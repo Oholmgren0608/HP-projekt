@@ -1,3 +1,4 @@
+import { Flashcards } from "@/components/flashcards";
 import { OfficialExamsBrowser } from "@/components/official-exams-browser";
 import { ReadingLibrary } from "@/components/reading-library";
 import { Badge } from "@/components/ui/badge";
@@ -88,6 +89,12 @@ export default function Home() {
           </span>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href="#flashcards"
+            className="hidden rounded-md px-3 py-2 text-sm font-medium text-[var(--ink-muted)] transition hover:text-[var(--ink)] md:inline"
+          >
+            Flashcards
+          </a>
           <a
             href="#gamla-prov"
             className="hidden rounded-md px-3 py-2 text-sm font-medium text-[var(--ink-muted)] transition hover:text-[var(--ink)] sm:inline"
@@ -383,7 +390,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="gamla-prov" className="border-y border-[var(--line)] bg-white/55 py-14">
+        <section id="flashcards" className="border-y border-[var(--line)] bg-white/40 py-14">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)] sm:text-4xl">
+              ORD-flashcards
+            </h2>
+            <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+              Aktiv recall: se ordet, säg betydelsen, vänd kortet. Fel kort kommer oftare tillbaka.
+              Progress sparas i webbläsaren.
+            </p>
+            <div className="mt-8">
+              <Flashcards />
+            </div>
+          </div>
+        </section>
+
+        <section id="gamla-prov" className="border-b border-[var(--line)] bg-white/55 py-14">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)] sm:text-4xl">
               Gamla högskoleprov
@@ -423,7 +445,9 @@ export default function Home() {
                         ? "Öppna →"
                         : r.href === "#gamla-prov"
                           ? "Öppna gamla prov →"
-                          : "Se läslistan →"}
+                          : r.href === "#flashcards"
+                            ? "Öppna flashcards →"
+                            : "Se läsbibliotek →"}
                     </a>
                   ) : null}
                 </div>

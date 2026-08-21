@@ -638,8 +638,8 @@ export const RESOURCES = [
   },
   {
     title: "ORD-ordlistor & flashcards",
-    body: "Bygg deck från provorden + läsorden. Aktiv recall slår passiv genomläsning.",
-    href: null,
+    body: "Aktiv recall med ORD-ord, läsbibliotekets vokabulär och MEK-konnektorer.",
+    href: "#flashcards",
   },
   {
     title: "Daglig sakprosa",
@@ -648,8 +648,8 @@ export const RESOURCES = [
   },
   {
     title: "MEK-konnektorlista",
-    body: "Emellertid, således, destomer, i synnerhet, respektive, oaktat, däremot, följaktligen…",
-    href: null,
+    body: "Träna konnektorer som flashcards — emellertid, således, oaktat…",
+    href: "#flashcards",
   },
 ];
 
