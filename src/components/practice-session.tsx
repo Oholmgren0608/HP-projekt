@@ -25,6 +25,18 @@ type Props = {
 
 type Phase = "quiz" | "review" | "reflect";
 
+const MEK_BLANK = /_{2,}/;
+
+function fillMekPassage(passage: string, word: string): { before: string; word: string; after: string } | null {
+  const match = passage.match(MEK_BLANK);
+  if (!match || match.index === undefined) return null;
+  return {
+    before: passage.slice(0, match.index),
+    word,
+    after: passage.slice(match.index + match[0].length),
+  };
+}
+
 function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes: number) {
   const requiredMs = requiredMinutes * 60 * 1000;
 
@@ -308,6 +320,17 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
             {questions.map((q, qi) => {
               const chosen = answers[q.id];
               const ok = chosen === q.correctIndex;
+              const correctWord = q.options[q.correctIndex];
+              const chosenWord = chosen !== undefined ? q.options[chosen] : null;
+              const filledCorrect =
+                q.kind === "mek" && q.passage
+                  ? fillMekPassage(q.passage, correctWord)
+                  : null;
+              const filledChosen =
+                q.kind === "mek" && q.passage && chosenWord && !ok
+                  ? fillMekPassage(q.passage, chosenWord)
+                  : null;
+
               return (
                 <li
                   key={q.id}
@@ -324,12 +347,53 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
                     <span>{ok ? "Rätt" : "Fel"}</span>
                   </div>
                   <p className="mt-1 font-medium text-[var(--ink)]">{q.prompt}</p>
-                  {!ok ? (
-                    <p className="mt-1 text-sm text-[var(--ink-muted)]">
-                      Ditt svar: {chosen !== undefined ? q.options[chosen] : "—"} · Rätt:{" "}
-                      {q.options[q.correctIndex]}
-                    </p>
-                  ) : null}
+
+                  {filledCorrect ? (
+                    <div className="mt-3 space-y-2">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+                        Rätt mening
+                      </p>
+                      <p className="rounded-md border border-[var(--lagoon)]/30 bg-white px-3 py-2 text-[15px] leading-relaxed text-[var(--ink)]">
+                        {filledCorrect.before}
+                        <mark className="rounded bg-[#c8ebe7] px-1 font-semibold text-[var(--ink)]">
+                          {filledCorrect.word}
+                        </mark>
+                        {filledCorrect.after}
+                      </p>
+                      {filledChosen ? (
+                        <>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+                            Din mening
+                          </p>
+                          <p className="rounded-md border border-[#9a3412]/25 bg-white px-3 py-2 text-[15px] leading-relaxed text-[var(--ink-muted)]">
+                            {filledChosen.before}
+                            <mark className="rounded bg-[#fde8e1] px-1 font-semibold text-[#9a3412] line-through decoration-[#9a3412]/70">
+                              {filledChosen.word}
+                            </mark>
+                            {filledChosen.after}
+                          </p>
+                        </>
+                      ) : null}
+                    </div>
+                  ) : (
+                    <>
+                      {q.passage && q.kind !== "mek" ? (
+                        <p className="mt-2 whitespace-pre-wrap rounded-md border border-[var(--line)] bg-white/70 px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]">
+                          {q.passage}
+                        </p>
+                      ) : null}
+                      {!ok ? (
+                        <p className="mt-1 text-sm text-[var(--ink-muted)]">
+                          Ditt svar: {chosenWord ?? "—"} · Rätt: {correctWord}
+                        </p>
+                      ) : (
+                        <p className="mt-1 text-sm text-[var(--ink-muted)]">
+                          Rätt svar: {correctWord}
+                        </p>
+                      )}
+                    </>
+                  )}
+
                   <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{q.explain}</p>
                 </li>
               );
