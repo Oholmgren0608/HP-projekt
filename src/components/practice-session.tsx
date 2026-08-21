@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   buildMixedQuiz,
   getReflectPrompt,
@@ -8,6 +8,12 @@ import {
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
+import {
+  clearPracticeTimer,
+  formatClock,
+  loadPracticeTimer,
+  savePracticeTimer,
+} from "@/lib/practice-timer";
 import type { StudyTask } from "@/lib/study-plan";
 
 type Props = {
@@ -19,39 +25,95 @@ type Props = {
 
 type Phase = "quiz" | "review" | "reflect";
 
-function sessionStartKey(week: number, taskId: string) {
-  return `hp-session-start:w${week}:${taskId}`;
-}
-
-function formatClock(totalSeconds: number): string {
-  const s = Math.max(0, totalSeconds);
-  const m = Math.floor(s / 60);
-  const r = s % 60;
-  return `${m}:${r.toString().padStart(2, "0")}`;
-}
-
-function useSessionTimer(requiredMinutes: number, startedAt: number) {
+function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes: number) {
   const requiredMs = requiredMinutes * 60 * 1000;
+
+  const [accumulatedMs, setAccumulatedMs] = useState(() =>
+    loadPracticeTimer(week, taskId).accumulatedMs,
+  );
+  const [runningSince, setRunningSince] = useState<number | null>(() => Date.now());
   const [now, setNow] = useState(() => Date.now());
+  const [paused, setPaused] = useState(false);
+
+  const accumulatedRef = useRef(accumulatedMs);
+  const runningSinceRef = useRef(runningSince);
 
   useEffect(() => {
+    accumulatedRef.current = accumulatedMs;
+  }, [accumulatedMs]);
+
+  useEffect(() => {
+    runningSinceRef.current = runningSince;
+  }, [runningSince]);
+
+  function persist(nextAccumulated: number) {
+    savePracticeTimer(week, taskId, { accumulatedMs: nextAccumulated });
+  }
+
+  function pause(reason: "leave" | "hidden" = "leave") {
+    const since = runningSinceRef.current;
+    if (since === null) {
+      setPaused(true);
+      return accumulatedRef.current;
+    }
+    const next = accumulatedRef.current + Math.max(0, Date.now() - since);
+    accumulatedRef.current = next;
+    runningSinceRef.current = null;
+    setAccumulatedMs(next);
+    setRunningSince(null);
+    setPaused(true);
+    persist(next);
+    void reason;
+    return next;
+  }
+
+  function resume() {
+    if (runningSinceRef.current !== null) {
+      setPaused(false);
+      return;
+    }
+    const t = Date.now();
+    runningSinceRef.current = t;
+    setRunningSince(t);
+    setPaused(false);
+    setNow(t);
+  }
+
+  useEffect(() => {
+    if (runningSince === null) return;
     const id = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(id);
-  }, []);
+  }, [runningSince]);
 
-  const elapsedMs = Math.max(0, now - startedAt);
+  useEffect(() => {
+    const onVisibility = () => {
+      if (document.hidden) pause("hidden");
+      else resume();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      pause("leave");
+    };
+    // intentionally once on mount/unmount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [week, taskId]);
+
+  const elapsedMs =
+    accumulatedMs + (runningSince !== null ? Math.max(0, now - runningSince) : 0);
   const remainingMs = Math.max(0, requiredMs - elapsedMs);
   const ready = remainingMs <= 0;
-  const elapsedSeconds = Math.floor(elapsedMs / 1000);
-  const remainingSeconds = Math.ceil(remainingMs / 1000);
   const progress = Math.min(100, Math.round((elapsedMs / requiredMs) * 100));
 
   return {
     ready,
-    elapsedSeconds,
-    remainingSeconds,
+    paused,
+    elapsedSeconds: Math.floor(elapsedMs / 1000),
+    remainingSeconds: Math.ceil(remainingMs / 1000),
     progress,
     requiredMinutes,
+    pause,
+    clear: () => clearPracticeTimer(week, taskId),
   };
 }
 
@@ -60,20 +122,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
   const seed = `w${week}:${task.id}`;
   const requiredMinutes = task.minutes;
 
-  const [startedAt] = useState(() => {
-    if (typeof window === "undefined") return Date.now();
-    const key = sessionStartKey(week, task.id);
-    const existing = window.sessionStorage.getItem(key);
-    if (existing) {
-      const parsed = Number(existing);
-      if (!Number.isNaN(parsed) && parsed > 0) return parsed;
-    }
-    const now = Date.now();
-    window.sessionStorage.setItem(key, String(now));
-    return now;
-  });
-
-  const timer = useSessionTimer(requiredMinutes, startedAt);
+  const timer = usePausablePracticeTimer(week, task.id, requiredMinutes);
 
   const questions = useMemo(() => {
     if (isReflect) return [] as ChoiceQuestion[];
@@ -119,11 +168,14 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
     setSelected(null);
   }
 
+  function handleClose() {
+    timer.pause("leave");
+    onClose();
+  }
+
   function finish() {
     if (!timer.ready) return;
-    if (typeof window !== "undefined") {
-      window.sessionStorage.removeItem(sessionStartKey(week, task.id));
-    }
+    timer.clear();
     onComplete({
       correct: isReflect ? reflectAnswers.filter((a) => a.trim()).length : score.correct,
       total: isReflect ? (reflect?.prompts.length ?? 0) : score.total,
@@ -144,10 +196,10 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
         </div>
         <button
           type="button"
-          onClick={onClose}
+          onClick={handleClose}
           className="rounded-md border border-[var(--line)] px-3 py-1.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
         >
-          Stäng
+          Pausa & stäng
         </button>
       </div>
 
@@ -247,7 +299,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
               </span>
             </p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
-              Tid i passet {formatClock(timer.elapsedSeconds)} · krav {requiredMinutes} min ·{" "}
+              Aktiv övningstid {formatClock(timer.elapsedSeconds)} · krav {requiredMinutes} min ·{" "}
               {kindLabels}
             </p>
           </div>
@@ -306,7 +358,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
 function TimeRequirementBanner({
   timer,
 }: {
-  timer: ReturnType<typeof useSessionTimer>;
+  timer: ReturnType<typeof usePausablePracticeTimer>;
 }) {
   return (
     <div className="mt-4 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3">
@@ -318,18 +370,26 @@ function TimeRequirementBanner({
             </>
           ) : (
             <>
-              Krav: <span className="font-semibold">{timer.requiredMinutes} min</span> i passet
-              innan uppgiften kan markeras klar. Kvar:{" "}
+              Krav: <span className="font-semibold">{timer.requiredMinutes} min</span> aktiv
+              övningstid. Kvar:{" "}
               <span className="font-semibold tabular-nums text-[var(--accent)]">
                 {formatClock(timer.remainingSeconds)}
               </span>
+              {timer.paused ? (
+                <span className="ml-2 rounded bg-[var(--mist)] px-1.5 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
+                  Pausad
+                </span>
+              ) : null}
             </>
           )}
         </p>
         <p className="text-xs tabular-nums text-[var(--ink-muted)]">
-          Tid: {formatClock(timer.elapsedSeconds)}
+          Aktiv tid: {formatClock(timer.elapsedSeconds)}
         </p>
       </div>
+      <p className="mt-1 text-xs text-[var(--ink-muted)]">
+        Timern pausas när du stänger övningen eller byter flik — den fortsätter där du slutade.
+      </p>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
         <div
           className={`h-full rounded-full transition-all ${timer.ready ? "bg-[var(--lagoon)]" : "bg-[var(--accent)]"}`}
@@ -361,8 +421,8 @@ function CompleteButton({
       </button>
       {!ready ? (
         <p className="text-sm text-[var(--ink-muted)]">
-          Knappen låses upp om {formatClock(remainingSeconds)}. Använd tiden till att gå igenom
-          förklaringarna.
+          Knappen låses upp efter {formatClock(remainingSeconds)} aktiv övningstid till. Timern
+          pausas om du lämnar passet.
         </p>
       ) : null}
     </div>
@@ -421,7 +481,7 @@ function ReflectForm({
         </button>
         {!timeReady ? (
           <p className="text-sm text-[var(--ink-muted)]">
-            Vänta tills rekommenderad tid är klar ({formatClock(remainingSeconds)} kvar).
+            Vänta tills aktiv övningstid är klar ({formatClock(remainingSeconds)} kvar).
           </p>
         ) : !filled ? (
           <p className="text-sm text-[var(--ink-muted)]">Fyll i alla fält först.</p>

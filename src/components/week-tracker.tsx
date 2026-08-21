@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { Progress } from "@/components/ui/progress";
+import { formatClock, loadPracticeTimer } from "@/lib/practice-timer";
 import { WEEKLY_PLANS, sectionLabel, type StudyTask } from "@/lib/study-plan";
 
 const STORAGE_KEY = "hp-studieplan-progress-v2";
@@ -32,6 +33,7 @@ export function WeekTracker() {
   const [activeWeek, setActiveWeek] = useState(1);
   const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
+  const [timerTick, setTimerTick] = useState(0);
 
   useEffect(() => {
     setProgress(loadJson(STORAGE_KEY, {}));
@@ -99,8 +101,14 @@ export function WeekTracker() {
       <PracticeSession
         task={activeTask}
         week={plan.week}
-        onClose={() => setActiveTaskId(null)}
-        onComplete={(result) => markComplete(activeTask, result)}
+        onClose={() => {
+          setActiveTaskId(null);
+          setTimerTick((n) => n + 1);
+        }}
+        onComplete={(result) => {
+          markComplete(activeTask, result);
+          setTimerTick((n) => n + 1);
+        }}
       />
     );
   }
@@ -181,6 +189,11 @@ export function WeekTracker() {
             const key = taskKey(plan.week, task.id);
             const checked = Boolean(progress[key]);
             const score = scores[key];
+            const bankedMin = Math.floor(
+              loadPracticeTimer(plan.week, task.id).accumulatedMs / 60000,
+            );
+            // timerTick forces re-read after leaving a session
+            void timerTick;
             return (
               <li key={task.id}>
                 <div
@@ -221,6 +234,9 @@ export function WeekTracker() {
                         {score
                           ? ` · Senaste resultat ${score.correct}/${score.total}`
                           : null}
+                        {!checked && bankedMin > 0
+                          ? ` · Sparad tid ${bankedMin}/${task.minutes} min (pausad)`
+                          : null}
                       </p>
                       <div className="mt-3 flex flex-wrap gap-2">
                         <button
@@ -228,7 +244,11 @@ export function WeekTracker() {
                           onClick={() => setActiveTaskId(task.id)}
                           className="rounded-md bg-[var(--accent)] px-3.5 py-2 text-sm font-semibold text-white transition hover:brightness-110"
                         >
-                          {checked ? "Öva igen" : "Starta övning"}
+                          {checked
+                            ? "Öva igen"
+                            : bankedMin > 0
+                              ? "Fortsätt övning"
+                              : "Starta övning"}
                         </button>
                         {checked && score ? (
                           <span className="self-center text-xs text-[var(--ink-muted)]">
@@ -236,7 +256,9 @@ export function WeekTracker() {
                           </span>
                         ) : (
                           <span className="self-center text-xs text-[var(--ink-muted)]">
-                            Markeras klar efter {task.minutes} min i passet
+                            {bankedMin > 0
+                              ? `Aktiv tid ${formatClock(bankedMin * 60)} / ${task.minutes} min`
+                              : `Markeras klar efter ${task.minutes} min aktiv övning`}
                           </span>
                         )}
                       </div>
