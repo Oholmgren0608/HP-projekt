@@ -1,3 +1,4 @@
+import { OfficialExamsBrowser } from "@/components/official-exams-browser";
 import { Badge } from "@/components/ui/badge";
 import { WeekTracker } from "@/components/week-tracker";
 import {
@@ -88,6 +89,12 @@ export default function Home() {
           </span>
         </div>
         <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href="#gamla-prov"
+            className="hidden rounded-md px-3 py-2 text-sm font-medium text-[var(--ink-muted)] transition hover:text-[var(--ink)] sm:inline"
+          >
+            Gamla prov
+          </a>
           <a
             href="#laslista"
             className="hidden rounded-md px-3 py-2 text-sm font-medium text-[var(--ink-muted)] transition hover:text-[var(--ink)] sm:inline"
@@ -425,6 +432,21 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="gamla-prov" className="border-y border-[var(--line)] bg-white/55 py-14">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)] sm:text-4xl">
+              Gamla högskoleprov
+            </h2>
+            <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+              Läs officiella provhäften och facit här på sidan. Prioritera MEK och ORD i de verbala
+              häftena — det är dina flaskhalsar.
+            </p>
+            <div className="mt-8">
+              <OfficialExamsBrowser />
+            </div>
+          </div>
+        </section>
+
         <section className="border-t border-[var(--line)] bg-white/50 py-14">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
@@ -446,7 +468,11 @@ export default function Home() {
                         : {})}
                       className="mt-3 inline-block text-sm font-medium text-[var(--accent)] underline-offset-4 hover:underline"
                     >
-                      {r.href.startsWith("http") ? "Öppna →" : "Se läslistan →"}
+                      {r.href.startsWith("http")
+                        ? "Öppna →"
+                        : r.href === "#gamla-prov"
+                          ? "Öppna gamla prov →"
+                          : "Se läslistan →"}
                     </a>
                   ) : null}
                 </div>

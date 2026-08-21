@@ -633,8 +633,8 @@ export const READING_METHOD = [
 export const RESOURCES = [
   {
     title: "Gamla högskoleprov",
-    body: "Primärmaterialet. Prioritera MEK- och ORD-uppgifter från flera prov.",
-    href: "https://www.studera.nu/hogskoleprov/forberedelser/gamla-hogskoleprov/",
+    body: "Officiella häften och facit inbäddade på den här sidan (från UHR/studera.nu).",
+    href: "#gamla-prov",
   },
   {
     title: "ORD-ordlistor & flashcards",

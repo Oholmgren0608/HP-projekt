@@ -16,11 +16,9 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 
 ## Vad appen innehåller
 
-- Personlig strategi utifrån tidigare resultat (kvant 1,4 / verbal 1,0)
-- Genomgång av varje delprov med metoder och veckomål
-- Daglig studiemall och konkret läslista (sakprosa/essä för ORD & LÄS)
-- 8-veckorsplan med interaktiva övningar (ORD, MEK, LÄS, ELF, DTK) som sparas i webbläsaren
-- Länkar till gamla högskoleprov
+- Interaktiv 8-veckorsplan med övningar (ORD, MEK, LÄS, ELF, DTK)
+- Officiella gamla högskoleprov inbäddade som PDF från UHR/studera.nu
+- Daglig läslista och strategier anpassade efter delprovspoäng
 
 ## Scripts
 
