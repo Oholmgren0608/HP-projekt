@@ -417,7 +417,8 @@ export default function Home() {
             8-veckorsplan med checklista
           </h2>
           <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-            Bas → teknik → fullprov → finish. Bocka av uppgifter — progressen sparas i webbläsaren.
+            Bas → teknik → fullprov → finish. Starta varje uppgift direkt på sidan — ORD, MEK,
+            LÄS, ELF, DTK och reflektion. Resultat sparas i webbläsaren.
           </p>
           <div className="mt-8">
             <WeekTracker />
