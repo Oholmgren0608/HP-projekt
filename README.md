@@ -1,6 +1,6 @@
 # HP Lift — Studieplan för Högskoleprovet
 
-Interaktiv 8-veckorsplan för höstens Högskoleprov. Anpassad för dig som är stark på kvantitativt och engelska men behöver lyfta svenska verbala (ORD, LÄS, MEK).
+Mata in dina HP-resultat (normpoäng + råpoäng per delprov) så bygger sidan om prioritering, tidsfördelning och veckoplan.
 
 ## Kom igång
 
@@ -16,9 +16,9 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 
 ## Vad appen innehåller
 
-- Interaktiv 8-veckorsplan med övningar (ORD, MEK, LÄS, ELF, DTK)
-- Officiella gamla högskoleprov inbäddade som PDF från UHR/studera.nu
-- Daglig läslista och strategier anpassade efter delprovspoäng
+- **Resultatformulär** — spara normpoäng, delprovspoäng, timmar/vecka och veckor till prov; planen genereras om lokalt
+- Interaktiv veckoplan med övningar (ORD, MEK, LÄS, ELF, DTK)
+- Flashcards, läsbibliotek och officiella gamla HP-prov (PDF från UHR)
 
 ## Scripts
 

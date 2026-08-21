@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
+import { usePlan } from "@/components/plan-context";
 import { Progress } from "@/components/ui/progress";
 import { formatClock, loadPracticeTimer, resetPracticeSession } from "@/lib/practice-timer";
-import { WEEKLY_PLANS, sectionLabel, type StudyTask } from "@/lib/study-plan";
+import { sectionLabel, type StudyTask } from "@/lib/study-plan";
 
 const STORAGE_KEY = "hp-studieplan-progress-v2";
 const SCORES_KEY = "hp-studieplan-scores-v1";
@@ -28,6 +29,9 @@ function taskKey(week: number, taskId: string) {
 }
 
 export function WeekTracker() {
+  const { plan: generated } = usePlan();
+  const weeklyPlans = generated.weeklyPlans;
+
   const [progress, setProgress] = useState<ProgressMap>({});
   const [scores, setScores] = useState<ScoreMap>({});
   const [activeWeek, setActiveWeek] = useState(1);
@@ -51,11 +55,18 @@ export function WeekTracker() {
     localStorage.setItem(SCORES_KEY, JSON.stringify(scores));
   }, [scores, ready]);
 
-  const plan = WEEKLY_PLANS.find((w) => w.week === activeWeek) ?? WEEKLY_PLANS[0];
-  const activeTask = plan.tasks.find((t) => t.id === activeTaskId) ?? null;
+  useEffect(() => {
+    if (activeWeek > weeklyPlans.length) {
+      setActiveWeek(1);
+      setActiveTaskId(null);
+    }
+  }, [weeklyPlans.length, activeWeek]);
+
+  const plan = weeklyPlans.find((w) => w.week === activeWeek) ?? weeklyPlans[0];
+  const activeTask = plan?.tasks.find((t) => t.id === activeTaskId) ?? null;
 
   const { done, total, percent } = useMemo(() => {
-    const allTasks = WEEKLY_PLANS.flatMap((w) =>
+    const allTasks = weeklyPlans.flatMap((w) =>
       w.tasks.map((t) => taskKey(w.week, t.id)),
     );
     const doneCount = allTasks.filter((k) => progress[k]).length;
@@ -64,7 +75,9 @@ export function WeekTracker() {
       total: allTasks.length,
       percent: allTasks.length ? Math.round((doneCount / allTasks.length) * 100) : 0,
     };
-  }, [progress]);
+  }, [progress, weeklyPlans]);
+
+  if (!plan) return null;
 
   const weekDone = plan.tasks.filter((t) => progress[taskKey(plan.week, t.id)]).length;
 
@@ -136,7 +149,7 @@ export function WeekTracker() {
       </div>
 
       <div className="flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Välj vecka">
-        {WEEKLY_PLANS.map((w) => {
+        {weeklyPlans.map((w) => {
           const selected = w.week === activeWeek;
           const wDone = w.tasks.filter((t) => progress[taskKey(w.week, t.id)]).length;
           return (

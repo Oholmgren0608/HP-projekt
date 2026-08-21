@@ -15,7 +15,7 @@ const sans = Source_Sans_3({
 export const metadata: Metadata = {
   title: "HP Lift — Studieplan för Högskoleprovet",
   description:
-    "Personlig 8-veckorsplan för Högskoleprovet med fokus på ORD, LÄS och MEK — anpassad för stark kvantitativ och engelsk del.",
+    "Mata in dina HP-resultat och få en personlig studieplan med prioritering, tidsfördelning och veckoplan.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

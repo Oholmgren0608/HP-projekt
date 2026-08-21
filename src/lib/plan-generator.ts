@@ -1,0 +1,620 @@
+import type { PracticeKind } from "@/lib/practice";
+import {
+  DELPROV_META,
+  type ScoreInput,
+  formatNorm,
+} from "@/lib/hp-scores";
+import type {
+  DelprovScore,
+  Priority,
+  SectionGuide,
+  SectionId,
+  StudyTask,
+  WeekPlan,
+} from "@/lib/study-plan";
+import { pct } from "@/lib/study-plan";
+
+export type TimeSplitItem = { label: string; pct: number; note: string };
+export type StrategyItem = { title: string; body: string };
+
+export type GeneratedPlan = {
+  profile: {
+    previousQuant: number;
+    previousVerbal: number;
+    overall: number;
+    totalCorrect: number;
+    totalQuestions: number;
+    targetOverall: string;
+    targetVerbal: string;
+    weeksUntilExam: number;
+    hoursPerWeek: number;
+  };
+  delprovScores: DelprovScore[];
+  sections: SectionGuide[];
+  strategy: StrategyItem[];
+  timeSplit: TimeSplitItem[];
+  weeklyPlans: WeekPlan[];
+  dailyTemplate: { slot: string; item: string }[];
+  heroSummary: string;
+  focusIds: SectionId[];
+};
+
+type Ranked = {
+  id: SectionId;
+  name: string;
+  correct: number;
+  total: number;
+  block: "kvant" | "verbal";
+  percent: number;
+  deficit: number;
+};
+
+const METHODS: Record<SectionId, { name: string; short: string; methods: string[] }> = {
+  MEK: {
+    name: "MEK — Meningskomplettering",
+    short: "MEK",
+    methods: [
+      "Träna konnektorer dagligen: emellertid, således, däremot, respektive, i synnerhet, oaktat",
+      "Läs varje alternativ högt — fel svar bryter ofta ton, tempus eller orsaksrelation",
+      "Eliminera först: stryk stilfel, sedan logikfel",
+      "Korta MEK-set flera gånger i veckan med felanalys",
+    ],
+  },
+  ORD: {
+    name: "ORD — Ordförståelse",
+    short: "ORD",
+    methods: [
+      "15–25 nya ord per dag + aktiv recall",
+      "Gruppera efter stammar så ett ord ger flera",
+      "Fel-decket går före nya ord",
+      "Använd flashcards i appen varje morgon",
+    ],
+  },
+  LAS: {
+    name: "LÄS — Svensk läsförståelse",
+    short: "LÄS",
+    methods: [
+      "Daglig sakprosa i läsbiblioteket",
+      "Tidsatta LÄS-pass med bevisrad efter fel",
+      "Sammanfatta huvudpoängen i en mening",
+      "Skilj stöd i texten från rimliga gissningar",
+    ],
+  },
+  ELF: {
+    name: "ELF — Engelsk läsförståelse",
+    short: "ELF",
+    methods: [
+      "Underhållspass så tempot inte dipsar",
+      "Lätt engelsk sakprosa vid behov",
+      "Analysera bara tydliga fel",
+    ],
+  },
+  DTK: {
+    name: "DTK — Diagram, tabeller och kartor",
+    short: "DTK",
+    methods: [
+      "Tempo + noggrann avläsning av axlar/enheter",
+      "Stryk irrelevant data innan du räknar",
+      "Felanalys: avläsning vs. räkning vs. feltolkad fråga",
+    ],
+  },
+  XYZ: {
+    name: "XYZ — Matematik problemlösning",
+    short: "XYZ",
+    methods: [
+      "Blandade problemlösningspass",
+      "Fokusera typer du missar i felanalys",
+      "Håll handen varm utan att överplugga",
+    ],
+  },
+  KVA: {
+    name: "KVA — Kvantitativa jämförelser",
+    short: "KVA",
+    methods: [
+      "Korta jämförelseset under tid",
+      "Öva att avgöra relation utan full uträkning",
+      "Felanalys per uppgiftstyp",
+    ],
+  },
+  NOG: {
+    name: "NOG — Kvantitativa resonemang",
+    short: "NOG",
+    methods: [
+      "Träna tillräcklighet: (1), (2), båda, ingetdera",
+      "Rita upp vad varje uppgift ger",
+      "Korta set med direkt felanalys",
+    ],
+  },
+};
+
+function priorityFromPercent(percent: number): Priority {
+  if (percent < 50) return "kritiskt";
+  if (percent < 65) return "huvudfokus";
+  if (percent < 80) return "underhall";
+  return "styrka";
+}
+
+function whyFor(r: Ranked, priority: Priority): string {
+  if (priority === "kritiskt") {
+    return `${r.correct}/${r.total} (${r.percent} %) — tydlig flaskhals. Här finns mest poäng att hämta.`;
+  }
+  if (priority === "huvudfokus") {
+    return `${r.correct}/${r.total} (${r.percent} %) — under målzonen. Regelbunden träning ger ofta snabb lyft.`;
+  }
+  if (priority === "underhall") {
+    return `${r.correct}/${r.total} (${r.percent} %) — okej nivå. Behåll med lätt underhåll, jaga inte på bekostnad av svagare delar.`;
+  }
+  return `${r.correct}/${r.total} (${r.percent} %) — styrka. Skydda nivån med korta pass.`;
+}
+
+function weeklyGoalFor(id: SectionId, priority: Priority): string {
+  if (id === "MEK") {
+    return priority === "styrka" || priority === "underhall"
+      ? "2–3 MEK-set/vecka"
+      : "5–6 MEK-set + fel-lista över konnektorer";
+  }
+  if (id === "ORD") {
+    return priority === "styrka" || priority === "underhall"
+      ? "Daglig lätt flashcard-repetition"
+      : "15–25 ord/dag + flashcards, ≥80 % rätt på veckotest";
+  }
+  if (id === "LAS") {
+    return priority === "kritiskt" || priority === "huvudfokus"
+      ? "3 tidsatta LÄS-pass + daglig sakprosa"
+      : "Daglig läsning + 1–2 LÄS-pass";
+  }
+  if (id === "ELF") return "1 underhållspass (öka om det dippar)";
+  if (id === "DTK") return "1–2 DTK-pass/vecka";
+  return "1 blandat underhållspass/vecka";
+}
+
+function toPractice(id: SectionId): PracticeKind[] {
+  if (id === "LAS") return ["las"];
+  if (id === "XYZ" || id === "KVA" || id === "NOG") return ["dtk"];
+  if (id === "DTK") return ["dtk"];
+  return [id.toLowerCase() as PracticeKind];
+}
+
+function allocateTime(ranked: Ranked[]): TimeSplitItem[] {
+  const verbalFocus = ranked.filter((r) => r.block === "verbal");
+  const quantFocus = ranked.filter((r) => r.block === "kvant");
+
+  const weights = new Map<string, number>();
+  for (const r of verbalFocus.slice(0, 3)) {
+    weights.set(r.id, Math.max(8, r.deficit));
+  }
+  // reading always gets a slice if not already high
+  if (![...weights.keys()].includes("LAS") && ![...weights.keys()].includes("ORD")) {
+    weights.set("LAS", 10);
+  }
+  const weakestQuant = quantFocus[0];
+  if (weakestQuant) weights.set(weakestQuant.id, Math.max(8, weakestQuant.deficit * 0.6));
+
+  // ensure ELF maintenance if strong
+  const elf = ranked.find((r) => r.id === "ELF");
+  if (elf && elf.percent >= 75) weights.set("ELF", 6);
+  else if (elf) weights.set("ELF", Math.max(8, elf.deficit));
+
+  let sum = 0;
+  for (const v of weights.values()) sum += v;
+  const items: TimeSplitItem[] = [];
+  for (const [id, w] of weights) {
+    const p = Math.round((w / sum) * 100);
+    const meta = METHODS[id as SectionId];
+    items.push({
+      label: meta?.short ?? id,
+      pct: p,
+      note:
+        (ranked.find((r) => r.id === id)?.percent ?? 0) < 65
+          ? "prioritet"
+          : "underhåll",
+    });
+  }
+  // normalize rounding drift
+  const drift = 100 - items.reduce((a, b) => a + b.pct, 0);
+  if (items.length && drift !== 0) items[0].pct += drift;
+  return items.sort((a, b) => b.pct - a.pct);
+}
+
+function buildWeeklyPlans(
+  focus: SectionId[],
+  weeks: number,
+): WeekPlan[] {
+  const primary = focus[0] ?? "MEK";
+  const secondary = focus[1] ?? "ORD";
+  const tertiary = focus[2] ?? "LAS";
+  const quant = focus.find((id) => ["DTK", "XYZ", "KVA", "NOG"].includes(id)) ?? "DTK";
+
+  const phases = [
+    { phase: "Bas", theme: `${METHODS[primary].short}-rutin + ${METHODS[secondary].short}`, focus: `Bygg daglig rutin runt ${METHODS[primary].short} och ${METHODS[secondary].short}.` },
+    { phase: "Bas", theme: `${METHODS[primary].short} under tid`, focus: `Öka volym och tempo på ${METHODS[primary].short}.` },
+    { phase: "Bas", theme: "Djup felanalys", focus: "Fel ska bli mönster du känner igen." },
+    { phase: "Bas", theme: "Avstämning", focus: "Mät lyftet på prioriterade delar och justera." },
+    { phase: "Teknik", theme: "Tempo", focus: "Samma material, högre precision under tid." },
+    { phase: "Teknik", theme: "Halvprov", focus: "Kombinera flaskhalsarna i längre pass." },
+    { phase: "Fullprov", theme: "Bred simulering", focus: "Simulera bredd och utvärdera energi." },
+    { phase: "Finish", theme: "Puts och vila", focus: "Repetition och energi — inga nya tunga system." },
+  ];
+
+  const n = Math.min(Math.max(weeks, 4), 8);
+  const plans: WeekPlan[] = [];
+
+  for (let i = 0; i < n; i++) {
+    const week = i + 1;
+    const meta = phases[i] ?? phases[phases.length - 1];
+    let tasks: StudyTask[] = [];
+
+    if (week <= 3) {
+      tasks = [
+        {
+          id: `w${week}-a`,
+          title: `${METHODS[primary].short}: fokuspass`,
+          detail: `Träna din svagaste del (${METHODS[primary].short}).`,
+          minutes: week === 1 ? 35 : 40,
+          section: primary,
+          practiceKinds: toPractice(primary),
+          questionCount: primary === "ORD" ? 10 : 8,
+        },
+        {
+          id: `w${week}-b`,
+          title: `${METHODS[secondary].short}: stödpass`,
+          detail: `Andra prioriteten (${METHODS[secondary].short}).`,
+          minutes: 35,
+          section: secondary,
+          practiceKinds: toPractice(secondary),
+          questionCount: 10,
+        },
+        {
+          id: `w${week}-c`,
+          title: `${METHODS[tertiary].short}: komplettering`,
+          detail: "Håll bredden utan att stjäla tid från flaskhalsarna.",
+          minutes: 25,
+          section: tertiary,
+          practiceKinds: toPractice(tertiary),
+          questionCount: tertiary === "LAS" ? 4 : 6,
+        },
+        {
+          id: `w${week}-d`,
+          title: `${METHODS[quant].short}: underhåll`,
+          detail: "Kvantitativ lucka / underhåll.",
+          minutes: 45,
+          section: quant,
+          practiceKinds: toPractice(quant),
+          questionCount: 4,
+        },
+      ];
+    } else if (week === 4) {
+      tasks = [
+        {
+          id: `w${week}-verbal`,
+          title: "Blandpass prioriterade delar",
+          detail: "Mät råpoäng på dina fokusdelar.",
+          minutes: 90,
+          section: primary,
+          practiceKinds: [...new Set([...toPractice(primary), ...toPractice(secondary), ...toPractice(tertiary)])],
+          questionCount: 14,
+        },
+        {
+          id: `w${week}-analys`,
+          title: "Felanalys",
+          detail: "Kunskap / slarv / tid. Tre konkreta justeringar.",
+          minutes: 45,
+          section: secondary,
+          practiceKinds: ["reflect"],
+        },
+        {
+          id: `w${week}-patch`,
+          title: `Lappa ${METHODS[primary].short} + ${METHODS[secondary].short}`,
+          detail: "Dubbla det som föll mest.",
+          minutes: 50,
+          section: primary,
+          practiceKinds: [...toPractice(primary), ...toPractice(secondary)],
+          questionCount: 12,
+        },
+        {
+          id: `w${week}-q`,
+          title: `${METHODS[quant].short}-check`,
+          detail: "Bekräfta kvantnivån.",
+          minutes: 50,
+          section: quant,
+          practiceKinds: toPractice(quant),
+          questionCount: 5,
+        },
+      ];
+    } else if (week <= 6) {
+      tasks = [
+        {
+          id: `w${week}-a`,
+          title: `${METHODS[primary].short}: tempo`,
+          detail: "Eliminering under tid.",
+          minutes: 40,
+          section: primary,
+          practiceKinds: toPractice(primary),
+          questionCount: 10,
+        },
+        {
+          id: `w${week}-b`,
+          title: `${METHODS[secondary].short}: tempo`,
+          detail: "Snabb igenkänning utan panikgissning.",
+          minutes: 35,
+          section: secondary,
+          practiceKinds: toPractice(secondary),
+          questionCount: 10,
+        },
+        {
+          id: `w${week}-c`,
+          title: "Halvprov fokus",
+          detail: "Kombinera dina två svagaste delar.",
+          minutes: 70,
+          section: primary,
+          practiceKinds: [...toPractice(primary), ...toPractice(secondary)],
+          questionCount: 12,
+        },
+        {
+          id: `w${week}-d`,
+          title: `${METHODS[quant].short}: tempo`,
+          detail: "Kort hårt pass.",
+          minutes: 45,
+          section: quant,
+          practiceKinds: toPractice(quant),
+          questionCount: 5,
+        },
+      ];
+    } else if (week === 7) {
+      tasks = [
+        {
+          id: `w${week}-full`,
+          title: "Bred simulering",
+          detail: "Blandat set över flera delar. Notera var energin föll.",
+          minutes: 90,
+          section: primary,
+          practiceKinds: ["ord", "mek", "las", "elf", "dtk"],
+          questionCount: 16,
+        },
+        {
+          id: `w${week}-review`,
+          title: "Analys efter simulering",
+          detail: "Mönster per delprov.",
+          minutes: 60,
+          section: secondary,
+          practiceKinds: ["reflect"],
+        },
+        {
+          id: `w${week}-patch`,
+          title: "Lappa största luckan",
+          detail: `Nästan alltid ${METHODS[primary].short} eller ${METHODS[secondary].short}.`,
+          minutes: 50,
+          section: primary,
+          practiceKinds: [...toPractice(primary), ...toPractice(secondary)],
+          questionCount: 12,
+        },
+        {
+          id: `w${week}-light`,
+          title: "Lätt underhåll",
+          detail: "Korta pass, ingen utmattning.",
+          minutes: 40,
+          section: quant,
+          practiceKinds: toPractice(quant),
+          questionCount: 4,
+        },
+      ];
+    } else {
+      tasks = [
+        {
+          id: `w${week}-a`,
+          title: `${METHODS[primary].short}: lätt repetition`,
+          detail: "Inga nya knep.",
+          minutes: 30,
+          section: primary,
+          practiceKinds: toPractice(primary),
+          questionCount: 6,
+        },
+        {
+          id: `w${week}-b`,
+          title: `${METHODS[secondary].short}: lätt repetition`,
+          detail: "Bara bekanta uppgifter.",
+          minutes: 30,
+          section: secondary,
+          practiceKinds: toPractice(secondary),
+          questionCount: 8,
+        },
+        {
+          id: `w${week}-c`,
+          title: "Halvprov fokus",
+          detail: "Senast mitt i veckan.",
+          minutes: 60,
+          section: primary,
+          practiceKinds: [...toPractice(primary), ...toPractice(secondary)],
+          questionCount: 10,
+        },
+        {
+          id: `w${week}-d`,
+          title: "Provdags-check",
+          detail: "Logistik, sömn, sista lätta repetition.",
+          minutes: 20,
+          section: "ELF",
+          practiceKinds: ["reflect"],
+        },
+      ];
+    }
+
+    plans.push({
+      week,
+      phase: meta.phase,
+      theme: meta.theme,
+      focus: meta.focus,
+      tasks,
+    });
+  }
+
+  return plans;
+}
+
+export function generatePlan(scores: ScoreInput): GeneratedPlan {
+  const ranked: Ranked[] = DELPROV_META.map((m) => {
+    const correct = scores.delprov[m.id] ?? 0;
+    const percent = pct(correct, m.total);
+    return {
+      id: m.id,
+      name: m.name,
+      correct,
+      total: m.total,
+      block: m.block,
+      percent,
+      deficit: Math.max(0, 100 - percent),
+    };
+  }).sort((a, b) => a.percent - b.percent);
+
+  const overall =
+    Math.round(((scores.quantNorm + scores.verbalNorm) / 2) * 100) / 100;
+  const totalCorrect = DELPROV_META.reduce(
+    (sum, m) => sum + (scores.delprov[m.id] ?? 0),
+    0,
+  );
+  const totalQuestions = DELPROV_META.reduce((sum, m) => sum + m.total, 0);
+
+  const targetOverallNum = Math.min(2, Math.round((overall + 0.4) * 10) / 10);
+  const targetVerbalNum = Math.min(
+    2,
+    Math.max(scores.verbalNorm + 0.3, scores.verbalNorm < 1.2 ? 1.4 : scores.verbalNorm + 0.2),
+  );
+
+  const delprovScores: DelprovScore[] = DELPROV_META.map((m) => ({
+    id: m.id,
+    name: m.name,
+    correct: scores.delprov[m.id] ?? 0,
+    total: m.total,
+    block: m.block,
+  }));
+
+  // Build section guides: critical/focus first, then rest — but include all practice-relevant ones
+  const guideOrder = [
+    ...ranked.filter((r) => ["MEK", "ORD", "LAS", "ELF", "DTK"].includes(r.id)),
+    ...ranked.filter((r) => ["XYZ", "KVA", "NOG"].includes(r.id)),
+  ];
+  // dedupe
+  const seen = new Set<SectionId>();
+  const sections: SectionGuide[] = [];
+  for (const r of guideOrder) {
+    if (seen.has(r.id)) continue;
+    seen.add(r.id);
+    // collapse XYZ/KVA/NOG into one card if all are strengths
+    if (["XYZ", "KVA", "NOG"].includes(r.id)) continue;
+    const priority = priorityFromPercent(r.percent);
+    const meta = METHODS[r.id];
+    sections.push({
+      id: r.id,
+      name: meta.name,
+      short: meta.short,
+      priority,
+      scoreLabel: `${r.correct}/${r.total} (${r.percent} %)`,
+      why: whyFor(r, priority),
+      methods: meta.methods,
+      weeklyGoal: weeklyGoalFor(r.id, priority),
+    });
+  }
+
+  // Add combined quant card
+  const xyz = ranked.find((r) => r.id === "XYZ")!;
+  const kva = ranked.find((r) => r.id === "KVA")!;
+  const nog = ranked.find((r) => r.id === "NOG")!;
+  const quantAvg = Math.round((xyz.percent + kva.percent + nog.percent) / 3);
+  sections.push({
+    id: "XYZ",
+    name: "Övrig kvant (XYZ, KVA, NOG)",
+    short: "Kvant",
+    priority: priorityFromPercent(quantAvg),
+    scoreLabel: `XYZ ${xyz.percent} % · KVA ${kva.percent} % · NOG ${nog.percent} %`,
+    why: `Samlat kvant-läge. Svagaste av de tre: ${[xyz, kva, nog].sort((a, b) => a.percent - b.percent)[0].id}.`,
+    methods: [
+      "1 blandat underhållspass/vecka utöver DTK",
+      "Extra set bara på den svagaste av XYZ/KVA/NOG",
+      "Fullt kvantitativt delprov var 2.–3. vecka",
+    ],
+    weeklyGoal: "1 blandat underhållspass + DTK vid behov",
+  });
+
+  const focusIds = ranked
+    .filter((r) => r.percent < 80)
+    .slice(0, 4)
+    .map((r) => r.id);
+  if (focusIds.length < 2) {
+    focusIds.push(...ranked.slice(0, 2).map((r) => r.id));
+  }
+
+  const weakestVerbal = ranked.filter((r) => r.block === "verbal")[0];
+  const strongestVerbal = [...ranked].filter((r) => r.block === "verbal").sort((a, b) => b.percent - a.percent)[0];
+  const weakestQuant = ranked.filter((r) => r.block === "kvant")[0];
+
+  const strategy: StrategyItem[] = [
+    {
+      title: `${METHODS[weakestVerbal.id].short} först`,
+      body: `Din svagaste verbala del är ${METHODS[weakestVerbal.id].short} (${weakestVerbal.correct}/${weakestVerbal.total}). Lägg merparten av verbala tiden där innan du jagar styrkor.`,
+    },
+    {
+      title: "Skydda det som redan fungerar",
+      body: `${METHODS[strongestVerbal.id].short} ligger på ${strongestVerbal.percent} %. Underhåll räcker — stjäl inte tid från flaskhalsarna.`,
+    },
+    {
+      title: `På kvant: ${METHODS[weakestQuant.id].short}`,
+      body: `Svagaste kvantitativa delen är ${METHODS[weakestQuant.id].short} (${weakestQuant.percent} %). Putsa den hellre än att överplugga redan starka delar.`,
+    },
+    {
+      title: "Felanalys slår volym",
+      body: "Efter varje pass: skriv varför rätt svar är rätt. Tre genomtänkta pass ger mer än tio slarviga.",
+    },
+  ];
+
+  const timeSplit = allocateTime(ranked);
+
+  const heroSummary = `Snitt ${formatNorm(overall)} (kvant ${formatNorm(scores.quantNorm)} / verbal ${formatNorm(scores.verbalNorm)}). Planen prioriterar ${focusIds
+    .slice(0, 2)
+    .map((id) => METHODS[id].short)
+    .join(" och ")} utifrån dina delprovspoäng.`;
+
+  return {
+    profile: {
+      previousQuant: scores.quantNorm,
+      previousVerbal: scores.verbalNorm,
+      overall,
+      totalCorrect,
+      totalQuestions,
+      targetOverall: `${formatNorm(Math.min(2, overall + 0.3))}–${formatNorm(targetOverallNum)}`,
+      targetVerbal: `${formatNorm(targetVerbalNum)}+`,
+      weeksUntilExam: scores.weeksUntilExam,
+      hoursPerWeek: scores.hoursPerWeek,
+    },
+    delprovScores,
+    sections,
+    strategy,
+    timeSplit,
+    weeklyPlans: buildWeeklyPlans(focusIds, scores.weeksUntilExam),
+    dailyTemplate: [
+      {
+        slot: "Morgon (25–40 min)",
+        item:
+          focusIds.includes("ORD") || focusIds[0] === "ORD"
+            ? "Flashcards / ORD-repetition"
+            : `Flashcards + kort ${METHODS[focusIds[0]].short}-set`,
+      },
+      {
+        slot: "Huvudpass (35–50 min)",
+        item: `${METHODS[focusIds[0]].short}-övning under tid + felanalys`,
+      },
+      {
+        slot: "Lunch/kväll (20–25 min)",
+        item: "Sakprosa i läsbiblioteket: ORD-ord + konnektorer",
+      },
+      {
+        slot: "Underhåll (2×/vecka)",
+        item: `${METHODS[weakestQuant.id].short} eller ELF — korta pass`,
+      },
+      {
+        slot: "Söndag (60–90 min)",
+        item: "Felanalys och justering av nästa vecka",
+      },
+    ],
+    heroSummary,
+    focusIds,
+  };
+}
