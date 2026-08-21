@@ -15,7 +15,7 @@ npm run dev -- -p 43123
 
 - Personlig strategi utifrån tidigare resultat (kvant 1,4 / verbal 1,0)
 - Genomgång av varje delprov med metoder och veckomål
-- Daglig studiemall
+- Daglig studiemall och konkret läslista (sakprosa/essä för ORD & LÄS)
 - 8-veckorsplan (bas → teknik → fullprov → finish) med checklista som sparas i webbläsaren
 - Länkar till gamla högskoleprov
 

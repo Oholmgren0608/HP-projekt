@@ -427,6 +427,90 @@ export const DAILY_TEMPLATE = [
   { slot: "Söndag (60–90 min)", item: "Felanalys, uppdatera ordlista, planera nästa vecka" },
 ];
 
+export type ReadingItem = {
+  title: string;
+  kind: string;
+  why: string;
+  how: string;
+  cadence: string;
+  href: string | null;
+};
+
+/** Sakprosa och essäer som speglar LÄS/ORD bättre än nyhetssnack eller lätt skönlitteratur. */
+export const READING_LIST: ReadingItem[] = [
+  {
+    title: "SvD Under strecket",
+    kind: "Essä / kulturhistoria",
+    why: "Långa, argumenterande texter med densitet och ordnivå nära HP:s LÄS.",
+    how: "Läs en essä (~20–30 min). Skriv huvudpoängen i en mening och plocka 5 svåra ord.",
+    cadence: "3–4×/vecka",
+    href: "https://www.svd.se/under-strecket",
+  },
+  {
+    title: "DN Ledare & Kultur",
+    kind: "Opinion + essä",
+    why: "Tränar att följa tes → stöd → invändning — exakt den struktur LÄS belönar.",
+    how: "Läs en ledare eller kulturessä. Markera tesen och två stödjande påståenden.",
+    cadence: "Dagligen (15–20 min)",
+    href: "https://www.dn.se/",
+  },
+  {
+    title: "Forskning & Framsteg",
+    kind: "Populärvetenskap",
+    why: "Saklig prosa, fackord i kontext och förklarande stycken — vanligt LÄS-tonläge.",
+    how: "Ett artikelkapitel. Sammanfatta utan att titta. Notera ord du skulle missa i ORD.",
+    cadence: "2–3×/vecka",
+    href: "https://fof.se/",
+  },
+  {
+    title: "Språktidningen",
+    kind: "Språk & stil",
+    why: "Bygger språklig medvetenhet som hjälper både MEK (register) och ORD.",
+    how: "En kort artikel. Lägg nya termer/konnektorer i din ordlista.",
+    cadence: "1–2×/vecka",
+    href: "https://spraktidningen.se/",
+  },
+  {
+    title: "Filosofiska rummet (SR) → läs manus/referat när du kan",
+    kind: "Resonemang (komplement)",
+    why: "Tränar att hålla långa resonemangskedjor — samma uthållighet som svåra LÄS-texter.",
+    how: "Lyssna eller läs sammanfattning. Skriv tre påståenden i ordning: premiss → mellansteg → slutsats.",
+    cadence: "1×/vecka",
+    href: "https://sverigesradio.se/filosofiskarummet",
+  },
+  {
+    title: "Shorter classics i sakprosa (valfri bok)",
+    kind: "Bok — ett kapitel/dag",
+    why: "Kontinuerlig exponering för formellt skriftspråk. Välj essä/sakprosa, inte bara romaner.",
+    how: "10–15 sidor. Ingen plot-jakt — fokusera på meningar, bindningar och ordval.",
+    cadence: "Dagligen om du orkar",
+    href: null,
+  },
+];
+
+export const READING_BOOK_PICKS = [
+  {
+    title: "Ola Wikander — Orden och evigheten (eller liknande språkessä)",
+    note: "Etymologi och ordhistoria — direkt boost till ORD.",
+  },
+  {
+    title: "Essäsamlingar (t.ex. DN/SvD-antologier, eller svenska essäister)",
+    note: "Hellre korta essäer än tjock roman om målet är HP-svenska.",
+  },
+  {
+    title: "Populärvetenskap på svenska (t.ex. böcker från Fri Tanke / liknande)",
+    note: "Tränar precist språk kring abstrakta ämnen — typiskt LÄS-stoff.",
+  },
+];
+
+export const READING_METHOD = [
+  "Skumma inte som nyheter: läs för struktur (tes, stöd, exempel, invändning).",
+  "Efter varje text: en mening sammanfattning utan att titta tillbaka.",
+  "Plocka 5 ord/uttryck → in i ORD-decket samma dag.",
+  "Markera konnektorer (emellertid, således, däremot…) — det stärker MEK.",
+  "Undvik att bara läsa sport/nöje/krönikor med talspråk — för låg densitet för HP.",
+];
+
 export const RESOURCES = [
   {
     title: "Gamla högskoleprov",
@@ -440,8 +524,8 @@ export const RESOURCES = [
   },
   {
     title: "Daglig sakprosa",
-    body: "DN, SvD, Forskning & Framsteg, Essäer. Läs för argumentstruktur, inte bara nyheter.",
-    href: null,
+    body: "Under strecket, DN Ledare, Forskning & Framsteg — se läslistan i appen.",
+    href: "#laslista",
   },
   {
     title: "Konnektorträning",
