@@ -11,8 +11,10 @@ import {
 import {
   clearPracticeTimer,
   formatClock,
+  loadOrStartPracticeSession,
   loadPracticeTimer,
   savePracticeTimer,
+  type PracticeTimerState,
 } from "@/lib/practice-timer";
 import type { StudyTask } from "@/lib/study-plan";
 
@@ -40,38 +42,42 @@ function fillMekPassage(passage: string, word: string): { before: string; word: 
 function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes: number) {
   const requiredMs = requiredMinutes * 60 * 1000;
 
-  const [accumulatedMs, setAccumulatedMs] = useState(() =>
-    loadPracticeTimer(week, taskId).accumulatedMs,
+  const [session, setSession] = useState<PracticeTimerState>(() =>
+    loadOrStartPracticeSession(week, taskId),
   );
   const [runningSince, setRunningSince] = useState<number | null>(() => Date.now());
   const [now, setNow] = useState(() => Date.now());
   const [paused, setPaused] = useState(false);
 
-  const accumulatedRef = useRef(accumulatedMs);
+  const sessionRef = useRef(session);
   const runningSinceRef = useRef(runningSince);
 
   useEffect(() => {
-    accumulatedRef.current = accumulatedMs;
-  }, [accumulatedMs]);
+    sessionRef.current = session;
+  }, [session]);
 
   useEffect(() => {
     runningSinceRef.current = runningSince;
   }, [runningSince]);
 
-  function persist(nextAccumulated: number) {
-    savePracticeTimer(week, taskId, { accumulatedMs: nextAccumulated });
+  function persist(next: PracticeTimerState) {
+    savePracticeTimer(week, taskId, next);
+    setSession(next);
+    sessionRef.current = next;
   }
 
   function pause(reason: "leave" | "hidden" = "leave") {
     const since = runningSinceRef.current;
     if (since === null) {
       setPaused(true);
-      return accumulatedRef.current;
+      return sessionRef.current;
     }
-    const next = accumulatedRef.current + Math.max(0, Date.now() - since);
-    accumulatedRef.current = next;
+    const next: PracticeTimerState = {
+      ...sessionRef.current,
+      accumulatedMs:
+        sessionRef.current.accumulatedMs + Math.max(0, Date.now() - since),
+    };
     runningSinceRef.current = null;
-    setAccumulatedMs(next);
     setRunningSince(null);
     setPaused(true);
     persist(next);
@@ -107,12 +113,12 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
       document.removeEventListener("visibilitychange", onVisibility);
       pause("leave");
     };
-    // intentionally once on mount/unmount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [week, taskId]);
 
   const elapsedMs =
-    accumulatedMs + (runningSince !== null ? Math.max(0, now - runningSince) : 0);
+    session.accumulatedMs +
+    (runningSince !== null ? Math.max(0, now - runningSince) : 0);
   const remainingMs = Math.max(0, requiredMs - elapsedMs);
   const ready = remainingMs <= 0;
   const progress = Math.min(100, Math.round((elapsedMs / requiredMs) * 100));
@@ -120,6 +126,7 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
   return {
     ready,
     paused,
+    attemptId: session.attemptId,
     elapsedSeconds: Math.floor(elapsedMs / 1000),
     remainingSeconds: Math.ceil(remainingMs / 1000),
     progress,
@@ -131,10 +138,10 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
 
 export function PracticeSession({ task, week, onClose, onComplete }: Props) {
   const isReflect = task.practiceKinds.length === 1 && task.practiceKinds[0] === "reflect";
-  const seed = `w${week}:${task.id}`;
   const requiredMinutes = task.minutes;
 
   const timer = usePausablePracticeTimer(week, task.id, requiredMinutes);
+  const seed = `w${week}:${task.id}:${timer.attemptId}`;
 
   const questions = useMemo(() => {
     if (isReflect) return [] as ChoiceQuestion[];

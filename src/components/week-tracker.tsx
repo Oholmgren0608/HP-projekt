@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { Progress } from "@/components/ui/progress";
-import { formatClock, loadPracticeTimer } from "@/lib/practice-timer";
+import { formatClock, loadPracticeTimer, resetPracticeSession } from "@/lib/practice-timer";
 import { WEEKLY_PLANS, sectionLabel, type StudyTask } from "@/lib/study-plan";
 
 const STORAGE_KEY = "hp-studieplan-progress-v2";
@@ -190,7 +190,7 @@ export function WeekTracker() {
             const checked = Boolean(progress[key]);
             const score = scores[key];
             const bankedMin = Math.floor(
-              loadPracticeTimer(plan.week, task.id).accumulatedMs / 60000,
+              (loadPracticeTimer(plan.week, task.id)?.accumulatedMs ?? 0) / 60000,
             );
             // timerTick forces re-read after leaving a session
             void timerTick;
@@ -241,11 +241,17 @@ export function WeekTracker() {
                       <div className="mt-3 flex flex-wrap gap-2">
                         <button
                           type="button"
-                          onClick={() => setActiveTaskId(task.id)}
+                          onClick={() => {
+                            // Klar uppgift / ny repetition → nytt frågeset
+                            if (checked) {
+                              resetPracticeSession(plan.week, task.id);
+                            }
+                            setActiveTaskId(task.id);
+                          }}
                           className="rounded-md bg-[var(--accent)] px-3.5 py-2 text-sm font-semibold text-white transition hover:brightness-110"
                         >
                           {checked
-                            ? "Öva igen"
+                            ? "Öva igen (nya frågor)"
                             : bankedMin > 0
                               ? "Fortsätt övning"
                               : "Starta övning"}
