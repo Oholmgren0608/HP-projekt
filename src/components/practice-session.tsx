@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   buildMixedQuiz,
   getReflectPrompt,
@@ -19,9 +19,61 @@ type Props = {
 
 type Phase = "quiz" | "review" | "reflect";
 
+function sessionStartKey(week: number, taskId: string) {
+  return `hp-session-start:w${week}:${taskId}`;
+}
+
+function formatClock(totalSeconds: number): string {
+  const s = Math.max(0, totalSeconds);
+  const m = Math.floor(s / 60);
+  const r = s % 60;
+  return `${m}:${r.toString().padStart(2, "0")}`;
+}
+
+function useSessionTimer(requiredMinutes: number, startedAt: number) {
+  const requiredMs = requiredMinutes * 60 * 1000;
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const elapsedMs = Math.max(0, now - startedAt);
+  const remainingMs = Math.max(0, requiredMs - elapsedMs);
+  const ready = remainingMs <= 0;
+  const elapsedSeconds = Math.floor(elapsedMs / 1000);
+  const remainingSeconds = Math.ceil(remainingMs / 1000);
+  const progress = Math.min(100, Math.round((elapsedMs / requiredMs) * 100));
+
+  return {
+    ready,
+    elapsedSeconds,
+    remainingSeconds,
+    progress,
+    requiredMinutes,
+  };
+}
+
 export function PracticeSession({ task, week, onClose, onComplete }: Props) {
   const isReflect = task.practiceKinds.length === 1 && task.practiceKinds[0] === "reflect";
   const seed = `w${week}:${task.id}`;
+  const requiredMinutes = task.minutes;
+
+  const [startedAt] = useState(() => {
+    if (typeof window === "undefined") return Date.now();
+    const key = sessionStartKey(week, task.id);
+    const existing = window.sessionStorage.getItem(key);
+    if (existing) {
+      const parsed = Number(existing);
+      if (!Number.isNaN(parsed) && parsed > 0) return parsed;
+    }
+    const now = Date.now();
+    window.sessionStorage.setItem(key, String(now));
+    return now;
+  });
+
+  const timer = useSessionTimer(requiredMinutes, startedAt);
 
   const questions = useMemo(() => {
     if (isReflect) return [] as ChoiceQuestion[];
@@ -39,7 +91,6 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
   const [selected, setSelected] = useState<number | null>(null);
   const [phase, setPhase] = useState<Phase>(isReflect ? "reflect" : "quiz");
   const [reflectAnswers, setReflectAnswers] = useState<string[]>([]);
-  const [startedAt] = useState(() => Date.now());
 
   const current = questions[index];
   const total = questions.length;
@@ -69,13 +120,15 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
   }
 
   function finish() {
+    if (!timer.ready) return;
+    if (typeof window !== "undefined") {
+      window.sessionStorage.removeItem(sessionStartKey(week, task.id));
+    }
     onComplete({
       correct: isReflect ? reflectAnswers.filter((a) => a.trim()).length : score.correct,
       total: isReflect ? (reflect?.prompts.length ?? 0) : score.total,
     });
   }
-
-  const elapsedMin = Math.max(1, Math.round((Date.now() - startedAt) / 60000));
 
   return (
     <div className="rounded-xl border border-[var(--line)] bg-white p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6">
@@ -97,6 +150,8 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
           Stäng
         </button>
       </div>
+
+      <TimeRequirementBanner timer={timer} />
 
       {phase === "quiz" && current ? (
         <div className="mt-5 space-y-5">
@@ -192,7 +247,8 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
               </span>
             </p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
-              Passet tog ca {elapsedMin} min · {kindLabels}
+              Tid i passet {formatClock(timer.elapsedSeconds)} · krav {requiredMinutes} min ·{" "}
+              {kindLabels}
             </p>
           </div>
 
@@ -228,13 +284,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
             })}
           </ul>
 
-          <button
-            type="button"
-            onClick={finish}
-            className="rounded-md bg-[var(--ink)] px-5 py-2.5 text-sm font-semibold text-[var(--paper)] transition hover:bg-[var(--ink-soft)]"
-          >
-            Markera uppgiften som klar
-          </button>
+          <CompleteButton ready={timer.ready} remainingSeconds={timer.remainingSeconds} onClick={finish} />
         </div>
       ) : null}
 
@@ -245,7 +295,75 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
           values={reflectAnswers}
           onChange={setReflectAnswers}
           onComplete={finish}
+          timeReady={timer.ready}
+          remainingSeconds={timer.remainingSeconds}
         />
+      ) : null}
+    </div>
+  );
+}
+
+function TimeRequirementBanner({
+  timer,
+}: {
+  timer: ReturnType<typeof useSessionTimer>;
+}) {
+  return (
+    <div className="mt-4 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm text-[var(--ink)]">
+          {timer.ready ? (
+            <>
+              Rekommenderad tid uppnådd ({timer.requiredMinutes} min). Du kan markera som klar.
+            </>
+          ) : (
+            <>
+              Krav: <span className="font-semibold">{timer.requiredMinutes} min</span> i passet
+              innan uppgiften kan markeras klar. Kvar:{" "}
+              <span className="font-semibold tabular-nums text-[var(--accent)]">
+                {formatClock(timer.remainingSeconds)}
+              </span>
+            </>
+          )}
+        </p>
+        <p className="text-xs tabular-nums text-[var(--ink-muted)]">
+          Tid: {formatClock(timer.elapsedSeconds)}
+        </p>
+      </div>
+      <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
+        <div
+          className={`h-full rounded-full transition-all ${timer.ready ? "bg-[var(--lagoon)]" : "bg-[var(--accent)]"}`}
+          style={{ width: `${timer.progress}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function CompleteButton({
+  ready,
+  remainingSeconds,
+  onClick,
+}: {
+  ready: boolean;
+  remainingSeconds: number;
+  onClick: () => void;
+}) {
+  return (
+    <div className="space-y-2">
+      <button
+        type="button"
+        disabled={!ready}
+        onClick={onClick}
+        className="rounded-md bg-[var(--ink)] px-5 py-2.5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+      >
+        Markera uppgiften som klar
+      </button>
+      {!ready ? (
+        <p className="text-sm text-[var(--ink-muted)]">
+          Knappen låses upp om {formatClock(remainingSeconds)}. Använd tiden till att gå igenom
+          förklaringarna.
+        </p>
       ) : null}
     </div>
   );
@@ -257,14 +375,19 @@ function ReflectForm({
   values,
   onChange,
   onComplete,
+  timeReady,
+  remainingSeconds,
 }: {
   title: string;
   prompts: string[];
   values: string[];
   onChange: (next: string[]) => void;
   onComplete: () => void;
+  timeReady: boolean;
+  remainingSeconds: number;
 }) {
   const filled = prompts.every((_, i) => (values[i] ?? "").trim().length > 0);
+  const canFinish = filled && timeReady;
 
   return (
     <div className="mt-5 space-y-5">
@@ -287,14 +410,23 @@ function ReflectForm({
           />
         </label>
       ))}
-      <button
-        type="button"
-        disabled={!filled}
-        onClick={onComplete}
-        className="rounded-md bg-[var(--ink)] px-5 py-2.5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
-      >
-        Markera som klar
-      </button>
+      <div className="space-y-2">
+        <button
+          type="button"
+          disabled={!canFinish}
+          onClick={onComplete}
+          className="rounded-md bg-[var(--ink)] px-5 py-2.5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          Markera som klar
+        </button>
+        {!timeReady ? (
+          <p className="text-sm text-[var(--ink-muted)]">
+            Vänta tills rekommenderad tid är klar ({formatClock(remainingSeconds)} kvar).
+          </p>
+        ) : !filled ? (
+          <p className="text-sm text-[var(--ink-muted)]">Fyll i alla fält först.</p>
+        ) : null}
+      </div>
     </div>
   );
 }

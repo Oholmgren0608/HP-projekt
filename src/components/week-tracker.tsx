@@ -230,21 +230,15 @@ export function WeekTracker() {
                         >
                           {checked ? "Öva igen" : "Starta övning"}
                         </button>
-                        {checked ? (
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setProgress((prev) => {
-                                const next = { ...prev };
-                                delete next[key];
-                                return next;
-                              })
-                            }
-                            className="rounded-md border border-[var(--line)] px-3 py-2 text-sm text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
-                          >
-                            Avmarkera
-                          </button>
-                        ) : null}
+                        {checked && score ? (
+                          <span className="self-center text-xs text-[var(--ink-muted)]">
+                            Klar · {score.correct}/{score.total}
+                          </span>
+                        ) : (
+                          <span className="self-center text-xs text-[var(--ink-muted)]">
+                            Markeras klar efter {task.minutes} min i passet
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
