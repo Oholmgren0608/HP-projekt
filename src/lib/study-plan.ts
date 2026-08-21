@@ -643,7 +643,7 @@ export const RESOURCES = [
   },
   {
     title: "Daglig sakprosa",
-    body: "Under strecket, DN Ledare, FoF, Språktidningen — se läslistan.",
+    body: "Läs färdiga essäer i appens läsbibliotek — ORD-ord och konnektorer ingår.",
     href: "#laslista",
   },
   {

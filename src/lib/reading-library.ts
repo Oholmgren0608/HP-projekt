@@ -1,0 +1,272 @@
+/** Egna sakprosatexter för läsning i appen (ej hämtade från tidningar/UHR). */
+
+export type LibraryText = {
+  id: string;
+  title: string;
+  kind: string;
+  minutes: number;
+  teaser: string;
+  body: string[];
+  focusWords: { word: string; meaning: string }[];
+  connectors: string[];
+  summaryPrompt: string;
+};
+
+export const LIBRARY_TEXTS: LibraryText[] = [
+  {
+    id: "info-overflod",
+    title: "När mer information gör oss sämre informerade",
+    kind: "Essä · medier",
+    minutes: 8,
+    teaser: "Om urval, inramning och varför tålamod slår snabb googling.",
+    body: [
+      "När medier talar om informationsöverflöd är problemet sällan mängden fakta i sig. Snarare handlar det om att urval och inramning styr vad som uppfattas som viktigt. Den som bara samlar mer data utan att pröva källor och perspektiv riskerar att bli sämre informerad, inte bättre.",
+      "Informationskompetens är därför mindre en fråga om snabb sökning och mer om uthållighet: att stanna kvar i en text tillräckligt länge för att se vad som faktiskt påstås. Emellertid räcker det inte att läsa långsamt om man aldrig jämför motstridiga belägg.",
+      "Således blir den avgörande färdigheten att skilja mellan tes, exempel och bihang. Den som klarar det kan navigera även i ett brusigt medieflöde — oaktat hur många rubriker som skriks ut samma dag.",
+    ],
+    focusWords: [
+      { word: "inramning", meaning: "hur något presenteras / sätts i sammanhang" },
+      { word: "belägg", meaning: "stödjande bevis eller underlag" },
+      { word: "bihang", meaning: "underordnad tilläggsuppgift" },
+      { word: "uthållighet", meaning: "förmåga att hålla ut över tid" },
+      { word: "navigera", meaning: "ta sig fram / orientera sig" },
+    ],
+    connectors: ["Snarare", "därför", "Emellertid", "Således", "oaktat"],
+    summaryPrompt: "Sammanfatta huvudpoängen i en mening utan att titta tillbaka.",
+  },
+  {
+    id: "forskning-negativa",
+    title: "Varför negativa forskningsfynd också är värde",
+    kind: "Essä · vetenskap",
+    minutes: 9,
+    teaser: "Om metoddisciplin, publiceringsbias och tillit till kunskap.",
+    body: [
+      "I debatten om forskningsfinansiering framställs ofta nyttiga resultat som det enda måttet på framgång. Men forskningens värde sitter lika mycket i metoddisciplin: att formulera frågor precist, att redovisa osäkerhet och att låta negativa fynd synas.",
+      "När bara spektakulära resultat belönas uppstår ett snedvridet urval av vad som publiceras. Det skadar både vetenskapen och allmänhetens tillit, eftersom bilden av kunskap blir mer säker än den egentligen är.",
+      "Likväl går det att ändra incitamenten. Tidskrifter och finansiärer kan kräva förregistrering av studier och ge utrymme åt replikationer. Destomer sådana krav blir normala, desto mindre lockande blir det att bara jaga positiva utfall.",
+    ],
+    focusWords: [
+      { word: "incitament", meaning: "drivkraft / belöning som styr beteende" },
+      { word: "replikation", meaning: "upprepning av studie för att pröva resultatet" },
+      { word: "snedvridet", meaning: "skevt / partiskt urval" },
+      { word: "osäkerhet", meaning: "brist på säkerhet; felmarginal" },
+      { word: "spektakulära", meaning: "uppseendeväckande" },
+    ],
+    connectors: ["Men", "När", "eftersom", "Likväl", "Destomer"],
+    summaryPrompt: "Vad varnar texten för om bara spektakulära resultat belönas?",
+  },
+  {
+    id: "gronska-stad",
+    title: "Städers grönska är mer än dekoration",
+    kind: "Sakprosa · samhällsplanering",
+    minutes: 8,
+    teaser: "Temperatur, hälsa och rättvisa i fördelningen av vegetation.",
+    body: [
+      "Städers grönska beskrivs ibland som ren dekoration. Forskning visar dock att träd och parker påverkar temperatur, luftkvalitet och människors stressnivåer. Effekten är störst i täta områden där hårdgjorda ytor annars samlar värme.",
+      "Samtidigt är grönska ojämnt fördelad: socioekonomiskt starka stadsdelar har ofta mer vegetation. Att plantera träd är därför inte bara estetik, utan en fråga om rättvisa och folkhälsa — förutsatt att skötsel och lokal förankring finns.",
+      "I synnerhet behövs långsiktiga skötselplaner. Utan dem vissnar satsningarna bokstavligen, och förtroendet för nästa projekt urholkas.",
+    ],
+    focusWords: [
+      { word: "vegetation", meaning: "växtlighet" },
+      { word: "socioekonomiskt", meaning: "som rör både sociala och ekonomiska villkor" },
+      { word: "förankring", meaning: "förankrad stöd / lokal acceptans" },
+      { word: "urholkas", meaning: "försvagas inifrån / töms på innehåll" },
+      { word: "hårdgjorda", meaning: "asfalterade eller belagda ytor" },
+    ],
+    connectors: ["dock", "Samtidigt", "därför", "förutsatt att", "I synnerhet"],
+    summaryPrompt: "Ange två skäl till att grönska är mer än dekoration.",
+  },
+  {
+    id: "koncist-sprak",
+    title: "Koncision är inte samma sak som enkelhet",
+    kind: "Språkessä",
+    minutes: 7,
+    teaser: "Om precist skriftspråk, register och varför korta meningar kan vara svåra.",
+    body: [
+      "Koncist språk uppfattas ibland som barnsligt eller tunt. Tvärtom kräver god koncision att man har valt bort det överflödiga utan att tappa precision. En mening kan vara kort och ändå dens: varje ord bär last.",
+      "I formell sakprosa är registret avgörande. Vardagliga fyllnadsord bryter tonen, medan träffsäkra konnektorer — emellertid, således, däremot — håller resonemanget samman.",
+      "Den som övar meningskomplettering tränar just denna känsla: vilken variant som är stilmässigt och logiskt adekvat. Följaktligen är språklig medvetenhet inte prydnad, utan verktyg.",
+    ],
+    focusWords: [
+      { word: "koncision", meaning: "kortfattad precision" },
+      { word: "register", meaning: "stilnivå i språket" },
+      { word: "adekvat", meaning: "lämplig / tillräcklig" },
+      { word: "dens", meaning: "tät / innehållsrik" },
+      { word: "träffsäkra", meaning: "exakt träffande" },
+    ],
+    connectors: ["Tvärtom", "medan", "Följaktligen"],
+    summaryPrompt: "Hur skiljer texten koncision från enkelhet?",
+  },
+  {
+    id: "remote-mentor",
+    title: "Distansarbete och den tysta kostnaden",
+    kind: "Essä · arbetsliv",
+    minutes: 8,
+    teaser: "Informellt lärande försvinner när korridoren försvinner.",
+    body: [
+      "Distansarbete framställs ofta som ett enkelt byte mellan flexibilitet och produktivitet. Det mer intressanta skiftet är emellertid kulturellt: när kollegor inte längre delar samma korridor krymper det informella lärandet.",
+      "Juniora medarbetare går miste om halvöverhörda samtal som en gång lärde dem hur beslut fattas. Organisationer som behandlar distansarbete som en ren logistikfråga — skrivbord, programvara, möten — missar denna tystare kostnad.",
+      "De som anpassar sig bäst omformar mentorskap medvetet, i stället för att hoppas att det sker av en slump. Således blir struktur en ersättning för det som tidigare skedde spontant.",
+    ],
+    focusWords: [
+      { word: "informella", meaning: "icke-formella / oplanerade" },
+      { word: "logistikfråga", meaning: "fråga om praktisk organisering" },
+      { word: "mentorskap", meaning: "vägledning från mer erfaren person" },
+      { word: "spontant", meaning: "utan planering" },
+      { word: "kulturellt", meaning: "som rör kultur och vanor" },
+    ],
+    connectors: ["emellertid", "Således", "i stället för"],
+    summaryPrompt: "Vilken tyst kostnad beskriver texten?",
+  },
+  {
+    id: "klimat-berattelse",
+    title: "Klimatjournalistiken och tidens problem",
+    kind: "Essä · medier",
+    minutes: 9,
+    teaser: "Plötsliga katastrofer syns — långsamma processer gör det inte.",
+    body: [
+      "Klimatrapportering har blivit skickligare på att beskriva extremväder, men den brottas fortfarande med tid. Läsaren får se en översvämning eller en brand som dramatiskt skeende, varefter berättelsen tar slut.",
+      "De långsammare processerna — jordförstörelse, försäkringsbolag som drar sig tillbaka, stigande basvärme — får mindre utrymme eftersom de saknar ett tydligt klimax. Denna narrativa bias betyder inte att journalister är oärliga; den betyder att format som fångar uppmärksamhet gynnar plötslighet.",
+      "Att förstå klimatrisk kräver därför att man läser förbi händelsen till trenden under. Oaktat hur starkt ett enskilt reportage känns, är det mönstret över år som avgör.",
+    ],
+    focusWords: [
+      { word: "narrativa", meaning: "som rör berättande" },
+      { word: "bias", meaning: "skevhet / systematisk snedvridning" },
+      { word: "klimax", meaning: "höjdpunkt" },
+      { word: "basvärme", meaning: "högre genomsnittlig temperaturnivå" },
+      { word: "plötslighet", meaning: "det plötsliga / abrupt skeende" },
+    ],
+    connectors: ["men", "eftersom", "därför", "Oaktat"],
+    summaryPrompt: "Varför får långsamma klimatprocesser mindre utrymme enligt texten?",
+  },
+  {
+    id: "ambivalens-beslut",
+    title: "Ambivalens som intellektuell dygd",
+    kind: "Filosofisk essä",
+    minutes: 8,
+    teaser: "Att hålla två tankar samtidigt är inte samma sak som att vara handlingsförlamad.",
+    body: [
+      "Ambivalens beskrivs ofta som svaghet: den som tvekar sägs sakna ryggrad. I komplexa frågor kan emellertid den snabba säkerheten vara farligare. Den som redan vet svaret letar bara efter bekräftelse.",
+      "Att vara ambivalent är att hålla två rimliga perspektiv samtidigt tillräckligt länge för att väga dem. Det är inte samma sak som likgiltighet. Tvärtom kräver det energi att inte stänga ner obekväma belägg.",
+      "Beslut måste trots det fattas. Poängen är inte att skjuta upp allt i det oändliga, utan att låta osäkerheten synas i premisserna — så att slutsatsen blir mer hederlig.",
+    ],
+    focusWords: [
+      { word: "ambivalens", meaning: "kluvenhet / blandade känslor" },
+      { word: "premisserna", meaning: "utgångspunkterna i ett resonemang" },
+      { word: "likgiltighet", meaning: "ointresse" },
+      { word: "bekräftelse", meaning: "stöd som stärker det man redan tror" },
+      { word: "hederlig", meaning: "ärlig / rättvis i redovisningen" },
+    ],
+    connectors: ["emellertid", "Tvärtom", "trots det", "utan att", "så att"],
+    summaryPrompt: "Hur skiljer texten ambivalens från likgiltighet?",
+  },
+  {
+    id: "statistik-tolkning",
+    title: "Siffror utan sammanhang ljuger vänligt",
+    kind: "Sakprosa · samhällsdata",
+    minutes: 8,
+    teaser: "Om procent, baslinjer och varför DTK-tänk hjälper även utanför provet.",
+    body: [
+      "En ökning på 50 procent låter dramatisk tills man frågar: 50 procent av vad? Från 2 till 3 är samma relativa hopp som från 200 till 300, men den absoluta skillnaden är en annan sak.",
+      "Därför är baslinjen avgörande. Diagram utan tydliga axlar, enheter eller tidsperioder bjuder in till feltolkning — ibland oavsiktligt, ibland medvetet. Den som läser tabeller under tid, som i DTK, tränar just att stryka det irrelevanta innan räkningen börjar.",
+      "Emellertid räcker inte teknisk läskunnighet. Man måste också fråga vilket urval som döljs. En statistik kan vara intern korrekt och ändå missvisande om den lämnar bort den grupp som förändrar bilden.",
+    ],
+    focusWords: [
+      { word: "baslinjen", meaning: "utgångsvärdet man jämför mot" },
+      { word: "absoluta", meaning: "i faktiska tal, inte relativ andel" },
+      { word: "relativt", meaning: "i förhållande till något annat" },
+      { word: "missvisande", meaning: "som ger fel bild" },
+      { word: "urval", meaning: "vilka som ingår i mätningen" },
+    ],
+    connectors: ["tills", "Därför", "Emellertid", "om"],
+    summaryPrompt: "Varför är baslinjen viktig när man tolkar procentuella ökningar?",
+  },
+  {
+    id: "tillit-institutioner",
+    title: "Tillit byggs långsamt och rivs snabbt",
+    kind: "Ledare-stil",
+    minutes: 7,
+    teaser: "Om institutioner, transparens och kostnaden för genvägar.",
+    body: [
+      "Tillit till institutioner är ingen naturlag. Den byggs genom förutsägbarhet, transparens och att fel rättas öppet. När genvägar belönas — hemliga undantag, otydliga beslut, selektiv redovisning — eroderar tilliten snabbare än den kan lagas.",
+      "Det betyder inte att varje kritik är rättvis. Vissa angrepp är illvilliga. Men även befogad kritik måste mötas med sakliga svar, inte med tonläge. I synnerhet gäller det myndigheter vars legitimitet vilar på att medborgarna tror att reglerna gäller lika.",
+      "Således är öppenhet inte bara moral, utan underhåll av ett samhälles infrastruktur.",
+    ],
+    focusWords: [
+      { word: "eroderar", meaning: "nöts ner / försvagas gradvis" },
+      { word: "legitimitet", meaning: "berättigande / giltighet i andras ögon" },
+      { word: "selektiv", meaning: "urvalsvis / partisk" },
+      { word: "förutsägbarhet", meaning: "att man kan förutse utfallet" },
+      { word: "illvilliga", meaning: "med ond avsikt" },
+    ],
+    connectors: ["När", "Men", "I synnerhet", "Således"],
+    summaryPrompt: "Vilka tre saker säger texten bygger tillit?",
+  },
+  {
+    id: "lasning-aktiv",
+    title: "Aktiv läsning slår passiv genomläsning",
+    kind: "Studieteknik",
+    minutes: 6,
+    teaser: "En metod för LÄS, ORD och MEK i samma pass.",
+    body: [
+      "Passiv läsning — ögonen rör sig, huvudet är någon annanstans — ger nästan ingen transfer till provsituationen. Aktiv läsning betyder att man gör något med texten: sammanfattar, markerar bindningar, plockar ord.",
+      "En enkel rutin räcker. Efter varje stycke: en mening om huvudpoängen. I marginalen: tre konnektorer. Till ordlistan: fem uttryck du inte kan förklara utan att gissa.",
+      "Däremot ska man inte markera allt. Om allt är viktigt är ingenting viktigt. Den som prioriterar tränar samma omdöme som LÄS-frågorna belönar: vad stöds av texten, och vad är bara rimligt men obevisat?",
+    ],
+    focusWords: [
+      { word: "transfer", meaning: "överföring av lärande till ny situation" },
+      { word: "bindningar", meaning: "satskopplingar / konnektorer" },
+      { word: "omdöme", meaning: "bedömningsförmåga" },
+      { word: "obevisat", meaning: "utan belägg i texten" },
+      { word: "rutin", meaning: "fast arbetsvanemönster" },
+    ],
+    connectors: ["Efter", "Däremot", "Om", "och"],
+    summaryPrompt: "Beskriv den trepunkters rutin texten föreslår.",
+  },
+  {
+    id: "koherent-argument",
+    title: "Vad som gör ett resonemang koherent",
+    kind: "Språk · argumentation",
+    minutes: 7,
+    teaser: "Premiss, mellansteg, slutsats — och var tautologin smyger in.",
+    body: [
+      "Ett koherent resonemang hänger ihop: premisserna leder till slutsatsen utan hopp som läsaren måste fylla i själv. Motsatsen är inte bara kaos, utan skenbar ordning — formuleringar som låter strama men upprepar samma påstående med nya ord.",
+      "Sådan tautologi kan kännas övertygande i stunden. Emellertid tillför den ingen ny information. På högskoleprovets verbala delar belönas just förmågan att se skillnaden mellan stöd och omskrivning.",
+      "Träna därför att skriva kedjan högt för dig själv: om A stämmer, och A medför B, då följer B. Saknas mellanstegget blir meningarna vackra men resonemanget poröst.",
+    ],
+    focusWords: [
+      { word: "koherent", meaning: "sammanhängande / logiskt enhetligt" },
+      { word: "tautologi", meaning: "innehållslös upprepning av samma sak" },
+      { word: "skenbar", meaning: "som bara ser ut att vara riktig" },
+      { word: "poröst", meaning: "genomsläppligt / svagt" },
+      { word: "medför", meaning: "innebär / leder till" },
+    ],
+    connectors: ["Emellertid", "därför", "om", "då"],
+    summaryPrompt: "Vad är skillnaden mellan stöd och omskrivning enligt texten?",
+  },
+  {
+    id: "tid-under-prov",
+    title: "Tid är också en del av uppgiften",
+    kind: "Provstrategi",
+    minutes: 6,
+    teaser: "Om tempo, eliminering och varför MEK ofta dippar sent.",
+    body: [
+      "På högskoleprovet är tid en begränsning lika verklig som kunskap. Den som kan alla ord men fastnar i varje tvekan hinner inte visa det. Därför är elimineringsteknik avgörande: stryk det omöjliga först, välj sedan bland det rimliga.",
+      "MEK kommer ofta när koncentrationen redan är nött. Likväl är just då konnektorerna som tydligast avslöjar om man läser eller gissar. En kort andningspaus mellan delprov är inte lyx — det är underhåll av omdömet.",
+      "Öva därför under tid, men analysera efteråt utan tid. Annars lär du dig bara att ha bråttom, inte att bli skarpare.",
+    ],
+    focusWords: [
+      { word: "elimineringsteknik", meaning: "metod att stryka fel alternativ först" },
+      { word: "koncentrationen", meaning: "uppmärksamhetens skärpa" },
+      { word: "nött", meaning: "utsliten / försvagad" },
+      { word: "omdömet", meaning: "bedömningsförmågan" },
+      { word: "begränsning", meaning: "gräns som sätter villkor" },
+    ],
+    connectors: ["Därför", "Likväl", "men", "Annars"],
+    summaryPrompt: "Varför ska man öva under tid men analysera utan tid?",
+  },
+];
+
+export function getLibraryText(id: string): LibraryText | undefined {
+  return LIBRARY_TEXTS.find((t) => t.id === id);
+}

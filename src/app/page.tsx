@@ -1,12 +1,11 @@
 import { OfficialExamsBrowser } from "@/components/official-exams-browser";
+import { ReadingLibrary } from "@/components/reading-library";
 import { Badge } from "@/components/ui/badge";
 import { WeekTracker } from "@/components/week-tracker";
 import {
   DAILY_TEMPLATE,
   DELPROV_SCORES,
   PROFILE,
-  READING_BOOK_PICKS,
-  READING_LIST,
   READING_METHOD,
   RESOURCES,
   SECTIONS,
@@ -99,7 +98,7 @@ export default function Home() {
             href="#laslista"
             className="hidden rounded-md px-3 py-2 text-sm font-medium text-[var(--ink-muted)] transition hover:text-[var(--ink)] sm:inline"
           >
-            Läslista
+            Läsbibliotek
           </a>
           <a
             href="#plan"
@@ -342,80 +341,32 @@ export default function Home() {
 
         <section id="laslista" className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
           <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)] sm:text-4xl">
-            Vad du ska läsa varje dag
+            Läsbibliotek i appen
           </h2>
           <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-            Prioritera sakprosa och essäer. Nu främst som bränsle till MEK (konnektorer) och ORD —
-            LÄS är redan på 75 %.
+            Sakprosatexter att läsa här — med ORD-ord, konnektorer och sammanfattning. Vi kan inte
+            kopiera in DN/SvD/UHR-texter (upphovsrätt), så biblioteket är skrivet för HP-träning.
           </p>
 
-          <div className="mt-8 grid gap-4">
-            {READING_LIST.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-xl border border-[var(--line)] bg-white/70 p-5 backdrop-blur-sm sm:p-6"
-              >
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)] sm:text-2xl">
-                    {item.title}
-                  </h3>
-                  <span className="rounded-md bg-[var(--mist)] px-2 py-1 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
-                    {item.cadence}
-                  </span>
-                </div>
-                <p className="mt-1 text-sm font-medium text-[var(--accent)]">{item.kind}</p>
-                <p className="mt-3 text-[var(--ink-muted)]">{item.why}</p>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">
-                  <span className="font-semibold text-[var(--ink)]">Så gör du: </span>
-                  {item.how}
-                </p>
-                {item.href ? (
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-block text-sm font-medium text-[var(--accent)] underline-offset-4 hover:underline"
-                  >
-                    Öppna →
-                  </a>
-                ) : null}
-              </article>
-            ))}
+          <div className="mt-8">
+            <ReadingLibrary />
           </div>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-2">
-            <div>
-              <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-                Boktips (valfritt)
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {READING_BOOK_PICKS.map((b) => (
-                  <li
-                    key={b.title}
-                    className="border-l-2 border-[var(--lagoon)] pl-3 text-sm leading-relaxed"
-                  >
-                    <span className="font-medium text-[var(--ink)]">{b.title}</span>
-                    <span className="mt-1 block text-[var(--ink-muted)]">{b.note}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-                Läsmetoden (viktigare än titeln)
-              </h3>
-              <ul className="mt-4 space-y-2">
-                {READING_METHOD.map((m) => (
-                  <li
-                    key={m}
-                    className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"
-                  >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
-                    <span>{m}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="mt-10">
+            <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+              Läsmetoden
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {READING_METHOD.map((m) => (
+                <li
+                  key={m}
+                  className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"
+                >
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
+                  <span>{m}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
