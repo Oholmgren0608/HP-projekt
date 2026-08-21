@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { WeekTracker } from "@/components/week-tracker";
 import {
   DAILY_TEMPLATE,
+  DELPROV_SCORES,
   PROFILE,
   READING_BOOK_PICKS,
   READING_LIST,
@@ -9,14 +10,30 @@ import {
   RESOURCES,
   SECTIONS,
   STRATEGY,
+  TIME_SPLIT,
+  pct,
   priorityLabel,
 } from "@/lib/study-plan";
 
 function PriorityBadge({ priority }: { priority: (typeof SECTIONS)[0]["priority"] }) {
   const label = priorityLabel(priority);
+  if (priority === "kritiskt") {
+    return (
+      <Badge className="border-transparent bg-[#9a3412] text-white hover:bg-[#9a3412]">
+        {label}
+      </Badge>
+    );
+  }
   if (priority === "huvudfokus") {
     return (
       <Badge className="border-transparent bg-[var(--accent)] text-white hover:bg-[var(--accent)]">
+        {label}
+      </Badge>
+    );
+  }
+  if (priority === "styrka") {
+    return (
+      <Badge className="border-transparent bg-[var(--lagoon)] text-white hover:bg-[var(--lagoon)]">
         {label}
       </Badge>
     );
@@ -25,6 +42,19 @@ function PriorityBadge({ priority }: { priority: (typeof SECTIONS)[0]["priority"
     <Badge variant="outline" className="border-[var(--line)] text-[var(--ink-soft)]">
       {label}
     </Badge>
+  );
+}
+
+function ScoreBar({ correct, total }: { correct: number; total: number }) {
+  const p = pct(correct, total);
+  return (
+    <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-[var(--mist)]">
+      <div
+        className="h-full rounded-full bg-[var(--accent)]"
+        style={{ width: `${p}%` }}
+        aria-hidden
+      />
+    </div>
   );
 }
 
@@ -83,9 +113,8 @@ export default function Home() {
               HP Lift
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-[var(--ink-muted)] sm:text-xl">
-              Du är stark på kvantitativt ({PROFILE.previousQuant.toString().replace(".", ",")}
-              ) och engelska. Flaskhalsen är svenska verbala — ORD, LÄS och MEK. Den här planen
-              lägger merparten av tiden där, utan att tappa dina styrkor.
+              Snitt 1,20 — men delproven pekar tydligt: MEK 8/20 och ORD 11/20 drar ner verbala,
+              medan LÄS 15/20 och ELF 17/20 redan är okej. Planen lägger ~65 % på MEK + ORD.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -95,10 +124,10 @@ export default function Home() {
                 Börja vecka 1
               </a>
               <a
-                href="#strategi"
+                href="#resultat"
                 className="inline-flex items-center justify-center rounded-md border border-[var(--line)] bg-white/50 px-5 py-2.5 text-sm font-medium text-[var(--ink)] backdrop-blur-sm transition hover:border-[var(--ink-soft)]"
               >
-                Se strategin
+                Se delproven
               </a>
             </div>
           </div>
@@ -111,44 +140,117 @@ export default function Home() {
               <div>
                 <dt className="text-sm text-[var(--ink-muted)]">Kvantitativt</dt>
                 <dd className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
-                  {PROFILE.previousQuant.toString().replace(".", ",")}
+                  1,4
                 </dd>
-                <dd className="text-xs text-[var(--lagoon)]">styrka · underhåll</dd>
+                <dd className="text-xs text-[var(--lagoon)]">XYZ/NOG starka · DTK svagare</dd>
               </div>
               <div>
                 <dt className="text-sm text-[var(--ink-muted)]">Verbalt</dt>
                 <dd className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
-                  {PROFILE.previousVerbal.toString().replace(".", ",")}
+                  1,0
                 </dd>
-                <dd className="text-xs text-[var(--accent)]">huvudfokus</dd>
+                <dd className="text-xs text-[var(--accent)]">MEK kritiskt · ORD fokus</dd>
               </div>
               <div>
-                <dt className="text-sm text-[var(--ink-muted)]">Mål snitt</dt>
+                <dt className="text-sm text-[var(--ink-muted)]">Snitt / mål</dt>
                 <dd className="text-xl font-semibold text-[var(--ink)]">
-                  {PROFILE.targetOverall}
+                  1,20 → {PROFILE.targetOverall}
                 </dd>
               </div>
               <div>
-                <dt className="text-sm text-[var(--ink-muted)]">Tempo</dt>
+                <dt className="text-sm text-[var(--ink-muted)]">Rätt totalt</dt>
                 <dd className="text-xl font-semibold text-[var(--ink)]">
-                  ~{PROFILE.hoursPerWeek} h/vecka · {PROFILE.weeksUntilExam} v
+                  {PROFILE.totalCorrect}/{PROFILE.totalQuestions}
                 </dd>
               </div>
             </dl>
             <p className="mt-5 border-t border-[var(--line)] pt-4 text-sm leading-relaxed text-[var(--ink-muted)]">
-              Realistiskt mål: lyft verbala till {PROFILE.targetVerbal} medan kvantitativa hålls
-              runt 1,4–1,5. Det ger ofta mer snitt än att jaga matte-tiondelar.
+              Medel bland deltagare: {PROFILE.cohortMean.toString().replace(".", ",")}. Din
+              snabbaste väg upp är MEK mot ~14/20 och ORD mot ~15/20 — inte mer matte.
             </p>
           </aside>
         </section>
 
-        <section id="strategi" className="border-y border-[var(--line)] bg-white/40 py-14">
+        <section id="resultat" className="border-y border-[var(--line)] bg-white/55 py-14">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)] sm:text-4xl">
+              Dina delprov — prioritering
+            </h2>
+            <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+              Sorterat efter var tiden ger mest. MEK och ORD först; LÄS/ELF/XYZ skyddas med lätt
+              underhåll.
+            </p>
+            <div className="mt-8 grid gap-8 lg:grid-cols-2">
+              {(
+                [
+                  { title: "Verbala", block: "verbal" as const },
+                  { title: "Kvantitativa", block: "kvant" as const },
+                ] as const
+              ).map((group) => (
+                <div key={group.block}>
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink-muted)]">
+                    {group.title}
+                  </h3>
+                  <ul className="mt-4 space-y-3">
+                    {DELPROV_SCORES.filter((s) => s.block === group.block)
+                      .slice()
+                      .sort((a, b) => a.correct / a.total - b.correct / b.total)
+                      .map((s) => {
+                        const p = pct(s.correct, s.total);
+                        return (
+                          <li
+                            key={s.id}
+                            className="rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3"
+                          >
+                            <div className="flex items-baseline justify-between gap-3">
+                              <div>
+                                <span className="font-semibold text-[var(--ink)]">{s.id}</span>
+                                <span className="ml-2 text-sm text-[var(--ink-muted)]">
+                                  {s.name}
+                                </span>
+                              </div>
+                              <span className="shrink-0 text-sm font-medium text-[var(--ink)]">
+                                {s.correct}/{s.total} · {p}%
+                              </span>
+                            </div>
+                            <ScoreBar correct={s.correct} total={s.total} />
+                          </li>
+                        );
+                      })}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10">
+              <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                Tidfördelning (~{PROFILE.hoursPerWeek} h/vecka)
+              </h3>
+              <ul className="mt-4 grid gap-3 sm:grid-cols-5">
+                {TIME_SPLIT.map((t) => (
+                  <li
+                    key={t.label}
+                    className="rounded-lg border border-[var(--line)] bg-white/70 px-3 py-3 text-center"
+                  >
+                    <div className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                      {t.pct}%
+                    </div>
+                    <div className="mt-1 text-sm font-semibold text-[var(--ink)]">{t.label}</div>
+                    <div className="text-xs text-[var(--ink-muted)]">{t.note}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="strategi" className="border-b border-[var(--line)] bg-white/40 py-14">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <h2 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)] sm:text-4xl">
               Strategin i fyra punkter
             </h2>
             <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-              En klar riktning innan schemat: var du lägger tid — och var du inte gör det.
+              Omkalibrerad efter dina råpoäng — inte bara efter kvant/verbal-snittet.
             </p>
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
               {STRATEGY.map((item, i) => (
@@ -170,7 +272,7 @@ export default function Home() {
             Delprov — vad du gör med varje
           </h2>
           <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-            Svenska sektionerna får huvuddelen av tiden. ELF och kvant hålls varma.
+            MEK kritiskt, ORD huvudfokus. LÄS underhålls. ELF och XYZ/NOG är styrkor.
           </p>
           <div className="mt-8 space-y-6">
             {SECTIONS.map((section) => (
@@ -183,6 +285,7 @@ export default function Home() {
                     {section.name}
                   </h3>
                   <PriorityBadge priority={section.priority} />
+                  <span className="text-sm text-[var(--ink-muted)]">{section.scoreLabel}</span>
                 </div>
                 <p className="mt-3 max-w-3xl text-[var(--ink-muted)]">{section.why}</p>
                 <ul className="mt-4 grid gap-2 sm:grid-cols-2">
@@ -235,8 +338,8 @@ export default function Home() {
             Vad du ska läsa varje dag
           </h2>
           <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-            Prioritera sakprosa och essäer — inte lätt nyhetssnack. Det är samma densitet och
-            ordnivå som LÄS och ORD belönar.
+            Prioritera sakprosa och essäer. Nu främst som bränsle till MEK (konnektorer) och ORD —
+            LÄS är redan på 75 %.
           </p>
 
           <div className="mt-8 grid gap-4">

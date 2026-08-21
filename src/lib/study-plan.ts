@@ -1,6 +1,6 @@
-export type SectionId = "ORD" | "LAS" | "MEK" | "ELF" | "KVA";
+export type SectionId = "ORD" | "LAS" | "MEK" | "ELF" | "XYZ" | "KVA" | "NOG" | "DTK";
 
-export type Priority = "huvudfokus" | "underhall" | "latt";
+export type Priority = "kritiskt" | "huvudfokus" | "underhall" | "styrka";
 
 export type StudyTask = {
   id: string;
@@ -23,325 +23,379 @@ export type SectionGuide = {
   name: string;
   short: string;
   priority: Priority;
+  scoreLabel: string;
   why: string;
   methods: string[];
   weeklyGoal: string;
 };
 
+export type DelprovScore = {
+  id: SectionId;
+  name: string;
+  correct: number;
+  total: number;
+  block: "kvant" | "verbal";
+};
+
 export const PROFILE = {
   previousQuant: 1.4,
   previousVerbal: 1.0,
+  overall: 1.2,
+  cohortMean: 0.9,
+  totalCorrect: 113,
+  totalQuestions: 160,
   targetOverall: "1,6–1,8",
   targetVerbal: "1,4+",
   weeksUntilExam: 8,
   hoursPerWeek: 10,
 };
 
+export const DELPROV_SCORES: DelprovScore[] = [
+  { id: "KVA", name: "Kvantitativa jämförelser", correct: 15, total: 20, block: "kvant" },
+  { id: "DTK", name: "Diagram, tabeller och kartor", correct: 16, total: 24, block: "kvant" },
+  { id: "XYZ", name: "Matematik problemlösning", correct: 21, total: 24, block: "kvant" },
+  { id: "NOG", name: "Kvantitativa resonemang", correct: 10, total: 12, block: "kvant" },
+  { id: "ORD", name: "Ordförståelse", correct: 11, total: 20, block: "verbal" },
+  { id: "LAS", name: "Läsförståelse svenska", correct: 15, total: 20, block: "verbal" },
+  { id: "MEK", name: "Meningskomplettering", correct: 8, total: 20, block: "verbal" },
+  { id: "ELF", name: "Läsförståelse engelska", correct: 17, total: 20, block: "verbal" },
+];
+
+export function pct(correct: number, total: number): number {
+  return Math.round((correct / total) * 100);
+}
+
 export const SECTIONS: SectionGuide[] = [
+  {
+    id: "MEK",
+    name: "MEK — Meningskomplettering",
+    short: "MEK",
+    priority: "kritiskt",
+    scoreLabel: "8/20 (40 %)",
+    why: "Din tydligaste flaskhals. Här finns flest ‘billiga’ poäng kvar på verbala — mer än LÄS som redan ligger på 75 %.",
+    methods: [
+      "Träna konnektorer dagligen: emellertid, således, däremot, respektive, i synnerhet, oaktat, destomer",
+      "Läs varje alternativ högt — fel svar bryter ofta ton, tempus eller orsaksrelation",
+      "Eliminera först: stryk det som är stilmässigt fel, sedan det som är logiskt fel",
+      "Gör korta MEK-set (10–15 frågor) 5–6 dagar i veckan, alltid med felanalys",
+      "När du läser sakprosa: markera bindningar mellan satser — det är MEK-träning i smyg",
+    ],
+    weeklyGoal: "5–6 MEK-set + personlig fel-lista över konnektorer/register",
+  },
   {
     id: "ORD",
     name: "ORD — Ordförståelse",
     short: "ORD",
     priority: "huvudfokus",
-    why: "Snabbaste poänglyftet på verbala. Ord kunskaper syns direkt i poäng om du repeterar rätt.",
+    scoreLabel: "11/20 (55 %)",
+    why: "Näst största luckan. ORD är träningsbart: varje ord du lär dig kan bli en direkt poäng.",
     methods: [
-      "Lär 15–25 nya ord per dag från gamla HP-prov och ordlistor",
-      "Använd aktiv recall: se ordet → säg betydelsen innan du tittar",
+      "15–25 nya ord per dag från gamla HP-prov + ord du möter i läsning",
+      "Aktiv recall: se ordet → säg betydelsen innan du tittar",
       "Gruppera efter stammar (geo-, -logi, in-/ut-) så ett ord ger flera",
-      "Repetera felord samma kväll och nästa morgon",
+      "Repetera felord samma kväll och nästa morgon — fel-decket går före nya ord",
     ],
-    weeklyGoal: "120+ nya ord in i systemet, 80% rätt på veckans ORD-övning",
+    weeklyGoal: "120+ ord i systemet, ≥80 % rätt på veckans ORD-test",
   },
   {
     id: "LAS",
     name: "LÄS — Svensk läsförståelse",
     short: "LÄS",
-    priority: "huvudfokus",
-    why: "Här avgörs verbala ofta. Du behöver tempo, precis läsning och att hitta huvudpoängen snabbt.",
+    priority: "underhall",
+    scoreLabel: "15/20 (75 %)",
+    why: "Redan hyfsat. Behåll nivån med daglig sakprosa och 1–2 tidsatta pass/vecka — jaga inte LÄS på bekostnad av MEK/ORD.",
     methods: [
-      "Läs 1–2 längre sakprosatexter dagligen (DN Ledare, SvD Under strecket, Forskning & Framsteg)",
-      "Efter varje text: sammanfatta huvudpoängen i en mening utan att titta",
-      "Träna på att markera påståenden som stöds / inte stöds i texten",
-      "Gör tidsatta LÄS-pass från gamla prov — analysera varje fel efteråt",
+      "Fortsätt daglig sakprosa (Under strecket, DN Ledare, FoF) — det matar också ORD och MEK",
+      "1–2 tidsatta LÄS-pass per vecka räcker i basfasen",
+      "Efter fel: hitta bevisraden i texten — slarv vs. missförstånd",
+      "Öka till 3 pass först om du dippar under ~70 % på övningsprov",
     ],
-    weeklyGoal: "3 tidsatta LÄS-pass + daglig sakprosa",
-  },
-  {
-    id: "MEK",
-    name: "MEK — Meningskomplettering",
-    short: "MEK",
-    priority: "huvudfokus",
-    why: "MEK belönar språklig känsla: konnektorer, stilnivå och logik i meningen.",
-    methods: [
-      "Öva konnektorer: emellertid, således, däremot, respektive, i synnerhet",
-      "Läs högt och känn vilken variant som låter mest ‘skriftspråklig’",
-      "Eliminera alternativ som bryter ton, tempus eller orsaksrelation",
-      "Gör korta MEK-set (10–15 frågor) flera gånger i veckan",
-    ],
-    weeklyGoal: "4 MEK-set + lista över konnektorer du missar",
+    weeklyGoal: "Daglig läsning + 1–2 tidsatta LÄS-pass",
   },
   {
     id: "ELF",
     name: "ELF — Engelsk läsförståelse",
     short: "ELF",
-    priority: "underhall",
-    why: "Du är redan stark här. Målet är att inte tappa — inte att jaga mer poäng på bekostnad av svenska.",
+    priority: "styrka",
+    scoreLabel: "17/20 (85 %)",
+    why: "En av dina starkaste delar. Skydda den med lätt underhåll — lägg inte mer tid här än nödvändigt.",
     methods: [
-      "Ett ELF-pass i veckan räcker under basfasen",
-      "Läs engelsk sakprosa lätt (The Economist short reads, BBC) för flyt",
-      "I slutfasen: 1–2 tidsatta ELF-pass för att behålla tempo",
+      "Ett ELF-pass varannan vecka i basfasen, ett per vecka sista månaden",
+      "Lätt engelsk sakprosa för flyt om du vill, men MEK/ORD går före",
     ],
-    weeklyGoal: "1 underhållspass (öka till 2 sista 3 veckorna)",
+    weeklyGoal: "Max 1 underhållspass",
   },
   {
-    id: "KVA",
-    name: "Kvantitativ del (XYZ, KVA, NOG, DTK)",
-    short: "KVA",
+    id: "DTK",
+    name: "DTK — Diagram, tabeller och kartor",
+    short: "DTK",
     priority: "underhall",
-    why: "1,4 är redan bra. Skydda nivån med regelbunden träning istället för att överplugga matte.",
+    scoreLabel: "16/24 (67 %)",
+    why: "Svagaste kvantitativa delen. Här finns mest att hämta på kvant utan att röra XYZ/NOG som redan är starka.",
     methods: [
-      "2–3 kortare kvantpass per vecka (blandade uppgifter)",
-      "Ett fullt kvantitativt delprov varannan vecka",
-      "Felanalys: vilka uppgiftstyper drogs ner? Öva bara dem extra",
-      "DTK: träna avläsningstempo — ofta billiga poäng",
+      "Ett DTK-pass per vecka: tempo + noggrann avläsning av axlar/enheter",
+      "Öva att stryka irrelevante data innan du räknar",
+      "Felanalys: avläsningsfel vs. räknefel vs. feltolkad fråga",
     ],
-    weeklyGoal: "3–4 timmar underhåll, mer bara om felanalys visar glapp",
+    weeklyGoal: "1 fokuserat DTK-pass (~45–60 min)",
+  },
+  {
+    id: "XYZ",
+    name: "Övrig kvant (XYZ, KVA, NOG)",
+    short: "KVA",
+    priority: "styrka",
+    scoreLabel: "XYZ 88 % · KVA 75 % · NOG 83 %",
+    why: "XYZ och NOG är riktigt starka; KVA är okej. Underhåll blandat — jaga inte tiondelar här först.",
+    methods: [
+      "1 blandat kvantpass/vecka utöver DTK",
+      "Varannan vecka: kort KVA-set om du vill putsa 15/20 → 17/20",
+      "Fullt kvantitativt delprov var 2.–3. vecka för att bekräfta 1,4-nivån",
+    ],
+    weeklyGoal: "1 blandat underhållspass + DTK",
   },
 ];
 
 export const STRATEGY = [
   {
-    title: "Verbala är flaskhalsen",
-    body: "Med 1,0 verbalt och 1,4 kvantitativt ligger merparten av din möjliga höjning i ORD, LÄS och MEK. Lägg ~65–70 % av tiden där.",
+    title: "MEK först — sedan ORD",
+    body: "8/20 på MEK och 11/20 på ORD drar ner hela verbala. LÄS (15/20) och ELF (17/20) är redan okej. Omfördela tiden: ~35 % MEK, ~30 % ORD, resten underhåll.",
   },
   {
-    title: "Skydda styrkorna",
-    body: "Engelska och matte ska hållas varma med underhåll — inte överges. Ett starkt snitt kräver att du inte tappar 1,4-nivån.",
+    title: "Läsning ska mata MEK och ORD",
+    body: "Daglig sakprosa är inte mest för LÄS längre — den är bränsle till ordförråd och konnektorer. Markera bindningar och svåra ord varje gång.",
+  },
+  {
+    title: "På kvant: DTK före mer XYZ",
+    body: "XYZ 21/24 och NOG 10/12 är redan toppskikt. DTK 16/24 är den kvantitativa luckan om du vill lyfta 1,4 utan att överplugga matte.",
   },
   {
     title: "Felanalys slår volym",
-    body: "Efter varje pass: skriv ner varför rätt svar är rätt. Tre genomtänkta pass ger mer än tio slarviga.",
+    body: "Efter varje MEK/ORD-pass: skriv varför rätt svar är rätt. Tre genomtänkta set ger mer än tio slarviga.",
   },
-  {
-    title: "Fullprov efter teknik",
-    body: "Börja inte med oändliga fullprov. Bygg ordförråd och lästeknik först, sedan tidsatta delprov, sedan hela HP.",
-  },
+];
+
+export const TIME_SPLIT = [
+  { label: "MEK", pct: 35, note: "dagliga korta set" },
+  { label: "ORD", pct: 30, note: "morgon + fel-deck" },
+  { label: "Läsning / LÄS", pct: 15, note: "sakprosa + 1–2 pass" },
+  { label: "DTK + kvant", pct: 12, note: "främst DTK" },
+  { label: "ELF", pct: 8, note: "lätt underhåll" },
 ];
 
 export const WEEKLY_PLANS: WeekPlan[] = [
   {
     week: 1,
     phase: "Bas",
-    theme: "Bygg systemet",
-    focus: "Sätt ordvana, daglig läsning och en enkel rutin du orkar hålla.",
+    theme: "MEK-rutin + ORD-system",
+    focus: "Sätt daglig MEK och ett ord-system du orkar hålla. LÄS/ELF får vänta.",
     tasks: [
+      {
+        id: "w1-mek",
+        title: "MEK: kort set 5–6 dagar",
+        detail: "10–15 frågor/gång. Bygg en lista över konnektorer och registerfel du missar.",
+        minutes: 35,
+        section: "MEK",
+      },
       {
         id: "w1-ord",
         title: "ORD: 20 ord/dag + kvällsrepetition",
-        detail: "Skapa en enkel lista (anteckningar eller Anki). Repetera gårdagens ord varje morgon.",
+        detail: "Anki eller anteckningar. Repetera gårdagens ord varje morgon innan nya.",
         minutes: 35,
         section: "ORD",
       },
       {
         id: "w1-las",
-        title: "LÄS: en sakprosatext varje dag",
-        detail: "Sammanfatta huvudpoängen i en mening. Markera tre svåra ord.",
+        title: "Sakprosa dagligen (för ORD/MEK)",
+        detail: "En text. Plocka 5 ord + markera 3 konnektorer. Ingen tidsatt LÄS ännu.",
         minutes: 25,
         section: "LAS",
       },
       {
-        id: "w1-mek",
-        title: "MEK: 2 korta set (tis + tors)",
-        detail: "Fokusera på konnektorer. Skriv ner varje nyansskillnad du missar.",
-        minutes: 40,
-        section: "MEK",
-      },
-      {
-        id: "w1-kva",
-        title: "Kvant: ett blandat pass",
-        detail: "60–75 min blandade uppgifter. Notera uppgiftstyper du tvekar på.",
-        minutes: 70,
-        section: "KVA",
+        id: "w1-dtk",
+        title: "DTK: ett tempo-pass",
+        detail: "Fokus avläsning (axlar, enheter, legend). Notera feltyp.",
+        minutes: 50,
+        section: "DTK",
       },
     ],
   },
   {
     week: 2,
     phase: "Bas",
-    theme: "Ord + läsning i djup",
-    focus: "Öka ordförrådet och börja göra tidsatta svenska delprov.",
+    theme: "MEK under tid",
+    focus: "Öka MEK-volymen och börja tidsätta. ORD fortsätter oförändrat.",
     tasks: [
       {
+        id: "w2-mek",
+        title: "MEK: 6 set, varav 3 under tid",
+        detail: "Jämför fel: kunskap (konnektor) vs. slarv vs. tempo.",
+        minutes: 40,
+        section: "MEK",
+      },
+      {
         id: "w2-ord",
-        title: "ORD: 25 ord/dag + helgrepetition",
-        detail: "Lägg till ord från veckans LÄS-texter. Helgen: testa dig själv på 80 ord.",
+        title: "ORD: 25 ord/dag + helgtest",
+        detail: "Helgen: testa dig på 80–100 ord. Felord in i prioritetsdeck.",
         minutes: 40,
         section: "ORD",
       },
       {
         id: "w2-las",
-        title: "LÄS: 2 tidsatta pass",
-        detail: "Använd gamla HP-prov. Efteråt: för varje fel, hitta bevisraden i texten.",
-        minutes: 50,
+        title: "LÄS: ett tidsatt pass",
+        detail: "Bekräfta att 75 %-nivån håller. Mer LÄS bara om det dippar.",
+        minutes: 45,
         section: "LAS",
       },
       {
-        id: "w2-mek",
-        title: "MEK: 3 set + konnektorlista",
-        detail: "Bygg en personlig lista med 30 konnektorer och exempelmeningar.",
-        minutes: 45,
-        section: "MEK",
-      },
-      {
-        id: "w2-elf",
-        title: "ELF: ett underhållspass",
-        detail: "Håll tempot. Analysera bara uppenbara fel.",
-        minutes: 40,
-        section: "ELF",
+        id: "w2-kva",
+        title: "Blandat kvant (lätt) + DTK",
+        detail: "Kort DTK + några KVA. Rör inte XYZ i onödan.",
+        minutes: 55,
+        section: "DTK",
       },
     ],
   },
   {
     week: 3,
     phase: "Bas",
-    theme: "Stabil rutin",
-    focus: "Samma struktur, högre kvalitet på felanalys.",
+    theme: "Konnektorer på djupet",
+    focus: "MEK-fel ska bli mönster du känner igen, inte engångshändelser.",
     tasks: [
       {
+        id: "w3-mek",
+        title: "MEK: tematiska set (orsak, kontrast, tillägg)",
+        detail: "Öva en konnektor-familj per pass. Skriv egna exempelmeningar.",
+        minutes: 40,
+        section: "MEK",
+      },
+      {
         id: "w3-ord",
-        title: "ORD: daglig drill + felord-deck",
-        detail: "Prioritera ord du missat tidigare. Nya ord får vänta om repetitionen halkar efter.",
+        title: "ORD: fel-deck före nya ord",
+        detail: "Inga nya ord förrän gårdagens fel sitter. Stam-gruppering.",
         minutes: 35,
         section: "ORD",
       },
       {
-        id: "w3-las",
-        title: "LÄS: 3 pass + en ‘svår’ tidningstext",
-        detail: "Träna att skilja huvudpoäng från detaljer och exempel.",
-        minutes: 55,
-        section: "LAS",
-      },
-      {
-        id: "w3-mek",
-        title: "MEK: blandade set under tid",
-        detail: "Sätt klocka. Gissa inte — eliminera först.",
-        minutes: 45,
+        id: "w3-read",
+        title: "Sakprosa med MEK-glasögon",
+        detail: "Under strecket/ledare: markera varje satskoppling. 5 ORD-ord.",
+        minutes: 25,
         section: "MEK",
       },
       {
-        id: "w3-kva",
-        title: "Kvant: fokusera svaga typer",
-        detail: "Bara de typer du missade i vecka 1. Ett kort DTK-pass.",
-        minutes: 60,
-        section: "KVA",
+        id: "w3-elf",
+        title: "ELF: ett lätt underhållspass",
+        detail: "Behålla 85 %. Analysera bara uppenbara fel.",
+        minutes: 40,
+        section: "ELF",
       },
     ],
   },
   {
     week: 4,
     phase: "Bas",
-    theme: "Första avstämningen",
-    focus: "Mät läget med ett verbalt delprov och justera.",
+    theme: "Verbala avstämningen",
+    focus: "Mät lyftet på MEK/ORD. Justera planen efter resultatet.",
     tasks: [
       {
         id: "w4-verbal",
         title: "Hela verbala delen under tid",
-        detail: "ORD + LÄS + MEK + ELF. Räkna råpoäng. Jämför med förra HP.",
+        detail: "Jämför särskilt MEK (mål ≥12/20) och ORD (mål ≥14/20) mot förra HP.",
         minutes: 110,
-        section: "LAS",
+        section: "MEK",
       },
       {
         id: "w4-analys",
-        title: "Djup felanalys (samma dag)",
-        detail: "Vilken del drog ner? Vilka fel var kunskap vs. slarv vs. tid?",
+        title: "Djup felanalys samma dag",
+        detail: "Kunskap / slarv / tid per delprov. Skriv tre konkreta justeringar.",
         minutes: 45,
         section: "ORD",
       },
       {
-        id: "w4-ord",
-        title: "ORD: återställ luckor",
-        detail: "Dubbla repetitionen på de ord/områden som föll.",
-        minutes: 40,
-        section: "ORD",
+        id: "w4-patch",
+        title: "Lappa MEK eller ORD (det som föll mest)",
+        detail: "Dubbla den delen 3 dagar. LÄS/ELF orörda om de höll.",
+        minutes: 50,
+        section: "MEK",
       },
       {
-        id: "w4-kva",
-        title: "Kvant: ett delprov",
-        detail: "Bekräfta att 1,4-nivån håller. Justera bara om det dippar.",
-        minutes: 90,
-        section: "KVA",
+        id: "w4-dtk",
+        title: "DTK + kort kvant-check",
+        detail: "Bekräfta att kvant 1,4 håller. Extra DTK om avläsning fortfarande krånglar.",
+        minutes: 70,
+        section: "DTK",
       },
     ],
   },
   {
     week: 5,
     phase: "Teknik",
-    theme: "Tempo och precision",
-    focus: "Korta, hårda pass. Teknik före volym.",
+    theme: "Tempo på MEK och ORD",
+    focus: "Samma material, högre precision under tid.",
     tasks: [
       {
+        id: "w5-mek",
+        title: "MEK: tidspress + elimineringsteknik",
+        detail: "Stryk två alternativ innan du väljer. Notera när magkänsla vs. regel vinner.",
+        minutes: 40,
+        section: "MEK",
+      },
+      {
         id: "w5-ord",
-        title: "ORD: tempo-övningar",
-        detail: "30 frågor på tid. Målet: snabb igenkänning, inte gissning.",
+        title: "ORD: 30 frågor på tid",
+        detail: "Snabb igenkänning. Gissa inte — lämna och återkom om du kör fast.",
         minutes: 35,
         section: "ORD",
       },
       {
         id: "w5-las",
-        title: "LÄS: 3 tidsatta pass",
-        detail: "Öva skumma → fråga → bevis. Hoppa inte mellan texter slumpmässigt.",
-        minutes: 60,
+        title: "LÄS: två tidsatta pass",
+        detail: "Putsa mot 16–17/20 om energin räcker efter MEK/ORD.",
+        minutes: 50,
         section: "LAS",
       },
       {
-        id: "w5-mek",
-        title: "MEK: stilnivå och register",
-        detail: "Träna att höra formellt vs. vardagligt. Bygg meningar själv med svåra konnektorer.",
-        minutes: 40,
-        section: "MEK",
-      },
-      {
-        id: "w5-elf",
-        title: "ELF: ett tempo-pass",
-        detail: "Behålla flyt. 40–50 minuter räcker.",
+        id: "w5-dtk",
+        title: "DTK: ett hårt tempo-pass",
+        detail: "Mål: färre avläsningsfel under tid.",
         minutes: 45,
-        section: "ELF",
+        section: "DTK",
       },
     ],
   },
   {
     week: 6,
     phase: "Teknik",
-    theme: "Svenska under press",
-    focus: "Två verbala ‘halvprov’ och tät repetition.",
+    theme: "Halvprov verbalt",
+    focus: "Två verbala block under tid. Jämför med vecka 4.",
     tasks: [
       {
         id: "w6-half1",
-        title: "Halvprov A: ORD + LÄS",
-        detail: "Under tid. Direkt felanalys efteråt.",
-        minutes: 80,
-        section: "LAS",
-      },
-      {
-        id: "w6-half2",
-        title: "Halvprov B: MEK + ELF",
-        detail: "Under tid. Jämför med vecka 4.",
+        title: "Halvprov A: ORD + MEK",
+        detail: "Dina flaskhalsar tillsammans. Direkt felanalys.",
         minutes: 70,
         section: "MEK",
       },
       {
+        id: "w6-half2",
+        title: "Halvprov B: LÄS + ELF",
+        detail: "Skydda styrkorna. Jämför råpoäng med förra HP.",
+        minutes: 70,
+        section: "LAS",
+      },
+      {
         id: "w6-ord",
         title: "ORD: intensiv felord-vecka",
-        detail: "Inga nya ord förrän fel-decket är under kontroll.",
+        detail: "Inga nya ord förrän fel-decket är stabilt.",
         minutes: 40,
         section: "ORD",
       },
       {
         id: "w6-kva",
-        title: "Kvant: blandat underhåll",
+        title: "Kvant underhåll (DTK-tungt)",
         detail: "2 kortare pass. Håll handen varm.",
         minutes: 50,
-        section: "KVA",
+        section: "DTK",
       },
     ],
   },
@@ -349,35 +403,35 @@ export const WEEKLY_PLANS: WeekPlan[] = [
     week: 7,
     phase: "Fullprov",
     theme: "Första hela HP",
-    focus: "Simulera provdagen och utvärdera energin.",
+    focus: "Simulera provdagen. Utvärdera energi — MEK brukar dippa sent.",
     tasks: [
       {
         id: "w7-full",
         title: "Hela Högskoleprovet under tid",
-        detail: "Samma pauser som på riktiga provet. Inga störningar.",
+        detail: "Riktiga pauser. Notera var koncentrationen föll (ofta MEK).",
         minutes: 235,
-        section: "LAS",
+        section: "MEK",
       },
       {
         id: "w7-review",
         title: "Tvådagaranalys",
-        detail: "Dag 1: rätt/fel. Dag 2: mönster per delprov och energi dippar.",
+        detail: "Dag 1 rätt/fel. Dag 2: mönster. Målbild MEK ≥14, ORD ≥15.",
         minutes: 90,
         section: "ORD",
       },
       {
         id: "w7-patch",
         title: "Lappa största luckan",
-        detail: "Om ORD faller → orddrill. Om LÄS → mer textbevis. Om MEK → konnektorer.",
+        detail: "Nästan alltid MEK eller ORD. Inte ELF. Inte XYZ.",
         minutes: 60,
         section: "MEK",
       },
       {
         id: "w7-light",
-        title: "Lätt underhåll kvant + ELF",
-        detail: "Korta pass, inte utmattning.",
+        title: "Lätt DTK + ELF",
+        detail: "Korta pass, ingen utmattning.",
         minutes: 45,
-        section: "KVA",
+        section: "DTK",
       },
     ],
   },
@@ -385,33 +439,33 @@ export const WEEKLY_PLANS: WeekPlan[] = [
     week: 8,
     phase: "Finish",
     theme: "Puts och vila",
-    focus: "Repetera, sova, gå in fräsch. Inga nya tunga system.",
+    focus: "Repetera MEK-regler och ORD-deck. Spara energi till provdagen.",
     tasks: [
+      {
+        id: "w8-mek",
+        title: "MEK: lätta set + konnektorlista",
+        detail: "Inga nya knep. Bara det du redan kan, lugnt tempo.",
+        minutes: 30,
+        section: "MEK",
+      },
       {
         id: "w8-ord",
         title: "ORD: bara repetition",
-        detail: "Inga nya ord sista 3–4 dagarna. Bara det du redan kan.",
+        detail: "Inga nya ord sista 3–4 dagarna.",
         minutes: 30,
         section: "ORD",
       },
       {
-        id: "w8-las",
-        title: "LÄS + MEK: lätta set",
-        detail: "Ett pass mitt i veckan. Fokus på lugn och metod.",
-        minutes: 50,
-        section: "LAS",
-      },
-      {
         id: "w8-mock",
-        title: "Valfritt: ett halvprov senast onsdag",
-        detail: "Inget fullprov sista två dagarna. Spara energi.",
+        title: "Valfritt halvprov senast onsdag",
+        detail: "ORD+MEK. Inget fullprov sista två dagarna.",
         minutes: 70,
         section: "MEK",
       },
       {
         id: "w8-rest",
-        title: "Sömn, mat, tidig ankomst",
-        detail: "Planera resväg, ID, pennor. Sista kvällen: lätt ORD-repetition max 20 min.",
+        title: "Sömn, mat, logistik",
+        detail: "Resväg, ID, pennor. Sista kvällen max 20 min ORD.",
         minutes: 20,
         section: "ELF",
       },
@@ -420,11 +474,11 @@ export const WEEKLY_PLANS: WeekPlan[] = [
 ];
 
 export const DAILY_TEMPLATE = [
-  { slot: "Morgon (25–40 min)", item: "ORD-repetition + 15–25 nya ord" },
-  { slot: "Lunch/kväll (25 min)", item: "Sakprosatext på svenska + enradssammanfattning" },
-  { slot: "Huvudpass (45–90 min)", item: "LÄS eller MEK under tid, 3–5 dagar/vecka" },
-  { slot: "Underhåll (2–3×/vecka)", item: "Kvant eller ELF — korta, fokuserade pass" },
-  { slot: "Söndag (60–90 min)", item: "Felanalys, uppdatera ordlista, planera nästa vecka" },
+  { slot: "Morgon (30–40 min)", item: "ORD-repetition + 15–25 nya ord" },
+  { slot: "Huvudpass (35–45 min)", item: "MEK-set under tid + felanalys (nästan varje dag)" },
+  { slot: "Lunch/kväll (20–25 min)", item: "Sakprosa: 5 ORD-ord + markera konnektorer" },
+  { slot: "Underhåll (2×/vecka)", item: "DTK-pass; ELF högst varannan vecka" },
+  { slot: "Söndag (60–90 min)", item: "Felanalys, uppdatera MEK-lista och ORD-deck" },
 ];
 
 export type ReadingItem = {
@@ -436,53 +490,52 @@ export type ReadingItem = {
   href: string | null;
 };
 
-/** Sakprosa och essäer som speglar LÄS/ORD bättre än nyhetssnack eller lätt skönlitteratur. */
 export const READING_LIST: ReadingItem[] = [
   {
     title: "SvD Under strecket",
     kind: "Essä / kulturhistoria",
-    why: "Långa, argumenterande texter med densitet och ordnivå nära HP:s LÄS.",
-    how: "Läs en essä (~20–30 min). Skriv huvudpoängen i en mening och plocka 5 svåra ord.",
+    why: "Långa meningar och formella bindningar — perfekt MEK-träning utöver ORD.",
+    how: "En essä. Markera konnektorer, skriv huvudpoängen i en mening, plocka 5 ord.",
     cadence: "3–4×/vecka",
     href: "https://www.svd.se/under-strecket",
   },
   {
     title: "DN Ledare & Kultur",
     kind: "Opinion + essä",
-    why: "Tränar att följa tes → stöd → invändning — exakt den struktur LÄS belönar.",
-    how: "Läs en ledare eller kulturessä. Markera tesen och två stödjande påståenden.",
+    why: "Tydlig tes/struktur och skriftspråklig ton — bra för både MEK-register och LÄS-underhåll.",
+    how: "En ledare. Hitta tesen, två stöd och tre konnektorer.",
     cadence: "Dagligen (15–20 min)",
     href: "https://www.dn.se/",
   },
   {
     title: "Forskning & Framsteg",
     kind: "Populärvetenskap",
-    why: "Saklig prosa, fackord i kontext och förklarande stycken — vanligt LÄS-tonläge.",
-    how: "Ett artikelkapitel. Sammanfatta utan att titta. Notera ord du skulle missa i ORD.",
+    why: "Saklig prosa och fackord i kontext — matar ORD utan att kräva mer LÄS-drill.",
+    how: "Ett artikelkapitel. Sammanfatta + 5 ORD-ord.",
     cadence: "2–3×/vecka",
     href: "https://fof.se/",
   },
   {
     title: "Språktidningen",
     kind: "Språk & stil",
-    why: "Bygger språklig medvetenhet som hjälper både MEK (register) och ORD.",
-    how: "En kort artikel. Lägg nya termer/konnektorer i din ordlista.",
+    why: "Direkt relevant för MEK: register, nyanser och satsfogning.",
+    how: "En kort artikel. Lägg termer/konnektorer i MEK-listan.",
     cadence: "1–2×/vecka",
     href: "https://spraktidningen.se/",
   },
   {
-    title: "Filosofiska rummet (SR) → läs manus/referat när du kan",
+    title: "Filosofiska rummet (SR)",
     kind: "Resonemang (komplement)",
-    why: "Tränar att hålla långa resonemangskedjor — samma uthållighet som svåra LÄS-texter.",
-    how: "Lyssna eller läs sammanfattning. Skriv tre påståenden i ordning: premiss → mellansteg → slutsats.",
+    why: "Tränar att följa långa kedjor — hjälper LÄS-underhåll utan att ta MEK-tid.",
+    how: "Lyssna eller läs referat. Skriv premiss → mellansteg → slutsats.",
     cadence: "1×/vecka",
     href: "https://sverigesradio.se/filosofiskarummet",
   },
   {
-    title: "Shorter classics i sakprosa (valfri bok)",
+    title: "Shorter sakprosa / essäbok",
     kind: "Bok — ett kapitel/dag",
-    why: "Kontinuerlig exponering för formellt skriftspråk. Välj essä/sakprosa, inte bara romaner.",
-    how: "10–15 sidor. Ingen plot-jakt — fokusera på meningar, bindningar och ordval.",
+    why: "Kontinuerlig exponering för formellt skriftspråk. Välj essä, inte deckare.",
+    how: "10–15 sidor. Fokus meningar, bindningar, ordval.",
     cadence: "Dagligen om du orkar",
     href: null,
   },
@@ -490,56 +543,61 @@ export const READING_LIST: ReadingItem[] = [
 
 export const READING_BOOK_PICKS = [
   {
-    title: "Ola Wikander — Orden och evigheten (eller liknande språkessä)",
-    note: "Etymologi och ordhistoria — direkt boost till ORD.",
+    title: "Ola Wikander — språk-/etymologiessäer",
+    note: "Direkt boost till ORD.",
   },
   {
-    title: "Essäsamlingar (t.ex. DN/SvD-antologier, eller svenska essäister)",
-    note: "Hellre korta essäer än tjock roman om målet är HP-svenska.",
+    title: "Essäsamlingar (DN/SvD-antologier, svenska essäister)",
+    note: "Hellre korta essäer än tjock roman när målet är MEK + ORD.",
   },
   {
-    title: "Populärvetenskap på svenska (t.ex. böcker från Fri Tanke / liknande)",
-    note: "Tränar precist språk kring abstrakta ämnen — typiskt LÄS-stoff.",
+    title: "Populärvetenskap på svenska",
+    note: "Precist språk kring abstrakta ämnen — bra ord + sakprosa-flyt.",
   },
 ];
 
 export const READING_METHOD = [
-  "Skumma inte som nyheter: läs för struktur (tes, stöd, exempel, invändning).",
+  "Primärt mål med läsning nu: ORD-ord + MEK-konnektorer (LÄS är redan 75 %).",
   "Efter varje text: en mening sammanfattning utan att titta tillbaka.",
-  "Plocka 5 ord/uttryck → in i ORD-decket samma dag.",
-  "Markera konnektorer (emellertid, således, däremot…) — det stärker MEK.",
-  "Undvik att bara läsa sport/nöje/krönikor med talspråk — för låg densitet för HP.",
+  "Plocka 5 ord/uttryck → ORD-decket samma dag.",
+  "Markera konnektorer (emellertid, således, däremot…) — det är din MEK-träning.",
+  "Undvik sport/nöje/talspråkskrönikor — för låg densitet för HP.",
 ];
 
 export const RESOURCES = [
   {
     title: "Gamla högskoleprov",
-    body: "Primärmaterialet. Träna på riktiga uppgifter under tid och analysera fel.",
+    body: "Primärmaterialet. Prioritera MEK- och ORD-uppgifter från flera prov.",
     href: "https://www.studera.nu/hogskoleprov/forberedelser/gamla-hogskoleprov/",
   },
   {
     title: "ORD-ordlistor & flashcards",
-    body: "Bygg ditt eget deck från provorden. Anki eller papperskort — viktigast är aktiv recall.",
+    body: "Bygg deck från provorden + läsorden. Aktiv recall slår passiv genomläsning.",
     href: null,
   },
   {
     title: "Daglig sakprosa",
-    body: "Under strecket, DN Ledare, Forskning & Framsteg — se läslistan i appen.",
+    body: "Under strecket, DN Ledare, FoF, Språktidningen — se läslistan.",
     href: "#laslista",
   },
   {
-    title: "Konnektorträning",
-    body: "Gör en egen lista: emellertid, således, destomer, i synnerhet, respektive, oaktat…",
+    title: "MEK-konnektorlista",
+    body: "Emellertid, således, destomer, i synnerhet, respektive, oaktat, däremot, följaktligen…",
     href: null,
   },
 ];
 
 export function sectionLabel(id: SectionId): string {
-  return SECTIONS.find((s) => s.id === id)?.short ?? id;
+  const map: Partial<Record<SectionId, string>> = {
+    LAS: "LÄS",
+    KVA: "Kvant",
+  };
+  return map[id] ?? id;
 }
 
 export function priorityLabel(p: Priority): string {
+  if (p === "kritiskt") return "Kritiskt";
   if (p === "huvudfokus") return "Huvudfokus";
   if (p === "underhall") return "Underhåll";
-  return "Lätt";
+  return "Styrka";
 }

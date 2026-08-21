@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
-import { WEEKLY_PLANS, type StudyTask } from "@/lib/study-plan";
+import { WEEKLY_PLANS, sectionLabel, type StudyTask } from "@/lib/study-plan";
 
 const STORAGE_KEY = "hp-studieplan-progress-v1";
 
@@ -161,7 +161,7 @@ export function WeekTracker() {
                       {task.title}
                     </span>
                     <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[var(--ink-soft)]">
-                      {task.section === "LAS" ? "LÄS" : task.section}
+                      {sectionLabel(task.section)}
                     </span>
                     <span className="text-xs text-[var(--ink-muted)]">~{task.minutes} min</span>
                   </div>
