@@ -6,10 +6,13 @@ Interaktiv 8-veckorsplan för höstens Högskoleprov. Anpassad för dig som är 
 
 ```bash
 npm install
-npm run dev -- -p 43123
+npm run build
+npm start
 ```
 
 Öppna [http://127.0.0.1:43123](http://127.0.0.1:43123).
+
+För lokal utveckling med hot reload: `npm run dev` (samma port).
 
 ## Vad appen innehåller
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
 import { WEEKLY_PLANS, sectionLabel, type StudyTask } from "@/lib/study-plan";
 
@@ -92,7 +91,7 @@ export function WeekTracker() {
         <Progress value={percent} className="h-2 bg-[var(--mist)]" />
       </div>
 
-      <div className="flex gap-2 overflow-x-auto pb-1">
+      <div className="flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Välj vecka">
         {WEEKLY_PLANS.map((w) => {
           const selected = w.week === activeWeek;
           const wDone = w.tasks.filter((t) => progress[taskKey(w.week, t.id)]).length;
@@ -100,6 +99,8 @@ export function WeekTracker() {
             <button
               key={w.week}
               type="button"
+              role="tab"
+              aria-selected={selected}
               onClick={() => setActiveWeek(w.week)}
               className={`shrink-0 rounded-md border px-3 py-2 text-left transition ${
                 selected
@@ -138,37 +139,44 @@ export function WeekTracker() {
             const key = taskKey(plan.week, task.id);
             const checked = Boolean(progress[key]);
             return (
-              <li
-                key={task.id}
-                className={`flex gap-3 rounded-lg border px-3 py-3 transition sm:px-4 ${
-                  checked
-                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)]/50"
-                    : "border-[var(--line)] bg-[var(--paper)]"
-                }`}
-              >
-                <Checkbox
-                  id={key}
-                  checked={checked}
-                  onCheckedChange={() => toggle(task)}
-                  className="mt-1"
-                  aria-label={task.title}
-                />
-                <label htmlFor={key} className="min-w-0 flex-1 cursor-pointer">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span
-                      className={`font-medium ${checked ? "text-[var(--ink-muted)] line-through" : "text-[var(--ink)]"}`}
-                    >
-                      {task.title}
+              <li key={task.id}>
+                <button
+                  type="button"
+                  onClick={() => toggle(task)}
+                  aria-pressed={checked}
+                  className={`flex w-full gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
+                    checked
+                      ? "border-[var(--accent)]/30 bg-[var(--accent-soft)]/50"
+                      : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs font-bold ${
+                      checked
+                        ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                        : "border-[var(--line)] bg-white text-transparent"
+                    }`}
+                  >
+                    ✓
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="flex flex-wrap items-center gap-2">
+                      <span
+                        className={`font-medium ${checked ? "text-[var(--ink-muted)] line-through" : "text-[var(--ink)]"}`}
+                      >
+                        {task.title}
+                      </span>
+                      <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[var(--ink-soft)]">
+                        {sectionLabel(task.section)}
+                      </span>
+                      <span className="text-xs text-[var(--ink-muted)]">~{task.minutes} min</span>
                     </span>
-                    <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[var(--ink-soft)]">
-                      {sectionLabel(task.section)}
+                    <span className="mt-1 block text-sm leading-relaxed text-[var(--ink-muted)]">
+                      {task.detail}
                     </span>
-                    <span className="text-xs text-[var(--ink-muted)]">~{task.minutes} min</span>
-                  </div>
-                  <p className="mt-1 text-sm leading-relaxed text-[var(--ink-muted)]">
-                    {task.detail}
-                  </p>
-                </label>
+                  </span>
+                </button>
               </li>
             );
           })}
