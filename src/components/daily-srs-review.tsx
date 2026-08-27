@@ -77,7 +77,7 @@ export function DailySrsReview() {
         </span>
       </div>
       <p className="mt-2 text-sm text-[var(--ink-muted)]">
-        Enkel spaced repetition (SM-2-liknande). Kommer ihåg → längre intervall; glömt → i morgon.
+        Visa svaret, sedan om du kommer ihåg eller behöver se kortet igen i morgon.
       </p>
 
       {card.passage ? (
