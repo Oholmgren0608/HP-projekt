@@ -5,7 +5,6 @@ import { kindBadge, type PracticeKind } from "@/lib/practice";
 import {
   SRS_EVENT,
   dueCards,
-  dueCount,
   reviewSrsCard,
   type SrsCard,
 } from "@/lib/error-srs";
@@ -13,7 +12,6 @@ import {
 export function DailySrsReview() {
   const [cards, setCards] = useState<SrsCard[]>([]);
   const [mounted, setMounted] = useState(false);
-  const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
   const [done, setDone] = useState(0);
 
@@ -33,17 +31,9 @@ export function DailySrsReview() {
     };
   }, []);
 
-  useEffect(() => {
-    setIndex(0);
-    setRevealed(false);
-  }, [cards.length]);
-
   if (!mounted) return null;
 
-  const remaining = dueCount();
-  const card = cards[index];
-
-  if (remaining === 0) {
+  if (cards.length === 0) {
     return (
       <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
@@ -62,7 +52,7 @@ export function DailySrsReview() {
     );
   }
 
-  if (!card) return null;
+  const card = cards[0];
 
   function grade(remembered: boolean) {
     reviewSrsCard(card.id, remembered);
@@ -79,7 +69,7 @@ export function DailySrsReview() {
             Dagens repetition
           </p>
           <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-            {remaining} felkort att repetera
+            {cards.length} felkort att repetera
           </h3>
         </div>
         <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
@@ -90,7 +80,15 @@ export function DailySrsReview() {
         Enkel spaced repetition (SM-2-liknande). Kommer ihåg → längre intervall; glömt → i morgon.
       </p>
 
-      <p className="mt-5 text-lg font-medium text-[var(--ink)]">{card.front}</p>
+      {card.passage ? (
+        <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
+          {card.passage}
+        </div>
+      ) : null}
+
+      <p className={`text-lg font-medium text-[var(--ink)] ${card.passage ? "mt-4" : "mt-5"}`}>
+        {card.front}
+      </p>
 
       {revealed ? (
         <div className="mt-4 space-y-3">

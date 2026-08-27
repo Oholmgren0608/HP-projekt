@@ -697,6 +697,14 @@ const BANKS: Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> = {
   nog: NOG_BANK,
 };
 
+export function findQuestionById(id: string): ChoiceQuestion | undefined {
+  for (const bank of Object.values(BANKS)) {
+    const found = bank.find((q) => q.id === id);
+    if (found) return found;
+  }
+  return undefined;
+}
+
 function hashSeed(input: string): number {
   let h = 2166136261;
   for (let i = 0; i < input.length; i++) {
