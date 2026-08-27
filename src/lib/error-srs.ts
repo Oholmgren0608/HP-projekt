@@ -17,6 +17,7 @@ export type SrsCard = {
   reps: number;
   lapses: number;
   passage?: string;
+  options?: string[];
 };
 
 function emitSrsChanged() {
@@ -44,10 +45,15 @@ function addDays(dateKey: string, days: number): string {
 }
 
 function hydrateCard(card: SrsCard): SrsCard {
-  if (card.passage) return card;
+  const needsPassage = !card.passage;
+  const needsOptions = !card.options?.length;
+  if (!needsPassage && !needsOptions) return card;
   const q = findQuestionById(card.id);
-  if (!q?.passage) return card;
-  return { ...card, passage: q.passage };
+  if (!q) return card;
+  const next: SrsCard = { ...card };
+  if (needsPassage && q.passage) next.passage = q.passage;
+  if (needsOptions && q.options.length) next.options = q.options;
+  return next;
 }
 
 export function loadSrs(): Record<string, SrsCard> {
@@ -61,7 +67,9 @@ export function loadSrs(): Record<string, SrsCard> {
     const hydrated: Record<string, SrsCard> = {};
     for (const [id, card] of Object.entries(parsed)) {
       const next = hydrateCard(card);
-      if (next.passage && !card.passage) changed = true;
+      if ((next.passage && !card.passage) || (next.options?.length && !card.options?.length)) {
+        changed = true;
+      }
       hydrated[id] = next;
     }
     if (changed) {
@@ -104,6 +112,7 @@ export function recordMissedQuestions(questions: ChoiceQuestion[], answers: Reco
       explain: q.explain,
       kind: q.kind,
       passage: q.passage,
+      options: q.options,
       due: today,
       interval: 1,
       ease: existing?.ease ?? 2.3,

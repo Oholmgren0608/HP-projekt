@@ -90,6 +90,35 @@ export function DailySrsReview() {
         {card.front}
       </p>
 
+      {card.options && card.options.length > 0 ? (
+        <ul className="mt-4 space-y-2" aria-label="Svarsalternativ">
+          {card.options.map((opt, i) => {
+            const isCorrect = revealed && opt === card.back;
+            return (
+              <li
+                key={`${card.id}-${i}`}
+                className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 sm:px-4 ${
+                  isCorrect
+                    ? "border-[var(--lagoon)]/40 bg-[#eef8f6]"
+                    : "border-[var(--line)] bg-[var(--paper)]"
+                }`}
+              >
+                <span
+                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
+                    isCorrect
+                      ? "border-[var(--lagoon)] bg-[var(--lagoon)] text-white"
+                      : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
+                  }`}
+                >
+                  {String.fromCharCode(65 + i)}
+                </span>
+                <span className="text-[var(--ink)]">{opt}</span>
+              </li>
+            );
+          })}
+        </ul>
+      ) : null}
+
       {revealed ? (
         <div className="mt-4 space-y-3">
           <p className="rounded-lg border border-[var(--lagoon)]/30 bg-[#eef8f6] px-4 py-3 text-[var(--ink)]">
