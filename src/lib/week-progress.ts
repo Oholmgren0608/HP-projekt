@@ -50,6 +50,31 @@ export function findNextIncomplete(
   return null;
 }
 
+/** Nästa ofärdiga uppgift efter den aktuella: resten av veckan först, annars findNextIncomplete. */
+export function findNextIncompleteAfter(
+  weeklyPlans: WeekPlan[],
+  progress: ProgressMap,
+  currentWeek: number,
+  currentTaskId: string,
+): { week: number; task: StudyTask } | null {
+  const currentPlan = weeklyPlans.find((w) => w.week === currentWeek);
+  if (currentPlan) {
+    const idx = currentPlan.tasks.findIndex((t) => t.id === currentTaskId);
+    if (idx >= 0) {
+      for (const task of currentPlan.tasks.slice(idx + 1)) {
+        if (!progress[taskKey(currentWeek, task.id)]) {
+          return { week: currentWeek, task };
+        }
+      }
+    }
+  }
+  const skipCurrent: ProgressMap = {
+    ...progress,
+    [taskKey(currentWeek, currentTaskId)]: true,
+  };
+  return findNextIncomplete(weeklyPlans, skipCurrent);
+}
+
 export function weekProgressSummary(weeklyPlans: WeekPlan[], progress: ProgressMap) {
   const allTasks = weeklyPlans.flatMap((w) => w.tasks.map((t) => taskKey(w.week, t.id)));
   const done = allTasks.filter((k) => progress[k]).length;

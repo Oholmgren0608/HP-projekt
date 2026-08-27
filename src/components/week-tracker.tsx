@@ -5,13 +5,14 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { usePlan } from "@/components/plan-context";
 import { Progress } from "@/components/ui/progress";
-import { formatClock, loadPracticeTimer, resetPracticeSession } from "@/lib/practice-timer";
+import { formatClock, loadPracticeTimer, newPracticeAttempt, resetPracticeSession } from "@/lib/practice-timer";
 import { sectionLabel, type StudyTask } from "@/lib/study-plan";
 import {
   WEEK_PROGRESS_KEY,
   WEEK_SCORES_KEY,
   clearLockedWeek,
   emitWeekProgressChanged,
+  findNextIncompleteAfter,
   loadJson,
   saveLockedWeekIfAbsent,
   taskKey,
@@ -33,6 +34,7 @@ export function WeekTracker({
   const [scores, setScores] = useState<ScoreMap>({});
   const [activeWeek, setActiveWeek] = useState(1);
   const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
+  const [sessionNonce, setSessionNonce] = useState(0);
   const [ready, setReady] = useState(false);
   const [timerTick, setTimerTick] = useState(0);
 
@@ -122,8 +124,15 @@ export function WeekTracker({
   }
 
   if (activeTask) {
+    const nextIncomplete = findNextIncompleteAfter(
+      weeklyPlans,
+      progress,
+      plan.week,
+      activeTask.id,
+    );
     return (
       <PracticeSession
+        key={`${plan.week}:${activeTask.id}:${sessionNonce}`}
         task={activeTask}
         week={plan.week}
         onClose={() => {
@@ -135,6 +144,22 @@ export function WeekTracker({
           markComplete(activeTask, result);
           setTimerTick((n) => n + 1);
           router.replace("/plan", { scroll: false });
+        }}
+        onRestartSame={() => {
+          newPracticeAttempt(plan.week, activeTask.id);
+          setSessionNonce((n) => n + 1);
+        }}
+        hasNextTask={Boolean(nextIncomplete)}
+        onNextTask={() => {
+          if (!nextIncomplete) return;
+          setActiveWeek(nextIncomplete.week);
+          setActiveTaskId(nextIncomplete.task.id);
+          setSessionNonce((n) => n + 1);
+          setTimerTick((n) => n + 1);
+          router.replace(
+            `/plan?week=${nextIncomplete.week}&start=${encodeURIComponent(nextIncomplete.task.id)}`,
+            { scroll: false },
+          );
         }}
       />
     );

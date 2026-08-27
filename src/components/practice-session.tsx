@@ -17,7 +17,6 @@ import {
   clearPracticeTimer,
   formatClock,
   loadOrStartPracticeSession,
-  loadPracticeTimer,
   savePracticeTimer,
   type PracticeTimerState,
 } from "@/lib/practice-timer";
@@ -28,6 +27,9 @@ type Props = {
   week: number;
   onClose: () => void;
   onComplete: (result: { correct: number; total: number }) => void;
+  onRestartSame: () => void;
+  hasNextTask: boolean;
+  onNextTask: () => void;
 };
 
 type Phase = "quiz" | "review" | "reflect";
@@ -141,7 +143,15 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
   };
 }
 
-export function PracticeSession({ task, week, onClose, onComplete }: Props) {
+export function PracticeSession({
+  task,
+  week,
+  onClose,
+  onComplete,
+  onRestartSame,
+  hasNextTask,
+  onNextTask,
+}: Props) {
   const isReflect = task.practiceKinds.length === 1 && task.practiceKinds[0] === "reflect";
   const requiredMinutes = task.minutes;
 
@@ -217,6 +227,16 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
   function handleClose() {
     timer.pause("leave");
     onClose();
+  }
+
+  function handleRestartSame() {
+    timer.pause("leave");
+    onRestartSame();
+  }
+
+  function handleNextTask() {
+    timer.pause("leave");
+    onNextTask();
   }
 
   function finish() {
@@ -448,6 +468,24 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
             })}
           </ul>
 
+          <div className="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={handleRestartSame}
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+            >
+              Ny övning
+            </button>
+            {hasNextTask ? (
+              <button
+                type="button"
+                onClick={handleNextTask}
+                className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+              >
+                Nästa i veckan
+              </button>
+            ) : null}
+          </div>
           <CompleteButton ready={timer.ready} remainingSeconds={timer.remainingSeconds} onClick={finish} />
         </div>
       ) : null}

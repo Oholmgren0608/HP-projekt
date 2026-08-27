@@ -76,6 +76,17 @@ export function resetPracticeSession(week: number, taskId: string): PracticeTime
   return created;
 }
 
+/** Nytt frågeset på samma uppgift — behåller sparad aktiv tid mot veckomålet. */
+export function newPracticeAttempt(week: number, taskId: string): PracticeTimerState {
+  const existing = loadPracticeTimer(week, taskId);
+  const next: PracticeTimerState = {
+    accumulatedMs: existing?.accumulatedMs ?? 0,
+    attemptId: createAttemptId(),
+  };
+  savePracticeTimer(week, taskId, next);
+  return next;
+}
+
 export function formatClock(totalSeconds: number): string {
   const s = Math.max(0, totalSeconds);
   const m = Math.floor(s / 60);

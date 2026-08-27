@@ -289,14 +289,10 @@ export function TimedMockExam() {
 
       <button
         type="button"
-        onClick={() => {
-          setPhase("intro");
-          setSeed("");
-          setDeadline(null);
-        }}
+        onClick={start}
         className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] hover:bg-[var(--ink-soft)]"
       >
-        Tillbaka till mini-prov
+        Nytt mini-prov
       </button>
     </div>
   );
