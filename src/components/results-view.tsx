@@ -97,7 +97,7 @@ export function ResultsView() {
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Tidfördelning (~{profile.hoursPerWeek} h/vecka)
         </h2>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-5">
+        <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {timeSplit.map((t) => (
             <li
               key={t.label}
