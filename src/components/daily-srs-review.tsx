@@ -13,6 +13,7 @@ export function DailySrsReview() {
   const [cards, setCards] = useState<SrsCard[]>([]);
   const [mounted, setMounted] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const [selected, setSelected] = useState<number | null>(null);
   const [done, setDone] = useState(0);
 
   function refresh() {
@@ -53,12 +54,23 @@ export function DailySrsReview() {
   }
 
   const card = cards[0];
+  const options = card.options ?? [];
+  const hasOptions = options.length > 0;
+  const chosenText = selected !== null ? options[selected] : null;
+  const pickedCorrect = chosenText !== null && chosenText === card.back;
 
   function grade(remembered: boolean) {
     reviewSrsCard(card.id, remembered);
     setDone((n) => n + 1);
     setRevealed(false);
+    setSelected(null);
     setCards(dueCards());
+  }
+
+  function pickOption(index: number) {
+    if (revealed) return;
+    setSelected(index);
+    setRevealed(true);
   }
 
   return (
@@ -77,7 +89,9 @@ export function DailySrsReview() {
         </span>
       </div>
       <p className="mt-2 text-sm text-[var(--ink-muted)]">
-        Visa svaret, sedan om du kommer ihåg eller behöver se kortet igen i morgon.
+        {hasOptions
+          ? "Välj det alternativ du tror är rätt. Sedan: kommer du ihåg, eller behöver du se kortet igen i morgon."
+          : "Visa svaret, sedan om du kommer ihåg eller behöver se kortet igen i morgon."}
       </p>
 
       {card.passage ? (
@@ -90,37 +104,68 @@ export function DailySrsReview() {
         {card.front}
       </p>
 
-      {card.options && card.options.length > 0 ? (
-        <ul className="mt-4 space-y-2" aria-label="Svarsalternativ">
-          {card.options.map((opt, i) => {
-            const isCorrect = revealed && opt === card.back;
+      {hasOptions ? (
+        <div className="mt-4 space-y-2" role="radiogroup" aria-label="Svarsalternativ">
+          {options.map((opt, i) => {
+            const isCorrect = opt === card.back;
+            const isChosen = selected === i;
+            const showResult = revealed;
+            const showCorrect = showResult && isCorrect;
+            const showWrong = showResult && isChosen && !isCorrect;
+
             return (
-              <li
+              <button
                 key={`${card.id}-${i}`}
-                className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 sm:px-4 ${
-                  isCorrect
+                type="button"
+                role="radio"
+                aria-checked={isChosen}
+                disabled={revealed}
+                onClick={() => pickOption(i)}
+                className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition disabled:opacity-100 sm:px-4 ${
+                  showCorrect
                     ? "border-[var(--lagoon)]/40 bg-[#eef8f6]"
-                    : "border-[var(--line)] bg-[var(--paper)]"
+                    : showWrong
+                      ? "border-[#9a3412]/30 bg-[#fff7f3]"
+                      : revealed
+                        ? "cursor-default border-[var(--line)] bg-[var(--paper)]"
+                        : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
                 }`}
               >
                 <span
                   className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
-                    isCorrect
+                    showCorrect
                       ? "border-[var(--lagoon)] bg-[var(--lagoon)] text-white"
-                      : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
+                      : showWrong
+                        ? "border-[#9a3412] bg-[#9a3412] text-white"
+                        : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
                   }`}
                 >
                   {String.fromCharCode(65 + i)}
                 </span>
-                <span className="text-[var(--ink)]">{opt}</span>
-              </li>
+                <span className="flex-1 text-[var(--ink)]">{opt}</span>
+                {showCorrect ? (
+                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--lagoon)]">
+                    Rätt
+                  </span>
+                ) : null}
+                {showWrong ? (
+                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[#9a3412]">
+                    Fel
+                  </span>
+                ) : null}
+              </button>
             );
           })}
-        </ul>
+        </div>
       ) : null}
 
       {revealed ? (
         <div className="mt-4 space-y-3">
+          {hasOptions && selected !== null ? (
+            <p className="text-sm font-medium text-[var(--ink)]">
+              {pickedCorrect ? "Rätt — du valde rätt alternativ." : "Fel — du valde fel alternativ."}
+            </p>
+          ) : null}
           <p className="rounded-lg border border-[var(--lagoon)]/30 bg-[#eef8f6] px-4 py-3 text-[var(--ink)]">
             <span className="block text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
               Rätt svar
