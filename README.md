@@ -4,10 +4,11 @@ Mata in dina HP-resultat (normpoäng + råpoäng per delprov) så bygger sidan o
 
 ## Kom igång
 
+Kräver Node.js 20.9 eller nyare. I WSL, från `~/hp-lift`:
+
 ```bash
 npm install
-npm run build
-npm start
+npm run dev
 ```
 
 Öppna [http://127.0.0.1:43123](http://127.0.0.1:43123).

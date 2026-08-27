@@ -87,7 +87,7 @@ export function ReadingLibrary() {
           })}
         </div>
 
-        <article className="rounded-xl border border-[var(--line)] bg-white/80 p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.4)] sm:p-6">
+        <article className="rounded-2xl border border-[var(--line)] bg-white/80 p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.4)] sm:p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
             {text.kind} · ~{text.minutes} min
           </p>
@@ -144,7 +144,7 @@ export function ReadingLibrary() {
             <button
               type="button"
               onClick={() => setRead((prev) => ({ ...prev, [text.id]: true }))}
-              className="rounded-md bg-[var(--accent)] px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
             >
               Markera som läst
             </button>

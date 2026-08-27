@@ -1,10 +1,5 @@
-import { HomeContent } from "@/components/home-content";
-import { PlanProvider } from "@/components/plan-context";
+import { DashboardHome } from "@/components/dashboard-home";
 
 export default function Home() {
-  return (
-    <PlanProvider>
-      <HomeContent />
-    </PlanProvider>
-  );
+  return <DashboardHome />;
 }

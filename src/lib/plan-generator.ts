@@ -163,54 +163,37 @@ function weeklyGoalFor(id: SectionId, priority: Priority): string {
       ? "3 tidsatta LÄS-pass + daglig sakprosa"
       : "Daglig läsning + 1–2 LÄS-pass";
   }
-  if (id === "ELF") return "1 underhållspass (öka om det dippar)";
+  if (id === "ELF") {
+    return priority === "styrka" || priority === "underhall"
+      ? "1 underhållspass/vecka"
+      : "2–3 ELF-pass + felanalys";
+  }
   if (id === "DTK") return "1–2 DTK-pass/vecka";
+  if (id === "XYZ") return "1–2 XYZ-pass (problemlösning)";
+  if (id === "KVA") return "Korta KVA-set under tid";
+  if (id === "NOG") return "1 NOG-pass: tillräcklighet";
   return "1 blandat underhållspass/vecka";
 }
 
 function toPractice(id: SectionId): PracticeKind[] {
   if (id === "LAS") return ["las"];
-  if (id === "XYZ" || id === "KVA" || id === "NOG") return ["dtk"];
-  if (id === "DTK") return ["dtk"];
   return [id.toLowerCase() as PracticeKind];
 }
 
 function allocateTime(ranked: Ranked[]): TimeSplitItem[] {
-  const verbalFocus = ranked.filter((r) => r.block === "verbal");
-  const quantFocus = ranked.filter((r) => r.block === "kvant");
+  const weighted = ranked
+    .map((r) => ({ r, weight: Math.max(0, r.total - r.correct) }))
+    .filter((row) => row.weight > 0);
 
-  const weights = new Map<string, number>();
-  for (const r of verbalFocus.slice(0, 3)) {
-    weights.set(r.id, Math.max(8, r.deficit));
-  }
-  // reading always gets a slice if not already high
-  if (![...weights.keys()].includes("LAS") && ![...weights.keys()].includes("ORD")) {
-    weights.set("LAS", 10);
-  }
-  const weakestQuant = quantFocus[0];
-  if (weakestQuant) weights.set(weakestQuant.id, Math.max(8, weakestQuant.deficit * 0.6));
+  const sum = weighted.reduce((acc, row) => acc + row.weight, 0);
+  if (sum === 0) return [];
 
-  // ensure ELF maintenance if strong
-  const elf = ranked.find((r) => r.id === "ELF");
-  if (elf && elf.percent >= 75) weights.set("ELF", 6);
-  else if (elf) weights.set("ELF", Math.max(8, elf.deficit));
+  const items: TimeSplitItem[] = weighted.map(({ r, weight }) => ({
+    label: METHODS[r.id]?.short ?? r.id,
+    pct: Math.round((weight / sum) * 100),
+    note: r.percent < 65 ? "prioritet" : "underhåll",
+  }));
 
-  let sum = 0;
-  for (const v of weights.values()) sum += v;
-  const items: TimeSplitItem[] = [];
-  for (const [id, w] of weights) {
-    const p = Math.round((w / sum) * 100);
-    const meta = METHODS[id as SectionId];
-    items.push({
-      label: meta?.short ?? id,
-      pct: p,
-      note:
-        (ranked.find((r) => r.id === id)?.percent ?? 0) < 65
-          ? "prioritet"
-          : "underhåll",
-    });
-  }
-  // normalize rounding drift
   const drift = 100 - items.reduce((a, b) => a + b.pct, 0);
   if (items.length && drift !== 0) items[0].pct += drift;
   return items.sort((a, b) => b.pct - a.pct);
@@ -219,11 +202,14 @@ function allocateTime(ranked: Ranked[]): TimeSplitItem[] {
 function buildWeeklyPlans(
   focus: SectionId[],
   weeks: number,
+  weakestQuant: SectionId = "DTK",
 ): WeekPlan[] {
   const primary = focus[0] ?? "MEK";
   const secondary = focus[1] ?? "ORD";
   const tertiary = focus[2] ?? "LAS";
-  const quant = focus.find((id) => ["DTK", "XYZ", "KVA", "NOG"].includes(id)) ?? "DTK";
+  const quant: SectionId = ["DTK", "XYZ", "KVA", "NOG"].includes(weakestQuant)
+    ? weakestQuant
+    : "DTK";
 
   const phases = [
     { phase: "Bas", theme: `${METHODS[primary].short}-rutin + ${METHODS[secondary].short}`, focus: `Bygg daglig rutin runt ${METHODS[primary].short} och ${METHODS[secondary].short}.` },
@@ -368,7 +354,9 @@ function buildWeeklyPlans(
           detail: "Blandat set över flera delar. Notera var energin föll.",
           minutes: 90,
           section: primary,
-          practiceKinds: ["ord", "mek", "las", "elf", "dtk"],
+          practiceKinds: [
+            ...new Set<PracticeKind>(["ord", "mek", "las", "elf", "dtk", ...toPractice(quant)]),
+          ],
           questionCount: 16,
         },
         {
@@ -588,7 +576,7 @@ export function generatePlan(scores: ScoreInput): GeneratedPlan {
     sections,
     strategy,
     timeSplit,
-    weeklyPlans: buildWeeklyPlans(focusIds, scores.weeksUntilExam),
+    weeklyPlans: buildWeeklyPlans(focusIds, scores.weeksUntilExam, weakestQuant.id),
     dailyTemplate: [
       {
         slot: "Morgon (25–40 min)",

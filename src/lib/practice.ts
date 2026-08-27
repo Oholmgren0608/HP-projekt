@@ -1,4 +1,26 @@
-export type PracticeKind = "ord" | "mek" | "las" | "elf" | "dtk" | "reflect";
+import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
+
+export type PracticeKind =
+  | "ord"
+  | "mek"
+  | "las"
+  | "elf"
+  | "dtk"
+  | "xyz"
+  | "kva"
+  | "nog"
+  | "reflect";
+
+export const MOCK_KINDS: Exclude<PracticeKind, "reflect">[] = [
+  "ord",
+  "mek",
+  "las",
+  "elf",
+  "xyz",
+  "kva",
+  "nog",
+  "dtk",
+];
 
 export type ChoiceQuestion = {
   id: string;
@@ -670,6 +692,9 @@ const BANKS: Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> = {
   las: LAS_BANK,
   elf: ELF_BANK,
   dtk: DTK_BANK,
+  xyz: XYZ_BANK,
+  kva: KVA_BANK,
+  nog: NOG_BANK,
 };
 
 function hashSeed(input: string): number {
@@ -743,9 +768,21 @@ export function practiceLabel(kind: PracticeKind): string {
       return "ELF-övning";
     case "dtk":
       return "DTK-övning";
+    case "xyz":
+      return "XYZ-övning";
+    case "kva":
+      return "KVA-övning";
+    case "nog":
+      return "NOG-övning";
     case "reflect":
       return "Reflektion";
   }
+}
+
+export function kindBadge(kind: PracticeKind): string {
+  if (kind === "las") return "LÄS";
+  if (kind === "reflect") return "Reflektion";
+  return kind.toUpperCase();
 }
 
 export function defaultQuestionCount(kind: PracticeKind): number {
@@ -760,7 +797,17 @@ export function defaultQuestionCount(kind: PracticeKind): number {
       return 3;
     case "dtk":
       return 4;
+    case "xyz":
+      return 6;
+    case "kva":
+      return 8;
+    case "nog":
+      return 6;
     case "reflect":
       return 0;
   }
+}
+
+export function buildMockExam(seed: string, count = 24): ChoiceQuestion[] {
+  return buildMixedQuiz(MOCK_KINDS, seed, count);
 }

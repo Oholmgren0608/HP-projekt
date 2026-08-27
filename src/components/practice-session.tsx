@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { recordMissedQuestions } from "@/lib/error-srs";
 import {
   buildMixedQuiz,
   getReflectPrompt,
+  kindBadge,
   practiceLabel,
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
+import { appendQuizResult } from "@/lib/progress-history";
 import {
   clearPracticeTimer,
   formatClock,
@@ -159,6 +162,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
   const [selected, setSelected] = useState<number | null>(null);
   const [phase, setPhase] = useState<Phase>(isReflect ? "reflect" : "quiz");
   const [reflectAnswers, setReflectAnswers] = useState<string[]>([]);
+  const loggedRef = useRef(false);
 
   const current = questions[index];
   const total = questions.length;
@@ -174,12 +178,29 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
 
   const kindLabels = task.practiceKinds.map(practiceLabel).join(" · ");
 
+  function logQuizOnce(finalAnswers: Record<string, number>) {
+    if (isReflect || loggedRef.current || questions.length === 0) return;
+    loggedRef.current = true;
+    let correct = 0;
+    for (const q of questions) {
+      if (finalAnswers[q.id] === q.correctIndex) correct += 1;
+    }
+    appendQuizResult({
+      source: "week",
+      kinds: task.practiceKinds,
+      correct,
+      total: questions.length,
+    });
+    recordMissedQuestions(questions, finalAnswers);
+  }
+
   function submitAnswer() {
     if (selected === null || !current) return;
     const nextAnswers = { ...answers, [current.id]: selected };
     setAnswers(nextAnswers);
 
     if (index >= total - 1) {
+      logQuizOnce(nextAnswers);
       setPhase("review");
       return;
     }
@@ -231,7 +252,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
               Fråga {index + 1} av {total}
             </span>
             <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
-              {current.kind === "las" ? "LÄS" : current.kind.toUpperCase()}
+              {kindBadge(current.kind)}
             </span>
           </div>
 
@@ -286,7 +307,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
               type="button"
               disabled={selected === null}
               onClick={submitAnswer}
-              className="rounded-md bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition enabled:hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
             >
               {index >= total - 1 ? "Visa resultat" : "Nästa fråga"}
             </button>
@@ -349,7 +370,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
                 >
                   <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
                     <span>
-                      {qi + 1}. {q.kind === "las" ? "LÄS" : q.kind.toUpperCase()}
+                      {qi + 1}. {kindBadge(q.kind)}
                     </span>
                     <span>{ok ? "Rätt" : "Fel"}</span>
                   </div>
@@ -486,7 +507,7 @@ function CompleteButton({
         type="button"
         disabled={!ready}
         onClick={onClick}
-        className="rounded-md bg-[var(--ink)] px-5 py-2.5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+        className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
       >
         Markera uppgiften som klar
       </button>
@@ -546,7 +567,7 @@ function ReflectForm({
           type="button"
           disabled={!canFinish}
           onClick={onComplete}
-          className="rounded-md bg-[var(--ink)] px-5 py-2.5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
         >
           Markera som klar
         </button>
