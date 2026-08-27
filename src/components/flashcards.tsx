@@ -184,7 +184,7 @@ export function Flashcards() {
               <button
                 type="button"
                 onClick={() => setFlipped(true)}
-                className="rounded-md bg-[var(--ink)] px-5 py-2.5 text-sm font-semibold text-[var(--paper)] transition hover:bg-[var(--ink-soft)]"
+                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] transition hover:bg-[var(--ink-soft)]"
               >
                 Visa svar
               </button>
@@ -193,14 +193,14 @@ export function Flashcards() {
                 <button
                   type="button"
                   onClick={() => rate("wrong")}
-                  className="rounded-md border border-[#9a3412]/40 bg-[#fff7f3] px-5 py-2.5 text-sm font-semibold text-[#9a3412] transition hover:brightness-95"
+                  className="inline-flex min-h-11 items-center rounded-lg border border-[#9a3412]/40 bg-[#fff7f3] px-5 text-sm font-semibold text-[#9a3412] transition hover:brightness-95"
                 >
                   Fel — visa igen
                 </button>
                 <button
                   type="button"
                   onClick={() => rate("correct")}
-                  className="rounded-md bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+                  className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
                 >
                   Rätt — nästa
                 </button>

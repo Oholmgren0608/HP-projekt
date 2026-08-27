@@ -1,36 +1,31 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { usePlan } from "@/components/plan-context";
 import { Progress } from "@/components/ui/progress";
 import { formatClock, loadPracticeTimer, resetPracticeSession } from "@/lib/practice-timer";
 import { sectionLabel, type StudyTask } from "@/lib/study-plan";
+import {
+  WEEK_PROGRESS_KEY,
+  WEEK_SCORES_KEY,
+  emitWeekProgressChanged,
+  loadJson,
+  taskKey,
+  type ProgressMap,
+  type ScoreMap,
+} from "@/lib/week-progress";
 
-const STORAGE_KEY = "hp-studieplan-progress-v2";
-const SCORES_KEY = "hp-studieplan-scores-v1";
-
-type ProgressMap = Record<string, boolean>;
-type ScoreMap = Record<string, { correct: number; total: number; at: string }>;
-
-function loadJson<T>(key: string, fallback: T): T {
-  if (typeof window === "undefined") return fallback;
-  try {
-    const raw = localStorage.getItem(key);
-    if (!raw) return fallback;
-    return JSON.parse(raw) as T;
-  } catch {
-    return fallback;
-  }
-}
-
-function taskKey(week: number, taskId: string) {
-  return `w${week}:${taskId}`;
-}
-
-export function WeekTracker() {
+export function WeekTracker({
+  onSessionChange,
+}: {
+  onSessionChange?: (open: boolean) => void;
+}) {
   const { plan: generated } = usePlan();
   const weeklyPlans = generated.weeklyPlans;
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
   const [progress, setProgress] = useState<ProgressMap>({});
   const [scores, setScores] = useState<ScoreMap>({});
@@ -40,19 +35,30 @@ export function WeekTracker() {
   const [timerTick, setTimerTick] = useState(0);
 
   useEffect(() => {
-    setProgress(loadJson(STORAGE_KEY, {}));
-    setScores(loadJson(SCORES_KEY, {}));
+    setProgress(loadJson(WEEK_PROGRESS_KEY, {}));
+    setScores(loadJson(WEEK_SCORES_KEY, {}));
     setReady(true);
   }, []);
 
   useEffect(() => {
     if (!ready) return;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    const week = Number(searchParams.get("week"));
+    const start = searchParams.get("start");
+    if (week && weeklyPlans.some((w) => w.week === week)) {
+      setActiveWeek(week);
+    }
+    if (start) setActiveTaskId(start);
+  }, [ready, searchParams, weeklyPlans]);
+
+  useEffect(() => {
+    if (!ready) return;
+    localStorage.setItem(WEEK_PROGRESS_KEY, JSON.stringify(progress));
+    emitWeekProgressChanged();
   }, [progress, ready]);
 
   useEffect(() => {
     if (!ready) return;
-    localStorage.setItem(SCORES_KEY, JSON.stringify(scores));
+    localStorage.setItem(WEEK_SCORES_KEY, JSON.stringify(scores));
   }, [scores, ready]);
 
   useEffect(() => {
@@ -65,10 +71,12 @@ export function WeekTracker() {
   const plan = weeklyPlans.find((w) => w.week === activeWeek) ?? weeklyPlans[0];
   const activeTask = plan?.tasks.find((t) => t.id === activeTaskId) ?? null;
 
+  useEffect(() => {
+    onSessionChange?.(Boolean(activeTask));
+  }, [activeTask, onSessionChange]);
+
   const { done, total, percent } = useMemo(() => {
-    const allTasks = weeklyPlans.flatMap((w) =>
-      w.tasks.map((t) => taskKey(w.week, t.id)),
-    );
+    const allTasks = weeklyPlans.flatMap((w) => w.tasks.map((t) => taskKey(w.week, t.id)));
     const doneCount = allTasks.filter((k) => progress[k]).length;
     return {
       done: doneCount,
@@ -117,10 +125,12 @@ export function WeekTracker() {
         onClose={() => {
           setActiveTaskId(null);
           setTimerTick((n) => n + 1);
+          router.replace("/plan", { scroll: false });
         }}
         onComplete={(result) => {
           markComplete(activeTask, result);
           setTimerTick((n) => n + 1);
+          router.replace("/plan", { scroll: false });
         }}
       />
     );
@@ -140,7 +150,7 @@ export function WeekTracker() {
           <button
             type="button"
             onClick={resetWeek}
-            className="text-sm text-[var(--ink-muted)] underline-offset-4 transition hover:text-[var(--ink)] hover:underline"
+            className="min-h-11 text-sm text-[var(--ink-muted)] underline-offset-4 transition hover:text-[var(--ink)] hover:underline"
           >
             Nollställ vecka {activeWeek}
           </button>
@@ -162,7 +172,7 @@ export function WeekTracker() {
                 setActiveWeek(w.week);
                 setActiveTaskId(null);
               }}
-              className={`shrink-0 rounded-md border px-3 py-2 text-left transition ${
+              className={`min-h-14 shrink-0 rounded-xl border px-4 py-2.5 text-left transition ${
                 selected
                   ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--ink)]"
                   : "border-[var(--line)] bg-white/60 text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
@@ -178,7 +188,7 @@ export function WeekTracker() {
         })}
       </div>
 
-      <div className="rounded-xl border border-[var(--line)] bg-white/70 p-5 shadow-[0_12px_40px_-28px_rgba(18,42,48,0.45)] backdrop-blur-sm sm:p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 shadow-[0_12px_40px_-28px_rgba(18,42,48,0.45)] backdrop-blur-sm sm:p-6">
         <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent)]">
@@ -205,12 +215,11 @@ export function WeekTracker() {
             const bankedMin = Math.floor(
               (loadPracticeTimer(plan.week, task.id)?.accumulatedMs ?? 0) / 60000,
             );
-            // timerTick forces re-read after leaving a session
             void timerTick;
             return (
               <li key={task.id}>
                 <div
-                  className={`rounded-lg border px-3 py-3 sm:px-4 ${
+                  className={`rounded-xl border px-3 py-3 sm:px-4 ${
                     checked
                       ? "border-[var(--accent)]/30 bg-[var(--accent-soft)]/50"
                       : "border-[var(--line)] bg-[var(--paper)]"
@@ -244,9 +253,7 @@ export function WeekTracker() {
                       </p>
                       <p className="mt-1 text-xs text-[var(--ink-soft)]">
                         Övning: {practiceKindsLabel(task.practiceKinds)}
-                        {score
-                          ? ` · Senaste resultat ${score.correct}/${score.total}`
-                          : null}
+                        {score ? ` · Senaste resultat ${score.correct}/${score.total}` : null}
                         {!checked && bankedMin > 0
                           ? ` · Sparad tid ${bankedMin}/${task.minutes} min (pausad)`
                           : null}
@@ -255,13 +262,12 @@ export function WeekTracker() {
                         <button
                           type="button"
                           onClick={() => {
-                            // Klar uppgift / ny repetition → nytt frågeset
                             if (checked) {
                               resetPracticeSession(plan.week, task.id);
                             }
                             setActiveTaskId(task.id);
                           }}
-                          className="rounded-md bg-[var(--accent)] px-3.5 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+                          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
                         >
                           {checked
                             ? "Öva igen (nya frågor)"

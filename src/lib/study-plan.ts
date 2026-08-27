@@ -634,22 +634,22 @@ export const RESOURCES = [
   {
     title: "Gamla högskoleprov",
     body: "Officiella häften och facit inbäddade på den här sidan (från UHR/studera.nu).",
-    href: "#gamla-prov",
+    href: "/prov",
   },
   {
     title: "ORD-ordlistor & flashcards",
     body: "Aktiv recall med ORD-ord, läsbibliotekets vokabulär och MEK-konnektorer.",
-    href: "#flashcards",
+    href: "/ova",
   },
   {
     title: "Daglig sakprosa",
     body: "Läs färdiga essäer i appens läsbibliotek — ORD-ord och konnektorer ingår.",
-    href: "#laslista",
+    href: "/ova",
   },
   {
     title: "MEK-konnektorlista",
     body: "Träna konnektorer som flashcards — emellertid, således, oaktat…",
-    href: "#flashcards",
+    href: "/ova",
   },
 ];
 

@@ -40,11 +40,8 @@ export function ScoreForm() {
     setDraft(next);
     const generated = generatePlan(next);
     setMessage(
-      `Planen uppdaterad. Fokus: ${generated.focusIds.slice(0, 2).join(" · ")} — se strategin och veckoplanen nedan.`,
+      `Planen uppdaterad. Fokus: ${generated.focusIds.slice(0, 2).join(" · ")} — se veckoplanen under Plan.`,
     );
-    requestAnimationFrame(() => {
-      document.getElementById("strategi")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
   }
 
   return (
@@ -144,7 +141,7 @@ export function ScoreForm() {
       <div className="flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          className="rounded-md bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
         >
           Skapa ny plan
         </button>
@@ -154,7 +151,7 @@ export function ScoreForm() {
             resetScores();
             setMessage("Återställde till standardvärden.");
           }}
-          className="rounded-md border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
+          className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line)] px-4 text-sm text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
         >
           Återställ
         </button>

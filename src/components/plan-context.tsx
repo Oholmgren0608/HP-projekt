@@ -16,6 +16,7 @@ import {
   type ScoreInput,
 } from "@/lib/hp-scores";
 import { generatePlan, type GeneratedPlan } from "@/lib/plan-generator";
+import { appendScoreSnapshot, ensureScoreBaseline } from "@/lib/progress-history";
 
 type PlanContextValue = {
   scores: ScoreInput;
@@ -32,18 +33,22 @@ export function PlanProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setScores(loadScores());
+    const loaded = loadScores();
+    setScores(loaded);
+    ensureScoreBaseline(loaded);
     setReady(true);
   }, []);
 
   const updateScores = useCallback((next: ScoreInput) => {
     setScores(next);
     saveScores(next);
+    appendScoreSnapshot(next);
   }, []);
 
   const resetScores = useCallback(() => {
     setScores(DEFAULT_SCORES);
     saveScores(DEFAULT_SCORES);
+    appendScoreSnapshot(DEFAULT_SCORES);
   }, []);
 
   const plan = useMemo(() => generatePlan(scores), [scores]);

@@ -165,13 +165,14 @@ function weeklyGoalFor(id: SectionId, priority: Priority): string {
   }
   if (id === "ELF") return "1 underhållspass (öka om det dippar)";
   if (id === "DTK") return "1–2 DTK-pass/vecka";
+  if (id === "XYZ") return "1–2 XYZ-pass (problemlösning)";
+  if (id === "KVA") return "Korta KVA-set under tid";
+  if (id === "NOG") return "1 NOG-pass: tillräcklighet";
   return "1 blandat underhållspass/vecka";
 }
 
 function toPractice(id: SectionId): PracticeKind[] {
   if (id === "LAS") return ["las"];
-  if (id === "XYZ" || id === "KVA" || id === "NOG") return ["dtk"];
-  if (id === "DTK") return ["dtk"];
   return [id.toLowerCase() as PracticeKind];
 }
 
@@ -219,11 +220,14 @@ function allocateTime(ranked: Ranked[]): TimeSplitItem[] {
 function buildWeeklyPlans(
   focus: SectionId[],
   weeks: number,
+  weakestQuant: SectionId = "DTK",
 ): WeekPlan[] {
   const primary = focus[0] ?? "MEK";
   const secondary = focus[1] ?? "ORD";
   const tertiary = focus[2] ?? "LAS";
-  const quant = focus.find((id) => ["DTK", "XYZ", "KVA", "NOG"].includes(id)) ?? "DTK";
+  const quant: SectionId = ["DTK", "XYZ", "KVA", "NOG"].includes(weakestQuant)
+    ? weakestQuant
+    : "DTK";
 
   const phases = [
     { phase: "Bas", theme: `${METHODS[primary].short}-rutin + ${METHODS[secondary].short}`, focus: `Bygg daglig rutin runt ${METHODS[primary].short} och ${METHODS[secondary].short}.` },
@@ -368,7 +372,9 @@ function buildWeeklyPlans(
           detail: "Blandat set över flera delar. Notera var energin föll.",
           minutes: 90,
           section: primary,
-          practiceKinds: ["ord", "mek", "las", "elf", "dtk"],
+          practiceKinds: [
+            ...new Set<PracticeKind>(["ord", "mek", "las", "elf", "dtk", ...toPractice(quant)]),
+          ],
           questionCount: 16,
         },
         {
@@ -588,7 +594,7 @@ export function generatePlan(scores: ScoreInput): GeneratedPlan {
     sections,
     strategy,
     timeSplit,
-    weeklyPlans: buildWeeklyPlans(focusIds, scores.weeksUntilExam),
+    weeklyPlans: buildWeeklyPlans(focusIds, scores.weeksUntilExam, weakestQuant.id),
     dailyTemplate: [
       {
         slot: "Morgon (25–40 min)",

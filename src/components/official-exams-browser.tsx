@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { TimedMockExam } from "@/components/timed-mock-exam";
 import {
   OFFICIAL_EXAMS,
   OFFICIAL_INDEX_URL,
@@ -62,6 +63,8 @@ export function OfficialExamsBrowser() {
 
   return (
     <div className="space-y-5">
+      <TimedMockExam />
+
       <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm text-[var(--ink-muted)]">
         Officiella provhäften och facit från UHR visas här direkt (PDF från studera.nu). Vi
         omhostar inte filerna — ELF saknas ofta eftersom UHR bara får visa de texterna en kort
