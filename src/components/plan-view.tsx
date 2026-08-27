@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { PriorityBadge } from "@/components/plan-badges";
 import { usePlan } from "@/components/plan-context";
 import { WeekTracker } from "@/components/week-tracker";
 
 export function PlanView() {
-  const { plan, ready } = usePlan();
+  const { plan, ready, adaptEnabled, setAdaptEnabled } = usePlan();
   const [sessionOpen, setSessionOpen] = useState(false);
 
   if (!ready) {
@@ -34,6 +35,29 @@ export function PlanView() {
             Byggs om från dina resultat. Starta varje uppgift direkt — progress sparas i
             webbläsaren.
           </p>
+          <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line)] bg-white/70 px-4 py-3">
+            <input
+              type="checkbox"
+              className="mt-1 size-4 accent-[var(--accent)]"
+              checked={adaptEnabled}
+              onChange={(e) => setAdaptEnabled(e.target.checked)}
+            />
+            <span>
+              <span className="block text-sm font-medium text-[var(--ink)]">
+                Anpassa kommande veckor efter övningstrend
+              </span>
+              <span className="mt-0.5 block text-sm text-[var(--ink-muted)]">
+                Av som standard. Slås på först när minst tre pass på samma delprov pekar åt samma
+                håll — ett enstaka pass flyttar inte planen.
+              </span>
+            </span>
+          </label>
+          {adaptEnabled && plan.adaptedFromPractice ? (
+            <p className="mt-3 max-w-xl text-sm text-[var(--ink)]">
+              Kommande veckor är justerade efter en konsekvent övningstrend. Påbörjade veckor är
+              oförändrade.
+            </p>
+          ) : null}
         </div>
       ) : null}
 
@@ -83,7 +107,11 @@ export function PlanView() {
           Delprov — vad du gör med varje
         </h2>
         <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-          Prioritet och veckomål följer dina senaste resultat.
+          Prioritet och veckomål följer dina senaste resultat. Mer om hur du tar dig upp finns under{" "}
+          <Link href="/tips" className="font-medium text-[var(--accent)] underline-offset-4 hover:underline">
+            Tips
+          </Link>
+          .
         </p>
         <div className="mt-6 space-y-4">
           {sections.map((section) => (

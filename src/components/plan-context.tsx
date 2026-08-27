@@ -16,12 +16,31 @@ import {
   type ScoreInput,
 } from "@/lib/hp-scores";
 import { generatePlan, type GeneratedPlan } from "@/lib/plan-generator";
-import { appendScoreSnapshot, ensureScoreBaseline } from "@/lib/progress-history";
+import {
+  ADAPT_PLAN_EVENT,
+  loadAdaptPlanEnabled,
+  saveAdaptPlanEnabled,
+} from "@/lib/adapt-plan-setting";
+import { detectPracticeTrends } from "@/lib/practice-trends";
+import {
+  HISTORY_EVENT,
+  appendScoreSnapshot,
+  ensureScoreBaseline,
+  loadHistory,
+} from "@/lib/progress-history";
+import {
+  WEEK_PROGRESS_EVENT,
+  loadLockedWeeks,
+  loadWeekProgress,
+  startedWeekNumbers,
+} from "@/lib/week-progress";
 
 type PlanContextValue = {
   scores: ScoreInput;
   plan: GeneratedPlan;
   ready: boolean;
+  adaptEnabled: boolean;
+  setAdaptEnabled: (enabled: boolean) => void;
   updateScores: (next: ScoreInput) => void;
   resetScores: () => void;
 };
@@ -31,12 +50,32 @@ const PlanContext = createContext<PlanContextValue | null>(null);
 export function PlanProvider({ children }: { children: ReactNode }) {
   const [scores, setScores] = useState<ScoreInput>(DEFAULT_SCORES);
   const [ready, setReady] = useState(false);
+  const [adaptEnabled, setAdaptEnabledState] = useState(false);
+  const [revision, setRevision] = useState(0);
 
   useEffect(() => {
     const loaded = loadScores();
     setScores(loaded);
     ensureScoreBaseline(loaded);
+    setAdaptEnabledState(loadAdaptPlanEnabled());
     setReady(true);
+  }, []);
+
+  useEffect(() => {
+    const bump = () => {
+      setAdaptEnabledState(loadAdaptPlanEnabled());
+      setRevision((n) => n + 1);
+    };
+    window.addEventListener(HISTORY_EVENT, bump);
+    window.addEventListener(WEEK_PROGRESS_EVENT, bump);
+    window.addEventListener(ADAPT_PLAN_EVENT, bump);
+    window.addEventListener("storage", bump);
+    return () => {
+      window.removeEventListener(HISTORY_EVENT, bump);
+      window.removeEventListener(WEEK_PROGRESS_EVENT, bump);
+      window.removeEventListener(ADAPT_PLAN_EVENT, bump);
+      window.removeEventListener("storage", bump);
+    };
   }, []);
 
   const updateScores = useCallback((next: ScoreInput) => {
@@ -51,11 +90,33 @@ export function PlanProvider({ children }: { children: ReactNode }) {
     appendScoreSnapshot(DEFAULT_SCORES);
   }, []);
 
-  const plan = useMemo(() => generatePlan(scores), [scores]);
+  const setAdaptEnabled = useCallback((enabled: boolean) => {
+    setAdaptEnabledState(enabled);
+    saveAdaptPlanEnabled(enabled);
+  }, []);
+
+  const plan = useMemo(() => {
+    if (!ready) return generatePlan(scores);
+    const trends = adaptEnabled ? detectPracticeTrends(scores, loadHistory()) : [];
+    return generatePlan(scores, {
+      adapt: adaptEnabled,
+      trends,
+      lockedWeeks: loadLockedWeeks(),
+      startedWeeks: startedWeekNumbers(loadWeekProgress()),
+    });
+  }, [scores, adaptEnabled, revision, ready]);
 
   const value = useMemo(
-    () => ({ scores, plan, ready, updateScores, resetScores }),
-    [scores, plan, ready, updateScores, resetScores],
+    () => ({
+      scores,
+      plan,
+      ready,
+      adaptEnabled,
+      setAdaptEnabled,
+      updateScores,
+      resetScores,
+    }),
+    [scores, plan, ready, adaptEnabled, setAdaptEnabled, updateScores, resetScores],
   );
 
   return <PlanContext.Provider value={value}>{children}</PlanContext.Provider>;

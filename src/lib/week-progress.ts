@@ -3,6 +3,7 @@ import type { StudyTask, WeekPlan } from "@/lib/study-plan";
 export const WEEK_PROGRESS_KEY = "hp-studieplan-progress-v2";
 export const WEEK_SCORES_KEY = "hp-studieplan-scores-v1";
 export const WEEK_PROGRESS_EVENT = "hp-lift-week-progress";
+export const LOCKED_WEEKS_KEY = "hp-lift-locked-weeks-v1";
 
 export type ProgressMap = Record<string, boolean>;
 export type ScoreMap = Record<string, { correct: number; total: number; at: string }>;
@@ -57,4 +58,36 @@ export function weekProgressSummary(weeklyPlans: WeekPlan[], progress: ProgressM
     total: allTasks.length,
     percent: allTasks.length ? Math.round((done / allTasks.length) * 100) : 0,
   };
+}
+
+export function startedWeekNumbers(progress: ProgressMap): number[] {
+  const weeks = new Set<number>();
+  for (const key of Object.keys(progress)) {
+    if (!progress[key]) continue;
+    const match = /^w(\d+):/.exec(key);
+    if (match) weeks.add(Number(match[1]));
+  }
+  return [...weeks];
+}
+
+export function loadLockedWeeks(): Record<number, WeekPlan> {
+  return loadJson<Record<number, WeekPlan>>(LOCKED_WEEKS_KEY, {});
+}
+
+export function saveLockedWeekIfAbsent(weekPlan: WeekPlan) {
+  if (typeof window === "undefined") return;
+  const locked = loadLockedWeeks();
+  if (locked[weekPlan.week]) return;
+  locked[weekPlan.week] = weekPlan;
+  localStorage.setItem(LOCKED_WEEKS_KEY, JSON.stringify(locked));
+  emitWeekProgressChanged();
+}
+
+export function clearLockedWeek(week: number) {
+  if (typeof window === "undefined") return;
+  const locked = loadLockedWeeks();
+  if (!locked[week]) return;
+  delete locked[week];
+  localStorage.setItem(LOCKED_WEEKS_KEY, JSON.stringify(locked));
+  emitWeekProgressChanged();
 }

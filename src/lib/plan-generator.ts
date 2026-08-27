@@ -13,6 +13,7 @@ import type {
   WeekPlan,
 } from "@/lib/study-plan";
 import { pct } from "@/lib/study-plan";
+import { adjustDeficit, type PracticeTrend } from "@/lib/practice-trends";
 
 export type TimeSplitItem = { label: string; pct: number; note: string };
 export type StrategyItem = { title: string; body: string };
@@ -37,6 +38,14 @@ export type GeneratedPlan = {
   dailyTemplate: { slot: string; item: string }[];
   heroSummary: string;
   focusIds: SectionId[];
+  adaptedFromPractice: boolean;
+};
+
+export type GeneratePlanOptions = {
+  adapt?: boolean;
+  trends?: PracticeTrend[];
+  lockedWeeks?: Record<number, WeekPlan>;
+  startedWeeks?: number[];
 };
 
 type Ranked = {
@@ -438,7 +447,7 @@ function buildWeeklyPlans(
   return plans;
 }
 
-export function generatePlan(scores: ScoreInput): GeneratedPlan {
+export function generatePlan(scores: ScoreInput, options: GeneratePlanOptions = {}): GeneratedPlan {
   const ranked: Ranked[] = DELPROV_META.map((m) => {
     const correct = scores.delprov[m.id] ?? 0;
     const percent = pct(correct, m.total);
@@ -522,17 +531,41 @@ export function generatePlan(scores: ScoreInput): GeneratedPlan {
     weeklyGoal: "1 blandat underhållspass + DTK vid behov",
   });
 
-  const focusIds = ranked
+  const hpFocusIds = ranked
     .filter((r) => r.percent < 80)
     .slice(0, 4)
     .map((r) => r.id);
-  if (focusIds.length < 2) {
-    focusIds.push(...ranked.slice(0, 2).map((r) => r.id));
+  if (hpFocusIds.length < 2) {
+    hpFocusIds.push(...ranked.slice(0, 2).map((r) => r.id));
+  }
+
+  const hpWeakestQuant = ranked.filter((r) => r.block === "kvant")[0];
+  const hpWeekly = buildWeeklyPlans(hpFocusIds, scores.weeksUntilExam, hpWeakestQuant.id);
+
+  const trends =
+    options.adapt && options.trends && options.trends.length > 0 ? options.trends : [];
+
+  let focusIds = hpFocusIds;
+  let weakestQuant = hpWeakestQuant;
+
+  if (trends.length > 0) {
+    const blended = [...ranked].sort((a, b) => {
+      const da = adjustDeficit(a.id, a.deficit, trends);
+      const db = adjustDeficit(b.id, b.deficit, trends);
+      return db - da;
+    });
+    focusIds = blended
+      .filter((r) => r.percent < 80 || trends.some((t) => t.id === r.id && t.direction === "weaker"))
+      .slice(0, 4)
+      .map((r) => r.id);
+    if (focusIds.length < 2) {
+      focusIds = blended.slice(0, 2).map((r) => r.id);
+    }
+    weakestQuant = blended.filter((r) => r.block === "kvant")[0] ?? hpWeakestQuant;
   }
 
   const weakestVerbal = ranked.filter((r) => r.block === "verbal")[0];
   const strongestVerbal = [...ranked].filter((r) => r.block === "verbal").sort((a, b) => b.percent - a.percent)[0];
-  const weakestQuant = ranked.filter((r) => r.block === "kvant")[0];
 
   const strategy: StrategyItem[] = [
     {
@@ -560,6 +593,25 @@ export function generatePlan(scores: ScoreInput): GeneratedPlan {
     .map((id) => METHODS[id].short)
     .join(" och ")} utifrån dina delprovspoäng.`;
 
+  const built = buildWeeklyPlans(focusIds, scores.weeksUntilExam, weakestQuant.id);
+  const started = new Set(options.startedWeeks ?? []);
+  const weeklyPlans = built.map((w) => {
+    const snap = options.lockedWeeks?.[w.week];
+    if (snap) return snap;
+    if (started.has(w.week)) {
+      return hpWeekly.find((h) => h.week === w.week) ?? w;
+    }
+    return w;
+  });
+
+  const adaptedApplied =
+    trends.length > 0 &&
+    weeklyPlans.some((w) => {
+      const hp = hpWeekly.find((h) => h.week === w.week);
+      if (!hp) return true;
+      return hp.theme !== w.theme || hp.focus !== w.focus;
+    });
+
   return {
     profile: {
       previousQuant: scores.quantNorm,
@@ -576,7 +628,7 @@ export function generatePlan(scores: ScoreInput): GeneratedPlan {
     sections,
     strategy,
     timeSplit,
-    weeklyPlans: buildWeeklyPlans(focusIds, scores.weeksUntilExam, weakestQuant.id),
+    weeklyPlans,
     dailyTemplate: [
       {
         slot: "Morgon (25–40 min)",
@@ -604,5 +656,6 @@ export function generatePlan(scores: ScoreInput): GeneratedPlan {
     ],
     heroSummary,
     focusIds,
+    adaptedFromPractice: adaptedApplied,
   };
 }

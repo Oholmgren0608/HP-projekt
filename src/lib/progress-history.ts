@@ -14,6 +14,8 @@ export type QuizHistoryEvent = {
   correct: number;
   total: number;
   estimatedNorm: number;
+  /** Active time for the pass, when known */
+  durationMs?: number;
 };
 
 export type ScoresHistoryEvent = {
@@ -64,6 +66,7 @@ export function appendQuizResult(input: {
   kinds: PracticeKind[];
   correct: number;
   total: number;
+  durationMs?: number;
 }) {
   const total = Math.max(0, input.total);
   const percent = total ? (input.correct / total) * 100 : 0;
@@ -76,6 +79,7 @@ export function appendQuizResult(input: {
     correct: input.correct,
     total,
     estimatedNorm: estimateNormFromPercent(percent),
+    durationMs: input.durationMs && input.durationMs > 0 ? input.durationMs : undefined,
   });
   saveHistory(events);
 }
@@ -148,4 +152,23 @@ export function shouldSuggestNewPlan(savedOverall: number, events: HistoryEvent[
   if (!rolling) return false;
   const estimated = estimateNormFromPercent(rolling.percent);
   return Math.abs(estimated - savedOverall) >= 0.2;
+}
+
+export function rollingPace(events: HistoryEvent[]): {
+  secPerQ: number;
+  n: number;
+} | null {
+  const timed = events.filter(
+    (e): e is QuizHistoryEvent =>
+      e.type === "quiz" && typeof e.durationMs === "number" && e.durationMs > 0 && e.total > 0,
+  );
+  const recent = timed.slice(-12);
+  let ms = 0;
+  let questions = 0;
+  for (const q of recent) {
+    ms += q.durationMs ?? 0;
+    questions += q.total;
+  }
+  if (questions < 4) return null;
+  return { secPerQ: ms / 1000 / questions, n: questions };
 }

@@ -9,10 +9,15 @@ import {
   chartPoints,
   estimateNormFromPercent,
   loadHistory,
+  rollingPace,
   rollingQuizPercent,
   shouldSuggestNewPlan,
   type HistoryEvent,
 } from "@/lib/progress-history";
+import {
+  MIXED_SEC_PER_QUESTION_CAP,
+  formatSecondsPerQuestion,
+} from "@/lib/practice-pace";
 
 function load(): HistoryEvent[] {
   return loadHistory();
@@ -51,6 +56,25 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
   const estimated = all ? estimateNormFromPercent(all.percent) : null;
   const suggest = shouldSuggestNewPlan(savedOverall, events);
   const quizCount = events.filter((e) => e.type === "quiz").length;
+  const pace = rollingPace(events);
+  const paceOver = pace ? pace.secPerQ > MIXED_SEC_PER_QUESTION_CAP : false;
+  const paceLine = pace ? (
+    <p className={`mt-3 text-sm ${paceOver ? "font-medium text-[#9a3412]" : "text-[var(--ink-muted)]"}`}>
+      Tempo {formatSecondsPerQuestion(pace.secPerQ)}/fråga
+      {paceOver
+        ? ` — över taket ${formatSecondsPerQuestion(MIXED_SEC_PER_QUESTION_CAP)} (HP 55 min / 40 frågor).`
+        : ` (tak ${formatSecondsPerQuestion(MIXED_SEC_PER_QUESTION_CAP)}).`}{" "}
+      {pace.n} tidsatta frågor.
+      {paceOver ? (
+        <>
+          {" "}
+          <Link href="/tips" className="font-semibold text-[var(--accent)] underline-offset-4 hover:underline">
+            Se tips →
+          </Link>
+        </>
+      ) : null}
+    </p>
+  ) : null;
 
   const numbers = (
     <div className="flex flex-wrap items-end gap-8">
@@ -97,6 +121,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
             ? "Inga övningar loggade än."
             : `${quizCount} övningspass · verbal ${verbal ? `${verbal.percent} %` : "—"} · kvant ${quant ? `${quant.percent} %` : "—"}`}
         </p>
+        {paceLine}
       </div>
     );
   }
@@ -145,6 +170,11 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
             ? "Inga övningar loggade än. Starta ett pass i veckoplanen så syns historiken här."
             : `${quizCount} övningspass sparade i webbläsaren.`}
         </p>
+        {paceLine ?? (
+          <p className="mt-3 text-sm text-[var(--ink-muted)]">
+            Tid per fråga visas när du avslutat ett tidsatt pass.
+          </p>
+        )}
       </aside>
     </div>
   );

@@ -10,6 +10,8 @@ import {
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
+import { PaceNotice } from "@/components/pace-notice";
+import { paceVerdict } from "@/lib/practice-pace";
 import { appendQuizResult } from "@/lib/progress-history";
 import {
   clearPracticeTimer,
@@ -163,6 +165,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
   const [phase, setPhase] = useState<Phase>(isReflect ? "reflect" : "quiz");
   const [reflectAnswers, setReflectAnswers] = useState<string[]>([]);
   const loggedRef = useRef(false);
+  const [loggedDurationMs, setLoggedDurationMs] = useState<number | null>(null);
 
   const current = questions[index];
   const total = questions.length;
@@ -185,11 +188,14 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
     for (const q of questions) {
       if (finalAnswers[q.id] === q.correctIndex) correct += 1;
     }
+    const durationMs = timer.elapsedSeconds * 1000;
+    setLoggedDurationMs(durationMs);
     appendQuizResult({
       source: "week",
       kinds: task.practiceKinds,
       correct,
       total: questions.length,
+      durationMs,
     });
     recordMissedQuestions(questions, finalAnswers);
   }
@@ -342,6 +348,20 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
               Aktiv övningstid {formatClock(timer.elapsedSeconds)} · krav {requiredMinutes} min ·{" "}
               {kindLabels}
             </p>
+            <div className="mt-3">
+              <PaceNotice
+                verdict={
+                  loggedDurationMs != null
+                    ? paceVerdict(
+                        loggedDurationMs,
+                        score.total,
+                        task.practiceKinds.filter((k) => k !== "reflect"),
+                      )
+                    : null
+                }
+                kinds={task.practiceKinds.filter((k) => k !== "reflect")}
+              />
+            </div>
           </div>
 
           <ul className="space-y-3">

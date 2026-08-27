@@ -9,6 +9,8 @@ import {
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
+import { PaceNotice } from "@/components/pace-notice";
+import { paceVerdict } from "@/lib/practice-pace";
 import { appendQuizResult, estimateNormFromPercent } from "@/lib/progress-history";
 
 const QUESTION_COUNT = 24;
@@ -25,6 +27,8 @@ export function TimedMockExam() {
   const [deadline, setDeadline] = useState<number | null>(null);
   const [now, setNow] = useState(() => Date.now());
   const loggedRef = useRef(false);
+  const startTsRef = useRef<number | null>(null);
+  const [loggedDurationMs, setLoggedDurationMs] = useState<number | null>(null);
 
   const questions = useMemo(() => {
     if (!seed) return [] as ChoiceQuestion[];
@@ -38,6 +42,8 @@ export function TimedMockExam() {
 
   function start() {
     loggedRef.current = false;
+    startTsRef.current = Date.now();
+    setLoggedDurationMs(null);
     setSeed(`mock:${Date.now()}`);
     setIndex(0);
     setAnswers({});
@@ -59,11 +65,14 @@ export function TimedMockExam() {
     loggedRef.current = true;
     const kinds = [...new Set(questions.map((q) => q.kind))] as PracticeKind[];
     const result = tally(questions, ans);
+    const durationMs = startTsRef.current ? Date.now() - startTsRef.current : undefined;
+    if (durationMs && durationMs > 0) setLoggedDurationMs(durationMs);
     appendQuizResult({
       source: "mock",
       kinds,
       correct: result.correct,
       total: result.total,
+      durationMs,
     });
     recordMissedQuestions(questions, ans);
   }
@@ -229,6 +238,20 @@ export function TimedMockExam() {
         Uppskattad norm {estimated.toFixed(1).replace(".", ",")} — inte UHR:s officiella tabell.
         Resultatet är sparat i historiken. Missade frågor blir felkort.
       </p>
+      <div className="mt-3">
+        <PaceNotice
+          verdict={
+            loggedDurationMs != null
+              ? paceVerdict(
+                  loggedDurationMs,
+                  score.total,
+                  [...new Set(questions.map((q) => q.kind))],
+                )
+              : null
+          }
+          kinds={[...new Set(questions.map((q) => q.kind))]}
+        />
+      </div>
 
       <ul className="mt-5 space-y-3">
         {questions.map((q, qi) => {

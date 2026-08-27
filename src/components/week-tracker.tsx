@@ -10,8 +10,10 @@ import { sectionLabel, type StudyTask } from "@/lib/study-plan";
 import {
   WEEK_PROGRESS_KEY,
   WEEK_SCORES_KEY,
+  clearLockedWeek,
   emitWeekProgressChanged,
   loadJson,
+  saveLockedWeekIfAbsent,
   taskKey,
   type ProgressMap,
   type ScoreMap,
@@ -90,6 +92,7 @@ export function WeekTracker({
   const weekDone = plan.tasks.filter((t) => progress[taskKey(plan.week, t.id)]).length;
 
   function markComplete(task: StudyTask, result: { correct: number; total: number }) {
+    saveLockedWeekIfAbsent(plan);
     const key = taskKey(plan.week, task.id);
     setProgress((prev) => ({ ...prev, [key]: true }));
     setScores((prev) => ({
@@ -100,6 +103,7 @@ export function WeekTracker({
   }
 
   function resetWeek() {
+    clearLockedWeek(plan.week);
     setProgress((prev) => {
       const next = { ...prev };
       for (const t of plan.tasks) {
