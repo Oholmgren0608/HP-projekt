@@ -164,12 +164,21 @@ export function PracticeSession({
 
   const timer = usePausablePracticeTimer(week, task.id, requiredMinutes);
   const seed = `w${week}:${task.id}:${timer.attemptId}`;
+  const quizSeedRef = useRef("");
+  const quizRef = useRef<ChoiceQuestion[]>([]);
 
+  const kindsKey = task.practiceKinds.join(",");
+  const questionCount = task.questionCount ?? 8;
   const questions = useMemo(() => {
     if (isReflect) return [] as ChoiceQuestion[];
-    const count = task.questionCount ?? 8;
-    return buildMixedQuiz(task.practiceKinds, seed, count);
-  }, [isReflect, task.practiceKinds, task.questionCount, seed]);
+    if (quizRef.current.length > 0 && quizSeedRef.current === seed) {
+      return quizRef.current;
+    }
+    const built = buildMixedQuiz(task.practiceKinds, seed, questionCount);
+    quizSeedRef.current = seed;
+    quizRef.current = built;
+    return built;
+  }, [isReflect, seed, kindsKey, questionCount, task.practiceKinds]);
 
   const reflect = useMemo(
     () => (isReflect ? getReflectPrompt(seed) : null),
@@ -184,22 +193,24 @@ export function PracticeSession({
   const [reflectAnswers, setReflectAnswers] = useState<string[]>([]);
   const loggedRef = useRef(false);
   const [loggedDurationMs, setLoggedDurationMs] = useState<number | null>(null);
+  const [reviewQuestions, setReviewQuestions] = useState<ChoiceQuestion[] | null>(null);
 
+  const gradedQuestions = reviewQuestions ?? questions;
   const current = questions[index];
   const total = questions.length;
   const answeredCount = Object.keys(answers).length;
 
   const score = useMemo(
-    () => tally(questions, finalAnswers ?? {}),
-    [finalAnswers, questions],
+    () => tally(gradedQuestions, finalAnswers ?? {}),
+    [finalAnswers, gradedQuestions],
   );
 
   const kindLabels = task.practiceKinds.map(practiceLabel).join(" · ");
 
-  function logQuizOnce(locked: Record<string, number>) {
-    if (isReflect || loggedRef.current || questions.length === 0) return;
+  function logQuizOnce(locked: Record<string, number>, quiz: ChoiceQuestion[]) {
+    if (isReflect || loggedRef.current || quiz.length === 0) return;
     loggedRef.current = true;
-    const result = tally(questions, locked);
+    const result = tally(quiz, locked);
     const durationMs = timer.elapsedSeconds * 1000;
     setLoggedDurationMs(durationMs);
     appendQuizResult({
@@ -209,14 +220,16 @@ export function PracticeSession({
       total: result.total,
       durationMs,
     });
-    recordMissedQuestions(questions, locked);
-    rememberShownQuestions(questions);
+    recordMissedQuestions(quiz, locked);
+    rememberShownQuestions(quiz);
     timer.markQuizComplete();
   }
 
   function lockAndReview(locked: Record<string, number>) {
+    const quiz = quizRef.current.length > 0 ? quizRef.current : questions;
+    setReviewQuestions(quiz);
     setFinalAnswers(locked);
-    logQuizOnce(locked);
+    logQuizOnce(locked, quiz);
     setPhase("review");
   }
 
@@ -397,7 +410,7 @@ export function PracticeSession({
             </div>
           </div>
 
-          <QuestionReviewList questions={questions} answers={finalAnswers ?? {}} />
+          <QuestionReviewList questions={gradedQuestions} answers={finalAnswers ?? {}} />
 
           <div className="flex flex-wrap gap-3">
             <button
