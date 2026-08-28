@@ -2,10 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { recordMissedQuestions } from "@/lib/error-srs";
+import { recordMasteredQuestions } from "@/lib/question-mastery";
 import { formatClock } from "@/lib/practice-timer";
 import {
   buildMockExam,
   kindBadge,
+  rememberShownQuestions,
   tally,
   type ChoiceQuestion,
   type PracticeKind,
@@ -83,6 +85,8 @@ export function TimedMockExam() {
       durationMs,
     });
     recordMissedQuestions(questions, locked);
+    recordMasteredQuestions(questions, locked);
+    rememberShownQuestions(questions);
   }
 
   useEffect(() => {

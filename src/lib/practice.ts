@@ -1,4 +1,8 @@
 import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
+import { MEK_BANK } from "@/lib/practice-mek";
+import { loadMasteredQuestionIds } from "@/lib/question-mastery";
+
+export { MEK_BANK };
 
 export type PracticeKind =
   | "ord"
@@ -231,209 +235,6 @@ export const ORD_BANK: ChoiceQuestion[] = [
     options: ["osammanhängande", "sammanhängande / logiskt enhetlig", "lång", "poetisk"],
     correctIndex: 1,
     explain: "Ett koherent resonemang hänger ihop utan motsägelser.",
-  },
-];
-
-export const MEK_BANK: ChoiceQuestion[] = [
-  {
-    id: "mek-1",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Studien fick kritik för små urval; ____ visade uppföljningen samma mönster i en större population.",
-    options: ["därför", "emellertid", "exempelvis", "nämligen"],
-    correctIndex: 1,
-    explain: "”Emellertid” markerar kontrast: trots kritiken bekräftades resultatet.",
-  },
-  {
-    id: "mek-2",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Författaren undviker förenklingar och resonerar ____, med tydliga premisser och slutsatser.",
-    options: ["slarvigt", "koherent", "vardagligt", "impulsivt"],
-    correctIndex: 1,
-    explain: "Koherent passar formell sakprosa och betyder sammanhängande.",
-  },
-  {
-    id: "mek-3",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Priset på råvaran steg kraftigt. ____ tvingades flera företag se över sina marginaler.",
-    options: ["Trots det", "Följaktligen", "Däremot", "Ändå"],
-    correctIndex: 1,
-    explain: "”Följaktligen” uttrycker orsak → verkan.",
-  },
-  {
-    id: "mek-4",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Rapporten är ____ kort: den sammanfattar tre års forskning på tio sidor utan att tappa precisionsnivån.",
-    options: ["onödigt", "koncist", "vagt", "mundligt"],
-    correctIndex: 1,
-    explain: "Koncist = kortfattat och precist.",
-  },
-  {
-    id: "mek-5",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Vissa kritiker såg reformen som för snabb, ____ andra menade att den kom för sent.",
-    options: ["respektive", "medan", "således", "dessutom"],
-    correctIndex: 1,
-    explain: "”Medan” ställer två synsätt mot varandra i samma mening.",
-  },
-  {
-    id: "mek-6",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Hypotesen är intressant, ____ underlaget är ännu för tunt för långtgående slutsatser.",
-    options: ["och", "men", "så", "ty"],
-    correctIndex: 1,
-    explain: "”Men” signalerar reservation mot det föregående.",
-  },
-  {
-    id: "mek-7",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Beslutet fattades ____ efter flera utredningar, inte i hast.",
-    options: ["impulsivt", "överlagt", "slumpmässigt", "hemligt"],
-    correctIndex: 1,
-    explain: "Överlagt = efter noggrant övervägande.",
-  },
-  {
-    id: "mek-8",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Tekniken är lovande. ____ kvarstår frågor om kostnader och rättvisa tillgång.",
-    options: ["Således", "Likväl", "Exempelvis", "Nämligen"],
-    correctIndex: 1,
-    explain: "”Likväl” = trots det; kontrast efter positiv inledning.",
-  },
-  {
-    id: "mek-9",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Hon argumenterade ____: varje påstående backades upp med belägg.",
-    options: ["dogmatiskt", "sakligt", "svävande", "ironiskt"],
-    correctIndex: 1,
-    explain: "Sakligt passar ett resonemang med belägg.",
-  },
-  {
-    id: "mek-10",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Förslaget vann gehör ____ bland dem som tidigare varit skeptiska.",
-    options: ["i synnerhet", "oaktat", "följaktligen", "däremot"],
-    correctIndex: 0,
-    explain: "”I synnerhet” förstärker att det gäller särskilt den gruppen.",
-  },
-  {
-    id: "mek-11",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "____ rådande osäkerhet gick bolaget vidare med investeringen.",
-    options: ["Tack vare", "Oaktat", "På grund av", "Till följd av"],
-    correctIndex: 1,
-    explain: "”Oaktat” = trots; formellt och MEK-typiskt.",
-  },
-  {
-    id: "mek-12",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Texten rör sig mellan empiri och teori, ____ utan att blanda ihop nivåerna.",
-    options: ["dock", "alltså", "ty", "så"],
-    correctIndex: 0,
-    explain: "”Dock” tillför en nyanserad reservation.",
-  },
-  {
-    id: "mek-13",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Resultaten pekar i samma riktning; ____ kan man tala om ett robust fynd.",
-    options: ["ändå", "således", "däremot", "trots det"],
-    correctIndex: 1,
-    explain: "”Således” drar en logisk slutsats.",
-  },
-  {
-    id: "mek-14",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Kritikerna angrep metoden, ____ inte själva frågeställningen.",
-    options: ["respektive", "men", "såväl", "både"],
-    correctIndex: 1,
-    explain: "”Men” kontrasterar vad som angrips och vad som lämnas.",
-  },
-  {
-    id: "mek-15",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Författaren skriver i ett ____ register som passar vetenskaplig essäistik.",
-    options: ["talspråkligt", "formellt", "barnsligt", "slangbetonat"],
-    correctIndex: 1,
-    explain: "Formellt register hör till sakprosa/essä.",
-  },
-  {
-    id: "mek-16",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Ju mer data som tillkom, ____ tydligare blev mönstret.",
-    options: ["desto", "så", "och", "men"],
-    correctIndex: 0,
-    explain: "Korrelationen ju … desto … är standard.",
-  },
-  {
-    id: "mek-17",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Han var ____ till förslaget: varken entusiastisk eller avvisande.",
-    options: ["ambivalent", "entydig", "aggressiv", "indifferent på ett skämtsamt sätt"],
-    correctIndex: 0,
-    explain: "Ambivalent = kluven.",
-  },
-  {
-    id: "mek-18",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Analysen är skarp, ____ den ibland blir väl kategorisk.",
-    options: ["även om", "därför att", "så att", "utan att"],
-    correctIndex: 0,
-    explain: "”Även om” inför en medgivande bisats.",
-  },
-  {
-    id: "mek-19",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Projektet stoppades ____ bristande finansiering.",
-    options: ["trots", "på grund av", "oaktat", "i stället för"],
-    correctIndex: 1,
-    explain: "”På grund av” anger orsak.",
-  },
-  {
-    id: "mek-20",
-    kind: "mek",
-    prompt: "Välj det alternativ som bäst fyller i meningen.",
-    passage:
-      "Skillnaden mellan grupperna är liten, ____ statistiskt signifikant.",
-    options: ["dock", "alltså", "nämligen", "respektive"],
-    correctIndex: 0,
-    explain: "”Dock” = kontrast: liten men ändå signifikant.",
   },
 ];
 
@@ -760,7 +561,7 @@ export function saveLastShownQuestionIds(
   window.sessionStorage.setItem(lastShownQuestionsKey(kind), JSON.stringify(ids));
 }
 
-/** Spara visade fråge-id:n per delprov — nästa set prioriterar resten av banken. */
+/** Spara visade fråge-id:n per delprov — ackumuleras, skrivs inte över. */
 export function rememberShownQuestions(questions: ChoiceQuestion[]) {
   const byKind = new Map<Exclude<PracticeKind, "reflect">, string[]>();
   for (const q of questions) {
@@ -769,7 +570,16 @@ export function rememberShownQuestions(questions: ChoiceQuestion[]) {
     byKind.set(q.kind, list);
   }
   for (const [kind, ids] of byKind) {
-    saveLastShownQuestionIds(kind, ids);
+    const prev = loadLastShownQuestionIds(kind);
+    const seen = new Set(prev);
+    const merged = [...prev];
+    for (const id of ids) {
+      if (!seen.has(id)) {
+        seen.add(id);
+        merged.push(id);
+      }
+    }
+    saveLastShownQuestionIds(kind, merged);
   }
 }
 
@@ -781,14 +591,28 @@ export function buildQuiz(
 ): ChoiceQuestion[] {
   const bank = BANKS[kind];
   const avoid = avoidIds instanceof Set ? avoidIds : new Set(avoidIds);
-  const unseen = avoid.size === 0 ? bank : bank.filter((q) => !avoid.has(q.id));
-  const seen = avoid.size === 0 ? [] : bank.filter((q) => avoid.has(q.id));
-  const ordered =
-    unseen.length === 0
-      ? shuffle(seen, seed)
-      : seen.length === 0
-        ? shuffle(unseen, seed)
-        : [...shuffle(unseen, seed), ...shuffle(seen, `${seed}:seen`)];
+  const mastered = loadMasteredQuestionIds();
+
+  const unmasteredFresh: ChoiceQuestion[] = [];
+  const unmasteredRecent: ChoiceQuestion[] = [];
+  const masteredFresh: ChoiceQuestion[] = [];
+  const masteredRecent: ChoiceQuestion[] = [];
+
+  for (const q of bank) {
+    const isMastered = mastered.has(q.id);
+    const isRecent = avoid.has(q.id);
+    if (!isMastered && !isRecent) unmasteredFresh.push(q);
+    else if (!isMastered) unmasteredRecent.push(q);
+    else if (!isRecent) masteredFresh.push(q);
+    else masteredRecent.push(q);
+  }
+
+  const ordered = [
+    ...shuffle(unmasteredFresh, seed),
+    ...shuffle(unmasteredRecent, `${seed}:recent`),
+    ...shuffle(masteredFresh, `${seed}:mastered`),
+    ...shuffle(masteredRecent, `${seed}:mastered-recent`),
+  ];
   return ordered.slice(0, Math.min(count, ordered.length));
 }
 

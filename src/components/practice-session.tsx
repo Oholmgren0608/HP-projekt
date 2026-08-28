@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { recordMissedQuestions } from "@/lib/error-srs";
+import { recordMasteredQuestions } from "@/lib/question-mastery";
 import { QuestionReviewList } from "@/components/question-review";
 import {
   buildMixedQuiz,
@@ -55,10 +56,6 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
   useEffect(() => {
     sessionRef.current = session;
   }, [session]);
-
-  useEffect(() => {
-    runningSinceRef.current = runningSince;
-  }, [runningSince]);
 
   function persist(next: PracticeTimerState) {
     const stored = loadPracticeTimer(week, taskId);
@@ -122,6 +119,7 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
       else resume();
     };
     document.addEventListener("visibilitychange", onVisibility);
+    if (!document.hidden) resume();
     return () => {
       document.removeEventListener("visibilitychange", onVisibility);
       pause("leave");
@@ -221,6 +219,7 @@ export function PracticeSession({
       durationMs,
     });
     recordMissedQuestions(quiz, locked);
+    recordMasteredQuestions(quiz, locked);
     rememberShownQuestions(quiz);
     timer.markQuizComplete();
   }
