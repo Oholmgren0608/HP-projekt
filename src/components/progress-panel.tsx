@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePlan } from "@/components/plan-context";
+import { useHydrated } from "@/lib/use-hydrated";
 import { formatNorm } from "@/lib/hp-scores";
 import {
   HISTORY_EVENT,
@@ -25,12 +26,10 @@ function load(): HistoryEvent[] {
 
 export function ProgressPanel({ compact = false }: { compact?: boolean }) {
   const { plan } = usePlan();
-  const [events, setEvents] = useState<HistoryEvent[]>([]);
-  const [mounted, setMounted] = useState(false);
+  const [events, setEvents] = useState<HistoryEvent[]>(load);
+  const mounted = useHydrated();
 
   useEffect(() => {
-    setEvents(load());
-    setMounted(true);
     const refresh = () => setEvents(load());
     window.addEventListener(HISTORY_EVENT, refresh);
     window.addEventListener("storage", refresh);

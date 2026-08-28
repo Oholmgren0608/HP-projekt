@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { usePlan } from "@/components/plan-context";
+import { useHydrated } from "@/lib/use-hydrated";
 import { Progress } from "@/components/ui/progress";
 import {
   formatClock,
@@ -36,29 +37,36 @@ export function WeekTracker({
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const [progress, setProgress] = useState<ProgressMap>({});
-  const [scores, setScores] = useState<ScoreMap>({});
-  const [activeWeek, setActiveWeek] = useState(1);
-  const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
+  const [progress, setProgress] = useState<ProgressMap>(() =>
+    loadJson(WEEK_PROGRESS_KEY, {}),
+  );
+  const [scores, setScores] = useState<ScoreMap>(() =>
+    loadJson(WEEK_SCORES_KEY, {}),
+  );
+  const urlWeek = searchParams.get("week");
+  const urlStart = searchParams.get("start");
+  const [activeWeek, setActiveWeek] = useState(() => {
+    const week = Number(urlWeek);
+    return week && weeklyPlans.some((w) => w.week === week) ? week : 1;
+  });
+  const [activeTaskId, setActiveTaskId] = useState<string | null>(urlStart);
   const [sessionNonce, setSessionNonce] = useState(0);
-  const [ready, setReady] = useState(false);
+  const ready = useHydrated();
   const [timerTick, setTimerTick] = useState(0);
 
-  useEffect(() => {
-    setProgress(loadJson(WEEK_PROGRESS_KEY, {}));
-    setScores(loadJson(WEEK_SCORES_KEY, {}));
-    setReady(true);
-  }, []);
-
-  useEffect(() => {
-    if (!ready) return;
-    const week = Number(searchParams.get("week"));
-    const start = searchParams.get("start");
+  // Re-apply active week/task when the URL query params change after mount.
+  // Tracking the previous URL string and adjusting state during render avoids a
+  // setState-in-effect cascade.
+  const urlKey = `${urlWeek ?? ""}|${urlStart ?? ""}`;
+  const [syncedUrlKey, setSyncedUrlKey] = useState(urlKey);
+  if (urlKey !== syncedUrlKey) {
+    setSyncedUrlKey(urlKey);
+    const week = Number(urlWeek);
     if (week && weeklyPlans.some((w) => w.week === week)) {
       setActiveWeek(week);
     }
-    if (start) setActiveTaskId(start);
-  }, [ready, searchParams, weeklyPlans]);
+    if (urlStart) setActiveTaskId(urlStart);
+  }
 
   useEffect(() => {
     if (!ready) return;
@@ -71,12 +79,12 @@ export function WeekTracker({
     localStorage.setItem(WEEK_SCORES_KEY, JSON.stringify(scores));
   }, [scores, ready]);
 
-  useEffect(() => {
-    if (activeWeek > weeklyPlans.length) {
-      setActiveWeek(1);
-      setActiveTaskId(null);
-    }
-  }, [weeklyPlans.length, activeWeek]);
+  // Clamp the active week when the generated plan shrinks below the selection,
+  // adjusting state during render instead of in an effect (avoids cascading renders).
+  if (activeWeek > weeklyPlans.length && weeklyPlans.length > 0) {
+    setActiveWeek(1);
+    setActiveTaskId(null);
+  }
 
   const plan = weeklyPlans.find((w) => w.week === activeWeek) ?? weeklyPlans[0];
   const activeTask = plan?.tasks.find((t) => t.id === activeTaskId) ?? null;

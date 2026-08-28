@@ -162,21 +162,15 @@ export function PracticeSession({
 
   const timer = usePausablePracticeTimer(week, task.id, requiredMinutes);
   const seed = `w${week}:${task.id}:${timer.attemptId}`;
-  const quizSeedRef = useRef("");
-  const quizRef = useRef<ChoiceQuestion[]>([]);
 
   const kindsKey = task.practiceKinds.join(",");
   const questionCount = task.questionCount ?? 8;
   const questions = useMemo(() => {
     if (isReflect) return [] as ChoiceQuestion[];
-    if (quizRef.current.length > 0 && quizSeedRef.current === seed) {
-      return quizRef.current;
-    }
-    const built = buildMixedQuiz(task.practiceKinds, seed, questionCount);
-    quizSeedRef.current = seed;
-    quizRef.current = built;
-    return built;
-  }, [isReflect, seed, kindsKey, questionCount, task.practiceKinds]);
+    return buildMixedQuiz(task.practiceKinds, seed, questionCount);
+    // task.practiceKinds is represented by the stable kindsKey dependency.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isReflect, seed, kindsKey, questionCount]);
 
   const reflect = useMemo(
     () => (isReflect ? getReflectPrompt(seed) : null),
@@ -225,7 +219,7 @@ export function PracticeSession({
   }
 
   function lockAndReview(locked: Record<string, number>) {
-    const quiz = quizRef.current.length > 0 ? quizRef.current : questions;
+    const quiz = questions;
     setReviewQuestions(quiz);
     setFinalAnswers(locked);
     logQuizOnce(locked, quiz);

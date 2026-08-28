@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useHydrated } from "@/lib/use-hydrated";
 import { kindBadge, type PracticeKind } from "@/lib/practice";
 import {
   SRS_EVENT,
@@ -10,8 +11,8 @@ import {
 } from "@/lib/error-srs";
 
 export function DailySrsReview() {
-  const [cards, setCards] = useState<SrsCard[]>([]);
-  const [mounted, setMounted] = useState(false);
+  const [cards, setCards] = useState<SrsCard[]>(dueCards);
+  const mounted = useHydrated();
   const [revealed, setRevealed] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
   const [done, setDone] = useState(0);
@@ -21,8 +22,6 @@ export function DailySrsReview() {
   }
 
   useEffect(() => {
-    refresh();
-    setMounted(true);
     const onChange = () => refresh();
     window.addEventListener(SRS_EVENT, onChange);
     window.addEventListener("storage", onChange);

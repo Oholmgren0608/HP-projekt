@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useHydrated } from "@/lib/use-hydrated";
 import {
   ALL_FLASHCARDS,
   filterDeck,
@@ -50,36 +51,33 @@ function buildQueue(deck: Flashcard[], progress: ProgressMap): Flashcard[] {
 
 export function Flashcards() {
   const [filter, setFilter] = useState<DeckFilter>("alla");
-  const [progress, setProgress] = useState<ProgressMap>({});
-  const [ready, setReady] = useState(false);
-  const [queue, setQueue] = useState<Flashcard[]>([]);
+  const [progress, setProgress] = useState<ProgressMap>(loadProgress);
+  const ready = useHydrated();
+  const deck = useMemo(() => filterDeck(filter), [filter]);
+  const [queue, setQueue] = useState<Flashcard[]>(() => buildQueue(deck, progress));
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [sessionCorrect, setSessionCorrect] = useState(0);
   const [sessionWrong, setSessionWrong] = useState(0);
-
-  const deck = useMemo(() => filterDeck(filter), [filter]);
-
-  useEffect(() => {
-    setProgress(loadProgress());
-    setReady(true);
-  }, []);
 
   useEffect(() => {
     if (!ready) return;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
   }, [progress, ready]);
 
-  useEffect(() => {
-    if (!ready) return;
+  // Restart the session when the deck filter changes. Adjusting state during
+  // render (tracking the previous filter) avoids a setState-in-effect cascade.
+  // Progress is intentionally read from the current value without reshuffling
+  // mid-answer.
+  const [sessionFilter, setSessionFilter] = useState(filter);
+  if (filter !== sessionFilter) {
+    setSessionFilter(filter);
     setQueue(buildQueue(deck, progress));
     setIndex(0);
     setFlipped(false);
     setSessionCorrect(0);
     setSessionWrong(0);
-    // restart queue when filter changes; progress intentionally omitted to avoid reshuffle mid-answer
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter, ready, deck]);
+  }
 
   const card = queue[index] ?? null;
   const knownCount = Object.values(progress).filter(

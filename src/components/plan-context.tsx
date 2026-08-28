@@ -16,6 +16,7 @@ import {
   type ScoreInput,
 } from "@/lib/hp-scores";
 import { generatePlan, type GeneratedPlan } from "@/lib/plan-generator";
+import { useHydrated } from "@/lib/use-hydrated";
 import {
   ADAPT_PLAN_EVENT,
   loadAdaptPlanEnabled,
@@ -48,17 +49,13 @@ type PlanContextValue = {
 const PlanContext = createContext<PlanContextValue | null>(null);
 
 export function PlanProvider({ children }: { children: ReactNode }) {
-  const [scores, setScores] = useState<ScoreInput>(DEFAULT_SCORES);
-  const [ready, setReady] = useState(false);
-  const [adaptEnabled, setAdaptEnabledState] = useState(false);
+  const [scores, setScores] = useState<ScoreInput>(loadScores);
+  const ready = useHydrated();
+  const [adaptEnabled, setAdaptEnabledState] = useState(loadAdaptPlanEnabled);
   const [revision, setRevision] = useState(0);
 
   useEffect(() => {
-    const loaded = loadScores();
-    setScores(loaded);
-    ensureScoreBaseline(loaded);
-    setAdaptEnabledState(loadAdaptPlanEnabled());
-    setReady(true);
+    ensureScoreBaseline(loadScores());
   }, []);
 
   useEffect(() => {
@@ -97,6 +94,10 @@ export function PlanProvider({ children }: { children: ReactNode }) {
 
   const plan = useMemo(() => {
     if (!ready) return generatePlan(scores);
+    // `revision` is a change counter bumped by external-store events; reading it
+    // here (as a no-op void) keeps it a genuine, lint-clean dependency so the
+    // plan recomputes when persisted history/progress changes.
+    void revision;
     const trends = adaptEnabled ? detectPracticeTrends(scores, loadHistory()) : [];
     return generatePlan(scores, {
       adapt: adaptEnabled,

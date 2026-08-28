@@ -91,16 +91,18 @@ export function TimedMockExam() {
 
   useEffect(() => {
     if (phase !== "quiz") return;
-    const id = window.setInterval(() => setNow(Date.now()), 250);
+    const id = window.setInterval(() => {
+      const ts = Date.now();
+      setNow(ts);
+      // Auto-submit from the timer tick (event context) instead of a
+      // render-triggered effect, avoiding a setState-in-effect cascade.
+      if (deadline !== null && ts >= deadline) {
+        finishQuiz();
+      }
+    }, 250);
     return () => window.clearInterval(id);
-  }, [phase]);
-
-  useEffect(() => {
-    if (phase === "quiz" && remainingSeconds <= 0) {
-      finishQuiz();
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, remainingSeconds]);
+  }, [phase, deadline]);
 
   function submitAnswer() {
     if (selected === null || !questions[index]) return;

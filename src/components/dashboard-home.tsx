@@ -5,6 +5,7 @@ import Link from "next/link";
 import { DailySrsReview } from "@/components/daily-srs-review";
 import { usePlan } from "@/components/plan-context";
 import { ProgressPanel } from "@/components/progress-panel";
+import { useHydrated } from "@/lib/use-hydrated";
 import { formatNorm } from "@/lib/hp-scores";
 import {
   WEEK_PROGRESS_EVENT,
@@ -16,13 +17,11 @@ import {
 
 export function DashboardHome() {
   const { plan, ready } = usePlan();
-  const [progress, setProgress] = useState<ProgressMap>({});
-  const [mounted, setMounted] = useState(false);
+  const [progress, setProgress] = useState<ProgressMap>(loadWeekProgress);
+  const mounted = useHydrated();
 
   useEffect(() => {
     const refresh = () => setProgress(loadWeekProgress());
-    refresh();
-    setMounted(true);
     window.addEventListener(WEEK_PROGRESS_EVENT, refresh);
     window.addEventListener("storage", refresh);
     return () => {

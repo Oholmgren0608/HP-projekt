@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePlan } from "@/components/plan-context";
 import { generatePlan } from "@/lib/plan-generator";
 import {
@@ -15,9 +15,14 @@ export function ScoreForm() {
   const [draft, setDraft] = useState<ScoreInput>(scores);
   const [message, setMessage] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (ready) setDraft(scores);
-  }, [ready, scores]);
+  // Resync the editable draft whenever the persisted scores change (e.g. after
+  // async hydration or a reset). Adjusting state during render is the
+  // recommended pattern over a setState-in-effect.
+  const [syncedScores, setSyncedScores] = useState(scores);
+  if (ready && scores !== syncedScores) {
+    setSyncedScores(scores);
+    setDraft(scores);
+  }
 
   function setDelprov(id: (typeof DELPROV_META)[number]["id"], value: string) {
     const n = clampDelprov(id, Number(value));

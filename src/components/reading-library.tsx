@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useHydrated } from "@/lib/use-hydrated";
 import { LIBRARY_TEXTS, type LibraryText } from "@/lib/reading-library";
 
 const READ_KEY = "hp-reading-done-v1";
@@ -18,14 +19,9 @@ function loadRead(): ReadMap {
 
 export function ReadingLibrary() {
   const [activeId, setActiveId] = useState(LIBRARY_TEXTS[0]?.id ?? "");
-  const [read, setRead] = useState<ReadMap>({});
+  const [read, setRead] = useState<ReadMap>(loadRead);
   const [summary, setSummary] = useState("");
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setRead(loadRead());
-    setReady(true);
-  }, []);
+  const ready = useHydrated();
 
   useEffect(() => {
     if (!ready) return;
