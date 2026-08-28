@@ -17,6 +17,7 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 
 ## Vad appen innehåller
 
+- **Nivåtest** — för dig som är ny på HP eller känner dig rostig: ett kort, otidsatt minitest med frågor från alla delprov. Resultatet uppskattar din nivå och bygger veckoplanen automatiskt.
 - **Resultatformulär** — spara normpoäng, delprovspoäng, timmar/vecka och veckor till prov; planen genereras om lokalt
 - Interaktiv veckoplan med övningar (ORD, MEK, LÄS, ELF, DTK)
 - Flashcards, läsbibliotek och officiella gamla HP-prov (PDF från UHR)

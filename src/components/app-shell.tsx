@@ -52,8 +52,19 @@ function IconLight() {
   );
 }
 
+function IconGauge() {
+  return (
+    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path d="M4 18a8 8 0 1 1 16 0" />
+      <path d="M12 18l4.5-4.5" />
+      <circle cx="12" cy="18" r="1.2" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 const NAV = [
   { href: "/", label: "Hem", icon: IconHome },
+  { href: "/nivatest", label: "Nivåtest", icon: IconGauge },
   { href: "/plan", label: "Plan", icon: IconCalendar },
   { href: "/ova", label: "Öva", icon: IconBook },
   { href: "/prov", label: "Prov", icon: IconFile },
@@ -123,7 +134,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
         aria-label="Huvudmeny"
       >
-        <ul className="grid grid-cols-6">
+        <ul className="grid grid-cols-7">
           {NAV.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);

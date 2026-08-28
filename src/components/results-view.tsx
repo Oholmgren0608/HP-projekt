@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ScoreBar } from "@/components/plan-badges";
 import { usePlan } from "@/components/plan-context";
 import { ProgressPanel } from "@/components/progress-panel";
@@ -32,6 +33,13 @@ export function ResultsView() {
         <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
           Fyll i norm och råpoäng per delprov. När du sparar byggs prioritering, tidsfördelning
           och {profile.weeksUntilExam}-veckorsplan om.
+        </p>
+        <p className="mt-3 rounded-lg border border-[var(--line)] bg-white/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
+          Ny på HP eller osäker på dina poäng?{" "}
+          <Link href="/nivatest" className="font-medium text-[var(--accent)] hover:underline">
+            Gör ett nivåtest
+          </Link>{" "}
+          så fyller vi i poängen åt dig utifrån resultatet.
         </p>
       </div>
 
