@@ -2,12 +2,14 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { recordMissedQuestions } from "@/lib/error-srs";
+import { QuestionReviewList } from "@/components/question-review";
 import {
   buildMixedQuiz,
   getReflectPrompt,
   kindBadge,
   practiceLabel,
   rememberShownQuestions,
+  tally,
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
@@ -36,18 +38,6 @@ type Props = {
 };
 
 type Phase = "quiz" | "review" | "reflect";
-
-const MEK_BLANK = /_{2,}/;
-
-function fillMekPassage(passage: string, word: string): { before: string; word: string; after: string } | null {
-  const match = passage.match(MEK_BLANK);
-  if (!match || match.index === undefined) return null;
-  return {
-    before: passage.slice(0, match.index),
-    word,
-    after: passage.slice(match.index + match[0].length),
-  };
-}
 
 function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes: number) {
   const requiredMs = requiredMinutes * 60 * 1000;
@@ -188,6 +178,7 @@ export function PracticeSession({
 
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [finalAnswers, setFinalAnswers] = useState<Record<string, number> | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [phase, setPhase] = useState<Phase>(isReflect ? "reflect" : "quiz");
   const [reflectAnswers, setReflectAnswers] = useState<string[]>([]);
@@ -198,35 +189,35 @@ export function PracticeSession({
   const total = questions.length;
   const answeredCount = Object.keys(answers).length;
 
-  const score = useMemo(() => {
-    let correct = 0;
-    for (const q of questions) {
-      if (answers[q.id] === q.correctIndex) correct += 1;
-    }
-    return { correct, total: questions.length };
-  }, [answers, questions]);
+  const score = useMemo(
+    () => tally(questions, finalAnswers ?? {}),
+    [finalAnswers, questions],
+  );
 
   const kindLabels = task.practiceKinds.map(practiceLabel).join(" · ");
 
-  function logQuizOnce(finalAnswers: Record<string, number>) {
+  function logQuizOnce(locked: Record<string, number>) {
     if (isReflect || loggedRef.current || questions.length === 0) return;
     loggedRef.current = true;
-    let correct = 0;
-    for (const q of questions) {
-      if (finalAnswers[q.id] === q.correctIndex) correct += 1;
-    }
+    const result = tally(questions, locked);
     const durationMs = timer.elapsedSeconds * 1000;
     setLoggedDurationMs(durationMs);
     appendQuizResult({
       source: "week",
       kinds: task.practiceKinds,
-      correct,
-      total: questions.length,
+      correct: result.correct,
+      total: result.total,
       durationMs,
     });
-    recordMissedQuestions(questions, finalAnswers);
+    recordMissedQuestions(questions, locked);
     rememberShownQuestions(questions);
     timer.markQuizComplete();
+  }
+
+  function lockAndReview(locked: Record<string, number>) {
+    setFinalAnswers(locked);
+    logQuizOnce(locked);
+    setPhase("review");
   }
 
   function submitAnswer() {
@@ -235,12 +226,20 @@ export function PracticeSession({
     setAnswers(nextAnswers);
 
     if (index >= total - 1) {
-      logQuizOnce(nextAnswers);
-      setPhase("review");
+      lockAndReview(nextAnswers);
       return;
     }
     setIndex((i) => i + 1);
-    setSelected(null);
+    setSelected(nextAnswers[questions[index + 1]?.id] ?? null);
+  }
+
+  function goPrevious() {
+    if (index <= 0 || !current) return;
+    const nextAnswers =
+      selected !== null ? { ...answers, [current.id]: selected } : answers;
+    if (nextAnswers !== answers) setAnswers(nextAnswers);
+    setIndex((i) => i - 1);
+    setSelected(nextAnswers[questions[index - 1]?.id] ?? null);
   }
 
   function handleClose() {
@@ -358,12 +357,7 @@ export function PracticeSession({
             </button>
             <button
               type="button"
-              onClick={() => {
-                if (index > 0) {
-                  setIndex((i) => i - 1);
-                  setSelected(answers[questions[index - 1]?.id] ?? null);
-                }
-              }}
+              onClick={goPrevious}
               disabled={index === 0}
               className="rounded-md border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)] disabled:opacity-40"
             >
@@ -403,89 +397,7 @@ export function PracticeSession({
             </div>
           </div>
 
-          <ul className="space-y-3">
-            {questions.map((q, qi) => {
-              const chosen = answers[q.id];
-              const ok = chosen === q.correctIndex;
-              const correctWord = q.options[q.correctIndex];
-              const chosenWord = chosen !== undefined ? q.options[chosen] : null;
-              const filledCorrect =
-                q.kind === "mek" && q.passage
-                  ? fillMekPassage(q.passage, correctWord)
-                  : null;
-              const filledChosen =
-                q.kind === "mek" && q.passage && chosenWord && !ok
-                  ? fillMekPassage(q.passage, chosenWord)
-                  : null;
-
-              return (
-                <li
-                  key={q.id}
-                  className={`rounded-lg border px-4 py-3 ${
-                    ok
-                      ? "border-[var(--lagoon)]/40 bg-[#eef8f6]"
-                      : "border-[#9a3412]/30 bg-[#fff7f3]"
-                  }`}
-                >
-                  <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
-                    <span>
-                      {qi + 1}. {kindBadge(q.kind)}
-                    </span>
-                    <span>{ok ? "Rätt" : "Fel"}</span>
-                  </div>
-                  <p className="mt-1 font-medium text-[var(--ink)]">{q.prompt}</p>
-
-                  {filledCorrect ? (
-                    <div className="mt-3 space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
-                        Rätt mening
-                      </p>
-                      <p className="rounded-md border border-[var(--lagoon)]/30 bg-white px-3 py-2 text-[15px] leading-relaxed text-[var(--ink)]">
-                        {filledCorrect.before}
-                        <mark className="rounded bg-[#c8ebe7] px-1 font-semibold text-[var(--ink)]">
-                          {filledCorrect.word}
-                        </mark>
-                        {filledCorrect.after}
-                      </p>
-                      {filledChosen ? (
-                        <>
-                          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
-                            Din mening
-                          </p>
-                          <p className="rounded-md border border-[#9a3412]/25 bg-white px-3 py-2 text-[15px] leading-relaxed text-[var(--ink-muted)]">
-                            {filledChosen.before}
-                            <mark className="rounded bg-[#fde8e1] px-1 font-semibold text-[#9a3412] line-through decoration-[#9a3412]/70">
-                              {filledChosen.word}
-                            </mark>
-                            {filledChosen.after}
-                          </p>
-                        </>
-                      ) : null}
-                    </div>
-                  ) : (
-                    <>
-                      {q.passage && q.kind !== "mek" ? (
-                        <p className="mt-2 whitespace-pre-wrap rounded-md border border-[var(--line)] bg-white/70 px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]">
-                          {q.passage}
-                        </p>
-                      ) : null}
-                      {!ok ? (
-                        <p className="mt-1 text-sm text-[var(--ink-muted)]">
-                          Ditt svar: {chosenWord ?? "—"} · Rätt: {correctWord}
-                        </p>
-                      ) : (
-                        <p className="mt-1 text-sm text-[var(--ink-muted)]">
-                          Rätt svar: {correctWord}
-                        </p>
-                      )}
-                    </>
-                  )}
-
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{q.explain}</p>
-                </li>
-              );
-            })}
-          </ul>
+          <QuestionReviewList questions={questions} answers={finalAnswers ?? {}} />
 
           <div className="flex flex-wrap gap-3">
             <button

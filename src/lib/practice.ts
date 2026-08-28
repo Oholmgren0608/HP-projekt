@@ -870,3 +870,15 @@ export function defaultQuestionCount(kind: PracticeKind): number {
 export function buildMockExam(seed: string, count = 24): ChoiceQuestion[] {
   return buildMixedQuiz(MOCK_KINDS, seed, count);
 }
+
+/** Räknar rätt mot en låst svarskopia — obesvarade räknas som fel. */
+export function tally(
+  questions: readonly ChoiceQuestion[],
+  answers: Record<string, number>,
+): { correct: number; total: number } {
+  let correct = 0;
+  for (const q of questions) {
+    if (answers[q.id] === q.correctIndex) correct += 1;
+  }
+  return { correct, total: questions.length };
+}

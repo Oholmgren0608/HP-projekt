@@ -6,9 +6,11 @@ import { formatClock } from "@/lib/practice-timer";
 import {
   buildMockExam,
   kindBadge,
+  tally,
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
+import { QuestionReviewList } from "@/components/question-review";
 import { PaceNotice } from "@/components/pace-notice";
 import { paceVerdict } from "@/lib/practice-pace";
 import { appendQuizResult, estimateNormFromPercent } from "@/lib/progress-history";
@@ -23,6 +25,7 @@ export function TimedMockExam() {
   const [seed, setSeed] = useState("");
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [finalAnswers, setFinalAnswers] = useState<Record<string, number> | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [deadline, setDeadline] = useState<number | null>(null);
   const [now, setNow] = useState(() => Date.now());
@@ -38,7 +41,10 @@ export function TimedMockExam() {
   const remainingSeconds =
     deadline === null ? LIMIT_SECONDS : Math.max(0, Math.ceil((deadline - now) / 1000));
 
-  const score = useMemo(() => tally(questions, answers), [answers, questions]);
+  const score = useMemo(
+    () => tally(questions, finalAnswers ?? {}),
+    [finalAnswers, questions],
+  );
 
   function start() {
     loggedRef.current = false;
@@ -47,6 +53,7 @@ export function TimedMockExam() {
     setSeed(`mock:${Date.now()}`);
     setIndex(0);
     setAnswers({});
+    setFinalAnswers(null);
     setSelected(null);
     setDeadline(Date.now() + LIMIT_SECONDS * 1000);
     setNow(Date.now());
@@ -54,17 +61,18 @@ export function TimedMockExam() {
   }
 
   function finishQuiz(nextAnswers?: Record<string, number>) {
-    const ans =
+    const locked =
       nextAnswers ??
       (selected !== null && questions[index]
         ? { ...answers, [questions[index].id]: selected }
         : answers);
-    if (ans !== answers) setAnswers(ans);
+    setAnswers(locked);
+    setFinalAnswers(locked);
     setPhase("review");
     if (loggedRef.current || questions.length === 0) return;
     loggedRef.current = true;
     const kinds = [...new Set(questions.map((q) => q.kind))] as PracticeKind[];
-    const result = tally(questions, ans);
+    const result = tally(questions, locked);
     const durationMs = startTsRef.current ? Date.now() - startTsRef.current : undefined;
     if (durationMs && durationMs > 0) setLoggedDurationMs(durationMs);
     appendQuizResult({
@@ -74,7 +82,7 @@ export function TimedMockExam() {
       total: result.total,
       durationMs,
     });
-    recordMissedQuestions(questions, ans);
+    recordMissedQuestions(questions, locked);
   }
 
   useEffect(() => {
@@ -253,39 +261,9 @@ export function TimedMockExam() {
         />
       </div>
 
-      <ul className="mt-5 space-y-3">
-        {questions.map((q, qi) => {
-          const chosen = answers[q.id];
-          const ok = chosen === q.correctIndex;
-          return (
-            <li
-              key={q.id}
-              className={`rounded-lg border px-4 py-3 ${
-                ok
-                  ? "border-[var(--lagoon)]/40 bg-[#eef8f6]"
-                  : "border-[#9a3412]/30 bg-[#fff7f3]"
-              }`}
-            >
-              <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
-                <span>
-                  {qi + 1}. {kindBadge(q.kind)}
-                </span>
-                <span>{ok ? "Rätt" : chosen === undefined ? "Obesvarad" : "Fel"}</span>
-              </div>
-              <p className="mt-1 font-medium text-[var(--ink)]">{q.prompt}</p>
-              {q.passage ? (
-                <p className="mt-2 whitespace-pre-wrap text-sm text-[var(--ink-soft)]">{q.passage}</p>
-              ) : null}
-              <p className="mt-1 text-sm text-[var(--ink-muted)]">
-                {ok
-                  ? `Rätt svar: ${q.options[q.correctIndex]}`
-                  : `Ditt svar: ${chosen !== undefined ? q.options[chosen] : "—"} · Rätt: ${q.options[q.correctIndex]}`}
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{q.explain}</p>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="mt-5">
+        <QuestionReviewList questions={questions} answers={finalAnswers ?? {}} />
+      </div>
 
       <button
         type="button"
@@ -296,12 +274,4 @@ export function TimedMockExam() {
       </button>
     </div>
   );
-}
-
-function tally(questions: ChoiceQuestion[], answers: Record<string, number>) {
-  let correct = 0;
-  for (const q of questions) {
-    if (answers[q.id] === q.correctIndex) correct += 1;
-  }
-  return { correct, total: questions.length };
 }
