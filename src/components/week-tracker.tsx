@@ -5,7 +5,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { usePlan } from "@/components/plan-context";
 import { Progress } from "@/components/ui/progress";
-import { formatClock, loadPracticeTimer, newPracticeAttempt, resetPracticeSession } from "@/lib/practice-timer";
+import {
+  formatClock,
+  isPracticeInProgress,
+  loadPracticeTimer,
+  newPracticeAttempt,
+  resetPracticeSession,
+} from "@/lib/practice-timer";
 import { sectionLabel, type StudyTask } from "@/lib/study-plan";
 import {
   WEEK_PROGRESS_KEY,
@@ -241,9 +247,9 @@ export function WeekTracker({
             const key = taskKey(plan.week, task.id);
             const checked = Boolean(progress[key]);
             const score = scores[key];
-            const bankedMin = Math.floor(
-              (loadPracticeTimer(plan.week, task.id)?.accumulatedMs ?? 0) / 60000,
-            );
+            const timerState = loadPracticeTimer(plan.week, task.id);
+            const bankedMin = Math.floor((timerState?.accumulatedMs ?? 0) / 60000);
+            const inProgressQuiz = isPracticeInProgress(timerState);
             void timerTick;
             return (
               <li key={task.id}>
@@ -293,6 +299,8 @@ export function WeekTracker({
                           onClick={() => {
                             if (checked) {
                               resetPracticeSession(plan.week, task.id);
+                            } else if (!inProgressQuiz) {
+                              newPracticeAttempt(plan.week, task.id);
                             }
                             setActiveTaskId(task.id);
                           }}
@@ -300,7 +308,7 @@ export function WeekTracker({
                         >
                           {checked
                             ? "Öva igen (nya frågor)"
-                            : bankedMin > 0
+                            : inProgressQuiz
                               ? "Fortsätt övning"
                               : "Starta övning"}
                         </button>

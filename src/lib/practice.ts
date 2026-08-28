@@ -733,14 +733,63 @@ function shuffle<T>(items: T[], seed: string): T[] {
   return arr;
 }
 
+export function lastShownQuestionsKey(kind: Exclude<PracticeKind, "reflect">) {
+  return `hp-last-shown-questions:${kind}`;
+}
+
+export function loadLastShownQuestionIds(
+  kind: Exclude<PracticeKind, "reflect">,
+): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.sessionStorage.getItem(lastShownQuestionsKey(kind));
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((id): id is string => typeof id === "string" && id.length > 0);
+  } catch {
+    return [];
+  }
+}
+
+export function saveLastShownQuestionIds(
+  kind: Exclude<PracticeKind, "reflect">,
+  ids: string[],
+) {
+  if (typeof window === "undefined") return;
+  window.sessionStorage.setItem(lastShownQuestionsKey(kind), JSON.stringify(ids));
+}
+
+/** Spara visade fråge-id:n per delprov — nästa set prioriterar resten av banken. */
+export function rememberShownQuestions(questions: ChoiceQuestion[]) {
+  const byKind = new Map<Exclude<PracticeKind, "reflect">, string[]>();
+  for (const q of questions) {
+    const list = byKind.get(q.kind) ?? [];
+    list.push(q.id);
+    byKind.set(q.kind, list);
+  }
+  for (const [kind, ids] of byKind) {
+    saveLastShownQuestionIds(kind, ids);
+  }
+}
+
 export function buildQuiz(
   kind: Exclude<PracticeKind, "reflect">,
   seed: string,
   count: number,
+  avoidIds: ReadonlySet<string> | readonly string[] = [],
 ): ChoiceQuestion[] {
   const bank = BANKS[kind];
-  const shuffled = shuffle(bank, seed);
-  return shuffled.slice(0, Math.min(count, shuffled.length));
+  const avoid = avoidIds instanceof Set ? avoidIds : new Set(avoidIds);
+  const unseen = avoid.size === 0 ? bank : bank.filter((q) => !avoid.has(q.id));
+  const seen = avoid.size === 0 ? [] : bank.filter((q) => avoid.has(q.id));
+  const ordered =
+    unseen.length === 0
+      ? shuffle(seen, seed)
+      : seen.length === 0
+        ? shuffle(unseen, seed)
+        : [...shuffle(unseen, seed), ...shuffle(seen, `${seed}:seen`)];
+  return ordered.slice(0, Math.min(count, ordered.length));
 }
 
 export function buildMixedQuiz(
@@ -754,7 +803,9 @@ export function buildMixedQuiz(
   const perKind = Math.max(1, Math.ceil(count / quizKinds.length));
   const pooled: ChoiceQuestion[] = [];
   for (const kind of quizKinds) {
-    pooled.push(...buildQuiz(kind, `${seed}:${kind}`, perKind + 2));
+    pooled.push(
+      ...buildQuiz(kind, `${seed}:${kind}`, perKind + 2, loadLastShownQuestionIds(kind)),
+    );
   }
   return shuffle(pooled, `${seed}:mix`).slice(0, Math.min(count, pooled.length));
 }

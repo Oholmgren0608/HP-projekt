@@ -7,6 +7,7 @@ import {
   getReflectPrompt,
   kindBadge,
   practiceLabel,
+  rememberShownQuestions,
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
@@ -17,6 +18,8 @@ import {
   clearPracticeTimer,
   formatClock,
   loadOrStartPracticeSession,
+  loadPracticeTimer,
+  savePausedPracticeTimer,
   savePracticeTimer,
   type PracticeTimerState,
 } from "@/lib/practice-timer";
@@ -68,7 +71,10 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
   }, [runningSince]);
 
   function persist(next: PracticeTimerState) {
-    savePracticeTimer(week, taskId, next);
+    const stored = loadPracticeTimer(week, taskId);
+    if (!stored || stored.attemptId === next.attemptId) {
+      savePracticeTimer(week, taskId, next);
+    }
     setSession(next);
     sessionRef.current = next;
   }
@@ -79,17 +85,27 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
       setPaused(true);
       return sessionRef.current;
     }
-    const next: PracticeTimerState = {
-      ...sessionRef.current,
-      accumulatedMs:
-        sessionRef.current.accumulatedMs + Math.max(0, Date.now() - since),
-    };
+    const extraMs = Math.max(0, Date.now() - since);
     runningSinceRef.current = null;
     setRunningSince(null);
     setPaused(true);
-    persist(next);
+    const { saved, replacedByNewerAttempt } = savePausedPracticeTimer(
+      week,
+      taskId,
+      sessionRef.current,
+      extraMs,
+    );
+    if (!replacedByNewerAttempt) {
+      setSession(saved);
+      sessionRef.current = saved;
+    }
     void reason;
-    return next;
+    return replacedByNewerAttempt ? sessionRef.current : saved;
+  }
+
+  function markQuizComplete() {
+    const next: PracticeTimerState = { ...sessionRef.current, quizComplete: true };
+    persist(next);
   }
 
   function resume() {
@@ -139,6 +155,7 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
     progress,
     requiredMinutes,
     pause,
+    markQuizComplete,
     clear: () => clearPracticeTimer(week, taskId),
   };
 }
@@ -208,6 +225,8 @@ export function PracticeSession({
       durationMs,
     });
     recordMissedQuestions(questions, finalAnswers);
+    rememberShownQuestions(questions);
+    timer.markQuizComplete();
   }
 
   function submitAnswer() {
