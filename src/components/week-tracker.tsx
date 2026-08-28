@@ -5,13 +5,22 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { usePlan } from "@/components/plan-context";
 import { Progress } from "@/components/ui/progress";
-import { formatClock, loadPracticeTimer, resetPracticeSession } from "@/lib/practice-timer";
+import {
+  formatClock,
+  isPracticeInProgress,
+  loadPracticeTimer,
+  newPracticeAttempt,
+  resetPracticeSession,
+} from "@/lib/practice-timer";
 import { sectionLabel, type StudyTask } from "@/lib/study-plan";
 import {
   WEEK_PROGRESS_KEY,
   WEEK_SCORES_KEY,
+  clearLockedWeek,
   emitWeekProgressChanged,
+  findNextIncompleteAfter,
   loadJson,
+  saveLockedWeekIfAbsent,
   taskKey,
   type ProgressMap,
   type ScoreMap,
@@ -31,6 +40,7 @@ export function WeekTracker({
   const [scores, setScores] = useState<ScoreMap>({});
   const [activeWeek, setActiveWeek] = useState(1);
   const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
+  const [sessionNonce, setSessionNonce] = useState(0);
   const [ready, setReady] = useState(false);
   const [timerTick, setTimerTick] = useState(0);
 
@@ -90,6 +100,7 @@ export function WeekTracker({
   const weekDone = plan.tasks.filter((t) => progress[taskKey(plan.week, t.id)]).length;
 
   function markComplete(task: StudyTask, result: { correct: number; total: number }) {
+    saveLockedWeekIfAbsent(plan);
     const key = taskKey(plan.week, task.id);
     setProgress((prev) => ({ ...prev, [key]: true }));
     setScores((prev) => ({
@@ -100,6 +111,7 @@ export function WeekTracker({
   }
 
   function resetWeek() {
+    clearLockedWeek(plan.week);
     setProgress((prev) => {
       const next = { ...prev };
       for (const t of plan.tasks) {
@@ -118,8 +130,15 @@ export function WeekTracker({
   }
 
   if (activeTask) {
+    const nextIncomplete = findNextIncompleteAfter(
+      weeklyPlans,
+      progress,
+      plan.week,
+      activeTask.id,
+    );
     return (
       <PracticeSession
+        key={`${plan.week}:${activeTask.id}:${sessionNonce}`}
         task={activeTask}
         week={plan.week}
         onClose={() => {
@@ -131,6 +150,22 @@ export function WeekTracker({
           markComplete(activeTask, result);
           setTimerTick((n) => n + 1);
           router.replace("/plan", { scroll: false });
+        }}
+        onRestartSame={() => {
+          newPracticeAttempt(plan.week, activeTask.id);
+          setSessionNonce((n) => n + 1);
+        }}
+        hasNextTask={Boolean(nextIncomplete)}
+        onNextTask={() => {
+          if (!nextIncomplete) return;
+          setActiveWeek(nextIncomplete.week);
+          setActiveTaskId(nextIncomplete.task.id);
+          setSessionNonce((n) => n + 1);
+          setTimerTick((n) => n + 1);
+          router.replace(
+            `/plan?week=${nextIncomplete.week}&start=${encodeURIComponent(nextIncomplete.task.id)}`,
+            { scroll: false },
+          );
         }}
       />
     );
@@ -212,9 +247,9 @@ export function WeekTracker({
             const key = taskKey(plan.week, task.id);
             const checked = Boolean(progress[key]);
             const score = scores[key];
-            const bankedMin = Math.floor(
-              (loadPracticeTimer(plan.week, task.id)?.accumulatedMs ?? 0) / 60000,
-            );
+            const timerState = loadPracticeTimer(plan.week, task.id);
+            const bankedMin = Math.floor((timerState?.accumulatedMs ?? 0) / 60000);
+            const inProgressQuiz = isPracticeInProgress(timerState);
             void timerTick;
             return (
               <li key={task.id}>
@@ -264,6 +299,8 @@ export function WeekTracker({
                           onClick={() => {
                             if (checked) {
                               resetPracticeSession(plan.week, task.id);
+                            } else if (!inProgressQuiz) {
+                              newPracticeAttempt(plan.week, task.id);
                             }
                             setActiveTaskId(task.id);
                           }}
@@ -271,7 +308,7 @@ export function WeekTracker({
                         >
                           {checked
                             ? "Öva igen (nya frågor)"
-                            : bankedMin > 0
+                            : inProgressQuiz
                               ? "Fortsätt övning"
                               : "Starta övning"}
                         </button>

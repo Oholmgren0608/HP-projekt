@@ -5,7 +5,6 @@ import { kindBadge, type PracticeKind } from "@/lib/practice";
 import {
   SRS_EVENT,
   dueCards,
-  dueCount,
   reviewSrsCard,
   type SrsCard,
 } from "@/lib/error-srs";
@@ -13,8 +12,8 @@ import {
 export function DailySrsReview() {
   const [cards, setCards] = useState<SrsCard[]>([]);
   const [mounted, setMounted] = useState(false);
-  const [index, setIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
+  const [selected, setSelected] = useState<number | null>(null);
   const [done, setDone] = useState(0);
 
   function refresh() {
@@ -33,17 +32,9 @@ export function DailySrsReview() {
     };
   }, []);
 
-  useEffect(() => {
-    setIndex(0);
-    setRevealed(false);
-  }, [cards.length]);
-
   if (!mounted) return null;
 
-  const remaining = dueCount();
-  const card = cards[index];
-
-  if (remaining === 0) {
+  if (cards.length === 0) {
     return (
       <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
@@ -62,13 +53,24 @@ export function DailySrsReview() {
     );
   }
 
-  if (!card) return null;
+  const card = cards[0];
+  const options = card.options ?? [];
+  const hasOptions = options.length > 0;
+  const chosenText = selected !== null ? options[selected] : null;
+  const pickedCorrect = chosenText !== null && chosenText === card.back;
 
   function grade(remembered: boolean) {
     reviewSrsCard(card.id, remembered);
     setDone((n) => n + 1);
     setRevealed(false);
+    setSelected(null);
     setCards(dueCards());
+  }
+
+  function pickOption(index: number) {
+    if (revealed) return;
+    setSelected(index);
+    setRevealed(true);
   }
 
   return (
@@ -79,7 +81,7 @@ export function DailySrsReview() {
             Dagens repetition
           </p>
           <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-            {remaining} felkort att repetera
+            {cards.length} felkort att repetera
           </h3>
         </div>
         <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
@@ -87,13 +89,83 @@ export function DailySrsReview() {
         </span>
       </div>
       <p className="mt-2 text-sm text-[var(--ink-muted)]">
-        Enkel spaced repetition (SM-2-liknande). Kommer ihåg → längre intervall; glömt → i morgon.
+        {hasOptions
+          ? "Välj det alternativ du tror är rätt. Sedan: kommer du ihåg, eller behöver du se kortet igen i morgon."
+          : "Visa svaret, sedan om du kommer ihåg eller behöver se kortet igen i morgon."}
       </p>
 
-      <p className="mt-5 text-lg font-medium text-[var(--ink)]">{card.front}</p>
+      {card.passage ? (
+        <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
+          {card.passage}
+        </div>
+      ) : null}
+
+      <p className={`text-lg font-medium text-[var(--ink)] ${card.passage ? "mt-4" : "mt-5"}`}>
+        {card.front}
+      </p>
+
+      {hasOptions ? (
+        <div className="mt-4 space-y-2" role="radiogroup" aria-label="Svarsalternativ">
+          {options.map((opt, i) => {
+            const isCorrect = opt === card.back;
+            const isChosen = selected === i;
+            const showResult = revealed;
+            const showCorrect = showResult && isCorrect;
+            const showWrong = showResult && isChosen && !isCorrect;
+
+            return (
+              <button
+                key={`${card.id}-${i}`}
+                type="button"
+                role="radio"
+                aria-checked={isChosen}
+                disabled={revealed}
+                onClick={() => pickOption(i)}
+                className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition disabled:opacity-100 sm:px-4 ${
+                  showCorrect
+                    ? "border-[var(--lagoon)]/40 bg-[#eef8f6]"
+                    : showWrong
+                      ? "border-[#9a3412]/30 bg-[#fff7f3]"
+                      : revealed
+                        ? "cursor-default border-[var(--line)] bg-[var(--paper)]"
+                        : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
+                }`}
+              >
+                <span
+                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
+                    showCorrect
+                      ? "border-[var(--lagoon)] bg-[var(--lagoon)] text-white"
+                      : showWrong
+                        ? "border-[#9a3412] bg-[#9a3412] text-white"
+                        : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
+                  }`}
+                >
+                  {String.fromCharCode(65 + i)}
+                </span>
+                <span className="flex-1 text-[var(--ink)]">{opt}</span>
+                {showCorrect ? (
+                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--lagoon)]">
+                    Rätt
+                  </span>
+                ) : null}
+                {showWrong ? (
+                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[#9a3412]">
+                    Fel
+                  </span>
+                ) : null}
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
 
       {revealed ? (
         <div className="mt-4 space-y-3">
+          {hasOptions && selected !== null ? (
+            <p className="text-sm font-medium text-[var(--ink)]">
+              {pickedCorrect ? "Rätt — du valde rätt alternativ." : "Fel — du valde fel alternativ."}
+            </p>
+          ) : null}
           <p className="rounded-lg border border-[var(--lagoon)]/30 bg-[#eef8f6] px-4 py-3 text-[var(--ink)]">
             <span className="block text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
               Rätt svar

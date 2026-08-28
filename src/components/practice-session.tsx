@@ -2,20 +2,27 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { recordMissedQuestions } from "@/lib/error-srs";
+import { recordMasteredQuestions } from "@/lib/question-mastery";
+import { QuestionReviewList } from "@/components/question-review";
 import {
   buildMixedQuiz,
   getReflectPrompt,
   kindBadge,
   practiceLabel,
+  rememberShownQuestions,
+  tally,
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
+import { PaceNotice } from "@/components/pace-notice";
+import { paceVerdict } from "@/lib/practice-pace";
 import { appendQuizResult } from "@/lib/progress-history";
 import {
   clearPracticeTimer,
   formatClock,
   loadOrStartPracticeSession,
   loadPracticeTimer,
+  savePausedPracticeTimer,
   savePracticeTimer,
   type PracticeTimerState,
 } from "@/lib/practice-timer";
@@ -26,21 +33,12 @@ type Props = {
   week: number;
   onClose: () => void;
   onComplete: (result: { correct: number; total: number }) => void;
+  onRestartSame: () => void;
+  hasNextTask: boolean;
+  onNextTask: () => void;
 };
 
 type Phase = "quiz" | "review" | "reflect";
-
-const MEK_BLANK = /_{2,}/;
-
-function fillMekPassage(passage: string, word: string): { before: string; word: string; after: string } | null {
-  const match = passage.match(MEK_BLANK);
-  if (!match || match.index === undefined) return null;
-  return {
-    before: passage.slice(0, match.index),
-    word,
-    after: passage.slice(match.index + match[0].length),
-  };
-}
 
 function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes: number) {
   const requiredMs = requiredMinutes * 60 * 1000;
@@ -59,12 +57,11 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
     sessionRef.current = session;
   }, [session]);
 
-  useEffect(() => {
-    runningSinceRef.current = runningSince;
-  }, [runningSince]);
-
   function persist(next: PracticeTimerState) {
-    savePracticeTimer(week, taskId, next);
+    const stored = loadPracticeTimer(week, taskId);
+    if (!stored || stored.attemptId === next.attemptId) {
+      savePracticeTimer(week, taskId, next);
+    }
     setSession(next);
     sessionRef.current = next;
   }
@@ -75,17 +72,27 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
       setPaused(true);
       return sessionRef.current;
     }
-    const next: PracticeTimerState = {
-      ...sessionRef.current,
-      accumulatedMs:
-        sessionRef.current.accumulatedMs + Math.max(0, Date.now() - since),
-    };
+    const extraMs = Math.max(0, Date.now() - since);
     runningSinceRef.current = null;
     setRunningSince(null);
     setPaused(true);
-    persist(next);
+    const { saved, replacedByNewerAttempt } = savePausedPracticeTimer(
+      week,
+      taskId,
+      sessionRef.current,
+      extraMs,
+    );
+    if (!replacedByNewerAttempt) {
+      setSession(saved);
+      sessionRef.current = saved;
+    }
     void reason;
-    return next;
+    return replacedByNewerAttempt ? sessionRef.current : saved;
+  }
+
+  function markQuizComplete() {
+    const next: PracticeTimerState = { ...sessionRef.current, quizComplete: true };
+    persist(next);
   }
 
   function resume() {
@@ -112,6 +119,7 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
       else resume();
     };
     document.addEventListener("visibilitychange", onVisibility);
+    if (!document.hidden) resume();
     return () => {
       document.removeEventListener("visibilitychange", onVisibility);
       pause("leave");
@@ -135,22 +143,40 @@ function usePausablePracticeTimer(week: number, taskId: string, requiredMinutes:
     progress,
     requiredMinutes,
     pause,
+    markQuizComplete,
     clear: () => clearPracticeTimer(week, taskId),
   };
 }
 
-export function PracticeSession({ task, week, onClose, onComplete }: Props) {
+export function PracticeSession({
+  task,
+  week,
+  onClose,
+  onComplete,
+  onRestartSame,
+  hasNextTask,
+  onNextTask,
+}: Props) {
   const isReflect = task.practiceKinds.length === 1 && task.practiceKinds[0] === "reflect";
   const requiredMinutes = task.minutes;
 
   const timer = usePausablePracticeTimer(week, task.id, requiredMinutes);
   const seed = `w${week}:${task.id}:${timer.attemptId}`;
+  const quizSeedRef = useRef("");
+  const quizRef = useRef<ChoiceQuestion[]>([]);
 
+  const kindsKey = task.practiceKinds.join(",");
+  const questionCount = task.questionCount ?? 8;
   const questions = useMemo(() => {
     if (isReflect) return [] as ChoiceQuestion[];
-    const count = task.questionCount ?? 8;
-    return buildMixedQuiz(task.practiceKinds, seed, count);
-  }, [isReflect, task.practiceKinds, task.questionCount, seed]);
+    if (quizRef.current.length > 0 && quizSeedRef.current === seed) {
+      return quizRef.current;
+    }
+    const built = buildMixedQuiz(task.practiceKinds, seed, questionCount);
+    quizSeedRef.current = seed;
+    quizRef.current = built;
+    return built;
+  }, [isReflect, seed, kindsKey, questionCount, task.practiceKinds]);
 
   const reflect = useMemo(
     () => (isReflect ? getReflectPrompt(seed) : null),
@@ -159,39 +185,51 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
 
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [finalAnswers, setFinalAnswers] = useState<Record<string, number> | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const [phase, setPhase] = useState<Phase>(isReflect ? "reflect" : "quiz");
   const [reflectAnswers, setReflectAnswers] = useState<string[]>([]);
   const loggedRef = useRef(false);
+  const [loggedDurationMs, setLoggedDurationMs] = useState<number | null>(null);
+  const [reviewQuestions, setReviewQuestions] = useState<ChoiceQuestion[] | null>(null);
 
+  const gradedQuestions = reviewQuestions ?? questions;
   const current = questions[index];
   const total = questions.length;
   const answeredCount = Object.keys(answers).length;
 
-  const score = useMemo(() => {
-    let correct = 0;
-    for (const q of questions) {
-      if (answers[q.id] === q.correctIndex) correct += 1;
-    }
-    return { correct, total: questions.length };
-  }, [answers, questions]);
+  const score = useMemo(
+    () => tally(gradedQuestions, finalAnswers ?? {}),
+    [finalAnswers, gradedQuestions],
+  );
 
   const kindLabels = task.practiceKinds.map(practiceLabel).join(" · ");
 
-  function logQuizOnce(finalAnswers: Record<string, number>) {
-    if (isReflect || loggedRef.current || questions.length === 0) return;
+  function logQuizOnce(locked: Record<string, number>, quiz: ChoiceQuestion[]) {
+    if (isReflect || loggedRef.current || quiz.length === 0) return;
     loggedRef.current = true;
-    let correct = 0;
-    for (const q of questions) {
-      if (finalAnswers[q.id] === q.correctIndex) correct += 1;
-    }
+    const result = tally(quiz, locked);
+    const durationMs = timer.elapsedSeconds * 1000;
+    setLoggedDurationMs(durationMs);
     appendQuizResult({
       source: "week",
       kinds: task.practiceKinds,
-      correct,
-      total: questions.length,
+      correct: result.correct,
+      total: result.total,
+      durationMs,
     });
-    recordMissedQuestions(questions, finalAnswers);
+    recordMissedQuestions(quiz, locked);
+    recordMasteredQuestions(quiz, locked);
+    rememberShownQuestions(quiz);
+    timer.markQuizComplete();
+  }
+
+  function lockAndReview(locked: Record<string, number>) {
+    const quiz = quizRef.current.length > 0 ? quizRef.current : questions;
+    setReviewQuestions(quiz);
+    setFinalAnswers(locked);
+    logQuizOnce(locked, quiz);
+    setPhase("review");
   }
 
   function submitAnswer() {
@@ -200,17 +238,35 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
     setAnswers(nextAnswers);
 
     if (index >= total - 1) {
-      logQuizOnce(nextAnswers);
-      setPhase("review");
+      lockAndReview(nextAnswers);
       return;
     }
     setIndex((i) => i + 1);
-    setSelected(null);
+    setSelected(nextAnswers[questions[index + 1]?.id] ?? null);
+  }
+
+  function goPrevious() {
+    if (index <= 0 || !current) return;
+    const nextAnswers =
+      selected !== null ? { ...answers, [current.id]: selected } : answers;
+    if (nextAnswers !== answers) setAnswers(nextAnswers);
+    setIndex((i) => i - 1);
+    setSelected(nextAnswers[questions[index - 1]?.id] ?? null);
   }
 
   function handleClose() {
     timer.pause("leave");
     onClose();
+  }
+
+  function handleRestartSame() {
+    timer.pause("leave");
+    onRestartSame();
+  }
+
+  function handleNextTask() {
+    timer.pause("leave");
+    onNextTask();
   }
 
   function finish() {
@@ -313,12 +369,7 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
             </button>
             <button
               type="button"
-              onClick={() => {
-                if (index > 0) {
-                  setIndex((i) => i - 1);
-                  setSelected(answers[questions[index - 1]?.id] ?? null);
-                }
-              }}
+              onClick={goPrevious}
               disabled={index === 0}
               className="rounded-md border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)] disabled:opacity-40"
             >
@@ -342,92 +393,42 @@ export function PracticeSession({ task, week, onClose, onComplete }: Props) {
               Aktiv övningstid {formatClock(timer.elapsedSeconds)} · krav {requiredMinutes} min ·{" "}
               {kindLabels}
             </p>
+            <div className="mt-3">
+              <PaceNotice
+                verdict={
+                  loggedDurationMs != null
+                    ? paceVerdict(
+                        loggedDurationMs,
+                        score.total,
+                        task.practiceKinds.filter((k) => k !== "reflect"),
+                      )
+                    : null
+                }
+                kinds={task.practiceKinds.filter((k) => k !== "reflect")}
+              />
+            </div>
           </div>
 
-          <ul className="space-y-3">
-            {questions.map((q, qi) => {
-              const chosen = answers[q.id];
-              const ok = chosen === q.correctIndex;
-              const correctWord = q.options[q.correctIndex];
-              const chosenWord = chosen !== undefined ? q.options[chosen] : null;
-              const filledCorrect =
-                q.kind === "mek" && q.passage
-                  ? fillMekPassage(q.passage, correctWord)
-                  : null;
-              const filledChosen =
-                q.kind === "mek" && q.passage && chosenWord && !ok
-                  ? fillMekPassage(q.passage, chosenWord)
-                  : null;
+          <QuestionReviewList questions={gradedQuestions} answers={finalAnswers ?? {}} />
 
-              return (
-                <li
-                  key={q.id}
-                  className={`rounded-lg border px-4 py-3 ${
-                    ok
-                      ? "border-[var(--lagoon)]/40 bg-[#eef8f6]"
-                      : "border-[#9a3412]/30 bg-[#fff7f3]"
-                  }`}
-                >
-                  <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
-                    <span>
-                      {qi + 1}. {kindBadge(q.kind)}
-                    </span>
-                    <span>{ok ? "Rätt" : "Fel"}</span>
-                  </div>
-                  <p className="mt-1 font-medium text-[var(--ink)]">{q.prompt}</p>
-
-                  {filledCorrect ? (
-                    <div className="mt-3 space-y-2">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
-                        Rätt mening
-                      </p>
-                      <p className="rounded-md border border-[var(--lagoon)]/30 bg-white px-3 py-2 text-[15px] leading-relaxed text-[var(--ink)]">
-                        {filledCorrect.before}
-                        <mark className="rounded bg-[#c8ebe7] px-1 font-semibold text-[var(--ink)]">
-                          {filledCorrect.word}
-                        </mark>
-                        {filledCorrect.after}
-                      </p>
-                      {filledChosen ? (
-                        <>
-                          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
-                            Din mening
-                          </p>
-                          <p className="rounded-md border border-[#9a3412]/25 bg-white px-3 py-2 text-[15px] leading-relaxed text-[var(--ink-muted)]">
-                            {filledChosen.before}
-                            <mark className="rounded bg-[#fde8e1] px-1 font-semibold text-[#9a3412] line-through decoration-[#9a3412]/70">
-                              {filledChosen.word}
-                            </mark>
-                            {filledChosen.after}
-                          </p>
-                        </>
-                      ) : null}
-                    </div>
-                  ) : (
-                    <>
-                      {q.passage && q.kind !== "mek" ? (
-                        <p className="mt-2 whitespace-pre-wrap rounded-md border border-[var(--line)] bg-white/70 px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]">
-                          {q.passage}
-                        </p>
-                      ) : null}
-                      {!ok ? (
-                        <p className="mt-1 text-sm text-[var(--ink-muted)]">
-                          Ditt svar: {chosenWord ?? "—"} · Rätt: {correctWord}
-                        </p>
-                      ) : (
-                        <p className="mt-1 text-sm text-[var(--ink-muted)]">
-                          Rätt svar: {correctWord}
-                        </p>
-                      )}
-                    </>
-                  )}
-
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{q.explain}</p>
-                </li>
-              );
-            })}
-          </ul>
-
+          <div className="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={handleRestartSame}
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+            >
+              Ny övning
+            </button>
+            {hasNextTask ? (
+              <button
+                type="button"
+                onClick={handleNextTask}
+                className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+              >
+                Nästa i veckan
+              </button>
+            ) : null}
+          </div>
           <CompleteButton ready={timer.ready} remainingSeconds={timer.remainingSeconds} onClick={finish} />
         </div>
       ) : null}
