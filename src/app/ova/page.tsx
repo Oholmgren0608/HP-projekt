@@ -1,5 +1,5 @@
-import { PracticeHub } from "@/components/practice-hub";
+import { PracticeHubV2 } from "@/components/practice-hub-v2";
 
 export default function PracticePage() {
-  return <PracticeHub />;
+  return <PracticeHubV2 />;
 }
