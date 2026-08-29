@@ -16,7 +16,10 @@ import {
 } from "@/lib/practice";
 import { PaceNotice } from "@/components/pace-notice";
 import { paceVerdict } from "@/lib/practice-pace";
-import { appendQuizResult } from "@/lib/progress-history";
+import {
+  appendQuizResult,
+  tallyPerKind,
+} from "@/lib/progress-history";
 import {
   clearPracticeTimer,
   formatClock,
@@ -210,6 +213,7 @@ export function PracticeSession({
       kinds: task.practiceKinds,
       correct: result.correct,
       total: result.total,
+      perKind: tallyPerKind(quiz, locked),
       durationMs,
     });
     recordMissedQuestions(quiz, locked);

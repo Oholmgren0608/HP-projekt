@@ -15,7 +15,7 @@ import {
 import { QuestionReviewList } from "@/components/question-review";
 import { PaceNotice } from "@/components/pace-notice";
 import { paceVerdict } from "@/lib/practice-pace";
-import { appendQuizResult, estimateNormFromPercent } from "@/lib/progress-history";
+import { appendQuizResult, estimateNormFromPercent, tallyPerKind } from "@/lib/progress-history";
 
 const QUESTION_COUNT = 24;
 const LIMIT_SECONDS = 20 * 60;
@@ -82,6 +82,7 @@ export function TimedMockExam() {
       kinds,
       correct: result.correct,
       total: result.total,
+      perKind: tallyPerKind(questions, locked),
       durationMs,
     });
     recordMissedQuestions(questions, locked);

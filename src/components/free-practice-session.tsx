@@ -6,6 +6,7 @@ import { buildMixedQuiz, tally, kindBadge } from "@/lib/practice";
 import { QuestionReviewList } from "@/components/question-review";
 import { recordMissedQuestions } from "@/lib/error-srs";
 import { recordMasteredQuestions } from "@/lib/question-mastery";
+import { appendQuizResult, tallyPerKind } from "@/lib/progress-history";
 
 type Props = {
   subtest: PracticeKind;
@@ -58,6 +59,14 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
   function logQuizOnce(locked: Record<string, number>) {
     if (loggedRef.current) return;
     loggedRef.current = true;
+    const result = tally(questions, locked);
+    appendQuizResult({
+      source: "free",
+      kinds: [subtest],
+      correct: result.correct,
+      total: result.total,
+      perKind: tallyPerKind(questions, locked),
+    });
     recordMissedQuestions(questions, locked);
     recordMasteredQuestions(questions, locked);
   }

@@ -5,14 +5,18 @@ import Link from "next/link";
 import { usePlan } from "@/components/plan-context";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatNorm } from "@/lib/hp-scores";
+import { kindBadge } from "@/lib/practice";
 import {
   HISTORY_EVENT,
+  PROGNOSIS_MIN_KIND_QUESTIONS,
   chartPoints,
   estimateNormFromPercent,
   loadHistory,
+  prognosisFromExercises,
   rollingPace,
   rollingQuizPercent,
   shouldSuggestNewPlan,
+  type ExercisePrognosis,
   type HistoryEvent,
 } from "@/lib/progress-history";
 import {
@@ -49,10 +53,10 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
 
   const savedOverall = plan.profile.overall;
   const points = chartPoints(events);
-  const all = rollingQuizPercent(events, "all");
+  const prognosis = prognosisFromExercises(events);
   const verbal = rollingQuizPercent(events, "verbal");
   const quant = rollingQuizPercent(events, "quant");
-  const estimated = all ? estimateNormFromPercent(all.percent) : null;
+  const estimated = prognosis ? estimateNormFromPercent(prognosis.percent) : null;
   const suggest = shouldSuggestNewPlan(savedOverall, events);
   const quizCount = events.filter((e) => e.type === "quiz").length;
   const pace = rollingPace(events);
@@ -113,6 +117,12 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
           Poängprognos
         </p>
         <div className="mt-4">{numbers}</div>
+        {prognosis === null && quizCount > 0 ? (
+          <p className="mt-2 text-sm text-[var(--ink-muted)]">
+            Prognos visas när du svarat på minst {PROGNOSIS_MIN_KIND_QUESTIONS} frågor i ett
+            delprov.
+          </p>
+        ) : null}
         {suggestBanner}
         <ProgressChart points={points} compact />
         <p className="mt-3 text-sm text-[var(--ink-muted)]">
@@ -134,8 +144,10 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
         <div className="mt-4">{numbers}</div>
         <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)]">
           Prognosen är en grov omräkning från råprocent i appens övningar — inte UHR:s officiella
-          normeringstabell. Den rör sig när du gör quiz och mini-prov.
+          normeringstabell. Den uppdateras bara när du svarat på minst{" "}
+          {PROGNOSIS_MIN_KIND_QUESTIONS} frågor i ett delprov — fler svar ger stabilare siffror.
         </p>
+        <PrognosisThresholdChips prognosis={prognosis} />
         {suggestBanner}
         <ProgressChart points={points} />
       </div>
@@ -175,6 +187,47 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
           </p>
         )}
       </aside>
+    </div>
+  );
+}
+
+const PROGNOSIS_KIND_ORDER = [
+  "ord",
+  "mek",
+  "las",
+  "elf",
+  "dtk",
+  "xyz",
+  "kva",
+  "nog",
+] as const;
+
+/** Visar hur många frågor som besvarats per delprov — grönt = räknas in i prognosen. */
+function PrognosisThresholdChips({ prognosis }: { prognosis: ExercisePrognosis | null }) {
+  const byKind = prognosis?.byKind ?? {};
+  return (
+    <div className="mt-4 flex flex-wrap gap-1.5">
+      {PROGNOSIS_KIND_ORDER.map((kind) => {
+        const n = Math.floor(byKind[kind]?.total ?? 0);
+        const reached = n >= PROGNOSIS_MIN_KIND_QUESTIONS;
+        return (
+          <span
+            key={kind}
+            title={
+              reached
+                ? `${kindBadge(kind)} räknas in i prognosen`
+                : `${PROGNOSIS_MIN_KIND_QUESTIONS - n} frågor kvar innan ${kindBadge(kind)} räknas in`
+            }
+            className={`rounded-md border px-2 py-1 text-[11px] font-semibold tabular-nums ${
+              reached
+                ? "border-[var(--lagoon)]/50 bg-[var(--lagoon)]/10 text-[var(--ink)]"
+                : "border-[var(--line)] bg-white/60 text-[var(--ink-muted)]"
+            }`}
+          >
+            {kindBadge(kind)} {n}/{PROGNOSIS_MIN_KIND_QUESTIONS}
+          </span>
+        );
+      })}
     </div>
   );
 }
