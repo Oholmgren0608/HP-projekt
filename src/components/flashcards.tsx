@@ -79,6 +79,16 @@ export function Flashcards() {
     setSessionWrong(0);
   }
 
+  // Kortleken blandas med slump på klienten — rendera inget förrän hydrering
+  // är klar, annars mismatchar SSR- och klient-HTML (hydreringsfel).
+  if (!ready) {
+    return (
+      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
+        <p className="text-sm text-[var(--ink-muted)]">Laddar flashcards…</p>
+      </div>
+    );
+  }
+
   const card = queue[index] ?? null;
   const knownCount = Object.values(progress).filter(
     (p) => (p.correct ?? 0) > 0 && p.last === "correct",

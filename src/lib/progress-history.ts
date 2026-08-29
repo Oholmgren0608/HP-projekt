@@ -11,7 +11,7 @@ export const HISTORY_EVENT = "hp-lift-history-changed";
  */
 export const PROGNOSIS_MIN_KIND_QUESTIONS = 10;
 
-export type QuizSource = "week" | "mock" | "free";
+export type QuizSource = "week" | "mock" | "free" | "nivatest";
 
 export type KindTally = { correct: number; total: number };
 

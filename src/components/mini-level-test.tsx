@@ -7,7 +7,8 @@ import { usePlan } from "@/components/plan-context";
 import { ScoreBar } from "@/components/plan-badges";
 import { QuestionReviewList } from "@/components/question-review";
 import { formatNorm } from "@/lib/hp-scores";
-import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
+import { kindBadge, tally, type ChoiceQuestion } from "@/lib/practice";
+import { appendQuizResult, tallyPerKind } from "@/lib/progress-history";
 import {
   MINI_TEST_MAX_QUESTIONS,
   buildMiniTest,
@@ -66,6 +67,17 @@ export function MiniLevelTest() {
     setAnswers(next);
     if (index >= questions.length - 1) {
       setFinalAnswers(next);
+      // Logga nivåtestet till övningshistoriken så att frågorna räknas mot
+      // prognos-tröskeln (10 besvarade frågor per delprov).
+      const kinds = [...new Set(questions.map((q) => q.kind))];
+      const result = tally(questions, next);
+      appendQuizResult({
+        source: "nivatest",
+        kinds,
+        correct: result.correct,
+        total: result.total,
+        perKind: tallyPerKind(questions, next),
+      });
       setPhase("result");
       return;
     }

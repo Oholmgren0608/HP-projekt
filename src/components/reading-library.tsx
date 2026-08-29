@@ -40,6 +40,16 @@ export function ReadingLibrary() {
     setSummary("");
   }
 
+  // "Läst"-markeringar och räknare kommer från localStorage — rendera inget
+  // förrän hydrering är klar, annars mismatchar SSR- och klient-HTML.
+  if (!ready) {
+    return (
+      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
+        <p className="text-sm text-[var(--ink-muted)]">Laddar läsbibliotek…</p>
+      </div>
+    );
+  }
+
   if (!text) return null;
 
   return (
