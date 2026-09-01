@@ -1,9 +1,5 @@
 import type { PracticeKind } from "@/lib/practice";
-import {
-  DELPROV_META,
-  type ScoreInput,
-  formatNorm,
-} from "@/lib/hp-scores";
+import { DELPROV_META, type ScoreInput, formatNorm } from "@/lib/hp-scores";
 import type {
   DelprovScore,
   Priority,
@@ -58,7 +54,10 @@ type Ranked = {
   deficit: number;
 };
 
-const METHODS: Record<SectionId, { name: string; short: string; methods: string[] }> = {
+const METHODS: Record<
+  SectionId,
+  { name: string; short: string; methods: string[] }
+> = {
   MEK: {
     name: "MEK — Meningskomplettering",
     short: "MEK",
@@ -136,7 +135,7 @@ const METHODS: Record<SectionId, { name: string; short: string; methods: string[
   },
 };
 
-function priorityFromPercent(percent: number): Priority {
+export function priorityFromPercent(percent: number): Priority {
   if (percent < 50) return "kritiskt";
   if (percent < 65) return "huvudfokus";
   if (percent < 80) return "underhall";
@@ -221,14 +220,46 @@ function buildWeeklyPlans(
     : "DTK";
 
   const phases = [
-    { phase: "Bas", theme: `${METHODS[primary].short}-rutin + ${METHODS[secondary].short}`, focus: `Bygg daglig rutin runt ${METHODS[primary].short} och ${METHODS[secondary].short}.` },
-    { phase: "Bas", theme: `${METHODS[primary].short} under tid`, focus: `Öka volym och tempo på ${METHODS[primary].short}.` },
-    { phase: "Bas", theme: "Djup felanalys", focus: "Fel ska bli mönster du känner igen." },
-    { phase: "Bas", theme: "Avstämning", focus: "Mät lyftet på prioriterade delar och justera." },
-    { phase: "Teknik", theme: "Tempo", focus: "Samma material, högre precision under tid." },
-    { phase: "Teknik", theme: "Halvprov", focus: "Kombinera flaskhalsarna i längre pass." },
-    { phase: "Fullprov", theme: "Bred simulering", focus: "Simulera bredd och utvärdera energi." },
-    { phase: "Finish", theme: "Puts och vila", focus: "Repetition och energi — inga nya tunga system." },
+    {
+      phase: "Bas",
+      theme: `${METHODS[primary].short}-rutin + ${METHODS[secondary].short}`,
+      focus: `Bygg daglig rutin runt ${METHODS[primary].short} och ${METHODS[secondary].short}.`,
+    },
+    {
+      phase: "Bas",
+      theme: `${METHODS[primary].short} under tid`,
+      focus: `Öka volym och tempo på ${METHODS[primary].short}.`,
+    },
+    {
+      phase: "Bas",
+      theme: "Djup felanalys",
+      focus: "Fel ska bli mönster du känner igen.",
+    },
+    {
+      phase: "Bas",
+      theme: "Avstämning",
+      focus: "Mät lyftet på prioriterade delar och justera.",
+    },
+    {
+      phase: "Teknik",
+      theme: "Tempo",
+      focus: "Samma material, högre precision under tid.",
+    },
+    {
+      phase: "Teknik",
+      theme: "Halvprov",
+      focus: "Kombinera flaskhalsarna i längre pass.",
+    },
+    {
+      phase: "Fullprov",
+      theme: "Bred simulering",
+      focus: "Simulera bredd och utvärdera energi.",
+    },
+    {
+      phase: "Finish",
+      theme: "Puts och vila",
+      focus: "Repetition och energi — inga nya tunga system.",
+    },
   ];
 
   const n = Math.min(Math.max(weeks, 4), 8);
@@ -286,7 +317,13 @@ function buildWeeklyPlans(
           detail: "Mät råpoäng på dina fokusdelar.",
           minutes: 90,
           section: primary,
-          practiceKinds: [...new Set([...toPractice(primary), ...toPractice(secondary), ...toPractice(tertiary)])],
+          practiceKinds: [
+            ...new Set([
+              ...toPractice(primary),
+              ...toPractice(secondary),
+              ...toPractice(tertiary),
+            ]),
+          ],
           questionCount: 14,
         },
         {
@@ -364,7 +401,14 @@ function buildWeeklyPlans(
           minutes: 90,
           section: primary,
           practiceKinds: [
-            ...new Set<PracticeKind>(["ord", "mek", "las", "elf", "dtk", ...toPractice(quant)]),
+            ...new Set<PracticeKind>([
+              "ord",
+              "mek",
+              "las",
+              "elf",
+              "dtk",
+              ...toPractice(quant),
+            ]),
           ],
           questionCount: 16,
         },
@@ -447,7 +491,10 @@ function buildWeeklyPlans(
   return plans;
 }
 
-export function generatePlan(scores: ScoreInput, options: GeneratePlanOptions = {}): GeneratedPlan {
+export function generatePlan(
+  scores: ScoreInput,
+  options: GeneratePlanOptions = {},
+): GeneratedPlan {
   const ranked: Ranked[] = DELPROV_META.map((m) => {
     const correct = scores.delprov[m.id] ?? 0;
     const percent = pct(correct, m.total);
@@ -473,7 +520,10 @@ export function generatePlan(scores: ScoreInput, options: GeneratePlanOptions = 
   const targetOverallNum = Math.min(2, Math.round((overall + 0.4) * 10) / 10);
   const targetVerbalNum = Math.min(
     2,
-    Math.max(scores.verbalNorm + 0.3, scores.verbalNorm < 1.2 ? 1.4 : scores.verbalNorm + 0.2),
+    Math.max(
+      scores.verbalNorm + 0.3,
+      scores.verbalNorm < 1.2 ? 1.4 : scores.verbalNorm + 0.2,
+    ),
   );
 
   const delprovScores: DelprovScore[] = DELPROV_META.map((m) => ({
@@ -540,10 +590,16 @@ export function generatePlan(scores: ScoreInput, options: GeneratePlanOptions = 
   }
 
   const hpWeakestQuant = ranked.filter((r) => r.block === "kvant")[0];
-  const hpWeekly = buildWeeklyPlans(hpFocusIds, scores.weeksUntilExam, hpWeakestQuant.id);
+  const hpWeekly = buildWeeklyPlans(
+    hpFocusIds,
+    scores.weeksUntilExam,
+    hpWeakestQuant.id,
+  );
 
   const trends =
-    options.adapt && options.trends && options.trends.length > 0 ? options.trends : [];
+    options.adapt && options.trends && options.trends.length > 0
+      ? options.trends
+      : [];
 
   let focusIds = hpFocusIds;
   let weakestQuant = hpWeakestQuant;
@@ -555,17 +611,24 @@ export function generatePlan(scores: ScoreInput, options: GeneratePlanOptions = 
       return db - da;
     });
     focusIds = blended
-      .filter((r) => r.percent < 80 || trends.some((t) => t.id === r.id && t.direction === "weaker"))
+      .filter(
+        (r) =>
+          r.percent < 80 ||
+          trends.some((t) => t.id === r.id && t.direction === "weaker"),
+      )
       .slice(0, 4)
       .map((r) => r.id);
     if (focusIds.length < 2) {
       focusIds = blended.slice(0, 2).map((r) => r.id);
     }
-    weakestQuant = blended.filter((r) => r.block === "kvant")[0] ?? hpWeakestQuant;
+    weakestQuant =
+      blended.filter((r) => r.block === "kvant")[0] ?? hpWeakestQuant;
   }
 
   const weakestVerbal = ranked.filter((r) => r.block === "verbal")[0];
-  const strongestVerbal = [...ranked].filter((r) => r.block === "verbal").sort((a, b) => b.percent - a.percent)[0];
+  const strongestVerbal = [...ranked]
+    .filter((r) => r.block === "verbal")
+    .sort((a, b) => b.percent - a.percent)[0];
 
   const strategy: StrategyItem[] = [
     {
@@ -593,7 +656,11 @@ export function generatePlan(scores: ScoreInput, options: GeneratePlanOptions = 
     .map((id) => METHODS[id].short)
     .join(" och ")} utifrån dina delprovspoäng.`;
 
-  const built = buildWeeklyPlans(focusIds, scores.weeksUntilExam, weakestQuant.id);
+  const built = buildWeeklyPlans(
+    focusIds,
+    scores.weeksUntilExam,
+    weakestQuant.id,
+  );
   const started = new Set(options.startedWeeks ?? []);
   const weeklyPlans = built.map((w) => {
     const snap = options.lockedWeeks?.[w.week];

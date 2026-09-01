@@ -3,7 +3,7 @@ OK#Prioriteringar
 2. Förbättra design och layout på webbsidan så att den blir så enkelt som möjligt att använda. Webbappen har redan ett bra tema men layouten är inte optimal och 
 
 #Förbättringar/åtgärder
- - [ ] Ändra så att poäng prognosen bara ändras när ett specifikt antal frågor i varje delprov har besvarats. Testa med att börja med 10 frågor då detta man har mer data att arbeta med och är likt andra HP appar.
+ - [x] Ändra så att poäng prognosen bara ändras när ett specifikt antal frågor i varje delprov har besvarats. Testa med att börja med 10 frågor då detta man har mer data att arbeta med och är likt andra HP appar.
  
 - [ ] Skapa en funktion i nivåtest sidan som tillåter användaren att bestämma hur mycket frågor de vill besvara på nivåtestet. Detta ger användaren möjligheten att få en bättre veckoplan och analys av deras kunskaper om de beviljar det.
 
@@ -11,8 +11,7 @@ OK#Prioriteringar
 
 - [ ] Ha mer dupgående/detaljerade förklaringar på rättningarna. Alltså förklara hur/vad det är som gör det korrekta svaret "korrekt" (det finns redan andra HP appar som gör detta). Detta ska göras för att användaren ska få en djupare förståelse vilket leder till ökad kunskap.
 
-- [ ] Förnya öva sidan så att den har subpages för alla delprov (och flashcards). Användaren kan sedan välja vilken delprov de vill öva på och sedan välja hur många frågor de vill ha i övningen (får välja mellan 5-20 frågor och 1-5 frågor på läs delproven). Ha läsbiblioteket som sin egna sida i webbsidan.
+- [x] Förnya öva sidan så att den har subpages för alla delprov (och flashcards). Användaren kan sedan välja vilken delprov de vill öva på och sedan välja hur många frågor de vill ha i övningen (får välja mellan 5-20 frågor och 1-5 frågor på läs delproven). Ha läsbiblioteket som sin egna sida i webbsidan.
 
 #Tokenbudget
-Måste vara smart och noggran med vilka modeller jag använder beroende på uppgiften. Har bara ett visst antal credits och vill spara på så mycket pengar som möjligt. Möjlig strategi för detta är att använda den billigaste (och mest relevanta) modellen för en viss uppgift och sedan pusha det som en branch. Om modellen lyckas bra med uppgiften mergar vi till main, annars raderar vi branchen, låter en annan modell göra uppgiften osv. På detta sätt lär jag mig vad för sort uppgifter olika modeller klarar av att genomföra effektivt. Detta betyder att jag kommer behöver experimentera i början och potentiellt bränna mer pengar, men i långsikt så är det mer sparsamt. Vi börjar med denna strategi på anthropics modeller då jag bara har credits för deras API:er. Sedan kan vi brancha ut.
-
+Måste vara smart och noggran med vilka modeller jag använder beroende på uppgiften. Har bara ett visst antal credits och vill spara på så mycket pengar som möjligt. Möjlig strategi för detta är att använda den billigaste (och mest relevanta) modellen för en viss uppgift och sedan pusha det som en branch. Om modellen lyckas bra med uppgiften mergar vi till main, annars raderar vi branchen, låter en annan modell göra uppgiften osv. På detta sätt lär jag mig vad för sort uppgifter olika modeller klarar av att genomföra effektivt. Detta betyder att jag kommer behöver experimentera i början och potentiellt bränna mer pengar, men i långsikt så är det mer sparsamt. 

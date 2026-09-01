@@ -5,6 +5,7 @@ import { ScoreBar } from "@/components/plan-badges";
 import { usePlan } from "@/components/plan-context";
 import { ProgressPanel } from "@/components/progress-panel";
 import { ScoreForm } from "@/components/score-form";
+import { StudyTimeNotice } from "@/components/study-time-notice";
 import { pct } from "@/lib/study-plan";
 
 export function ResultsView() {
@@ -31,17 +32,22 @@ export function ResultsView() {
           Poäng och prognos
         </h1>
         <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-          Fyll i norm och råpoäng per delprov. När du sparar byggs prioritering, tidsfördelning
-          och {profile.weeksUntilExam}-veckorsplan om.
+          Fyll i norm och råpoäng per delprov. När du sparar byggs prioritering,
+          tidsfördelning och {profile.weeksUntilExam}-veckorsplan om.
         </p>
         <p className="mt-3 rounded-lg border border-[var(--line)] bg-white/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
           Ny på HP eller osäker på dina poäng?{" "}
-          <Link href="/nivatest" className="font-medium text-[var(--accent)] hover:underline">
+          <Link
+            href="/nivatest"
+            className="font-medium text-[var(--accent)] hover:underline"
+          >
             Gör ett nivåtest
           </Link>{" "}
           så fyller vi i poängen åt dig utifrån resultatet.
         </p>
       </div>
+
+      <StudyTimeNotice />
 
       <section className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -84,8 +90,12 @@ export function ResultsView() {
                       >
                         <div className="flex items-baseline justify-between gap-3">
                           <div>
-                            <span className="font-semibold text-[var(--ink)]">{s.id}</span>
-                            <span className="ml-2 text-sm text-[var(--ink-muted)]">{s.name}</span>
+                            <span className="font-semibold text-[var(--ink)]">
+                              {s.id}
+                            </span>
+                            <span className="ml-2 text-sm text-[var(--ink-muted)]">
+                              {s.name}
+                            </span>
                           </div>
                           <span className="shrink-0 text-sm font-medium text-[var(--ink)]">
                             {s.correct}/{s.total} · {p}%
@@ -114,7 +124,9 @@ export function ResultsView() {
               <div className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
                 {t.pct}%
               </div>
-              <div className="mt-1 text-sm font-semibold text-[var(--ink)]">{t.label}</div>
+              <div className="mt-1 text-sm font-semibold text-[var(--ink)]">
+                {t.label}
+              </div>
               <div className="text-xs text-[var(--ink-muted)]">{t.note}</div>
             </li>
           ))}

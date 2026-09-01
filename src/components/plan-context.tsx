@@ -11,7 +11,9 @@ import {
 } from "react";
 import {
   DEFAULT_SCORES,
+  loadHasSavedScores,
   loadScores,
+  markScoresSaved,
   saveScores,
   type ScoreInput,
 } from "@/lib/hp-scores";
@@ -40,6 +42,7 @@ type PlanContextValue = {
   scores: ScoreInput;
   plan: GeneratedPlan;
   ready: boolean;
+  hasSavedScores: boolean;
   adaptEnabled: boolean;
   setAdaptEnabled: (enabled: boolean) => void;
   updateScores: (next: ScoreInput) => void;
@@ -51,6 +54,7 @@ const PlanContext = createContext<PlanContextValue | null>(null);
 export function PlanProvider({ children }: { children: ReactNode }) {
   const [scores, setScores] = useState<ScoreInput>(loadScores);
   const ready = useHydrated();
+  const [hasSavedScores, setHasSavedScores] = useState(loadHasSavedScores);
   const [adaptEnabled, setAdaptEnabledState] = useState(loadAdaptPlanEnabled);
   const [revision, setRevision] = useState(0);
 
@@ -61,6 +65,7 @@ export function PlanProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const bump = () => {
       setAdaptEnabledState(loadAdaptPlanEnabled());
+      setHasSavedScores(loadHasSavedScores());
       setRevision((n) => n + 1);
     };
     window.addEventListener(HISTORY_EVENT, bump);
@@ -78,6 +83,8 @@ export function PlanProvider({ children }: { children: ReactNode }) {
   const updateScores = useCallback((next: ScoreInput) => {
     setScores(next);
     saveScores(next);
+    markScoresSaved();
+    setHasSavedScores(true);
     appendScoreSnapshot(next);
   }, []);
 
@@ -112,12 +119,13 @@ export function PlanProvider({ children }: { children: ReactNode }) {
       scores,
       plan,
       ready,
+      hasSavedScores,
       adaptEnabled,
       setAdaptEnabled,
       updateScores,
       resetScores,
     }),
-    [scores, plan, ready, adaptEnabled, setAdaptEnabled, updateScores, resetScores],
+    [scores, plan, ready, hasSavedScores, adaptEnabled, setAdaptEnabled, updateScores, resetScores],
   );
 
   return <PlanContext.Provider value={value}>{children}</PlanContext.Provider>;

@@ -56,6 +56,20 @@ export function clampNorm(value: number): number {
   return Math.max(0, Math.min(2, Math.round(value * 10) / 10));
 }
 
+export function clampHoursPerWeek(value: unknown): number {
+  if (value === null || value === undefined) return DEFAULT_SCORES.hoursPerWeek;
+  const n = Number(value);
+  if (!Number.isFinite(n)) return DEFAULT_SCORES.hoursPerWeek;
+  return Math.max(3, Math.min(40, n));
+}
+
+export function clampWeeksUntilExam(value: unknown): number {
+  if (value === null || value === undefined) return DEFAULT_SCORES.weeksUntilExam;
+  const n = Number(value);
+  if (!Number.isFinite(n)) return DEFAULT_SCORES.weeksUntilExam;
+  return Math.max(4, Math.min(16, n));
+}
+
 export function loadScores(): ScoreInput {
   if (typeof window === "undefined") return DEFAULT_SCORES;
   try {
@@ -71,8 +85,8 @@ export function loadScores(): ScoreInput {
     return {
       quantNorm: clampNorm(parsed.quantNorm ?? DEFAULT_SCORES.quantNorm),
       verbalNorm: clampNorm(parsed.verbalNorm ?? DEFAULT_SCORES.verbalNorm),
-      hoursPerWeek: Math.max(3, Math.min(40, parsed.hoursPerWeek ?? 10)),
-      weeksUntilExam: Math.max(4, Math.min(16, parsed.weeksUntilExam ?? 8)),
+      hoursPerWeek: clampHoursPerWeek(parsed.hoursPerWeek),
+      weeksUntilExam: clampWeeksUntilExam(parsed.weeksUntilExam),
       delprov,
     };
   } catch {
@@ -83,6 +97,27 @@ export function loadScores(): ScoreInput {
 export function saveScores(scores: ScoreInput) {
   if (typeof window === "undefined") return;
   localStorage.setItem(SCORES_STORAGE_KEY, JSON.stringify(scores));
+}
+
+/** Sätts en gång när användaren sparar sina egna resultat (formulär eller nivåtest). */
+export const SCORES_SAVED_FLAG_KEY = "hp-lift-scores-saved-v1";
+
+export function loadHasSavedScores(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return localStorage.getItem(SCORES_SAVED_FLAG_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+export function markScoresSaved(): void {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(SCORES_SAVED_FLAG_KEY, "1");
+  } catch {
+    // ignore
+  }
 }
 
 export function formatNorm(n: number): string {
