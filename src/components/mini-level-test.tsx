@@ -9,10 +9,16 @@ import { QuestionReviewList } from "@/components/question-review";
 import { formatNorm } from "@/lib/hp-scores";
 import { kindBadge, tally, type ChoiceQuestion } from "@/lib/practice";
 import { appendQuizResult, tallyPerKind } from "@/lib/progress-history";
+import type { SectionId } from "@/lib/study-plan";
 import {
-  MINI_TEST_MAX_QUESTIONS,
+  MINI_TEST_MAX_COUNTS,
+  SECTION_KINDS,
   buildMiniTest,
+  defaultNivatestCounts,
+  loadNivatestCounts,
   miniTestToScoreInput,
+  saveNivatestCounts,
+  type NivatestCounts,
 } from "@/lib/mini-level-test";
 
 type Phase = "intro" | "quiz" | "result";
@@ -31,6 +37,16 @@ export function MiniLevelTest() {
   const [weeksUntilExam, setWeeksUntilExam] = useState(8);
   const [applied, setApplied] = useState(false);
 
+  // Antal frågor per delprov — standard 3, sedan användarens sparade val.
+  // Läses från localStorage först efter hydrering (samma mönster som PlanProvider)
+  // för att undvika SSR-mismatch. Justering under render undviker setState i effekt.
+  const [counts, setCounts] = useState<NivatestCounts>(defaultNivatestCounts);
+  const [countsLoaded, setCountsLoaded] = useState(false);
+  if (ready && !countsLoaded) {
+    setCountsLoaded(true);
+    setCounts(loadNivatestCounts());
+  }
+
   // Förifyll tid/veckor från ev. sparad plan när den hydrerats. Justering under
   // render (spårar föregående värde) undviker setState i en effekt.
   const [syncedScores, setSyncedScores] = useState(scores);
@@ -41,14 +57,22 @@ export function MiniLevelTest() {
   }
 
   const questions = useMemo(
-    () => (seed ? buildMiniTest(seed) : ([] as ChoiceQuestion[])),
-    [seed],
+    () => (seed ? buildMiniTest(seed, counts) : ([] as ChoiceQuestion[])),
+    [seed, counts],
   );
+
+  const totalQuestions = SECTION_KINDS.reduce((sum, { id }) => sum + counts[id], 0);
 
   const outcome = useMemo(
     () => miniTestToScoreInput(questions, finalAnswers, { hoursPerWeek, weeksUntilExam }),
     [questions, finalAnswers, hoursPerWeek, weeksUntilExam],
   );
+
+  function updateCount(id: SectionId, count: number) {
+    const next = { ...counts, [id]: count };
+    setCounts(next);
+    saveNivatestCounts(next);
+  }
 
   function start() {
     setSeed(`nivatest:${Date.now()}`);
@@ -128,7 +152,7 @@ export function MiniLevelTest() {
               nivåtestet ger en färsk ögonblicksbild av var du står just nu.
             </p>
             <p>
-              Testet innehåller {MINI_TEST_MAX_QUESTIONS} frågor — några från varje delprov (ORD,
+              Testet innehåller {totalQuestions} frågor — några från varje delprov (ORD,
               MEK, LÄS, ELF, XYZ, KVA, NOG och DTK). Det är <strong>inte tidtaget</strong>, så ta den
               tid du behöver. Gissa hellre än att hoppa över; obesvarade räknas som fel, precis som
               på riktiga provet.
@@ -143,6 +167,51 @@ export function MiniLevelTest() {
             Frågorna är appens egna övningsfrågor i HP-stil — inte hämtade från officiella prov. De
             riktiga häftena hittar du under <strong>Prov</strong>.
           </p>
+          <div className="mt-6">
+            <p className="text-sm font-semibold text-[var(--ink)]">Antal frågor per delprov</p>
+            <p className="mt-1 text-sm text-[var(--ink-muted)]">
+              Fler frågor ger en säkrare uppskattning av din nivå.
+            </p>
+            <div className="mt-3 space-y-2.5">
+              {SECTION_KINDS.map(({ id, kind }) => {
+                const max = MINI_TEST_MAX_COUNTS[id];
+                return (
+                  <div
+                    key={id}
+                    className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2.5"
+                  >
+                    <span className="w-12 shrink-0 text-sm font-semibold text-[var(--ink)]">
+                      {kindBadge(kind)}
+                    </span>
+                    <div
+                      className="flex flex-wrap gap-2"
+                      role="group"
+                      aria-label={`Antal ${kindBadge(kind)}-frågor`}
+                    >
+                      {Array.from({ length: max }, (_, i) => i + 1).map((count) => {
+                        const active = counts[id] === count;
+                        return (
+                          <button
+                            key={count}
+                            type="button"
+                            aria-pressed={active}
+                            onClick={() => updateCount(id, count)}
+                            className={`min-w-12 rounded-lg border px-4 py-2 font-semibold transition ${
+                              active
+                                ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--ink)]"
+                                : "border-[var(--line)] bg-white text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
+                            }`}
+                          >
+                            {count}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
           <button
             type="button"
             onClick={start}

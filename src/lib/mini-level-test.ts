@@ -11,15 +11,78 @@ import {
 import { estimateNormFromPercent } from "@/lib/progress-history";
 import type { SectionId } from "@/lib/study-plan";
 
-/** Antal frågor per delprov i nivåtestet. */
-export const MINI_TEST_PER_SECTION = 3;
+/** Antal frågor per delprov i nivåtestet (standardval, matchar tidigare beteende). */
+export const MINI_TEST_DEFAULT_COUNT = 3;
+
+/** Användarens valda antal frågor per delprov. */
+export type NivatestCounts = Record<SectionId, number>;
+
+/** Högsta valbara antal frågor per delprov, begränsat av respektive övningsbank. */
+export const MINI_TEST_MAX_COUNTS: Record<SectionId, number> = {
+  ELF: 4,
+  LAS: 4,
+  DTK: 8,
+  XYZ: 8,
+  KVA: 8,
+  NOG: 8,
+  ORD: 8,
+  MEK: 8,
+};
+
+export function defaultNivatestCounts(): NivatestCounts {
+  return {
+    ORD: MINI_TEST_DEFAULT_COUNT,
+    MEK: MINI_TEST_DEFAULT_COUNT,
+    LAS: MINI_TEST_DEFAULT_COUNT,
+    ELF: MINI_TEST_DEFAULT_COUNT,
+    XYZ: MINI_TEST_DEFAULT_COUNT,
+    KVA: MINI_TEST_DEFAULT_COUNT,
+    NOG: MINI_TEST_DEFAULT_COUNT,
+    DTK: MINI_TEST_DEFAULT_COUNT,
+  };
+}
+
+export const NIVATEST_COUNTS_STORAGE_KEY = "hp-lift-nivatest-counts-v1";
+
+/** Klipper ett valt antal till [1, max] för delprovet. */
+export function clampNivatestCount(id: SectionId, value: number): number {
+  const max = MINI_TEST_MAX_COUNTS[id];
+  const n = Math.round(value);
+  return Math.max(1, Math.min(max, Number.isFinite(n) ? n : 1));
+}
+
+export function loadNivatestCounts(): NivatestCounts {
+  const defaults = defaultNivatestCounts();
+  if (typeof window === "undefined") return defaults;
+  try {
+    const raw = localStorage.getItem(NIVATEST_COUNTS_STORAGE_KEY);
+    if (!raw) return defaults;
+    const parsed = JSON.parse(raw) as Partial<Record<SectionId, unknown>>;
+    for (const { id } of SECTION_KINDS) {
+      const value = parsed[id];
+      if (typeof value === "number") defaults[id] = clampNivatestCount(id, value);
+    }
+    return defaults;
+  } catch {
+    return defaults;
+  }
+}
+
+export function saveNivatestCounts(counts: NivatestCounts) {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(NIVATEST_COUNTS_STORAGE_KEY, JSON.stringify(counts));
+  } catch {
+    // ignore
+  }
+}
 
 /**
  * Delproven som ingår i nivåtestet — alla åtta, kopplade till respektive
  * övningsbank. Ordningen används bara som utgångspunkt; frågorna blandas
  * sedan så att delproven varvas.
  */
-const SECTION_KINDS: { id: SectionId; kind: Exclude<PracticeKind, "reflect"> }[] = [
+export const SECTION_KINDS: { id: SectionId; kind: Exclude<PracticeKind, "reflect"> }[] = [
   { id: "ORD", kind: "ord" },
   { id: "MEK", kind: "mek" },
   { id: "LAS", kind: "las" },
@@ -30,17 +93,18 @@ const SECTION_KINDS: { id: SectionId; kind: Exclude<PracticeKind, "reflect"> }[]
   { id: "DTK", kind: "dtk" },
 ];
 
-/** Totalt antal frågor i ett fullständigt nivåtest (så länge bankerna räcker). */
-export const MINI_TEST_MAX_QUESTIONS = SECTION_KINDS.length * MINI_TEST_PER_SECTION;
-
 /**
  * Bygger ett nivåtest med frågor från varje delprov. Frågorna varvas
  * (round-robin) så att användaren möter olika delprov om vartannat i stället
- * för tre likadana i rad.
+ * för flera likadana i rad. Antalet per delprov styrs av `counts` och klipps
+ * mot respektive banks storlek.
  */
-export function buildMiniTest(seed: string): ChoiceQuestion[] {
-  const perSection = SECTION_KINDS.map(({ kind }) =>
-    buildQuiz(kind, `${seed}:${kind}`, MINI_TEST_PER_SECTION),
+export function buildMiniTest(
+  seed: string,
+  counts: NivatestCounts = defaultNivatestCounts(),
+): ChoiceQuestion[] {
+  const perSection = SECTION_KINDS.map(({ kind, id }) =>
+    buildQuiz(kind, `${seed}:${kind}`, clampNivatestCount(id, counts[id] ?? MINI_TEST_DEFAULT_COUNT)),
   );
   const maxLen = perSection.reduce((max, qs) => Math.max(max, qs.length), 0);
   const interleaved: ChoiceQuestion[] = [];

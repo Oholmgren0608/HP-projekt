@@ -455,6 +455,26 @@ export const DTK_BANK: ChoiceQuestion[] = [
     correctIndex: 0,
     explain: "40 − 35 = 5.",
   },
+  {
+    id: "dtk-7",
+    kind: "dtk",
+    prompt: "Vilken avdelning hade lägst sjukfrånvaro i mars?",
+    passage:
+      "Sjukfrånvaro per avdelning (procent av arbetad tid)\nAvd. A: feb 6,2 · mars 5,4 · april 5,8\nAvd. B: feb 4,9 · mars 5,1 · april 4,7\nAvd. C: feb 7,3 · mars 6,8 · april 7,0\nAvd. D: feb 5,6 · mars 4,9 · april 5,3",
+    options: ["A", "B", "C", "D"],
+    correctIndex: 3,
+    explain: "Mars: A 5,4 · B 5,1 · C 6,8 · D 4,9 → D lägst.",
+  },
+  {
+    id: "dtk-8",
+    kind: "dtk",
+    prompt: "Hur stor andel av företagets totala kostnader utgjorde material 2023?",
+    passage:
+      "Kostnader 2023 (miljoner kr): Personal 12 · Material 8 · Lokaler 4 · Övrigt 6. Totalt = 30.",
+    options: ["8 %", "ungefär 27 %", "ungefär 40 %", "ungefär 73 %"],
+    correctIndex: 1,
+    explain: "8 / 30 ≈ 0,267 → cirka 27 %.",
+  },
 ];
 
 export const REFLECT_BANK: ReflectPrompt[] = [
