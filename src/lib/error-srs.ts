@@ -45,14 +45,13 @@ function addDays(dateKey: string, days: number): string {
 }
 
 function hydrateCard(card: SrsCard): SrsCard {
-  const needsPassage = !card.passage;
-  const needsOptions = !card.options?.length;
-  if (!needsPassage && !needsOptions) return card;
   const q = findQuestionById(card.id);
   if (!q) return card;
   const next: SrsCard = { ...card };
-  if (needsPassage && q.passage) next.passage = q.passage;
-  if (needsOptions && q.options.length) next.options = q.options;
+  if (!card.passage && q.passage) next.passage = q.passage;
+  if (!card.options?.length && q.options.length) next.options = q.options;
+  // Snapshot fields can go stale; reconcile explain so rewritten explanations rehydrate.
+  if (q.explain !== card.explain) next.explain = q.explain;
   return next;
 }
 
@@ -67,7 +66,11 @@ export function loadSrs(): Record<string, SrsCard> {
     const hydrated: Record<string, SrsCard> = {};
     for (const [id, card] of Object.entries(parsed)) {
       const next = hydrateCard(card);
-      if ((next.passage && !card.passage) || (next.options?.length && !card.options?.length)) {
+      if (
+        next.passage !== card.passage ||
+        next.options !== card.options ||
+        next.explain !== card.explain
+      ) {
         changed = true;
       }
       hydrated[id] = next;

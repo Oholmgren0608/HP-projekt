@@ -171,7 +171,12 @@ export function DailySrsReview() {
             </span>
             {card.back}
           </p>
-          <p className="text-sm leading-relaxed text-[var(--ink-soft)]">{card.explain}</p>
+          <div className="text-sm leading-relaxed text-[var(--ink-soft)]">
+            <span className="block text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+              Förklaring
+            </span>
+            <p className="mt-1 whitespace-pre-wrap">{card.explain}</p>
+          </div>
           <div className="flex flex-wrap gap-2">
             <button
               type="button"

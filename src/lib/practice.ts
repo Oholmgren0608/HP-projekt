@@ -50,7 +50,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ordet ”adekvat”?",
     options: ["överdriven", "lämplig / tillräcklig", "otydlig", "tillfällig"],
     correctIndex: 1,
-    explain: "Adekvat = lämplig eller tillräcklig i sammanhanget.",
+    explain: "Adekvat betyder lämplig eller tillräcklig för ett givet syfte. Överdriven beskriver något som gått för långt, vilket är en annan dimension än lämplighet. Otydlig handlar om klarhet, inte om att passa syftet. Tillfällig syftar på varaktighet i tid, inte på lämplighet.",
   },
   {
     id: "ord-2",
@@ -58,7 +58,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”implikation”?",
     options: ["direkt motsägelse", "följd / underförstådd betydelse", "offentlig debatt", "formell ursäkt"],
     correctIndex: 1,
-    explain: "En implikation är något som följer eller underförstås.",
+    explain: "En implikation är en följd eller underförstådd betydelse som ett påstående för med sig. Direkt motsägelse är motsatsen, eftersom en implikation snarare hänger ihop med utsagan än strider mot den. Offentlig debatt handlar om diskussion, inte om logisk följd. Formell ursäkt saknar helt kopplingen till följd eller antydan.",
   },
   {
     id: "ord-3",
@@ -66,7 +66,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”premissen”?",
     options: ["slutsatserna", "utgångspunkten / antagandet", "undantaget", "bevisbördan"],
     correctIndex: 1,
-    explain: "Premiss = antagande som ett resonemang bygger på.",
+    explain: "Premissen är den utgångspunkt eller det antagande som ett resonemang bygger på. Slutsatserna är istället vad man kommer fram till efter resonemanget, alltså motsatt ände av tankekedjan. Undantaget rör avvikelser från en regel, inte grunden för argumentet. Bevisbördan handlar om vem som måste styrka ett påstående, vilket är en annan juridisk/logisk term.",
   },
   {
     id: "ord-4",
@@ -74,7 +74,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”ambivalent”?",
     options: ["helt säker", "kluven / dubbeltydigt sinnad", "ointresserad", "öppen och glad"],
     correctIndex: 1,
-    explain: "Ambivalent = att ha blandade eller motstridiga känslor.",
+    explain: "Ambivalent betyder kluven eller att ha motstridiga känslor samtidigt. Helt säker är motsatsen, då det utesluter tvekan. Ointresserad beskriver brist på engagemang snarare än dubbelhet i känslor. Öppen och glad beskriver ett positivt, enhetligt sinnestillstånd utan den inneboende splittringen.",
   },
   {
     id: "ord-5",
@@ -82,7 +82,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”koncist”?",
     options: ["långrandigt", "kortfattat och precist", "poetiskt", "vardagligt"],
     correctIndex: 1,
-    explain: "Koncis stil är knappt och klart formulerad.",
+    explain: "Koncist betyder kortfattat och precist formulerat. Långrandigt är motsatsen, eftersom det syftar på utdragna och ordrika formuleringar. Poetiskt handlar om stilistiskt bildspråk, inte om korthet. Vardagligt beskriver register snarare än hur kort eller precis en text är.",
   },
   {
     id: "ord-6",
@@ -90,7 +90,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”relativisera”?",
     options: ["absolutgöra", "sätta i perspektiv / tona ner absoluthet", "förstora", "bevisa"],
     correctIndex: 1,
-    explain: "Att relativisera är att se något i förhållande till annat.",
+    explain: "Att relativisera är att sätta något i perspektiv eller tona ner dess absoluta karaktär genom att jämföra med annat. Absolutgöra är motsatsen, eftersom det förstärker snarare än nyanserar ett påstående. Förstora handlar om att göra något större, inte om att relativisera dess betydelse. Bevisa syftar på att styrka sanningshalt, vilket inte har med perspektivering att göra.",
   },
   {
     id: "ord-7",
@@ -98,7 +98,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”diskrepans”?",
     options: ["överensstämmelse", "skillnad / bristande överensstämmelse", "sammanfattning", "upprepning"],
     correctIndex: 1,
-    explain: "Diskrepans = skillnad mellan två uppgifter eller bilder.",
+    explain: "Diskrepans betyder skillnad eller bristande överensstämmelse mellan till exempel två uppgifter. Överensstämmelse är motsatsen, då den beskriver att saker stämmer ihop. Sammanfattning handlar om att komprimera information, inte om att peka på skillnader. Upprepning innebär att säga samma sak igen, vilket är en annan process än att jämföra och hitta avvikelser.",
   },
   {
     id: "ord-8",
@@ -106,7 +106,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”eminent”?",
     options: ["medelmåttig", "framstående", "okänd", "tillfällig"],
     correctIndex: 1,
-    explain: "Eminent = synnerligen skicklig eller framstående.",
+    explain: "Eminent betyder framstående eller synnerligen skicklig. Medelmåttig är närmast motsatsen, eftersom det beskriver genomsnittlig kvalitet. Okänd beskriver brist på uppmärksamhet, vilket strider mot att vara framstående. Tillfällig handlar om varaktighet i tid och saknar koppling till skicklighet eller status.",
   },
   {
     id: "ord-9",
@@ -114,7 +114,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”provisorisk”?",
     options: ["slutgiltig", "tillfällig", "laglig", "dyr"],
     correctIndex: 1,
-    explain: "Provisorisk = tillfällig lösning i väntan på något bättre.",
+    explain: "Provisorisk betyder tillfällig, ofta som en lösning i väntan på något bättre. Slutgiltig är motsatsen, då den betecknar det som är avgjort och bestående. Laglig rör lagenlighet, inte varaktighet. Dyr handlar om kostnad, vilket är en helt annan egenskap än hur länge något ska gälla.",
   },
   {
     id: "ord-10",
@@ -122,7 +122,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”subversiv”?",
     options: ["stödjande", "omstörtande / underminerande", "neutral", "högtidlig"],
     correctIndex: 1,
-    explain: "Subversiv verksamhet syftar till att underminera rådande ordning.",
+    explain: "Subversiv betyder omstörtande eller underminerande gentemot en rådande ordning. Stödjande är motsatsen, eftersom det innebär att man bidrar till att upprätthålla något snarare än att underminera det. Neutral beskriver avsaknad av ställningstagande, vilket inte stämmer med den aktiva undermineringen i subversiv. Högtidlig rör ett formellt tonläge och saknar den ifrågasättande innebörden.",
   },
   {
     id: "ord-11",
@@ -130,7 +130,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”tautologi”?",
     options: ["cirkelresonemang / upprepning av samma sak", "motsägelse", "exempel", "bevis"],
     correctIndex: 0,
-    explain: "Tautologi upprepar samma innebörd med andra ord.",
+    explain: "Tautologi är ett cirkelresonemang eller en upprepning av samma sak i andra ordalag. Motsägelse beskriver istället två påståenden som inte kan vara sanna samtidigt, vilket är motsatt logik. Exempel är en illustration av något, inte en upprepning av samma innebörd. Bevis syftar på belägg för ett påstående, vilket skiljer sig från att bara omformulera det.",
   },
   {
     id: "ord-12",
@@ -138,7 +138,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”kontroversiell”?",
     options: ["allmänt accepterad", "omstridd", "hemlig", "teknisk"],
     correctIndex: 1,
-    explain: "Kontroversiell = något som väcker starka motstridiga åsikter.",
+    explain: "Kontroversiell betyder omstridd, det väcker starka och motstridiga åsikter. Allmänt accepterad är motsatsen, eftersom den beskriver bred enighet snarare än konflikt. Hemlig handlar om att vara dold, inte om att vara omdebatterad. Teknisk syftar på fackmässig karaktär och har ingen koppling till grad av oenighet.",
   },
   {
     id: "ord-13",
@@ -146,7 +146,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”indignation”?",
     options: ["nöjdhet", "rättmätig vrede / upprördhet", "nyfikenhet", "trötthet"],
     correctIndex: 1,
-    explain: "Indignation är upprördhet över något som uppfattas som orätt.",
+    explain: "Indignation betyder rättmätig vrede eller upprördhet över något som uppfattas som orätt. Nöjdhet är motsatsen, då den beskriver ett tillfredsställt sinnestillstånd. Nyfikenhet handlar om intresse för att veta mer, inte om upprördhet. Trötthet syftar på brist på energi och saknar den känslomässiga laddningen i indignation.",
   },
   {
     id: "ord-14",
@@ -154,7 +154,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”implicit”?",
     options: ["uttryckligen sagt", "underförstått", "felaktigt", "högljutt"],
     correctIndex: 1,
-    explain: "Implicit = underförstått, inte uttalat rakt ut.",
+    explain: "Implicit betyder underförstått, det är antytt snarare än uttalat. Uttryckligen sagt är motsatsen, eftersom det betecknar det som sägs rakt ut. Felaktigt handlar om sanningshalt, inte om hur något förmedlas. Högljutt rör volym eller intensitet i uttryck, vilket saknar koppling till underförstådd betydelse.",
   },
   {
     id: "ord-15",
@@ -162,7 +162,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”konsensus”?",
     options: ["konflikt", "samförstånd", "omröstning", "kompromisslöshet"],
     correctIndex: 1,
-    explain: "Konsensus = allmän enighet.",
+    explain: "Konsensus betyder samförstånd eller allmän enighet. Konflikt är motsatsen, då den beskriver oenighet snarare än samstämmighet. Omröstning är en metod för att fatta beslut men innebär inte i sig enighet. Kompromisslöshet betecknar en ovilja att mötas, vilket är raka motsatsen till samförstånd.",
   },
   {
     id: "ord-16",
@@ -170,7 +170,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”epitet”?",
     options: ["tillnamn / beskrivande beteckning", "fotnot", "citat", "rubrik"],
     correctIndex: 0,
-    explain: "Ett epitet är ett beskrivande tillnamn eller attribut.",
+    explain: "Epitet är ett tillnamn eller en beskrivande beteckning som fästs vid någon eller något. Fotnot är en förklarande not i en text, vilket är en annan textuell funktion än ett tillnamn. Citat är ett återgivet uttalande, inte en beskrivande benämning. Rubrik är en titel som inleder en text, vilket skiljer sig från ett epitet som beskriver en person eller sak.",
   },
   {
     id: "ord-17",
@@ -178,7 +178,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”fatal”?",
     options: ["ofarlig", "ödesdiger / katastrofal", "rolig", "långsam"],
     correctIndex: 1,
-    explain: "Fatal = som leder till katastrof eller dödlig utgång.",
+    explain: "Fatal betyder ödesdiger eller katastrofal, ofta med allvarliga eller dödliga följder. Ofarlig är motsatsen, eftersom den utesluter allvarlig skada. Rolig beskriver ett lustfyllt intryck, vilket är oförenligt med den allvarliga innebörden i fatal. Långsam handlar om hastighet, inte om graden av allvar i följderna.",
   },
   {
     id: "ord-18",
@@ -186,7 +186,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”abstrahera”?",
     options: ["göra konkret", "lyfta ut det väsentliga / bortse från detaljer", "räkna", "översätta"],
     correctIndex: 1,
-    explain: "Att abstrahera är att generalisera bort från enskilda detaljer.",
+    explain: "Att abstrahera är att lyfta ut det väsentliga och bortse från enskilda detaljer. Göra konkret är motsatsen, då det innebär att knyta något till specifika, konkreta exempel snarare än att generalisera. Räkna handlar om matematisk bearbetning, inte om att bortse från detaljer. Översätta rör överföring mellan språk, vilket är en annan process än generalisering.",
   },
   {
     id: "ord-19",
@@ -194,7 +194,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”legitim”?",
     options: ["olaglig", "berättigad / giltig", "hemlig", "tillfällig"],
     correctIndex: 1,
-    explain: "Legitim = giltig eller berättigad.",
+    explain: "Legitim betyder berättigad eller giltig, ofta i juridisk eller moralisk mening. Olaglig är motsatsen, eftersom den betecknar det som strider mot lagen. Hemlig handlar om att vara dold, vilket inte har med giltighet att göra. Tillfällig syftar på varaktighet i tid, en annan egenskap än att vara berättigad.",
   },
   {
     id: "ord-20",
@@ -202,7 +202,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”paradox”?",
     options: ["självmotsägande påstående som kan rymma en sanning", "enkel sanning", "statistik", "citat"],
     correctIndex: 0,
-    explain: "En paradox verkar motsägelsefull men kan ändå fånga något sant.",
+    explain: "En paradox är ett självmotsägande påstående som trots det kan rymma en sanning. Enkel sanning är motsatsen, då den saknar den motsägelsefulla ytan som utmärker en paradox. Statistik handlar om sifferunderlag, inte om ett logiskt spänningsfullt påstående. Citat är ett återgivet uttalande, vilket inte i sig behöver innehålla någon motsägelse.",
   },
   {
     id: "ord-21",
@@ -210,7 +210,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”resursstark”?",
     options: ["fattig på medel", "som har goda tillgångar / kapacitet", "ointresserad", "svag"],
     correctIndex: 1,
-    explain: "Resursstark = rik på resurser, ofta ekonomiskt eller organisatoriskt.",
+    explain: "Resursstark betyder att ha goda tillgångar eller kapacitet, till exempel ekonomiskt eller organisatoriskt. Fattig på medel är motsatsen, eftersom den beskriver brist snarare än överflöd av resurser. Ointresserad handlar om engagemang, inte om tillgång till resurser. Svag beskriver bristande kraft eller förmåga, vilket är motsatt innebörd till att vara resursstark.",
   },
   {
     id: "ord-22",
@@ -218,7 +218,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”dogmatisk”?",
     options: ["öppen för kritik", "låst vid fasta läror utan nyans", "humoristisk", "praktisk"],
     correctIndex: 1,
-    explain: "Dogmatisk hållning vägrar ifrågasätta sina grundsatser.",
+    explain: "Dogmatisk betyder att vara låst vid fasta läror utan att öppna för nyans eller kritik. Öppen för kritik är motsatsen, eftersom den beskriver en beredskap att ompröva sina ståndpunkter. Humoristisk rör lekfullhet i uttryck, vilket saknar kopplingen till orubblig övertygelse. Praktisk handlar om verklighetsanpassning snarare än om orubblig fasthet vid en lära.",
   },
   {
     id: "ord-23",
@@ -226,7 +226,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”implicera”?",
     options: ["utesluta", "innebära / antyda", "bevisa med experiment", "citera"],
     correctIndex: 1,
-    explain: "Att implicera är att antyda eller medföra något.",
+    explain: "Att implicera är att innebära eller antyda något utan att säga det rakt ut. Utesluta är motsatsen, då det innebär att avlägsna eller frånta möjligheten, inte att antyda. Bevisa med experiment syftar på empirisk verifiering, vilket är en mycket starkare och annorlunda process än att antyda. Citera handlar om att återge någons ord, inte om att låta något förstås indirekt.",
   },
   {
     id: "ord-24",
@@ -234,7 +234,7 @@ export const ORD_BANK: ChoiceQuestion[] = [
     prompt: "Vad betyder ”koherent”?",
     options: ["osammanhängande", "sammanhängande / logiskt enhetlig", "lång", "poetisk"],
     correctIndex: 1,
-    explain: "Ett koherent resonemang hänger ihop utan motsägelser.",
+    explain: "Koherent betyder sammanhängande och logiskt enhetlig, utan inbördes motsägelser. Osammanhängande är motsatsen, eftersom det just beskriver brist på inre logik. Lång handlar om omfång, vilket är oberoende av om resonemanget hänger ihop. Poetisk rör stilistiskt bildspråk, vilket inte har med logisk sammanhållning att göra.",
   },
 ];
 
@@ -252,7 +252,7 @@ export const LAS_BANK: ChoiceQuestion[] = [
       "Medier bör sluta publicera långa texter",
     ],
     correctIndex: 1,
-    explain: "Texten betonar urval/inramning och tålamod framför mer data.",
+    explain: "Texten framhåller att problemet är hur information väljs ut och ramas in, inte hur mycket information som finns, vilket gör att huvudpoängen handlar om urval och inramning snarare än mängd. Att fler fakta alltid gör människor bättre informerade motsägs av just den poängen, eftersom texten ifrågasätter att mer data i sig hjälper. Att googling är den viktigaste färdigheten är en för smal och konkret tolkning som inte fångar resonemanget om inramning. Att medier bör sluta publicera långa texter nämns inte och är en helt annan slutsats än den om urval och tålamod.",
   },
   {
     id: "las-2",
@@ -267,7 +267,7 @@ export const LAS_BANK: ChoiceQuestion[] = [
       "Fakta och inramning är samma sak",
     ],
     correctIndex: 0,
-    explain: "Menningen om att samla mer data utan att pröva källor stödjer A.",
+    explain: "Texten stödjer att det är problematiskt att samla mer data utan att pröva källorna, eftersom det är just denna okritiska datainsamling som texten varnar för. Att alla nyhetsmedier ljuger medvetet är en överdrift som går längre än vad texten påstår om brister i granskning. Att tålamod är oviktigt vid läsning strider mot textens betoning av tålamod som en dygd. Att fakta och inramning är samma sak motsäger textens poäng om att det är just skillnaden mellan dem som spelar roll.",
   },
   {
     id: "las-3",
@@ -282,7 +282,7 @@ export const LAS_BANK: ChoiceQuestion[] = [
       "Att finansiering bör upphöra",
     ],
     correctIndex: 1,
-    explain: "Texten lyfter metoddisciplin, osäkerhet och negativa fynd.",
+    explain: "Författaren menar att forskningens värde också ligger i metoddisciplin, redovisad osäkerhet och negativa fynd, inte bara i det slutliga resultatet. Att negativa fynd bör döljas är motsatsen till vad som lyfts fram, eftersom texten snarare vill synliggöra dem. Att spektakulära resultat alltid är bäst är precis den syn som texten ifrågasätter genom att peka på andra värden i forskningen. Att finansiering bör upphöra är en långtgående slutsats som inte har stöd i resonemanget om vad som gör forskning värdefull.",
   },
   {
     id: "las-4",
@@ -297,7 +297,7 @@ export const LAS_BANK: ChoiceQuestion[] = [
       "Att forskare slutar formulera frågor",
     ],
     correctIndex: 1,
-    explain: "Belöning av spektakulära resultat → snedvridet urval och falsk säkerhet.",
+    explain: "Texten varnar för att belöning av spektakulära resultat leder till snedvridet urval och en överdriven bild av hur säker kunskapen egentligen är. Ökad publicering av negativa fynd är motsatt riktning mot vad som varnas för, eftersom det snarare skulle motverka snedvridningen. Lägre krav på metod är inte den konsekvens som texten pekar ut, utan snarare en följd av snedvridet urval än varningen i sig. Att forskare slutar formulera frågor nämns inte och ligger utanför det som beskrivs som konsekvens.",
   },
   {
     id: "las-5",
@@ -312,7 +312,7 @@ export const LAS_BANK: ChoiceQuestion[] = [
       "Socioekonomi saknar betydelse för vegetation",
     ],
     correctIndex: 1,
-    explain: "Texten binder ihop effekter (temperatur/hälsa) och ojämn fördelning.",
+    explain: "Texten kopplar samman grönskans mätbara effekter, till exempel på temperatur och hälsa, med att den är ojämnt fördelad mellan olika områden. Att grönska bara är dekoration motsäger att texten lyfter fram konkreta, mätbara effekter. Att träd bara hjälper på landsbygden strider mot att resonemanget handlar om städer. Att socioekonomi saknar betydelse för vegetation går emot att texten just kopplar den ojämna fördelningen till sociala och ekonomiska skillnader.",
   },
   {
     id: "las-6",
@@ -327,7 +327,7 @@ export const LAS_BANK: ChoiceQuestion[] = [
       "Att ta bort parker i rika områden",
     ],
     correctIndex: 1,
-    explain: "Slutet säger uttryckligen skötsel och lokal förankring.",
+    explain: "Texten anger uttryckligen att skötsel och lokal förankring krävs för att trädsatsningar ska fungera på sikt. Fler planteringsceremonier beskriver en engångshändelse och saknar den långsiktiga skötsel som texten kräver. Att undvika täta områden nämns inte som ett villkor för att satsningarna ska lyckas. Att ta bort parker i rika områden är en omfördelningsåtgärd som inte är det som texten anger som förutsättning.",
   },
 ];
 
@@ -345,7 +345,7 @@ export const ELF_BANK: ChoiceQuestion[] = [
       "Junior staff prefer offices for social reasons only",
     ],
     correctIndex: 1,
-    explain: "The passage focuses on informal learning loss and deliberate mentorship.",
+    explain: "The passage's main claim is that remote work carries a hidden cost in lost informal learning, which means mentorship needs to be deliberately redesigned rather than left to chance. The claim that remote work always increases productivity overstates the passage's point, which is about a specific cultural cost rather than a blanket productivity effect. Saying hallways matter more than software takes a supporting image too literally instead of the broader argument about learning. Reducing junior staff's preference for offices to social reasons only ignores the passage's emphasis on learning, not just socializing.",
   },
   {
     id: "elf-2",
@@ -360,7 +360,7 @@ export const ELF_BANK: ChoiceQuestion[] = [
       "That flexibility never matters",
     ],
     correctIndex: 0,
-    explain: "Treating remote work as logistics alone misses the quieter cultural cost.",
+    explain: "Weaker remote strategies overlook the cultural cost of fewer informal learning moments, since they treat remote work only as a logistical matter. The price of office furniture is irrelevant and not something the passage discusses as a missed cost. Scheduling more meetings is not identified as the missing insight, since the issue is the quality of informal exchange, not meeting frequency. Claiming flexibility never matters overstates the passage's position, which criticizes shallow strategies, not flexibility itself.",
   },
   {
     id: "elf-3",
@@ -375,7 +375,7 @@ export const ELF_BANK: ChoiceQuestion[] = [
       "Ignore junior staff",
     ],
     correctIndex: 1,
-    explain: "Last sentence: redesign mentorship deliberately.",
+    explain: "According to the author, successful organizations deliberately redesign mentorship to compensate for what remote work removes. Banning remote work contradicts the passage's assumption that remote work continues and simply needs better mentorship. Adding more hallways online is a literal misreading of the hallway image rather than the actual recommendation to redesign mentorship. Ignoring junior staff is the opposite of the intent, since the passage's concern is precisely about supporting them.",
   },
   {
     id: "elf-4",
@@ -390,7 +390,7 @@ export const ELF_BANK: ChoiceQuestion[] = [
       "Insurance is unrelated to climate",
     ],
     correctIndex: 1,
-    explain: "The core idea is narrative bias toward suddenness vs slow processes.",
+    explain: "The passage's core idea is that sudden events attract more attention than slow-moving trends, so readers need to actively look for the underlying trend themselves. Saying journalists invent climate disasters goes beyond the claim, which is about attention bias, not fabrication. Calling floods unimportant misreads the point, since floods are used as an example of a sudden event, not dismissed as trivial. Saying insurance is unrelated to climate ignores that such details likely serve as evidence within the passage's argument, not as an unrelated aside.",
   },
 ];
 
@@ -403,7 +403,7 @@ export const DTK_BANK: ChoiceQuestion[] = [
       "Andel cykelresor av alla resor (procent)\nKommun A: 2022: 12  2023: 14  2024: 15\nKommun B: 2022: 18  2023: 17  2024: 19\nKommun C: 2022: 9   2023: 11  2024: 13\nKommun D: 2022: 16  2023: 16  2024: 18",
     options: ["A", "B", "C", "D"],
     correctIndex: 1,
-    explain: "2024: A15, B19, C13, D18 → B högst.",
+    explain: "År 2024 hade B högst andel med 19 procent, jämfört med D:s 18, A:s 15 och C:s 13, vilket gör B till den kommun med störst cykelandel. A och C ligger klart lägre och kan uteslutas direkt, och D:s 18 procent är nära men ändå lägre än B:s 19.",
   },
   {
     id: "dtk-2",
@@ -413,7 +413,7 @@ export const DTK_BANK: ChoiceQuestion[] = [
       "Andel cykelresor av alla resor (procent)\nKommun A: 2022: 12  2023: 14  2024: 15\nKommun B: 2022: 18  2023: 17  2024: 19\nKommun C: 2022: 9   2023: 11  2024: 13\nKommun D: 2022: 16  2023: 16  2024: 18",
     options: ["2", "3", "4", "15"],
     correctIndex: 1,
-    explain: "15 − 12 = 3 procentenheter.",
+    explain: "Kommun A gick från 12 procent 2022 till 15 procent 2024, en ökning med 3 procentenheter. Alternativen 2 och 4 motsvarar inte differensen mellan dessa två värden, och 15 procentenheter vore orimligt stort eftersom det är själva slutvärdet, inte förändringen.",
   },
   {
     id: "dtk-3",
@@ -423,7 +423,7 @@ export const DTK_BANK: ChoiceQuestion[] = [
       "Andel cykelresor av alla resor (procent)\nKommun A: 2022: 12  2023: 14  2024: 15\nKommun B: 2022: 18  2023: 17  2024: 19\nKommun C: 2022: 9   2023: 11  2024: 13\nKommun D: 2022: 16  2023: 16  2024: 18",
     options: ["A", "B", "C", "D"],
     correctIndex: 1,
-    explain: "B: 18 → 17. Övriga ökade eller var oförändrade.",
+    explain: "B är den enda kommun som minskade mellan 2022 och 2023, från 18 till 17 procent. A, C och D antingen ökade eller låg still under samma period och kan därför uteslutas.",
   },
   {
     id: "dtk-4",
@@ -433,7 +433,7 @@ export const DTK_BANK: ChoiceQuestion[] = [
       "Försäljning per produkt (miljoner kr): X = 40, Y = 25, Z = 35. Totalt = 100.",
     options: ["15 %", "25 %", "35 %", "40 %"],
     correctIndex: 1,
-    explain: "25/100 = 25 %.",
+    explain: "Produkt Y svarade för 25 av totalt 100 (motsvarande enheter), det vill säga 25 procent av den totala försäljningen. 15 procent är för lågt och 35/40 procent överskattar Y:s andel, vilka snarare stämmer med andra produkters värden i diagrammet.",
   },
   {
     id: "dtk-5",
@@ -443,7 +443,7 @@ export const DTK_BANK: ChoiceQuestion[] = [
       "Försäljning per produkt (miljoner kr): X = 40, Y = 25, Z = 35. Totalt = 100.",
     options: ["X", "Y", "Z", "Y och Z lika"],
     correctIndex: 0,
-    explain: "X = 40 är störst.",
+    explain: "X hade störst försäljning med värdet 40, vilket är högre än både Y (25) och Z (35). Y och Z ligger båda under X och är dessutom inte lika stora som varandra, så det sista alternativet stämmer inte heller.",
   },
   {
     id: "dtk-6",
@@ -453,7 +453,7 @@ export const DTK_BANK: ChoiceQuestion[] = [
       "Försäljning per produkt (miljoner kr): X = 40, Y = 25, Z = 35. Totalt = 100.",
     options: ["5", "10", "15", "25"],
     correctIndex: 0,
-    explain: "40 − 35 = 5.",
+    explain: "X ligger på 40 miljoner och Z på 35 miljoner, en skillnad på 5 miljoner. 10 och 15 miljoner är för stora skillnader utifrån dessa värden, och 25 miljoner motsvarar snarare skillnaden mellan X och en annan produkt.",
   },
   {
     id: "dtk-7",
@@ -463,7 +463,7 @@ export const DTK_BANK: ChoiceQuestion[] = [
       "Sjukfrånvaro per avdelning (procent av arbetad tid)\nAvd. A: feb 6,2 · mars 5,4 · april 5,8\nAvd. B: feb 4,9 · mars 5,1 · april 4,7\nAvd. C: feb 7,3 · mars 6,8 · april 7,0\nAvd. D: feb 5,6 · mars 4,9 · april 5,3",
     options: ["A", "B", "C", "D"],
     correctIndex: 3,
-    explain: "Mars: A 5,4 · B 5,1 · C 6,8 · D 4,9 → D lägst.",
+    explain: "I mars hade D lägst sjukfrånvaro med 4,9 procent, vilket är lägre än B:s 5,1, A:s 5,4 och C:s 6,8. B (5,1) är näst lägst men ändå högre än D, och C sticker tvärtom ut som avdelningen med högst frånvaro.",
   },
   {
     id: "dtk-8",
@@ -473,7 +473,7 @@ export const DTK_BANK: ChoiceQuestion[] = [
       "Kostnader 2023 (miljoner kr): Personal 12 · Material 8 · Lokaler 4 · Övrigt 6. Totalt = 30.",
     options: ["8 %", "ungefär 27 %", "ungefär 40 %", "ungefär 73 %"],
     correctIndex: 1,
-    explain: "8 / 30 ≈ 0,267 → cirka 27 %.",
+    explain: "Materialkostnaden var 8 av totalt 30 (motsvarande enheter), vilket ger 8/30 ≈ 0,27, det vill säga ungefär 27 procent. 8 procent förväxlar delvärdet med andelen, medan 40 och 73 procent bygger på fel jämförelsetal och blir alldeles för höga.",
   },
 ];
 

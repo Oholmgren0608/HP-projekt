@@ -89,7 +89,14 @@ function QuestionReviewItem({
         })}
       </div>
 
-      <p className="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]">{q.explain}</p>
+      <div className="mt-3">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+          Förklaring
+        </p>
+        <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink-soft)]">
+          {q.explain}
+        </p>
+      </div>
     </li>
   );
 }
