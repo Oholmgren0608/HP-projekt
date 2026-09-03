@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { useAuth } from "@/lib/supabase/auth-context";
+import { isSupabaseConfigured } from "@/lib/supabase/client";
 
 function IconHome() {
   return (
@@ -59,6 +61,52 @@ function IconGauge() {
       <path d="M12 18l4.5-4.5" />
       <circle cx="12" cy="18" r="1.2" fill="currentColor" stroke="none" />
     </svg>
+  );
+}
+
+function GoogleG() {
+  return (
+    <svg className="size-4" viewBox="0 0 24 24" aria-hidden>
+      <path fill="#4285F4" d="M23.5 12.3c0-.9-.1-1.5-.3-2.2H12v4.1h6.5c-.1 1.1-.8 2.7-2.4 3.8l3.7 2.9c2.3-2.1 3.7-5.1 3.7-8.6Z" />
+      <path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.7-2.9c-1 .7-2.4 1.2-4.2 1.2-3.2 0-6-2.1-6.9-5.1L1.2 17.2C3.2 21.2 7.3 24 12 24Z" />
+      <path fill="#FBBC05" d="M5.1 14.3c-.3-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.2 6.8C.4 8.4 0 10.2 0 12s.4 3.6 1.2 5.2l3.9-2.9Z" />
+      <path fill="#EA4335" d="M12 4.7c2.3 0 3.8 1 4.7 1.8l3.4-3.3C18 1.2 15.2 0 12 0 7.3 0 3.2 2.8 1.2 6.8l3.9 2.9C6 6.8 8.8 4.7 12 4.7Z" />
+    </svg>
+  );
+}
+
+function AuthCluster() {
+  const { user, loading, signInWithGoogle, signOut } = useAuth();
+
+  if (!isSupabaseConfigured() || loading) return null;
+
+  if (user) {
+    return (
+      <div className="flex items-center gap-2">
+        <span className="hidden max-w-40 truncate text-xs text-[var(--ink-muted)] sm:inline">
+          {user.email ?? "Inloggad"}
+        </span>
+        <button
+          type="button"
+          onClick={() => void signOut()}
+          className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
+        >
+          Logga ut
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => void signInWithGoogle()}
+      className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+    >
+      <GoogleG />
+      <span className="hidden sm:inline">Logga in med Google</span>
+      <span className="sm:hidden">Logga in</span>
+    </button>
   );
 }
 
@@ -122,6 +170,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               );
             })}
           </nav>
+          <AuthCluster />
         </div>
       </header>
 
