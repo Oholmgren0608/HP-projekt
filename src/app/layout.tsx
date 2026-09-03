@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { AppShell } from "@/components/app-shell";
 import { PlanProvider } from "@/components/plan-context";
+import { AuthProvider } from "@/lib/supabase/auth-context";
 import "./globals.css";
 
 const display = Fraunces({
@@ -38,9 +39,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {/* Be Dark Reader att hoppa över sidan — tillägget lägger annars till
             data-darkreader-*-attribut som ger hydreringsvarningar (se scriptet). */}
         <meta name="darkreader-lock" />
-        <PlanProvider>
-          <AppShell>{children}</AppShell>
-        </PlanProvider>
+        <AuthProvider>
+          <PlanProvider>
+            <AppShell>{children}</AppShell>
+          </PlanProvider>
+        </AuthProvider>
         {/*
           Dark Reader och liknande webbläsartillägg lägger till data-*-attribut
           på elementen innan React hydrerar. Server-HTML:en har inte dessa, så
