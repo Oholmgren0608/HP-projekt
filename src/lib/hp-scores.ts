@@ -1,4 +1,5 @@
 import type { SectionId } from "@/lib/study-plan";
+import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 
 export const DELPROV_META: {
   id: SectionId;
@@ -73,7 +74,7 @@ export function clampWeeksUntilExam(value: unknown): number {
 export function loadScores(): ScoreInput {
   if (typeof window === "undefined") return DEFAULT_SCORES;
   try {
-    const raw = localStorage.getItem(SCORES_STORAGE_KEY);
+    const raw = storageGet(SCORES_STORAGE_KEY);
     if (!raw) return DEFAULT_SCORES;
     const parsed = JSON.parse(raw) as Partial<ScoreInput>;
     const delprov = { ...DEFAULT_SCORES.delprov };
@@ -96,7 +97,7 @@ export function loadScores(): ScoreInput {
 
 export function saveScores(scores: ScoreInput) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(SCORES_STORAGE_KEY, JSON.stringify(scores));
+  storageSet(SCORES_STORAGE_KEY, JSON.stringify(scores));
 }
 
 /** Sätts en gång när användaren sparar sina egna resultat (formulär eller nivåtest). */
@@ -105,7 +106,7 @@ export const SCORES_SAVED_FLAG_KEY = "hp-lift-scores-saved-v1";
 export function loadHasSavedScores(): boolean {
   if (typeof window === "undefined") return false;
   try {
-    return localStorage.getItem(SCORES_SAVED_FLAG_KEY) === "1";
+    return storageGet(SCORES_SAVED_FLAG_KEY) === "1";
   } catch {
     return false;
   }
@@ -114,7 +115,7 @@ export function loadHasSavedScores(): boolean {
 export function markScoresSaved(): void {
   if (typeof window === "undefined") return;
   try {
-    localStorage.setItem(SCORES_SAVED_FLAG_KEY, "1");
+    storageSet(SCORES_SAVED_FLAG_KEY, "1");
   } catch {
     // ignore
   }

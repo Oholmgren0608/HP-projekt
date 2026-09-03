@@ -1,5 +1,6 @@
 import { clampNorm, type ScoreInput } from "@/lib/hp-scores";
 import type { ChoiceQuestion, PracticeKind } from "@/lib/practice";
+import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 
 export const HISTORY_STORAGE_KEY = "hp-lift-history-v1";
 export const HISTORY_EVENT = "hp-lift-history-changed";
@@ -54,7 +55,7 @@ function emitHistoryChanged() {
 export function loadHistory(): HistoryEvent[] {
   if (typeof window === "undefined") return [];
   try {
-    const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
+    const raw = storageGet(HISTORY_STORAGE_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw) as HistoryEvent[];
     return Array.isArray(parsed) ? parsed : [];
@@ -65,7 +66,7 @@ export function loadHistory(): HistoryEvent[] {
 
 function saveHistory(events: HistoryEvent[]) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(events.slice(-80)));
+  storageSet(HISTORY_STORAGE_KEY, JSON.stringify(events.slice(-80)));
   emitHistoryChanged();
 }
 

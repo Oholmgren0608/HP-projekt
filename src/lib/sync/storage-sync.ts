@@ -123,6 +123,9 @@ async function performMerge(userId: string) {
 
   const uploads: Array<Promise<void>> = [];
   const cache = new Map<string, string>();
+  // Sant om molnet faktiskt ändrade lokal data — dä krävs en reload så att
+  // komponenternas in-memory-tillstånd återspeglar molnet.
+  let adopted = false;
 
   for (const key of SYNCED_KEYS) {
     const row = rowByKey.get(key);
@@ -137,6 +140,7 @@ async function performMerge(userId: string) {
       if (localValue === null || cloudNewer || localValue === cloudValue) {
         // Molnet vinner (eller värdena är identiska): använd molnets värde.
         if (cloudValue !== null) {
+          if (cloudValue !== localValue) adopted = true;
           localStorage.setItem(key, cloudValue);
           if (Number.isFinite(cloudAt)) meta[key] = cloudAt;
         }
@@ -159,6 +163,7 @@ async function performMerge(userId: string) {
     cloudCache = cache;
   }
   await Promise.all(uploads);
+  return adopted;
 }
 
 // ---- Brygga mot auth -------------------------------------------------------
@@ -167,20 +172,27 @@ async function performMerge(userId: string) {
  * Anropas från AuthProvider när auth-tillståndet ändras.
  * - Inloggad: startar merge och aktiverar molnsynk.
  * - Utloggad: återgår till rent lokal läge.
+ *
+ * Vid sign-in/utloggning laddas sidan om så att komponenternas
+ * in-memory-tillstånd startar om från (de nya) localStorage-värdena.
  */
 export function onAuthChanged(userId: string | null) {
   if (!userId) {
+    const wasSignedIn = activeUserId !== null;
     activeUserId = null;
     cloudCache = null;
     mergeUserId = null;
+    if (wasSignedIn) window.location.reload();
     return;
   }
   activeUserId = userId;
   if (cloudCache !== null) return; // Redan synkad för den här sessionen.
   if (mergeUserId !== userId) {
     mergeUserId = userId;
-    void performMerge(userId).finally(() => {
+    void performMerge(userId).then((adopted) => {
       if (mergeUserId === userId) mergeUserId = null;
+      // Reload bara om molnet faktiskt ändrade lokal data (annars ingen poäng).
+      if (adopted && activeUserId === userId) window.location.reload();
     });
   }
 }
@@ -189,7 +201,7 @@ export function onAuthChanged(userId: string | null) {
 
 /** Läser en nyckel. Molnets spegel används när den är laddad, annars lokal. */
 export function storageGet(key: string): string | null {
-  if (cloudCache !== null) {
+  if (cloudCache !== null && cloudCache.has(key)) {
     return cloudCache.get(key) ?? null;
   }
   return localStorage.getItem(key);

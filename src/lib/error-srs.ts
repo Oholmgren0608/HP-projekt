@@ -1,4 +1,5 @@
 import { findQuestionById, type ChoiceQuestion } from "@/lib/practice";
+import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 
 export const SRS_STORAGE_KEY = "hp-lift-srs-v1";
 export const SRS_EVENT = "hp-lift-srs-changed";
@@ -58,7 +59,7 @@ function hydrateCard(card: SrsCard): SrsCard {
 export function loadSrs(): Record<string, SrsCard> {
   if (typeof window === "undefined") return {};
   try {
-    const raw = localStorage.getItem(SRS_STORAGE_KEY);
+    const raw = storageGet(SRS_STORAGE_KEY);
     if (!raw) return {};
     const parsed = JSON.parse(raw) as Record<string, SrsCard>;
     if (!parsed || typeof parsed !== "object") return {};
@@ -76,7 +77,7 @@ export function loadSrs(): Record<string, SrsCard> {
       hydrated[id] = next;
     }
     if (changed) {
-      localStorage.setItem(SRS_STORAGE_KEY, JSON.stringify(hydrated));
+      storageSet(SRS_STORAGE_KEY, JSON.stringify(hydrated));
     }
     return hydrated;
   } catch {
@@ -86,7 +87,7 @@ export function loadSrs(): Record<string, SrsCard> {
 
 function saveSrs(map: Record<string, SrsCard>) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(SRS_STORAGE_KEY, JSON.stringify(map));
+  storageSet(SRS_STORAGE_KEY, JSON.stringify(map));
   emitSrsChanged();
 }
 

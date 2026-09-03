@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { usePlan } from "@/components/plan-context";
 import { useHydrated } from "@/lib/use-hydrated";
+import { storageSet } from "@/lib/sync/storage-sync";
 import { Progress } from "@/components/ui/progress";
 import {
   formatClock,
@@ -70,13 +71,13 @@ export function WeekTracker({
 
   useEffect(() => {
     if (!ready) return;
-    localStorage.setItem(WEEK_PROGRESS_KEY, JSON.stringify(progress));
+    storageSet(WEEK_PROGRESS_KEY, JSON.stringify(progress));
     emitWeekProgressChanged();
   }, [progress, ready]);
 
   useEffect(() => {
     if (!ready) return;
-    localStorage.setItem(WEEK_SCORES_KEY, JSON.stringify(scores));
+    storageSet(WEEK_SCORES_KEY, JSON.stringify(scores));
   }, [scores, ready]);
 
   // Clamp the active week when the generated plan shrinks below the selection,

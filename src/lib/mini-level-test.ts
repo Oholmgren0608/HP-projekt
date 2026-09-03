@@ -3,6 +3,7 @@ import {
   clampDelprov,
   type ScoreInput,
 } from "@/lib/hp-scores";
+import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 import {
   buildQuiz,
   type ChoiceQuestion,
@@ -55,7 +56,7 @@ export function loadNivatestCounts(): NivatestCounts {
   const defaults = defaultNivatestCounts();
   if (typeof window === "undefined") return defaults;
   try {
-    const raw = localStorage.getItem(NIVATEST_COUNTS_STORAGE_KEY);
+    const raw = storageGet(NIVATEST_COUNTS_STORAGE_KEY);
     if (!raw) return defaults;
     const parsed = JSON.parse(raw) as Partial<Record<SectionId, unknown>>;
     for (const { id } of SECTION_KINDS) {
@@ -71,7 +72,7 @@ export function loadNivatestCounts(): NivatestCounts {
 export function saveNivatestCounts(counts: NivatestCounts) {
   if (typeof window === "undefined") return;
   try {
-    localStorage.setItem(NIVATEST_COUNTS_STORAGE_KEY, JSON.stringify(counts));
+    storageSet(NIVATEST_COUNTS_STORAGE_KEY, JSON.stringify(counts));
   } catch {
     // ignore
   }

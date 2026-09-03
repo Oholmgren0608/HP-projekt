@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useHydrated } from "@/lib/use-hydrated";
+import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 import {
   ALL_FLASHCARDS,
   filterDeck,
@@ -16,7 +17,7 @@ const STORAGE_KEY = "hp-flashcards-progress-v1";
 function loadProgress(): ProgressMap {
   if (typeof window === "undefined") return {};
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}") as ProgressMap;
+    return JSON.parse(storageGet(STORAGE_KEY) ?? "{}") as ProgressMap;
   } catch {
     return {};
   }
@@ -62,7 +63,7 @@ export function Flashcards() {
 
   useEffect(() => {
     if (!ready) return;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    storageSet(STORAGE_KEY, JSON.stringify(progress));
   }, [progress, ready]);
 
   // Restart the session when the deck filter changes. Adjusting state during

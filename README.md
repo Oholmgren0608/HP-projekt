@@ -28,3 +28,37 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 - `npm run build` — produktionsbygge
 - `npm run start` — kör byggt resultat
 - `npm run lint` — ESLint
+
+## Supabase (valfritt — appen funkar anonymt utan)
+
+Appen synkar all sparad data till ett Supabase-konto när användaren loggar
+in med Google. Utan inloggning sparas allt i localStorage som tidigare.
+
+### 1. Miljövariabler
+
+Kopiera `.env.local.example` till `.env.local` och fyll i
+`NEXT_PUBLIC_SUPABASE_URL` och `NEXT_PUBLIC_SUPABASE_ANON_KEY` (Supabase
+Dashboard → Project Settings → API).
+
+### 2. Databas
+
+Kör `supabase/migrations/0001_user_state.sql` i Supabase Dashboard →
+SQL Editor. Skapar `user_state`-tabellen med RLS (varje användare ser bara
+sina egna rader).
+
+### 3. Google-inloggning
+
+- Skapa en OAuth-klient i Google Cloud Console (OAuth consent screen +
+  Web application-klient).
+- I Supabase: Authentication → Providers → Google: fyll i Client ID och
+  Client Secret.
+- Authentication → URL Configuration: lägg till
+  `http://127.0.0.1:43123` och `http://localhost:43123`.
+
+### Synk-logik
+
+Vid första inloggningen mergas lokala data med molnet, nyckel för nyckel —
+nyaste värdet vinner (lokal skrivtid vs. molnets `updated_at`). Därefter är
+molnet källa till sanning och localStorage fungerar som offline-cache.
+`src/lib/sync/storage-sync.ts` är en drop-in-ersättning för
+`localStorage.getItem/setItem`.
