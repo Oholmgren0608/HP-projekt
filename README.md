@@ -37,8 +37,11 @@ in med Google. Utan inloggning sparas allt i localStorage som tidigare.
 ### 1. Miljövariabler
 
 Kopiera `.env.local.example` till `.env.local` och fyll i
-`NEXT_PUBLIC_SUPABASE_URL` och `NEXT_PUBLIC_SUPABASE_ANON_KEY` (Supabase
-Dashboard → Project Settings → API).
+`NEXT_PUBLIC_SUPABASE_URL` och `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+Du hittar båda i Supabase Dashboard: klicka på **Connect** uppe till höger
+i projektöversikten, eller gå till **Settings → API Keys**. Använd en
+**Publishable key** (`sb_publishable_...`) i
+`NEXT_PUBLIC_SUPABASE_ANON_KEY` — aldrig en Secret key.
 
 ### 2. Databas
 
