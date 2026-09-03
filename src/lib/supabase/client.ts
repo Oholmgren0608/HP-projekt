@@ -1,6 +1,39 @@
 import { createClient } from "@supabase/supabase-js";
 
 /**
+ * Typad vy över public-schemat (user_state). Den här supabase-js-versionen
+ * kräver schema-nyckel ("public") och att varje tabell har Relationships.
+ * Värden lagras som {"v": "<raw localStorage-sträng>"} i jsonb.
+ */
+export type Database = {
+  public: {
+    Tables: {
+      user_state: {
+        Row: {
+          user_id: string;
+          storage_key: string;
+          value: { v?: string } | null;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          storage_key: string;
+          value: { v?: string } | null;
+          updated_at?: string;
+        };
+        Update: {
+          value?: { v?: string } | null;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+    };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
+  };
+};
+
+/**
  * Supabase browser client, created lazily on first use.
  *
  * The app must keep working 100% anonymously without Supabase configured
@@ -15,7 +48,7 @@ export function isSupabaseConfigured(): boolean {
   return Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 }
 
-let browserClient: ReturnType<typeof createClient> | null = null;
+let browserClient: ReturnType<typeof createClient<Database>> | null = null;
 
 /**
  * Returns a singleton Supabase browser client, or `null` if env vars are
@@ -24,7 +57,7 @@ let browserClient: ReturnType<typeof createClient> | null = null;
 export function getSupabase() {
   if (!isSupabaseConfigured()) return null;
   if (!browserClient) {
-    browserClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    browserClient = createClient<Database>(SUPABASE_URL, SUPABASE_ANON_KEY, {
       auth: {
         persistSession: true,
         autoRefreshToken: true,
