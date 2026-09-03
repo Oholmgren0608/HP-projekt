@@ -1,4 +1,5 @@
 import type { StudyTask, WeekPlan } from "@/lib/study-plan";
+import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 
 export const WEEK_PROGRESS_KEY = "hp-studieplan-progress-v2";
 export const WEEK_SCORES_KEY = "hp-studieplan-scores-v1";
@@ -15,7 +16,7 @@ export function taskKey(week: number, taskId: string) {
 export function loadJson<T>(key: string, fallback: T): T {
   if (typeof window === "undefined") return fallback;
   try {
-    const raw = localStorage.getItem(key);
+    const raw = storageGet(key);
     if (!raw) return fallback;
     return JSON.parse(raw) as T;
   } catch {
@@ -104,7 +105,7 @@ export function saveLockedWeekIfAbsent(weekPlan: WeekPlan) {
   const locked = loadLockedWeeks();
   if (locked[weekPlan.week]) return;
   locked[weekPlan.week] = weekPlan;
-  localStorage.setItem(LOCKED_WEEKS_KEY, JSON.stringify(locked));
+  storageSet(LOCKED_WEEKS_KEY, JSON.stringify(locked));
   emitWeekProgressChanged();
 }
 
@@ -113,6 +114,6 @@ export function clearLockedWeek(week: number) {
   const locked = loadLockedWeeks();
   if (!locked[week]) return;
   delete locked[week];
-  localStorage.setItem(LOCKED_WEEKS_KEY, JSON.stringify(locked));
+  storageSet(LOCKED_WEEKS_KEY, JSON.stringify(locked));
   emitWeekProgressChanged();
 }

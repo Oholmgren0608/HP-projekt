@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useHydrated } from "@/lib/use-hydrated";
+import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 import { LIBRARY_TEXTS, type LibraryText } from "@/lib/reading-library";
 
 const READ_KEY = "hp-reading-done-v1";
@@ -11,7 +12,7 @@ type ReadMap = Record<string, boolean>;
 function loadRead(): ReadMap {
   if (typeof window === "undefined") return {};
   try {
-    return JSON.parse(localStorage.getItem(READ_KEY) ?? "{}") as ReadMap;
+    return JSON.parse(storageGet(READ_KEY) ?? "{}") as ReadMap;
   } catch {
     return {};
   }
@@ -25,7 +26,7 @@ export function ReadingLibrary() {
 
   useEffect(() => {
     if (!ready) return;
-    localStorage.setItem(READ_KEY, JSON.stringify(read));
+    storageSet(READ_KEY, JSON.stringify(read));
   }, [read, ready]);
 
   const text = useMemo(

@@ -1,3 +1,5 @@
+import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+
 const MASTERY_STORAGE_KEY = "hp-lift-mastered-v1";
 
 type GradedItem = {
@@ -8,7 +10,7 @@ type GradedItem = {
 export function loadMasteredQuestionIds(): Set<string> {
   if (typeof window === "undefined") return new Set();
   try {
-    const raw = window.localStorage.getItem(MASTERY_STORAGE_KEY);
+    const raw = storageGet(MASTERY_STORAGE_KEY);
     if (!raw) return new Set();
     const parsed = JSON.parse(raw) as unknown;
     if (!Array.isArray(parsed)) return new Set();
@@ -22,7 +24,7 @@ export function loadMasteredQuestionIds(): Set<string> {
 
 function saveMasteredQuestionIds(ids: Set<string>) {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(MASTERY_STORAGE_KEY, JSON.stringify([...ids]));
+  storageSet(MASTERY_STORAGE_KEY, JSON.stringify([...ids]));
 }
 
 /** Spara fråge-id som användaren svarat rätt på (alla delprov). */
