@@ -9,6 +9,7 @@ import {
 } from "react";
 import type { User } from "@supabase/supabase-js";
 import { getSupabase, isSupabaseConfigured } from "./client";
+import { onAuthChanged } from "@/lib/sync/storage-sync";
 
 type AuthState = {
   /** Inloggad användare, eller null. */
@@ -38,12 +39,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(data.session?.user ?? null);
         setLoading(false);
       }
+      onAuthChanged(data.session?.user?.id ?? null);
     });
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
+      onAuthChanged(session?.user?.id ?? null);
     });
 
     return () => {
