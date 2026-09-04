@@ -23,6 +23,7 @@ import {
   submitAnswer,
 } from "@/lib/duel/matchmaking";
 import { displayNameFromUser, formatMs } from "./duel-utils";
+import { ReviewForm } from "./review-form";
 
 type Phase = "loading" | "error" | "playing" | "waiting" | "finished";
 
@@ -250,12 +251,18 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       const oppId = isBotMatch ? null : iAmA ? m.player_b : m.player_a;
 
       setIsBot(isBotMatch);
-      if (isBotMatch) botEloRef.current = m.bot_elo ?? null;
       const qs = buildDuelQuiz(m.question_seed, DUEL_QUESTION_COUNT);
       setQuestions(qs);
 
       const myProfile = await getProfile(user.id).catch(() => null);
-      if (myProfile) setMeElo(myProfile.elo);
+      if (myProfile) {
+        setMeElo(myProfile.elo);
+        if (isBotMatch) {
+          // Boten blir svårare/lättare utifrån tidigare svårighetsröster.
+          botEloRef.current =
+            (m.bot_elo ?? 1200) + (myProfile.bot_skill_offset ?? 0);
+        }
+      }
       if (oppId) {
         const oppProfile = await getProfile(oppId).catch(() => null);
         if (oppProfile) {
@@ -349,7 +356,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       if (myCount >= qs.length) {
         if (isBotMatch) {
           botDecisionsRef.current = qs.map((q) =>
-            simulateBotAnswer(q, m.bot_elo as number),
+            simulateBotAnswer(q, botEloRef.current ?? 1200),
           );
           setBotCorrect(
             botDecisionsRef.current.filter((d) => d?.correct).length,
@@ -795,6 +802,8 @@ function ResultView({
           Tillbaka till Duell
         </button>
       </div>
+
+      <ReviewForm matchId={match.id} isBot={isBot} />
     </div>
   );
 }

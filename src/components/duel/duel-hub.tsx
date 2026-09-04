@@ -205,6 +205,14 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
         </div>
       ) : null}
 
+      {profile?.flagged ? (
+        <div className="rounded-lg border border-[#9a3412]/30 bg-[#fff7f3] px-4 py-3 text-sm text-[#9a3412]">
+          Ditt konto är under granskning på grund av upprepade negativa omdömen
+          eller rapporter. Ranked-matchmaking är avstängt tills dina omdömen
+          förbättrats. Casual, bot och privata dueller fungerar som vanligt.
+        </div>
+      ) : null}
+
       {/* Mina stats */}
       <section className="grid gap-4 sm:grid-cols-4">
         <StatCard label="Ranking (ELO)" value={String(profile?.elo ?? 1200)} />
@@ -217,9 +225,13 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
       <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <ModeCard
           title="Ranked"
-          description="Tävla om ELO. Vinst ger poäng, förlust drar av."
+          description={
+            profile?.flagged
+              ? "Avstängt medan ditt konto är under granskning."
+              : "Tävla om ELO. Vinst ger poäng, förlust drar av."
+          }
           cta="Hitta match"
-          disabled={busy}
+          disabled={busy || profile?.flagged}
           onClick={() => setView({ kind: "matchmaking", mode: "ranked" })}
         />
         <ModeCard

@@ -37,6 +37,12 @@ export type Database = {
           draws: number;
           created_at: string;
           updated_at: string;
+          flagged: boolean;
+          flagged_at: string | null;
+          received_rating_sum: number;
+          received_rating_count: number;
+          report_count: number;
+          bot_skill_offset: number;
         };
         Insert: {
           user_id: string;
@@ -47,6 +53,12 @@ export type Database = {
           draws?: number;
           created_at?: string;
           updated_at?: string;
+          flagged?: boolean;
+          flagged_at?: string | null;
+          received_rating_sum?: number;
+          received_rating_count?: number;
+          report_count?: number;
+          bot_skill_offset?: number;
         };
         Update: {
           display_name?: string;
@@ -55,6 +67,12 @@ export type Database = {
           losses?: number;
           draws?: number;
           updated_at?: string;
+          flagged?: boolean;
+          flagged_at?: string | null;
+          received_rating_sum?: number;
+          received_rating_count?: number;
+          report_count?: number;
+          bot_skill_offset?: number;
         };
         Relationships: [];
       };
@@ -166,6 +184,41 @@ export type Database = {
         };
         Relationships: [];
       };
+      duel_reviews: {
+        Row: {
+          id: string;
+          match_id: string;
+          reviewer_id: string;
+          target_user: string | null;
+          target_is_bot: boolean;
+          rating: number | null;
+          difficulty: "too_easy" | "just_right" | "too_hard" | null;
+          report_reason: "cheating" | "unsportsmanlike" | "abuse" | "other" | null;
+          comment: string | null;
+          weight: number;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          match_id: string;
+          reviewer_id: string;
+          target_user?: string | null;
+          target_is_bot?: boolean;
+          rating?: number | null;
+          difficulty?: "too_easy" | "just_right" | "too_hard" | null;
+          report_reason?: "cheating" | "unsportsmanlike" | "abuse" | "other" | null;
+          comment?: string | null;
+          weight?: number;
+          created_at?: string;
+        };
+        Update: {
+          rating?: number | null;
+          difficulty?: "too_easy" | "just_right" | "too_hard" | null;
+          report_reason?: "cheating" | "unsportsmanlike" | "abuse" | "other" | null;
+          comment?: string | null;
+        };
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: {
@@ -227,6 +280,16 @@ export type Database = {
       duel_cancel_private: {
         Args: { p_match_id: string };
         Returns: null;
+      };
+      duel_submit_review: {
+        Args: {
+          p_match_id: string;
+          p_rating: number | null;
+          p_difficulty: string | null;
+          p_report_reason: string | null;
+          p_comment: string | null;
+        };
+        Returns: { status: string };
       };
     };
   };

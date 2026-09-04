@@ -5,6 +5,7 @@ export type DuelMode = "ranked" | "casual" | "private";
 export type DuelMatch = Database["public"]["Tables"]["duel_matches"]["Row"];
 export type DuelProfile = Database["public"]["Tables"]["player_profiles"]["Row"];
 export type DuelAnswer = Database["public"]["Tables"]["duel_answers"]["Row"];
+export type DuelReview = Database["public"]["Tables"]["duel_reviews"]["Row"];
 
 /** Frågeformatet som dueller använder (samma som övningsbanken). */
 export const DUEL_QUESTION_COUNT = 10;
