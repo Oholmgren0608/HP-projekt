@@ -19,7 +19,7 @@ import {
 import { createPrivate, joinPrivate, startBotMatch } from "@/lib/duel/matchmaking";
 import { MatchmakingScreen } from "./matchmaking-screen";
 import { PrivateLobby } from "./private-lobby";
-import { displayNameFromUser, winRate } from "./duel-utils";
+import { displayNameFromUser, errorMessage, winRate } from "./duel-utils";
 
 type View =
   | { kind: "hub" }
@@ -66,7 +66,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
         setOpponentNames(await resolveOpponentNames(h, userId));
       } catch (e) {
         if (!cancelled) {
-          setError(e instanceof Error ? e.message : "Kunde inte ladda duell-data.");
+          setError(errorMessage(e, "Kunde inte ladda duell-data."));
         }
       }
     }
@@ -85,7 +85,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
       if (matchId) router.push(`/duell/${matchId}`);
       else setError("Ogiltig eller redan startad kod.");
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Kunde inte gå med i duellen.");
+      setError(errorMessage(e, "Kunde inte gå med i duellen."));
     } finally {
       setBusy(false);
     }
@@ -106,7 +106,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
       const { code, match_id } = await createPrivate();
       setView({ kind: "private", code, matchId: match_id });
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Kunde inte skapa privat match.");
+      setError(errorMessage(e, "Kunde inte skapa privat match."));
     } finally {
       setBusy(false);
     }
@@ -120,7 +120,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
       const matchId = await startBotMatch("ranked");
       router.push(`/duell/${matchId}`);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Kunde inte starta match mot bot.");
+      setError(errorMessage(e, "Kunde inte starta match mot bot."));
       setBusy(false);
     }
   }

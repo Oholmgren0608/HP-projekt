@@ -9,6 +9,7 @@ import {
   type DuelMode,
 } from "@/lib/duel/types";
 import { cancelQueue, joinQueue, startBotMatch } from "@/lib/duel/matchmaking";
+import { errorMessage } from "./duel-utils";
 
 type Supabase = NonNullable<ReturnType<typeof getSupabase>>;
 
@@ -85,7 +86,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
         if (matchId) finish(matchId);
       } catch (e) {
         if (!cancelled) {
-          setError(e instanceof Error ? e.message : "Kunde inte hitta match.");
+          setError(errorMessage(e, "Kunde inte hitta match."));
         }
       }
     }
@@ -131,7 +132,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
       }
     } catch (e) {
       setStartingBot(false);
-      setError(e instanceof Error ? e.message : "Kunde inte starta match mot bot.");
+      setError(errorMessage(e, "Kunde inte starta match mot bot."));
     }
   }
 
