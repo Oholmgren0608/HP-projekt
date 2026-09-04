@@ -27,9 +27,208 @@ export type Database = {
         };
         Relationships: [];
       };
+      player_profiles: {
+        Row: {
+          user_id: string;
+          display_name: string;
+          elo: number;
+          wins: number;
+          losses: number;
+          draws: number;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          display_name: string;
+          elo?: number;
+          wins?: number;
+          losses?: number;
+          draws?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          display_name?: string;
+          elo?: number;
+          wins?: number;
+          losses?: number;
+          draws?: number;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      duel_matches: {
+        Row: {
+          id: string;
+          mode: "ranked" | "casual" | "private";
+          status: "waiting" | "active" | "finished" | "forfeit" | "cancelled";
+          player_a: string;
+          player_b: string | null;
+          bot_elo: number | null;
+          question_seed: string;
+          winner: string | null;
+          a_correct: number | null;
+          b_correct: number | null;
+          a_time_ms: number | null;
+          b_time_ms: number | null;
+          elo_a_delta: number | null;
+          elo_b_delta: number | null;
+          invite_code: string | null;
+          a_finished_at: string | null;
+          b_finished_at: string | null;
+          created_at: string;
+          started_at: string | null;
+          finished_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          mode: "ranked" | "casual" | "private";
+          status?: "waiting" | "active" | "finished" | "forfeit" | "cancelled";
+          player_a: string;
+          player_b?: string | null;
+          bot_elo?: number | null;
+          question_seed?: string;
+          winner?: string | null;
+          a_correct?: number | null;
+          b_correct?: number | null;
+          a_time_ms?: number | null;
+          b_time_ms?: number | null;
+          elo_a_delta?: number | null;
+          elo_b_delta?: number | null;
+          invite_code?: string | null;
+          a_finished_at?: string | null;
+          b_finished_at?: string | null;
+          created_at?: string;
+          started_at?: string | null;
+          finished_at?: string | null;
+        };
+        Update: {
+          status?: "waiting" | "active" | "finished" | "forfeit" | "cancelled";
+          winner?: string | null;
+          a_correct?: number | null;
+          b_correct?: number | null;
+          a_time_ms?: number | null;
+          b_time_ms?: number | null;
+          elo_a_delta?: number | null;
+          elo_b_delta?: number | null;
+          a_finished_at?: string | null;
+          b_finished_at?: string | null;
+          started_at?: string | null;
+          finished_at?: string | null;
+        };
+        Relationships: [];
+      };
+      duel_answers: {
+        Row: {
+          match_id: string;
+          user_id: string;
+          question_id: string;
+          chosen: number;
+          correct: boolean;
+          time_ms: number;
+          answered_at: string;
+        };
+        Insert: {
+          match_id: string;
+          user_id: string;
+          question_id: string;
+          chosen: number;
+          correct: boolean;
+          time_ms: number;
+          answered_at?: string;
+        };
+        Update: {
+          chosen?: number;
+          correct?: boolean;
+          time_ms?: number;
+        };
+        Relationships: [];
+      };
+      duel_queue: {
+        Row: {
+          id: string;
+          user_id: string;
+          mode: "ranked" | "casual";
+          elo: number;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          mode: "ranked" | "casual";
+          elo: number;
+          created_at?: string;
+        };
+        Update: {
+          mode?: "ranked" | "casual";
+          elo?: number;
+        };
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
-    Functions: Record<string, never>;
+    Functions: {
+      duel_ensure_profile: {
+        Args: { p_display_name: string };
+        Returns: null;
+      };
+      duel_join_queue: {
+        Args: { p_mode: string };
+        Returns: string | null;
+      };
+      duel_cancel_queue: {
+        Args: Record<string, never>;
+        Returns: null;
+      };
+      duel_start_bot_match: {
+        Args: { p_mode: string };
+        Returns: string;
+      };
+      duel_submit_answer: {
+        Args: {
+          p_match_id: string;
+          p_question_id: string;
+          p_chosen: number;
+          p_correct: boolean;
+          p_time_ms: number;
+        };
+        Returns: null;
+      };
+      duel_mark_finished: {
+        Args: { p_match_id: string; p_correct: number; p_time_ms: number };
+        Returns: string | null;
+      };
+      duel_finish_bot: {
+        Args: {
+          p_match_id: string;
+          p_player_correct: number;
+          p_player_time_ms: number;
+          p_bot_correct: number;
+        };
+        Returns: { delta: number; winner_is_me: boolean } | null;
+      };
+      duel_forfeit: {
+        Args: { p_match_id: string };
+        Returns: null;
+      };
+      duel_claim_stall_win: {
+        Args: { p_match_id: string };
+        Returns: null;
+      };
+      duel_create_private: {
+        Args: Record<string, never>;
+        Returns: { code: string; match_id: string };
+      };
+      duel_join_private: {
+        Args: { p_code: string };
+        Returns: string | null;
+      };
+      duel_cancel_private: {
+        Args: { p_match_id: string };
+        Returns: null;
+      };
+    };
   };
 };
 

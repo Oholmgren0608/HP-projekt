@@ -45,6 +45,21 @@ function IconChart() {
   );
 }
 
+function IconDuel() {
+  return (
+    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5" />
+      <line x1="13" x2="19" y1="19" y2="13" />
+      <line x1="16" x2="20" y1="16" y2="20" />
+      <line x1="19" x2="21" y1="21" y2="19" />
+      <polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5" />
+      <line x1="5" x2="9" y1="14" y2="18" />
+      <line x1="7" x2="4" y1="17" y2="20" />
+      <line x1="3" x2="5" y1="19" y2="21" />
+    </svg>
+  );
+}
+
 function IconLight() {
   return (
     <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -116,6 +131,7 @@ const NAV = [
   { href: "/plan", label: "Plan", icon: IconCalendar },
   { href: "/ova", label: "Öva", icon: IconBook },
   { href: "/prov", label: "Prov", icon: IconFile },
+  { href: "/duell", label: "Duell", icon: IconDuel },
   { href: "/resultat", label: "Poäng", icon: IconChart },
   { href: "/tips", label: "Tips", icon: IconLight },
 ] as const;
@@ -183,7 +199,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
         aria-label="Huvudmeny"
       >
-        <ul className="grid grid-cols-7">
+        <ul className="grid grid-cols-8">
           {NAV.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);
