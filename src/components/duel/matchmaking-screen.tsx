@@ -8,13 +8,11 @@ import {
   type DuelMatch,
   type DuelMode,
 } from "@/lib/duel/types";
-import {
-  cancelQueue,
-  joinQueue,
-  startBotMatch,
-} from "@/lib/duel/matchmaking";
+import { cancelQueue, joinQueue, startBotMatch } from "@/lib/duel/matchmaking";
 
 type Supabase = NonNullable<ReturnType<typeof getSupabase>>;
+
+const COUNTDOWN_SECONDS = Math.round(DUEL_MATCHMAKING_TIMEOUT_MS / 1000);
 
 type Props = {
   mode: DuelMode;
@@ -23,10 +21,9 @@ type Props = {
 };
 
 export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
-  const [secondsLeft, setSecondsLeft] = useState(
-    Math.round(DUEL_MATCHMAKING_TIMEOUT_MS / 1000),
-  );
+  const [secondsLeft, setSecondsLeft] = useState(COUNTDOWN_SECONDS);
   const [error, setError] = useState<string | null>(null);
+  const [startingBot, setStartingBot] = useState(false);
 
   const onMatchedRef = useRef(onMatched);
   const doneRef = useRef(false);
@@ -35,11 +32,14 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
     onMatchedRef.current = onMatched;
   });
 
+  // Nedräkningen har nått noll = tiden är ute. Ingen automatisk bot-match:
+  // spelaren får i stället välja att möta en bot eller fortsätta söka.
+  const timedOut = secondsLeft === 0;
+
+  // Sök efter motståndare + realtid på nya matcher.
   useEffect(() => {
     let cancelled = false;
     let channel: ReturnType<Supabase["channel"]> | null = null;
-    let timeoutId: ReturnType<typeof setTimeout> | null = null;
-    let intervalId: ReturnType<typeof setInterval> | null = null;
 
     function finish(matchId: string) {
       if (doneRef.current) return;
@@ -82,28 +82,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
       try {
         const matchId = await joinQueue(mode);
         if (cancelled) return;
-        if (matchId) {
-          finish(matchId);
-          return;
-        }
-
-        intervalId = setInterval(
-          () => setSecondsLeft((s) => Math.max(0, s - 1)),
-          1000,
-        );
-        timeoutId = setTimeout(async () => {
-          if (cancelled || doneRef.current) return;
-          try {
-            const botMatchId = await startBotMatch(mode);
-            if (!cancelled) finish(botMatchId);
-          } catch (e) {
-            if (!cancelled) {
-              setError(
-                e instanceof Error ? e.message : "Kunde inte starta match mot bot.",
-              );
-            }
-          }
-        }, DUEL_MATCHMAKING_TIMEOUT_MS);
+        if (matchId) finish(matchId);
       } catch (e) {
         if (!cancelled) {
           setError(e instanceof Error ? e.message : "Kunde inte hitta match.");
@@ -119,10 +98,18 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
         channel.unsubscribe();
         void getSupabase()?.removeChannel(channel);
       }
-      if (timeoutId) clearTimeout(timeoutId);
-      if (intervalId) clearInterval(intervalId);
     };
   }, [mode]);
+
+  // Synlig nedräkning som tickar ner medan man söker.
+  useEffect(() => {
+    if (doneRef.current || timedOut) return;
+    const id = setInterval(
+      () => setSecondsLeft((s) => Math.max(0, s - 1)),
+      1000,
+    );
+    return () => clearInterval(id);
+  }, [timedOut]);
 
   function handleCancel() {
     if (!doneRef.current) {
@@ -132,24 +119,52 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
     onCancel();
   }
 
+  async function handleStartBot() {
+    if (doneRef.current || startingBot) return;
+    setStartingBot(true);
+    setError(null);
+    try {
+      const matchId = await startBotMatch(mode);
+      if (!doneRef.current) {
+        doneRef.current = true;
+        onMatchedRef.current(matchId);
+      }
+    } catch (e) {
+      setStartingBot(false);
+      setError(e instanceof Error ? e.message : "Kunde inte starta match mot bot.");
+    }
+  }
+
+  function handleKeepSearching() {
+    setSecondsLeft(COUNTDOWN_SECONDS);
+  }
+
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
         {duelModeLabel(mode)}
       </p>
       <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-        Söker motståndare…
+        {timedOut ? "Ingen motståndare hittades ännu" : "Söker motståndare…"}
       </h2>
 
       <div className="mt-6 flex flex-col items-center gap-4">
         <div className="size-10 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--accent)]" />
-        <p className="text-sm text-[var(--ink-muted)]">
-          Matchar dig mot en spelare på ungefär samma nivå.
+        <p className="text-center text-sm text-[var(--ink-muted)]">
+          {timedOut
+            ? "Du står kvar i kön. Vill du möta en bot istället?"
+            : "Matchar dig mot en spelare på ungefär samma nivå."}
         </p>
-        <p className="tabular-nums text-sm text-[var(--ink-soft)]">
-          Bot om ingen hittas inom{" "}
-          <span className="font-semibold text-[var(--ink)]">{secondsLeft}s</span>
-        </p>
+        {timedOut ? (
+          <p className="text-sm font-semibold text-[var(--ink)]">
+            Sökt i över {COUNTDOWN_SECONDS} sekunder
+          </p>
+        ) : (
+          <p className="font-[family-name:var(--font-display)] text-4xl tabular-nums text-[var(--ink)]">
+            {secondsLeft}
+            <span className="text-base font-normal text-[var(--ink-muted)]"> s</span>
+          </p>
+        )}
       </div>
 
       {error ? (
@@ -158,11 +173,32 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
         </p>
       ) : null}
 
-      <div className="mt-6 flex justify-center">
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <button
+          type="button"
+          disabled={startingBot}
+          onClick={() => void handleStartBot()}
+          className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition disabled:opacity-50 ${
+            timedOut
+              ? "bg-[var(--accent)] text-white hover:brightness-110"
+              : "border border-[var(--line)] font-medium text-[var(--ink-muted)] hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
+          }`}
+        >
+          {startingBot ? "Startar…" : "Möt en bot istället"}
+        </button>
+        {timedOut ? (
+          <button
+            type="button"
+            onClick={handleKeepSearching}
+            className="rounded-lg border border-[var(--line)] px-5 py-2.5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+          >
+            Fortsätt söka
+          </button>
+        ) : null}
         <button
           type="button"
           onClick={handleCancel}
-          className="rounded-lg border border-[var(--line)] px-5 py-2.5 text-sm font-medium text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
+          className="rounded-lg border border-[var(--line)] px-5 py-2.5 text-sm font-medium text-[var(--ink-muted)] transition hover:border-[#9a3412]/40 hover:text-[#9a3412]"
         >
           Avbryt
         </button>

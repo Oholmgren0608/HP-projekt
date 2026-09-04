@@ -16,7 +16,7 @@ import {
   getMatchHistory,
   getProfile,
 } from "@/lib/duel/profile";
-import { createPrivate, joinPrivate } from "@/lib/duel/matchmaking";
+import { createPrivate, joinPrivate, startBotMatch } from "@/lib/duel/matchmaking";
 import { MatchmakingScreen } from "./matchmaking-screen";
 import { PrivateLobby } from "./private-lobby";
 import { displayNameFromUser, winRate } from "./duel-utils";
@@ -112,6 +112,19 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
     }
   }
 
+  async function handleStartBot() {
+    setBusy(true);
+    setError(null);
+    try {
+      // Rankad bot-match: ELO påverkas med reducerad vikt (K=16).
+      const matchId = await startBotMatch("ranked");
+      router.push(`/duell/${matchId}`);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Kunde inte starta match mot bot.");
+      setBusy(false);
+    }
+  }
+
   function goToMatch(matchId: string) {
     router.push(`/duell/${matchId}`);
   }
@@ -201,7 +214,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
       </section>
 
       {/* Spellägen */}
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <ModeCard
           title="Ranked"
           description="Tävla om ELO. Vinst ger poäng, förlust drar av."
@@ -215,6 +228,13 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
           cta="Spela avslappnat"
           disabled={busy}
           onClick={() => setView({ kind: "matchmaking", mode: "casual" })}
+        />
+        <ModeCard
+          title="Möt en bot"
+          description="Tävla mot en AI-bot som anpassar sig efter din ELO. Påverkar ELO."
+          cta="Spela mot bot"
+          disabled={busy}
+          onClick={() => void handleStartBot()}
         />
         <div className="flex flex-col rounded-2xl border border-[var(--line)] bg-white/75 p-5">
           <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
