@@ -39,6 +39,7 @@ export const SYNCED_KEYS = [
   "hp-lift-locked-weeks-v1",
   "hp-flashcards-progress-v1",
   "hp-reading-done-v1",
+  "hp-lift-gamification-v1",
 ] as const;
 
 type CloudRow = {

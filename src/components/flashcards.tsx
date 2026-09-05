@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useHydrated } from "@/lib/use-hydrated";
+import { recordEvent } from "@/lib/gamification/engine";
 import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 import {
   ALL_FLASHCARDS,
@@ -97,6 +98,7 @@ export function Flashcards() {
 
   function rate(result: "correct" | "wrong") {
     if (!card) return;
+    recordEvent({ type: "flashcards", count: 1 });
     const cur: CardProgress = progress[card.id] ?? { correct: 0, wrong: 0 };
     const updated: CardProgress = {
       correct: cur.correct + (result === "correct" ? 1 : 0),

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { recordEvent } from "@/lib/gamification/engine";
 import { getSupabase } from "@/lib/supabase/client";
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import {
@@ -51,6 +52,17 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const [myTimeMs, setMyTimeMs] = useState(0);
   const [botCorrect, setBotCorrect] = useState(0);
   const [stallElapsed, setStallElapsed] = useState(false);
+
+  // Gamification: rapportera duellens utfall en gång när matchen är slut.
+  const duelReportedRef = useRef(false);
+  useEffect(() => {
+    if (phase !== "finished" || !match || !meId || duelReportedRef.current) return;
+    duelReportedRef.current = true;
+    if (match.status === "cancelled") return;
+    const result =
+      match.winner === meId ? "win" : match.winner === null ? "draw" : "loss";
+    recordEvent({ type: "duel_end", result });
+  }, [phase, match, meId]);
 
   // Refs — skrivs aldrig under render (se synk-effekten nedan).
   const phaseRef = useRef(phase);

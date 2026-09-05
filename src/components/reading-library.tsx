@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useHydrated } from "@/lib/use-hydrated";
+import { recordEvent } from "@/lib/gamification/engine";
 import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 import { LIBRARY_TEXTS, type LibraryText } from "@/lib/reading-library";
 
@@ -150,7 +151,10 @@ export function ReadingLibrary() {
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
-              onClick={() => setRead((prev) => ({ ...prev, [text.id]: true }))}
+              onClick={() => {
+                if (!read[text.id]) recordEvent({ type: "reading_done" });
+                setRead((prev) => ({ ...prev, [text.id]: true }));
+              }}
               className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
             >
               Markera som läst

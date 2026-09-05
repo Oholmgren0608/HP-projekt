@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
+import { ArrowRight, Play, Timer } from "lucide-react";
 import { DailySrsReview } from "@/components/daily-srs-review";
 import { usePlan } from "@/components/plan-context";
 import { ProgressPanel } from "@/components/progress-panel";
@@ -14,9 +16,24 @@ import {
   weekProgressSummary,
   type ProgressMap,
 } from "@/lib/week-progress";
+import { useGamification } from "@/lib/gamification/provider";
+import { Mascot } from "@/components/mascot";
+import { XpBar } from "@/components/gamification/xp-bar";
+import { StreakCard } from "@/components/gamification/streak-card";
+import { DailyQuests } from "@/components/gamification/daily-quests";
+import { AchievementsPanel } from "@/components/gamification/achievements-panel";
+
+function greeting(): string {
+  const h = new Date().getHours();
+  if (h < 5) return "God natt";
+  if (h < 10) return "God morgon";
+  if (h < 17) return "God dag";
+  return "God kväll";
+}
 
 export function DashboardHome() {
-  const { plan, ready } = usePlan();
+  const { plan, ready, hasSavedScores } = usePlan();
+  const { state } = useGamification();
   const [progress, setProgress] = useState<ProgressMap>(loadWeekProgress);
   const mounted = useHydrated();
 
@@ -34,8 +51,8 @@ export function DashboardHome() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-40 animate-pulse rounded-2xl bg-white/70" />
-        <div className="h-28 animate-pulse rounded-2xl bg-white/70" />
+        <div className="h-40 animate-pulse rounded-2xl bg-[var(--mist)]" />
+        <div className="h-28 animate-pulse rounded-2xl bg-[var(--mist)]" />
       </div>
     );
   }
@@ -44,95 +61,179 @@ export function DashboardHome() {
   const summary = weekProgressSummary(plan.weeklyPlans, progress);
   const { profile, focusIds } = plan;
 
-  return (
-    <div className="space-y-8">
-      <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
-          Dagens pass
-        </p>
-        <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
-          Vad du ska göra nu
-        </h1>
-        <p className="mt-2 max-w-xl text-[var(--ink-muted)]">
-          Snitt {formatNorm(profile.overall)} · {summary.done}/{summary.total} uppgifter klara (
-          {summary.percent} %).
-        </p>
-      </div>
+  const { streak } = state;
+  const mascotMood: "idle" | "happy" | "celebrate" | "nudge" | "sad" =
+    state.quests.allDone ? "celebrate" : streak.current >= 1 ? "happy" : streak.current === 0 && state.xp > 0 ? "sad" : "nudge";
+  const speechText =
+    state.quests.allDone
+      ? "Alla uppdrag klara — du är grym idag! 🎉"
+      : streak.current >= 1
+        ? `${streak.current} ${streak.current === 1 ? "dag" : "dagar"} i rad — fortsätt så! 🔥`
+        : state.xp > 0
+          ? "Din streak väntar på dig — plugga idag igen! 🔥"
+          : "Hej! Börja med dagens pass så tänder vi din streak 🔥";
 
-      <section className="rounded-2xl border border-[var(--line)] bg-white/80 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
-        {next ? (
-          <>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
-              Vecka {next.week} · ~{next.task.minutes} min
+  return (
+    <div className="space-y-6">
+      {/* ---- Hjältesektion -------------------------------------------------- */}
+      <section className="grid items-stretch gap-6 lg:grid-cols-[1fr_auto]">
+        <div className="flex flex-col justify-between gap-5">
+          <div>
+            <p className="text-xs font-extrabold tracking-[0.18em] text-[var(--accent)] uppercase">
+              {greeting()} · Dagens pass
             </p>
-            <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-              {next.task.title}
-            </h2>
-            <p className="mt-2 text-[var(--ink-muted)]">{next.task.detail}</p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <Link
-                href={`/plan?week=${next.week}&start=${encodeURIComponent(next.task.id)}`}
-                className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
-              >
-                Starta övning
-              </Link>
-              <Link
-                href="/plan"
-                className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--line)] bg-white px-5 text-sm font-medium text-[var(--ink)] hover:border-[var(--ink-soft)]"
-              >
-                Hela veckoplanen
-              </Link>
-            </div>
-          </>
-        ) : (
-          <>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-              Alla uppgifter är klara
-            </h2>
-            <p className="mt-2 text-[var(--ink-muted)]">
-              Bra jobbat. Repetera med flashcards, mini-prov eller öva en uppgift igen.
+            <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+              Vad du ska göra nu
+            </h1>
+            <p className="mt-2 max-w-xl font-semibold text-[var(--ink-muted)]">
+              Snitt {formatNorm(profile.overall)} · {summary.done}/{summary.total} uppgifter klara (
+              {summary.percent} %).
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <Link
-                href="/ova"
-                className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white hover:brightness-110"
-              >
-                Öva flashcards
-              </Link>
-              <Link
-                href="/prov"
-                className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--line)] bg-white px-5 text-sm font-medium text-[var(--ink)]"
-              >
-                Mini-prov
-              </Link>
-            </div>
-          </>
-        )}
+          </div>
+          <XpBar />
+        </div>
+
+        <div className="flex items-start gap-3 lg:w-80">
+          <div className="relative mt-3 rounded-2xl rounded-bl-md border border-[var(--line)] bg-[var(--card)] px-4 py-3 shadow-soft">
+            <p className="text-sm font-bold text-[var(--ink)]">{speechText}</p>
+            <span
+              aria-hidden
+              className="absolute -bottom-2 left-4 size-4 rotate-45 border-b border-r border-[var(--line)] bg-[var(--card)]"
+            />
+          </div>
+          <Mascot mood={mascotMood} className="size-24 shrink-0" />
+        </div>
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-3">
-        <div className="rounded-2xl border border-[var(--line)] bg-white/75 p-4">
-          <p className="text-sm text-[var(--ink-muted)]">Kvant / verbal</p>
-          <p className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-            {formatNorm(profile.previousQuant)} · {formatNorm(profile.previousVerbal)}
-          </p>
+      {/* ---- Onboarding för nya användare ------------------------------------ */}
+      {!hasSavedScores && (
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="overflow-hidden rounded-3xl bg-[linear-gradient(120deg,var(--accent),var(--lagoon))] p-6 text-white shadow-pop sm:p-8"
+        >
+          <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+            <div className="max-w-lg">
+              <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold sm:text-3xl">
+                Ny här? Kom igång på 2 minuter
+              </h2>
+              <p className="mt-2 font-semibold text-white/85">
+                Gör nivåtestet eller mata in dina tidigare resultat — så bygger jag din personliga
+                veckoplan direkt.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link
+                  href="/nivatest"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-extrabold text-[var(--accent)] shadow-soft transition hover:scale-[1.03] active:scale-95"
+                >
+                  <Play className="size-4" fill="currentColor" />
+                  Gör nivåtestet
+                </Link>
+                <Link
+                  href="/resultat"
+                  className="inline-flex min-h-11 items-center rounded-full border border-white/40 px-5 text-sm font-extrabold text-white transition hover:bg-white/10 active:scale-95"
+                >
+                  Mata in resultat
+                </Link>
+              </div>
+            </div>
+            <Mascot mood="happy" className="size-24 shrink-0 sm:size-28" />
+          </div>
+        </motion.section>
+      )}
+
+      {/* ---- Uppdrag + dagens pass ------------------------------------------- */}
+      <section className="grid items-stretch gap-6 lg:grid-cols-2">
+        <DailyQuests />
+
+        <div className="relative flex flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft sm:p-6">
+          {next ? (
+            <>
+              <p className="flex items-center gap-2 text-xs font-extrabold tracking-[0.14em] text-[var(--accent)] uppercase">
+                Vecka {next.week}
+                <span className="flex items-center gap-1 rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-[11px] font-extrabold tracking-normal text-[var(--accent-foreground)]">
+                  <Timer className="size-3" />~{next.task.minutes} min
+                </span>
+              </p>
+              <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                {next.task.title}
+              </h2>
+              <p className="mt-2 font-semibold text-[var(--ink-muted)]">{next.task.detail}</p>
+              <div className="mt-auto flex flex-wrap gap-3 pt-5">
+                <Link
+                  href={`/plan?week=${next.week}&start=${encodeURIComponent(next.task.id)}`}
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--accent),var(--lagoon))] px-6 text-sm font-extrabold text-white shadow-soft transition hover:scale-[1.03] hover:shadow-pop active:scale-95"
+                >
+                  Starta övning
+                  <ArrowRight className="size-4" />
+                </Link>
+                <Link
+                  href="/plan"
+                  className="inline-flex min-h-11 items-center rounded-full border border-[var(--line)] bg-transparent px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
+                >
+                  Hela veckoplanen
+                </Link>
+              </div>
+            </>
+          ) : (
+            <>
+              <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                Alla uppgifter är klara 🎉
+              </h2>
+              <p className="mt-2 font-semibold text-[var(--ink-muted)]">
+                Bra jobbat! Repetera med flashcards, kör ett mini-prov eller utmana någon i en duell.
+              </p>
+              <div className="mt-auto flex flex-wrap gap-3 pt-5">
+                <Link
+                  href="/ova"
+                  className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--accent),var(--lagoon))] px-6 text-sm font-extrabold text-white shadow-soft transition hover:scale-[1.03] active:scale-95"
+                >
+                  Öva flashcards
+                </Link>
+                <Link
+                  href="/duell"
+                  className="inline-flex min-h-11 items-center rounded-full border border-[var(--line)] px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
+                >
+                  Spela en duell ⚔️
+                </Link>
+              </div>
+            </>
+          )}
         </div>
-        <div className="rounded-2xl border border-[var(--line)] bg-white/75 p-4 sm:col-span-2">
-          <p className="text-sm text-[var(--ink-muted)]">Fokus just nu</p>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {focusIds.slice(0, 3).map((id) => (
-              <span
-                key={id}
-                className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-medium text-[var(--ink)]"
-              >
-                {id}
-              </span>
-            ))}
+      </section>
+
+      {/* ---- Streak + statistik ---------------------------------------------- */}
+      <section className="grid items-stretch gap-4 lg:grid-cols-[auto_1fr]">
+        <div className="lg:w-72">
+          <StreakCard />
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft">
+            <p className="text-sm font-bold text-[var(--ink-muted)]">Kvant / verbal</p>
+            <p className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+              {formatNorm(profile.previousQuant)} · {formatNorm(profile.previousVerbal)}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft">
+            <p className="text-sm font-bold text-[var(--ink-muted)]">Fokus just nu</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {focusIds.slice(0, 3).map((id) => (
+                <span
+                  key={id}
+                  className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-bold text-[var(--accent-foreground)]"
+                >
+                  {id}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <DailySrsReview />
+
+      <AchievementsPanel />
 
       <ProgressPanel compact />
     </div>

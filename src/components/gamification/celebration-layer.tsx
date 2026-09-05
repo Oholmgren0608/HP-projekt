@@ -1,0 +1,218 @@
+"use client";
+
+/**
+ * Firarlager — konsumerar motorns notiser och visar:
+ *  - Konfetti (canvas-confetti) vid level-up, achievements och streak
+ *  - Level-up-modal med maskoten i festhumör
+ *  - Toasts för achievements, uppdrag och streak
+ * Allt respekterar prefers-reduced-motion och spelar ljud om det är på.
+ */
+
+import { useEffect, useRef, useState } from "react";
+import confetti from "canvas-confetti";
+import { AnimatePresence, motion } from "motion/react";
+import { ACHIEVEMENTS, QUEST_POOL } from "@/lib/gamification/config";
+import {
+  consumeNotifications,
+  subscribeGamification,
+  type GameNotification,
+} from "@/lib/gamification/engine";
+import { play } from "@/lib/sound";
+import { Mascot } from "@/components/mascot";
+import { Button } from "@/components/ui/button";
+
+const PALETTE = ["#0d7c6f", "#2ba89a", "#f59e0b", "#f2604f", "#ffffff"];
+
+function reducedMotion(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
+}
+
+function burst(big: boolean) {
+  if (reducedMotion()) return;
+  confetti({
+    particleCount: big ? 160 : 70,
+    spread: big ? 100 : 70,
+    startVelocity: big ? 42 : 30,
+    gravity: 0.9,
+    scalar: big ? 1.1 : 0.85,
+    ticks: big ? 260 : 180,
+    origin: { x: 0.5, y: 0.35 },
+    colors: PALETTE,
+    disableForReducedMotion: true,
+    zIndex: 200,
+  });
+}
+
+type Toast = {
+  id: number;
+  emoji: string;
+  title: string;
+  desc: string;
+};
+
+let toastId = 0;
+
+export function CelebrationLayer() {
+  const [levelUp, setLevelUp] = useState<{ level: number; title: string } | null>(null);
+  const [toasts, setToasts] = useState<Toast[]>([]);
+  const queueRef = useRef<GameNotification[]>([]);
+  const busyRef = useRef(false);
+
+  useEffect(() => {
+    return subscribeGamification(() => {
+      queueRef.current.push(...consumeNotifications());
+    });
+  }, []);
+
+  // Processa kön sekventiellt — level-up-modalen väntar på sin tur.
+  useEffect(() => {
+    if (busyRef.current) return;
+    const next = queueRef.current.shift();
+    if (!next) return;
+
+    busyRef.current = true;
+    const showToast = (t: Omit<Toast, "id">) => {
+      setToasts((prev) => [...prev.slice(-2), { ...t, id: ++toastId }]);
+    };
+
+    const finish = () => {
+      busyRef.current = false;
+    };
+
+    switch (next.kind) {
+      case "levelup": {
+        burst(true);
+        play("levelup");
+        setLevelUp({ level: next.level, title: next.title });
+        // Modal stänger sig själv; kön fortsätter när den stängs.
+        break;
+      }
+      case "achievement": {
+        const def = ACHIEVEMENTS.find((a) => a.id === next.id);
+        if (def) {
+          burst(false);
+          play("achievement");
+          showToast({ emoji: def.emoji, title: `Achievement: ${def.title}`, desc: def.desc });
+        }
+        finish();
+        break;
+      }
+      case "questdone": {
+        const def = QUEST_POOL.find((q) => q.id === next.questId);
+        if (def) {
+          play("questdone");
+          showToast({
+            emoji: def.emoji,
+            title: "Uppdrag klart!",
+            desc: `${def.label} · +${def.xp} XP`,
+          });
+        }
+        finish();
+        break;
+      }
+      case "streak": {
+        play("streak");
+        showToast({
+          emoji: "🔥",
+          title: `${next.count} dagar i rad!`,
+          desc: "Din streak växer — fortsätt så!",
+        });
+        finish();
+        break;
+      }
+      default:
+        finish();
+    }
+  }, [toasts, levelUp]);
+
+  const closeLevelUp = () => {
+    setLevelUp(null);
+    busyRef.current = false;
+  };
+
+  const dismissToast = (id: number) => {
+    setToasts((prev) => prev.filter((t) => t.id !== id));
+  };
+
+  return (
+    <>
+      {/* Level-up-modal */}
+      <AnimatePresence>
+        {levelUp && (
+          <motion.div
+            key="levelup"
+            className="fixed inset-0 z-[150] flex items-center justify-center p-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div
+              className="absolute inset-0 bg-[var(--ink)]/40 backdrop-blur-sm"
+              onClick={closeLevelUp}
+            />
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label={`Nivå upp: ${levelUp.title}`}
+              initial={{ scale: 0.7, y: 40, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.85, y: 20, opacity: 0 }}
+              transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}
+              className="relative w-full max-w-sm rounded-3xl border border-[var(--line)] bg-[var(--card)] p-8 text-center shadow-pop"
+            >
+              <motion.div
+                initial={{ rotate: -6, scale: 0.6 }}
+                animate={{ rotate: 0, scale: 1 }}
+                transition={{ type: "spring", bounce: 0.5, delay: 0.15 }}
+              >
+                <Mascot mood="celebrate" className="mx-auto size-28" />
+              </motion.div>
+              <p className="mt-4 text-sm font-extrabold tracking-widest text-[var(--energy)] uppercase">
+                Nivå upp!
+              </p>
+              <h2 className="mt-1 font-[family-name:var(--font-display)] text-4xl font-bold text-[var(--ink)]">
+                Nivå {levelUp.level}
+              </h2>
+              <p className="mt-1 text-lg font-bold text-[var(--accent)]">{levelUp.title}</p>
+              <Button className="mt-6 w-full rounded-full py-2.5 text-base" onClick={closeLevelUp}>
+                Fortsätt plugga 🎉
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Toasts */}
+      <div className="pointer-events-none fixed inset-x-0 top-20 z-[140] flex flex-col items-center gap-2 px-4">
+        <AnimatePresence>
+          {toasts.map((t) => (
+            <motion.button
+              key={t.id}
+              type="button"
+              onClick={() => dismissToast(t.id)}
+              initial={{ opacity: 0, y: -16, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              transition={{ type: "spring", bounce: 0.35, duration: 0.5 }}
+              onAnimationComplete={() => {
+                window.setTimeout(() => dismissToast(t.id), 4000);
+              }}
+              className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--card)] p-3.5 text-left shadow-pop"
+            >
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-xl">
+                {t.emoji}
+              </span>
+              <span className="min-w-0">
+                <span className="block truncate text-sm font-extrabold text-[var(--ink)]">{t.title}</span>
+                <span className="block truncate text-xs font-semibold text-[var(--ink-muted)]">{t.desc}</span>
+              </span>
+            </motion.button>
+          ))}
+        </AnimatePresence>
+      </div>
+    </>
+  );
+}

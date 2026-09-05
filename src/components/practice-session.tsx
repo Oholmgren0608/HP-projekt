@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { recordEvent } from "@/lib/gamification/engine";
 import { recordMissedQuestions } from "@/lib/error-srs";
 import { recordMasteredQuestions } from "@/lib/question-mastery";
 import { QuestionReviewList } from "@/components/question-review";
@@ -219,6 +220,11 @@ export function PracticeSession({
     recordMissedQuestions(quiz, locked);
     recordMasteredQuestions(quiz, locked);
     rememberShownQuestions(quiz);
+    recordEvent({
+      type: "practice_session_complete",
+      correct: result.correct,
+      total: result.total,
+    });
     timer.markQuizComplete();
   }
 
@@ -232,6 +238,7 @@ export function PracticeSession({
 
   function submitAnswer() {
     if (selected === null || !current) return;
+    recordEvent({ type: "question", correct: selected === current.correctIndex });
     const nextAnswers = { ...answers, [current.id]: selected };
     setAnswers(nextAnswers);
 

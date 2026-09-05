@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { recordEvent } from "@/lib/gamification/engine";
 import type { PracticeKind } from "@/lib/practice";
 import { buildMixedQuiz, tally, kindBadge } from "@/lib/practice";
 import { QuestionReviewList } from "@/components/question-review";
@@ -69,6 +70,11 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
     });
     recordMissedQuestions(questions, locked);
     recordMasteredQuestions(questions, locked);
+    recordEvent({
+      type: "practice_session_complete",
+      correct: result.correct,
+      total: result.total,
+    });
   }
 
   function lockAndReview(locked: Record<string, number>) {
@@ -79,6 +85,7 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
 
   function submitAnswer() {
     if (selected === null || !current) return;
+    recordEvent({ type: "question", correct: selected === current.correctIndex });
     const nextAnswers = { ...answers, [current.id]: selected };
     setAnswers(nextAnswers);
 

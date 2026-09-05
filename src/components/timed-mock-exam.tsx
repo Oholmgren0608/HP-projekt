@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { recordEvent } from "@/lib/gamification/engine";
 import { recordMissedQuestions } from "@/lib/error-srs";
 import { recordMasteredQuestions } from "@/lib/question-mastery";
 import { formatClock } from "@/lib/practice-timer";
@@ -73,6 +74,7 @@ export function TimedMockExam() {
     setPhase("review");
     if (loggedRef.current || questions.length === 0) return;
     loggedRef.current = true;
+    recordEvent({ type: "mock_exam_complete" });
     const kinds = [...new Set(questions.map((q) => q.kind))] as PracticeKind[];
     const result = tally(questions, locked);
     const durationMs = startTsRef.current ? Date.now() - startTsRef.current : undefined;

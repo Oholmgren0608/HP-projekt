@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useHydrated } from "@/lib/use-hydrated";
+import { recordEvent } from "@/lib/gamification/engine";
 import { kindBadge, type PracticeKind } from "@/lib/practice";
 import {
   SRS_EVENT,
@@ -59,6 +60,7 @@ export function DailySrsReview() {
   const pickedCorrect = chosenText !== null && chosenText === card.back;
 
   function grade(remembered: boolean) {
+    recordEvent({ type: "srs_review", count: 1 });
     reviewSrsCard(card.id, remembered);
     setDone((n) => n + 1);
     setRevealed(false);

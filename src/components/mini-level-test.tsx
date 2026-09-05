@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { recordEvent } from "@/lib/gamification/engine";
 import { usePlan } from "@/components/plan-context";
 import { ScoreBar } from "@/components/plan-badges";
 import { QuestionReviewList } from "@/components/question-review";
@@ -102,6 +103,7 @@ export function MiniLevelTest() {
         total: result.total,
         perKind: tallyPerKind(questions, next),
       });
+      recordEvent({ type: "level_test_complete" });
       setPhase("result");
       return;
     }

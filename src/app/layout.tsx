@@ -1,19 +1,22 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Fraunces, Nunito } from "next/font/google";
 import { AppShell } from "@/components/app-shell";
 import { PlanProvider } from "@/components/plan-context";
 import { AuthProvider } from "@/lib/supabase/auth-context";
+import { PreferencesProvider } from "@/lib/preferences";
+import { GamificationProvider } from "@/lib/gamification/provider";
+import { CelebrationLayer } from "@/components/gamification/celebration-layer";
 import "./globals.css";
 
 const display = Fraunces({
   variable: "--font-display",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
-const sans = Source_Sans_3({
+const sans = Nunito({
   variable: "--font-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {
@@ -26,6 +29,10 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f5ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d1417" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -35,15 +42,38 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
+      <head>
+        {/* Sätt tema-klassen innan första målningen — undviker ljust flimmer
+            i mörkt läge. Körs i <head> direkt, inte via beforeInteractive. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  var stored = localStorage.getItem("hp-lift-theme");
+                  var dark = stored === "dark"
+                    || ((stored !== "light") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+                  if (dark) document.documentElement.classList.add("dark");
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col font-sans">
         {/* Be Dark Reader att hoppa över sidan — tillägget lägger annars till
             data-darkreader-*-attribut som ger hydreringsvarningar (se scriptet). */}
         <meta name="darkreader-lock" />
-        <AuthProvider>
-          <PlanProvider>
-            <AppShell>{children}</AppShell>
-          </PlanProvider>
-        </AuthProvider>
+        <PreferencesProvider>
+          <AuthProvider>
+            <GamificationProvider>
+              <PlanProvider>
+                <AppShell>{children}</AppShell>
+                <CelebrationLayer />
+              </PlanProvider>
+            </GamificationProvider>
+          </AuthProvider>
+        </PreferencesProvider>
         {/*
           Dark Reader och liknande webbläsartillägg lägger till data-*-attribut
           på elementen innan React hydrerar. Server-HTML:en har inte dessa, så

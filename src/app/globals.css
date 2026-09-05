@@ -7,7 +7,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans), "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans), "Nunito", ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
   --font-heading: var(--font-display), Georgia, serif;
   --color-sidebar-ring: var(--sidebar-ring);
@@ -39,6 +39,9 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --shadow-soft: var(--shadow-soft);
+  --shadow-card: var(--shadow-card);
+  --shadow-pop: var(--shadow-pop);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -48,17 +51,28 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ------------------------------------------------------------------ */
+/*  Ljust tema — varmt, vänligt "paper & ink" med spelkänsla           */
+/* ------------------------------------------------------------------ */
 :root {
-  --ink: #122a30;
-  --ink-soft: #2a454c;
-  --ink-muted: #5a7379;
-  --paper: #f3f7f6;
-  --fog: #e7f0ee;
-  --mist: #d6e4e1;
-  --line: #c5d5d1;
-  --accent: #0f6e6a;
-  --accent-soft: #d7eeeb;
-  --lagoon: #3aa39c;
+  --ink: #14302c;
+  --ink-soft: #334b48;
+  --ink-muted: #6b7f7b;
+  --paper: #f7f5ef;
+  --fog: #ecf1eb;
+  --mist: #e1e9e2;
+  --line: #d9dfd5;
+  --accent: #0d7c6f;
+  --accent-soft: #d6eee8;
+  --lagoon: #2ba89a;
+
+  /* Spelenergi: XP, streak, firande */
+  --energy: #f59e0b;
+  --energy-soft: #fdf0d5;
+  --coral: #f2604f;
+  --coral-soft: #fde3df;
+  --success: #22965a;
+  --success-soft: #dcf2e4;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -66,27 +80,89 @@
   --card-foreground: var(--ink);
   --popover: #ffffff;
   --popover-foreground: var(--ink);
-  --primary: var(--ink);
-  --primary-foreground: var(--paper);
+  --primary: var(--accent);
+  --primary-foreground: #ffffff;
   --secondary: var(--mist);
   --secondary-foreground: var(--ink);
   --muted: var(--mist);
   --muted-foreground: var(--ink-muted);
-  --accent-foreground: #ffffff;
-  --destructive: oklch(0.577 0.245 27.325);
+  --accent: var(--accent-soft);
+  --accent-foreground: #0a5c52;
+  --destructive: #c23b2e;
   --border: var(--line);
   --input: var(--line);
   --ring: var(--lagoon);
   --chart-1: var(--accent);
   --chart-2: var(--lagoon);
-  --chart-3: var(--ink-soft);
-  --chart-4: var(--mist);
-  --chart-5: var(--ink);
-  --radius: 0.625rem;
+  --chart-3: var(--energy);
+  --chart-4: var(--coral);
+  --chart-5: var(--ink-soft);
+  --radius: 1rem;
+  --shadow-soft: 0 1px 2px rgb(20 48 44 / 0.05), 0 6px 20px -4px rgb(20 48 44 / 0.08);
+  --shadow-card: 0 2px 4px rgb(20 48 44 / 0.04), 0 12px 32px -8px rgb(20 48 44 / 0.12);
+  --shadow-pop: 0 8px 24px -6px rgb(20 48 44 / 0.18), 0 2px 6px rgb(20 48 44 / 0.08);
   --sidebar: var(--paper);
   --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--ink);
-  --sidebar-primary-foreground: var(--paper);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--mist);
+  --sidebar-accent-foreground: var(--ink);
+  --sidebar-border: var(--line);
+  --sidebar-ring: var(--lagoon);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Mörkt tema — djupt, fokuserat (Spotify/Discord-känsla)             */
+/* ------------------------------------------------------------------ */
+.dark {
+  --ink: #e8efeb;
+  --ink-soft: #c4d2cd;
+  --ink-muted: #8ca09a;
+  --paper: #0d1417;
+  --fog: #121c20;
+  --mist: #1e2a2f;
+  --line: #243239;
+  --accent: #35c4b2;
+  --accent-soft: #12332e;
+  --lagoon: #45cfbe;
+
+  --energy: #f6b93b;
+  --energy-soft: #3a2f14;
+  --coral: #ff7a6b;
+  --coral-soft: #3f201c;
+  --success: #4cc38a;
+  --success-soft: #14301f;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #131d22;
+  --card-foreground: var(--ink);
+  --popover: #152026;
+  --popover-foreground: var(--ink);
+  --primary: var(--accent);
+  --primary-foreground: #05201c;
+  --secondary: var(--mist);
+  --secondary-foreground: var(--ink);
+  --muted: var(--mist);
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--accent-soft);
+  --accent-foreground: #7ce3d4;
+  --destructive: #f26d5e;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--lagoon);
+  --chart-1: var(--accent);
+  --chart-2: var(--lagoon);
+  --chart-3: var(--energy);
+  --chart-4: var(--coral);
+  --chart-5: #6b8f98;
+  --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.25), 0 6px 20px -4px rgb(0 0 0 / 0.35);
+  --shadow-card: 0 2px 4px rgb(0 0 0 / 0.25), 0 12px 32px -8px rgb(0 0 0 / 0.5);
+  --shadow-pop: 0 8px 24px -6px rgb(0 0 0 / 0.55), 0 2px 6px rgb(0 0 0 / 0.35);
+  --sidebar: var(--paper);
+  --sidebar-foreground: var(--ink);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: #05201c;
   --sidebar-accent: var(--mist);
   --sidebar-accent-foreground: var(--ink);
   --sidebar-border: var(--line);
@@ -103,6 +179,49 @@
   html {
     @apply font-sans;
   }
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+}
+
+/* ---- Mjuk scrollbar ---------------------------------------------------- */
+@supports (scrollbar-width: auto) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklab, var(--ink) 22%, transparent) transparent;
+  }
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--ink) 18%, transparent);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Rörelsebibliotek (utöver tw-animate-css)                            */
+/* ------------------------------------------------------------------ */
+
+/* Pop in — för badges, poäng, upplåsningar */
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-pop {
+  animation: pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
 @keyframes rise {
@@ -115,18 +234,111 @@
     transform: translateY(0);
   }
 }
-
 .animate-rise {
   animation: rise 0.7s ease-out both;
 }
-
 .animate-rise-delay {
   animation: rise 0.8s ease-out 0.15s both;
 }
 
+/* Flytande — maskot i vila */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.animate-float {
+  animation: float 3.2s ease-in-out infinite;
+}
+
+/* Vicka — maskot hälsar, flame ikon, etc. */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  40% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-3deg);
+  }
+  80% {
+    transform: rotate(3deg);
+  }
+}
+.animate-wiggle {
+  animation: wiggle 0.9s ease-in-out both;
+}
+.animate-wiggle-infinite {
+  animation: wiggle 2.4s ease-in-out infinite;
+}
+
+/* Flamma — streak-ikon */
+@keyframes flicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(-1.5deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.06) rotate(1.5deg);
+    opacity: 0.92;
+  }
+  60% {
+    transform: scale(0.96) rotate(-0.5deg);
+    opacity: 1;
+  }
+}
+.animate-flicker {
+  animation: flicker 1.6s ease-in-out infinite;
+  transform-origin: 50% 80%;
+}
+
+/* Skimmer — progress bars, skeletons */
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
+
+/* Mjuk in-fade för sidinnehåll */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.35s ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-rise,
-  .animate-rise-delay {
+  .animate-rise-delay,
+  .animate-pop,
+  .animate-float,
+  .animate-wiggle,
+  .animate-wiggle-infinite,
+  .animate-flicker,
+  .animate-shimmer,
+  .animate-fade-in {
     animation: none;
   }
 }

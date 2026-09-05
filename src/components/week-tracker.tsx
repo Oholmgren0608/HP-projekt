@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { recordEvent } from "@/lib/gamification/engine";
 import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
 import { usePlan } from "@/components/plan-context";
 import { useHydrated } from "@/lib/use-hydrated";
@@ -111,12 +112,17 @@ export function WeekTracker({
   function markComplete(task: StudyTask, result: { correct: number; total: number }) {
     saveLockedWeekIfAbsent(plan);
     const key = taskKey(plan.week, task.id);
-    setProgress((prev) => ({ ...prev, [key]: true }));
+    const nextProgress = { ...progress, [key]: true };
+    setProgress(nextProgress);
     setScores((prev) => ({
       ...prev,
       [key]: { ...result, at: new Date().toISOString() },
     }));
     setActiveTaskId(null);
+    // Hela veckan klar? Fira med XP.
+    if (plan.tasks.every((t) => nextProgress[taskKey(plan.week, t.id)])) {
+      recordEvent({ type: "plan_week_complete" });
+    }
   }
 
   function resetWeek() {

@@ -3,81 +3,26 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { motion } from "motion/react";
+import {
+  BarChart3,
+  BookOpen,
+  CalendarDays,
+  FileText,
+  Home,
+  LogOut,
+  Moon,
+  Swords,
+  Sun,
+  Volume2,
+  VolumeX,
+} from "lucide-react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
-
-function IconHome() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5Z" />
-    </svg>
-  );
-}
-function IconCalendar() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <rect x="3" y="5" width="18" height="16" rx="2" />
-      <path d="M8 3v4M16 3v4M3 10h18" />
-    </svg>
-  );
-}
-function IconBook() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-      <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5v-15Z" />
-    </svg>
-  );
-}
-function IconFile() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
-      <path d="M14 2v6h6" />
-    </svg>
-  );
-}
-function IconChart() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <path d="M4 20V10M12 20V4M20 20v-7" />
-    </svg>
-  );
-}
-
-function IconDuel() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5" />
-      <line x1="13" x2="19" y1="19" y2="13" />
-      <line x1="16" x2="20" y1="16" y2="20" />
-      <line x1="19" x2="21" y1="21" y2="19" />
-      <polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5" />
-      <line x1="5" x2="9" y1="14" y2="18" />
-      <line x1="7" x2="4" y1="17" y2="20" />
-      <line x1="3" x2="5" y1="19" y2="21" />
-    </svg>
-  );
-}
-
-function IconLight() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <path d="M9 18h6M10 22h4" />
-      <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2Z" />
-    </svg>
-  );
-}
-
-function IconGauge() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <path d="M4 18a8 8 0 1 1 16 0" />
-      <path d="M12 18l4.5-4.5" />
-      <circle cx="12" cy="18" r="1.2" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
+import { usePreferences } from "@/lib/preferences";
+import { play } from "@/lib/sound";
+import { Mascot } from "@/components/mascot";
+import { cn } from "@/lib/utils";
 
 function GoogleG() {
   return (
@@ -97,16 +42,21 @@ function AuthCluster() {
 
   if (user) {
     return (
-      <div className="flex items-center gap-2">
-        <span className="hidden max-w-40 truncate text-xs text-[var(--ink-muted)] sm:inline">
-          {user.email ?? "Inloggad"}
+      <div className="flex items-center gap-1.5">
+        <span
+          className="flex size-8 items-center justify-center rounded-full bg-[var(--accent)] text-sm font-extrabold text-white shadow-soft"
+          title={user.email ?? "Inloggad"}
+        >
+          {(user.email ?? "H")[0]?.toUpperCase()}
         </span>
         <button
           type="button"
           onClick={() => void signOut()}
-          className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
+          title="Logga ut"
+          aria-label="Logga ut"
+          className="flex size-8 items-center justify-center rounded-full text-[var(--ink-muted)] transition hover:bg-[var(--mist)] hover:text-[var(--ink)] active:scale-90"
         >
-          Logga ut
+          <LogOut className="size-4" />
         </button>
       </div>
     );
@@ -116,7 +66,7 @@ function AuthCluster() {
     <button
       type="button"
       onClick={() => void signInWithGoogle()}
-      className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+      className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3.5 py-2 text-sm font-bold text-[var(--ink)] shadow-soft transition hover:bg-[var(--accent-soft)] hover:shadow-card active:scale-95"
     >
       <GoogleG />
       <span className="hidden sm:inline">Logga in med Google</span>
@@ -125,15 +75,35 @@ function AuthCluster() {
   );
 }
 
+function IconButton({
+  onClick,
+  label,
+  children,
+}: {
+  onClick: () => void;
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={label}
+      title={label}
+      className="flex size-9 items-center justify-center rounded-full text-[var(--ink-soft)] transition hover:bg-[var(--mist)] hover:text-[var(--ink)] active:scale-90"
+    >
+      {children}
+    </button>
+  );
+}
+
 const NAV = [
-  { href: "/", label: "Hem", icon: IconHome },
-  { href: "/nivatest", label: "Nivåtest", icon: IconGauge },
-  { href: "/plan", label: "Plan", icon: IconCalendar },
-  { href: "/ova", label: "Öva", icon: IconBook },
-  { href: "/prov", label: "Prov", icon: IconFile },
-  { href: "/duell", label: "Duell", icon: IconDuel },
-  { href: "/resultat", label: "Poäng", icon: IconChart },
-  { href: "/tips", label: "Tips", icon: IconLight },
+  { href: "/", label: "Hem", icon: Home },
+  { href: "/ova", label: "Öva", icon: BookOpen },
+  { href: "/plan", label: "Plan", icon: CalendarDays },
+  { href: "/prov", label: "Prov", icon: FileText },
+  { href: "/duell", label: "Duell", icon: Swords },
+  { href: "/resultat", label: "Statistik", icon: BarChart3 },
 ] as const;
 
 function isActive(pathname: string, href: string) {
@@ -143,63 +113,107 @@ function isActive(pathname: string, href: string) {
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const { resolvedTheme, toggleTheme, sound, setSound } = usePreferences();
 
   return (
     <div className="relative flex min-h-full flex-col overflow-x-hidden">
+      {/* Bakgrund — mjuka färgfläckar */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 10% -10%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 55%), radial-gradient(ellipse 60% 40% at 90% 5%, color-mix(in oklab, var(--lagoon) 22%, transparent), transparent 50%), linear-gradient(180deg, var(--fog) 0%, var(--paper) 38%, var(--fog) 100%)",
+            "radial-gradient(ellipse 80% 50% at 10% -10%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 55%), radial-gradient(ellipse 60% 40% at 90% 5%, color-mix(in oklab, var(--lagoon) 18%, transparent), transparent 50%), radial-gradient(ellipse 50% 40% at 50% 110%, color-mix(in oklab, var(--energy) 7%, transparent), transparent 55%), linear-gradient(180deg, var(--fog) 0%, var(--paper) 38%, var(--fog) 100%)",
         }}
       />
 
+      {/* Flytande header */}
       <header
-        className="sticky top-0 z-30 border-b border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_82%,white)]/90 backdrop-blur-md"
+        className="sticky top-3 z-40 mx-auto w-[calc(100%-1.5rem)] max-w-6xl sm:w-[calc(100%-2rem)]"
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-5 py-3 sm:px-8">
-          <Link href="/" className="flex items-baseline gap-2">
-            <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
-              HP Lift
-            </span>
-            <span className="hidden text-sm text-[var(--ink-muted)] sm:inline">
-              studieplan från dina resultat
+        <div className="flex items-center justify-between gap-2 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_86%,white)]/90 px-3 py-2 shadow-soft backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_86%,black)]/90">
+          <Link href="/" className="flex items-center gap-2 rounded-xl px-1 transition active:scale-95">
+            <Mascot mood="idle" float={false} className="size-9" />
+            <span className="flex items-baseline gap-2">
+              <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
+                HP Lift
+              </span>
+              <span className="hidden text-xs font-semibold text-[var(--ink-muted)] lg:inline">
+                plugga smartare till högskoleprovet
+              </span>
             </span>
           </Link>
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Huvudmeny">
+
+          <nav className="hidden items-center gap-0.5 md:flex" aria-label="Huvudmeny">
             {NAV.map((item) => {
               const active = isActive(pathname, item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
-                    active
-                      ? "bg-[var(--accent-soft)] text-[var(--ink)]"
-                      : "text-[var(--ink-muted)] hover:text-[var(--ink)]"
-                  }`}
+                  className={cn(
+                    "relative rounded-full px-3.5 py-2 text-sm font-bold transition active:scale-95",
+                    active ? "text-[var(--ink)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
+                  )}
                 >
-                  {item.label}
+                  {active && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full bg-[var(--accent-soft)] shadow-soft"
+                      transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                    />
+                  )}
+                  <span className="relative">{item.label}</span>
                 </Link>
               );
             })}
           </nav>
-          <AuthCluster />
+
+          <div className="flex items-center gap-1">
+            <IconButton
+              onClick={() => {
+                setSound(!sound);
+              }}
+              label={sound ? "Stäng av ljud" : "Sätt på ljud"}
+            >
+              {sound ? <Volume2 className="size-4.5" /> : <VolumeX className="size-4.5" />}
+            </IconButton>
+            <IconButton onClick={toggleTheme} label={resolvedTheme === "dark" ? "Ljust läge" : "Mörkt läge"}>
+              <motion.span
+                key={resolvedTheme}
+                initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                transition={{ type: "spring", bounce: 0.4, duration: 0.5 }}
+                className="flex"
+              >
+                {resolvedTheme === "dark" ? <Sun className="size-4.5" /> : <Moon className="size-4.5" />}
+              </motion.span>
+            </IconButton>
+            <div className="mx-1 hidden h-5 w-px bg-[var(--line)] sm:block" />
+            <AuthCluster />
+          </div>
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-6xl flex-1 px-5 pb-28 pt-6 sm:px-8 sm:pt-8 md:pb-12">
+      {/* Sidinnehåll med mjuk övergång */}
+      <motion.main
+        key={pathname}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto w-full max-w-6xl flex-1 px-5 pb-32 pt-6 sm:px-8 sm:pt-8 md:pb-16"
+      >
         {children}
-      </main>
+      </motion.main>
 
+      {/* Flytande mobilmeny */}
       <nav
-        className="fixed inset-x-0 bottom-0 z-30 border-t border-[var(--line)] bg-[color-mix(in_oklab,var(--paper)_90%,white)]/95 backdrop-blur-md md:hidden"
-        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+        className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4 md:hidden"
+        style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
         aria-label="Huvudmeny"
       >
-        <ul className="grid grid-cols-8">
+        <ul className="mx-auto grid max-w-md grid-cols-6 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
           {NAV.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);
@@ -207,12 +221,21 @@ export function AppShell({ children }: { children: ReactNode }) {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`flex min-h-14 flex-col items-center justify-center gap-0.5 text-[11px] font-medium ${
-                    active ? "text-[var(--accent)]" : "text-[var(--ink-muted)]"
-                  }`}
+                  onClick={() => active && play("click")}
+                  className={cn(
+                    "relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded-xl text-[10.5px] font-bold transition active:scale-90",
+                    active ? "text-[var(--ink)]" : "text-[var(--ink-muted)]",
+                  )}
                 >
-                  <Icon />
-                  {item.label}
+                  {active && (
+                    <motion.span
+                      layoutId="mob-pill"
+                      className="absolute inset-0 rounded-xl bg-[var(--accent-soft)]"
+                      transition={{ type: "spring", bounce: 0.3, duration: 0.45 }}
+                    />
+                  )}
+                  <Icon className="relative size-5" />
+                  <span className="relative">{item.label}</span>
                 </Link>
               </li>
             );
