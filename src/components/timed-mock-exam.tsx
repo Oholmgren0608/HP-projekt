@@ -55,6 +55,12 @@ export function TimedMockExam() {
 
   const quiz = useQuiz({ questions, onFinish: logFinish });
 
+  // Latest finish so the timeout interval never calls a stale closure.
+  const finishRef = useRef(quiz.finish);
+  useEffect(() => {
+    finishRef.current = quiz.finish;
+  });
+
   const remainingSeconds =
     deadline === null ? LIMIT_SECONDS : Math.max(0, Math.ceil((deadline - now) / 1000));
 
@@ -82,11 +88,10 @@ export function TimedMockExam() {
       // Auto-submit from the timer tick (event context) instead of a
       // render-triggered effect, avoiding a setState-in-effect cascade.
       if (deadline !== null && ts >= deadline) {
-        quiz.finish();
+        finishRef.current();
       }
     }, 250);
     return () => window.clearInterval(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, deadline]);
 
   const current = quiz.current;
