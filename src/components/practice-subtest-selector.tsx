@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { PracticeKind } from "@/lib/practice";
-import { SUBTESTS, type SubTestInfo } from "./practice-hub-v2";
+import { SUBTESTS, type SubTestInfo } from "./practice-hub";
 import { FreePracticeSession } from "./free-practice-session";
 
 type Props = {
