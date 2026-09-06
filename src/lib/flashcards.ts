@@ -1,5 +1,6 @@
 import { ORD_BANK } from "@/lib/practice";
 import { LIBRARY_TEXTS } from "@/lib/reading-library";
+import { loadJson, saveJson } from "@/lib/storage";
 
 export type Flashcard = {
   id: string;
@@ -81,3 +82,13 @@ export type CardProgress = {
 };
 
 export type ProgressMap = Record<string, CardProgress>;
+
+export const FLASHCARD_PROGRESS_KEY = "hp-flashcards-progress-v1";
+
+export function loadFlashcardProgress(): ProgressMap {
+  return loadJson<ProgressMap>(FLASHCARD_PROGRESS_KEY, {});
+}
+
+export function saveFlashcardProgress(value: ProgressMap): void {
+  saveJson(FLASHCARD_PROGRESS_KEY, value);
+}

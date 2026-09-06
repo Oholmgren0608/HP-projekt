@@ -1,19 +1,15 @@
 import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
 import { MEK_BANK } from "@/lib/practice-mek";
 import { loadMasteredQuestionIds } from "@/lib/question-mastery";
+import { hashSeed, shuffle } from "@/lib/random";
+import type {
+  ChoiceQuestion,
+  PracticeKind,
+  ReflectPrompt,
+} from "@/lib/practice-types";
 
-export { MEK_BANK };
-
-export type PracticeKind =
-  | "ord"
-  | "mek"
-  | "las"
-  | "elf"
-  | "dtk"
-  | "xyz"
-  | "kva"
-  | "nog"
-  | "reflect";
+export { tally } from "@/lib/quiz";
+export type { ChoiceQuestion, PracticeKind, ReflectPrompt } from "@/lib/practice-types";
 
 export const MOCK_KINDS: Exclude<PracticeKind, "reflect">[] = [
   "ord",
@@ -25,22 +21,6 @@ export const MOCK_KINDS: Exclude<PracticeKind, "reflect">[] = [
   "nog",
   "dtk",
 ];
-
-export type ChoiceQuestion = {
-  id: string;
-  kind: Exclude<PracticeKind, "reflect">;
-  prompt: string;
-  passage?: string;
-  options: string[];
-  correctIndex: number;
-  explain: string;
-};
-
-export type ReflectPrompt = {
-  id: string;
-  title: string;
-  prompts: string[];
-};
 
 /** Egna övningsfrågor i HP-stil — inte hämtade från riktiga prov. */
 export const ORD_BANK: ChoiceQuestion[] = [
@@ -526,34 +506,6 @@ export function findQuestionById(id: string): ChoiceQuestion | undefined {
   return undefined;
 }
 
-function hashSeed(input: string): number {
-  let h = 2166136261;
-  for (let i = 0; i < input.length; i++) {
-    h ^= input.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
-}
-
-function mulberry32(seed: number) {
-  return function next() {
-    let t = (seed += 0x6d2b79f5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function shuffle<T>(items: T[], seed: string): T[] {
-  const arr = [...items];
-  const rand = mulberry32(hashSeed(seed));
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
 export function lastShownQuestionsKey(kind: Exclude<PracticeKind, "reflect">) {
   return `hp-last-shown-questions:${kind}`;
 }
@@ -688,41 +640,6 @@ export function kindBadge(kind: PracticeKind): string {
   return kind.toUpperCase();
 }
 
-export function defaultQuestionCount(kind: PracticeKind): number {
-  switch (kind) {
-    case "ord":
-      return 10;
-    case "mek":
-      return 8;
-    case "las":
-      return 4;
-    case "elf":
-      return 3;
-    case "dtk":
-      return 4;
-    case "xyz":
-      return 6;
-    case "kva":
-      return 8;
-    case "nog":
-      return 6;
-    case "reflect":
-      return 0;
-  }
-}
-
 export function buildMockExam(seed: string, count = 24): ChoiceQuestion[] {
   return buildMixedQuiz(MOCK_KINDS, seed, count);
-}
-
-/** Räknar rätt mot en låst svarskopia — obesvarade räknas som fel. */
-export function tally(
-  questions: readonly ChoiceQuestion[],
-  answers: Record<string, number>,
-): { correct: number; total: number } {
-  let correct = 0;
-  for (const q of questions) {
-    if (answers[q.id] === q.correctIndex) correct += 1;
-  }
-  return { correct, total: questions.length };
 }

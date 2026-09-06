@@ -1,4 +1,4 @@
-import type { ChoiceQuestion } from "@/lib/practice";
+import type { ChoiceQuestion } from "@/lib/practice-types";
 
 /** Egna HP-stil-frågor — inte från officiella prov. */
 
