@@ -3,13 +3,16 @@ import {
   clampDelprov,
   type ScoreInput,
 } from "@/lib/hp-scores";
-import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { storageSet } from "@/lib/sync/storage-sync";
+import { loadJson } from "@/lib/storage";
 import {
   buildQuiz,
   type ChoiceQuestion,
   type PracticeKind,
 } from "@/lib/practice";
 import { estimateNormFromPercent } from "@/lib/progress-history";
+import { isCorrect } from "@/lib/quiz";
+import { kindToSection } from "@/lib/section-kinds";
 import type { SectionId } from "@/lib/study-plan";
 
 /** Antal frågor per delprov i nivåtestet (standardval, matchar tidigare beteende). */
@@ -54,11 +57,11 @@ export function clampNivatestCount(id: SectionId, value: number): number {
 
 export function loadNivatestCounts(): NivatestCounts {
   const defaults = defaultNivatestCounts();
-  if (typeof window === "undefined") return defaults;
+  const parsed = loadJson<Partial<Record<SectionId, unknown>>>(
+    NIVATEST_COUNTS_STORAGE_KEY,
+    {},
+  );
   try {
-    const raw = storageGet(NIVATEST_COUNTS_STORAGE_KEY);
-    if (!raw) return defaults;
-    const parsed = JSON.parse(raw) as Partial<Record<SectionId, unknown>>;
     for (const { id } of SECTION_KINDS) {
       const value = parsed[id];
       if (typeof value === "number") defaults[id] = clampNivatestCount(id, value);
@@ -118,11 +121,6 @@ export function buildMiniTest(
   return interleaved;
 }
 
-/** Delprovets id ur en frågas kind (ord → ORD, las → LAS, …). */
-function sectionIdFromKind(kind: ChoiceQuestion["kind"]): SectionId {
-  return kind.toUpperCase() as SectionId;
-}
-
 export type MiniSectionResult = {
   id: SectionId;
   name: string;
@@ -145,8 +143,8 @@ export function sectionBreakdown(
   answers: Record<string, number>,
 ): MiniSectionResult[] {
   return DELPROV_META.map((m) => {
-    const asked = questions.filter((q) => sectionIdFromKind(q.kind) === m.id);
-    const correct = asked.filter((q) => answers[q.id] === q.correctIndex).length;
+    const asked = questions.filter((q) => kindToSection(q.kind) === m.id);
+    const correct = asked.filter((q) => isCorrect(q, answers)).length;
     const percent = asked.length ? Math.round((correct / asked.length) * 100) : 0;
     const estCorrect = clampDelprov(m.id, Math.round((percent / 100) * m.total));
     return {

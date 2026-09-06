@@ -4,23 +4,17 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { PracticeKind } from "@/lib/practice";
 import { buildMixedQuiz, tally, kindBadge } from "@/lib/practice";
 import { QuestionReviewList } from "@/components/question-review";
-import { recordMissedQuestions } from "@/lib/error-srs";
-import { recordMasteredQuestions } from "@/lib/question-mastery";
-import { appendQuizResult, tallyPerKind } from "@/lib/progress-history";
+import { formatClock } from "@/lib/practice-timer";
+import { recordQuizOutcome } from "@/lib/quiz-outcome";
+import { useQuiz } from "@/lib/use-quiz";
+import { QuizOptions } from "@/components/quiz/quiz-options";
+import { QuizProgress } from "@/components/quiz/quiz-progress";
 
 type Props = {
   subtest: PracticeKind;
   questionCount: number;
   onClose: () => void;
 };
-
-type Phase = "quiz" | "review";
-
-function formatClock(seconds: number): string {
-  const mins = Math.floor(seconds / 60);
-  const secs = seconds % 60;
-  return `${mins}:${String(secs).padStart(2, "0")}`;
-}
 
 export function FreePracticeSession({ subtest, questionCount, onClose }: Props) {
   const [sessionStartTime] = useState(() => Date.now());
@@ -31,16 +25,34 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
     return buildMixedQuiz([subtest], seed, questionCount);
   }, [subtest, seed, questionCount]);
 
-  const [index, setIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<string, number>>({});
-  const [finalAnswers, setFinalAnswers] = useState<Record<string, number> | null>(null);
-  const [selected, setSelected] = useState<number | null>(null);
-  const [phase, setPhase] = useState<Phase>("quiz");
   const loggedRef = useRef(false);
 
-  const current = questions[index];
-  const total = questions.length;
-  const answeredCount = Object.keys(answers).length;
+  function logQuizOnce(locked: Record<string, number>) {
+    if (loggedRef.current) return;
+    loggedRef.current = true;
+    recordQuizOutcome({
+      source: "free",
+      questions,
+      answers: locked,
+      kinds: [subtest],
+      rememberShown: false,
+    });
+  }
+
+  const quiz = useQuiz({ questions, onFinish: logQuizOnce });
+
+  const {
+    index,
+    total,
+    finalAnswers,
+    selected,
+    setSelected,
+    phase,
+    current,
+    answeredCount,
+    submitAnswer,
+    goPrevious,
+  } = quiz;
 
   const score = useMemo(
     () => tally(questions, finalAnswers ?? {}),
@@ -55,50 +67,6 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
     const id = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(id);
   }, [phase]);
-
-  function logQuizOnce(locked: Record<string, number>) {
-    if (loggedRef.current) return;
-    loggedRef.current = true;
-    const result = tally(questions, locked);
-    appendQuizResult({
-      source: "free",
-      kinds: [subtest],
-      correct: result.correct,
-      total: result.total,
-      perKind: tallyPerKind(questions, locked),
-    });
-    recordMissedQuestions(questions, locked);
-    recordMasteredQuestions(questions, locked);
-  }
-
-  function lockAndReview(locked: Record<string, number>) {
-    setFinalAnswers(locked);
-    logQuizOnce(locked);
-    setPhase("review");
-  }
-
-  function submitAnswer() {
-    if (selected === null || !current) return;
-    const nextAnswers = { ...answers, [current.id]: selected };
-    setAnswers(nextAnswers);
-
-    if (index >= total - 1) {
-      lockAndReview(nextAnswers);
-      return;
-    }
-
-    setIndex((i) => i + 1);
-    setSelected(nextAnswers[questions[index + 1]?.id] ?? null);
-  }
-
-  function goPrevious() {
-    if (index <= 0 || !current) return;
-    const nextAnswers =
-      selected !== null ? { ...answers, [current.id]: selected } : answers;
-    if (nextAnswers !== answers) setAnswers(nextAnswers);
-    setIndex((i) => i - 1);
-    setSelected(nextAnswers[questions[index - 1]?.id] ?? null);
-  }
 
   function handleRestart() {
     onClose();
@@ -135,12 +103,7 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
             </span>
           </div>
 
-          <div className="h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
-            <div
-              className="h-full rounded-full bg-[var(--accent)] transition-all"
-              style={{ width: `${(answeredCount / total) * 100}%` }}
-            />
-          </div>
+          <QuizProgress current={answeredCount} total={total} />
 
           {current.passage ? (
             <div className="whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
@@ -150,36 +113,12 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
 
           <p className="text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
 
-          <div className="space-y-2" role="radiogroup" aria-label="Svarsalternativ">
-            {current.options.map((opt, i) => {
-              const active = selected === i;
-              return (
-                <button
-                  key={`${current.id}-${i}`}
-                  type="button"
-                  role="radio"
-                  aria-checked={active}
-                  onClick={() => setSelected(i)}
-                  className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
-                    active
-                      ? "border-[var(--accent)] bg-[var(--accent-soft)]"
-                      : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
-                  }`}
-                >
-                  <span
-                    className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
-                      active
-                        ? "border-[var(--accent)] bg-[var(--accent)] text-white"
-                        : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
-                    }`}
-                  >
-                    {String.fromCharCode(65 + i)}
-                  </span>
-                  <span className="text-[var(--ink)]">{opt}</span>
-                </button>
-              );
-            })}
-          </div>
+          <QuizOptions
+            questionId={current.id}
+            options={current.options}
+            selected={selected}
+            onSelect={setSelected}
+          />
 
           <div className="flex flex-wrap gap-3 pt-2">
             <button
