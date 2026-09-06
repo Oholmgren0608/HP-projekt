@@ -1,27 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useHydrated } from "@/lib/use-hydrated";
-import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { useMemo, useState } from "react";
+import { usePersistentState } from "@/lib/use-persistent-state";
 import {
   ALL_FLASHCARDS,
+  FLASHCARD_PROGRESS_KEY,
   filterDeck,
   type CardProgress,
   type DeckFilter,
   type Flashcard,
   type ProgressMap,
 } from "@/lib/flashcards";
-
-const STORAGE_KEY = "hp-flashcards-progress-v1";
-
-function loadProgress(): ProgressMap {
-  if (typeof window === "undefined") return {};
-  try {
-    return JSON.parse(storageGet(STORAGE_KEY) ?? "{}") as ProgressMap;
-  } catch {
-    return {};
-  }
-}
 
 function shuffle<T>(items: T[]): T[] {
   const arr = [...items];
@@ -52,19 +41,16 @@ function buildQueue(deck: Flashcard[], progress: ProgressMap): Flashcard[] {
 
 export function Flashcards() {
   const [filter, setFilter] = useState<DeckFilter>("alla");
-  const [progress, setProgress] = useState<ProgressMap>(loadProgress);
-  const ready = useHydrated();
+  const [progress, setProgress, ready] = usePersistentState<ProgressMap>(
+    FLASHCARD_PROGRESS_KEY,
+    {},
+  );
   const deck = useMemo(() => filterDeck(filter), [filter]);
   const [queue, setQueue] = useState<Flashcard[]>(() => buildQueue(deck, progress));
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [sessionCorrect, setSessionCorrect] = useState(0);
   const [sessionWrong, setSessionWrong] = useState(0);
-
-  useEffect(() => {
-    if (!ready) return;
-    storageSet(STORAGE_KEY, JSON.stringify(progress));
-  }, [progress, ready]);
 
   // Restart the session when the deck filter changes. Adjusting state during
   // render (tracking the previous filter) avoids a setState-in-effect cascade.
