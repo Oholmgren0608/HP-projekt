@@ -57,7 +57,7 @@ export const SUBTESTS = [
   {
     id: "LAS",
     kind: "las",
-    name: "Läsförståelse svenska",
+    name: "Svensk läsförståelse",
     short: "LÄS",
     total: 20,
     block: "verbal",
@@ -75,7 +75,7 @@ export const SUBTESTS = [
   {
     id: "ELF",
     kind: "elf",
-    name: "Läsförståelse engelska",
+    name: "Engelsk läsförståelse",
     short: "ELF",
     total: 20,
     block: "verbal",

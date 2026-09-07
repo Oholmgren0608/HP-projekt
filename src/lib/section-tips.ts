@@ -48,7 +48,7 @@ export const SECTION_TIPS: SectionTip[] = [
   },
   {
     id: "LAS",
-    title: "LÄS — Läsförståelse svenska",
+    title: "LÄS — Svensk läsförståelse",
     tests: "Om du kan peka på stöd i texten — inte om slutsatsen 'känns rimlig'.",
     mistakes: [
       "Svara från allmänkunskap i stället för texten",
@@ -66,7 +66,7 @@ export const SECTION_TIPS: SectionTip[] = [
   },
   {
     id: "ELF",
-    title: "ELF — Läsförståelse engelska",
+    title: "ELF — Engelsk läsförståelse",
     tests: "Samma som LÄS men på engelska: huvudpoäng, attityd och stöd i texten.",
     mistakes: [
       "Översätta ord för ord och tappa helheten",

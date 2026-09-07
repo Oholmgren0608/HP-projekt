@@ -107,10 +107,10 @@ export function PracticeHub() {
           Övning
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
-          Välj deltest att öva på
+          Välj delprov att öva på
         </h1>
         <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-          Välj ett deltest och bestäm hur många frågor du vill öva på. Du kan öva hur många gånger
+          Välj ett delprov och bestäm hur många frågor du vill öva på. Du kan öva hur många gånger
           du vill, och ditt resultat sparas.
         </p>
       </div>

@@ -28,7 +28,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
   if (!info) {
     return (
       <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-6">
-        <p className="text-[var(--ink-muted)]">Deltestet hittades inte.</p>
+        <p className="text-[var(--ink-muted)]">Delprovet hittades inte.</p>
       </div>
     );
   }
@@ -88,7 +88,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
           <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4">
             <p className="text-sm text-[var(--ink-soft)]">
               <span className="font-semibold text-[var(--ink)]">Tip:</span> Börja med färre
-              frågor om du är ny på deltestet. Du kan öva hur många gånger du vill och ditt
+              frågor om du är ny på delprovet. Du kan öva hur många gånger du vill och ditt
               resultat sparas för analys.
             </p>
           </div>
