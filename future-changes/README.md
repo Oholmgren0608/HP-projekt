@@ -24,13 +24,11 @@ impact, and concrete implementation options.
 - [Phase 4 — TypeScript consolidation & deduplication](./phase-4-typescript-consolidation.md) —
   ✅ completed and committed (see the completion summary in that file).
 
-## Open content questions
+## Resolved content fixes
 
-- `src/lib/subtests.ts` XYZ `name: "Matematik problemlösning"` is unidiomatic;
-  the official HP term is "Matematisk problemlösning". Correcting it propagates
-  automatically to `practice-hub.tsx` (via `nameFor`), but `plan-generator.ts`
-  and `section-tips.ts` hold hardcoded copies that would also need updating.
-- `practice-hub.tsx` ELF entry has `isReading: false`; ELF is
-  `Läsförståelse engelska` (reading comprehension), so it should likely be
-  `true`. This affects the practice question-count range (reading = 1–5,
-  otherwise 5–20).
+- XYZ `name` corrected to `"Matematisk problemlösning"` (grammar) across
+  `subtests.ts`, `plan-generator.ts`, `section-tips.ts`, and `practice-hub.tsx`
+  (the latter derives it via `nameFor`).
+- ELF `isReading` flipped to `true` (reading comprehension → 1–5 questions).
+- LÄS/ELF names aligned to the `subtests.ts` word order
+  (`Läsförståelse svenska` / `Läsförståelse engelska`).

@@ -31,7 +31,7 @@ function shortFor(kind: PracticeKind): string {
   return CATALOG_BY_KIND[kind]?.short ?? kind.toUpperCase();
 }
 
-export const SUBTESTS: SubTestInfo[] = [
+export const PRACTICE_OPTIONS: SubTestInfo[] = [
   {
     id: "ord",
     label: shortFor("ord"),
@@ -117,7 +117,7 @@ export function PracticeHub() {
 
       {/* Sub-tests Grid */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {SUBTESTS.map((subtest) => (
+        {PRACTICE_OPTIONS.map((subtest) => (
           <Link
             key={subtest.id}
             href={`/ova/${subtest.id}`}

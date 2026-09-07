@@ -34,7 +34,7 @@ Successfully implemented the revamped practice section with sub-pages for each d
   - **MEK** - Meningskomplettering (Sentence Completion)
   - **LÄS** - Läsförståelse svenska (Reading Comprehension)
   - **ELF** - Läsförståelse engelska (English Reading)
-  - **XYZ** - Matematik problemlösning (Math Problem Solving)
+  - **XYZ** - Matematisk problemlösning (Math Problem Solving)
   - **KVA** - Kvantitativa jämförelser (Quantitative Comparison)
   - **NOG** - Kvantitativa resonemang (Quantitative Reasoning)
   - **DTK** - Diagram, tabeller och kartor (Data Interpretation)

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { PracticeKind } from "@/lib/practice";
-import { SUBTESTS, type SubTestInfo } from "./practice-hub";
+import { PRACTICE_OPTIONS, type SubTestInfo } from "./practice-hub";
 import { FreePracticeSession } from "./free-practice-session";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 };
 
 function getSubtestInfo(subtest: PracticeKind): SubTestInfo | null {
-  return SUBTESTS.find((s) => s.id === subtest) ?? null;
+  return PRACTICE_OPTIONS.find((s) => s.id === subtest) ?? null;
 }
 
 function getQuestionCountRange(subtest: PracticeKind): { min: number; max: number } {
