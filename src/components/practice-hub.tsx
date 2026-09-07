@@ -68,9 +68,9 @@ export const SUBTESTS: SubTestInfo[] = [
     id: "xyz",
     label: shortFor("xyz"),
     title: nameFor("xyz"),
-    description: "Öva på logiska slutledningar och mönsteranalys.",
+    description: "Lös matematiska problem med räkning, algebra och geometri.",
     isReading: false,
-    icon: "🧩",
+    icon: "🧮",
   },
   {
     id: "kva",
@@ -84,9 +84,9 @@ export const SUBTESTS: SubTestInfo[] = [
     id: "nog",
     label: shortFor("nog"),
     title: nameFor("nog"),
-    description: "Lösa problem med hjälp av givna siffror och information.",
+    description: "Avgör om den givna informationen räcker för att lösa uppgiften.",
     isReading: false,
-    icon: "📊",
+    icon: "🧩",
   },
   {
     id: "dtk",
