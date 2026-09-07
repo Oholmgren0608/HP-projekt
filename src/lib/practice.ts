@@ -2,6 +2,7 @@ import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
 import { MEK_BANK } from "@/lib/practice-mek";
 import { loadMasteredQuestionIds } from "@/lib/question-mastery";
 import { hashSeed, shuffle } from "@/lib/random";
+import { SUBTESTS } from "@/lib/subtests";
 
 export { MEK_BANK };
 
@@ -656,9 +657,8 @@ export function practiceLabel(kind: PracticeKind): string {
 }
 
 export function kindBadge(kind: PracticeKind): string {
-  if (kind === "las") return "LÄS";
   if (kind === "reflect") return "Reflektion";
-  return kind.toUpperCase();
+  return SUBTESTS.find((s) => s.kind === kind)?.short ?? kind.toUpperCase();
 }
 
 export function buildMockExam(seed: string, count = 24): ChoiceQuestion[] {

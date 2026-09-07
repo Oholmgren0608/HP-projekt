@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePlan } from "@/components/plan-context";
 import { recommendStudyTime } from "@/lib/study-time-recommendation";
 import type { StudyTimeVerdict } from "@/lib/study-time-recommendation";
+import { sectionShort } from "@/lib/subtests";
 
 export function StudyTimeNotice() {
   const { scores, ready, hasSavedScores } = usePlan();
@@ -84,7 +85,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
               href={`/tips?section=${b.id}`}
               className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-[var(--ink)] ring-1 ring-[var(--line)] hover:ring-[var(--ink-soft)]"
             >
-              {b.id === "LAS" ? "LÄS" : b.id} {b.percent} %
+              {sectionShort(b.id)} {b.percent} %
             </Link>
           ))}
         </div>
