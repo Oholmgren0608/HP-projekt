@@ -55,8 +55,11 @@ Kör migrationsfilerna i Supabase Dashboard → SQL Editor, i nummerordning:
   (spelarprofiler, matcher, svar, matchmaking och ELO).
 - `0003_duel_reviews.sql` — recensioner, rapporter och bot-svårighet för
   dueller.
+- `0004_duel_integrity.sql` — server-auktoritativ rättning (facit-tabell),
+  tätare RLS, mindre profilexponering och viktad `received_rating_count`
+  för dueller.
 
-`0002` och `0003` behövs bara om du vill använda Duell-funktionen.
+`0002`–`0004` behövs bara om du vill använda Duell-funktionen.
 
 ### 3. Google-inloggning
 
