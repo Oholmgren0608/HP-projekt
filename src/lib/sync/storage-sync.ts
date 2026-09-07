@@ -22,6 +22,13 @@ import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 const META_KEY = "hp-lift-sync-meta-v1";
 
 /**
+ * Tombstone för offline-radering: när en nyckel raderas medan molnsynk är
+ * inaktiv markeras den med -1 i meta så att raderingen sprids till molnet
+ * vid nästa merge (istället för att molnvärdet återställs).
+ */
+const DELETED_MARKER = -1;
+
+/**
  * Alla appnycklar som synkas (speglar storage-nycklarna i de olika
  * modulerna). Medvetet en explicit lista: session-/auth-nycklar
  * ("hp-lift-auth", "sb-*") får aldrig synkas.
@@ -129,6 +136,15 @@ async function performMerge(userId: string) {
 
   for (const key of SYNCED_KEYS) {
     const row = rowByKey.get(key);
+
+    // Tombstone: raderades offline — sprid raderingen till molnet och
+    // återställ inte molnvärdet lokalt.
+    if (meta[key] === DELETED_MARKER) {
+      if (row) uploads.push(deleteFromCloud(userId, key));
+      delete meta[key];
+      continue;
+    }
+
     const localValue = localStorage.getItem(key);
     const localAt = meta[key] ?? 0;
 
@@ -224,13 +240,19 @@ export function storageSet(key: string, value: string): void {
 export function storageRemove(key: string): void {
   localStorage.removeItem(key);
   const meta = readMeta();
+
+  if (cloudCache === null || !activeUserId) {
+    // Molnsynk inaktiv: sätt en tombstone så att raderingen sprids vid
+    // nästa inloggning istället för att molnvärdet återställs.
+    meta[key] = DELETED_MARKER;
+    writeMeta(meta);
+    return;
+  }
+
   delete meta[key];
   writeMeta(meta);
-
-  if (cloudCache !== null) {
-    cloudCache.delete(key);
-    if (activeUserId) void deleteFromCloud(activeUserId, key);
-  }
+  cloudCache.delete(key);
+  void deleteFromCloud(activeUserId, key);
 }
 
 /**

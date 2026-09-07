@@ -53,9 +53,10 @@ export async function getMyReview(matchId: string): Promise<DuelReview | null> {
   const { data, error } = await client
     .from("duel_reviews")
     .select("*")
-    .eq("match_id", matchId);
+    .eq("match_id", matchId)
+    .eq("reviewer_id", user.id)
+    .maybeSingle();
   if (error) throw error;
 
-  const mine = (data ?? []).find((r) => r.reviewer_id === user.id);
-  return mine ?? null;
+  return data;
 }

@@ -36,29 +36,21 @@ export async function submitAnswer(args: {
   matchId: string;
   questionId: string;
   chosen: number;
-  correct: boolean;
   timeMs: number;
 }): Promise<void> {
   const { error } = await rpc().rpc("duel_submit_answer", {
     p_match_id: args.matchId,
     p_question_id: args.questionId,
     p_chosen: args.chosen,
-    p_correct: args.correct,
     p_time_ms: args.timeMs,
   });
   if (error) throw error;
 }
 
 /** Returnerar match-id om matchen finaliserades, annars null (vänta på motståndare). */
-export async function markFinished(
-  matchId: string,
-  correct: number,
-  timeMs: number,
-): Promise<string | null> {
+export async function markFinished(matchId: string): Promise<string | null> {
   const { data, error } = await rpc().rpc("duel_mark_finished", {
     p_match_id: matchId,
-    p_correct: correct,
-    p_time_ms: timeMs,
   });
   if (error) throw error;
   return data;
@@ -66,14 +58,10 @@ export async function markFinished(
 
 export async function finishBot(args: {
   matchId: string;
-  playerCorrect: number;
-  playerTimeMs: number;
   botCorrect: number;
-}): Promise<{ delta: number; winner_is_me: boolean } | null> {
+}): Promise<{ delta: number; winner_is_me: boolean | null } | null> {
   const { data, error } = await rpc().rpc("duel_finish_bot", {
     p_match_id: args.matchId,
-    p_player_correct: args.playerCorrect,
-    p_player_time_ms: args.playerTimeMs,
     p_bot_correct: args.botCorrect,
   });
   if (error) throw error;
