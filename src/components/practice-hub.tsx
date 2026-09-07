@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { PracticeKind } from "@/lib/practice";
+import { SUBTESTS as CATALOG } from "@/lib/subtests";
 
 export type SubTestInfo = {
   id: PracticeKind;
@@ -12,67 +13,85 @@ export type SubTestInfo = {
   icon: string;
 };
 
+// Names/labels come from src/lib/subtests.ts (single source of truth), keyed
+// by the lowercase practice `kind` (e.g. "xyz" -> "Matematik problemlösning").
+const CATALOG_BY_KIND = CATALOG.reduce<Record<string, (typeof CATALOG)[number]>>(
+  (acc, subtest) => {
+    acc[subtest.kind] = subtest;
+    return acc;
+  },
+  {},
+);
+
+function nameFor(kind: PracticeKind): string {
+  return CATALOG_BY_KIND[kind]?.name ?? kind;
+}
+
+function shortFor(kind: PracticeKind): string {
+  return CATALOG_BY_KIND[kind]?.short ?? kind.toUpperCase();
+}
+
 export const SUBTESTS: SubTestInfo[] = [
   {
     id: "ord",
-    label: "ORD",
-    title: "Ordförståelse",
+    label: shortFor("ord"),
+    title: nameFor("ord"),
     description: "Öva på ord- och begreppsförståelse med fokus på synonymer och betydelser.",
     isReading: false,
     icon: "📚",
   },
   {
     id: "mek",
-    label: "MEK",
-    title: "Meningskomplettering",
+    label: shortFor("mek"),
+    title: nameFor("mek"),
     description: "Fyll i meningar med rätt ord och konnektorer.",
     isReading: true,
     icon: "✏️",
   },
   {
     id: "las",
-    label: "LÄS",
-    title: "Läsförståelse",
+    label: shortFor("las"),
+    title: nameFor("las"),
     description: "Läs texter och svara på förståelsefrågor.",
     isReading: true,
     icon: "📖",
   },
   {
     id: "elf",
-    label: "ELF",
-    title: "Engelsk Läsförståelse",
+    label: shortFor("elf"),
+    title: nameFor("elf"),
     description: "Läs engelska texter och svara på förståelsefrågor.",
     isReading: false,
     icon: "🌍",
   },
   {
     id: "xyz",
-    label: "XYZ",
-    title: "Logiska resonemang",
+    label: shortFor("xyz"),
+    title: nameFor("xyz"),
     description: "Öva på logiska slutledningar och mönsteranalys.",
     isReading: false,
     icon: "🧩",
   },
   {
     id: "kva",
-    label: "KVA",
-    title: "Kvantitativ Jämförelse",
+    label: shortFor("kva"),
+    title: nameFor("kva"),
     description: "Jämför storheter och tal. Är A större, B större eller lika stora?",
     isReading: false,
     icon: "🔢",
   },
   {
     id: "nog",
-    label: "NOG",
-    title: "Numerisk Orientering",
+    label: shortFor("nog"),
+    title: nameFor("nog"),
     description: "Lösa problem med hjälp av givna siffror och information.",
     isReading: false,
     icon: "📊",
   },
   {
     id: "dtk",
-    label: "DTK",
-    title: "Diagram, Tabeller & Kartor",
+    label: shortFor("dtk"),
+    title: nameFor("dtk"),
     description: "Tolka och analysera data från diagram, tabeller och kartor.",
     isReading: false,
     icon: "📈",
