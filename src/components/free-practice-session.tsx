@@ -7,6 +7,7 @@ import { QuestionReviewList } from "@/components/question-review";
 import { recordMissedQuestions } from "@/lib/error-srs";
 import { recordMasteredQuestions } from "@/lib/question-mastery";
 import { appendQuizResult, tallyPerKind } from "@/lib/progress-history";
+import { formatClock } from "@/lib/practice-timer";
 
 type Props = {
   subtest: PracticeKind;
@@ -15,12 +16,6 @@ type Props = {
 };
 
 type Phase = "quiz" | "review";
-
-function formatClock(seconds: number): string {
-  const mins = Math.floor(seconds / 60);
-  const secs = seconds % 60;
-  return `${mins}:${String(secs).padStart(2, "0")}`;
-}
 
 export function FreePracticeSession({ subtest, questionCount, onClose }: Props) {
   const [sessionStartTime] = useState(() => Date.now());

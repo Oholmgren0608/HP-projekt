@@ -1,4 +1,4 @@
-import { getSupabase } from "@/lib/supabase/client";
+import { requireSupabase } from "@/lib/supabase/client";
 import type { DuelMatch, DuelProfile } from "./types";
 
 /** Offentlig profilvy — det enda andra spelare får se om varandra. */
@@ -12,12 +12,6 @@ export type PublicDuelProfile = {
 };
 
 /** PvP kräver Supabase + inloggning. Kasta om det saknas. */
-function requireSupabase() {
-  const client = getSupabase();
-  if (!client) throw new Error("Supabase är inte konfigurerat");
-  return client;
-}
-
 export async function ensureProfile(userId: string, displayName: string) {
   const { error } = await requireSupabase().rpc("duel_ensure_profile", {
     p_display_name: displayName,

@@ -342,3 +342,9 @@ export function getSupabase() {
   }
   return browserClient;
 }
+
+export function requireSupabase() {
+  const client = getSupabase();
+  if (!client) throw new Error("Supabase är inte konfigurerat");
+  return client;
+}

@@ -1,4 +1,4 @@
-import { getSupabase } from "@/lib/supabase/client";
+import { requireSupabase } from "@/lib/supabase/client";
 import type { DuelReview } from "./types";
 
 /**
@@ -16,12 +16,6 @@ export const REPORT_REASON_LABELS: Record<ReportReason, string> = {
   other: "Annat",
 };
 
-function rpc() {
-  const client = getSupabase();
-  if (!client) throw new Error("Supabase är inte konfigurerat");
-  return client;
-}
-
 export async function submitReview(args: {
   matchId: string;
   /** 1-5 mot människa, null mot bot. */
@@ -32,7 +26,7 @@ export async function submitReview(args: {
   reportReason: ReportReason | null;
   comment: string;
 }): Promise<void> {
-  const { error } = await rpc().rpc("duel_submit_review", {
+  const { error } = await requireSupabase().rpc("duel_submit_review", {
     p_match_id: args.matchId,
     p_rating: args.rating,
     p_difficulty: args.difficulty,
@@ -44,7 +38,7 @@ export async function submitReview(args: {
 
 /** Min eventuella tidigare recension av matchen (en per match). */
 export async function getMyReview(matchId: string): Promise<DuelReview | null> {
-  const client = rpc();
+  const client = requireSupabase();
   const {
     data: { user },
   } = await client.auth.getUser();
