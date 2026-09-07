@@ -28,10 +28,6 @@ export function loadWeekProgress(): ProgressMap {
   return loadJson<ProgressMap>(WEEK_PROGRESS_KEY, {});
 }
 
-export function loadWeekScores(): ScoreMap {
-  return loadJson<ScoreMap>(WEEK_SCORES_KEY, {});
-}
-
 export function emitWeekProgressChanged() {
   if (typeof window === "undefined") return;
   window.dispatchEvent(new Event(WEEK_PROGRESS_EVENT));

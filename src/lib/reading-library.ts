@@ -266,7 +266,3 @@ export const LIBRARY_TEXTS: LibraryText[] = [
     summaryPrompt: "Varför ska man öva under tid men analysera utan tid?",
   },
 ];
-
-export function getLibraryText(id: string): LibraryText | undefined {
-  return LIBRARY_TEXTS.find((t) => t.id === id);
-}

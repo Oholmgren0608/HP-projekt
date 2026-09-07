@@ -688,29 +688,6 @@ export function kindBadge(kind: PracticeKind): string {
   return kind.toUpperCase();
 }
 
-export function defaultQuestionCount(kind: PracticeKind): number {
-  switch (kind) {
-    case "ord":
-      return 10;
-    case "mek":
-      return 8;
-    case "las":
-      return 4;
-    case "elf":
-      return 3;
-    case "dtk":
-      return 4;
-    case "xyz":
-      return 6;
-    case "kva":
-      return 8;
-    case "nog":
-      return 6;
-    case "reflect":
-      return 0;
-  }
-}
-
 export function buildMockExam(seed: string, count = 24): ChoiceQuestion[] {
   return buildMixedQuiz(MOCK_KINDS, seed, count);
 }

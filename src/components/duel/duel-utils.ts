@@ -14,14 +14,6 @@ export function formatMs(ms: number): string {
   return `${(ms / 1000).toFixed(1)} s`;
 }
 
-/** Format sekunder som m:ss. */
-export function formatSeconds(totalSeconds: number): string {
-  const s = Math.max(0, Math.floor(totalSeconds));
-  const m = Math.floor(s / 60);
-  const r = s % 60;
-  return m > 0 ? `${m}:${String(r).padStart(2, "0")}` : `${r}`;
-}
-
 export function winRate(wins: number, losses: number, draws: number): number {
   const total = wins + losses + draws;
   if (total === 0) return 0;

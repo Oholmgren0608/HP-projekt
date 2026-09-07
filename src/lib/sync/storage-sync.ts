@@ -17,7 +17,7 @@
  * i realtid; sista skrivning per nyckel vinner vid nästa inloggning.
  */
 
-import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { getSupabase } from "@/lib/supabase/client";
 
 const META_KEY = "hp-lift-sync-meta-v1";
 
@@ -234,31 +234,4 @@ export function storageSet(key: string, value: string): void {
     cloudCache.set(key, value);
     if (activeUserId) void pushToCloud(activeUserId, key, value);
   }
-}
-
-/** Raderar en nyckel lokalt och (om inloggad) i molnet. */
-export function storageRemove(key: string): void {
-  localStorage.removeItem(key);
-  const meta = readMeta();
-
-  if (cloudCache === null || !activeUserId) {
-    // Molnsynk inaktiv: sätt en tombstone så att raderingen sprids vid
-    // nästa inloggning istället för att molnvärdet återställs.
-    meta[key] = DELETED_MARKER;
-    writeMeta(meta);
-    return;
-  }
-
-  delete meta[key];
-  writeMeta(meta);
-  cloudCache.delete(key);
-  void deleteFromCloud(activeUserId, key);
-}
-
-/**
- * Exponeras för felsökning/tester: är molnsynk aktiv just nu?
- * (Behövs i praktiken inte av appen.)
- */
-export function isCloudSyncActive(): boolean {
-  return isSupabaseConfigured() && cloudCache !== null;
 }

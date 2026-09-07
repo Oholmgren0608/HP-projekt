@@ -98,10 +98,6 @@ export function dueCards(map = loadSrs()): SrsCard[] {
     .sort((a, b) => toLocalDateKey(a.due).localeCompare(toLocalDateKey(b.due)));
 }
 
-export function dueCount(): number {
-  return dueCards().length;
-}
-
 export function recordMissedQuestions(questions: ChoiceQuestion[], answers: Record<string, number>) {
   const map = loadSrs();
   const today = localDateKey();

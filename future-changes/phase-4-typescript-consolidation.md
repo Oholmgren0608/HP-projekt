@@ -32,7 +32,7 @@ instead of deriving from `src/lib/subtests.ts` (`SUBTESTS` / `SUBTEST_BY_ID` /
 
 - `src/lib/mini-level-test.ts`
 - `src/lib/plan-generator.ts`
-- `src/lib/practice.ts` (`practiceLabel`, `kindBadge`, `defaultQuestionCount`)
+- `src/lib/practice.ts` (`practiceLabel`, `kindBadge`)
 - `src/lib/progress-history.ts`
 - `src/lib/study-plan.ts`
 - `src/lib/section-tips.ts`

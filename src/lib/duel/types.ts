@@ -23,18 +23,3 @@ export function duelModeLabel(mode: DuelMode): string {
       return "Privat";
   }
 }
-
-export function duelStatusLabel(status: DuelMatch["status"]): string {
-  switch (status) {
-    case "waiting":
-      return "Väntar";
-    case "active":
-      return "Pågår";
-    case "finished":
-      return "Avslutad";
-    case "forfeit":
-      return "Uppgiven";
-    case "cancelled":
-      return "Avbruten";
-  }
-}

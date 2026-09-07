@@ -101,8 +101,3 @@ export const SUBTEST_BY_ID = SUBTESTS.reduce<Record<SectionId, Subtest>>(
   },
   {} as Record<SectionId, Subtest>,
 );
-
-/** Kortetikett för ett delprov (t.ex. `LAS` → `"LÄS"`). */
-export function sectionShort(id: SectionId): string {
-  return SUBTEST_BY_ID[id].short;
-}
