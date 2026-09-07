@@ -14,7 +14,7 @@ export type SubTestInfo = {
 };
 
 // Names/labels come from src/lib/subtests.ts (single source of truth), keyed
-// by the lowercase practice `kind` (e.g. "xyz" -> "Matematik problemlösning").
+// by the lowercase practice `kind` (e.g. "xyz" -> "Matematisk problemlösning").
 const CATALOG_BY_KIND = CATALOG.reduce<Record<string, (typeof CATALOG)[number]>>(
   (acc, subtest) => {
     acc[subtest.kind] = subtest;
@@ -61,7 +61,7 @@ export const SUBTESTS: SubTestInfo[] = [
     label: shortFor("elf"),
     title: nameFor("elf"),
     description: "Läs engelska texter och svara på förståelsefrågor.",
-    isReading: false,
+    isReading: true,
     icon: "🌍",
   },
   {

@@ -30,7 +30,7 @@ export const SUBTESTS = [
   {
     id: "XYZ",
     kind: "xyz",
-    name: "Matematik problemlösning",
+    name: "Matematisk problemlösning",
     short: "XYZ",
     total: 24,
     block: "kvant",
