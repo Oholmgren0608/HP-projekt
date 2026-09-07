@@ -79,7 +79,7 @@ const METHODS: Record<
     ],
   },
   LAS: {
-    name: "LÄS — Svensk läsförståelse",
+    name: "LÄS — Läsförståelse svenska",
     short: "LÄS",
     methods: [
       "Daglig sakprosa i läsbiblioteket",
@@ -89,7 +89,7 @@ const METHODS: Record<
     ],
   },
   ELF: {
-    name: "ELF — Engelsk läsförståelse",
+    name: "ELF — Läsförståelse engelska",
     short: "ELF",
     methods: [
       "Underhållspass så tempot inte dipsar",
