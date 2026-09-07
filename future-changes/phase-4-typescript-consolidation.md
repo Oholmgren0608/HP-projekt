@@ -1,7 +1,33 @@
 # Phase 4 — TypeScript consolidation & deduplication
 
-**Status:** Not started. This phase runs after Phase 3 (SQL dedup) or in
-parallel with it (disjoint files).
+**Status:** ✅ Completed (2026-09-07). Keep this doc as a record only — the
+work below is done and committed to `main`. See the commit log for details.
+
+## Completion summary
+
+Done (committed):
+- Seeded RNG/shuffle extracted to `src/lib/random.ts` (`hashSeed`, `mulberry32`,
+  `shuffle`); imported by `practice.ts` and `duel/questions.ts`.
+- `formatClock` deduped via `@/lib/practice-timer`; `clamp` in `utils.ts`;
+  `requireSupabase` in `supabase/client.ts`.
+- `sectionShort()` added to `src/lib/subtests.ts`; `LÄS` short-label now derived
+  from `SUBTESTS` in `practice.ts`, `pace-notice.tsx`, `study-time-notice.tsx`,
+  `tips-view.tsx`, `study-time-recommendation.ts`.
+- `kindBadge` in `practice.ts` derives non-reflect labels from `SUBTESTS`.
+- `progress-history.ts` derives `QUANT_KINDS`/`VERBAL_KINDS` from `SUBTESTS.block`.
+- `practice-hub.tsx` XYZ/NOG descriptions + icons corrected (they were swapped).
+
+Divergences from the original assumptions in this doc (left as-is on purpose):
+- `flashcards.tsx` uses `Math.random()` (non-seeded Fisher–Yates), not the
+  seeded `mulberry32` — so it was **not** migrated to `random.ts` (that would
+  have changed flashcard shuffling from random to deterministic).
+- `practice-hub.tsx` was already migrated to `SUBTESTS` (the "swapped XYZ/NOG
+  titles" note was stale; titles were correct, descriptions/icons were the swap).
+- `practice-pace.ts` and `hp-scores.ts` were already deriving from `SUBTESTS`.
+- `section-tips.ts`, `plan-generator.ts`, `reading-library.ts` contain curated
+  copy not derivable from the catalogue — intentionally left.
+- Practice banks (`practice.ts`, `practice-mek.ts`, `practice-kvant.ts`) were
+  left split (optional item; low value, high churn).
 
 ## Goal
 
