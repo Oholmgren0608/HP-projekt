@@ -27,17 +27,17 @@ Successfully implemented the revamped practice section with sub-pages for each d
 
 ### Components Created
 
-#### 1. `practice-hub-v2.tsx`
+#### 1. `practice-hub.tsx`
 - Main practice hub showing all sub-tests as cards
 - Displays 8 HP deltests:
   - **ORD** - Ordförståelse (Vocabulary)
   - **MEK** - Meningskomplettering (Sentence Completion)
-  - **LÄS** - Läsförståelse (Reading Comprehension)
-  - **ELF** - Engelsk Läsförståelse (English Reading)
-  - **XYZ** - Logiska resonemang (Logical Reasoning)
-  - **KVA** - Kvantitativ Jämförelse (Quantitative Comparison)
-  - **NOG** - Numerisk Orientering (Numerical Reasoning)
-  - **DTK** - Diagram, Tabeller & Kartor (Data Interpretation)
+  - **LÄS** - Läsförståelse svenska (Reading Comprehension)
+  - **ELF** - Läsförståelse engelska (English Reading)
+  - **XYZ** - Matematik problemlösning (Math Problem Solving)
+  - **KVA** - Kvantitativa jämförelser (Quantitative Comparison)
+  - **NOG** - Kvantitativa resonemang (Quantitative Reasoning)
+  - **DTK** - Diagram, tabeller och kartor (Data Interpretation)
 - Two additional resource cards for Flashcards and Reading Library
 - Responsive grid layout (3 columns on large screens, 2 on tablet, 1 on mobile)
 

@@ -4,7 +4,7 @@ Mata in dina HP-resultat (normpoäng + råpoäng per delprov) så bygger sidan o
 
 ## Kom igång
 
-Kräver Node.js 20.9 eller nyare. I WSL, från `~/hp-lift`:
+Kräver Node.js 20.9 eller nyare. I WSL, från projektmappen:
 
 ```bash
 npm install
@@ -19,8 +19,10 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 
 - **Nivåtest** — för dig som är ny på HP eller känner dig rostig: ett kort, otidsatt minitest med frågor från alla delprov. Resultatet uppskattar din nivå och bygger veckoplanen automatiskt.
 - **Resultatformulär** — spara normpoäng, delprovspoäng, timmar/vecka och veckor till prov; planen genereras om lokalt
-- Interaktiv veckoplan med övningar (ORD, MEK, LÄS, ELF, DTK)
+- Interaktiv veckoplan med övningar för alla åtta delprov (KVA, DTK, XYZ, NOG, ORD, LÄS, MEK, ELF)
+- Övningshubbar per delprov med valfritt antal frågor, tidtaget mini-prov och daglig repetition (SRS)
 - Flashcards, läsbibliotek och officiella gamla HP-prov (PDF från UHR)
+- **Duell** — frågedueller mot andra spelare (PvP) eller en bot, med ELO-ranking
 
 ## Scripts
 
@@ -45,9 +47,16 @@ i projektöversikten, eller gå till **Settings → API Keys**. Använd en
 
 ### 2. Databas
 
-Kör `supabase/migrations/0001_user_state.sql` i Supabase Dashboard →
-SQL Editor. Skapar `user_state`-tabellen med RLS (varje användare ser bara
-sina egna rader).
+Kör migrationsfilerna i Supabase Dashboard → SQL Editor, i nummerordning:
+
+- `0001_user_state.sql` — `user_state`-tabellen för molnsynk (RLS: varje
+  användare ser bara sina egna rader).
+- `0002_duel_pvp.sql` — tabeller och funktioner för frågedueller
+  (spelarprofiler, matcher, svar, matchmaking och ELO).
+- `0003_duel_reviews.sql` — recensioner, rapporter och bot-svårighet för
+  dueller.
+
+`0002` och `0003` behövs bara om du vill använda Duell-funktionen.
 
 ### 3. Google-inloggning
 
