@@ -41,3 +41,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# högskoleprov importer (generated output)
+/scripts/import-prov/downloads/
+/scripts/import-prov/parsed/
+/scripts/import-prov/figures/

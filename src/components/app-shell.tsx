@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
+import { AuthForms } from "@/components/auth/auth-forms";
 
 function IconHome() {
   return (
@@ -92,6 +93,27 @@ function GoogleG() {
 
 function AuthCluster() {
   const { user, loading, signInWithGoogle, signOut } = useAuth();
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Stänger dropdownen vid klick utanför eller Escape.
+  useEffect(() => {
+    if (!open) return;
+    function handlePointerDown(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
 
   if (!isSupabaseConfigured() || loading) return null;
 
@@ -113,15 +135,39 @@ function AuthCluster() {
   }
 
   return (
-    <button
-      type="button"
-      onClick={() => void signInWithGoogle()}
-      className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
-    >
-      <GoogleG />
-      <span className="hidden sm:inline">Logga in med Google</span>
-      <span className="sm:hidden">Logga in</span>
-    </button>
+    <div className="relative" ref={containerRef}>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--accent)] transition hover:bg-[var(--accent-soft)]"
+      >
+        Logga in
+      </button>
+      {open ? (
+        <div
+          role="dialog"
+          aria-label="Logga in"
+          className="absolute right-0 top-full z-40 mt-2 w-80 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+        >
+          <button
+            type="button"
+            onClick={() => void signInWithGoogle()}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+          >
+            <GoogleG />
+            Fortsätt med Google
+          </button>
+          <div className="my-3 flex items-center gap-3 text-xs text-[var(--ink-muted)]">
+            <span className="h-px flex-1 bg-[var(--line)]" />
+            eller
+            <span className="h-px flex-1 bg-[var(--line)]" />
+          </div>
+          <AuthForms compact />
+        </div>
+      ) : null}
+    </div>
   );
 }
 
@@ -143,6 +189,7 @@ function isActive(pathname: string, href: string) {
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const { user } = useAuth();
 
   return (
     <div className="relative flex min-h-full flex-col overflow-x-hidden">
@@ -185,6 +232,18 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </Link>
               );
             })}
+            {user ? (
+              <Link
+                href="/review"
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                  isActive(pathname, "/review")
+                    ? "bg-[var(--accent-soft)] text-[var(--ink)]"
+                    : "text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                }`}
+              >
+                Granska
+              </Link>
+            ) : null}
           </nav>
           <AuthCluster />
         </div>

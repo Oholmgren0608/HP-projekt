@@ -17,6 +17,15 @@ type AuthState = {
   /** Sant tills sessionen är läst från supabase-js (eller om Supabase saknas). */
   loading: boolean;
   signInWithGoogle: () => Promise<void>;
+  signInWithEmail: (
+    email: string,
+    password: string,
+  ) => Promise<{ error: string | null }>;
+  signUpWithEmail: (
+    email: string,
+    password: string,
+  ) => Promise<{ error: string | null; needsConfirmation: boolean }>;
+  sendPasswordReset: (email: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
 };
 
@@ -65,6 +74,35 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         provider: "google",
         options: { redirectTo: window.location.origin },
       });
+    },
+    signInWithEmail: async (email, password) => {
+      const supabase = getSupabase();
+      if (!supabase) return { error: "Supabase är inte konfigurerat" };
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      return { error: error?.message ?? null };
+    },
+    signUpWithEmail: async (email, password) => {
+      const supabase = getSupabase();
+      if (!supabase) {
+        return { error: "Supabase är inte konfigurerat", needsConfirmation: false };
+      }
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { emailRedirectTo: window.location.origin },
+      });
+      return {
+        error: error?.message ?? null,
+        needsConfirmation: data.session === null,
+      };
+    },
+    sendPasswordReset: async (email) => {
+      const supabase = getSupabase();
+      if (!supabase) return { error: "Supabase är inte konfigurerat" };
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin,
+      });
+      return { error: error?.message ?? null };
     },
     signOut: async () => {
       const supabase = getSupabase();

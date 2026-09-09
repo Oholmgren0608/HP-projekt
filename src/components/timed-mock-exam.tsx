@@ -18,6 +18,7 @@ import { recordQuizOutcome } from "@/lib/quiz-outcome";
 import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
+import { QuestionFigure } from "@/components/question-figure";
 
 const QUESTION_COUNT = 24;
 const LIMIT_SECONDS = 20 * 60;
@@ -165,6 +166,8 @@ export function TimedMockExam() {
             {current.passage}
           </div>
         ) : null}
+
+        <QuestionFigure question={current} position={quiz.index + 1} />
 
         <p className="mt-5 text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
 

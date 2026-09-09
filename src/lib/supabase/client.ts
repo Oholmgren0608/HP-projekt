@@ -36,6 +36,13 @@ export type Database = {
           options: string[];
           correct_index: number;
           explain: string;
+          exam_id: string | null;
+          exam_date: string | null;
+          pass_number: number | null;
+          question_number: number | null;
+          figure_url: string | null;
+          source_url: string | null;
+          status: string;
         };
         Insert: {
           id: string;
@@ -45,6 +52,13 @@ export type Database = {
           options: string[];
           correct_index: number;
           explain: string;
+          exam_id?: string | null;
+          exam_date?: string | null;
+          pass_number?: number | null;
+          question_number?: number | null;
+          figure_url?: string | null;
+          source_url?: string | null;
+          status?: string;
         };
         Update: {
           kind?: string;
@@ -53,6 +67,35 @@ export type Database = {
           options?: string[];
           correct_index?: number;
           explain?: string;
+          exam_id?: string | null;
+          exam_date?: string | null;
+          pass_number?: number | null;
+          question_number?: number | null;
+          figure_url?: string | null;
+          source_url?: string | null;
+          status?: string;
+        };
+        Relationships: [];
+      };
+      exams: {
+        Row: {
+          id: string;
+          exam_date: string;
+          title: string;
+          status: string;
+          created_at: string;
+        };
+        Insert: {
+          id: string;
+          exam_date: string;
+          title: string;
+          status?: string;
+          created_at?: string;
+        };
+        Update: {
+          exam_date?: string;
+          title?: string;
+          status?: string;
         };
         Relationships: [];
       };

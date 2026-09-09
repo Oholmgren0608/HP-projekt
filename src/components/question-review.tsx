@@ -1,6 +1,7 @@
 "use client";
 
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
+import { QuestionFigure } from "@/components/question-figure";
 
 export function QuestionReviewList({
   questions,
@@ -42,6 +43,7 @@ function QuestionReviewItem({
         <span>
           {index + 1}. {kindBadge(q.kind)}
         </span>
+        {q.passNumber !== undefined ? <span>Pass {q.passNumber}</span> : null}
         <span>{ok ? "Rätt" : unanswered ? "Obesvarad" : "Fel"}</span>
       </div>
       <p className="mt-1 font-medium text-[var(--ink)]">{q.prompt}</p>
@@ -51,6 +53,8 @@ function QuestionReviewItem({
           {q.passage}
         </p>
       ) : null}
+
+      <QuestionFigure question={q} position={index + 1} />
 
       <div className="mt-3 space-y-2" role="list" aria-label="Svarsalternativ">
         {q.options.map((opt, i) => {

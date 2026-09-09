@@ -8,10 +8,11 @@ export function ExamsView() {
           Prov
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
-          Mini-prov och gamla häften
+          Prov — gamla prov och övning
         </h1>
         <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
-          Kör ett tidsatt mini-prov med appens frågor, eller läs officiella UHR-häften som PDF.
+          Träna på importerade gamla prov i appen, kör ett tidsatt mini-prov med appens egna
+          frågor, eller läs officiella UHR-häften som PDF.
         </p>
       </div>
       <OfficialExamsBrowser />

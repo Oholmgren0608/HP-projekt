@@ -10,14 +10,17 @@ import { recordQuizOutcome } from "@/lib/quiz-outcome";
 import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
+import { QuestionFigure } from "@/components/question-figure";
 
 type Props = {
   subtest: PracticeKind;
   questionCount: number;
+  /** Filtrera till frågor från ett specifikt importerat prov. */
+  examId?: string;
   onClose: () => void;
 };
 
-export function FreePracticeSession({ subtest, questionCount, onClose }: Props) {
+export function FreePracticeSession({ subtest, questionCount, examId, onClose }: Props) {
   const [sessionStartTime] = useState(() => Date.now());
   const [now, setNow] = useState(() => Date.now());
 
@@ -26,8 +29,8 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
 
   const questions = useMemo(() => {
     if (!questionsReady) return [] as ChoiceQuestion[];
-    return buildMixedQuiz([subtest], seed, questionCount);
-  }, [subtest, seed, questionCount, questionsReady]);
+    return buildMixedQuiz([subtest], seed, questionCount, examId);
+  }, [subtest, seed, questionCount, examId, questionsReady]);
 
   const loggedRef = useRef(false);
 
@@ -121,6 +124,8 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
               {current.passage}
             </div>
           ) : null}
+
+          <QuestionFigure question={current} position={index + 1} />
 
           <p className="text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
 

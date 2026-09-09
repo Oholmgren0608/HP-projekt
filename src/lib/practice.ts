@@ -578,8 +578,10 @@ export function buildQuiz(
   seed: string,
   count: number,
   avoidIds: ReadonlySet<string> | readonly string[] = [],
+  examId?: string,
 ): ChoiceQuestion[] {
-  const bank = getBanks()[kind];
+  let bank = getBanks()[kind];
+  if (examId) bank = bank.filter((q) => q.examId === examId);
   const avoid = avoidIds instanceof Set ? avoidIds : new Set(avoidIds);
   const mastered = loadMasteredQuestionIds();
 
@@ -610,6 +612,7 @@ export function buildMixedQuiz(
   kinds: PracticeKind[],
   seed: string,
   count: number,
+  examId?: string,
 ): ChoiceQuestion[] {
   const quizKinds = kinds.filter((k): k is Exclude<PracticeKind, "reflect"> => k !== "reflect");
   if (quizKinds.length === 0) return [];
@@ -618,7 +621,7 @@ export function buildMixedQuiz(
   const pooled: ChoiceQuestion[] = [];
   for (const kind of quizKinds) {
     pooled.push(
-      ...buildQuiz(kind, `${seed}:${kind}`, perKind + 2, loadLastShownQuestionIds(kind)),
+      ...buildQuiz(kind, `${seed}:${kind}`, perKind + 2, loadLastShownQuestionIds(kind), examId),
     );
   }
   return shuffle(pooled, `${seed}:mix`).slice(0, Math.min(count, pooled.length));
@@ -663,4 +666,39 @@ export function kindBadge(kind: PracticeKind): string {
 
 export function buildMockExam(seed: string, count = 24): ChoiceQuestion[] {
   return buildMixedQuiz(MOCK_KINDS, seed, count);
+}
+
+// ---- Importerade prov (exam-filter) ----------------------------------------
+
+export type ExamPassGroup = {
+  passNumber: number;
+  questions: ChoiceQuestion[];
+};
+
+/** Alla publicerade frågor som tillhör ett specifikt importerat prov. */
+export function getExamQuestions(examId: string): ChoiceQuestion[] {
+  return getQuestions().filter((q) => q.examId === examId);
+}
+
+/**
+ * Gruppera ett provs frågor per provpass, sorterade i passordning (1, 3, 4, 5)
+ * och inom varje pass efter frågenummer (XYZ 1-12, KVA 13-22, NOG 23-28,
+ * DTK 29-40). Används av helprovsläget.
+ */
+export function groupExamQuestionsByPass(examId: string): ExamPassGroup[] {
+  const byPass = new Map<number, ChoiceQuestion[]>();
+  for (const q of getExamQuestions(examId)) {
+    const passNumber = q.passNumber ?? 0;
+    const list = byPass.get(passNumber);
+    if (list) list.push(q);
+    else byPass.set(passNumber, [q]);
+  }
+  return [...byPass.entries()]
+    .map(([passNumber, questions]) => ({
+      passNumber,
+      questions: [...questions].sort(
+        (a, b) => (a.questionNumber ?? 0) - (b.questionNumber ?? 0),
+      ),
+    }))
+    .sort((a, b) => a.passNumber - b.passNumber);
 }

@@ -20,6 +20,7 @@ import { usePausablePracticeTimer } from "@/lib/use-pausable-practice-timer";
 import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
+import { QuestionFigure } from "@/components/question-figure";
 import type { StudyTask } from "@/lib/study-plan";
 
 type Props = {
@@ -178,6 +179,8 @@ export function PracticeSession({
               {current.passage}
             </div>
           ) : null}
+
+          <QuestionFigure question={current} position={quiz.index + 1} />
 
           <p className="text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
 

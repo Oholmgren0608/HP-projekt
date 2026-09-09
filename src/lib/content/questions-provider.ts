@@ -24,7 +24,7 @@ export type QuestionBank = {
   reflect: ReflectPrompt[];
 };
 
-const CACHE_KEY = "hp-lift-questions-v1";
+const CACHE_KEY = "hp-lift-questions-v2";
 
 const QUESTION_KINDS: ChoiceQuestion["kind"][] = [
   "ord",
@@ -74,7 +74,21 @@ function isStringArray(v: unknown): v is string[] {
 }
 
 function questionFromRow(row: Record<string, unknown>): ChoiceQuestion | null {
-  const { id, kind, prompt, passage, options, correct_index, explain } = row;
+  const {
+    id,
+    kind,
+    prompt,
+    passage,
+    options,
+    correct_index,
+    explain,
+    exam_id,
+    exam_date,
+    pass_number,
+    question_number,
+    figure_url,
+    status,
+  } = row;
   const valid =
     isString(id) &&
     isString(kind) &&
@@ -96,6 +110,13 @@ function questionFromRow(row: Record<string, unknown>): ChoiceQuestion | null {
     options: options as string[],
     correctIndex: correct_index as number,
     explain: explain as string,
+    examId: typeof exam_id === "string" ? exam_id : undefined,
+    examDate: typeof exam_date === "string" ? exam_date : undefined,
+    passNumber: typeof pass_number === "number" ? pass_number : undefined,
+    questionNumber:
+      typeof question_number === "number" ? question_number : undefined,
+    figureUrl: typeof figure_url === "string" ? figure_url : undefined,
+    status: typeof status === "string" ? status : undefined,
   };
 }
 
@@ -190,7 +211,7 @@ export function loadQuestions(): Promise<QuestionBank> {
       if (supabase) {
         try {
           const [questionsRes, reflectRes] = await Promise.all([
-            supabase.from("questions").select("*"),
+            supabase.from("questions").select("*").eq("status", "published"),
             supabase.from("reflect_prompts").select("*"),
           ]);
 
