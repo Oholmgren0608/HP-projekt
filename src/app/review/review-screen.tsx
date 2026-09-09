@@ -5,7 +5,7 @@ import { useAuth } from "@/lib/supabase/auth-context";
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { AuthForms } from "@/components/auth/auth-forms";
 import {
-  listDrafts,
+  listAll,
   saveQuestion,
   setStatus,
   publishExam,
@@ -22,6 +22,14 @@ const STATUS_LABEL: Record<string, string> = {
 };
 
 type Phase = "boot" | "signin" | "forbidden" | "notconfigured" | "error" | "ready";
+
+type View = "drafts" | "published" | "all";
+
+const VIEW_OPTIONS: { id: View; label: string }[] = [
+  { id: "drafts", label: "Utkast & avvisade" },
+  { id: "published", label: "Publicerade (historik)" },
+  { id: "all", label: "Alla" },
+];
 
 // ---- Flaggor ---------------------------------------------------------------
 
@@ -84,18 +92,19 @@ export function ReviewScreen() {
   const [groups, setGroups] = useState<ReviewExamGroup[] | null>(null);
   const [loadError, setLoadError] = useState<ReviewError | null>(null);
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const [view, setView] = useState<View>("drafts");
   const [notice, setNotice] = useState<{ kind: "ok" | "err"; text: string } | null>(null);
 
   const supabaseConfigured = isSupabaseConfigured();
 
   // Hämtar och returnerar resultatet utan att röra React-state (anropas i
   // effektens .then — samma mönster som useExams/useQuestions).
-  const fetchDrafts = useCallback(async (): Promise<ListResult> => {
+  const fetchAll = useCallback(async (): Promise<ListResult> => {
     const supabase = getSupabase();
     if (!supabase) return { ok: false, error: "NOT_CONFIGURED" };
     const { data } = await supabase.auth.getSession();
     const token = data.session?.access_token ?? "";
-    return listDrafts(token);
+    return listAll(token);
   }, []);
 
   const applyResult = useCallback((res: ListResult) => {
@@ -109,19 +118,19 @@ export function ReviewScreen() {
   }, []);
 
   async function refresh() {
-    applyResult(await fetchDrafts());
+    applyResult(await fetchAll());
   }
 
   useEffect(() => {
     if (authLoading || !supabaseConfigured || !user) return;
     let cancelled = false;
-    void fetchDrafts().then((res) => {
+    void fetchAll().then((res) => {
       if (!cancelled) applyResult(res);
     });
     return () => {
       cancelled = true;
     };
-  }, [authLoading, supabaseConfigured, user, fetchDrafts, applyResult]);
+  }, [authLoading, supabaseConfigured, user, fetchAll, applyResult]);
 
   function toggleExam(examId: string) {
     setExpanded((prev) => {
@@ -154,10 +163,27 @@ export function ReviewScreen() {
     return () => clearTimeout(t);
   }, [notice]);
 
-  const draftCount = useMemo(
-    () => (groups ?? []).reduce((n, g) => n + g.questions.filter((q) => q.status === "draft").length, 0),
-    [groups],
-  );
+  const counts = useMemo(() => {
+    const qs = (groups ?? []).flatMap((g) => g.questions);
+    return {
+      draft: qs.filter((q) => q.status === "draft").length,
+      rejected: qs.filter((q) => q.status === "rejected").length,
+      published: qs.filter((q) => q.status === "published").length,
+    };
+  }, [groups]);
+
+  const visibleGroups = useMemo(() => {
+    if (!groups) return [];
+    const matches = (q: ReviewQuestion): boolean =>
+      view === "published"
+        ? q.status === "published"
+        : view === "drafts"
+          ? q.status === "draft" || q.status === "rejected"
+          : true;
+    return groups
+      .map((g) => ({ ...g, questions: g.questions.filter(matches) }))
+      .filter((g) => g.questions.length > 0);
+  }, [groups, view]);
 
   // Fas härleds vid render — ingen setState i effekten (lint-säkert).
   let phase: Phase;
@@ -270,12 +296,16 @@ export function ReviewScreen() {
             Administration
           </p>
           <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
-            Granska utkast
+            Granska frågor
           </h1>
           <p className="mt-2 text-[var(--ink-muted)]">
-            {groups.length > 0
-              ? `${groups.length} prov med frågor att granska · ${draftCount} utkast`
-              : "Inga utkast att granska."}
+            {visibleGroups.length > 0
+              ? view === "published"
+                ? `${visibleGroups.length} prov · ${counts.published} publicerade`
+                : view === "drafts"
+                  ? `${visibleGroups.length} prov · ${counts.draft} utkast · ${counts.rejected} avvisade`
+                  : `${visibleGroups.length} prov · ${counts.draft} utkast · ${counts.rejected} avvisade · ${counts.published} publicerade`
+              : "Inga frågor att visa."}
           </p>
         </div>
         <button
@@ -285,6 +315,24 @@ export function ReviewScreen() {
         >
           Uppdatera
         </button>
+      </div>
+
+      <div className="flex flex-wrap gap-2">
+        {VIEW_OPTIONS.map((opt) => (
+          <button
+            key={opt.id}
+            type="button"
+            onClick={() => setView(opt.id)}
+            aria-pressed={view === opt.id}
+            className={`rounded-lg border px-3 py-1.5 text-sm font-medium transition ${
+              view === opt.id
+                ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                : "border-[var(--line)] bg-white/70 text-[var(--ink)] hover:bg-[var(--accent-soft)]"
+            }`}
+          >
+            {opt.label}
+          </button>
+        ))}
       </div>
 
       {notice ? (
@@ -299,16 +347,17 @@ export function ReviewScreen() {
         </div>
       ) : null}
 
-      {groups.length === 0 ? (
+      {visibleGroups.length === 0 ? (
         <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-10 text-center text-[var(--ink-muted)]">
-          Inga utkast att granska.
+          Inga frågor att visa i den här vyn.
         </div>
       ) : (
         <div className="space-y-3">
-          {groups.map((group) => (
+          {visibleGroups.map((group) => (
             <ExamGroup
               key={group.examId}
               group={group}
+              view={view}
               expanded={expanded.has(group.examId)}
               onToggle={() => toggleExam(group.examId)}
               onStatusChange={runMutation}
@@ -325,12 +374,14 @@ export function ReviewScreen() {
 
 function ExamGroup({
   group,
+  view,
   expanded,
   onToggle,
   onStatusChange,
   onPublishExam,
 }: {
   group: ReviewExamGroup;
+  view: View;
   expanded: boolean;
   onToggle: () => void;
   onStatusChange: (fn: () => Promise<MutateResult>, successText: string) => Promise<void>;
@@ -338,6 +389,7 @@ function ExamGroup({
 }) {
   const draftCount = group.questions.filter((q) => q.status === "draft").length;
   const rejectedCount = group.questions.filter((q) => q.status === "rejected").length;
+  const publishedCount = group.questions.filter((q) => q.status === "published").length;
   const flaggedCount = group.questions.filter((q) => parseFlags(q.explain).flags.length > 0).length;
   const isLegacy = group.examId === "__legacy__";
 
@@ -407,6 +459,11 @@ function ExamGroup({
               {rejectedCount} avvisade
             </span>
           ) : null}
+          {publishedCount > 0 ? (
+            <span className="rounded-full border border-[var(--lagoon)]/50 bg-[#eef8f6] px-2 py-0.5 text-xs text-[var(--accent)]">
+              {publishedCount} publicerade
+            </span>
+          ) : null}
           {flaggedCount > 0 ? (
             <span className="rounded-full border border-[#b45309]/30 bg-[#fffbeb] px-2 py-0.5 text-xs text-[#b45309]">
               {flaggedCount} flaggade
@@ -417,31 +474,33 @@ function ExamGroup({
 
       {expanded ? (
         <div className="border-t border-[var(--line)] px-4 py-4 sm:px-5">
-          <div className="mb-4 flex flex-wrap gap-2">
-            <button
-              type="button"
-              onClick={() => void bulk("published")}
-              className="rounded-lg bg-[var(--lagoon)] px-3 py-1.5 text-xs font-semibold text-white transition hover:opacity-90"
-            >
-              Publicera alla
-            </button>
-            <button
-              type="button"
-              onClick={() => void bulk("rejected")}
-              className="rounded-lg border border-[#9a3412]/40 bg-white px-3 py-1.5 text-xs font-semibold text-[#9a3412] transition hover:bg-[#fff7f3]"
-            >
-              Avvisa alla
-            </button>
-            {!isLegacy ? (
+          {view !== "published" ? (
+            <div className="mb-4 flex flex-wrap gap-2">
               <button
                 type="button"
-                onClick={() => void publishThisExam()}
-                className="rounded-lg border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+                onClick={() => void bulk("published")}
+                className="rounded-lg bg-[var(--lagoon)] px-3 py-1.5 text-xs font-semibold text-white transition hover:opacity-90"
               >
-                Publicera prov
+                Publicera alla
               </button>
-            ) : null}
-          </div>
+              <button
+                type="button"
+                onClick={() => void bulk("rejected")}
+                className="rounded-lg border border-[#9a3412]/40 bg-white px-3 py-1.5 text-xs font-semibold text-[#9a3412] transition hover:bg-[#fff7f3]"
+              >
+                Avvisa alla
+              </button>
+              {!isLegacy ? (
+                <button
+                  type="button"
+                  onClick={() => void publishThisExam()}
+                  className="rounded-lg border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+                >
+                  Publicera prov
+                </button>
+              ) : null}
+            </div>
+          ) : null}
 
           <div className="space-y-5">
             {passGroups.map((pg) => (
@@ -595,7 +654,15 @@ function QuestionCard({
             Godkänn
           </button>
         ) : null}
-        {q.status !== "rejected" ? (
+        {q.status === "published" ? (
+          <button
+            type="button"
+            onClick={() => void changeStatus("rejected")}
+            className="rounded-lg bg-[#9a3412] px-3 py-1.5 text-xs font-semibold text-white transition hover:brightness-110"
+          >
+            Markera som fel
+          </button>
+        ) : q.status !== "rejected" ? (
           <button
             type="button"
             onClick={() => void changeStatus("rejected")}

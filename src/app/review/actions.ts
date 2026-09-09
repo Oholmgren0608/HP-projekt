@@ -116,16 +116,13 @@ function groupQuestions(
   return groups;
 }
 
-/** Hämtar alla utkast/avvisade frågor, grupperade per prov. */
-export async function listDrafts(accessToken: string): Promise<ListResult> {
+/** Hämtar alla frågor (oavsett status), grupperade per prov. */
+export async function listAll(accessToken: string): Promise<ListResult> {
   const auth = await authorize(accessToken);
   if (!auth.ok) return auth;
 
   const [qRes, eRes] = await Promise.all([
-    auth.admin
-      .from("questions")
-      .select("*")
-      .in("status", ["draft", "rejected"]),
+    auth.admin.from("questions").select("*"),
     auth.admin.from("exams").select("*"),
   ]);
 
