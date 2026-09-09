@@ -80,3 +80,28 @@ export async function verifyReviewer(
     return null;
   }
 }
+
+/**
+ * Verifierar en browser-utfärdad Supabase access-token UTAN e-post-allowlist.
+ * Returnerar användarens id (uuid) eller null. Används för åtgärder där en
+ * inloggad användare får agera på sitt eget konto (t.ex. radera kontot).
+ */
+export async function verifyUser(accessToken: string): Promise<string | null> {
+  if (!accessToken) return null;
+
+  const url = serverUrl();
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !anonKey) return null;
+
+  const client = createClient<Database>(url, anonKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+
+  try {
+    const { data, error } = await client.auth.getUser(accessToken);
+    if (error || !data.user) return null;
+    return data.user.id;
+  } catch {
+    return null;
+  }
+}

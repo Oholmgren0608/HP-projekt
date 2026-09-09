@@ -120,6 +120,7 @@ export type Database = {
         Row: {
           user_id: string;
           display_name: string;
+          username: string | null;
           elo: number;
           wins: number;
           losses: number;
@@ -136,6 +137,7 @@ export type Database = {
         Insert: {
           user_id: string;
           display_name: string;
+          username?: string | null;
           elo?: number;
           wins?: number;
           losses?: number;
@@ -151,6 +153,7 @@ export type Database = {
         };
         Update: {
           display_name?: string;
+          username?: string | null;
           elo?: number;
           wins?: number;
           losses?: number;
@@ -314,6 +317,22 @@ export type Database = {
       duel_ensure_profile: {
         Args: { p_display_name: string };
         Returns: null;
+      };
+      profile_set_username: {
+        Args: { p_username: string };
+        Returns: {
+          user_id: string;
+          display_name: string;
+          username: string;
+        } | null;
+      };
+      profile_ensure: {
+        Args: Record<string, never>;
+        Returns: {
+          user_id: string;
+          display_name: string;
+          username: string | null;
+        } | null;
       };
       duel_join_queue: {
         Args: { p_mode: string };
