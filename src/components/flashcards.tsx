@@ -2,9 +2,11 @@
 
 import { useMemo, useState } from "react";
 import { usePersistentState } from "@/lib/use-persistent-state";
+import { getQuestionBankSync } from "@/lib/content/questions-provider";
+import { useQuestions } from "@/lib/content/use-questions";
 import {
-  ALL_FLASHCARDS,
   FLASHCARD_PROGRESS_KEY,
+  buildAllFlashcards,
   filterDeck,
   type CardProgress,
   type DeckFilter,
@@ -41,24 +43,33 @@ function buildQueue(deck: Flashcard[], progress: ProgressMap): Flashcard[] {
 
 export function Flashcards() {
   const [filter, setFilter] = useState<DeckFilter>("alla");
-  const [progress, setProgress, ready] = usePersistentState<ProgressMap>(
+  const [progress, setProgress, progressReady] = usePersistentState<ProgressMap>(
     FLASHCARD_PROGRESS_KEY,
     {},
   );
-  const deck = useMemo(() => filterDeck(filter), [filter]);
-  const [queue, setQueue] = useState<Flashcard[]>(() => buildQueue(deck, progress));
+  const { ready: questionsReady } = useQuestions();
+
+  // Kortleken byggs från runtime-frågebanken när den laddats (Supabase/fallback).
+  const allCards = useMemo(
+    () => (questionsReady ? buildAllFlashcards(getQuestionBankSync()) : []),
+    [questionsReady],
+  );
+  const deck = useMemo(() => filterDeck(filter, allCards), [filter, allCards]);
+
+  const [queue, setQueue] = useState<Flashcard[]>([]);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [sessionCorrect, setSessionCorrect] = useState(0);
   const [sessionWrong, setSessionWrong] = useState(0);
 
-  // Restart the session when the deck filter changes. Adjusting state during
-  // render (tracking the previous filter) avoids a setState-in-effect cascade.
-  // Progress is intentionally read from the current value without reshuffling
+  // Restart the session when the deck (or filter) changes — including the
+  // first time the question bank becomes ready. Adjusting state during render
+  // (tracking the previous deck) avoids a setState-in-effect cascade. Progress
+  // is intentionally read from the current value without reshuffling
   // mid-answer.
-  const [sessionFilter, setSessionFilter] = useState(filter);
-  if (filter !== sessionFilter) {
-    setSessionFilter(filter);
+  const [sessionDeck, setSessionDeck] = useState<Flashcard[] | null>(null);
+  if (deck !== sessionDeck) {
+    setSessionDeck(deck);
     setQueue(buildQueue(deck, progress));
     setIndex(0);
     setFlipped(false);
@@ -66,9 +77,11 @@ export function Flashcards() {
     setSessionWrong(0);
   }
 
+  const hydrated = progressReady && questionsReady;
+
   // Kortleken blandas med slump på klienten — rendera inget förrän hydrering
-  // är klar, annars mismatchar SSR- och klient-HTML (hydreringsfel).
-  if (!ready) {
+  // och frågebanken är klara, annars mismatchar SSR- och klient-HTML.
+  if (!hydrated) {
     return (
       <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar flashcards…</p>
@@ -112,7 +125,7 @@ export function Flashcards() {
   }
 
   const filters: { id: DeckFilter; label: string }[] = [
-    { id: "alla", label: `Alla (${ALL_FLASHCARDS.length})` },
+    { id: "alla", label: `Alla (${allCards.length})` },
     { id: "ord", label: "ORD" },
     { id: "lasning", label: "Läsbibliotek" },
     { id: "konnektorer", label: "Konnektorer" },

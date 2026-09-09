@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { PracticeKind } from "@/lib/practice";
+import type { ChoiceQuestion, PracticeKind } from "@/lib/practice";
 import { buildMixedQuiz, tally, kindBadge } from "@/lib/practice";
+import { useQuestions } from "@/lib/content/use-questions";
 import { QuestionReviewList } from "@/components/question-review";
 import { formatClock } from "@/lib/practice-timer";
 import { recordQuizOutcome } from "@/lib/quiz-outcome";
@@ -21,9 +22,12 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
   const [now, setNow] = useState(() => Date.now());
 
   const seed = `free:${subtest}:${sessionStartTime}`;
+  const { ready: questionsReady } = useQuestions();
+
   const questions = useMemo(() => {
+    if (!questionsReady) return [] as ChoiceQuestion[];
     return buildMixedQuiz([subtest], seed, questionCount);
-  }, [subtest, seed, questionCount]);
+  }, [subtest, seed, questionCount, questionsReady]);
 
   const loggedRef = useRef(false);
 
@@ -91,6 +95,13 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
           Stäng
         </button>
       </div>
+
+      {phase === "quiz" && !questionsReady ? (
+        <div className="mt-5 flex items-center justify-center gap-2 py-10 text-sm text-[var(--ink-muted)]">
+          <span className="size-4 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--accent)]" />
+          Laddar frågor…
+        </div>
+      ) : null}
 
       {phase === "quiz" && current ? (
         <div className="mt-5 space-y-5">

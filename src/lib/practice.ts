@@ -1,5 +1,4 @@
-import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
-import { MEK_BANK } from "@/lib/practice-mek";
+import { getQuestions, getReflectPrompts } from "@/lib/content/questions-provider";
 import { loadMasteredQuestionIds } from "@/lib/question-mastery";
 import { hashSeed, shuffle } from "@/lib/random";
 import type {
@@ -487,19 +486,38 @@ export const REFLECT_BANK: ReflectPrompt[] = [
   },
 ];
 
-const BANKS: Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> = {
-  ord: ORD_BANK,
-  mek: MEK_BANK,
-  las: LAS_BANK,
-  elf: ELF_BANK,
-  dtk: DTK_BANK,
-  xyz: XYZ_BANK,
-  kva: KVA_BANK,
-  nog: NOG_BANK,
-};
+let banksCache: Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> | null = null;
+let banksCacheSource: ChoiceQuestion[] | null = null;
+
+/**
+ * Frågebanken grupperad per delprov, hämtad från runtime-providern (Supabase
+ * eller bundlad fallback). Cachas mot providerns array-identitet så att
+ * grupperingen byggs om först när banken faktiskt byts ut.
+ */
+function getBanks(): Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> {
+  const questions = getQuestions();
+  if (banksCache && banksCacheSource === questions) return banksCache;
+  const banks: Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> = {
+    ord: [],
+    mek: [],
+    las: [],
+    elf: [],
+    dtk: [],
+    xyz: [],
+    kva: [],
+    nog: [],
+  };
+  for (const q of questions) {
+    const list = banks[q.kind];
+    if (list) list.push(q);
+  }
+  banksCache = banks;
+  banksCacheSource = questions;
+  return banks;
+}
 
 export function findQuestionById(id: string): ChoiceQuestion | undefined {
-  for (const bank of Object.values(BANKS)) {
+  for (const bank of Object.values(getBanks())) {
     const found = bank.find((q) => q.id === id);
     if (found) return found;
   }
@@ -561,7 +579,7 @@ export function buildQuiz(
   count: number,
   avoidIds: ReadonlySet<string> | readonly string[] = [],
 ): ChoiceQuestion[] {
-  const bank = BANKS[kind];
+  const bank = getBanks()[kind];
   const avoid = avoidIds instanceof Set ? avoidIds : new Set(avoidIds);
   const mastered = loadMasteredQuestionIds();
 
@@ -607,8 +625,11 @@ export function buildMixedQuiz(
 }
 
 export function getReflectPrompt(seed: string): ReflectPrompt {
-  const idx = hashSeed(seed) % REFLECT_BANK.length;
-  return REFLECT_BANK[idx];
+  const prompts = getReflectPrompts();
+  // Guard: om Supabase-data saknar reflektioner, fall tillbaka på den bundlade.
+  const list = prompts.length > 0 ? prompts : REFLECT_BANK;
+  const idx = hashSeed(seed) % list.length;
+  return list[idx];
 }
 
 export function practiceLabel(kind: PracticeKind): string {

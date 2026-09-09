@@ -27,6 +27,52 @@ export type Database = {
         };
         Relationships: [];
       };
+      questions: {
+        Row: {
+          id: string;
+          kind: string;
+          prompt: string;
+          passage: string | null;
+          options: string[];
+          correct_index: number;
+          explain: string;
+        };
+        Insert: {
+          id: string;
+          kind: string;
+          prompt: string;
+          passage?: string | null;
+          options: string[];
+          correct_index: number;
+          explain: string;
+        };
+        Update: {
+          kind?: string;
+          prompt?: string;
+          passage?: string | null;
+          options?: string[];
+          correct_index?: number;
+          explain?: string;
+        };
+        Relationships: [];
+      };
+      reflect_prompts: {
+        Row: {
+          id: string;
+          title: string;
+          prompts: string[];
+        };
+        Insert: {
+          id: string;
+          title: string;
+          prompts: string[];
+        };
+        Update: {
+          title?: string;
+          prompts?: string[];
+        };
+        Relationships: [];
+      };
       player_profiles: {
         Row: {
           user_id: string;

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { formatClock } from "@/lib/practice-timer";
+import { useQuestions } from "@/lib/content/use-questions";
 import {
   buildMockExam,
   kindBadge,
@@ -32,10 +33,12 @@ export function TimedMockExam() {
   const startTsRef = useRef<number | null>(null);
   const [loggedDurationMs, setLoggedDurationMs] = useState<number | null>(null);
 
+  const { ready: questionsReady } = useQuestions();
+
   const questions = useMemo(() => {
-    if (!seed) return [] as ChoiceQuestion[];
+    if (!seed || !questionsReady) return [] as ChoiceQuestion[];
     return buildMockExam(seed, QUESTION_COUNT);
-  }, [seed]);
+  }, [seed, questionsReady]);
 
   function logFinish(locked: Record<string, number>) {
     setPhase("review");
@@ -70,6 +73,7 @@ export function TimedMockExam() {
   );
 
   function start() {
+    if (!questionsReady) return;
     loggedRef.current = false;
     startTsRef.current = Date.now();
     setLoggedDurationMs(null);
@@ -116,9 +120,10 @@ export function TimedMockExam() {
         <button
           type="button"
           onClick={start}
-          className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white hover:brightness-110"
+          disabled={!questionsReady}
+          className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Starta mini-prov ({LIMIT_SECONDS / 60} min)
+          {questionsReady ? `Starta mini-prov (${LIMIT_SECONDS / 60} min)` : "Laddar frågor…"}
         </button>
       </div>
     );

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabase } from "@/lib/supabase/client";
+import { loadQuestions } from "@/lib/content/questions-provider";
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import {
   DUEL_QUESTION_COUNT,
@@ -251,6 +252,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       const oppId = isBotMatch ? null : iAmA ? m.player_b : m.player_a;
 
       setIsBot(isBotMatch);
+      await loadQuestions();
       const qs = buildDuelQuiz(m.question_seed, DUEL_QUESTION_COUNT);
       setQuestions(qs);
 

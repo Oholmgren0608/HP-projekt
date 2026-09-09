@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { usePlan } from "@/components/plan-context";
+import { useQuestions } from "@/lib/content/use-questions";
 import { ScoreBar } from "@/components/plan-badges";
 import { QuestionReviewList } from "@/components/question-review";
 import { formatNorm } from "@/lib/hp-scores";
@@ -57,9 +58,14 @@ export function MiniLevelTest() {
     setWeeksUntilExam(scores.weeksUntilExam);
   }
 
+  const { ready: questionsReady } = useQuestions();
+
   const questions = useMemo(
-    () => (seed ? buildMiniTest(seed, counts) : ([] as ChoiceQuestion[])),
-    [seed, counts],
+    () =>
+      seed && questionsReady
+        ? buildMiniTest(seed, counts)
+        : ([] as ChoiceQuestion[]),
+    [seed, counts, questionsReady],
   );
 
   function onFinish(locked: Record<string, number>) {
@@ -213,6 +219,17 @@ export function MiniLevelTest() {
   }
 
   if (phase === "quiz") {
+    if (!questionsReady || questions.length === 0) {
+      return (
+        <div className="space-y-6">
+          {heading}
+          <div className="flex items-center justify-center gap-2 rounded-2xl border border-[var(--line)] bg-white/75 py-10 text-sm text-[var(--ink-muted)]">
+            <span className="size-4 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--accent)]" />
+            Laddar frågor…
+          </div>
+        </div>
+      );
+    }
     const current = quiz.current;
     if (!current) return null;
     return (

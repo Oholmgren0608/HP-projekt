@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { QuestionReviewList } from "@/components/question-review";
+import { useQuestions } from "@/lib/content/use-questions";
 import {
   buildMixedQuiz,
   getReflectPrompt,
@@ -50,16 +51,18 @@ export function PracticeSession({
 
   const kindsKey = task.practiceKinds.join(",");
   const questionCount = task.questionCount ?? 8;
+  const { ready: questionsReady } = useQuestions();
+
   const questions = useMemo(() => {
-    if (isReflect) return [] as ChoiceQuestion[];
+    if (isReflect || !questionsReady) return [] as ChoiceQuestion[];
     return buildMixedQuiz(task.practiceKinds, seed, questionCount);
     // task.practiceKinds is represented by the stable kindsKey dependency.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isReflect, seed, kindsKey, questionCount]);
+  }, [isReflect, questionsReady, seed, kindsKey, questionCount]);
 
   const reflect = useMemo(
-    () => (isReflect ? getReflectPrompt(seed) : null),
-    [isReflect, seed],
+    () => (isReflect && questionsReady ? getReflectPrompt(seed) : null),
+    [isReflect, questionsReady, seed],
   );
 
   const [phase, setPhase] = useState<Phase>(isReflect ? "reflect" : "quiz");
@@ -149,6 +152,13 @@ export function PracticeSession({
       </div>
 
       <TimeRequirementBanner timer={timer} />
+
+      {phase === "quiz" && !questionsReady ? (
+        <div className="mt-5 flex items-center justify-center gap-2 py-10 text-sm text-[var(--ink-muted)]">
+          <span className="size-4 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--accent)]" />
+          Laddar frågor…
+        </div>
+      ) : null}
 
       {phase === "quiz" && current ? (
         <div className="mt-5 space-y-5">
@@ -250,6 +260,13 @@ export function PracticeSession({
             ) : null}
           </div>
           <CompleteButton ready={timer.ready} remainingSeconds={timer.remainingSeconds} onClick={finish} />
+        </div>
+      ) : null}
+
+      {phase === "reflect" && !questionsReady ? (
+        <div className="mt-5 flex items-center justify-center gap-2 py-10 text-sm text-[var(--ink-muted)]">
+          <span className="size-4 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--accent)]" />
+          Laddar frågor…
         </div>
       ) : null}
 
