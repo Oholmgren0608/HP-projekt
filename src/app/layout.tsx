@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { Fraunces, Nunito } from "next/font/google";
 import { AppShell } from "@/components/app-shell";
 import { PlanProvider } from "@/components/plan-context";
@@ -67,6 +66,42 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             `,
           }}
         />
+        {/*
+          Dark Reader och liknande webbläsartillägg lägger till data-*-attribut
+          på elementen innan React hydrerar. Server-HTML:en har inte dessa, så
+          React varnar om mismatch. Ta bort attributen — tillägget återskapar
+          dem vid behov efteråt, utan nya kontroller. Körs inline i <head>
+          direkt, precis som tema-scriptet ovan, i stället för via
+          <Script strategy="beforeInteractive"> som kastade React-felet
+          "Encountered a script tag" på 404-rutter. Kör även om vid
+          DOMContentLoaded så att attribut på body-element hinns med.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                function strip() {
+                  try {
+                    var all = document.querySelectorAll("*");
+                    for (var i = 0; i < all.length; i++) {
+                      var attrs = all[i].attributes;
+                      for (var j = attrs.length - 1; j >= 0; j--) {
+                        var name = attrs[j].name;
+                        if (name.indexOf("data-darkreader") === 0) {
+                          all[i].removeAttribute(name);
+                        }
+                      }
+                    }
+                  } catch (e) {}
+                }
+                strip();
+                if (document.readyState === "loading") {
+                  document.addEventListener("DOMContentLoaded", strip);
+                }
+              })();
+            `,
+          }}
+        />
       </head>
       <body className="flex min-h-full flex-col font-sans">
         <PreferencesProvider>
@@ -79,30 +114,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </GamificationProvider>
           </AuthProvider>
         </PreferencesProvider>
-        {/*
-          Dark Reader och liknande webbläsartillägg lägger till data-*-attribut
-          på elementen innan React hydrerar. Server-HTML:en har inte dessa, så
-          React varnar om mismatch. Kör före hydrering och ta bort attributen —
-          tillägget återskapar dem vid behov efteråt, utan nya kontroller.
-        */}
-        <Script id="strip-extension-attrs" strategy="beforeInteractive">
-          {`
-          (function () {
-            try {
-              var all = document.querySelectorAll("*");
-              for (var i = 0; i < all.length; i++) {
-                var attrs = all[i].attributes;
-                for (var j = attrs.length - 1; j >= 0; j--) {
-                  var name = attrs[j].name;
-                  if (name.indexOf("data-darkreader") === 0) {
-                    all[i].removeAttribute(name);
-                  }
-                }
-              }
-            } catch (e) {}
-          })();
-          `}
-        </Script>
       </body>
     </html>
   );
