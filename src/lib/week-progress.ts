@@ -1,5 +1,8 @@
 import type { StudyTask, WeekPlan } from "@/lib/study-plan";
-import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { storageSet } from "@/lib/sync/storage-sync";
+import { emitEvent, loadJson } from "@/lib/storage";
+
+export { loadJson };
 
 export const WEEK_PROGRESS_KEY = "hp-studieplan-progress-v2";
 export const WEEK_SCORES_KEY = "hp-studieplan-scores-v1";
@@ -13,24 +16,12 @@ export function taskKey(week: number, taskId: string) {
   return `w${week}:${taskId}`;
 }
 
-export function loadJson<T>(key: string, fallback: T): T {
-  if (typeof window === "undefined") return fallback;
-  try {
-    const raw = storageGet(key);
-    if (!raw) return fallback;
-    return JSON.parse(raw) as T;
-  } catch {
-    return fallback;
-  }
-}
-
 export function loadWeekProgress(): ProgressMap {
   return loadJson<ProgressMap>(WEEK_PROGRESS_KEY, {});
 }
 
 export function emitWeekProgressChanged() {
-  if (typeof window === "undefined") return;
-  window.dispatchEvent(new Event(WEEK_PROGRESS_EVENT));
+  emitEvent(WEEK_PROGRESS_EVENT);
 }
 
 export function findNextIncomplete(

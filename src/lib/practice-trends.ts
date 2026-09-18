@@ -1,6 +1,6 @@
 import type { ScoreInput } from "@/lib/hp-scores";
 import { DELPROV_META } from "@/lib/hp-scores";
-import { pct } from "@/lib/study-plan";
+import { pct } from "@/lib/format";
 import type { SectionId } from "@/lib/study-plan";
 import { kindToSection } from "@/lib/practice-pace";
 import type { HistoryEvent } from "@/lib/progress-history";

@@ -1,21 +1,15 @@
-import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
-import { MEK_BANK } from "@/lib/practice-mek";
+import { getQuestions, getReflectPrompts } from "@/lib/content/questions-provider";
 import { loadMasteredQuestionIds } from "@/lib/question-mastery";
 import { hashSeed, shuffle } from "@/lib/random";
 import { SUBTESTS } from "@/lib/subtests";
+import type {
+  ChoiceQuestion,
+  PracticeKind,
+  ReflectPrompt,
+} from "@/lib/practice-types";
 
-export { MEK_BANK };
-
-export type PracticeKind =
-  | "ord"
-  | "mek"
-  | "las"
-  | "elf"
-  | "dtk"
-  | "xyz"
-  | "kva"
-  | "nog"
-  | "reflect";
+export { tally } from "@/lib/quiz";
+export type { ChoiceQuestion, PracticeKind, ReflectPrompt } from "@/lib/practice-types";
 
 export const MOCK_KINDS: Exclude<PracticeKind, "reflect">[] = [
   "ord",
@@ -27,22 +21,6 @@ export const MOCK_KINDS: Exclude<PracticeKind, "reflect">[] = [
   "nog",
   "dtk",
 ];
-
-export type ChoiceQuestion = {
-  id: string;
-  kind: Exclude<PracticeKind, "reflect">;
-  prompt: string;
-  passage?: string;
-  options: string[];
-  correctIndex: number;
-  explain: string;
-};
-
-export type ReflectPrompt = {
-  id: string;
-  title: string;
-  prompts: string[];
-};
 
 /** Egna övningsfrågor i HP-stil — inte hämtade från riktiga prov. */
 export const ORD_BANK: ChoiceQuestion[] = [
@@ -509,19 +487,38 @@ export const REFLECT_BANK: ReflectPrompt[] = [
   },
 ];
 
-const BANKS: Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> = {
-  ord: ORD_BANK,
-  mek: MEK_BANK,
-  las: LAS_BANK,
-  elf: ELF_BANK,
-  dtk: DTK_BANK,
-  xyz: XYZ_BANK,
-  kva: KVA_BANK,
-  nog: NOG_BANK,
-};
+let banksCache: Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> | null = null;
+let banksCacheSource: ChoiceQuestion[] | null = null;
+
+/**
+ * Frågebanken grupperad per delprov, hämtad från runtime-providern (Supabase
+ * eller bundlad fallback). Cachas mot providerns array-identitet så att
+ * grupperingen byggs om först när banken faktiskt byts ut.
+ */
+function getBanks(): Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> {
+  const questions = getQuestions();
+  if (banksCache && banksCacheSource === questions) return banksCache;
+  const banks: Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> = {
+    ord: [],
+    mek: [],
+    las: [],
+    elf: [],
+    dtk: [],
+    xyz: [],
+    kva: [],
+    nog: [],
+  };
+  for (const q of questions) {
+    const list = banks[q.kind];
+    if (list) list.push(q);
+  }
+  banksCache = banks;
+  banksCacheSource = questions;
+  return banks;
+}
 
 export function findQuestionById(id: string): ChoiceQuestion | undefined {
-  for (const bank of Object.values(BANKS)) {
+  for (const bank of Object.values(getBanks())) {
     const found = bank.find((q) => q.id === id);
     if (found) return found;
   }
@@ -582,8 +579,10 @@ export function buildQuiz(
   seed: string,
   count: number,
   avoidIds: ReadonlySet<string> | readonly string[] = [],
+  examId?: string,
 ): ChoiceQuestion[] {
-  const bank = BANKS[kind];
+  let bank = getBanks()[kind];
+  if (examId) bank = bank.filter((q) => q.examId === examId);
   const avoid = avoidIds instanceof Set ? avoidIds : new Set(avoidIds);
   const mastered = loadMasteredQuestionIds();
 
@@ -614,6 +613,7 @@ export function buildMixedQuiz(
   kinds: PracticeKind[],
   seed: string,
   count: number,
+  examId?: string,
 ): ChoiceQuestion[] {
   const quizKinds = kinds.filter((k): k is Exclude<PracticeKind, "reflect"> => k !== "reflect");
   if (quizKinds.length === 0) return [];
@@ -622,15 +622,18 @@ export function buildMixedQuiz(
   const pooled: ChoiceQuestion[] = [];
   for (const kind of quizKinds) {
     pooled.push(
-      ...buildQuiz(kind, `${seed}:${kind}`, perKind + 2, loadLastShownQuestionIds(kind)),
+      ...buildQuiz(kind, `${seed}:${kind}`, perKind + 2, loadLastShownQuestionIds(kind), examId),
     );
   }
   return shuffle(pooled, `${seed}:mix`).slice(0, Math.min(count, pooled.length));
 }
 
 export function getReflectPrompt(seed: string): ReflectPrompt {
-  const idx = hashSeed(seed) % REFLECT_BANK.length;
-  return REFLECT_BANK[idx];
+  const prompts = getReflectPrompts();
+  // Guard: om Supabase-data saknar reflektioner, fall tillbaka på den bundlade.
+  const list = prompts.length > 0 ? prompts : REFLECT_BANK;
+  const idx = hashSeed(seed) % list.length;
+  return list[idx];
 }
 
 export function practiceLabel(kind: PracticeKind): string {
@@ -665,14 +668,37 @@ export function buildMockExam(seed: string, count = 24): ChoiceQuestion[] {
   return buildMixedQuiz(MOCK_KINDS, seed, count);
 }
 
-/** Räknar rätt mot en låst svarskopia — obesvarade räknas som fel. */
-export function tally(
-  questions: readonly ChoiceQuestion[],
-  answers: Record<string, number>,
-): { correct: number; total: number } {
-  let correct = 0;
-  for (const q of questions) {
-    if (answers[q.id] === q.correctIndex) correct += 1;
+// ---- Importerade prov (exam-filter) ----------------------------------------
+
+export type ExamPassGroup = {
+  passNumber: number;
+  questions: ChoiceQuestion[];
+};
+
+/** Alla publicerade frågor som tillhör ett specifikt importerat prov. */
+export function getExamQuestions(examId: string): ChoiceQuestion[] {
+  return getQuestions().filter((q) => q.examId === examId);
+}
+
+/**
+ * Gruppera ett provs frågor per provpass, sorterade i passordning (1, 3, 4, 5)
+ * och inom varje pass efter frågenummer (XYZ 1-12, KVA 13-22, NOG 23-28,
+ * DTK 29-40). Används av helprovsläget.
+ */
+export function groupExamQuestionsByPass(examId: string): ExamPassGroup[] {
+  const byPass = new Map<number, ChoiceQuestion[]>();
+  for (const q of getExamQuestions(examId)) {
+    const passNumber = q.passNumber ?? 0;
+    const list = byPass.get(passNumber);
+    if (list) list.push(q);
+    else byPass.set(passNumber, [q]);
   }
-  return { correct, total: questions.length };
+  return [...byPass.entries()]
+    .map(([passNumber, questions]) => ({
+      passNumber,
+      questions: [...questions].sort(
+        (a, b) => (a.questionNumber ?? 0) - (b.questionNumber ?? 0),
+      ),
+    }))
+    .sort((a, b) => a.passNumber - b.passNumber);
 }

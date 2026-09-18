@@ -1,10 +1,5 @@
-import {
-  DTK_BANK,
-  MEK_BANK,
-  ORD_BANK,
-  type ChoiceQuestion,
-} from "@/lib/practice";
-import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
+import { getQuestions } from "@/lib/content/questions-provider";
+import type { ChoiceQuestion } from "@/lib/practice";
 import { shuffle } from "@/lib/random";
 
 /**
@@ -14,14 +9,26 @@ import { shuffle } from "@/lib/random";
 export const DUEL_KINDS = ["ord", "mek", "xyz", "kva", "nog", "dtk"] as const;
 export type DuelKind = (typeof DUEL_KINDS)[number];
 
-const BANKS: Record<DuelKind, ChoiceQuestion[]> = {
-  ord: ORD_BANK,
-  mek: MEK_BANK,
-  xyz: XYZ_BANK,
-  kva: KVA_BANK,
-  nog: NOG_BANK,
-  dtk: DTK_BANK,
-};
+/** Frågebanken per duell-delprov, hämtad från runtime-providern (Supabase/fallback). */
+function getBanks(): Record<DuelKind, ChoiceQuestion[]> {
+  const banks: Record<DuelKind, ChoiceQuestion[]> = {
+    ord: [],
+    mek: [],
+    xyz: [],
+    kva: [],
+    nog: [],
+    dtk: [],
+  };
+  for (const q of getQuestions()) {
+    const list = banks[q.kind as DuelKind];
+    if (list) list.push(q);
+  }
+  return banks;
+}
+
+// Samma deterministiska hash/shuffle som i practice.ts — men här utan
+// per-spelare-filtrering (mastered/recent), så att båda spelarna får
+// *exakt samma* frågor utifrån den delade seed:en.
 
 /**
  * Bygger en deterministisk duellfrågeserie utifrån en seed. Frågorna
@@ -29,7 +36,8 @@ const BANKS: Record<DuelKind, ChoiceQuestion[]> = {
  * domineras av ett enda delprov.
  */
 export function buildDuelQuiz(seed: string, count = 10): ChoiceQuestion[] {
-  const pools = DUEL_KINDS.map((kind) => shuffle(BANKS[kind], `${seed}:${kind}`));
+  const banks = getBanks();
+  const pools = DUEL_KINDS.map((kind) => shuffle(banks[kind], `${seed}:${kind}`));
   const result: ChoiceQuestion[] = [];
   let round = 0;
 

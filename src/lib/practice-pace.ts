@@ -1,6 +1,9 @@
 import { SUBTESTS } from "@/lib/subtests";
-import type { PracticeKind } from "@/lib/practice";
+import { formatMmSs } from "@/lib/format";
+import { kindToSection } from "@/lib/section-kinds";
 import type { SectionId } from "@/lib/study-plan";
+
+export { kindToSection } from "@/lib/section-kinds";
 
 /** HP-pass: 40 frågor på 55 min ≈ 82 s/fråga. Text/DTK får mer, ORD/KVA lite mindre. */
 export const SEC_PER_QUESTION_CAP = SUBTESTS.reduce<Record<SectionId, number>>(
@@ -13,17 +16,6 @@ export const SEC_PER_QUESTION_CAP = SUBTESTS.reduce<Record<SectionId, number>>(
 
 export const MIXED_SEC_PER_QUESTION_CAP = 82;
 
-const KIND_TO_SECTION = SUBTESTS.reduce<
-  Record<Exclude<PracticeKind, "reflect">, SectionId>
->((acc, s) => {
-  acc[s.kind] = s.id;
-  return acc;
-}, {} as Record<Exclude<PracticeKind, "reflect">, SectionId>);
-
-export function kindToSection(kind: string): SectionId | null {
-  const k = kind.toLowerCase() as Exclude<PracticeKind, "reflect">;
-  return KIND_TO_SECTION[k] ?? null;
-}
 
 export function capForKinds(kinds: string[]): number {
   const sections = kinds
@@ -41,10 +33,7 @@ export function secondsPerQuestion(durationMs: number, total: number): number | 
 }
 
 export function formatSecondsPerQuestion(sec: number): string {
-  const s = Math.max(0, Math.round(sec));
-  const m = Math.floor(s / 60);
-  const r = s % 60;
-  return `${m}:${r.toString().padStart(2, "0")}`;
+  return formatMmSs(Math.round(sec));
 }
 
 export type PaceVerdict = {

@@ -1,5 +1,7 @@
 /** Pausbar övningstimer — räknar bara medan användaren är inne i passet. */
 
+import { formatMmSs } from "@/lib/format";
+
 export type PracticeTimerState = {
   accumulatedMs: number;
   /** Stabilt id för ett pågående försök — nya frågor vid nytt försök */
@@ -131,8 +133,5 @@ export function newPracticeAttempt(week: number, taskId: string): PracticeTimerS
 }
 
 export function formatClock(totalSeconds: number): string {
-  const s = Math.max(0, totalSeconds);
-  const m = Math.floor(s / 60);
-  const r = s % 60;
-  return `${m}:${r.toString().padStart(2, "0")}`;
+  return formatMmSs(totalSeconds);
 }

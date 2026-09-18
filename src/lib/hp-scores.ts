@@ -1,6 +1,7 @@
 import type { SectionId } from "@/lib/study-plan";
 import { SUBTESTS } from "@/lib/subtests";
 import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { loadJson } from "@/lib/storage";
 
 export const DELPROV_META: {
   id: SectionId;
@@ -64,11 +65,8 @@ export function clampWeeksUntilExam(value: unknown): number {
 }
 
 export function loadScores(): ScoreInput {
-  if (typeof window === "undefined") return DEFAULT_SCORES;
+  const parsed = loadJson<Partial<ScoreInput>>(SCORES_STORAGE_KEY, DEFAULT_SCORES);
   try {
-    const raw = storageGet(SCORES_STORAGE_KEY);
-    if (!raw) return DEFAULT_SCORES;
-    const parsed = JSON.parse(raw) as Partial<ScoreInput>;
     const delprov = { ...DEFAULT_SCORES.delprov };
     for (const m of DELPROV_META) {
       if (typeof parsed.delprov?.[m.id] === "number") {

@@ -1,5 +1,5 @@
 import { ReadingLibrary } from "@/components/reading-library";
-import { READING_METHOD } from "@/lib/study-plan";
+import { READING_METHOD } from "@/lib/reading-library";
 
 export default function ReadingLibraryPage() {
   return (

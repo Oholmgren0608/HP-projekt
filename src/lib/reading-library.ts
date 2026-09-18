@@ -1,5 +1,19 @@
 /** Egna sakprosatexter för läsning i appen (ej hämtade från tidningar/UHR). */
 
+import { loadJson, saveJson } from "@/lib/storage";
+
+export type ReadMap = Record<string, boolean>;
+
+export const READING_PROGRESS_KEY = "hp-reading-done-v1";
+
+export function loadReadingProgress(): ReadMap {
+  return loadJson<ReadMap>(READING_PROGRESS_KEY, {});
+}
+
+export function saveReadingProgress(value: ReadMap): void {
+  saveJson(READING_PROGRESS_KEY, value);
+}
+
 export type LibraryText = {
   id: string;
   title: string;
@@ -265,4 +279,12 @@ export const LIBRARY_TEXTS: LibraryText[] = [
     connectors: ["Därför", "Likväl", "men", "Annars"],
     summaryPrompt: "Varför ska man öva under tid men analysera utan tid?",
   },
+];
+
+export const READING_METHOD = [
+  "Primärt mål med läsning nu: ORD-ord + MEK-konnektorer (LÄS är redan 75 %).",
+  "Efter varje text: en mening sammanfattning utan att titta tillbaka.",
+  "Plocka 5 ord/uttryck → ORD-decket samma dag.",
+  "Markera konnektorer (emellertid, således, däremot…) — det är din MEK-träning.",
+  "Undvik sport/nöje/talspråkskrönikor — för låg densitet för HP.",
 ];

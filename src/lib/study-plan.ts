@@ -1,4 +1,4 @@
-import type { PracticeKind } from "@/lib/practice";
+import type { PracticeKind } from "@/lib/practice-types";
 import type { SectionId } from "@/lib/subtests";
 import { SUBTEST_BY_ID } from "@/lib/subtests";
 
@@ -43,18 +43,6 @@ export type DelprovScore = {
   total: number;
   block: "kvant" | "verbal";
 };
-
-export function pct(correct: number, total: number): number {
-  return Math.round((correct / total) * 100);
-}
-
-export const READING_METHOD = [
-  "Primärt mål med läsning nu: ORD-ord + MEK-konnektorer (LÄS är redan 75 %).",
-  "Efter varje text: en mening sammanfattning utan att titta tillbaka.",
-  "Plocka 5 ord/uttryck → ORD-decket samma dag.",
-  "Markera konnektorer (emellertid, således, däremot…) — det är din MEK-träning.",
-  "Undvik sport/nöje/talspråkskrönikor — för låg densitet för HP.",
-];
 
 export function sectionLabel(id: SectionId): string {
   if (id === "KVA") return "Kvant";

@@ -27,10 +27,100 @@ export type Database = {
         };
         Relationships: [];
       };
+      questions: {
+        Row: {
+          id: string;
+          kind: string;
+          prompt: string;
+          passage: string | null;
+          options: string[];
+          correct_index: number;
+          explain: string;
+          exam_id: string | null;
+          exam_date: string | null;
+          pass_number: number | null;
+          question_number: number | null;
+          figure_url: string | null;
+          source_url: string | null;
+          status: string;
+        };
+        Insert: {
+          id: string;
+          kind: string;
+          prompt: string;
+          passage?: string | null;
+          options: string[];
+          correct_index: number;
+          explain: string;
+          exam_id?: string | null;
+          exam_date?: string | null;
+          pass_number?: number | null;
+          question_number?: number | null;
+          figure_url?: string | null;
+          source_url?: string | null;
+          status?: string;
+        };
+        Update: {
+          kind?: string;
+          prompt?: string;
+          passage?: string | null;
+          options?: string[];
+          correct_index?: number;
+          explain?: string;
+          exam_id?: string | null;
+          exam_date?: string | null;
+          pass_number?: number | null;
+          question_number?: number | null;
+          figure_url?: string | null;
+          source_url?: string | null;
+          status?: string;
+        };
+        Relationships: [];
+      };
+      exams: {
+        Row: {
+          id: string;
+          exam_date: string;
+          title: string;
+          status: string;
+          created_at: string;
+        };
+        Insert: {
+          id: string;
+          exam_date: string;
+          title: string;
+          status?: string;
+          created_at?: string;
+        };
+        Update: {
+          exam_date?: string;
+          title?: string;
+          status?: string;
+        };
+        Relationships: [];
+      };
+      reflect_prompts: {
+        Row: {
+          id: string;
+          title: string;
+          prompts: string[];
+        };
+        Insert: {
+          id: string;
+          title: string;
+          prompts: string[];
+        };
+        Update: {
+          title?: string;
+          prompts?: string[];
+        };
+        Relationships: [];
+      };
       player_profiles: {
         Row: {
           user_id: string;
           display_name: string;
+          username: string | null;
           elo: number;
           wins: number;
           losses: number;
@@ -47,6 +137,7 @@ export type Database = {
         Insert: {
           user_id: string;
           display_name: string;
+          username?: string | null;
           elo?: number;
           wins?: number;
           losses?: number;
@@ -62,6 +153,7 @@ export type Database = {
         };
         Update: {
           display_name?: string;
+          username?: string | null;
           elo?: number;
           wins?: number;
           losses?: number;
@@ -238,6 +330,22 @@ export type Database = {
       duel_ensure_profile: {
         Args: { p_display_name: string };
         Returns: null;
+      };
+      profile_set_username: {
+        Args: { p_username: string };
+        Returns: {
+          user_id: string;
+          display_name: string;
+          username: string;
+        } | null;
+      };
+      profile_ensure: {
+        Args: Record<string, never>;
+        Returns: {
+          user_id: string;
+          display_name: string;
+          username: string | null;
+        } | null;
       };
       duel_join_queue: {
         Args: { p_mode: string };

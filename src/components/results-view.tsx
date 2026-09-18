@@ -6,7 +6,7 @@ import { usePlan } from "@/components/plan-context";
 import { ProgressPanel } from "@/components/progress-panel";
 import { ScoreForm } from "@/components/score-form";
 import { StudyTimeNotice } from "@/components/study-time-notice";
-import { pct } from "@/lib/study-plan";
+import { pct } from "@/lib/format";
 
 export function ResultsView() {
   const { plan, ready } = usePlan();

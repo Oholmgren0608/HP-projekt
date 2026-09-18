@@ -58,8 +58,17 @@ Kör migrationsfilerna i Supabase Dashboard → SQL Editor, i nummerordning:
 - `0004_duel_integrity.sql` — server-auktoritativ rättning (facit-tabell),
   tätare RLS, mindre profilexponering och viktad `received_rating_count`
   för dueller.
+- `0005_questions.sql` — Supabase-backade övningsfrågor: tabellerna
+  `questions` och `reflect_prompts` (ORD, MEK, LÄS, ELF, DTK, XYZ, KVA,
+  NOG).
+- `0006_exam_import.sql` — kolumner och tabeller för import-pipelinen
+  (`exams`, frågemetadata och `prov-figures`-bucketen).
+- `0007_usernames.sql` — unikt användarnamn per profil (`username`,
+  skiftlägesokänsligt index och profil-RPC:er).
 
 `0002`–`0004` behövs bara om du vill använda Duell-funktionen.
+Vill du köra allt i ett svep finns `supabase/combined_migrations.sql`
+(0001 → 0007) att klistra in direkt i SQL Editor.
 
 ### 3. Google-inloggning
 

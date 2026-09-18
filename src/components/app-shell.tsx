@@ -2,17 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
+import { AuthForms } from "@/components/auth/auth-forms";
+import { UsernamePrompt } from "@/components/auth/username-prompt";
+import { ChevronDown, ClipboardCheck, LogOut, User } from "lucide-react";
 
-function IconHome() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5Z" />
-    </svg>
-  );
-}
 function IconCalendar() {
   return (
     <svg className="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
@@ -91,42 +87,127 @@ function GoogleG() {
 }
 
 function AuthCluster() {
-  const { user, loading, signInWithGoogle, signOut } = useAuth();
+  const { user, loading, username, signInWithGoogle, signOut } = useAuth();
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Stänger dropdownen vid klick utanför eller Escape.
+  useEffect(() => {
+    if (!open) return;
+    function handlePointerDown(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
 
   if (!isSupabaseConfigured() || loading) return null;
 
   if (user) {
+    const displayName = username ?? user.email ?? "Inloggad";
+    const initials = displayName.slice(0, 2).toUpperCase();
     return (
-      <div className="flex items-center gap-2">
-        <span className="hidden max-w-40 truncate text-xs text-[var(--ink-muted)] sm:inline">
-          {user.email ?? "Inloggad"}
-        </span>
+      <div className="relative" ref={containerRef}>
         <button
           type="button"
-          onClick={() => void signOut()}
-          className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
+          onClick={() => setOpen((o) => !o)}
+          aria-haspopup="menu"
+          aria-expanded={open}
+          className="flex items-center gap-2 rounded-full py-1 pl-1 pr-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
         >
-          Logga ut
+          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[var(--accent)] text-xs font-semibold text-[var(--accent-foreground)]">
+            {initials}
+          </span>
+          <span className="hidden max-w-28 truncate sm:inline">{displayName}</span>
+          <ChevronDown size={14} className="text-[var(--ink-muted)]" aria-hidden />
         </button>
+        {open ? (
+          <div
+            role="menu"
+            aria-label="Konto"
+            className="absolute right-0 top-full z-40 mt-2 w-56 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-white p-1.5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+          >
+            <Link
+              href="/profil"
+              onClick={() => setOpen(false)}
+              role="menuitem"
+              className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+            >
+              <User size={16} className="text-[var(--ink-muted)]" aria-hidden />
+              Profil
+            </Link>
+            <Link
+              href="/review"
+              onClick={() => setOpen(false)}
+              role="menuitem"
+              className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+            >
+              <ClipboardCheck size={16} className="text-[var(--ink-muted)]" aria-hidden />
+              Granska
+            </Link>
+            <div className="my-1.5 h-px bg-[var(--line)]" />
+            <button
+              type="button"
+              onClick={() => void signOut()}
+              role="menuitem"
+              className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+            >
+              <LogOut size={16} className="text-[var(--ink-muted)]" aria-hidden />
+              Logga ut
+            </button>
+          </div>
+        ) : null}
       </div>
     );
   }
 
   return (
-    <button
-      type="button"
-      onClick={() => void signInWithGoogle()}
-      className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
-    >
-      <GoogleG />
-      <span className="hidden sm:inline">Logga in med Google</span>
-      <span className="sm:hidden">Logga in</span>
-    </button>
+    <div className="relative" ref={containerRef}>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--accent)] transition hover:bg-[var(--accent-soft)]"
+      >
+        Logga in
+      </button>
+      {open ? (
+        <div
+          role="dialog"
+          aria-label="Logga in"
+          className="absolute right-0 top-full z-40 mt-2 w-80 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+        >
+          <button
+            type="button"
+            onClick={() => void signInWithGoogle()}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+          >
+            <GoogleG />
+            Fortsätt med Google
+          </button>
+          <div className="my-3 flex items-center gap-3 text-xs text-[var(--ink-muted)]">
+            <span className="h-px flex-1 bg-[var(--line)]" />
+            eller
+            <span className="h-px flex-1 bg-[var(--line)]" />
+          </div>
+          <AuthForms compact />
+        </div>
+      ) : null}
+    </div>
   );
 }
 
 const NAV = [
-  { href: "/", label: "Hem", icon: IconHome },
   { href: "/nivatest", label: "Nivåtest", icon: IconGauge },
   { href: "/plan", label: "Plan", icon: IconCalendar },
   { href: "/ova", label: "Öva", icon: IconBook },
@@ -164,22 +245,20 @@ export function AppShell({ children }: { children: ReactNode }) {
             <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
               HP Lift
             </span>
-            <span className="hidden text-sm text-[var(--ink-muted)] sm:inline">
-              studieplan från dina resultat
-            </span>
           </Link>
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Huvudmeny">
+          <nav className="hidden items-center gap-0.5 md:flex" aria-label="Huvudmeny">
             {NAV.map((item) => {
               const active = isActive(pathname, item.href);
+              const hideOnMd = item.href === "/tips";
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-lg px-3 py-2 text-sm font-medium transition ${
+                  className={`rounded-lg px-2 py-1.5 text-sm font-medium transition ${
                     active
                       ? "bg-[var(--accent-soft)] text-[var(--ink)]"
                       : "text-[var(--ink-muted)] hover:text-[var(--ink)]"
-                  }`}
+                  } ${hideOnMd ? "hidden lg:inline" : ""}`}
                 >
                   {item.label}
                 </Link>
@@ -190,6 +269,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </header>
 
+      {/* Engångsprompt för användarnamn (rendreras efter inloggning, oavsett sida). */}
+      <UsernamePrompt />
+
       <main className="mx-auto w-full max-w-6xl flex-1 px-5 pb-28 pt-6 sm:px-8 sm:pt-8 md:pb-12">
         {children}
       </main>
@@ -199,7 +281,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
         aria-label="Huvudmeny"
       >
-        <ul className="grid grid-cols-8">
+        <ul className="grid grid-cols-7">
           {NAV.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);

@@ -1,6 +1,7 @@
 import { DELPROV_META, type ScoreInput } from "@/lib/hp-scores";
 import { priorityFromPercent } from "@/lib/plan-generator";
-import { pct, type Priority, type SectionId } from "@/lib/study-plan";
+import { pct } from "@/lib/format";
+import type { Priority, SectionId } from "@/lib/study-plan";
 import { sectionShort } from "@/lib/subtests";
 import { clamp } from "@/lib/utils";
 

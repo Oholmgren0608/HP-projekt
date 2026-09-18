@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getSupabase } from "@/lib/supabase/client";
+import { loadQuestions } from "@/lib/content/questions-provider";
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import {
   DUEL_QUESTION_COUNT,
@@ -24,6 +25,7 @@ import {
 } from "@/lib/duel/matchmaking";
 import { displayNameFromUser, formatMs } from "./duel-utils";
 import { ReviewForm } from "./review-form";
+import { QuestionFigure } from "@/components/question-figure";
 
 type Phase = "loading" | "error" | "playing" | "waiting" | "finished";
 
@@ -242,6 +244,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       const oppId = isBotMatch ? null : iAmA ? m.player_b : m.player_a;
 
       setIsBot(isBotMatch);
+      await loadQuestions();
       const qs = buildDuelQuiz(m.question_seed, DUEL_QUESTION_COUNT);
       setQuestions(qs);
 
@@ -461,6 +464,8 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
               {current.passage}
             </div>
           ) : null}
+
+          <QuestionFigure question={current} position={index + 1} />
 
           <p className="mt-4 text-lg font-medium text-[var(--ink)]">
             {current.prompt}
