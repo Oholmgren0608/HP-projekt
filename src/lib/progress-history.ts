@@ -52,13 +52,80 @@ function emitHistoryChanged() {
   window.dispatchEvent(new Event(HISTORY_EVENT));
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function toFiniteNumber(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+/** Normaliserar en lagrad händelse så att korrupta/legacy-värden aldrig når vyerna. */
+function normalizeHistoryEvent(raw: unknown): HistoryEvent | null {
+  if (!isRecord(raw)) return null;
+  const at = typeof raw.at === "string" ? raw.at : "";
+  if (raw.type === "scores") {
+    const quantNorm = toFiniteNumber(raw.quantNorm) ?? 0;
+    const verbalNorm = toFiniteNumber(raw.verbalNorm) ?? 0;
+    const overall =
+      toFiniteNumber(raw.overall) ??
+      Math.round(((quantNorm + verbalNorm) / 2) * 100) / 100;
+    return { type: "scores", at, quantNorm, verbalNorm, overall };
+  }
+  if (raw.type === "quiz") {
+    const correct = toFiniteNumber(raw.correct) ?? 0;
+    const total = toFiniteNumber(raw.total) ?? 0;
+    const kinds = Array.isArray(raw.kinds)
+      ? raw.kinds.filter((k): k is string => typeof k === "string")
+      : [];
+    const source: QuizSource =
+      raw.source === "week" ||
+      raw.source === "mock" ||
+      raw.source === "free" ||
+      raw.source === "nivatest"
+        ? raw.source
+        : "free";
+    const estimatedNorm = toFiniteNumber(raw.estimatedNorm) ?? 0;
+    const durationMs = toFiniteNumber(raw.durationMs) ?? undefined;
+    let perKind: Record<string, KindTally> | undefined;
+    if (isRecord(raw.perKind)) {
+      const normalized: Record<string, KindTally> = {};
+      for (const [kind, value] of Object.entries(raw.perKind)) {
+        if (!isRecord(value)) continue;
+        const c = toFiniteNumber(value.correct);
+        const t = toFiniteNumber(value.total);
+        if (c !== null && t !== null) normalized[kind] = { correct: c, total: t };
+      }
+      if (Object.keys(normalized).length > 0) perKind = normalized;
+    }
+    return {
+      type: "quiz",
+      at,
+      source,
+      kinds,
+      correct,
+      total,
+      estimatedNorm,
+      perKind,
+      durationMs,
+    };
+  }
+  return null;
+}
+
 export function loadHistory(): HistoryEvent[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = storageGet(HISTORY_STORAGE_KEY);
     if (!raw) return [];
-    const parsed = JSON.parse(raw) as HistoryEvent[];
-    return Array.isArray(parsed) ? parsed : [];
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    const events: HistoryEvent[] = [];
+    for (const item of parsed) {
+      const normalized = normalizeHistoryEvent(item);
+      if (normalized) events.push(normalized);
+    }
+    return events;
   } catch {
     return [];
   }

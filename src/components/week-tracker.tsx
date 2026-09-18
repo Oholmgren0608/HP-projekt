@@ -22,7 +22,8 @@ import {
   clearLockedWeek,
   emitWeekProgressChanged,
   findNextIncompleteAfter,
-  loadJson,
+  loadWeekProgress,
+  loadWeekScores,
   saveLockedWeekIfAbsent,
   taskKey,
   type ProgressMap,
@@ -40,10 +41,10 @@ export function WeekTracker({
   const router = useRouter();
 
   const [progress, setProgress] = useState<ProgressMap>(() =>
-    loadJson(WEEK_PROGRESS_KEY, {}),
+    loadWeekProgress(),
   );
   const [scores, setScores] = useState<ScoreMap>(() =>
-    loadJson(WEEK_SCORES_KEY, {}),
+    loadWeekScores(),
   );
   const urlWeek = searchParams.get("week");
   const urlStart = searchParams.get("start");

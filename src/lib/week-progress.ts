@@ -1,4 +1,5 @@
-import type { StudyTask, WeekPlan } from "@/lib/study-plan";
+import type { PracticeKind } from "@/lib/practice";
+import type { SectionId, StudyTask, WeekPlan } from "@/lib/study-plan";
 import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 
 export const WEEK_PROGRESS_KEY = "hp-studieplan-progress-v2";
@@ -13,23 +14,108 @@ export function taskKey(week: number, taskId: string) {
   return `w${week}:${taskId}`;
 }
 
-export function loadJson<T>(key: string, fallback: T): T {
+export function loadJson<T>(
+  key: string,
+  fallback: T,
+  normalize?: (value: unknown) => T,
+): T {
   if (typeof window === "undefined") return fallback;
   try {
     const raw = storageGet(key);
     if (!raw) return fallback;
-    return JSON.parse(raw) as T;
+    const parsed: unknown = JSON.parse(raw);
+    if (parsed == null) return fallback;
+    return normalize ? normalize(parsed) : (parsed as T);
   } catch {
     return fallback;
   }
 }
 
-export function loadWeekProgress(): ProgressMap {
-  return loadJson<ProgressMap>(WEEK_PROGRESS_KEY, {});
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
+function toFiniteNumber(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+/** Bygger en giltig veckoplan av ett okänt värde, annars null. */
+function toWeekPlan(value: unknown): WeekPlan | null {
+  if (!isRecord(value)) return null;
+  const week = toFiniteNumber(value.week);
+  if (
+    week === null ||
+    typeof value.phase !== "string" ||
+    typeof value.theme !== "string" ||
+    typeof value.focus !== "string" ||
+    !Array.isArray(value.tasks)
+  ) {
+    return null;
+  }
+  const tasks: StudyTask[] = [];
+  for (const task of value.tasks) {
+    if (!isRecord(task)) return null;
+    const minutes = toFiniteNumber(task.minutes);
+    if (
+      typeof task.id !== "string" ||
+      typeof task.title !== "string" ||
+      typeof task.detail !== "string" ||
+      minutes === null ||
+      typeof task.section !== "string" ||
+      !Array.isArray(task.practiceKinds)
+    ) {
+      return null;
+    }
+    const questionCount = toFiniteNumber(task.questionCount);
+    tasks.push({
+      id: task.id,
+      title: task.title,
+      detail: task.detail,
+      minutes,
+      section: task.section as SectionId,
+      practiceKinds: task.practiceKinds as PracticeKind[],
+      ...(questionCount === null ? {} : { questionCount }),
+    });
+  }
+  return {
+    week,
+    phase: value.phase,
+    theme: value.theme,
+    focus: value.focus,
+    tasks,
+  };
+}
+
+/** Normaliserar lagrad progress: bara `true`/`false`-värden behålls. */
+export function loadWeekProgress(): ProgressMap {
+  return loadJson<ProgressMap>(WEEK_PROGRESS_KEY, {}, (parsed) => {
+    if (!isRecord(parsed)) return {};
+    const out: ProgressMap = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      if (typeof value === "boolean") out[key] = value;
+    }
+    return out;
+  });
+}
+
+/** Normaliserar lagrade resultat: bara poster med numerisk correct/total behålls. */
 export function loadWeekScores(): ScoreMap {
-  return loadJson<ScoreMap>(WEEK_SCORES_KEY, {});
+  return loadJson<ScoreMap>(WEEK_SCORES_KEY, {}, (parsed) => {
+    if (!isRecord(parsed)) return {};
+    const out: ScoreMap = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      if (!isRecord(value)) continue;
+      const correct = toFiniteNumber(value.correct);
+      const total = toFiniteNumber(value.total);
+      if (correct === null || total === null) continue;
+      out[key] = {
+        correct,
+        total,
+        at: typeof value.at === "string" ? value.at : "",
+      };
+    }
+    return out;
+  });
 }
 
 export function emitWeekProgressChanged() {
@@ -97,7 +183,18 @@ export function startedWeekNumbers(progress: ProgressMap): number[] {
 }
 
 export function loadLockedWeeks(): Record<number, WeekPlan> {
-  return loadJson<Record<number, WeekPlan>>(LOCKED_WEEKS_KEY, {});
+  return loadJson<Record<number, WeekPlan>>(LOCKED_WEEKS_KEY, {}, (parsed) => {
+    if (!isRecord(parsed)) return {};
+    const out: Record<number, WeekPlan> = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      const week = Number(key);
+      if (!Number.isInteger(week) || week <= 0) continue;
+      const plan = toWeekPlan(value);
+      if (!plan) continue;
+      out[week] = plan;
+    }
+    return out;
+  });
 }
 
 export function saveLockedWeekIfAbsent(weekPlan: WeekPlan) {
