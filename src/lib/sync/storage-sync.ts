@@ -5,21 +5,44 @@
  * - Utloggad: exakt samma beteende som localStorage (anonym läge).
  * - Inloggad: localStorage behålls som offline-cache, men molnet
  *   (user_state-tabellen) är källa till sanning. Vid inloggning mergas
- *   molnet med lokala data nyckel för nyckel — "nyaste vinner" (lokal
- *   skrivtid vs. molnets updated_at). Klockskew mellan enheter kan göra
- *   jämförelsen ungefärlig; molnets tid väger tyngst vid lika.
+ *   molnet med lokala data nyckel för nyckel — "nyaste vinner".
+ *
+ * Ordning ("nyaste vinner") använder en monoton lokal baslinje per nyckel
+ * (`meta[key]`, enbart skrivtider från den här enheten) mot molnets
+ * `updated_at`. Molntidstämplar skrivs aldrig tillbaka till `meta`, så en
+ * enhet som anammar en molnredigering får inte en "framtida" baslinje som
+ * gör en senare lokal redigering äldre än den är. Konfliktsemantik: om
+ * molnet och lokalt skiljer sig vinner den nyaste tidstämpeln; vid exakt
+ * lika väger molnet tyngst. Kvarstår: vid klockskew mellan enheter (fullt
+ * fix kräver servertid, d.v.s. en DB-ändring) kan ordningen bli ungefärlig.
+ *
+ * Raderingar synkas med tombstones: en raderad nyckel lagras lokalt och i
+ * molnet som den reserverade strängen TOMBSTONE i stället för att plockas
+ * bort, så att en äldre molnkopia inte återuppstår vid nästa merge.
  *
  * API:et är synkront (samma former som localStorage) så att befintliga
  * anrop kan bytas rakt av. Molnskrivningar skickas asynkront och fel
- * sväljs med console.warn — appen får aldrig krascha p.g.a. nätverksfel.
+ * sväljs med console.warn — appen får aldrig krascha p.g.a. nätverksfel
+ * eller misslyckade localStorage-skrivningar (kvot/privat läge).
  *
  * Känd begränsning: samtidig redigering i två flikar/enheter synkas inte
  * i realtid; sista skrivning per nyckel vinner vid nästa inloggning.
+ * Läsningar i samma flik ser dock alltid den färskaste lokala kopian
+ * (se storageGet).
  */
 
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 
 const META_KEY = "hp-lift-sync-meta-v1";
+
+/**
+ * Reserverad markör för en raderad nyckel (tombstone). Används både i
+ * localStorage och som molnets `{"v": TOMBSTONE}` så att en radering kan
+ * spridas och aldrig skrivs över av en äldre molnkopia. Inget appvärde
+ * använder den här strängen, så befintliga lagrade JSON-värden ("1", "0",
+ * objekt/arrayer) fortsätter att fungera som vanliga värden.
+ */
+const TOMBSTONE = "__hp_lift_deleted__";
 
 /**
  * Alla appnycklar som synkas (speglar storage-nycklarna i de olika
@@ -60,18 +83,57 @@ let activeUserId: string | null = null;
 let cloudCache: Map<string, string> | null = null;
 let mergeUserId: string | null = null;
 
+// ---- Säkra localStorage-åtkomster (kvot/privat läge får aldrig krascha) ---
+
+function safeGetItem(key: string): string | null {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function safeSetItem(key: string, value: string): boolean {
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch {
+    console.warn(`[sync] Kunde inte skriva "${key}" till localStorage.`);
+    return false;
+  }
+}
+
+function safeRemoveItem(key: string): void {
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    /* ignorera */
+  }
+}
+
 // ---- Lokal skrivtid -------------------------------------------------------
 
+/**
+ * Monoton lokal baslinje per nyckel (skrivtider, enbart den här enhetens
+ * klocka). Normaliseras till ett objekt så att en korrupt/`null`-blob aldrig
+ * gör att `meta[key]` kastar.
+ */
 function readMeta(): Record<string, number> {
   try {
-    return JSON.parse(localStorage.getItem(META_KEY) ?? "{}") as Record<string, number>;
+    const parsed: unknown = JSON.parse(safeGetItem(META_KEY) ?? "{}");
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    const result: Record<string, number> = {};
+    for (const [k, v] of Object.entries(parsed as Record<string, unknown>)) {
+      if (typeof v === "number" && Number.isFinite(v)) result[k] = v;
+    }
+    return result;
   } catch {
     return {};
   }
 }
 
 function writeMeta(meta: Record<string, number>) {
-  localStorage.setItem(META_KEY, JSON.stringify(meta));
+  safeSetItem(META_KEY, JSON.stringify(meta));
 }
 
 // ---- Molnskrivningar (async, fel sväljs) ----------------------------------
@@ -91,18 +153,34 @@ async function pushToCloud(userId: string, key: string, value: string) {
   if (error) console.warn(`[sync] Kunde inte skriva "${key}" till molnet:`, error.message);
 }
 
-async function deleteFromCloud(userId: string, key: string) {
+/** Sprider en radering som en tombstone-rad i molnet (raderar inte raden). */
+async function pushTombstone(userId: string, key: string, at: number) {
   const supabase = getSupabase();
   if (!supabase) return;
-  const { error } = await supabase
-    .from("user_state")
-    .delete()
-    .eq("user_id", userId)
-    .eq("storage_key", key);
-  if (error) console.warn(`[sync] Kunde inte radera "${key}" i molnet:`, error.message);
+  const { error } = await supabase.from("user_state").upsert(
+    {
+      user_id: userId,
+      storage_key: key,
+      value: { v: TOMBSTONE },
+      updated_at: new Date(at).toISOString(),
+    },
+    { onConflict: "user_id,storage_key" },
+  );
+  if (error) console.warn(`[sync] Kunde inte sprida radering av "${key}" till molnet:`, error.message);
 }
 
 // ---- Merge vid inloggning -------------------------------------------------
+
+type LocalEntry =
+  | { kind: "missing" }
+  | { kind: "value"; value: string }
+  | { kind: "tombstone" };
+
+function parseLocal(raw: string | null): LocalEntry {
+  if (raw === null) return { kind: "missing" };
+  if (raw === TOMBSTONE) return { kind: "tombstone" };
+  return { kind: "value", value: raw };
+}
 
 async function performMerge(userId: string) {
   const supabase = getSupabase();
@@ -118,43 +196,96 @@ async function performMerge(userId: string) {
     return;
   }
 
+  // Avbryt om användaren loggade ut medan hämtningen pågick — annars kan
+  // merge skriva in den utloggade användarens molnvärden i localStorage.
+  if (activeUserId !== userId) return;
+
   const meta = readMeta();
   const rows = (data ?? []) as CloudRow[];
   const rowByKey = new Map(rows.map((r) => [r.storage_key, r]));
 
   const uploads: Array<Promise<void>> = [];
   const cache = new Map<string, string>();
-  // Sant om molnet faktiskt ändrade lokal data — dä krävs en reload så att
+  // Sant om molnet faktiskt ändrade lokal data — då krävs en reload så att
   // komponenternas in-memory-tillstånd återspeglar molnet.
   let adopted = false;
 
   for (const key of SYNCED_KEYS) {
     const row = rowByKey.get(key);
-    const localValue = localStorage.getItem(key);
+    const localEntry = parseLocal(safeGetItem(key));
     const localAt = meta[key] ?? 0;
 
-    if (row) {
-      const cloudValue = unwrap(row.value);
-      const cloudAt = new Date(row.updated_at).getTime();
-      const cloudNewer = Number.isFinite(cloudAt) ? cloudAt >= localAt : true;
+    if (!row) {
+      // Finns bara lokalt: ladda upp. Tombstones behöver inget (molnet
+      // saknar redan raden) men behålls lokalt som skydd mot återuppstånd.
+      if (localEntry.kind === "value") {
+        cache.set(key, localEntry.value);
+        uploads.push(pushToCloud(userId, key, localEntry.value));
+      }
+      continue;
+    }
 
-      if (localValue === null || cloudNewer || localValue === cloudValue) {
-        // Molnet vinner (eller värdena är identiska): använd molnets värde.
-        if (cloudValue !== null) {
-          if (cloudValue !== localValue) adopted = true;
-          localStorage.setItem(key, cloudValue);
-          if (Number.isFinite(cloudAt)) meta[key] = cloudAt;
-        }
-        if (cloudValue !== null) cache.set(key, cloudValue);
+    const cloudAt = new Date(row.updated_at).getTime();
+    const cloudNewer = Number.isFinite(cloudAt) ? cloudAt >= localAt : true;
+    const cloudValue = unwrap(row.value);
+    const cloudIsTombstone = cloudValue === TOMBSTONE;
+
+    if (cloudIsTombstone) {
+      if (localEntry.kind === "value" && !cloudNewer) {
+        // Lokal redigering är nyare än raderingen: behåll och ladda upp
+        // (skriver över molnets tombstone).
+        cache.set(key, localEntry.value);
+        uploads.push(pushToCloud(userId, key, localEntry.value));
+      } else if (localEntry.kind === "value") {
+        // Raderingen vinner över ett äldre lokalt värde: skriv en lokal
+        // tombstone (tid i meta, enbart lokal klocka).
+        safeSetItem(key, TOMBSTONE);
+        meta[key] = Math.max(meta[key] ?? 0, Date.now());
+        adopted = true;
+      }
+      // missing/tombstone: redan borta eller redan raderad — inget att göra.
+      continue;
+    }
+
+    if (cloudValue === null) {
+      // Molnrad utan värde (legacy {}): behandla som frånvarande.
+      if (localEntry.kind === "value") {
+        cache.set(key, localEntry.value);
+        uploads.push(pushToCloud(userId, key, localEntry.value));
+      }
+      continue;
+    }
+
+    if (localEntry.kind === "value") {
+      if (localEntry.value === cloudValue) {
+        // Värdena är identiska: använd molnets (ingen skillnad).
+        cache.set(key, cloudValue);
+      } else if (cloudNewer) {
+        // Molnet är nyast: använd molnets värde. Skriv aldrig cloudAt till
+        // meta — baslinjen ska bara spegla lokala skrivtider.
+        safeSetItem(key, cloudValue);
+        cache.set(key, cloudValue);
+        adopted = true;
       } else {
         // Lokala data är nyare: behåll och ladda upp.
-        cache.set(key, localValue);
-        uploads.push(pushToCloud(userId, key, localValue));
+        cache.set(key, localEntry.value);
+        uploads.push(pushToCloud(userId, key, localEntry.value));
       }
-    } else if (localValue !== null) {
-      // Finns bara lokalt: ladda upp.
-      cache.set(key, localValue);
-      uploads.push(pushToCloud(userId, key, localValue));
+    } else if (localEntry.kind === "tombstone") {
+      if (cloudNewer) {
+        // Molnet har ett värde nyare än raderingen: återställ lokalt.
+        safeSetItem(key, cloudValue);
+        cache.set(key, cloudValue);
+        adopted = true;
+      } else {
+        // Raderingen är nyare: sprid den till molnet.
+        uploads.push(pushTombstone(userId, key, localAt));
+      }
+    } else {
+      // Nyckeln saknas lokalt: använd molnets värde.
+      safeSetItem(key, cloudValue);
+      cache.set(key, cloudValue);
+      adopted = true;
     }
   }
 
@@ -168,6 +299,12 @@ async function performMerge(userId: string) {
 }
 
 // ---- Brygga mot auth -------------------------------------------------------
+
+/** Rensar den delade lokala synk-cachen (alla synkade nycklar + meta). */
+function clearSyncedLocalState() {
+  for (const key of SYNCED_KEYS) safeRemoveItem(key);
+  safeRemoveItem(META_KEY);
+}
 
 /**
  * Anropas från AuthProvider när auth-tillståndet ändras.
@@ -183,7 +320,14 @@ export function onAuthChanged(userId: string | null) {
     activeUserId = null;
     cloudCache = null;
     mergeUserId = null;
-    if (wasSignedIn) window.location.reload();
+    if (wasSignedIn) {
+      // Rensa den delade lokala cachen så att nästa användare (anonym eller
+      // inloggad) aldrig ser den utloggade användarens data. Trade-off:
+      // lokala ändringar från den inloggade sessionen som inte hann synkas
+      // till molnet kastas; molnets kopia av kontot berörs inte.
+      clearSyncedLocalState();
+      window.location.reload();
+    }
     return;
   }
   activeUserId = userId;
@@ -200,19 +344,36 @@ export function onAuthChanged(userId: string | null) {
 
 // ---- Det synkrona API:et (ersätter localStorage-metoderna) ----------------
 
-/** Läser en nyckel. Molnets spegel används när den är laddad, annars lokal. */
+/**
+ * Läser en nyckel. Molnets spegel används när den är laddad, annars lokal.
+ * Om localStorage avviker från spegeln (t.ex. en annan flik har skrivit)
+ * vinner alltid den färskaste lokala kopian, och spegeln uppdateras.
+ */
 export function storageGet(key: string): string | null {
+  const localRaw = safeGetItem(key);
   if (cloudCache !== null && cloudCache.has(key)) {
-    return cloudCache.get(key) ?? null;
+    const cached = cloudCache.get(key) ?? null;
+    const localEntry = parseLocal(localRaw);
+    const localValue = localEntry.kind === "value" ? localEntry.value : null;
+    if (localValue === cached) return cached;
+    // localStorage avviker från spegeln: en annan flik har skrivit (eller
+    // raderat) nyare data. Låt localStorage vinna och uppdatera spegeln.
+    if (localEntry.kind === "value") {
+      cloudCache.set(key, localEntry.value);
+      return localEntry.value;
+    }
+    cloudCache.delete(key);
+    return null;
   }
-  return localStorage.getItem(key);
+  const parsed = parseLocal(localRaw);
+  return parsed.kind === "value" ? parsed.value : null;
 }
 
 /** Skriver en nyckel. Lokal cache skrivs alltid; molnet om inloggad. */
 export function storageSet(key: string, value: string): void {
-  localStorage.setItem(key, value);
+  safeSetItem(key, value);
   const meta = readMeta();
-  meta[key] = Date.now();
+  meta[key] = Math.max(meta[key] ?? 0, Date.now());
   writeMeta(meta);
 
   if (cloudCache !== null) {
@@ -221,16 +382,16 @@ export function storageSet(key: string, value: string): void {
   }
 }
 
-/** Raderar en nyckel lokalt och (om inloggad) i molnet. */
+/** Raderar en nyckel lokalt (tombstone) och (om inloggad) i molnet. */
 export function storageRemove(key: string): void {
-  localStorage.removeItem(key);
+  safeSetItem(key, TOMBSTONE);
   const meta = readMeta();
-  delete meta[key];
+  meta[key] = Math.max(meta[key] ?? 0, Date.now());
   writeMeta(meta);
 
   if (cloudCache !== null) {
     cloudCache.delete(key);
-    if (activeUserId) void deleteFromCloud(activeUserId, key);
+    if (activeUserId) void pushTombstone(activeUserId, key, meta[key]);
   }
 }
 
