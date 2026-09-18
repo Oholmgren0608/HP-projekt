@@ -51,30 +51,56 @@ automatiskt) och ingår **inte** i migrationskedjan `0001`–`0009`.
 
 **Status:** 0010 är överspelad av `0004_duel_integrity`, som i stället gör
 duell-RPC:erna server-auktoritativa. Eftersom 0010 återskapar de gamla
-RPC-signaturerna och därmed backar `0004` får filen **aldrig** köras mot
-nuvarande kod — den sparas bara som referens.
+RPC-signaturerna och därmed backar `0004` får filen **aldrig** köras igen —
+den sparas bara som referens.
 
-## Verifierat live-läge (read-only REST-prober)
+**Nuance i live-databasen:** 0010 hade redan körts tidigare under sitt gamla
+namn `0006_duel_rpc_wrapper_hardening`, så dess resultat finns i databasen:
+de 16 `private.*`-implementationerna är kvar. Efter `0004` är de dock
+**föräldralösa** — de publika funktionerna kommer från `0004` i stället.
+Ofarliga rester; filen ligger kvar i `supabase/manual/` och får aldrig
+appliceras igen.
+
+## Verifierat live-läge (Management-API-frågor + Playwright mot live-DB)
+
+Samtliga migrationer `0001`–`0010` finns nu i live-databasen. `0004`–`0007`
+kördes i dag i ordning (`0004_duel_integrity`, `0005_questions`,
+`0006_exam_import`, `0007_usernames`), paste som
+`supabase/manual/apply-0004-0007.sql` i en körning. `0008`–`0010` kördes
+tidigare under sina dåvarande namn.
 
 | Migration | Status | Bevis |
 | --- | --- | --- |
 | `0001`–`0003` | APPLIED | — |
-| `0004_duel_integrity` | PENDING | `duel_questions` och vyn `duel_public_profiles` saknas |
-| `0005_questions` | PENDING | `questions`/`reflect_prompts` saknas → `PGRST205` |
-| `0006_exam_import` | PENDING | `exams` saknas och bucketen `prov-figures` finns inte |
-| `0007_usernames` | PENDING | `player_profiles.username` saknas → `42703` |
-| `0008_duel_rpc_hardening` | ALREADY APPLIED UNDER OLD NAME | kördes tidigare som `0004_duel_rpc_hardening` (ej verifierbart via REST) |
-| `0009_leaderboard` | ALREADY APPLIED UNDER OLD NAME | `leaderboard_entries` finns; kördes tidigare som `0005_leaderboard` |
+| `0004_duel_integrity` | APPLIED (i dag) | `duel_questions` 136 rader, vyn `duel_public_profiles` finns; RPC-signaturerna matchar klienten och gamla 5/3/4-args-varianterna är borta; `EXECUTE` = true för `authenticated`, false för `anon`; `duel_questions` har RLS med 0 policyer |
+| `0005_questions` | APPLIED (i dag) | `questions` 146 rader, `reflect_prompts` 3 rader; publika SELECT-policyer för anon+authenticated |
+| `0006_exam_import` | APPLIED (i dag) | `exams` finns med 0 rader (ingen import körd ännu) |
+| `0007_usernames` | APPLIED (i dag) | kolumnen `player_profiles.username` finns |
+| `0008_duel_rpc_hardening` | APPLIED UNDER OLD NAME | kördes tidigare som `0004_duel_rpc_hardening` (ej verifierbart via REST) |
+| `0009_leaderboard` | APPLIED UNDER OLD NAME | `leaderboard_entries` finns med 3 policyer; kördes tidigare som `0005_leaderboard` |
+| `0010_duel_rpc_wrapper_hardening` | APPLIED UNDER OLD NAME | de 16 `private.*`-implementationerna finns kvar; kördes tidigare som `0006_duel_rpc_wrapper_hardening` (nu föräldralösa, se ovan) |
 
-Rekommenderad åtgärd för de fyra PENDING-migrationerna:
-`supabase/manual/apply-0004-0007.sql`. `supabase/combined_migrations.sql`
-(0001 → 0009) bör inte klistras in blint eftersom 0001–0003/0008/0009 redan
-finns i live-databasen.
+Körning av appen mot live-DB (anonymt, ingen inloggning): alla sidor 200,
+ORD-övning läser från Supabase (`/rest/v1/questions` 200, 146 rader;
+`/rest/v1/reflect_prompts` 200, 3 rader), ingen `PGRST205`, ingen lokal
+fallback. `/prov` visar "Inga importerade prov ännu" eftersom `exams` har
+0 rader — import-pipelinen måste köras för att fylla den. 404 fortsatt
+korrekt; 0 databasskrivningar (endast läsningar).
+
+Åtgärden `supabase/manual/apply-0004-0007.sql` är **körd** (consumed) och
+sparas bara som dokumentation över vad som applicerades.
+`supabase/combined_migrations.sql` (0001 → 0009) bör fortfarande inte
+klistras in blint eftersom allt redan finns i live-databasen.
+
+**Otestsbart utan session (känd lucka, inte bugg):** duel
+matchmaking/poängsättning, sätta användarnamn, publicera recensioner och
+provimporten.
 
 ## Verifierat läge efter (test)körning av 0010
 
-> Avser resultatet av 0010-körningen, inte den nuvarande live-databasen —
-> där är 0010 inte applicerad (se live-läget ovan).
+> Avser resultatet av 0010-körningen. Det resultatet finns i live-databasen
+> under det gamla namnet `0006_duel_rpc_wrapper_hardening`, men är överspelat
+> av `0004_duel_integrity` (implementationerna i `private` är föräldralösa).
 
 | Kontroll | Resultat |
 | --- | --- |
@@ -91,17 +117,21 @@ Funktionstester körda i rullade tillbaka transaktioner som `authenticated`:
 
 ## Kvarstår
 
-- `supabase_migrations.schema_migrations` är **tom** trots att 0001–0003 samt 0008–0009 är körda.
-  Kör man `supabase db push` senare tror CLI:t att inget är applicerat och kommer
-  att köra om allt (och fallera på "already exists"). Använd
-  `supabase migration repair --status applied 0001 0002 0003 0008 0009 --linked`
-  om/när CLI:t tas i bruk. Tills dess: kör filerna manuellt i ordning enligt README.
+- `supabase_migrations.schema_migrations` är **fortfarande tom** trots att
+  0001–0010 nu är körda. Kör man `supabase db push` senare tror CLI:t att
+  inget är applicerat och kommer att köra om allt (och fallera på "already
+  exists"). Använd
+  `supabase migration repair --status applied 0001 0002 0003 0004 0005 0006 0007 0008 0009 0010 --linked`
+  om/när CLI:t tas i bruk (obs: 0010 kördes under sitt gamla namn, så dess
+  ledger-rad motsvarar ingen fil i `supabase/migrations/`). Tills dess: kör
+  filerna manuellt i ordning enligt README.
 - Ett B4-test i `..._verify.sql` (att `pgrst.db_schemas` inte är ändrat) är inte
   kört. Standardvärdet (`public`, `storage`, `graphql_public`) gäller om ingen
   medvetet ändrat det.
-- **Känd kvarvarande svaghet i live:** `duel_submit_answer`, `duel_mark_finished`
-  och `duel_finish_bot` litar på de poäng/svar som klienten skickar in. Facit
-  finns bara i frontend (`practice.ts` m.fl.), så rankad ELO kan manipuleras från
-  webbläsaren. Åtgärden finns redan färdig i `0004_duel_integrity` (facit i
-  `duel_questions`, server-auktoritativa 4/1/2-args-RPC:er) — kör den, enklast
-  via `supabase/manual/apply-0004-0007.sql`, för att stänga svagheten.
+- **Stängd svaghet:** `duel_submit_answer`, `duel_mark_finished` och
+  `duel_finish_bot` litade tidigare på poäng/svar från klienten. Efter
+  `0004_duel_integrity` (APPLIED i dag) är rättningen server-auktoritativ:
+  facit ligger i `duel_questions` (RLS, 0 policyer), klienten skickar inget
+  rätt/fel eller totalpoäng och de gamla signaturerna är borttagna. Kvar som
+  testlucka: de klientflöden som kräver en session (matchmaking, poäng,
+  användarnamn, recensioner, provimport).
