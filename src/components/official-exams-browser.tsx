@@ -39,6 +39,8 @@ export function OfficialExamsBrowser() {
       OFFICIAL_EXAMS[0]?.documents[0]?.url ??
       "",
   );
+  // null = ingen extern PDF har begärts ännu (klick-för-att-ladda).
+  const [loadedDocUrl, setLoadedDocUrl] = useState<string | null>(null);
 
   const exams = useMemo(
     () => OFFICIAL_EXAMS.filter((e) => year === "alla" || e.year === year),
@@ -59,6 +61,7 @@ export function OfficialExamsBrowser() {
       exam.documents.find((d) => d.kind === "kvantitativ") ??
       exam.documents[0];
     setActiveDocUrl(preferred?.url ?? "");
+    setLoadedDocUrl(null);
   }
 
   return (
@@ -161,7 +164,10 @@ export function OfficialExamsBrowser() {
                     <button
                       key={doc.url}
                       type="button"
-                      onClick={() => setActiveDocUrl(doc.url)}
+                      onClick={() => {
+                        setActiveDocUrl(doc.url);
+                        setLoadedDocUrl(null);
+                      }}
                       className={`rounded-md border px-3 py-1.5 text-sm transition ${
                         selected
                           ? "border-[var(--ink)] bg-[var(--ink)] text-[var(--paper)]"
@@ -190,11 +196,26 @@ export function OfficialExamsBrowser() {
                       Öppna PDF i ny flik →
                     </a>
                   </div>
-                  <iframe
-                    title={activeDoc.title}
-                    src={`${activeDoc.url}#view=FitH`}
-                    className="h-[min(80vh,920px)] w-full bg-[#525659]"
-                  />
+                  {loadedDocUrl === activeDoc.url ? (
+                    <iframe
+                      title={activeDoc.title}
+                      src={`${activeDoc.url}#view=FitH`}
+                      className="h-[min(80vh,920px)] w-full bg-[#525659]"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center gap-3 bg-[var(--paper)] px-6 py-16 text-center">
+                      <p className="text-sm text-[var(--ink-muted)]">
+                        PDF:en laddas inte automatiskt — studera.nu kan blockera inbäddning.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => setLoadedDocUrl(activeDoc.url)}
+                        className="rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+                      >
+                        Visa PDF i läsaren
+                      </button>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <p className="text-sm text-[var(--ink-muted)]">Inga PDF:er hittades för detta prov.</p>
