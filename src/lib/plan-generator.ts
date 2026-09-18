@@ -262,21 +262,24 @@ function buildWeeklyPlans(
     },
   ];
 
-  const n = Math.min(Math.max(weeks, 4), 8);
+  const n = Math.min(Math.max(weeks, 4), 16);
   const plans: WeekPlan[] = [];
 
   for (let i = 0; i < n; i++) {
     const week = i + 1;
-    const meta = phases[i] ?? phases[phases.length - 1];
+    // För horisonter över 8 veckor cyklas 8-veckorsbågen så att planen
+    // förblir sammanhängande: vecka 9 upprepar vecka 1:s uppstart osv.
+    const cycle = ((week - 1) % phases.length) + 1;
+    const meta = phases[cycle - 1] ?? phases[phases.length - 1];
     let tasks: StudyTask[] = [];
 
-    if (week <= 3) {
+    if (cycle <= 3) {
       tasks = [
         {
           id: `w${week}-a`,
           title: `${METHODS[primary].short}: fokuspass`,
           detail: `Träna din svagaste del (${METHODS[primary].short}).`,
-          minutes: week === 1 ? 35 : 40,
+          minutes: cycle === 1 ? 35 : 40,
           section: primary,
           practiceKinds: toPractice(primary),
           questionCount: primary === "ORD" ? 10 : 8,
@@ -309,7 +312,7 @@ function buildWeeklyPlans(
           questionCount: 4,
         },
       ];
-    } else if (week === 4) {
+    } else if (cycle === 4) {
       tasks = [
         {
           id: `w${week}-verbal`,
@@ -353,7 +356,7 @@ function buildWeeklyPlans(
           questionCount: 5,
         },
       ];
-    } else if (week <= 6) {
+    } else if (cycle <= 6) {
       tasks = [
         {
           id: `w${week}-a`,
@@ -392,7 +395,7 @@ function buildWeeklyPlans(
           questionCount: 5,
         },
       ];
-    } else if (week === 7) {
+    } else if (cycle === 7) {
       tasks = [
         {
           id: `w${week}-full`,

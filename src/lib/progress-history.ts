@@ -253,6 +253,23 @@ export function rollingQuizPercent(
   let total = 0;
   for (const q of recent) {
     if (q.total <= 0) continue;
+    // Blandade pass (t.ex. tidsatt mini-prov) har perKind: räkna bara in de
+    // delprov som hör till blocket, annars dubbelräknas hela passet.
+    if (block !== "all" && q.perKind) {
+      let blockCorrect = 0;
+      let blockTotal = 0;
+      for (const [kind, row] of Object.entries(q.perKind)) {
+        if (block === "quant" ? QUANT_KINDS.has(kind) : VERBAL_KINDS.has(kind)) {
+          blockCorrect += row.correct;
+          blockTotal += row.total;
+        }
+      }
+      if (blockTotal > 0) {
+        correct += blockCorrect;
+        total += blockTotal;
+      }
+      continue;
+    }
     const kinds = q.kinds;
     const match =
       block === "all" ||
@@ -272,7 +289,16 @@ export function chartPoints(events: HistoryEvent[]): { at: string; value: number
   const running = new Map<string, KindTally>();
   for (const e of events) {
     if (e.type === "scores") {
-      points.push({ at: e.at, value: e.overall, label: "inmatad" });
+      // Äldre/legacy scores-händelser kan sakna `overall` — härled från
+      // normerna istället för att skicka NaN vidare till grafen.
+      const value = Number.isFinite(e.overall)
+        ? e.overall
+        : Number.isFinite(e.quantNorm) && Number.isFinite(e.verbalNorm)
+          ? Math.round(((e.quantNorm + e.verbalNorm) / 2) * 100) / 100
+          : null;
+      if (value !== null) {
+        points.push({ at: e.at, value, label: "inmatad" });
+      }
       continue;
     }
     addQuizToStats(running, e);

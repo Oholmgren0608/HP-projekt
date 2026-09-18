@@ -25,7 +25,7 @@ export function ResultsView() {
   return (
     <div className="space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
           Resultat
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -39,7 +39,7 @@ export function ResultsView() {
           Ny på HP eller osäker på dina poäng?{" "}
           <Link
             href="/nivatest"
-            className="font-medium text-[var(--accent)] hover:underline"
+            className="font-medium text-[var(--brand)] hover:underline"
           >
             Gör ett nivåtest
           </Link>{" "}
@@ -115,22 +115,29 @@ export function ResultsView() {
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Tidfördelning (~{profile.hoursPerWeek} h/vecka)
         </h2>
-        <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {timeSplit.map((t) => (
-            <li
-              key={t.label}
-              className="rounded-2xl border border-[var(--line)] bg-white/70 px-3 py-4 text-center"
-            >
-              <div className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-                {t.pct}%
-              </div>
-              <div className="mt-1 text-sm font-semibold text-[var(--ink)]">
-                {t.label}
-              </div>
-              <div className="text-xs text-[var(--ink-muted)]">{t.note}</div>
-            </li>
-          ))}
-        </ul>
+        {timeSplit.length === 0 ? (
+          <p className="mt-4 rounded-xl border border-[var(--line)] bg-white/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
+            Alla delprov ligger på samma nivå — ingen enskild del behöver extra
+            tid. Fördela tiden jämnt över delarna.
+          </p>
+        ) : (
+          <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {timeSplit.map((t) => (
+              <li
+                key={t.label}
+                className="rounded-2xl border border-[var(--line)] bg-white/70 px-3 py-4 text-center"
+              >
+                <div className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                  {t.pct}%
+                </div>
+                <div className="mt-1 text-sm font-semibold text-[var(--ink)]">
+                  {t.label}
+                </div>
+                <div className="text-xs text-[var(--ink-muted)]">{t.note}</div>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       <ProgressPanel />

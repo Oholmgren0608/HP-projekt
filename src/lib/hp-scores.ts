@@ -61,14 +61,14 @@ export function clampHoursPerWeek(value: unknown): number {
   if (value === null || value === undefined) return DEFAULT_SCORES.hoursPerWeek;
   const n = Number(value);
   if (!Number.isFinite(n)) return DEFAULT_SCORES.hoursPerWeek;
-  return Math.max(3, Math.min(40, n));
+  return Math.round(Math.max(3, Math.min(40, n)));
 }
 
 export function clampWeeksUntilExam(value: unknown): number {
   if (value === null || value === undefined) return DEFAULT_SCORES.weeksUntilExam;
   const n = Number(value);
   if (!Number.isFinite(n)) return DEFAULT_SCORES.weeksUntilExam;
-  return Math.max(4, Math.min(16, n));
+  return Math.round(Math.max(4, Math.min(16, n)));
 }
 
 export function loadScores(): ScoreInput {

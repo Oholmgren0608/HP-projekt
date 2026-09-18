@@ -35,6 +35,12 @@ export function TimedMockExam() {
   const loggedRef = useRef(false);
   const startTsRef = useRef<number | null>(null);
   const [loggedDurationMs, setLoggedDurationMs] = useState<number | null>(null);
+  // Håll alltid den senaste finishQuiz så att timerns intervall inte stänger
+  // över en gammal render (stale closure) med tomma svar vid deadline.
+  const finishRef = useRef(finishQuiz);
+  useEffect(() => {
+    finishRef.current = finishQuiz;
+  });
 
   const questions = useMemo(() => {
     if (!seed) return [] as ChoiceQuestion[];
@@ -100,11 +106,10 @@ export function TimedMockExam() {
       // Auto-submit from the timer tick (event context) instead of a
       // render-triggered effect, avoiding a setState-in-effect cascade.
       if (deadline !== null && ts >= deadline) {
-        finishQuiz();
+        finishRef.current();
       }
     }, 250);
     return () => window.clearInterval(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase, deadline]);
 
   function submitAnswer() {
@@ -128,7 +133,7 @@ export function TimedMockExam() {
   if (phase === "intro") {
     return (
       <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
           Mini-prov · appens egna frågor
         </p>
         <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -142,7 +147,7 @@ export function TimedMockExam() {
         <button
           type="button"
           onClick={start}
-          className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white hover:brightness-110"
+          className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white hover:brightness-110"
         >
           Starta mini-prov ({LIMIT_SECONDS / 60} min)
         </button>
@@ -155,7 +160,7 @@ export function TimedMockExam() {
       <div className="rounded-2xl border border-[var(--line)] bg-white p-5 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
               Mini-prov · {kindBadge(current.kind)}
             </p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
@@ -175,7 +180,7 @@ export function TimedMockExam() {
 
         <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
           <div
-            className="h-full rounded-full bg-[var(--accent)]"
+            className="h-full rounded-full bg-[var(--brand)]"
             style={{ width: `${((index + 1) / questions.length) * 100}%` }}
           />
         </div>
@@ -200,14 +205,14 @@ export function TimedMockExam() {
                 onClick={() => setSelected(i)}
                 className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
                   active
-                    ? "border-[var(--accent)] bg-[var(--accent-soft)]"
+                    ? "border-[var(--brand)] bg-[var(--accent-soft)]"
                     : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
                 }`}
               >
                 <span
                   className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                     active
-                      ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                      ? "border-[var(--brand)] bg-[var(--brand)] text-white"
                       : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
                   }`}
                 >
@@ -224,7 +229,7 @@ export function TimedMockExam() {
             type="button"
             disabled={selected === null}
             onClick={submitAnswer}
-            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white enabled:hover:brightness-110 disabled:opacity-40"
+            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white enabled:hover:brightness-110 disabled:opacity-40"
           >
             {index >= questions.length - 1 ? "Lämna in" : "Nästa"}
           </button>
@@ -242,7 +247,7 @@ export function TimedMockExam() {
 
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white p-5 sm:p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
         Genomgång
       </p>
       <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">

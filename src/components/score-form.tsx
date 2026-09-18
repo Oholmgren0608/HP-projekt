@@ -34,8 +34,8 @@ export function ScoreForm() {
     const next: ScoreInput = {
       quantNorm: clampNorm(Number(draft.quantNorm)),
       verbalNorm: clampNorm(Number(draft.verbalNorm)),
-      hoursPerWeek: Math.max(3, Math.min(40, Number(draft.hoursPerWeek) || 10)),
-      weeksUntilExam: Math.max(4, Math.min(16, Number(draft.weeksUntilExam) || 8)),
+      hoursPerWeek: Math.round(Math.max(3, Math.min(40, Number(draft.hoursPerWeek) || 10))),
+      weeksUntilExam: Math.round(Math.max(4, Math.min(16, Number(draft.weeksUntilExam) || 8))),
       delprov: { ...draft.delprov },
     };
     for (const m of DELPROV_META) {
@@ -63,7 +63,7 @@ export function ScoreForm() {
             onChange={(e) =>
               setDraft((d) => ({ ...d, quantNorm: Number(e.target.value) }))
             }
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--accent)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
         <label className="block space-y-1.5">
@@ -77,7 +77,7 @@ export function ScoreForm() {
             onChange={(e) =>
               setDraft((d) => ({ ...d, verbalNorm: Number(e.target.value) }))
             }
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--accent)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
         <label className="block space-y-1.5">
@@ -90,7 +90,7 @@ export function ScoreForm() {
             onChange={(e) =>
               setDraft((d) => ({ ...d, hoursPerWeek: Number(e.target.value) }))
             }
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--accent)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
         <label className="block space-y-1.5">
@@ -103,7 +103,7 @@ export function ScoreForm() {
             onChange={(e) =>
               setDraft((d) => ({ ...d, weeksUntilExam: Number(e.target.value) }))
             }
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--accent)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
       </div>
@@ -134,7 +134,7 @@ export function ScoreForm() {
                   max={m.total}
                   value={draft.delprov[m.id]}
                   onChange={(e) => setDelprov(m.id, e.target.value)}
-                  className="w-16 rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-center text-[var(--ink)] outline-none ring-[var(--accent)] focus:ring-2"
+                  className="w-16 rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-center text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
                 />
                 / {m.total}
               </span>
@@ -146,7 +146,7 @@ export function ScoreForm() {
       <div className="flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
         >
           Skapa ny plan
         </button>
