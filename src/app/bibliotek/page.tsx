@@ -5,7 +5,7 @@ export default function ReadingLibraryPage() {
   return (
     <div className="space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
           Resurser
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -33,7 +33,7 @@ export default function ReadingLibraryPage() {
               key={m}
               className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"
             >
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand)]" />
               <span>{m}</span>
             </li>
           ))}

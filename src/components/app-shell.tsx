@@ -20,6 +20,7 @@ import {
 import { useAuth } from "@/lib/supabase/auth-context";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
 import { usePreferences } from "@/lib/preferences";
+import { useHydrated } from "@/lib/use-hydrated";
 import { play } from "@/lib/sound";
 import { Mascot } from "@/components/mascot";
 import { cn } from "@/lib/utils";
@@ -44,7 +45,7 @@ function AuthCluster() {
     return (
       <div className="flex items-center gap-1.5">
         <span
-          className="flex size-8 items-center justify-center rounded-full bg-[var(--accent)] text-sm font-extrabold text-white shadow-soft"
+          className="flex size-8 items-center justify-center rounded-full bg-[var(--brand)] text-sm font-extrabold text-white shadow-soft"
           title={user.email ?? "Inloggad"}
         >
           {(user.email ?? "H")[0]?.toUpperCase()}
@@ -114,6 +115,7 @@ function isActive(pathname: string, href: string) {
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const { resolvedTheme, toggleTheme, sound, setSound } = usePreferences();
+  const mounted = useHydrated();
 
   return (
     <div className="relative flex min-h-full flex-col overflow-x-hidden">
@@ -123,7 +125,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 10% -10%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 55%), radial-gradient(ellipse 60% 40% at 90% 5%, color-mix(in oklab, var(--lagoon) 18%, transparent), transparent 50%), radial-gradient(ellipse 50% 40% at 50% 110%, color-mix(in oklab, var(--energy) 7%, transparent), transparent 55%), linear-gradient(180deg, var(--fog) 0%, var(--paper) 38%, var(--fog) 100%)",
+            "radial-gradient(ellipse 80% 50% at 10% -10%, color-mix(in oklab, var(--brand) 16%, transparent), transparent 55%), radial-gradient(ellipse 60% 40% at 90% 5%, color-mix(in oklab, var(--lagoon) 18%, transparent), transparent 50%), radial-gradient(ellipse 50% 40% at 50% 110%, color-mix(in oklab, var(--energy) 7%, transparent), transparent 55%), linear-gradient(180deg, var(--fog) 0%, var(--paper) 38%, var(--fog) 100%)",
         }}
       />
 
@@ -175,19 +177,22 @@ export function AppShell({ children }: { children: ReactNode }) {
               onClick={() => {
                 setSound(!sound);
               }}
-              label={sound ? "Stäng av ljud" : "Sätt på ljud"}
+              label={!mounted ? "Ljud" : sound ? "Stäng av ljud" : "Sätt på ljud"}
             >
-              {sound ? <Volume2 className="size-4.5" /> : <VolumeX className="size-4.5" />}
+              {mounted && sound ? <Volume2 className="size-4.5" /> : <VolumeX className="size-4.5" />}
             </IconButton>
-            <IconButton onClick={toggleTheme} label={resolvedTheme === "dark" ? "Ljust läge" : "Mörkt läge"}>
+            <IconButton
+              onClick={toggleTheme}
+              label={!mounted ? "Tema" : resolvedTheme === "dark" ? "Ljust läge" : "Mörkt läge"}
+            >
               <motion.span
-                key={resolvedTheme}
-                initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                key={mounted ? resolvedTheme : "pending"}
+                initial={mounted ? { rotate: -90, opacity: 0, scale: 0.6 } : false}
                 animate={{ rotate: 0, opacity: 1, scale: 1 }}
                 transition={{ type: "spring", bounce: 0.4, duration: 0.5 }}
                 className="flex"
               >
-                {resolvedTheme === "dark" ? <Sun className="size-4.5" /> : <Moon className="size-4.5" />}
+                {mounted && resolvedTheme === "dark" ? <Sun className="size-4.5" /> : <Moon className="size-4.5" />}
               </motion.span>
             </IconButton>
             <div className="mx-1 hidden h-5 w-px bg-[var(--line)] sm:block" />

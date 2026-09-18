@@ -4,7 +4,7 @@ export default function FlashcardsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
           Verktyg
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">

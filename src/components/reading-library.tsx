@@ -75,7 +75,7 @@ export function ReadingLibrary() {
                 onClick={() => selectText(item)}
                 className={`w-full rounded-lg border px-3 py-3 text-left transition ${
                   selected
-                    ? "border-[var(--accent)] bg-[var(--accent-soft)]"
+                    ? "border-[var(--brand)] bg-[var(--accent-soft)]"
                     : "border-[var(--line)] bg-white/70 hover:border-[var(--ink-soft)]"
                 }`}
               >
@@ -96,7 +96,7 @@ export function ReadingLibrary() {
         </div>
 
         <article className="rounded-2xl border border-[var(--line)] bg-white/80 p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.4)] sm:p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             {text.kind} · ~{text.minutes} min
           </p>
           <h3 className="mt-2 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
@@ -142,7 +142,7 @@ export function ReadingLibrary() {
                 value={summary}
                 onChange={(e) => setSummary(e.target.value)}
                 rows={3}
-                className="mt-2 w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--accent)] focus:ring-2"
+                className="mt-2 w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
                 placeholder="Skriv din sammanfattning här…"
               />
             </div>
@@ -155,7 +155,7 @@ export function ReadingLibrary() {
                 if (!read[text.id]) recordEvent({ type: "reading_done" });
                 setRead((prev) => ({ ...prev, [text.id]: true }));
               }}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
             >
               Markera som läst
             </button>

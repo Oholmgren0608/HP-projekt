@@ -79,7 +79,7 @@ export function DashboardHome() {
       <section className="grid items-stretch gap-6 lg:grid-cols-[1fr_auto]">
         <div className="flex flex-col justify-between gap-5">
           <div>
-            <p className="text-xs font-extrabold tracking-[0.18em] text-[var(--accent)] uppercase">
+            <p className="text-xs font-extrabold tracking-[0.18em] text-[var(--brand)] uppercase">
               {greeting()} · Dagens pass
             </p>
             <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -111,7 +111,7 @@ export function DashboardHome() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="overflow-hidden rounded-3xl bg-[linear-gradient(120deg,var(--accent),var(--lagoon))] p-6 text-white shadow-pop sm:p-8"
+          className="overflow-hidden rounded-3xl bg-[linear-gradient(120deg,var(--brand),var(--lagoon))] p-6 text-white shadow-pop sm:p-8"
         >
           <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
             <div className="max-w-lg">
@@ -125,7 +125,7 @@ export function DashboardHome() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/nivatest"
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-extrabold text-[var(--accent)] shadow-soft transition hover:scale-[1.03] active:scale-95"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-extrabold text-[var(--brand)] shadow-soft transition hover:scale-[1.03] active:scale-95"
                 >
                   <Play className="size-4" fill="currentColor" />
                   Gör nivåtestet
@@ -150,7 +150,7 @@ export function DashboardHome() {
         <div className="relative flex flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft sm:p-6">
           {next ? (
             <>
-              <p className="flex items-center gap-2 text-xs font-extrabold tracking-[0.14em] text-[var(--accent)] uppercase">
+              <p className="flex items-center gap-2 text-xs font-extrabold tracking-[0.14em] text-[var(--brand)] uppercase">
                 Vecka {next.week}
                 <span className="flex items-center gap-1 rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-[11px] font-extrabold tracking-normal text-[var(--accent-foreground)]">
                   <Timer className="size-3" />~{next.task.minutes} min
@@ -163,7 +163,7 @@ export function DashboardHome() {
               <div className="mt-auto flex flex-wrap gap-3 pt-5">
                 <Link
                   href={`/plan?week=${next.week}&start=${encodeURIComponent(next.task.id)}`}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--accent),var(--lagoon))] px-6 text-sm font-extrabold text-white shadow-soft transition hover:scale-[1.03] hover:shadow-pop active:scale-95"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--brand),var(--lagoon))] px-6 text-sm font-extrabold text-white shadow-soft transition hover:scale-[1.03] hover:shadow-pop active:scale-95"
                 >
                   Starta övning
                   <ArrowRight className="size-4" />
@@ -187,7 +187,7 @@ export function DashboardHome() {
               <div className="mt-auto flex flex-wrap gap-3 pt-5">
                 <Link
                   href="/ova"
-                  className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--accent),var(--lagoon))] px-6 text-sm font-extrabold text-white shadow-soft transition hover:scale-[1.03] active:scale-95"
+                  className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--brand),var(--lagoon))] px-6 text-sm font-extrabold text-white shadow-soft transition hover:scale-[1.03] active:scale-95"
                 >
                   Öva flashcards
                 </Link>

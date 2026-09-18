@@ -151,7 +151,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
         <button
           type="button"
           onClick={() => void signInWithGoogle()}
-          className="mt-6 inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-6 text-sm font-semibold text-white transition hover:brightness-110"
+          className="mt-6 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-white transition hover:brightness-110"
         >
           Logga in med Google
         </button>
@@ -185,7 +185,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
   return (
     <div className="space-y-8">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
           PvP
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -259,7 +259,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
             type="button"
             disabled={busy}
             onClick={() => void handleCreatePrivate()}
-            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
+            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
           >
             Skapa privat match
           </button>
@@ -269,7 +269,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
               onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
               placeholder="MATCHKOD"
               maxLength={6}
-              className="w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm uppercase tracking-widest text-[var(--ink)] outline-none ring-[var(--accent)] focus:ring-2"
+              className="w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm uppercase tracking-widest text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
             />
             <button
               type="button"
@@ -299,7 +299,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
                 <li key={p.user_id} className="flex items-center gap-3 py-2">
                   <span
                     className={`w-6 text-center font-semibold tabular-nums ${
-                      i < 3 ? "text-[var(--accent)]" : "text-[var(--ink-muted)]"
+                      i < 3 ? "text-[var(--brand)]" : "text-[var(--ink-muted)]"
                     }`}
                   >
                     {i + 1}
@@ -383,7 +383,7 @@ function ModeCard({
         type="button"
         disabled={disabled}
         onClick={onClick}
-        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
+        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
       >
         {cta}
       </button>

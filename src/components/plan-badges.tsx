@@ -12,7 +12,7 @@ export function PriorityBadge({ priority }: { priority: Priority }) {
   }
   if (priority === "huvudfokus") {
     return (
-      <Badge className="border-transparent bg-[var(--accent)] text-white hover:bg-[var(--accent)]">
+      <Badge className="border-transparent bg-[var(--brand)] text-white hover:bg-[var(--brand)]">
         {label}
       </Badge>
     );
@@ -36,7 +36,7 @@ export function ScoreBar({ correct, total }: { correct: number; total: number })
   return (
     <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-[var(--mist)]">
       <div
-        className="h-full rounded-full bg-[var(--accent)]"
+        className="h-full rounded-full bg-[var(--brand)]"
         style={{ width: `${p}%` }}
         aria-hidden
       />

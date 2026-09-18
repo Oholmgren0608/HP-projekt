@@ -62,7 +62,7 @@
   --fog: #ecf1eb;
   --mist: #e1e9e2;
   --line: #d9dfd5;
-  --accent: #0d7c6f;
+  --brand: #0d7c6f;
   --accent-soft: #d6eee8;
   --lagoon: #2ba89a;
 
@@ -80,7 +80,7 @@
   --card-foreground: var(--ink);
   --popover: #ffffff;
   --popover-foreground: var(--ink);
-  --primary: var(--accent);
+  --primary: var(--brand);
   --primary-foreground: #ffffff;
   --secondary: var(--mist);
   --secondary-foreground: var(--ink);
@@ -92,7 +92,7 @@
   --border: var(--line);
   --input: var(--line);
   --ring: var(--lagoon);
-  --chart-1: var(--accent);
+  --chart-1: var(--brand);
   --chart-2: var(--lagoon);
   --chart-3: var(--energy);
   --chart-4: var(--coral);
@@ -103,7 +103,7 @@
   --shadow-pop: 0 8px 24px -6px rgb(20 48 44 / 0.18), 0 2px 6px rgb(20 48 44 / 0.08);
   --sidebar: var(--paper);
   --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--accent);
+  --sidebar-primary: var(--brand);
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: var(--mist);
   --sidebar-accent-foreground: var(--ink);
@@ -122,7 +122,7 @@
   --fog: #121c20;
   --mist: #1e2a2f;
   --line: #243239;
-  --accent: #35c4b2;
+  --brand: #35c4b2;
   --accent-soft: #12332e;
   --lagoon: #45cfbe;
 
@@ -139,7 +139,7 @@
   --card-foreground: var(--ink);
   --popover: #152026;
   --popover-foreground: var(--ink);
-  --primary: var(--accent);
+  --primary: var(--brand);
   --primary-foreground: #05201c;
   --secondary: var(--mist);
   --secondary-foreground: var(--ink);
@@ -151,7 +151,7 @@
   --border: var(--line);
   --input: var(--line);
   --ring: var(--lagoon);
-  --chart-1: var(--accent);
+  --chart-1: var(--brand);
   --chart-2: var(--lagoon);
   --chart-3: var(--energy);
   --chart-4: var(--coral);
@@ -161,7 +161,7 @@
   --shadow-pop: 0 8px 24px -6px rgb(0 0 0 / 0.55), 0 2px 6px rgb(0 0 0 / 0.35);
   --sidebar: var(--paper);
   --sidebar-foreground: var(--ink);
-  --sidebar-primary: var(--accent);
+  --sidebar-primary: var(--brand);
   --sidebar-primary-foreground: #05201c;
   --sidebar-accent: var(--mist);
   --sidebar-accent-foreground: var(--ink);
@@ -180,7 +180,7 @@
     @apply font-sans;
   }
   ::selection {
-    background: color-mix(in oklab, var(--accent) 30%, transparent);
+    background: color-mix(in oklab, var(--brand) 30%, transparent);
   }
 }
 

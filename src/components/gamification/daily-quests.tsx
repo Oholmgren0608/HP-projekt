@@ -54,7 +54,7 @@ export function DailyQuests({ className }: { className?: string }) {
                     <motion.div
                       className={cn(
                         "h-full rounded-full",
-                        q.done ? "bg-[var(--success)]" : "bg-[linear-gradient(90deg,var(--accent),var(--lagoon))]",
+                        q.done ? "bg-[var(--success)]" : "bg-[linear-gradient(90deg,var(--brand),var(--lagoon))]",
                       )}
                       initial={{ width: 0 }}
                       animate={{ width: `${pct}%` }}

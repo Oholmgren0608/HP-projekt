@@ -30,7 +30,7 @@ export function PaceNotice({
       <p className="text-sm font-medium tabular-nums text-[#9a3412]">{paceLine}</p>
       <Link
         href={tipsHref}
-        className="mt-1 inline-block text-sm font-semibold text-[var(--accent)] underline-offset-4 hover:underline"
+        className="mt-1 inline-block text-sm font-semibold text-[var(--brand)] underline-offset-4 hover:underline"
       >
         Tips för att korta tiden{sectionLabel ? ` på ${sectionLabel}` : ""} →
       </Link>

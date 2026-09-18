@@ -224,7 +224,7 @@ export function WeekTracker({
               }}
               className={`min-h-14 shrink-0 rounded-xl border px-4 py-2.5 text-left transition ${
                 selected
-                  ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--ink)]"
+                  ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                   : "border-[var(--line)] bg-white/60 text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
               }`}
             >
@@ -241,7 +241,7 @@ export function WeekTracker({
       <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 shadow-[0_12px_40px_-28px_rgba(18,42,48,0.45)] backdrop-blur-sm sm:p-6">
         <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--accent)]">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--brand)]">
               {plan.phase} · Vecka {plan.week}
             </p>
             <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -271,7 +271,7 @@ export function WeekTracker({
                 <div
                   className={`rounded-xl border px-3 py-3 sm:px-4 ${
                     checked
-                      ? "border-[var(--accent)]/30 bg-[var(--accent-soft)]/50"
+                      ? "border-[var(--brand)]/30 bg-[var(--accent-soft)]/50"
                       : "border-[var(--line)] bg-[var(--paper)]"
                   }`}
                 >
@@ -280,7 +280,7 @@ export function WeekTracker({
                       aria-hidden
                       className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs font-bold ${
                         checked
-                          ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                          ? "border-[var(--brand)] bg-[var(--brand)] text-white"
                           : "border-[var(--line)] bg-white text-transparent"
                       }`}
                     >
@@ -319,7 +319,7 @@ export function WeekTracker({
                             }
                             setActiveTaskId(task.id);
                           }}
-                          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
+                          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
                         >
                           {checked
                             ? "Öva igen (nya frågor)"

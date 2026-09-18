@@ -74,7 +74,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
 
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
         Privat duell
       </p>
       <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -101,7 +101,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
             <button
               type="button"
               onClick={() => void copy()}
-              className="shrink-0 rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+              className="shrink-0 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
             >
               {copied ? "Kopierad!" : "Kopiera"}
             </button>
@@ -110,7 +110,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
       </div>
 
       <div className="mt-6 flex items-center gap-3">
-        <div className="size-5 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--accent)]" />
+        <div className="size-5 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--brand)]" />
         <p className="text-sm text-[var(--ink-muted)]">
           Matchen startar när din motståndare ansluter.
         </p>

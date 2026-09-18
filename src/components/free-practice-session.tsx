@@ -115,7 +115,7 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
     <div className="rounded-xl border border-[var(--line)] bg-white p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             Fri övning · {kindBadge(subtest)}
           </p>
           <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -144,7 +144,7 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
 
           <div className="h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
             <div
-              className="h-full rounded-full bg-[var(--accent)] transition-all"
+              className="h-full rounded-full bg-[var(--brand)] transition-all"
               style={{ width: `${(answeredCount / total) * 100}%` }}
             />
           </div>
@@ -169,14 +169,14 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
                   onClick={() => setSelected(i)}
                   className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
                     active
-                      ? "border-[var(--accent)] bg-[var(--accent-soft)]"
+                      ? "border-[var(--brand)] bg-[var(--accent-soft)]"
                       : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
                   }`}
                 >
                   <span
                     className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                       active
-                        ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                        ? "border-[var(--brand)] bg-[var(--brand)] text-white"
                         : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
                     }`}
                   >
@@ -193,7 +193,7 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
               type="button"
               disabled={selected === null}
               onClick={submitAnswer}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
             >
               {index >= total - 1 ? "Visa resultat" : "Nästa fråga"}
             </button>
@@ -230,7 +230,7 @@ export function FreePracticeSession({ subtest, questionCount, onClose }: Props) 
             <button
               type="button"
               onClick={handleRestart}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
             >
               Ny övning
             </button>

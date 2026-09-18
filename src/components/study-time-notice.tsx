@@ -32,7 +32,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
         }
       : status === "tight"
         ? {
-            border: "border-[var(--accent)]/30",
+            border: "border-[var(--brand)]/30",
             bg: "bg-[var(--accent-soft)]/60",
             title: "text-[var(--ink)]",
             icon: "⏳",

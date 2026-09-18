@@ -142,7 +142,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
 
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
         {duelModeLabel(mode)}
       </p>
       <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -150,7 +150,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
       </h2>
 
       <div className="mt-6 flex flex-col items-center gap-4">
-        <div className="size-10 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--accent)]" />
+        <div className="size-10 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--brand)]" />
         <p className="text-center text-sm text-[var(--ink-muted)]">
           {timedOut
             ? "Du står kvar i kön. Vill du möta en bot istället?"
@@ -181,7 +181,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
           onClick={() => void handleStartBot()}
           className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition disabled:opacity-50 ${
             timedOut
-              ? "bg-[var(--accent)] text-white hover:brightness-110"
+              ? "bg-[var(--brand)] text-white hover:brightness-110"
               : "border border-[var(--line)] font-medium text-[var(--ink-muted)] hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
           }`}
         >

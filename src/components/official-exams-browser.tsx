@@ -73,7 +73,7 @@ export function OfficialExamsBrowser() {
           href={OFFICIAL_INDEX_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium text-[var(--accent)] underline-offset-4 hover:underline"
+          className="font-medium text-[var(--brand)] underline-offset-4 hover:underline"
         >
           UHR:s arkiv
         </a>
@@ -86,7 +86,7 @@ export function OfficialExamsBrowser() {
           onClick={() => setYear("alla")}
           className={`rounded-md border px-3 py-1.5 text-sm transition ${
             year === "alla"
-              ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--ink)]"
+              ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
               : "border-[var(--line)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
           }`}
         >
@@ -99,7 +99,7 @@ export function OfficialExamsBrowser() {
             onClick={() => setYear(y)}
             className={`rounded-md border px-3 py-1.5 text-sm transition ${
               year === y
-                ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--ink)]"
+                ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                 : "border-[var(--line)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
             }`}
           >
@@ -119,7 +119,7 @@ export function OfficialExamsBrowser() {
                 onClick={() => selectExam(exam)}
                 className={`w-full rounded-lg border px-3 py-3 text-left transition ${
                   selected
-                    ? "border-[var(--accent)] bg-[var(--accent-soft)]"
+                    ? "border-[var(--brand)] bg-[var(--accent-soft)]"
                     : "border-[var(--line)] bg-white/70 hover:border-[var(--ink-soft)]"
                 }`}
               >
@@ -148,7 +148,7 @@ export function OfficialExamsBrowser() {
                   href={activeExam.pageUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-[var(--accent)] underline-offset-4 hover:underline"
+                  className="text-sm font-medium text-[var(--brand)] underline-offset-4 hover:underline"
                 >
                   UHR-sida →
                 </a>
@@ -185,7 +185,7 @@ export function OfficialExamsBrowser() {
                       href={activeDoc.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-[var(--accent)] underline-offset-4 hover:underline"
+                      className="text-sm text-[var(--brand)] underline-offset-4 hover:underline"
                     >
                       Öppna PDF i ny flik →
                     </a>

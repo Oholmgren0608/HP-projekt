@@ -111,7 +111,7 @@ export function ReviewForm({
                 onClick={() => setDifficulty(d)}
                 className={`rounded-lg border px-4 py-2 text-sm font-medium transition ${
                   difficulty === d
-                    ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--accent)]"
+                    ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--brand)]"
                     : "border-[var(--line)] bg-white text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
                 }`}
               >
@@ -135,7 +135,7 @@ export function ReviewForm({
                 aria-label={`${n} stjärnor`}
                 onClick={() => setRating(n)}
                 className={`text-3xl leading-none transition ${
-                  n <= rating ? "text-[var(--accent)]" : "text-[var(--line)]"
+                  n <= rating ? "text-[var(--brand)]" : "text-[var(--line)]"
                 }`}
               >
                 ★
@@ -184,7 +184,7 @@ export function ReviewForm({
             ? "Övrig feedback (valfritt)…"
             : "Kommentar om matchen (valfritt)…"
         }
-        className="mt-4 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--accent)] placeholder:text-[var(--ink-muted)] focus:ring-2"
+        className="mt-4 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2"
       />
 
       {error ? (
@@ -195,7 +195,7 @@ export function ReviewForm({
         type="button"
         disabled={!canSubmit || submitting}
         onClick={() => void handleSubmit()}
-        className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+        className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
       >
         {submitting ? "Skickar…" : "Skicka recension"}
       </button>

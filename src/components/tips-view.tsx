@@ -17,7 +17,7 @@ export function TipsView() {
   return (
     <div className="space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
           Metoder
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -36,7 +36,7 @@ export function TipsView() {
             href={`#${tip.id}`}
             className={`rounded-lg border px-3 py-1.5 text-sm font-medium ${
               highlight === tip.id
-                ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--ink)]"
+                ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                 : "border-[var(--line)] bg-white/70 text-[var(--ink-muted)] hover:text-[var(--ink)]"
             }`}
           >
@@ -52,7 +52,7 @@ export function TipsView() {
             id={tip.id}
             className={`scroll-mt-24 rounded-2xl border bg-white/75 p-5 sm:p-6 ${
               highlight === tip.id
-                ? "border-[var(--accent)]"
+                ? "border-[var(--brand)]"
                 : "border-[var(--line)]"
             }`}
           >

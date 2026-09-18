@@ -69,11 +69,11 @@ export function Mascot({
         </motion.g>
 
         {/* Örontofsar */}
-        <path d="M38 22 30 6l14 8Z" fill="var(--accent)" />
-        <path d="M82 22 90 6 76 14Z" fill="var(--accent)" />
+        <path d="M38 22 30 6l14 8Z" fill="var(--brand)" />
+        <path d="M82 22 90 6 76 14Z" fill="var(--brand)" />
 
         {/* Kropp */}
-        <ellipse cx="60" cy="66" rx="42" ry="46" fill="var(--accent)" />
+        <ellipse cx="60" cy="66" rx="42" ry="46" fill="var(--brand)" />
         {/* Mage */}
         <ellipse cx="60" cy="76" rx="26" ry="30" fill="var(--accent-soft)" />
 
@@ -135,7 +135,7 @@ export function Mascot({
             transition={{ duration: 4.2, times: [0, 0.9, 0.95, 1, 1], repeat: Infinity, repeatDelay: 0.5 }}
             style={{ originX: "60px", originY: "52px" }}
           >
-            <path d="M31.5 52h27M61.5 52h27" stroke="var(--accent)" strokeWidth="13.5" strokeLinecap="round" opacity="0.001" />
+            <path d="M31.5 52h27M61.5 52h27" stroke="var(--brand)" strokeWidth="13.5" strokeLinecap="round" opacity="0.001" />
           </motion.g>
         )}
 

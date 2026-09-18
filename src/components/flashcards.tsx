@@ -144,7 +144,7 @@ export function Flashcards() {
             onClick={() => setFilter(f.id)}
             className={`rounded-md border px-3 py-1.5 text-sm transition ${
               filter === f.id
-                ? "border-[var(--accent)] bg-[var(--accent-soft)] text-[var(--ink)]"
+                ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                 : "border-[var(--line)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
             }`}
           >
@@ -161,7 +161,7 @@ export function Flashcards() {
         <button
           type="button"
           onClick={reshuffle}
-          className="text-[var(--accent)] underline-offset-4 hover:underline"
+          className="text-[var(--brand)] underline-offset-4 hover:underline"
         >
           Blanda om
         </button>
@@ -211,7 +211,7 @@ export function Flashcards() {
                 <button
                   type="button"
                   onClick={() => rate("correct")}
-                  className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+                  className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
                 >
                   Rätt — nästa
                 </button>

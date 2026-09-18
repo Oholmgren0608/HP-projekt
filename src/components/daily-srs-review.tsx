@@ -190,7 +190,7 @@ export function DailySrsReview() {
             <button
               type="button"
               onClick={() => grade(true)}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-4 text-sm font-semibold text-white hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white hover:brightness-110"
             >
               Kommer ihåg
             </button>

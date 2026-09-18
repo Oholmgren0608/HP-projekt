@@ -71,7 +71,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
       {paceOver ? (
         <>
           {" "}
-          <Link href="/tips" className="font-semibold text-[var(--accent)] underline-offset-4 hover:underline">
+          <Link href="/tips" className="font-semibold text-[var(--brand)] underline-offset-4 hover:underline">
             Se tips →
           </Link>
         </>
@@ -97,13 +97,13 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
   );
 
   const suggestBanner = suggest ? (
-    <div className="mt-4 rounded-lg border border-[var(--accent)]/40 bg-[var(--accent-soft)] px-4 py-3">
+    <div className="mt-4 rounded-lg border border-[var(--brand)]/40 bg-[var(--accent-soft)] px-4 py-3">
       <p className="text-sm font-medium text-[var(--ink)]">
         Övningsnivån skiljer sig från din inmatade norm. Skapa en ny plan från uppdaterade resultat.
       </p>
       <Link
         href="/resultat"
-        className="mt-2 inline-block text-sm font-semibold text-[var(--accent)] underline-offset-4 hover:underline"
+        className="mt-2 inline-block text-sm font-semibold text-[var(--brand)] underline-offset-4 hover:underline"
       >
         Uppdatera resultat →
       </Link>
@@ -279,7 +279,7 @@ function ProgressChart({
         <text x={4} y={h - pad} className="fill-[var(--ink-muted)] text-[10px]">
           0
         </text>
-        <path d={d} fill="none" stroke="var(--accent)" strokeWidth="2.5" />
+        <path d={d} fill="none" stroke="var(--brand)" strokeWidth="2.5" />
         {xs.map((x, i) => (
           <circle
             key={`${points[i].at}-${i}`}

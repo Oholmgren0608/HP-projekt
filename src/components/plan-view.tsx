@@ -26,7 +26,7 @@ export function PlanView() {
     <div className="space-y-10">
       {!sessionOpen ? (
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
             {profile.weeksUntilExam} veckor · {profile.hoursPerWeek} h/vecka
           </p>
           <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -39,7 +39,7 @@ export function PlanView() {
           <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line)] bg-white/70 px-4 py-3">
             <input
               type="checkbox"
-              className="mt-1 size-4 accent-[var(--accent)]"
+              className="mt-1 size-4 accent-[var(--brand)]"
               checked={adaptEnabled}
               onChange={(e) => setAdaptEnabled(e.target.checked)}
             />
@@ -121,7 +121,7 @@ export function PlanView() {
               tar dig upp finns under{" "}
               <Link
                 href="/tips"
-                className="font-medium text-[var(--accent)] underline-offset-4 hover:underline"
+                className="font-medium text-[var(--brand)] underline-offset-4 hover:underline"
               >
                 Tips
               </Link>
