@@ -3,7 +3,7 @@
 /**
  * Firarlager — konsumerar motorns notiser och visar:
  *  - Konfetti (canvas-confetti) vid level-up, achievements och streak
- *  - Level-up-modal med maskoten i festhumör
+ *  - Level-up-modal när användaren når en ny nivå
  *  - Toasts för achievements, uppdrag och streak
  * Allt respekterar prefers-reduced-motion och spelar ljud om det är på.
  */
@@ -18,7 +18,6 @@ import {
   type GameNotification,
 } from "@/lib/gamification/engine";
 import { play } from "@/lib/sound";
-import { Mascot } from "@/components/mascot";
 import { Button } from "@/components/ui/button";
 
 const PALETTE = ["#0d7c6f", "#2ba89a", "#f59e0b", "#f2604f", "#ffffff"];
@@ -168,14 +167,7 @@ export function CelebrationLayer() {
               transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}
               className="relative w-full max-w-sm rounded-3xl border border-[var(--line)] bg-[var(--card)] p-8 text-center shadow-pop"
             >
-              <motion.div
-                initial={{ rotate: -6, scale: 0.6 }}
-                animate={{ rotate: 0, scale: 1 }}
-                transition={{ type: "spring", bounce: 0.5, delay: 0.15 }}
-              >
-                <Mascot mood="celebrate" className="mx-auto size-28" />
-              </motion.div>
-              <p className="mt-4 text-sm font-extrabold tracking-widest text-[var(--energy)] uppercase">
+              <p className="text-sm font-extrabold tracking-widest text-[var(--energy)] uppercase">
                 Nivå upp!
               </p>
               <h2 className="mt-1 font-[family-name:var(--font-display)] text-4xl font-bold text-[var(--ink)]">

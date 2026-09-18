@@ -22,7 +22,6 @@ import { isSupabaseConfigured } from "@/lib/supabase/client";
 import { usePreferences } from "@/lib/preferences";
 import { useHydrated } from "@/lib/use-hydrated";
 import { play } from "@/lib/sound";
-import { Mascot } from "@/components/mascot";
 import { cn } from "@/lib/utils";
 
 function GoogleG() {
@@ -136,7 +135,6 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         <div className="flex items-center justify-between gap-2 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_86%,white)]/90 px-3 py-2 shadow-soft backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_86%,black)]/90">
           <Link href="/" className="flex items-center gap-2 rounded-xl px-1 transition active:scale-95">
-            <Mascot mood="idle" float={false} className="size-9" />
             <span className="flex items-baseline gap-2">
               <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
                 HP Lift

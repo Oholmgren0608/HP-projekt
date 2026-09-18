@@ -241,21 +241,7 @@
   animation: rise 0.8s ease-out 0.15s both;
 }
 
-/* Flytande — maskot i vila */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-.animate-float {
-  animation: float 3.2s ease-in-out infinite;
-}
-
-/* Vicka — maskot hälsar, flame ikon, etc. */
+/* Vicka — flame-ikon, etc. */
 @keyframes wiggle {
   0%,
   100% {
@@ -333,7 +319,6 @@
   .animate-rise,
   .animate-rise-delay,
   .animate-pop,
-  .animate-float,
   .animate-wiggle,
   .animate-wiggle-infinite,
   .animate-flicker,

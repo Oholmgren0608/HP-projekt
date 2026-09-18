@@ -16,8 +16,6 @@ import {
   weekProgressSummary,
   type ProgressMap,
 } from "@/lib/week-progress";
-import { useGamification } from "@/lib/gamification/provider";
-import { Mascot } from "@/components/mascot";
 import { XpBar } from "@/components/gamification/xp-bar";
 import { StreakCard } from "@/components/gamification/streak-card";
 import { DailyQuests } from "@/components/gamification/daily-quests";
@@ -33,7 +31,6 @@ function greeting(): string {
 
 export function DashboardHome() {
   const { plan, ready, hasSavedScores } = usePlan();
-  const { state } = useGamification();
   const [progress, setProgress] = useState<ProgressMap>(loadWeekProgress);
   const mounted = useHydrated();
 
@@ -61,23 +58,11 @@ export function DashboardHome() {
   const summary = weekProgressSummary(plan.weeklyPlans, progress);
   const { profile, focusIds } = plan;
 
-  const { streak } = state;
-  const mascotMood: "idle" | "happy" | "celebrate" | "nudge" | "sad" =
-    state.quests.allDone ? "celebrate" : streak.current >= 1 ? "happy" : streak.current === 0 && state.xp > 0 ? "sad" : "nudge";
-  const speechText =
-    state.quests.allDone
-      ? "Alla uppdrag klara — du är grym idag! 🎉"
-      : streak.current >= 1
-        ? `${streak.current} ${streak.current === 1 ? "dag" : "dagar"} i rad — fortsätt så! 🔥`
-        : state.xp > 0
-          ? "Din streak väntar på dig — plugga idag igen! 🔥"
-          : "Hej! Börja med dagens pass så tänder vi din streak 🔥";
-
   return (
     <div className="space-y-6">
       {/* ---- Hjältesektion -------------------------------------------------- */}
-      <section className="grid items-stretch gap-6 lg:grid-cols-[1fr_auto]">
-        <div className="flex flex-col justify-between gap-5">
+      <section>
+        <div className="flex flex-col gap-5">
           <div>
             <p className="text-xs font-extrabold tracking-[0.18em] text-[var(--brand)] uppercase">
               {greeting()} · Dagens pass
@@ -91,17 +76,6 @@ export function DashboardHome() {
             </p>
           </div>
           <XpBar />
-        </div>
-
-        <div className="flex items-start gap-3 lg:w-80">
-          <div className="relative mt-3 rounded-2xl rounded-bl-md border border-[var(--line)] bg-[var(--card)] px-4 py-3 shadow-soft">
-            <p className="text-sm font-bold text-[var(--ink)]">{speechText}</p>
-            <span
-              aria-hidden
-              className="absolute -bottom-2 left-4 size-4 rotate-45 border-b border-r border-[var(--line)] bg-[var(--card)]"
-            />
-          </div>
-          <Mascot mood={mascotMood} className="size-24 shrink-0" />
         </div>
       </section>
 
@@ -138,7 +112,6 @@ export function DashboardHome() {
                 </Link>
               </div>
             </div>
-            <Mascot mood="happy" className="size-24 shrink-0 sm:size-28" />
           </div>
         </motion.section>
       )}
