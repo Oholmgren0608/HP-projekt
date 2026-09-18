@@ -53,17 +53,6 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const [botCorrect, setBotCorrect] = useState(0);
   const [stallElapsed, setStallElapsed] = useState(false);
 
-  // Gamification: rapportera duellens utfall en gång när matchen är slut.
-  const duelReportedRef = useRef(false);
-  useEffect(() => {
-    if (phase !== "finished" || !match || !meId || duelReportedRef.current) return;
-    duelReportedRef.current = true;
-    if (match.status === "cancelled") return;
-    const result =
-      match.winner === meId ? "win" : match.winner === null ? "draw" : "loss";
-    recordEvent({ type: "duel_end", result });
-  }, [phase, match, meId]);
-
   // Refs — skrivs aldrig under render (se synk-effekten nedan).
   const phaseRef = useRef(phase);
   const indexRef = useRef(index);
@@ -80,6 +69,32 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const submitRef = useRef<(chosen: number | null) => void>(() => {});
 
   const oppDisplayCorrect = isBot ? botCorrect : oppCorrect;
+
+  // Gamification: rapportera duellens utfall. Motorn dedupar på matchId
+  // (persisterat), så samma match belönas aldrig två gånger (reload/remount).
+  useEffect(() => {
+    if (phase !== "finished" || !match || !meId) return;
+    if (match.status === "cancelled") return;
+
+    const winnerIsMe = match.winner === meId;
+    // Bot-uppgivande: servern skriver winner = null men registrerar en
+    // förlust — klassificera det som förlust, inte oavgjort. (G21)
+    const result: "win" | "loss" | "draw" = winnerIsMe
+      ? "win"
+      : match.status === "forfeit"
+        ? "loss"
+        : match.winner === null
+          ? "draw"
+          : "loss";
+
+    recordEvent({
+      type: "duel_end",
+      result,
+      matchId,
+      forfeit: match.status === "forfeit",
+      answers: Object.keys(myAnswersRef.current).length,
+    });
+  }, [phase, match, meId, matchId]);
 
   const loadMatch = useCallback(async () => {
     const supabase = getSupabase();
@@ -122,6 +137,9 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         });
       } catch {
         /* ignorera — vi laddar om matchen ändå */
+      } finally {
+        // Återställ skyddet så att ett misslyckat avslut kan göras om.
+        questionDoneRef.current = false;
       }
       await loadMatchRef.current();
     } else {
@@ -134,6 +152,8 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
           window.setTimeout(() => setStallElapsed(true), DUEL_STALL_GRACE_MS);
         }
       } catch {
+        // Återställ skyddet så att avslutet kan göras om.
+        questionDoneRef.current = false;
         await loadMatchRef.current();
       }
     }
@@ -145,9 +165,18 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       const i = indexRef.current;
       const qs = questionsRef.current;
       if (i >= qs.length) return;
-      questionDoneRef.current = true;
 
       const q = qs[i];
+      // Redan besvarat (t.ex. efter ett misslyckat avslut) — försök bara
+      // avsluta igen utan att räkna om svaret.
+      if (myAnswersRef.current[q.id] !== undefined) {
+        questionDoneRef.current = true;
+        void finishMatchRef.current();
+        return;
+      }
+
+      questionDoneRef.current = true;
+
       const elapsed = Math.min(
         DUEL_SECONDS_PER_QUESTION * 1000,
         Date.now() - startRef.current,
@@ -375,8 +404,21 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
           );
           void finishMatchRef.current();
         } else {
-          setPhase("waiting");
           const myFinishedAt = iAmA ? m.a_finished_at : m.b_finished_at;
+          if (!myFinishedAt) {
+            // Förra avslutet misslyckades — försök markera klar igen.
+            try {
+              const finalized = await markFinished(matchId, myC, myT);
+              if (cancelled) return;
+              if (finalized) {
+                await loadMatchRef.current();
+                return;
+              }
+            } catch {
+              /* ignorera — vi hamnar i waiting nedan */
+            }
+          }
+          setPhase("waiting");
           const elapsed = myFinishedAt
             ? Date.now() - new Date(myFinishedAt).getTime()
             : 0;
@@ -461,7 +503,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         <button
           type="button"
           onClick={() => router.push("/duell")}
-          className="mt-6 rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white"
+          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white"
         >
           Tillbaka till Duell
         </button>
@@ -500,7 +542,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
                 className={`rounded-full px-2.5 py-0.5 text-sm font-semibold tabular-nums ${
                   secondsLeft <= 5
                     ? "bg-[#9a3412]/10 text-[#9a3412]"
-                    : "bg-[var(--accent-soft)] text-[var(--accent)]"
+                    : "bg-[var(--accent-soft)] text-[var(--brand)]"
                 }`}
               >
                 {secondsLeft}s
@@ -510,7 +552,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
 
           <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
             <div
-              className="h-full rounded-full bg-[var(--accent)] transition-all"
+              className="h-full rounded-full bg-[var(--brand)] transition-all"
               style={{ width: `${((index + 1) / total) * 100}%` }}
             />
           </div>
@@ -537,14 +579,14 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
                   onClick={() => setSelected(i)}
                   className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
                     active
-                      ? "border-[var(--accent)] bg-[var(--accent-soft)]"
+                      ? "border-[var(--brand)] bg-[var(--accent-soft)]"
                       : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
                   }`}
                 >
                   <span
                     className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                       active
-                        ? "border-[var(--accent)] bg-[var(--accent)] text-white"
+                        ? "border-[var(--brand)] bg-[var(--brand)] text-white"
                         : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
                     }`}
                   >
@@ -568,7 +610,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
               type="button"
               disabled={selected === null}
               onClick={() => submitRef.current(selected)}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-6 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
             >
               Svara
             </button>
@@ -578,7 +620,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
 
       {phase === "waiting" ? (
         <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             Klar!
           </p>
           <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -588,7 +630,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             Du har {myCorrect} rätt av {total} på {formatMs(myTimeMs)}.
           </p>
           <div className="mt-4 flex items-center justify-center gap-3">
-            <div className="size-5 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--accent)]" />
+            <div className="size-5 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--brand)]" />
             <span className="text-sm text-[var(--ink-muted)]">
               Motståndaren spelar fortfarande
             </span>
@@ -598,7 +640,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             <button
               type="button"
               onClick={() => void handleClaim()}
-              className="mt-6 rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
             >
               Gör anspråk på vinst (motståndaren verkar ha lämnat)
             </button>
@@ -651,7 +693,7 @@ function MatchHeader({
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-5">
       <div className="flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
           {duelModeLabel(mode)}
         </p>
         <p className="text-xs text-[var(--ink-muted)]">
@@ -692,7 +734,7 @@ function PlayerCard({
     <div
       className={`rounded-xl border p-3 ${
         highlight
-          ? "border-[var(--accent)]/40 bg-[var(--accent-soft)]"
+          ? "border-[var(--brand)]/40 bg-[var(--accent-soft)]"
           : "border-[var(--line)] bg-[var(--paper)]"
       }`}
     >
@@ -764,7 +806,7 @@ function ResultView({
 
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
         {duelModeLabel(match.mode)}
       </p>
       <h2 className={`mt-2 font-[family-name:var(--font-display)] text-3xl ${tone}`}>
@@ -802,7 +844,7 @@ function ResultView({
         <button
           type="button"
           onClick={onAgain}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--accent)] px-6 text-sm font-semibold text-white transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-white transition hover:brightness-110"
         >
           Ny match
         </button>

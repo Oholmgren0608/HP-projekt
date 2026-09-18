@@ -58,12 +58,17 @@ let toastId = 0;
 export function CelebrationLayer() {
   const [levelUp, setLevelUp] = useState<{ level: number; title: string } | null>(null);
   const [toasts, setToasts] = useState<Toast[]>([]);
+  const [tick, setTick] = useState(0);
   const queueRef = useRef<GameNotification[]>([]);
   const busyRef = useRef(false);
 
   useEffect(() => {
     return subscribeGamification(() => {
-      queueRef.current.push(...consumeNotifications());
+      const incoming = consumeNotifications();
+      if (incoming.length === 0) return;
+      queueRef.current.push(...incoming);
+      // Trigger en render så att kön faktiskt processas.
+      setTick((t) => t + 1);
     });
   }, []);
 
@@ -126,7 +131,7 @@ export function CelebrationLayer() {
       default:
         finish();
     }
-  }, [toasts, levelUp]);
+  }, [tick, toasts, levelUp]);
 
   const closeLevelUp = () => {
     setLevelUp(null);
@@ -176,7 +181,7 @@ export function CelebrationLayer() {
               <h2 className="mt-1 font-[family-name:var(--font-display)] text-4xl font-bold text-[var(--ink)]">
                 Nivå {levelUp.level}
               </h2>
-              <p className="mt-1 text-lg font-bold text-[var(--accent)]">{levelUp.title}</p>
+              <p className="mt-1 text-lg font-bold text-[var(--brand)]">{levelUp.title}</p>
               <Button className="mt-6 w-full rounded-full py-2.5 text-base" onClick={closeLevelUp}>
                 Fortsätt plugga 🎉
               </Button>

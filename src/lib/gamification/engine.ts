@@ -26,6 +26,33 @@ import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 
 export const GAMIFICATION_KEY = "hp-lift-gamification-v1";
 
+/** Persisterade duell-id:n som redan rapporterats (anti-dubbel vid reload/remount). */
+const REPORTED_DUELS_KEY = "hp-lift-reported-duels-v1";
+
+function readReportedDuels(): Record<string, true> {
+  try {
+    const raw = storageGet(REPORTED_DUELS_KEY);
+    if (!raw) return {};
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    const out: Record<string, true> = {};
+    for (const [key, value] of Object.entries(parsed)) {
+      if (key && value) out[key] = true;
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+function writeReportedDuels(reported: Record<string, true>): void {
+  try {
+    storageSet(REPORTED_DUELS_KEY, JSON.stringify(reported));
+  } catch {
+    /* ignorera — gamification får aldrig krascha appen */
+  }
+}
+
 // ---- Typer -----------------------------------------------------------------
 
 export type GameStats = {
@@ -78,7 +105,15 @@ export type GameEvent =
   | { type: "practice_session_complete"; correct: number; total: number }
   | { type: "flashcards"; count: number }
   | { type: "srs_review"; count: number }
-  | { type: "duel_end"; result: "win" | "loss" | "draw" }
+  | {
+      type: "duel_end";
+      result: "win" | "loss" | "draw";
+      matchId: string;
+      /** true om matchen slutade i uppgivande (status "forfeit"). */
+      forfeit: boolean;
+      /** Antal frågor som den här spelaren besvarade. */
+      answers: number;
+    }
   | { type: "mock_exam_complete" }
   | { type: "level_test_complete" }
   | { type: "reading_done" }
@@ -100,9 +135,10 @@ export function dateKey(d: Date = new Date()): string {
 }
 
 export function dayIndex(d: Date = new Date()): number {
-  return Math.floor(
-    (Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())) / 86400000,
-  );
+  // Lokal midnatt — samma kalenderdag som dateKey() — så att uppdragens
+  // rotation följer lokal tid (inte UTC) precis som resten av datumlogiken.
+  const localMidnight = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  return Math.floor(localMidnight.getTime() / 86400000);
 }
 
 /** ISO-veckonyckel, ex. "2025-W37" (måndag som veckostart). */
@@ -412,12 +448,23 @@ export function recordEvent(event: GameEvent): void {
       break;
     }
     case "duel_end": {
-      xpGain +=
-        event.result === "win"
-          ? XP_VALUES.duelWin
-          : event.result === "loss"
-            ? XP_VALUES.duelLoss
-            : XP_VALUES.duelDraw;
+      // Samma match får aldrig belönas två gånger (reload/remount).
+      const reported = readReportedDuels();
+      if (reported[event.matchId]) return;
+      writeReportedDuels({ ...reported, [event.matchId]: true });
+
+      // Uppgivande utan några besvarade frågor ger varken XP eller
+      // duell-uppdragsprogress (motverkar "ge upp"-farmning).
+      const noReward = event.forfeit && event.answers === 0 && event.result !== "win";
+
+      if (!noReward) {
+        xpGain +=
+          event.result === "win"
+            ? XP_VALUES.duelWin
+            : event.result === "loss"
+              ? XP_VALUES.duelLoss
+              : XP_VALUES.duelDraw;
+      }
       s = {
         ...s,
         stats: {
@@ -425,7 +472,7 @@ export function recordEvent(event: GameEvent): void {
           duelsPlayed: s.stats.duelsPlayed + 1,
           duelsWon: s.stats.duelsWon + (event.result === "win" ? 1 : 0),
         },
-        today: { ...s.today, duels: s.today.duels + 1 },
+        today: { ...s.today, duels: s.today.duels + (noReward ? 0 : 1) },
       };
       break;
     }

@@ -12,11 +12,6 @@ import { cn } from "@/lib/utils";
 export function AchievementsPanel({ className }: { className?: string }) {
   const { state, markAchievementsSeen } = useGamification();
 
-  // Markera olästa som sedda när panelen visas.
-  const unseen = ACHIEVEMENTS.filter(
-    (a) => state.achievements[a.id] && !state.achievements[a.id].seen,
-  ).map((a) => a.id);
-
   return (
     <div className={cn("rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft", className)}>
       <div className="flex items-center justify-between">
