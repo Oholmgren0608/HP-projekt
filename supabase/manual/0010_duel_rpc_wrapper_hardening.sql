@@ -1,3 +1,30 @@
+-- =====================================================================
+-- !!! VARNING — DEN HÄR FILEN ÄR INTE LÄNGRE EN MIGRATION !!!
+-- =====================================================================
+-- Filen ligger i supabase/manual/ och får ALDRIG köras mot nuvarande kod.
+--
+-- VARFÖR: filen återskapar de GAMLA duel-RPC-signaturerna
+--   public.duel_submit_answer(uuid, text, integer, boolean, integer)  (5 arg)
+--   public.duel_mark_finished(uuid, integer, integer)                 (3 arg)
+--   public.duel_finish_bot(uuid, integer, integer, integer)           (4 arg)
+-- samt duel_start_bot_match/submit_review, och lägger implementationerna i
+-- schemat private. Det backar därmed 0004_duel_integrity:s
+-- server-auktoritativa rättning (4/1/2-args-varianterna som läser facit ur
+-- public.duel_questions). Klienten anropar 4/1/2-args-varianterna och
+-- skulle sluta fungera; de gamla signaturerna tar dessutom emot rätt/fel
+-- och poäng från klienten, vilket öppnar för fusk med ELO och statistik.
+--
+-- Filen sparas ENDAST som referens för den som vill återinföra
+-- private/public-wrappers ovanpå 0004:s design (t.ex. för att tysta
+-- SECURITY DEFINER-lintvarningen). Utgå då från 0004 och anpassa wrapperna
+-- till 4/1/2-args-signaturerna — kopiera inte den här filen rakt av.
+--
+-- Blanda ALDRIG in den här filen i supabase/migrations/ eller i
+-- supabase/manual/apply-0004-0007.sql.
+--
+-- Se även README.md och supabase/combined_migrations.sql (0001 -> 0009).
+-- =====================================================================
+
 -- HP Lift: Härdning av lintvarningen för SECURITY DEFINER-RPC:erna.
 --
 -- Lintvarningen (Supabase lint 0029/0028) säger att en SECURITY DEFINER-

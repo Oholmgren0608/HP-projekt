@@ -51,80 +51,71 @@ i projektöversikten, eller gå till **Settings → API Keys**. Använd en
 
 ### 2. Databas
 
-Kör migrationsfilerna i Supabase Dashboard → SQL Editor, i nummerordning:
+Kör migrationsfilerna i Supabase Dashboard → SQL Editor, i nummerordning.
+`supabase/migrations/` innehåller nu exakt `0001`–`0009`. Statusen nedan är
+verifierad mot live-databasen med read-only REST-prober.
 
-- `0001_user_state.sql` — `user_state`-tabellen med RLS (varje användare
-  ser bara sina egna rader), för molnsynk.
-- `0002_duel_pvp.sql` — spelarprofiler (ELO/statistik), matcher,
-  per-fråga-svar och matchmaking-kö, plus SECURITY DEFINER-funktioner för
-  ranking.
-- `0003_duel_reviews.sql` — recensioner och betyg efter dueller, rapporter,
-  flaggning av osportsliga konton och bot-svårighetsjustering.
-- `0004_duel_integrity.sql` — server-auktoritativ rättning (facit-tabell),
-  tätare RLS, mindre profilexponering och viktad `received_rating_count`
-  för dueller.
-- `0005_questions.sql` — Supabase-backade övningsfrågor: tabellerna
-  `questions` och `reflect_prompts` (ORD, MEK, LÄS, ELF, DTK, XYZ, KVA,
-  NOG).
-- `0006_exam_import.sql` — kolumner och tabeller för import-pipelinen
-  (`exams`, frågemetadata och `prov-figures`-bucketen).
-- `0007_usernames.sql` — unikt användarnamn per profil (`username`,
-  skiftlägesokänsligt index och profil-RPC:er).
+| Migration | Innehåll | Status i live-DB | Bevis |
+| --- | --- | --- | --- |
+| `0001_user_state` | `user_state`-tabellen med RLS (varje användare ser bara sina egna rader), för molnsynk | APPLIED | — |
+| `0002_duel_pvp` | spelarprofiler (ELO/statistik), matcher, per-fråga-svar och matchmaking-kö, plus ranking-RPC:er | APPLIED | — |
+| `0003_duel_reviews` | recensioner och betyg efter dueller, rapporter, flaggning och bot-svårighetsjustering | APPLIED | — |
+| `0004_duel_integrity` | server-auktoritativ rättning (`duel_questions`), tätare RLS, vyn `duel_public_profiles` och viktad `received_rating_count` | PENDING | `duel_questions` och vyn `duel_public_profiles` saknas |
+| `0005_questions` | Supabase-backade övningsfrågor: `questions` och `reflect_prompts` (ORD, MEK, LÄS, ELF, DTK, XYZ, KVA, NOG) | PENDING | tabellerna saknas → PostgREST `PGRST205` |
+| `0006_exam_import` | kolumner och tabeller för import-pipelinen (`exams`, frågemetadata och `prov-figures`-bucketen) | PENDING | `exams` saknas och bucketen `prov-figures` finns inte |
+| `0007_usernames` | unikt användarnamn per profil (`username`, skiftlägesokänsligt index och profil-RPC:er) | PENDING | `player_profiles.username` saknas → `42703` |
+| `0008_duel_rpc_hardening` | härdar kö-/avboknings-RPC:erna (`search_path` och rättigheter) | ALREADY APPLIED UNDER OLD NAME | kördes tidigare som `0004_duel_rpc_hardening` (går inte att verifiera via REST) |
+| `0009_leaderboard` | vecko-XP-topplista för gamification | ALREADY APPLIED UNDER OLD NAME | `leaderboard_entries` finns; kördes tidigare som `0005_leaderboard` |
 
-`0002`–`0004` behövs bara om du vill använda Duell-funktionen.
-Vill du köra allt i ett svep finns `supabase/combined_migrations.sql`
-(0001 → 0010) att klistra in direkt i SQL Editor.
+**Rekommenderad åtgärd för de fyra PENDING-migrationerna:** kör
+`supabase/manual/apply-0004-0007.sql` — verbatim `0004`+`0005`+`0006`+`0007`
+följt av en read-only efterkontroll. Det är det säkraste sättet att synka
+live-databasen, eftersom filen bara innehåller det som saknas.
 
-Dessutom finns härdnings- och topplista-migrationerna från feature-grenen.
-Efter merge-omskrivningen ligger de efter main-kedjan (`0001`–`0007`):
+`0002`–`0004` behövs bara om du vill använda Duell-funktionen. I appen just
+nu innebär de fyra PENDING-migrationerna att övningsfrågorna bara fungerar
+via den lokala fallbacken och att `/prov`-listan över importerade prov är
+tom.
 
-- `0008_duel_rpc_hardening.sql` — härdar kö-/avboknings-RPC:erna
-  (`search_path` och rättigheter).
-- `0009_leaderboard.sql` — vecko-XP-topplista för gamification.
-- `0010_duel_rpc_wrapper_hardening.sql` — flyttar RPC-implementationerna
-  till schemat `private` och ersätter dem i `public` med tunna
-  `SECURITY INVOKER`-wrappers, så klientanropen är oförändrade.
-  `0010_duel_rpc_wrapper_hardening_verify.sql` jämför läget före/efter och
-  `0010_duel_rpc_wrapper_hardening_rollback.sql` återställer läget före
-  0010. Båda dessa manuella verktyg ligger i `supabase/manual/` (utanför
-  migrations-mappen) så att de aldrig plockas upp av en automatisk körning.
+`supabase/combined_migrations.sql` (0001 → 0009) ska fortfarande **inte**
+klistras in blint: `0001`–`0003`, `0008` och `0009` finns redan i
+live-databasen och skulle köras om i onödan. Använd `apply-0004-0007.sql`
+i stället.
 
-> **OBS 0008–0010 (feature-kedjan):** `0008`–`0010` definierar om samma
-> duel-RPC:er som `0004_duel_integrity.sql` redan definierar. Körs båda i
-> ordning vinner `0008`–`0010` (de ligger sist), så granska om
-> wrapper-härdningen i `0010` fortfarande behövs innan du kör dem — annars
-> kan main:s integritetshärdning i `0004` skrivas över.
->
-> `supabase/manual/0010_duel_rpc_wrapper_hardening_rollback.sql` och
-> `..._verify.sql` är **manuella verktyg**, inte migrationer. Rollback-filen
-> ångrar `0010` och får aldrig köras automatiskt; de ligger därför i
-> `supabase/manual/` i stället för i `supabase/migrations/`.
-
-> **Varning:** `supabase_migrations.schema_migrations` är tom även om
-> 0001–0007 redan har körts (manuellt i SQL Editor). Därför misslyckas
-> `supabase db push` — den tror att inga migrationer är applicerade. Kör
-> istället följande en gång för att markera dem som tillämpade:
+> **Varning:** `supabase_migrations.schema_migrations` är tom (eller
+> ofullständig) trots att `0001`–`0003` samt `0008`–`0009` redan är körda
+> manuellt i SQL Editor. Därför misslyckas `supabase db push` — den tror att
+> inga migrationer är applicerade. Markera de redan körda som tillämpade en
+> gång:
 >
 > ```bash
-> supabase migration repair --status applied 0001 0002 0003 0004 0005 0006 0007 --linked
+> supabase migration repair --status applied 0001 0002 0003 0008 0009 --linked
 > ```
 
-### Känd risk: duellpoäng litar på klienten (migration 0011, ej genomförd)
+> **OBS `0010` (flyttad till `supabase/manual/`):**
+> `0010_duel_rpc_wrapper_hardening.sql` är inte längre en migration. Den
+> återskapar de **gamla** RPC-signaturerna och skulle därför backa
+> `0004_duel_integrity`s server-auktoritativa design och bryta klienten.
+> Filen får **aldrig** köras mot nuvarande kod och sparas bara som
+> referens, tillsammans med `..._rollback.sql` och `..._verify.sql` i
+> `supabase/manual/`.
 
-Duellmotorn räknar i dag ut rätt/fel och tidsåtgång i klienten och skickar
-siffrorna till servern, som lagrar och rankar utifrån dem. Det betyder att
-en användare med utvecklarverktyg kan manipulera sin ELO och statistik.
-Planen är migration 0011 (ännu inte skriven eller körd):
+### Duellpoäng litar på klienten i live — åtgärdas av `0004_duel_integrity`
 
-1. Ny tabell `duel_questions` (question_id + correct_index) så att rätt
-   svar lagras på servern.
-2. Klienten skickar bara det valda svaret (och eventuell tidsåtgång som
-   information) — aldrig en egen "correct"-flagga.
-3. Servern räknar om rätt svar, vinnare och ELO utifrån de lagrade
-   correct_index-värdena; klientens räkningar ignoreras helt.
+Live-databasen kör i dag de gamla RPC-varianterna (5/3/4 argument) som tar
+emot rätt/fel och poäng från klienten; facit finns bara i frontend. En
+användare med utvecklarverktyg kan därför manipulera sin ELO och statistik
+**i live-miljön**.
 
-Inget av detta är tillämpat i databasen ännu. Tills 0011 är skriven och körd
-ska duellstatistik betraktas som ej manipulationssäker.
+Svagheten är redan löst i koden: `0004_duel_integrity` tar bort de
+klienttrustade signaturerna och skapar server-auktoritativa 4/1/2-args-varianter
+som läser facit ur den nya tabellen `duel_questions`. Migrationen är dock
+**inte** applicerad i live-databasen ännu (se tabellen ovan), så risken
+kvarstår där tills den körs.
+
+**Åtgärd:** kör `0004_duel_integrity` — enklast via
+`supabase/manual/apply-0004-0007.sql`. Ingen ny migration behövs; `0004` gör
+redan detta.
 
 ### 3. Google-inloggning
 
