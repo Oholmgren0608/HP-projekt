@@ -28,6 +28,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
 
   const onMatchedRef = useRef(onMatched);
   const doneRef = useRef(false);
+  const inQueueRef = useRef(false);
 
   useEffect(() => {
     onMatchedRef.current = onMatched;
@@ -83,8 +84,10 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
       try {
         const matchId = await joinQueue(mode);
         if (cancelled) return;
+        inQueueRef.current = true;
         if (matchId) finish(matchId);
       } catch (e) {
+        inQueueRef.current = false;
         if (!cancelled) {
           setError(errorMessage(e, "Kunde inte hitta match."));
         }
@@ -136,8 +139,26 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
     }
   }
 
-  function handleKeepSearching() {
+  async function handleKeepSearching() {
     setSecondsLeft(COUNTDOWN_SECONDS);
+    setError(null);
+    // Står vi redan i kön (joinQueue lyckades men tiden tog slut) gör vi
+    // ingenting — att anropa joinQueue igen skulle skapa en dubblett. Annars
+    // (förra joinQueue kastade) försöker vi faktiskt igen.
+    if (doneRef.current || inQueueRef.current) return;
+    try {
+      const matchId = await joinQueue(mode);
+      if (!doneRef.current) {
+        inQueueRef.current = true;
+        if (matchId) {
+          doneRef.current = true;
+          onMatchedRef.current(matchId);
+        }
+      }
+    } catch (e) {
+      inQueueRef.current = false;
+      setError(errorMessage(e, "Kunde inte hitta match."));
+    }
   }
 
   return (

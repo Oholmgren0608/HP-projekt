@@ -30,6 +30,85 @@ type Phase = "loading" | "error" | "playing" | "waiting" | "finished";
 
 type MyAnswer = { chosen: number | null; correct: boolean; timeMs: number };
 
+type DuelResult = "win" | "loss" | "draw";
+
+/**
+ * Klassificerar en avslutad duells utfall för spelaren `meId`. Delas av
+ * XP-rapporteringen (engine) och resultatvyn så att de aldrig kan divergera.
+ *
+ * Botmatcher: servern (duel_finish_bot) sätter winner = null både vid förlust
+ * (boten vann, b_correct > a_correct) och vid oavgjort; skillnaden syns bara i
+ * a_correct/b_correct. Uppgivande registrerar alltid en förlust. (G21)
+ */
+function classifyDuelResult(match: DuelMatch, meId: string): DuelResult {
+  if (match.winner === meId) return "win";
+  if (match.status === "forfeit") return "loss";
+
+  const isBotMatch = match.player_b === null && match.bot_elo != null;
+  if (isBotMatch && match.status === "finished" && match.winner === null) {
+    return match.b_correct != null &&
+      match.a_correct != null &&
+      match.b_correct === match.a_correct
+      ? "draw"
+      : "loss";
+  }
+
+  return match.winner === null ? "draw" : "loss";
+}
+
+/**
+ * Lokal lagring av botsvar per match. Botmatcher skickar aldrig svar till
+ * servern, så utan den här nyckeln börjar quizet om vid reload. Nyckeln är
+ * medvetet inte med i storage-sync:ns SYNCED_KEYS (per-match-data ska inte
+ * synkas till molnet).
+ */
+const BOT_ANSWERS_KEY = "hp-lift-duel-bot-answers-v1";
+
+type StoredBotAnswers = Record<string, Record<string, MyAnswer>>;
+
+function readBotAnswers(): StoredBotAnswers {
+  try {
+    const raw = localStorage.getItem(BOT_ANSWERS_KEY);
+    if (!raw) return {};
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    const out: StoredBotAnswers = {};
+    for (const [matchKey, value] of Object.entries(parsed as Record<string, unknown>)) {
+      if (!value || typeof value !== "object" || Array.isArray(value)) continue;
+      const answers: Record<string, MyAnswer> = {};
+      for (const [qid, a] of Object.entries(value as Record<string, unknown>)) {
+        if (!a || typeof a !== "object") continue;
+        const entry = a as Partial<MyAnswer>;
+        if (
+          (typeof entry.chosen === "number" || entry.chosen === null) &&
+          typeof entry.correct === "boolean" &&
+          typeof entry.timeMs === "number"
+        ) {
+          answers[qid] = {
+            chosen: entry.chosen,
+            correct: entry.correct,
+            timeMs: entry.timeMs,
+          };
+        }
+      }
+      if (Object.keys(answers).length > 0) out[matchKey] = answers;
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+function writeBotAnswers(matchId: string, answers: Record<string, MyAnswer>): void {
+  try {
+    const all = readBotAnswers();
+    all[matchId] = answers;
+    localStorage.setItem(BOT_ANSWERS_KEY, JSON.stringify(all));
+  } catch {
+    /* ignorera — quizet får aldrig krascha p.g.a. lagring */
+  }
+}
+
 export function DuelMatchView({ matchId }: { matchId: string }) {
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("loading");
@@ -76,16 +155,9 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     if (phase !== "finished" || !match || !meId) return;
     if (match.status === "cancelled") return;
 
-    const winnerIsMe = match.winner === meId;
-    // Bot-uppgivande: servern skriver winner = null men registrerar en
-    // förlust — klassificera det som förlust, inte oavgjort. (G21)
-    const result: "win" | "loss" | "draw" = winnerIsMe
-      ? "win"
-      : match.status === "forfeit"
-        ? "loss"
-        : match.winner === null
-          ? "draw"
-          : "loss";
+    // Klassificeringen delas med resultatvyn (se classifyDuelResult) så att
+    // XP och UI aldrig kan divergera. (G21)
+    const result = classifyDuelResult(match, meId);
 
     recordEvent({
       type: "duel_end",
@@ -186,6 +258,9 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         chosen === null ? DUEL_SECONDS_PER_QUESTION * 1000 : Math.max(1, elapsed);
 
       myAnswersRef.current[q.id] = { chosen, correct, timeMs };
+      if (isBotRef.current) {
+        writeBotAnswers(matchId, myAnswersRef.current);
+      }
       setMyCorrect((c) => c + (correct ? 1 : 0));
       setMyTimeMs((t) => t + timeMs);
 
@@ -338,6 +413,20 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         } else {
           countedOpp.add(a.question_id);
           if (a.correct) oppC += 1;
+        }
+      }
+      // Bot-matcher sparar sina svar lokalt — återställ dem så att en reload
+      // återupptar quizet i stället för att börja om. Tolerant mot gammal
+      // eller främmande state: bara fråge-id som finns i den aktuella
+      // omgången används.
+      if (isBotMatch) {
+        const qIds = new Set(qs.map((q) => q.id));
+        const stored = readBotAnswers()[matchId];
+        for (const [qid, a] of Object.entries(stored ?? {})) {
+          if (!qIds.has(qid) || qid in myAnswers) continue;
+          myAnswers[qid] = a;
+          if (a.correct) myC += 1;
+          myT += a.timeMs;
         }
       }
       myAnswersRef.current = myAnswers;
@@ -782,27 +871,30 @@ function ResultView({
   const oppScore = iAmA ? match.b_correct : match.a_correct;
   const myDelta = iAmA ? match.elo_a_delta : match.elo_b_delta;
 
-  const winnerIsMe = match.winner === meId;
   const isForfeit = match.status === "forfeit";
-  const isDraw = match.status === "finished" && match.winner === null;
+  // Avbrutna matcher har inget utfall; behåll vy:ns tidigare beteende (förlust)
+  // medan XP-rapporteringen hoppar över dem helt.
+  const result: DuelResult =
+    match.status === "cancelled" ? "loss" : classifyDuelResult(match, meId);
 
   const title = isForfeit
-    ? winnerIsMe
+    ? result === "win"
       ? "Du vann — motståndaren gav upp"
       : "Du gav upp"
-    : isDraw
+    : result === "draw"
       ? "Oavgjort"
-      : winnerIsMe
+      : result === "win"
         ? "Du vann!"
         : isBot
           ? "Boten vann"
           : "Du förlorade";
 
-  const tone = isDraw
-    ? "text-[var(--ink)]"
-    : winnerIsMe
-      ? "text-[var(--lagoon)]"
-      : "text-[#9a3412]";
+  const tone =
+    result === "draw"
+      ? "text-[var(--ink)]"
+      : result === "win"
+        ? "text-[var(--lagoon)]"
+        : "text-[#9a3412]";
 
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
