@@ -72,7 +72,7 @@ stable
 security definer
 set search_path = public
 as $$
-  select rank() over (order by xp desc, updated_at asc),
+  select rank() over (order by xp desc, le.updated_at asc),
          le.user_id,
          coalesce(pp.display_name, 'Spelare')::text,
          le.xp,
@@ -80,7 +80,7 @@ as $$
   from public.leaderboard_entries le
   left join public.player_profiles pp on pp.user_id = le.user_id
   where le.week = p_week
-  order by xp desc, updated_at asc
+  order by xp desc, le.updated_at asc
   limit p_limit;
 $$;
 

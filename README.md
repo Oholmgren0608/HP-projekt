@@ -49,6 +49,18 @@ Kör `supabase/migrations/0001_user_state.sql` i Supabase Dashboard →
 SQL Editor. Skapar `user_state`-tabellen med RLS (varje användare ser bara
 sina egna rader).
 
+Alla migrationer ligger i `supabase/migrations/` och körs i Supabase
+Dashboard → SQL Editor i ordning: `0001_user_state.sql`,
+`0002_duel_pvp.sql`, `0003_duel_reviews.sql`,
+`0004_duel_rpc_hardening.sql`, `0005_leaderboard.sql` och
+`0006_duel_rpc_wrapper_hardening.sql`. Migration 0006 flyttar
+RPC-implementationerna till schemat `private` och ersätter dem i `public`
+med tunna `SECURITY INVOKER`-wrappers, så att klientanropen är oförändrade.
+`0006_duel_rpc_wrapper_hardening_verify.sql` kan köras både före och efter
+0006 för att jämföra läget, och
+`0006_duel_rpc_wrapper_hardening_rollback.sql` återställer läget före 0006
+om migrationen behöver rullas tillbaka.
+
 ### 3. Google-inloggning
 
 - Skapa en OAuth-klient i Google Cloud Console (OAuth consent screen +

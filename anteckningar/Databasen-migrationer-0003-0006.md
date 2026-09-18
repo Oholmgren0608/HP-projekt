@@ -1,0 +1,79 @@
+# Databasen: migrationerna 0003–0006 (2026-09-18)
+
+## Läget före
+
+Databasen (projekt `jhrycfampkrouwtsqxhx`) hade bara **0001 och 0002** körda. Det
+förklarar varför Supabase security linter visade 12 varningar (0029/0028) för
+`duel_*`-funktionerna: de kommer från 0002 och var de enda som fanns.
+
+Att 0003–0005 aldrig var körda innebar att två funktioner var tyst trasiga:
+
+- **Omdöme efter duell** (`duel_submit_review` + `duel_reviews`) misslyckades.
+- **Veckans XP till topplistan** (`leaderboard_submit`, anropas vid varje XP-ändring
+  i `gamification/provider.tsx`) misslyckades tyst. XP i sig ligger kvar lokalt.
+
+## Varför 0005 aldrig kunde ha körts
+
+`leaderboard_get` (language sql) joinar `leaderboard_entries le` med
+`player_profiles pp`. **Båda tabellerna har kolumnen `updated_at`**, och funktionen
+refererade den okvalificerad i både fönsterfunktionen och den avslutande
+`order by` → `ERROR 42702: column reference "updated_at" is ambiguous`.
+
+Felet var alltså inbyggt i filen som den committades, inte i databasen.
+
+**Fixen:** `updated_at` → `le.updated_at` på båda ställena. Semantiken är
+oförändrad (sorteringen sker fortsätter på topplisteradens egen tidsstämpel).
+Samma fix är speglad i 0006:s implementation och i rollback-filen, så att
+funktionskropparna förblir byte-identiska mellan filerna.
+
+## Vad 0006 gör
+
+Flyttar de 16 anropbara RPC-funktionerna till schemat `private` (som **inte** ligger
+i `pgrst.db_schemas` och därför inte går att nå via `/rest/v1/rpc/`) och exponerar
+tunna `SECURITY INVOKER`-wrappers med identiska namn, argument och
+standardvärden i `public`. Klientkoden är oförändrad – samma `rpc("duel_…")`-anrop
+fungerar som förut.
+
+Syftet är att bli av med lint **0029/0028** ("SECURITY DEFINER-funktion körbar av
+authenticated/anon") utan att ge upp behörighetsmodellen: implementationerna körs
+fortsatt som `postgres` (som har `bypassrls`) och har kvar sina egna
+`auth.uid()`-ägandekontroller, medan `public` inte längre innehåller någon
+`SECURITY DEFINER`-funktion som någon roll kan köra.
+
+**Konvention framåt:** en ny RPC = implementation i `private` + tunn wrapper i
+`public`. Aldrig en `SECURITY DEFINER`-funktion direkt i `public`.
+
+Filer: `0006_duel_rpc_wrapper_hardening.sql`,
+`..._rollback.sql` (återställer exakt dagens läge) och `..._verify.sql`
+(read-only; avsnitt 0 visar läget i databasen, B/C visar resultatet efteråt).
+
+## Verifierat läge efter körning
+
+| Kontroll | Resultat |
+| --- | --- |
+| Wrappers i `public` / implementationer i `private` | 16 / 16 |
+| `SECURITY DEFINER` kvar i `public` | 0 |
+| Tabeller, varav med RLS | 7 av 7 |
+| Audit = lintervillkoret (0029 + 0028) | 0 rader |
+| Ägare på alla funktioner och tabeller | `postgres` (bypassrls) |
+
+Funktionstester körda i rullade tillbaka transaktioner som `authenticated`:
+`leaderboard_submit`/`_get` (topplisterad skriven och läst, `is_me = true`),
+`leaderboard_get` som `anon`, `duel_create_private`, `duel_start_bot_match`,
+`duel_finish_bot`, `duel_submit_review`, `leaderboard_set_name`. Inga testdata kvar.
+
+## Kvarstår
+
+- `supabase_migrations.schema_migrations` är **tom** trots att 0001–0006 är körda.
+  Kör man `supabase db push` senare tror CLI:t att inget är applicerat och kommer
+  att köra om allt (och fallera på "already exists"). Använd
+  `supabase migration repair --status applied 0001 0002 0003 0004 0005 0006 --linked`
+  om/när CLI:t tas i bruk. Tills dess: kör filerna manuellt i ordning enligt README.
+- Ett B4-test i `..._verify.sql` (att `pgrst.db_schemas` inte är ändrat) är inte
+  kört. Standardvärdet (`public`, `storage`, `graphql_public`) gäller om ingen
+  medvetet ändrat det.
+- **Känd kvarvarande svaghet:** `duel_submit_answer`, `duel_mark_finished` och
+  `duel_finish_bot` litar på de poäng/svar som klienten skickar in. Facit finns
+  bara i frontend (`practice.ts` m.fl.), så rankad ELO kan manipuleras från
+  webbläsaren. Åtgärd kräver en fråge-/facittabell i databasen och planeras som
+  egen migration 0007.
