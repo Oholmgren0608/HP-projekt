@@ -494,6 +494,27 @@ function buildWeeklyPlans(
   return plans;
 }
 
+/** Jämför två veckoplaner på de fält som faktiskt ändrar vad användaren ser/övar. */
+function weekPlanDiffers(a: WeekPlan, b: WeekPlan): boolean {
+  if (a.theme !== b.theme || a.focus !== b.focus) return true;
+  if (a.tasks.length !== b.tasks.length) return true;
+  for (let i = 0; i < a.tasks.length; i++) {
+    const ta = a.tasks[i];
+    const tb = b.tasks[i];
+    if (
+      ta.id !== tb.id ||
+      ta.title !== tb.title ||
+      ta.section !== tb.section ||
+      ta.questionCount !== tb.questionCount ||
+      ta.minutes !== tb.minutes ||
+      ta.practiceKinds.join("|") !== tb.practiceKinds.join("|")
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export function generatePlan(
   scores: ScoreInput,
   options: GeneratePlanOptions = {},
@@ -674,13 +695,17 @@ export function generatePlan(
     return w;
   });
 
+  const focusChanged =
+    focusIds.length !== hpFocusIds.length ||
+    focusIds.some((id, i) => id !== hpFocusIds[i]);
+
   const adaptedApplied =
     trends.length > 0 &&
-    weeklyPlans.some((w) => {
-      const hp = hpWeekly.find((h) => h.week === w.week);
-      if (!hp) return true;
-      return hp.theme !== w.theme || hp.focus !== w.focus;
-    });
+    (focusChanged ||
+      weeklyPlans.some((w) => {
+        const hp = hpWeekly.find((h) => h.week === w.week);
+        return !hp || weekPlanDiffers(hp, w);
+      }));
 
   return {
     profile: {
