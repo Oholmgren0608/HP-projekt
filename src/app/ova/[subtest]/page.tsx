@@ -1,5 +1,6 @@
 import { PracticeSubtestSelector } from "@/components/practice-subtest-selector";
 import type { PracticeKind } from "@/lib/practice";
+import { notFound } from "next/navigation";
 
 const VALID_SUBTESTS: PracticeKind[] = [
   "ord",
@@ -17,14 +18,7 @@ export default async function SubtestPage(props: PageProps<"/ova/[subtest]">) {
   const subtest = rawSubtest.toLowerCase();
 
   if (!VALID_SUBTESTS.includes(subtest as PracticeKind)) {
-    return (
-      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-6">
-        <p className="text-lg text-[var(--ink)]">Deltestet &quot;{subtest}&quot; hittades inte.</p>
-        <p className="mt-2 text-sm text-[var(--ink-muted)]">
-          Gå tillbaka till övningen och välj ett giltigt deltest.
-        </p>
-      </div>
-    );
+    notFound();
   }
 
   return <PracticeSubtestSelector subtest={subtest as PracticeKind} />;

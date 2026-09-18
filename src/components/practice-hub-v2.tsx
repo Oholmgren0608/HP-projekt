@@ -8,7 +8,7 @@ export type SubTestInfo = {
   label: string;
   title: string;
   description: string;
-  isReading: boolean; // true for LÄS, MEK, etc.
+  isReading: boolean; // true för långa läspass (LÄS, ELF)
   icon: string;
 };
 
@@ -26,13 +26,13 @@ export const SUBTESTS: SubTestInfo[] = [
     label: "MEK",
     title: "Meningskomplettering",
     description: "Fyll i meningar med rätt ord och konnektorer.",
-    isReading: true,
+    isReading: false,
     icon: "✏️",
   },
   {
     id: "las",
     label: "LÄS",
-    title: "Läsförståelse",
+    title: "Svensk läsförståelse",
     description: "Läs texter och svara på förståelsefrågor.",
     isReading: true,
     icon: "📖",
@@ -40,23 +40,23 @@ export const SUBTESTS: SubTestInfo[] = [
   {
     id: "elf",
     label: "ELF",
-    title: "Engelsk Läsförståelse",
+    title: "Engelsk läsförståelse",
     description: "Läs engelska texter och svara på förståelsefrågor.",
-    isReading: false,
+    isReading: true,
     icon: "🌍",
   },
   {
     id: "xyz",
     label: "XYZ",
-    title: "Logiska resonemang",
-    description: "Öva på logiska slutledningar och mönsteranalys.",
+    title: "Matematik problemlösning",
+    description: "Öva på matematisk problemlösning under tid: ekvationer, procent och geometri.",
     isReading: false,
     icon: "🧩",
   },
   {
     id: "kva",
     label: "KVA",
-    title: "Kvantitativ Jämförelse",
+    title: "Kvantitativa jämförelser",
     description: "Jämför storheter och tal. Är A större, B större eller lika stora?",
     isReading: false,
     icon: "🔢",
@@ -64,15 +64,15 @@ export const SUBTESTS: SubTestInfo[] = [
   {
     id: "nog",
     label: "NOG",
-    title: "Numerisk Orientering",
-    description: "Lösa problem med hjälp av givna siffror och information.",
+    title: "Kvantitativa resonemang",
+    description: "Avgör om den givna informationen räcker för att lösa uppgiften.",
     isReading: false,
     icon: "📊",
   },
   {
     id: "dtk",
     label: "DTK",
-    title: "Diagram, Tabeller & Kartor",
+    title: "Diagram, tabeller och kartor",
     description: "Tolka och analysera data från diagram, tabeller och kartor.",
     isReading: false,
     icon: "📈",
@@ -84,7 +84,7 @@ export function PracticeHubV2() {
     <div className="space-y-8">
       {/* Header */}
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
           Övning
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -102,21 +102,21 @@ export function PracticeHubV2() {
           <Link
             key={subtest.id}
             href={`/ova/${subtest.id}`}
-            className="group rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--accent)] hover:bg-[var(--accent-soft)] hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+            className="group rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--brand)] hover:bg-[var(--accent-soft)] hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
           >
             <div className="mb-4 text-4xl">{subtest.icon}</div>
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
                   {subtest.label}
                 </p>
-                <h2 className="mt-2 font-[family-name:var(--font-display)] text-lg text-[var(--ink)] group-hover:text-[var(--accent)]">
+                <h2 className="mt-2 font-[family-name:var(--font-display)] text-lg text-[var(--ink)] group-hover:text-[var(--brand)]">
                   {subtest.title}
                 </h2>
               </div>
             </div>
             <p className="mt-3 text-sm text-[var(--ink-muted)]">{subtest.description}</p>
-            <div className="mt-4 inline-block rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--accent)]">
+            <div className="mt-4 inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
               Börja öva →
             </div>
           </Link>
@@ -128,9 +128,9 @@ export function PracticeHubV2() {
         {/* Flashcards */}
         <Link
           href="/ova/flashcards"
-          className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--accent)] hover:bg-white hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+          className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--brand)] hover:bg-white hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             Verktyg
           </p>
           <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
@@ -139,7 +139,7 @@ export function PracticeHubV2() {
           <p className="mt-2 text-sm text-[var(--ink-muted)]">
             Öva på ord och begrepp med flashcards. Se ordet, säg betydelsen, vänd kortet.
           </p>
-          <div className="mt-4 inline-block rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--accent)]">
+          <div className="mt-4 inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
             Öppna →
           </div>
         </Link>
@@ -147,9 +147,9 @@ export function PracticeHubV2() {
         {/* Reading Library */}
         <Link
           href="/bibliotek"
-          className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--accent)] hover:bg-white hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+          className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--brand)] hover:bg-white hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--accent)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             Resurser
           </p>
           <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
@@ -158,7 +158,7 @@ export function PracticeHubV2() {
           <p className="mt-2 text-sm text-[var(--ink-muted)]">
             Sakprosatexter att läsa med ord, konnektorer och sammanfattning.
           </p>
-          <div className="mt-4 inline-block rounded-full bg-[var(--accent)]/10 px-3 py-1 text-xs font-semibold text-[var(--accent)]">
+          <div className="mt-4 inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
             Öppna →
           </div>
         </Link>
