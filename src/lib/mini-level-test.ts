@@ -10,6 +10,7 @@ import {
   type PracticeKind,
 } from "@/lib/practice";
 import { estimateNormFromPercent } from "@/lib/progress-history";
+import { SUBTESTS } from "@/lib/subtests";
 import type { SectionId } from "@/lib/study-plan";
 
 /** Antal frågor per delprov i nivåtestet (standardval, matchar tidigare beteende). */
@@ -83,16 +84,8 @@ export function saveNivatestCounts(counts: NivatestCounts) {
  * övningsbank. Ordningen används bara som utgångspunkt; frågorna blandas
  * sedan så att delproven varvas.
  */
-export const SECTION_KINDS: { id: SectionId; kind: Exclude<PracticeKind, "reflect"> }[] = [
-  { id: "ORD", kind: "ord" },
-  { id: "MEK", kind: "mek" },
-  { id: "LAS", kind: "las" },
-  { id: "ELF", kind: "elf" },
-  { id: "XYZ", kind: "xyz" },
-  { id: "KVA", kind: "kva" },
-  { id: "NOG", kind: "nog" },
-  { id: "DTK", kind: "dtk" },
-];
+export const SECTION_KINDS: { id: SectionId; kind: Exclude<PracticeKind, "reflect"> }[] =
+  SUBTESTS.map(({ id, kind }) => ({ id, kind }));
 
 /**
  * Bygger ett nivåtest med frågor från varje delprov. Frågorna varvas

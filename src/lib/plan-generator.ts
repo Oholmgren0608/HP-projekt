@@ -107,7 +107,7 @@ const METHODS: Record<
     ],
   },
   XYZ: {
-    name: "XYZ — Matematik problemlösning",
+    name: "XYZ — Matematisk problemlösning",
     short: "XYZ",
     methods: [
       "Blandade problemlösningspass",

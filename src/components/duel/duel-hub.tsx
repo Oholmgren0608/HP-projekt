@@ -14,7 +14,8 @@ import {
   ensureProfile,
   getLeaderboard,
   getMatchHistory,
-  getProfile,
+  getMyProfile,
+  type PublicDuelProfile,
 } from "@/lib/duel/profile";
 import { createPrivate, joinPrivate, startBotMatch } from "@/lib/duel/matchmaking";
 import { MatchmakingScreen } from "./matchmaking-screen";
@@ -32,7 +33,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
   const [view, setView] = useState<View>({ kind: "hub" });
   const [profile, setProfile] = useState<DuelProfile | null>(null);
-  const [leaderboard, setLeaderboard] = useState<DuelProfile[]>([]);
+  const [leaderboard, setLeaderboard] = useState<PublicDuelProfile[]>([]);
   const [history, setHistory] = useState<DuelMatch[]>([]);
   const [opponentNames, setOpponentNames] = useState<Record<string, string>>({});
   const [joinCode, setJoinCode] = useState("");
@@ -55,7 +56,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
         setOpponentNames({});
         setError(null);
         const [p, lb, h] = await Promise.all([
-          getProfile(userId),
+          getMyProfile(userId),
           getLeaderboard(50),
           getMatchHistory(userId, 30),
         ]);
@@ -460,7 +461,7 @@ async function resolveOpponentNames(
   }
   if (ids.size === 0) return {};
   const { data } = await supabase
-    .from("player_profiles")
+    .from("duel_public_profiles")
     .select("user_id, display_name")
     .in("user_id", [...ids]);
   const map: Record<string, string> = {};

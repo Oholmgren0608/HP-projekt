@@ -1,30 +1,24 @@
+import { SUBTESTS } from "@/lib/subtests";
 import type { PracticeKind } from "@/lib/practice";
 import type { SectionId } from "@/lib/study-plan";
 
 /** HP-pass: 40 frågor på 55 min ≈ 82 s/fråga. Text/DTK får mer, ORD/KVA lite mindre. */
-export const SEC_PER_QUESTION_CAP: Record<SectionId, number> = {
-  ORD: 50,
-  KVA: 70,
-  MEK: 75,
-  XYZ: 82,
-  NOG: 82,
-  DTK: 100,
-  LAS: 110,
-  ELF: 110,
-};
+export const SEC_PER_QUESTION_CAP = SUBTESTS.reduce<Record<SectionId, number>>(
+  (acc, s) => {
+    acc[s.id] = s.secPerQuestion;
+    return acc;
+  },
+  {} as Record<SectionId, number>,
+);
 
 export const MIXED_SEC_PER_QUESTION_CAP = 82;
 
-const KIND_TO_SECTION: Record<Exclude<PracticeKind, "reflect">, SectionId> = {
-  ord: "ORD",
-  mek: "MEK",
-  las: "LAS",
-  elf: "ELF",
-  dtk: "DTK",
-  xyz: "XYZ",
-  kva: "KVA",
-  nog: "NOG",
-};
+const KIND_TO_SECTION = SUBTESTS.reduce<
+  Record<Exclude<PracticeKind, "reflect">, SectionId>
+>((acc, s) => {
+  acc[s.kind] = s.id;
+  return acc;
+}, {} as Record<Exclude<PracticeKind, "reflect">, SectionId>);
 
 export function kindToSection(kind: string): SectionId | null {
   const k = kind.toLowerCase() as Exclude<PracticeKind, "reflect">;

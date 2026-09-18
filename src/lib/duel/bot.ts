@@ -1,4 +1,5 @@
 import type { ChoiceQuestion } from "@/lib/practice";
+import { clamp } from "@/lib/utils";
 
 /**
  * AI-bot vars svårighetsgrad automatiskt anpassas efter spelarens ELO.
@@ -12,10 +13,6 @@ export type BotDecision = {
   /** Millisekunder innan botens svar "dyker upp" i ställningen. */
   delayMs: number;
 };
-
-function clamp(value: number, min: number, max: number): number {
-  return Math.min(max, Math.max(min, value));
-}
 
 /** Träffsäkerhet 0.35–0.85, skalad mot spelarens ELO. */
 export function botAccuracy(playerElo: number): number {

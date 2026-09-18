@@ -4,6 +4,7 @@ import {
   kindToSection,
   type PaceVerdict,
 } from "@/lib/practice-pace";
+import { sectionShort } from "@/lib/subtests";
 
 export function PaceNotice({
   verdict,
@@ -22,7 +23,7 @@ export function PaceNotice({
   }
 
   const section = kinds && kinds.length === 1 ? kindToSection(kinds[0]) : null;
-  const sectionLabel = section === "LAS" ? "LÄS" : section;
+  const sectionLabel = section ? sectionShort(section) : null;
   const tipsHref = section ? `/tips?section=${section}` : "/tips";
 
   return (

@@ -17,7 +17,7 @@
  * i realtid; sista skrivning per nyckel vinner vid nästa inloggning.
  */
 
-import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { getSupabase } from "@/lib/supabase/client";
 
 const META_KEY = "hp-lift-sync-meta-v1";
 
@@ -90,17 +90,6 @@ async function pushToCloud(userId: string, key: string, value: string) {
   if (error) console.warn(`[sync] Kunde inte skriva "${key}" till molnet:`, error.message);
 }
 
-async function deleteFromCloud(userId: string, key: string) {
-  const supabase = getSupabase();
-  if (!supabase) return;
-  const { error } = await supabase
-    .from("user_state")
-    .delete()
-    .eq("user_id", userId)
-    .eq("storage_key", key);
-  if (error) console.warn(`[sync] Kunde inte radera "${key}" i molnet:`, error.message);
-}
-
 // ---- Merge vid inloggning -------------------------------------------------
 
 async function performMerge(userId: string) {
@@ -129,6 +118,7 @@ async function performMerge(userId: string) {
 
   for (const key of SYNCED_KEYS) {
     const row = rowByKey.get(key);
+
     const localValue = localStorage.getItem(key);
     const localAt = meta[key] ?? 0;
 
@@ -218,25 +208,4 @@ export function storageSet(key: string, value: string): void {
     cloudCache.set(key, value);
     if (activeUserId) void pushToCloud(activeUserId, key, value);
   }
-}
-
-/** Raderar en nyckel lokalt och (om inloggad) i molnet. */
-export function storageRemove(key: string): void {
-  localStorage.removeItem(key);
-  const meta = readMeta();
-  delete meta[key];
-  writeMeta(meta);
-
-  if (cloudCache !== null) {
-    cloudCache.delete(key);
-    if (activeUserId) void deleteFromCloud(activeUserId, key);
-  }
-}
-
-/**
- * Exponeras för felsökning/tester: är molnsynk aktiv just nu?
- * (Behövs i praktiken inte av appen.)
- */
-export function isCloudSyncActive(): boolean {
-  return isSupabaseConfigured() && cloudCache !== null;
 }

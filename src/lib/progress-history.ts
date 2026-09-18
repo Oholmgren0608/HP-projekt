@@ -1,6 +1,7 @@
 import { clampNorm, type ScoreInput } from "@/lib/hp-scores";
 import type { ChoiceQuestion, PracticeKind } from "@/lib/practice";
 import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { SUBTESTS } from "@/lib/subtests";
 
 export const HISTORY_STORAGE_KEY = "hp-lift-history-v1";
 export const HISTORY_EVENT = "hp-lift-history-changed";
@@ -44,8 +45,12 @@ export type ScoresHistoryEvent = {
 
 export type HistoryEvent = QuizHistoryEvent | ScoresHistoryEvent;
 
-const QUANT_KINDS = new Set(["dtk", "xyz", "kva", "nog"]);
-const VERBAL_KINDS = new Set(["ord", "mek", "las", "elf"]);
+const QUANT_KINDS = new Set<string>(
+  SUBTESTS.filter((s) => s.block === "kvant").map((s) => s.kind),
+);
+const VERBAL_KINDS = new Set<string>(
+  SUBTESTS.filter((s) => s.block === "verbal").map((s) => s.kind),
+);
 
 function emitHistoryChanged() {
   if (typeof window === "undefined") return;

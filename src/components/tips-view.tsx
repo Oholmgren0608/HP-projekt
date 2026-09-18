@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { SECTION_TIPS } from "@/lib/section-tips";
+import { sectionShort } from "@/lib/subtests";
 
 export function TipsView() {
   const params = useSearchParams();
@@ -40,7 +41,7 @@ export function TipsView() {
                 : "border-[var(--line)] bg-white/70 text-[var(--ink-muted)] hover:text-[var(--ink)]"
             }`}
           >
-            {tip.id === "LAS" ? "LÄS" : tip.id}
+            {sectionShort(tip.id)}
           </a>
         ))}
       </nav>

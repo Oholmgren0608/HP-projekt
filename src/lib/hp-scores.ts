@@ -1,4 +1,5 @@
 import type { SectionId } from "@/lib/study-plan";
+import { SUBTESTS } from "@/lib/subtests";
 import { storageGet, storageSet } from "@/lib/sync/storage-sync";
 
 export const DELPROV_META: {
@@ -6,16 +7,7 @@ export const DELPROV_META: {
   name: string;
   total: number;
   block: "kvant" | "verbal";
-}[] = [
-  { id: "KVA", name: "Kvantitativa jämförelser", total: 20, block: "kvant" },
-  { id: "DTK", name: "Diagram, tabeller och kartor", total: 24, block: "kvant" },
-  { id: "XYZ", name: "Matematik problemlösning", total: 24, block: "kvant" },
-  { id: "NOG", name: "Kvantitativa resonemang", total: 12, block: "kvant" },
-  { id: "ORD", name: "Ordförståelse", total: 20, block: "verbal" },
-  { id: "LAS", name: "Läsförståelse svenska", total: 20, block: "verbal" },
-  { id: "MEK", name: "Meningskomplettering", total: 20, block: "verbal" },
-  { id: "ELF", name: "Läsförståelse engelska", total: 20, block: "verbal" },
-];
+}[] = SUBTESTS.map(({ id, name, total, block }) => ({ id, name, total, block }));
 
 export type ScoreInput = {
   quantNorm: number;

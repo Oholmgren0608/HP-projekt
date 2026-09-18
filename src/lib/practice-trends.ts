@@ -3,7 +3,7 @@ import { DELPROV_META } from "@/lib/hp-scores";
 import { pct } from "@/lib/study-plan";
 import type { SectionId } from "@/lib/study-plan";
 import { kindToSection } from "@/lib/practice-pace";
-import type { HistoryEvent, QuizHistoryEvent } from "@/lib/progress-history";
+import type { HistoryEvent } from "@/lib/progress-history";
 
 const MIN_SESSIONS = 3;
 /** Ignore noise around the HP baseline (51 % vs 50 % is not a trend). */
@@ -67,8 +67,4 @@ export function adjustDeficit(
   const t = trends.find((x) => x.id === id);
   if (!t) return deficit;
   return t.direction === "weaker" ? deficit + 18 : Math.max(0, deficit - 18);
-}
-
-export function quizIsSingleKind(e: QuizHistoryEvent): boolean {
-  return e.kinds.filter((k) => k !== "reflect").length === 1;
 }

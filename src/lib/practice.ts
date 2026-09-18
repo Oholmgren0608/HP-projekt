@@ -1,6 +1,8 @@
 import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
 import { MEK_BANK } from "@/lib/practice-mek";
 import { loadMasteredQuestionIds } from "@/lib/question-mastery";
+import { hashSeed, shuffle } from "@/lib/random";
+import { SUBTESTS } from "@/lib/subtests";
 
 export { MEK_BANK };
 
@@ -526,34 +528,6 @@ export function findQuestionById(id: string): ChoiceQuestion | undefined {
   return undefined;
 }
 
-function hashSeed(input: string): number {
-  let h = 2166136261;
-  for (let i = 0; i < input.length; i++) {
-    h ^= input.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
-}
-
-function mulberry32(seed: number) {
-  return function next() {
-    let t = (seed += 0x6d2b79f5);
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function shuffle<T>(items: T[], seed: string): T[] {
-  const arr = [...items];
-  const rand = mulberry32(hashSeed(seed));
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
 export function lastShownQuestionsKey(kind: Exclude<PracticeKind, "reflect">) {
   return `hp-last-shown-questions:${kind}`;
 }
@@ -683,32 +657,8 @@ export function practiceLabel(kind: PracticeKind): string {
 }
 
 export function kindBadge(kind: PracticeKind): string {
-  if (kind === "las") return "LÄS";
   if (kind === "reflect") return "Reflektion";
-  return kind.toUpperCase();
-}
-
-export function defaultQuestionCount(kind: PracticeKind): number {
-  switch (kind) {
-    case "ord":
-      return 10;
-    case "mek":
-      return 8;
-    case "las":
-      return 4;
-    case "elf":
-      return 3;
-    case "dtk":
-      return 4;
-    case "xyz":
-      return 6;
-    case "kva":
-      return 8;
-    case "nog":
-      return 6;
-    case "reflect":
-      return 0;
-  }
+  return SUBTESTS.find((s) => s.kind === kind)?.short ?? kind.toUpperCase();
 }
 
 export function buildMockExam(seed: string, count = 24): ChoiceQuestion[] {

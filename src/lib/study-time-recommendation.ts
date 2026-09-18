@@ -1,6 +1,8 @@
 import { DELPROV_META, type ScoreInput } from "@/lib/hp-scores";
 import { priorityFromPercent } from "@/lib/plan-generator";
 import { pct, type Priority, type SectionId } from "@/lib/study-plan";
+import { sectionShort } from "@/lib/subtests";
+import { clamp } from "@/lib/utils";
 
 /**
  * Studietids-rekommendation.
@@ -32,10 +34,6 @@ const MAX_HOURS = 40;
 
 /** Delprov under den här procenten räknas som svaga och nämns i rekommendationen. */
 const WEAK_THRESHOLD = 65;
-
-function clamp(n: number, lo: number, hi: number): number {
-  return Math.max(lo, Math.min(hi, n));
-}
 
 export type Bottleneck = {
   id: SectionId;
@@ -142,7 +140,7 @@ function buildSummary(args: {
       weakCount === 1 ? "1 svagt delprov" : `${weakCount} svaga delprov`;
     const weakest = bottlenecks[0];
     const weakestRef = weakest
-      ? ` (svagast: ${weakest.id === "LAS" ? "LÄS" : weakest.id} ${weakest.percent} %)`
+      ? ` (svagast: ${sectionShort(weakest.id)} ${weakest.percent} %)`
       : "";
     return `På ${weeks} veckor räcker ${currentHours} h/vecka troligtvis inte för att lyfta ${countLabel}${weakestRef}.`;
   }
