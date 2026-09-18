@@ -20,9 +20,17 @@ const sans = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "HP Lift — Studieplan för Högskoleprovet",
+  title: {
+    default: "HP Lift — Studieplan för Högskoleprovet",
+    template: "%s · HP Lift",
+  },
   description:
     "Mata in dina HP-resultat och få en personlig studieplan med prioritering, tidsfördelning och veckoplan.",
+  other: {
+    // Be Dark Reader att hoppa över sidan — tillägget lägger annars till
+    // data-darkreader-*-attribut som ger hydreringsvarningar (se scriptet).
+    "darkreader-lock": "",
+  },
 };
 
 export const viewport: Viewport = {
@@ -61,9 +69,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="flex min-h-full flex-col font-sans">
-        {/* Be Dark Reader att hoppa över sidan — tillägget lägger annars till
-            data-darkreader-*-attribut som ger hydreringsvarningar (se scriptet). */}
-        <meta name="darkreader-lock" />
         <PreferencesProvider>
           <AuthProvider>
             <GamificationProvider>

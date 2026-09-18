@@ -1,5 +1,12 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { PlanView } from "@/components/plan-view";
+
+export const metadata: Metadata = {
+  title: "Veckoplan",
+  description:
+    "Din personliga veckoplan med prioriterade delprov, tidsfördelning och interaktiva övningar.",
+};
 
 export default function PlanPage() {
   return (

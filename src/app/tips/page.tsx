@@ -1,5 +1,11 @@
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { TipsView } from "@/components/tips-view";
+
+export const metadata: Metadata = {
+  title: "Tips",
+  description: "Strategier och tips för att höja ditt HP-resultat.",
+};
 
 export default function TipsPage() {
   return (

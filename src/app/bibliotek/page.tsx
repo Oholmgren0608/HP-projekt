@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { ReadingLibrary } from "@/components/reading-library";
 import { READING_METHOD } from "@/lib/study-plan";
+
+export const metadata: Metadata = {
+  title: "Läsbibliotek",
+  description:
+    "Sakprosatexter för HP-träning med ORD-ord, konnektorer och sammanfattning.",
+};
 
 export default function ReadingLibraryPage() {
   return (
