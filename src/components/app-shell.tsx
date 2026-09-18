@@ -2,23 +2,29 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion } from "motion/react";
 import {
   BarChart3,
   BookOpen,
   CalendarDays,
+  ChevronDown,
+  ClipboardCheck,
   FileText,
-  Home,
+  Gauge,
+  Lightbulb,
   LogOut,
   Moon,
-  Swords,
   Sun,
+  Swords,
+  User,
   Volume2,
   VolumeX,
 } from "lucide-react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
+import { AuthForms } from "@/components/auth/auth-forms";
+import { UsernamePrompt } from "@/components/auth/username-prompt";
 import { usePreferences } from "@/lib/preferences";
 import { useHydrated } from "@/lib/use-hydrated";
 import { play } from "@/lib/sound";
@@ -36,42 +42,123 @@ function GoogleG() {
 }
 
 function AuthCluster() {
-  const { user, loading, signInWithGoogle, signOut } = useAuth();
+  const { user, loading, username, signInWithGoogle, signOut } = useAuth();
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Stänger dropdownen vid klick utanför eller Escape.
+  useEffect(() => {
+    if (!open) return;
+    function handlePointerDown(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
 
   if (!isSupabaseConfigured() || loading) return null;
 
   if (user) {
+    const displayName = username ?? user.email ?? "Inloggad";
+    const initials = displayName.slice(0, 2).toUpperCase();
     return (
-      <div className="flex items-center gap-1.5">
-        <span
-          className="flex size-8 items-center justify-center rounded-full bg-[var(--brand)] text-sm font-extrabold text-white shadow-soft"
-          title={user.email ?? "Inloggad"}
-        >
-          {(user.email ?? "H")[0]?.toUpperCase()}
-        </span>
+      <div className="relative" ref={containerRef}>
         <button
           type="button"
-          onClick={() => void signOut()}
-          title="Logga ut"
-          aria-label="Logga ut"
-          className="flex size-8 items-center justify-center rounded-full text-[var(--ink-muted)] transition hover:bg-[var(--mist)] hover:text-[var(--ink)] active:scale-90"
+          onClick={() => setOpen((o) => !o)}
+          aria-haspopup="menu"
+          aria-expanded={open}
+          className="flex items-center gap-2 rounded-full py-1 pl-1 pr-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
         >
-          <LogOut className="size-4" />
+          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[var(--accent)] text-xs font-semibold text-[var(--accent-foreground)]">
+            {initials}
+          </span>
+          <span className="hidden max-w-28 truncate sm:inline">{displayName}</span>
+          <ChevronDown size={14} className="text-[var(--ink-muted)]" aria-hidden />
         </button>
+        {open ? (
+          <div
+            role="menu"
+            aria-label="Konto"
+            className="absolute right-0 top-full z-40 mt-2 w-56 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-white p-1.5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+          >
+            <Link
+              href="/profil"
+              onClick={() => setOpen(false)}
+              role="menuitem"
+              className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+            >
+              <User size={16} className="text-[var(--ink-muted)]" aria-hidden />
+              Profil
+            </Link>
+            <Link
+              href="/review"
+              onClick={() => setOpen(false)}
+              role="menuitem"
+              className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+            >
+              <ClipboardCheck size={16} className="text-[var(--ink-muted)]" aria-hidden />
+              Granska
+            </Link>
+            <div className="my-1.5 h-px bg-[var(--line)]" />
+            <button
+              type="button"
+              onClick={() => void signOut()}
+              role="menuitem"
+              className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+            >
+              <LogOut size={16} className="text-[var(--ink-muted)]" aria-hidden />
+              Logga ut
+            </button>
+          </div>
+        ) : null}
       </div>
     );
   }
 
   return (
-    <button
-      type="button"
-      onClick={() => void signInWithGoogle()}
-      className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3.5 py-2 text-sm font-bold text-[var(--ink)] shadow-soft transition hover:bg-[var(--accent-soft)] hover:shadow-card active:scale-95"
-    >
-      <GoogleG />
-      <span className="hidden sm:inline">Logga in med Google</span>
-      <span className="sm:hidden">Logga in</span>
-    </button>
+    <div className="relative" ref={containerRef}>
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--brand)] transition hover:bg-[var(--accent-soft)]"
+      >
+        Logga in
+      </button>
+      {open ? (
+        <div
+          role="dialog"
+          aria-label="Logga in"
+          className="absolute right-0 top-full z-40 mt-2 w-80 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+        >
+          <button
+            type="button"
+            onClick={() => void signInWithGoogle()}
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+          >
+            <GoogleG />
+            Fortsätt med Google
+          </button>
+          <div className="my-3 flex items-center gap-3 text-xs text-[var(--ink-muted)]">
+            <span className="h-px flex-1 bg-[var(--line)]" />
+            eller
+            <span className="h-px flex-1 bg-[var(--line)]" />
+          </div>
+          <AuthForms compact />
+        </div>
+      ) : null}
+    </div>
   );
 }
 
@@ -98,12 +185,13 @@ function IconButton({
 }
 
 const NAV = [
-  { href: "/", label: "Hem", icon: Home },
-  { href: "/ova", label: "Öva", icon: BookOpen },
+  { href: "/nivatest", label: "Nivåtest", icon: Gauge },
   { href: "/plan", label: "Plan", icon: CalendarDays },
+  { href: "/ova", label: "Öva", icon: BookOpen },
   { href: "/prov", label: "Prov", icon: FileText },
   { href: "/duell", label: "Duell", icon: Swords },
-  { href: "/resultat", label: "Statistik", icon: BarChart3 },
+  { href: "/resultat", label: "Poäng", icon: BarChart3 },
+  { href: "/tips", label: "Tips", icon: Lightbulb },
 ] as const;
 
 function isActive(pathname: string, href: string) {
@@ -133,21 +221,16 @@ export function AppShell({ children }: { children: ReactNode }) {
         className="sticky top-3 z-40 mx-auto w-[calc(100%-1.5rem)] max-w-6xl sm:w-[calc(100%-2rem)]"
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
-        <div className="flex items-center justify-between gap-2 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_86%,white)]/90 px-3 py-2 shadow-soft backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_86%,black)]/90">
-          <Link href="/" className="flex items-center gap-2 rounded-xl px-1 transition active:scale-95">
-            <span className="flex items-baseline gap-2">
-              <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
-                HP Lift
-              </span>
-              <span className="hidden text-xs font-semibold text-[var(--ink-muted)] lg:inline">
-                plugga smartare till högskoleprovet
-              </span>
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-5 py-3 sm:px-8">
+          <Link href="/" className="flex items-baseline gap-2">
+            <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
+              HP Lift
             </span>
           </Link>
-
           <nav className="hidden items-center gap-0.5 md:flex" aria-label="Huvudmeny">
             {NAV.map((item) => {
               const active = isActive(pathname, item.href);
+              const hideOnMd = item.href === "/tips";
               return (
                 <Link
                   key={item.href}
@@ -155,6 +238,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   className={cn(
                     "relative rounded-full px-3.5 py-2 text-sm font-bold transition active:scale-95",
                     active ? "text-[var(--ink)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
+                    hideOnMd && "hidden lg:inline",
                   )}
                 >
                   {active && (
@@ -199,6 +283,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </header>
 
+      {/* Engångsprompt för användarnamn (rendreras efter inloggning, oavsett sida). */}
+      <UsernamePrompt />
+
       {/* Sidinnehåll med mjuk övergång */}
       <motion.main
         key={pathname}
@@ -216,7 +303,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
         aria-label="Huvudmeny"
       >
-        <ul className="mx-auto grid max-w-md grid-cols-6 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
+        <ul className="mx-auto grid max-w-md grid-cols-7 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
           {NAV.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);

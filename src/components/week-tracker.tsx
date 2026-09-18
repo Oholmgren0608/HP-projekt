@@ -3,19 +3,19 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { recordEvent } from "@/lib/gamification/engine";
-import { PracticeSession, practiceKindsLabel } from "@/components/practice-session";
+import { PracticeSession } from "@/components/practice-session";
+import { WeekTaskRow } from "@/components/week-task-row";
 import { usePlan } from "@/components/plan-context";
+import { Progress } from "@/components/ui/progress";
 import { useHydrated } from "@/lib/use-hydrated";
 import { storageSet } from "@/lib/sync/storage-sync";
-import { Progress } from "@/components/ui/progress";
 import {
-  formatClock,
   isPracticeInProgress,
   loadPracticeTimer,
   newPracticeAttempt,
   resetPracticeSession,
 } from "@/lib/practice-timer";
-import { sectionLabel, type StudyTask } from "@/lib/study-plan";
+import { type StudyTask } from "@/lib/study-plan";
 import {
   WEEK_PROGRESS_KEY,
   WEEK_SCORES_KEY,
@@ -40,12 +40,8 @@ export function WeekTracker({
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const [progress, setProgress] = useState<ProgressMap>(() =>
-    loadWeekProgress(),
-  );
-  const [scores, setScores] = useState<ScoreMap>(() =>
-    loadWeekScores(),
-  );
+  const [progress, setProgress] = useState<ProgressMap>(() => loadWeekProgress());
+  const [scores, setScores] = useState<ScoreMap>(() => loadWeekScores());
   const urlWeek = searchParams.get("week");
   const urlStart = searchParams.get("start");
   const [activeWeek, setActiveWeek] = useState(() => {
@@ -54,8 +50,8 @@ export function WeekTracker({
   });
   const [activeTaskId, setActiveTaskId] = useState<string | null>(urlStart);
   const [sessionNonce, setSessionNonce] = useState(0);
-  const ready = useHydrated();
   const [timerTick, setTimerTick] = useState(0);
+  const ready = useHydrated();
 
   // Re-apply active week/task when the URL query params change after mount.
   // Tracking the previous URL string and adjusting state during render avoids a
@@ -105,6 +101,23 @@ export function WeekTracker({
       percent: allTasks.length ? Math.round((doneCount / allTasks.length) * 100) : 0,
     };
   }, [progress, weeklyPlans]);
+
+  // Timer-tillstånd läses en gång per (plan, timerTick) i stället för per
+  // uppgift inne i JSX:en. `timerTick` tvingar en omavläsning efter att ett
+  // pass stängts/avslutats så att sparad tid och pågående-status hålls aktuella.
+  const timerStates = useMemo(() => {
+    const states = new Map<string, { bankedMin: number; inProgressQuiz: boolean }>();
+    void timerTick;
+    if (!plan) return states;
+    for (const task of plan.tasks) {
+      const timerState = loadPracticeTimer(plan.week, task.id);
+      states.set(task.id, {
+        bankedMin: Math.floor((timerState?.accumulatedMs ?? 0) / 60000),
+        inProgressQuiz: isPracticeInProgress(timerState),
+      });
+    }
+    return states;
+  }, [plan, timerTick]);
 
   if (!plan) return null;
 
@@ -263,87 +276,26 @@ export function WeekTracker({
             const key = taskKey(plan.week, task.id);
             const checked = Boolean(progress[key]);
             const score = scores[key];
-            const timerState = loadPracticeTimer(plan.week, task.id);
-            const bankedMin = Math.floor((timerState?.accumulatedMs ?? 0) / 60000);
-            const inProgressQuiz = isPracticeInProgress(timerState);
-            void timerTick;
+            const timer = timerStates.get(task.id);
+            const bankedMin = timer?.bankedMin ?? 0;
+            const inProgressQuiz = timer?.inProgressQuiz ?? false;
             return (
-              <li key={task.id}>
-                <div
-                  className={`rounded-xl border px-3 py-3 sm:px-4 ${
-                    checked
-                      ? "border-[var(--brand)]/30 bg-[var(--accent-soft)]/50"
-                      : "border-[var(--line)] bg-[var(--paper)]"
-                  }`}
-                >
-                  <div className="flex flex-wrap items-start gap-3">
-                    <span
-                      aria-hidden
-                      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs font-bold ${
-                        checked
-                          ? "border-[var(--brand)] bg-[var(--brand)] text-white"
-                          : "border-[var(--line)] bg-white text-transparent"
-                      }`}
-                    >
-                      ✓
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span
-                          className={`font-medium ${checked ? "text-[var(--ink-muted)]" : "text-[var(--ink)]"}`}
-                        >
-                          {task.title}
-                        </span>
-                        <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[var(--ink-soft)]">
-                          {sectionLabel(task.section)}
-                        </span>
-                        <span className="text-xs text-[var(--ink-muted)]">~{task.minutes} min</span>
-                      </div>
-                      <p className="mt-1 text-sm leading-relaxed text-[var(--ink-muted)]">
-                        {task.detail}
-                      </p>
-                      <p className="mt-1 text-xs text-[var(--ink-soft)]">
-                        Övning: {practiceKindsLabel(task.practiceKinds)}
-                        {score ? ` · Senaste resultat ${score.correct}/${score.total}` : null}
-                        {!checked && bankedMin > 0
-                          ? ` · Sparad tid ${bankedMin}/${task.minutes} min (pausad)`
-                          : null}
-                      </p>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        <button
-                          type="button"
-                          onClick={() => {
-                            if (checked) {
-                              resetPracticeSession(plan.week, task.id);
-                            } else if (!inProgressQuiz) {
-                              newPracticeAttempt(plan.week, task.id);
-                            }
-                            setActiveTaskId(task.id);
-                          }}
-                          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
-                        >
-                          {checked
-                            ? "Öva igen (nya frågor)"
-                            : inProgressQuiz
-                              ? "Fortsätt övning"
-                              : "Starta övning"}
-                        </button>
-                        {checked && score ? (
-                          <span className="self-center text-xs text-[var(--ink-muted)]">
-                            Klar · {score.correct}/{score.total}
-                          </span>
-                        ) : (
-                          <span className="self-center text-xs text-[var(--ink-muted)]">
-                            {bankedMin > 0
-                              ? `Aktiv tid ${formatClock(bankedMin * 60)} / ${task.minutes} min`
-                              : `Markeras klar efter ${task.minutes} min aktiv övning`}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+              <WeekTaskRow
+                key={task.id}
+                task={task}
+                checked={checked}
+                score={score}
+                bankedMin={bankedMin}
+                inProgressQuiz={inProgressQuiz}
+                onStart={() => {
+                  if (checked) {
+                    resetPracticeSession(plan.week, task.id);
+                  } else if (!inProgressQuiz) {
+                    newPracticeAttempt(plan.week, task.id);
+                  }
+                  setActiveTaskId(task.id);
+                }}
+              />
             );
           })}
         </ul>

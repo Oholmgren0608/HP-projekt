@@ -27,10 +27,100 @@ export type Database = {
         };
         Relationships: [];
       };
+      questions: {
+        Row: {
+          id: string;
+          kind: string;
+          prompt: string;
+          passage: string | null;
+          options: string[];
+          correct_index: number;
+          explain: string;
+          exam_id: string | null;
+          exam_date: string | null;
+          pass_number: number | null;
+          question_number: number | null;
+          figure_url: string | null;
+          source_url: string | null;
+          status: string;
+        };
+        Insert: {
+          id: string;
+          kind: string;
+          prompt: string;
+          passage?: string | null;
+          options: string[];
+          correct_index: number;
+          explain: string;
+          exam_id?: string | null;
+          exam_date?: string | null;
+          pass_number?: number | null;
+          question_number?: number | null;
+          figure_url?: string | null;
+          source_url?: string | null;
+          status?: string;
+        };
+        Update: {
+          kind?: string;
+          prompt?: string;
+          passage?: string | null;
+          options?: string[];
+          correct_index?: number;
+          explain?: string;
+          exam_id?: string | null;
+          exam_date?: string | null;
+          pass_number?: number | null;
+          question_number?: number | null;
+          figure_url?: string | null;
+          source_url?: string | null;
+          status?: string;
+        };
+        Relationships: [];
+      };
+      exams: {
+        Row: {
+          id: string;
+          exam_date: string;
+          title: string;
+          status: string;
+          created_at: string;
+        };
+        Insert: {
+          id: string;
+          exam_date: string;
+          title: string;
+          status?: string;
+          created_at?: string;
+        };
+        Update: {
+          exam_date?: string;
+          title?: string;
+          status?: string;
+        };
+        Relationships: [];
+      };
+      reflect_prompts: {
+        Row: {
+          id: string;
+          title: string;
+          prompts: string[];
+        };
+        Insert: {
+          id: string;
+          title: string;
+          prompts: string[];
+        };
+        Update: {
+          title?: string;
+          prompts?: string[];
+        };
+        Relationships: [];
+      };
       player_profiles: {
         Row: {
           user_id: string;
           display_name: string;
+          username: string | null;
           elo: number;
           wins: number;
           losses: number;
@@ -47,6 +137,7 @@ export type Database = {
         Insert: {
           user_id: string;
           display_name: string;
+          username?: string | null;
           elo?: number;
           wins?: number;
           losses?: number;
@@ -62,6 +153,7 @@ export type Database = {
         };
         Update: {
           display_name?: string;
+          username?: string | null;
           elo?: number;
           wins?: number;
           losses?: number;
@@ -74,6 +166,18 @@ export type Database = {
           report_count?: number;
           bot_skill_offset?: number;
         };
+        Relationships: [];
+      };
+      duel_questions: {
+        Row: {
+          question_id: string;
+          correct_index: number;
+        };
+        Insert: {
+          question_id: string;
+          correct_index: number;
+        };
+        Update: Record<string, never>;
         Relationships: [];
       };
       duel_matches: {
@@ -121,20 +225,7 @@ export type Database = {
           started_at?: string | null;
           finished_at?: string | null;
         };
-        Update: {
-          status?: "waiting" | "active" | "finished" | "forfeit" | "cancelled";
-          winner?: string | null;
-          a_correct?: number | null;
-          b_correct?: number | null;
-          a_time_ms?: number | null;
-          b_time_ms?: number | null;
-          elo_a_delta?: number | null;
-          elo_b_delta?: number | null;
-          a_finished_at?: string | null;
-          b_finished_at?: string | null;
-          started_at?: string | null;
-          finished_at?: string | null;
-        };
+        Update: Record<string, never>;
         Relationships: [];
       };
       duel_answers: {
@@ -239,11 +330,41 @@ export type Database = {
         Relationships: [];
       };
     };
-    Views: Record<string, never>;
+    Views: {
+      duel_public_profiles: {
+        Row: {
+          user_id: string;
+          display_name: string;
+          elo: number;
+          wins: number;
+          losses: number;
+          draws: number;
+        };
+        Insert: never;
+        Update: never;
+        Relationships: [];
+      };
+    };
     Functions: {
       duel_ensure_profile: {
         Args: { p_display_name: string };
         Returns: null;
+      };
+      profile_set_username: {
+        Args: { p_username: string };
+        Returns: {
+          user_id: string;
+          display_name: string;
+          username: string;
+        } | null;
+      };
+      profile_ensure: {
+        Args: Record<string, never>;
+        Returns: {
+          user_id: string;
+          display_name: string;
+          username: string | null;
+        } | null;
       };
       duel_join_queue: {
         Args: { p_mode: string };
@@ -262,23 +383,20 @@ export type Database = {
           p_match_id: string;
           p_question_id: string;
           p_chosen: number;
-          p_correct: boolean;
           p_time_ms: number;
         };
         Returns: null;
       };
       duel_mark_finished: {
-        Args: { p_match_id: string; p_correct: number; p_time_ms: number };
+        Args: { p_match_id: string };
         Returns: string | null;
       };
       duel_finish_bot: {
         Args: {
           p_match_id: string;
-          p_player_correct: number;
-          p_player_time_ms: number;
           p_bot_correct: number;
         };
-        Returns: { delta: number; winner_is_me: boolean } | null;
+        Returns: { delta: number; winner_is_me: boolean | null } | null;
       };
       duel_forfeit: {
         Args: { p_match_id: string };
@@ -368,4 +486,10 @@ export function getSupabase() {
     });
   }
   return browserClient;
+}
+
+export function requireSupabase() {
+  const client = getSupabase();
+  if (!client) throw new Error("Supabase är inte konfigurerat");
+  return client;
 }

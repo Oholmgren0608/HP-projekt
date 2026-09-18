@@ -1,5 +1,7 @@
 import { findQuestionById, type ChoiceQuestion } from "@/lib/practice";
-import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { isCorrect } from "@/lib/quiz";
+import { storageSet } from "@/lib/sync/storage-sync";
+import { emitEvent, loadJson } from "@/lib/storage";
 
 export const SRS_STORAGE_KEY = "hp-lift-srs-v1";
 export const SRS_EVENT = "hp-lift-srs-changed";
@@ -22,8 +24,7 @@ export type SrsCard = {
 };
 
 function emitSrsChanged() {
-  if (typeof window === "undefined") return;
-  window.dispatchEvent(new Event(SRS_EVENT));
+  emitEvent(SRS_EVENT);
 }
 
 function localDateKey(date = new Date()): string {
@@ -57,11 +58,8 @@ function hydrateCard(card: SrsCard): SrsCard {
 }
 
 export function loadSrs(): Record<string, SrsCard> {
-  if (typeof window === "undefined") return {};
+  const parsed = loadJson<Record<string, SrsCard>>(SRS_STORAGE_KEY, {});
   try {
-    const raw = storageGet(SRS_STORAGE_KEY);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw) as Record<string, SrsCard>;
     if (!parsed || typeof parsed !== "object") return {};
     let changed = false;
     const hydrated: Record<string, SrsCard> = {};
@@ -98,16 +96,11 @@ export function dueCards(map = loadSrs()): SrsCard[] {
     .sort((a, b) => toLocalDateKey(a.due).localeCompare(toLocalDateKey(b.due)));
 }
 
-export function dueCount(): number {
-  return dueCards().length;
-}
-
 export function recordMissedQuestions(questions: ChoiceQuestion[], answers: Record<string, number>) {
   const map = loadSrs();
   const today = localDateKey();
   for (const q of questions) {
-    const chosen = answers[q.id];
-    if (chosen === q.correctIndex) continue;
+    if (isCorrect(q, answers)) continue;
     const existing = map[q.id];
     map[q.id] = {
       id: q.id,

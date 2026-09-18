@@ -1,6 +1,11 @@
 import { clampNorm, type ScoreInput } from "@/lib/hp-scores";
 import type { ChoiceQuestion, PracticeKind } from "@/lib/practice";
-import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { tallyByKind, type KindTally } from "@/lib/quiz";
+import { storageSet } from "@/lib/sync/storage-sync";
+import { SUBTESTS } from "@/lib/subtests";
+import { emitEvent, loadJson } from "@/lib/storage";
+
+export type { KindTally };
 
 export const HISTORY_STORAGE_KEY = "hp-lift-history-v1";
 export const HISTORY_EVENT = "hp-lift-history-changed";
@@ -13,8 +18,6 @@ export const HISTORY_EVENT = "hp-lift-history-changed";
 export const PROGNOSIS_MIN_KIND_QUESTIONS = 10;
 
 export type QuizSource = "week" | "mock" | "free" | "nivatest";
-
-export type KindTally = { correct: number; total: number };
 
 export type QuizHistoryEvent = {
   type: "quiz";
@@ -44,12 +47,15 @@ export type ScoresHistoryEvent = {
 
 export type HistoryEvent = QuizHistoryEvent | ScoresHistoryEvent;
 
-const QUANT_KINDS = new Set(["dtk", "xyz", "kva", "nog"]);
-const VERBAL_KINDS = new Set(["ord", "mek", "las", "elf"]);
+const QUANT_KINDS = new Set<string>(
+  SUBTESTS.filter((s) => s.block === "kvant").map((s) => s.kind),
+);
+const VERBAL_KINDS = new Set<string>(
+  SUBTESTS.filter((s) => s.block === "verbal").map((s) => s.kind),
+);
 
 function emitHistoryChanged() {
-  if (typeof window === "undefined") return;
-  window.dispatchEvent(new Event(HISTORY_EVENT));
+  emitEvent(HISTORY_EVENT);
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -114,21 +120,16 @@ function normalizeHistoryEvent(raw: unknown): HistoryEvent | null {
 }
 
 export function loadHistory(): HistoryEvent[] {
-  if (typeof window === "undefined") return [];
-  try {
-    const raw = storageGet(HISTORY_STORAGE_KEY);
-    if (!raw) return [];
-    const parsed: unknown = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    const events: HistoryEvent[] = [];
-    for (const item of parsed) {
-      const normalized = normalizeHistoryEvent(item);
-      if (normalized) events.push(normalized);
-    }
-    return events;
-  } catch {
-    return [];
+  // loadJson sköter SSR-guard, saknad nyckel och JSON-fel; därefter
+  // normaliseras varje händelse så att korrupta/legacy-värden aldrig når vyerna.
+  const parsed = loadJson<unknown>(HISTORY_STORAGE_KEY, []);
+  if (!Array.isArray(parsed)) return [];
+  const events: HistoryEvent[] = [];
+  for (const item of parsed) {
+    const normalized = normalizeHistoryEvent(item);
+    if (normalized) events.push(normalized);
   }
+  return events;
 }
 
 function saveHistory(events: HistoryEvent[]) {
@@ -209,13 +210,7 @@ export function tallyPerKind(
   questions: readonly ChoiceQuestion[],
   answers: Record<string, number>,
 ): Record<string, KindTally> {
-  const map: Record<string, KindTally> = {};
-  for (const q of questions) {
-    const row = (map[q.kind] ??= { correct: 0, total: 0 });
-    row.total += 1;
-    if (answers[q.id] === q.correctIndex) row.correct += 1;
-  }
-  return map;
+  return tallyByKind(questions, answers);
 }
 
 function addQuizToStats(map: Map<string, KindTally>, e: QuizHistoryEvent) {

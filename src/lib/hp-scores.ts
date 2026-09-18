@@ -1,21 +1,14 @@
 import type { SectionId } from "@/lib/study-plan";
+import { SUBTESTS } from "@/lib/subtests";
 import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { loadJson } from "@/lib/storage";
 
 export const DELPROV_META: {
   id: SectionId;
   name: string;
   total: number;
   block: "kvant" | "verbal";
-}[] = [
-  { id: "KVA", name: "Kvantitativa jämförelser", total: 20, block: "kvant" },
-  { id: "DTK", name: "Diagram, tabeller och kartor", total: 24, block: "kvant" },
-  { id: "XYZ", name: "Matematik problemlösning", total: 24, block: "kvant" },
-  { id: "NOG", name: "Kvantitativa resonemang", total: 12, block: "kvant" },
-  { id: "ORD", name: "Ordförståelse", total: 20, block: "verbal" },
-  { id: "LAS", name: "Läsförståelse svenska", total: 20, block: "verbal" },
-  { id: "MEK", name: "Meningskomplettering", total: 20, block: "verbal" },
-  { id: "ELF", name: "Läsförståelse engelska", total: 20, block: "verbal" },
-];
+}[] = SUBTESTS.map(({ id, name, total, block }) => ({ id, name, total, block }));
 
 export type ScoreInput = {
   quantNorm: number;
@@ -72,11 +65,8 @@ export function clampWeeksUntilExam(value: unknown): number {
 }
 
 export function loadScores(): ScoreInput {
-  if (typeof window === "undefined") return DEFAULT_SCORES;
+  const parsed = loadJson<Partial<ScoreInput>>(SCORES_STORAGE_KEY, DEFAULT_SCORES);
   try {
-    const raw = storageGet(SCORES_STORAGE_KEY);
-    if (!raw) return DEFAULT_SCORES;
-    const parsed = JSON.parse(raw) as Partial<ScoreInput>;
     const delprov = { ...DEFAULT_SCORES.delprov };
     for (const m of DELPROV_META) {
       if (typeof parsed.delprov?.[m.id] === "number") {

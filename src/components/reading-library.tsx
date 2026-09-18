@@ -1,34 +1,22 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useHydrated } from "@/lib/use-hydrated";
+import { useMemo, useState } from "react";
+import { usePersistentState } from "@/lib/use-persistent-state";
 import { recordEvent } from "@/lib/gamification/engine";
-import { storageGet, storageSet } from "@/lib/sync/storage-sync";
-import { LIBRARY_TEXTS, type LibraryText } from "@/lib/reading-library";
-
-const READ_KEY = "hp-reading-done-v1";
-
-type ReadMap = Record<string, boolean>;
-
-function loadRead(): ReadMap {
-  if (typeof window === "undefined") return {};
-  try {
-    return JSON.parse(storageGet(READ_KEY) ?? "{}") as ReadMap;
-  } catch {
-    return {};
-  }
-}
+import {
+  LIBRARY_TEXTS,
+  READING_PROGRESS_KEY,
+  type LibraryText,
+  type ReadMap,
+} from "@/lib/reading-library";
 
 export function ReadingLibrary() {
   const [activeId, setActiveId] = useState(LIBRARY_TEXTS[0]?.id ?? "");
-  const [read, setRead] = useState<ReadMap>(loadRead);
+  const [read, setRead, ready] = usePersistentState<ReadMap>(
+    READING_PROGRESS_KEY,
+    {},
+  );
   const [summary, setSummary] = useState("");
-  const ready = useHydrated();
-
-  useEffect(() => {
-    if (!ready) return;
-    storageSet(READ_KEY, JSON.stringify(read));
-  }, [read, ready]);
 
   const text = useMemo(
     () => LIBRARY_TEXTS.find((t) => t.id === activeId) ?? LIBRARY_TEXTS[0],

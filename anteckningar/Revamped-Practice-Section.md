@@ -27,7 +27,7 @@ Successfully implemented the revamped practice section with sub-pages for each d
 
 ### Components Created
 
-#### 1. `practice-hub-v2.tsx`
+#### 1. `practice-hub.tsx`
 - Main practice hub showing all sub-tests as cards
 - Displays 8 HP deltests:
   - **ORD** - Ordförståelse (Vocabulary)

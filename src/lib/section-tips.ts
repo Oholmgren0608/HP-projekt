@@ -102,7 +102,7 @@ export const SECTION_TIPS: SectionTip[] = [
   },
   {
     id: "XYZ",
-    title: "XYZ — Matematik problemlösning",
+    title: "XYZ — Matematisk problemlösning",
     tests: "Gymnasiematte under tid: modell, ekvation, rimlighetskoll.",
     mistakes: [
       "Räkna färdigt trots att ett svarsalternativ redan syns",

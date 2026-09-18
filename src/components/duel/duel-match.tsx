@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { recordEvent } from "@/lib/gamification/engine";
 import { getSupabase } from "@/lib/supabase/client";
+import { loadQuestions } from "@/lib/content/questions-provider";
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import {
   DUEL_QUESTION_COUNT,
@@ -15,7 +16,7 @@ import {
 } from "@/lib/duel/types";
 import { buildDuelQuiz } from "@/lib/duel/questions";
 import { simulateBotAnswer, type BotDecision } from "@/lib/duel/bot";
-import { getProfile } from "@/lib/duel/profile";
+import { getMyProfile, getPublicProfile } from "@/lib/duel/profile";
 import {
   claimStallWin,
   finishBot,
@@ -25,6 +26,7 @@ import {
 } from "@/lib/duel/matchmaking";
 import { displayNameFromUser, formatMs } from "./duel-utils";
 import { ReviewForm } from "./review-form";
+import { QuestionFigure } from "@/components/question-figure";
 
 type Phase = "loading" | "error" | "playing" | "waiting" | "finished";
 
@@ -127,7 +129,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const [selected, setSelected] = useState<number | null>(null);
   const [secondsLeft, setSecondsLeft] = useState(DUEL_SECONDS_PER_QUESTION);
   const [myCorrect, setMyCorrect] = useState(0);
-  const [oppCorrect, setOppCorrect] = useState(0);
+  const [oppCorrect] = useState<number | null>(null);
   const [myTimeMs, setMyTimeMs] = useState(0);
   const [botCorrect, setBotCorrect] = useState(0);
   const [stallElapsed, setStallElapsed] = useState(false);
@@ -139,13 +141,15 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const isBotRef = useRef(isBot);
   const botEloRef = useRef<number | null>(null);
   const botDecisionsRef = useRef<(BotDecision | null)[]>([]);
-  const myAnswersRef = useRef<Record<string, MyAnswer>>({});
-  const countedOppRef = useRef(new Set<string>());
   const questionDoneRef = useRef(false);
+  const pendingSubmitRef = useRef<Promise<void>>(Promise.resolve());
   const startRef = useRef(0);
   const loadMatchRef = useRef<() => Promise<void>>(async () => {});
   const finishMatchRef = useRef<() => Promise<void>>(async () => {});
   const submitRef = useRef<(chosen: number | null) => void>(() => {});
+  // Egna svar per fråge-id (server/resume + lokala bot-svar). Driver XP-antalet
+  // och hindrar dubbel-inskick av samma fråga efter reload.
+  const myAnswersRef = useRef<Record<string, MyAnswer>>({});
 
   const oppDisplayCorrect = isBot ? botCorrect : oppCorrect;
 
@@ -194,29 +198,19 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
 
   const finishMatch = useCallback(async () => {
     if (phaseRef.current !== "playing") return;
-    const entries = Object.values(myAnswersRef.current);
-    const myC = entries.filter((a) => a.correct).length;
-    const myT = entries.reduce((s, a) => s + a.timeMs, 0);
 
     if (isBotRef.current) {
       const botFinal = botDecisionsRef.current.filter((d) => d?.correct).length;
       try {
-        await finishBot({
-          matchId,
-          playerCorrect: myC,
-          playerTimeMs: myT,
-          botCorrect: botFinal,
-        });
+        await finishBot({ matchId, botCorrect: botFinal });
       } catch {
-        /* ignorera — vi laddar om matchen ändå */
-      } finally {
         // Återställ skyddet så att ett misslyckat avslut kan göras om.
         questionDoneRef.current = false;
       }
       await loadMatchRef.current();
     } else {
       try {
-        const finalized = await markFinished(matchId, myC, myT);
+        const finalized = await markFinished(matchId);
         if (finalized) {
           await loadMatchRef.current();
         } else {
@@ -232,7 +226,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   }, [matchId]);
 
   const submit = useCallback(
-    (chosen: number | null) => {
+    async (chosen: number | null) => {
       if (phaseRef.current !== "playing" || questionDoneRef.current) return;
       const i = indexRef.current;
       const qs = questionsRef.current;
@@ -264,15 +258,18 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       setMyCorrect((c) => c + (correct ? 1 : 0));
       setMyTimeMs((t) => t + timeMs);
 
-      if (!isBotRef.current) {
-        void submitAnswer({
-          matchId,
-          questionId: q.id,
-          chosen: chosen ?? -1,
-          correct,
-          timeMs,
-        }).catch(() => {});
-      } else {
+      // Spara alltid svaret server-side; servern räknar rätt/fel själv.
+      const answerPayload = {
+        matchId,
+        questionId: q.id,
+        chosen: chosen ?? -1,
+        timeMs,
+      };
+      pendingSubmitRef.current = pendingSubmitRef.current
+        .then(() => submitAnswer(answerPayload))
+        .catch(() => {});
+
+      if (isBotRef.current) {
         const decision = simulateBotAnswer(q, botEloRef.current ?? 1200);
         botDecisionsRef.current[i] = decision;
         window.setTimeout(() => {
@@ -281,6 +278,9 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       }
 
       if (i + 1 >= qs.length) {
+        // Vänta på att alla (inkl. sista) svaren sparats innan vi finaliserar,
+        // annars kan servern härleda fel antal rätt.
+        await pendingSubmitRef.current;
         void finishMatchRef.current();
       } else {
         questionDoneRef.current = false;
@@ -308,9 +308,6 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   // Initiera: hämta match, frågor, profiler, befintliga svar + prenumerera.
   useEffect(() => {
     let cancelled = false;
-    let answersChannel: ReturnType<
-      NonNullable<ReturnType<typeof getSupabase>>["channel"]
-    > | null = null;
     let matchChannel: ReturnType<
       NonNullable<ReturnType<typeof getSupabase>>["channel"]
     > | null = null;
@@ -367,10 +364,11 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       const oppId = isBotMatch ? null : iAmA ? m.player_b : m.player_a;
 
       setIsBot(isBotMatch);
+      await loadQuestions();
       const qs = buildDuelQuiz(m.question_seed, DUEL_QUESTION_COUNT);
       setQuestions(qs);
 
-      const myProfile = await getProfile(user.id).catch(() => null);
+      const myProfile = await getMyProfile(user.id).catch(() => null);
       if (myProfile) {
         setMeElo(myProfile.elo);
         if (isBotMatch) {
@@ -380,7 +378,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         }
       }
       if (oppId) {
-        const oppProfile = await getProfile(oppId).catch(() => null);
+        const oppProfile = await getPublicProfile(oppId).catch(() => null);
         if (oppProfile) {
           setOppName(oppProfile.display_name);
           setOppElo(oppProfile.elo);
@@ -396,23 +394,22 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         .select("*")
         .eq("match_id", matchId);
       if (cancelled) return;
-      const myAnswers: Record<string, MyAnswer> = {};
       let myC = 0;
       let myT = 0;
-      let oppC = 0;
-      const countedOpp = new Set<string>();
+      let myCount = 0;
+      // Egna svar som redan finns på servern (resume) — fråga → svar.
+      const myAnswers: Record<string, MyAnswer> = {};
       for (const a of (answersData ?? []) as DuelAnswer[]) {
+        // RLS döljer motståndarens svar under aktiv match — processa bara egna.
         if (a.user_id === user.id) {
+          myCount += 1;
+          if (a.correct) myC += 1;
+          myT += a.time_ms;
           myAnswers[a.question_id] = {
             chosen: a.chosen,
             correct: a.correct,
             timeMs: a.time_ms,
           };
-          if (a.correct) myC += 1;
-          myT += a.time_ms;
-        } else {
-          countedOpp.add(a.question_id);
-          if (a.correct) oppC += 1;
         }
       }
       // Bot-matcher sparar sina svar lokalt — återställ dem så att en reload
@@ -425,17 +422,16 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         for (const [qid, a] of Object.entries(stored ?? {})) {
           if (!qIds.has(qid) || qid in myAnswers) continue;
           myAnswers[qid] = a;
+          myCount += 1;
           if (a.correct) myC += 1;
           myT += a.timeMs;
         }
       }
       myAnswersRef.current = myAnswers;
-      countedOppRef.current = countedOpp;
       setMyCorrect(myC);
       setMyTimeMs(myT);
-      setOppCorrect(oppC);
 
-      // Realtime: matchstatus (+ motståndarens svar för människa-matcher).
+      // Realtime: matchstatus.
       matchChannel = supabase
         .channel(`duel-match-${matchId}`)
         .on(
@@ -459,30 +455,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         )
         .subscribe();
 
-      if (!isBotMatch) {
-        answersChannel = supabase
-          .channel(`duel-answers-${matchId}`)
-          .on(
-            "postgres_changes",
-            {
-              event: "INSERT",
-              schema: "public",
-              table: "duel_answers",
-              filter: `match_id=eq.${matchId}`,
-            },
-            (payload) => {
-              const row = payload.new as DuelAnswer;
-              if (row.user_id === user.id) return;
-              if (countedOppRef.current.has(row.question_id)) return;
-              countedOppRef.current.add(row.question_id);
-              if (row.correct) setOppCorrect((c) => c + 1);
-            },
-          )
-          .subscribe();
-      }
-
       // Bestäm var vi ska återuppta.
-      const myCount = Object.keys(myAnswers).length;
       if (myCount >= qs.length) {
         if (isBotMatch) {
           botDecisionsRef.current = qs.map((q) =>
@@ -497,7 +470,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
           if (!myFinishedAt) {
             // Förra avslutet misslyckades — försök markera klar igen.
             try {
-              const finalized = await markFinished(matchId, myC, myT);
+              const finalized = await markFinished(matchId);
               if (cancelled) return;
               if (finalized) {
                 await loadMatchRef.current();
@@ -527,10 +500,6 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
 
     return () => {
       cancelled = true;
-      if (answersChannel) {
-        answersChannel.unsubscribe();
-        void getSupabase()?.removeChannel(answersChannel);
-      }
       if (matchChannel) {
         matchChannel.unsubscribe();
         void getSupabase()?.removeChannel(matchChannel);
@@ -651,6 +620,8 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
               {current.passage}
             </div>
           ) : null}
+
+          <QuestionFigure question={current} position={index + 1} />
 
           <p className="mt-4 text-lg font-medium text-[var(--ink)]">
             {current.prompt}
@@ -773,11 +744,13 @@ function MatchHeader({
   oppElo: number | null;
   isBot: boolean;
   myCorrect: number;
-  oppCorrect: number;
+  oppCorrect: number | null;
   total: number;
 }) {
-  const meAhead = myCorrect > oppCorrect;
-  const tie = myCorrect === oppCorrect;
+  const known = oppCorrect !== null;
+  const meAhead = known && myCorrect > oppCorrect;
+  const tie = known && myCorrect === oppCorrect;
+  const opponentAhead = known && myCorrect < oppCorrect;
 
   return (
     <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-5">
@@ -786,7 +759,10 @@ function MatchHeader({
           {duelModeLabel(mode)}
         </p>
         <p className="text-xs text-[var(--ink-muted)]">
-          {total} frågor · {meAhead ? "Du leder" : tie ? "Lika" : "Motståndaren leder"}
+          {total} frågor
+          {known
+            ? ` · ${meAhead ? "Du leder" : tie ? "Lika" : "Motståndaren leder"}`
+            : ""}
         </p>
       </div>
 
@@ -796,7 +772,7 @@ function MatchHeader({
           name={oppName}
           elo={oppElo}
           correct={oppCorrect}
-          highlight={!meAhead && !tie}
+          highlight={opponentAhead}
           isBot={isBot}
         />
       </div>
@@ -814,7 +790,7 @@ function PlayerCard({
 }: {
   name: string;
   elo: number | null;
-  correct: number;
+  correct: number | null;
   highlight: boolean;
   isYou?: boolean;
   isBot?: boolean;
@@ -844,8 +820,10 @@ function PlayerCard({
         {elo != null ? `ELO ${elo}` : "—"}
       </p>
       <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
-        {correct}
-        <span className="text-sm text-[var(--ink-muted)]"> rätt</span>
+        {correct === null ? "—" : correct}
+        {correct !== null ? (
+          <span className="text-sm text-[var(--ink-muted)]"> rätt</span>
+        ) : null}
       </p>
     </div>
   );

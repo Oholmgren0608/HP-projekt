@@ -1,13 +1,17 @@
-import { getSupabase } from "@/lib/supabase/client";
+import { requireSupabase } from "@/lib/supabase/client";
 import type { DuelMatch, DuelProfile } from "./types";
 
-/** PvP kräver Supabase + inloggning. Kasta om det saknas. */
-function requireSupabase() {
-  const client = getSupabase();
-  if (!client) throw new Error("Supabase är inte konfigurerat");
-  return client;
-}
+/** Offentlig profilvy — det enda andra spelare får se om varandra. */
+export type PublicDuelProfile = {
+  user_id: string;
+  display_name: string;
+  elo: number;
+  wins: number;
+  losses: number;
+  draws: number;
+};
 
+/** PvP kräver Supabase + inloggning. Kasta om det saknas. */
 export async function ensureProfile(userId: string, displayName: string) {
   const { error } = await requireSupabase().rpc("duel_ensure_profile", {
     p_display_name: displayName,
@@ -15,7 +19,7 @@ export async function ensureProfile(userId: string, displayName: string) {
   if (error) console.warn("[duel] ensure_profile:", error.message);
 }
 
-export async function getProfile(userId: string): Promise<DuelProfile | null> {
+export async function getMyProfile(userId: string): Promise<DuelProfile | null> {
   const { data, error } = await requireSupabase()
     .from("player_profiles")
     .select("*")
@@ -25,9 +29,21 @@ export async function getProfile(userId: string): Promise<DuelProfile | null> {
   return data;
 }
 
-export async function getLeaderboard(limit = 50): Promise<DuelProfile[]> {
+export async function getPublicProfile(
+  userId: string,
+): Promise<PublicDuelProfile | null> {
   const { data, error } = await requireSupabase()
-    .from("player_profiles")
+    .from("duel_public_profiles")
+    .select("*")
+    .eq("user_id", userId)
+    .maybeSingle();
+  if (error) throw error;
+  return data;
+}
+
+export async function getLeaderboard(limit = 50): Promise<PublicDuelProfile[]> {
+  const { data, error } = await requireSupabase()
+    .from("duel_public_profiles")
     .select("*")
     .order("elo", { ascending: false })
     .order("wins", { ascending: false })
@@ -43,6 +59,7 @@ export async function getMatchHistory(
   const { data, error } = await requireSupabase()
     .from("duel_matches")
     .select("*")
+    // userId är en uuid härifrån (från auth), så stränginterpolering är säker.
     .or(`player_a.eq.${userId},player_b.eq.${userId}`)
     .in("status", ["finished", "forfeit"])
     .order("finished_at", { ascending: false })

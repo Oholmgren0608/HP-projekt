@@ -18,7 +18,6 @@ import {
   type GameNotification,
 } from "@/lib/gamification/engine";
 import { play } from "@/lib/sound";
-import { Button } from "@/components/ui/button";
 
 const PALETTE = ["#0d7c6f", "#2ba89a", "#f59e0b", "#f2604f", "#ffffff"];
 
@@ -174,9 +173,13 @@ export function CelebrationLayer() {
                 Nivå {levelUp.level}
               </h2>
               <p className="mt-1 text-lg font-bold text-[var(--brand)]">{levelUp.title}</p>
-              <Button className="mt-6 w-full rounded-full py-2.5 text-base" onClick={closeLevelUp}>
+              <button
+                type="button"
+                onClick={closeLevelUp}
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand)] px-4 py-2.5 text-base font-semibold text-white transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              >
                 Fortsätt plugga 🎉
-              </Button>
+              </button>
             </motion.div>
           </motion.div>
         )}

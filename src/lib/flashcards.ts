@@ -1,5 +1,7 @@
-import { ORD_BANK } from "@/lib/practice";
+import type { ChoiceQuestion } from "@/lib/practice-types";
+import type { QuestionBank } from "@/lib/content/questions-provider";
 import { LIBRARY_TEXTS } from "@/lib/reading-library";
+import { loadJson, saveJson } from "@/lib/storage";
 
 export type Flashcard = {
   id: string;
@@ -15,12 +17,16 @@ function fromOrdPrompt(prompt: string): string {
   return m?.[1] ?? prompt.replace(/^Vad betyder\s+/i, "").replace(/\?$/, "");
 }
 
-const ORD_CARDS: Flashcard[] = ORD_BANK.map((q) => ({
-  id: `ord-${q.id}`,
-  front: fromOrdPrompt(q.prompt),
-  back: q.options[q.correctIndex],
-  source: "ORD-bank",
-}));
+function ordCards(questions: ChoiceQuestion[]): Flashcard[] {
+  return questions
+    .filter((q) => q.kind === "ord")
+    .map((q) => ({
+      id: `ord-${q.id}`,
+      front: fromOrdPrompt(q.prompt),
+      back: q.options[q.correctIndex],
+      source: "ORD-bank",
+    }));
+}
 
 const READING_CARDS: Flashcard[] = LIBRARY_TEXTS.flatMap((t) =>
   t.focusWords.map((w) => ({
@@ -65,19 +71,22 @@ function dedupe(cards: Flashcard[]): Flashcard[] {
   return out;
 }
 
-export const ALL_FLASHCARDS = dedupe([
-  ...ORD_CARDS,
-  ...READING_CARDS,
-  ...CONNECTOR_CARDS,
-]);
+/** Bygger den fullständiga kortleken från en runtime-frågebank. */
+export function buildAllFlashcards(bank: QuestionBank): Flashcard[] {
+  return dedupe([
+    ...ordCards(bank.questions),
+    ...READING_CARDS,
+    ...CONNECTOR_CARDS,
+  ]);
+}
 
 export type DeckFilter = "alla" | "ord" | "lasning" | "konnektorer";
 
-export function filterDeck(filter: DeckFilter): Flashcard[] {
-  if (filter === "ord") return ALL_FLASHCARDS.filter((c) => c.id.startsWith("ord-"));
-  if (filter === "lasning") return ALL_FLASHCARDS.filter((c) => c.id.startsWith("read-"));
-  if (filter === "konnektorer") return ALL_FLASHCARDS.filter((c) => c.id.startsWith("kon-"));
-  return ALL_FLASHCARDS;
+export function filterDeck(filter: DeckFilter, all: Flashcard[]): Flashcard[] {
+  if (filter === "ord") return all.filter((c) => c.id.startsWith("ord-"));
+  if (filter === "lasning") return all.filter((c) => c.id.startsWith("read-"));
+  if (filter === "konnektorer") return all.filter((c) => c.id.startsWith("kon-"));
+  return all;
 }
 
 export type CardProgress = {
@@ -87,3 +96,13 @@ export type CardProgress = {
 };
 
 export type ProgressMap = Record<string, CardProgress>;
+
+export const FLASHCARD_PROGRESS_KEY = "hp-flashcards-progress-v1";
+
+export function loadFlashcardProgress(): ProgressMap {
+  return loadJson<ProgressMap>(FLASHCARD_PROGRESS_KEY, {});
+}
+
+export function saveFlashcardProgress(value: ProgressMap): void {
+  saveJson(FLASHCARD_PROGRESS_KEY, value);
+}

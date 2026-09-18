@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
-import { pct, priorityLabel, type Priority } from "@/lib/study-plan";
+import { pct } from "@/lib/format";
+import { priorityLabel, type Priority } from "@/lib/study-plan";
 
 export function PriorityBadge({ priority }: { priority: Priority }) {
   const label = priorityLabel(priority);

@@ -8,7 +8,8 @@ import type {
   StudyTask,
   WeekPlan,
 } from "@/lib/study-plan";
-import { pct } from "@/lib/study-plan";
+import { pct } from "@/lib/format";
+import { sectionToKinds } from "@/lib/section-kinds";
 import { adjustDeficit, type PracticeTrend } from "@/lib/practice-trends";
 
 export type TimeSplitItem = { label: string; pct: number; note: string };
@@ -107,7 +108,7 @@ const METHODS: Record<
     ],
   },
   XYZ: {
-    name: "XYZ — Matematik problemlösning",
+    name: "XYZ — Matematisk problemlösning",
     short: "XYZ",
     methods: [
       "Blandade problemlösningspass",
@@ -184,8 +185,7 @@ function weeklyGoalFor(id: SectionId, priority: Priority): string {
 }
 
 function toPractice(id: SectionId): PracticeKind[] {
-  if (id === "LAS") return ["las"];
-  return [id.toLowerCase() as PracticeKind];
+  return sectionToKinds(id);
 }
 
 function allocateTime(ranked: Ranked[]): TimeSplitItem[] {

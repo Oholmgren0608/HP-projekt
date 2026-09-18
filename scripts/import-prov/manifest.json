@@ -1,0 +1,817 @@
+{
+  "exams": [
+    {
+      "examId": "hp-2012-10-27",
+      "title": "Högskoleprovet hösten 2012",
+      "date": "2012-10-27",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2012-10-27/provpass1kvant.pdf"
+        },
+        {
+          "passNumber": 2,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2012-10-27/provpass2vejelf12b.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2012-10-27/provpass4kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2012-10-27/provpass5vejelf12b.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2012-10-27/facit.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 3 (ej publicerat); publicerade pass är {1,2,4,5} i stället för {1,3,4,5}.",
+        "Verbala passen är 'utan ELF'-versioner ('vejelf' = verbal ej ELF)."
+      ]
+    },
+    {
+      "examId": "hp-2013-04-06",
+      "title": "Högskoleprovet våren 2013",
+      "date": "2013-04-06",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-04-06/provpass2kvant.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-04-06/provpass3vej.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-04-06/provpass4kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-04-06/provpass5vej.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-04-06/facit.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5}.",
+        "Sidan är olänkad från hubben; slug 'facit-provfragor-och-normering-varen-20131'."
+      ]
+    },
+    {
+      "examId": "hp-2013-10-26",
+      "title": "Högskoleprovet hösten 2013",
+      "date": "2013-10-26",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-10-26/provpass1verbutanelf.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-10-26/provpass3kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-10-26/provpass4verbutanelf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-10-26/provpass5kvant.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2013-10-26/facit13b.pdf",
+      "notes": []
+    },
+    {
+      "examId": "hp-2014-04-05",
+      "title": "Högskoleprovet våren 2014",
+      "date": "2014-04-05",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-04-05/provpass1kvant.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-04-05/provpass3verb14auelf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-04-05/provpass4kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-04-05/provpass5verb14auelf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-04-05/facit.pdf",
+      "notes": []
+    },
+    {
+      "examId": "hp-2014-10-25",
+      "title": "Högskoleprovet hösten 2014",
+      "date": "2014-10-25",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-10-25/provpass1verbej-elf.pdf"
+        },
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-10-25/provpass2kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-10-25/provpass4verbej-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-10-25/provpass5kvant.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2014-10-25/facit14b.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 3 (ej publicerat); publicerade pass är {1,2,4,5}."
+      ]
+    },
+    {
+      "examId": "hp-2015-03-28",
+      "title": "Högskoleprovet våren 2015",
+      "date": "2015-03-28",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-03-28/provpass2kvant.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-03-28/provpass3verbuelf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-03-28/provpass4kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-03-28/provpass5verbuelf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-03-28/facit-.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5}.",
+        "Facit-filen har det udda namnet 'facit-.pdf'."
+      ]
+    },
+    {
+      "examId": "hp-2015-10-24",
+      "title": "Högskoleprovet hösten 2015",
+      "date": "2015-10-24",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-10-24/provpass1verb-ej-elf.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-10-24/provpass3kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-10-24/provpass4verb-ej-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-10-24/provpass5kvant.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2015-10-24/facit.pdf",
+      "notes": []
+    },
+    {
+      "examId": "hp-2016-04-09",
+      "title": "Högskoleprovet våren 2016",
+      "date": "2016-04-09",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-04-09/fragor/provpass-2-verbal.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-04-09/fragor/provpass-3-kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-04-09/fragor/provpass-4-verbal.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-04-09/fragor/provpass-5-kvant.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-04-09/facit-varen-2016/facit-vt2016.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5}.",
+        "Sidan ligger nästlad under /hogskoleprov/provfragor-hosten-2016/provfragor-varen-2016/."
+      ]
+    },
+    {
+      "examId": "hp-2016-10-29",
+      "title": "Högskoleprovet hösten 2016",
+      "date": "2016-10-29",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-10-29/provpass-2/provpass-2-verbal_2016-11-05.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-10-29/provpass-3/provpass-3-kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-10-29/provpass-4/provpass-4-verbal_2016-11-05.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-10-29/provpass-5-v1/provpass-5-kvant-p-version-1.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2016-10-29/facit-version-1-16b.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5}.",
+        "Provet fanns i 4 versioner (1–4). Facit-versioner (alla i hp-2016-10-29/): facit-version-1-16b.pdf, facit-version-2-16b.pdf, facit-version-3-16b.pdf, facit-version-4-16b.pdf.",
+        "Provpass 5 (kvant) finns i 4 versioner: provpass-5-v1/provpass-5-kvant-p-version-1.pdf, provpass-5-v2/provpass-5-kvant-q-version-2.pdf, provpass-5-v3/provpass-5-kvant-r-version-3.pdf, provpass-5-v4/provpass-5-kvant-s-version-4.pdf. Pass 2–4 är gemensamma för alla versioner."
+      ]
+    },
+    {
+      "examId": "hp-2017-04-01",
+      "title": "Högskoleprovet våren 2017",
+      "date": "2017-04-01",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-04-01/provpass-1-kvant-a.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-04-01/provpass-3-verbal-a-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-04-01/provpass-4-kvant-a.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-04-01/provpass-5-verbal-a-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-04-01/facit-a.pdf",
+      "notes": [
+        "Provet fanns i 2 versioner (A/B). Version B (ej länkad från sidan men nedladdningsbar): facit-b.pdf, provpass-1-kvant-b.pdf, provpass-3-verbal-b-utan-elf.pdf. Pass 4 och 5 var gemensamma (inga b-filer)."
+      ]
+    },
+    {
+      "examId": "hp-2017-10-21",
+      "title": "Högskoleprovet hösten 2017",
+      "date": "2017-10-21",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-10-21/provpass-1-verbal-utan-elf.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-10-21/provpass-3-kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-10-21/provpass-4-verbal-utan-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-10-21/provpass-5-kvant-version-1.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2017-10-21/facit-version-1.pdf",
+      "notes": [
+        "Provet fanns i 2 versioner (1/2). Version 2 (ej länkad från sidan men nedladdningsbar): facit-version-2.pdf, provpass-5-kvant-version-2.pdf. Pass 1, 3 och 4 var gemensamma."
+      ]
+    },
+    {
+      "examId": "hp-2018-04-14",
+      "title": "Högskoleprovet våren 2018",
+      "date": "2018-04-14",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-04-14/provpass-1-kvant-version-1.pdf"
+        },
+        {
+          "passNumber": 2,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-04-14/provpass-2-verbal-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-04-14/provpass-4-kvant-version-1.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-04-14/provpass-5-verbal-version-1-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-04-14/nyare-facit/facit-version-1-18a-111.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 3 (ej publicerat); publicerade pass är {1,2,4,5}.",
+        "Provet fanns i 8 provversioner; facit finns i 8 filer: nyare-facit/facit-version-1-18a-111.pdf … facit-version-8-18a-222.pdf.",
+        "Provpass 1 (kvant) har version 1 och 2: provpass-1-kvant-version-1.pdf, provpass-1-kvant-version-2.pdf.",
+        "Provpass 4 (kvant) har version 1 och 2: provpass-4-kvant-version-1.pdf, provpass-4-kvant-version-2.pdf.",
+        "Provpass 5 (verbal) har version 1 och 2: provpass-5-verbal-version-1-utan-elf.pdf, provpass-5-verbal-version-2-utan-elf.pdf."
+      ]
+    },
+    {
+      "examId": "hp-2018-10-21",
+      "title": "Högskoleprovet hösten 2018",
+      "date": "2018-10-21",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-10-21/hogskoleprovet-2018-10-21-del-2_kvantitativ-del.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-10-21/hogskoleprovet-2018-10-21-del-3_verbal-del-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-10-21/hogskoleprovet-2018-10-21-del-4_kvantitativ-del.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-10-21/hogskoleprovet-2018-10-21-del-5_verbal-del-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2018-10-21/facit-ht18.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5} ('del' = provpass i filnamnen)."
+      ]
+    },
+    {
+      "examId": "hp-2019-04-06",
+      "title": "Högskoleprovet våren 2019",
+      "date": "2019-04-06",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-04-06/provpass-1-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-04-06/hogskoleprovet-2019-04-06-del-2_kvantitativ-del2.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-04-06/provpass-4-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-04-06/hogskoleprovet-2019-04-06-del-5_kvantitativ-del.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-04-06/facit-hogskoleprovet-vt-2019.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 3 (ej publicerat); publicerade pass är {1,2,4,5}."
+      ]
+    },
+    {
+      "examId": "hp-2019-10-20",
+      "title": "Högskoleprovet hösten 2019",
+      "date": "2019-10-20",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-10-20/hogskoleprovet-2019-10-20-del-1_kvantitativ-del-version-1.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-10-20/hogskoleprovet-2019-10-20-del-3_verbal-del-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-10-20/provpass-4-kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-10-20/provpass-5-verb-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2019-10-20/hogskoleprovet-facit-19b---version-1.pdf",
+      "notes": [
+        "Provet fanns i 2 versioner. Facit: hogskoleprovet-facit-19b---version-1.pdf och hogskoleprovet-facit-19b---version-2.pdf.",
+        "Provpass 1 (kvant) har 2 versioner: hogskoleprovet-2019-10-20-del-1_kvantitativ-del-version-1.pdf (v1) och provpass-1-2-kvant.pdf (v2)."
+      ]
+    },
+    {
+      "examId": "hp-2020-10-25",
+      "title": "Högskoleprovet hösten 2020",
+      "date": "2020-10-25",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2020-10-25/hogskoleprovet-2020-10-25-del-2_verbal-del-utan-elf.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2020-10-25/hogskoleprovet-2020-10-25-del-3_kvantitativ-del.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2020-10-25/hogskoleprovet-2020-10-25-del-4_verbal-del-utan-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2020-10-25/hogskoleprovet-2020-10-25-del-5_kvantitativ-del.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2020-10-25/facit-hp-2020-10-25.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5} ('del' = provpass)."
+      ]
+    },
+    {
+      "examId": "hp-2021-03-13",
+      "title": "Högskoleprovet våren 2021 (13 mars)",
+      "date": "2021-03-13",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-03-13/provpass-1-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-03-13/hogskoleprovet-2021-03-13-del-3_kvantitativ-del.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-03-13/provpass-4-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-03-13/hogskoleprovet-2021-03-13-del-5_kvantitativ-del.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-03-13/hogskoleprovet-facit-21a1.pdf",
+      "notes": [
+        "Första av två sittningar för våren 2021 (13 mars)."
+      ]
+    },
+    {
+      "examId": "hp-2021-05-08",
+      "title": "Högskoleprovet våren 2021 (8 maj)",
+      "date": "2021-05-08",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-05-08/provpass-1-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-05-08/provpass-2-kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-05-08/provpass-4-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-05-08/provpass-5-kvant.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-05-08/hogskoleprovet-facit-21a2.pdf",
+      "notes": [
+        "Andra av två sittningar för våren 2021 (8 maj).",
+        "Utprövningspasset var provpass 3 (ej publicerat); publicerade pass är {1,2,4,5}."
+      ]
+    },
+    {
+      "examId": "hp-2021-10-24",
+      "title": "Högskoleprovet hösten 2021",
+      "date": "2021-10-24",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-10-24/211024-provpass-1-kvant.pdf"
+        },
+        {
+          "passNumber": 2,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-10-24/211024-provpass-2-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-10-24/211024-provpass-4-kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-10-24/211024-provpass-5-verb-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2021-10-24/hogskoleprovet-facit-21-b.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 3 (ej publicerat); publicerade pass är {1,2,4,5}."
+      ]
+    },
+    {
+      "examId": "hp-2022-03-12",
+      "title": "Högskoleprovet våren 2022 (12 mars)",
+      "date": "2022-03-12",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-03-12/provpass-2-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-03-12/provpass-3-kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-03-12/provpass-4-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-03-12/provpass-5-kvant.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-03-12/hogskoleprovet-facit-22a1.pdf",
+      "notes": [
+        "Första av två sittningar för våren 2022 (12 mars).",
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5}."
+      ]
+    },
+    {
+      "examId": "hp-2022-05-07",
+      "title": "Högskoleprovet våren 2022 (7 maj)",
+      "date": "2022-05-07",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-05-07/provpass-1-kvant.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-05-07/provpass-3-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-05-07/provpass-4-kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-05-07/provpass-5-verb-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-05-07/hogskoleprovet-facit-22a2-7-maj.pdf",
+      "notes": [
+        "Andra av två sittningar för våren 2022 (7 maj)."
+      ]
+    },
+    {
+      "examId": "hp-2022-10-23",
+      "title": "Högskoleprovet hösten 2022",
+      "date": "2022-10-23",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-10-23/provpass-1-kvant.pdf"
+        },
+        {
+          "passNumber": 2,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-10-23/provpass-2-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-10-23/provpass-4-kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-10-23/provpass-5-verb-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2022-10-23/hogskoleprovet-facit-22b.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 3 (ej publicerat); publicerade pass är {1,2,4,5}."
+      ]
+    },
+    {
+      "examId": "hp-2023-03-25",
+      "title": "Högskoleprovet våren 2023",
+      "date": "2023-03-25",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-03-25/provpass-2-kvant.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-03-25/provpass-3-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-03-25/provpass-4-kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-03-25/provpass-5-verb-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-03-25/hogskoleprovet-facit-23a.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5}."
+      ]
+    },
+    {
+      "examId": "hp-2023-10-22",
+      "title": "Högskoleprovet hösten 2023",
+      "date": "2023-10-22",
+      "passes": [
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-10-22/provpass-2-kvant.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-10-22/provpass-3-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-10-22/provpass-4-kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-10-22/provpass-5-verb_utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2023-10-22/hogskoleprovet-facit-23b.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 1 (ej publicerat); publicerade pass är {2,3,4,5}.",
+        "Provpass 5 har filnamn med understreck: provpass-5-verb_utan-elf.pdf."
+      ]
+    },
+    {
+      "examId": "hp-2024-04-13",
+      "title": "Högskoleprovet våren 2024",
+      "date": "2024-04-13",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-04-13/provpass-1-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 2,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-04-13/provpass-2-kvant.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-04-13/provpass-4-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-04-13/provpass-5-kvant.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-04-13/hogskoleprovet-facit-24a.pdf",
+      "notes": [
+        "Utprövningspasset var provpass 3 (ej publicerat); publicerade pass är {1,2,4,5}."
+      ]
+    },
+    {
+      "examId": "hp-2024-10-20",
+      "title": "Högskoleprovet hösten 2024",
+      "date": "2024-10-20",
+      "passes": [
+        {
+          "passNumber": 1,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-10-20/provpass-1-kvant.pdf"
+        },
+        {
+          "passNumber": 3,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-10-20/provpass-3-verb-utan-elf.pdf"
+        },
+        {
+          "passNumber": 4,
+          "type": "kvant",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-10-20/provpass-4-kvant.pdf"
+        },
+        {
+          "passNumber": 5,
+          "type": "verbal",
+          "url": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-10-20/provpass-5-verb-utan-elf.pdf"
+        }
+      ],
+      "facitUrl": "https://www.studera.nu/globalassets/05-hogskoleprovet/hp-2024-10-20/hogskoleprovet-facit-24b.pdf",
+      "notes": []
+    }
+  ],
+  "unverified": []
+}

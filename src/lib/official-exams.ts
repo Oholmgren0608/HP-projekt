@@ -644,12 +644,3 @@ export const OFFICIAL_EXAMS: OfficialExam[] = [
 
 export const OFFICIAL_INDEX_URL =
   "https://www.studera.nu/hogskoleprov/om/forbereda/tidigare/";
-
-export function docsForExam(exam: OfficialExam, prefer: OfficialDocKind[] = ["verbal", "kvantitativ", "facit"]) {
-  const ranked = [...exam.documents].sort((a, b) => {
-    const ai = prefer.indexOf(a.kind);
-    const bi = prefer.indexOf(b.kind);
-    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
-  });
-  return ranked;
-}

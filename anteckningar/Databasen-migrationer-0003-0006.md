@@ -1,4 +1,4 @@
-# Databasen: migrationerna 0003–0006 (2026-09-18)
+# Databasen: migrationerna 0003–0010 (2026-09-18)
 
 ## Läget före
 
@@ -6,13 +6,13 @@ Databasen (projekt `jhrycfampkrouwtsqxhx`) hade bara **0001 och 0002** körda. D
 förklarar varför Supabase security linter visade 12 varningar (0029/0028) för
 `duel_*`-funktionerna: de kommer från 0002 och var de enda som fanns.
 
-Att 0003–0005 aldrig var körda innebar att två funktioner var tyst trasiga:
+Att 0003, 0008 och 0009 aldrig var körda innebar att två funktioner var tyst trasiga:
 
 - **Omdöme efter duell** (`duel_submit_review` + `duel_reviews`) misslyckades.
 - **Veckans XP till topplistan** (`leaderboard_submit`, anropas vid varje XP-ändring
   i `gamification/provider.tsx`) misslyckades tyst. XP i sig ligger kvar lokalt.
 
-## Varför 0005 aldrig kunde ha körts
+## Varför 0009 aldrig kunde ha körts
 
 `leaderboard_get` (language sql) joinar `leaderboard_entries le` med
 `player_profiles pp`. **Båda tabellerna har kolumnen `updated_at`**, och funktionen
@@ -23,10 +23,10 @@ Felet var alltså inbyggt i filen som den committades, inte i databasen.
 
 **Fixen:** `updated_at` → `le.updated_at` på båda ställena. Semantiken är
 oförändrad (sorteringen sker fortsätter på topplisteradens egen tidsstämpel).
-Samma fix är speglad i 0006:s implementation och i rollback-filen, så att
+Samma fix är speglad i 0010:s implementation och i rollback-filen, så att
 funktionskropparna förblir byte-identiska mellan filerna.
 
-## Vad 0006 gör
+## Vad 0010 gör
 
 Flyttar de 16 anropbara RPC-funktionerna till schemat `private` (som **inte** ligger
 i `pgrst.db_schemas` och därför inte går att nå via `/rest/v1/rpc/`) och exponerar
@@ -43,9 +43,11 @@ fortsatt som `postgres` (som har `bypassrls`) och har kvar sina egna
 **Konvention framåt:** en ny RPC = implementation i `private` + tunn wrapper i
 `public`. Aldrig en `SECURITY DEFINER`-funktion direkt i `public`.
 
-Filer: `0006_duel_rpc_wrapper_hardening.sql`,
+Filer: `0010_duel_rpc_wrapper_hardening.sql`,
 `..._rollback.sql` (återställer exakt dagens läge) och `..._verify.sql`
 (read-only; avsnitt 0 visar läget i databasen, B/C visar resultatet efteråt).
+Rollback- och verify-filerna ligger i `supabase/manual/` (manuella verktyg,
+körs aldrig automatiskt).
 
 ## Verifierat läge efter körning
 
@@ -64,10 +66,10 @@ Funktionstester körda i rullade tillbaka transaktioner som `authenticated`:
 
 ## Kvarstår
 
-- `supabase_migrations.schema_migrations` är **tom** trots att 0001–0006 är körda.
+- `supabase_migrations.schema_migrations` är **tom** trots att 0001–0003 samt 0008–0010 är körda.
   Kör man `supabase db push` senare tror CLI:t att inget är applicerat och kommer
   att köra om allt (och fallera på "already exists"). Använd
-  `supabase migration repair --status applied 0001 0002 0003 0004 0005 0006 --linked`
+  `supabase migration repair --status applied 0001 0002 0003 0008 0009 0010 --linked`
   om/när CLI:t tas i bruk. Tills dess: kör filerna manuellt i ordning enligt README.
 - Ett B4-test i `..._verify.sql` (att `pgrst.db_schemas` inte är ändrat) är inte
   kört. Standardvärdet (`public`, `storage`, `graphql_public`) gäller om ingen
@@ -76,4 +78,4 @@ Funktionstester körda i rullade tillbaka transaktioner som `authenticated`:
   `duel_finish_bot` litar på de poäng/svar som klienten skickar in. Facit finns
   bara i frontend (`practice.ts` m.fl.), så rankad ELO kan manipuleras från
   webbläsaren. Åtgärd kräver en fråge-/facittabell i databasen och planeras som
-  egen migration 0007.
+  egen migration 0011.

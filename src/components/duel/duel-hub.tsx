@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { getSupabase } from "@/lib/supabase/client";
+import { AuthForms } from "@/components/auth/auth-forms";
 import {
   duelModeLabel,
   type DuelMatch,
@@ -14,7 +15,8 @@ import {
   ensureProfile,
   getLeaderboard,
   getMatchHistory,
-  getProfile,
+  getMyProfile,
+  type PublicDuelProfile,
 } from "@/lib/duel/profile";
 import { createPrivate, joinPrivate, startBotMatch } from "@/lib/duel/matchmaking";
 import { MatchmakingScreen } from "./matchmaking-screen";
@@ -32,7 +34,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
   const [view, setView] = useState<View>({ kind: "hub" });
   const [profile, setProfile] = useState<DuelProfile | null>(null);
-  const [leaderboard, setLeaderboard] = useState<DuelProfile[]>([]);
+  const [leaderboard, setLeaderboard] = useState<PublicDuelProfile[]>([]);
   const [history, setHistory] = useState<DuelMatch[]>([]);
   const [opponentNames, setOpponentNames] = useState<Record<string, string>>({});
   const [joinCode, setJoinCode] = useState("");
@@ -55,7 +57,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
         setOpponentNames({});
         setError(null);
         const [p, lb, h] = await Promise.all([
-          getProfile(userId),
+          getMyProfile(userId),
           getLeaderboard(50),
           getMatchHistory(userId, 30),
         ]);
@@ -140,21 +142,27 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
   if (!user) {
     return (
-      <div className="mx-auto max-w-lg rounded-2xl border border-[var(--line)] bg-white/80 p-8 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
+      <div className="mx-auto max-w-lg space-y-4 text-center">
         <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Duellera i realtid
         </p>
-        <p className="mt-2 text-[var(--ink-muted)]">
+        <p className="text-[var(--ink-muted)]">
           Logga in med Google för att tävla mot andra, klättra i ranking och spara
           din matchhistorik.
         </p>
         <button
           type="button"
           onClick={() => void signInWithGoogle()}
-          className="mt-6 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-white transition hover:brightness-110"
+          className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-white transition hover:brightness-110"
         >
           Logga in med Google
         </button>
+        <div className="flex items-center gap-3 text-xs text-[var(--ink-muted)]">
+          <span className="h-px flex-1 bg-[var(--line)]" />
+          eller
+          <span className="h-px flex-1 bg-[var(--line)]" />
+        </div>
+        <AuthForms />
       </div>
     );
   }
@@ -460,7 +468,7 @@ async function resolveOpponentNames(
   }
   if (ids.size === 0) return {};
   const { data } = await supabase
-    .from("player_profiles")
+    .from("duel_public_profiles")
     .select("user_id, display_name")
     .in("user_id", [...ids]);
   const map: Record<string, string> = {};

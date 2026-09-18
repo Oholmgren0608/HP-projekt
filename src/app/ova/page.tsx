@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PracticeHubV2 } from "@/components/practice-hub-v2";
+import { PracticeHub } from "@/components/practice-hub";
 
 export const metadata: Metadata = {
   title: "Öva",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function PracticePage() {
-  return <PracticeHubV2 />;
+  return <PracticeHub />;
 }

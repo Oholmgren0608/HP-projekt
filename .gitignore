@@ -41,3 +41,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# supabase CLI artifacts
+/supabase/.temp/
+
+# högskoleprov importer (generated output)
+/scripts/import-prov/downloads/
+/scripts/import-prov/parsed/
+/scripts/import-prov/figures/
