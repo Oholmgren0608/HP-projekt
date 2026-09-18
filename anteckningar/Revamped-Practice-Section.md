@@ -32,19 +32,19 @@ Successfully implemented the revamped practice section with sub-pages for each d
 - Displays 8 HP deltests:
   - **ORD** - Ordförståelse (Vocabulary)
   - **MEK** - Meningskomplettering (Sentence Completion)
-  - **LÄS** - Läsförståelse (Reading Comprehension)
-  - **ELF** - Engelsk Läsförståelse (English Reading)
-  - **XYZ** - Logiska resonemang (Logical Reasoning)
-  - **KVA** - Kvantitativ Jämförelse (Quantitative Comparison)
-  - **NOG** - Numerisk Orientering (Numerical Reasoning)
-  - **DTK** - Diagram, Tabeller & Kartor (Data Interpretation)
+  - **LÄS** - Svensk läsförståelse (Swedish Reading Comprehension)
+  - **ELF** - Engelsk läsförståelse (English Reading Comprehension)
+  - **XYZ** - Matematik problemlösning (Math Problem Solving)
+  - **KVA** - Kvantitativa jämförelser (Quantitative Comparisons)
+  - **NOG** - Kvantitativa resonemang (Quantitative Reasoning)
+  - **DTK** - Diagram, tabeller och kartor (Data Interpretation)
 - Two additional resource cards for Flashcards and Reading Library
 - Responsive grid layout (3 columns on large screens, 2 on tablet, 1 on mobile)
 
 #### 2. `practice-subtest-selector.tsx`
 - Allows users to choose number of questions for the selected sub-test
 - Question count constraints:
-  - **Reading tests** (LÄS, MEK): 1-5 questions
+  - **Reading tests** (LÄS, ELF): 1-5 questions
   - **All other tests**: 5-20 questions
 - Shows tips and information about the selected sub-test
 - Launches FreePracticeSession when user clicks "Start practice"
@@ -130,7 +130,8 @@ Successfully implemented the revamped practice section with sub-pages for each d
 
 ### Validation
 - Sub-test URL parameter validated against whitelist
-- Invalid routes show helpful error message
+- Invalid routes return 404 (`notFound()`)
+- Valid routes render the selector unchanged
 - Question count validated through UI constraints
 
 ### TypeScript Safety
@@ -142,7 +143,7 @@ Successfully implemented the revamped practice section with sub-pages for each d
 - Build successful with all new routes
 - Static pages for practice hub and reading library
 - Dynamic routes for sub-test pages (cached)
-- No new dependencies required
+- No practice-specific dependencies required
 
 ## Build Status
 ✅ **All builds pass successfully**
