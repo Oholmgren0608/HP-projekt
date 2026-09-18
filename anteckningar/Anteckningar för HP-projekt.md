@@ -15,3 +15,6 @@ OK#Prioriteringar
 
 #Tokenbudget
 Måste vara smart och noggran med vilka modeller jag använder beroende på uppgiften. Har bara ett visst antal credits och vill spara på så mycket pengar som möjligt. Möjlig strategi för detta är att använda den billigaste (och mest relevanta) modellen för en viss uppgift och sedan pusha det som en branch. Om modellen lyckas bra med uppgiften mergar vi till main, annars raderar vi branchen, låter en annan modell göra uppgiften osv. På detta sätt lär jag mig vad för sort uppgifter olika modeller klarar av att genomföra effektivt. Detta betyder att jag kommer behöver experimentera i början och potentiellt bränna mer pengar, men i långsikt så är det mer sparsamt. 
+
+#Känt beteende
+- Mastery är "sticky": en fråga som besvarats rätt markeras som mastered och tas medvetet inte bort om användaren senare svarar fel på samma fråga. Detta är ett medvetet produktbeteende, inte en bugg.
