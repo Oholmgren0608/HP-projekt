@@ -46,12 +46,18 @@ const CONNECTOR_CARDS: Flashcard[] = [
   { id: "kon-namligen", front: "nämligen", back: "förklaring / preciserar föregående", source: "MEK-konnektorer" },
 ];
 
-/** Unika kort (samma framsida behålls första gången). */
+/**
+ * Unika kort: samma kategori + framsida behålls första gången. Kategorin
+ * härleds ur id-prefixet ("ord-", "read-", "kon-") så att läsningskort vars
+ * framsida krockar med ett ORD-kort (t.ex. "adekvat", "koherent",
+ * "tautologi") inte längre slängs bort.
+ */
 function dedupe(cards: Flashcard[]): Flashcard[] {
   const seen = new Set<string>();
   const out: Flashcard[] = [];
   for (const c of cards) {
-    const key = c.front.toLowerCase().trim();
+    const category = c.id.split("-")[0];
+    const key = `${category}:${c.front.toLowerCase().trim()}`;
     if (seen.has(key)) continue;
     seen.add(key);
     out.push(c);
