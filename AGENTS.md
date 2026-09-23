@@ -37,8 +37,10 @@ frontend/backend split, Express server, or Prisma layer.
 **Trigger:** Apply when editing `supabase/migrations` or `src/lib/supabase`.
 
 - Make schema changes as new numbered SQL migrations in `supabase/migrations`
-  (next is `0004_<name>.sql`). Never edit already-applied migrations
-  (`0001`–`0003`).
+  (next is `0011_<name>.sql`). Never edit already-applied migrations
+  (`0001`–`0010`). Apply with `supabase db push --db-url <anslutningssträng>`
+  (kör `--dry-run` först) eller genom att klistra in filen i Dashboard → SQL
+  Editor.
 - Enable Row Level Security on every table with least-privilege policies using
   `auth.uid()` / `auth.role()`.
 - Put atomic/anti-cheat logic (e.g. ELO and stat updates) in `SECURITY DEFINER`

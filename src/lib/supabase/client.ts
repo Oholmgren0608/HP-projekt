@@ -261,6 +261,7 @@ export type Database = {
           mode: "ranked" | "casual";
           elo: number;
           created_at: string;
+          expires_at: string;
         };
         Insert: {
           id?: string;
@@ -268,6 +269,7 @@ export type Database = {
           mode: "ranked" | "casual";
           elo: number;
           created_at?: string;
+          expires_at?: string;
         };
         Update: {
           mode?: "ranked" | "casual";
