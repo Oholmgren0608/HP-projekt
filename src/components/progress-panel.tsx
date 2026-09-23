@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Disclosure } from "@/components/disclosure";
 import { ProgressChart } from "@/components/progress-chart";
 import { usePlan } from "@/components/plan-context";
 import { useHydrated } from "@/lib/use-hydrated";
@@ -111,84 +112,96 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
     </div>
   ) : null;
 
+  const card = (
+    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+        Poängprognos
+      </p>
+      <div className="mt-4">{numbers}</div>
+      {prognosis === null && quizCount > 0 ? (
+        <p className="mt-2 text-sm text-[var(--ink-muted)]">
+          Prognos visas när du svarat på minst {PROGNOSIS_MIN_KIND_QUESTIONS} frågor i ett
+          delprov.
+        </p>
+      ) : null}
+      {suggestBanner}
+      <ProgressChart points={points} compact />
+      <p className="mt-3 text-sm text-[var(--ink-muted)]">
+        {quizCount === 0
+          ? "Inga övningar loggade än."
+          : `${quizCount} övningspass · verbal ${verbal ? `${verbal.percent} %` : "—"} · kvant ${quant ? `${quant.percent} %` : "—"}`}
+      </p>
+      {paceLine}
+    </div>
+  );
+
   if (compact) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
-          Poängprognos
-        </p>
-        <div className="mt-4">{numbers}</div>
-        {prognosis === null && quizCount > 0 ? (
-          <p className="mt-2 text-sm text-[var(--ink-muted)]">
-            Prognos visas när du svarat på minst {PROGNOSIS_MIN_KIND_QUESTIONS} frågor i ett
-            delprov.
-          </p>
-        ) : null}
-        {suggestBanner}
-        <ProgressChart points={points} compact />
-        <p className="mt-3 text-sm text-[var(--ink-muted)]">
-          {quizCount === 0
-            ? "Inga övningar loggade än."
-            : `${quizCount} övningspass · verbal ${verbal ? `${verbal.percent} %` : "—"} · kvant ${quant ? `${quant.percent} %` : "—"}`}
-        </p>
-        {paceLine}
-      </div>
+      <Disclosure title="Poängprognos" bodyClassName="px-3 pb-3 pt-3">
+        {card}
+      </Disclosure>
     );
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-      <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
-          Uppskattad poängprognos
-        </p>
-        <div className="mt-4">{numbers}</div>
-        <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)]">
-          Prognosen är en grov omräkning från råprocent i appens övningar — inte UHR:s officiella
-          normeringstabell. Den uppdateras bara när du svarat på minst{" "}
-          {PROGNOSIS_MIN_KIND_QUESTIONS} frågor i ett delprov — fler svar ger stabilare siffror.
-        </p>
-        <PrognosisThresholdChips prognosis={prognosis} />
-        {suggestBanner}
-        <ProgressChart points={points} />
-      </div>
-
-      <aside className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
-          Senaste övningar
-        </p>
-        <dl className="mt-4 grid grid-cols-2 gap-5">
-          <div>
-            <dt className="text-sm text-[var(--ink-muted)]">Verbalt</dt>
-            <dd className="text-xl font-semibold text-[var(--ink)]">
-              {verbal ? `${verbal.percent} %` : "—"}
-            </dd>
-            {verbal ? (
-              <p className="text-xs text-[var(--ink-muted)]">{verbal.n} frågor</p>
-            ) : null}
-          </div>
-          <div>
-            <dt className="text-sm text-[var(--ink-muted)]">Kvant</dt>
-            <dd className="text-xl font-semibold text-[var(--ink)]">
-              {quant ? `${quant.percent} %` : "—"}
-            </dd>
-            {quant ? (
-              <p className="text-xs text-[var(--ink-muted)]">{quant.n} frågor</p>
-            ) : null}
-          </div>
-        </dl>
-        <p className="mt-5 border-t border-[var(--line)] pt-4 text-sm text-[var(--ink-muted)]">
-          {quizCount === 0
-            ? "Inga övningar loggade än. Starta ett pass i veckoplanen så syns historiken här."
-            : `${quizCount} övningspass sparade i webbläsaren.`}
-        </p>
-        {paceLine ?? (
-          <p className="mt-3 text-sm text-[var(--ink-muted)]">
-            Tid per fråga visas när du avslutat ett tidsatt pass.
+    <Disclosure
+      title="Poängprognos"
+      subtitle="Inmatad norm, uppskattning från övningar och dina senaste pass."
+      bodyClassName="px-3 pb-3 pt-3"
+    >
+      <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+        <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+            Uppskattad poängprognos
           </p>
-        )}
-      </aside>
-    </div>
+          <div className="mt-4">{numbers}</div>
+          <p className="mt-3 text-sm leading-relaxed text-[var(--ink-muted)]">
+            Prognosen är en grov omräkning från råprocent i appens övningar — inte UHR:s officiella
+            normeringstabell. Den uppdateras bara när du svarat på minst{" "}
+            {PROGNOSIS_MIN_KIND_QUESTIONS} frågor i ett delprov — fler svar ger stabilare siffror.
+          </p>
+          <PrognosisThresholdChips prognosis={prognosis} />
+          {suggestBanner}
+          <ProgressChart points={points} />
+        </div>
+
+        <aside className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+            Senaste övningar
+          </p>
+          <dl className="mt-4 grid grid-cols-2 gap-5">
+            <div>
+              <dt className="text-sm text-[var(--ink-muted)]">Verbalt</dt>
+              <dd className="text-xl font-semibold text-[var(--ink)]">
+                {verbal ? `${verbal.percent} %` : "—"}
+              </dd>
+              {verbal ? (
+                <p className="text-xs text-[var(--ink-muted)]">{verbal.n} frågor</p>
+              ) : null}
+            </div>
+            <div>
+              <dt className="text-sm text-[var(--ink-muted)]">Kvant</dt>
+              <dd className="text-xl font-semibold text-[var(--ink)]">
+                {quant ? `${quant.percent} %` : "—"}
+              </dd>
+              {quant ? (
+                <p className="text-xs text-[var(--ink-muted)]">{quant.n} frågor</p>
+              ) : null}
+            </div>
+          </dl>
+          <p className="mt-5 border-t border-[var(--line)] pt-4 text-sm text-[var(--ink-muted)]">
+            {quizCount === 0
+              ? "Inga övningar loggade än. Starta ett pass i veckoplanen så syns historiken här."
+              : `${quizCount} övningspass sparade i webbläsaren.`}
+          </p>
+          {paceLine ?? (
+            <p className="mt-3 text-sm text-[var(--ink-muted)]">
+              Tid per fråga visas när du avslutat ett tidsatt pass.
+            </p>
+          )}
+        </aside>
+      </div>
+    </Disclosure>
   );
 }
 

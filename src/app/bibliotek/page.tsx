@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Disclosure } from "@/components/disclosure";
 import { ReadingLibrary } from "@/components/reading-library";
 import { READING_METHOD } from "@/lib/reading-library";
 
@@ -30,12 +31,9 @@ export default function ReadingLibraryPage() {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
-          Läsmetoden
-        </h2>
-        <ul className="mt-4 space-y-2.5">
-          {READING_METHOD.map((m) => (
+      <Disclosure title="Läsmetoden" subtitle={READING_METHOD[0]}>
+        <ul className="space-y-2.5">
+          {READING_METHOD.slice(1).map((m) => (
             <li
               key={m}
               className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"
@@ -45,7 +43,7 @@ export default function ReadingLibraryPage() {
             </li>
           ))}
         </ul>
-      </section>
+      </Disclosure>
     </div>
   );
 }

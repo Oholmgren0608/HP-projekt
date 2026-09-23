@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import { Disclosure } from "@/components/disclosure";
 import { SECTION_TIPS } from "@/lib/section-tips";
 import { sectionShort } from "@/lib/subtests";
 
@@ -46,23 +47,17 @@ export function TipsView() {
         ))}
       </nav>
 
-      <div className="space-y-8 sm:space-y-10">
+      <div className="space-y-4 sm:space-y-5">
         {SECTION_TIPS.map((tip) => (
-          <article
+          <Disclosure
             key={tip.id}
             id={tip.id}
-            className={`scroll-mt-24 rounded-2xl border bg-card/75 p-5 sm:p-6 ${
-              highlight === tip.id
-                ? "border-[var(--brand)]"
-                : "border-[var(--line)]"
-            }`}
+            title={tip.title}
+            subtitle={tip.tests}
+            defaultOpen={highlight === tip.id}
+            className={highlight === tip.id ? "border-[var(--brand)]" : undefined}
           >
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-              {tip.title}
-            </h2>
-            <p className="mt-3 leading-relaxed text-[var(--ink-muted)]">{tip.tests}</p>
-
-            <h3 className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink-muted)]">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink-muted)]">
               Vanliga fel
             </h3>
             <ul className="mt-2 space-y-2.5">
@@ -87,7 +82,7 @@ export function TipsView() {
                 <li key={s}>{s}</li>
               ))}
             </ol>
-          </article>
+          </Disclosure>
         ))}
       </div>
     </div>

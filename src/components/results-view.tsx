@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Disclosure } from "@/components/disclosure";
 import { ScoreBar } from "@/components/plan-badges";
 import { usePlan } from "@/components/plan-context";
 import { ProgressPanel } from "@/components/progress-panel";
@@ -58,14 +59,11 @@ export function ResultsView() {
         </div>
       </section>
 
-      <section>
-        <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-          Delprov — prioritering
-        </h2>
-        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-          Sorterat efter var tiden ger mest utifrån dina inmatade poäng.
-        </p>
-        <div className="mt-6 grid gap-8 lg:grid-cols-2">
+      <Disclosure
+        title="Delprov — prioritering"
+        subtitle="Sorterat efter var tiden ger mest utifrån dina inmatade poäng."
+      >
+        <div className="grid gap-8 lg:grid-cols-2">
           {(
             [
               { title: "Verbala", block: "verbal" as const },
@@ -109,19 +107,20 @@ export function ResultsView() {
             </div>
           ))}
         </div>
-      </section>
+      </Disclosure>
 
-      <section>
-        <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-          Tidfördelning (~{profile.hoursPerWeek} h/vecka)
-        </h2>
+      <Disclosure
+        title="Tidfördelning"
+        hint={`~${profile.hoursPerWeek} h/vecka`}
+        subtitle="Så fördelas veckans tid mellan delproven."
+      >
         {timeSplit.length === 0 ? (
-          <p className="mt-4 rounded-xl border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
+          <p className="rounded-xl border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
             Alla delprov ligger på samma nivå — ingen enskild del behöver extra
             tid. Fördela tiden jämnt över delarna.
           </p>
         ) : (
-          <ul className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             {timeSplit.map((t) => (
               <li
                 key={t.label}
@@ -138,7 +137,7 @@ export function ResultsView() {
             ))}
           </ul>
         )}
-      </section>
+      </Disclosure>
 
       <ProgressPanel />
     </div>

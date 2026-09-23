@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { Lock } from "lucide-react";
+import { Disclosure } from "@/components/disclosure";
 import { ACHIEVEMENTS } from "@/lib/gamification/config";
 import { useGamification } from "@/lib/gamification/provider";
 import { cn } from "@/lib/utils";
@@ -11,19 +13,33 @@ import { cn } from "@/lib/utils";
  */
 export function AchievementsPanel({ className }: { className?: string }) {
   const { state, markAchievementsSeen } = useGamification();
+  const [expanded, setExpanded] = useState(false);
+
+  // Stängd panel animerar klart utan att någon ser markeringen; kvittera därför
+  // "NY" först när panelen faktiskt är öppen och användaren hunnit se den.
+  useEffect(() => {
+    if (!expanded) return;
+    const unseen = ACHIEVEMENTS.filter((a) => {
+      const entry = state.achievements[a.id];
+      return entry && !entry.seen;
+    }).map((a) => a.id);
+    if (unseen.length === 0) return;
+    const timer = window.setTimeout(() => markAchievementsSeen(unseen), 1000);
+    return () => window.clearTimeout(timer);
+  }, [expanded, state.achievements, markAchievementsSeen]);
 
   return (
-    <div className={cn("rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft", className)}>
-      <div className="flex items-center justify-between">
-        <h2 className="font-[family-name:var(--font-display)] text-lg font-bold text-[var(--ink)]">
-          Achievements
-        </h2>
+    <Disclosure
+      title="Achievements"
+      onOpenChange={setExpanded}
+      className={cn("shadow-soft", className)}
+      hint={
         <span className="rounded-full bg-[var(--accent-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--accent-foreground)]">
           {Object.keys(state.achievements).length} / {ACHIEVEMENTS.length}
         </span>
-      </div>
-
-      <ul className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+      }
+    >
+      <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
         {ACHIEVEMENTS.map((a, i) => {
           const unlocked = state.achievements[a.id];
           const isNew = unlocked && !unlocked.seen;
@@ -34,7 +50,7 @@ export function AchievementsPanel({ className }: { className?: string }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i * 0.03, 0.3) }}
               onAnimationComplete={() => {
-                if (isNew) markAchievementsSeen([a.id]);
+                if (expanded && isNew) markAchievementsSeen([a.id]);
               }}
               className={cn(
                 "relative flex flex-col items-center gap-1 rounded-xl border p-3 text-center transition",
@@ -73,6 +89,6 @@ export function AchievementsPanel({ className }: { className?: string }) {
           );
         })}
       </ul>
-    </div>
+    </Disclosure>
   );
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Disclosure } from "@/components/disclosure";
 import { PriorityBadge } from "@/components/plan-badges";
 import { usePlan } from "@/components/plan-context";
 import { StudyTimeNotice } from "@/components/study-time-notice";
@@ -69,11 +70,8 @@ export function PlanView() {
 
       {!sessionOpen ? (
         <>
-          <section>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-              Strategin i korthet
-            </h2>
-            <div className="mt-5 grid gap-5 sm:grid-cols-2">
+          <Disclosure title="Strategin i korthet">
+            <div className="grid gap-5 sm:grid-cols-2">
               {strategy.map((item) => (
                 <article
                   key={item.title}
@@ -88,16 +86,14 @@ export function PlanView() {
                 </article>
               ))}
             </div>
-          </section>
+          </Disclosure>
 
-          <section className="rounded-2xl bg-foreground p-5 text-background sm:p-6">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl">
-              En vanlig studiedag
-            </h2>
-            <p className="mt-3 max-w-2xl text-background/70">
-              Mall efter dina flaskhalsar — justeras när du sparar nya resultat.
-            </p>
-            <ol className="mt-6 space-y-4">
+          <Disclosure
+            variant="inverted"
+            title="En vanlig studiedag"
+            subtitle="Mall efter dina flaskhalsar — justeras när du sparar nya resultat."
+          >
+            <ol className="space-y-4">
               {dailyTemplate.map((row, i) => (
                 <li
                   key={row.slot}
@@ -110,7 +106,7 @@ export function PlanView() {
                 </li>
               ))}
             </ol>
-          </section>
+          </Disclosure>
 
           <section>
             <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -129,23 +125,18 @@ export function PlanView() {
             </p>
             <div className="mt-6 space-y-4">
               {sections.map((section) => (
-                <article
+                <Disclosure
                   key={`${section.id}-${section.name}`}
-                  className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6"
-                >
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-                      {section.name}
-                    </h3>
-                    <PriorityBadge priority={section.priority} />
-                    <span className="text-sm text-[var(--ink-muted)]">
-                      {section.scoreLabel}
+                  title={section.name}
+                  subtitle={section.why}
+                  hint={
+                    <span className="flex flex-wrap items-center gap-2">
+                      <PriorityBadge priority={section.priority} />
+                      <span className="text-sm text-[var(--ink-muted)]">{section.scoreLabel}</span>
                     </span>
-                  </div>
-                  <p className="mt-3 max-w-3xl text-[var(--ink-muted)]">
-                    {section.why}
-                  </p>
-                  <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                  }
+                >
+                  <ul className="grid gap-2 sm:grid-cols-2">
                     {section.methods.map((m) => (
                       <li
                         key={m}
@@ -162,7 +153,7 @@ export function PlanView() {
                       {section.weeklyGoal}
                     </span>
                   </p>
-                </article>
+                </Disclosure>
               ))}
             </div>
           </section>

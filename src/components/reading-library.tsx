@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Disclosure } from "@/components/disclosure";
 import { usePersistentState } from "@/lib/use-persistent-state";
 import { recordEvent } from "@/lib/gamification/engine";
 import {
@@ -52,36 +53,47 @@ export function ReadingLibrary() {
       </div>
 
       <div className="grid gap-5 lg:gap-6 lg:grid-cols-[17rem_1fr]">
-        <div className="space-y-2.5">
-          {LIBRARY_TEXTS.map((item) => {
-            const selected = item.id === text.id;
-            const done = Boolean(read[item.id]);
-            return (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => selectText(item)}
-                className={`w-full rounded-lg border px-3 py-3 text-left transition ${
-                  selected
-                    ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                    : "border-[var(--line-strong)] bg-card/70 hover:border-[var(--ink-soft)]"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <span className="font-medium text-[var(--ink)]">{item.title}</span>
-                  {done ? (
-                    <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-[var(--lagoon-ink)]">
-                      Läst
-                    </span>
-                  ) : null}
-                </div>
-                <div className="mt-1 text-xs text-[var(--ink-muted)]">
-                  {item.kind} · ~{item.minutes} min
-                </div>
-              </button>
-            );
-          })}
-        </div>
+        <Disclosure
+          title="Välj text"
+          subtitle={`${LIBRARY_TEXTS.length} texter`}
+          hint={
+            <span className="max-w-[12rem] truncate rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--brand)]">
+              {text.title}
+            </span>
+          }
+          className="lg:self-start"
+        >
+          <div className="space-y-2.5">
+            {LIBRARY_TEXTS.map((item) => {
+              const selected = item.id === text.id;
+              const done = Boolean(read[item.id]);
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => selectText(item)}
+                  className={`w-full rounded-lg border px-3 py-3 text-left transition ${
+                    selected
+                      ? "border-[var(--brand)] bg-[var(--accent-soft)]"
+                      : "border-[var(--line-strong)] bg-card/70 hover:border-[var(--ink-soft)]"
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="font-medium text-[var(--ink)]">{item.title}</span>
+                    {done ? (
+                      <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-[var(--lagoon-ink)]">
+                        Läst
+                      </span>
+                    ) : null}
+                  </div>
+                  <div className="mt-1 text-xs text-[var(--ink-muted)]">
+                    {item.kind} · ~{item.minutes} min
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </Disclosure>
 
         <article className="rounded-2xl border border-[var(--line)] bg-card/80 p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.4)] sm:p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
