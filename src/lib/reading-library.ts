@@ -282,9 +282,9 @@ export const LIBRARY_TEXTS: LibraryText[] = [
 ];
 
 export const READING_METHOD = [
-  "Primärt mål med läsning nu: ORD-ord + MEK-konnektorer (LÄS är redan 75 %).",
-  "Efter varje text: en mening sammanfattning utan att titta tillbaka.",
+  "Mål: ORD-ord + MEK-konnektorer (LÄS är redan starkt).",
+  "Efter varje text: sammanfatta i en mening.",
   "Plocka 5 ord/uttryck → ORD-decket samma dag.",
-  "Markera konnektorer (emellertid, således, däremot…) — det är din MEK-träning.",
-  "Undvik sport/nöje/talspråkskrönikor — för låg densitet för HP.",
+  "Markera konnektorer — det är din MEK-träning.",
+  "Undvik krönikor och talspråk — för låg densitet.",
 ];

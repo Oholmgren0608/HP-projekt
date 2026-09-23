@@ -63,10 +63,10 @@ const METHODS: Record<
     name: "MEK — Meningskomplettering",
     short: "MEK",
     methods: [
-      "Träna konnektorer dagligen: emellertid, således, däremot, respektive, i synnerhet, oaktat",
-      "Läs varje alternativ högt — fel svar bryter ofta ton, tempus eller orsaksrelation",
-      "Eliminera först: stryk stilfel, sedan logikfel",
-      "Korta MEK-set flera gånger i veckan med felanalys",
+      "Konnektorer dagligen: emellertid, således, däremot, oaktat",
+      "Alternativen högt: fel svar bryter ton eller orsaksrelation",
+      "Stryk stilfel före logikfel",
+      "Korta MEK-set med felanalys",
     ],
   },
   ORD: {
@@ -74,9 +74,9 @@ const METHODS: Record<
     short: "ORD",
     methods: [
       "15–25 nya ord per dag + aktiv recall",
-      "Gruppera efter stammar så ett ord ger flera",
+      "Gruppera efter stammar",
       "Fel-decket går före nya ord",
-      "Använd flashcards i appen varje morgon",
+      "Flashcards varje morgon",
     ],
   },
   LAS: {
@@ -84,16 +84,16 @@ const METHODS: Record<
     short: "LÄS",
     methods: [
       "Daglig sakprosa i läsbiblioteket",
-      "Tidsatta LÄS-pass med bevisrad efter fel",
+      "Tidsatta pass med bevisrad",
       "Sammanfatta huvudpoängen i en mening",
-      "Skilj stöd i texten från rimliga gissningar",
+      "Stöd i texten slår gissningar",
     ],
   },
   ELF: {
     name: "ELF — Engelsk läsförståelse",
     short: "ELF",
     methods: [
-      "Underhållspass så tempot inte dipsar",
+      "Underhållspass så tempot hålls",
       "Lätt engelsk sakprosa vid behov",
       "Analysera bara tydliga fel",
     ],
@@ -102,9 +102,9 @@ const METHODS: Record<
     name: "DTK — Diagram, tabeller och kartor",
     short: "DTK",
     methods: [
-      "Tempo + noggrann avläsning av axlar/enheter",
-      "Stryk irrelevant data innan du räknar",
-      "Felanalys: avläsning vs. räkning vs. feltolkad fråga",
+      "Tempo + noggrann avläsning",
+      "Stryk irrelevant data före räkning",
+      "Felanalys: avläsning, räkning, feltolkning",
     ],
   },
   XYZ: {
@@ -112,8 +112,8 @@ const METHODS: Record<
     short: "XYZ",
     methods: [
       "Blandade problemlösningspass",
-      "Fokusera typer du missar i felanalys",
-      "Håll handen varm utan att överplugga",
+      "Fokusera på missade typer",
+      "Korta pass — överplugga inte",
     ],
   },
   KVA: {
@@ -121,7 +121,7 @@ const METHODS: Record<
     short: "KVA",
     methods: [
       "Korta jämförelseset under tid",
-      "Öva att avgöra relation utan full uträkning",
+      "Avgör relation utan full uträkning",
       "Felanalys per uppgiftstyp",
     ],
   },
@@ -143,29 +143,29 @@ export function priorityFromPercent(percent: number): Priority {
   return "styrka";
 }
 
-function whyFor(r: Ranked, priority: Priority): string {
+function whyFor(priority: Priority): string {
   if (priority === "kritiskt") {
-    return `${r.correct}/${r.total} (${r.percent} %) — tydlig flaskhals. Här finns mest poäng att hämta.`;
+    return "Tydlig flaskhals — mest poäng att hämta här.";
   }
   if (priority === "huvudfokus") {
-    return `${r.correct}/${r.total} (${r.percent} %) — under målzonen. Regelbunden träning ger ofta snabb lyft.`;
+    return "Under målzonen. Regelbunden träning ger snabb lyft.";
   }
   if (priority === "underhall") {
-    return `${r.correct}/${r.total} (${r.percent} %) — okej nivå. Behåll med lätt underhåll, jaga inte på bekostnad av svagare delar.`;
+    return "God nivå. Underhåll — ta inte tid från svagare delar.";
   }
-  return `${r.correct}/${r.total} (${r.percent} %) — styrka. Skydda nivån med korta pass.`;
+  return "Styrka. Skydda nivån med korta pass.";
 }
 
 function weeklyGoalFor(id: SectionId, priority: Priority): string {
   if (id === "MEK") {
     return priority === "styrka" || priority === "underhall"
       ? "2–3 MEK-set/vecka"
-      : "5–6 MEK-set + fel-lista över konnektorer";
+      : "5–6 MEK-set + konnektorlista";
   }
   if (id === "ORD") {
     return priority === "styrka" || priority === "underhall"
       ? "Daglig lätt flashcard-repetition"
-      : "15–25 ord/dag + flashcards, ≥80 % rätt på veckotest";
+      : "15–25 ord/dag + flashcards, ≥80 % på veckotest";
   }
   if (id === "LAS") {
     return priority === "kritiskt" || priority === "huvudfokus"
@@ -178,7 +178,7 @@ function weeklyGoalFor(id: SectionId, priority: Priority): string {
       : "2–3 ELF-pass + felanalys";
   }
   if (id === "DTK") return "1–2 DTK-pass/vecka";
-  if (id === "XYZ") return "1–2 XYZ-pass (problemlösning)";
+  if (id === "XYZ") return "1–2 XYZ-pass";
   if (id === "KVA") return "Korta KVA-set under tid";
   if (id === "NOG") return "1 NOG-pass: tillräcklighet";
   return "1 blandat underhållspass/vecka";
@@ -579,7 +579,7 @@ export function generatePlan(
       short: meta.short,
       priority,
       scoreLabel: `${r.correct}/${r.total} (${r.percent} %)`,
-      why: whyFor(r, priority),
+      why: whyFor(priority),
       methods: meta.methods,
       weeklyGoal: weeklyGoalFor(r.id, priority),
     });
@@ -599,7 +599,7 @@ export function generatePlan(
     why: `Samlat kvant-läge. Svagaste av de tre: ${[xyz, kva, nog].sort((a, b) => a.percent - b.percent)[0].id}.`,
     methods: [
       "1 blandat underhållspass/vecka utöver DTK",
-      "Extra set bara på den svagaste av XYZ/KVA/NOG",
+      "Extra set bara på svagaste av XYZ/KVA/NOG",
       "Fullt kvantitativt delprov var 2.–3. vecka",
     ],
     weeklyGoal: "1 blandat underhållspass + DTK vid behov",
@@ -657,19 +657,19 @@ export function generatePlan(
   const strategy: StrategyItem[] = [
     {
       title: `${METHODS[weakestVerbal.id].short} först`,
-      body: `Din svagaste verbala del är ${METHODS[weakestVerbal.id].short} (${weakestVerbal.correct}/${weakestVerbal.total}). Lägg merparten av verbala tiden där innan du jagar styrkor.`,
+      body: `Verbala svagaste del: ${METHODS[weakestVerbal.id].short}. Lägg tiden där först.`,
     },
     {
       title: "Skydda det som redan fungerar",
-      body: `${METHODS[strongestVerbal.id].short} ligger på ${strongestVerbal.percent} %. Underhåll räcker — stjäl inte tid från flaskhalsarna.`,
+      body: `${METHODS[strongestVerbal.id].short} är stark. Underhåll — ta inte tid från flaskhalsarna.`,
     },
     {
       title: `På kvant: ${METHODS[weakestQuant.id].short}`,
-      body: `Svagaste kvantitativa delen är ${METHODS[weakestQuant.id].short} (${weakestQuant.percent} %). Putsa den hellre än att överplugga redan starka delar.`,
+      body: `Kvantens svagaste: ${METHODS[weakestQuant.id].short}. Putsa den före starka delar.`,
     },
     {
       title: "Felanalys slår volym",
-      body: "Efter varje pass: skriv varför rätt svar är rätt. Tre genomtänkta pass ger mer än tio slarviga.",
+      body: "Skriv efter varje pass varför rätt svar är rätt.",
     },
   ];
 
@@ -738,7 +738,7 @@ export function generatePlan(
       },
       {
         slot: "Lunch/kväll (20–25 min)",
-        item: "Sakprosa i läsbiblioteket: ORD-ord + konnektorer",
+        item: "Sakprosa: ORD-ord + konnektorer",
       },
       {
         slot: "Underhåll (2×/vecka)",

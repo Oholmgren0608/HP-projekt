@@ -267,7 +267,7 @@ export function OfficialExamsBrowser() {
           Officiella provhäften och facit
         </h2>
         <div className="mt-3 rounded-lg border border-[var(--line)] bg-card/60 px-4 py-3 text-sm text-[var(--ink-muted)]">
-          Häftena och facit visas här (PDF från studera.nu). Vi omhostar inte filerna — ELF saknas ofta (UHR visar texterna kort tid). För fler år:{" "}
+          PDF från studera.nu — vi omhostar inte filerna. ELF saknas ofta (UHR visar texterna kort tid). För fler år:{" "}
           <a
             href={OFFICIAL_INDEX_URL}
             target="_blank"
