@@ -9,6 +9,20 @@ import { shuffle } from "@/lib/random";
 export const DUEL_KINDS = ["ord", "mek", "xyz", "kva", "nog", "dtk"] as const;
 export type DuelKind = (typeof DUEL_KINDS)[number];
 
+/**
+ * Endast frågor med facit i den server-side tabellen `duel_questions` får
+ * användas i dueller. Servern rättar svaren mot den tabellen, och ett id utan
+ * facit ger tyst 0 poäng (`duel_submit_answer` svarar "unknown question").
+ * Tabellen är inte läsbar för klienten (RLS utan policies), men facit-raderna
+ * täcker exakt de bundlade id:na på formen "<delprov>-<nummer>" — importerade
+ * provfrågor har id "hp-<datum>-p<n>-q<m>" och saknar facit tills de backfyllts.
+ */
+const FACIT_BACKED_ID = /^(ord|mek|xyz|kva|nog|dtk)-\d+$/;
+
+export function isFacitBackedId(id: string): boolean {
+  return FACIT_BACKED_ID.test(id);
+}
+
 /** Frågebanken per duell-delprov, hämtad från runtime-providern (Supabase/fallback). */
 function getBanks(): Record<DuelKind, ChoiceQuestion[]> {
   const banks: Record<DuelKind, ChoiceQuestion[]> = {
@@ -21,7 +35,7 @@ function getBanks(): Record<DuelKind, ChoiceQuestion[]> {
   };
   for (const q of getQuestions()) {
     const list = banks[q.kind as DuelKind];
-    if (list) list.push(q);
+    if (list && isFacitBackedId(q.id)) list.push(q);
   }
   return banks;
 }

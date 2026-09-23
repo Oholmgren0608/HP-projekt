@@ -1,5 +1,34 @@
 import type { User } from "@supabase/supabase-js";
 
+import type { DuelMatch } from "@/lib/duel/types";
+
+export type DuelResult = "win" | "loss" | "draw";
+
+/**
+ * Klassificerar en avslutad duells utfall för spelaren `meId`. Delas av
+ * XP-rapporteringen (engine) och resultatvyn så att de aldrig kan divergera.
+ *
+ * Botmatcher: servern (duel_finish_bot) sätter winner = null både vid förlust
+ * (boten vann, b_correct > a_correct) och vid oavgjort; skillnaden syns bara i
+ * a_correct/b_correct. Uppgivande registrerar alltid en förlust. (G21)
+ */
+export function classifyDuelResult(match: DuelMatch, meId: string): DuelResult {
+  if (match.winner === meId) return "win";
+  if (match.status === "forfeit") return "loss";
+
+  const isBotMatch = match.player_b === null && match.bot_elo != null;
+  if (isBotMatch && match.status === "finished" && match.winner === null) {
+    return match.b_correct != null &&
+      match.a_correct != null &&
+      match.b_correct === match.a_correct
+      ? "draw"
+      : "loss";
+  }
+
+  return match.winner === null ? "draw" : "loss";
+}
+
+
 /** Visningsnamn från Google-kontot (full_name > name > e-post). */
 export function displayNameFromUser(user: User | null): string {
   if (!user) return "Spelare";

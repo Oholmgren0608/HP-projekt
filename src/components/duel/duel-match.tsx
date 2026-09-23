@@ -24,7 +24,7 @@ import {
   markFinished,
   submitAnswer,
 } from "@/lib/duel/matchmaking";
-import { displayNameFromUser, formatMs } from "./duel-utils";
+import { classifyDuelResult, displayNameFromUser, formatMs, type DuelResult } from "./duel-utils";
 import { ReviewForm } from "./review-form";
 import { QuestionFigure } from "@/components/question-figure";
 
@@ -32,31 +32,7 @@ type Phase = "loading" | "error" | "playing" | "waiting" | "finished";
 
 type MyAnswer = { chosen: number | null; correct: boolean; timeMs: number };
 
-type DuelResult = "win" | "loss" | "draw";
 
-/**
- * Klassificerar en avslutad duells utfall för spelaren `meId`. Delas av
- * XP-rapporteringen (engine) och resultatvyn så att de aldrig kan divergera.
- *
- * Botmatcher: servern (duel_finish_bot) sätter winner = null både vid förlust
- * (boten vann, b_correct > a_correct) och vid oavgjort; skillnaden syns bara i
- * a_correct/b_correct. Uppgivande registrerar alltid en förlust. (G21)
- */
-function classifyDuelResult(match: DuelMatch, meId: string): DuelResult {
-  if (match.winner === meId) return "win";
-  if (match.status === "forfeit") return "loss";
-
-  const isBotMatch = match.player_b === null && match.bot_elo != null;
-  if (isBotMatch && match.status === "finished" && match.winner === null) {
-    return match.b_correct != null &&
-      match.a_correct != null &&
-      match.b_correct === match.a_correct
-      ? "draw"
-      : "loss";
-  }
-
-  return match.winner === null ? "draw" : "loss";
-}
 
 /**
  * Lokal lagring av botsvar per match. Botmatcher skickar aldrig svar till
@@ -98,6 +74,58 @@ function readBotAnswers(): StoredBotAnswers {
     return out;
   } catch {
     return {};
+  }
+}
+
+/** Botens beslut per match — utan den nollställs botens poäng vid omladdning. */
+const BOT_DECISIONS_KEY = "hp-lift-duel-bot-decisions-v1";
+
+type StoredBotDecisions = Record<string, Record<string, BotDecision>>;
+
+function readBotDecisions(): StoredBotDecisions {
+  try {
+    const raw = localStorage.getItem(BOT_DECISIONS_KEY);
+    if (!raw) return {};
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    const out: StoredBotDecisions = {};
+    for (const [matchKey, value] of Object.entries(parsed as Record<string, unknown>)) {
+      if (!value || typeof value !== "object") continue;
+      const decisions: Record<string, BotDecision> = {};
+      for (const [qid, d] of Object.entries(value as Record<string, unknown>)) {
+        const entry = d as Partial<BotDecision>;
+        if (
+          typeof entry.chosen === "number" &&
+          typeof entry.correct === "boolean" &&
+          typeof entry.delayMs === "number"
+        ) {
+          decisions[qid] = { chosen: entry.chosen, correct: entry.correct, delayMs: entry.delayMs };
+        }
+      }
+      if (Object.keys(decisions).length > 0) out[matchKey] = decisions;
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
+function writeBotDecisions(
+  matchId: string,
+  questions: { id: string }[],
+  decisions: (BotDecision | null)[],
+): void {
+  try {
+    const byId: Record<string, BotDecision> = {};
+    questions.forEach((q, i) => {
+      const d = decisions[i];
+      if (d) byId[q.id] = d;
+    });
+    const all = readBotDecisions();
+    all[matchId] = byId;
+    localStorage.setItem(BOT_DECISIONS_KEY, JSON.stringify(all));
+  } catch {
+    /* ignorera — quizet får aldrig krascha p.g.a. lagring */
   }
 }
 
@@ -270,8 +298,9 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         .catch(() => {});
 
       if (isBotRef.current) {
-        const decision = simulateBotAnswer(q, botEloRef.current ?? 1200);
+                const decision = simulateBotAnswer(q, botEloRef.current ?? 1200);
         botDecisionsRef.current[i] = decision;
+        writeBotDecisions(matchId, qs, botDecisionsRef.current);
         window.setTimeout(() => {
           if (decision.correct) setBotCorrect((c) => c + 1);
         }, decision.delayMs);
@@ -456,10 +485,16 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         .subscribe();
 
       // Bestäm var vi ska återuppta.
+            const storedBotDecisions = isBotMatch ? readBotDecisions()[matchId] : undefined;
+
       if (myCount >= qs.length) {
         if (isBotMatch) {
-          botDecisionsRef.current = qs.map((q) =>
-            simulateBotAnswer(q, botEloRef.current ?? 1200),
+          // Läs tillbaka botens faktiska beslut; simulera bara det som saknas,
+          // annars kan slutsiffrorna skilja sig från vad spelaren såg.
+          botDecisionsRef.current = qs.map(
+            (q) =>
+              storedBotDecisions?.[q.id] ??
+              simulateBotAnswer(q, botEloRef.current ?? 1200),
           );
           setBotCorrect(
             botDecisionsRef.current.filter((d) => d?.correct).length,
@@ -487,11 +522,15 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
           const remaining = Math.max(0, DUEL_STALL_GRACE_MS - elapsed);
           window.setTimeout(() => setStallElapsed(true), remaining);
         }
-      } else {
+            } else {
         questionDoneRef.current = false;
         startRef.current = Date.now();
         setSecondsLeft(DUEL_SECONDS_PER_QUESTION);
         setIndex(myCount);
+        if (isBotMatch && storedBotDecisions) {
+          botDecisionsRef.current = qs.map((q) => storedBotDecisions[q.id] ?? null);
+          setBotCorrect(botDecisionsRef.current.filter((d) => d?.correct).length);
+        }
         setPhase("playing");
       }
     }

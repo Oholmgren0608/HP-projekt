@@ -21,7 +21,7 @@ import {
 import { createPrivate, joinPrivate, startBotMatch } from "@/lib/duel/matchmaking";
 import { MatchmakingScreen } from "./matchmaking-screen";
 import { PrivateLobby } from "./private-lobby";
-import { displayNameFromUser, errorMessage, winRate } from "./duel-utils";
+import { classifyDuelResult, displayNameFromUser, errorMessage, winRate } from "./duel-utils";
 
 type View =
   | { kind: "hub" }
@@ -413,11 +413,28 @@ function HistoryItem({
   const oppCorrect = iAmA ? match.b_correct : match.a_correct;
   const myDelta = iAmA ? match.elo_a_delta : match.elo_b_delta;
 
-  const won = match.winner === meId;
-  const draw = match.winner === null && match.status === "finished";
+    // Botmatcher har player_b = null, och servern sätter winner = null både när
+  // boten vinner och vid oavgjort — därför måste utfallet avgöras på antal rätta
+  // svar (samma klassificering som resultatvyn använder).
+  const botMatch = match.player_b === null && match.bot_elo != null;
+  const result = classifyDuelResult(match, meId);
 
-  const resultLabel = match.status === "forfeit" ? (won ? "Vinst (motståndare gav upp)" : "Förlust (gav upp)") : draw ? "Oavgjort" : won ? "Vinst" : "Förlust";
-  const resultColor = won || draw ? (draw ? "text-[var(--ink-muted)]" : "text-[var(--lagoon-ink)]") : "text-[var(--destructive)]";
+  const resultLabel =
+    match.status === "forfeit"
+      ? result === "win"
+        ? "Vinst (motståndare gav upp)"
+        : "Förlust (gav upp)"
+      : result === "win"
+        ? "Vinst"
+        : result === "loss"
+          ? "Förlust"
+          : "Oavgjort";
+  const resultColor =
+    result === "win"
+      ? "text-[var(--lagoon-ink)]"
+      : result === "loss"
+        ? "text-[var(--destructive)]"
+        : "text-[var(--ink-muted)]";
 
   const date = match.finished_at
     ? new Date(match.finished_at).toLocaleDateString("sv-SE", { month: "short", day: "numeric" })
@@ -430,7 +447,7 @@ function HistoryItem({
       </span>
       <span className={`flex-1 truncate font-medium ${resultColor}`}>
         {resultLabel}
-        <span className="ml-1 text-[var(--ink-muted)]">vs {opponentName}</span>
+                <span className="ml-1 text-[var(--ink-muted)]">vs {botMatch ? "AI-bot" : opponentName}</span>
       </span>
       <span className="shrink-0 tabular-nums text-[var(--ink-soft)]">
         {myCorrect ?? "–"}–{oppCorrect ?? "–"}
