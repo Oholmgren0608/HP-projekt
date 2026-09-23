@@ -96,7 +96,7 @@ export function DailySrsReview() {
       </p>
 
       {card.passage ? (
-        <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
+        <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
           {card.passage}
         </div>
       ) : null}
@@ -106,7 +106,7 @@ export function DailySrsReview() {
       </p>
 
       {hasOptions ? (
-        <div className="mt-4 space-y-2" role="radiogroup" aria-label="Svarsalternativ">
+        <div className="mt-4 space-y-2.5 sm:space-y-3" role="radiogroup" aria-label="Svarsalternativ">
           {options.map((opt, i) => {
             const isCorrect = opt === card.back;
             const isChosen = selected === i;

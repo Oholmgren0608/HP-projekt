@@ -32,7 +32,7 @@ export function PlanView() {
           <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
             Veckoplan
           </h1>
-          <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+          <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
             Byggs om från dina resultat. Starta varje uppgift direkt — progress
             sparas i webbläsaren.
           </p>
@@ -94,7 +94,7 @@ export function PlanView() {
             <h2 className="font-[family-name:var(--font-display)] text-2xl">
               En vanlig studiedag
             </h2>
-            <p className="mt-2 max-w-2xl text-background/70">
+            <p className="mt-3 max-w-2xl text-background/70">
               Mall efter dina flaskhalsar — justeras när du sparar nya resultat.
             </p>
             <ol className="mt-6 space-y-4">
@@ -116,7 +116,7 @@ export function PlanView() {
             <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
               Delprov — vad du gör med varje
             </h2>
-            <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+            <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
               Prioritet och veckomål följer dina senaste resultat. Mer om hur du
               tar dig upp finns under{" "}
               <Link

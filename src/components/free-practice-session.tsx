@@ -134,7 +134,7 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
           <QuizProgress current={answeredCount} total={total} />
 
           {current.passage ? (
-            <div className="whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
+            <div className="whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
               {current.passage}
             </div>
           ) : null}
@@ -173,7 +173,7 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
 
       {phase === "review" ? (
         <div className="mt-5 space-y-5">
-          <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5">
             <p className="text-sm text-[var(--ink-muted)]">Resultat</p>
             <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
               {score.correct}/{score.total}

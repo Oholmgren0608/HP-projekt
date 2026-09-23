@@ -161,7 +161,7 @@ export function OfficialExamsBrowser() {
             </h2>
           </div>
         </div>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
           Kör ett helt prov med riktiga uppgifter eller öva en del i taget. Här visas de prov som
           har importerats med frågor i appen.
         </p>
@@ -188,7 +188,7 @@ export function OfficialExamsBrowser() {
               return (
                 <div
                   key={exam.id}
-                  className="rounded-lg border border-[var(--line)] bg-card/70 p-4"
+                  className="rounded-lg border border-[var(--line)] bg-card/70 p-5"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0">
@@ -295,8 +295,8 @@ export function OfficialExamsBrowser() {
           ))}
         </div>
 
-        <div className="mt-4 grid gap-4 lg:grid-cols-[16rem_1fr]">
-          <div className="space-y-2">
+        <div className="mt-4 grid gap-5 lg:gap-6 lg:grid-cols-[16rem_1fr]">
+          <div className="space-y-2.5">
             {pdfExams.map((exam) => {
               const selected = exam.id === activePdfExam?.id;
               return (

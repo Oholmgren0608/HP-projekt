@@ -172,7 +172,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
     >
       {mode === "signin" ? (
         <form onSubmit={handleSignIn} noValidate className="space-y-3">
-          <label htmlFor={`${uid}-email`} className="block space-y-1.5">
+          <label htmlFor={`${uid}-email`} className="block space-y-2">
             <span className={labelClass}>E-post</span>
             <input
               id={`${uid}-email`}
@@ -186,7 +186,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
               className={inputClass}
             />
           </label>
-          <label htmlFor={`${uid}-password`} className="block space-y-1.5">
+          <label htmlFor={`${uid}-password`} className="block space-y-2">
             <span className={labelClass}>Lösenord</span>
             <input
               id={`${uid}-password`}
@@ -226,7 +226,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
         </form>
       ) : mode === "signup" ? (
         <form onSubmit={handleSignUp} noValidate className="space-y-3">
-          <label htmlFor={`${uid}-signup-email`} className="block space-y-1.5">
+          <label htmlFor={`${uid}-signup-email`} className="block space-y-2">
             <span className={labelClass}>E-post</span>
             <input
               id={`${uid}-signup-email`}
@@ -240,7 +240,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
               className={inputClass}
             />
           </label>
-          <label htmlFor={`${uid}-new-password`} className="block space-y-1.5">
+          <label htmlFor={`${uid}-new-password`} className="block space-y-2">
             <span className={labelClass}>Lösenord (minst 8 tecken)</span>
             <input
               id={`${uid}-new-password`}
@@ -254,7 +254,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
               className={inputClass}
             />
           </label>
-          <label htmlFor={`${uid}-confirm-password`} className="block space-y-1.5">
+          <label htmlFor={`${uid}-confirm-password`} className="block space-y-2">
             <span className={labelClass}>Bekräfta lösenord</span>
             <input
               id={`${uid}-confirm-password`}
@@ -292,7 +292,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
             Skriv in din e-post så skickar vi en länk för att återställa
             lösenordet.
           </p>
-          <label htmlFor={`${uid}-reset-email`} className="block space-y-1.5">
+          <label htmlFor={`${uid}-reset-email`} className="block space-y-2">
             <span className={labelClass}>E-post</span>
             <input
               id={`${uid}-reset-email`}

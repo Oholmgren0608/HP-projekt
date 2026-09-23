@@ -46,7 +46,7 @@ export function DashboardHome() {
 
   if (!ready || !mounted) {
     return (
-      <div className="space-y-6">
+      <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
         <div className="h-40 animate-pulse rounded-2xl bg-[var(--mist)]" />
         <div className="h-28 animate-pulse rounded-2xl bg-[var(--mist)]" />
@@ -59,7 +59,7 @@ export function DashboardHome() {
   const { profile, focusIds } = plan;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 sm:space-y-10">
       {/* ---- Hjältesektion -------------------------------------------------- */}
       <section>
         <div className="flex flex-col gap-5">
@@ -177,18 +177,18 @@ export function DashboardHome() {
       </section>
 
       {/* ---- Streak + statistik ---------------------------------------------- */}
-      <section className="grid items-stretch gap-4 lg:grid-cols-[auto_1fr]">
+      <section className="grid items-stretch gap-5 lg:gap-6 lg:grid-cols-[auto_1fr]">
         <div className="lg:w-72">
           <StreakCard />
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft">
+        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
             <p className="text-sm font-bold text-[var(--ink-muted)]">Kvant / verbal</p>
             <p className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
               {formatNorm(profile.previousQuant)} · {formatNorm(profile.previousVerbal)}
             </p>
           </div>
-          <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
             <p className="text-sm font-bold text-[var(--ink-muted)]">Fokus just nu</p>
             <div className="mt-2 flex flex-wrap gap-2">
               {focusIds.slice(0, 3).map((id) => (

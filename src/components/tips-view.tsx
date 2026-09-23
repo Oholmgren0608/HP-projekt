@@ -24,7 +24,7 @@ export function TipsView() {
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Tips per delprov
         </h1>
-        <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
           Vad varje del testar, vanliga fel, tempo och konkreta övningsråd. Prioritet i veckoplanen
           kommer från dina poäng — här är hur du tar dig upp.
         </p>
@@ -46,7 +46,7 @@ export function TipsView() {
         ))}
       </nav>
 
-      <div className="space-y-6">
+      <div className="space-y-8 sm:space-y-10">
         {SECTION_TIPS.map((tip) => (
           <article
             key={tip.id}
@@ -65,7 +65,7 @@ export function TipsView() {
             <h3 className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink-muted)]">
               Vanliga fel
             </h3>
-            <ul className="mt-2 space-y-2">
+            <ul className="mt-2 space-y-2.5">
               {tip.mistakes.map((m) => (
                 <li key={m} className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--destructive)]" />
@@ -82,7 +82,7 @@ export function TipsView() {
             <h3 className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink-muted)]">
               Öva så här
             </h3>
-            <ol className="mt-2 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-[var(--ink-soft)]">
+            <ol className="mt-2 list-decimal space-y-2.5 pl-5 text-sm leading-relaxed text-[var(--ink-soft)]">
               {tip.steps.map((s) => (
                 <li key={s}>{s}</li>
               ))}

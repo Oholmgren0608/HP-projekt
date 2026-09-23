@@ -51,8 +51,8 @@ export function ScoreForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <label className="block space-y-1.5">
+      <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <label className="block space-y-2">
           <span className="text-sm font-medium text-[var(--ink)]">Kvantitativ norm (0–2,0)</span>
           <input
             type="number"
@@ -66,7 +66,7 @@ export function ScoreForm() {
             className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
-        <label className="block space-y-1.5">
+        <label className="block space-y-2">
           <span className="text-sm font-medium text-[var(--ink)]">Verbal norm (0–2,0)</span>
           <input
             type="number"
@@ -80,7 +80,7 @@ export function ScoreForm() {
             className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
-        <label className="block space-y-1.5">
+        <label className="block space-y-2">
           <span className="text-sm font-medium text-[var(--ink)]">Timmar / vecka</span>
           <input
             type="number"
@@ -93,7 +93,7 @@ export function ScoreForm() {
             className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
-        <label className="block space-y-1.5">
+        <label className="block space-y-2">
           <span className="text-sm font-medium text-[var(--ink)]">Veckor till prov</span>
           <input
             type="number"

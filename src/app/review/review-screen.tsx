@@ -289,7 +289,7 @@ export function ReviewScreen() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 sm:space-y-10">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
@@ -508,7 +508,7 @@ function ExamGroup({
                 <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
                   {pg.label}
                 </h3>
-                <div className="space-y-2">
+                <div className="space-y-2.5 sm:space-y-3">
                   {pg.questions.map((q) => (
                     <QuestionCard key={q.id} q={q} onStatusChange={onStatusChange} />
                   ))}
@@ -594,7 +594,7 @@ function QuestionCard({
         </p>
       ) : null}
 
-      <ul className="mt-3 space-y-1.5">
+      <ul className="mt-3 space-y-2 sm:space-y-2.5">
         {q.options.map((opt, i) => {
           const isCorrect = i === q.correctIndex;
           return (
@@ -820,7 +820,7 @@ function EditForm({
         <span className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
           Svarsalternativ
         </span>
-        <div className="mt-1 space-y-1.5">
+        <div className="mt-1 space-y-2">
           {form.options.map((opt, i) => (
             <div key={i} className="flex items-center gap-2">
               <span

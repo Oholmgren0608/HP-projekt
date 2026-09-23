@@ -133,7 +133,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
   if (authLoading) {
     return (
-      <div className="space-y-6">
+      <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
         <div className="h-40 animate-pulse rounded-2xl bg-card/70" />
       </div>
@@ -142,7 +142,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
   if (!user) {
     return (
-      <div className="mx-auto max-w-lg space-y-4 text-center">
+      <div className="mx-auto max-w-xl space-y-6 text-center">
         <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Duellera i realtid
         </p>
@@ -191,7 +191,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
   const myWinRate = profile ? winRate(profile.wins, profile.losses, profile.draws) : 0;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10">
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
           PvP
@@ -222,7 +222,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
       ) : null}
 
       {/* Mina stats */}
-      <section className="grid gap-4 sm:grid-cols-4">
+      <section className="grid gap-5 sm:gap-6 sm:grid-cols-4">
         <StatCard label="Ranking (ELO)" value={String(profile?.elo ?? 1200)} />
         <StatCard label="Vinster" value={String(profile?.wins ?? 0)} />
         <StatCard label="Förluster" value={String(profile?.losses ?? 0)} />
@@ -230,7 +230,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
       </section>
 
       {/* Spellägen */}
-      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <section className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
         <ModeCard
           title="Ranked"
           description={
@@ -359,7 +359,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-4">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
       <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
         {value}

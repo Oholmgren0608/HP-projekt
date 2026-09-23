@@ -129,7 +129,7 @@ export function MiniLevelTest() {
 
   if (phase === "intro") {
     return (
-      <div className="space-y-8">
+      <div className="space-y-8 sm:space-y-10">
         {heading}
         <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
           <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -258,7 +258,7 @@ export function MiniLevelTest() {
           </div>
 
           {current.passage ? (
-            <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
+            <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
               {current.passage}
             </div>
           ) : null}
@@ -302,14 +302,14 @@ export function MiniLevelTest() {
   // phase === "result"
   const { sections, verbalPercent, quantPercent, overallNorm, input } = outcome;
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10">
       {heading}
 
       <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
           Din uppskattade nivå
         </p>
-        <div className="mt-3 grid gap-4 sm:grid-cols-3">
+        <div className="mt-3 grid gap-5 sm:gap-6 sm:grid-cols-3">
           {[
             { label: "Snitt (norm)", value: formatNorm(overallNorm), note: "verbal + kvant" },
             { label: "Verbalt", value: formatNorm(input.verbalNorm), note: `${verbalPercent} % rätt` },
@@ -337,7 +337,7 @@ export function MiniLevelTest() {
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Så här gick delproven
         </h2>
-        <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
           Andelen rätt skalas upp till varje delprovs fulla antal frågor och blir din startpoäng i
           planen.
         </p>
@@ -374,8 +374,8 @@ export function MiniLevelTest() {
         <p className="mt-2 text-[var(--ink-muted)]">
           Sista steget: hur mycket tid har du? Sedan bygger vi planen från ditt resultat.
         </p>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          <label className="block space-y-1.5">
+        <div className="mt-4 grid gap-5 sm:gap-6 sm:grid-cols-2">
+          <label className="block space-y-2">
             <span className="text-sm font-medium text-[var(--ink)]">Timmar / vecka</span>
             <input
               type="number"
@@ -386,7 +386,7 @@ export function MiniLevelTest() {
               className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
             />
           </label>
-          <label className="block space-y-1.5">
+          <label className="block space-y-2">
             <span className="text-sm font-medium text-[var(--ink)]">Veckor till prov</span>
             <input
               type="number"
@@ -421,7 +421,7 @@ export function MiniLevelTest() {
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Genomgång
         </h2>
-        <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
           Titta igenom facit — förklaringarna hjälper dig förstå mönstren inför träningen.
         </p>
         <div className="mt-4">

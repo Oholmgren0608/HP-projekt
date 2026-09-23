@@ -30,7 +30,7 @@ export function StreakCard() {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft">
+    <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <motion.span

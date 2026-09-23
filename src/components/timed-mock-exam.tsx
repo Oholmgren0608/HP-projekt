@@ -115,7 +115,7 @@ export function TimedMockExam() {
         <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Tidsatt provpass
         </h3>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
           {QUESTION_COUNT} originalfrågor från ORD, MEK, LÄS, ELF, XYZ, KVA, NOG och DTK.{" "}
           {LIMIT_SECONDS / 60} minuter nedräkning, sedan genomgång med rätt/fel. Obesvarade räknas
           som fel. Det här är inte ett officiellt UHR-prov — PDF:erna nedan är de riktiga häftena.
@@ -164,7 +164,7 @@ export function TimedMockExam() {
         </div>
 
         {current.passage ? (
-          <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
+          <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
             {current.passage}
           </div>
         ) : null}

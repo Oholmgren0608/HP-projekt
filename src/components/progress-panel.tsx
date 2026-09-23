@@ -157,7 +157,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
           Senaste övningar
         </p>
-        <dl className="mt-4 grid grid-cols-2 gap-4">
+        <dl className="mt-4 grid grid-cols-2 gap-5">
           <div>
             <dt className="text-sm text-[var(--ink-muted)]">Verbalt</dt>
             <dd className="text-xl font-semibold text-[var(--ink)]">

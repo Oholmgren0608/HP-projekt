@@ -80,7 +80,7 @@ export function ReviewForm({
 
   if (phase === "done") {
     return (
-      <div className="mt-6 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-4 text-center">
+      <div className="mt-6 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-5 text-center">
         <p className="text-sm font-medium text-[var(--ink)]">
           Tack för din feedback!
         </p>
@@ -92,7 +92,7 @@ export function ReviewForm({
   }
 
   return (
-    <div className="mt-6 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left sm:p-5">
+    <div className="mt-6 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-5 text-left sm:p-6">
       {isBot ? (
         <>
           <p className="text-sm font-semibold text-[var(--ink)]">

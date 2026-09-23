@@ -201,7 +201,7 @@ export function WeekTracker({
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 sm:space-y-10">
       <div className="space-y-3">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
@@ -261,8 +261,8 @@ export function WeekTracker({
             <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
               {plan.theme}
             </h3>
-            <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">{plan.focus}</p>
-            <p className="mt-2 text-sm font-medium text-[var(--ink-soft)]">
+            <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">{plan.focus}</p>
+            <p className="mt-3 text-sm font-medium text-[var(--ink-soft)]">
               Klicka på en uppgift för att öva den här på sidan.
             </p>
           </div>

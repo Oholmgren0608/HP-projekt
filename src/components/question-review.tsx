@@ -56,7 +56,7 @@ function QuestionReviewItem({
 
       <QuestionFigure question={q} position={index + 1} />
 
-      <div className="mt-3 space-y-2" role="list" aria-label="Svarsalternativ">
+      <div className="mt-3 space-y-2.5 sm:space-y-3" role="list" aria-label="Svarsalternativ">
         {q.options.map((opt, i) => {
           const isChosen = chosen === i;
           const isCorrect = i === q.correctIndex;

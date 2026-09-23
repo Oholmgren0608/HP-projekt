@@ -54,7 +54,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 sm:space-y-10">
       {/* Header */}
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
@@ -63,7 +63,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           {info.title}
         </h1>
-        <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">{info.description}</p>
+        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">{info.description}</p>
       </div>
 
       {/* Question Count Selector */}
@@ -97,7 +97,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
             </div>
           </div>
 
-          <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5">
             <p className="text-sm text-[var(--ink-soft)]">
               <span className="font-semibold text-[var(--ink)]">Tip:</span> Börja med färre
               frågor om du är ny på delprovet. Du kan öva hur många gånger du vill och ditt

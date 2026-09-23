@@ -100,7 +100,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
 
 export function PracticeHub() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10">
       {/* Header */}
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
@@ -109,14 +109,14 @@ export function PracticeHub() {
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Välj delprov att öva på
         </h1>
-        <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
           Välj ett delprov och bestäm hur många frågor du vill öva på. Du kan öva hur många gånger
           du vill, och ditt resultat sparas.
         </p>
       </div>
 
       {/* Sub-tests Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {PRACTICE_OPTIONS.map((subtest) => (
           <Link
             key={subtest.id}
@@ -143,7 +143,7 @@ export function PracticeHub() {
       </div>
 
       {/* Additional Resources */}
-      <div className="mt-10 grid gap-4 sm:grid-cols-2">
+      <div className="mt-10 grid gap-5 sm:gap-6 sm:grid-cols-2">
         {/* Flashcards */}
         <Link
           href="/ova/flashcards"

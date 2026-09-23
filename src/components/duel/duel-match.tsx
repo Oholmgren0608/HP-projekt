@@ -544,7 +544,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
 
   if (phase === "loading") {
     return (
-      <div className="space-y-6">
+      <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
         <div className="h-64 animate-pulse rounded-2xl bg-card/70" />
       </div>
@@ -573,7 +573,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const total = questions.length;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 sm:space-y-10">
       <MatchHeader
         mode={match?.mode ?? "ranked"}
         meName={meName}
@@ -616,7 +616,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
           </div>
 
           {current.passage ? (
-            <div className="mt-4 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
+            <div className="mt-4 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
               {current.passage}
             </div>
           ) : null}
@@ -627,7 +627,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             {current.prompt}
           </p>
 
-          <div className="mt-4 space-y-2" role="radiogroup" aria-label="Svarsalternativ">
+          <div className="mt-4 space-y-2.5 sm:space-y-3" role="radiogroup" aria-label="Svarsalternativ">
             {current.options.map((opt, i) => {
               const active = selected === i;
               return (
@@ -753,7 +753,7 @@ function MatchHeader({
   const opponentAhead = known && myCorrect < oppCorrect;
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-5">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
       <div className="flex items-center justify-between">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
           {duelModeLabel(mode)}

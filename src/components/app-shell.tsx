@@ -221,7 +221,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         className="sticky top-3 z-40 mx-auto w-[calc(100%-1.5rem)] max-w-6xl sm:w-[calc(100%-2rem)]"
         style={{ paddingTop: "env(safe-area-inset-top)" }}
       >
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-5 py-3 sm:px-8">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-5 py-3.5 sm:px-8">
           <Link href="/" className="flex items-baseline gap-2">
             <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
               HP Lift
@@ -292,18 +292,18 @@ export function AppShell({ children }: { children: ReactNode }) {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto w-full max-w-6xl flex-1 px-5 pb-32 pt-6 sm:px-8 sm:pt-8 md:pb-16"
+        className="mx-auto w-full max-w-6xl flex-1 px-5 pb-36 pt-7 sm:px-8 sm:pt-10 md:pb-16"
       >
         {children}
       </motion.main>
 
       {/* Flytande mobilmeny */}
       <nav
-        className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4 md:hidden"
+        className="fixed inset-x-0 bottom-0 z-40 px-2 pb-4 sm:px-4 md:hidden"
         style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
         aria-label="Huvudmeny"
       >
-        <ul className="mx-auto grid max-w-md grid-cols-7 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
+        <ul className="mx-auto grid max-w-md grid-cols-7 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 sm:p-2 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
           {NAV.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);
@@ -313,7 +313,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   href={item.href}
                   onClick={() => active && play("click")}
                   className={cn(
-                    "relative flex min-h-14 flex-col items-center justify-center gap-0.5 rounded-xl text-[10.5px] font-bold transition active:scale-90",
+                    "relative flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl text-[10.5px] sm:text-[11px] font-bold transition active:scale-90",
                     active ? "text-[var(--ink)]" : "text-[var(--ink-muted)]",
                   )}
                 >

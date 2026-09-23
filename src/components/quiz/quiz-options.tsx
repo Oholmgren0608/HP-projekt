@@ -37,7 +37,7 @@ export function QuizOptions({
 
   return (
     <div
-      className="space-y-2"
+      className="space-y-2.5 sm:space-y-3"
       role={isReview ? "list" : "radiogroup"}
       aria-label={isReview ? undefined : ariaLabel}
     >

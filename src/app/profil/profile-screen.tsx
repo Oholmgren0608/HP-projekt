@@ -261,7 +261,7 @@ function UsernameEditor() {
   }
 
   return (
-    <form onSubmit={handleSave} noValidate className="space-y-2">
+    <form onSubmit={handleSave} noValidate className="space-y-2.5">
       <div className="flex flex-wrap items-center gap-2">
         <input
           value={value}
@@ -365,7 +365,7 @@ export function ProfileScreen() {
 
   if (!user) {
     return (
-      <div className="mx-auto max-w-lg space-y-4 text-center">
+      <div className="mx-auto max-w-xl space-y-6 text-center">
         <h1 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
           Din profil
         </h1>
@@ -431,7 +431,7 @@ export function ProfileScreen() {
     : "—";
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 sm:space-y-10">
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
           Konto
@@ -445,7 +445,7 @@ export function ProfileScreen() {
       <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <div className="flex items-start gap-4">
           <Avatar username={username} email={user.email ?? null} />
-          <div className="min-w-0 space-y-1.5">
+          <div className="min-w-0 space-y-2">
             <UsernameEditor />
             <p className="truncate text-sm text-[var(--ink-muted)]">
               {user.email ?? "Ingen e-post"}
@@ -462,7 +462,7 @@ export function ProfileScreen() {
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Träningsstatistik
         </h2>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-4 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <StatCard label="Besvarade frågor" value={String(stats.answered)} />
           <StatCard
             label="Träffsäkerhet"
@@ -490,7 +490,7 @@ export function ProfileScreen() {
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Duell-statistik
         </h2>
-        <div className="mt-4 grid gap-4 sm:grid-cols-4">
+        <div className="mt-4 grid gap-5 sm:gap-6 sm:grid-cols-4">
           <StatCard label="Ranking (ELO)" value={String(profile?.elo ?? 1200)} />
           <StatCard label="Vinster" value={String(profile?.wins ?? 0)} />
           <StatCard label="Förluster" value={String(profile?.losses ?? 0)} />
@@ -558,7 +558,7 @@ export function ProfileScreen() {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-4">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
       <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
         {value}

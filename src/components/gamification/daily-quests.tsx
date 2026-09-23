@@ -14,7 +14,7 @@ export function DailyQuests({ className }: { className?: string }) {
   const { items, allDone } = state.quests;
 
   return (
-    <div className={cn("rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft", className)}>
+    <div className={cn("rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft", className)}>
       <div className="flex items-center justify-between">
         <h2 className="font-[family-name:var(--font-display)] text-lg font-bold text-[var(--ink)]">
           Dagens uppdrag

@@ -51,8 +51,8 @@ export function ReadingLibrary() {
         </p>
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-[17rem_1fr]">
-        <div className="space-y-2">
+      <div className="grid gap-5 lg:gap-6 lg:grid-cols-[17rem_1fr]">
+        <div className="space-y-2.5">
           {LIBRARY_TEXTS.map((item) => {
             const selected = item.id === text.id;
             const done = Boolean(read[item.id]);
@@ -103,7 +103,7 @@ export function ReadingLibrary() {
           <div className="mt-8 grid gap-5 border-t border-[var(--line)] pt-6 sm:grid-cols-2">
             <div>
               <h4 className="text-sm font-semibold text-[var(--ink)]">ORD att plocka</h4>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-3 space-y-2.5">
                 {text.focusWords.map((w) => (
                   <li key={w.word} className="text-sm leading-relaxed">
                     <span className="font-semibold text-[var(--ink)]">{w.word}</span>

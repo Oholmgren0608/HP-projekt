@@ -15,7 +15,7 @@ export function XpBar({ compact = false }: { compact?: boolean }) {
   const pct = Math.max(0, Math.min(100, Math.round((have / Math.max(1, toNext)) * 100)));
 
   return (
-    <div className={compact ? "" : "rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft"}>
+    <div className={compact ? "" : "rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft"}>
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
           <span className="flex size-9 items-center justify-center rounded-xl bg-[var(--brand)] text-sm font-extrabold text-primary-foreground shadow-soft">

@@ -126,7 +126,7 @@ export function ExamMockExam({
               per pass. Endast råpoäng — ingen normering.
             </p>
 
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-4 space-y-2.5">
               {passes.map((pass) => (
                 <li
                   key={pass.passNumber}
@@ -304,7 +304,7 @@ function ExamPassQuiz({
       </div>
 
       {current.passage ? (
-        <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-[15px] leading-relaxed text-[var(--ink-soft)]">
+        <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
           {current.passage}
         </div>
       ) : null}

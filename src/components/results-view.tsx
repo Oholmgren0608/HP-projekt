@@ -13,7 +13,7 @@ export function ResultsView() {
 
   if (!ready) {
     return (
-      <div className="space-y-6">
+      <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
         <div className="h-56 animate-pulse rounded-2xl bg-card/70" />
       </div>
@@ -31,7 +31,7 @@ export function ResultsView() {
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Poäng och prognos
         </h1>
-        <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
           Fyll i norm och råpoäng per delprov. När du sparar byggs prioritering,
           tidsfördelning och {profile.weeksUntilExam}-veckorsplan om.
         </p>
@@ -62,7 +62,7 @@ export function ResultsView() {
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Delprov — prioritering
         </h2>
-        <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
           Sorterat efter var tiden ger mest utifrån dina inmatade poäng.
         </p>
         <div className="mt-6 grid gap-8 lg:grid-cols-2">

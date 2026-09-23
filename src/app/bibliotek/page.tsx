@@ -18,7 +18,7 @@ export default function ReadingLibraryPage() {
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Läsbibliotek
         </h1>
-        <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
+        <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
           Sakprosatexter att läsa här — med ORD-ord, konnektorer och sammanfattning. Vi kan inte
           kopiera in DN/SvD/UHR-texter (upphovsrätt), så biblioteket är skrivet för HP-träning.
         </p>
@@ -34,7 +34,7 @@ export default function ReadingLibraryPage() {
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Läsmetoden
         </h2>
-        <ul className="mt-4 space-y-2">
+        <ul className="mt-4 space-y-2.5">
           {READING_METHOD.map((m) => (
             <li
               key={m}
