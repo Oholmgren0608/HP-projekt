@@ -6,5 +6,6 @@ export function formatMmSs(seconds: number): string {
 }
 
 export function pct(correct: number, total: number): number {
+  if (!Number.isFinite(correct) || !Number.isFinite(total) || total <= 0) return 0;
   return Math.round((correct / total) * 100);
 }

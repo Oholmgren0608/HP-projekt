@@ -117,7 +117,7 @@ export type GameEvent =
   | { type: "mock_exam_complete" }
   | { type: "level_test_complete" }
   | { type: "reading_done" }
-  | { type: "plan_week_complete" };
+    | { type: "plan_week_complete"; week: string };
 
 export type GameNotification =
   | { kind: "levelup"; level: number; title: string }
@@ -190,6 +190,28 @@ function makeQuests(): GamificationState["quests"] {
   return { date: dateKey(), items, allDone: false };
 }
 
+const REWARDED_WEEKS_KEY = "hp-lift-weeks-rewarded-v1";
+
+function readRewardedWeeks(): Record<string, true> {
+  try {
+    const raw = storageGet(REWARDED_WEEKS_KEY);
+    if (!raw) return {};
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    return parsed as Record<string, true>;
+  } catch {
+    return {};
+  }
+}
+
+function writeRewardedWeeks(weeks: Record<string, true>) {
+  try {
+    storageSet(REWARDED_WEEKS_KEY, JSON.stringify(weeks));
+  } catch {
+    /* ignorera — gamification får aldrig krascha appen */
+  }
+}
+
 function defaultState(): GamificationState {
   return {
     xp: 0,
@@ -204,24 +226,56 @@ function defaultState(): GamificationState {
   };
 }
 
+/** Tal ur lagrad state, eller reservvärdet — skräp får aldrig nå vyn. */
+function numberOf(value: unknown, fallback = 0): number {
+  return typeof value === "number" && Number.isFinite(value) ? value : fallback;
+}
+
+/** Samma nycklar som reserven, men bara ändliga tal från det lagrade objektet. */
+function numbersFrom<T extends Record<string, unknown>>(fallback: T, raw: unknown): T {
+  const source = (raw ?? {}) as Record<string, unknown>;
+  const out: Record<string, unknown> = { ...fallback };
+  for (const key of Object.keys(fallback)) {
+    const value = source[key];
+    if (typeof fallback[key] === "number" && typeof value === "number" && Number.isFinite(value)) {
+      out[key] = value;
+    }
+  }
+  return out as T;
+}
+
 function loadState(): GamificationState {
   try {
     const raw = storageGet(GAMIFICATION_KEY);
     if (!raw) return defaultState();
     const parsed = JSON.parse(raw) as Partial<GamificationState>;
+    if (!parsed || typeof parsed !== "object") return defaultState();
     const base = defaultState();
+    const streak = (parsed.streak ?? {}) as Partial<GamificationState["streak"]>;
+    const today = (parsed.today ?? {}) as Partial<GamificationState["today"]>;
     return {
       ...base,
-      ...parsed,
-      streak: { ...base.streak, ...(parsed.streak ?? {}) },
-      stats: { ...base.stats, ...(parsed.stats ?? {}) },
-      today: { ...base.today, ...(parsed.today ?? {}) },
-      quests: parsed.quests ?? base.quests,
-      achievements: parsed.achievements ?? {},
-      activeDays: parsed.activeDays ?? {},
-      weeklyXp: parsed.weeklyXp ?? {},
+      xp: numberOf(parsed.xp),
+      streak: {
+        current: numberOf(streak.current),
+        best: numberOf(streak.best),
+        lastActive: typeof streak.lastActive === "string" ? streak.lastActive : null,
+      },
+      stats: numbersFrom(base.stats, parsed.stats),
+      today: {
+        ...numbersFrom(base.today, parsed.today),
+        date: typeof today.date === "string" ? today.date : base.today.date,
+      },
+      quests: parsed.quests && typeof parsed.quests === "object" ? parsed.quests : base.quests,
+      achievements: parsed.achievements && typeof parsed.achievements === "object" ? parsed.achievements : {},
+      activeDays: parsed.activeDays && typeof parsed.activeDays === "object" ? parsed.activeDays : {},
+      weeklyXp: Object.fromEntries(
+        Object.entries(parsed.weeklyXp ?? {}).filter(
+          ([, v]) => typeof v === "number" && Number.isFinite(v),
+        ),
+      ) as GamificationState["weeklyXp"],
     };
-  } catch {
+    } catch {
     return defaultState();
   }
 }
@@ -230,7 +284,7 @@ function loadState(): GamificationState {
 
 type Listener = () => void;
 
-let state: GamificationState = loadState();
+let state: GamificationState = rolloverIfNeeded(loadState());
 const listeners = new Set<Listener>();
 let notifications: GameNotification[] = [];
 
@@ -383,9 +437,24 @@ export function getGamificationState(): GamificationState {
 /** Stabil snapshot för SSR (useSyncExternalStore). */
 export const serverSnapshot: GamificationState = defaultState();
 
+/** Annan flik skrev till nyckeln — läs om och meddela prenumeranterna. */
+function onStorageEvent(event: StorageEvent) {
+  if (event.key && event.key !== GAMIFICATION_KEY) return;
+  state = loadState();
+  for (const fn of listeners) fn();
+}
+
 export function subscribeGamification(fn: Listener): () => void {
   listeners.add(fn);
-  return () => listeners.delete(fn);
+  if (typeof window !== "undefined" && listeners.size === 1) {
+    window.addEventListener("storage", onStorageEvent);
+  }
+  return () => {
+    listeners.delete(fn);
+    if (typeof window !== "undefined" && listeners.size === 0) {
+      window.removeEventListener("storage", onStorageEvent);
+    }
+  };
 }
 
 export function consumeNotifications(): GameNotification[] {
@@ -503,7 +572,12 @@ export function recordEvent(event: GameEvent): void {
       };
       break;
     }
-    case "plan_week_complete": {
+        case "plan_week_complete": {
+      // Samma vecka får bara belönas en gång — annars kan man farma XP genom
+      // att nollställa veckan och göra om den.
+      const rewarded = readRewardedWeeks();
+      if (rewarded[event.week]) return;
+      writeRewardedWeeks({ ...rewarded, [event.week]: true });
       xpGain += XP_VALUES.planWeek;
       s = {
         ...s,

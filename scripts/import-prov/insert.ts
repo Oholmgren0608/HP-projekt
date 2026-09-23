@@ -152,7 +152,12 @@ async function main() {
         passage: q.passage ?? null,
         options: q.options,
         correct_index: q.correctIndex,
-        explain: "",
+                // Tom förklaring gör att frågan filtreras bort av appens frågeladdare.
+        // Flaggorna skrivs i den form /review läser (FLAGGOR: …).
+        explain:
+          q.flags.length > 0
+            ? `FLAGGOR: ${q.flags.join(", ")}`
+            : "Förklaring saknas ännu — importerad från provet.",
         exam_id: exam.examId,
         exam_date: exam.examDate,
         pass_number: pass.passNumber,

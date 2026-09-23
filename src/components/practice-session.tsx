@@ -103,8 +103,12 @@ export function PracticeSession({
 
   const quiz = useQuiz({ questions, onFinish });
 
+  // En fråga rapporteras högst en gång per pass (se free-practice-session).
+  const reportedRef = useRef<Set<string>>(new Set());
+
   function handleSubmit() {
-    if (quiz.selected !== null && quiz.current) {
+    if (quiz.selected !== null && quiz.current && !reportedRef.current.has(quiz.current.id)) {
+      reportedRef.current.add(quiz.current.id);
       recordEvent({ type: "question", correct: quiz.selected === quiz.current.correctIndex });
     }
     quiz.submitAnswer();

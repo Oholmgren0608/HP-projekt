@@ -141,6 +141,7 @@ export function ReadingLibrary() {
                 value={summary}
                 onChange={(e) => setSummary(e.target.value)}
                 rows={3}
+                aria-label="Din sammanfattning"
                 className="mt-2 w-full rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
                 placeholder="Skriv din sammanfattning här…"
               />

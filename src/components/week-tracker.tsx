@@ -135,7 +135,7 @@ export function WeekTracker({
     setActiveTaskId(null);
     // Hela veckan klar? Fira med XP.
     if (plan.tasks.every((t) => nextProgress[taskKey(plan.week, t.id)])) {
-      recordEvent({ type: "plan_week_complete" });
+      recordEvent({ type: "plan_week_complete", week: String(plan.week) });
     }
   }
 

@@ -1,4 +1,4 @@
-import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
+import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from "react";
 import { loadJson, saveJson } from "@/lib/storage";
 import { useHydrated } from "@/lib/use-hydrated";
 
@@ -18,11 +18,17 @@ export function usePersistentState<T>(
   key: string,
   fallback: T,
 ): [T, Dispatch<SetStateAction<T>>, boolean] {
-  const [value, setValue] = useState<T>(() => loadJson(key, fallback));
+    const [value, setValue] = useState<T>(() => loadJson(key, fallback));
   const ready = useHydrated();
+  const savedRef = useRef(JSON.stringify(value));
 
   useEffect(() => {
     if (!ready) return;
+    // Skriv bara när något faktiskt ändrats: annars får nyckeln ny tidsstämpel
+    // vid varje sidladdning och sync-mergen tror att lokalt är nyare än molnet.
+    const serialized = JSON.stringify(value);
+    if (serialized === savedRef.current) return;
+    savedRef.current = serialized;
     saveJson(key, value);
   }, [key, value, ready]);
 

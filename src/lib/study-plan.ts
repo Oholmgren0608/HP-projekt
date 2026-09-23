@@ -45,7 +45,6 @@ export type DelprovScore = {
 };
 
 export function sectionLabel(id: SectionId): string {
-  if (id === "KVA") return "Kvant";
   return SUBTEST_BY_ID[id].short;
 }
 

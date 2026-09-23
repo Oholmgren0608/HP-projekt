@@ -42,9 +42,9 @@ export const MEK_BANK: ChoiceQuestion[] = [
     prompt: MEK_PROMPT,
     passage:
       "Rapporten är ____ kort: den sammanfattar tre års forskning på tio sidor utan att tappa precisionsnivån.",
-    options: ["onödigt", "vagt", "mundligt", "koncist"],
+    options: ["onödigt", "vagt", "muntligt", "koncist"],
     correctIndex: 3,
-    explain: "Koncist betyder kortfattat och precist, den positiva egenskap meningen beskriver. Onödigt är en värdering som inte beskriver språklig stil. Vagt är nästan motsatsen, eftersom det innebär otydlighet snarare än precision. Mundligt (muntligt) beskriver talspråklig framställning, inte kortfattad precision.",
+    explain: "Koncist betyder kortfattat och precist, den positiva egenskap meningen beskriver. Onödigt är en värdering som inte beskriver språklig stil. Vagt är nästan motsatsen, eftersom det innebär otydlighet snarare än precision. Muntligt beskriver talspråklig framställning, inte kortfattad precision.",
   },
   {
     id: "mek-5",

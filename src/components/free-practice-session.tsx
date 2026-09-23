@@ -68,8 +68,13 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
     goPrevious,
   } = quiz;
 
+  // En fråga rapporteras högst en gång per pass: annars dubbelräknas XP,
+  // statistik och dagliga uppdrag när man går tillbaka och skickar samma svar igen.
+  const reportedRef = useRef<Set<string>>(new Set());
+
   function handleSubmit() {
-    if (selected !== null && current) {
+    if (selected !== null && current && !reportedRef.current.has(current.id)) {
+      reportedRef.current.add(current.id);
       recordEvent({ type: "question", correct: selected === current.correctIndex });
     }
     submitAnswer();

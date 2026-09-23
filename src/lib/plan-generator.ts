@@ -605,12 +605,12 @@ export function generatePlan(
     weeklyGoal: "1 blandat underhållspass + DTK vid behov",
   });
 
-  const hpFocusIds = ranked
-    .filter((r) => r.percent < 80)
-    .slice(0, 4)
-    .map((r) => r.id);
-  if (hpFocusIds.length < 2) {
-    hpFocusIds.push(...ranked.slice(0, 2).map((r) => r.id));
+    const hpFocusIds = [
+    ...new Set(ranked.filter((r) => r.percent < 80).slice(0, 4).map((r) => r.id)),
+  ];
+  for (const row of ranked) {
+    if (hpFocusIds.length >= 2) break;
+    if (!hpFocusIds.includes(row.id)) hpFocusIds.push(row.id);
   }
 
   const hpWeakestQuant = ranked.filter((r) => r.block === "kvant")[0];

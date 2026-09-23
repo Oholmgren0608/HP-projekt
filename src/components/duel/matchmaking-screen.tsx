@@ -64,6 +64,8 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
       }
       const userId = user.id;
 
+            if (cancelled || doneRef.current) return;
+
       channel = supabase
         .channel(`duel-matching-${userId}`)
         .on(
@@ -81,7 +83,8 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
         )
         .subscribe();
 
-      try {
+            try {
+        if (cancelled || doneRef.current) return;
         const matchId = await joinQueue(mode);
         if (cancelled) return;
         inQueueRef.current = true;
@@ -94,10 +97,21 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
       }
     }
 
+        // Lämnar användaren sidan mitt i sökningen ska kön tömmas — annars ligger
+    // hen kvar som spöke och kan matchas (och få förlust) utan att spela.
+    const leaveQueue = () => {
+      if (doneRef.current || !inQueueRef.current) return;
+      doneRef.current = true;
+      void cancelQueue().catch(() => {});
+    };
+    window.addEventListener("pagehide", leaveQueue);
+
     void run();
 
     return () => {
       cancelled = true;
+      window.removeEventListener("pagehide", leaveQueue);
+      leaveQueue();
       if (channel) {
         channel.unsubscribe();
         void getSupabase()?.removeChannel(channel);

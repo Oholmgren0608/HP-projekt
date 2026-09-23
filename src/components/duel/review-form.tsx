@@ -59,7 +59,8 @@ export function ReviewForm({
         matchId,
         rating: isBot ? null : rating,
         difficulty: isBot ? difficulty : null,
-        reportReason: isBot ? null : reportReason,
+                // Rapportorsaken nollställs när betyget höjs över 2 — skicka den inte med ändå.
+        reportReason: isBot || rating > 2 ? null : reportReason,
         comment,
       });
       setPhase("done");

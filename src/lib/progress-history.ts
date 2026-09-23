@@ -387,18 +387,23 @@ export function shouldSuggestNewPlan(savedOverall: number, events: HistoryEvent[
 export function rollingPace(events: HistoryEvent[]): {
   secPerQ: number;
   n: number;
+  kinds: string[];
 } | null {
   const timed = events.filter(
     (e): e is QuizHistoryEvent =>
       e.type === "quiz" && typeof e.durationMs === "number" && e.durationMs > 0 && e.total > 0,
   );
-  const recent = timed.slice(-12);
+    const recent = timed.slice(-12);
+  const kinds = new Set<string>();
   let ms = 0;
   let questions = 0;
   for (const q of recent) {
     ms += q.durationMs ?? 0;
     questions += q.total;
+    for (const kind of q.kinds ?? []) kinds.add(kind);
   }
   if (questions < 4) return null;
-  return { secPerQ: ms / 1000 / questions, n: questions };
+    return {
+    kinds: [...kinds],
+    secPerQ: ms / 1000 / questions, n: questions };
 }

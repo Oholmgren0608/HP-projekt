@@ -10,6 +10,12 @@ import {
 } from "react";
 import type { User } from "@supabase/supabase-js";
 import { getSupabase, isSupabaseConfigured } from "./client";
+
+/** Nuvarande URL utan hash — OAuth ska komma tillbaka till samma sida. */
+function currentUrl(): string {
+  if (typeof window === "undefined") return "";
+  return window.location.origin + window.location.pathname + window.location.search;
+}
 import { onAuthChanged } from "@/lib/sync/storage-sync";
 
 type AuthState = {
@@ -110,12 +116,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     user,
     loading,
     username,
-    signInWithGoogle: async () => {
+        signInWithGoogle: async () => {
       const supabase = getSupabase();
       if (!supabase) return;
       await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: window.location.origin },
+        // Behåll sökväg och query (t.ex. /duell?kod=ABC123) så djupa länkar
+        // fungerar även när användaren måste logga in först.
+        options: { redirectTo: currentUrl() },
       });
     },
     signInWithEmail: async (email, password) => {

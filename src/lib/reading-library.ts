@@ -57,7 +57,7 @@ export const LIBRARY_TEXTS: LibraryText[] = [
     body: [
       "I debatten om forskningsfinansiering framställs ofta nyttiga resultat som det enda måttet på framgång. Men forskningens värde sitter lika mycket i metoddisciplin: att formulera frågor precist, att redovisa osäkerhet och att låta negativa fynd synas.",
       "När bara spektakulära resultat belönas uppstår ett snedvridet urval av vad som publiceras. Det skadar både vetenskapen och allmänhetens tillit, eftersom bilden av kunskap blir mer säker än den egentligen är.",
-      "Likväl går det att ändra incitamenten. Tidskrifter och finansiärer kan kräva förregistrering av studier och ge utrymme åt replikationer. Destomer sådana krav blir normala, desto mindre lockande blir det att bara jaga positiva utfall.",
+      "Likväl går det att ändra incitamenten. Tidskrifter och finansiärer kan kräva förregistrering av studier och ge utrymme åt replikationer. Ju fler sådana krav som blir normala, desto mindre lockande blir det att bara jaga positiva utfall.",
     ],
     focusWords: [
       { word: "incitament", meaning: "drivkraft / belöning som styr beteende" },
@@ -66,7 +66,7 @@ export const LIBRARY_TEXTS: LibraryText[] = [
       { word: "osäkerhet", meaning: "brist på säkerhet; felmarginal" },
       { word: "spektakulära", meaning: "uppseendeväckande" },
     ],
-    connectors: ["Men", "När", "eftersom", "Likväl", "Destomer"],
+    connectors: ["Men", "När", "eftersom", "Likväl", "Ju … desto"],
     summaryPrompt: "Vad varnar texten för om bara spektakulära resultat belönas?",
   },
   {

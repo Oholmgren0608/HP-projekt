@@ -95,8 +95,11 @@ function questionFromRow(row: Record<string, unknown>): ChoiceQuestion | null {
     QUESTION_KINDS.includes(kind as ChoiceQuestion["kind"]) &&
     isString(prompt) &&
     isString(explain) &&
-    isStringArray(options) &&
+        isStringArray(options) &&
+    typeof correct_index === "number" &&
     Number.isInteger(correct_index) &&
+    correct_index >= 0 &&
+    correct_index < options.length &&
     (passage === null || passage === undefined || typeof passage === "string");
   if (!valid) {
     console.warn("[questions] Hoppar över ogiltig frågerad:", row);
@@ -145,8 +148,12 @@ function isChoiceQuestion(q: unknown): q is ChoiceQuestion {
     isString(o.kind) &&
     isString(o.prompt) &&
     isString(o.explain) &&
-    isStringArray(o.options) &&
+        isStringArray(o.options) &&
+    typeof o.correctIndex === "number" &&
     Number.isInteger(o.correctIndex) &&
+    o.correctIndex >= 0 &&
+    o.correctIndex < o.options.length &&
+    QUESTION_KINDS.includes(o.kind as ChoiceQuestion["kind"]) &&
     (o.passage === undefined || typeof o.passage === "string")
   );
 }

@@ -49,10 +49,14 @@ function addDays(dateKey: string, days: number): string {
 function hydrateCard(card: SrsCard): SrsCard {
   const q = findQuestionById(card.id);
   if (!q) return card;
-  const next: SrsCard = { ...card };
+    const next: SrsCard = { ...card };
   if (!card.passage && q.passage) next.passage = q.passage;
-  if (!card.options?.length && q.options.length) next.options = q.options;
-  // Snapshot fields can go stale; reconcile explain so rewritten explanations rehydrate.
+  // Alternativ, rätt svar och prompt kan ha ändrats i banken sedan kortet skapades
+  // — kortet måste rätta mot aktuellt facit, annars lär det ut ett gammalt svar.
+  if (q.options.length) next.options = q.options;
+  if (q.prompt !== card.front) next.front = q.prompt;
+  const liveBack = q.options[q.correctIndex];
+  if (liveBack && liveBack !== card.back) next.back = liveBack;
   if (q.explain !== card.explain) next.explain = q.explain;
   return next;
 }
@@ -65,10 +69,12 @@ export function loadSrs(): Record<string, SrsCard> {
     const hydrated: Record<string, SrsCard> = {};
     for (const [id, card] of Object.entries(parsed)) {
       const next = hydrateCard(card);
-      if (
+            if (
         next.passage !== card.passage ||
         next.options !== card.options ||
-        next.explain !== card.explain
+        next.explain !== card.explain ||
+        next.back !== card.back ||
+        next.front !== card.front
       ) {
         changed = true;
       }

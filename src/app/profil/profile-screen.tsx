@@ -181,7 +181,7 @@ async function resolveOpponentNames(
   }
   if (ids.size === 0) return {};
   const { data } = await supabase
-    .from("player_profiles")
+    .from("duel_public_profiles")
     .select("user_id, display_name")
     .in("user_id", [...ids]);
   const map: Record<string, string> = {};

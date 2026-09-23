@@ -21,8 +21,7 @@ import {
   type ExercisePrognosis,
   type HistoryEvent,
 } from "@/lib/progress-history";
-import {
-  MIXED_SEC_PER_QUESTION_CAP,
+import { capForKinds, MIXED_SEC_PER_QUESTION_CAP,
   formatSecondsPerQuestion,
 } from "@/lib/practice-pace";
 
@@ -61,8 +60,11 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
   const estimated = prognosis ? estimateNormFromPercent(prognosis.percent) : null;
   const suggest = shouldSuggestNewPlan(savedOverall, events);
   const quizCount = events.filter((e) => e.type === "quiz").length;
-  const pace = rollingPace(events);
-  const paceOver = pace ? pace.secPerQ > MIXED_SEC_PER_QUESTION_CAP : false;
+    const pace = rollingPace(events);
+  // Samma tak som PaceNotice använder under passet — annars kan samma pass få
+  // motsatta omdömen i sessionen och i prognosen.
+  const paceCap = pace ? capForKinds(pace.kinds) : MIXED_SEC_PER_QUESTION_CAP;
+  const paceOver = pace ? pace.secPerQ > paceCap : false;
   const paceLine = pace ? (
     <p className={`mt-3 text-sm ${paceOver ? "font-medium text-[var(--destructive)]" : "text-[var(--ink-muted)]"}`}>
       Tempo {formatSecondsPerQuestion(pace.secPerQ)}/fråga
