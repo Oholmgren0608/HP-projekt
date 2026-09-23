@@ -137,7 +137,13 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
 
   if (compact) {
     return (
-      <Disclosure title="Poängprognos" bodyClassName="px-3 pb-3 pt-3">
+      <Disclosure
+        title="Poängprognos"
+        subtitle={`Inmatad norm ${formatNorm(savedOverall)} · uppskattning ${
+          estimated !== null ? formatNorm(estimated) : "—"
+        }`}
+        bodyClassName="px-3 pb-3 pt-3"
+      >
         {card}
       </Disclosure>
     );
@@ -200,7 +206,8 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
             </p>
           )}
         </aside>
-      </div>
+      </div>
+
     </Disclosure>
   );
 }

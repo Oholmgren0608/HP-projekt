@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useHydrated } from "@/lib/use-hydrated";
 
 type DisclosureProps = {
   /** Rubrik i den klickbara sammanfattningsraden. */
@@ -12,7 +11,7 @@ type DisclosureProps = {
   subtitle?: ReactNode;
   /** Liten etikett till höger om rubriken, t.ex. en badge. */
   hint?: ReactNode;
-  /** Öppen oavsett skärmbredd (används när sektionen är mål för en ankarlänk). */
+  /** Startar öppen (används när sektionen är mål för en ankarlänk, t.ex. /tips?section=MEK). */
   defaultOpen?: boolean;
   /** "inverted" = mörk panel (bg-foreground/text-background) i stället för kort. */
   variant?: "card" | "inverted";
@@ -26,10 +25,9 @@ type DisclosureProps = {
 };
 
 /**
- * Vikbar sektion. Stängd på mobil och öppen från md och uppåt, så att långa
- * sidor blir korta att skanna utan att desktoptittaren tappar överblick.
- * Använder native <details>/<summary> för tangentbord, skärmläsare och
- * sökindexering; användarens egen växling vinner över standardläget.
+ * Vikbar sektion, alltid stängd när sidan laddas (även desktop) så att långa
+ * sidor blir korta att skanna. Använder native <details>/<summary> för
+ * tangentbord, skärmläsare och sökindexering; användarens egen växling vinner.
  */
 export function Disclosure({
   title,
@@ -43,19 +41,9 @@ export function Disclosure({
   bodyClassName,
   children,
 }: DisclosureProps) {
-  const mounted = useHydrated();
-  const [isDesktop, setIsDesktop] = useState(false);
   const [manual, setManual] = useState<boolean | null>(null);
 
-  useEffect(() => {
-    const query = window.matchMedia("(min-width: 768px)");
-    const sync = () => setIsDesktop(query.matches);
-    sync();
-    query.addEventListener("change", sync);
-    return () => query.removeEventListener("change", sync);
-  }, []);
-
-  const open = manual ?? (defaultOpen || (mounted && isDesktop));
+  const open = manual ?? defaultOpen;
   const inverted = variant === "inverted";
 
   return (
