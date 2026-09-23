@@ -156,10 +156,10 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
   async function handleKeepSearching() {
     setSecondsLeft(COUNTDOWN_SECONDS);
     setError(null);
-    // Står vi redan i kön (joinQueue lyckades men tiden tog slut) gör vi
-    // ingenting — att anropa joinQueue igen skulle skapa en dubblett. Annars
-    // (förra joinQueue kastade) försöker vi faktiskt igen.
-    if (doneRef.current || inQueueRef.current) return;
+    if (doneRef.current) return;
+    // Anropa alltid joinQueue: servern tar först bort spelarens egen körad
+    // (ingen dubblett) och sätter ny utgångstid. Utan det här skulle en lång
+    // sökning tyst falla ur kön när den gamla raden löpt ut.
     try {
       const matchId = await joinQueue(mode);
       if (!doneRef.current) {
