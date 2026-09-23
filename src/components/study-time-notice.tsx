@@ -92,8 +92,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
       ) : null}
 
       <p className="mt-3 text-xs text-[var(--ink-muted)]">
-        Detta är en rekommendation utifrån dina resultat och din tidsram — du
-        bestämmer själv hur mycket tid du lägger.
+        Rekommendation utifrån dina resultat och din tidsram — du bestämmer själv.
       </p>
     </section>
   );

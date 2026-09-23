@@ -116,9 +116,8 @@ export function TimedMockExam() {
           Tidsatt provpass
         </h3>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
-          {QUESTION_COUNT} originalfrågor från ORD, MEK, LÄS, ELF, XYZ, KVA, NOG och DTK.{" "}
-          {LIMIT_SECONDS / 60} minuter nedräkning, sedan genomgång med rätt/fel. Obesvarade räknas
-          som fel. Det här är inte ett officiellt UHR-prov — PDF:erna nedan är de riktiga häftena.
+          {QUESTION_COUNT} frågor från alla delprov.{" "}
+          {LIMIT_SECONDS / 60} minuter nedräkning och genomgång med rätt/fel efteråt. Inte ett officiellt UHR-prov.
         </p>
         <button
           type="button"

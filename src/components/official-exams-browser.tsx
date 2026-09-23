@@ -178,8 +178,7 @@ export function OfficialExamsBrowser() {
           </div>
         </div>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
-          Kör ett helt prov med riktiga uppgifter eller öva en del i taget. Här visas de prov som
-          har importerats med frågor i appen.
+          Kör hela prov eller öva en del i taget.
         </p>
 
         {!examsReady || !questionsReady ? (
@@ -191,8 +190,7 @@ export function OfficialExamsBrowser() {
           <div className="mt-4 rounded-lg border border-dashed border-[var(--line)] bg-card/60 px-4 py-6 text-center">
             <p className="text-sm font-medium text-[var(--ink)]">Inga importerade prov ännu</p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
-              Fler äldre prov importeras löpande. Tills dess hittar du originalhäften som PDF
-              längre ner på sidan.
+              Äldre prov importeras löpande — originalhäftena finns som PDF nedan.
             </p>
           </div>
         ) : (
@@ -269,9 +267,7 @@ export function OfficialExamsBrowser() {
           Officiella provhäften och facit
         </h2>
         <div className="mt-3 rounded-lg border border-[var(--line)] bg-card/60 px-4 py-3 text-sm text-[var(--ink-muted)]">
-          Officiella provhäften och facit från UHR visas här direkt (PDF från studera.nu). Vi
-          omhostar inte filerna — ELF saknas ofta eftersom UHR bara får visa de texterna en kort
-          tid. För fler år:{" "}
+          Häftena och facit visas här (PDF från studera.nu). Vi omhostar inte filerna — ELF saknas ofta (UHR visar texterna kort tid). För fler år:{" "}
           <a
             href={OFFICIAL_INDEX_URL}
             target="_blank"

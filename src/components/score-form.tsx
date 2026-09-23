@@ -113,7 +113,7 @@ export function ScoreForm() {
           Råpoäng per delprov
         </h3>
         <p className="mt-1 text-sm text-[var(--ink-muted)]">
-          Fyll i antal rätt. Planen rangordnar flaskhalsar automatiskt.
+          Planen rangordnar flaskhalsar automatiskt.
         </p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {DELPROV_META.map((m) => (

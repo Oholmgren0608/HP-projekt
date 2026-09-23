@@ -197,12 +197,12 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
           </dl>
           <p className="mt-5 border-t border-[var(--line)] pt-4 text-sm text-[var(--ink-muted)]">
             {quizCount === 0
-              ? "Inga övningar loggade än. Starta ett pass i veckoplanen så syns historiken här."
+              ? "Inga övningar loggade än."
               : `${quizCount} övningspass sparade i webbläsaren.`}
           </p>
           {paceLine ?? (
             <p className="mt-3 text-sm text-[var(--ink-muted)]">
-              Tid per fråga visas när du avslutat ett tidsatt pass.
+              Tid per fråga kräver ett tidsatt pass.
             </p>
           )}
         </aside>

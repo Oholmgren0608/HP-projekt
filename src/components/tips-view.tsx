@@ -26,8 +26,7 @@ export function TipsView() {
           Tips per delprov
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-          Vad varje del testar, vanliga fel, tempo och konkreta övningsråd. Prioritet i veckoplanen
-          kommer från dina poäng — här är hur du tar dig upp.
+          Vad varje del testar, vanliga fel och konkreta råd.
         </p>
       </div>
 

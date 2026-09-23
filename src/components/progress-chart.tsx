@@ -18,7 +18,7 @@ export function ProgressChart({
   if (points.length < 2) {
     return (
       <p className="mt-5 text-sm text-[var(--ink-muted)]">
-        Grafen visas när du har minst två mätpunkter (sparade resultat eller avslutade övningar).
+        Grafen kräver minst två mätpunkter.
       </p>
     );
   }

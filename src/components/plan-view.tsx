@@ -34,8 +34,7 @@ export function PlanView() {
             Veckoplan
           </h1>
           <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-            Byggs om från dina resultat. Starta varje uppgift direkt — progress
-            sparas i webbläsaren.
+            Byggs om från dina resultat · progress sparas lokalt.
           </p>
           <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line-strong)] bg-card/70 px-4 py-3">
             <input
@@ -49,9 +48,7 @@ export function PlanView() {
                 Anpassa kommande veckor efter övningstrend
               </span>
               <span className="mt-0.5 block text-sm text-[var(--ink-muted)]">
-                Av som standard. Slås på först när minst tre pass på samma
-                delprov pekar åt samma håll — ett enstaka pass flyttar inte
-                planen.
+                Kräver tre pass på samma delprov som pekar åt samma håll.
               </span>
             </span>
           </label>
@@ -91,7 +88,7 @@ export function PlanView() {
           <Disclosure
             variant="inverted"
             title="En vanlig studiedag"
-            subtitle="Mall efter dina flaskhalsar — justeras när du sparar nya resultat."
+            subtitle="Justeras när du sparar nya resultat."
           >
             <ol className="space-y-4">
               {dailyTemplate.map((row, i) => (
@@ -113,8 +110,7 @@ export function PlanView() {
               Delprov — vad du gör med varje
             </h2>
             <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-              Prioritet och veckomål följer dina senaste resultat. Mer om hur du
-              tar dig upp finns under{" "}
+              Prioritet och veckomål följer dina resultat. Läs mer under{" "}
               <Link
                 href="/tips"
                 className="font-medium text-[var(--brand)] underline-offset-4 hover:underline"
@@ -124,37 +120,43 @@ export function PlanView() {
               .
             </p>
             <div className="mt-6 space-y-4">
-              {sections.map((section) => (
-                <Disclosure
-                  key={`${section.id}-${section.name}`}
-                  title={section.name}
-                  subtitle={section.why}
-                  hint={
-                    <span className="flex flex-wrap items-center gap-2">
-                      <PriorityBadge priority={section.priority} />
-                      <span className="text-sm text-[var(--ink-muted)]">{section.scoreLabel}</span>
-                    </span>
-                  }
-                >
-                  <ul className="grid gap-2 sm:grid-cols-2">
-                    {section.methods.map((m) => (
-                      <li
-                        key={m}
-                        className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"
-                      >
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--lagoon-ink)]" />
-                        <span>{m}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 text-sm font-medium text-[var(--ink)]">
-                    Veckans mål:{" "}
-                    <span className="font-normal text-[var(--ink-muted)]">
-                      {section.weeklyGoal}
-                    </span>
-                  </p>
-                </Disclosure>
-              ))}
+              {sections.map((section) => {
+                const score = /(\d+\/\d+)/.exec(section.scoreLabel)?.[0];
+                return (
+                  <Disclosure
+                    key={`${section.id}-${section.name}`}
+                    title={section.name}
+                    hint={
+                      <span className="flex flex-wrap items-center gap-2">
+                        <PriorityBadge priority={section.priority} />
+                        {score ? (
+                          <span className="text-sm text-[var(--ink-muted)]">{score}</span>
+                        ) : null}
+                      </span>
+                    }
+                  >
+                    <p className="text-sm font-medium text-[var(--ink)]">{section.scoreLabel}</p>
+                    <p className="mt-2 text-[var(--ink-muted)]">{section.why}</p>
+                    <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                      {section.methods.map((m) => (
+                        <li
+                          key={m}
+                          className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"
+                        >
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--lagoon-ink)]" />
+                          <span>{m}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-4 text-sm font-medium text-[var(--ink)]">
+                      Veckans mål:{" "}
+                      <span className="font-normal text-[var(--ink-muted)]">
+                        {section.weeklyGoal}
+                      </span>
+                    </p>
+                  </Disclosure>
+                );
+              })}
             </div>
           </section>
         </>

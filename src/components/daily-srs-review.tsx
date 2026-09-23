@@ -41,8 +41,7 @@ export function DailySrsReview() {
           Dagens repetition
         </p>
         <p className="mt-3 text-[var(--ink-muted)]">
-          Inga felkort förfaller idag. Missade quizfrågor blir kort med ett datum för nästa
-          repetition — de dyker upp här när de är due.
+          Inga felkort idag. Missade quizfrågor kommer tillbaka med nästa repetitionsdatum.
         </p>
         {done > 0 ? (
           <p className="mt-2 text-sm font-medium text-[var(--ink)]">

@@ -1,6 +1,5 @@
 "use client";
 
-import { practiceKindsLabel } from "@/components/practice-session";
 import { formatClock } from "@/lib/practice-timer";
 import { sectionLabel, type StudyTask } from "@/lib/study-plan";
 
@@ -60,13 +59,16 @@ export function WeekTaskRow({
             <p className="mt-1 text-sm leading-relaxed text-[var(--ink-muted)]">
               {task.detail}
             </p>
-            <p className="mt-1 text-xs text-[var(--ink-soft)]">
-              Övning: {practiceKindsLabel(task.practiceKinds)}
-              {score ? ` · Senaste resultat ${score.correct}/${score.total}` : null}
-              {!checked && bankedMin > 0
-                ? ` · Sparad tid ${bankedMin}/${task.minutes} min (pausad)`
-                : null}
-            </p>
+            {(score || (!checked && bankedMin > 0)) && (
+              <p className="mt-1 text-xs text-[var(--ink-soft)]">
+                {[
+                  score ? `Senaste resultat ${score.correct}/${score.total}` : null,
+                  !checked && bankedMin > 0 ? `Sparad tid ${bankedMin}/${task.minutes} min (pausad)` : null,
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </p>
+            )}
             <div className="mt-3 flex flex-wrap gap-2">
               <button
                 type="button"

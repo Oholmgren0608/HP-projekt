@@ -47,8 +47,7 @@ export function ReadingLibrary() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <p className="text-sm text-[var(--ink-muted)]">
-          {doneCount}/{LIBRARY_TEXTS.length} texter markerade som lästa · egna sakprosatexter i
-          appen (inte kopierade från tidningar)
+          {doneCount}/{LIBRARY_TEXTS.length} texter lästa
         </p>
       </div>
 

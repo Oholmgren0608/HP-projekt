@@ -36,7 +36,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     id: "ord",
     label: shortFor("ord"),
     title: nameFor("ord"),
-    description: "Öva på ord- och begreppsförståelse med fokus på synonymer och betydelser.",
+    description: "Synonymer och betydelser.",
     isReading: false,
     icon: "📚",
   },
@@ -44,7 +44,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     id: "mek",
     label: shortFor("mek"),
     title: nameFor("mek"),
-    description: "Fyll i meningar med rätt ord och konnektorer.",
+    description: "Konnektorer och ordval i meningar.",
     isReading: false,
     icon: "✏️",
   },
@@ -52,7 +52,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     id: "las",
     label: shortFor("las"),
     title: nameFor("las"),
-    description: "Läs texter och svara på förståelsefrågor.",
+    description: "Svenska texter med frågor.",
     isReading: true,
     icon: "📖",
   },
@@ -60,7 +60,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     id: "elf",
     label: shortFor("elf"),
     title: nameFor("elf"),
-    description: "Läs engelska texter och svara på förståelsefrågor.",
+    description: "Engelska texter med frågor.",
     isReading: true,
     icon: "🌍",
   },
@@ -68,7 +68,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     id: "xyz",
     label: shortFor("xyz"),
     title: nameFor("xyz"),
-    description: "Lös matematiska problem med räkning, algebra och geometri.",
+    description: "Räkning, algebra och geometri.",
     isReading: false,
     icon: "🧮",
   },
@@ -76,7 +76,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     id: "kva",
     label: shortFor("kva"),
     title: nameFor("kva"),
-    description: "Jämför storheter och tal. Är A större, B större eller lika stora?",
+    description: "A, B eller lika stora?",
     isReading: false,
     icon: "🔢",
   },
@@ -84,7 +84,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     id: "nog",
     label: shortFor("nog"),
     title: nameFor("nog"),
-    description: "Avgör om den givna informationen räcker för att lösa uppgiften.",
+    description: "Räcker informationen för att lösa uppgiften?",
     isReading: false,
     icon: "🧩",
   },
@@ -92,7 +92,7 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     id: "dtk",
     label: shortFor("dtk"),
     title: nameFor("dtk"),
-    description: "Tolka och analysera data från diagram, tabeller och kartor.",
+    description: "Diagram, tabeller och kartor.",
     isReading: false,
     icon: "📈",
   },
@@ -110,8 +110,7 @@ export function PracticeHub() {
           Välj delprov att öva på
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-          Välj ett delprov och bestäm hur många frågor du vill öva på. Du kan öva hur många gånger
-          du vill, och ditt resultat sparas.
+          Välj delprov och antal frågor. Resultatet sparas.
         </p>
       </div>
 
@@ -156,7 +155,7 @@ export function PracticeHub() {
             ORD-Flashcards
           </h2>
           <p className="mt-2 text-sm text-[var(--ink-muted)]">
-            Öva på ord och begrepp med flashcards. Se ordet, säg betydelsen, vänd kortet.
+            Se ordet, säg betydelsen, vänd kortet.
           </p>
           <div className="mt-4 inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
             Öppna →
@@ -175,7 +174,7 @@ export function PracticeHub() {
             Läsbibliotek
           </h2>
           <p className="mt-2 text-sm text-[var(--ink-muted)]">
-            Sakprosatexter att läsa med ord, konnektorer och sammanfattning.
+            Läsetexter med ord och sammanfattning.
           </p>
           <div className="mt-4 inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
             Öppna →

@@ -18,8 +18,7 @@ export default function FlashcardsPage() {
           ORD-Flashcards
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-          Se ordet, säg betydelsen, vänd kortet. Fel kort kommer oftare tillbaka. Din progress
-          sparas i webbläsaren.
+          Se ordet, säg betydelsen, vänd kortet. Fel kort kommer oftare tillbaka.
         </p>
       </div>
 

@@ -11,8 +11,7 @@ export function ExamsView() {
           Prov — gamla prov och övning
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-          Träna på importerade gamla prov i appen, kör ett tidsatt mini-prov med appens egna
-          frågor, eller läs officiella UHR-häften som PDF.
+          Importerade prov, tidsatt mini-prov och officiella UHR-häften.
         </p>
       </div>
       <OfficialExamsBrowser />

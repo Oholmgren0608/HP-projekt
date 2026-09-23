@@ -33,18 +33,17 @@ export function ResultsView() {
           Poäng och prognos
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-          Fyll i norm och råpoäng per delprov. När du sparar byggs prioritering,
-          tidsfördelning och {profile.weeksUntilExam}-veckorsplan om.
+          Fyll i norm och råpoäng per delprov. När du sparar byggs planen om.
         </p>
         <p className="mt-3 rounded-lg border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
-          Ny på HP eller osäker på dina poäng?{" "}
+          Osäker på dina poäng?{" "}
           <Link
             href="/nivatest"
             className="font-medium text-[var(--brand)] hover:underline"
           >
             Gör ett nivåtest
           </Link>{" "}
-          så fyller vi i poängen åt dig utifrån resultatet.
+          så fyller vi i dem åt dig.
         </p>
       </div>
 

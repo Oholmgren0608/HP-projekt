@@ -20,8 +20,7 @@ export default function ReadingLibraryPage() {
           Läsbibliotek
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-          Sakprosatexter att läsa här — med ORD-ord, konnektorer och sammanfattning. Vi kan inte
-          kopiera in DN/SvD/UHR-texter (upphovsrätt), så biblioteket är skrivet för HP-träning.
+          Egna sakprosatexter för HP-träning — inte kopior av tidnings- eller UHR-texter.
         </p>
       </div>
 
@@ -31,9 +30,9 @@ export default function ReadingLibraryPage() {
         </div>
       </section>
 
-      <Disclosure title="Läsmetoden" subtitle={READING_METHOD[0]}>
+      <Disclosure title="Läsmetoden" subtitle={`${READING_METHOD.length} råd`}>
         <ul className="space-y-2.5">
-          {READING_METHOD.slice(1).map((m) => (
+          {READING_METHOD.map((m) => (
             <li
               key={m}
               className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"

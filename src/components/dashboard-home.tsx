@@ -93,8 +93,7 @@ export function DashboardHome() {
                 Ny här? Kom igång på 2 minuter
               </h2>
               <p className="mt-2 font-semibold text-primary-foreground/85">
-                Gör nivåtestet eller mata in dina tidigare resultat — så bygger jag din personliga
-                veckoplan direkt.
+                Gör nivåtestet eller mata in tidigare resultat — så byggs din veckoplan.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link

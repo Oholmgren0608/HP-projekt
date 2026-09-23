@@ -262,9 +262,6 @@ export function WeekTracker({
               {plan.theme}
             </h3>
             <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">{plan.focus}</p>
-            <p className="mt-3 text-sm font-medium text-[var(--ink-soft)]">
-              Klicka på en uppgift för att öva den här på sidan.
-            </p>
           </div>
           <p className="rounded-md bg-[var(--mist)] px-3 py-1.5 text-sm text-[var(--ink)]">
             {weekDone}/{plan.tasks.length} klara

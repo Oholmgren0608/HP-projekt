@@ -133,34 +133,23 @@ export function MiniLevelTest() {
         {heading}
         <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
           <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-            För dig som är ny på HP — eller känner dig rostig
+            Ny på HP — eller rostig?
           </h2>
           <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[var(--ink-muted)]">
             <p>
-              Har du aldrig gjort högskoleprovet, eller är det längesedan sist? Då kan det vara
-              svårt att veta vilka poäng du ska mata in under <strong>Poäng</strong>. Det här korta
-              nivåtestet ger en färsk ögonblicksbild av var du står just nu.
-            </p>
-            <p>
-              Testet innehåller {totalQuestions} frågor — några från varje delprov (ORD,
-              MEK, LÄS, ELF, XYZ, KVA, NOG och DTK). Det är <strong>inte tidtaget</strong>, så ta den
-              tid du behöver. Gissa hellre än att hoppa över; obesvarade räknas som fel, precis som
-              på riktiga provet.
-            </p>
-            <p>
-              När du är klar uppskattar vi din nivå per delprov och{" "}
-              <strong>bygger din veckoplan utifrån resultatet</strong>. Du kan alltid finjustera
-              poängen senare under <strong>Poäng</strong>.
+              Testet har {totalQuestions} frågor från alla delprov och är <strong>inte tidtaget</strong>.
+              Gissa hellre än att hoppa över — obesvarade räknas som fel. När du är klar{" "}
+              <strong>byggs din veckoplan</strong> utifrån resultatet, och poängen kan du justera
+              senare under <strong>Poäng</strong>.
             </p>
           </div>
           <p className="mt-4 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm text-[var(--ink-soft)]">
-            Frågorna är appens egna övningsfrågor i HP-stil — inte hämtade från officiella prov. De
-            riktiga häftena hittar du under <strong>Prov</strong>.
+            Appens egna frågor i HP-stil — de officiella häftena finns under <strong>Prov</strong>.
           </p>
           <div className="mt-6">
             <p className="text-sm font-semibold text-[var(--ink)]">Antal frågor per delprov</p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
-              Fler frågor ger en säkrare uppskattning av din nivå.
+              Fler frågor ger säkrare uppskattning.
             </p>
             <div className="mt-3 space-y-2.5">
               {SECTION_KINDS.map(({ id, kind }) => {

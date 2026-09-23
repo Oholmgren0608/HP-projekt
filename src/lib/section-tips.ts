@@ -13,7 +13,7 @@ export const SECTION_TIPS: SectionTip[] = [
   {
     id: "MEK",
     title: "MEK — Meningskomplettering",
-    tests: "Om du hör register, logik och bindningar. Rätt ord ska passa både grammatik och tanke.",
+    tests: "Register, logik och bindningar i meningen.",
     mistakes: [
       "Välja ett ord som 'låter fint' men bryter orsaks- eller kontrastrelationen",
       "Hoppa över att läsa hela meningen före och efter luckan",
@@ -31,7 +31,7 @@ export const SECTION_TIPS: SectionTip[] = [
   {
     id: "ORD",
     title: "ORD — Ordförståelse",
-    tests: "Ordförråd i sakprosa: stammar, nyanser och vanliga HP-ord — inte korsordsgissning.",
+    tests: "Stammar, nyanser och vanliga HP-ord.",
     mistakes: [
       "Bara läsa listor utan aktiv recall",
       "Hoppa över fel-decket och bara lägga till nya ord",
@@ -49,7 +49,7 @@ export const SECTION_TIPS: SectionTip[] = [
   {
     id: "LAS",
     title: "LÄS — Svensk läsförståelse",
-    tests: "Om du kan peka på stöd i texten — inte om slutsatsen 'känns rimlig'.",
+    tests: "Stöd i texten — inte vad som känns rimligt.",
     mistakes: [
       "Svara från allmänkunskap i stället för texten",
       "Läsa för långsamt och få tidsbrist på sista texterna",
@@ -67,7 +67,7 @@ export const SECTION_TIPS: SectionTip[] = [
   {
     id: "ELF",
     title: "ELF — Engelsk läsförståelse",
-    tests: "Samma som LÄS men på engelska: huvudpoäng, attityd och stöd i texten.",
+    tests: "Huvudpoäng, attityd och stöd — på engelska.",
     mistakes: [
       "Översätta ord för ord och tappa helheten",
       "Låta ELF-tempot dippa för att verbala flaskhalsar tar all tid",
@@ -85,7 +85,7 @@ export const SECTION_TIPS: SectionTip[] = [
   {
     id: "DTK",
     title: "DTK — Diagram, tabeller och kartor",
-    tests: "Avläsning av axlar, enheter och vad frågan faktiskt frågar — inte avancerad matte.",
+    tests: "Axlar, enheter och vad frågan faktiskt frågar.",
     mistakes: [
       "Räkna innan du läst enheter och tidsperiod",
       "Använda fel rad/kolumn i tabellen",
@@ -103,7 +103,7 @@ export const SECTION_TIPS: SectionTip[] = [
   {
     id: "XYZ",
     title: "XYZ — Matematisk problemlösning",
-    tests: "Gymnasiematte under tid: modell, ekvation, rimlighetskoll.",
+    tests: "Modell, ekvation och rimlighetskoll.",
     mistakes: [
       "Räkna färdigt trots att ett svarsalternativ redan syns",
       "Enhetsfel och glömda parenteser",
@@ -121,7 +121,7 @@ export const SECTION_TIPS: SectionTip[] = [
   {
     id: "KVA",
     title: "KVA — Kvantitativa jämförelser",
-    tests: "Relation mellan två storheter utan att alltid räkna ut båda.",
+    tests: "Jämför två storheter utan full uträkning.",
     mistakes: [
       "Räkna fullt i onödan",
       "Glömma att 'går inte att avgöra' är ett alternativ",
@@ -139,7 +139,7 @@ export const SECTION_TIPS: SectionTip[] = [
   {
     id: "NOG",
     title: "NOG — Kvantitativa resonemang",
-    tests: "Tillräcklighet: räcker (1), (2), båda, eller ingetdera?",
+    tests: "Räcker (1), (2), båda eller ingetdera?",
     mistakes: [
       "Börja räkna svaret i stället för att fråga 'räcker det?'",
       "Blanda ihop 'båda behövs' och 'varje räcker ensam'",
