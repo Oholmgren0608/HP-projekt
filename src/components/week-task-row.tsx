@@ -39,8 +39,8 @@ export function WeekTaskRow({
             aria-hidden
             className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs font-bold ${
               checked
-                ? "border-[var(--brand)] bg-[var(--brand)] text-white"
-                : "border-[var(--line)] bg-white text-transparent"
+                ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
+                : "border-[var(--line)] bg-card text-transparent"
             }`}
           >
             ✓
@@ -71,7 +71,7 @@ export function WeekTaskRow({
               <button
                 type="button"
                 onClick={onStart}
-                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
+                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
               >
                 {checked
                   ? "Öva igen (nya frågor)"

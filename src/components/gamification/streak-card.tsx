@@ -40,7 +40,7 @@ export function StreakCard() {
             transition={{ type: "spring", bounce: 0.5 }}
             className={cn(
               "flex size-11 items-center justify-center rounded-xl",
-              current > 0 ? "bg-[var(--energy-soft)] text-[var(--energy)]" : "bg-[var(--mist)] text-[var(--ink-muted)]",
+              current > 0 ? "bg-[var(--energy-soft)] text-[var(--energy-ink)]" : "bg-[var(--mist)] text-[var(--ink-muted)]",
             )}
           >
             <Flame className={cn("size-6", current > 0 && "animate-flicker")} />
@@ -66,14 +66,14 @@ export function StreakCard() {
               className={cn(
                 "flex size-7 items-center justify-center rounded-lg text-[10px] font-extrabold",
                 d.active
-                  ? "bg-[linear-gradient(135deg,var(--energy),var(--coral))] text-white shadow-soft"
+                  ? "bg-[linear-gradient(135deg,var(--energy-ink),var(--coral-ink))] text-primary-foreground shadow-soft"
                   : "bg-[var(--mist)] text-[var(--ink-muted)]",
-                d.isToday && !d.active && "border-2 border-dashed border-[var(--energy)]",
+                d.isToday && !d.active && "border-2 border-dashed border-[var(--energy-ink)]",
               )}
             >
               {d.active ? "✓" : ""}
             </motion.span>
-            <span className={cn("text-[9px] font-bold", d.isToday ? "text-[var(--energy)]" : "text-[var(--ink-muted)]")}>
+            <span className={cn("text-[9px] font-bold", d.isToday ? "text-[var(--energy-ink)]" : "text-[var(--ink-muted)]")}>
               {d.label}
             </span>
           </div>

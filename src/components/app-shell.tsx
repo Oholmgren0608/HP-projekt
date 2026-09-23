@@ -89,7 +89,7 @@ function AuthCluster() {
           <div
             role="menu"
             aria-label="Konto"
-            className="absolute right-0 top-full z-40 mt-2 w-56 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-white p-1.5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+            className="absolute right-0 top-full z-40 mt-2 w-56 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-card p-1.5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
           >
             <Link
               href="/profil"
@@ -140,12 +140,12 @@ function AuthCluster() {
         <div
           role="dialog"
           aria-label="Logga in"
-          className="absolute right-0 top-full z-40 mt-2 w-80 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+          className="absolute right-0 top-full z-40 mt-2 w-80 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-card p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
         >
           <button
             type="button"
             onClick={() => void signInWithGoogle()}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
           >
             <GoogleG />
             Fortsätt med Google

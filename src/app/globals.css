@@ -57,22 +57,28 @@
 :root {
   --ink: #14302c;
   --ink-soft: #334b48;
-  --ink-muted: #6b7f7b;
+  --ink-muted: #5b6b66;
   --paper: #f7f5ef;
   --fog: #ecf1eb;
   --mist: #e1e9e2;
   --line: #d9dfd5;
-  --brand: #0d7c6f;
+  --line-strong: #7a7f7d;
+  --brand: #0c6f62;
+  --brand-deep: #0a5c52;
   --accent-soft: #d6eee8;
   --lagoon: #2ba89a;
+  --lagoon-ink: #0c6f7c;
 
   /* Spelenergi: XP, streak, firande */
   --energy: #f59e0b;
   --energy-soft: #fdf0d5;
+  --energy-ink: #9a5b00;
   --coral: #f2604f;
   --coral-soft: #fde3df;
+  --coral-ink: #b0301f;
   --success: #22965a;
   --success-soft: #dcf2e4;
+  --success-ink: #0e6b3c;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -88,14 +94,14 @@
   --muted-foreground: var(--ink-muted);
   --accent: var(--accent-soft);
   --accent-foreground: #0a5c52;
-  --destructive: #c23b2e;
+  --destructive: #b3302a;
   --border: var(--line);
   --input: var(--line);
-  --ring: var(--lagoon);
+  --ring: var(--lagoon-ink);
   --chart-1: var(--brand);
-  --chart-2: var(--lagoon);
-  --chart-3: var(--energy);
-  --chart-4: var(--coral);
+  --chart-2: var(--lagoon-ink);
+  --chart-3: var(--energy-ink);
+  --chart-4: var(--coral-ink);
   --chart-5: var(--ink-soft);
   --radius: 1rem;
   --shadow-soft: 0 1px 2px rgb(20 48 44 / 0.05), 0 6px 20px -4px rgb(20 48 44 / 0.08);
@@ -122,16 +128,22 @@
   --fog: #121c20;
   --mist: #1e2a2f;
   --line: #243239;
+  --line-strong: #68797f;
   --brand: #35c4b2;
+  --brand-deep: #7ce3d4;
   --accent-soft: #12332e;
   --lagoon: #45cfbe;
+  --lagoon-ink: #45cfbe;
 
   --energy: #f6b93b;
   --energy-soft: #3a2f14;
+  --energy-ink: #f6b93b;
   --coral: #ff7a6b;
   --coral-soft: #3f201c;
+  --coral-ink: #ff7a6b;
   --success: #4cc38a;
   --success-soft: #14301f;
+  --success-ink: #4cc38a;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -150,11 +162,11 @@
   --destructive: #f26d5e;
   --border: var(--line);
   --input: var(--line);
-  --ring: var(--lagoon);
+  --ring: var(--lagoon-ink);
   --chart-1: var(--brand);
-  --chart-2: var(--lagoon);
-  --chart-3: var(--energy);
-  --chart-4: var(--coral);
+  --chart-2: var(--lagoon-ink);
+  --chart-3: var(--energy-ink);
+  --chart-4: var(--coral-ink);
   --chart-5: #6b8f98;
   --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.25), 0 6px 20px -4px rgb(0 0 0 / 0.35);
   --shadow-card: 0 2px 4px rgb(0 0 0 / 0.25), 0 12px 32px -8px rgb(0 0 0 / 0.5);

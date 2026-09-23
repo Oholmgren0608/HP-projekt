@@ -41,7 +41,7 @@ export function UsernamePrompt() {
         role="dialog"
         aria-modal="true"
         aria-label="Välj ett användarnamn"
-        className="relative w-full max-w-sm rounded-2xl border border-[var(--line)] bg-white p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+        className="relative w-full max-w-sm rounded-2xl border border-[var(--line)] bg-card p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
       >
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Välj ett användarnamn
@@ -60,17 +60,17 @@ export function UsernamePrompt() {
             autoComplete="off"
             spellCheck={false}
             aria-label="Användarnamn"
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2"
           />
           {error ? (
-            <p className="text-xs text-[#9a3412]" aria-live="polite">
+            <p className="text-xs text-[var(--destructive)]" aria-live="polite">
               {error}
             </p>
           ) : null}
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {submitting ? (
               <>

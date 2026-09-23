@@ -18,7 +18,7 @@ export function XpBar({ compact = false }: { compact?: boolean }) {
     <div className={compact ? "" : "rounded-2xl border border-[var(--line)] bg-[var(--card)] p-4 shadow-soft"}>
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <span className="flex size-9 items-center justify-center rounded-xl bg-[var(--brand)] text-sm font-extrabold text-white shadow-soft">
+          <span className="flex size-9 items-center justify-center rounded-xl bg-[var(--brand)] text-sm font-extrabold text-primary-foreground shadow-soft">
             {level.level}
           </span>
           <div>
@@ -28,7 +28,7 @@ export function XpBar({ compact = false }: { compact?: boolean }) {
             <p className="text-sm font-extrabold text-[var(--ink)]">{level.title}</p>
           </div>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-[var(--energy-soft)] px-2.5 py-1 text-xs font-extrabold text-[color-mix(in_oklab,var(--energy)_70%,var(--ink))]">
+        <div className="flex items-center gap-1.5 rounded-full bg-[var(--energy-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--energy-ink)]">
           <Sparkles className="size-3.5" />
           +{state.today.xp} XP idag
         </div>
@@ -37,7 +37,7 @@ export function XpBar({ compact = false }: { compact?: boolean }) {
       <div className="mt-3 flex items-center gap-3">
         <div className="relative h-2.5 flex-1 overflow-hidden rounded-full bg-[var(--mist)]">
           <motion.div
-            className="h-full rounded-full bg-[linear-gradient(90deg,var(--brand),var(--lagoon))]"
+            className="h-full rounded-full bg-[linear-gradient(90deg,var(--brand),var(--lagoon-ink))]"
             initial={{ width: 0 }}
             animate={{ width: `${pct}%` }}
             transition={{ type: "spring", bounce: 0, duration: 0.8 }}

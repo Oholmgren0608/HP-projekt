@@ -24,7 +24,7 @@ export function DailyQuests({ className }: { className?: string }) {
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", bounce: 0.5 }}
-            className="rounded-full bg-[var(--success-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--success)]"
+            className="rounded-full bg-[var(--success-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--success-ink)]"
           >
             Alla klara! 🎉
           </motion.span>
@@ -54,7 +54,7 @@ export function DailyQuests({ className }: { className?: string }) {
                     <motion.div
                       className={cn(
                         "h-full rounded-full",
-                        q.done ? "bg-[var(--success)]" : "bg-[linear-gradient(90deg,var(--brand),var(--lagoon))]",
+                        q.done ? "bg-[var(--success-ink)]" : "bg-[linear-gradient(90deg,var(--brand),var(--lagoon-ink))]",
                       )}
                       initial={{ width: 0 }}
                       animate={{ width: `${pct}%` }}
@@ -72,12 +72,12 @@ export function DailyQuests({ className }: { className?: string }) {
                     initial={{ scale: 0, rotate: -30 }}
                     animate={{ scale: 1, rotate: 0 }}
                     transition={{ type: "spring", bounce: 0.6 }}
-                    className="flex size-7 items-center justify-center rounded-full bg-[var(--success)] text-white"
+                    className="flex size-7 items-center justify-center rounded-full bg-[var(--success-ink)] text-primary-foreground"
                   >
                     <Check className="size-4" strokeWidth={3} />
                   </motion.span>
                 ) : (
-                  <span className="text-xs font-extrabold text-[var(--energy)]">+{q.xp}</span>
+                  <span className="text-xs font-extrabold text-[var(--energy-ink)]">+{q.xp}</span>
                 )}
               </div>
             </li>

@@ -84,7 +84,7 @@ export function Flashcards() {
   // och frågebanken är klara, annars mismatchar SSR- och klient-HTML.
   if (!hydrated) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar flashcards…</p>
       </div>
     );
@@ -144,7 +144,7 @@ export function Flashcards() {
             className={`rounded-md border px-3 py-1.5 text-sm transition ${
               filter === f.id
                 ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                : "border-[var(--line)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
+                : "border-[var(--line-strong)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
             }`}
           >
             {f.label}
@@ -171,7 +171,7 @@ export function Flashcards() {
           <button
             type="button"
             onClick={() => setFlipped((v) => !v)}
-            className="group relative w-full rounded-2xl border border-[var(--line)] bg-white px-6 py-16 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] transition hover:border-[var(--ink-soft)]"
+            className="group relative w-full rounded-2xl border border-[var(--line-strong)] bg-card px-6 py-16 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] transition hover:border-[var(--ink-soft)]"
             aria-label={flipped ? "Visa frågesida" : "Visa svar"}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
@@ -203,14 +203,14 @@ export function Flashcards() {
                 <button
                   type="button"
                   onClick={() => rate("wrong")}
-                  className="inline-flex min-h-11 items-center rounded-lg border border-[#9a3412]/40 bg-[#fff7f3] px-5 text-sm font-semibold text-[#9a3412] transition hover:brightness-95"
+                  className="inline-flex min-h-11 items-center rounded-lg border border-[var(--destructive)]/40 bg-[var(--coral-soft)] px-5 text-sm font-semibold text-[var(--destructive)] transition hover:brightness-95"
                 >
                   Fel — visa igen
                 </button>
                 <button
                   type="button"
                   onClick={() => rate("correct")}
-                  className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+                  className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
                 >
                   Rätt — nästa
                 </button>

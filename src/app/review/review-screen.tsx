@@ -70,15 +70,15 @@ function Figure({ q }: { q: ReviewQuestion }) {
       src={q.figureUrl}
       alt={alt}
       loading="lazy"
-      className="my-3 max-h-96 w-auto max-w-full rounded-lg border border-[var(--line)] bg-white object-contain"
+      className="my-3 max-h-96 w-auto max-w-full rounded-lg border border-[var(--line)] bg-card object-contain"
     />
   );
 }
 
 function statusBadgeClass(status: string): string {
-  if (status === "published") return "border-[var(--lagoon)]/50 bg-[#eef8f6] text-[var(--brand)]";
-  if (status === "rejected") return "border-[#9a3412]/30 bg-[#fff7f3] text-[#9a3412]";
-  return "border-[var(--line)] bg-white/70 text-[var(--ink-muted)]";
+  if (status === "published") return "border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)] text-[var(--brand)]";
+  if (status === "rejected") return "border-[var(--destructive)]/30 bg-[var(--coral-soft)] text-[var(--destructive)]";
+  return "border-[var(--line)] bg-card/70 text-[var(--ink-muted)]";
 }
 
 function kindLabel(kind: string): string {
@@ -232,7 +232,7 @@ export function ReviewScreen() {
         <button
           type="button"
           onClick={() => void signInWithGoogle()}
-          className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+          className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
         >
           Logga in med Google
         </button>
@@ -276,7 +276,7 @@ export function ReviewScreen() {
         <button
           type="button"
           onClick={() => void refresh()}
-          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
         >
           Försök igen
         </button>
@@ -311,7 +311,7 @@ export function ReviewScreen() {
         <button
           type="button"
           onClick={() => void refresh()}
-          className="rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+          className="rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-4 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
         >
           Uppdatera
         </button>
@@ -326,8 +326,8 @@ export function ReviewScreen() {
             aria-pressed={view === opt.id}
             className={`rounded-lg border px-3 py-1.5 text-sm font-medium transition ${
               view === opt.id
-                ? "border-[var(--brand)] bg-[var(--brand)] text-white"
-                : "border-[var(--line)] bg-white/70 text-[var(--ink)] hover:bg-[var(--accent-soft)]"
+                ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
+                : "border-[var(--line-strong)] bg-card/70 text-[var(--ink)] hover:bg-[var(--accent-soft)]"
             }`}
           >
             {opt.label}
@@ -339,8 +339,8 @@ export function ReviewScreen() {
         <div
           className={`rounded-lg border px-4 py-2 text-sm ${
             notice.kind === "ok"
-              ? "border-[var(--lagoon)]/40 bg-[#eef8f6] text-[var(--brand)]"
-              : "border-[#9a3412]/30 bg-[#fff7f3] text-[#9a3412]"
+              ? "border-[var(--lagoon-ink)]/40 bg-[var(--accent-soft)] text-[var(--brand)]"
+              : "border-[var(--destructive)]/30 bg-[var(--coral-soft)] text-[var(--destructive)]"
           }`}
         >
           {notice.text}
@@ -348,7 +348,7 @@ export function ReviewScreen() {
       ) : null}
 
       {visibleGroups.length === 0 ? (
-        <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-10 text-center text-[var(--ink-muted)]">
+        <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-10 text-center text-[var(--ink-muted)]">
           Inga frågor att visa i den här vyn.
         </div>
       ) : (
@@ -433,7 +433,7 @@ function ExamGroup({
   }
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-[var(--line)] bg-white/70">
+    <section className="overflow-hidden rounded-2xl border border-[var(--line)] bg-card/70">
       <div className="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-5">
         <button
           type="button"
@@ -451,21 +451,21 @@ function ExamGroup({
         </button>
 
         <div className="flex flex-wrap items-center gap-1.5">
-          <span className="rounded-full border border-[var(--line)] bg-white/70 px-2 py-0.5 text-xs text-[var(--ink-muted)]">
+          <span className="rounded-full border border-[var(--line)] bg-card/70 px-2 py-0.5 text-xs text-[var(--ink-muted)]">
             {draftCount} utkast
           </span>
           {rejectedCount > 0 ? (
-            <span className="rounded-full border border-[#9a3412]/30 bg-[#fff7f3] px-2 py-0.5 text-xs text-[#9a3412]">
+            <span className="rounded-full border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-2 py-0.5 text-xs text-[var(--destructive)]">
               {rejectedCount} avvisade
             </span>
           ) : null}
           {publishedCount > 0 ? (
-            <span className="rounded-full border border-[var(--lagoon)]/50 bg-[#eef8f6] px-2 py-0.5 text-xs text-[var(--brand)]">
+            <span className="rounded-full border border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)] px-2 py-0.5 text-xs text-[var(--brand)]">
               {publishedCount} publicerade
             </span>
           ) : null}
           {flaggedCount > 0 ? (
-            <span className="rounded-full border border-[#b45309]/30 bg-[#fffbeb] px-2 py-0.5 text-xs text-[#b45309]">
+            <span className="rounded-full border border-[var(--energy-ink)]/30 bg-[var(--energy-soft)] px-2 py-0.5 text-xs text-[var(--energy-ink)]">
               {flaggedCount} flaggade
             </span>
           ) : null}
@@ -479,14 +479,14 @@ function ExamGroup({
               <button
                 type="button"
                 onClick={() => void bulk("published")}
-                className="rounded-lg bg-[var(--lagoon)] px-3 py-1.5 text-xs font-semibold text-white transition hover:opacity-90"
+                className="rounded-lg bg-[var(--lagoon-ink)] px-3 py-1.5 text-xs font-semibold text-primary-foreground transition hover:opacity-90"
               >
                 Publicera alla
               </button>
               <button
                 type="button"
                 onClick={() => void bulk("rejected")}
-                className="rounded-lg border border-[#9a3412]/40 bg-white px-3 py-1.5 text-xs font-semibold text-[#9a3412] transition hover:bg-[#fff7f3]"
+                className="rounded-lg border border-[var(--destructive)]/40 bg-card px-3 py-1.5 text-xs font-semibold text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
               >
                 Avvisa alla
               </button>
@@ -494,7 +494,7 @@ function ExamGroup({
                 <button
                   type="button"
                   onClick={() => void publishThisExam()}
-                  className="rounded-lg border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+                  className="rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
                 >
                   Publicera prov
                 </button>
@@ -562,7 +562,7 @@ function QuestionCard({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white px-4 py-3">
+    <div className="rounded-xl border border-[var(--line)] bg-card px-4 py-3">
       <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
         <span>{kindLabel(q.kind)}</span>
         {q.passNumber != null ? <span>Pass {q.passNumber}</span> : null}
@@ -575,7 +575,7 @@ function QuestionCard({
             {flags.map((f, i) => (
               <span
                 key={i}
-                className="rounded-full border border-[#b45309]/30 bg-[#fffbeb] px-2 py-0.5 normal-case tracking-normal text-[#b45309]"
+                className="rounded-full border border-[var(--energy-ink)]/30 bg-[var(--energy-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--energy-ink)]"
               >
                 ⚠ {f}
               </span>
@@ -602,14 +602,14 @@ function QuestionCard({
               key={i}
               className={`flex items-start gap-2 rounded-lg border px-3 py-2 text-sm ${
                 isCorrect
-                  ? "border-[var(--lagoon)]/50 bg-[#eef8f6]"
-                  : "border-[var(--line)] bg-white/70"
+                  ? "border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)]"
+                  : "border-[var(--line)] bg-card/70"
               }`}
             >
               <span
                 className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
                   isCorrect
-                    ? "bg-[var(--lagoon)] text-white"
+                    ? "bg-[var(--lagoon-ink)] text-primary-foreground"
                     : "border border-[var(--line)] text-[var(--ink-muted)]"
                 }`}
               >
@@ -617,7 +617,7 @@ function QuestionCard({
               </span>
               <span className="flex-1 whitespace-pre-wrap text-[var(--ink)]">{opt}</span>
               {isCorrect ? (
-                <span className="mt-0.5 shrink-0 text-xs font-semibold uppercase text-[var(--lagoon)]">
+                <span className="mt-0.5 shrink-0 text-xs font-semibold uppercase text-[var(--lagoon-ink)]">
                   Rätt
                 </span>
               ) : null}
@@ -641,7 +641,7 @@ function QuestionCard({
         <button
           type="button"
           onClick={() => setEditing(true)}
-          className="rounded-lg border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+          className="rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
         >
           Redigera
         </button>
@@ -649,7 +649,7 @@ function QuestionCard({
           <button
             type="button"
             onClick={() => void changeStatus("published")}
-            className="rounded-lg bg-[var(--lagoon)] px-3 py-1.5 text-xs font-semibold text-white transition hover:opacity-90"
+            className="rounded-lg bg-[var(--lagoon-ink)] px-3 py-1.5 text-xs font-semibold text-primary-foreground transition hover:opacity-90"
           >
             Godkänn
           </button>
@@ -658,7 +658,7 @@ function QuestionCard({
           <button
             type="button"
             onClick={() => void changeStatus("rejected")}
-            className="rounded-lg bg-[#9a3412] px-3 py-1.5 text-xs font-semibold text-white transition hover:brightness-110"
+            className="rounded-lg bg-[var(--destructive)] px-3 py-1.5 text-xs font-semibold text-primary-foreground transition hover:brightness-110"
           >
             Markera som fel
           </button>
@@ -666,7 +666,7 @@ function QuestionCard({
           <button
             type="button"
             onClick={() => void changeStatus("rejected")}
-            className="rounded-lg border border-[#9a3412]/40 bg-white px-3 py-1.5 text-xs font-semibold text-[#9a3412] transition hover:bg-[#fff7f3]"
+            className="rounded-lg border border-[var(--destructive)]/40 bg-card px-3 py-1.5 text-xs font-semibold text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
           >
             Avvisa
           </button>
@@ -675,7 +675,7 @@ function QuestionCard({
           <button
             type="button"
             onClick={() => void changeStatus("draft")}
-            className="rounded-lg border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)]"
+            className="rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-semibold text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)]"
           >
             Ångra
           </button>
@@ -783,7 +783,7 @@ function EditForm({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--brand)]/40 bg-white px-4 py-3 shadow-sm">
+    <div className="rounded-xl border border-[var(--brand)]/40 bg-card px-4 py-3 shadow-sm">
       <div className="mb-3 flex items-center justify-between">
         <span className="text-xs font-semibold uppercase tracking-wide text-[var(--brand)]">
           Redigerar · {kindLabel(q.kind)}
@@ -800,7 +800,7 @@ function EditForm({
           value={form.prompt}
           onChange={(e) => setForm({ ...form, prompt: e.target.value })}
           rows={3}
-          className="mt-1 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] focus:border-[var(--lagoon)] focus:outline-none"
+          className="mt-1 w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-sm text-[var(--ink)] focus:border-[var(--lagoon-ink)] focus:outline-none"
         />
       </label>
 
@@ -812,7 +812,7 @@ function EditForm({
           value={form.passage}
           onChange={(e) => setForm({ ...form, passage: e.target.value })}
           rows={4}
-          className="mt-1 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] focus:border-[var(--lagoon)] focus:outline-none"
+          className="mt-1 w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-sm text-[var(--ink)] focus:border-[var(--lagoon-ink)] focus:outline-none"
         />
       </label>
 
@@ -826,7 +826,7 @@ function EditForm({
               <span
                 className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
                   i === form.correctIndex
-                    ? "bg-[var(--lagoon)] text-white"
+                    ? "bg-[var(--lagoon-ink)] text-primary-foreground"
                     : "border border-[var(--line)] text-[var(--ink-muted)]"
                 }`}
               >
@@ -835,14 +835,14 @@ function EditForm({
               <input
                 value={opt}
                 onChange={(e) => setOption(i, e.target.value)}
-                className="min-w-0 flex-1 rounded-lg border border-[var(--line)] bg-white px-3 py-1.5 text-sm text-[var(--ink)] focus:border-[var(--lagoon)] focus:outline-none"
+                className="min-w-0 flex-1 rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-sm text-[var(--ink)] focus:border-[var(--lagoon-ink)] focus:outline-none"
                 placeholder={`Alternativ ${String.fromCharCode(65 + i)}`}
               />
               <button
                 type="button"
                 onClick={() => removeOption(i)}
                 disabled={form.options.length <= 2}
-                className="shrink-0 rounded-md px-2 py-1 text-xs text-[#9a3412] transition hover:bg-[#fff7f3] disabled:opacity-40"
+                className="shrink-0 rounded-md px-2 py-1 text-xs text-[var(--destructive)] transition hover:bg-[var(--coral-soft)] disabled:opacity-40"
                 aria-label={`Ta bort alternativ ${String.fromCharCode(65 + i)}`}
               >
                 ✕
@@ -853,7 +853,7 @@ function EditForm({
         <button
           type="button"
           onClick={addOption}
-          className="mt-2 rounded-lg border border-dashed border-[var(--line)] px-3 py-1.5 text-xs font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)]"
+          className="mt-2 rounded-lg border border-dashed border-[var(--line-strong)] px-3 py-1.5 text-xs font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)]"
         >
           + Lägg till alternativ
         </button>
@@ -866,7 +866,7 @@ function EditForm({
         <select
           value={form.correctIndex}
           onChange={(e) => setForm({ ...form, correctIndex: Number(e.target.value) })}
-          className="mt-1 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] focus:border-[var(--lagoon)] focus:outline-none"
+          className="mt-1 w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-sm text-[var(--ink)] focus:border-[var(--lagoon-ink)] focus:outline-none"
         >
           {form.options.map((opt, i) => (
             <option key={i} value={i}>
@@ -884,12 +884,12 @@ function EditForm({
           value={form.body}
           onChange={(e) => setForm({ ...form, body: e.target.value })}
           rows={4}
-          className="mt-1 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] focus:border-[var(--lagoon)] focus:outline-none"
+          className="mt-1 w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-sm text-[var(--ink)] focus:border-[var(--lagoon-ink)] focus:outline-none"
         />
       </label>
 
       {validation ? (
-        <p className="mt-2 text-sm text-[#9a3412]">{validation}</p>
+        <p className="mt-2 text-sm text-[var(--destructive)]">{validation}</p>
       ) : null}
 
       <div className="mt-4 flex flex-wrap gap-2">
@@ -897,7 +897,7 @@ function EditForm({
           type="button"
           onClick={() => void handleSave()}
           disabled={saving}
-          className="rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
+          className="rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
         >
           {saving ? "Sparar…" : "Spara"}
         </button>
@@ -905,7 +905,7 @@ function EditForm({
           type="button"
           onClick={onCancel}
           disabled={saving}
-          className="rounded-lg border border-[var(--line)] bg-white px-4 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)] disabled:opacity-50"
+          className="rounded-lg border border-[var(--line-strong)] bg-card px-4 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)] disabled:opacity-50"
         >
           Avbryt
         </button>

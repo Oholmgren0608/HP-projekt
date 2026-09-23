@@ -23,7 +23,7 @@ export default function FlashcardsPage() {
         </p>
       </div>
 
-      <section className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
+      <section className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <Flashcards />
       </section>
     </div>

@@ -51,19 +51,19 @@ export function QuizOptions({
               role="listitem"
               className={`flex w-full items-start gap-3 rounded-lg border px-3 py-2.5 sm:px-4 ${
                 isCorrect
-                  ? "border-[var(--lagoon)]/40 bg-white"
+                  ? "border-[var(--lagoon-ink)]/40 bg-card"
                   : isChosen
-                    ? "border-[#9a3412]/30 bg-white"
-                    : "border-[var(--line)] bg-white/70"
+                    ? "border-[var(--destructive)]/30 bg-card"
+                    : "border-[var(--line)] bg-card/70"
               }`}
             >
               <span
                 className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                   isCorrect
-                    ? "border-[var(--lagoon)] bg-[var(--lagoon)] text-white"
+                    ? "border-[var(--lagoon-ink)] bg-[var(--lagoon-ink)] text-primary-foreground"
                     : isChosen
-                      ? "border-[#9a3412] bg-[#9a3412] text-white"
-                      : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
+                      ? "border-[var(--destructive)] bg-[var(--destructive)] text-primary-foreground"
+                      : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
                 }`}
               >
                 {String.fromCharCode(65 + i)}
@@ -85,14 +85,14 @@ export function QuizOptions({
             className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
               active
                 ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
+                : "border-[var(--line-strong)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
             }`}
           >
             <span
               className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                 active
-                  ? "border-[var(--brand)] bg-[var(--brand)] text-white"
-                  : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
+                  ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
+                  : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
               }`}
             >
               {String.fromCharCode(65 + i)}

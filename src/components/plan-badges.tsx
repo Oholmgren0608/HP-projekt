@@ -6,21 +6,21 @@ export function PriorityBadge({ priority }: { priority: Priority }) {
   const label = priorityLabel(priority);
   if (priority === "kritiskt") {
     return (
-      <Badge className="border-transparent bg-[#9a3412] text-white hover:bg-[#9a3412]">
+      <Badge className="border-transparent bg-[var(--destructive)] text-primary-foreground hover:bg-[var(--destructive)]">
         {label}
       </Badge>
     );
   }
   if (priority === "huvudfokus") {
     return (
-      <Badge className="border-transparent bg-[var(--brand)] text-white hover:bg-[var(--brand)]">
+      <Badge className="border-transparent bg-[var(--brand)] text-primary-foreground hover:bg-[var(--brand)]">
         {label}
       </Badge>
     );
   }
   if (priority === "styrka") {
     return (
-      <Badge className="border-transparent bg-[var(--lagoon)] text-white hover:bg-[var(--lagoon)]">
+      <Badge className="border-transparent bg-[var(--lagoon-ink)] text-primary-foreground hover:bg-[var(--lagoon-ink)]">
         {label}
       </Badge>
     );

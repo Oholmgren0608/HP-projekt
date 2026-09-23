@@ -121,7 +121,7 @@ export function PracticeHub() {
           <Link
             key={subtest.id}
             href={`/ova/${subtest.id}`}
-            className="group rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--brand)] hover:bg-[var(--accent-soft)] hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+            className="group rounded-2xl border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-[var(--accent-soft)] hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
           >
             <div className="mb-4 text-4xl">{subtest.icon}</div>
             <div className="flex items-start justify-between gap-2">
@@ -147,7 +147,7 @@ export function PracticeHub() {
         {/* Flashcards */}
         <Link
           href="/ova/flashcards"
-          className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--brand)] hover:bg-white hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+          className="rounded-2xl border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             Verktyg
@@ -166,7 +166,7 @@ export function PracticeHub() {
         {/* Reading Library */}
         <Link
           href="/bibliotek"
-          className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 transition hover:border-[var(--brand)] hover:bg-white hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+          className="rounded-2xl border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             Resurser

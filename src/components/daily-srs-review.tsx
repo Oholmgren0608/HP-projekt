@@ -36,7 +36,7 @@ export function DailySrsReview() {
 
   if (cards.length === 0) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
           Dagens repetition
         </p>
@@ -75,7 +75,7 @@ export function DailySrsReview() {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.4)] sm:p-6">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.4)] sm:p-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
@@ -124,33 +124,33 @@ export function DailySrsReview() {
                 onClick={() => pickOption(i)}
                 className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition disabled:opacity-100 sm:px-4 ${
                   showCorrect
-                    ? "border-[var(--lagoon)]/40 bg-[#eef8f6]"
+                    ? "border-[var(--lagoon-ink)]/40 bg-[var(--accent-soft)]"
                     : showWrong
-                      ? "border-[#9a3412]/30 bg-[#fff7f3]"
+                      ? "border-[var(--destructive)]/30 bg-[var(--coral-soft)]"
                       : revealed
-                        ? "cursor-default border-[var(--line)] bg-[var(--paper)]"
-                        : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
+                        ? "cursor-default border-[var(--line-strong)] bg-[var(--paper)]"
+                        : "border-[var(--line-strong)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
                 }`}
               >
                 <span
                   className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                     showCorrect
-                      ? "border-[var(--lagoon)] bg-[var(--lagoon)] text-white"
+                      ? "border-[var(--lagoon-ink)] bg-[var(--lagoon-ink)] text-primary-foreground"
                       : showWrong
-                        ? "border-[#9a3412] bg-[#9a3412] text-white"
-                        : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
+                        ? "border-[var(--destructive)] bg-[var(--destructive)] text-primary-foreground"
+                        : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
                   }`}
                 >
                   {String.fromCharCode(65 + i)}
                 </span>
                 <span className="flex-1 text-[var(--ink)]">{opt}</span>
                 {showCorrect ? (
-                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--lagoon)]">
+                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--lagoon-ink)]">
                     Rätt
                   </span>
                 ) : null}
                 {showWrong ? (
-                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[#9a3412]">
+                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--destructive)]">
                     Fel
                   </span>
                 ) : null}
@@ -167,7 +167,7 @@ export function DailySrsReview() {
               {pickedCorrect ? "Rätt — du valde rätt alternativ." : "Fel — du valde fel alternativ."}
             </p>
           ) : null}
-          <p className="rounded-lg border border-[var(--lagoon)]/30 bg-[#eef8f6] px-4 py-3 text-[var(--ink)]">
+          <p className="rounded-lg border border-[var(--lagoon-ink)]/30 bg-[var(--accent-soft)] px-4 py-3 text-[var(--ink)]">
             <span className="block text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
               Rätt svar
             </span>
@@ -183,14 +183,14 @@ export function DailySrsReview() {
             <button
               type="button"
               onClick={() => grade(false)}
-              className="rounded-md border border-[var(--line)] px-4 py-2 text-sm font-medium text-[var(--ink)] hover:border-[var(--ink-soft)]"
+              className="rounded-md border border-[var(--line-strong)] px-4 py-2 text-sm font-medium text-[var(--ink)] hover:border-[var(--ink-soft)]"
             >
               Glömt — igen i morgon
             </button>
             <button
               type="button"
               onClick={() => grade(true)}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground hover:brightness-110"
             >
               Kommer ihåg
             </button>

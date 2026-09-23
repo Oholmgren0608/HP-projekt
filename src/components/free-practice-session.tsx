@@ -94,7 +94,7 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
   }
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6">
+    <div className="rounded-xl border border-[var(--line)] bg-card p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
@@ -107,7 +107,7 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
         <button
           type="button"
           onClick={onClose}
-          className="rounded-md border border-[var(--line)] px-3 py-1.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
+          className="rounded-md border border-[var(--line-strong)] px-3 py-1.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
         >
           Stäng
         </button>
@@ -155,7 +155,7 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
               type="button"
               disabled={selected === null}
               onClick={handleSubmit}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-50"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
             >
               {index >= total - 1 ? "Visa resultat" : "Nästa fråga"}
             </button>
@@ -163,7 +163,7 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
               type="button"
               onClick={goPrevious}
               disabled={index === 0}
-              className="rounded-md border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)] disabled:opacity-40"
+              className="rounded-md border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] disabled:opacity-40"
             >
               Föregående
             </button>
@@ -192,14 +192,14 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
             <button
               type="button"
               onClick={handleRestart}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
             >
               Ny övning
             </button>
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+              className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
             >
               Till övningsval
             </button>

@@ -15,7 +15,7 @@ export function ResultsView() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-56 animate-pulse rounded-2xl bg-white/70" />
+        <div className="h-56 animate-pulse rounded-2xl bg-card/70" />
       </div>
     );
   }
@@ -35,7 +35,7 @@ export function ResultsView() {
           Fyll i norm och råpoäng per delprov. När du sparar byggs prioritering,
           tidsfördelning och {profile.weeksUntilExam}-veckorsplan om.
         </p>
-        <p className="mt-3 rounded-lg border border-[var(--line)] bg-white/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
+        <p className="mt-3 rounded-lg border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
           Ny på HP eller osäker på dina poäng?{" "}
           <Link
             href="/nivatest"
@@ -49,7 +49,7 @@ export function ResultsView() {
 
       <StudyTimeNotice />
 
-      <section className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 sm:p-6">
+      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Mata in dina HP-resultat
         </h2>
@@ -86,7 +86,7 @@ export function ResultsView() {
                     return (
                       <li
                         key={s.id}
-                        className="rounded-2xl border border-[var(--line)] bg-white/70 px-4 py-3"
+                        className="rounded-2xl border border-[var(--line)] bg-card/70 px-4 py-3"
                       >
                         <div className="flex items-baseline justify-between gap-3">
                           <div>
@@ -116,7 +116,7 @@ export function ResultsView() {
           Tidfördelning (~{profile.hoursPerWeek} h/vecka)
         </h2>
         {timeSplit.length === 0 ? (
-          <p className="mt-4 rounded-xl border border-[var(--line)] bg-white/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
+          <p className="mt-4 rounded-xl border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
             Alla delprov ligger på samma nivå — ingen enskild del behöver extra
             tid. Fördela tiden jämnt över delarna.
           </p>
@@ -125,7 +125,7 @@ export function ResultsView() {
             {timeSplit.map((t) => (
               <li
                 key={t.label}
-                className="rounded-2xl border border-[var(--line)] bg-white/70 px-3 py-4 text-center"
+                className="rounded-2xl border border-[var(--line)] bg-card/70 px-3 py-4 text-center"
               >
                 <div className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
                   {t.pct}%

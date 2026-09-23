@@ -37,7 +37,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
 
   if (!info) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-6">
         <p className="text-[var(--ink-muted)]">Delprovet hittades inte.</p>
       </div>
     );
@@ -67,7 +67,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
       </div>
 
       {/* Question Count Selector */}
-      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-6 sm:p-8">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-6 sm:p-8">
         <div className="space-y-6">
           <div role="group" aria-labelledby="question-count-heading">
             <span
@@ -87,7 +87,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
                     className={`min-w-12 rounded-lg border px-4 py-2 font-semibold transition ${
                       questionCount === count
                         ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                        : "border-[var(--line)] bg-white text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
+                        : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
                     }`}
                   >
                     {count}
@@ -108,7 +108,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
           <button
             type="button"
             onClick={() => setSessionActive(true)}
-            className="inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-semibold text-white transition hover:brightness-110"
+            className="inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-semibold text-primary-foreground transition hover:brightness-110"
           >
             Starta övning med {questionCount} {questionCount === 1 ? "fråga" : "frågor"}
           </button>
@@ -116,7 +116,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
       </div>
 
       {/* Info */}
-      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-6">
         <h2 className="font-[family-name:var(--font-display)] text-lg text-[var(--ink)]">
           Om {info.label}
         </h2>

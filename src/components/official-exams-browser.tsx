@@ -172,7 +172,7 @@ export function OfficialExamsBrowser() {
             Laddar prov…
           </div>
         ) : visibleDbExams.length === 0 ? (
-          <div className="mt-4 rounded-lg border border-dashed border-[var(--line)] bg-white/60 px-4 py-6 text-center">
+          <div className="mt-4 rounded-lg border border-dashed border-[var(--line)] bg-card/60 px-4 py-6 text-center">
             <p className="text-sm font-medium text-[var(--ink)]">Inga importerade prov ännu</p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
               Fler äldre prov importeras löpande. Tills dess hittar du originalhäften som PDF
@@ -188,7 +188,7 @@ export function OfficialExamsBrowser() {
               return (
                 <div
                   key={exam.id}
-                  className="rounded-lg border border-[var(--line)] bg-white/70 p-4"
+                  className="rounded-lg border border-[var(--line)] bg-card/70 p-4"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0">
@@ -208,7 +208,7 @@ export function OfficialExamsBrowser() {
                       <button
                         type="button"
                         onClick={() => setExamMode({ exam })}
-                        className="inline-flex min-h-10 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
+                        className="inline-flex min-h-10 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
                       >
                         Helt prov
                       </button>
@@ -228,7 +228,7 @@ export function OfficialExamsBrowser() {
                               count: info!.byKind[k] ?? 0,
                             })
                           }
-                          className="rounded-md border border-[var(--line)] bg-white px-3 py-1.5 text-sm text-[var(--ink-soft)] transition hover:border-[var(--ink-soft)]"
+                          className="rounded-md border border-[var(--line-strong)] bg-card px-3 py-1.5 text-sm text-[var(--ink-soft)] transition hover:border-[var(--ink-soft)]"
                         >
                           Öva {kindBadge(k)}
                         </button>
@@ -252,7 +252,7 @@ export function OfficialExamsBrowser() {
         <h2 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Officiella provhäften och facit
         </h2>
-        <div className="mt-3 rounded-lg border border-[var(--line)] bg-white/60 px-4 py-3 text-sm text-[var(--ink-muted)]">
+        <div className="mt-3 rounded-lg border border-[var(--line)] bg-card/60 px-4 py-3 text-sm text-[var(--ink-muted)]">
           Officiella provhäften och facit från UHR visas här direkt (PDF från studera.nu). Vi
           omhostar inte filerna — ELF saknas ofta eftersom UHR bara får visa de texterna en kort
           tid. För fler år:{" "}
@@ -274,7 +274,7 @@ export function OfficialExamsBrowser() {
             className={`rounded-md border px-3 py-1.5 text-sm transition ${
               year === "alla"
                 ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                : "border-[var(--line)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
+                : "border-[var(--line-strong)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
             }`}
           >
             Alla
@@ -287,7 +287,7 @@ export function OfficialExamsBrowser() {
               className={`rounded-md border px-3 py-1.5 text-sm transition ${
                 year === y
                   ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                  : "border-[var(--line)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
+                  : "border-[var(--line-strong)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
               }`}
             >
               {y}
@@ -307,7 +307,7 @@ export function OfficialExamsBrowser() {
                   className={`w-full rounded-lg border px-3 py-3 text-left transition ${
                     selected
                       ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                      : "border-[var(--line)] bg-white/70 hover:border-[var(--ink-soft)]"
+                      : "border-[var(--line-strong)] bg-card/70 hover:border-[var(--ink-soft)]"
                   }`}
                 >
                   <div className="font-medium text-[var(--ink)]">{exam.title}</div>
@@ -352,7 +352,7 @@ export function OfficialExamsBrowser() {
                         className={`rounded-md border px-3 py-1.5 text-sm transition ${
                           selected
                             ? "border-[var(--ink)] bg-[var(--ink)] text-[var(--paper)]"
-                            : "border-[var(--line)] bg-white text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
+                            : "border-[var(--line-strong)] bg-card text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
                         }`}
                       >
                         <span className="mr-1.5 text-[10px] uppercase tracking-wide opacity-70">
@@ -365,7 +365,7 @@ export function OfficialExamsBrowser() {
                 </div>
 
                 {activeDoc ? (
-                  <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-white shadow-[0_16px_40px_-28px_rgba(18,42,48,0.45)]">
+                  <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-card shadow-[0_16px_40px_-28px_rgba(18,42,48,0.45)]">
                     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--line)] bg-[var(--paper)] px-4 py-2">
                       <p className="text-sm font-medium text-[var(--ink)]">{activeDoc.title}</p>
                       <a
@@ -391,7 +391,7 @@ export function OfficialExamsBrowser() {
                         <button
                           type="button"
                           onClick={() => setLoadedDocUrl(activeDoc.url)}
-                          className="rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+                          className="rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
                         >
                           Visa PDF i läsaren
                         </button>

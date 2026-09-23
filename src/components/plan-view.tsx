@@ -15,7 +15,7 @@ export function PlanView() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-56 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-48 animate-pulse rounded-2xl bg-white/70" />
+        <div className="h-48 animate-pulse rounded-2xl bg-card/70" />
       </div>
     );
   }
@@ -36,7 +36,7 @@ export function PlanView() {
             Byggs om från dina resultat. Starta varje uppgift direkt — progress
             sparas i webbläsaren.
           </p>
-          <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line)] bg-white/70 px-4 py-3">
+          <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line-strong)] bg-card/70 px-4 py-3">
             <input
               type="checkbox"
               className="mt-1 size-4 accent-[var(--brand)]"
@@ -77,7 +77,7 @@ export function PlanView() {
               {strategy.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-2xl border border-[var(--line)] bg-white/70 p-5"
+                  className="rounded-2xl border border-[var(--line)] bg-card/70 p-5"
                 >
                   <h3 className="text-lg font-semibold text-[var(--ink)]">
                     {item.title}
@@ -90,23 +90,23 @@ export function PlanView() {
             </div>
           </section>
 
-          <section className="rounded-2xl bg-[var(--ink)] p-5 text-[var(--paper)] sm:p-6">
+          <section className="rounded-2xl bg-foreground p-5 text-background sm:p-6">
             <h2 className="font-[family-name:var(--font-display)] text-2xl">
               En vanlig studiedag
             </h2>
-            <p className="mt-2 max-w-2xl text-white/70">
+            <p className="mt-2 max-w-2xl text-background/70">
               Mall efter dina flaskhalsar — justeras när du sparar nya resultat.
             </p>
             <ol className="mt-6 space-y-4">
               {dailyTemplate.map((row, i) => (
                 <li
                   key={row.slot}
-                  className="grid gap-1 border-b border-white/15 pb-4 last:border-0 last:pb-0 sm:grid-cols-[14rem_1fr] sm:gap-6"
+                  className="grid gap-1 border-b border-background/15 pb-4 last:border-0 last:pb-0 sm:grid-cols-[14rem_1fr] sm:gap-6"
                 >
-                  <span className="text-sm font-medium text-[var(--lagoon)]">
+                  <span className="text-sm font-medium text-background/70">
                     {i + 1}. {row.slot}
                   </span>
-                  <span className="text-white/90">{row.item}</span>
+                  <span className="text-background/90">{row.item}</span>
                 </li>
               ))}
             </ol>
@@ -131,7 +131,7 @@ export function PlanView() {
               {sections.map((section) => (
                 <article
                   key={`${section.id}-${section.name}`}
-                  className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6"
+                  className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6"
                 >
                   <div className="flex flex-wrap items-center gap-3">
                     <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -151,7 +151,7 @@ export function PlanView() {
                         key={m}
                         className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"
                       >
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--lagoon)]" />
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--lagoon-ink)]" />
                         <span>{m}</span>
                       </li>
                     ))}

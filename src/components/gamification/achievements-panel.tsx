@@ -64,7 +64,7 @@ export function AchievementsPanel({ className }: { className?: string }) {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", bounce: 0.6, delay: 0.15 }}
-                  className="absolute -top-1.5 -right-1.5 flex size-5 items-center justify-center rounded-full bg-[var(--coral)] text-[9px] font-extrabold text-white shadow-pop"
+                  className="absolute -top-1.5 -right-1.5 flex size-5 items-center justify-center rounded-full bg-[var(--coral-ink)] text-[9px] font-extrabold text-primary-foreground shadow-pop"
                 >
                   NY
                 </motion.span>

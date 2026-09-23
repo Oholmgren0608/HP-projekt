@@ -112,7 +112,7 @@ export function ReviewForm({
                 className={`rounded-lg border px-4 py-2 text-sm font-medium transition ${
                   difficulty === d
                     ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--brand)]"
-                    : "border-[var(--line)] bg-white text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
+                    : "border-[var(--line-strong)] bg-card text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
                 }`}
               >
                 {BOT_DIFFICULTY_LABELS[d]}
@@ -161,8 +161,8 @@ export function ReviewForm({
                     }
                     className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
                       reportReason === r
-                        ? "border-[#9a3412] bg-[#fff7f3] text-[#9a3412]"
-                        : "border-[var(--line)] bg-white text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
+                        ? "border-[var(--destructive)] bg-[var(--coral-soft)] text-[var(--destructive)]"
+                        : "border-[var(--line-strong)] bg-card text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
                     }`}
                   >
                     {REPORT_REASON_LABELS[r]}
@@ -184,18 +184,18 @@ export function ReviewForm({
             ? "Övrig feedback (valfritt)…"
             : "Kommentar om matchen (valfritt)…"
         }
-        className="mt-4 w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2"
+        className="mt-4 w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2"
       />
 
       {error ? (
-        <p className="mt-2 text-xs text-[#9a3412]">{error}</p>
+        <p className="mt-2 text-xs text-[var(--destructive)]">{error}</p>
       ) : null}
 
       <button
         type="button"
         disabled={!canSubmit || submitting}
         onClick={() => void handleSubmit()}
-        className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+        className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
       >
         {submitting ? "Skickar…" : "Skicka recension"}
       </button>

@@ -34,7 +34,7 @@ export function ReadingLibrary() {
   // förrän hydrering är klar, annars mismatchar SSR- och klient-HTML.
   if (!ready) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar läsbibliotek…</p>
       </div>
     );
@@ -64,13 +64,13 @@ export function ReadingLibrary() {
                 className={`w-full rounded-lg border px-3 py-3 text-left transition ${
                   selected
                     ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                    : "border-[var(--line)] bg-white/70 hover:border-[var(--ink-soft)]"
+                    : "border-[var(--line-strong)] bg-card/70 hover:border-[var(--ink-soft)]"
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">
                   <span className="font-medium text-[var(--ink)]">{item.title}</span>
                   {done ? (
-                    <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-[var(--lagoon)]">
+                    <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-[var(--lagoon-ink)]">
                       Läst
                     </span>
                   ) : null}
@@ -83,7 +83,7 @@ export function ReadingLibrary() {
           })}
         </div>
 
-        <article className="rounded-2xl border border-[var(--line)] bg-white/80 p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.4)] sm:p-6">
+        <article className="rounded-2xl border border-[var(--line)] bg-card/80 p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.4)] sm:p-6">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             {text.kind} · ~{text.minutes} min
           </p>
@@ -130,7 +130,7 @@ export function ReadingLibrary() {
                 value={summary}
                 onChange={(e) => setSummary(e.target.value)}
                 rows={3}
-                className="mt-2 w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
+                className="mt-2 w-full rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
                 placeholder="Skriv din sammanfattning här…"
               />
             </div>
@@ -143,7 +143,7 @@ export function ReadingLibrary() {
                 if (!read[text.id]) recordEvent({ type: "reading_done" });
                 setRead((prev) => ({ ...prev, [text.id]: true }));
               }}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
             >
               Markera som läst
             </button>
@@ -157,7 +157,7 @@ export function ReadingLibrary() {
                     return next;
                   })
                 }
-                className="rounded-md border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)]"
+                className="rounded-md border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)]"
               >
                 Avmarkera
               </button>

@@ -166,7 +166,7 @@ export function CelebrationLayer() {
               transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}
               className="relative w-full max-w-sm rounded-3xl border border-[var(--line)] bg-[var(--card)] p-8 text-center shadow-pop"
             >
-              <p className="text-sm font-extrabold tracking-widest text-[var(--energy)] uppercase">
+              <p className="text-sm font-extrabold tracking-widest text-[var(--energy-ink)] uppercase">
                 Nivå upp!
               </p>
               <h2 className="mt-1 font-[family-name:var(--font-display)] text-4xl font-bold text-[var(--ink)]">
@@ -176,7 +176,7 @@ export function CelebrationLayer() {
               <button
                 type="button"
                 onClick={closeLevelUp}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand)] px-4 py-2.5 text-base font-semibold text-white transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand)] px-4 py-2.5 text-base font-semibold text-primary-foreground transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Fortsätt plugga 🎉
               </button>
@@ -200,7 +200,7 @@ export function CelebrationLayer() {
               onAnimationComplete={() => {
                 window.setTimeout(() => dismissToast(t.id), 4000);
               }}
-              className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--card)] p-3.5 text-left shadow-pop"
+              className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-2xl border border-[var(--line-strong)] bg-[var(--card)] p-3.5 text-left shadow-pop"
             >
               <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-xl">
                 {t.emoji}

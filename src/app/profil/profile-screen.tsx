@@ -204,7 +204,7 @@ function Avatar({
 }) {
   return (
     <div
-      className={`flex items-center justify-center rounded-full bg-[var(--brand)] font-semibold text-white ${
+      className={`flex items-center justify-center rounded-full bg-[var(--brand)] font-semibold text-primary-foreground ${
         size === "lg" ? "size-14 text-xl" : "size-8 text-xs"
       }`}
       aria-hidden
@@ -272,12 +272,12 @@ function UsernameEditor() {
           autoComplete="off"
           spellCheck={false}
           aria-label="Användarnamn"
-          className="w-full max-w-56 rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2"
+          className="w-full max-w-56 rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2"
         />
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex min-h-9 items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex min-h-9 items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {submitting ? "Sparar…" : "Spara"}
         </button>
@@ -295,7 +295,7 @@ function UsernameEditor() {
         ) : null}
       </div>
       {error ? (
-        <p className="text-xs text-[#9a3412]" aria-live="polite">
+        <p className="text-xs text-[var(--destructive)]" aria-live="polite">
           {error}
         </p>
       ) : null}
@@ -376,7 +376,7 @@ export function ProfileScreen() {
         <button
           type="button"
           onClick={() => void signInWithGoogle()}
-          className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-white transition hover:brightness-110"
+          className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
         >
           Logga in med Google
         </button>
@@ -442,7 +442,7 @@ export function ProfileScreen() {
       </div>
 
       {/* 1. Kontouppgifter */}
-      <section className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 sm:p-6">
+      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <div className="flex items-start gap-4">
           <Avatar username={username} email={user.email ?? null} />
           <div className="min-w-0 space-y-1.5">
@@ -458,7 +458,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 2. Träningsstatistik */}
-      <section className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 sm:p-6">
+      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Träningsstatistik
         </h2>
@@ -486,7 +486,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 3. Duel-statistik */}
-      <section className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 sm:p-6">
+      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Duell-statistik
         </h2>
@@ -525,7 +525,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 4. Kontoåtgärder */}
-      <section className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 sm:p-6">
+      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Kontoåtgärder
         </h2>
@@ -533,7 +533,7 @@ export function ProfileScreen() {
           <button
             type="button"
             onClick={() => void signOut()}
-            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--line)] px-5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
           >
             Logga ut
           </button>
@@ -541,13 +541,13 @@ export function ProfileScreen() {
             type="button"
             disabled={deleting}
             onClick={() => void handleDeleteAccount()}
-            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[#9a3412]/40 px-5 text-sm font-medium text-[#9a3412] transition hover:bg-[#fff7f3] disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--destructive)]/40 px-5 text-sm font-medium text-[var(--destructive)] transition hover:bg-[var(--coral-soft)] disabled:cursor-not-allowed disabled:opacity-50"
           >
             {deleting ? "Raderar…" : "Ta bort konto"}
           </button>
         </div>
         {deleteError ? (
-          <p className="mt-3 text-sm text-[#9a3412]" aria-live="polite">
+          <p className="mt-3 text-sm text-[var(--destructive)]" aria-live="polite">
             {deleteError}
           </p>
         ) : null}
@@ -558,7 +558,7 @@ export function ProfileScreen() {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white/75 p-4">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-4">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
       <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
         {value}
@@ -583,10 +583,10 @@ function MatchRow({
 
   const resultLabel = draw ? "Oavgjort" : won ? "Vinst" : "Förlust";
   const resultColor = won
-    ? "text-[var(--lagoon)]"
+    ? "text-[var(--lagoon-ink)]"
     : draw
       ? "text-[var(--ink-muted)]"
-      : "text-[#9a3412]";
+      : "text-[var(--destructive)]";
 
   const date = match.finished_at
     ? new Date(match.finished_at).toLocaleDateString("sv-SE", {
@@ -606,9 +606,9 @@ function MatchRow({
       <span
         className={`w-14 shrink-0 text-right tabular-nums ${
           (myDelta ?? 0) > 0
-            ? "text-[var(--lagoon)]"
+            ? "text-[var(--lagoon-ink)]"
             : (myDelta ?? 0) < 0
-              ? "text-[#9a3412]"
+              ? "text-[var(--destructive)]"
               : "text-[var(--ink-muted)]"
         }`}
       >

@@ -73,7 +73,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
         Privat duell
       </p>
@@ -96,12 +96,12 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
               readOnly
               value={inviteUrl}
               onFocus={(e) => e.currentTarget.select()}
-              className="w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink-soft)] outline-none"
+              className="w-full rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink-soft)] outline-none"
             />
             <button
               type="button"
               onClick={() => void copy()}
-              className="shrink-0 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+              className="shrink-0 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
             >
               {copied ? "Kopierad!" : "Kopiera"}
             </button>
@@ -120,7 +120,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
         <button
           type="button"
           onClick={handleCancel}
-          className="rounded-lg border border-[var(--line)] px-5 py-2.5 text-sm font-medium text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
+          className="rounded-lg border border-[var(--line-strong)] px-5 py-2.5 text-sm font-medium text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
         >
           Avbryt
         </button>

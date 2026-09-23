@@ -146,7 +146,7 @@ export function PracticeSession({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-white p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6">
+    <div className="rounded-xl border border-[var(--line)] bg-card p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
@@ -160,7 +160,7 @@ export function PracticeSession({
         <button
           type="button"
           onClick={handleClose}
-          className="rounded-md border border-[var(--line)] px-3 py-1.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
+          className="rounded-md border border-[var(--line-strong)] px-3 py-1.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
         >
           Pausa & stäng
         </button>
@@ -210,7 +210,7 @@ export function PracticeSession({
               type="button"
               disabled={quiz.selected === null}
               onClick={handleSubmit}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
             >
               {quiz.index >= quiz.total - 1 ? "Visa resultat" : "Nästa fråga"}
             </button>
@@ -218,7 +218,7 @@ export function PracticeSession({
               type="button"
               onClick={quiz.goPrevious}
               disabled={quiz.index === 0}
-              className="rounded-md border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)] disabled:opacity-40"
+              className="rounded-md border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] disabled:opacity-40"
             >
               Föregående
             </button>
@@ -262,7 +262,7 @@ export function PracticeSession({
             <button
               type="button"
               onClick={handleRestartSame}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
             >
               Ny övning
             </button>
@@ -270,7 +270,7 @@ export function PracticeSession({
               <button
                 type="button"
                 onClick={handleNextTask}
-                className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+                className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
               >
                 Nästa i veckan
               </button>
@@ -339,7 +339,7 @@ function TimeRequirementBanner({
       </p>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
         <div
-          className={`h-full rounded-full transition-all ${timer.ready ? "bg-[var(--lagoon)]" : "bg-[var(--brand)]"}`}
+          className={`h-full rounded-full transition-all ${timer.ready ? "bg-[var(--lagoon-ink)]" : "bg-[var(--brand)]"}`}
           style={{ width: `${timer.progress}%` }}
         />
       </div>
@@ -412,7 +412,7 @@ function ReflectForm({
               onChange(next);
             }}
             rows={3}
-            className="w-full rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
             placeholder="Skriv kort här…"
           />
         </label>

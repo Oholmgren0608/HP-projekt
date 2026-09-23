@@ -546,14 +546,14 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     return (
       <div className="space-y-6">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-64 animate-pulse rounded-2xl bg-white/70" />
+        <div className="h-64 animate-pulse rounded-2xl bg-card/70" />
       </div>
     );
   }
 
   if (phase === "error") {
     return (
-      <div className="mx-auto max-w-lg rounded-2xl border border-[var(--line)] bg-white/80 p-8 text-center">
+      <div className="mx-auto max-w-lg rounded-2xl border border-[var(--line)] bg-card/80 p-8 text-center">
         <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Något gick fel
         </p>
@@ -561,7 +561,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         <button
           type="button"
           onClick={() => router.push("/duell")}
-          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white"
+          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground"
         >
           Tillbaka till Duell
         </button>
@@ -587,7 +587,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       />
 
       {phase === "playing" && current ? (
-        <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
+        <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
           <div className="flex items-center justify-between gap-3">
             <span className="text-sm text-[var(--ink-muted)]">
               Fråga {index + 1} av {total}
@@ -599,7 +599,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
               <span
                 className={`rounded-full px-2.5 py-0.5 text-sm font-semibold tabular-nums ${
                   secondsLeft <= 5
-                    ? "bg-[#9a3412]/10 text-[#9a3412]"
+                    ? "bg-[var(--destructive)]/10 text-[var(--destructive)]"
                     : "bg-[var(--accent-soft)] text-[var(--brand)]"
                 }`}
               >
@@ -640,14 +640,14 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
                   className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
                     active
                       ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                      : "border-[var(--line)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
+                      : "border-[var(--line-strong)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
                   }`}
                 >
                   <span
                     className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
                       active
-                        ? "border-[var(--brand)] bg-[var(--brand)] text-white"
-                        : "border-[var(--line)] bg-white text-[var(--ink-muted)]"
+                        ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
+                        : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
                     }`}
                   >
                     {String.fromCharCode(65 + i)}
@@ -662,7 +662,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             <button
               type="button"
               onClick={() => void handleForfeit()}
-              className="rounded-lg border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)] transition hover:border-[#9a3412]/40 hover:text-[#9a3412]"
+              className="rounded-lg border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--destructive)]/40 hover:text-[var(--destructive)]"
             >
               Ge upp
             </button>
@@ -670,7 +670,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
               type="button"
               disabled={selected === null}
               onClick={() => submitRef.current(selected)}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
             >
               Svara
             </button>
@@ -679,7 +679,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       ) : null}
 
       {phase === "waiting" ? (
-        <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
+        <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
             Klar!
           </p>
@@ -700,7 +700,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             <button
               type="button"
               onClick={() => void handleClaim()}
-              className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
             >
               Gör anspråk på vinst (motståndaren verkar ha lämnat)
             </button>
@@ -753,7 +753,7 @@ function MatchHeader({
   const opponentAhead = known && myCorrect < oppCorrect;
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-5">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-4 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-5">
       <div className="flex items-center justify-between">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
           {duelModeLabel(mode)}
@@ -871,11 +871,11 @@ function ResultView({
     result === "draw"
       ? "text-[var(--ink)]"
       : result === "win"
-        ? "text-[var(--lagoon)]"
-        : "text-[#9a3412]";
+        ? "text-[var(--lagoon-ink)]"
+        : "text-[var(--destructive)]";
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
         {duelModeLabel(match.mode)}
       </p>
@@ -902,7 +902,7 @@ function ResultView({
       {myDelta != null && myDelta !== 0 ? (
         <p className="mt-4 text-sm text-[var(--ink-soft)]">
           Rankingförändring:{" "}
-          <span className={`font-semibold ${myDelta > 0 ? "text-[var(--lagoon)]" : "text-[#9a3412]"}`}>
+          <span className={`font-semibold ${myDelta > 0 ? "text-[var(--lagoon-ink)]" : "text-[var(--destructive)]"}`}>
             {myDelta > 0 ? `+${myDelta}` : myDelta} ELO
           </span>
         </p>
@@ -914,14 +914,14 @@ function ResultView({
         <button
           type="button"
           onClick={onAgain}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-white transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
         >
           Ny match
         </button>
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line)] px-6 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+          className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-6 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
         >
           Tillbaka till Duell
         </button>

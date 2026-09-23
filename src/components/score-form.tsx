@@ -63,7 +63,7 @@ export function ScoreForm() {
             onChange={(e) =>
               setDraft((d) => ({ ...d, quantNorm: Number(e.target.value) }))
             }
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
         <label className="block space-y-1.5">
@@ -77,7 +77,7 @@ export function ScoreForm() {
             onChange={(e) =>
               setDraft((d) => ({ ...d, verbalNorm: Number(e.target.value) }))
             }
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
         <label className="block space-y-1.5">
@@ -90,7 +90,7 @@ export function ScoreForm() {
             onChange={(e) =>
               setDraft((d) => ({ ...d, hoursPerWeek: Number(e.target.value) }))
             }
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
         <label className="block space-y-1.5">
@@ -103,7 +103,7 @@ export function ScoreForm() {
             onChange={(e) =>
               setDraft((d) => ({ ...d, weeksUntilExam: Number(e.target.value) }))
             }
-            className="w-full rounded-lg border border-[var(--line)] bg-white px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
+            className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
           />
         </label>
       </div>
@@ -119,7 +119,7 @@ export function ScoreForm() {
           {DELPROV_META.map((m) => (
             <label
               key={m.id}
-              className="flex items-center justify-between gap-3 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2"
+              className="flex items-center justify-between gap-3 rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2"
             >
               <span className="min-w-0">
                 <span className="font-semibold text-[var(--ink)]">{m.id}</span>
@@ -134,7 +134,7 @@ export function ScoreForm() {
                   max={m.total}
                   value={draft.delprov[m.id]}
                   onChange={(e) => setDelprov(m.id, e.target.value)}
-                  className="w-16 rounded-md border border-[var(--line)] bg-white px-2 py-1.5 text-center text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
+                  className="w-16 rounded-md border border-[var(--line-strong)] bg-card px-2 py-1.5 text-center text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
                 />
                 / {m.total}
               </span>
@@ -146,7 +146,7 @@ export function ScoreForm() {
       <div className="flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
         >
           Skapa ny plan
         </button>
@@ -156,11 +156,11 @@ export function ScoreForm() {
             resetScores();
             setMessage("Återställde till standardvärden.");
           }}
-          className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line)] px-4 text-sm text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
+          className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-4 text-sm text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
         >
           Återställ
         </button>
-        {message ? <p className="text-sm text-[var(--lagoon)]">{message}</p> : null}
+        {message ? <p className="text-sm text-[var(--lagoon-ink)]">{message}</p> : null}
       </div>
     </form>
   );

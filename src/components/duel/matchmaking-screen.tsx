@@ -162,7 +162,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
+    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
         {duelModeLabel(mode)}
       </p>
@@ -190,7 +190,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
       </div>
 
       {error ? (
-        <p className="mt-4 rounded-lg border border-[#9a3412]/30 bg-[#fff7f3] px-4 py-3 text-sm text-[#9a3412]">
+        <p className="mt-4 rounded-lg border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-4 py-3 text-sm text-[var(--destructive)]">
           {error}
         </p>
       ) : null}
@@ -202,8 +202,8 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
           onClick={() => void handleStartBot()}
           className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition disabled:opacity-50 ${
             timedOut
-              ? "bg-[var(--brand)] text-white hover:brightness-110"
-              : "border border-[var(--line)] font-medium text-[var(--ink-muted)] hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
+              ? "bg-[var(--brand)] text-primary-foreground hover:brightness-110"
+              : "border border-[var(--line-strong)] font-medium text-[var(--ink-muted)] hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
           }`}
         >
           {startingBot ? "Startar…" : "Möt en bot istället"}
@@ -212,7 +212,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
           <button
             type="button"
             onClick={handleKeepSearching}
-            className="rounded-lg border border-[var(--line)] px-5 py-2.5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+            className="rounded-lg border border-[var(--line-strong)] px-5 py-2.5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
           >
             Fortsätt söka
           </button>
@@ -220,7 +220,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
         <button
           type="button"
           onClick={handleCancel}
-          className="rounded-lg border border-[var(--line)] px-5 py-2.5 text-sm font-medium text-[var(--ink-muted)] transition hover:border-[#9a3412]/40 hover:text-[#9a3412]"
+          className="rounded-lg border border-[var(--line-strong)] px-5 py-2.5 text-sm font-medium text-[var(--ink-muted)] transition hover:border-[var(--destructive)]/40 hover:text-[var(--destructive)]"
         >
           Avbryt
         </button>

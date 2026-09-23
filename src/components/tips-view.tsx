@@ -38,7 +38,7 @@ export function TipsView() {
             className={`rounded-lg border px-3 py-1.5 text-sm font-medium ${
               highlight === tip.id
                 ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                : "border-[var(--line)] bg-white/70 text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                : "border-[var(--line-strong)] bg-card/70 text-[var(--ink-muted)] hover:text-[var(--ink)]"
             }`}
           >
             {sectionShort(tip.id)}
@@ -51,7 +51,7 @@ export function TipsView() {
           <article
             key={tip.id}
             id={tip.id}
-            className={`scroll-mt-24 rounded-2xl border bg-white/75 p-5 sm:p-6 ${
+            className={`scroll-mt-24 rounded-2xl border bg-card/75 p-5 sm:p-6 ${
               highlight === tip.id
                 ? "border-[var(--brand)]"
                 : "border-[var(--line)]"
@@ -68,7 +68,7 @@ export function TipsView() {
             <ul className="mt-2 space-y-2">
               {tip.mistakes.map((m) => (
                 <li key={m} className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#9a3412]" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--destructive)]" />
                   <span>{m}</span>
                 </li>
               ))}

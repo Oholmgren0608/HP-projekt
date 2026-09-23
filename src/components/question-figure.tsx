@@ -29,7 +29,7 @@ export function QuestionFigure({
       src={question.figureUrl}
       alt={alt}
       loading="lazy"
-      className="my-3 max-h-96 w-auto max-w-full rounded-lg border border-[var(--line)] bg-white object-contain"
+      className="my-3 max-h-96 w-auto max-w-full rounded-lg border border-[var(--line)] bg-card object-contain"
     />
   );
 }

@@ -46,7 +46,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
 
   if (!mounted) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-white/70 p-5 sm:p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar historik…</p>
       </div>
     );
@@ -63,7 +63,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
   const pace = rollingPace(events);
   const paceOver = pace ? pace.secPerQ > MIXED_SEC_PER_QUESTION_CAP : false;
   const paceLine = pace ? (
-    <p className={`mt-3 text-sm ${paceOver ? "font-medium text-[#9a3412]" : "text-[var(--ink-muted)]"}`}>
+    <p className={`mt-3 text-sm ${paceOver ? "font-medium text-[var(--destructive)]" : "text-[var(--ink-muted)]"}`}>
       Tempo {formatSecondsPerQuestion(pace.secPerQ)}/fråga
       {paceOver
         ? ` — över taket ${formatSecondsPerQuestion(MIXED_SEC_PER_QUESTION_CAP)} (HP 55 min / 40 frågor).`
@@ -113,7 +113,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
 
   if (compact) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 sm:p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
           Poängprognos
         </p>
@@ -138,7 +138,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-      <div className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
+      <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
           Uppskattad poängprognos
         </p>
@@ -153,7 +153,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
         <ProgressChart points={points} />
       </div>
 
-      <aside className="rounded-2xl border border-[var(--line)] bg-white/75 p-5 sm:p-6">
+      <aside className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
           Senaste övningar
         </p>
@@ -221,8 +221,8 @@ function PrognosisThresholdChips({ prognosis }: { prognosis: ExercisePrognosis |
             }
             className={`rounded-md border px-2 py-1 text-[11px] font-semibold tabular-nums ${
               reached
-                ? "border-[var(--lagoon)]/50 bg-[var(--lagoon)]/10 text-[var(--ink)]"
-                : "border-[var(--line)] bg-white/60 text-[var(--ink-muted)]"
+                ? "border-[var(--lagoon-ink)]/50 bg-[var(--lagoon-ink)]/10 text-[var(--ink)]"
+                : "border-[var(--line)] bg-card/60 text-[var(--ink-muted)]"
             }`}
           >
             {kindBadge(kind)} {n}/{PROGNOSIS_MIN_KIND_QUESTIONS}

@@ -62,7 +62,7 @@ export function ProgressChart({
             cx={x}
             cy={ys[i]}
             r={4}
-            fill={points[i].label === "inmatad" ? "var(--ink)" : "var(--lagoon)"}
+            fill={points[i].label === "inmatad" ? "var(--ink)" : "var(--lagoon-ink)"}
           />
         ))}
       </svg>

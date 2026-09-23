@@ -109,7 +109,7 @@ export function ExamMockExam({
           <button
             type="button"
             onClick={onExit}
-            className="rounded-md border border-[var(--line)] px-3 py-1.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
+            className="rounded-md border border-[var(--line-strong)] px-3 py-1.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
           >
             Tillbaka
           </button>
@@ -130,7 +130,7 @@ export function ExamMockExam({
               {passes.map((pass) => (
                 <li
                   key={pass.passNumber}
-                  className="rounded-lg border border-[var(--line)] bg-white/70 px-4 py-3 text-sm text-[var(--ink-soft)]"
+                  className="rounded-lg border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-soft)]"
                 >
                   <span className="font-semibold text-[var(--ink)]">
                     Pass {pass.passNumber}
@@ -144,7 +144,7 @@ export function ExamMockExam({
             <button
               type="button"
               onClick={start}
-              className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
             >
               Starta helt prov
             </button>
@@ -186,7 +186,7 @@ export function ExamMockExam({
 
   const pct = totalScore.total ? Math.round((totalScore.correct / totalScore.total) * 100) : 0;
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white p-5 sm:p-6">
+    <div className="rounded-2xl border border-[var(--line)] bg-card p-5 sm:p-6">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
         Provresultat
       </p>
@@ -278,7 +278,7 @@ function ExamPassQuiz({
   if (!current) return null;
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-white p-5 sm:p-6">
+    <div className="rounded-2xl border border-[var(--line)] bg-card p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
@@ -291,7 +291,7 @@ function ExamPassQuiz({
         <p
           className={`rounded-md px-3 py-1.5 font-semibold tabular-nums ${
             remainingSeconds <= 60
-              ? "bg-[#fff7f3] text-[#9a3412]"
+              ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
               : "bg-[var(--mist)] text-[var(--ink)]"
           }`}
         >
@@ -327,21 +327,21 @@ function ExamPassQuiz({
           type="button"
           disabled={quiz.selected === null}
           onClick={quiz.submitAnswer}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-white enabled:hover:brightness-110 disabled:opacity-40"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
         >
           {quiz.index >= questions.length - 1 ? "Lämna in pass" : "Nästa"}
         </button>
         <button
           type="button"
           onClick={() => quiz.finish()}
-          className="rounded-md border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)] hover:text-[var(--ink)]"
+          className="rounded-md border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] hover:text-[var(--ink)]"
         >
           Avsluta pass
         </button>
         <button
           type="button"
           onClick={onAbort}
-          className="rounded-md border border-[var(--line)] px-4 py-2.5 text-sm text-[var(--ink-muted)] hover:text-[var(--ink)]"
+          className="rounded-md border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] hover:text-[var(--ink)]"
         >
           Avbryt prov
         </button>

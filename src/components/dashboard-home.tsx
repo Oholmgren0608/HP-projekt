@@ -85,28 +85,28 @@ export function DashboardHome() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="overflow-hidden rounded-3xl bg-[linear-gradient(120deg,var(--brand),var(--lagoon))] p-6 text-white shadow-pop sm:p-8"
+          className="overflow-hidden rounded-3xl bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] p-6 text-primary-foreground shadow-pop sm:p-8"
         >
           <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
             <div className="max-w-lg">
               <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold sm:text-3xl">
                 Ny här? Kom igång på 2 minuter
               </h2>
-              <p className="mt-2 font-semibold text-white/85">
+              <p className="mt-2 font-semibold text-primary-foreground/85">
                 Gör nivåtestet eller mata in dina tidigare resultat — så bygger jag din personliga
                 veckoplan direkt.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/nivatest"
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-extrabold text-[var(--brand)] shadow-soft transition hover:scale-[1.03] active:scale-95"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-card px-5 text-sm font-extrabold text-[var(--brand)] shadow-soft transition hover:scale-[1.03] active:scale-95"
                 >
                   <Play className="size-4" fill="currentColor" />
                   Gör nivåtestet
                 </Link>
                 <Link
                   href="/resultat"
-                  className="inline-flex min-h-11 items-center rounded-full border border-white/40 px-5 text-sm font-extrabold text-white transition hover:bg-white/10 active:scale-95"
+                  className="inline-flex min-h-11 items-center rounded-full border border-primary-foreground/40 px-5 text-sm font-extrabold text-primary-foreground transition hover:bg-primary-foreground/10 active:scale-95"
                 >
                   Mata in resultat
                 </Link>
@@ -136,14 +136,14 @@ export function DashboardHome() {
               <div className="mt-auto flex flex-wrap gap-3 pt-5">
                 <Link
                   href={`/plan?week=${next.week}&start=${encodeURIComponent(next.task.id)}`}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--brand),var(--lagoon))] px-6 text-sm font-extrabold text-white shadow-soft transition hover:scale-[1.03] hover:shadow-pop active:scale-95"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] px-6 text-sm font-extrabold text-primary-foreground shadow-soft transition hover:scale-[1.03] hover:shadow-pop active:scale-95"
                 >
                   Starta övning
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
                   href="/plan"
-                  className="inline-flex min-h-11 items-center rounded-full border border-[var(--line)] bg-transparent px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
+                  className="inline-flex min-h-11 items-center rounded-full border border-[var(--line-strong)] bg-transparent px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
                 >
                   Hela veckoplanen
                 </Link>
@@ -160,13 +160,13 @@ export function DashboardHome() {
               <div className="mt-auto flex flex-wrap gap-3 pt-5">
                 <Link
                   href="/ova"
-                  className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--brand),var(--lagoon))] px-6 text-sm font-extrabold text-white shadow-soft transition hover:scale-[1.03] active:scale-95"
+                  className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] px-6 text-sm font-extrabold text-primary-foreground shadow-soft transition hover:scale-[1.03] active:scale-95"
                 >
                   Öva flashcards
                 </Link>
                 <Link
                   href="/duell"
-                  className="inline-flex min-h-11 items-center rounded-full border border-[var(--line)] px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
+                  className="inline-flex min-h-11 items-center rounded-full border border-[var(--line-strong)] px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
                 >
                   Spela en duell ⚔️
                 </Link>

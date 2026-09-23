@@ -26,9 +26,9 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
   const tone =
     status === "insufficient"
       ? {
-          border: "border-[#9a3412]/30",
-          bg: "bg-[#fff7f3]",
-          title: "text-[#9a3412]",
+          border: "border-[var(--destructive)]/30",
+          bg: "bg-[var(--coral-soft)]",
+          title: "text-[var(--destructive)]",
           icon: "⚠️",
         }
       : status === "tight"
@@ -39,7 +39,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
             icon: "⏳",
           }
         : {
-            border: "border-[var(--lagoon)]/40",
+            border: "border-[var(--lagoon-ink)]/40",
             bg: "bg-[var(--accent-soft)]/60",
             title: "text-[var(--ink)]",
             icon: "✓",
@@ -60,7 +60,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
           </p>
         </div>
 
-        <div className="shrink-0 rounded-xl border border-[var(--line)] bg-white/80 px-4 py-3 text-center">
+        <div className="shrink-0 rounded-xl border border-[var(--line)] bg-card/80 px-4 py-3 text-center">
           <p className="text-xs uppercase tracking-[0.12em] text-[var(--ink-muted)]">
             Rekommenderad tid
           </p>
@@ -83,7 +83,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
             <Link
               key={b.id}
               href={`/tips?section=${b.id}`}
-              className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-[var(--ink)] ring-1 ring-[var(--line)] hover:ring-[var(--ink-soft)]"
+              className="rounded-full bg-card/80 px-3 py-1 text-xs font-medium text-[var(--ink)] ring-1 ring-[var(--line)] hover:ring-[var(--ink-soft)]"
             >
               {sectionShort(b.id)} {b.percent} %
             </Link>
