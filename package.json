@@ -9,7 +9,10 @@
     "dev": "next dev -H 0.0.0.0 -p 43123",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 43123",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db": "npx tsx scripts/db.ts",
+    "db:push": "npx tsx scripts/db.ts db push",
+    "db:dry": "npx tsx scripts/db.ts db push --dry-run"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

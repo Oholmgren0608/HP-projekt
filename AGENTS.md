@@ -37,10 +37,16 @@ frontend/backend split, Express server, or Prisma layer.
 **Trigger:** Apply when editing `supabase/migrations` or `src/lib/supabase`.
 
 - Make schema changes as new numbered SQL migrations in `supabase/migrations`
-  (next is `0011_<name>.sql`). Never edit already-applied migrations
-  (`0001`–`0010`). Apply with `supabase db push --db-url <anslutningssträng>`
-  (kör `--dry-run` först) eller genom att klistra in filen i Dashboard → SQL
-  Editor.
+  (next is `0012_<name>.sql`). Never edit already-applied migrations
+  (`0001`–`0011`).
+- Apply migrations with the Supabase CLI via the wrapper in `scripts/db.ts`
+  (`npm run db:dry` först, sedan `npm run db:push`). Den läser
+  `SUPABASE_DB_PASSWORD` och `SUPABASE_POOLER_URL` ur `.env.local` och skriver
+  CLI:ts länkfil (`supabase/.temp/pooler-url`) - CLI:t självt läser inte
+  `.env.local`. Andra kommandon: `npm run db -- migration list`. (`db dump`
+  och `gen types` kräver Docker - använd SQL mot katalograderna i stället.)
+  `supabase link` kräver `SUPABASE_ACCESS_TOKEN` (personlig access token från
+  Dashboard → Account → Access Tokens) och behövs bara om länkfilen saknas.
 - Enable Row Level Security on every table with least-privilege policies using
   `auth.uid()` / `auth.role()`.
 - Put atomic/anti-cheat logic (e.g. ELO and stat updates) in `SECURITY DEFINER`
