@@ -468,6 +468,34 @@ export type Database = {
         };
         Relationships: [];
       };
+      feature_requests: {
+        Row: {
+          id: string;
+          kind: string;
+          user_id: string | null;
+          category: string;
+          title: string;
+          description: string;
+          reason: string | null;
+          status: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          kind?: string;
+          user_id?: string | null;
+          category: string;
+          title: string;
+          description: string;
+          reason?: string | null;
+          status?: string;
+          created_at?: string;
+        };
+        Update: {
+          status?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       duel_public_profiles: {
@@ -692,6 +720,16 @@ export type Database = {
       forum_resolve_report: {
         Args: { p_report_id: string; p_status?: string };
         Returns: null;
+      };
+      feature_request_submit: {
+        Args: {
+          p_kind: string;
+          p_category: string;
+          p_title: string;
+          p_description: string;
+          p_reason?: string | null;
+        };
+        Returns: string;
       };
     };
   };

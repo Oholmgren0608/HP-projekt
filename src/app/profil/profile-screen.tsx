@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { getSupabase } from "@/lib/supabase/client";
 import { LoginPanel } from "@/components/auth/login-panel";
 import { getMatchHistory, getMyProfile } from "@/lib/duel/profile";
 import type { DuelMatch, DuelProfile } from "@/lib/duel/types";
 import { clearLocalData } from "@/lib/sync/storage-sync";
+import { REQUEST_CHANNELS } from "@/lib/feedback/feature-request";
 import { deleteAccount } from "./actions";
 
 // ---------------------------------------------------------------------------
@@ -375,6 +377,7 @@ export function ProfileScreen() {
           duellresultat.
         </p>
         <LoginPanel />
+        <HelpAndFeedbackCard />
         <LocalDataCard signedIn={false} />
       </div>
     );
@@ -543,6 +546,8 @@ export function ProfileScreen() {
         ) : null}
       </section>
 
+      <HelpAndFeedbackCard />
+
       <LocalDataCard signedIn />
     </div>
   );
@@ -591,6 +596,39 @@ function LocalDataCard({ signedIn }: { signedIn: boolean }) {
           Rensa lokal data
         </button>
       )}
+    </section>
+  );
+}
+
+/**
+ * Hjälp & feedback: två kanaler — idéer (önskemål) och problem. Ligger utanför
+ * inloggningsgrinden så att även utloggade kan skicka in.
+ */
+function HelpAndFeedbackCard() {
+  const entries = [
+    { href: "/feedback", channel: REQUEST_CHANNELS.idea },
+    { href: "/feedback?typ=problem", channel: REQUEST_CHANNELS.problem },
+  ];
+
+  return (
+    <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
+      <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+        Hjälp & feedback
+      </h2>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2">
+        {entries.map(({ href, channel }) => (
+          <Link
+            key={href}
+            href={href}
+            className="rounded-xl border border-[var(--line-strong)] bg-[var(--paper)] p-4 transition hover:border-[var(--brand)] hover:bg-card"
+          >
+            <p className="text-sm font-bold text-[var(--ink)]">
+              {channel.emoji} {channel.label}
+            </p>
+            <p className="mt-1 text-sm text-[var(--ink-muted)]">{channel.description}</p>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }
