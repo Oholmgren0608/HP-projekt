@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { recordEvent } from "@/lib/gamification/engine";
@@ -22,6 +22,14 @@ import {
   saveNivatestCounts,
   type NivatestCounts,
 } from "@/lib/mini-level-test";
+import {
+  NIVATEST_FINAL_WARN_SECONDS,
+  NIVATEST_WARN_SECONDS,
+  formatCountdown,
+  loadNivatestTimerEnabled,
+  nivatestMinutesFor,
+  saveNivatestTimerEnabled,
+} from "@/lib/nivatest-timer";
 import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
@@ -50,6 +58,20 @@ export function MiniLevelTest() {
     setCountsLoaded(true);
     setCounts(loadNivatestCounts());
   }
+
+  // Timern är valfri och ställs in innan testet startar. Valet sparas (och
+  // synkas mellan enheter) på samma sätt som antalet frågor.
+  const [timerEnabled, setTimerEnabled] = useState(true);
+  const [timerLoaded, setTimerLoaded] = useState(false);
+  if (ready && !timerLoaded) {
+    setTimerLoaded(true);
+    setTimerEnabled(loadNivatestTimerEnabled());
+  }
+
+  const [deadline, setDeadline] = useState<number | null>(null);
+  const [now, setNow] = useState(() => Date.now());
+  const [timedOut, setTimedOut] = useState(false);
+  const finishedRef = useRef(false);
 
   // Förifyll tid/veckor från ev. sparad plan när den hydrerats. Justering under
   // render (spårar föregående värde) undviker setState i en effekt.
@@ -91,9 +113,45 @@ export function MiniLevelTest() {
     setPhase("result");
   }
 
+  const totalQuestions = SECTION_KINDS.reduce((sum, { id }) => sum + counts[id], 0);
+
   const quiz = useQuiz({ questions, onFinish });
 
-  const totalQuestions = SECTION_KINDS.reduce((sum, { id }) => sum + counts[id], 0);
+  // Senaste finish-funktionen, så att nedräkningseffekten inte behöver ha
+  // quiz-objektet (ny identitet varje render) i sin beroendelista.
+  const finishRef = useRef(quiz.finish);
+  useEffect(() => {
+    finishRef.current = quiz.finish;
+  });
+
+  const recommendedMinutes = nivatestMinutesFor(totalQuestions);
+  const remainingSeconds =
+    deadline === null ? null : Math.max(0, Math.ceil((deadline - now) / 1000));
+  const warning =
+    remainingSeconds === null
+      ? null
+      : remainingSeconds <= NIVATEST_FINAL_WARN_SECONDS
+        ? "final"
+        : remainingSeconds <= NIVATEST_WARN_SECONDS
+          ? "five"
+          : null;
+
+  // Tickar bara medan testet pågår och en tidsgräns är satt.
+  useEffect(() => {
+    if (phase !== "quiz" || deadline === null) return;
+    const id = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(id);
+  }, [phase, deadline]);
+
+  // Tiden slut: exakt samma väg som "Se resultat" — besvarade frågor rättas och
+  // obesvarade räknas som fel. finishedRef hindrar flera anrop.
+  useEffect(() => {
+    if (phase !== "quiz" || remainingSeconds === null || remainingSeconds > 0) return;
+    if (finishedRef.current) return;
+    finishedRef.current = true;
+    setTimedOut(true);
+    finishRef.current();
+  }, [phase, remainingSeconds]);
 
   const finalAnswers = quiz.finalAnswers ?? EMPTY_ANSWERS;
   const outcome = useMemo(
@@ -111,7 +169,17 @@ export function MiniLevelTest() {
     setSeed(`nivatest:${Date.now()}`);
     quiz.reset();
     setApplied(false);
+    setTimedOut(false);
+    finishedRef.current = false;
+    const minutes = nivatestMinutesFor(totalQuestions);
+    setDeadline(timerEnabled && minutes > 0 ? Date.now() + minutes * 60_000 : null);
+    setNow(Date.now());
     setPhase("quiz");
+  }
+
+  function toggleTimer(next: boolean) {
+    setTimerEnabled(next);
+    saveNivatestTimerEnabled(next);
   }
 
   function applyPlan() {
@@ -141,10 +209,10 @@ export function MiniLevelTest() {
           </h2>
           <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[var(--ink-muted)]">
             <p>
-              Testet har {totalQuestions} frågor från alla delprov och är <strong>inte tidtaget</strong>.
-              Gissa hellre än att hoppa över — obesvarade räknas som fel. När du är klar{" "}
-              <strong>byggs din veckoplan</strong> utifrån resultatet, och poängen kan du justera
-              senare under <strong>Poäng</strong>.
+              Testet har {totalQuestions} frågor från alla delprov, och du väljer själv om det ska
+              vara tidtaget. Gissa hellre än att hoppa över — obesvarade räknas som fel. När du är
+              klar <strong>byggs din veckoplan</strong> utifrån resultatet, och poängen kan du
+              justera senare under <strong>Poäng</strong>.
             </p>
           </div>
           <p className="mt-4 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm text-[var(--ink-soft)]">
@@ -195,6 +263,47 @@ export function MiniLevelTest() {
               })}
             </div>
           </div>
+          <div className="mt-6 rounded-xl border border-[var(--line-strong)] bg-[var(--paper)] p-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="text-sm font-semibold text-[var(--ink)]">Tid för nivåtestet</p>
+              <label className="flex cursor-pointer items-center gap-2.5">
+                <span className="text-sm font-medium text-[var(--ink-muted)]">
+                  {timerEnabled ? "På" : "Av"}
+                </span>
+                <input
+                  type="checkbox"
+                  checked={timerEnabled}
+                  onChange={(e) => toggleTimer(e.target.checked)}
+                  aria-label="Tidsgräns för nivåtestet"
+                  className="peer sr-only"
+                />
+                <span
+                  aria-hidden
+                  className="relative h-6 w-11 rounded-full bg-[var(--mist)] transition after:absolute after:left-0.5 after:top-0.5 after:size-5 after:rounded-full after:bg-card after:shadow-soft after:transition peer-checked:bg-[var(--brand)] peer-checked:after:translate-x-5 peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--brand)]"
+                />
+              </label>
+            </div>
+            {timerEnabled ? (
+              <>
+                <p className="mt-3 font-[family-name:var(--font-display)] text-xl tabular-nums text-[var(--ink)]">
+                  {totalQuestions} frågor · {recommendedMinutes} minuter
+                </p>
+                <p className="mt-1 text-sm text-[var(--ink-muted)]">
+                  Rekommenderad tid baserat på hur många frågor du har valt.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="mt-3 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+                  Ingen tidsgräns
+                </p>
+                <p className="mt-1 text-sm text-[var(--ink-muted)]">
+                  Du kan ta den tid du behöver.
+                </p>
+              </>
+            )}
+          </div>
+
           <button
             type="button"
             onClick={start}
@@ -241,10 +350,36 @@ export function MiniLevelTest() {
                 Fråga {quiz.index + 1} av {questions.length}
               </p>
             </div>
-            <p className="rounded-md bg-[var(--mist)] px-3 py-1.5 text-sm font-medium tabular-nums text-[var(--ink)]">
-              {quiz.answeredCount}/{questions.length} besvarade
-            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              {remainingSeconds !== null ? (
+                <p
+                  className={`rounded-md px-3 py-1.5 text-sm font-semibold tabular-nums ${
+                    warning
+                      ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
+                      : "bg-[var(--mist)] text-[var(--ink)]"
+                  }`}
+                >
+                  Tid kvar: {formatCountdown(remainingSeconds)}
+                </p>
+              ) : null}
+              <p className="rounded-md bg-[var(--mist)] px-3 py-1.5 text-sm font-medium tabular-nums text-[var(--ink)]">
+                {quiz.answeredCount}/{questions.length} besvarade
+              </p>
+            </div>
           </div>
+
+          {warning ? (
+            <p
+              role="status"
+              className={`mt-3 text-sm font-medium ${
+                warning === "final" ? "text-[var(--destructive)]" : "text-[var(--energy-ink)]"
+              }`}
+            >
+              {warning === "final"
+                ? "1 minut kvar — testet avslutas automatiskt."
+                : "5 minuter kvar."}
+            </p>
+          ) : null}
 
           <div className="mt-4">
             <QuizProgress current={quiz.index + 1} total={questions.length} />
@@ -297,6 +432,13 @@ export function MiniLevelTest() {
   return (
     <div className="space-y-8 sm:space-y-10">
       {heading}
+
+      {timedOut ? (
+        <p className="rounded-xl border border-[var(--energy-ink)]/40 bg-[var(--accent-soft)]/60 px-4 py-3 text-sm text-[var(--ink)]">
+          Tiden tog slut — testet avslutades automatiskt. Besvarade frågor rättades och
+          obesvarade räknades som fel.
+        </p>
+      ) : null}
 
       <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
