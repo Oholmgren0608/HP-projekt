@@ -123,19 +123,19 @@ export function DashboardHome() {
         </motion.section>
       )}
 
-      {/* ---- Uppdrag + dagens pass ------------------------------------------- */}
-      <section className="grid items-stretch gap-6 lg:grid-cols-2">
+      {/* ---- Uppdrag + dagens pass (utan plan: streak-kortet i ledig ruta) --- */}
+      <section className="grid items-stretch gap-5 lg:gap-6 lg:grid-cols-2">
         <DailyQuests />
 
-        {plan ? <NextTaskCard next={next} /> : null}
+        {plan ? <NextTaskCard next={next} /> : <StreakCard />}
       </section>
 
       {/* ---- Streak + statistik ---------------------------------------------- */}
-      <section className="grid items-stretch gap-5 lg:gap-6 lg:grid-cols-[auto_1fr]">
-        <div className="lg:w-72">
-          <StreakCard />
-        </div>
-        {plan && profile ? (
+      {plan && profile ? (
+        <section className="grid items-stretch gap-5 lg:gap-6 lg:grid-cols-[auto_1fr]">
+          <div className="lg:w-72">
+            <StreakCard />
+          </div>
           <div className="grid gap-5 sm:gap-6 sm:grid-cols-2">
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
               <p className="text-sm font-bold text-[var(--ink-muted)]">Kvant / verbal</p>
@@ -157,8 +157,8 @@ export function DashboardHome() {
               </div>
             </div>
           </div>
-        ) : null}
-      </section>
+        </section>
+      ) : null}
 
       <DailySrsReview />
 
