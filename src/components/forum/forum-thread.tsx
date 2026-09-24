@@ -99,13 +99,18 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
 
   useEffect(() => {
     let cancelled = false;
-    void readThread(questionId).then((next) => {
-      if (cancelled) return;
-      setQuestion(next.question);
-      setThread(next.meta);
-      setPosts(next.posts);
-      setLoading(false);
-    });
+    void readThread(questionId)
+      .then((next) => {
+        if (cancelled) return;
+        setQuestion(next.question);
+        setThread(next.meta);
+        setPosts(next.posts);
+        setLoading(false);
+      })
+      .catch((e) => {
+        console.warn("[forum] kunde inte läsa tråden:", e);
+        if (!cancelled) setLoading(false);
+      });
     return () => {
       cancelled = true;
     };

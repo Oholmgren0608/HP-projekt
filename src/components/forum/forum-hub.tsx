@@ -53,13 +53,17 @@ export function ForumHub() {
   const [loading, setLoading] = useState(true);
 
   // Enkel sökfördröjning så att varje tangenttryck inte blir ett anrop.
+  // OBS: sätt bara loading när sökordet faktiskt ändras - annars släcker
+  // timern spinnern efter att hämtningen redan hunnit bli klar.
   useEffect(() => {
+    const nästa = search.trim();
+    if (nästa === query) return;
     const id = setTimeout(() => {
-      setQuery(search.trim());
+      setQuery(nästa);
       setLoading(true);
     }, 300);
     return () => clearTimeout(id);
-  }, [search]);
+  }, [search, query]);
 
   useEffect(() => {
     let cancelled = false;
