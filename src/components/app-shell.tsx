@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import { motion } from "motion/react";
 import {
   BarChart3,
@@ -12,6 +12,8 @@ import {
   ClipboardCheck,
   FileText,
   Gauge,
+  Layers,
+  Library,
   Lightbulb,
   LogOut,
   MessagesSquare,
@@ -21,6 +23,7 @@ import {
   User,
   Volume2,
   VolumeX,
+  type LucideIcon,
 } from "lucide-react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
@@ -36,24 +39,7 @@ function AuthCluster() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Stänger dropdownen vid klick utanför eller Escape.
-  useEffect(() => {
-    if (!open) return;
-    function handlePointerDown(e: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpen(false);
-    }
-    document.addEventListener("mousedown", handlePointerDown);
-    document.addEventListener("keydown", handleKeyDown);
-    return () => {
-      document.removeEventListener("mousedown", handlePointerDown);
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [open]);
+  useDismiss(open, setOpen, containerRef);
 
   if (!isSupabaseConfigured() || loading) return null;
 
@@ -164,20 +150,168 @@ function IconButton({
   );
 }
 
-const NAV = [
+type NavLeaf = { href: string; label: string; icon: LucideIcon };
+type NavGroup = { label: string; icon: LucideIcon; children: readonly NavLeaf[] };
+
+const NAV: readonly (NavLeaf | NavGroup)[] = [
   { href: "/nivatest", label: "Nivåtest", icon: Gauge },
   { href: "/plan", label: "Plan", icon: CalendarDays },
-  { href: "/ova", label: "Öva", icon: BookOpen },
-  { href: "/prov", label: "Prov", icon: FileText },
-  { href: "/duell", label: "Duell", icon: Swords },
+  {
+    label: "Öva",
+    icon: BookOpen,
+    children: [
+      { href: "/ova", label: "Öva delprov", icon: BookOpen },
+      { href: "/ova/flashcards", label: "ORD-Flashcards", icon: Layers },
+      { href: "/bibliotek", label: "Läsbibliotek", icon: Library },
+      { href: "/prov", label: "Gamla prov", icon: FileText },
+      { href: "/duell", label: "Duell", icon: Swords },
+    ],
+  },
   { href: "/forum", label: "Forum", icon: MessagesSquare },
   { href: "/resultat", label: "Poäng", icon: BarChart3 },
   { href: "/tips", label: "Tips", icon: Lightbulb },
-] as const;
+];
 
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+/** Stänger en öppen meny vid klick utanför containern eller Escape. Delas av
+ * kontomenyn och nav-menyerna så att beteendet aldrig kan divergera. */
+function useDismiss(
+  open: boolean,
+  setOpen: (open: boolean) => void,
+  ref: RefObject<HTMLElement | null>,
+) {
+  useEffect(() => {
+    if (!open) return;
+    function handlePointerDown(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open, ref, setOpen]);
+}
+
+const NAV_PANEL =
+  "absolute z-50 w-56 max-w-[calc(100vw-2.5rem)] rounded-2xl border border-[var(--line)] bg-card p-1.5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]";
+
+/** Menypost i navigationen: en grupp vars trigger är en knapp som fäller ut
+ * barnen. Menyn stängs vid val av post, klick utanför och Escape. `variant`
+ * styr markup och position — toppmenyn respektive bottenmenyn (ovanför baren). */
+function NavMenu({
+  item,
+  pathname,
+  variant,
+}: {
+  item: NavGroup;
+  pathname: string;
+  variant: "desktop" | "mobile";
+}) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  useDismiss(open, setOpen, containerRef);
+
+  const Icon = item.icon;
+  const active = item.children.some((child) => isActive(pathname, child.href));
+  const desktop = variant === "desktop";
+
+  const panel = open ? (
+    <div
+      role="menu"
+      aria-label={item.label}
+      className={cn(
+        NAV_PANEL,
+        desktop ? "right-0 top-full mt-2" : "bottom-full left-1/2 mb-2 -translate-x-1/2",
+      )}
+    >
+      {item.children.map((child) => {
+        const ChildIcon = child.icon;
+        return (
+          <Link
+            key={child.href}
+            href={child.href}
+            role="menuitem"
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+          >
+            <ChildIcon size={16} className="text-[var(--ink-muted)]" aria-hidden />
+            {child.label}
+          </Link>
+        );
+      })}
+    </div>
+  ) : null;
+
+  if (desktop) {
+    return (
+      <div className="relative" ref={containerRef}>
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          aria-haspopup="menu"
+          aria-expanded={open}
+          className={cn(
+            "relative flex items-center gap-1 rounded-full px-3 py-2 text-sm font-bold transition active:scale-95 lg:px-3.5",
+            active ? "text-[var(--ink)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
+          )}
+        >
+          {active && (
+            <motion.span
+              layoutId="nav-pill"
+              className="absolute inset-0 rounded-full bg-[var(--accent-soft)] shadow-soft"
+              transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+            />
+          )}
+          <span className="relative">{item.label}</span>
+          <ChevronDown
+            size={14}
+            className={cn("relative text-[var(--ink-muted)] transition", open && "rotate-180")}
+            aria-hidden
+          />
+        </button>
+        {panel}
+      </div>
+    );
+  }
+
+  return (
+    <li>
+      <div className="relative" ref={containerRef}>
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          aria-haspopup="menu"
+          aria-expanded={open}
+          className={cn(
+            "relative flex min-h-14 w-full flex-col items-center justify-center gap-1 rounded-xl text-[10.5px] font-bold transition active:scale-90 sm:text-[11px]",
+            active ? "text-[var(--ink)]" : "text-[var(--ink-muted)]",
+          )}
+        >
+          {active && (
+            <motion.span
+              layoutId="mob-pill"
+              className="absolute inset-0 rounded-xl bg-[var(--accent-soft)]"
+              transition={{ type: "spring", bounce: 0.3, duration: 0.45 }}
+            />
+          )}
+          <Icon className="relative size-5" />
+          <span className="relative">{item.label}</span>
+        </button>
+        {panel}
+      </div>
+    </li>
+  );
 }
 
 export function AppShell({ children }: { children: ReactNode }) {
@@ -210,6 +344,11 @@ export function AppShell({ children }: { children: ReactNode }) {
           </Link>
           <nav className="hidden items-center gap-0.5 md:flex" aria-label="Huvudmeny">
             {NAV.map((item) => {
+              if ("children" in item) {
+                return (
+                  <NavMenu key={item.label} item={item} pathname={pathname} variant="desktop" />
+                );
+              }
               const active = isActive(pathname, item.href);
               const hideOnMd = item.href === "/tips";
               return (
@@ -284,8 +423,13 @@ export function AppShell({ children }: { children: ReactNode }) {
         style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
         aria-label="Huvudmeny"
       >
-        <ul className="mx-auto grid max-w-md grid-cols-8 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 sm:p-2 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
+        <ul className="mx-auto grid max-w-md grid-cols-6 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 sm:p-2 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
           {NAV.map((item) => {
+            if ("children" in item) {
+              return (
+                <NavMenu key={item.label} item={item} pathname={pathname} variant="mobile" />
+              );
+            }
             const Icon = item.icon;
             const active = isActive(pathname, item.href);
             return (
