@@ -1,6 +1,7 @@
 "use client";
 
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
+import { ExplainFigure } from "@/lib/content/explain-figures";
 import { QuestionFigure } from "@/components/question-figure";
 import { DiscussQuestionButton } from "@/components/forum/discuss-button";
 
@@ -101,6 +102,7 @@ function QuestionReviewItem({
         <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink-soft)]">
           {q.explain}
         </p>
+        <ExplainFigure questionId={q.id} />
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">

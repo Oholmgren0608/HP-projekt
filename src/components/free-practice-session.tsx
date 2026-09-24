@@ -9,6 +9,7 @@ import { useQuestions } from "@/lib/content/use-questions";
 import { QuestionReviewList } from "@/components/question-review";
 import { formatClock } from "@/lib/practice-timer";
 import { formatCountdown } from "@/lib/countdown";
+import { ExplainFigure } from "@/lib/content/explain-figures";
 import { useQuizCountdown } from "@/lib/use-quiz-countdown";
 import { recordQuizOutcome } from "@/lib/quiz-outcome";
 import { useQuiz } from "@/lib/use-quiz";
@@ -248,6 +249,7 @@ export function FreePracticeSession({
               <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink-soft)]">
                 {current.explain}
               </p>
+              <ExplainFigure questionId={current.id} />
             </div>
           ) : null}
 
