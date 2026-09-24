@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { LoginPanel } from "@/components/auth/login-panel";
+import { ExplainFigure } from "@/lib/content/explain-figures";
 import {
   listAll,
   saveQuestion,
@@ -624,6 +625,7 @@ function QuestionCard({
           <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink-soft)]">
             {body}
           </p>
+          <ExplainFigure questionId={q.id} />
         </div>
       ) : null}
 

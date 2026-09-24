@@ -49,6 +49,7 @@ function GroupedBars({
   yMax,
   marks = [],
   note,
+  reference,
   suffix = "",
 }: {
   label: string;
@@ -58,6 +59,8 @@ function GroupedBars({
   marks?: Mark[];
   /** Svarskommentar — ritas i övre högra hörnet så att den aldrig krockar med värdelabels. */
   note?: string;
+  /** Streckad referenslinje, t.ex. ett medelvärde att jämföra staplarna mot. */
+  reference?: { value: number; text: string };
   suffix?: string;
 }) {
   const groupW = PLOT_W / categories.length;
@@ -135,6 +138,30 @@ function GroupedBars({
           </g>
         );
       })}
+
+      {reference ? (
+        <g>
+          <line
+            x1={PAD.left}
+            y1={y(reference.value)}
+            x2={PAD.left + PLOT_W}
+            y2={y(reference.value)}
+            stroke="var(--brand)"
+            strokeWidth="1.5"
+            strokeDasharray="6 4"
+          />
+          <text
+            x={PAD.left + PLOT_W - 4}
+            y={y(reference.value) - 5}
+            textAnchor="end"
+            fontSize="10"
+            fontWeight={700}
+            fill="var(--brand)"
+          >
+            {reference.text}
+          </text>
+        </g>
+      ) : null}
     </Figure>
   );
 }
@@ -359,29 +386,144 @@ function ShareBars({ label, bars }: { label: string; bars: { text: string; value
   );
 }
 
-/** Rektangel med mått och area (XYZ/NOG-geometri). */
+/** Rektangel med mått och area (XYZ/NOG-geometri). `box` styr proportionerna. */
 function RectangleSketch({
   label,
   widthText,
   heightText,
   areaText,
+  box = { w: 260, h: 110 },
 }: {
   label: string;
   widthText: string;
   heightText: string;
   areaText: string;
+  box?: { w: number; h: number };
 }) {
+  const x = 240 - box.w / 2;
+  const y = 44;
   return (
     <Figure label={label}>
-      <rect x="110" y="60" width="260" height="110" rx="3" fill="var(--accent-soft)" stroke="var(--brand)" strokeWidth="2" />
-      <text x="240" y="126" textAnchor="middle" fontSize="14" fontWeight={600} fill="var(--ink)">
+      <rect
+        x={x}
+        y={y}
+        width={box.w}
+        height={box.h}
+        rx="3"
+        fill="var(--accent-soft)"
+        stroke="var(--brand)"
+        strokeWidth="2"
+      />
+      <text x="240" y={y + box.h / 2 + 6} textAnchor="middle" fontSize="14" fontWeight={600} fill="var(--ink)">
         {areaText}
       </text>
-      <text x="240" y="192" textAnchor="middle" fontSize="12" fill="var(--ink-muted)">
+      <text x="240" y={y + box.h + 34} textAnchor="middle" fontSize="12" fill="var(--ink-muted)">
         {widthText}
       </text>
-      <text x="92" y="120" textAnchor="middle" fontSize="12" fill="var(--ink-muted)" transform="rotate(-90 92 120)">
+      <text
+        x={x - 14}
+        y={y + box.h / 2 + 4}
+        textAnchor="middle"
+        fontSize="12"
+        fill="var(--ink-muted)"
+        transform={`rotate(-90 ${x - 14} ${y + box.h / 2 + 4})`}
+      >
         {heightText}
+      </text>
+    </Figure>
+  );
+}
+
+/** Bråkstapel: en helhet delad i lika stora delar, med de markerade delarna ifyllda. */
+function FractionBar({
+  label,
+  rows,
+  note,
+}: {
+  label: string;
+  rows: { text: string; parts: number; filled: number }[];
+  note: string;
+}) {
+  const x0 = 132;
+  const barW = 296;
+  const rowH = 42;
+  return (
+    <Figure label={label}>
+      {rows.map((row, i) => {
+        const y = 40 + i * rowH;
+        const segW = barW / row.parts;
+        return (
+          <g key={row.text}>
+            <text x={x0 - 12} y={y + 18} textAnchor="end" fontSize="12" fontWeight={600} fill="var(--ink)">
+              {row.text}
+            </text>
+            {Array.from({ length: row.parts }, (_, s) => (
+              <rect
+                key={s}
+                x={x0 + s * segW}
+                y={y}
+                width={Math.max(2, segW - 2)}
+                height="26"
+                rx="2"
+                fill={s < row.filled ? "var(--brand)" : "var(--accent-soft)"}
+                stroke="var(--line-strong)"
+                strokeWidth="0.5"
+              />
+            ))}
+          </g>
+        );
+      })}
+      <text x={x0 - 12} y={40 + rows.length * rowH + 18} textAnchor="end" fontSize="12" fontWeight={700} fill="var(--brand)">
+        =
+      </text>
+      <text x={x0} y={40 + rows.length * rowH + 18} fontSize="13" fontWeight={700} fill="var(--brand)">
+        {note}
+      </text>
+    </Figure>
+  );
+}
+
+/** Procentstapel: helheten som en stapel där en andel är markerad. */
+function PercentBar({
+  label,
+  totalText,
+  percent,
+  partText,
+  restText,
+  note,
+}: {
+  label: string;
+  totalText: string;
+  percent: number;
+  partText: string;
+  restText: string;
+  note: string;
+}) {
+  const x0 = 60;
+  const barW = 360;
+  const barY = 78;
+  const partW = (barW * percent) / 100;
+  return (
+    <Figure label={label}>
+      <text x={x0} y={46} fontSize="12" fontWeight={600} fill="var(--ink)">
+        {totalText}
+      </text>
+      <rect x={x0} y={barY} width={barW} height="36" rx="4" fill="var(--accent-soft)" stroke="var(--line-strong)" strokeWidth="0.5" />
+      <rect x={x0} y={barY} width={Math.max(4, partW)} height="36" rx="4" fill="var(--brand)" />
+      <text x={x0 + Math.max(4, partW) / 2} y={barY - 8} textAnchor="middle" fontSize="11" fontWeight={700} fill="var(--brand)">
+        {partText}
+      </text>
+      <text
+        x={x0 + partW + (barW - partW) / 2}
+        y={barY - 8}
+        textAnchor="middle"
+        fontSize="11"
+        fill="var(--ink-muted)"
+      >
+        {restText}
+      </text>
+      <text x={x0} y={barY + 66} fontSize="14" fontWeight={700} fill="var(--brand)">
+        {note}
       </text>
     </Figure>
   );
@@ -453,6 +595,22 @@ const FIGURES: Record<string, () => ReactNode> = {
   ),
 
   // KVA — jämförelser där bilden visar varför svaret blir vad det blir
+  "kva-1": () => (
+    <FractionBar
+      label="3/4 av en helhet är 0,75 – exakt samma tal som kvantitet II"
+      rows={[{ text: "3/4", parts: 4, filled: 3 }]}
+      note="3 av 4 delar = 0,75 = 75 %"
+    />
+  ),
+  "kva-5": () => (
+    <RectangleSketch
+      label="Kvadrat med sidan 5, area 25 m²"
+      widthText="5"
+      heightText="5"
+      areaText="5 × 5 = 25"
+      box={{ w: 130, h: 130 }}
+    />
+  ),
   "kva-3": () => (
     <LinePlot
       label="Kvantitet I (2x) och kvantitet II (x + 3) korsar varandra vid x = 3"
@@ -499,6 +657,18 @@ const FIGURES: Record<string, () => ReactNode> = {
     />
   ),
 
+  "kva-8": () => (
+    <FractionBar
+      label="1/2 + 1/3 skrivs om i sjättedelar: 3/6 + 2/6 = 5/6"
+      rows={[
+        { text: "1/2 = 3/6", parts: 6, filled: 3 },
+        { text: "1/3 = 2/6", parts: 6, filled: 2 },
+        { text: "summa = 5/6", parts: 6, filled: 5 },
+      ]}
+      note="5/6 – lika stort som kvantitet II"
+    />
+  ),
+
   // XYZ — geometri och skalor
   "xyz-1": () => (
     <RectangleSketch label="Rektangel 6 m × 4 m, area 24 m²" widthText="6 m" heightText="4 m" areaText="6 × 4 = 24 m²" />
@@ -539,7 +709,71 @@ const FIGURES: Record<string, () => ReactNode> = {
     </Figure>
   ),
 
+  "xyz-2": () => (
+    <PercentBar
+      label="Sänkningen 20 % av 250 kr är 50 kr, varan kostar då 200 kr"
+      totalText="250 kr = 100 %"
+      percent={20}
+      partText="20 % = 50 kr"
+      restText="kvar: 200 kr"
+      note="250 − 50 = 200 kr"
+    />
+  ),
+  "xyz-6": () => (
+    <PercentBar
+      label="Räntan 5 % av 8 000 kr är 400 kr, skulden blir 8 400 kr"
+      totalText="8 000 kr = 100 %"
+      percent={5}
+      partText="5 % = 400 kr"
+      restText="8 000 kr"
+      note="8 000 + 400 = 8 400 kr"
+    />
+  ),
+  "xyz-7": () => (
+    <GroupedBars
+      label="Medelvärdet 10 kräver summan 40: 4 + 8 + 12 = 24, så det fjärde talet är 16"
+      categories={["4", "8", "12", "16"]}
+      series={[{ name: "Tal", values: [4, 8, 12, 16], color: "var(--lagoon-ink)" }]}
+      yMax={20}
+      marks={[{ category: 3, series: 0 }]}
+      note="4 × 10 − 24 = 16"
+      reference={{ value: 10, text: "medelvärde 10" }}
+    />
+  ),
+
   // NOG — grafen visar varför båda påståendena behövs
+  "nog-3": () => (
+    <RectangleSketch
+      label="Omkretsen 24 cm ger bredden 4 cm när längden är 8 cm, area 32 cm²"
+      widthText="längd 8 cm"
+      heightText="bredd 4 cm"
+      areaText="8 × 4 = 32 cm²"
+      box={{ w: 240, h: 120 }}
+    />
+  ),
+  "nog-4": () => (
+    <NumberLine
+      label="k² = 16 ger både k = 4 och k = −4, så tecknet avgörs först av påstående (2)"
+      min={-6}
+      max={6}
+      ticks={[-6, -4, -2, 0, 2, 4, 6]}
+      points={[
+        { value: -4, text: "k = −4, inte positivt", color: "var(--destructive)" },
+        { value: 4, text: "k = 4, positivt", color: "var(--brand)" },
+      ]}
+      format={(value) => String(value)}
+    />
+  ),
+  "nog-6": () => (
+    <PercentBar
+      label="40 % av klassen är 12 flickor, alltså är hela klassen 30 elever"
+      totalText="hela klassen = 100 %"
+      percent={40}
+      partText="40 % = 12 flickor"
+      restText="60 % = 18 pojkar"
+      note="12 / 0,4 = 30 elever"
+    />
+  ),
   "nog-8": () => (
     <LinePlot
       label="Linjen y = 2x + 1 med punkten (3, 7) markerad"
