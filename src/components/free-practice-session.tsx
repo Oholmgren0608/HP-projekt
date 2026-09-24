@@ -4,9 +4,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { recordEvent } from "@/lib/gamification/engine";
 import type { ChoiceQuestion, PracticeKind } from "@/lib/practice";
 import { buildMixedQuiz, tally, kindBadge } from "@/lib/practice";
+import type { RevealMode } from "@/lib/practice-modes";
 import { useQuestions } from "@/lib/content/use-questions";
 import { QuestionReviewList } from "@/components/question-review";
 import { formatClock } from "@/lib/practice-timer";
+import { formatCountdown } from "@/lib/countdown";
+import { useQuizCountdown } from "@/lib/use-quiz-countdown";
 import { recordQuizOutcome } from "@/lib/quiz-outcome";
 import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
@@ -18,12 +21,28 @@ type Props = {
   questionCount: number;
   /** Filtrera till frågor från ett specifikt importerat prov. */
   examId?: string;
+  /** Tidsgräns i sekunder, eller null för att öva utan klocka. */
+  timeLimitSeconds?: number | null;
+  /** "immediate" visar rätt/fel direkt efter varje besvarad fråga. */
+  reveal?: RevealMode;
   onClose: () => void;
 };
 
-export function FreePracticeSession({ subtest, questionCount, examId, onClose }: Props) {
+export function FreePracticeSession({
+  subtest,
+  questionCount,
+  examId,
+  timeLimitSeconds = null,
+  reveal = "after",
+  onClose,
+}: Props) {
   const [sessionStartTime] = useState(() => Date.now());
   const [now, setNow] = useState(() => Date.now());
+  // Tidsgränsen räknas från det att övningen startar.
+  const [deadline] = useState(() =>
+    timeLimitSeconds && timeLimitSeconds > 0 ? Date.now() + timeLimitSeconds * 1000 : null,
+  );
+  const [timedOut, setTimedOut] = useState(false);
 
   const seed = `free:${subtest}:${sessionStartTime}`;
   const { ready: questionsReady } = useQuestions();
@@ -58,6 +77,7 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
   const {
     index,
     total,
+    answers,
     finalAnswers,
     selected,
     setSelected,
@@ -65,8 +85,28 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
     current,
     answeredCount,
     submitAnswer,
+    commitAnswer,
     goPrevious,
   } = quiz;
+
+  // Nedräkning, varningar och avslut delas med nivåtestet och provpasset.
+  const { remainingSeconds, warning } = useQuizCountdown({
+    deadline,
+    active: phase === "quiz",
+    onExpire: () => {
+      setTimedOut(true);
+      quiz.finish();
+    },
+  });
+
+  /** Registrerat svar på aktuell fråga (visas bara när rättningen sker direkt). */
+  const committed = reveal === "immediate" && current ? answers[current.id] : undefined;
+  const isLast = index >= total - 1;
+  const primaryLabel = isLast
+    ? "Visa resultat"
+    : reveal === "immediate" && committed === undefined
+      ? "Svara"
+      : "Nästa fråga";
 
   // En fråga rapporteras högst en gång per pass: annars dubbelräknas XP,
   // statistik och dagliga uppdrag när man går tillbaka och skickar samma svar igen.
@@ -77,7 +117,10 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
       reportedRef.current.add(current.id);
       recordEvent({ type: "question", correct: selected === current.correctIndex });
     }
-    submitAnswer();
+    // Direkt rättning: registrera svaret och stanna kvar på frågan så att
+    // rätt/fel hinner visas innan man går vidare.
+    if (reveal === "immediate") commitAnswer();
+    else submitAnswer();
   }
 
   const score = useMemo(
@@ -87,12 +130,12 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
 
   const elapsedSeconds = Math.floor((now - sessionStartTime) / 1000);
 
-  // Timer effect
+  // Klockan för "Tid:"-märket; när en tidsgräns finns sköter nedräkningen ticken.
   useEffect(() => {
-    if (phase !== "quiz") return;
+    if (phase !== "quiz" || deadline !== null) return;
     const id = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(id);
-  }, [phase]);
+  }, [phase, deadline]);
 
   function handleRestart() {
     onClose();
@@ -131,10 +174,35 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
             <span>
               Fråga {index + 1} av {total}
             </span>
-            <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
-              Tid: {formatClock(elapsedSeconds)}
-            </span>
+            {remainingSeconds !== null ? (
+              <span
+                className={`rounded px-2 py-0.5 text-xs font-semibold tabular-nums ${
+                  warning
+                    ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
+                    : "bg-[var(--mist)] text-[var(--ink-soft)]"
+                }`}
+              >
+                Tid kvar: {formatCountdown(remainingSeconds)}
+              </span>
+            ) : (
+              <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
+                Tid: {formatClock(elapsedSeconds)}
+              </span>
+            )}
           </div>
+
+          {warning ? (
+            <p
+              role="status"
+              className={`text-sm font-medium ${
+                warning === "final" ? "text-[var(--destructive)]" : "text-[var(--energy-ink)]"
+              }`}
+            >
+              {warning === "final"
+                ? "1 minut kvar — övningen avslutas automatiskt."
+                : "5 minuter kvar."}
+            </p>
+          ) : null}
 
           <QuizProgress current={answeredCount} total={total} />
 
@@ -148,21 +216,49 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
 
           <p className="text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
 
-          <QuizOptions
-            questionId={current.id}
-            options={current.options}
-            selected={selected}
-            onSelect={setSelected}
-          />
+          {committed !== undefined ? (
+            <QuizOptions
+              questionId={current.id}
+              options={current.options}
+              selected={committed}
+              correctIndex={current.correctIndex}
+            />
+          ) : (
+            <QuizOptions
+              questionId={current.id}
+              options={current.options}
+              selected={selected}
+              onSelect={setSelected}
+            />
+          )}
+
+          {committed !== undefined ? (
+            <div
+              className={`rounded-lg border px-4 py-3 ${
+                committed === current.correctIndex
+                  ? "border-[var(--lagoon-ink)]/40 bg-[var(--accent-soft)]"
+                  : "border-[var(--destructive)]/30 bg-[var(--coral-soft)]"
+              }`}
+            >
+              <p className="text-sm font-semibold text-[var(--ink)]">
+                {committed === current.correctIndex
+                  ? "Rätt svar!"
+                  : `Fel — rätt svar är ${String.fromCharCode(65 + current.correctIndex)}.`}
+              </p>
+              <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink-soft)]">
+                {current.explain}
+              </p>
+            </div>
+          ) : null}
 
           <div className="flex flex-wrap gap-3 pt-2">
             <button
               type="button"
-              disabled={selected === null}
-              onClick={handleSubmit}
+              disabled={committed === undefined && selected === null}
+              onClick={committed !== undefined ? submitAnswer : handleSubmit}
               className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
             >
-              {index >= total - 1 ? "Visa resultat" : "Nästa fråga"}
+              {primaryLabel}
             </button>
             <button
               type="button"
@@ -189,6 +285,11 @@ export function FreePracticeSession({ subtest, questionCount, examId, onClose }:
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
               Tid: {formatClock(elapsedSeconds)} · {kindBadge(subtest)}
             </p>
+            {timedOut ? (
+              <p className="mt-2 text-sm text-[var(--ink)]">
+                Tiden tog slut — besvarade frågor rättades och obesvarade räknades som fel.
+              </p>
+            ) : null}
           </div>
 
           <QuestionReviewList questions={questions} answers={finalAnswers ?? {}} />

@@ -3,8 +3,23 @@
 import { useState } from "react";
 import { useQuestions } from "@/lib/content/use-questions";
 import type { PracticeKind } from "@/lib/practice";
+import { useHydrated } from "@/lib/use-hydrated";
+import {
+  DEFAULT_PRACTICE_MODE,
+  loadPracticeModeSettings,
+  savePracticeModeSettings,
+  timeLimitSeconds,
+  type PracticeModeSettings,
+  type RevealMode,
+} from "@/lib/practice-modes";
 import { PRACTICE_OPTIONS, type SubTestInfo } from "./practice-hub";
 import { FreePracticeSession } from "./free-practice-session";
+
+/** Rättningen kan visas direkt per fråga eller först efter hela passet. */
+const REVEAL_OPTIONS: { value: RevealMode; label: string }[] = [
+  { value: "immediate", label: "Direkt efter varje fråga" },
+  { value: "after", label: "Efter provpasset" },
+];
 
 type Props = {
   subtest: PracticeKind;
@@ -32,6 +47,28 @@ export function PracticeSubtestSelector({ subtest }: Props) {
   const effectiveCount = Math.min(Math.max(questionCount, range.min), range.max);
   const [sessionActive, setSessionActive] = useState(false);
 
+  // Inställningarna (tid och rättning) läses efter hydrering och sparas lokalt,
+  // precis som antalet frågor i nivåtestet.
+  const hydrated = useHydrated();
+  const [settings, setSettings] = useState<PracticeModeSettings>(DEFAULT_PRACTICE_MODE);
+  const [settingsLoaded, setSettingsLoaded] = useState(false);
+  if (hydrated && !settingsLoaded) {
+    setSettingsLoaded(true);
+    setSettings(loadPracticeModeSettings());
+  }
+
+  function updateSettings(next: PracticeModeSettings) {
+    setSettings(next);
+    savePracticeModeSettings(next);
+  }
+
+  const limitText =
+    settings.timeLimit === "extended"
+      ? "80 minuter (förlängd tid)"
+      : settings.timeLimit === "normal"
+        ? "55 minuter"
+        : "ingen tidsgräns";
+
   if (!info) {
     return (
       <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-6">
@@ -43,8 +80,10 @@ export function PracticeSubtestSelector({ subtest }: Props) {
   if (sessionActive) {
     return (
       <FreePracticeSession
-                subtest={subtest}
+        subtest={subtest}
         questionCount={effectiveCount}
+        timeLimitSeconds={timeLimitSeconds(settings.timeLimit)}
+        reveal={settings.reveal}
         onClose={() => setSessionActive(false)}
       />
     );
@@ -102,12 +141,81 @@ export function PracticeSubtestSelector({ subtest }: Props) {
             </p>
           </div>
 
+          <div className="rounded-xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="text-sm font-semibold text-[var(--ink)]">Tid</p>
+              <label className="flex cursor-pointer items-center gap-2.5">
+                <span className="text-sm font-medium text-[var(--ink-muted)]">
+                  {settings.timeLimit === "off" ? "Av" : "På"}
+                </span>
+                <input
+                  type="checkbox"
+                  checked={settings.timeLimit !== "off"}
+                  onChange={(e) =>
+                    updateSettings({
+                      ...settings,
+                      timeLimit: e.target.checked ? "normal" : "off",
+                    })
+                  }
+                  aria-label="Tidsgräns för övningen"
+                  className="peer sr-only"
+                />
+                <span
+                  aria-hidden
+                  className="relative h-6 w-11 rounded-full bg-[var(--mist)] transition after:absolute after:left-0.5 after:top-0.5 after:size-5 after:rounded-full after:bg-card after:shadow-soft after:transition peer-checked:bg-[var(--brand)] peer-checked:after:translate-x-5 peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--brand)]"
+                />
+              </label>
+            </div>
+
+            {settings.timeLimit !== "off" ? (
+              <label className="mt-3 flex cursor-pointer items-center gap-2.5 text-sm text-[var(--ink)]">
+                <input
+                  type="checkbox"
+                  checked={settings.timeLimit === "extended"}
+                  onChange={(e) =>
+                    updateSettings({
+                      ...settings,
+                      timeLimit: e.target.checked ? "extended" : "normal",
+                    })
+                  }
+                  className="size-4 accent-[var(--brand)]"
+                />
+                Förlängd provtid (dyslexi) — 80 minuter
+              </label>
+            ) : null}
+
+            <div className="mt-4">
+              <p className="text-sm font-semibold text-[var(--ink)]">Rättning</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {REVEAL_OPTIONS.map((opt) => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    aria-pressed={settings.reveal === opt.value}
+                    onClick={() => updateSettings({ ...settings, reveal: opt.value })}
+                    className={`rounded-lg border px-3 py-2 text-sm font-medium transition ${
+                      settings.reveal === opt.value
+                        ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
+                        : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-4 font-[family-name:var(--font-display)] text-lg tabular-nums text-[var(--ink)]">
+              {effectiveCount} {effectiveCount === 1 ? "fråga" : "frågor"} · {limitText}
+            </p>
+          </div>
+
           <button
             type="button"
             onClick={() => setSessionActive(true)}
             className="inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-semibold text-primary-foreground transition hover:brightness-110"
           >
-                        Starta övning med {effectiveCount} {effectiveCount === 1 ? "fråga" : "frågor"}
+            Starta övning
           </button>
         </div>
       </div>

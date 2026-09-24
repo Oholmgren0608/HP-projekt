@@ -11,7 +11,7 @@ export function ExamsView() {
           Prov — gamla prov och övning
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-          Importerade prov, tidsatt mini-prov och officiella UHR-häften.
+          Importerade prov, simulerade provpass, tidsatt mini-prov och officiella UHR-häften.
         </p>
       </div>
       <OfficialExamsBrowser />

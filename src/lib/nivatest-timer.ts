@@ -8,6 +8,9 @@ import { loadJson } from "@/lib/storage";
  * används för att räkna fram en rekommenderad tid utifrån antalet valda
  * frågor. Timern påverkar varken frågeurvalet eller hur nivån räknas — den
  * styr bara hur lång tid man har på sig.
+ *
+ * Nedräkning, varningar och tidsformat delas med övriga tidsatta lägen i
+ * `@/lib/countdown` och `@/lib/use-quiz-countdown`.
  */
 
 export const NIVATEST_TIME_TABLE = [
@@ -18,11 +21,6 @@ export const NIVATEST_TIME_TABLE = [
   { questions: 32, minutes: 43 },
   { questions: 40, minutes: 53 },
 ] as const;
-
-/** Diskret varning när så här många sekunder återstår. */
-export const NIVATEST_WARN_SECONDS = 5 * 60;
-/** Sista varningen innan testet avslutas automatiskt. */
-export const NIVATEST_FINAL_WARN_SECONDS = 60;
 
 /**
  * Rekommenderad tid i hela minuter. Exakta träffar i tabellen returneras rakt
@@ -51,13 +49,6 @@ export function nivatestMinutesFor(totalQuestions: number): number {
   const previous = NIVATEST_TIME_TABLE[NIVATEST_TIME_TABLE.length - 2];
   const minutesPerQuestion = (last.minutes - previous.minutes) / (last.questions - previous.questions);
   return Math.round(last.minutes + (total - last.questions) * minutesPerQuestion);
-}
-
-/** Nedräkning som "18:42" (även under tio minuter och över en timme). */
-export function formatCountdown(totalSeconds: number): string {
-  const seconds = Math.max(0, Math.floor(totalSeconds));
-  const minutes = Math.floor(seconds / 60);
-  return `${String(minutes).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
 }
 
 export const NIVATEST_TIMER_STORAGE_KEY = "hp-lift-nivatest-timer-v1";

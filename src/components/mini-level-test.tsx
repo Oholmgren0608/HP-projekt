@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { recordEvent } from "@/lib/gamification/engine";
@@ -23,13 +23,12 @@ import {
   type NivatestCounts,
 } from "@/lib/mini-level-test";
 import {
-  NIVATEST_FINAL_WARN_SECONDS,
-  NIVATEST_WARN_SECONDS,
-  formatCountdown,
   loadNivatestTimerEnabled,
   nivatestMinutesFor,
   saveNivatestTimerEnabled,
 } from "@/lib/nivatest-timer";
+import { formatCountdown } from "@/lib/countdown";
+import { useQuizCountdown } from "@/lib/use-quiz-countdown";
 import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
@@ -69,9 +68,7 @@ export function MiniLevelTest() {
   }
 
   const [deadline, setDeadline] = useState<number | null>(null);
-  const [now, setNow] = useState(() => Date.now());
   const [timedOut, setTimedOut] = useState(false);
-  const finishedRef = useRef(false);
 
   // Förifyll tid/veckor från ev. sparad plan när den hydrerats. Justering under
   // render (spårar föregående värde) undviker setState i en effekt.
@@ -117,41 +114,19 @@ export function MiniLevelTest() {
 
   const quiz = useQuiz({ questions, onFinish });
 
-  // Senaste finish-funktionen, så att nedräkningseffekten inte behöver ha
-  // quiz-objektet (ny identitet varje render) i sin beroendelista.
-  const finishRef = useRef(quiz.finish);
-  useEffect(() => {
-    finishRef.current = quiz.finish;
-  });
-
   const recommendedMinutes = nivatestMinutesFor(totalQuestions);
-  const remainingSeconds =
-    deadline === null ? null : Math.max(0, Math.ceil((deadline - now) / 1000));
-  const warning =
-    remainingSeconds === null
-      ? null
-      : remainingSeconds <= NIVATEST_FINAL_WARN_SECONDS
-        ? "final"
-        : remainingSeconds <= NIVATEST_WARN_SECONDS
-          ? "five"
-          : null;
 
-  // Tickar bara medan testet pågår och en tidsgräns är satt.
-  useEffect(() => {
-    if (phase !== "quiz" || deadline === null) return;
-    const id = window.setInterval(() => setNow(Date.now()), 1000);
-    return () => window.clearInterval(id);
-  }, [phase, deadline]);
-
-  // Tiden slut: exakt samma väg som "Se resultat" — besvarade frågor rättas och
-  // obesvarade räknas som fel. finishedRef hindrar flera anrop.
-  useEffect(() => {
-    if (phase !== "quiz" || remainingSeconds === null || remainingSeconds > 0) return;
-    if (finishedRef.current) return;
-    finishedRef.current = true;
-    setTimedOut(true);
-    finishRef.current();
-  }, [phase, remainingSeconds]);
+  // Nedräkning, varningar och avslut delas med övningen och provpasset. Tiden
+  // slut går exakt samma väg som "Se resultat": besvarade frågor rättas och
+  // obesvarade räknas som fel.
+  const { remainingSeconds, warning } = useQuizCountdown({
+    deadline,
+    active: phase === "quiz",
+    onExpire: () => {
+      setTimedOut(true);
+      quiz.finish();
+    },
+  });
 
   const finalAnswers = quiz.finalAnswers ?? EMPTY_ANSWERS;
   const outcome = useMemo(
@@ -170,10 +145,8 @@ export function MiniLevelTest() {
     quiz.reset();
     setApplied(false);
     setTimedOut(false);
-    finishedRef.current = false;
     const minutes = nivatestMinutesFor(totalQuestions);
     setDeadline(timerEnabled && minutes > 0 ? Date.now() + minutes * 60_000 : null);
-    setNow(Date.now());
     setPhase("quiz");
   }
 

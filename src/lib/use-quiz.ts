@@ -65,6 +65,15 @@ export function useQuiz({ questions, onFinish }: UseQuizOptions) {
     setSelected(nextAnswers[questions[nextIndex]?.id] ?? null);
   }
 
+  /**
+   * Registrerar svaret på aktuell fråga utan att gå vidare. Används av lägen
+   * med direkt rättning, där frågan först visas med rätt/fel innan nästa.
+   */
+  function commitAnswer() {
+    if (selected === null || !current) return;
+    setAnswers((prev) => ({ ...prev, [current.id]: selected }));
+  }
+
   const goNext = submitAnswer;
 
   function goPrevious() {
@@ -99,6 +108,7 @@ export function useQuiz({ questions, onFinish }: UseQuizOptions) {
     answeredCount,
     progress,
     submitAnswer,
+    commitAnswer,
     goNext,
     goPrevious,
     finish,

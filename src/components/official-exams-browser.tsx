@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Disclosure } from "@/components/disclosure";
 import { TimedMockExam } from "@/components/timed-mock-exam";
 import { ExamMockExam } from "@/components/exam-mock-exam";
+import { ProvpassSession } from "@/components/provpass-session";
 import { FreePracticeSession } from "@/components/free-practice-session";
 import { getQuestions } from "@/lib/content/questions-provider";
 import { useQuestions } from "@/lib/content/use-questions";
@@ -255,6 +256,8 @@ export function OfficialExamsBrowser() {
           </div>
         )}
       </section>
+
+      <ProvpassSession />
 
       <TimedMockExam />
 
