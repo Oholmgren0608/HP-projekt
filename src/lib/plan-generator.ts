@@ -204,7 +204,9 @@ function allocateTime(ranked: Ranked[]): TimeSplitItem[] {
 
   const drift = 100 - items.reduce((a, b) => a + b.pct, 0);
   if (items.length && drift !== 0) items[0].pct += drift;
-  return items.sort((a, b) => b.pct - a.pct);
+  // Behåll den ordning rankningen gav (svagast först) i stället för att sortera
+  // om på andel, så att tidfördelningen pekar på samma delprov som fokuslistan.
+  return items;
 }
 
 function buildWeeklyPlans(
@@ -265,11 +267,20 @@ function buildWeeklyPlans(
   const n = Math.min(Math.max(weeks, 4), 16);
   const plans: WeekPlan[] = [];
 
+  // Kroppen (Bas/Teknik) cyklas, men de två sista veckorna är alltid "Fullprov"
+  // och "Finish": nedtrappningen ska ligga före provet även när horisonten inte
+  // är exakt 8 eller 16 veckor. Förr hamnade "Puts och vila" på vecka 8 och en
+  // 10-veckorsplan började om på "Bas" två veckor före provet.
+  const bodyPhases = phases.length - 2;
+
   for (let i = 0; i < n; i++) {
     const week = i + 1;
-    // För horisonter över 8 veckor cyklas 8-veckorsbågen så att planen
-    // förblir sammanhängande: vecka 9 upprepar vecka 1:s uppstart osv.
-    const cycle = ((week - 1) % phases.length) + 1;
+    const cycle =
+      i === n - 1
+        ? phases.length
+        : i === n - 2
+          ? phases.length - 1
+          : (i % bodyPhases) + 1;
     const meta = phases[cycle - 1] ?? phases[phases.length - 1];
     let tasks: StudyTask[] = [];
 
@@ -504,6 +515,7 @@ function weekPlanDiffers(a: WeekPlan, b: WeekPlan): boolean {
     if (
       ta.id !== tb.id ||
       ta.title !== tb.title ||
+      ta.detail !== tb.detail ||
       ta.section !== tb.section ||
       ta.questionCount !== tb.questionCount ||
       ta.minutes !== tb.minutes ||
@@ -519,6 +531,13 @@ export function generatePlan(
   scores: ScoreInput,
   options: GeneratePlanOptions = {},
 ): GeneratedPlan {
+  // Veckorna normaliseras en gång här, så att planens längd och profilen alltid
+  // visar samma sak. Förr kunde profilen säga 20 veckor medan planen hade 16,
+  // och ett icke-numeriskt värde gav en tom plan.
+  const weeks = Number.isFinite(scores.weeksUntilExam)
+    ? Math.min(Math.max(Math.round(scores.weeksUntilExam), 4), 16)
+    : 8;
+
   const ranked: Ranked[] = DELPROV_META.map((m) => {
     const correct = scores.delprov[m.id] ?? 0;
     const percent = pct(correct, m.total);
@@ -606,7 +625,7 @@ export function generatePlan(
   });
 
     const hpFocusIds = [
-    ...new Set(ranked.filter((r) => r.percent < 80).slice(0, 4).map((r) => r.id)),
+    ...new Set(ranked.filter((r) => r.percent < 80).slice(0, 3).map((r) => r.id)),
   ];
   for (const row of ranked) {
     if (hpFocusIds.length >= 2) break;
@@ -616,7 +635,7 @@ export function generatePlan(
   const hpWeakestQuant = ranked.filter((r) => r.block === "kvant")[0];
   const hpWeekly = buildWeeklyPlans(
     hpFocusIds,
-    scores.weeksUntilExam,
+    weeks,
     hpWeakestQuant.id,
   );
 
@@ -628,19 +647,22 @@ export function generatePlan(
   let focusIds = hpFocusIds;
   let weakestQuant = hpWeakestQuant;
 
+  let effectiveRanking: Ranked[] = ranked;
+
   if (trends.length > 0) {
     const blended = [...ranked].sort((a, b) => {
       const da = adjustDeficit(a.id, a.deficit, trends);
       const db = adjustDeficit(b.id, b.deficit, trends);
       return db - da;
     });
+    effectiveRanking = blended;
     focusIds = blended
       .filter(
         (r) =>
           r.percent < 80 ||
           trends.some((t) => t.id === r.id && t.direction === "weaker"),
       )
-      .slice(0, 4)
+      .slice(0, 3)
       .map((r) => r.id);
     if (focusIds.length < 2) {
       focusIds = blended.slice(0, 2).map((r) => r.id);
@@ -649,15 +671,18 @@ export function generatePlan(
       blended.filter((r) => r.block === "kvant")[0] ?? hpWeakestQuant;
   }
 
-  const weakestVerbal = ranked.filter((r) => r.block === "verbal")[0];
-  const strongestVerbal = [...ranked]
+  // Samma rangordning som fokus och veckoplan använder. Annars kunde
+  // strategikorten och tidfördelningen peka på andra delprov än planen
+  // faktiskt prioriterar (t.ex. "ORD först" samtidigt som fokus var NOG).
+  const weakestVerbal = effectiveRanking.filter((r) => r.block === "verbal")[0];
+  const strongestVerbal = [...effectiveRanking]
     .filter((r) => r.block === "verbal")
     .sort((a, b) => b.percent - a.percent)[0];
 
   const strategy: StrategyItem[] = [
     {
-      title: `${METHODS[weakestVerbal.id].short} först`,
-      body: `Verbala svagaste del: ${METHODS[weakestVerbal.id].short}. Lägg tiden där först.`,
+      title: `${METHODS[weakestVerbal.id].short} först i det verbala`,
+      body: `Svagaste verbala del: ${METHODS[weakestVerbal.id].short}. Den får mest tid av det verbala blocket.`,
     },
     {
       title: "Skydda det som redan fungerar",
@@ -673,18 +698,25 @@ export function generatePlan(
     },
   ];
 
-  const timeSplit = allocateTime(ranked);
+  const timeSplit = allocateTime(effectiveRanking);
 
   const heroSummary = `Snitt ${formatNorm(overall)} (kvant ${formatNorm(scores.quantNorm)} / verbal ${formatNorm(scores.verbalNorm)}). Planen prioriterar ${focusIds
     .slice(0, 2)
     .map((id) => METHODS[id].short)
     .join(" och ")} utifrån dina delprovspoäng.`;
 
-  const built = buildWeeklyPlans(
-    focusIds,
-    scores.weeksUntilExam,
-    weakestQuant.id,
-  );
+  const focusChanged =
+    focusIds.length !== hpFocusIds.length ||
+    focusIds.some((id, i) => id !== hpFocusIds[i]);
+
+  // Bygg bara om planen när anpassningen faktiskt ändrade fokus eller kvantdel;
+  // annars återanvänds hpWeekly (samma innehåll, färre allokeringar och stabil
+  // objektidentitet nedströms).
+  const built =
+    !focusChanged && weakestQuant.id === hpWeakestQuant.id
+      ? hpWeekly
+      : buildWeeklyPlans(focusIds, weeks, weakestQuant.id);
+
   const started = new Set(options.startedWeeks ?? []);
   const weeklyPlans = built.map((w) => {
     const snap = options.lockedWeeks?.[w.week];
@@ -695,14 +727,13 @@ export function generatePlan(
     return w;
   });
 
-  const focusChanged =
-    focusIds.length !== hpFocusIds.length ||
-    focusIds.some((id, i) => id !== hpFocusIds[i]);
-
+  // Jämför före lås och startade veckor: annars kunde ett gammalt låst snapshot
+  // göra att planen påstod sig vara trendanpassad utan att någon trend ändrat
+  // något i planen.
   const adaptedApplied =
     trends.length > 0 &&
     (focusChanged ||
-      weeklyPlans.some((w) => {
+      built.some((w) => {
         const hp = hpWeekly.find((h) => h.week === w.week);
         return !hp || weekPlanDiffers(hp, w);
       }));
@@ -716,7 +747,7 @@ export function generatePlan(
       totalQuestions,
       targetOverall: `${formatNorm(Math.min(2, overall + 0.3))}–${formatNorm(targetOverallNum)}`,
       targetVerbal: `${formatNorm(targetVerbalNum)}+`,
-      weeksUntilExam: scores.weeksUntilExam,
+      weeksUntilExam: weeks,
       hoursPerWeek: scores.hoursPerWeek,
     },
     delprovScores,

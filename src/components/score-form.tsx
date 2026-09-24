@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { usePlan } from "@/components/plan-context";
-import { generatePlan } from "@/lib/plan-generator";
 import {
   DELPROV_META,
   clampDelprov,
@@ -55,10 +54,11 @@ function parseNumber(value: string): number | null {
 }
 
 export function ScoreForm() {
-  const { scores, updateScores, clearScores, ready } = usePlan();
+  const { scores, plan, updateScores, clearScores, ready } = usePlan();
   const [draft, setDraft] = useState<Draft>(() => toDraft(scores));
   const [missing, setMissing] = useState<ReadonlySet<string>>(new Set());
   const [confirmClear, setConfirmClear] = useState(false);
+  const [pendingSave, setPendingSave] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
   // Resync the editable draft whenever the persisted scores change (e.g. after
@@ -74,6 +74,7 @@ export function ScoreForm() {
   /** Tar bort markerade fält i takt med att de fylls i. */
   function clearMissing(key: string) {
     setConfirmClear(false);
+    setPendingSave(false);
     setMissing((prev) => {
       if (!prev.has(key)) return prev;
       const next = new Set(prev);
@@ -118,6 +119,7 @@ export function ScoreForm() {
       weeks === null
     ) {
       setMissing(missingKeys);
+      setPendingSave(false);
       setMessage(
         "Fyll i alla fält — eller kör nivåtestet, då fylls de i åt dig. Inget sparas förrän allt är ifyllt.",
       );
@@ -134,11 +136,9 @@ export function ScoreForm() {
     updateScores(next);
     setMissing(new Set());
     setConfirmClear(false);
+    setPendingSave(true);
+    setMessage(null);
     setDraft(toDraft(next));
-    const generated = generatePlan(next);
-    setMessage(
-      `Planen uppdaterad. Fokus: ${generated.focusIds.slice(0, 2).join(" · ")} — se veckoplanen under Plan.`,
-    );
   }
 
   function handleClear() {
@@ -146,10 +146,22 @@ export function ScoreForm() {
     setDraft(toDraft(null));
     setMissing(new Set());
     setConfirmClear(false);
-    setMessage("Sparade resultat raderade. Appen är tillbaka i utgångsläget.");
+    setPendingSave(false);
+    setMessage(
+      "Sparade resultat raderade. Din träningsprogress och historik ligger kvar under Plan.",
+    );
   }
 
   const invalidClass = "border-[var(--destructive)] ring-2 ring-[var(--destructive)]/30";
+
+  // Meddelandet läses från planen som providern just byggde, så att det visar
+  // samma fokus som /plan (tidigare byggdes en egen plan här bara för texten,
+  // vilket kunde visa fel fokus när anpassningsläget var på).
+  const successText =
+    pendingSave && plan
+      ? `Planen uppdaterad. Fokus: ${plan.focusIds.slice(0, 2).join(" · ")} — se veckoplanen under Plan.`
+      : null;
+  const shownMessage = message ?? successText;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -290,7 +302,11 @@ export function ScoreForm() {
             Rensa sparade resultat
           </button>
         )}
-        {message ? <p className="text-sm text-[var(--lagoon-ink)]">{message}</p> : null}
+        {shownMessage ? (
+          <p className="text-sm text-[var(--lagoon-ink)]" role="status">
+            {shownMessage}
+          </p>
+        ) : null}
       </div>
     </form>
   );

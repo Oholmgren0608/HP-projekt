@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { recordEvent } from "@/lib/gamification/engine";
 import { PracticeSession } from "@/components/practice-session";
@@ -10,6 +10,7 @@ import { Progress } from "@/components/ui/progress";
 import { useHydrated } from "@/lib/use-hydrated";
 import { storageSet } from "@/lib/sync/storage-sync";
 import {
+  clearPracticeTimer,
   isPracticeInProgress,
   loadPracticeTimer,
   newPracticeAttempt,
@@ -18,6 +19,7 @@ import {
 import { type StudyTask } from "@/lib/study-plan";
 import type { GeneratedPlan } from "@/lib/plan-generator";
 import {
+  WEEK_PROGRESS_EVENT,
   WEEK_PROGRESS_KEY,
   WEEK_SCORES_KEY,
   clearLockedWeek,
@@ -27,6 +29,7 @@ import {
   loadWeekScores,
   saveLockedWeekIfAbsent,
   taskKey,
+  weekProgressSummary,
   type ProgressMap,
   type ScoreMap,
 } from "@/lib/week-progress";
@@ -72,16 +75,55 @@ export function WeekTracker({
     if (urlStart) setActiveTaskId(urlStart);
   }
 
-  useEffect(() => {
-    if (!ready) return;
-    storageSet(WEEK_PROGRESS_KEY, JSON.stringify(progress));
-    emitWeekProgressChanged();
-  }, [progress, ready]);
+  // Skriv bara när något faktiskt ändrats: annars stämplas nyckeln som nyare än
+  // molnet vid varje besök, och sync-mergen ("nyaste vinner") låter en gammal
+  // lokal kopia skriva över en nyare molnredigering.
+  const savedProgressRef = useRef(JSON.stringify(progress));
+  const savedScoresRef = useRef(JSON.stringify(scores));
 
   useEffect(() => {
     if (!ready) return;
-    storageSet(WEEK_SCORES_KEY, JSON.stringify(scores));
-  }, [scores, ready]);
+    const nextProgress = JSON.stringify(progress);
+    const nextScores = JSON.stringify(scores);
+    const progressChanged = nextProgress !== savedProgressRef.current;
+    const scoresChanged = nextScores !== savedScoresRef.current;
+    // Båda skrivningarna görs innan eventet: annars hinner prenumerationen nedan
+    // läsa den gamla score-kartan och skriva över den i state.
+    if (progressChanged) {
+      savedProgressRef.current = nextProgress;
+      storageSet(WEEK_PROGRESS_KEY, nextProgress);
+    }
+    if (scoresChanged) {
+      savedScoresRef.current = nextScores;
+      storageSet(WEEK_SCORES_KEY, nextScores);
+    }
+    if (progressChanged) emitWeekProgressChanged();
+  }, [progress, scores, ready]);
+
+  // Andra flikar (och molnsynken) kan ändra progressen medan sidan är öppen —
+  // samma prenumeration som dashboard-home gör, annars skriver den här fliken
+  // tillbaka en gammal karta och tappar den andra flikens uppdatering.
+  useEffect(() => {
+    const refresh = () => {
+      const nextProgress = loadWeekProgress();
+      setProgress(nextProgress);
+      savedProgressRef.current = JSON.stringify(nextProgress);
+      const nextScores = loadWeekScores();
+      setScores(nextScores);
+      savedScoresRef.current = JSON.stringify(nextScores);
+    };
+    const onStorage = (event: StorageEvent) => {
+      if (event.key === null || event.key === WEEK_PROGRESS_KEY || event.key === WEEK_SCORES_KEY) {
+        refresh();
+      }
+    };
+    window.addEventListener(WEEK_PROGRESS_EVENT, refresh);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      window.removeEventListener(WEEK_PROGRESS_EVENT, refresh);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
 
   // Clamp the active week when the generated plan shrinks below the selection,
   // adjusting state during render instead of in an effect (avoids cascading renders).
@@ -97,15 +139,18 @@ export function WeekTracker({
     onSessionChange?.(Boolean(activeTask));
   }, [activeTask, onSessionChange]);
 
-  const { done, total, percent } = useMemo(() => {
-    const allTasks = weeklyPlans.flatMap((w) => w.tasks.map((t) => taskKey(w.week, t.id)));
-    const doneCount = allTasks.filter((k) => progress[k]).length;
-    return {
-      done: doneCount,
-      total: allTasks.length,
-      percent: allTasks.length ? Math.round((doneCount / allTasks.length) * 100) : 0,
-    };
-  }, [progress, weeklyPlans]);
+  const { done, total, percent } = useMemo(
+    () => weekProgressSummary(weeklyPlans, progress),
+    [progress, weeklyPlans],
+  );
+
+  // En påbörjad vecka ska inte byta innehåll: lås den när ett pass startas, inte
+  // bara när en uppgift blir klar. Annars kunde en pausad uppgift få ett annat
+  // delprov medan den sparade tiden låg kvar på samma uppgifts-id.
+  useEffect(() => {
+    if (!plan || !activeTask) return;
+    saveLockedWeekIfAbsent(plan);
+  }, [plan, activeTask]);
 
   // Timer-tillstånd läses en gång per (plan, timerTick) i stället för per
   // uppgift inne i JSX:en. `timerTick` tvingar en omavläsning efter att ett
@@ -146,6 +191,7 @@ export function WeekTracker({
 
   function resetWeek() {
     clearLockedWeek(plan.week);
+    for (const t of plan.tasks) clearPracticeTimer(plan.week, t.id);
     setProgress((prev) => {
       const next = { ...prev };
       for (const t of plan.tasks) {

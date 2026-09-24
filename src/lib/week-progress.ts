@@ -1,5 +1,6 @@
 import type { PracticeKind } from "@/lib/practice";
 import type { SectionId, StudyTask, WeekPlan } from "@/lib/study-plan";
+import { SUBTESTS } from "@/lib/subtests";
 import { storageSet } from "@/lib/sync/storage-sync";
 import { emitEvent, loadJson } from "@/lib/storage";
 
@@ -40,6 +41,11 @@ function toFiniteNumber(value: unknown): number | null {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
+/** Delprov som en lagrad veckoplan får referera till (annars kastar sectionLabel). */
+const SECTION_IDS = new Set<string>(SUBTESTS.map((s) => s.id));
+/** Övningstyper som går att bygga ett pass av. */
+const PRACTICE_KINDS = new Set<string>([...SUBTESTS.map((s) => s.kind), "reflect"]);
+
 /** Bygger en giltig veckoplan av ett okänt värde, annars null. */
 function toWeekPlan(value: unknown): WeekPlan | null {
   if (!isRecord(value)) return null;
@@ -63,7 +69,9 @@ function toWeekPlan(value: unknown): WeekPlan | null {
       typeof task.detail !== "string" ||
       minutes === null ||
       typeof task.section !== "string" ||
-      !Array.isArray(task.practiceKinds)
+      !SECTION_IDS.has(task.section) ||
+      !Array.isArray(task.practiceKinds) ||
+      !task.practiceKinds.every((k) => typeof k === "string" && PRACTICE_KINDS.has(k))
     ) {
       return null;
     }
@@ -137,7 +145,7 @@ export function findNextIncomplete(
   return null;
 }
 
-/** Nästa ofärdiga uppgift efter den aktuella: resten av veckan först, annars findNextIncomplete. */
+/** Nästa ofärdiga uppgift efter den aktuella: resten av veckan först, sedan senare veckor. */
 export function findNextIncompleteAfter(
   weeklyPlans: WeekPlan[],
   progress: ProgressMap,
@@ -159,7 +167,12 @@ export function findNextIncompleteAfter(
     ...progress,
     [taskKey(currentWeek, currentTaskId)]: true,
   };
-  return findNextIncomplete(weeklyPlans, skipCurrent);
+  // Bara framåt: knappen heter "Nästa i veckan" och ska inte kasta tillbaka
+  // användaren till en tidigare vecka (hoppade uppgifter nås via veckoväljaren).
+  return findNextIncomplete(
+    weeklyPlans.filter((w) => w.week > currentWeek),
+    skipCurrent,
+  );
 }
 
 export function weekProgressSummary(weeklyPlans: WeekPlan[], progress: ProgressMap) {

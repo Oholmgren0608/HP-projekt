@@ -20,22 +20,38 @@ import { generatePlan, type GeneratedPlan } from "@/lib/plan-generator";
 import { useHydrated } from "@/lib/use-hydrated";
 import {
   ADAPT_PLAN_EVENT,
+  ADAPT_PLAN_KEY,
   loadAdaptPlanEnabled,
   saveAdaptPlanEnabled,
 } from "@/lib/adapt-plan-setting";
 import { detectPracticeTrends } from "@/lib/practice-trends";
 import {
   HISTORY_EVENT,
+  HISTORY_STORAGE_KEY,
   appendScoreSnapshot,
   ensureScoreBaseline,
   loadHistory,
 } from "@/lib/progress-history";
+import { SCORES_STORAGE_KEY } from "@/lib/hp-scores";
 import {
+  LOCKED_WEEKS_KEY,
   WEEK_PROGRESS_EVENT,
+  WEEK_PROGRESS_KEY,
+  WEEK_SCORES_KEY,
   loadLockedWeeks,
   loadWeekProgress,
   startedWeekNumbers,
 } from "@/lib/week-progress";
+
+/** Nycklar planen faktiskt läser — bara de ska räkna om den. */
+const PLAN_STORAGE_KEYS = new Set<string>([
+  SCORES_STORAGE_KEY,
+  HISTORY_STORAGE_KEY,
+  WEEK_PROGRESS_KEY,
+  WEEK_SCORES_KEY,
+  LOCKED_WEEKS_KEY,
+  ADAPT_PLAN_KEY,
+]);
 
 type PlanContextValue = {
   /** Sparat underlag. `null` = inget sparat — visa tomt läge, aldrig gissade siffror. */
@@ -76,15 +92,21 @@ export function PlanProvider({ children }: { children: ReactNode }) {
       });
       setRevision((n) => n + 1);
     };
+    // Ett storage-event för t.ex. flashcards eller SRS rör inte planen; utan
+    // filtret genererades hela planen om på varje synkad nyckel från andra flikar.
+    const onStorage = (event: StorageEvent) => {
+      if (event.key !== null && !PLAN_STORAGE_KEYS.has(event.key)) return;
+      bump();
+    };
     window.addEventListener(HISTORY_EVENT, bump);
     window.addEventListener(WEEK_PROGRESS_EVENT, bump);
     window.addEventListener(ADAPT_PLAN_EVENT, bump);
-    window.addEventListener("storage", bump);
+    window.addEventListener("storage", onStorage);
     return () => {
       window.removeEventListener(HISTORY_EVENT, bump);
       window.removeEventListener(WEEK_PROGRESS_EVENT, bump);
       window.removeEventListener(ADAPT_PLAN_EVENT, bump);
-      window.removeEventListener("storage", bump);
+      window.removeEventListener("storage", onStorage);
     };
   }, []);
 
