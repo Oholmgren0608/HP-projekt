@@ -16,6 +16,7 @@ import {
   resetPracticeSession,
 } from "@/lib/practice-timer";
 import { type StudyTask } from "@/lib/study-plan";
+import type { GeneratedPlan } from "@/lib/plan-generator";
 import {
   WEEK_PROGRESS_KEY,
   WEEK_SCORES_KEY,
@@ -30,13 +31,17 @@ import {
   type ScoreMap,
 } from "@/lib/week-progress";
 
+// Stabil identitet: annars byter useMemo-beroendena referens varje render.
+const NO_WEEKS: GeneratedPlan["weeklyPlans"] = [];
+
 export function WeekTracker({
   onSessionChange,
 }: {
   onSessionChange?: (open: boolean) => void;
 }) {
   const { plan: generated } = usePlan();
-  const weeklyPlans = generated.weeklyPlans;
+  // Stabil tom lista när inget underlag sparats; PlanView visar då ingen WeekTracker.
+  const weeklyPlans = generated?.weeklyPlans ?? NO_WEEKS;
   const searchParams = useSearchParams();
   const router = useRouter();
 

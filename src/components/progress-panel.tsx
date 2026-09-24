@@ -52,7 +52,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
     );
   }
 
-  const savedOverall = plan.profile.overall;
+  const savedOverall = plan?.profile.overall ?? null;
   const points = chartPoints(events);
   const prognosis = prognosisFromExercises(events);
   const verbal = rollingQuizPercent(events, "verbal");
@@ -88,7 +88,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
       <div>
         <p className="text-sm text-[var(--ink-muted)]">Inmatad norm</p>
         <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
-          {formatNorm(savedOverall)}
+          {savedOverall !== null ? formatNorm(savedOverall) : "—"}
         </p>
       </div>
       <div>
@@ -141,7 +141,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
     return (
       <Disclosure
         title="Poängprognos"
-        subtitle={`Inmatad norm ${formatNorm(savedOverall)} · uppskattning ${
+        subtitle={`Inmatad norm ${savedOverall !== null ? formatNorm(savedOverall) : "—"} · uppskattning ${
           estimated !== null ? formatNorm(estimated) : "—"
         }`}
         bodyClassName="px-3 pb-3 pt-3"

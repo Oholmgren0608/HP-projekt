@@ -1,6 +1,6 @@
 import type { SectionId } from "@/lib/study-plan";
 import { SUBTESTS } from "@/lib/subtests";
-import { storageGet, storageSet } from "@/lib/sync/storage-sync";
+import { storageGet, storageRemove, storageSet } from "@/lib/sync/storage-sync";
 import { loadJson } from "@/lib/storage";
 
 export const DELPROV_META: {
@@ -19,7 +19,11 @@ export type ScoreInput = {
   delprov: Record<SectionId, number>;
 };
 
-/** Default = dina tidigare resultat (kan ändras i formuläret). */
+/**
+ * Neutrala reservvärden för enskilda fält som saknar giltigt värde i *sparad*
+ * data. Är aldrig ett påhittat underlag: finns inget sparat underlag returnerar
+ * `loadScores()` null och appen visar ett tomt läge i stället.
+ */
 export const DEFAULT_SCORES: ScoreInput = {
   quantNorm: 1.4,
   verbalNorm: 1.0,
@@ -64,25 +68,43 @@ export function clampWeeksUntilExam(value: unknown): number {
   return Math.round(Math.max(4, Math.min(16, n)));
 }
 
-export function loadScores(): ScoreInput {
-  const parsed = loadJson<Partial<ScoreInput>>(SCORES_STORAGE_KEY, DEFAULT_SCORES);
+/**
+ * Läser användarens sparade underlag. Returnerar `null` när inget underlag
+ * sparats (flaggan saknas) eller när det som ligger i storage är ofullständigt —
+ * appen visar då ett tomt läge i stället för påhittade siffror.
+ */
+export function loadScores(): ScoreInput | null {
+  if (typeof window === "undefined") return null;
+  if (!loadHasSavedScores()) return null;
+  const parsed = loadJson<Partial<ScoreInput> | null>(SCORES_STORAGE_KEY, null);
+  if (!parsed || !parsed.delprov) return null;
   try {
     const delprov = { ...DEFAULT_SCORES.delprov };
     for (const m of DELPROV_META) {
-      if (typeof parsed.delprov?.[m.id] === "number") {
-        delprov[m.id] = clampDelprov(m.id, parsed.delprov[m.id]);
-      }
+      const value = parsed.delprov[m.id];
+      if (typeof value !== "number" || Number.isNaN(value)) return null;
+      delprov[m.id] = clampDelprov(m.id, value);
+    }
+    if (typeof parsed.quantNorm !== "number" || typeof parsed.verbalNorm !== "number") {
+      return null;
     }
     return {
-      quantNorm: clampNorm(parsed.quantNorm ?? DEFAULT_SCORES.quantNorm),
-      verbalNorm: clampNorm(parsed.verbalNorm ?? DEFAULT_SCORES.verbalNorm),
+      quantNorm: clampNorm(parsed.quantNorm),
+      verbalNorm: clampNorm(parsed.verbalNorm),
       hoursPerWeek: clampHoursPerWeek(parsed.hoursPerWeek),
       weeksUntilExam: clampWeeksUntilExam(parsed.weeksUntilExam),
       delprov,
     };
   } catch {
-    return DEFAULT_SCORES;
+    return null;
   }
+}
+
+/** Raderar sparat underlag. Tombstone → sprids till molnet när man är inloggad. */
+export function clearScores(): void {
+  if (typeof window === "undefined") return;
+  storageRemove(SCORES_STORAGE_KEY);
+  storageRemove(SCORES_SAVED_FLAG_KEY);
 }
 
 export function saveScores(scores: ScoreInput) {
@@ -93,7 +115,7 @@ export function saveScores(scores: ScoreInput) {
 /** Sätts en gång när användaren sparar sina egna resultat (formulär eller nivåtest). */
 export const SCORES_SAVED_FLAG_KEY = "hp-lift-scores-saved-v1";
 
-export function loadHasSavedScores(): boolean {
+function loadHasSavedScores(): boolean {
   if (typeof window === "undefined") return false;
   try {
     return storageGet(SCORES_SAVED_FLAG_KEY) === "1";

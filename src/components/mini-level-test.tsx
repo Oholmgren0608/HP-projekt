@@ -56,8 +56,12 @@ export function MiniLevelTest() {
   const [syncedScores, setSyncedScores] = useState(scores);
   if (ready && scores !== syncedScores) {
     setSyncedScores(scores);
-    setHoursPerWeek(scores.hoursPerWeek);
-    setWeeksUntilExam(scores.weeksUntilExam);
+    // Bara ett sparat underlag får förifylla tid/veckor — annars står 10/8 kvar
+    // som redigerbara utgångsvärden.
+    if (scores) {
+      setHoursPerWeek(scores.hoursPerWeek);
+      setWeeksUntilExam(scores.weeksUntilExam);
+    }
   }
 
   const { ready: questionsReady } = useQuestions();

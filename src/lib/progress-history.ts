@@ -377,7 +377,11 @@ export function chartPoints(events: HistoryEvent[]): { at: string; value: number
   return points.slice(-12);
 }
 
-export function shouldSuggestNewPlan(savedOverall: number, events: HistoryEvent[]): boolean {
+export function shouldSuggestNewPlan(
+  savedOverall: number | null,
+  events: HistoryEvent[],
+): boolean {
+  if (savedOverall === null) return false;
   const prognosis = prognosisFromExercises(events);
   if (!prognosis) return false;
   const estimated = estimateNormFromPercent(prognosis.percent);

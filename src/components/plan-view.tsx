@@ -21,6 +21,39 @@ export function PlanView() {
     );
   }
 
+  if (!plan) {
+    return (
+      <div className="space-y-10">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+            Plan
+          </p>
+          <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+            Ingen veckoplan än
+          </h1>
+          <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
+            Veckoplanen byggs från dina resultat. Gör nivåtestet på några minuter,
+            eller fyll i dina senaste HP-poäng för hand.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/nivatest"
+              className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] px-6 text-sm font-extrabold text-primary-foreground shadow-soft transition hover:scale-[1.03] active:scale-95"
+            >
+              Gör nivåtestet
+            </Link>
+            <Link
+              href="/resultat"
+              className="inline-flex min-h-11 items-center rounded-full border border-[var(--line-strong)] px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
+            >
+              Mata in resultat
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const { profile, sections, strategy, dailyTemplate } = plan;
 
   return (

@@ -20,6 +20,11 @@
  * molnet som den reserverade strängen TOMBSTONE i stället för att plockas
  * bort, så att en äldre molnkopia inte återuppstår vid nästa merge.
  *
+ * Vid utloggning läggs den lokala kopian undan per konto
+ * (`hp-lift-archive-<userId>`) innan den delade cachen rensas, och läggs
+ * tillbaka vid nästa inloggning för samma konto. Molnets kopia berörs inte,
+ * och nästa användare på samma enhet ser aldrig den utloggades data.
+ *
  * API:et är synkront (samma former som localStorage) så att befintliga
  * anrop kan bytas rakt av. Molnskrivningar skickas asynkront och fel
  * sväljs med console.warn — appen får aldrig krascha p.g.a. nätverksfel
@@ -69,6 +74,20 @@ type CloudRow = {
   storage_key: string;
   value: { v?: string } | null;
   updated_at: string;
+};
+
+/**
+ * Prefix för undanlagd lokal data per användar-id. Skrivs vid utloggning och
+ * läggs tillbaka vid nästa inloggning för samma konto, så att ändringar som
+ * inte hann synkas till molnet inte försvinner när den delade lokala cachen
+ * rensas (flera användare på samma enhet).
+ */
+const ARCHIVE_PREFIX = "hp-lift-archive-";
+
+type LocalSnapshot = {
+  at: number;
+  values: Record<string, string>;
+  meta: Record<string, number>;
 };
 
 /** Molnet lagrar råa localStorage-strängar som {"v": "<sträng>"} (jsonb). */
@@ -298,13 +317,66 @@ async function performMerge(userId: string) {
   return adopted;
 }
 
-// ---- Brygga mot auth -------------------------------------------------------
+// ---- Undanlagd lokal data (utloggning utan dataförlust) --------------------
+
+/** Sparar undan den lokala kopian under användarens id. */
+function archiveLocalState(userId: string): void {
+  const values: Record<string, string> = {};
+  for (const key of SYNCED_KEYS) {
+    const raw = safeGetItem(key);
+    if (raw !== null) values[key] = raw;
+  }
+  if (Object.keys(values).length === 0) return;
+  const snapshot: LocalSnapshot = { at: Date.now(), values, meta: readMeta() };
+  try {
+    localStorage.setItem(ARCHIVE_PREFIX + userId, JSON.stringify(snapshot));
+  } catch {
+    // Kvot/privat läge: hellre tappa arkivet än att krascha utloggningen.
+  }
+}
+
+/** Lägger tillbaka undanlagd lokal data. Nyare lokalt värde vinner per nyckel. */
+function restoreArchivedState(userId: string): void {
+  const archiveKey = ARCHIVE_PREFIX + userId;
+  const raw = safeGetItem(archiveKey);
+  if (!raw) return;
+  safeRemoveItem(archiveKey);
+  const synced = new Set<string>(SYNCED_KEYS);
+  try {
+    const snapshot = JSON.parse(raw) as LocalSnapshot;
+    const meta = readMeta();
+    for (const [key, value] of Object.entries(snapshot.values ?? {})) {
+      if (!synced.has(key)) continue;
+      const archivedAt = snapshot.meta?.[key] ?? snapshot.at ?? 0;
+      const localAt = meta[key] ?? 0;
+      if (archivedAt < localAt) continue;
+      safeSetItem(key, value);
+      meta[key] = archivedAt;
+    }
+    writeMeta(meta);
+  } catch {
+    // Korrupt arkiv: ignorera.
+  }
+}
+
+/** Raderar all sparad träning lokalt: synkade nycklar, undanlagd data och meta. */
+export function clearLocalData(): void {
+  clearSyncedLocalState();
+  const archives: string[] = [];
+  for (let i = 0; i < localStorage.length; i += 1) {
+    const key = localStorage.key(i);
+    if (key && key.startsWith(ARCHIVE_PREFIX)) archives.push(key);
+  }
+  for (const key of archives) safeRemoveItem(key);
+}
 
 /** Rensar den delade lokala synk-cachen (alla synkade nycklar + meta). */
 function clearSyncedLocalState() {
   for (const key of SYNCED_KEYS) safeRemoveItem(key);
   safeRemoveItem(META_KEY);
 }
+
+// ---- Brygga mot auth -------------------------------------------------------
 
 /**
  * Anropas från AuthProvider när auth-tillståndet ändras.
@@ -316,21 +388,25 @@ function clearSyncedLocalState() {
  */
 export function onAuthChanged(userId: string | null) {
   if (!userId) {
-    const wasSignedIn = activeUserId !== null;
+    const previousUserId = activeUserId;
     activeUserId = null;
     cloudCache = null;
     mergeUserId = null;
-    if (wasSignedIn) {
+    if (previousUserId !== null) {
       // Rensa den delade lokala cachen så att nästa användare (anonym eller
-      // inloggad) aldrig ser den utloggade användarens data. Trade-off:
-      // lokala ändringar från den inloggade sessionen som inte hann synkas
-      // till molnet kastas; molnets kopia av kontot berörs inte.
+      // inloggad) aldrig ser den utloggade användarens data — men lägg undan
+      // kopian under användarens id först, så att ändringar som inte hann
+      // synkas till molnet kan läggas tillbaka vid nästa inloggning.
+      archiveLocalState(previousUserId);
       clearSyncedLocalState();
       window.location.reload();
     }
     return;
   }
   activeUserId = userId;
+  // Lägg tillbaka undanlagd data innan merge, så att jämförelsen sker mot rätt
+  // lokala värden. Görs före cache-kollen: arkivet ska alltid tillbaka.
+  restoreArchivedState(userId);
   if (cloudCache !== null) return; // Redan synkad för den här sessionen.
   if (mergeUserId !== userId) {
     mergeUserId = userId;

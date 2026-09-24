@@ -6,6 +6,7 @@ import { getSupabase } from "@/lib/supabase/client";
 import { LoginPanel } from "@/components/auth/login-panel";
 import { getMatchHistory, getMyProfile } from "@/lib/duel/profile";
 import type { DuelMatch, DuelProfile } from "@/lib/duel/types";
+import { clearLocalData } from "@/lib/sync/storage-sync";
 import { deleteAccount } from "./actions";
 
 // ---------------------------------------------------------------------------
@@ -374,6 +375,7 @@ export function ProfileScreen() {
           duellresultat.
         </p>
         <LoginPanel />
+        <LocalDataCard signedIn={false} />
       </div>
     );
   }
@@ -540,7 +542,56 @@ export function ProfileScreen() {
           </p>
         ) : null}
       </section>
+
+      <LocalDataCard signedIn />
     </div>
+  );
+}
+
+/**
+ * Lokal data på enheten. Träning sparas i webbläsaren även utan konto; här
+ * städas den bort. Är man inloggad finns kopian i molnet, så knappen visas
+ * bara i det anonyma läget — annars skulle datan komma tillbaka vid nästa merge.
+ */
+function LocalDataCard({ signedIn }: { signedIn: boolean }) {
+  function handleClear() {
+    if (
+      !window.confirm(
+        "Radera all träningsdata som sparats lokalt i den här webbläsaren? Resultat, veckoplan, historik och flashcards försvinner permanent. Ett konto i molnet påverkas inte.",
+      )
+    ) {
+      return;
+    }
+    clearLocalData();
+    window.location.reload();
+  }
+
+  return (
+    <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
+      <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+        Lokal data på den här enheten
+      </h2>
+      <p className="mt-2 text-sm text-[var(--ink-muted)]">
+        Din träning sparas i webbläsarens lokala lagring — även utan konto. På en
+        delad dator ser nästa person det du lämnat kvar här.
+      </p>
+      {signedIn ? (
+        <p className="mt-4 text-sm text-[var(--ink-muted)]">
+          Du är inloggad, så din data finns också i ditt konto. <strong>Logga ut</strong>{" "}
+          ovan rensar den här enheten (osynkade ändringar sparas undan och läggs
+          tillbaka nästa gång du loggar in). Vill du radera allt permanent använder
+          du <strong>Ta bort konto</strong>.
+        </p>
+      ) : (
+        <button
+          type="button"
+          onClick={handleClear}
+          className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--destructive)]/40 px-5 text-sm font-medium text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
+        >
+          Rensa lokal data
+        </button>
+      )}
+    </section>
   );
 }
 

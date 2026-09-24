@@ -30,7 +30,7 @@ function greeting(): string {
 }
 
 export function DashboardHome() {
-  const { plan, ready, hasSavedScores } = usePlan();
+  const { plan, ready } = usePlan();
   const [progress, setProgress] = useState<ProgressMap>(loadWeekProgress);
   const mounted = useHydrated();
 
@@ -54,9 +54,10 @@ export function DashboardHome() {
     );
   }
 
-  const next = findNextIncomplete(plan.weeklyPlans, progress);
-  const summary = weekProgressSummary(plan.weeklyPlans, progress);
-  const { profile, focusIds } = plan;
+  const next = plan ? findNextIncomplete(plan.weeklyPlans, progress) : null;
+  const summary = plan ? weekProgressSummary(plan.weeklyPlans, progress) : null;
+  const profile = plan?.profile ?? null;
+  const focusIds = plan?.focusIds ?? [];
 
   return (
     <div className="space-y-8 sm:space-y-10">
@@ -65,22 +66,29 @@ export function DashboardHome() {
         <div className="flex flex-col gap-5">
           <div>
             <p className="text-xs font-extrabold tracking-[0.18em] text-[var(--brand)] uppercase">
-              {greeting()} · Dagens pass
+              {greeting()} · {plan ? "Dagens pass" : "Ditt HP-läge"}
             </p>
             <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
-              Vad du ska göra nu
+              {plan ? "Vad du ska göra nu" : "Kom igång med din HP-plan"}
             </h1>
-            <p className="mt-2 max-w-xl font-semibold text-[var(--ink-muted)]">
-              Snitt {formatNorm(profile.overall)} · {summary.done}/{summary.total} uppgifter klara (
-              {summary.percent} %).
-            </p>
+            {profile && summary ? (
+              <p className="mt-2 max-w-xl font-semibold text-[var(--ink-muted)]">
+                Snitt {formatNorm(profile.overall)} · {summary.done}/{summary.total} uppgifter klara (
+                {summary.percent} %).
+              </p>
+            ) : (
+              <p className="mt-2 max-w-xl font-semibold text-[var(--ink-muted)]">
+                Gör nivåtestet eller mata in dina senaste resultat — då byggs en personlig
+                veckoplan från din nivå.
+              </p>
+            )}
           </div>
           <XpBar />
         </div>
       </section>
 
       {/* ---- Onboarding för nya användare ------------------------------------ */}
-      {!hasSavedScores && (
+      {!plan && (
         <motion.section
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -119,60 +127,7 @@ export function DashboardHome() {
       <section className="grid items-stretch gap-6 lg:grid-cols-2">
         <DailyQuests />
 
-        <div className="relative flex flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft sm:p-6">
-          {next ? (
-            <>
-              <p className="flex items-center gap-2 text-xs font-extrabold tracking-[0.14em] text-[var(--brand)] uppercase">
-                Vecka {next.week}
-                <span className="flex items-center gap-1 rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-[11px] font-extrabold tracking-normal text-[var(--accent-foreground)]">
-                  <Timer className="size-3" />~{next.task.minutes} min
-                </span>
-              </p>
-              <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-                {next.task.title}
-              </h2>
-              <p className="mt-2 font-semibold text-[var(--ink-muted)]">{next.task.detail}</p>
-              <div className="mt-auto flex flex-wrap gap-3 pt-5">
-                <Link
-                  href={`/plan?week=${next.week}&start=${encodeURIComponent(next.task.id)}`}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] px-6 text-sm font-extrabold text-primary-foreground shadow-soft transition hover:scale-[1.03] hover:shadow-pop active:scale-95"
-                >
-                  Starta övning
-                  <ArrowRight className="size-4" />
-                </Link>
-                <Link
-                  href="/plan"
-                  className="inline-flex min-h-11 items-center rounded-full border border-[var(--line-strong)] bg-transparent px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
-                >
-                  Hela veckoplanen
-                </Link>
-              </div>
-            </>
-          ) : (
-            <>
-              <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-                Alla uppgifter är klara 🎉
-              </h2>
-              <p className="mt-2 font-semibold text-[var(--ink-muted)]">
-                Bra jobbat! Repetera med flashcards, kör ett mini-prov eller utmana någon i en duell.
-              </p>
-              <div className="mt-auto flex flex-wrap gap-3 pt-5">
-                <Link
-                  href="/ova"
-                  className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] px-6 text-sm font-extrabold text-primary-foreground shadow-soft transition hover:scale-[1.03] active:scale-95"
-                >
-                  Öva flashcards
-                </Link>
-                <Link
-                  href="/duell"
-                  className="inline-flex min-h-11 items-center rounded-full border border-[var(--line-strong)] px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
-                >
-                  Spela en duell ⚔️
-                </Link>
-              </div>
-            </>
-          )}
-        </div>
+        {plan ? <NextTaskCard next={next} /> : null}
       </section>
 
       {/* ---- Streak + statistik ---------------------------------------------- */}
@@ -180,27 +135,29 @@ export function DashboardHome() {
         <div className="lg:w-72">
           <StreakCard />
         </div>
-        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
-            <p className="text-sm font-bold text-[var(--ink-muted)]">Kvant / verbal</p>
-            <p className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
-              {formatNorm(profile.previousQuant)} · {formatNorm(profile.previousVerbal)}
-            </p>
-          </div>
-          <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
-            <p className="text-sm font-bold text-[var(--ink-muted)]">Fokus just nu</p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {focusIds.slice(0, 3).map((id) => (
-                <span
-                  key={id}
-                  className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-bold text-[var(--accent-foreground)]"
-                >
-                  {id}
-                </span>
-              ))}
+        {plan && profile ? (
+          <div className="grid gap-5 sm:gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
+              <p className="text-sm font-bold text-[var(--ink-muted)]">Kvant / verbal</p>
+              <p className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                {formatNorm(profile.previousQuant)} · {formatNorm(profile.previousVerbal)}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
+              <p className="text-sm font-bold text-[var(--ink-muted)]">Fokus just nu</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {focusIds.slice(0, 3).map((id) => (
+                  <span
+                    key={id}
+                    className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-sm font-bold text-[var(--accent-foreground)]"
+                  >
+                    {id}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
       </section>
 
       <DailySrsReview />
@@ -208,6 +165,67 @@ export function DashboardHome() {
       <AchievementsPanel />
 
       <ProgressPanel compact />
+    </div>
+  );
+}
+
+
+/** Dagens pass-kortet. `next === null` betyder att alla uppgifter är klara. */
+function NextTaskCard({ next }: { next: ReturnType<typeof findNextIncomplete> }) {
+  return (
+    <div className="relative flex flex-col overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft sm:p-6">
+      {next ? (
+        <>
+          <p className="flex items-center gap-2 text-xs font-extrabold tracking-[0.14em] text-[var(--brand)] uppercase">
+            Vecka {next.week}
+            <span className="flex items-center gap-1 rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-[11px] font-extrabold tracking-normal text-[var(--accent-foreground)]">
+              <Timer className="size-3" />~{next.task.minutes} min
+            </span>
+          </p>
+          <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+            {next.task.title}
+          </h2>
+          <p className="mt-2 font-semibold text-[var(--ink-muted)]">{next.task.detail}</p>
+          <div className="mt-auto flex flex-wrap gap-3 pt-5">
+            <Link
+              href={`/plan?week=${next.week}&start=${encodeURIComponent(next.task.id)}`}
+              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] px-6 text-sm font-extrabold text-primary-foreground shadow-soft transition hover:scale-[1.03] hover:shadow-pop active:scale-95"
+            >
+              Starta övning
+              <ArrowRight className="size-4" />
+            </Link>
+            <Link
+              href="/plan"
+              className="inline-flex min-h-11 items-center rounded-full border border-[var(--line-strong)] bg-transparent px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
+            >
+              Hela veckoplanen
+            </Link>
+          </div>
+        </>
+      ) : (
+        <>
+          <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+            Alla uppgifter är klara 🎉
+          </h2>
+          <p className="mt-2 font-semibold text-[var(--ink-muted)]">
+            Bra jobbat! Repetera med flashcards, kör ett mini-prov eller utmana någon i en duell.
+          </p>
+          <div className="mt-auto flex flex-wrap gap-3 pt-5">
+            <Link
+              href="/ova"
+              className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] px-6 text-sm font-extrabold text-primary-foreground shadow-soft transition hover:scale-[1.03] active:scale-95"
+            >
+              Öva flashcards
+            </Link>
+            <Link
+              href="/duell"
+              className="inline-flex min-h-11 items-center rounded-full border border-[var(--line-strong)] px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
+            >
+              Spela en duell ⚔️
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -7,8 +7,8 @@ import type { StudyTimeVerdict } from "@/lib/study-time-recommendation";
 import { sectionShort } from "@/lib/subtests";
 
 export function StudyTimeNotice() {
-  const { scores, ready, hasSavedScores } = usePlan();
-  if (!ready || !hasSavedScores) return null;
+  const { scores, ready } = usePlan();
+  if (!ready || !scores) return null;
   const verdict = recommendStudyTime(scores);
   return <NoticeBody verdict={verdict} />;
 }
