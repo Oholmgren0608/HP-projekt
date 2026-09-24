@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
-import { AuthForms } from "@/components/auth/auth-forms";
+import { LoginPanel } from "@/components/auth/login-panel";
 import {
   listAll,
   saveQuestion,
@@ -88,7 +88,7 @@ function kindLabel(kind: string): string {
 // ---- Huvudskärm ------------------------------------------------------------
 
 export function ReviewScreen() {
-  const { user, loading: authLoading, signInWithGoogle } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const [groups, setGroups] = useState<ReviewExamGroup[] | null>(null);
   const [loadError, setLoadError] = useState<ReviewError | null>(null);
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
@@ -229,19 +229,9 @@ export function ReviewScreen() {
         <p className="mt-4 text-[var(--ink-muted)]">
           Du måste logga in för att granska utkast.
         </p>
-        <button
-          type="button"
-          onClick={() => void signInWithGoogle()}
-          className="mt-6 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
-        >
-          Logga in med Google
-        </button>
-        <div className="my-4 flex items-center gap-3 text-xs text-[var(--ink-muted)]">
-          <span className="h-px flex-1 bg-[var(--line)]" />
-          eller
-          <span className="h-px flex-1 bg-[var(--line)]" />
+        <div className="mt-6">
+          <LoginPanel />
         </div>
-        <AuthForms />
       </div>
     );
   }

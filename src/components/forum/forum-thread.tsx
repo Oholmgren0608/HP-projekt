@@ -19,6 +19,7 @@ import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuestionFigure } from "@/components/question-figure";
 import { useAuth } from "@/lib/supabase/auth-context";
+import { LoginPanel } from "@/components/auth/login-panel";
 import {
   createPost,
   deletePost,
@@ -78,7 +79,7 @@ async function readThread(questionId: string): Promise<{
 
 /** Trådsidan: frågan, diskussionen och alla svar. */
 export function ForumThreadScreen({ questionId }: { questionId: string }) {
-  const { user, signInWithGoogle } = useAuth();
+  const { user } = useAuth();
   const [question, setQuestion] = useState<ChoiceQuestion | null>(null);
   const [thread, setThread] = useState<ForumThreadMeta | null>(null);
   const [posts, setPosts] = useState<ForumPost[]>([]);
@@ -354,17 +355,11 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
             {error ? <p className="mt-2 text-sm text-[var(--destructive)]">{error}</p> : null}
           </div>
         ) : (
-          <div className="space-y-3 rounded-2xl border border-[var(--line)] bg-card p-5">
-            <p className="text-sm text-[var(--ink-muted)]">
-              Logga in för att ställa frågor, svara och rösta på hjälpsamma förklaringar.
-            </p>
-            <button
-              type="button"
-              onClick={() => void signInWithGoogle()}
-              className="inline-flex min-h-10 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
-            >
-              Logga in med Google
-            </button>
+          <div className="rounded-2xl border border-[var(--line)] bg-card p-5">
+            <LoginPanel
+              compact
+              note="Logga in eller skapa konto med e-post för att ställa frågor, svara och rösta på hjälpsamma förklaringar."
+            />
           </div>
         )}
       </section>

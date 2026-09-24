@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { getSupabase } from "@/lib/supabase/client";
-import { AuthForms } from "@/components/auth/auth-forms";
+import { LoginPanel } from "@/components/auth/login-panel";
 import {
   duelModeLabel,
   type DuelMatch,
@@ -29,7 +29,7 @@ type View =
   | { kind: "private"; code: string; matchId: string };
 
 export function DuelHub({ initialCode }: { initialCode: string }) {
-  const { user, loading: authLoading, signInWithGoogle } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const router = useRouter();
 
   const [view, setView] = useState<View>({ kind: "hub" });
@@ -147,22 +147,10 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
           Duellera i realtid
         </p>
         <p className="text-[var(--ink-muted)]">
-          Logga in med Google för att tävla mot andra, klättra i ranking och spara
-          din matchhistorik.
+          Logga in för att tävla mot andra, klättra i ranking och spara din
+          matchhistorik.
         </p>
-        <button
-          type="button"
-          onClick={() => void signInWithGoogle()}
-          className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
-        >
-          Logga in med Google
-        </button>
-        <div className="flex items-center gap-3 text-xs text-[var(--ink-muted)]">
-          <span className="h-px flex-1 bg-[var(--line)]" />
-          eller
-          <span className="h-px flex-1 bg-[var(--line)]" />
-        </div>
-        <AuthForms />
+        <LoginPanel />
       </div>
     );
   }

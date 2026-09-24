@@ -8,14 +8,29 @@ type Mode = "signin" | "signup" | "reset";
 
 /** Mappar vanliga Supabase-felmeddelanden till vänlig svensk text. */
 function friendlyAuthError(message: string): string {
-  if (message === "Invalid login credentials") return "Fel e-post eller lösenord.";
-  if (message === "User already registered") {
+  const m = message.toLowerCase();
+  if (m.includes("invalid login credentials")) return "Fel e-post eller lösenord.";
+  if (m.includes("email not confirmed")) {
+    return "Din e-post är inte bekräftad än. Öppna bekräftelsemejlet (kolla skräpposten) eller skicka ett nytt nedan.";
+  }
+  if (m.includes("user already registered")) {
     return "Det finns redan ett konto med denna e-post. Logga in i stället.";
   }
-  if (message.startsWith("Password should be at least")) {
+  if (m.includes("password should be at least")) {
     return "Lösenordet måste vara minst 8 tecken.";
   }
+  if (m.includes("email address") && m.includes("invalid")) {
+    return "Den e-postadressen ser inte ut att finnas. Kontrollera stavningen.";
+  }
+  if (m.includes("rate limit") || m.includes("too many")) {
+    return "För många mejl eller försök just nu. Vänta en liten stund och försök igen.";
+  }
   return message;
+}
+
+/** Sant när felet betyder "kontot finns men e-posten är inte bekräftad". */
+function isUnconfirmed(message: string): boolean {
+  return message.toLowerCase().includes("email not confirmed");
 }
 
 /**
@@ -25,7 +40,7 @@ function friendlyAuthError(message: string): string {
  * oberoende av omgivande layout.
  */
 export function AuthForms({ compact = false }: { compact?: boolean }) {
-  const { signInWithEmail, signUpWithEmail, sendPasswordReset } = useAuth();
+  const { signInWithEmail, signUpWithEmail, sendPasswordReset, resendConfirmation } = useAuth();
   const uid = useId();
   const [mode, setMode] = useState<Mode>("signin");
   const [email, setEmail] = useState("");
@@ -35,14 +50,38 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
   const [submitting, setSubmitting] = useState(false);
   // E-postadress att visa i framgångspanelen (bekräftelse / återställning).
   const [success, setSuccess] = useState<string | null>(null);
+  // Kontot finns men e-posten är obekräftad - erbjud ett nytt mejl.
+  const [needsResend, setNeedsResend] = useState(false);
+  const [resending, setResending] = useState(false);
+  const [resentTo, setResentTo] = useState<string | null>(null);
 
   function switchMode(next: Mode) {
     setMode(next);
     setError(null);
     setSuccess(null);
+    setNeedsResend(false);
+    setResentTo(null);
     setSubmitting(false);
     setPassword("");
     setConfirm("");
+  }
+
+  async function handleResend() {
+    const adress = email.trim();
+    if (!adress.includes("@")) {
+      setError("Ange en giltig e-postadress.");
+      return;
+    }
+    setResending(true);
+    setError(null);
+    const { error: fel } = await resendConfirmation(adress);
+    setResending(false);
+    if (fel) {
+      setError(friendlyAuthError(fel));
+      return;
+    }
+    setNeedsResend(false);
+    setResentTo(adress);
   }
 
   async function handleSignIn(e: FormEvent) {
@@ -60,6 +99,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
     const { error } = await signInWithEmail(email.trim(), password);
     if (error) {
       setError(friendlyAuthError(error));
+      setNeedsResend(isUnconfirmed(error));
       setSubmitting(false);
     }
     // Vid lyckad inloggning laddas sidan om via onAuthChanged — gör inget här.
@@ -147,6 +187,20 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
             ? `Vi har skickat en återställningslänk till ${success}. Klicka på länken i mejlet för att välja ett nytt lösenord.`
             : `Vi har skickat en bekräftelselänk till ${success}. Klicka på länken i mejlet för att aktivera ditt konto.`}
         </p>
+        {resentTo ? (
+          <p className="text-sm text-[var(--success-ink)]" aria-live="polite">
+            Nytt mejl skickat till {resentTo}. Kolla även skräpposten.
+          </p>
+        ) : (
+          <button
+            type="button"
+            disabled={resending}
+            onClick={() => void handleResend()}
+            className="text-sm font-medium text-[var(--brand)] transition hover:underline disabled:opacity-50"
+          >
+            {resending ? "Skickar…" : "Har du inte fått något mejl? Skicka igen"}
+          </button>
+        )}
         <button
           type="button"
           onClick={() => switchMode("signin")}
@@ -203,6 +257,23 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
             <p className="text-xs text-[var(--destructive)]" aria-live="polite">
               {error}
             </p>
+          ) : null}
+          {needsResend || resentTo ? (
+            <div className="space-y-1.5">
+              {resentTo ? (
+                <p className="text-xs text-[var(--success-ink)]" aria-live="polite">
+                  Nytt bekräftelsemejl skickat till {resentTo}.
+                </p>
+              ) : null}
+              <button
+                type="button"
+                disabled={resending}
+                onClick={() => void handleResend()}
+                className="text-xs font-semibold text-[var(--brand)] transition hover:underline disabled:opacity-50"
+              >
+                {resending ? "Skickar…" : "Skicka nytt bekräftelsemejl"}
+              </button>
+            </div>
           ) : null}
           <button type="submit" disabled={submitting} className={submitClass}>
             {submitting ? "Loggar in…" : "Logga in"}

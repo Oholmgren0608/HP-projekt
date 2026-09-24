@@ -3,7 +3,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { getSupabase } from "@/lib/supabase/client";
-import { AuthForms } from "@/components/auth/auth-forms";
+import { LoginPanel } from "@/components/auth/login-panel";
 import { getMatchHistory, getMyProfile } from "@/lib/duel/profile";
 import type { DuelMatch, DuelProfile } from "@/lib/duel/types";
 import { deleteAccount } from "./actions";
@@ -308,7 +308,7 @@ function UsernameEditor() {
 // ---------------------------------------------------------------------------
 
 export function ProfileScreen() {
-  const { user, username, loading: authLoading, signInWithGoogle, signOut } = useAuth();
+  const { user, username, loading: authLoading, signOut } = useAuth();
   const [profile, setProfile] = useState<DuelProfile | null>(null);
   const [history, setHistory] = useState<DuelMatch[]>([]);
   const [opponentNames, setOpponentNames] = useState<Record<string, string>>({});
@@ -373,19 +373,7 @@ export function ProfileScreen() {
           Logga in för att se din profil, din träningsstatistik och dina
           duellresultat.
         </p>
-        <button
-          type="button"
-          onClick={() => void signInWithGoogle()}
-          className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
-        >
-          Logga in med Google
-        </button>
-        <div className="flex items-center gap-3 text-xs text-[var(--ink-muted)]">
-          <span className="h-px flex-1 bg-[var(--line)]" />
-          eller
-          <span className="h-px flex-1 bg-[var(--line)]" />
-        </div>
-        <AuthForms />
+        <LoginPanel />
       </div>
     );
   }
