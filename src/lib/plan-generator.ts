@@ -209,10 +209,57 @@ function allocateTime(ranked: Ranked[]): TimeSplitItem[] {
   return items;
 }
 
+/** Minuter per uppgift: kortare än så är inte ett meningsfullt pass, längre är orealistiskt. */
+const MIN_TASK_MINUTES = 20;
+const MAX_TASK_MINUTES = 180;
+/** Andel av den angivna veckotiden planen lägger upp — resten är repetition och oförutsett. */
+const WEEKLY_LOAD_FACTOR = 0.8;
+
+function clampTaskMinutes(minutes: number): number {
+  return Math.min(MAX_TASK_MINUTES, Math.max(MIN_TASK_MINUTES, Math.round(minutes / 5) * 5));
+}
+
+/**
+ * Fördelar veckans tillgängliga tid (hoursPerWeek × 60 × WEEKLY_LOAD_FACTOR) på
+ * veckans uppgifter, proportionellt mot mallens minuter så att tyngdpunkten
+ * mellan uppgifterna behålls. Klampat per uppgift, och överskott från en
+ * klampad uppgift flyttas över till de som har utrymme kvar.
+ */
+function scaleTasksToWeeklyBudget(tasks: StudyTask[], hoursPerWeek: number): StudyTask[] {
+  const totalWeight = tasks.reduce((sum, t) => sum + t.minutes, 0);
+  if (totalWeight <= 0) return tasks;
+
+  const budget = Math.max(
+    tasks.length * MIN_TASK_MINUTES,
+    Math.round((hoursPerWeek * 60 * WEEKLY_LOAD_FACTOR) / 5) * 5,
+  );
+
+  const scaled = tasks.map((task) => ({
+    ...task,
+    minutes: clampTaskMinutes((task.minutes / totalWeight) * budget),
+  }));
+
+  let leftover = budget - scaled.reduce((sum, t) => sum + t.minutes, 0);
+  for (let pass = 0; pass < 4 && leftover >= scaled.length * 5; pass += 1) {
+    const room = scaled.filter((t) => t.minutes < MAX_TASK_MINUTES);
+    if (room.length === 0) break;
+    const step = Math.floor(leftover / room.length / 5) * 5;
+    if (step <= 0) break;
+    for (const task of room) {
+      const add = Math.min(step, MAX_TASK_MINUTES - task.minutes);
+      task.minutes += add;
+      leftover -= add;
+    }
+  }
+
+  return scaled;
+}
+
 function buildWeeklyPlans(
   focus: SectionId[],
   weeks: number,
   weakestQuant: SectionId = "DTK",
+  hoursPerWeek = 10,
 ): WeekPlan[] {
   const primary = focus[0] ?? "MEK";
   const secondary = focus[1] ?? "ORD";
@@ -264,7 +311,7 @@ function buildWeeklyPlans(
     },
   ];
 
-  const n = Math.min(Math.max(weeks, 4), 16);
+  const n = Math.min(Math.max(weeks, 1), 16);
   const plans: WeekPlan[] = [];
 
   // Kroppen (Bas/Teknik) cyklas, men de två sista veckorna är alltid "Fullprov"
@@ -498,7 +545,7 @@ function buildWeeklyPlans(
       phase: meta.phase,
       theme: meta.theme,
       focus: meta.focus,
-      tasks,
+      tasks: scaleTasksToWeeklyBudget(tasks, hoursPerWeek),
     });
   }
 
@@ -533,9 +580,10 @@ export function generatePlan(
 ): GeneratedPlan {
   // Veckorna normaliseras en gång här, så att planens längd och profilen alltid
   // visar samma sak. Förr kunde profilen säga 20 veckor medan planen hade 16,
-  // och ett icke-numeriskt värde gav en tom plan.
+  // och ett icke-numeriskt värde gav en tom plan. Korta horisonter (1-3 veckor)
+  // är tillåtna: då blir sista veckan alltid nedtrappningen.
   const weeks = Number.isFinite(scores.weeksUntilExam)
-    ? Math.min(Math.max(Math.round(scores.weeksUntilExam), 4), 16)
+    ? Math.min(Math.max(Math.round(scores.weeksUntilExam), 1), 16)
     : 8;
 
   const ranked: Ranked[] = DELPROV_META.map((m) => {
@@ -637,6 +685,7 @@ export function generatePlan(
     hpFocusIds,
     weeks,
     hpWeakestQuant.id,
+    scores.hoursPerWeek,
   );
 
   const trends =
@@ -715,7 +764,7 @@ export function generatePlan(
   const built =
     !focusChanged && weakestQuant.id === hpWeakestQuant.id
       ? hpWeekly
-      : buildWeeklyPlans(focusIds, weeks, weakestQuant.id);
+      : buildWeeklyPlans(focusIds, weeks, weakestQuant.id, scores.hoursPerWeek);
 
   const started = new Set(options.startedWeeks ?? []);
   const weeklyPlans = built.map((w) => {

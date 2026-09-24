@@ -224,7 +224,7 @@ export function ScoreForm() {
           <span className="text-sm font-medium text-[var(--ink)]">Veckor till prov</span>
           <input
             type="number"
-            min={4}
+            min={1}
             max={16}
             value={draft.weeksUntilExam}
             aria-invalid={missing.has("weeksUntilExam")}

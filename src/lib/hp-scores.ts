@@ -65,7 +65,8 @@ export function clampWeeksUntilExam(value: unknown): number {
   if (value === null || value === undefined) return DEFAULT_SCORES.weeksUntilExam;
   const n = Number(value);
   if (!Number.isFinite(n)) return DEFAULT_SCORES.weeksUntilExam;
-  return Math.round(Math.max(4, Math.min(16, n)));
+  // 1-3 veckor är giltiga: planen lägger då nedtrappningen på sista veckan.
+  return Math.round(Math.max(1, Math.min(16, n)));
 }
 
 /**

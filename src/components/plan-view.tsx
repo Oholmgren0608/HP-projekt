@@ -56,6 +56,16 @@ export function PlanView() {
 
   const { profile, sections, strategy, dailyTemplate } = plan;
 
+  // Planen lägger upp ca 80 % av den angivna veckotiden (resten är repetition
+  // och oförutsett) — visa summan så att den inte behöver gissas.
+  const plannedMinutes = plan.weeklyPlans.reduce(
+    (sum, week) => sum + week.tasks.reduce((weekSum, task) => weekSum + task.minutes, 0),
+    0,
+  );
+  const plannedHoursPerWeek = plan.weeklyPlans.length
+    ? (plannedMinutes / plan.weeklyPlans.length / 60).toFixed(1).replace(".", ",")
+    : "0";
+
   return (
     <div className="space-y-10">
       {!sessionOpen ? (
@@ -67,7 +77,8 @@ export function PlanView() {
             Veckoplan
           </h1>
           <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-            Byggs om från dina resultat · progress sparas lokalt.
+            Byggs om från dina resultat · ca {plannedHoursPerWeek} h planerad träning per vecka ·
+            progress sparas lokalt.
           </p>
           <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line-strong)] bg-card/70 px-4 py-3">
             <input
