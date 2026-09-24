@@ -154,8 +154,15 @@ type NavLeaf = { href: string; label: string; icon: LucideIcon };
 type NavGroup = { label: string; icon: LucideIcon; children: readonly NavLeaf[] };
 
 const NAV: readonly (NavLeaf | NavGroup)[] = [
-  { href: "/nivatest", label: "Nivåtest", icon: Gauge },
-  { href: "/plan", label: "Plan", icon: CalendarDays },
+  {
+    label: "Plan",
+    icon: CalendarDays,
+    children: [
+      { href: "/plan", label: "Veckoplan", icon: CalendarDays },
+      { href: "/nivatest", label: "Nivåtest", icon: Gauge },
+      { href: "/resultat", label: "Poäng", icon: BarChart3 },
+    ],
+  },
   {
     label: "Öva",
     icon: BookOpen,
@@ -168,7 +175,6 @@ const NAV: readonly (NavLeaf | NavGroup)[] = [
     ],
   },
   { href: "/forum", label: "Forum", icon: MessagesSquare },
-  { href: "/resultat", label: "Poäng", icon: BarChart3 },
   { href: "/tips", label: "Tips", icon: Lightbulb },
 ];
 
@@ -232,7 +238,7 @@ function NavMenu({
       aria-label={item.label}
       className={cn(
         NAV_PANEL,
-        desktop ? "right-0 top-full mt-2" : "bottom-full left-1/2 mb-2 -translate-x-1/2",
+        desktop ? "right-0 top-full mt-2" : "bottom-full left-0 right-0 mx-auto mb-2",
       )}
     >
       {item.children.map((child) => {
@@ -287,7 +293,7 @@ function NavMenu({
 
   return (
     <li>
-      <div className="relative" ref={containerRef}>
+      <div ref={containerRef}>
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
@@ -350,7 +356,6 @@ export function AppShell({ children }: { children: ReactNode }) {
                 );
               }
               const active = isActive(pathname, item.href);
-              const hideOnMd = item.href === "/tips";
               return (
                 <Link
                   key={item.href}
@@ -358,7 +363,6 @@ export function AppShell({ children }: { children: ReactNode }) {
                   className={cn(
                     "relative rounded-full px-3 py-2 text-sm font-bold transition active:scale-95 lg:px-3.5",
                     active ? "text-[var(--ink)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
-                    hideOnMd && "hidden lg:inline",
                   )}
                 >
                   {active && (
@@ -423,7 +427,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
         aria-label="Huvudmeny"
       >
-        <ul className="mx-auto grid max-w-md grid-cols-6 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 sm:p-2 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
+        <ul className="mx-auto grid max-w-md grid-cols-4 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 sm:p-2 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
           {NAV.map((item) => {
             if ("children" in item) {
               return (
