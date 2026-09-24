@@ -2,6 +2,7 @@
 
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import { QuestionFigure } from "@/components/question-figure";
+import { DiscussQuestionButton } from "@/components/forum/discuss-button";
 
 export function QuestionReviewList({
   questions,
@@ -100,6 +101,13 @@ function QuestionReviewItem({
         <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink-soft)]">
           {q.explain}
         </p>
+      </div>
+
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <DiscussQuestionButton questionId={q.id} />
+        <span className="text-xs text-[var(--ink-muted)]">
+          Fråga andra om uppgiften – svaren sparas i forumet så att fler kan läsa dem.
+        </span>
       </div>
     </li>
   );

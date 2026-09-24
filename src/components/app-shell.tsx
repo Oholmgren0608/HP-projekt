@@ -14,6 +14,7 @@ import {
   Gauge,
   Lightbulb,
   LogOut,
+  MessagesSquare,
   Moon,
   Sun,
   Swords,
@@ -190,6 +191,7 @@ const NAV = [
   { href: "/ova", label: "Öva", icon: BookOpen },
   { href: "/prov", label: "Prov", icon: FileText },
   { href: "/duell", label: "Duell", icon: Swords },
+  { href: "/forum", label: "Forum", icon: MessagesSquare },
   { href: "/resultat", label: "Poäng", icon: BarChart3 },
   { href: "/tips", label: "Tips", icon: Lightbulb },
 ] as const;
@@ -236,7 +238,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "relative rounded-full px-3.5 py-2 text-sm font-bold transition active:scale-95",
+                    "relative rounded-full px-3 py-2 text-sm font-bold transition active:scale-95 lg:px-3.5",
                     active ? "text-[var(--ink)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
                     hideOnMd && "hidden lg:inline",
                   )}
@@ -303,7 +305,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom))" }}
         aria-label="Huvudmeny"
       >
-        <ul className="mx-auto grid max-w-md grid-cols-7 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 sm:p-2 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
+        <ul className="mx-auto grid max-w-md grid-cols-8 rounded-2xl border border-[var(--line)]/80 bg-[color-mix(in_oklab,var(--paper)_88%,white)]/95 p-1.5 sm:p-2 shadow-card backdrop-blur-md dark:bg-[color-mix(in_oklab,var(--paper)_88%,black)]/95">
           {NAV.map((item) => {
             const Icon = item.icon;
             const active = isActive(pathname, item.href);

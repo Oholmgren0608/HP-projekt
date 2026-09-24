@@ -331,6 +331,143 @@ export type Database = {
         };
         Relationships: [];
       };
+      forum_threads: {
+        Row: {
+          id: string;
+          question_id: string;
+          kind: string;
+          title: string;
+          created_by: string | null;
+          created_at: string;
+          last_activity_at: string;
+          post_count: number;
+        };
+        Insert: {
+          id?: string;
+          question_id: string;
+          kind: string;
+          title: string;
+          created_by?: string | null;
+          created_at?: string;
+          last_activity_at?: string;
+          post_count?: number;
+        };
+        Update: {
+          last_activity_at?: string;
+          post_count?: number;
+        };
+        Relationships: [];
+      };
+      forum_posts: {
+        Row: {
+          id: string;
+          thread_id: string;
+          parent_id: string | null;
+          author_id: string;
+          body: string;
+          created_at: string;
+          is_best: boolean;
+          is_deleted: boolean;
+          deleted_by: string | null;
+          up_votes: number;
+          down_votes: number;
+        };
+        Insert: {
+          id?: string;
+          thread_id: string;
+          parent_id?: string | null;
+          author_id: string;
+          body: string;
+          created_at?: string;
+          is_best?: boolean;
+          is_deleted?: boolean;
+        };
+        Update: {
+          body?: string;
+          is_best?: boolean;
+          is_deleted?: boolean;
+        };
+        Relationships: [];
+      };
+      forum_votes: {
+        Row: {
+          post_id: string;
+          user_id: string;
+          value: number;
+          created_at: string;
+        };
+        Insert: {
+          post_id: string;
+          user_id: string;
+          value: number;
+          created_at?: string;
+        };
+        Update: {
+          value?: number;
+        };
+        Relationships: [];
+      };
+      forum_reports: {
+        Row: {
+          id: string;
+          post_id: string;
+          reporter_id: string;
+          reason: string;
+          status: "open" | "handled" | "dismissed";
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          post_id: string;
+          reporter_id: string;
+          reason: string;
+          status?: "open" | "handled" | "dismissed";
+          created_at?: string;
+        };
+        Update: {
+          reason?: string;
+          status?: "open" | "handled" | "dismissed";
+        };
+        Relationships: [];
+      };
+      forum_moderators: {
+        Row: {
+          user_id: string;
+          added_at: string;
+        };
+        Insert: {
+          user_id: string;
+          added_at?: string;
+        };
+        Update: never;
+        Relationships: [];
+      };
+      forum_reputation: {
+        Row: {
+          user_id: string;
+          points: number;
+          upvotes_received: number;
+          downvotes_received: number;
+          best_answers: number;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          points?: number;
+          upvotes_received?: number;
+          downvotes_received?: number;
+          best_answers?: number;
+          updated_at?: string;
+        };
+        Update: {
+          points?: number;
+          upvotes_received?: number;
+          downvotes_received?: number;
+          best_answers?: number;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       duel_public_profiles: {
@@ -446,6 +583,114 @@ export type Database = {
       };
       leaderboard_set_name: {
         Args: { p_display_name: string };
+        Returns: null;
+      };
+      forum_thread_list: {
+        Args: {
+          p_sort?: string;
+          p_kind?: string | null;
+          p_search?: string | null;
+          p_limit?: number;
+          p_offset?: number;
+        };
+        Returns: {
+          id: string;
+          question_id: string;
+          kind: string;
+          title: string;
+          created_at: string;
+          last_activity_at: string;
+          post_count: number;
+          score: number;
+          solved: boolean;
+          author_name: string;
+          preview: string;
+        }[];
+      };
+      forum_thread_by_question: {
+        Args: { p_question_id: string };
+        Returns: {
+          id: string;
+          question_id: string;
+          kind: string;
+          title: string;
+          created_by: string | null;
+          created_at: string;
+          last_activity_at: string;
+          post_count: number;
+          best_post_id: string | null;
+          is_moderator: boolean;
+        }[];
+      };
+      forum_thread_posts: {
+        Args: { p_thread_id: string };
+        Returns: {
+          id: string;
+          parent_id: string | null;
+          author_id: string;
+          author_name: string;
+          body: string;
+          created_at: string;
+          up_votes: number;
+          down_votes: number;
+          is_best: boolean;
+          is_deleted: boolean;
+          my_vote: number | null;
+          is_mine: boolean;
+          is_op: boolean;
+        }[];
+      };
+      forum_post_to_question: {
+        Args: { p_question_id: string; p_kind: string; p_title: string; p_body: string };
+        Returns: string;
+      };
+      forum_create_post: {
+        Args: { p_thread_id: string; p_parent_id: string | null; p_body: string };
+        Returns: string;
+      };
+      forum_vote: {
+        Args: { p_post_id: string; p_value: number };
+        Returns: null;
+      };
+      forum_mark_best: {
+        Args: { p_post_id: string; p_best?: boolean };
+        Returns: null;
+      };
+      forum_report: {
+        Args: { p_post_id: string; p_reason: string };
+        Returns: null;
+      };
+      forum_moderate_delete: {
+        Args: { p_post_id: string };
+        Returns: null;
+      };
+      forum_reputation_top: {
+        Args: { p_limit?: number };
+        Returns: {
+          user_id: string;
+          display_name: string;
+          points: number;
+          upvotes_received: number;
+          best_answers: number;
+        }[];
+      };
+      forum_moderator_reports: {
+        Args: { p_limit?: number };
+        Returns: {
+          report_id: string;
+          post_id: string;
+          thread_id: string;
+          question_id: string;
+          reason: string;
+          status: string;
+          created_at: string;
+          author_name: string;
+          reporter_name: string;
+          body: string;
+        }[];
+      };
+      forum_resolve_report: {
+        Args: { p_report_id: string; p_status?: string };
         Returns: null;
       };
     };
