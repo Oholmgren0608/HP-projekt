@@ -14,7 +14,7 @@ import {
   type PracticeKind,
 } from "@/lib/practice";
 import { PaceNotice } from "@/components/pace-notice";
-import { paceVerdict } from "@/lib/practice-pace";
+import { paceVerdict, requiredPracticeMinutes } from "@/lib/practice-pace";
 import { formatClock } from "@/lib/practice-timer";
 import { recordQuizOutcome } from "@/lib/quiz-outcome";
 import { usePausablePracticeTimer } from "@/lib/use-pausable-practice-timer";
@@ -46,10 +46,13 @@ export function PracticeSession({
   onNextTask,
 }: Props) {
   const isReflect = task.practiceKinds.length === 1 && task.practiceKinds[0] === "reflect";
-  const requiredMinutes = task.minutes;
+  const requiredMinutes = requiredPracticeMinutes(task);
 
   const timer = usePausablePracticeTimer(week, task.id, requiredMinutes);
   const seed = `w${week}:${task.id}:${timer.attemptId}`;
+  // Timern summerar alla omgångar av uppgiften (kravet gäller summan), men
+  // tempot ska mätas på den här omgången. Varje omgång monteras på nytt.
+  const attemptStartSecondsRef = useRef(timer.elapsedSeconds);
 
   const kindsKey = task.practiceKinds.join(",");
   const questionCount = task.questionCount ?? 8;
@@ -76,7 +79,7 @@ export function PracticeSession({
   function logQuizOnce(locked: Record<string, number>, quiz: ChoiceQuestion[]) {
     if (isReflect || loggedRef.current || quiz.length === 0) return;
     loggedRef.current = true;
-    const durationMs = timer.elapsedSeconds * 1000;
+    const durationMs = (timer.elapsedSeconds - attemptStartSecondsRef.current) * 1000;
     setLoggedDurationMs(durationMs);
     recordQuizOutcome({
       source: "week",
@@ -170,7 +173,7 @@ export function PracticeSession({
         </button>
       </div>
 
-      <TimeRequirementBanner timer={timer} />
+      <TimeRequirementBanner timer={timer} plannedMinutes={task.minutes} />
 
       {phase === "quiz" && !questionsReady ? (
         <div className="mt-5 flex items-center justify-center gap-2 py-10 text-sm text-[var(--ink-muted)]">
@@ -308,8 +311,10 @@ export function PracticeSession({
 
 function TimeRequirementBanner({
   timer,
+  plannedMinutes,
 }: {
   timer: ReturnType<typeof usePausablePracticeTimer>;
+  plannedMinutes: number;
 }) {
   return (
     <div className="mt-4 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3">
@@ -338,6 +343,12 @@ function TimeRequirementBanner({
           Aktiv tid: {formatClock(timer.elapsedSeconds)}
         </p>
       </div>
+      {plannedMinutes > timer.requiredMinutes ? (
+        <p className="mt-1 text-xs text-[var(--ink-muted)]">
+          Passet är planerat till ~{plannedMinutes} min. Har du tid kvar: kör en ny omgång eller
+          ett gammalt provpass under Prov.
+        </p>
+      ) : null}
       <p className="mt-1 text-xs text-[var(--ink-muted)]">
         Timern pausas när du stänger övningen eller byter flik — den fortsätter där du slutade.
       </p>

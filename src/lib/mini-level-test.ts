@@ -1,6 +1,8 @@
 import {
   DELPROV_META,
   clampDelprov,
+  clampHoursPerWeek,
+  clampWeeksUntilExam,
   type ScoreInput,
 } from "@/lib/hp-scores";
 import { storageSet } from "@/lib/sync/storage-sync";
@@ -196,8 +198,10 @@ export function miniTestToScoreInput(
   const input: ScoreInput = {
     quantNorm,
     verbalNorm,
-    hoursPerWeek: Math.max(3, Math.min(40, Math.round(opts.hoursPerWeek) || 10)),
-    weeksUntilExam: Math.max(4, Math.min(16, Math.round(opts.weeksUntilExam) || 8)),
+    // Samma gränser som resultatformuläret och planen (1–3 veckor är giltiga);
+    // ett tomt fält (0) ger standardvärdet.
+    hoursPerWeek: clampHoursPerWeek(opts.hoursPerWeek || undefined),
+    weeksUntilExam: clampWeeksUntilExam(opts.weeksUntilExam || undefined),
     delprov,
   };
 

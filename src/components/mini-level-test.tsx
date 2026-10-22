@@ -28,6 +28,7 @@ import {
   saveNivatestTimerEnabled,
 } from "@/lib/nivatest-timer";
 import { formatCountdown } from "@/lib/countdown";
+import { sectionShort } from "@/lib/subtests";
 import { useQuizCountdown } from "@/lib/use-quiz-countdown";
 import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
@@ -71,8 +72,11 @@ export function MiniLevelTest() {
   const [timedOut, setTimedOut] = useState(false);
 
   // Förifyll tid/veckor från ev. sparad plan när den hydrerats. Justering under
-  // render (spårar föregående värde) undviker setState i en effekt.
-  const [syncedScores, setSyncedScores] = useState(scores);
+  // render (spårar föregående värde) undviker setState i en effekt. Startvärdet
+  // är undefined: PlanProvider har redan läst scores vid första klientrendern,
+  // så med `useState(scores)` blev det aldrig någon skillnad att reagera på och
+  // sparade 5 h / 3 veckor skrevs över med 10 / 8.
+  const [syncedScores, setSyncedScores] = useState<typeof scores | undefined>(undefined);
   if (ready && scores !== syncedScores) {
     setSyncedScores(scores);
     // Bara ett sparat underlag får förifylla tid/veckor — annars står 10/8 kvar
@@ -459,7 +463,7 @@ export function MiniLevelTest() {
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <div className="min-w-0">
-                    <span className="font-semibold text-[var(--ink)]">{s.id}</span>
+                    <span className="font-semibold text-[var(--ink)]">{sectionShort(s.id)}</span>
                     <span className="ml-2 text-sm text-[var(--ink-muted)]">{s.name}</span>
                   </div>
                   <span className="shrink-0 text-sm font-medium text-[var(--ink)]">

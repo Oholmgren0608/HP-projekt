@@ -609,13 +609,27 @@ export function buildQuiz(
   return ordered.slice(0, Math.min(count, ordered.length));
 }
 
+function quizKindsOf(kinds: PracticeKind[]): Exclude<PracticeKind, "reflect">[] {
+  return kinds.filter((k): k is Exclude<PracticeKind, "reflect"> => k !== "reflect");
+}
+
+/** Antal frågor buildMixedQuiz ger för `kinds` och `count` — banken kan vara mindre. */
+export function mixedQuizSize(kinds: PracticeKind[], count: number): number {
+  const quizKinds = quizKindsOf(kinds);
+  if (quizKinds.length === 0) return 0;
+  const perKind = Math.max(1, Math.ceil(count / quizKinds.length));
+  const banks = getBanks();
+  const pooled = quizKinds.reduce((sum, kind) => sum + Math.min(perKind + 2, banks[kind].length), 0);
+  return Math.min(count, pooled);
+}
+
 export function buildMixedQuiz(
   kinds: PracticeKind[],
   seed: string,
   count: number,
   examId?: string,
 ): ChoiceQuestion[] {
-  const quizKinds = kinds.filter((k): k is Exclude<PracticeKind, "reflect"> => k !== "reflect");
+  const quizKinds = quizKindsOf(kinds);
   if (quizKinds.length === 0) return [];
 
   const perKind = Math.max(1, Math.ceil(count / quizKinds.length));

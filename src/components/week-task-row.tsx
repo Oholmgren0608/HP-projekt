@@ -5,6 +5,8 @@ import { sectionLabel, type StudyTask } from "@/lib/study-plan";
 
 type Props = {
   task: StudyTask;
+  /** Aktiv övningstid som krävs för att markera klar (task.minutes är planerad tid). */
+  requiredMinutes: number;
   checked: boolean;
   score?: { correct: number; total: number };
   bankedMin: number;
@@ -18,6 +20,7 @@ type Props = {
  */
 export function WeekTaskRow({
   task,
+  requiredMinutes,
   checked,
   score,
   bankedMin,
@@ -63,7 +66,7 @@ export function WeekTaskRow({
               <p className="mt-1 text-xs text-[var(--ink-soft)]">
                 {[
                   score ? `Senaste resultat ${score.correct}/${score.total}` : null,
-                  !checked && bankedMin > 0 ? `Sparad tid ${bankedMin}/${task.minutes} min (pausad)` : null,
+                  !checked && bankedMin > 0 ? `Sparad tid ${bankedMin}/${requiredMinutes} min (pausad)` : null,
                 ]
                   .filter(Boolean)
                   .join(" · ")}
@@ -88,8 +91,8 @@ export function WeekTaskRow({
               ) : (
                 <span className="self-center text-xs text-[var(--ink-muted)]">
                   {bankedMin > 0
-                    ? `Aktiv tid ${formatClock(bankedMin * 60)} / ${task.minutes} min`
-                    : `Markeras klar efter ${task.minutes} min aktiv övning`}
+                    ? `Aktiv tid ${formatClock(bankedMin * 60)} / ${requiredMinutes} min`
+                    : `Markeras klar efter ${requiredMinutes} min aktiv övning`}
                 </span>
               )}
             </div>

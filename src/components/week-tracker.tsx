@@ -8,6 +8,8 @@ import { WeekTaskRow } from "@/components/week-task-row";
 import { usePlan } from "@/components/plan-context";
 import { Progress } from "@/components/ui/progress";
 import { useHydrated } from "@/lib/use-hydrated";
+import { requiredPracticeMinutes } from "@/lib/practice-pace";
+import { useQuestions } from "@/lib/content/use-questions";
 import { storageSet } from "@/lib/sync/storage-sync";
 import {
   clearPracticeTimer,
@@ -45,6 +47,9 @@ export function WeekTracker({
   const { plan: generated } = usePlan();
   // Stabil tom lista när inget underlag sparats; PlanView visar då ingen WeekTracker.
   const weeklyPlans = generated?.weeklyPlans ?? NO_WEEKS;
+  // Tidskravet per uppgift beror på hur många frågor banken har — rendera om
+  // när Supabase-banken laddats så att raden visar samma krav som passet.
+  useQuestions();
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -331,6 +336,7 @@ export function WeekTracker({
               <WeekTaskRow
                 key={task.id}
                 task={task}
+                requiredMinutes={requiredPracticeMinutes(task)}
                 checked={checked}
                 score={score}
                 bankedMin={bankedMin}

@@ -214,6 +214,12 @@ const MIN_TASK_MINUTES = 20;
 const MAX_TASK_MINUTES = 180;
 /** Andel av den angivna veckotiden planen lägger upp — resten är repetition och oförutsett. */
 const WEEKLY_LOAD_FACTOR = 0.8;
+/**
+ * Nedtrappningsveckan ("Puts och vila") får en mindre del av veckotiden. Utan
+ * det skalades den till samma budget som byggveckorna och nedtrappningen
+ * försvann (i mallen är den 140 min mot 190–240 för veckorna närmast före).
+ */
+const TAPER_WEEK_SHARE = 0.6;
 
 function clampTaskMinutes(minutes: number): number {
   return Math.min(MAX_TASK_MINUTES, Math.max(MIN_TASK_MINUTES, Math.round(minutes / 5) * 5));
@@ -545,7 +551,10 @@ function buildWeeklyPlans(
       phase: meta.phase,
       theme: meta.theme,
       focus: meta.focus,
-      tasks: scaleTasksToWeeklyBudget(tasks, hoursPerWeek),
+      tasks: scaleTasksToWeeklyBudget(
+        tasks,
+        cycle === phases.length ? hoursPerWeek * TAPER_WEEK_SHARE : hoursPerWeek,
+      ),
     });
   }
 
