@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 type Mode = "signin" | "signup" | "reset";
 
 /** Mappar vanliga Supabase-felmeddelanden till vänlig svensk text. */
-function friendlyAuthError(message: string): string {
+export function friendlyAuthError(message: string): string {
   const m = message.toLowerCase();
   if (m.includes("invalid login credentials")) return "Fel e-post eller lösenord.";
   if (m.includes("email not confirmed")) {
@@ -18,6 +18,15 @@ function friendlyAuthError(message: string): string {
   }
   if (m.includes("password should be at least")) {
     return "Lösenordet måste vara minst 8 tecken.";
+  }
+  if (m.includes("should be different from the old password")) {
+    return "Välj ett lösenord som skiljer sig från det gamla.";
+  }
+  if (m.includes("weak") && m.includes("password")) {
+    return "Lösenordet är för lätt att gissa. Välj ett annat.";
+  }
+  if (m.includes("auth session missing")) {
+    return "Länken har gått ut. Begär en ny under Logga in → Glömt lösenord?";
   }
   if (m.includes("email address") && m.includes("invalid")) {
     return "Den e-postadressen ser inte ut att finnas. Kontrollera stavningen.";
@@ -74,7 +83,10 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
     }
     setResending(true);
     setError(null);
-    const { error: fel } = await resendConfirmation(adress);
+    // Efter "Glömt lösenord?" ska en ny återställningslänk skickas, inte ett
+    // bekräftelsemejl för registrering.
+    const { error: fel } =
+      mode === "reset" ? await sendPasswordReset(adress) : await resendConfirmation(adress);
     setResending(false);
     if (fel) {
       setError(friendlyAuthError(fel));

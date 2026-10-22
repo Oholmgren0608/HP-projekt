@@ -10,13 +10,14 @@ import { useAuth } from "@/lib/supabase/auth-context";
  * (lokal state) — vid nästa inloggning visas den igen.
  */
 export function UsernamePrompt() {
-  const { user, username, loading, setUsername } = useAuth();
+  const { user, username, loading, passwordRecovery, setUsername } = useAuth();
   const [value, setValue] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
-  if (!user || username || loading || dismissed) return null;
+  // Nytt lösenord först (PasswordRecoveryPrompt), användarnamnet sedan.
+  if (!user || username || loading || dismissed || passwordRecovery) return null;
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();

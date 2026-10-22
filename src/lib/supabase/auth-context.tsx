@@ -18,6 +18,28 @@ function currentUrl(): string {
 }
 import { onAuthChanged } from "@/lib/sync/storage-sync";
 
+// Återställningslänken loggar in användaren (PASSWORD_RECOVERY). Flaggan ligger
+// i sessionStorage eftersom inloggningens molnsynk kan ladda om sidan innan
+// användaren hunnit välja ett nytt lösenord.
+const RECOVERY_KEY = "hp-lift-password-recovery";
+
+function readRecoveryFlag(): boolean {
+  try {
+    return window.sessionStorage.getItem(RECOVERY_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function writeRecoveryFlag(on: boolean) {
+  try {
+    if (on) window.sessionStorage.setItem(RECOVERY_KEY, "1");
+    else window.sessionStorage.removeItem(RECOVERY_KEY);
+  } catch {
+    /* sessionStorage kan vara avstängt — prompten visas då bara till nästa reload */
+  }
+}
+
 type AuthState = {
   /** Inloggad användare, eller null. */
   user: User | null;
@@ -35,6 +57,12 @@ type AuthState = {
     password: string,
   ) => Promise<{ error: string | null; needsConfirmation: boolean }>;
   sendPasswordReset: (email: string) => Promise<{ error: string | null }>;
+  /** Sant efter att en återställningslänk öppnats, tills lösenordsprompten stängts. */
+  passwordRecovery: boolean;
+  /** Sparar ett nytt lösenord för den inloggade användaren. */
+  updatePassword: (password: string) => Promise<{ error: string | null }>;
+  /** Stänger "välj nytt lösenord" (efter bytet, eller utan att byta). */
+  dismissPasswordRecovery: () => void;
   /** Skickar ett nytt bekräftelsemejl till en adress som inte hunnit bekräftas. */
   resendConfirmation: (email: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
@@ -50,6 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // Env-variabler är inbakade vid build: samma värde på server och klient,
   // så initialvärdet ger ingen hydreringsmismatch.
   const [loading, setLoading] = useState(() => isSupabaseConfigured());
+  const [passwordRecovery, setPasswordRecovery] = useState(false);
   // Senast tillämpade användar-id, så att en långsam profilhämtning inte
   // skriver över en nyare användare (t.ex. vid snabb utloggning/inloggning).
   const appliedUserIdRef = useRef<string | null>(null);
@@ -95,6 +124,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     supabase.auth.getSession().then(({ data }) => {
       if (!cancelled) {
+        // Efter en reload mitt i en återställning: fortsätt visa prompten.
+        if (data.session?.user && readRecoveryFlag()) setPasswordRecovery(true);
+        if (!data.session) writeRecoveryFlag(false);
         void applyUser(data.session?.user ?? null);
         onAuthChanged(data.session?.user?.id ?? null);
       }
@@ -102,8 +134,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = supabase.auth.onAuthStateChange((event, session) => {
       if (cancelled) return;
+      if (event === "PASSWORD_RECOVERY") {
+        writeRecoveryFlag(true);
+        setPasswordRecovery(true);
+      } else if (event === "SIGNED_OUT") {
+        writeRecoveryFlag(false);
+        setPasswordRecovery(false);
+      }
       void applyUser(session?.user ?? null);
       onAuthChanged(session?.user?.id ?? null);
     });
@@ -156,6 +195,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         redirectTo: window.location.origin,
       });
       return { error: error?.message ?? null };
+    },
+    passwordRecovery,
+    updatePassword: async (password) => {
+      const supabase = getSupabase();
+      if (!supabase) return { error: "Supabase är inte konfigurerat" };
+      const { error } = await supabase.auth.updateUser({ password });
+      if (error) return { error: error.message };
+      // Klart — men prompten visar sin bekräftelse tills användaren stänger
+      // den (dismissPasswordRecovery), så användarnamnsprompten inte hamnar ovanpå.
+      writeRecoveryFlag(false);
+      return { error: null };
+    },
+    dismissPasswordRecovery: () => {
+      writeRecoveryFlag(false);
+      setPasswordRecovery(false);
     },
     resendConfirmation: async (email) => {
       const supabase = getSupabase();

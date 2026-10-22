@@ -28,6 +28,7 @@ import {
 import { useAuth } from "@/lib/supabase/auth-context";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
 import { LoginPanel } from "@/components/auth/login-panel";
+import { PasswordRecoveryPrompt } from "@/components/auth/password-recovery-prompt";
 import { UsernamePrompt } from "@/components/auth/username-prompt";
 import { usePreferences } from "@/lib/preferences";
 import { useHydrated } from "@/lib/use-hydrated";
@@ -407,7 +408,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
       </header>
 
-      {/* Engångsprompt för användarnamn (rendreras efter inloggning, oavsett sida). */}
+      {/* Engångsprompter efter inloggning, oavsett sida: nytt lösenord efter
+          återställningslänken, sedan användarnamn. */}
+      <PasswordRecoveryPrompt />
       <UsernamePrompt />
 
       {/* Sidinnehåll med mjuk övergång */}
