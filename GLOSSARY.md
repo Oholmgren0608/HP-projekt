@@ -35,3 +35,43 @@ _Avoid_: Poängformulär
 **Veckoplan**:
 Den genererade studieplanen med övningar per delprov, byggd på nivå per delprov, timmar per vecka och veckor kvar till provet.
 _Avoid_: Schema, studieplan (som synonym för veckoplanen)
+
+## Resultat och nivå
+
+**Råpoäng**:
+Antal rätta svar i ett delprov.
+_Avoid_: Poäng (utan precisering), score
+
+**Normpoäng**:
+Provets normerade poäng för ett block, i appen kvantitativ eller verbal norm. Anges för block, inte för delprov.
+_Avoid_: Normerad poäng, HP-poäng
+
+**Nivå**:
+Användarens utgångsläge som veckoplanen bygger på: normpoäng per block och råpoäng per delprov, inmatade i resultatformuläret eller uppskattade av nivåtestet. Har inget med spelnivå att göra.
+_Avoid_: Level, färdighetsnivå
+
+## Övning
+
+**Repetitionskort (SRS)**:
+Ett kort som skapas av en felbesvarad fråga och återkommer vid daglig repetition tills användaren minns det.
+_Avoid_: Flashcard (flashcards är ett separat material), glosa
+
+## Duell
+
+**Duell**:
+En match med 10 frågor mot en annan spelare eller en bot, i läget ranked, casual eller privat.
+_Avoid_: Quiz, match (som huvudterm)
+
+**ELO**:
+Spelarens rankingtal i duell, med startvärde 1200, som endast servern uppdaterar efter ranked-matcher.
+_Avoid_: Rank, rating
+
+## Spelmoment
+
+**XP**:
+Poäng som användaren tjänar för studieaktivitet och som avgör spelnivå och veckotopplista.
+_Avoid_: Erfarenhetspoäng
+
+**Spelnivå**:
+Steg 1–20 i belöningssystemet, bestämt av total XP (från "Nybörjare" till "Oövervinnelig"). Skiljs från nivå.
+_Avoid_: Nivå (ensamt), level
