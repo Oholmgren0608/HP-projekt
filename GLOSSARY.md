@@ -56,6 +56,24 @@ _Avoid_: Level, färdighetsnivå
 Ett kort som skapas av en felbesvarad fråga och återkommer vid daglig repetition tills användaren minns det.
 _Avoid_: Flashcard (flashcards är ett separat material), glosa
 
+## Frågebank
+
+**Frågebank**:
+Samlingen av alla flervalsfrågor appen använder. Databasen är sanningen; den inbyggda kopian i koden är bara en reserv utan nätverk.
+_Avoid_: Frågedatabas, content
+
+**Provfråga**:
+En fråga som importerats ur ett officiellt Prov från UHR, med uppgift om prov, provpass och frågenummer. Huvudkällan i frågebanken.
+_Avoid_: Importerad fråga, riktig fråga
+
+**Övningsfråga**:
+En egenskriven fråga i HP-stil som inte kommer från ett officiellt prov.
+_Avoid_: Egen fråga, syntetisk fråga
+
+**Bemästrad**:
+En fråga är bemästrad när användaren svarat rätt på den tre gånger i rad. Ett enda rätt svar räcker inte, eftersom ett av fyra alternativ kan gissas.
+_Avoid_: Klarad, inlärd
+
 ## Duell
 
 **Duell**:
