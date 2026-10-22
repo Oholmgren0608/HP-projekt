@@ -29,11 +29,11 @@ Ett kort, otidsatt test med frågor från alla delprov som uppskattar användare
 _Avoid_: Diagnostiskt test, placeringstest
 
 **Resultatformulär**:
-Formuläret där användaren själv matar in sina HP-resultat per delprov (normpoäng och råpoäng) som indata till planen.
+Formuläret där användaren själv matar in sina HP-resultat (normpoäng per block, råpoäng per delprov) som indata till planen.
 _Avoid_: Poängformulär
 
 **Veckoplan**:
-Den genererade studieplanen med övningar per delprov, byggd på nivå per delprov, timmar per vecka och veckor kvar till provet.
+Den genererade studieplanen med övningar per delprov, byggd på nivå, timmar per vecka och veckor kvar till provet.
 _Avoid_: Schema, studieplan (som synonym för veckoplanen)
 
 ## Resultat och nivå
