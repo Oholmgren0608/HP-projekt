@@ -46,14 +46,21 @@ function addDays(dateKey: string, days: number): string {
   return localDateKey(new Date(y, m - 1, d + days));
 }
 
+function sameOptions(a: string[] | undefined, b: string[]): boolean {
+  return !!a && a.length === b.length && a.every((option, i) => option === b[i]);
+}
+
 function hydrateCard(card: SrsCard): SrsCard {
   const q = findQuestionById(card.id);
   if (!q) return card;
-    const next: SrsCard = { ...card };
+  const next: SrsCard = { ...card };
   if (!card.passage && q.passage) next.passage = q.passage;
   // Alternativ, rätt svar och prompt kan ha ändrats i banken sedan kortet skapades
   // — kortet måste rätta mot aktuellt facit, annars lär det ut ett gammalt svar.
-  if (q.options.length) next.options = q.options;
+  // Jämför innehållet, inte referensen: ett nytt array varje gång fick loadSrs
+  // att skriva (och stämpla om synk-tiden) vid varje läsning, så att den här
+  // enhetens gamla kort skrev över nyare repetitioner från andra enheter.
+  if (q.options.length && !sameOptions(card.options, q.options)) next.options = q.options;
   if (q.prompt !== card.front) next.front = q.prompt;
   const liveBack = q.options[q.correctIndex];
   if (liveBack && liveBack !== card.back) next.back = liveBack;
@@ -69,7 +76,7 @@ export function loadSrs(): Record<string, SrsCard> {
     const hydrated: Record<string, SrsCard> = {};
     for (const [id, card] of Object.entries(parsed)) {
       const next = hydrateCard(card);
-            if (
+      if (
         next.passage !== card.passage ||
         next.options !== card.options ||
         next.explain !== card.explain ||
