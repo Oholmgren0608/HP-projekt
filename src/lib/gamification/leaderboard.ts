@@ -1,7 +1,7 @@
 /**
- * Topplistan (Supabase): skicka in veckans XP, hämta listan och ändra
- * visningsnamn. Allt no-opar tyst när Supabase saknas eller användaren
- * inte är inloggad — appen fungerar fullt ut anonymt.
+ * Topplistan (Supabase): skicka in veckans XP och hämta listan. Visningsnamn
+ * sätts via profile_set_username. Allt no-opar tyst när Supabase saknas eller
+ * användaren inte är inloggad — appen fungerar fullt ut anonymt.
  */
 
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
@@ -44,19 +44,6 @@ export async function fetchLeaderboard(week: string, limit = 50): Promise<Leader
   } catch (e) {
     console.warn("[topplista] nätverksfel vid hämtning:", e);
     return [];
-  }
-}
-
-export async function setDisplayName(name: string): Promise<void> {
-  const supabase = getSupabase();
-  if (!supabase) return;
-  try {
-    const { error } = await supabase.rpc("leaderboard_set_name", {
-      p_display_name: name,
-    });
-    if (error) console.warn("[topplista] kunde inte ändra namn:", error.message);
-  } catch (e) {
-    console.warn("[topplista] nätverksfel vid namnbyte:", e);
   }
 }
 

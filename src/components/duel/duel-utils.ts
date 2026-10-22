@@ -1,6 +1,10 @@
 import type { User } from "@supabase/supabase-js";
 
-import type { DuelMatch } from "@/lib/duel/types";
+import {
+  DUEL_STALL_GRACE_MS,
+  DUEL_STALL_MATCH_WINDOW_MS,
+  type DuelMatch,
+} from "@/lib/duel/types";
 
 export type DuelResult = "win" | "loss" | "draw";
 
@@ -28,6 +32,20 @@ export function classifyDuelResult(match: DuelMatch, meId: string): DuelResult {
   return match.winner === null ? "draw" : "loss";
 }
 
+
+/**
+ * Millisekunder tills servern godtar anspråk på vinst (0 = redan nu). Samma
+ * regler som duel_claim_stall_win: minst 60 s efter att du blev klar och
+ * tidigast när motståndarens speltid har gått ut räknat från matchstart.
+ */
+export function stallClaimDelayMs(match: DuelMatch, myFinishedAtMs: number, now = Date.now()): number {
+  const startedMs = new Date(match.started_at ?? match.created_at).getTime();
+  const claimAt = Math.max(
+    myFinishedAtMs + DUEL_STALL_GRACE_MS,
+    Number.isFinite(startedMs) ? startedMs + DUEL_STALL_MATCH_WINDOW_MS : 0,
+  );
+  return Math.max(0, claimAt - now);
+}
 
 /** Visningsnamn från Google-kontot (full_name > name > e-post). */
 export function displayNameFromUser(user: User | null): string {

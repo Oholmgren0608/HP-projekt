@@ -609,10 +609,6 @@ export type Database = {
           is_me: boolean;
         }[];
       };
-      leaderboard_set_name: {
-        Args: { p_display_name: string };
-        Returns: null;
-      };
       forum_thread_list: {
         Args: {
           p_sort?: string;

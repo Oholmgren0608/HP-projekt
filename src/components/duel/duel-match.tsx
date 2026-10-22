@@ -24,7 +24,14 @@ import {
   markFinished,
   submitAnswer,
 } from "@/lib/duel/matchmaking";
-import { classifyDuelResult, displayNameFromUser, formatMs, type DuelResult } from "./duel-utils";
+import {
+  classifyDuelResult,
+  displayNameFromUser,
+  errorMessage,
+  formatMs,
+  stallClaimDelayMs,
+  type DuelResult,
+} from "./duel-utils";
 import { ReviewForm } from "./review-form";
 import { QuestionFigure } from "@/components/question-figure";
 
@@ -161,8 +168,10 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const [myTimeMs, setMyTimeMs] = useState(0);
   const [botCorrect, setBotCorrect] = useState(0);
   const [stallElapsed, setStallElapsed] = useState(false);
+  const [claimError, setClaimError] = useState<string | null>(null);
 
   // Refs — skrivs aldrig under render (se synk-effekten nedan).
+  const matchRef = useRef(match);
   const phaseRef = useRef(phase);
   const indexRef = useRef(index);
   const questionsRef = useRef(questions);
@@ -243,7 +252,11 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
           await loadMatchRef.current();
         } else {
           setPhase("waiting");
-          window.setTimeout(() => setStallElapsed(true), DUEL_STALL_GRACE_MS);
+          const current = matchRef.current;
+          window.setTimeout(
+            () => setStallElapsed(true),
+            current ? stallClaimDelayMs(current, Date.now()) : DUEL_STALL_GRACE_MS,
+          );
         }
       } catch {
         // Återställ skyddet så att avslutet kan göras om.
@@ -325,6 +338,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   // Synka refs i en effekt (React rekommenderar att refs uppdateras i
   // effekter, inte under render).
   useEffect(() => {
+    matchRef.current = match;
     phaseRef.current = phase;
     indexRef.current = index;
     questionsRef.current = questions;
@@ -516,11 +530,8 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             }
           }
           setPhase("waiting");
-          const elapsed = myFinishedAt
-            ? Date.now() - new Date(myFinishedAt).getTime()
-            : 0;
-          const remaining = Math.max(0, DUEL_STALL_GRACE_MS - elapsed);
-          window.setTimeout(() => setStallElapsed(true), remaining);
+          const finishedMs = myFinishedAt ? new Date(myFinishedAt).getTime() : Date.now();
+          window.setTimeout(() => setStallElapsed(true), stallClaimDelayMs(m, finishedMs));
         }
             } else {
         questionDoneRef.current = false;
@@ -573,10 +584,12 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   }
 
   async function handleClaim() {
+    setClaimError(null);
     try {
       await claimStallWin(matchId);
-    } catch {
-      /* ignorera */
+    } catch (e) {
+      // Servern nekar om motståndaren fortfarande har speltid kvar.
+      setClaimError(errorMessage(e, "Det gick inte att ta vinsten just nu."));
     }
     await loadMatch();
   }
@@ -745,9 +758,14 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             </button>
           ) : (
             <p className="mt-6 text-xs text-[var(--ink-muted)]">
-              Du kan göra anspråk på vinsten efter 60 sekunder.
+              Blir motståndaren inte klar kan du ta vinsten när speltiden har gått ut.
             </p>
           )}
+          {claimError ? (
+            <p className="mt-3 text-sm text-[var(--destructive)]" role="alert">
+              {claimError}
+            </p>
+          ) : null}
         </div>
       ) : null}
 
