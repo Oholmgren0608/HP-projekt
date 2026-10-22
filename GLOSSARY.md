@@ -63,11 +63,11 @@ Samlingen av alla flervalsfrågor appen använder. Databasen är sanningen; den 
 _Avoid_: Frågedatabas, content
 
 **Provfråga**:
-En fråga som importerats ur ett officiellt Prov från UHR, med uppgift om prov, provpass och frågenummer. Huvudkällan i frågebanken.
+En fråga ur ett officiellt Prov från UHR, med uppgift om prov, provpass och frågenummer. Upphovsrättsskyddad av UHR och därför inte en del av den publicerade frågebanken.
 _Avoid_: Importerad fråga, riktig fråga
 
 **Övningsfråga**:
-En egenskriven fråga i HP-stil som inte kommer från ett officiellt prov.
+En egenskriven fråga i HP-stil som inte kommer från ett officiellt prov. Huvudkällan i frågebanken.
 _Avoid_: Egen fråga, syntetisk fråga
 
 **Bemästrad**:
