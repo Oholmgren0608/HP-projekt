@@ -70,6 +70,10 @@ _Avoid_: Importerad fråga, riktig fråga
 En egenskriven fråga i HP-stil som inte kommer från ett officiellt prov. Huvudkällan i frågebanken.
 _Avoid_: Egen fråga, syntetisk fråga
 
+**Förlaga**:
+En Provfråga som används som mall för att skriva en Övningsfråga. Mönstret återanvänds, inte innehållet: den nya frågan har egna siffror, ord och texter, och förlagan visas aldrig för användare.
+_Avoid_: Mall, original
+
 **Bemästrad**:
 En fråga är bemästrad när användaren svarat rätt på den tre gånger i rad. Ett enda rätt svar räcker inte, eftersom ett av fyra alternativ kan gissas.
 _Avoid_: Klarad, inlärd
