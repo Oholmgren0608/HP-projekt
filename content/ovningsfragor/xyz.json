@@ -1,0 +1,284 @@
+[
+  {
+    "id": "ovn-xyz-001",
+    "kind": "xyz",
+    "prompt": "Vad är 5/6 − 2/3 · 3/4?",
+    "options": [
+      "−1/18",
+      "1/8",
+      "1/3",
+      "1"
+    ],
+    "correctIndex": 2,
+    "explain": "Multiplikation utförs före subtraktion. Först 2/3 · 3/4 = 6/12 = 1/2, sedan 5/6 − 1/2 = 5/6 − 3/6 = 2/6 = 1/3. 1/8 får man om man räknar från vänster till höger: (5/6 − 2/3) · 3/4 = 1/6 · 3/4 = 1/8. −1/18 får man om man dividerar i stället för att multiplicera: 2/3 delat med 3/4 är 8/9, och 5/6 − 8/9 = 15/18 − 16/18 = −1/18. 1 får man om man subtraherar täljare och nämnare var för sig: 5/6 − 1/2 blir då (5 − 1)/(6 − 2) = 4/4.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-002",
+    "kind": "xyz",
+    "prompt": "Vad är (2³)² · 4⁻²?",
+    "options": [
+      "2",
+      "4",
+      "16",
+      "32"
+    ],
+    "correctIndex": 1,
+    "explain": "(2³)² = 2³ · 2³ = 2⁶ = 64, och 4⁻² = 1/4² = 1/16. Uttrycket blir 64 · 1/16 = 4. Med potenslagar: 4⁻² = (2²)⁻² = 2⁻⁴, så 2⁶ · 2⁻⁴ = 2² = 4. 2 får man om man adderar exponenterna i (2³)² och får 2⁵ = 32 i stället för 2⁶; 32/16 = 2. 32 får man om man tolkar (2³)² som 2 upphöjt till 3² = 9; 2⁹/16 = 512/16 = 32. 16 får man om man glömmer att 4 = 2² och räknar 4⁻² som 2⁻² = 1/4; 64 · 1/4 = 16.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-003",
+    "kind": "xyz",
+    "prompt": "Lös ekvationen (x + 4)/3 − (x − 3)/4 = 3. Vad är x?",
+    "options": [
+      "11",
+      "23",
+      "29",
+      "61"
+    ],
+    "correctIndex": 0,
+    "explain": "Multiplicera båda leden med 12, den minsta gemensamma nämnaren: 4(x + 4) − 3(x − 3) = 36. Det ger 4x + 16 − 3x + 9 = 36, alltså x + 25 = 36 och x = 11. Kontroll: 15/3 − 8/4 = 5 − 2 = 3. 29 får man med ett teckenfel när parentesen löses upp: skriver man −3(x − 3) som −3x − 9 i stället för −3x + 9 blir det x + 7 = 36. 23 får man om man bara multiplicerar x-termen med 4 och skriver 4(x + 4) som 4x + 4. 61 får man om man flyttar 25 till högerledet utan att byta tecken och räknar 36 + 25.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-004",
+    "kind": "xyz",
+    "prompt": "Vad är √50 − √18 + √8?",
+    "options": [
+      "4√2",
+      "2√10",
+      "6√2",
+      "10√2"
+    ],
+    "correctIndex": 0,
+    "explain": "Förenkla varje rot genom att bryta ut en kvadrat: √50 = √(25 · 2) = 5√2, √18 = √(9 · 2) = 3√2 och √8 = √(4 · 2) = 2√2. Uttrycket blir 5√2 − 3√2 + 2√2 = 4√2. 2√10 = √40 får man om man slår ihop allt under ett rottecken, √(50 − 18 + 8); rötter kan inte adderas eller subtraheras på det sättet. 6√2 får man om man bryter ut 4 i stället för √4 = 2 ur √8 och skriver √8 som 4√2. 10√2 får man om man missar minustecknet och adderar alla tre termerna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-005",
+    "kind": "xyz",
+    "prompt": "En cirkel har arean 49π cm². Radien ökas med 3 cm. Hur mycket ökar cirkelns area?",
+    "options": [
+      "6π cm²",
+      "9π cm²",
+      "51π cm²",
+      "100π cm²"
+    ],
+    "correctIndex": 2,
+    "explain": "Arean πr² = 49π ger r = 7 cm. Den nya radien är 10 cm, så den nya arean är π · 10² = 100π cm². Ökningen är 100π − 49π = 51π cm². 9π cm² får man om man räknar (7 + 3)² som 7² + 3² och glömmer den dubbla produkten 2 · 7 · 3 = 42. 100π cm² är den nya arean, inte ökningen. 6π får man om man räknar ut hur mycket omkretsen ökar (från 14π cm till 20π cm) i stället för arean.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-006",
+    "kind": "xyz",
+    "prompt": "Hur många heltal x uppfyller −7 ≤ 5 − 3x < 11?",
+    "options": [
+      "0",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 2,
+    "explain": "Subtrahera 5 i alla led: −12 ≤ −3x < 6. Dela alla led med −3 och vänd olikhetstecknen: 4 ≥ x > −2, alltså −2 < x ≤ 4. Heltalen −1, 0, 1, 2, 3 och 4 uppfyller detta, det vill säga 6 stycken. 0 får man om man glömmer att vända olikhetstecknen vid division med ett negativt tal; då står det 4 ≤ x < −2, och det uppfyller inget tal. 7 får man om man räknar med −2, men x = −2 ger 5 − 3x = 11, som inte är mindre än 11. 5 får man om man utesluter 4, men x = 4 ger 5 − 3x = −7, och −7 ≤ −7 gäller.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-007",
+    "kind": "xyz",
+    "prompt": "Talen a och b är positiva, och a är 60 % större än b. Hur många procent mindre än a är b?",
+    "options": [
+      "37,5 %",
+      "40 %",
+      "60 %",
+      "62,5 %"
+    ],
+    "correctIndex": 0,
+    "explain": "Att a är 60 % större än b betyder att a = 1,6b. Då är b = a/1,6 = 0,625a, så b är 62,5 % av a och alltså 100 − 62,5 = 37,5 % mindre än a. Med siffror: b = 100 ger a = 160, och skillnaden 60 är 60/160 = 0,375 av a. 60 % får man om man tror att procentskillnaden är densamma åt båda hållen, men de 60 procenten är räknade på b och inte på a. 62,5 % är hur stor andel av a som b utgör, inte hur mycket mindre b är. 40 % får man om man tror att b = 0,6a, till exempel genom att räkna 1/1,6 som 0,6.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-008",
+    "kind": "xyz",
+    "prompt": "Vilka lösningar har ekvationen (x − 3)² = 2x − 6?",
+    "options": [
+      "x = 3 eller x = 5",
+      "x = 5",
+      "x = −1 eller x = 3",
+      "x = −5 eller x = −3"
+    ],
+    "correctIndex": 0,
+    "explain": "Högerledet är 2(x − 3). Flytta över och bryt ut x − 3: (x − 3)² − 2(x − 3) = 0 ger (x − 3)(x − 3 − 2) = 0, alltså (x − 3)(x − 5) = 0. Lösningarna är x = 3 och x = 5, och båda stämmer vid insättning (0 = 0 och 4 = 4). Bara x = 5 får man om man dividerar båda leden med x − 3; då tappar man x = 3, eftersom x − 3 är 0 just där. x = −1 eller x = 3 får man om man felaktigt utvecklar (x − 3)² till x² − 9 i stället för x² − 6x + 9. x = −5 eller x = −3 får man om man utvecklar rätt till x² − 8x + 15 = 0 men gör teckenfel i pq-formeln och räknar −4 ± 1 i stället för 4 ± 1.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-009",
+    "kind": "xyz",
+    "passage": "4x + 3y = 26\n3x + 4y = 23",
+    "prompt": "Talen x och y uppfyller ekvationssystemet ovan. Vad är x² − y²?",
+    "options": [
+      "9",
+      "21",
+      "29",
+      "49"
+    ],
+    "correctIndex": 1,
+    "explain": "Addera ekvationerna: 7x + 7y = 49, så x + y = 7. Subtrahera den andra ekvationen från den första: x − y = 3. Konjugatregeln ger x² − y² = (x + y)(x − y) = 7 · 3 = 21. Kontroll: systemet har lösningen x = 5 och y = 2, och 5² − 2² = 25 − 4 = 21. 49 = (x + y)² och 9 = (x − y)² får man om man behandlar x² − y² som en kvadrat. 29 = 5² + 2² får man om man adderar kvadraterna i stället för att subtrahera dem.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-010",
+    "kind": "xyz",
+    "prompt": "Förenkla (x² − 4)/(x² + x − 6), där x ≠ 2 och x ≠ −3.",
+    "options": [
+      "(x − 2)/(x − 3)",
+      "(x − 2)/(x + 3)",
+      "−4/(x − 6)",
+      "(x + 2)/(x + 3)"
+    ],
+    "correctIndex": 3,
+    "explain": "Faktorisera täljare och nämnare. Konjugatregeln ger x² − 4 = (x + 2)(x − 2). Nämnaren blir x² + x − 6 = (x + 3)(x − 2), eftersom 3 · (−2) = −6 och 3 + (−2) = 1. Förkorta med den gemensamma faktorn x − 2: (x + 2)/(x + 3). (x − 2)/(x − 3) får man om man faktoriserar nämnaren med fel tecken, som (x − 3)(x + 2), och förkortar med x + 2. (x − 2)/(x + 3) får man om man tror att x² − 4 = (x − 2)². −4/(x − 6) får man om man stryker x² i täljare och nämnare, men man får bara förkorta med faktorer, inte med termer.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-011",
+    "kind": "xyz",
+    "prompt": "En rät linje går genom punkterna (−1, 7) och (3, −1). För vilket värde på x skär linjen x-axeln?",
+    "options": [
+      "−4,5",
+      "2,5",
+      "5",
+      "13"
+    ],
+    "correctIndex": 1,
+    "explain": "Lutningen är k = (−1 − 7)/(3 − (−1)) = −8/4 = −2. Sätt in punkten (−1, 7) i y = −2x + m: 7 = 2 + m, så m = 5 och linjen är y = −2x + 5. Linjen skär x-axeln där y = 0: −2x + 5 = 0 ger x = 2,5. 5 är m-värdet, alltså där linjen skär y-axeln. −4,5 får man med teckenfel i lutningen: k = 2 ger m = 9 och y = 2x + 9, som är 0 för x = −4,5. 13 får man om man beräknar lutningen som förändringen i x delat med förändringen i y, k = −1/2; då blir m = 6,5 och linjen är 0 för x = 13.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-012",
+    "kind": "xyz",
+    "prompt": "En rektangel har omkretsen 34 cm och arean 60 cm². Hur lång är rektangelns diagonal?",
+    "options": [
+      "7 cm",
+      "12 cm",
+      "13 cm",
+      "17 cm"
+    ],
+    "correctIndex": 2,
+    "explain": "Kalla sidorna a och b. Omkretsen ger 2(a + b) = 34, alltså a + b = 17, och arean ger ab = 60. Diagonalen d uppfyller enligt Pythagoras sats d² = a² + b² = (a + b)² − 2ab = 289 − 120 = 169, så d = 13 cm. Man kan också hitta sidorna: 12 och 5 har summan 17 och produkten 60, och √(144 + 25) = 13. 17 cm är a + b, halva omkretsen, och 7 cm är skillnaden mellan sidorna. 12 cm är bara den längre sidan; diagonalen måste vara längre än båda sidorna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-013",
+    "kind": "xyz",
+    "prompt": "I en påse ligger 4 röda och 6 blå kulor. Man drar slumpmässigt två kulor utan återläggning. Hur stor är sannolikheten att kulorna har olika färg?",
+    "options": [
+      "4/15",
+      "7/15",
+      "12/25",
+      "8/15"
+    ],
+    "correctIndex": 3,
+    "explain": "Olika färg kan fås på två sätt. Röd och sedan blå: 4/10 · 6/9 = 24/90. Blå och sedan röd: 6/10 · 4/9 = 24/90. Totalt 48/90 = 8/15. 4/15 = 24/90 får man om man bara räknar med ordningen röd–blå. 12/25 = 2 · 4/10 · 6/10 får man om man räknar som om den första kulan lades tillbaka, så att det fortfarande fanns 10 kulor vid andra dragningen. 7/15 är sannolikheten för samma färg, (4 · 3 + 6 · 5)/90 = 42/90, alltså motsatsen till det som efterfrågas.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-014",
+    "kind": "xyz",
+    "prompt": "Hur många tresiffriga tal kan bildas av siffrorna 0, 1, 2, 3 och 4 om varje siffra får användas högst en gång i varje tal?",
+    "options": [
+      "24",
+      "48",
+      "60",
+      "100"
+    ],
+    "correctIndex": 1,
+    "explain": "Den första siffran får inte vara 0 och kan därför väljas på 4 sätt. Den andra siffran kan väljas bland de 4 siffror som är kvar, nu även 0, och den tredje bland de 3 som återstår. Antalet blir 4 · 4 · 3 = 48. 60 = 5 · 4 · 3 får man om man glömmer att ett tresiffrigt tal inte kan börja med 0. 24 = 4 · 3 · 2 får man om man inte använder siffran 0 alls. 100 = 4 · 5 · 5 får man om man tillåter att samma siffra används flera gånger.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-015",
+    "kind": "xyz",
+    "prompt": "Det gäller att 3ˣ = 4. Vad är 9ˣ⁺¹?",
+    "options": [
+      "17",
+      "36",
+      "48",
+      "144"
+    ],
+    "correctIndex": 3,
+    "explain": "Skriv 9 som 3²: 9ˣ⁺¹ = 9ˣ · 9 = (3²)ˣ · 9 = (3ˣ)² · 9 = 4² · 9 = 16 · 9 = 144. 36 = 4 · 9 får man om man glömmer att 9ˣ = (3ˣ)² och räknar 9ˣ som 4. 48 = 16 · 3 får man om man skriver 9ˣ⁺¹ som 3²ˣ⁺¹ och alltså bara multiplicerar x med 2 i exponenten; rätt exponent är 2(x + 1) = 2x + 2. 17 = 16 + 1 får man om man tror att 9ˣ⁺¹ = 9ˣ + 1.",
+    "verification": "disagreed",
+    "verificationNote": "Exponenten i 9ˣ⁺¹ (och 3²ˣ⁺¹ i förklaringen) skrivs med Unicode-upphöjda tecken; ˣ och ⁺ finns inte i appens typsnitt (Nunito), ritas med reservtypsnitt och blir mycket små. Läses +1 som utanför exponenten blir svaret 9ˣ + 1 = 17 (alternativ A). Kontrollera visningen på mobil eller skriv om i ord, t.ex. \"Vad är 9 upphöjt till (x + 1)?\"."
+  },
+  {
+    "id": "ovn-xyz-016",
+    "kind": "xyz",
+    "prompt": "En kvadrat med arean 50 cm² är inskriven i en cirkel, det vill säga kvadratens fyra hörn ligger på cirkeln. Hur stor är cirkelns area?",
+    "options": [
+      "12,5π cm²",
+      "25π cm²",
+      "50π cm²",
+      "100π cm²"
+    ],
+    "correctIndex": 1,
+    "explain": "Kvadratens diagonal är en diameter i cirkeln. Med sidan s är s² = 50, och Pythagoras sats ger diagonalen d² = s² + s² = 100, alltså d = 10 cm. Radien är 5 cm och cirkelns area π · 5² = 25π cm². 100π cm² får man om man använder diagonalen 10 cm som radie i stället för diameter. 50π cm² får man om man använder kvadratens sida som radie, så att r² = 50. 12,5π cm² är arean av den cirkel som ryms inuti kvadraten, med radien halva sidan.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-017",
+    "kind": "xyz",
+    "prompt": "Funktionen f definieras av f(x) = x² − 3x. Vilket uttryck är lika med f(a + 2) − f(a)?",
+    "options": [
+      "−2",
+      "−2a − 2",
+      "4a + 10",
+      "4a − 2"
+    ],
+    "correctIndex": 3,
+    "explain": "f(a + 2) = (a + 2)² − 3(a + 2) = a² + 4a + 4 − 3a − 6 = a² + a − 2. Då blir f(a + 2) − f(a) = (a² + a − 2) − (a² − 3a) = a² + a − 2 − a² + 3a = 4a − 2. Kontroll med a = 1: f(3) − f(1) = 0 − (−2) = 2, och 4 · 1 − 2 = 2. −2 får man om man utvecklar (a + 2)² som a² + 4 utan den dubbla produkten 4a, eller om man tror att f(a + 2) = f(a) + f(2). 4a + 10 får man med teckenfel i −3(a + 2), som blir −3a − 6 och inte −3a + 6. −2a − 2 får man om man glömmer att minustecknet framför f(a) gäller båda termerna, så att −(a² − 3a) blir −a² − 3a i stället för −a² + 3a.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-018",
+    "kind": "xyz",
+    "prompt": "En cylinders radie ökas med 20 % samtidigt som höjden minskas med 20 %. Hur förändras cylinderns volym?",
+    "options": [
+      "Volymen minskar med 4 %",
+      "Volymen är oförändrad",
+      "Volymen ökar med 12 %",
+      "Volymen ökar med 15,2 %"
+    ],
+    "correctIndex": 3,
+    "explain": "Volymen är V = πr²h. Radien multipliceras med 1,2 och höjden med 0,8, så volymen multipliceras med 1,2² · 0,8 = 1,44 · 0,8 = 1,152. Volymen ökar alltså med 15,2 %. En minskning med 4 % får man om man glömmer att radien ska kvadreras och räknar 1,2 · 0,8 = 0,96. Att volymen skulle vara oförändrad bygger på tanken att +20 % och −20 % tar ut varandra. En ökning med 12 % får man om man tror att r² ökar med 2 · 20 % = 40 % och räknar 1,4 · 0,8 = 1,12, men 1,2² = 1,44, inte 1,4.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-019",
+    "kind": "xyz",
+    "prompt": "En liten pump kan ensam tömma en bassäng på 6 timmar och en stor pump kan ensam tömma den på 4 timmar. Den lilla pumpen startas först och 1 timme senare startas även den stora. Hur lång tid tar det totalt, räknat från att den lilla pumpen startades, att tömma bassängen?",
+    "options": [
+      "2 timmar",
+      "2,4 timmar",
+      "3 timmar",
+      "3,4 timmar"
+    ],
+    "correctIndex": 2,
+    "explain": "Den lilla pumpen tömmer 1/6 av bassängen per timme och den stora 1/4. Efter den första timmen återstår 1 − 1/6 = 5/6. Tillsammans tömmer pumparna 1/6 + 1/4 = 5/12 per timme, så resten tar (5/6)/(5/12) = 2 timmar. Totalt tar det 1 + 2 = 3 timmar. 2 timmar är bara tiden efter att den stora pumpen startats; den första timmen saknas. 2,4 timmar = 1/(5/12) är tiden om båda pumparna går från början. 3,4 timmar får man om man lägger den första timmen till 2,4 timmar och glömmer att den lilla pumpen redan har tömt 1/6 av bassängen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-020",
+    "kind": "xyz",
+    "prompt": "Fem olika positiva heltal har medelvärdet 6 och medianen 7. Vilket är det största möjliga värdet på det största av talen?",
+    "options": [
+      "12",
+      "13",
+      "14",
+      "20"
+    ],
+    "correctIndex": 0,
+    "explain": "Summan av talen är 5 · 6 = 30. I storleksordning är det mittersta talet medianen, alltså 7. Det största talet blir så stort som möjligt när de andra är så små som möjligt. De två minsta ska vara olika positiva heltal under 7, minst 1 och 2, och det fjärde talet ska vara större än 7, minst 8. Det största talet blir då 30 − 1 − 2 − 7 − 8 = 12, och talen 1, 2, 7, 8 och 12 uppfyller alla villkor. 13 får man om man låter det fjärde talet vara 7 (1, 2, 7, 7, 13), men då är två av talen lika. 14 får man om man tillåter lika tal både under och över medianen (1, 1, 7, 7, 14). 20 = 30 − 1 − 2 − 7 får man om man glömmer bort det fjärde talet.",
+    "verification": "agreed"
+  }
+]

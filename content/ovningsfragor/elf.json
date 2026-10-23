@@ -1,0 +1,302 @@
+[
+  {
+    "id": "ovn-elf-001",
+    "kind": "elf",
+    "prompt": "What is the main point of the text?",
+    "passage": "Anyone who has tried to hold a conversation beside a busy road knows the instinctive remedy: you raise your voice, and perhaps its pitch, until you are heard. Birds, it turns out, do something similar. In many cities, songbirds of several species sing at a higher pitch than their relatives in the quieter countryside, apparently lifting their songs clear of the low rumble of traffic. Some sing more loudly; some start earlier, before the morning rush begins; a few have taken to singing at night, when the streets are quieter.\n\nIt is tempting to read such findings as evolution caught in the act, and headlines have rarely resisted the temptation. Cities are young, the argument runs, so any trait that sets urban populations apart must have arisen at remarkable speed. The story appeals because it turns the city, usually cast as nature's enemy, into a laboratory in which natural selection can be watched at work.\n\nThe trouble is that a difference between two populations says nothing, on its own, about how the difference came about. A bird that sings higher in a city may carry genes that its rural cousins lack, but it may equally be an ordinary bird doing what birds of its kind have always been able to do: adjusting its song to its surroundings, much as we adjust our voices in a crowded restaurant. Individual birds of some species have been observed raising and lowering their pitch as the noise around them rises and falls, which is hard to square with the idea of a fixed, inherited trait. Telling the two explanations apart requires patient work—raising birds from different populations under identical conditions, for instance—and such studies are slow, expensive and, by the standards of a news cycle, unexciting.\n\nNone of this makes urban song less interesting. If anything, the case for flexibility raises a sharper question. Many species have never settled in cities at all, while others have moved in with apparent ease. Perhaps what distinguishes the successful newcomers is not a change acquired after arrival but a capacity they brought with them: a readiness to vary their behaviour when circumstances change. On this view, the city does not so much create new kinds of birds as sort existing ones, admitting those that were adaptable to begin with and quietly turning the rest away.\n\nThat is a less dramatic story than evolution at high speed, but it may prove the more useful one. If flexibility is the price of admission, then the species we should worry about as cities spread are not those that already share our streets, but those whose habits are too fixed to follow.",
+    "options": [
+      "Traffic noise has forced urban songbirds to evolve higher-pitched songs in a remarkably short time.",
+      "Only slow and patient research can show whether city birds really sing differently from rural ones.",
+      "The way city birds sing may say more about adaptability than about rapid genetic change.",
+      "City birds may have evolved their flexible way of singing as a response to urban noise."
+    ],
+    "correctIndex": 2,
+    "explain": "The author grants that urban birds sing differently but argues that the difference 'says nothing, on its own' about its cause, that it may equally reflect birds adjusting their song, and that such adaptability may also explain which species manage to settle in cities at all, so the songs may say more about adaptability than about rapid genetic change. The idea that traffic noise has forced rapid evolution is the headline reading the author questions. The suggestion that birds evolved their flexibility in response to city noise contradicts the text, which presents flexibility as 'a capacity they brought with them', not 'a change acquired after arrival'. Patient research is said to be needed to tell the two explanations apart, not to establish whether city birds sing differently, which the text treats as an observed fact.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-002",
+    "kind": "elf",
+    "prompt": "According to the text, what makes it hard to regard higher-pitched urban song as a fixed, inherited trait?",
+    "passage": "Anyone who has tried to hold a conversation beside a busy road knows the instinctive remedy: you raise your voice, and perhaps its pitch, until you are heard. Birds, it turns out, do something similar. In many cities, songbirds of several species sing at a higher pitch than their relatives in the quieter countryside, apparently lifting their songs clear of the low rumble of traffic. Some sing more loudly; some start earlier, before the morning rush begins; a few have taken to singing at night, when the streets are quieter.\n\nIt is tempting to read such findings as evolution caught in the act, and headlines have rarely resisted the temptation. Cities are young, the argument runs, so any trait that sets urban populations apart must have arisen at remarkable speed. The story appeals because it turns the city, usually cast as nature's enemy, into a laboratory in which natural selection can be watched at work.\n\nThe trouble is that a difference between two populations says nothing, on its own, about how the difference came about. A bird that sings higher in a city may carry genes that its rural cousins lack, but it may equally be an ordinary bird doing what birds of its kind have always been able to do: adjusting its song to its surroundings, much as we adjust our voices in a crowded restaurant. Individual birds of some species have been observed raising and lowering their pitch as the noise around them rises and falls, which is hard to square with the idea of a fixed, inherited trait. Telling the two explanations apart requires patient work—raising birds from different populations under identical conditions, for instance—and such studies are slow, expensive and, by the standards of a news cycle, unexciting.\n\nNone of this makes urban song less interesting. If anything, the case for flexibility raises a sharper question. Many species have never settled in cities at all, while others have moved in with apparent ease. Perhaps what distinguishes the successful newcomers is not a change acquired after arrival but a capacity they brought with them: a readiness to vary their behaviour when circumstances change. On this view, the city does not so much create new kinds of birds as sort existing ones, admitting those that were adaptable to begin with and quietly turning the rest away.\n\nThat is a less dramatic story than evolution at high speed, but it may prove the more useful one. If flexibility is the price of admission, then the species we should worry about as cities spread are not those that already share our streets, but those whose habits are too fixed to follow.",
+    "options": [
+      "Some individual birds change their pitch as the noise around them changes.",
+      "Rural birds of the same species have been found to sing just as high.",
+      "Cities have not existed long enough for inherited traits to change.",
+      "Birds raised under identical conditions in the laboratory have turned out to sing alike."
+    ],
+    "correctIndex": 0,
+    "explain": "The text says that individual birds of some species have been seen raising and lowering their pitch as the noise rises and falls, which is 'hard to square with the idea of a fixed, inherited trait'. Raising birds under identical conditions is mentioned only as the kind of study needed to tell the explanations apart; no results from such studies are reported. The young age of cities is part of the argument for rapid evolution, not an objection to inherited change. And the text says the opposite of the claim about rural birds: urban birds sing higher than their relatives in the countryside.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-003",
+    "kind": "elf",
+    "prompt": "How does the author seem to regard the way findings about urban birdsong have often been reported?",
+    "passage": "Anyone who has tried to hold a conversation beside a busy road knows the instinctive remedy: you raise your voice, and perhaps its pitch, until you are heard. Birds, it turns out, do something similar. In many cities, songbirds of several species sing at a higher pitch than their relatives in the quieter countryside, apparently lifting their songs clear of the low rumble of traffic. Some sing more loudly; some start earlier, before the morning rush begins; a few have taken to singing at night, when the streets are quieter.\n\nIt is tempting to read such findings as evolution caught in the act, and headlines have rarely resisted the temptation. Cities are young, the argument runs, so any trait that sets urban populations apart must have arisen at remarkable speed. The story appeals because it turns the city, usually cast as nature's enemy, into a laboratory in which natural selection can be watched at work.\n\nThe trouble is that a difference between two populations says nothing, on its own, about how the difference came about. A bird that sings higher in a city may carry genes that its rural cousins lack, but it may equally be an ordinary bird doing what birds of its kind have always been able to do: adjusting its song to its surroundings, much as we adjust our voices in a crowded restaurant. Individual birds of some species have been observed raising and lowering their pitch as the noise around them rises and falls, which is hard to square with the idea of a fixed, inherited trait. Telling the two explanations apart requires patient work—raising birds from different populations under identical conditions, for instance—and such studies are slow, expensive and, by the standards of a news cycle, unexciting.\n\nNone of this makes urban song less interesting. If anything, the case for flexibility raises a sharper question. Many species have never settled in cities at all, while others have moved in with apparent ease. Perhaps what distinguishes the successful newcomers is not a change acquired after arrival but a capacity they brought with them: a readiness to vary their behaviour when circumstances change. On this view, the city does not so much create new kinds of birds as sort existing ones, admitting those that were adaptable to begin with and quietly turning the rest away.\n\nThat is a less dramatic story than evolution at high speed, but it may prove the more useful one. If flexibility is the price of admission, then the species we should worry about as cities spread are not those that already share our streets, but those whose habits are too fixed to follow.",
+    "options": [
+      "With some understanding, as the evolutionary reading of the findings will probably prove correct",
+      "With anger, because journalists have knowingly misled the public about the evidence",
+      "With some scepticism, as the reports exaggerate how much the songs of city and country birds differ",
+      "With some scepticism, as the reports read more into the findings than they show"
+    ],
+    "correctIndex": 3,
+    "explain": "The author says that headlines 'have rarely resisted the temptation' to treat the findings as evolution caught in the act, and then points out that a difference between populations 'says nothing, on its own' about its cause: the reports draw a conclusion about causes that the findings alone do not support. The author is sceptical, but not about the size of the difference, since the higher pitch of city birds is presented as an observed fact. Although the author understands why the evolutionary story 'appeals', nothing suggests that it will probably prove correct; if anything, the text leans towards the explanation based on flexibility. And describing the coverage as giving in to a temptation suggests an understandable mistake, not deliberate deception, so anger at journalists who knowingly mislead is too strong.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-004",
+    "kind": "elf",
+    "prompt": "What does the author suggest in the final paragraph?",
+    "passage": "Anyone who has tried to hold a conversation beside a busy road knows the instinctive remedy: you raise your voice, and perhaps its pitch, until you are heard. Birds, it turns out, do something similar. In many cities, songbirds of several species sing at a higher pitch than their relatives in the quieter countryside, apparently lifting their songs clear of the low rumble of traffic. Some sing more loudly; some start earlier, before the morning rush begins; a few have taken to singing at night, when the streets are quieter.\n\nIt is tempting to read such findings as evolution caught in the act, and headlines have rarely resisted the temptation. Cities are young, the argument runs, so any trait that sets urban populations apart must have arisen at remarkable speed. The story appeals because it turns the city, usually cast as nature's enemy, into a laboratory in which natural selection can be watched at work.\n\nThe trouble is that a difference between two populations says nothing, on its own, about how the difference came about. A bird that sings higher in a city may carry genes that its rural cousins lack, but it may equally be an ordinary bird doing what birds of its kind have always been able to do: adjusting its song to its surroundings, much as we adjust our voices in a crowded restaurant. Individual birds of some species have been observed raising and lowering their pitch as the noise around them rises and falls, which is hard to square with the idea of a fixed, inherited trait. Telling the two explanations apart requires patient work—raising birds from different populations under identical conditions, for instance—and such studies are slow, expensive and, by the standards of a news cycle, unexciting.\n\nNone of this makes urban song less interesting. If anything, the case for flexibility raises a sharper question. Many species have never settled in cities at all, while others have moved in with apparent ease. Perhaps what distinguishes the successful newcomers is not a change acquired after arrival but a capacity they brought with them: a readiness to vary their behaviour when circumstances change. On this view, the city does not so much create new kinds of birds as sort existing ones, admitting those that were adaptable to begin with and quietly turning the rest away.\n\nThat is a less dramatic story than evolution at high speed, but it may prove the more useful one. If flexibility is the price of admission, then the species we should worry about as cities spread are not those that already share our streets, but those whose habits are too fixed to follow.",
+    "options": [
+      "Scientists will eventually abandon the evolutionary explanation in favour of the one based on flexibility.",
+      "Species that are absent from cities may be more threatened by urban growth than those found there.",
+      "Flexible species that settle in cities will gradually evolve into new, distinctly urban species.",
+      "Species already living in cities may be more at risk from urban growth than those that have stayed away."
+    ],
+    "correctIndex": 1,
+    "explain": "The final paragraph says that if flexibility is 'the price of admission', the species to worry about as cities spread are 'not those that already share our streets, but those whose habits are too fixed to follow', that is, species that have not moved into cities. The claim that species already living in cities are more at risk reverses this. The idea that flexible species will evolve into new urban species contradicts the previous paragraph, where the city is said to sort existing birds rather than create new kinds. The author says the flexibility story 'may prove the more useful one' but makes no prediction that scientists will abandon the evolutionary explanation.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-005",
+    "kind": "elf",
+    "prompt": "Why, according to the author, can closer inspection not solve the main problem?",
+    "passage": "Every organisation that tries to manage by numbers sooner or later runs into the same awkward fact. A figure that once told you something useful about how well people were working starts, the moment you reward or punish them according to it, to tell you mainly how good they have become at producing that figure. Economists call this Goodhart's law, after the British economist who described it, but few of us need the name. We have all heard of call centres that time their calls and end up with staff who cut difficult customers off, or of schools judged on exam results that quietly stop entering pupils who might fail.\n\nThe usual response is outrage, followed by tighter rules. On this account the trouble is cheating: a few unscrupulous individuals game the system, and the cure is closer inspection. Cheating certainly happens, but it is not the heart of the problem. Far more common, and far harder to detect, is the conscientious employee who simply does what she has been asked. Told that her performance will be judged on a single number, she devotes her limited time and attention to that number, and the parts of her job that nobody counts—the patient explanation, the colleague helped out of a tight spot—shrink without anyone ever deciding that they should. No rule has been broken. That is precisely why inspection cannot fix it.\n\nIt does not follow that we should throw our measurements away. Organisations that abandon numbers altogether tend to fall back on impressions, and impressions are hardly free of bias; they favour the confident, the visible and the familiar. A hospital that stops recording waiting times does not thereby become kinder to its patients. The question is not whether to measure but what to do with the measurements once we have them.\n\nHere a distinction that is often blurred in practice becomes useful. A number can serve as the start of a conversation or as a verdict. In the first case, a sudden drop in a team's figures prompts someone to go and find out what is happening, and the answer may well be that the team is doing something valuable that the number cannot see. In the second, the same drop sets off an automatic penalty, and the team learns to protect the number rather than explain it. The figures are identical in both cases; what differs is whether anyone is still expected to exercise judgement.\n\nSuch judgement does not come cheap. It requires managers who understand the work well enough to see what the numbers leave out, and it cannot be scaled up as easily as a spreadsheet. But the alternative is not objectivity. It is an organisation that knows more and more about less and less.",
+    "options": [
+      "Because conscientious employees hide from inspectors the parts of the job they neglect",
+      "Because the problem lies in what people are asked to do, not in people breaking rules",
+      "Because inspectors tend to favour the confident, the visible and the familiar",
+      "Because cheating has become far too widespread to be investigated properly"
+    ],
+    "correctIndex": 1,
+    "explain": "The author argues that the main problem is not cheating but the conscientious employee who 'simply does what she has been asked', concentrating on the number she is judged by while the uncounted parts of the job shrink; no rule is broken, which is 'precisely why inspection cannot fix it'. This behaviour is 'far harder to detect' because nothing is being broken, not because employees hide what they neglect; the text says the shrinking happens 'without anyone ever deciding that they should'. The bias towards the confident, the visible and the familiar is attributed to impressions, not to inspectors. And the claim that cheating is too widespread contradicts the statement that cheating 'is not the heart of the problem'.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-006",
+    "kind": "elf",
+    "prompt": "What role does the third paragraph (beginning 'It does not follow') play in the text?",
+    "passage": "Every organisation that tries to manage by numbers sooner or later runs into the same awkward fact. A figure that once told you something useful about how well people were working starts, the moment you reward or punish them according to it, to tell you mainly how good they have become at producing that figure. Economists call this Goodhart's law, after the British economist who described it, but few of us need the name. We have all heard of call centres that time their calls and end up with staff who cut difficult customers off, or of schools judged on exam results that quietly stop entering pupils who might fail.\n\nThe usual response is outrage, followed by tighter rules. On this account the trouble is cheating: a few unscrupulous individuals game the system, and the cure is closer inspection. Cheating certainly happens, but it is not the heart of the problem. Far more common, and far harder to detect, is the conscientious employee who simply does what she has been asked. Told that her performance will be judged on a single number, she devotes her limited time and attention to that number, and the parts of her job that nobody counts—the patient explanation, the colleague helped out of a tight spot—shrink without anyone ever deciding that they should. No rule has been broken. That is precisely why inspection cannot fix it.\n\nIt does not follow that we should throw our measurements away. Organisations that abandon numbers altogether tend to fall back on impressions, and impressions are hardly free of bias; they favour the confident, the visible and the familiar. A hospital that stops recording waiting times does not thereby become kinder to its patients. The question is not whether to measure but what to do with the measurements once we have them.\n\nHere a distinction that is often blurred in practice becomes useful. A number can serve as the start of a conversation or as a verdict. In the first case, a sudden drop in a team's figures prompts someone to go and find out what is happening, and the answer may well be that the team is doing something valuable that the number cannot see. In the second, the same drop sets off an automatic penalty, and the team learns to protect the number rather than explain it. The figures are identical in both cases; what differs is whether anyone is still expected to exercise judgement.\n\nSuch judgement does not come cheap. It requires managers who understand the work well enough to see what the numbers leave out, and it cannot be scaled up as easily as a spreadsheet. But the alternative is not objectivity. It is an organisation that knows more and more about less and less.",
+    "options": [
+      "It gives a further example of how measuring performance can damage the work being measured.",
+      "It argues that impressions are, on the whole, a fairer basis for judgement than figures are.",
+      "It suggests that waiting times are a misleading way of judging how well a hospital works.",
+      "It rejects a conclusion that readers might draw from the first two paragraphs."
+    ],
+    "correctIndex": 3,
+    "explain": "The paragraph opens 'It does not follow that we should throw our measurements away': after two paragraphs on how numbers distort work, the author rejects the tempting conclusion that measuring should be abandoned and turns to how measurements should be used. The hospital example is not a further case of measurement damaging work; it shows that dropping a measure does not by itself make an organisation better. Far from preferring impressions, the paragraph says they are 'hardly free of bias'. Nor does it criticise waiting times as a measure; it only says that no longer recording them would not make a hospital kinder.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-007",
+    "kind": "elf",
+    "prompt": "In the fourth paragraph, what distinguishes using a number as 'the start of a conversation' from using it as 'a verdict'?",
+    "passage": "Every organisation that tries to manage by numbers sooner or later runs into the same awkward fact. A figure that once told you something useful about how well people were working starts, the moment you reward or punish them according to it, to tell you mainly how good they have become at producing that figure. Economists call this Goodhart's law, after the British economist who described it, but few of us need the name. We have all heard of call centres that time their calls and end up with staff who cut difficult customers off, or of schools judged on exam results that quietly stop entering pupils who might fail.\n\nThe usual response is outrage, followed by tighter rules. On this account the trouble is cheating: a few unscrupulous individuals game the system, and the cure is closer inspection. Cheating certainly happens, but it is not the heart of the problem. Far more common, and far harder to detect, is the conscientious employee who simply does what she has been asked. Told that her performance will be judged on a single number, she devotes her limited time and attention to that number, and the parts of her job that nobody counts—the patient explanation, the colleague helped out of a tight spot—shrink without anyone ever deciding that they should. No rule has been broken. That is precisely why inspection cannot fix it.\n\nIt does not follow that we should throw our measurements away. Organisations that abandon numbers altogether tend to fall back on impressions, and impressions are hardly free of bias; they favour the confident, the visible and the familiar. A hospital that stops recording waiting times does not thereby become kinder to its patients. The question is not whether to measure but what to do with the measurements once we have them.\n\nHere a distinction that is often blurred in practice becomes useful. A number can serve as the start of a conversation or as a verdict. In the first case, a sudden drop in a team's figures prompts someone to go and find out what is happening, and the answer may well be that the team is doing something valuable that the number cannot see. In the second, the same drop sets off an automatic penalty, and the team learns to protect the number rather than explain it. The figures are identical in both cases; what differs is whether anyone is still expected to exercise judgement.\n\nSuch judgement does not come cheap. It requires managers who understand the work well enough to see what the numbers leave out, and it cannot be scaled up as easily as a spreadsheet. But the alternative is not objectivity. It is an organisation that knows more and more about less and less.",
+    "options": [
+      "Whether a drop in the figures is looked into or punished automatically",
+      "Whether the figures are discussed openly with the staff or kept among the managers",
+      "Whether the figures are accurate or have been quietly manipulated by the team itself",
+      "Whether the figures describe the performance of individual employees or of whole teams"
+    ],
+    "correctIndex": 0,
+    "explain": "The author explains that a number used as the start of a conversation makes someone 'go and find out what is happening', whereas a number used as a verdict 'sets off an automatic penalty'; what differs is 'whether anyone is still expected to exercise judgement'. The word 'conversation' does not refer to sharing figures with staff rather than managers, and nothing is said about who sees the numbers. The text stresses that 'the figures are identical in both cases', so accuracy or manipulation cannot be the difference. Both cases concern the same team's figures, so the distinction is not between individuals and teams.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-008",
+    "kind": "elf",
+    "prompt": "What does the author mean by the final phrase, 'an organisation that knows more and more about less and less'?",
+    "passage": "Every organisation that tries to manage by numbers sooner or later runs into the same awkward fact. A figure that once told you something useful about how well people were working starts, the moment you reward or punish them according to it, to tell you mainly how good they have become at producing that figure. Economists call this Goodhart's law, after the British economist who described it, but few of us need the name. We have all heard of call centres that time their calls and end up with staff who cut difficult customers off, or of schools judged on exam results that quietly stop entering pupils who might fail.\n\nThe usual response is outrage, followed by tighter rules. On this account the trouble is cheating: a few unscrupulous individuals game the system, and the cure is closer inspection. Cheating certainly happens, but it is not the heart of the problem. Far more common, and far harder to detect, is the conscientious employee who simply does what she has been asked. Told that her performance will be judged on a single number, she devotes her limited time and attention to that number, and the parts of her job that nobody counts—the patient explanation, the colleague helped out of a tight spot—shrink without anyone ever deciding that they should. No rule has been broken. That is precisely why inspection cannot fix it.\n\nIt does not follow that we should throw our measurements away. Organisations that abandon numbers altogether tend to fall back on impressions, and impressions are hardly free of bias; they favour the confident, the visible and the familiar. A hospital that stops recording waiting times does not thereby become kinder to its patients. The question is not whether to measure but what to do with the measurements once we have them.\n\nHere a distinction that is often blurred in practice becomes useful. A number can serve as the start of a conversation or as a verdict. In the first case, a sudden drop in a team's figures prompts someone to go and find out what is happening, and the answer may well be that the team is doing something valuable that the number cannot see. In the second, the same drop sets off an automatic penalty, and the team learns to protect the number rather than explain it. The figures are identical in both cases; what differs is whether anyone is still expected to exercise judgement.\n\nSuch judgement does not come cheap. It requires managers who understand the work well enough to see what the numbers leave out, and it cannot be scaled up as easily as a spreadsheet. But the alternative is not objectivity. It is an organisation that knows more and more about less and less.",
+    "options": [
+      "One that gathers so much data that it can no longer make sense of any of it",
+      "One that trusts impressions more and more and its own figures less and less",
+      "One that tracks an ever narrower part of its work in ever greater detail",
+      "One that gathers ever more figures on an ever smaller number of employees"
+    ],
+    "correctIndex": 2,
+    "explain": "The phrase sums up the argument: when numbers replace judgement, people concentrate on what is counted and the uncounted parts of the work shrink, so the organisation measures an ever smaller share of what matters in ever greater detail. The problem described is not a flood of data that cannot be interpreted; the numbers are clear enough, they simply leave things out. Trusting impressions more is the opposite of what the sentence describes, since 'the alternative' to costly judgement is relying on numbers alone. 'Less and less' refers to how much of the work the figures capture, not to the number of employees being measured.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-009",
+    "kind": "elf",
+    "prompt": "What is the main point of the text?",
+    "passage": "In a famous passage of his Confessions, Augustine describes watching Ambrose, the bishop of Milan, at his reading: his eyes ran over the page and his heart searched out the meaning, but his voice and tongue were still. For generations the scene was cited as proof that silent reading was a rarity in the ancient world—an oddity worth writing down. The inference is weaker than it looks. Ambrose was not alone in a study when Augustine saw him; he read in this way while visitors sat waiting to speak with him. And Augustine's own guesses at the reason—that the bishop wished to avoid being asked to explain difficult passages to his listeners, or to spare a voice that tired easily—concern why a man would read silently in company, not whether such reading was possible. A single surprised witness, in any case, tells us first of all about the witness's own expectations. Whether those expectations were shared by everyone who could read is another question.",
+    "options": [
+      "Silent reading may well have been rarer in antiquity than modern scholars tend to assume.",
+      "Augustine misunderstood the reasons why Ambrose chose to read in silence.",
+      "Silent reading was in fact widespread in the ancient world, as Augustine's account shows.",
+      "Augustine's account says less about ancient reading habits than is often assumed."
+    ],
+    "correctIndex": 3,
+    "explain": "The author's central claim is that 'the inference is weaker than it looks': the scene has long been cited as proof that silent reading was rare, but the circumstances and Augustine's own guesses suggest that it shows something narrower. The suggestion that silent reading may have been rarer than modern scholars assume runs against this argument, which weakens the evidence for rarity rather than strengthening it. Nor does the text claim that Augustine misunderstood Ambrose's reasons; his guesses are used as evidence of what puzzled him. Finally, the author does not argue that silent reading was widespread, since whether Augustine's expectations were shared by other readers is left as 'another question'.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-010",
+    "kind": "elf",
+    "prompt": "Why does the author point out that visitors were present when Ambrose read?",
+    "passage": "In a famous passage of his Confessions, Augustine describes watching Ambrose, the bishop of Milan, at his reading: his eyes ran over the page and his heart searched out the meaning, but his voice and tongue were still. For generations the scene was cited as proof that silent reading was a rarity in the ancient world—an oddity worth writing down. The inference is weaker than it looks. Ambrose was not alone in a study when Augustine saw him; he read in this way while visitors sat waiting to speak with him. And Augustine's own guesses at the reason—that the bishop wished to avoid being asked to explain difficult passages to his listeners, or to spare a voice that tired easily—concern why a man would read silently in company, not whether such reading was possible. A single surprised witness, in any case, tells us first of all about the witness's own expectations. Whether those expectations were shared by everyone who could read is another question.",
+    "options": [
+      "To suggest that Augustine was puzzled by silent reading in company, not by silent reading as such",
+      "To suggest that Ambrose read silently out of consideration for the visitors who were waiting for him",
+      "To indicate that the visitors, like Augustine, regarded silent reading as something strange",
+      "To explain how Augustine came to be in a position to watch the bishop reading"
+    ],
+    "correctIndex": 0,
+    "explain": "Right after noting that Ambrose was not alone in a study but read this way while visitors waited, the author says that Augustine's guesses 'concern why a man would read silently in company, not whether such reading was possible'; the detail supports the idea that what surprised Augustine was the circumstances, not silent reading as such. The text gives no motive of consideration for the visitors; the reasons it mentions are avoiding requests to explain difficult passages and sparing a voice that tired easily. Nothing is said about how the visitors themselves reacted. And the detail is not there to explain how Augustine came to see the scene, but to weaken the old inference drawn from it.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-011",
+    "kind": "elf",
+    "prompt": "According to the text, why may a document saved thirty years ago be impossible to read today?",
+    "passage": "A letter left in a drawer for three hundred years can usually still be read by anyone who knows the language. A document saved on a computer thirty years ago may be beyond rescue even if the disk that holds it is in perfect condition. The bits survive; what disappears is everything needed to make sense of them—the program that created the file, the operating system that ran the program, the machine that ran the operating system. Each layer was built on the unspoken assumption that the one beneath it would always be there. Seen this way, preserving digital material has less in common with storing objects than with keeping a language in use. Putting files somewhere safe is only the beginning; someone must go on carrying them over into forms that the tools of the day can open, again and again, for as long as anyone wants them read. A digital archive, in other words, is less a place than an activity.",
+    "options": [
+      "The data on the disk fades gradually, even when the disk itself is well kept.",
+      "Modern computers are designed to refuse files made on much older systems.",
+      "The programs and machines needed to open it may no longer exist.",
+      "No one may still remember what the document was originally for."
+    ],
+    "correctIndex": 2,
+    "explain": "The text says that 'the bits survive' and that what disappears is everything needed to make sense of them: 'the program that created the file, the operating system that ran the program, the machine that ran the operating system'. The idea that the data fades contradicts this, as well as the statement that the disk may be in perfect condition. Nothing is said about modern computers being designed to refuse old files; the problem is that the layers needed to read them have disappeared. And 'make sense of them' refers to these technical layers, not to people forgetting what a document was for.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-012",
+    "kind": "elf",
+    "prompt": "What does the author mean by saying that a digital archive 'is less a place than an activity'?",
+    "passage": "A letter left in a drawer for three hundred years can usually still be read by anyone who knows the language. A document saved on a computer thirty years ago may be beyond rescue even if the disk that holds it is in perfect condition. The bits survive; what disappears is everything needed to make sense of them—the program that created the file, the operating system that ran the program, the machine that ran the operating system. Each layer was built on the unspoken assumption that the one beneath it would always be there. Seen this way, preserving digital material has less in common with storing objects than with keeping a language in use. Putting files somewhere safe is only the beginning; someone must go on carrying them over into forms that the tools of the day can open, again and again, for as long as anyone wants them read. A digital archive, in other words, is less a place than an activity.",
+    "options": [
+      "It can be reached from anywhere, rather than only from inside a single building.",
+      "Its files must regularly be moved to new and safer places of storage.",
+      "Its contents stay readable only as long as people keep working to make them so.",
+      "Its staff need to be able to translate documents between many different languages."
+    ],
+    "correctIndex": 2,
+    "explain": "The author says that putting files somewhere safe 'is only the beginning': someone must keep 'carrying them over into forms that the tools of the day can open, again and again'. An archive is therefore defined by continuing work rather than by a location. 'Carrying them over' means converting files into forms that new tools can open, not moving them to safer storage, which the text says is not enough on its own. The phrase has nothing to do with remote access, and the comparison with a language is a metaphor, so nothing is said about staff translating between languages.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-013",
+    "kind": "elf",
+    "prompt": "What does the author suggest about the queue outside such a restaurant?",
+    "passage": "Restaurants that refuse to take bookings like to present the policy as a kind of democracy: no favours for those with connections, first come, first served. The economics are less high-minded. A reserved table that nobody turns up to claim is pure loss, and on a busy night a handful of no-shows can wipe out the profit from an entire sitting. Abolishing reservations moves that risk elsewhere. Instead of the restaurant waiting for diners who may never arrive, the diners wait for tables that are certain to come free—and they do so on the pavement, in full view of everyone walking past. Few forms of advertising are as persuasive as a line of people willing to stand in the rain for their dinner, and this one costs nothing. Customers are not necessarily the losers, of course; plenty of them would rather queue for half an hour than plan a meal three weeks ahead. But it is worth being clear about whom the arrangement was designed to serve.",
+    "options": [
+      "It shows that many diners find the policy more frustrating than they admit.",
+      "It works in the restaurant's favour by catching the eye of passers-by.",
+      "It is a reliable sign that the food is better than at restaurants nearby.",
+      "It tends to discourage people walking past from trying the restaurant."
+    ],
+    "correctIndex": 1,
+    "explain": "The author says that few forms of advertising are as persuasive as a line of people willing to stand in the rain, and adds that 'this one costs nothing', so the queue benefits the restaurant by attracting attention. The text does not say that the food really is better; the queue persuades passers-by, but nothing is said about whether that impression is accurate. Saying that the queue puts people off reverses the author's point. And the author notes that 'plenty' of customers would rather queue than book weeks ahead, which does not fit the idea that diners are secretly frustrated.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-014",
+    "kind": "elf",
+    "prompt": "What is the author's main purpose in the text?",
+    "passage": "Restaurants that refuse to take bookings like to present the policy as a kind of democracy: no favours for those with connections, first come, first served. The economics are less high-minded. A reserved table that nobody turns up to claim is pure loss, and on a busy night a handful of no-shows can wipe out the profit from an entire sitting. Abolishing reservations moves that risk elsewhere. Instead of the restaurant waiting for diners who may never arrive, the diners wait for tables that are certain to come free—and they do so on the pavement, in full view of everyone walking past. Few forms of advertising are as persuasive as a line of people willing to stand in the rain for their dinner, and this one costs nothing. Customers are not necessarily the losers, of course; plenty of them would rather queue for half an hour than plan a meal three weeks ahead. But it is worth being clear about whom the arrangement was designed to serve.",
+    "options": [
+      "To argue that restaurants ought to go back to accepting reservations from their customers",
+      "To show that customers generally end up worse off when restaurants refuse to take bookings",
+      "To explain why restaurants that refuse bookings so often have queues outside",
+      "To show that a policy presented as fair was really designed to suit the restaurant"
+    ],
+    "correctIndex": 3,
+    "explain": "The author contrasts the 'democratic' way such restaurants present the policy with economics that are 'less high-minded': refusing bookings moves the risk of no-shows onto waiting diners and supplies free advertising, and the text ends by urging us to be clear about 'whom the arrangement was designed to serve'. The queue is part of this argument, as evidence of what the restaurant gains, but explaining it is not the purpose of the text. No recommendation is made that restaurants go back to taking bookings. And the claim that customers generally lose out is contradicted by 'Customers are not necessarily the losers'.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-015",
+    "kind": "elf",
+    "prompt": "Which of the following would be the most suitable title for the text?",
+    "passage": "Few scientific images have travelled as far as the 'wood wide web'. The phrase describes the threads of soil fungi that link the roots of neighbouring trees, and in popular retellings it has grown into something close to a forest internet, through which old 'mother trees' feed their seedlings and warn their neighbours of danger. The fungal connections themselves are real, and remarkable. What is less secure is the story told about them. Showing that carbon or a chemical signal passes from one tree to another is hard enough in the field; showing that it travelled through the fungus rather than through the soil, and that the transfer makes any difference to the tree that receives it, is harder still. Several researchers have recently argued that the evidence for the most popular claims is thinner than books and documentaries suggest. That is no reason to stop marvelling at the forest floor. It is a reason to notice when a metaphor has begun to do the work that evidence should be doing.",
+    "options": [
+      "A Story That Has Outrun the Science",
+      "The Wood Wide Web Exposed as a Myth",
+      "How Old Trees Care for Their Young",
+      "The Hidden Network Beneath Our Forests"
+    ],
+    "correctIndex": 0,
+    "explain": "The author accepts that the fungal connections are 'real, and remarkable' but argues that 'the story told about them' goes beyond what has been shown, ending with a warning about a metaphor doing 'the work that evidence should be doing', which is what 'A Story That Has Outrun the Science' expresses. A title claiming that the wood wide web has been exposed as a myth is too strong, since the connections themselves are said to be real. A title about old trees caring for their young repeats the popular claim that the author questions. A title about a hidden network names the topic but leaves out the author's point, which is a criticism of how that network has been described.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-016",
+    "kind": "elf",
+    "prompt": "Which of the following does the text present as the most difficult to demonstrate?",
+    "passage": "Few scientific images have travelled as far as the 'wood wide web'. The phrase describes the threads of soil fungi that link the roots of neighbouring trees, and in popular retellings it has grown into something close to a forest internet, through which old 'mother trees' feed their seedlings and warn their neighbours of danger. The fungal connections themselves are real, and remarkable. What is less secure is the story told about them. Showing that carbon or a chemical signal passes from one tree to another is hard enough in the field; showing that it travelled through the fungus rather than through the soil, and that the transfer makes any difference to the tree that receives it, is harder still. Several researchers have recently argued that the evidence for the most popular claims is thinner than books and documentaries suggest. That is no reason to stop marvelling at the forest floor. It is a reason to notice when a metaphor has begun to do the work that evidence should be doing.",
+    "options": [
+      "That a substance went through the soil rather than through the fungi",
+      "That a substance went via the fungi and affected the receiving tree",
+      "That carbon or a chemical signal can pass from one tree to another",
+      "That popular books and documentaries have exaggerated the evidence"
+    ],
+    "correctIndex": 1,
+    "explain": "The text says that showing carbon or a chemical signal passing from one tree to another is 'hard enough', but that showing it 'travelled through the fungus rather than through the soil, and that the transfer makes any difference to the tree that receives it, is harder still'. Transfer between trees as such is therefore difficult, but not the most difficult. The option about the soil reverses the point: the hard task is to rule out the soil route, not to prove it. The view that books and documentaries exaggerate the evidence is attributed to several researchers; the text does not present it as something difficult to prove.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-017",
+    "kind": "elf",
+    "prompt": "Which alternative best fits gap 1?",
+    "passage": "Procrastination is usually treated as a failure of planning, and the standard remedies reflect this: calendars, to-do lists, apps that break large tasks into small ones. Such tools are not useless. __1__, a growing number of psychologists argue that they aim at the wrong target. People seldom put off a task because they have misjudged how long it will take. They put it off because the task stirs up something unpleasant—boredom, anxiety, the fear of doing it badly—and turning to something else makes that feeling __2__ almost at once. The reward is immediate, while the cost arrives later and is easy to __3__, which is exactly why the habit is so hard to break.\n\nSeen this way, the procrastinator is not someone who cannot tell the time but someone who is managing a mood, and doing so quite efficiently in the short run. This has practical consequences. Urging such a person to try harder, or handing over a more detailed schedule, may simply add guilt to the original discomfort—and someone faced with one more unpleasant feeling is __4__ to respond with further delay. More promising, on this view, are approaches that make the first step of a task less daunting, or that help people tolerate the discomfort long enough for it to pass.",
+    "options": [
+      "Consequently",
+      "In other words",
+      "Likewise",
+      "Even so"
+    ],
+    "correctIndex": 3,
+    "explain": "The previous sentence grants that the tools 'are not useless', and the sentence with the gap goes on to criticise them, so a concessive link meaning 'despite this' is needed: 'Even so'. 'Consequently' would present the criticism as following from the tools being useful, which is illogical. 'In other words' would introduce a restatement, but aiming at the wrong target does not rephrase being useful. 'Likewise' signals a similar point, whereas the two sentences pull in opposite directions.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-018",
+    "kind": "elf",
+    "prompt": "Which alternative best fits gap 2?",
+    "passage": "Procrastination is usually treated as a failure of planning, and the standard remedies reflect this: calendars, to-do lists, apps that break large tasks into small ones. Such tools are not useless. __1__, a growing number of psychologists argue that they aim at the wrong target. People seldom put off a task because they have misjudged how long it will take. They put it off because the task stirs up something unpleasant—boredom, anxiety, the fear of doing it badly—and turning to something else makes that feeling __2__ almost at once. The reward is immediate, while the cost arrives later and is easy to __3__, which is exactly why the habit is so hard to break.\n\nSeen this way, the procrastinator is not someone who cannot tell the time but someone who is managing a mood, and doing so quite efficiently in the short run. This has practical consequences. Urging such a person to try harder, or handing over a more detailed schedule, may simply add guilt to the original discomfort—and someone faced with one more unpleasant feeling is __4__ to respond with further delay. More promising, on this view, are approaches that make the first step of a task less daunting, or that help people tolerate the discomfort long enough for it to pass.",
+    "options": [
+      "subside",
+      "intensify",
+      "resurface",
+      "harden"
+    ],
+    "correctIndex": 0,
+    "explain": "The next sentence calls the effect of delaying an immediate 'reward', so turning to something else must make the unpleasant feeling weaken: 'subside' means to become less intense or die down. If the feeling were to 'intensify' (grow stronger) or 'harden' (become firmer and more fixed), delaying would be a punishment rather than a reward. 'Resurface' (come back after having gone away) does not fit either, since the feeling is already present and the point is the quick relief that keeps the habit going.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-019",
+    "kind": "elf",
+    "prompt": "Which alternative best fits gap 3?",
+    "passage": "Procrastination is usually treated as a failure of planning, and the standard remedies reflect this: calendars, to-do lists, apps that break large tasks into small ones. Such tools are not useless. __1__, a growing number of psychologists argue that they aim at the wrong target. People seldom put off a task because they have misjudged how long it will take. They put it off because the task stirs up something unpleasant—boredom, anxiety, the fear of doing it badly—and turning to something else makes that feeling __2__ almost at once. The reward is immediate, while the cost arrives later and is easy to __3__, which is exactly why the habit is so hard to break.\n\nSeen this way, the procrastinator is not someone who cannot tell the time but someone who is managing a mood, and doing so quite efficiently in the short run. This has practical consequences. Urging such a person to try harder, or handing over a more detailed schedule, may simply add guilt to the original discomfort—and someone faced with one more unpleasant feeling is __4__ to respond with further delay. More promising, on this view, are approaches that make the first step of a task less daunting, or that help people tolerate the discomfort long enough for it to pass.",
+    "options": [
+      "anticipate",
+      "exaggerate",
+      "discount",
+      "measure"
+    ],
+    "correctIndex": 2,
+    "explain": "The sentence explains why the habit persists: the reward comes now, while the cost comes later and is easy to 'discount', that is, to treat as less important than it really is. If the cost were easy to 'anticipate' or to 'measure', people would see it clearly in advance, which would make the habit easier, not harder, to break. Similarly, a cost that people tend to 'exaggerate' would put them off delaying. Only 'discount' explains why a delayed cost fails to outweigh the immediate reward.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-020",
+    "kind": "elf",
+    "prompt": "Which alternative best fits gap 4?",
+    "passage": "Procrastination is usually treated as a failure of planning, and the standard remedies reflect this: calendars, to-do lists, apps that break large tasks into small ones. Such tools are not useless. __1__, a growing number of psychologists argue that they aim at the wrong target. People seldom put off a task because they have misjudged how long it will take. They put it off because the task stirs up something unpleasant—boredom, anxiety, the fear of doing it badly—and turning to something else makes that feeling __2__ almost at once. The reward is immediate, while the cost arrives later and is easy to __3__, which is exactly why the habit is so hard to break.\n\nSeen this way, the procrastinator is not someone who cannot tell the time but someone who is managing a mood, and doing so quite efficiently in the short run. This has practical consequences. Urging such a person to try harder, or handing over a more detailed schedule, may simply add guilt to the original discomfort—and someone faced with one more unpleasant feeling is __4__ to respond with further delay. More promising, on this view, are approaches that make the first step of a task less daunting, or that help people tolerate the discomfort long enough for it to pass.",
+    "options": [
+      "unlikely",
+      "liable",
+      "reluctant",
+      "entitled"
+    ],
+    "correctIndex": 1,
+    "explain": "The passage argues that people put tasks off in order to escape unpleasant feelings, so someone who now also feels guilty will tend to put things off even more: 'liable to' means likely to. 'Unlikely' and 'reluctant' (unwilling) both express the common-sense idea that guilt pushes people into action, which is exactly the view the passage rejects when it says that urging and schedules 'may simply add guilt to the original discomfort'. 'Entitled' (having a right) does not fit either, since the sentence describes how people tend to react, not what they have a right to do.",
+    "verification": "agreed"
+  }
+]

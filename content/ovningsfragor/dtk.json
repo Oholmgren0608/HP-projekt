@@ -1,0 +1,304 @@
+[
+  {
+    "id": "ovn-dtk-001",
+    "kind": "dtk",
+    "prompt": "Vilken region hade den största ökningen av andelen sysselsatta mellan 2014 och 2024, räknat i procentenheter?",
+    "passage": "Befolkning och sysselsättning i fem regioner i ett fiktivt land, 2014 och 2024\n\nTabell 1. Antal invånare 20–64 år (tusental)\nRegion A – 2014: 412 | 2024: 455\nRegion B – 2014: 268 | 2024: 251\nRegion C – 2014: 535 | 2024: 610\nRegion D – 2014: 190 | 2024: 176\nRegion E – 2014: 327 | 2024: 340\n\nTabell 2. Andel sysselsatta bland invånarna 20–64 år (procent)\nRegion A – 2014: 78,5 | 2024: 80,1\nRegion B – 2014: 74,0 | 2024: 76,0\nRegion C – 2014: 81,2 | 2024: 79,6\nRegion D – 2014: 70,3 | 2024: 78,4\nRegion E – 2014: 76,8 | 2024: 78,2",
+    "options": [
+      "Region A",
+      "Region B",
+      "Region C",
+      "Region D"
+    ],
+    "correctIndex": 3,
+    "explain": "Ökningen i procentenheter är skillnaden mellan de två andelarna i tabell 2: Region A 80,1 − 78,5 = 1,6, Region B 76,0 − 74,0 = 2,0, Region C 79,6 − 81,2 = −1,6 (en minskning) och Region D 78,4 − 70,3 = 8,1 procentenheter. Region D ökade alltså mest (Region E ökade med 1,4). Region A hade den högsta andelen år 2024 och Region C den högsta år 2014, men frågan gäller förändringen och inte nivån. Tabell 1 behövs inte: att Region C fick flest nya invånare säger inget om andelen sysselsatta.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-002",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många av invånarna 20–64 år i Region B var inte sysselsatta år 2024?",
+    "passage": "Befolkning och sysselsättning i fem regioner i ett fiktivt land, 2014 och 2024\n\nTabell 1. Antal invånare 20–64 år (tusental)\nRegion A – 2014: 412 | 2024: 455\nRegion B – 2014: 268 | 2024: 251\nRegion C – 2014: 535 | 2024: 610\nRegion D – 2014: 190 | 2024: 176\nRegion E – 2014: 327 | 2024: 340\n\nTabell 2. Andel sysselsatta bland invånarna 20–64 år (procent)\nRegion A – 2014: 78,5 | 2024: 80,1\nRegion B – 2014: 74,0 | 2024: 76,0\nRegion C – 2014: 81,2 | 2024: 79,6\nRegion D – 2014: 70,3 | 2024: 78,4\nRegion E – 2014: 76,8 | 2024: 78,2",
+    "options": [
+      "ca 60 000",
+      "ca 70 000",
+      "ca 80 000",
+      "ca 190 000"
+    ],
+    "correctIndex": 0,
+    "explain": "År 2024 var 76,0 procent av invånarna 20–64 år i Region B sysselsatta, så 100 − 76,0 = 24,0 procent var inte sysselsatta. Regionen hade 251 tusen invånare i åldern, och 0,24 · 251 000 ≈ 60 200, vilket ligger närmast ca 60 000. Ca 190 000 är i stället antalet sysselsatta (0,76 · 251 000 ≈ 190 800). Ca 70 000 får man med 2014 års uppgifter (0,26 · 268 000 ≈ 69 700), och ca 80 000 om man blandar åren och drar 2024 års sysselsatta från 2014 års befolkning (268 000 − 190 800 ≈ 77 200).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-003",
+    "kind": "dtk",
+    "prompt": "I vilken eller vilka av regionerna var antalet sysselsatta invånare 20–64 år lägre år 2024 än år 2014?",
+    "passage": "Befolkning och sysselsättning i fem regioner i ett fiktivt land, 2014 och 2024\n\nTabell 1. Antal invånare 20–64 år (tusental)\nRegion A – 2014: 412 | 2024: 455\nRegion B – 2014: 268 | 2024: 251\nRegion C – 2014: 535 | 2024: 610\nRegion D – 2014: 190 | 2024: 176\nRegion E – 2014: 327 | 2024: 340\n\nTabell 2. Andel sysselsatta bland invånarna 20–64 år (procent)\nRegion A – 2014: 78,5 | 2024: 80,1\nRegion B – 2014: 74,0 | 2024: 76,0\nRegion C – 2014: 81,2 | 2024: 79,6\nRegion D – 2014: 70,3 | 2024: 78,4\nRegion E – 2014: 76,8 | 2024: 78,2",
+    "options": [
+      "Endast Region C",
+      "Endast Region B",
+      "Region B och Region D",
+      "Region B, Region C och Region D"
+    ],
+    "correctIndex": 1,
+    "explain": "Antalet sysselsatta är antalet invånare gånger andelen sysselsatta. Region A och Region E ökade både i befolkning och i andel och kan uteslutas direkt. Region B: 268 · 0,740 ≈ 198,3 tusen år 2014 och 251 · 0,760 ≈ 190,8 tusen år 2024, alltså en minskning. Region C: 535 · 0,812 ≈ 434,4 tusen och 610 · 0,796 ≈ 485,6 tusen, en ökning trots att andelen sjönk, eftersom befolkningen växte kraftigt. Region D: 190 · 0,703 ≈ 133,6 tusen och 176 · 0,784 ≈ 138,0 tusen, en ökning trots att befolkningen minskade, eftersom andelen steg med 8,1 procentenheter. Bara Region B hade alltså färre sysselsatta. Svaren som tar med Region C eller Region D bygger på att man bara läser en av tabellerna.",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringens sista mening (\"Svaren som tar med Region C eller Region D bygger på att man bara läser en av tabellerna\") stämmer inte för det fjärde alternativet (B, C och D): det svaret fås när man räknar en region som \"lägre\" om antingen befolkningen (tabell 1) eller andelen (tabell 2) minskat, utan att multiplicera. Nyckel och alla beräkningar är korrekta; justera bara meningen."
+  },
+  {
+    "id": "ovn-dtk-004",
+    "kind": "dtk",
+    "prompt": "Med hur många procent steg priserna på livsmedel mellan 2020 och 2024?",
+    "passage": "Prisindex för fyra varugrupper i ett fiktivt land (2018 = 100)\n\nLivsmedel – 2018: 100 | 2020: 104 | 2022: 117 | 2024: 130\nKläder – 2018: 100 | 2020: 96 | 2022: 102 | 2024: 108\nEnergi – 2018: 100 | 2020: 92 | 2022: 150 | 2024: 126\nTransporter – 2018: 100 | 2020: 106 | 2022: 120 | 2024: 135\n\nAnm.: Indexet för varje varugrupp anger prisnivån i förhållande till samma varugrupps prisnivå år 2018. Ett index på 110 betyder alltså att priserna i gruppen var 10 procent högre än år 2018.",
+    "options": [
+      "25 procent",
+      "26 procent",
+      "30 procent",
+      "35 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "Livsmedelsindexet steg från 104 år 2020 till 130 år 2024, alltså med 26 indexenheter. Den procentuella ökningen räknas från 2020 års nivå: 26 / 104 = 0,25, det vill säga 25 procent. 26 procent är ökningen i indexenheter, och indexenheter blir procent bara när man utgår från 100. 30 procent är ökningen sedan basåret 2018 (130 − 100), inte sedan 2020. 35 procent får man om man läser av fel rad, nämligen transporternas ökning mellan 2018 och 2024.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-005",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån tabellen?",
+    "passage": "Prisindex för fyra varugrupper i ett fiktivt land (2018 = 100)\n\nLivsmedel – 2018: 100 | 2020: 104 | 2022: 117 | 2024: 130\nKläder – 2018: 100 | 2020: 96 | 2022: 102 | 2024: 108\nEnergi – 2018: 100 | 2020: 92 | 2022: 150 | 2024: 126\nTransporter – 2018: 100 | 2020: 106 | 2022: 120 | 2024: 135\n\nAnm.: Indexet för varje varugrupp anger prisnivån i förhållande till samma varugrupps prisnivå år 2018. Ett index på 110 betyder alltså att priserna i gruppen var 10 procent högre än år 2018.",
+    "options": [
+      "Priserna på kläder var lägre än priserna på livsmedel år 2024.",
+      "Energipriserna steg med 58 procent mellan 2020 och 2022.",
+      "Energipriserna steg mer än livsmedelspriserna mellan 2018 och 2024.",
+      "Energipriserna sjönk med mindre än 20 procent mellan 2022 och 2024."
+    ],
+    "correctIndex": 3,
+    "explain": "Energiindexet sjönk från 150 till 126, alltså med 24 indexenheter. Räknat från 2022 års nivå är det 24 / 150 = 0,16, en minskning med 16 procent, vilket är mindre än 20 procent. Den slutsatsen stämmer alltså. Att energipriserna steg med 58 procent mellan 2020 och 2022 är fel: 58 indexenheter från nivån 92 är 58 / 92 ≈ 0,63, alltså ungefär 63 procent. Mellan 2018 och 2024 steg energipriserna med 26 procent och livsmedelspriserna med 30 procent, så energipriserna steg inte mer. Om priserna på kläder var lägre än priserna på livsmedel går inte att avgöra, eftersom varje index bara jämför en varugrupp med samma varugrupp år 2018 och inte säger något om prisnivån i olika grupper.",
+    "verification": "disagreed",
+    "verificationNote": "Första alternativet (\"Priserna på kläder var lägre än priserna på livsmedel år 2024\") är avsiktligt en icke-slutsats, men kan läsas som \"indexet var lägre\" (108 mot 130) och då vara sant, så en elev kan uppleva två rätta svar. Överväg att göra det tydligt att det gäller prisnivå i kronor, t.ex. \"Kläder var billigare än livsmedel år 2024.\" Nyckeln (fjärde alternativet) och förklaringen är korrekta."
+  },
+  {
+    "id": "ovn-dtk-006",
+    "kind": "dtk",
+    "prompt": "Under vilken av perioderna 2018–2020, 2020–2022 och 2022–2024 steg priserna på livsmedel mest, räknat i procent?",
+    "passage": "Prisindex för fyra varugrupper i ett fiktivt land (2018 = 100)\n\nLivsmedel – 2018: 100 | 2020: 104 | 2022: 117 | 2024: 130\nKläder – 2018: 100 | 2020: 96 | 2022: 102 | 2024: 108\nEnergi – 2018: 100 | 2020: 92 | 2022: 150 | 2024: 126\nTransporter – 2018: 100 | 2020: 106 | 2022: 120 | 2024: 135\n\nAnm.: Indexet för varje varugrupp anger prisnivån i förhållande till samma varugrupps prisnivå år 2018. Ett index på 110 betyder alltså att priserna i gruppen var 10 procent högre än år 2018.",
+    "options": [
+      "2018–2020",
+      "2020–2022",
+      "2022–2024",
+      "Lika mycket under 2020–2022 som under 2022–2024"
+    ],
+    "correctIndex": 1,
+    "explain": "Livsmedelsindexet steg med 4 enheter 2018–2020, med 13 enheter 2020–2022 och med 13 enheter 2022–2024. I procent räknas varje ökning från periodens startvärde: 4 / 100 = 0,04, 13 / 104 = 0,125 och 13 / 117 ≈ 0,111, alltså 4 procent, 12,5 procent respektive ungefär 11,1 procent. Störst var alltså ökningen 2020–2022. Påståendet att ökningen var lika stor under de två sista perioderna stämmer bara för indexenheterna – samma antal enheter ger en mindre procentuell ökning när startvärdet är högre. Perioden 2018–2020 hade den minsta ökningen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-007",
+    "kind": "dtk",
+    "prompt": "Vilket produktområde ökade sin försäljning mest mellan 2022 och 2024, räknat i kronor?",
+    "passage": "Försäljning för ett företag efter produktområde, 2022–2024\n\nTabell 1. Försäljning (miljoner kronor)\nMöbler – 2022: 46,0 | 2023: 52,5 | 2024: 50,4\nBelysning – 2022: 18,4 | 2023: 21,0 | 2024: 25,2\nTextil – 2022: 27,5 | 2023: 26,1 | 2024: 22,8\nInredningsdetaljer – 2022: 12,1 | 2023: 15,4 | 2024: 21,6\n\nTabell 2. Exportens andel av försäljningen år 2024 (procent)\nMöbler: 10\nBelysning: 65\nTextil: 15\nInredningsdetaljer: 60",
+    "options": [
+      "Möbler",
+      "Belysning",
+      "Textil",
+      "Inredningsdetaljer"
+    ],
+    "correctIndex": 3,
+    "explain": "Förändringen 2022–2024 är skillnaden mellan åren i tabell 1: möbler 50,4 − 46,0 = 4,4, belysning 25,2 − 18,4 = 6,8, textil 22,8 − 27,5 = −4,7 och inredningsdetaljer 21,6 − 12,1 = 9,5 miljoner kronor. Inredningsdetaljer ökade alltså mest. Möbler har den högsta försäljningen och ökade mest mellan 2022 och 2023, men frågan gäller förändringen 2022–2024. Textil minskade, och belysningens ökning på 6,8 miljoner kronor är mindre än inredningsdetaljernas på 9,5 miljoner kronor.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-008",
+    "kind": "dtk",
+    "prompt": "Hur stor andel av företagets totala försäljning år 2024 kom från belysning?",
+    "passage": "Försäljning för ett företag efter produktområde, 2022–2024\n\nTabell 1. Försäljning (miljoner kronor)\nMöbler – 2022: 46,0 | 2023: 52,5 | 2024: 50,4\nBelysning – 2022: 18,4 | 2023: 21,0 | 2024: 25,2\nTextil – 2022: 27,5 | 2023: 26,1 | 2024: 22,8\nInredningsdetaljer – 2022: 12,1 | 2023: 15,4 | 2024: 21,6\n\nTabell 2. Exportens andel av försäljningen år 2024 (procent)\nMöbler: 10\nBelysning: 65\nTextil: 15\nInredningsdetaljer: 60",
+    "options": [
+      "18 procent",
+      "21 procent",
+      "25 procent",
+      "27 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Företagets totala försäljning 2024 är 50,4 + 25,2 + 22,8 + 21,6 = 120,0 miljoner kronor. Belysningen stod för 25,2 miljoner kronor, och 25,2 / 120,0 = 0,21, alltså 21 procent. 25 procent får man om man läser försäljningen 25,2 miljoner kronor som en andel, vilket bara stämmer om totalen är 100. 27 procent får man om man jämför belysningen med de övriga produktområdena (25,2 / 94,8 ≈ 0,27) i stället för med hela försäljningen. 18 procent är inredningsdetaljernas andel 2024 (21,6 / 120,0) och ungefär belysningens andel 2022 (18,4 / 104,0 ≈ 0,18), alltså fel rad eller fel år.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-009",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av företagets totala försäljning år 2024 gick på export?",
+    "passage": "Försäljning för ett företag efter produktområde, 2022–2024\n\nTabell 1. Försäljning (miljoner kronor)\nMöbler – 2022: 46,0 | 2023: 52,5 | 2024: 50,4\nBelysning – 2022: 18,4 | 2023: 21,0 | 2024: 25,2\nTextil – 2022: 27,5 | 2023: 26,1 | 2024: 22,8\nInredningsdetaljer – 2022: 12,1 | 2023: 15,4 | 2024: 21,6\n\nTabell 2. Exportens andel av försäljningen år 2024 (procent)\nMöbler: 10\nBelysning: 65\nTextil: 15\nInredningsdetaljer: 60",
+    "options": [
+      "ca 24 procent",
+      "ca 32 procent",
+      "ca 38 procent",
+      "ca 46 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Exporten för varje produktområde är försäljningen 2024 gånger exportandelen: möbler 50,4 · 0,10 ≈ 5,0, belysning 25,2 · 0,65 ≈ 16,4, textil 22,8 · 0,15 ≈ 3,4 och inredningsdetaljer 21,6 · 0,60 ≈ 13,0 miljoner kronor. Sammanlagt exporterades 37,8 av 120,0 miljoner kronor, och 37,8 / 120,0 ≈ 0,315, alltså ca 32 procent. Ca 38 procent är medelvärdet av de fyra andelarna, (10 + 65 + 15 + 60) / 4 = 37,5, men det tar inte hänsyn till att möbler, som har lägst exportandel, står för den största försäljningen. Ca 46 procent får man om exporten jämförs med den övriga försäljningen (37,8 / 82,2 ≈ 0,46) i stället för med hela försäljningen, och ca 24 procent om man bara räknar med exporten av belysning och inredningsdetaljer ((16,38 + 12,96) / 120,0 ≈ 0,24).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-010",
+    "kind": "dtk",
+    "prompt": "Hur stor areal skogsmark fanns i Län E?",
+    "passage": "Landareal och skogsmark i sex län i ett fiktivt land, 2024\n\nLandareal anges i km². Skogsmark anges i procent av länets landareal och skyddad skogsmark i procent av länets skogsmark.\n\nLän A – Landareal: 16 600 | Skogsmark: 76 | Skyddad skogsmark: 4\nLän B – Landareal: 5 200 | Skogsmark: 45 | Skyddad skogsmark: 9\nLän C – Landareal: 21 400 | Skogsmark: 55 | Skyddad skogsmark: 3\nLän D – Landareal: 3 800 | Skogsmark: 30 | Skyddad skogsmark: 11\nLän E – Landareal: 9 500 | Skogsmark: 62 | Skyddad skogsmark: 6\nLän F – Landareal: 11 900 | Skogsmark: 84 | Skyddad skogsmark: 5",
+    "options": [
+      "353 km²",
+      "570 km²",
+      "3 610 km²",
+      "5 890 km²"
+    ],
+    "correctIndex": 3,
+    "explain": "Skogsmarken utgör 62 procent av Län E:s landareal på 9 500 km², alltså 0,62 · 9 500 = 5 890 km². 3 610 km² är den del av landarealen som inte är skogsmark (0,38 · 9 500). 570 km² får man om man i stället tar andelen skyddad skogsmark, 6 procent, av hela landarealen (0,06 · 9 500), och 353 km² är bara den skyddade skogsmarken (0,06 · 5 890 ≈ 353), inte all skogsmark.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-011",
+    "kind": "dtk",
+    "prompt": "Vilket län hade störst areal skogsmark?",
+    "passage": "Landareal och skogsmark i sex län i ett fiktivt land, 2024\n\nLandareal anges i km². Skogsmark anges i procent av länets landareal och skyddad skogsmark i procent av länets skogsmark.\n\nLän A – Landareal: 16 600 | Skogsmark: 76 | Skyddad skogsmark: 4\nLän B – Landareal: 5 200 | Skogsmark: 45 | Skyddad skogsmark: 9\nLän C – Landareal: 21 400 | Skogsmark: 55 | Skyddad skogsmark: 3\nLän D – Landareal: 3 800 | Skogsmark: 30 | Skyddad skogsmark: 11\nLän E – Landareal: 9 500 | Skogsmark: 62 | Skyddad skogsmark: 6\nLän F – Landareal: 11 900 | Skogsmark: 84 | Skyddad skogsmark: 5",
+    "options": [
+      "Län A",
+      "Län C",
+      "Län E",
+      "Län F"
+    ],
+    "correctIndex": 0,
+    "explain": "Skogsmarkens areal är landarealen gånger andelen skogsmark: Län A 16 600 · 0,76 ≈ 12 600 km², Län C 21 400 · 0,55 ≈ 11 800 km², Län F 11 900 · 0,84 ≈ 10 000 km² och Län E 9 500 · 0,62 = 5 890 km². Län A har alltså störst areal skogsmark. Län C har störst landareal men en lägre andel skogsmark, och Län F har högst andel skogsmark men en mindre landareal; båda hamnar under Län A när man räknar ut arealen. Län E ligger långt efter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-012",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många gånger så stor var arealen skyddad skogsmark i Län F som i Län D?",
+    "passage": "Landareal och skogsmark i sex län i ett fiktivt land, 2024\n\nLandareal anges i km². Skogsmark anges i procent av länets landareal och skyddad skogsmark i procent av länets skogsmark.\n\nLän A – Landareal: 16 600 | Skogsmark: 76 | Skyddad skogsmark: 4\nLän B – Landareal: 5 200 | Skogsmark: 45 | Skyddad skogsmark: 9\nLän C – Landareal: 21 400 | Skogsmark: 55 | Skyddad skogsmark: 3\nLän D – Landareal: 3 800 | Skogsmark: 30 | Skyddad skogsmark: 11\nLän E – Landareal: 9 500 | Skogsmark: 62 | Skyddad skogsmark: 6\nLän F – Landareal: 11 900 | Skogsmark: 84 | Skyddad skogsmark: 5",
+    "options": [
+      "ca 2 gånger",
+      "ca 3 gånger",
+      "ca 4 gånger",
+      "ca 9 gånger"
+    ],
+    "correctIndex": 2,
+    "explain": "Den skyddade skogsmarken är landareal · andel skogsmark · andel skyddad skogsmark. Län F: 11 900 · 0,84 · 0,05 ≈ 500 km². Län D: 3 800 · 0,30 · 0,11 ≈ 125 km². Kvoten blir 500 / 125 ≈ 4, alltså ca 4 gånger så stor. Ca 9 gånger är kvoten mellan länens hela skogsarealer (9 996 / 1 140 ≈ 8,8); då glömmer man att Län D skyddar en större andel av sin skogsmark. Ca 3 gånger motsvarar kvoten mellan landarealerna (11 900 / 3 800 ≈ 3,1) eller mellan andelarna skogsmark (84 / 30 = 2,8). Ca 2 gånger får man om man bara jämför andelarna skyddad skogsmark, och dessutom åt fel håll (11 / 5 = 2,2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-013",
+    "kind": "dtk",
+    "prompt": "Hur många invånare i åldersgruppen 35–44 år hade eftergymnasial utbildning?",
+    "passage": "Befolkningen 25–64 år i en fiktiv kommun efter åldersgrupp och högsta utbildningsnivå, 2024\n\nTabell 1. Antal invånare\n25–34 år: 11 000\n35–44 år: 8 000\n45–54 år: 9 500\n55–64 år: 5 500\n\nTabell 2. Högsta utbildningsnivå (procent av invånarna i respektive åldersgrupp)\n25–34 år – Förgymnasial: 7 | Gymnasial: 38 | Eftergymnasial: 55\n35–44 år – Förgymnasial: 10 | Gymnasial: 44 | Eftergymnasial: 46\n45–54 år – Förgymnasial: 14 | Gymnasial: 50 | Eftergymnasial: 36\n55–64 år – Förgymnasial: 20 | Gymnasial: 52 | Eftergymnasial: 28",
+    "options": [
+      "3 520",
+      "3 680",
+      "4 370",
+      "6 050"
+    ],
+    "correctIndex": 1,
+    "explain": "I åldersgruppen 35–44 år fanns 8 000 invånare, och 46 procent av dem hade eftergymnasial utbildning: 0,46 · 8 000 = 3 680. 3 520 är antalet med gymnasial utbildning i samma grupp (0,44 · 8 000), alltså fel kolumn. 4 370 får man om man använder antalet invånare i gruppen 45–54 år (0,46 · 9 500), och 6 050 är antalet med eftergymnasial utbildning bland 25–34-åringarna (0,55 · 11 000), alltså fel rad.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-014",
+    "kind": "dtk",
+    "prompt": "I vilken åldersgrupp fanns flest invånare med förgymnasial utbildning som högsta utbildningsnivå?",
+    "passage": "Befolkningen 25–64 år i en fiktiv kommun efter åldersgrupp och högsta utbildningsnivå, 2024\n\nTabell 1. Antal invånare\n25–34 år: 11 000\n35–44 år: 8 000\n45–54 år: 9 500\n55–64 år: 5 500\n\nTabell 2. Högsta utbildningsnivå (procent av invånarna i respektive åldersgrupp)\n25–34 år – Förgymnasial: 7 | Gymnasial: 38 | Eftergymnasial: 55\n35–44 år – Förgymnasial: 10 | Gymnasial: 44 | Eftergymnasial: 46\n45–54 år – Förgymnasial: 14 | Gymnasial: 50 | Eftergymnasial: 36\n55–64 år – Förgymnasial: 20 | Gymnasial: 52 | Eftergymnasial: 28",
+    "options": [
+      "25–34 år",
+      "35–44 år",
+      "45–54 år",
+      "55–64 år"
+    ],
+    "correctIndex": 2,
+    "explain": "Antalet med förgymnasial utbildning är antalet invånare gånger andelen: 25–34 år 0,07 · 11 000 = 770, 35–44 år 0,10 · 8 000 = 800, 45–54 år 0,14 · 9 500 = 1 330 och 55–64 år 0,20 · 5 500 = 1 100. Flest fanns alltså i gruppen 45–54 år. Gruppen 55–64 år har den högsta andelen, 20 procent, men är den minsta åldersgruppen, så antalet blir lägre. Gruppen 25–34 år är störst men har den lägsta andelen, och gruppen 35–44 år hamnar på 800.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-015",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av kommunens invånare 25–64 år med eftergymnasial utbildning var 25–34 år?",
+    "passage": "Befolkningen 25–64 år i en fiktiv kommun efter åldersgrupp och högsta utbildningsnivå, 2024\n\nTabell 1. Antal invånare\n25–34 år: 11 000\n35–44 år: 8 000\n45–54 år: 9 500\n55–64 år: 5 500\n\nTabell 2. Högsta utbildningsnivå (procent av invånarna i respektive åldersgrupp)\n25–34 år – Förgymnasial: 7 | Gymnasial: 38 | Eftergymnasial: 55\n35–44 år – Förgymnasial: 10 | Gymnasial: 44 | Eftergymnasial: 46\n45–54 år – Förgymnasial: 14 | Gymnasial: 50 | Eftergymnasial: 36\n55–64 år – Förgymnasial: 20 | Gymnasial: 52 | Eftergymnasial: 28",
+    "options": [
+      "ca 25 procent",
+      "ca 33 procent",
+      "ca 41 procent",
+      "ca 55 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Räkna först ut antalet med eftergymnasial utbildning i varje grupp: 0,55 · 11 000 = 6 050, 0,46 · 8 000 = 3 680, 0,36 · 9 500 = 3 420 och 0,28 · 5 500 = 1 540, totalt 14 690. Andelen av dem som var 25–34 år blir 6 050 / 14 690 ≈ 0,41, alltså ca 41 procent. 55 procent är andelen med eftergymnasial utbildning inom gruppen 25–34 år, alltså en andel av fel helhet. Ca 33 procent får man om man bara ser på antalet invånare (11 000 / 34 000 ≈ 0,32) eller bara på procentsatserna (55 / 165 ≈ 0,33), och ca 25 procent om man räknar som om alla fyra grupperna bidrog lika mycket.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-016",
+    "kind": "dtk",
+    "prompt": "Hur förändrades cykelns andel av arbetsresorna mellan 2014 och 2024?",
+    "passage": "Arbetsresor i en fiktiv kommun, 2014 och 2024\n\nTabell 1. Antal arbetsresor en genomsnittlig vardag\n2014: 42 000\n2024: 51 000\n\nTabell 2. Arbetsresornas fördelning efter huvudsakligt färdsätt (procent)\nBil – 2014: 56 | 2024: 47\nKollektivtrafik – 2014: 24 | 2024: 27\nCykel – 2014: 12 | 2024: 17\nGång – 2014: 6 | 2024: 7\nÖvrigt – 2014: 2 | 2024: 2",
+    "options": [
+      "Den ökade med 5 procentenheter.",
+      "Den ökade med 5 procent.",
+      "Den ökade med 29 procent.",
+      "Den ökade med 42 procentenheter."
+    ],
+    "correctIndex": 0,
+    "explain": "Cykelns andel steg från 12 till 17 procent. Skillnaden mellan två procentsatser anges i procentenheter: 17 − 12 = 5 procentenheter. Att andelen ökade med 5 procent är fel, för räknat i procent ökade den med 5 / 12 ≈ 0,42, alltså ungefär 42 procent. Därför är också 42 procentenheter fel – det blandar ihop de två måtten. 29 procent får man om man räknar ökningen från fel utgångsvärde (5 / 17 ≈ 0,29) i stället för från 12.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-017",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många fler arbetsresor gjordes med kollektivtrafik en genomsnittlig vardag år 2024 än år 2014?",
+    "passage": "Arbetsresor i en fiktiv kommun, 2014 och 2024\n\nTabell 1. Antal arbetsresor en genomsnittlig vardag\n2014: 42 000\n2024: 51 000\n\nTabell 2. Arbetsresornas fördelning efter huvudsakligt färdsätt (procent)\nBil – 2014: 56 | 2024: 47\nKollektivtrafik – 2014: 24 | 2024: 27\nCykel – 2014: 12 | 2024: 17\nGång – 2014: 6 | 2024: 7\nÖvrigt – 2014: 2 | 2024: 2",
+    "options": [
+      "ca 1 500",
+      "ca 2 200",
+      "ca 3 700",
+      "ca 13 800"
+    ],
+    "correctIndex": 2,
+    "explain": "Antalet kollektivtrafikresor är andelen gånger det totala antalet arbetsresor: 0,24 · 42 000 = 10 080 år 2014 och 0,27 · 51 000 = 13 770 år 2024. Ökningen är 13 770 − 10 080 = 3 690, alltså ca 3 700. Ca 13 800 är antalet resor 2024, inte ökningen. Ca 1 500 får man om man bara räknar med att andelen ökade med 3 procentenheter (0,03 · 51 000 = 1 530) och glömmer att antalet resor också ökade. Ca 2 200 får man om man tvärtom bara räknar med att antalet resor ökade och använder 2014 års andel båda åren (0,24 · 51 000 − 10 080 = 2 160).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-018",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent ökade antalet cykelresor en genomsnittlig vardag mellan 2014 och 2024?",
+    "passage": "Arbetsresor i en fiktiv kommun, 2014 och 2024\n\nTabell 1. Antal arbetsresor en genomsnittlig vardag\n2014: 42 000\n2024: 51 000\n\nTabell 2. Arbetsresornas fördelning efter huvudsakligt färdsätt (procent)\nBil – 2014: 56 | 2024: 47\nKollektivtrafik – 2014: 24 | 2024: 27\nCykel – 2014: 12 | 2024: 17\nGång – 2014: 6 | 2024: 7\nÖvrigt – 2014: 2 | 2024: 2",
+    "options": [
+      "ca 5 procent",
+      "ca 21 procent",
+      "ca 42 procent",
+      "ca 72 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Antalet cykelresor var 0,12 · 42 000 = 5 040 år 2014 och 0,17 · 51 000 = 8 670 år 2024. Ökningen är 8 670 − 5 040 = 3 630 resor, och 3 630 / 5 040 ≈ 0,72, alltså ca 72 procent. Ca 42 procent är ökningen av cykelns andel (5 / 12 ≈ 0,42), men eftersom det totala antalet resor också ökade blir ökningen av antalet cykelresor större. Ca 21 procent är ökningen av det totala antalet resor (9 000 / 42 000 ≈ 0,21), och ca 5 procent förväxlar ökningen på 5 procentenheter med en procentuell ökning.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-019",
+    "kind": "dtk",
+    "prompt": "Hur många invånare hade Kommun E som minst?",
+    "passage": "Befolkningstäthet i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter sin befolkningstäthet. Kartan har fem klasser:\nKlass 1: färre än 10 invånare per km²\nKlass 2: från 10 till färre än 25 invånare per km²\nKlass 3: från 25 till färre än 50 invånare per km²\nKlass 4: från 50 till färre än 100 invånare per km²\nKlass 5: 100 eller fler invånare per km²\n\nKommun A – Landareal: 420 km² | Klass: 5\nKommun B – Landareal: 1 350 km² | Klass: 2\nKommun C – Landareal: 860 km² | Klass: 3\nKommun D – Landareal: 2 400 km² | Klass: 1\nKommun E – Landareal: 610 km² | Klass: 4\nKommun F – Landareal: 1 900 km² | Klass: 2",
+    "options": [
+      "6 100",
+      "15 250",
+      "30 500",
+      "61 000"
+    ],
+    "correctIndex": 2,
+    "explain": "Kommun E ligger i klass 4, alltså minst 50 invånare per km². Med landarealen 610 km² blir det minst 50 · 610 = 30 500 invånare. 61 000 (100 · 610) är klassens övre gräns, som kommunen inte når upp till. 15 250 och 6 100 får man med gränserna 25 och 10 invånare per km², som är de lägsta värdena i klass 3 respektive klass 2.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-020",
+    "kind": "dtk",
+    "prompt": "Vilken av följande kommuner hade med säkerhet färre invånare än Kommun A?",
+    "passage": "Befolkningstäthet i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter sin befolkningstäthet. Kartan har fem klasser:\nKlass 1: färre än 10 invånare per km²\nKlass 2: från 10 till färre än 25 invånare per km²\nKlass 3: från 25 till färre än 50 invånare per km²\nKlass 4: från 50 till färre än 100 invånare per km²\nKlass 5: 100 eller fler invånare per km²\n\nKommun A – Landareal: 420 km² | Klass: 5\nKommun B – Landareal: 1 350 km² | Klass: 2\nKommun C – Landareal: 860 km² | Klass: 3\nKommun D – Landareal: 2 400 km² | Klass: 1\nKommun E – Landareal: 610 km² | Klass: 4\nKommun F – Landareal: 1 900 km² | Klass: 2",
+    "options": [
+      "Kommun B",
+      "Kommun C",
+      "Kommun E",
+      "Kommun F"
+    ],
+    "correctIndex": 0,
+    "explain": "Kommun A ligger i klass 5 och hade alltså minst 100 · 420 = 42 000 invånare. En kommun hade med säkerhet färre invånare bara om även dess högsta möjliga antal ligger under 42 000. Kommun B ligger i klass 2 och hade färre än 25 · 1 350 = 33 750 invånare, alltså säkert färre än Kommun A. Kommun C ligger i en lägre klass än Kommun A men kan ha upp till nästan 50 · 860 = 43 000 invånare, alltså fler än Kommun A:s minimum. Kommun E kan ha nästan 100 · 610 = 61 000 och Kommun F nästan 25 · 1 900 = 47 500 invånare, så inte heller för dem är det säkert.",
+    "verification": "agreed"
+  }
+]
