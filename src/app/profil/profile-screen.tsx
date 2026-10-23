@@ -8,6 +8,12 @@ import { LoginPanel } from "@/components/auth/login-panel";
 import { getMatchHistory, getMyProfile } from "@/lib/duel/profile";
 import type { DuelMatch, DuelProfile } from "@/lib/duel/types";
 import { clearLocalData } from "@/lib/sync/storage-sync";
+import {
+  countMastered,
+  MASTERY_STORAGE_KEY,
+  parseMasteryStreaks,
+} from "@/lib/question-mastery";
+import { isProvfragaId } from "@/lib/error-srs";
 import { REQUEST_CHANNELS } from "@/lib/feedback/feature-request";
 import { deleteAccount } from "./actions";
 
@@ -81,7 +87,7 @@ async function loadTrainingStats(userId: string): Promise<TrainingStats> {
   const keys = [
     "hp-lift-history-v1",
     "hp-lift-srs-v1",
-    "hp-lift-mastered-v1",
+    MASTERY_STORAGE_KEY,
     "hp-flashcards-progress-v1",
     "hp-lift-scores-v1",
   ];
@@ -130,17 +136,18 @@ async function loadTrainingStats(userId: string): Promise<TrainingStats> {
   const srs = parseJson<Record<string, unknown>>(values["hp-lift-srs-v1"]);
   if (srs && typeof srs === "object" && !Array.isArray(srs)) {
     const today = todayKey();
-    for (const card of Object.values(srs)) {
+    for (const [id, card] of Object.entries(srs)) {
       const c = card as { due?: string };
-      if (c && typeof c === "object") {
+      if (c && typeof c === "object" && !isProvfragaId(id)) {
         srsCount += 1;
         if (typeof c.due === "string" && toDayKey(c.due) <= today) srsDue += 1;
       }
     }
   }
 
-  const mastered = parseJson<unknown>(values["hp-lift-mastered-v1"]);
-  const masteredCount = Array.isArray(mastered) ? mastered.length : 0;
+  const masteredCount = countMastered(
+    parseMasteryStreaks(parseJson<unknown>(values[MASTERY_STORAGE_KEY])),
+  );
 
   const flashcards = parseJson<Record<string, unknown>>(
     values["hp-flashcards-progress-v1"],
@@ -465,7 +472,7 @@ export function ProfileScreen() {
             label="SRS-kort"
             value={`${stats.srsCount} (${stats.srsDue} förfallna)`}
           />
-          <StatCard label="Masterade frågor" value={String(stats.mastered)} />
+          <StatCard label="Bemästrade frågor" value={String(stats.mastered)} />
           <StatCard label="Flashcard-kort" value={String(stats.flashcardCards)} />
           <StatCard
             label="Senaste norm (Kvant/Verbal)"

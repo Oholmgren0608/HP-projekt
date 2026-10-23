@@ -4,6 +4,7 @@ import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import { ExplainFigure } from "@/lib/content/explain-figures";
 import { QuestionFigure } from "@/components/question-figure";
 import { DiscussQuestionButton } from "@/components/forum/discuss-button";
+import { FlagQuestionButton } from "@/components/flag-question-button";
 
 export function QuestionReviewList({
   questions,
@@ -45,7 +46,6 @@ function QuestionReviewItem({
         <span>
           {index + 1}. {kindBadge(q.kind)}
         </span>
-        {q.passNumber !== undefined ? <span>Pass {q.passNumber}</span> : null}
         <span>{ok ? "Rätt" : unanswered ? "Obesvarad" : "Fel"}</span>
       </div>
       <p className="mt-1 font-medium text-[var(--ink)]">{q.prompt}</p>
@@ -110,6 +110,7 @@ function QuestionReviewItem({
         <span className="text-xs text-[var(--ink-muted)]">
           Fråga andra om uppgiften – svaren sparas i forumet så att fler kan läsa dem.
         </span>
+        <FlagQuestionButton questionId={q.id} />
       </div>
     </li>
   );

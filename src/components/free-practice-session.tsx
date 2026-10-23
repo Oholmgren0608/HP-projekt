@@ -20,8 +20,6 @@ import { QuestionFigure } from "@/components/question-figure";
 type Props = {
   subtest: PracticeKind;
   questionCount: number;
-  /** Filtrera till frågor från ett specifikt importerat prov. */
-  examId?: string;
   /** Tidsgräns i sekunder, eller null för att öva utan klocka. */
   timeLimitSeconds?: number | null;
   /** "immediate" visar rätt/fel direkt efter varje besvarad fråga. */
@@ -32,7 +30,6 @@ type Props = {
 export function FreePracticeSession({
   subtest,
   questionCount,
-  examId,
   timeLimitSeconds = null,
   reveal = "after",
   onClose,
@@ -50,8 +47,8 @@ export function FreePracticeSession({
 
   const questions = useMemo(() => {
     if (!questionsReady) return [] as ChoiceQuestion[];
-    return buildMixedQuiz([subtest], seed, questionCount, examId);
-  }, [subtest, seed, questionCount, examId, questionsReady]);
+    return buildMixedQuiz([subtest], seed, questionCount);
+  }, [subtest, seed, questionCount, questionsReady]);
 
   const loggedRef = useRef(false);
 

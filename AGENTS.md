@@ -37,8 +37,9 @@ frontend/backend split, Express server, or Prisma layer.
 **Trigger:** Apply when editing `supabase/migrations` or `src/lib/supabase`.
 
 - Make schema changes as new numbered SQL migrations in `supabase/migrations`
-  (next is `0017_<name>.sql`). Never edit already-applied migrations
-  (`npm run db -- migration list` shows which ones are; `0001`–`0016` are).
+  (next is `0018_<name>.sql`). Never edit already-applied migrations
+  (`npm run db -- migration list` shows which ones are; `0001`–`0016` are,
+  `0017_fragebank_skydd_och_flaggor` is written but not yet applied).
 - Apply migrations with the Supabase CLI via the wrapper in `scripts/db.ts`
   (`npm run db:dry` först, sedan `npm run db:push`). Den läser
   `SUPABASE_DB_PASSWORD` och `SUPABASE_POOLER_URL` ur `.env.local` och skriver
@@ -72,6 +73,17 @@ The dev server runs on `http://127.0.0.1:43123` (`npm run dev`).
 
 - `src/lib/subtests.ts` is the single source of truth for the eight HP subtests
   (names, short labels, question counts, block, and pace).
+- The question bank lives in the database (`public.questions`); it is the
+  source of truth. `src/lib/content/fallback-bank.json` is the offline copy,
+  generated with `npm run fragebank:export` — never edit it by hand.
+- New Övningsfrågor: write them in `content/ovningsfragor/<delprov>.json`, run
+  `npm run fragebank:validate`, the independent second check
+  (`npm run fragebank:kontroll -- blind <delprov>`, let another AI answer
+  without the key, then `-- merge <delprov>`), upload as drafts with
+  `npm run fragebank:upload`, and publish after spot checks on `/review`.
+- Provfrågor (rows with `exam_id` or an `hp-…` id, imported from UHR's exams)
+  are copyrighted: they may only be used as templates (Förlagor) and must never
+  be published or shown to users. The database enforces this from `0017`.
 - `src/lib/sync/storage-sync.ts` is a drop-in replacement for
   `localStorage.getItem/setItem` and handles the cloud merge on login.
 - Swedish user-facing copy and identifiers (`delprov`, `veckoplan`, `nivatest`,

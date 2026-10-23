@@ -49,3 +49,6 @@ next-env.d.ts
 /scripts/import-prov/downloads/
 /scripts/import-prov/parsed/
 /scripts/import-prov/figures/
+
+# frågebank: underlag för andra kontrollen (frågor utan facit, kontrollantens svar)
+/content/ovningsfragor/.andra-kontroll/

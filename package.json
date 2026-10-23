@@ -12,7 +12,11 @@
     "lint": "eslint",
     "db": "npx tsx scripts/db.ts",
     "db:push": "npx tsx scripts/db.ts db push",
-    "db:dry": "npx tsx scripts/db.ts db push --dry-run"
+    "db:dry": "npx tsx scripts/db.ts db push --dry-run",
+    "fragebank:validate": "npx tsx scripts/fragebank/validate.ts",
+    "fragebank:kontroll": "npx tsx scripts/fragebank/second-check.ts",
+    "fragebank:upload": "npx tsx scripts/fragebank/upload.ts",
+    "fragebank:export": "npx tsx scripts/fragebank/export-fallback.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

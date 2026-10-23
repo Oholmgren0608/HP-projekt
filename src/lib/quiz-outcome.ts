@@ -1,6 +1,6 @@
 import { tally, tallyByKind } from "@/lib/quiz";
 import { appendQuizResult, type QuizSource } from "@/lib/progress-history";
-import { recordMasteredQuestions } from "@/lib/question-mastery";
+import { recordMasteryAnswers } from "@/lib/question-mastery";
 import { recordMissedQuestions } from "@/lib/error-srs";
 import { rememberShownQuestions } from "@/lib/practice";
 import type { ChoiceQuestion, PracticeKind } from "@/lib/practice-types";
@@ -15,7 +15,7 @@ export type QuizOutcomeOptions = {
   kinds?: PracticeKind[];
   /** Record missed questions into SRS error cards. Default true. */
   trackSrs?: boolean;
-  /** Record correctly answered questions as mastered. Default true. */
+  /** Update the right-in-a-row streaks behind "bemästrad". Default true. */
   trackMastery?: boolean;
   /** Remember shown question ids per kind. Default true. */
   rememberShown?: boolean;
@@ -23,7 +23,7 @@ export type QuizOutcomeOptions = {
 
 /**
  * Logga ett avslutat quiz i ett enda anrop: övningshistorik + (valfritt)
- * felkort i SRS, mastered-frågor och "visade frågor" per delprov.
+ * felkort i SRS, serier mot bemästrade frågor och "visade frågor" per delprov.
  */
 export function recordQuizOutcome(opts: QuizOutcomeOptions) {
   const {
@@ -50,6 +50,6 @@ export function recordQuizOutcome(opts: QuizOutcomeOptions) {
   });
 
   if (trackSrs) recordMissedQuestions([...questions], answers);
-  if (trackMastery) recordMasteredQuestions([...questions], answers);
+  if (trackMastery) recordMasteryAnswers([...questions], answers);
   if (rememberShown) rememberShownQuestions([...questions]);
 }

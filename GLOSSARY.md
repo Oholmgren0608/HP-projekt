@@ -74,9 +74,21 @@ _Avoid_: Egen fråga, syntetisk fråga
 En Provfråga som används som mall för att skriva en Övningsfråga. Mönstret återanvänds, inte innehållet: den nya frågan har egna siffror, ord och texter, och förlagan visas aldrig för användare.
 _Avoid_: Mall, original
 
+**Andra kontrollen**:
+En oberoende kontroll av en ny Övningsfråga: en annan AI än den som skrev frågan löser den utan facit och granskar sedan förklaringen. Resultatet är ense eller oense, och en oense fråga granskas en och en innan den kan publiceras.
+_Avoid_: Verifiering, dubbelkoll
+
+**Stickprov**:
+Teamets manuella läsning av ett urval nya Övningsfrågor innan de publiceras.
+_Avoid_: Granskning (som om varje fråga lästes)
+
+**Felrapport**:
+En användares anmälan, med motivering, att en publicerad fråga är fel. När tre olika användare har öppna felrapporter på samma fråga dras den tillbaka till utkast; rapporterna stängs när frågan publiceras igen.
+_Avoid_: Flagga (det ordet används för importskriptets egna varningar), anmälan
+
 **Bemästrad**:
-En fråga är bemästrad när användaren svarat rätt på den tre gånger i rad. Ett enda rätt svar räcker inte, eftersom ett av fyra alternativ kan gissas.
-_Avoid_: Klarad, inlärd
+En fråga är bemästrad när användaren svarat rätt på den tre gånger i rad. Ett enda rätt svar räcker inte, eftersom ett av fyra eller fem alternativ kan gissas. Ett fel svar nollställer serien.
+_Avoid_: Klarad, inlärd, masterad
 
 ## Duell
 

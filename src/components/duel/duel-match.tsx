@@ -408,7 +408,8 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
 
       setIsBot(isBotMatch);
       await loadQuestions();
-      const qs = buildDuelQuiz(m.question_seed, DUEL_QUESTION_COUNT);
+      const qs = await buildDuelQuiz(matchId, m.question_seed, DUEL_QUESTION_COUNT);
+      if (cancelled) return;
       setQuestions(qs);
 
       const myProfile = await getMyProfile(user.id).catch(() => null);

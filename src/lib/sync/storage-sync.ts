@@ -59,7 +59,7 @@ export const SYNCED_KEYS = [
   "hp-lift-scores-saved-v1",
   "hp-lift-history-v1",
   "hp-lift-srs-v1",
-  "hp-lift-mastered-v1",
+  "hp-lift-mastery-v2",
   "hp-lift-adapt-plan-v1",
   "hp-lift-nivatest-counts-v1",
   "hp-lift-nivatest-timer-v1",
@@ -71,6 +71,19 @@ export const SYNCED_KEYS = [
   "hp-flashcards-progress-v1",
   "hp-reading-done-v1",
   "hp-lift-gamification-v1",
+] as const;
+
+/**
+ * Lokala nycklar som inte synkas men rensas tillsammans med de synkade, så att
+ * en tidigare användares data inte blir kvar på en delad enhet: nycklar som
+ * inte längre används och per-match-data från dueller.
+ */
+const LOCAL_ONLY_KEYS = [
+  "hp-lift-mastered-v1",
+  "hp-lift-duel-questions-v1",
+  "hp-lift-duel-questions-v2",
+  "hp-lift-duel-bot-answers-v1",
+  "hp-lift-duel-bot-decisions-v1",
 ] as const;
 
 type CloudRow = {
@@ -376,6 +389,7 @@ export function clearLocalData(): void {
 /** Rensar den delade lokala synk-cachen (alla synkade nycklar + meta). */
 function clearSyncedLocalState() {
   for (const key of SYNCED_KEYS) safeRemoveItem(key);
+  for (const key of LOCAL_ONLY_KEYS) safeRemoveItem(key);
   safeRemoveItem(META_KEY);
 }
 

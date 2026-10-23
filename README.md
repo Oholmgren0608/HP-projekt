@@ -34,6 +34,43 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 - `npm run build` — produktionsbygge
 - `npm run start` — kör byggt resultat
 - `npm run lint` — ESLint
+- `npm run fragebank:validate` / `fragebank:kontroll` / `fragebank:upload` /
+  `fragebank:export` — arbetsflödet för nya övningsfrågor (se nedan)
+
+## Frågebanken
+
+Databasen (`public.questions`) är sanningen för alla frågor. Nya
+övningsfrågor tas fram så här:
+
+1. Skriv frågorna i `content/ovningsfragor/<delprov>.json` (id
+   `ovn-<delprov>-001` …). Kör `npm run fragebank:validate` – den kontrollerar
+   bland annat antal svarsalternativ (ORD och NOG har fem, som på provet),
+   att rätt svar är spritt över positionerna och att inget är en dubblett.
+2. Andra kontrollen: `npm run fragebank:kontroll -- blind <delprov>` skriver
+   frågorna utan facit till `content/ovningsfragor/.andra-kontroll/`. En
+   annan AI än den som skrev frågorna löser dem och skriver
+   `<delprov>.svar.json`; `npm run fragebank:kontroll -- merge <delprov>`
+   markerar varje fråga som ense eller oense.
+3. `npm run fragebank:upload -- --dry-run`, sedan `npm run fragebank:upload`
+   (eller `-- elf las` för bara vissa delprov) lägger in nya frågor som
+   utkast (kräver `SUPABASE_SERVICE_ROLE_KEY` i `.env.local`). Frågor som
+   redan finns i databasen rörs inte – efter uppladdningen ändras de på
+   `/review`.
+4. Teamet gör stickprov på `/review`. "Publicera … ense" publicerar bara
+   frågor där andra kontrollen var ense och som saknar felrapporter; oense
+   frågor godkänns en och en.
+5. `npm run fragebank:export` skriver om reservbanken
+   `src/lib/content/fallback-bank.json` från databasen.
+
+Användare kan rapportera fel i en fråga efter ett pass. När tre olika
+användare har öppna felrapporter dras frågan tillbaka till utkast, och
+rapporterna visas på `/review` (vyn "Att granska" visar även publicerade
+frågor med enstaka rapporter). Rapporterna stängs när frågan publiceras igen
+eller markeras som hanterade.
+
+Provfrågor som importeras ur UHR:s prov (`scripts/import-prov`) är
+upphovsrättsskyddade. De används bara som förlagor och kan aldrig publiceras
+(databasen stoppar det från migration `0017`).
 
 ## Supabase (valfritt — appen funkar anonymt utan)
 

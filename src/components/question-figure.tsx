@@ -19,9 +19,7 @@ export function QuestionFigure({
 }) {
   if (!question.figureUrl) return null;
 
-  const label = question.questionNumber ?? position;
-  const alt =
-    label !== undefined && label !== null ? `Figur till fråga ${label}` : "Figur till fråga";
+  const alt = position !== undefined ? `Figur till fråga ${position}` : "Figur till fråga";
 
   return (
     // eslint-disable-next-line @next/next/no-img-element

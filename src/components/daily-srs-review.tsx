@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useHydrated } from "@/lib/use-hydrated";
+import { loadQuestions } from "@/lib/content/questions-provider";
 import { recordEvent } from "@/lib/gamification/engine";
 import { kindBadge, type PracticeKind } from "@/lib/practice";
 import {
@@ -13,6 +14,9 @@ import {
 
 export function DailySrsReview() {
   const [cards, setCards] = useState<SrsCard[]>(dueCards);
+  // Korten visas först när frågebanken har laddats: innan dess vet vi inte
+  // vilka frågor som fortfarande är publicerade.
+  const [bankReady, setBankReady] = useState(false);
   const mounted = useHydrated();
   const [revealed, setRevealed] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
@@ -23,16 +27,25 @@ export function DailySrsReview() {
   }
 
   useEffect(() => {
+    let cancelled = false;
+    // Läs om korten när frågebanken har laddats: först då vet vi vilka frågor
+    // som fortfarande är publicerade (och vilket facit som gäller).
+    void loadQuestions().then(() => {
+      if (cancelled) return;
+      setBankReady(true);
+      refresh();
+    });
     const onChange = () => refresh();
     window.addEventListener(SRS_EVENT, onChange);
     window.addEventListener("storage", onChange);
     return () => {
+      cancelled = true;
       window.removeEventListener(SRS_EVENT, onChange);
       window.removeEventListener("storage", onChange);
     };
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted || !bankReady) return null;
 
   if (cards.length === 0) {
     return (

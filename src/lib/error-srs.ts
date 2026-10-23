@@ -1,3 +1,4 @@
+import { isBankFromDatabase } from "@/lib/content/questions-provider";
 import { findQuestionById, type ChoiceQuestion } from "@/lib/practice";
 import { isCorrect } from "@/lib/quiz";
 import { storageSet } from "@/lib/sync/storage-sync";
@@ -75,6 +76,11 @@ export function loadSrs(): Record<string, SrsCard> {
     let changed = false;
     const hydrated: Record<string, SrsCard> = {};
     for (const [id, card] of Object.entries(parsed)) {
+      // Provfrågor kan aldrig publiceras igen; kortets kopia av UHR:s text tas bort.
+      if (isProvfragaId(id)) {
+        changed = true;
+        continue;
+      }
       const next = hydrateCard(card);
       if (
         next.passage !== card.passage ||
@@ -102,10 +108,27 @@ function saveSrs(map: Record<string, SrsCard>) {
   emitSrsChanged();
 }
 
+/** Provfrågor ur UHR:s prov har id på formen "hp-<datum>-p<n>-q<m>". */
+export function isProvfragaId(id: string): boolean {
+  return id.startsWith("hp-");
+}
+
+/**
+ * Kortet sparar en kopia av frågan, så en fråga som inte längre är publicerad
+ * (indragen efter felrapporter, avvisad eller en provfråga från före 0017)
+ * skulle annars fortsätta visas. Provfrågor (id "hp-…") visas aldrig; övriga
+ * kort göms när banken kommer från databasen men saknar frågan. Kortet ligger
+ * kvar och dyker upp igen om frågan publiceras på nytt.
+ */
+function isShowable(card: SrsCard): boolean {
+  if (isProvfragaId(card.id)) return false;
+  return !isBankFromDatabase() || findQuestionById(card.id) !== undefined;
+}
+
 export function dueCards(map = loadSrs()): SrsCard[] {
   const today = localDateKey();
   return Object.values(map)
-    .filter((c) => toLocalDateKey(c.due) <= today)
+    .filter((c) => isShowable(c) && toLocalDateKey(c.due) <= today)
     .sort((a, b) => toLocalDateKey(a.due).localeCompare(toLocalDateKey(b.due)));
 }
 

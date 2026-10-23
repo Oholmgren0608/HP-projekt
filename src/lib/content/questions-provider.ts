@@ -1,22 +1,18 @@
-import {
-  DTK_BANK,
-  ELF_BANK,
-  LAS_BANK,
-  ORD_BANK,
-  REFLECT_BANK,
-} from "@/lib/practice";
-import { MEK_BANK } from "@/lib/practice-mek";
-import { KVA_BANK, NOG_BANK, XYZ_BANK } from "@/lib/practice-kvant";
+import fallbackBank from "@/lib/content/fallback-bank.json";
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
+import { fetchAllPages } from "@/lib/supabase/paginate";
 import type { ChoiceQuestion, ReflectPrompt } from "@/lib/practice-types";
 
 /**
  * Runtime-"source of truth" för övningsfrågorna.
  *
- * Frågorna kan ligga i Supabase (`questions` / `reflect_prompts`) och redigeras
- * från dashboarden. När Supabase är konfigurerat hämtas de en gång per sidladdning
- * och cachelagras i localStorage. Vid fel, tomt resultat eller utan Supabase
- * används den bundlade statiska banken som fallback, så appen fungerar offline.
+ * Databasen (`questions` / `reflect_prompts`) är sanningen: frågor skapas som
+ * utkast, granskas på /review och publiceras där. När Supabase är konfigurerat
+ * hämtas de publicerade frågorna en gång per sidladdning och cachelagras i
+ * localStorage. Vid fel, tomt resultat eller utan Supabase används den bundlade
+ * banken (`fallback-bank.json`) så att appen fungerar offline. Den filen
+ * genereras från databasen med `npm run fragebank:export` och redigeras inte
+ * för hand.
  */
 
 export type QuestionBank = {
@@ -24,7 +20,15 @@ export type QuestionBank = {
   reflect: ReflectPrompt[];
 };
 
-const CACHE_KEY = "hp-lift-questions-v2";
+/**
+ * v3 sedan 0017: en äldre cache (v2) kan innehålla frågor som inte längre får
+ * visas (utkast eller provfrågor från före migrationen) och tas bort.
+ */
+const CACHE_KEY = "hp-lift-questions-v3";
+const LEGACY_CACHE_KEYS = ["hp-lift-questions-v2"];
+
+/** Bara det appen visar – granskningsdata som andra kontrollens anteckningar hämtas inte. */
+const QUESTION_COLUMNS = "id, kind, prompt, passage, options, correct_index, explain, figure_url";
 
 const QUESTION_KINDS: ChoiceQuestion["kind"][] = [
   "ord",
@@ -39,28 +43,25 @@ const QUESTION_KINDS: ChoiceQuestion["kind"][] = [
 
 let bank: QuestionBank | null = null;
 let loadPromise: Promise<QuestionBank> | null = null;
+/** Varifrån den laddade banken kom; "database" betyder exakt det som är publicerat nu. */
+let bankSource: "database" | "cache" | "fallback" | null = null;
 
 let fallback: QuestionBank | null = null;
 
-/** Den bundlade statiska banken (146 frågor + 3 reflektioner). Byggs lazily
- *  för att undvika cirkulär import mot practice.ts vid modul-initiering. */
+/** Den bundlade banken, validerad med samma regler som cachen. */
 function getFallback(): QuestionBank {
   if (!fallback) {
     fallback = {
-      questions: [
-        ...ORD_BANK,
-        ...MEK_BANK,
-        ...LAS_BANK,
-        ...ELF_BANK,
-        ...DTK_BANK,
-        ...XYZ_BANK,
-        ...KVA_BANK,
-        ...NOG_BANK,
-      ],
-      reflect: REFLECT_BANK,
+      questions: (fallbackBank.questions as unknown[]).filter(isChoiceQuestion),
+      reflect: (fallbackBank.reflect as unknown[]).filter(isReflectPrompt),
     };
   }
   return fallback;
+}
+
+/** Bundlade reflektionsfrågor, för när databasen saknar egna. */
+export function getFallbackReflectPrompts(): ReflectPrompt[] {
+  return getFallback().reflect;
 }
 
 // ---- Row-mappning (Supabase) ----------------------------------------------
@@ -82,12 +83,7 @@ function questionFromRow(row: Record<string, unknown>): ChoiceQuestion | null {
     options,
     correct_index,
     explain,
-    exam_id,
-    exam_date,
-    pass_number,
-    question_number,
     figure_url,
-    status,
   } = row;
   const valid =
     isString(id) &&
@@ -113,13 +109,7 @@ function questionFromRow(row: Record<string, unknown>): ChoiceQuestion | null {
     options: options as string[],
     correctIndex: correct_index as number,
     explain: explain as string,
-    examId: typeof exam_id === "string" ? exam_id : undefined,
-    examDate: typeof exam_date === "string" ? exam_date : undefined,
-    passNumber: typeof pass_number === "number" ? pass_number : undefined,
-    questionNumber:
-      typeof question_number === "number" ? question_number : undefined,
     figureUrl: typeof figure_url === "string" ? figure_url : undefined,
-    status: typeof status === "string" ? status : undefined,
   };
 }
 
@@ -190,6 +180,7 @@ function readCache(): QuestionBank | null {
 function writeCache(value: QuestionBank): void {
   if (typeof window === "undefined") return;
   try {
+    for (const key of LEGACY_CACHE_KEYS) window.localStorage.removeItem(key);
     const entry: CacheEntry & { fetchedAt: number } = {
       fetchedAt: Date.now(),
       questions: value.questions,
@@ -202,6 +193,78 @@ function writeCache(value: QuestionBank): void {
 }
 
 // ---- Laddning --------------------------------------------------------------
+
+/**
+ * Hämtar alla publicerade frågor sida för sida (sorterade på id så att
+ * sidorna inte överlappar). Utan sidindelning kapas banken tyst vid radtaket.
+ */
+async function fetchPublishedQuestionRows(): Promise<{
+  rows: Record<string, unknown>[];
+  error: boolean;
+}> {
+  const supabase = getSupabase();
+  if (!supabase) return { rows: [], error: true };
+  const rows = await fetchAllPages((from, to) =>
+    supabase
+      .from("questions")
+      .select(QUESTION_COLUMNS, { count: "exact" })
+      .eq("status", "published")
+      .order("id")
+      .range(from, to),
+  );
+  return rows ? { rows: rows as Record<string, unknown>[], error: false } : { rows: [], error: true };
+}
+
+/**
+ * Id och delprov för alla frågor som är publicerade just nu, direkt från
+ * databasen (dueller: båda spelarna väljer ur samma aktuella lista även om
+ * deras sidor laddades vid olika tidpunkter). Null utan Supabase eller vid fel.
+ */
+export async function fetchPublishedQuestionIds(
+  kinds: readonly ChoiceQuestion["kind"][],
+): Promise<{ id: string; kind: string }[] | null> {
+  const supabase = getSupabase();
+  if (!supabase) return null;
+  try {
+    return await fetchAllPages((from, to) =>
+      supabase
+        .from("questions")
+        .select("id, kind", { count: "exact" })
+        .eq("status", "published")
+        .in("kind", [...kinds])
+        .order("id")
+        .range(from, to),
+    );
+  } catch {
+    return null;
+  }
+}
+
+/** Publicerade frågor med givna id:n, för frågor som publicerats efter sidladdningen. */
+export async function fetchPublishedQuestionsByIds(
+  ids: readonly string[],
+): Promise<ChoiceQuestion[]> {
+  const supabase = getSupabase();
+  if (!supabase || ids.length === 0) return [];
+  try {
+    const { data, error } = await supabase
+      .from("questions")
+      .select(QUESTION_COLUMNS)
+      .eq("status", "published")
+      .in("id", [...ids]);
+    if (error) return [];
+    return ((data ?? []) as Record<string, unknown>[])
+      .map(questionFromRow)
+      .filter((q): q is ChoiceQuestion => q !== null);
+  } catch {
+    return [];
+  }
+}
+
+/** Sant när banken laddades från databasen, alltså är exakt det som är publicerat nu. */
+export function isBankFromDatabase(): boolean {
+  return bankSource === "database";
+}
 
 /**
  * Laddar frågebanken en gång per sidladdning (modul-singleton). Resolverar
@@ -218,11 +281,11 @@ export function loadQuestions(): Promise<QuestionBank> {
       if (supabase) {
         try {
           const [questionsRes, reflectRes] = await Promise.all([
-            supabase.from("questions").select("*").eq("status", "published"),
+            fetchPublishedQuestionRows(),
             supabase.from("reflect_prompts").select("*"),
           ]);
 
-          const qRows = (questionsRes.data ?? []) as Record<string, unknown>[];
+          const qRows = questionsRes.rows;
           const rRows = (reflectRes.data ?? []) as Record<string, unknown>[];
 
           if (!questionsRes.error && !reflectRes.error && qRows.length > 0) {
@@ -236,6 +299,7 @@ export function loadQuestions(): Promise<QuestionBank> {
             };
             writeCache(next);
             bank = next;
+            bankSource = "database";
             return next;
           }
         } catch (err) {
@@ -247,10 +311,12 @@ export function loadQuestions(): Promise<QuestionBank> {
     const cached = readCache();
     if (cached) {
       bank = cached;
+      bankSource = "cache";
       return cached;
     }
 
     bank = getFallback();
+    bankSource = "fallback";
     return bank;
   })();
 
