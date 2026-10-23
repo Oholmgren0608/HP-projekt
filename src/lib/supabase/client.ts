@@ -43,6 +43,9 @@ export type Database = {
           figure_url: string | null;
           source_url: string | null;
           status: string;
+          /** Andra kontrollen av en övningsfråga; null för äldre frågor. */
+          verification: "agreed" | "disagreed" | null;
+          verification_note: string | null;
         };
         Insert: {
           id: string;
@@ -59,6 +62,8 @@ export type Database = {
           figure_url?: string | null;
           source_url?: string | null;
           status?: string;
+          verification?: "agreed" | "disagreed" | null;
+          verification_note?: string | null;
         };
         Update: {
           kind?: string;
@@ -74,7 +79,23 @@ export type Database = {
           figure_url?: string | null;
           source_url?: string | null;
           status?: string;
+          verification?: "agreed" | "disagreed" | null;
+          verification_note?: string | null;
         };
+        Relationships: [];
+      };
+      question_flags: {
+        Row: {
+          question_id: string;
+          user_id: string;
+          reason: string;
+          created_at: string;
+          /** null = öppen flagga; sätts när frågan publiceras igen. */
+          resolved_at: string | null;
+        };
+        Insert: never;
+        /** Bara service role (/review) får stänga rapporter. */
+        Update: { resolved_at?: string | null };
         Relationships: [];
       };
       exams: {
@@ -683,6 +704,10 @@ export type Database = {
       forum_report: {
         Args: { p_post_id: string; p_reason: string };
         Returns: null;
+      };
+      question_flag: {
+        Args: { p_question_id: string; p_reason: string };
+        Returns: { flags: number; withdrawn: boolean };
       };
       forum_moderate_delete: {
         Args: { p_post_id: string };
