@@ -52,3 +52,6 @@ next-env.d.ts
 
 # frågebank: underlag för andra kontrollen (frågor utan facit, kontrollantens svar)
 /content/ovningsfragor/.andra-kontroll/
+
+# Superdesign temporary HTML
+.superdesign/tmp/

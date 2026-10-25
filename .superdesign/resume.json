@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "targets": {
+    "/": {
+      "targetKind": "existing-ui",
+      "projectId": "4edad021-f529-4223-8709-3a746604c5c2",
+      "baselineDraftId": "5a50eb90-89d0-49ed-85e2-70a340cd5464",
+      "activeDraftId": "5a50eb90-89d0-49ed-85e2-70a340cd5464",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/components/dashboard-home.tsx",
+        "src/components/app-shell.tsx:324:492",
+        "src/app/globals.css"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "27b158e99f6220116d79ae821557bd49fd2aea6de242ab4bcd8108ada0bf8a1c",
+        "src/components/dashboard-home.tsx": "3dddced900eafea18536849b0220218d98224ceb32642835bb85df7eea642279",
+        "src/components/app-shell.tsx": "b86c54b7a6e3332b25cbb24f33fd4be647b82616a4d66ab78899de2fdb42f899",
+        "src/app/globals.css": "4668c92e942cef593db0fd33b5cfd1a2056d41c32715c3653bd038560a79d227"
+      },
+      "components": [],
+      "drafts": {
+        "5a50eb90-89d0-49ed-85e2-70a340cd5464": {
+          "title": "Nuvarande Översikt (/) — reproduction of the old design",
+          "visualDirection": "baseline: old paper & ink / teal gamified style",
+          "currentVersion": 1
+        },
+        "8465c1f2-1d17-48e9-ba5a-e4b367991ecb": {
+          "title": "Översikt — Lugn, sidebar",
+          "visualDirection": "Lugn design system; left sidebar nav; dominant Dagens pass card, stats row, two columns",
+          "parentDraftId": "5a50eb90-89d0-49ed-85e2-70a340cd5464",
+          "currentVersion": 1
+        },
+        "4f471797-af3f-450a-b374-3247ba052713": {
+          "title": "Idag — Lugn, top bar",
+          "visualDirection": "Lugn design system; slim solid top bar; single 720px editorial column, numbered 'Att göra idag' list",
+          "parentDraftId": "5a50eb90-89d0-49ed-85e2-70a340cd5464",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-10-25T00:00:00Z"
+    }
+  }
+}
