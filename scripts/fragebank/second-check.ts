@@ -2,22 +2,24 @@
  * Andra kontrollen av nya övningsfrågor.
  *
  *   npm run fragebank:kontroll -- blind elf
- *     Skriver content/ovningsfragor/.andra-kontroll/elf.blind.json: frågorna
- *     utan facit och förklaring. Kontrollanten (en annan AI än den som skrev
+ *     Skriver content/ovningsfragor/.andra-kontroll/elf.blind.json: de frågor
+ *     som ännu inte har kontrollerats, utan facit och förklaring (redan
+ *     kontrollerade frågor i filen tas inte med igen). Kontrollanten (en annan AI än den som skrev
  *     frågorna) löser dem från början och skriver elf.svar.json:
  *       [{ "id": "...", "answerIndex": 2, "explanationOk": true, "issues": "" }]
  *     `explanationOk` och `issues` fylls i efter den blinda lösningen, när
  *     kontrollanten jämför med frågans förklaring.
  *
  *   npm run fragebank:kontroll -- merge elf
- *     För över resultatet till content/ovningsfragor/elf.json. Ense (agreed)
+ *     För över resultatet för de okontrollerade frågorna till
+ *     content/ovningsfragor/elf.json. Ense (agreed)
  *     kräver samma svar som facit, godkänd förklaring och inga anmärkningar;
  *     allt annat blir oense (disagreed) och måste granskas manuellt på /review.
  */
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { CHECK_DIR, contentPath, isKind, letter, readDrafts, type DraftQuestion } from "./lib";
+import { CHECK_DIR, contentPath, isKind, readDrafts, type DraftQuestion } from "./lib";
 
 type CheckAnswer = {
   id: string;
@@ -33,12 +35,18 @@ if ((command !== "blind" && command !== "merge") || !kindArg || !isKind(kindArg)
 }
 const kind = kindArg;
 const questions = readDrafts(kind);
+/** Frågor som ännu inte har gått igenom andra kontrollen. */
+const pending = questions.filter((q) => q.verification === undefined);
 mkdirSync(CHECK_DIR, { recursive: true });
 const blindPath = join(CHECK_DIR, `${kind}.blind.json`);
 const answerPath = join(CHECK_DIR, `${kind}.svar.json`);
 
 if (command === "blind") {
-  const blind = questions.map((q) => ({
+  if (pending.length === 0) {
+    console.log(`${kind}: alla frågor har redan kontrollerats.`);
+    process.exit(0);
+  }
+  const blind = pending.map((q) => ({
     id: q.id,
     kind: q.kind,
     ...(q.passage ? { passage: q.passage } : {}),
@@ -56,21 +64,29 @@ if (!existsSync(answerPath)) {
 }
 const answers = JSON.parse(readFileSync(answerPath, "utf8")) as CheckAnswer[];
 const byId = new Map(answers.map((a) => [a.id, a]));
-const missing = questions.filter((q) => !byId.has(q.id)).map((q) => q.id);
+const missing = pending.filter((q) => !byId.has(q.id)).map((q) => q.id);
 if (missing.length > 0) {
   console.error(`Kontrollanten har inte svarat på: ${missing.join(", ")}`);
   process.exit(1);
 }
 
+if (pending.length === 0) {
+  console.log(`${kind}: inga okontrollerade frågor att föra över.`);
+  process.exit(0);
+}
+
 let agreed = 0;
 const merged: DraftQuestion[] = questions.map((q) => {
+  // Redan kontrollerade frågor behåller sitt resultat.
+  if (q.verification !== undefined) return q;
   const a = byId.get(q.id)!;
   const notes: string[] = [];
+  // Alternativen anges med sin text, inte bokstav: ordningen kan ändras senare.
   if (a.answerIndex !== q.correctIndex) {
     notes.push(
       Number.isInteger(a.answerIndex) && a.answerIndex >= 0 && a.answerIndex < q.options.length
-        ? `Andra kontrollen valde ${letter(a.answerIndex)} men facit är ${letter(q.correctIndex)}.`
-        : `Andra kontrollen kunde inte välja ett svar (facit är ${letter(q.correctIndex)}).`,
+        ? `Andra kontrollen valde ”${q.options[a.answerIndex]}” men facit är ”${q.options[q.correctIndex]}”.`
+        : `Andra kontrollen kunde inte välja ett svar (facit är ”${q.options[q.correctIndex]}”).`,
     );
   }
   if (a.explanationOk !== true) notes.push("Förklaringen godkändes inte.");
@@ -87,4 +103,4 @@ const merged: DraftQuestion[] = questions.map((q) => {
 });
 
 writeFileSync(contentPath(kind), JSON.stringify(merged, null, 2) + "\n");
-console.log(`${kind}: ense ${agreed}, oense ${merged.length - agreed} av ${merged.length}.`);
+console.log(`${kind}: ense ${agreed}, oense ${pending.length - agreed} av ${pending.length} nya.`);

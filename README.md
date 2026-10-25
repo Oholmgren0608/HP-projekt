@@ -47,7 +47,8 @@ Databasen (`public.questions`) är sanningen för alla frågor. Nya
    bland annat antal svarsalternativ (ORD och NOG har fem, som på provet),
    att rätt svar är spritt över positionerna och att inget är en dubblett.
 2. Andra kontrollen: `npm run fragebank:kontroll -- blind <delprov>` skriver
-   frågorna utan facit till `content/ovningsfragor/.andra-kontroll/`. En
+   de frågor som inte redan kontrollerats, utan facit, till
+   `content/ovningsfragor/.andra-kontroll/`. En
    annan AI än den som skrev frågorna löser dem och skriver
    `<delprov>.svar.json`; `npm run fragebank:kontroll -- merge <delprov>`
    markerar varje fråga som ense eller oense.
