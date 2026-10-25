@@ -51,6 +51,7 @@ function GroupedBars({
   note,
   reference,
   suffix = "",
+  decimals,
 }: {
   label: string;
   categories: string[];
@@ -62,12 +63,16 @@ function GroupedBars({
   /** Streckad referenslinje, t.ex. ett medelvärde att jämföra staplarna mot. */
   reference?: { value: number; text: string };
   suffix?: string;
+  /** Antal decimaler i värdelabels (med decimalkomma, som i frågetexten). */
+  decimals?: number;
 }) {
   const groupW = PLOT_W / categories.length;
   const barW = Math.min(20, (groupW - 16) / series.length);
   const barsW = barW * series.length;
   const baseY = PAD.top + PLOT_H;
   const y = (value: number) => baseY - (value / yMax) * PLOT_H;
+  const format = (value: number) =>
+    (decimals === undefined ? String(value) : value.toFixed(decimals)).replace(".", ",");
 
   return (
     <Figure label={label}>
@@ -113,13 +118,17 @@ function GroupedBars({
               const x = groupX + si * barW;
               return (
                 <g key={s.name}>
+                  {/* Markerade staplar behåller seriens färg (så att förklaringen
+                      stämmer) och får en kontur i stället. */}
                   <rect
                     x={x}
                     y={y(value)}
                     width={Math.max(6, barW - 3)}
                     height={baseY - y(value)}
                     rx="2"
-                    fill={marked ? "var(--brand)" : s.color}
+                    fill={s.color}
+                    stroke={marked ? "var(--ink)" : "none"}
+                    strokeWidth={marked ? 2 : 0}
                     opacity={marked || marks.length === 0 ? 1 : 0.45}
                   />
                   <text
@@ -130,7 +139,7 @@ function GroupedBars({
                     fontWeight={marked ? 700 : 400}
                     fill={marked ? "var(--ink)" : "var(--ink-muted)"}
                   >
-                    {value}
+                    {format(value)}
                   </text>
                 </g>
               );
@@ -150,10 +159,11 @@ function GroupedBars({
             strokeWidth="1.5"
             strokeDasharray="6 4"
           />
+          {/* Till vänster: höga staplar till höger skymmer annars texten. */}
           <text
-            x={PAD.left + PLOT_W - 4}
+            x={PAD.left + 4}
             y={y(reference.value) - 5}
-            textAnchor="end"
+            textAnchor="start"
             fontSize="10"
             fontWeight={700}
             fill="var(--brand)"
@@ -329,19 +339,37 @@ function LinePlot({
       <text x={PAD.left + PLOT_W} y={baseY + 20} textAnchor="end" fontSize="10" fill="var(--ink-muted)">
         x = {xMax}
       </text>
-      {lines.map((line) => (
-        <polyline
-          key={line.name}
-          points={line.points.map(([px, py]) => `${x(px)},${y(py)}`).join(" ")}
-          fill="none"
-          stroke={line.color}
-          strokeWidth="2.5"
-        />
-      ))}
+      {lines.map((line) => {
+        const [lx, ly] = line.points[line.points.length - 1];
+        return (
+          <g key={line.name}>
+            <polyline
+              points={line.points.map(([px, py]) => `${x(px)},${y(py)}`).join(" ")}
+              fill="none"
+              stroke={line.color}
+              strokeWidth="2.5"
+            />
+            {lines.length > 1 ? (
+              // Namnet efter linjens slut, eller ovanför slutet om linjen når högerkanten.
+              <text
+                x={x(lx) < CHART_W - 80 ? x(lx) + 6 : x(lx) - 4}
+                y={x(lx) < CHART_W - 80 ? y(ly) + 4 : y(ly) - 8}
+                textAnchor={x(lx) < CHART_W - 80 ? "start" : "end"}
+                fontSize="11"
+                fontWeight={700}
+                fill={line.color}
+              >
+                {line.name}
+              </text>
+            ) : null}
+          </g>
+        );
+      })}
       {point ? (
         <g>
           <circle cx={x(point.x)} cy={y(point.y)} r="4" fill="var(--ink)" />
-          <text x={x(point.x) + 8} y={y(point.y) - 6} fontSize="11" fontWeight={600} fill="var(--ink)">
+          {/* Under och till höger om punkten: där går inga stigande linjer. */}
+          <text x={x(point.x) + 10} y={y(point.y) + 18} fontSize="11" fontWeight={600} fill="var(--ink)">
             {point.text}
           </text>
         </g>
@@ -571,6 +599,7 @@ const FIGURES: Record<string, () => ReactNode> = {
         marks={[{ category: 3, series: 1 }]}
         note="Avd. D i mars: 4,9 % – lägst"
         suffix=" %"
+        decimals={1}
       />
       <Legend
         items={[
@@ -604,7 +633,7 @@ const FIGURES: Record<string, () => ReactNode> = {
   ),
   "kva-5": () => (
     <RectangleSketch
-      label="Kvadrat med sidan 5, area 25 m²"
+      label="Kvadrat med sidan 5, area 25"
       widthText="5"
       heightText="5"
       areaText="5 × 5 = 25"
@@ -617,8 +646,8 @@ const FIGURES: Record<string, () => ReactNode> = {
       xMax={8}
       yMax={12}
       lines={[
-        { name: "2x", color: "var(--brand)", points: [[0, 0], [6, 12]] },
-        { name: "x + 3", color: "var(--lagoon-ink)", points: [[0, 3], [8, 11]] },
+        { name: "I: 2x", color: "var(--brand)", points: [[0, 0], [6, 12]] },
+        { name: "II: x + 3", color: "var(--energy-ink)", points: [[0, 3], [8, 11]] },
       ]}
       point={{ x: 3, y: 6, text: "x = 3 ger lika" }}
     />
@@ -680,10 +709,10 @@ const FIGURES: Record<string, () => ReactNode> = {
       <text x="260" y="200" textAnchor="middle" fontSize="12" fill="var(--ink-muted)">
         bas 10 cm
       </text>
-      <text x="272" y="130" fontSize="12" fill="var(--ink-muted)">
+      <text x="252" y="140" textAnchor="end" fontSize="12" fill="var(--ink-muted)">
         höjd 6 cm
       </text>
-      <text x="260" y="150" textAnchor="middle" fontSize="13" fontWeight={600} fill="var(--ink)">
+      <text x="40" y="60" fontSize="13" fontWeight={600} fill="var(--ink)">
         (10 × 6) / 2 = 30 cm²
       </text>
     </Figure>
@@ -725,7 +754,7 @@ const FIGURES: Record<string, () => ReactNode> = {
       totalText="8 000 kr = 100 %"
       percent={5}
       partText="5 % = 400 kr"
-      restText="8 000 kr"
+      restText="95 % = 7 600 kr"
       note="8 000 + 400 = 8 400 kr"
     />
   ),
