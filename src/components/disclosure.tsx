@@ -13,8 +13,6 @@ type DisclosureProps = {
   hint?: ReactNode;
   /** Startar öppen (används när sektionen är mål för en ankarlänk, t.ex. /tips?section=MEK). */
   defaultOpen?: boolean;
-  /** "inverted" = mörk panel (bg-foreground/text-background) i stället för kort. */
-  variant?: "card" | "inverted";
   /** Får veta när sektionen öppnas/stängs (t.ex. för att kvittera "NY"-markeringar). */
   onOpenChange?: (open: boolean) => void;
   /** Sätts på <details> så att t.ex. #ankare och scroll-margin fungerar. */
@@ -34,7 +32,6 @@ export function Disclosure({
   subtitle,
   hint,
   defaultOpen = false,
-  variant = "card",
   onOpenChange,
   id,
   className,
@@ -44,7 +41,6 @@ export function Disclosure({
   const [manual, setManual] = useState<boolean | null>(null);
 
   const open = manual ?? defaultOpen;
-  const inverted = variant === "inverted";
 
   return (
     <details
@@ -56,24 +52,22 @@ export function Disclosure({
       }}
       className={cn(
         "group scroll-mt-24 overflow-hidden rounded-[10px] border",
-        inverted
-          ? "border-transparent bg-foreground text-background"
-          : "border-[var(--line)] bg-card/75",
+        "border-[var(--line)] bg-card",
         className,
       )}
     >
       <summary
         className={cn(
           "flex cursor-pointer list-none items-center gap-3 p-5 transition focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--ring)] sm:p-6 [&::-webkit-details-marker]:hidden",
-          inverted ? "hover:bg-background/10" : "hover:bg-[var(--accent-soft)]/40",
+          "hover:bg-[var(--mist)]/60",
         )}
       >
         <span className="min-w-0 flex-1">
           <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span
               className={cn(
-                "font-[family-name:var(--font-display)] text-xl sm:text-2xl",
-                !inverted && "text-[var(--ink)]",
+                "font-[family-name:var(--font-display)] text-lg font-semibold",
+                "text-[var(--ink)]",
               )}
             >
               {title}
@@ -84,7 +78,7 @@ export function Disclosure({
             <span
               className={cn(
                 "mt-1 block text-sm",
-                inverted ? "text-background/70" : "text-[var(--ink-muted)]",
+                "text-[var(--ink-muted)]",
               )}
             >
               {subtitle}
@@ -94,7 +88,7 @@ export function Disclosure({
         <ChevronDown
           className={cn(
             "size-5 shrink-0 transition-transform group-open:rotate-180",
-            inverted ? "text-background/70" : "text-[var(--ink-muted)]",
+            "text-[var(--ink-muted)]",
           )}
           aria-hidden
         />
@@ -102,7 +96,7 @@ export function Disclosure({
       <div
         className={cn(
           "border-t px-5 pb-5 pt-4 sm:px-6 sm:pb-6",
-          inverted ? "border-background/15" : "border-[var(--line)]",
+          "border-[var(--line)]",
           bodyClassName,
         )}
       >

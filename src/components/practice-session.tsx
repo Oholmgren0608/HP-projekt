@@ -377,7 +377,7 @@ function CompleteButton({
         type="button"
         disabled={!ready}
         onClick={onClick}
-        className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+        className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
       >
         Markera uppgiften som klar
       </button>
@@ -437,7 +437,7 @@ function ReflectForm({
           type="button"
           disabled={!canFinish}
           onClick={onComplete}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
         >
           Markera som klar
         </button>

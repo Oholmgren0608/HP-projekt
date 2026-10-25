@@ -212,7 +212,7 @@ export function DailySrsReview() {
         <button
           type="button"
           onClick={() => setRevealed(true)}
-          className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] hover:bg-[var(--ink-soft)]"
+          className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground hover:bg-[var(--ink-soft)]"
         >
           Visa svar
         </button>

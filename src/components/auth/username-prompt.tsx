@@ -35,7 +35,7 @@ export function UsernamePrompt() {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div
         aria-hidden
-        className="absolute inset-0 bg-[var(--ink)]/40 backdrop-blur-[2px]"
+        className="absolute inset-0 bg-[var(--ink)]/40"
         onClick={() => setDismissed(true)}
       />
       <div

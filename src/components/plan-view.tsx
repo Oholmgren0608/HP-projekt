@@ -127,7 +127,6 @@ export function PlanView() {
           </Disclosure>
 
           <Disclosure
-            variant="inverted"
             title="En vanlig studiedag"
             subtitle="Justeras när du sparar nya resultat."
           >

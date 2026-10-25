@@ -30,7 +30,7 @@ export function AchievementsPanel({ className }: { className?: string }) {
 
   return (
     <Disclosure
-      title="Achievements"
+      title="Prestationer"
       onOpenChange={setExpanded}
       className={cn("shadow-soft", className)}
       hint={

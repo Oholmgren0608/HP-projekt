@@ -308,7 +308,7 @@ export function WeekTracker({
         })}
       </div>
 
-      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 backdrop-blur-sm sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs font-medium text-[var(--brand)]">

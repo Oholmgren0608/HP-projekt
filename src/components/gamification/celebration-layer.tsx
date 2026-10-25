@@ -122,7 +122,7 @@ export function CelebrationLayer() {
             exit={{ opacity: 0 }}
           >
             <div
-              className="absolute inset-0 bg-[var(--ink)]/40 backdrop-blur-sm"
+              className="absolute inset-0 bg-[var(--ink)]/40"
               onClick={closeLevelUp}
             />
             <motion.div

@@ -211,7 +211,7 @@ export function OfficialExamsBrowser() {
                                 onClick={() => { setActiveDocUrl(doc.url); setLoadedDocUrl(null); }}
                                 className={`rounded-md border px-3 py-1.5 text-sm transition ${
                                   selected
-                                    ? "border-[var(--ink)] bg-[var(--ink)] text-[var(--paper)]"
+                                    ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--brand)]"
                                     : "border-[var(--line-strong)] bg-card text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
                                 }`}
                               >

@@ -194,7 +194,7 @@ export function Flashcards() {
               <button
                 type="button"
                 onClick={() => setFlipped(true)}
-                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] transition hover:bg-[var(--ink-soft)]"
+                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:bg-[var(--ink-soft)]"
               >
                 Visa svar
               </button>
