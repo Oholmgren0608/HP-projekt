@@ -29,18 +29,236 @@
         },
         "8465c1f2-1d17-48e9-ba5a-e4b367991ecb": {
           "title": "Översikt — Lugn, sidebar",
-          "visualDirection": "Lugn design system; left sidebar nav; dominant Dagens pass card, stats row, two columns",
+          "visualDirection": "Lugn design system; left sidebar nav; dominant Dagens pass card, stats row, two columns; v2 hand-authored refinement (import, no credits)",
           "parentDraftId": "5a50eb90-89d0-49ed-85e2-70a340cd5464",
-          "currentVersion": 1
+          "currentVersion": 2
         },
         "4f471797-af3f-450a-b374-3247ba052713": {
           "title": "Idag — Lugn, top bar",
           "visualDirection": "Lugn design system; slim solid top bar; single 720px editorial column, numbered 'Att göra idag' list",
           "parentDraftId": "5a50eb90-89d0-49ed-85e2-70a340cd5464",
           "currentVersion": 1
+        },
+        "fc1cf1a6-2869-4cc7-8bc5-963ee07e521f": {
+          "title": "Översikt – Lugn (mobil)",
+          "visualDirection": "mobile copy of v2",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
         }
       },
-      "updatedAt": "2026-10-25T00:00:00Z"
+      "updatedAt": "2026-10-25T12:00:00Z"
+    },
+    "/ova": {
+      "targetKind": "existing-ui",
+      "sourceTarget": "/",
+      "sourceDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+      "projectId": "4edad021-f529-4223-8709-3a746604c5c2",
+      "activeDraftId": "7379e325-425e-4d78-b3ef-b35e5f8d07da",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/components/practice-hub.tsx",
+        "src/components/practice-subtest-selector.tsx",
+        "src/lib/subtests.ts"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "27b158e99f6220116d79ae821557bd49fd2aea6de242ab4bcd8108ada0bf8a1c",
+        "src/components/practice-hub.tsx": "f4c059d75067821b029a4f04a45b72a291a540f40dcd5ac012a8be43929382ed",
+        "src/components/practice-subtest-selector.tsx": "635308c385a53cea31845a6ddbece4a24dc559bf082fbebe620524cf163af7df",
+        "src/lib/subtests.ts": "d52e781fd67a485ab40b9e363d26360b9741ee36938d2239267647a3e8487b4e"
+      },
+      "components": [],
+      "drafts": {
+        "7379e325-425e-4d78-b3ef-b35e5f8d07da": {
+          "title": "Öva – Lugn",
+          "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        },
+        "b1677d7e-5ef7-489a-9d74-2169d1a58aab": {
+          "title": "Öva – Lugn (mobil)",
+          "visualDirection": "mobile copy",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-10-25T12:00:00Z"
+    },
+    "/ova/[subtest]": {
+      "targetKind": "existing-ui",
+      "sourceTarget": "/",
+      "sourceDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+      "projectId": "4edad021-f529-4223-8709-3a746604c5c2",
+      "activeDraftId": "3d603343-b183-46cd-b49d-e6c316e2e942",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/components/practice-session.tsx",
+        "src/components/quiz/quiz-options.tsx"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "27b158e99f6220116d79ae821557bd49fd2aea6de242ab4bcd8108ada0bf8a1c",
+        "src/components/practice-session.tsx": "8567912d458d6312c08458261b0eb3896da1f92a0c21a3efe4e0b9609350d39e",
+        "src/components/quiz/quiz-options.tsx": "60094645157bbd74335aea85e3e22716811391d3bc57b4a26cf1c363cec50a2a"
+      },
+      "components": [],
+      "drafts": {
+        "3d603343-b183-46cd-b49d-e6c316e2e942": {
+          "title": "Övningsfråga KVA – Lugn",
+          "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        },
+        "62065ed1-48f7-4ff1-8969-a33522a7aabd": {
+          "title": "Övningsfråga KVA – Lugn (mobil)",
+          "visualDirection": "mobile copy",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-10-25T12:00:00Z"
+    },
+    "practice-session-summary": {
+      "targetKind": "existing-ui",
+      "sourceTarget": "/",
+      "sourceDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+      "projectId": "4edad021-f529-4223-8709-3a746604c5c2",
+      "activeDraftId": "111a7073-232d-453a-8026-2c5566bcc062",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/components/practice-session.tsx",
+        "src/components/question-review.tsx"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "27b158e99f6220116d79ae821557bd49fd2aea6de242ab4bcd8108ada0bf8a1c",
+        "src/components/practice-session.tsx": "8567912d458d6312c08458261b0eb3896da1f92a0c21a3efe4e0b9609350d39e",
+        "src/components/question-review.tsx": "907ce43d4c6e09ca44e09a989a50399540fb5a6d7ce34895255262526e857b9e"
+      },
+      "components": [],
+      "drafts": {
+        "111a7073-232d-453a-8026-2c5566bcc062": {
+          "title": "Resultat efter pass – Lugn",
+          "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        },
+        "a10ed659-5adb-45c9-b239-7d42d2a2870c": {
+          "title": "Resultat efter pass – Lugn (mobil)",
+          "visualDirection": "mobile copy",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-10-25T12:00:00Z"
+    },
+    "/plan": {
+      "targetKind": "existing-ui",
+      "sourceTarget": "/",
+      "sourceDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+      "projectId": "4edad021-f529-4223-8709-3a746604c5c2",
+      "activeDraftId": "e1631723-afde-4d7e-99f7-eba5604ef3a7",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/components/plan-view.tsx",
+        "src/components/week-task-row.tsx"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "27b158e99f6220116d79ae821557bd49fd2aea6de242ab4bcd8108ada0bf8a1c",
+        "src/components/plan-view.tsx": "11927181d74ae92e9146917eefd22b6bead62a3471c35fd36b634ed1d0ac2c1e",
+        "src/components/week-task-row.tsx": "2d5526d39e113c0943c569af4b348db8c5d318f41fc554c8bb45f917b500a2d1"
+      },
+      "components": [],
+      "drafts": {
+        "e1631723-afde-4d7e-99f7-eba5604ef3a7": {
+          "title": "Veckoplan – Lugn",
+          "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        },
+        "f16d9544-2499-417e-b537-2ba8aebf1f17": {
+          "title": "Veckoplan – Lugn (mobil)",
+          "visualDirection": "mobile copy",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-10-25T12:00:00Z"
+    },
+    "/prov": {
+      "targetKind": "existing-ui",
+      "sourceTarget": "/",
+      "sourceDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+      "projectId": "4edad021-f529-4223-8709-3a746604c5c2",
+      "activeDraftId": "9fb2dd3f-54eb-4023-9b43-b8ed79dc4f5a",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/components/exams-view.tsx",
+        "src/components/timed-mock-exam.tsx"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "27b158e99f6220116d79ae821557bd49fd2aea6de242ab4bcd8108ada0bf8a1c",
+        "src/components/exams-view.tsx": "7fc0c1d8b78674b3b581cbe2ec0db3906fbabe59948fbc819e554a73ab731355",
+        "src/components/timed-mock-exam.tsx": "b4ba2b3bf07ac79f44f0e3ec2d2baa9df8af5d8b96115cd880c46e61f29cadb5"
+      },
+      "components": [],
+      "drafts": {
+        "9fb2dd3f-54eb-4023-9b43-b8ed79dc4f5a": {
+          "title": "Prov – Lugn",
+          "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        },
+        "f5151c96-e4cd-42f0-bfbb-2ed59a068314": {
+          "title": "Prov – Lugn (mobil)",
+          "visualDirection": "mobile copy",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-10-25T12:00:00Z"
+    },
+    "/profil": {
+      "targetKind": "existing-ui",
+      "sourceTarget": "/",
+      "sourceDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+      "projectId": "4edad021-f529-4223-8709-3a746604c5c2",
+      "activeDraftId": "30072740-99fd-4b57-8f99-3c5005c77fc0",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/app/profil/page.tsx",
+        "src/components/gamification/achievements-panel.tsx"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "27b158e99f6220116d79ae821557bd49fd2aea6de242ab4bcd8108ada0bf8a1c",
+        "src/app/profil/page.tsx": "9077c60b8b1528ac3d671341e9f72b52adbb1d42a06d582913f9c880ea35fc4d",
+        "src/components/gamification/achievements-panel.tsx": "2d346efc45df342fb55260e48172c388e16e609367e1d3a6b989bb7c49152ad9"
+      },
+      "components": [],
+      "drafts": {
+        "30072740-99fd-4b57-8f99-3c5005c77fc0": {
+          "title": "Profil – Lugn",
+          "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        },
+        "c606d1d1-07a7-4276-868b-a80674bf77dd": {
+          "title": "Profil – Lugn (mobil)",
+          "visualDirection": "mobile copy",
+          "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
+          "currentVersion": 1
+        }
+      },
+      "updatedAt": "2026-10-25T12:00:00Z"
     }
   }
 }
