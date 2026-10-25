@@ -51,7 +51,7 @@ export function QuizOptions({
               role="listitem"
               className={`flex w-full items-start gap-3 rounded-lg border px-3 py-2.5 sm:px-4 ${
                 isCorrect
-                  ? "border-[var(--lagoon-ink)]/40 bg-card"
+                  ? "border-[var(--success-ink)]/40 bg-card"
                   : isChosen
                     ? "border-[var(--destructive)]/30 bg-card"
                     : "border-[var(--line)] bg-card/70"
@@ -60,7 +60,7 @@ export function QuizOptions({
               <span
                 className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
                   isCorrect
-                    ? "border-[var(--lagoon-ink)] bg-[var(--lagoon-ink)] text-primary-foreground"
+                    ? "border-[var(--success-ink)] bg-[var(--success-ink)] text-primary-foreground"
                     : isChosen
                       ? "border-[var(--destructive)] bg-[var(--destructive)] text-primary-foreground"
                       : "border-[var(--line)] bg-card text-[var(--ink-muted)]"

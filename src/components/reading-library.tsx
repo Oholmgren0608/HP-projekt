@@ -80,7 +80,7 @@ export function ReadingLibrary() {
                   <div className="flex items-start justify-between gap-2">
                     <span className="font-medium text-[var(--ink)]">{item.title}</span>
                     {done ? (
-                      <span className="shrink-0 text-[10px] font-medium text-[var(--lagoon-ink)]">
+                      <span className="shrink-0 text-[10px] font-medium text-[var(--success-ink)]">
                         Läst
                       </span>
                     ) : null}

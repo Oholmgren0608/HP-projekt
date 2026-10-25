@@ -136,7 +136,7 @@ export function DailySrsReview() {
                 onClick={() => pickOption(i)}
                 className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition disabled:opacity-100 sm:px-4 ${
                   showCorrect
-                    ? "border-[var(--lagoon-ink)]/40 bg-[var(--accent-soft)]"
+                    ? "border-[var(--success-ink)]/40 bg-[var(--success-soft)]"
                     : showWrong
                       ? "border-[var(--destructive)]/30 bg-[var(--coral-soft)]"
                       : revealed
@@ -147,7 +147,7 @@ export function DailySrsReview() {
                 <span
                   className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
                     showCorrect
-                      ? "border-[var(--lagoon-ink)] bg-[var(--lagoon-ink)] text-primary-foreground"
+                      ? "border-[var(--success-ink)] bg-[var(--success-ink)] text-primary-foreground"
                       : showWrong
                         ? "border-[var(--destructive)] bg-[var(--destructive)] text-primary-foreground"
                         : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
@@ -157,7 +157,7 @@ export function DailySrsReview() {
                 </span>
                 <span className="flex-1 text-[var(--ink)]">{opt}</span>
                 {showCorrect ? (
-                  <span className="mt-0.5 text-xs font-medium text-[var(--lagoon-ink)]">
+                  <span className="mt-0.5 text-xs font-medium text-[var(--success-ink)]">
                     Rätt
                   </span>
                 ) : null}
@@ -179,7 +179,7 @@ export function DailySrsReview() {
               {pickedCorrect ? "Rätt — du valde rätt alternativ." : "Fel — du valde fel alternativ."}
             </p>
           ) : null}
-          <p className="rounded-lg border border-[var(--lagoon-ink)]/30 bg-[var(--accent-soft)] px-4 py-3 text-[var(--ink)]">
+          <p className="rounded-lg border border-[var(--success-ink)]/30 bg-[var(--success-soft)] px-4 py-3 text-[var(--ink)]">
             <span className="block text-xs font-medium text-[var(--ink-muted)]">
               Rätt svar
             </span>

@@ -926,7 +926,7 @@ function ResultView({
     result === "draw"
       ? "text-[var(--ink)]"
       : result === "win"
-        ? "text-[var(--lagoon-ink)]"
+        ? "text-[var(--success-ink)]"
         : "text-[var(--destructive)]";
 
   return (
@@ -954,7 +954,7 @@ function ResultView({
       {myDelta != null && myDelta !== 0 ? (
         <p className="mt-4 text-sm text-[var(--ink-soft)]">
           Rankingförändring:{" "}
-          <span className={`font-medium ${myDelta > 0 ? "text-[var(--lagoon-ink)]" : "text-[var(--destructive)]"}`}>
+          <span className={`font-medium ${myDelta > 0 ? "text-[var(--success-ink)]" : "text-[var(--destructive)]"}`}>
             {myDelta > 0 ? `+${myDelta}` : myDelta} ELO
           </span>
         </p>

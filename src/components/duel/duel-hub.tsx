@@ -416,7 +416,7 @@ function HistoryItem({
           : "Oavgjort";
   const resultColor =
     result === "win"
-      ? "text-[var(--lagoon-ink)]"
+      ? "text-[var(--success-ink)]"
       : result === "loss"
         ? "text-[var(--destructive)]"
         : "text-[var(--ink-muted)]";
@@ -440,7 +440,7 @@ function HistoryItem({
       <span
         className={`w-14 shrink-0 text-right tabular-nums ${
           (myDelta ?? 0) > 0
-            ? "text-[var(--lagoon-ink)]"
+            ? "text-[var(--success-ink)]"
             : (myDelta ?? 0) < 0
               ? "text-[var(--destructive)]"
               : "text-[var(--ink-muted)]"

@@ -234,7 +234,7 @@ export function FreePracticeSession({
             <div
               className={`rounded-lg border px-4 py-3 ${
                 committed === current.correctIndex
-                  ? "border-[var(--lagoon-ink)]/40 bg-[var(--accent-soft)]"
+                  ? "border-[var(--success-ink)]/40 bg-[var(--success-soft)]"
                   : "border-[var(--destructive)]/30 bg-[var(--coral-soft)]"
               }`}
             >

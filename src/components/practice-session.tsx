@@ -354,7 +354,7 @@ function TimeRequirementBanner({
       </p>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
         <div
-          className={`h-full rounded-full transition-all ${timer.ready ? "bg-[var(--lagoon-ink)]" : "bg-[var(--brand)]"}`}
+          className={`h-full rounded-full transition-all ${timer.ready ? "bg-[var(--success-ink)]" : "bg-[var(--brand)]"}`}
           style={{ width: `${timer.progress}%` }}
         />
       </div>

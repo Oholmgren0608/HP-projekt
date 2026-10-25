@@ -183,7 +183,7 @@ export function PlanView() {
                           key={m}
                           className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]"
                         >
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--lagoon-ink)]" />
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--ink-muted)]" />
                           <span>{m}</span>
                         </li>
                       ))}

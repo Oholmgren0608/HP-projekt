@@ -418,7 +418,7 @@ function PostItem({
         className={cn(
           "rounded-[10px] border p-4 sm:p-5",
           node.is_best
-            ? "border-[var(--lagoon-ink)]/40 bg-[var(--accent-soft)]/40"
+            ? "border-[var(--success-ink)]/40 bg-[var(--success-soft)]/40"
             : node.is_deleted
               ? "border-[var(--line)] bg-[var(--paper)]"
               : "border-[var(--line)] bg-card/70",

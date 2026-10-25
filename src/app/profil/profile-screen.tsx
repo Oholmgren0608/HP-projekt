@@ -664,7 +664,7 @@ function MatchRow({
 
   const resultLabel = draw ? "Oavgjort" : won ? "Vinst" : "Förlust";
   const resultColor = won
-    ? "text-[var(--lagoon-ink)]"
+    ? "text-[var(--success-ink)]"
     : draw
       ? "text-[var(--ink-muted)]"
       : "text-[var(--destructive)]";
@@ -687,7 +687,7 @@ function MatchRow({
       <span
         className={`w-14 shrink-0 text-right tabular-nums ${
           (myDelta ?? 0) > 0
-            ? "text-[var(--lagoon-ink)]"
+            ? "text-[var(--success-ink)]"
             : (myDelta ?? 0) < 0
               ? "text-[var(--destructive)]"
               : "text-[var(--ink-muted)]"
