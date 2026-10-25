@@ -16,7 +16,7 @@
   {
     "id": "ovn-xyz-002",
     "kind": "xyz",
-    "prompt": "Vad är (2³)² · 4⁻²?",
+    "prompt": "Vad är (2³)² · 4^(−2)?",
     "options": [
       "2",
       "4",
@@ -24,7 +24,7 @@
       "32"
     ],
     "correctIndex": 1,
-    "explain": "(2³)² = 2³ · 2³ = 2⁶ = 64, och 4⁻² = 1/4² = 1/16. Uttrycket blir 64 · 1/16 = 4. Med potenslagar: 4⁻² = (2²)⁻² = 2⁻⁴, så 2⁶ · 2⁻⁴ = 2² = 4. 2 får man om man adderar exponenterna i (2³)² och får 2⁵ = 32 i stället för 2⁶; 32/16 = 2. 32 får man om man tolkar (2³)² som 2 upphöjt till 3² = 9; 2⁹/16 = 512/16 = 32. 16 får man om man glömmer att 4 = 2² och räknar 4⁻² som 2⁻² = 1/4; 64 · 1/4 = 16.",
+    "explain": "(2³)² = 2³ · 2³ = 2^6 = 64, och 4^(−2) = 1/4² = 1/16. Uttrycket blir 64 · 1/16 = 4. Med potenslagar: 4^(−2) = (2²)^(−2) = 2^(−4), så 2^6 · 2^(−4) = 2² = 4. 2 får man om man adderar exponenterna i (2³)² och får 2^5 = 32 i stället för 2^6; 32/16 = 2. 32 får man om man tolkar (2³)² som 2 upphöjt till 3² = 9; 2^9/16 = 512/16 = 32. 16 får man om man glömmer att 4 = 2² och räknar 4^(−2) som 2^(−2) = 1/4; 64 · 1/4 = 16.",
     "verification": "agreed"
   },
   {
@@ -199,7 +199,7 @@
   {
     "id": "ovn-xyz-015",
     "kind": "xyz",
-    "prompt": "Det gäller att 3ˣ = 4. Vad är 9ˣ⁺¹?",
+    "prompt": "Det gäller att 3^x = 4. Vad är 9^(x + 1)?",
     "options": [
       "17",
       "36",
@@ -207,9 +207,9 @@
       "144"
     ],
     "correctIndex": 3,
-    "explain": "Skriv 9 som 3²: 9ˣ⁺¹ = 9ˣ · 9 = (3²)ˣ · 9 = (3ˣ)² · 9 = 4² · 9 = 16 · 9 = 144. 36 = 4 · 9 får man om man glömmer att 9ˣ = (3ˣ)² och räknar 9ˣ som 4. 48 = 16 · 3 får man om man skriver 9ˣ⁺¹ som 3²ˣ⁺¹ och alltså bara multiplicerar x med 2 i exponenten; rätt exponent är 2(x + 1) = 2x + 2. 17 = 16 + 1 får man om man tror att 9ˣ⁺¹ = 9ˣ + 1.",
+    "explain": "Skriv 9 som 3²: 9^(x + 1) = 9^x · 9 = (3²)^x · 9 = (3^x)² · 9 = 4² · 9 = 16 · 9 = 144. 36 = 4 · 9 får man om man glömmer att 9^x = (3^x)² och räknar 9^x som 4. 48 = 16 · 3 får man om man skriver 9^(x + 1) som 3^(2x + 1) och alltså bara multiplicerar x med 2 i exponenten; rätt exponent är 2(x + 1) = 2x + 2. 17 = 16 + 1 får man om man tror att 9^(x + 1) = 9^x + 1.",
     "verification": "disagreed",
-    "verificationNote": "Exponenten i 9ˣ⁺¹ (och 3²ˣ⁺¹ i förklaringen) skrivs med Unicode-upphöjda tecken; ˣ och ⁺ finns inte i appens typsnitt (Nunito), ritas med reservtypsnitt och blir mycket små. Läses +1 som utanför exponenten blir svaret 9ˣ + 1 = 17 (alternativ A). Kontrollera visningen på mobil eller skriv om i ord, t.ex. \"Vad är 9 upphöjt till (x + 1)?\"."
+    "verificationNote": "Rättat före uppladdning efter andra kontrollen: exponenterna skrivs nu med ^ (t.ex. 9^(x + 1)) i stället för upphöjda tecken som typsnittet saknar. Kontrollera visningen och publicera."
   },
   {
     "id": "ovn-xyz-016",
@@ -279,6 +279,287 @@
     ],
     "correctIndex": 0,
     "explain": "Summan av talen är 5 · 6 = 30. I storleksordning är det mittersta talet medianen, alltså 7. Det största talet blir så stort som möjligt när de andra är så små som möjligt. De två minsta ska vara olika positiva heltal under 7, minst 1 och 2, och det fjärde talet ska vara större än 7, minst 8. Det största talet blir då 30 − 1 − 2 − 7 − 8 = 12, och talen 1, 2, 7, 8 och 12 uppfyller alla villkor. 13 får man om man låter det fjärde talet vara 7 (1, 2, 7, 7, 13), men då är två av talen lika. 14 får man om man tillåter lika tal både under och över medianen (1, 1, 7, 7, 14). 20 = 30 − 1 − 2 − 7 får man om man glömmer bort det fjärde talet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-021",
+    "kind": "xyz",
+    "prompt": "Hur många positiva heltal n uppfyller 1/4 < 3/n < 2/5?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "7"
+    ],
+    "correctIndex": 1,
+    "explain": "Eftersom n är positivt kan man multiplicera bort nämnarna utan att vända olikhetstecknen. Villkoret 1/4 < 3/n ger n < 12, och villkoret 3/n < 2/5 ger 15 < 2n, alltså n > 7,5. Talen 8, 9, 10 och 11 uppfyller båda villkoren, så det finns 4 sådana tal. Kontroll: 3/8 = 0,375 ligger mellan 1/4 = 0,25 och 2/5 = 0,4. 5 får man om man tar med en ändpunkt, men n = 12 ger 3/12 = 1/4, som inte är större än 1/4, och n = 7 ger 3/7, som är större än 2/5 eftersom 3 · 5 = 15 är större än 2 · 7 = 14. 3 får man om man räknar ut 11 − 8 i stället för att räkna talen 8, 9, 10 och 11. 7 får man om man tror att 3/n < 2/5 betyder n < 7,5 och tar talen 1 till 7; en mindre kvot kräver i själva verket en större nämnare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-022",
+    "kind": "xyz",
+    "prompt": "Lös ekvationen 4^(x + 1) = 8^(x − 1). Vad är x?",
+    "options": [
+      "−5",
+      "2",
+      "3",
+      "5"
+    ],
+    "correctIndex": 3,
+    "explain": "Skriv båda baserna som potenser av 2: 4 = 2² och 8 = 2³. Då blir vänsterledet 2^(2(x + 1)) = 2^(2x + 2) och högerledet 2^(3(x − 1)) = 2^(3x − 3). Två potenser med samma bas är lika när exponenterna är lika: 2x + 2 = 3x − 3, alltså x = 5. Kontroll: 4^6 = 4 096 och 8^4 = 4 096. 2 får man om man bara multiplicerar x med 2 respektive 3 och skriver exponenterna som 2x + 1 och 3x − 1. 3 får man om man behandlar potenserna som produkter och löser 4(x + 1) = 8(x − 1). −5 får man om man byter plats på faktorerna 2 och 3 och löser 3(x + 1) = 2(x − 1), som om 4 vore 2³ och 8 vore 2².",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-023",
+    "kind": "xyz",
+    "prompt": "En femhörning har tre räta vinklar, och de två övriga vinklarna är lika stora. Hur stor är var och en av de två övriga vinklarna?",
+    "options": [
+      "45°",
+      "135°",
+      "225°",
+      "270°"
+    ],
+    "correctIndex": 1,
+    "explain": "Vinkelsumman i en månghörning med n hörn är (n − 2) · 180°, så i en femhörning är den 3 · 180° = 540°. De tre räta vinklarna är tillsammans 270°, så de två övriga är tillsammans 540° − 270° = 270°, alltså 135° var. En sådan femhörning får man till exempel om man klipper av ett hörn på en kvadrat med ett rakt snitt som går lika långt in längs båda sidorna. 45° får man om man tror att vinkelsumman är 360° som i en fyrhörning: (360° − 270°)/2 = 45°. 225° får man om man räknar vinkelsumman som (5 − 1) · 180° = 720°: (720° − 270°)/2 = 225°. 270° är de två vinklarnas sammanlagda storlek; man har glömt att dela med 2.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-024",
+    "kind": "xyz",
+    "prompt": "En bils värde minskar med 20 % per år. Efter två år är bilen värd 160 000 kr. Vad var bilen värd från början?",
+    "options": [
+      "200 000 kr",
+      "224 000 kr",
+      "230 400 kr",
+      "250 000 kr"
+    ],
+    "correctIndex": 3,
+    "explain": "Att värdet minskar med 20 % betyder att det multipliceras med 0,8 varje år. Efter två år har startvärdet V multiplicerats med 0,8 · 0,8 = 0,64, så 0,64V = 160 000 och V = 160 000/0,64 = 250 000 kr. Kontroll: 250 000 · 0,8 = 200 000 och 200 000 · 0,8 = 160 000. 200 000 kr är värdet efter ett år; man har bara räknat tillbaka ett år. 224 000 kr = 160 000 · 1,4 får man om man tror att två minskningar med 20 % är en minskning med 40 % och tar tillbaka den genom att lägga på 40 %. 230 400 kr = 160 000 · 1,2 · 1,2 får man om man räknar tillbaka genom att öka med 20 % två gånger, men en minskning med 20 % tas inte ut av en ökning med 20 %, eftersom procenten räknas på olika belopp.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-025",
+    "kind": "xyz",
+    "prompt": "Punkten M = (2, −1) är mittpunkt på sträckan AB, där A = (−3, 5). Vilka koordinater har punkten B?",
+    "options": [
+      "(7, −7)",
+      "(1, 3)",
+      "(5, −6)",
+      "(−8, 11)"
+    ],
+    "correctIndex": 0,
+    "explain": "Mittpunktens koordinater är medelvärdena av ändpunkternas koordinater. Med B = (x, y) ger (−3 + x)/2 = 2 att x = 7, och (5 + y)/2 = −1 ger y = −7. Alltså är B = (7, −7). Man kan också tänka i steg: från A till M ökar x med 5 och y minskar med 6, och tar man ett lika stort steg till från M hamnar man i (2 + 5, −1 − 6) = (7, −7). (5, −6) är steget från A till M, inte punkten B. (1, 3) får man med ett teckenfel: B:s koordinater är 2 · 2 − (−3) = 7 och 2 · (−1) − 5 = −7, men adderar man A:s koordinater i stället för att subtrahera dem får man 2 · 2 + (−3) = 1 och 2 · (−1) + 5 = 3. (−8, 11) får man om man tar steget åt fel håll, från A bort från M; då blir A mittpunkt i stället för M.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-026",
+    "kind": "xyz",
+    "prompt": "I en påse är förhållandet mellan antalet röda och antalet gröna kulor 5 : 3. När man tar bort 6 röda kulor blir antalet röda kulor lika stort som antalet gröna. Hur många kulor låg i påsen från början?",
+    "options": [
+      "15",
+      "18",
+      "24",
+      "48"
+    ],
+    "correctIndex": 2,
+    "explain": "Låt antalet röda kulor vara 5k och antalet gröna 3k. Efter att 6 röda tagits bort gäller 5k − 6 = 3k, alltså 2k = 6 och k = 3. Från början fanns 15 röda och 9 gröna kulor, totalt 24. Kontroll: 15 − 6 = 9, lika många som de gröna. 15 är bara antalet röda kulor från början. 18 är antalet kulor som finns kvar efter att de 6 röda tagits bort. 48 får man om man tror att de 6 borttagna kulorna motsvarar en del i förhållandet; skillnaden mellan röda och gröna är 5 − 3 = 2 delar, så en del är 3 kulor och inte 6.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-027",
+    "kind": "xyz",
+    "prompt": "Vilken eller vilka lösningar har ekvationen |x − 4| = 2x + 1?",
+    "options": [
+      "x = 1",
+      "x = −5",
+      "x = 3",
+      "x = −5 eller x = 1"
+    ],
+    "correctIndex": 0,
+    "explain": "Ett absolutbelopp är aldrig negativt, så en lösning måste uppfylla 2x + 1 ≥ 0. Dela upp i två fall. Om x ≥ 4 är |x − 4| = x − 4, och x − 4 = 2x + 1 ger x = −5, vilket strider mot villkoret x ≥ 4. Om x < 4 är |x − 4| = 4 − x, och 4 − x = 2x + 1 ger 3x = 3, alltså x = 1. Kontroll: |1 − 4| = 3 och 2 · 1 + 1 = 3. Ekvationen har alltså bara lösningen x = 1. x = −5 eller x = 1 får man om man löser båda fallen men inte prövar lösningarna; x = −5 ger vänsterledet |−9| = 9 men högerledet −9. Bara x = −5 får man om man tar bort beloppstecknen direkt och löser x − 4 = 2x + 1. x = 3 får man om man tror att beloppstecknen gör alla tal positiva och skriver |x − 4| som x + 4; men |3 − 4| = 1 medan 2 · 3 + 1 = 7.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-028",
+    "kind": "xyz",
+    "prompt": "Ett rätblock är 2 cm långt, 3 cm brett och 6 cm högt. Hur lång är rätblockets rymddiagonal, det vill säga sträckan genom rätblocket mellan två motstående hörn?",
+    "options": [
+      "√11 cm",
+      "√13 cm",
+      "3√5 cm",
+      "7 cm"
+    ],
+    "correctIndex": 3,
+    "explain": "Använd Pythagoras sats två gånger. Bottenytan är en rektangel med sidorna 2 cm och 3 cm, och dess diagonal är √(2² + 3²) = √13 cm. Den diagonalen, höjden 6 cm och rymddiagonalen bildar en rätvinklig triangel, så rymddiagonalen är √(13 + 6²) = √49 = 7 cm. Kortare: d² = 2² + 3² + 6² = 4 + 9 + 36 = 49. √11 cm får man om man adderar kantlängderna utan att kvadrera dem: √(2 + 3 + 6). √13 cm är bara bottenytans diagonal; höjden saknas. 3√5 cm = √45 cm är diagonalen i den största sidoytan, som har sidorna 3 cm och 6 cm: √(3² + 6²) = √45. Den diagonalen går längs ytan och inte genom rätblocket.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-029",
+    "kind": "xyz",
+    "prompt": "Linn lägger undan 200 kr den första månaden. Därefter lägger hon varje månad undan 50 kr mer än månaden innan. Hur mycket har hon lagt undan sammanlagt efter 12 månader?",
+    "options": [
+      "5 700 kr",
+      "6 000 kr",
+      "9 000 kr",
+      "11 400 kr"
+    ],
+    "correctIndex": 0,
+    "explain": "Beloppen 200, 250, 300, … bildar en aritmetisk talföljd med differensen 50. Mellan den första och den tolfte månaden ökar beloppet 11 gånger, så den tolfte månaden lägger hon undan 200 + 11 · 50 = 750 kr. Summan är antalet termer gånger medelvärdet av den första och den sista termen: 12 · (200 + 750)/2 = 12 · 475 = 5 700 kr. 6 000 kr får man om man räknar det sista beloppet som 200 + 12 · 50 = 800 kr: 12 · (200 + 800)/2 = 6 000. 11 400 kr får man om man glömmer att dela med 2 och räknar 12 · (200 + 750). 9 000 kr = 12 · 750 får man om man räknar som om varje månad vore lika stor som den sista.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-030",
+    "kind": "xyz",
+    "prompt": "En cirkelsektor har medelpunktsvinkeln 120° och arean 27π cm². Hur lång är sektorns cirkelbåge?",
+    "options": [
+      "3π cm",
+      "6π cm",
+      "18π cm",
+      "54π cm"
+    ],
+    "correctIndex": 1,
+    "explain": "Medelpunktsvinkeln 120° är en tredjedel av ett helt varv, 360°. Sektorn är alltså en tredjedel av cirkeln, och πr²/3 = 27π ger r² = 81, så radien är 9 cm. Bågen är en tredjedel av omkretsen: 2π · 9/3 = 6π cm. 18π cm är hela cirkelns omkrets, 2π · 9; man har glömt att bara ta en tredjedel. 3π cm får man om man räknar omkretsen som πr i stället för 2πr, eller tar 9 cm som diameter: π · 9/3 = 3π. 54π cm får man om man glömmer att dra roten ur 81 och använder 81 cm som radie: 2π · 81/3 = 54π.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-031",
+    "kind": "xyz",
+    "prompt": "I en grupp på 12 personer är medelåldern 30 år. Tre av personerna, som har medelåldern 42 år, lämnar gruppen. Vilken är medelåldern för dem som är kvar?",
+    "options": [
+      "18 år",
+      "19,5 år",
+      "26 år",
+      "27 år"
+    ],
+    "correctIndex": 2,
+    "explain": "Räkna med summan av åldrarna. Från början är summan 12 · 30 = 360 år, och de tre som lämnar gruppen är tillsammans 3 · 42 = 126 år. Kvar är 9 personer med summan 360 − 126 = 234 år, och medelåldern blir 234/9 = 26 år. 19,5 år = 234/12 får man om man delar med 12 i stället för med 9, men bara 9 personer är kvar. 27 år får man om man fördelar de tre personernas sammanlagda överskott över medelåldern, 3 · 12 = 36 år, på alla 12 i stället för på de 9 som är kvar: 30 − 36/12 = 27. Rätt är 30 − 36/9 = 26. 18 år får man om man drar av skillnaden 42 − 30 = 12 år direkt från medelåldern.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-032",
+    "kind": "xyz",
+    "prompt": "Punkterna A, B och C ligger på en cirkel med medelpunkten O. Vinkeln AOB är 110°, och C ligger på den större av de två cirkelbågarna mellan A och B. Hur stor är vinkeln ACB?",
+    "options": [
+      "35°",
+      "55°",
+      "110°",
+      "125°"
+    ],
+    "correctIndex": 1,
+    "explain": "Vinkeln AOB är en medelpunktsvinkel och vinkeln ACB en randvinkel, och båda står på den mindre bågen AB. Enligt randvinkelsatsen är randvinkeln hälften så stor som medelpunktsvinkeln på samma båge: 110°/2 = 55°. 110° får man om man tror att randvinkeln är lika stor som medelpunktsvinkeln. 125° är randvinkeln om C i stället hade legat på den mindre bågen; då står vinkeln på den större bågen, som har medelpunktsvinkeln 360° − 110° = 250°, och 250°/2 = 125°. 35° = (180° − 110°)/2 är basvinkeln vid A eller B i den likbenta triangeln AOB, inte vinkeln vid C.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-033",
+    "kind": "xyz",
+    "prompt": "Vilket är det minsta positiva heltal n som gör 540 · n till kvadraten av ett heltal?",
+    "options": [
+      "5",
+      "15",
+      "30",
+      "135"
+    ],
+    "correctIndex": 1,
+    "explain": "Primtalsfaktorisera: 540 = 2² · 3³ · 5. I kvadraten av ett heltal förekommer varje primtalsfaktor ett jämnt antal gånger. Faktorn 2 förekommer redan två gånger, men 3 förekommer tre gånger och 5 en gång, så det behövs ytterligare en faktor 3 och en faktor 5: n = 3 · 5 = 15. Kontroll: 540 · 15 = 8 100 = 90². 5 får man om man missar att faktorn 3 förekommer ett udda antal gånger; 540 · 5 = 2 700 är inte en kvadrat. 30 = 2 · 3 · 5 får man om man multiplicerar med varje primtalsfaktor en gång, fast 2² redan är en kvadrat; 540 · 30 = 16 200 är inte en kvadrat. 135 får man om man skriver 540 = 4 · 135 och multiplicerar med 135; 540 · 135 = 72 900 = 270² är visserligen en kvadrat, men 135 är inte det minsta talet som fungerar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-034",
+    "kind": "xyz",
+    "prompt": "Ett rakt prisma är 10 cm högt, och dess bottenyta är en rätvinklig triangel med kateterna 3 cm och 4 cm. Hur stor är prismats totala begränsningsarea?",
+    "options": [
+      "82 cm²",
+      "126 cm²",
+      "132 cm²",
+      "144 cm²"
+    ],
+    "correctIndex": 2,
+    "explain": "Prismat begränsas av två trianglar (botten och topp) och tre rektanglar. Varje triangel har arean 3 · 4/2 = 6 cm². Triangelns tredje sida, hypotenusan, är √(3² + 4²) = 5 cm, så rektanglarna är 10 cm höga och 3, 4 och 5 cm breda, med den sammanlagda arean (3 + 4 + 5) · 10 = 120 cm². Totalt blir det 2 · 6 + 120 = 132 cm². 82 cm² får man om man glömmer rektangeln vid hypotenusan: 2 · 6 + (3 + 4) · 10. 126 cm² får man om man bara räknar med en triangel: 6 + 120. 144 cm² får man om man glömmer att dela med 2 i triangelns area och räknar 3 · 4 = 12 cm² per triangel: 2 · 12 + 120.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-035",
+    "kind": "xyz",
+    "prompt": "Två vanliga sexsidiga tärningar kastas, och man får veta att summan av prickarna blev 8. Hur stor är då sannolikheten att minst en av tärningarna visar en femma?",
+    "options": [
+      "1/18",
+      "11/36",
+      "1/3",
+      "2/5"
+    ],
+    "correctIndex": 3,
+    "explain": "Skriv utfallen som (första tärningen, andra tärningen). Av de 36 lika sannolika utfallen ger fem summan 8: (2, 6), (3, 5), (4, 4), (5, 3) och (6, 2). När man vet att summan är 8 är det bara dessa fem utfall som är möjliga, och de är lika sannolika. Två av dem innehåller en femma, (3, 5) och (5, 3), så sannolikheten är 2/5. 1/18 = 2/36 får man om man räknar de två gynnsamma utfallen bland alla 36 och bortser från att man vet att summan är 8. 11/36 är sannolikheten för minst en femma utan villkoret: 36 − 5 · 5 = 11 utfall. 1/3 får man om man räknar de tre kombinationerna 2 och 6, 3 och 5 samt 4 och 4 som lika sannolika; men 2 och 6 samt 3 och 5 kan komma på två sätt var, medan 4 och 4 bara kan komma på ett.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-036",
+    "kind": "xyz",
+    "prompt": "Vilken är entalssiffran i talet 7^2026?",
+    "options": [
+      "1",
+      "3",
+      "7",
+      "9"
+    ],
+    "correctIndex": 3,
+    "explain": "Entalssiffran i en produkt beror bara på faktorernas entalssiffror, så det räcker att följa entalssiffran: 7, 7² = 49, 7³ = 343 och 7^4 = 2 401 slutar på 7, 9, 3 och 1. Därefter upprepas mönstret 7, 9, 3, 1 med period 4. Eftersom 2026 = 4 · 506 + 2 har 7^2026 samma entalssiffra som 7², alltså 9. 1 får man om man räknar som om 2026 vore delbart med 4; det är 2024 som är det, och 7^2024 slutar mycket riktigt på 1. 3 får man om man går ett steg för långt i mönstret och tar entalssiffran för 7³. 7 får man om man tror att alla potenser av 7 slutar på 7, eller går ett steg för kort i mönstret.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-037",
+    "kind": "xyz",
+    "prompt": "I triangeln ABC ligger punkten D på sidan AB och punkten E på sidan AC, så att DE är parallell med BC. Det gäller att AD = 4 cm och DB = 6 cm. Triangeln ADE har arean 8 cm². Hur stor area har fyrhörningen DBCE?",
+    "options": [
+      "12 cm²",
+      "18 cm²",
+      "42 cm²",
+      "50 cm²"
+    ],
+    "correctIndex": 2,
+    "explain": "Eftersom DE är parallell med BC är trianglarna ADE och ABC likformiga. Längdskalan är AB/AD = (4 + 6)/4 = 2,5, och areor förändras med kvadraten av längdskalan: 2,5² = 6,25. Triangeln ABC har därför arean 8 · 6,25 = 50 cm², och fyrhörningen DBCE har arean 50 − 8 = 42 cm². 50 cm² är arean av hela triangeln ABC; man har glömt att dra bort triangeln ADE. 12 cm² får man om man använder längdskalan 2,5 direkt på arean: 8 · 2,5 = 20 och 20 − 8 = 12. 18 cm² = 8 · (6/4)² får man om man behandlar fyrhörningen som en figur likformig med triangeln ADE med skalan DB/AD; en fyrhörning kan inte vara likformig med en triangel.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-038",
+    "kind": "xyz",
+    "prompt": "Fem personer, bland dem Ada och Bo, ska ställa sig på en rad. På hur många sätt kan det göras om Ada och Bo inte får stå bredvid varandra?",
+    "options": [
+      "36",
+      "48",
+      "72",
+      "96"
+    ],
+    "correctIndex": 2,
+    "explain": "Utan villkor kan de fem ställa sig på 5 · 4 · 3 · 2 · 1 = 120 sätt. Räkna sedan bort de ordningar där Ada och Bo står bredvid varandra. Se dem som ett block: blocket och de tre andra kan ordnas på 4 · 3 · 2 · 1 = 24 sätt, och inom blocket kan Ada och Bo stå på 2 sätt, så det blir 48 ordningar. Kvar blir 120 − 48 = 72. 48 är antalet ordningar där Ada och Bo står bredvid varandra, alltså motsatsen. 96 = 120 − 24 får man om man glömmer att Ada och Bo kan stå i två ordningar inom blocket. 36 får man om man räknar platser: av de 10 möjliga paren av platser för Ada och Bo ligger 6 inte bredvid varandra, och de tre andra kan ordnas på 6 sätt, men 6 · 6 = 36 missar att Ada och Bo dessutom kan byta plats med varandra; rätt är 6 · 2 · 6 = 72.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-039",
+    "kind": "xyz",
+    "prompt": "En strut har formen av en kon och hålls med spetsen rakt nedåt. Struten rymmer 2,7 dl när den är full. Man häller i vatten tills vattnet når upp till två tredjedelar av strutens höjd, räknat från spetsen. Hur mycket vatten är det i struten?",
+    "options": [
+      "0,8 dl",
+      "1,2 dl",
+      "1,8 dl",
+      "2,6 dl"
+    ],
+    "correctIndex": 0,
+    "explain": "Vattnet bildar en mindre kon med spetsen nedåt som är likformig med hela struten, med längdskalan 2/3; både höjden och radien är två tredjedelar av strutens. Volymer förändras med kuben av längdskalan: (2/3)³ = 8/27. Vattnet är alltså 2,7 · 8/27 = 0,8 dl. 1,8 dl = 2,7 · 2/3 får man om man använder längdskalan direkt. 1,2 dl = 2,7 · 4/9 får man om man använder areaskalan (2/3)². 2,6 dl får man om man tror att det tomma utrymmet överst är en liten kon med skalan 1/3 och räknar 2,7 − 2,7/27; det hade stämt om struten hade hållits med spetsen uppåt.",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Förklaringen: bisatsen \"det hade stämt om struten hade hållits med spetsen uppåt\" är fel. Med spetsen uppåt och nivån 2/3 av höjden räknat från spetsen blir vattnet 2,7 · (1 − 8/27) = 1,9 dl; 2,6 dl hade krävt att nivån låg 2/3 upp från basen. Rätta eller stryk bisatsen (facit 0,8 dl och övriga distraktorer stämmer)."
+  },
+  {
+    "id": "ovn-xyz-040",
+    "kind": "xyz",
+    "prompt": "En andragradsfunktion f har nollställena x = −1 och x = 7, och f(0) = −14. Vilket är funktionens minsta värde?",
+    "options": [
+      "−32",
+      "−30",
+      "−16",
+      "−14"
+    ],
+    "correctIndex": 0,
+    "explain": "En andragradsfunktion med nollställena −1 och 7 kan skrivas f(x) = a(x + 1)(x − 7). Villkoret f(0) = a · 1 · (−7) = −7a = −14 ger a = 2. Grafen är symmetrisk kring linjen mitt emellan nollställena, x = (−1 + 7)/2 = 3, och eftersom a > 0 har den sin minimipunkt där: f(3) = 2 · 4 · (−4) = −32. −14 är f(0), där grafen skär y-axeln, inte det minsta värdet. −16 får man om man glömmer faktorn a och räknar (3 + 1)(3 − 7) = −16. −30 får man om man tar halva avståndet mellan nollställena, (7 − (−1))/2 = 4, som symmetrilinje i stället för mittpunkten: f(4) = 2 · 5 · (−3) = −30.",
     "verification": "agreed"
   }
 ]

@@ -1,0 +1,302 @@
+[
+  {
+    "id": "ovn-mek-001",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Trots den kraftiga prissänkningen i januari ökade försäljningen bara ____; de flesta kunderna hade redan gjort sina inköp under julhandeln.",
+    "options": [
+      "avsevärt",
+      "nämnvärt",
+      "marginellt",
+      "påtagligt"
+    ],
+    "correctIndex": 2,
+    "explain": "Marginellt betyder i liten, närmast obetydlig grad, vilket stämmer med bara och med att de flesta kunderna redan hade handlat under julhandeln. Avsevärt och påtagligt betyder att ökningen var stor eller tydligt märkbar och motsägs av förklaringen efter semikolon. Nämnvärt betyder värd att nämna, alltså betydande, och används nästan bara efter nekande ord som i ”inte nämnvärt”; efter bara ger det ingen mening.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-002",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Kritikerna anklagade tidningen för att ____ konflikten om den nya gruvan. Genom att bara återge de mest kompromisslösa rösterna gav tidningen intrycket att motsättningarna var ____ än de i själva verket var; enligt en enkät var de flesta av ortens invånare öppna för en kompromiss.",
+    "options": [
+      "underblåsa / djupare",
+      "förringa / ytligare",
+      "förringa / djupare",
+      "underblåsa / ytligare"
+    ],
+    "correctIndex": 0,
+    "explain": "Att underblåsa en konflikt är att elda på den, och det gör tidningen när den bara låter de mest kompromisslösa rösterna höras, så att motsättningarna verkar djupare än de är. Förringa betyder att få något att framstå som mindre viktigt än det är, och förringa / ytligare kan därför låta logiskt, men ett urval av enbart kompromisslösa röster får motsättningarna att verka större, och enkäten visar att de i själva verket var mindre än de framstod. Förringa / djupare och underblåsa / ytligare säger båda emot sig själva.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-003",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Redan under 1920-talet syntes tecken som ____ den stora depressionen: jordbrukspriserna rasade efter första världskriget, och i USA gick tusentals småbanker på landsbygden i konkurs.",
+    "options": [
+      "förestod",
+      "förebrådde",
+      "föreskrev",
+      "förebådade"
+    ],
+    "correctIndex": 3,
+    "explain": "Förebådade betyder varslade om något som skulle komma, och prisraset och bankkonkurserna beskrivs just som tidiga varningstecken på krisen. Förestod betyder ledde eller förvaltade, som när någon förestår en verksamhet, och ger ingen mening med tecken som subjekt. Förebrådde betyder klandrade och föreskrev betyder beordrade eller bestämde; inget av det kan tecken göra, och orden liknar förebådade bara till formen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-004",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Många tror att man sparar mycket tid på att köra fort på motorvägen. ____ är tidsvinsten ofta ____: den som håller 120 i stället för 110 kilometer i timmen på en fem mil lång sträcka kommer fram bara drygt två minuter tidigare. Den som vill komma fram snabbare har därför mer att ____ på att undvika köer och onödiga stopp.",
+    "options": [
+      "Dessutom / avsevärd / vinna",
+      "I själva verket / försumbar / vinna",
+      "Dessutom / försumbar / förlora",
+      "I själva verket / avsevärd / förlora"
+    ],
+    "correctIndex": 1,
+    "explain": "Texten rättar en vanlig föreställning, och i själva verket inleder just en sådan rättelse, medan dessutom skulle lägga till något i samma riktning som föreställningen. Försumbar, alltså så liten att den knappt spelar någon roll, stämmer med räkneexemplet där vinsten bara blir drygt två minuter, medan avsevärd motsägs av exemplet. Eftersom högre fart ger så lite finns det mer att vinna på att undvika köer och stopp; mer att förlora på det vore ologiskt för den som vill komma fram snabbare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-005",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Att en viss mossa sällan finns med i naturinventeringarna beror inte på att den är ovanlig; ____ är den så vanlig att inventerarna inte ens bryr sig om att anteckna den.",
+    "options": [
+      "däremot",
+      "tvärtom",
+      "likaså",
+      "ändå"
+    ],
+    "correctIndex": 1,
+    "explain": "Tvärtom används när man förnekar något och sedan hävdar motsatsen, och här ställs att mossan är mycket vanlig mot påståendet att den skulle vara ovanlig. Däremot ställer två olika saker eller egenskaper mot varandra, som i ”den är inte dyr, däremot är den svår att få tag på”, och passar inte när det andra ledet bara säger motsatsen till det som just förnekats. Likaså betyder på samma sätt och kräver något likartat att jämföra med, vilket saknas. Ändå betyder trots det och skulle kräva en motsättning mellan leden, men det andra ledet förklarar i stället det första.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-006",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Havsörnen var nära att försvinna från Sverige på 1970-talet, främst eftersom miljögifter försämrade fåglarnas fortplantning. Sedan gifterna förbjöds har beståndet emellertid ____, och i dag räknas arten inte längre som ____.",
+    "options": [
+      "minskat ytterligare / hotad",
+      "återhämtat sig / livskraftig",
+      "minskat ytterligare / livskraftig",
+      "återhämtat sig / hotad"
+    ],
+    "correctIndex": 3,
+    "explain": "Emellertid och förbudet mot gifterna, som låg bakom nedgången, signalerar en vändning till det bättre: beståndet har återhämtat sig, och arten räknas inte längre som hotad. Minskat ytterligare strider mot den vändning som emellertid markerar och vore en orimlig följd av att orsaken till nedgången togs bort. Livskraftig går inte ihop med inte längre, eftersom en art som har återhämtat sig har blivit livskraftig och inte slutat vara det.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-007",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Syre är ett ____ men inte ett ____ villkor för att ved ska brinna. Utan syre brinner ingen ved, men syre ensamt får inte ett vedträ att fatta eld; veden måste också värmas upp till sin antändningstemperatur.",
+    "options": [
+      "nödvändigt / tillräckligt",
+      "tillräckligt / nödvändigt",
+      "önskvärt / tillräckligt",
+      "tillräckligt / önskvärt"
+    ],
+    "correctIndex": 0,
+    "explain": "Att ingen ved brinner utan syre visar att syre är ett nödvändigt villkor, och att syre ensamt inte räcker för att tända ett vedträ visar att det inte är ett tillräckligt villkor. Tillräckligt / nödvändigt vänder på förhållandet och motsägs av båda påståendena i andra meningen. Önskvärt är för svagt, eftersom det antyder att veden kan brinna utan syre, medan texten säger att den inte kan det. Tillräckligt men inte önskvärt motsägs dessutom av att syre ensamt inte räcker och ger ingen mening.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-008",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Det är ____ hur få av de tillfrågade som kände till lagändringen, med tanke på hur mycket den hade diskuterats i medierna.",
+    "options": [
+      "begripligt",
+      "förutsägbart",
+      "påfallande",
+      "likgiltigt"
+    ],
+    "correctIndex": 2,
+    "explain": "Påfallande betyder anmärkningsvärt eller förvånande, och det är förvånande att så få kände till ändringen när den hade diskuterats så mycket. Begripligt och förutsägbart skulle betyda att resultatet var väntat, men med tanke på den stora uppmärksamheten borde betydligt fler ha känt till ändringen. Likgiltigt betyder att något saknar betydelse och passar inte ihop med ”med tanke på”, som här inleder skälet till att resultatet är förvånande.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-009",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Boktryckarkonsten brukar beskrivas som en revolution, men förändringen gick ____ så fort som ordet antyder. Under de första decennierna trycktes främst texter som redan var ____ i handskrift, och de flesta människor kunde fortfarande inte läsa. Det krävdes ____ mer än en ny teknik för att den skrivna kulturen skulle förändras i grunden.",
+    "options": [
+      "knappast / sällsynta / trots det",
+      "faktiskt / spridda / trots det",
+      "faktiskt / sällsynta / följaktligen",
+      "knappast / spridda / följaktligen"
+    ],
+    "correctIndex": 3,
+    "explain": "Men i första meningen inleder en invändning mot bilden av en revolution, och knappast ger just den, medan faktiskt skulle bekräfta att förändringen gick fort och motsägs av resten av texten. Att man främst tryckte texter som redan var spridda i handskrift visar att det nya till en början liknade det gamla; texter som var sällsynta skulle tvärtom tala för en snabb förnyelse. Sista meningen är en slutsats av det som sagts och kräver därför följaktligen, medan trots det skulle markera en motsättning som inte finns.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-010",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Farhågorna för att datoriseringen skulle slå ut hela yrkesgruppen visade sig vara ____: tio år senare arbetade fler inom yrket än någonsin.",
+    "options": [
+      "obefogade",
+      "befogade",
+      "framsynta",
+      "ofrånkomliga"
+    ],
+    "correctIndex": 0,
+    "explain": "Obefogade betyder att farhågorna saknade grund, och det bekräftas av att fler arbetade inom yrket tio år senare än någonsin tidigare. Befogade betyder tvärtom att farhågorna var berättigade, och framsynta skulle innebära att de förutsåg det som hände; båda motsägs av fortsättningen. Ofrånkomliga betyder oundvikliga och säger ingenting om huruvida farhågorna stämde, så ordet passar inte före ett kolon som visar att de var fel.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-011",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "När revisorerna granskade föreningens räkenskaper fann de inga tecken på ____. Däremot konstaterade de att redovisningen var så ____ att det var svårt att följa hur pengarna hade använts, och de krävde därför en mer utförlig redogörelse till nästa år.",
+    "options": [
+      "oklarheter / knapphändig",
+      "oegentligheter / överskådlig",
+      "oegentligheter / knapphändig",
+      "oklarheter / överskådlig"
+    ],
+    "correctIndex": 2,
+    "explain": "Oegentligheter betyder fusk eller otillåtna förfaranden, och texten säger att sådant inte fanns men att redovisningen hade en annan svaghet, vilket däremot markerar. Knapphändig betyder sparsam eller ofullständig och förklarar både att pengarna var svåra att följa och att revisorerna krävde en utförligare redogörelse. Oklarheter fungerar inte, eftersom en redovisning som är svår att följa just innehåller oklarheter, och texten skulle då motsäga sig själv. Överskådlig betyder lätt att få överblick över och kan inte vara skälet till att något är svårt att följa.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-012",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Under sin livstid var tonsättaren ____ okänd utanför hemstaden. Först när hans manuskript återupptäcktes ett sekel efter hans död blev hans namn känt för en bredare publik, och i dag åtnjuter musiken stort ____ bland både musiker och lyssnare.",
+    "options": [
+      "allt annat än / anseende",
+      "så gott som / anseende",
+      "så gott som / avseende",
+      "allt annat än / avseende"
+    ],
+    "correctIndex": 1,
+    "explain": "Andra meningen säger att tonsättarens namn blev känt för en bredare publik först efter återupptäckten, och så gott som okänd betyder just nästan helt okänd. Allt annat än okänd betyder tvärtom välkänd och motsäger därför fortsättningen. Det man åtnjuter är till exempel anseende, alltså gott rykte och aktning. Avseende betyder hänseende eller hänsyn, som i uttrycken ”i detta avseende” och ”fästa avseende vid”, och är inget som man kan åtnjuta.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-013",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Resonemanget är ____: krönikans uppgifter bedöms som tillförlitliga eftersom krönikören själv försäkrar att han bara har skrivit ned sådant som han med egna ögon har sett.",
+    "options": [
+      "cirkulärt",
+      "anakronistiskt",
+      "motsägelsefullt",
+      "induktivt"
+    ],
+    "correctIndex": 0,
+    "explain": "Ett cirkulärt resonemang förutsätter det som ska bevisas: för att tro på krönikörens försäkran måste man redan lita på honom, och det är just hans tillförlitlighet som skulle visas. Anakronistiskt betyder att något placeras i fel tid, vilket inte har med felet att göra. Motsägelsefullt skulle innebära att resonemanget säger emot sig självt, men problemet är att det går i cirkel. Induktivt betyder att man drar en allmän slutsats från många enskilda fall, och det beskriver inte att en källa används för att bekräfta sig själv.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-014",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Höjda räntor dämpar ____ inflationen, men de gör det med fördröjning och ofta till priset av ____ arbetslöshet. Därför brukar centralbanker vara försiktiga med att höja räntan mer än nödvändigt.",
+    "options": [
+      "knappast / stigande",
+      "visserligen / sjunkande",
+      "knappast / sjunkande",
+      "visserligen / stigande"
+    ],
+    "correctIndex": 3,
+    "explain": "Visserligen medger något som sedan begränsas av men: räntehöjningar fungerar mot inflationen men har nackdelar. Knappast skulle säga att räntorna inte dämpar inflationen, vilket motsägs av att de gör det med fördröjning. Till priset av anger vad något kostar, och stigande arbetslöshet är en sådan kostnad som också förklarar centralbankernas försiktighet, medan sjunkande arbetslöshet vore en fördel och inte ett pris.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-015",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Placeboeffekten avfärdas ibland som ren inbillning, men den är betydligt mer ____ än så. Hos patienter som tror att de får smärtlindring frisätter hjärnan egna smärtstillande ämnen, och effekten går därför att ____ med hjärnavbildning. Den är dessutom ett ____ problem i läkemedelsforskningen: eftersom även ett piller utan verksam substans kan lindra besvären, måste ett nytt preparat i regel visa sig vara bättre än ett sådant piller.",
+    "options": [
+      "påtaglig / framkalla / etiskt",
+      "subjektiv / påvisa / etiskt",
+      "påtaglig / påvisa / metodologiskt",
+      "subjektiv / framkalla / metodologiskt"
+    ],
+    "correctIndex": 2,
+    "explain": "Men ställer effekten i motsats till ren inbillning, och påtaglig, alltså konkret och märkbar, uttrycker just den motsatsen, vilket subjektiv inte gör eftersom inbillning redan är subjektiv. Eftersom hjärnan faktiskt frisätter smärtstillande ämnen går effekten att påvisa med hjärnavbildning; framkalla betyder att få något att uppstå, och det gör inte en undersökningsmetod. Förklaringen efter kolon, att nya preparat måste visa sig vara bättre än ett piller som också kan lindra besvären, beskriver ett metodologiskt problem, alltså ett problem för hur forskningen läggs upp, och inte ett etiskt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-016",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Hon fick ett stort inflytande över partiets politik, inte ____ någon formell position utan genom sitt omfattande kontaktnät.",
+    "options": [
+      "i brist på",
+      "i kraft av",
+      "med hänsyn till",
+      "på bekostnad av"
+    ],
+    "correctIndex": 1,
+    "explain": "I kraft av betyder med stöd av eller på grund av, och meningen ställer två möjliga grunder för inflytandet mot varandra: en formell position och kontaktnätet. I brist på betyder att något saknas och kan inte ange vad inflytandet byggde på. Med hänsyn till betyder att man tar något i beaktande, och på bekostnad av anger att något offras; inget av dem passar i konstruktionen inte … utan genom, där det första ledet måste ange en grund för inflytandet precis som det andra.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-017",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Den nya vägen kommer att ta stora delar av naturreservatet ____. Kritikerna menar att trafikbehovet hade kunnat ____ på ett annat sätt, till exempel genom att den befintliga vägen breddades.",
+    "options": [
+      "i förvar / tillgodoses",
+      "i anspråk / tillstyrkas",
+      "i förvar / tillstyrkas",
+      "i anspråk / tillgodoses"
+    ],
+    "correctIndex": 3,
+    "explain": "Att ta något i anspråk betyder att använda eller lägga beslag på det, och det gör en väg med marken den byggs på. Att ta något i förvar betyder att förvara det åt någon, till exempel när polisen tar egendom i förvar, och passar inte om mark. Ett behov tillgodoses när det blir uppfyllt, medan tillstyrkas betyder att ett förslag får stöd och inte kan sägas om ett behov.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-018",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Den torra sommaren gav sämre skördar i hela landet, ____ i de södra delarna, där det knappt regnade alls under juni och juli.",
+    "options": [
+      "i synnerhet",
+      "däremot",
+      "åtminstone",
+      "dessutom"
+    ],
+    "correctIndex": 0,
+    "explain": "I synnerhet lyfter fram en del av det som just sagts som särskilt berörd, och de södra delarna, där det knappt regnade alls, pekas ut som extra hårt drabbade. Däremot skulle ställa de södra delarna i motsats till resten av landet, vilket motsägs av att det var torrast just där. Åtminstone skulle antyda att man bara vet säkert om de södra delarna, vilket strider mot i hela landet, och dessutom lägger till något som redan ingår, eftersom de södra delarna är en del av hela landet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-019",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "I många länder har antalet biobesök minskat under lång tid. Att färre går på bio är ____ ett tecken på att intresset för film har svalnat; ____ beror det på att allt fler ser film hemma via strömningstjänster.",
+    "options": [
+      "ovedersägligen / snarare",
+      "inte med nödvändighet / snarare",
+      "ovedersägligen / därmed",
+      "inte med nödvändighet / därmed"
+    ],
+    "correctIndex": 1,
+    "explain": "Det andra ledet ger en annan förklaring till att biobesöken minskar, så det första ledet måste avvisa att minskningen säkert beror på svalnat intresse, vilket inte med nödvändighet gör. Ovedersägligen betyder obestridligen och skulle tvärtom slå fast just den förklaring som texten sedan ersätter. Snarare inleder ett alternativ som framstår som mer sannolikt än det som just avvisats. Därmed anger en följd av det föregående, men att allt fler ser film hemma följer inte av det första ledet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-020",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Att en teori aldrig har motbevisats innebär inte att den är ____. Enligt filosofen Karl Popper kan en teori aldrig slutgiltigt bekräftas, hur många observationer som än ____ den, medan en enda observation som strider mot den kan räcka för att kullkasta den. Det som gör en teori vetenskaplig är därför att den är ____: den måste uttala sig så precist om världen att den skulle kunna visa sig vara fel.",
+    "options": [
+      "falsk / motsäger / prövbar",
+      "falsk / motsäger / väl underbyggd",
+      "sann / stöder / prövbar",
+      "sann / stöder / väl underbyggd"
+    ],
+    "correctIndex": 2,
+    "explain": "Andra meningen förklarar varför en teori som inte har motbevisats ändå inte kan sägas vara sann: hur många observationer som än stöder den kan den inte slutgiltigt bekräftas. Motsäger ger ingen mening, eftersom observationer som strider mot teorin enligt samma mening kan kullkasta den, och falsk passar inte eftersom fortsättningen handlar om varför en teori inte kan bevisas. Det sista ledet kräver prövbar, eftersom teorin enligt förklaringen efter kolon måste kunna visa sig vara fel. Väl underbyggd ligger nära till hands men motsägs av resonemanget: enligt Popper är det inte stödet från många observationer som gör en teori vetenskaplig.",
+    "verification": "agreed"
+  }
+]

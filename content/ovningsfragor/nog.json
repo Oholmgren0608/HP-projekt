@@ -318,5 +318,326 @@
     "correctIndex": 3,
     "explain": "Låt Ola ha köpt x vykort för 5 kronor och y vykort för 8 kronor. Då är 5x + 8y = 53, där x och y är heltal som inte är negativa. För att 53 − 8y ska vara delbart med 5 måste y vara 1 eller 6 (y = 11 skulle kosta mer än 53 kronor). Det finns alltså två möjligheter: x = 9 och y = 1, eller x = 1 och y = 6.\n(1) Bara fallet x = 9, y = 1 har fler vykort för 5 kronor, så y = 1. (1) räcker.\n(2) Bara fallet x = 9, y = 1 ger 10 vykort (det andra fallet ger 7), så y = 1. (2) räcker.\nTillräcklig information erhålls i (1) och (2) var för sig.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-021",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Ett tvåsiffrigt tal har siffersumman 12. Vilket är talet?\n(1) Talet är delbart med 4.\n(2) Talets tiotalssiffra är dubbelt så stor som dess entalssiffra.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "De tvåsiffriga talen med siffersumman 12 är 39, 48, 57, 66, 75, 84 och 93.\n(1) Av dessa tal är 48 och 84 delbara med 4, eftersom 48 = 4 · 12 och 84 = 4 · 21. (1) räcker inte.\n(2) Om entalssiffran är x är tiotalssiffran 2x. Siffersumman blir x + 2x = 3x = 12, så x = 4 och talet är 84. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-022",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En rektangel har omkretsen 20 cm. Är rektangelns area större än 20 cm²?\n(1) Var och en av rektangelns sidor är längre än 3 cm.\n(2) Var och en av rektangelns sidor är kortare än 8 cm.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "Omkretsen 20 cm betyder att två sidor som möts i ett hörn tillsammans är 10 cm långa. Kalla den ena sidan x cm. Då är den andra 10 − x cm och arean x(10 − x) cm².\n(1) Om båda sidorna är längre än 3 cm ligger x mellan 3 och 7. Arean kan skrivas x(10 − x) = 21 + (x − 3)(7 − x), och när x ligger mellan 3 och 7 är (x − 3)(7 − x) positivt. Arean är alltså större än 21 cm² och därmed större än 20 cm². Svaret är ja, så (1) räcker.\n(2) Sidorna 2,5 cm och 7,5 cm är båda kortare än 8 cm och ger arean 18,75 cm², som är mindre än 20 cm². Sidorna 4 cm och 6 cm är också kortare än 8 cm men ger arean 24 cm². (2) räcker inte.\nTillräcklig information erhålls i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-023",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Var och en av deltagarna på en konferens talar svenska, engelska eller båda språken. 70 procent av deltagarna talar svenska och 80 procent talar engelska. Hur många av deltagarna talar båda språken?\n(1) 36 av deltagarna talar engelska men inte svenska.\n(2) 24 av deltagarna talar svenska men inte engelska.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Eftersom alla talar minst ett av språken talar 70 + 80 − 100 = 50 procent av deltagarna båda språken. Det som behövs är alltså antalet deltagare.\n(1) De som talar engelska men inte svenska är precis de som inte talar svenska, och de utgör 100 − 70 = 30 procent av deltagarna. Om 30 procent är 36 personer är 10 procent 12 personer, så konferensen har 120 deltagare. Av dem talar 50 procent, alltså 60 personer, båda språken. (1) räcker.\n(2) De som talar svenska men inte engelska är precis de som inte talar engelska, och de utgör 100 − 80 = 20 procent av deltagarna. Om 20 procent är 24 personer har konferensen 120 deltagare, och 60 av dem talar båda språken. (2) räcker.\nTillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-024",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "I en burk finns bara vinstlotter och nitlotter. Man drar en lott på måfå ur burken. Är sannolikheten större än 1/2 att lotten är en vinstlott?\n(1) I burken finns 6 vinstlotter.\n(2) Om man lade ytterligare 2 vinstlotter i burken skulle det finnas fler vinstlotter än nitlotter i den.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "Kalla antalet vinstlotter v och antalet nitlotter n. Sannolikheten att dra en vinstlott är v/(v + n), och den är större än 1/2 precis när v är större än n.\n(1) ger v = 6 men säger ingenting om n. (1) räcker inte.\n(2) ger v + 2 > n. Det gäller både för v = 5, n = 2, där sannolikheten är 5/7 och alltså större än 1/2, och för v = 3, n = 4, där sannolikheten är 3/7 och alltså mindre än 1/2. (2) räcker inte.\nTillsammans: 6 + 2 > n, så det finns högst 7 nitlotter. Med 5 nitlotter är sannolikheten 6/11, som är större än 1/2, men med 7 nitlotter är den 6/13, som är mindre än 1/2. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-025",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En klocka går för fort och drar sig före den rätta tiden i jämn takt. Hur många minuter före går klockan nu?\n(1) Klockan drar sig före 1 minut på 8 timmar.\n(2) Klockan ställdes på rätt tid för exakt 12 dygn sedan.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "(1) ger hur fort klockan drar sig före: 1 minut på 8 timmar är 3 minuter per dygn. Det framgår inte när klockan senast visade rätt tid. (1) räcker inte.\n(2) säger när klockan visade rätt tid men inte hur fort den drar sig före. (2) räcker inte.\nTillsammans: på 12 dygn har klockan dragit sig före 12 · 3 = 36 minuter. Klockan går 36 minuter före, så tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-026",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "n är ett positivt heltal. Är n delbart med 8?\n(1) n är delbart med 4.\n(2) n² är delbart med 32.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "(1) Talet 4 är delbart med 4 men inte med 8, medan talet 8 är delbart med både 4 och 8. (1) räcker inte.\n(2) Varje faktor 2 i n ger två faktorer 2 i n² = n · n, så n² innehåller faktorn 2 ett jämnt antal gånger. Eftersom 32 = 2 · 2 · 2 · 2 · 2 innehåller n² faktorn 2 minst fem gånger, och eftersom antalet är jämnt minst sex gånger. Då innehåller n faktorn 2 minst tre gånger, och n är delbart med 2 · 2 · 2 = 8. Svaret är ja, så (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "disagreed",
+    "verificationNote": "Liknar nära provuppgiften hp-2015-03-28, provpass 2, NOG 27 (”x är ett heltal. Är x jämnt delbart med 15? (1) x/10 är ett heltal. (2) x² är jämnt delbart med 30”): samma uppbyggnad (heltal, delbarhetsfråga, en kvadrat som är delbar med ett tal i (2)) och samma svar (bara (2) räcker), med nya tal och en egen vridning (32 = 2^5 kräver jämn exponent). Facit och förklaring är rätta, men en människa bör avgöra om förlagan syns för tydligt."
+  },
+  {
+    "id": "ovn-nog-027",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "I en talföljd fås varje tal från och med det andra genom att man adderar ett och samma tal till det närmast föregående talet. Det femte talet i följden är 20. Vilket är det första talet?\n(1) Det tionde talet i följden är 35.\n(2) Summan av de nio första talen i följden är 180.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "Kalla det första talet a och talet som adderas varje gång d. Då är det femte talet a + 4d = 20.\n(1) Från det femte till det tionde talet har d adderats fem gånger, så 5d = 35 − 20 = 15 och d = 3. Det ger a = 20 − 4 · 3 = 8. (1) räcker.\n(2) Summan av de nio första talen är a + (a + d) + … + (a + 8d) = 9a + 36d = 9(a + 4d) = 9 · 20 = 180. Summan är alltså 180 vilka a och d än är, så (2) ger ingen ny information. Till exempel har både talföljden 8, 11, 14, … och talföljden 12, 14, 16, … det femte talet 20. (2) räcker inte.\nTillräcklig information erhålls i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-028",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Juni har 30 dagar och juli har 31 dagar. Vilken veckodag var det den 30 juni ett visst år?\n(1) Den 1 juni samma år var en tisdag.\n(2) Den 31 juli samma år var en lördag.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Veckodagarna upprepas var sjunde dag. Hur många veckodagar två datum skiljer sig åt avgörs därför av resten när antalet dagar mellan dem delas med 7.\n(1) Den 30 juni kommer 29 dagar efter den 1 juni. Eftersom 29 = 4 · 7 + 1 är den 30 juni en veckodag efter tisdag, alltså en onsdag. (1) räcker.\n(2) Den 31 juli kommer 31 dagar efter den 30 juni. Eftersom 31 = 4 · 7 + 3 är den 30 juni tre veckodagar före lördag, alltså en onsdag. (2) räcker.\nTillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-029",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "I en bågskyttetävling ger varje pil 3 poäng om den träffar tavlans mitt, 1 poäng om den träffar tavlan utanför mitten och 0 poäng om den missar tavlan. Tove sköt 12 pilar och fick sammanlagt 20 poäng. Hur många av hennes pilar träffade tavlans mitt?\n(1) Minst en av pilarna missade tavlan.\n(2) Fler pilar träffade tavlan utanför mitten än missade tavlan.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "Låt m vara antalet pilar som träffade mitten, u antalet som träffade tavlan utanför mitten och b antalet som missade tavlan. Då är m + u + b = 12 och 3m + u = 20. Det ger u = 20 − 3m och b = 12 − m − u = 2m − 8. Eftersom varken u eller b kan vara negativt måste m vara 4, 5 eller 6. Det finns alltså tre möjligheter: m = 4, u = 8, b = 0, eller m = 5, u = 5, b = 2, eller m = 6, u = 2, b = 4.\n(1) utesluter bara möjligheten b = 0. Både m = 5 och m = 6 är kvar. (1) räcker inte.\n(2) utesluter bara möjligheten m = 6, där u = 2 och b = 4. Både m = 4 och m = 5 är kvar. (2) räcker inte.\nTillsammans: bara m = 5, u = 5, b = 2 uppfyller båda påståendena. Fem pilar träffade mitten, så tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-030",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Ett tresiffrigt tal har hundratalssiffran 5 och entalssiffran 8. Vilken är talets tiotalssiffra?\n(1) Talet är delbart med 3.\n(2) Talet är delbart med 4.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "Kalla tiotalssiffran a. Ett tal är delbart med 3 om siffersumman är delbar med 3, och delbart med 4 om talet som bildas av de två sista siffrorna är delbart med 4.\n(1) Siffersumman 5 + a + 8 = 13 + a är delbar med 3 när a är 2, 5 eller 8. (1) räcker inte.\n(2) De två sista siffrorna bildar talet 10a + 8. Det är delbart med 4 när a är 0, 2, 4, 6 eller 8 (08, 28, 48, 68 och 88 är alla delbara med 4) men inte när a är udda. (2) räcker inte.\nTillsammans: både a = 2 och a = 8 uppfyller båda villkoren. Talen 528 och 588 är båda delbara med 3 och med 4, så tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-031",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En restaurangguide ger varje restaurang ett totalbetyg som är ett viktat medelvärde av restaurangens betyg för mat, service och miljö. Vilket totalbetyg fick restaurangen Kajen?\n(1) Kajen fick betyget 4 för mat, betyget 4 för service och betyget 4 för miljö.\n(2) Betyget för mat väger dubbelt så mycket som betyget för service och tre gånger så mycket som betyget för miljö.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "I ett viktat medelvärde multipliceras varje betyg med sin vikt, och summan delas med summan av vikterna.\n(1) Om vikterna är a, b och c blir totalbetyget (4a + 4b + 4c)/(a + b + c) = 4(a + b + c)/(a + b + c) = 4. Totalbetyget är 4 vilka vikterna än är. (1) räcker.\n(2) ger bara hur mycket de tre betygen väger, inte vilka betyg Kajen fick. (2) räcker inte.\nTillräcklig information erhålls i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-032",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En rät linje L skär både den positiva x-axeln och den positiva y-axeln. Hur stor area har den triangel som begränsas av L och de två koordinataxlarna?\n(1) L har lutningen −2.\n(2) L går genom punkten (1, 4).",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "Om L skär x-axeln i punkten (p, 0) och y-axeln i punkten (0, q) är triangelns area pq/2.\n(1) Både linjen y = −2x + 2, som skär axlarna i (1, 0) och (0, 2), och linjen y = −2x + 6, som skär axlarna i (3, 0) och (0, 6), har lutningen −2. Areorna blir 1 respektive 9 areaenheter. (1) räcker inte.\n(2) Både linjen y = −x + 5, som skär axlarna i (5, 0) och (0, 5), och linjen y = −4x + 8, som skär axlarna i (2, 0) och (0, 8), går genom (1, 4). Areorna blir 12,5 respektive 8 areaenheter. (2) räcker inte.\nTillsammans: L kan skrivas y = −2x + m. Eftersom punkten (1, 4) ligger på L är 4 = −2 + m, så m = 6. L skär axlarna i (3, 0) och (0, 6), och triangelns area är 3 · 6/2 = 9 areaenheter. Tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-033",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Från en hållplats avgår bussar med jämna mellanrum hela dagen. Hur många minuter går det mellan två avgångar som följer direkt efter varandra?\n(1) En buss avgår klockan 08.10 och en buss avgår klockan 09.25.\n(2) Det avgår fyra bussar i timmen.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "(1) Mellan 08.10 och 09.25 är det 75 minuter. Tiden mellan två avgångar måste gå jämnt upp i 75 minuter, men den kan till exempel vara 5, 15 eller 25 minuter. (1) räcker inte.\n(2) Om bussarna avgår med jämna mellanrum och det avgår fyra bussar i timmen är det 60/4 = 15 minuter mellan avgångarna. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-034",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "På en karta har en sjö arean 3 cm². Hur stor är sjöns verkliga area?\n(1) Kartans skala är 1:20 000.\n(2) En rak väg som är 5 cm lång på kartan är 1 km lång i verkligheten.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Om 1 cm på kartan motsvarar s meter i verkligheten motsvarar 1 cm² på kartan en kvadrat med sidan s meter, alltså s · s m². Det räcker därför att känna kartans skala.\n(1) Med skalan 1:20 000 motsvarar 1 cm på kartan 20 000 cm = 200 m. Då motsvarar 1 cm² på kartan 200 · 200 = 40 000 m², och sjöns verkliga area är 3 · 40 000 = 120 000 m². (1) räcker.\n(2) 5 cm på kartan motsvarar 1 000 m, så 1 cm motsvarar 200 m. Det är samma skala som i (1), och sjöns area är 120 000 m². (2) räcker.\nTillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-035",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "På en kurs är slutpoängen ett viktat medelvärde av poängen på en laboration och poängen på en tentamen, där tentamen väger mer än laborationen. Fick Ali högre slutpoäng än Bea?\n(1) Ali fick 10 poäng mer än Bea på tentamen.\n(2) Bea fick 15 poäng mer än Ali på laborationen.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "Låt tentamen utgöra andelen p av slutpoängen och laborationen andelen 1 − p. Eftersom tentamen väger mer än laborationen är p större än 0,5.\n(1) säger ingenting om laborationen. Om Ali och Bea fick lika många poäng på laborationen fick Ali högst slutpoäng, men om Bea fick betydligt fler poäng än Ali på laborationen kan Bea ha fått högst. (1) räcker inte.\n(2) säger ingenting om tentamen. Om Ali och Bea fick lika många poäng på tentamen fick Bea högst slutpoäng, men om Ali fick betydligt fler poäng än Bea på tentamen kan Ali ha fått högst. (2) räcker inte.\nTillsammans: Alis slutpoäng minus Beas slutpoäng är 10p − 15(1 − p). Med p = 0,8 blir skillnaden 8 − 3 = 5 poäng till Alis fördel, men med p = 0,52 blir den 5,2 − 7,2 = −2, alltså 2 poäng till Beas fördel. Tentamen väger mer än laborationen i båda fallen, så tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-036",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En rät linje L har lutningen k och går genom punkten (3, 2). Skär L y-axeln i en punkt ovanför x-axeln?\n(1) L skär x-axeln i en punkt med positiv x-koordinat.\n(2) k < 0",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "Linjen kan skrivas y = 2 + k(x − 3). Den skär y-axeln där x = 0, alltså i punkten (0, 2 − 3k).\n(1) Linjen med k = −1 skär x-axeln i (5, 0) och y-axeln i (0, 5), ovanför x-axeln. Linjen med k = 1 skär x-axeln i (1, 0) och y-axeln i (0, −1), nedanför x-axeln. Båda linjerna skär x-axeln i en punkt med positiv x-koordinat. (1) räcker inte.\n(2) Om k < 0 är −3k positivt, så 2 − 3k är större än 2. L skär alltså y-axeln ovanför x-axeln, och svaret är ja. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-037",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En butik hade 120 jackor i lager när en månad började. Under månaden köpte butiken in nya jackor och sålde en del av jackorna. Hur många jackor sålde butiken under månaden?\n(1) När månaden var slut hade butiken 90 jackor i lager.\n(2) Butiken köpte in hälften så många jackor som den sålde.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "Kalla antalet inköpta jackor i och antalet sålda jackor s. När månaden var slut fanns 120 + i − s jackor i lager.\n(1) 120 + i − s = 90 ger s − i = 30. Butiken kan till exempel ha köpt in 10 jackor och sålt 40 eller köpt in 20 och sålt 50. (1) räcker inte.\n(2) ger i = s/2 men säger ingenting om hur många jackor det är. (2) räcker inte.\nTillsammans: s − s/2 = 30 ger s/2 = 30, alltså s = 60. Butiken sålde 60 jackor och köpte in 30, så tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-038",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "x, y och z är tre på varandra följande heltal, där x < y < z. Vilket tal är z?\n(1) x + y + z = 48\n(2) xz = 255",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "Eftersom talen följer på varandra är y = x + 1 och z = x + 2.\n(1) x + (x + 1) + (x + 2) = 3x + 3 = 48 ger x = 15, så z = 17. (1) räcker.\n(2) Talet y ligger mitt emellan x och z, så xz = (y − 1)(y + 1) = y² − 1. Av y² − 1 = 255 följer y² = 256, alltså y = 16 eller y = −16. Både talen 15, 16, 17 och talen −17, −16, −15 uppfyller villkoret, eftersom 15 · 17 = 255 och (−17) · (−15) = 255. z kan alltså vara 17 eller −15. (2) räcker inte.\nTillräcklig information erhålls i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-039",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Ett paket har formen av en kub. Hur stor är paketets volym?\n(1) Paketets sex sidor har sammanlagt arean 54 dm².\n(2) Paketets tolv kanter är sammanlagt 36 dm långa.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Om kubens kanter är s dm långa är volymen s³ dm³, så det räcker att bestämma s.\n(1) Varje sida är en kvadrat med arean s², så 6s² = 54. Det ger s² = 9 och s = 3. Volymen är 3³ = 27 dm³. (1) räcker.\n(2) 12s = 36 ger s = 3, och volymen är 27 dm³. (2) räcker.\nTillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-040",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "I en talföljd fås varje tal från och med det andra genom att man multiplicerar det närmast föregående talet med ett och samma tal k. Vilket är det fjärde talet i följden?\n(1) Det första talet är 2 och det tredje talet är 18.\n(2) Det tredje talet är större än det andra talet.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "Om det första talet är a är talföljden a, ak, ak², ak³, …\n(1) Av 2k² = 18 följer k² = 9, alltså k = 3 eller k = −3. Med k = 3 blir talföljden 2, 6, 18, 54, … och med k = −3 blir den 2, −6, 18, −54, … Det fjärde talet kan alltså vara 54 eller −54. (1) räcker inte.\n(2) säger ingenting om hur stora talen är. Både 1, 2, 4, 8, … och 1, 3, 9, 27, … uppfyller villkoret. (2) räcker inte.\nTillsammans: i båda talföljderna från (1) är det tredje talet, 18, större än det andra, som är 6 respektive −6. Påstående (2) utesluter alltså ingen av dem, och det fjärde talet kan fortfarande vara 54 eller −54. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
   }
 ]

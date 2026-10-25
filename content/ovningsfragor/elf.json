@@ -298,5 +298,305 @@
     "correctIndex": 1,
     "explain": "The passage argues that people put tasks off in order to escape unpleasant feelings, so someone who now also feels guilty will tend to put things off even more: 'liable to' means likely to. 'Unlikely' and 'reluctant' (unwilling) both express the common-sense idea that guilt pushes people into action, which is exactly the view the passage rejects when it says that urging and schedules 'may simply add guilt to the original discomfort'. 'Entitled' (having a right) does not fit either, since the sentence describes how people tend to react, not what they have a right to do.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-021",
+    "kind": "elf",
+    "prompt": "What is the main point of the text?",
+    "passage": "Few medical messages are as easy to sell as the promise of early detection. Find a disease before it causes symptoms, the reasoning goes, and you can treat it while it is still small, simple and curable. It is hard to imagine anyone objecting, and in public campaigns hardly anyone does. Yet the figures most often quoted in support of screening are among the least reliable guides to whether it works.\n\nConsider survival rates: the share of patients still alive, say, five years after diagnosis. Imagine a woman whose tumour, left to announce itself, would cause symptoms at the age of 64 and kill her at 68. Her survival after diagnosis would be four years. Now suppose that a screening test finds the same tumour at 58, and that the treatment she then receives makes no difference whatever. She still dies at 68, but she has now survived ten years after diagnosis and counts as a five-year survivor. The statistics have improved; her life has not been extended by a single day. All that has changed is the moment at which the clock was started.\n\nA second distortion is less obvious and, in some ways, more troubling. Screening does not only find dangerous diseases earlier. It also finds abnormalities that would never have caused any harm: tumours that grow so slowly, or stop growing altogether, that the people carrying them would have died of something else without ever knowing they were there. Doctors call this overdiagnosis. Its victims are turned into patients and given treatment—surgery, radiotherapy, years of check-ups—from which they cannot benefit, because there was nothing to cure. And since no one can tell, in any individual case, which tumours belonged to this harmless group, every one of these people has reason to believe that the test saved their life.\n\nThe result is a paradox. The more overdiagnosis a programme causes, the more survivors it produces, the more grateful patients it has to speak on its behalf, and the more popular it becomes. A programme that did nothing but harm could, in principle, earn a reputation as one of medicine's great successes.\n\nNone of this means that screening is a mistake. For some diseases, large trials in which people were invited to screening or not, at random, have shown that fewer of those invited went on to die of the disease. That, rather than survival after diagnosis, is the figure that matters, because neither distortion can flatter it: starting the clock earlier does not, by itself, postpone a single death, and finding harmless tumours does not prevent one. The difficulty is that such trials take many years and very large numbers of people, and their results are rarely as dramatic as the stories told by survivors.\n\nWhat follows is not that people should refuse to be screened, but that they deserve to be told what they are being offered. An invitation that mentions only the lives saved, and not the healthy people turned into patients, is not really asking for consent. It is asking for applause.",
+    "options": [
+      "Screening may well do more harm than good, since many of the tumours it finds would never have caused any harm.",
+      "The figures and stories most often cited in support of screening say little about whether it saves lives.",
+      "Survival rates mislead chiefly because screening programmes start counting from the moment a tumour is found.",
+      "Screening ought to be offered only for diseases where large trials have shown that it prevents deaths."
+    ],
+    "correctIndex": 1,
+    "explain": "The author argues that survival figures can improve without anyone living longer, and that overdiagnosis creates grateful 'survivors' who were never in danger, so that even a programme that 'did nothing but harm' could look like a great success; the usual evidence therefore says little about whether screening saves lives. The idea that screening may do more harm than good runs against 'None of this means that screening is a mistake', and the text never says how many of the tumours found are harmless. Starting the count at diagnosis is only one of the two distortions described, so it is neither the chief reason nor the main point. Nor does the author say that screening should be restricted to diseases where trials have shown a benefit; the conclusion is that people deserve to be told what they are being offered.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-022",
+    "kind": "elf",
+    "prompt": "What does the example of the woman in the second paragraph illustrate?",
+    "passage": "Few medical messages are as easy to sell as the promise of early detection. Find a disease before it causes symptoms, the reasoning goes, and you can treat it while it is still small, simple and curable. It is hard to imagine anyone objecting, and in public campaigns hardly anyone does. Yet the figures most often quoted in support of screening are among the least reliable guides to whether it works.\n\nConsider survival rates: the share of patients still alive, say, five years after diagnosis. Imagine a woman whose tumour, left to announce itself, would cause symptoms at the age of 64 and kill her at 68. Her survival after diagnosis would be four years. Now suppose that a screening test finds the same tumour at 58, and that the treatment she then receives makes no difference whatever. She still dies at 68, but she has now survived ten years after diagnosis and counts as a five-year survivor. The statistics have improved; her life has not been extended by a single day. All that has changed is the moment at which the clock was started.\n\nA second distortion is less obvious and, in some ways, more troubling. Screening does not only find dangerous diseases earlier. It also finds abnormalities that would never have caused any harm: tumours that grow so slowly, or stop growing altogether, that the people carrying them would have died of something else without ever knowing they were there. Doctors call this overdiagnosis. Its victims are turned into patients and given treatment—surgery, radiotherapy, years of check-ups—from which they cannot benefit, because there was nothing to cure. And since no one can tell, in any individual case, which tumours belonged to this harmless group, every one of these people has reason to believe that the test saved their life.\n\nThe result is a paradox. The more overdiagnosis a programme causes, the more survivors it produces, the more grateful patients it has to speak on its behalf, and the more popular it becomes. A programme that did nothing but harm could, in principle, earn a reputation as one of medicine's great successes.\n\nNone of this means that screening is a mistake. For some diseases, large trials in which people were invited to screening or not, at random, have shown that fewer of those invited went on to die of the disease. That, rather than survival after diagnosis, is the figure that matters, because neither distortion can flatter it: starting the clock earlier does not, by itself, postpone a single death, and finding harmless tumours does not prevent one. The difficulty is that such trials take many years and very large numbers of people, and their results are rarely as dramatic as the stories told by survivors.\n\nWhat follows is not that people should refuse to be screened, but that they deserve to be told what they are being offered. An invitation that mentions only the lives saved, and not the healthy people turned into patients, is not really asking for consent. It is asking for applause.",
+    "options": [
+      "Treatment given before symptoms appear is often no better than treatment given later.",
+      "Screening tends to find tumours too late for treatment to change the outcome.",
+      "People whose tumours are found by screening are likely to live to an older age.",
+      "Survival after diagnosis can increase even when death comes no later."
+    ],
+    "correctIndex": 3,
+    "explain": "In the example, screening moves the diagnosis from 64 to 58 while the woman still dies at 68, so her survival after diagnosis rises from four years to ten although 'her life has not been extended by a single day'. Living to an older age is exactly what the example rules out. That the treatment makes no difference is a supposition made for the sake of the example, not a claim that early treatment is often no better than later treatment. Nor does the example say that screening finds tumours too late; it finds this one six years before symptoms would have appeared.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-023",
+    "kind": "elf",
+    "prompt": "According to the text, why can overdiagnosis make a screening programme more popular?",
+    "passage": "Few medical messages are as easy to sell as the promise of early detection. Find a disease before it causes symptoms, the reasoning goes, and you can treat it while it is still small, simple and curable. It is hard to imagine anyone objecting, and in public campaigns hardly anyone does. Yet the figures most often quoted in support of screening are among the least reliable guides to whether it works.\n\nConsider survival rates: the share of patients still alive, say, five years after diagnosis. Imagine a woman whose tumour, left to announce itself, would cause symptoms at the age of 64 and kill her at 68. Her survival after diagnosis would be four years. Now suppose that a screening test finds the same tumour at 58, and that the treatment she then receives makes no difference whatever. She still dies at 68, but she has now survived ten years after diagnosis and counts as a five-year survivor. The statistics have improved; her life has not been extended by a single day. All that has changed is the moment at which the clock was started.\n\nA second distortion is less obvious and, in some ways, more troubling. Screening does not only find dangerous diseases earlier. It also finds abnormalities that would never have caused any harm: tumours that grow so slowly, or stop growing altogether, that the people carrying them would have died of something else without ever knowing they were there. Doctors call this overdiagnosis. Its victims are turned into patients and given treatment—surgery, radiotherapy, years of check-ups—from which they cannot benefit, because there was nothing to cure. And since no one can tell, in any individual case, which tumours belonged to this harmless group, every one of these people has reason to believe that the test saved their life.\n\nThe result is a paradox. The more overdiagnosis a programme causes, the more survivors it produces, the more grateful patients it has to speak on its behalf, and the more popular it becomes. A programme that did nothing but harm could, in principle, earn a reputation as one of medicine's great successes.\n\nNone of this means that screening is a mistake. For some diseases, large trials in which people were invited to screening or not, at random, have shown that fewer of those invited went on to die of the disease. That, rather than survival after diagnosis, is the figure that matters, because neither distortion can flatter it: starting the clock earlier does not, by itself, postpone a single death, and finding harmless tumours does not prevent one. The difficulty is that such trials take many years and very large numbers of people, and their results are rarely as dramatic as the stories told by survivors.\n\nWhat follows is not that people should refuse to be screened, but that they deserve to be told what they are being offered. An invitation that mentions only the lives saved, and not the healthy people turned into patients, is not really asking for consent. It is asking for applause.",
+    "options": [
+      "It adds to the number of people who wrongly believe that the test saved their lives.",
+      "It lowers the number of deaths from the disease, which makes the programme look more effective.",
+      "It allows the programme to find more dangerous tumours while they can still be cured.",
+      "It makes patients more willing to accept treatment from which they cannot benefit."
+    ],
+    "correctIndex": 0,
+    "explain": "Since no one can tell which tumours were harmless, every overdiagnosed person 'has reason to believe that the test saved their life', so the more overdiagnosis a programme causes, the more grateful survivors it has 'to speak on its behalf'. Overdiagnosis cannot lower the number of deaths, since the author points out that finding harmless tumours 'does not prevent' a single one. The tumours in question are by definition ones that would never have caused harm, not dangerous ones caught in time. The text does say that these patients receive treatment from which they cannot benefit, but it does not link the programme's popularity to their willingness to accept it.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-024",
+    "kind": "elf",
+    "prompt": "Why, according to the author, is the number of deaths from the disease among those invited to screening a better guide than survival after diagnosis?",
+    "passage": "Few medical messages are as easy to sell as the promise of early detection. Find a disease before it causes symptoms, the reasoning goes, and you can treat it while it is still small, simple and curable. It is hard to imagine anyone objecting, and in public campaigns hardly anyone does. Yet the figures most often quoted in support of screening are among the least reliable guides to whether it works.\n\nConsider survival rates: the share of patients still alive, say, five years after diagnosis. Imagine a woman whose tumour, left to announce itself, would cause symptoms at the age of 64 and kill her at 68. Her survival after diagnosis would be four years. Now suppose that a screening test finds the same tumour at 58, and that the treatment she then receives makes no difference whatever. She still dies at 68, but she has now survived ten years after diagnosis and counts as a five-year survivor. The statistics have improved; her life has not been extended by a single day. All that has changed is the moment at which the clock was started.\n\nA second distortion is less obvious and, in some ways, more troubling. Screening does not only find dangerous diseases earlier. It also finds abnormalities that would never have caused any harm: tumours that grow so slowly, or stop growing altogether, that the people carrying them would have died of something else without ever knowing they were there. Doctors call this overdiagnosis. Its victims are turned into patients and given treatment—surgery, radiotherapy, years of check-ups—from which they cannot benefit, because there was nothing to cure. And since no one can tell, in any individual case, which tumours belonged to this harmless group, every one of these people has reason to believe that the test saved their life.\n\nThe result is a paradox. The more overdiagnosis a programme causes, the more survivors it produces, the more grateful patients it has to speak on its behalf, and the more popular it becomes. A programme that did nothing but harm could, in principle, earn a reputation as one of medicine's great successes.\n\nNone of this means that screening is a mistake. For some diseases, large trials in which people were invited to screening or not, at random, have shown that fewer of those invited went on to die of the disease. That, rather than survival after diagnosis, is the figure that matters, because neither distortion can flatter it: starting the clock earlier does not, by itself, postpone a single death, and finding harmless tumours does not prevent one. The difficulty is that such trials take many years and very large numbers of people, and their results are rarely as dramatic as the stories told by survivors.\n\nWhat follows is not that people should refuse to be screened, but that they deserve to be told what they are being offered. An invitation that mentions only the lives saved, and not the healthy people turned into patients, is not really asking for consent. It is asking for applause.",
+    "options": [
+      "Because the trials that measure it involve very large numbers of people over many years",
+      "Because it also reflects the harm done to healthy people by unnecessary treatment",
+      "Because diagnosing earlier or finding tumours that pose no threat cannot make it look better",
+      "Because its results are more dramatic and therefore easier for the public to grasp"
+    ],
+    "correctIndex": 2,
+    "explain": "The author calls deaths from the disease among those invited 'the figure that matters' because 'neither distortion can flatter it': starting the clock earlier does not by itself postpone a death, and finding harmless tumours does not prevent one. The size and length of such trials are mentioned as difficulties, not as the reason why the measure is better. A count of deaths from the disease says nothing about harm caused by treatment, and the text never claims that it does. And the results of such trials are said to be 'rarely as dramatic as the stories told by survivors', the opposite of the claim about dramatic results.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-025",
+    "kind": "elf",
+    "prompt": "According to the reviewer, what is the novel's greatest strength?",
+    "passage": "Halfway through this first novel, its fifteen-year-old narrator watches her father wash the family car three times in a single afternoon. Nell does not know why he is doing it, and the novel does not stop to explain. It is the last week before the fish-processing plant where he has worked for twenty years closes its doors, and the reader grasps at once what she cannot: that a man who will soon have nowhere to go in the morning needs something to do with his hands. Nell notices only that the car has never been so clean.\n\nScenes like this are the novel's great strength. The closure of the plant, which employs half the town, is the largest event in the book, yet it happens almost entirely offstage. We glimpse it in telephone calls overheard through a bedroom floor, in a neighbour's sudden wish to sell her piano, in the disappearance of the smell that used to hang over the harbour. Nell is far more interested in a boy from the campsite than in redundancy payments, and through her the catastrophe arrives as a series of small puzzles. The effect is not to make the town's loss seem smaller but to make it sharper. We are always a step ahead of the narrator, and it is in the space between what she sees and what we understand that the novel does its work.\n\nThe prose is plain, almost to a fault. There are few metaphors and fewer adjectives, and some readers will find the opening chapters slow. They should persist. The plainness turns out to be a kind of tact: a more colourful style would have crowded out the reader, who is being asked, page after page, to supply what Nell leaves out.\n\nThe trouble begins in the final third. Having kept us at Nell's shoulder for two hundred pages, the author suddenly hands the story to the father, in a series of chapters that tell us what he was thinking on the afternoon of the car and on all the others. Nothing in them is false, and some of it is moving. But very little of it is news. We had understood him perfectly well through his daughter's incomprehension; to have him explained is to be told what we had already worked out for ourselves, and to lose the very gap that had given the book its force. First novels are usually faulted for putting too much in. This one's fault is subtler: its author seems not to trust that she has already put enough in.\n\nThe ending, in which a new employer arrives, the father finds work and nobody has to leave, is tidier than anything that precedes it. One can see the impulse—after so much quiet loss, the author wants to give her characters something—but tidiness is an odd reward for a book whose great virtue was its willingness to leave things unsaid. Still, the first two-thirds are as fine as anything I have read this year, and a writer who can sustain that kind of restraint for so long will surely learn to sustain it to the last page.",
+    "options": [
+      "Its detailed account of how the closure of the plant affects the town's economy",
+      "Its use of the father's point of view to explain what his daughter cannot see",
+      "The way it allows readers to understand more than its young narrator does",
+      "The vivid and colourful language in which the town and its people are described"
+    ],
+    "correctIndex": 2,
+    "explain": "The reviewer calls scenes like the one with the car 'the novel's great strength' and explains that 'we are always a step ahead of the narrator': the book does its work in the space between what Nell sees and what the reader understands. The closure is said to happen 'almost entirely offstage', so the book gives no detailed account of its economic effects. The chapters told from the father's point of view are what the reviewer criticises, not praises. And the prose is described as 'plain, almost to a fault', with few metaphors and fewer adjectives.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-026",
+    "kind": "elf",
+    "prompt": "What does the reviewer mean by saying that the author 'seems not to trust that she has already put enough in'?",
+    "passage": "Halfway through this first novel, its fifteen-year-old narrator watches her father wash the family car three times in a single afternoon. Nell does not know why he is doing it, and the novel does not stop to explain. It is the last week before the fish-processing plant where he has worked for twenty years closes its doors, and the reader grasps at once what she cannot: that a man who will soon have nowhere to go in the morning needs something to do with his hands. Nell notices only that the car has never been so clean.\n\nScenes like this are the novel's great strength. The closure of the plant, which employs half the town, is the largest event in the book, yet it happens almost entirely offstage. We glimpse it in telephone calls overheard through a bedroom floor, in a neighbour's sudden wish to sell her piano, in the disappearance of the smell that used to hang over the harbour. Nell is far more interested in a boy from the campsite than in redundancy payments, and through her the catastrophe arrives as a series of small puzzles. The effect is not to make the town's loss seem smaller but to make it sharper. We are always a step ahead of the narrator, and it is in the space between what she sees and what we understand that the novel does its work.\n\nThe prose is plain, almost to a fault. There are few metaphors and fewer adjectives, and some readers will find the opening chapters slow. They should persist. The plainness turns out to be a kind of tact: a more colourful style would have crowded out the reader, who is being asked, page after page, to supply what Nell leaves out.\n\nThe trouble begins in the final third. Having kept us at Nell's shoulder for two hundred pages, the author suddenly hands the story to the father, in a series of chapters that tell us what he was thinking on the afternoon of the car and on all the others. Nothing in them is false, and some of it is moving. But very little of it is news. We had understood him perfectly well through his daughter's incomprehension; to have him explained is to be told what we had already worked out for ourselves, and to lose the very gap that had given the book its force. First novels are usually faulted for putting too much in. This one's fault is subtler: its author seems not to trust that she has already put enough in.\n\nThe ending, in which a new employer arrives, the father finds work and nobody has to leave, is tidier than anything that precedes it. One can see the impulse—after so much quiet loss, the author wants to give her characters something—but tidiness is an odd reward for a book whose great virtue was its willingness to leave things unsaid. Still, the first two-thirds are as fine as anything I have read this year, and a writer who can sustain that kind of restraint for so long will surely learn to sustain it to the last page.",
+    "options": [
+      "She spells out what her earlier chapters had already made clear.",
+      "She fears that readers will find her plain style too slow.",
+      "She leaves out so much that parts of the story remain unexplained.",
+      "She crowds the book with more events than the story needs."
+    ],
+    "correctIndex": 0,
+    "explain": "The remark sums up the criticism of the final third, where chapters about the father explain what readers 'had already worked out' for themselves: the author adds explanations because she does not trust her earlier scenes to have done their work. The reviewer contrasts this with the usual fault of first novels, 'putting too much in', so crowding the book with events is not what is meant. Leaving too much unexplained is the opposite of the criticism, since the reviewer praises the book's willingness to leave things unsaid. The slowness of the opening chapters is mentioned as something some readers may experience, not as a fear of the author's.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-027",
+    "kind": "elf",
+    "prompt": "How does the reviewer regard the novel's ending?",
+    "passage": "Halfway through this first novel, its fifteen-year-old narrator watches her father wash the family car three times in a single afternoon. Nell does not know why he is doing it, and the novel does not stop to explain. It is the last week before the fish-processing plant where he has worked for twenty years closes its doors, and the reader grasps at once what she cannot: that a man who will soon have nowhere to go in the morning needs something to do with his hands. Nell notices only that the car has never been so clean.\n\nScenes like this are the novel's great strength. The closure of the plant, which employs half the town, is the largest event in the book, yet it happens almost entirely offstage. We glimpse it in telephone calls overheard through a bedroom floor, in a neighbour's sudden wish to sell her piano, in the disappearance of the smell that used to hang over the harbour. Nell is far more interested in a boy from the campsite than in redundancy payments, and through her the catastrophe arrives as a series of small puzzles. The effect is not to make the town's loss seem smaller but to make it sharper. We are always a step ahead of the narrator, and it is in the space between what she sees and what we understand that the novel does its work.\n\nThe prose is plain, almost to a fault. There are few metaphors and fewer adjectives, and some readers will find the opening chapters slow. They should persist. The plainness turns out to be a kind of tact: a more colourful style would have crowded out the reader, who is being asked, page after page, to supply what Nell leaves out.\n\nThe trouble begins in the final third. Having kept us at Nell's shoulder for two hundred pages, the author suddenly hands the story to the father, in a series of chapters that tell us what he was thinking on the afternoon of the car and on all the others. Nothing in them is false, and some of it is moving. But very little of it is news. We had understood him perfectly well through his daughter's incomprehension; to have him explained is to be told what we had already worked out for ourselves, and to lose the very gap that had given the book its force. First novels are usually faulted for putting too much in. This one's fault is subtler: its author seems not to trust that she has already put enough in.\n\nThe ending, in which a new employer arrives, the father finds work and nobody has to leave, is tidier than anything that precedes it. One can see the impulse—after so much quiet loss, the author wants to give her characters something—but tidiness is an odd reward for a book whose great virtue was its willingness to leave things unsaid. Still, the first two-thirds are as fine as anything I have read this year, and a writer who can sustain that kind of restraint for so long will surely learn to sustain it to the last page.",
+    "options": [
+      "As rather too neat, though also the most moving part of the book",
+      "As unconvincing, since towns like this one seldom find new employers",
+      "As a mistake so serious that it spoils the earlier chapters",
+      "As understandable, but out of keeping with what made the book good"
+    ],
+    "correctIndex": 3,
+    "explain": "The reviewer says that 'one can see the impulse' behind the tidy ending, but that tidiness is 'an odd reward' for a book whose great virtue was leaving things unsaid; the ending is thus understandable but at odds with the book's strengths. The reviewer does find it too tidy, but never calls it moving: only the father's chapters are said to be partly moving. The objection concerns tidiness, not likelihood, so the reviewer does not call the ending unrealistic. Finally, the earlier chapters are not spoiled, since the first two-thirds are 'as fine as anything I have read this year'.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-028",
+    "kind": "elf",
+    "prompt": "Which of the following best describes the reviewer's overall view of the novel?",
+    "passage": "Halfway through this first novel, its fifteen-year-old narrator watches her father wash the family car three times in a single afternoon. Nell does not know why he is doing it, and the novel does not stop to explain. It is the last week before the fish-processing plant where he has worked for twenty years closes its doors, and the reader grasps at once what she cannot: that a man who will soon have nowhere to go in the morning needs something to do with his hands. Nell notices only that the car has never been so clean.\n\nScenes like this are the novel's great strength. The closure of the plant, which employs half the town, is the largest event in the book, yet it happens almost entirely offstage. We glimpse it in telephone calls overheard through a bedroom floor, in a neighbour's sudden wish to sell her piano, in the disappearance of the smell that used to hang over the harbour. Nell is far more interested in a boy from the campsite than in redundancy payments, and through her the catastrophe arrives as a series of small puzzles. The effect is not to make the town's loss seem smaller but to make it sharper. We are always a step ahead of the narrator, and it is in the space between what she sees and what we understand that the novel does its work.\n\nThe prose is plain, almost to a fault. There are few metaphors and fewer adjectives, and some readers will find the opening chapters slow. They should persist. The plainness turns out to be a kind of tact: a more colourful style would have crowded out the reader, who is being asked, page after page, to supply what Nell leaves out.\n\nThe trouble begins in the final third. Having kept us at Nell's shoulder for two hundred pages, the author suddenly hands the story to the father, in a series of chapters that tell us what he was thinking on the afternoon of the car and on all the others. Nothing in them is false, and some of it is moving. But very little of it is news. We had understood him perfectly well through his daughter's incomprehension; to have him explained is to be told what we had already worked out for ourselves, and to lose the very gap that had given the book its force. First novels are usually faulted for putting too much in. This one's fault is subtler: its author seems not to trust that she has already put enough in.\n\nThe ending, in which a new employer arrives, the father finds work and nobody has to leave, is tidier than anything that precedes it. One can see the impulse—after so much quiet loss, the author wants to give her characters something—but tidiness is an odd reward for a book whose great virtue was its willingness to leave things unsaid. Still, the first two-thirds are as fine as anything I have read this year, and a writer who can sustain that kind of restraint for so long will surely learn to sustain it to the last page.",
+    "options": [
+      "Largely disappointed, since the strong opening makes the weak ending harder to forgive",
+      "Highly appreciative of most of it, despite serious reservations about its final part",
+      "Enthusiastic, apart from the slow opening chapters, which may test some readers' patience",
+      "Impressed by the author's restraint, though doubtful that she can keep it up in future books"
+    ],
+    "correctIndex": 1,
+    "explain": "The reviewer rates the first two-thirds 'as fine as anything I have read this year' but devotes two paragraphs to the problems of the final third and the tidy ending, so the view is highly appreciative but with serious reservations. 'Largely disappointed' is too negative given that praise. The slow opening is not the reviewer's real objection, since readers are told to 'persist'; the reservations concern the last part. And far from doubting the author's future, the reviewer says that she 'will surely learn' to sustain her restraint to the last page.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-029",
+    "kind": "elf",
+    "prompt": "Why, according to the text, do linguists see a child's use of 'goed' as progress?",
+    "passage": "Parents are sometimes alarmed when a child who has been saying 'went' and 'ran' for months starts to say 'goed' and 'runned'. It looks like a step backwards. Linguists see it the other way round. A two-year-old who says 'went' may simply be repeating a word she has heard, much as she repeats the names of her toys. A three-year-old who says 'goed' is doing something more ambitious. She has noticed that most English verbs form their past tense by adding the same ending, and she has begun to apply that pattern even to verbs that do not follow it. Hardly anyone around her says 'goed', so she has not simply copied it; she has built it herself. In time she will learn which verbs are exceptions, and 'went' will win out again—this time not as an isolated word but as a known exception to a rule she has mastered. The temporary dip, in other words, is not a sign of decline. It is the sound of a grammar being built.",
+    "options": [
+      "It shows that she has begun to learn which verbs are exceptions.",
+      "It shows that she is learning more from other children than from adults.",
+      "It shows that she has started to correct the mistakes she made at two.",
+      "It shows that she has found a regularity and is extending it by herself."
+    ],
+    "correctIndex": 3,
+    "explain": "The child who says 'goed' has noticed that most verbs form the past tense with the same ending and has begun to apply that pattern even to verbs that do not follow it, building the form 'herself'; this shows that she is working out rules rather than repeating what she hears. Learning which verbs are exceptions comes later, when 'went' wins out again. The text says that she has not simply copied the form, and it says nothing about learning from other children. Nor is she correcting earlier mistakes, since at two she said 'went', which is correct.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-030",
+    "kind": "elf",
+    "prompt": "Why does the author mention a child repeating 'the names of her toys'?",
+    "passage": "Parents are sometimes alarmed when a child who has been saying 'went' and 'ran' for months starts to say 'goed' and 'runned'. It looks like a step backwards. Linguists see it the other way round. A two-year-old who says 'went' may simply be repeating a word she has heard, much as she repeats the names of her toys. A three-year-old who says 'goed' is doing something more ambitious. She has noticed that most English verbs form their past tense by adding the same ending, and she has begun to apply that pattern even to verbs that do not follow it. Hardly anyone around her says 'goed', so she has not simply copied it; she has built it herself. In time she will learn which verbs are exceptions, and 'went' will win out again—this time not as an isolated word but as a known exception to a rule she has mastered. The temporary dip, in other words, is not a sign of decline. It is the sound of a grammar being built.",
+    "options": [
+      "To suggest that children probably learn the names of things before they learn verbs",
+      "To suggest that an early correct form may be repeated without any grasp of a rule",
+      "To show that young children learn words most easily when they are linked to play",
+      "To show that a child of two already understands how past tenses are formed"
+    ],
+    "correctIndex": 1,
+    "explain": "The comparison suggests that a two-year-old's 'went' may be a word stored and repeated as a whole, like a name, without any understanding of how the past tense is formed; this is why its later replacement by 'goed' can be seen as progress. The claim that a two-year-old already understands how past tenses are formed reverses this point. The text makes no claim that the names of things are learned before verbs, or that words are learned most easily through play.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-031",
+    "kind": "elf",
+    "prompt": "According to the text, what did the safety brake and its public demonstration achieve?",
+    "passage": "The passenger lift is often described as the invention that made the skyscraper possible, but lifting people was never the difficult part. Hoists of one kind or another had carried goods up and down buildings for centuries. What kept people off them was the fear of what would happen if the rope broke. The decisive step, taken in the 1850s, was a safety brake that locked the platform to its guide rails the moment the rope went slack—together with a public demonstration in which its inventor stood on a raised platform and ordered the rope to be cut. What he was selling, in other words, was not a way of going up but a reason to believe that one would not come down too fast.\n\nThe consequences reached far beyond engineering. In a building without a lift, the upper floors were the least desirable: every visit meant another flight of stairs, and the rooms under the roof went to servants and to those who could afford nothing better. Once the lift made height effortless, that order was turned upside down. The top floor, long the cheapest in the building, became the most expensive, and height, once a burden, became something people were willing to pay for.",
+    "options": [
+      "They gave people a reason to trust a kind of machine that already existed.",
+      "They made it possible for the first time to raise goods to the top of tall buildings.",
+      "They replaced the rope with a mechanism that could not break.",
+      "They allowed lifts to travel much faster than earlier hoists had done."
+    ],
+    "correctIndex": 0,
+    "explain": "The text says that lifting 'was never the difficult part', since hoists had existed for centuries; what kept people off them was fear, and the brake and the demonstration gave them 'a reason to believe that one would not come down too fast'. Raising goods to the top of buildings was nothing new, as the old hoists show. The rope was not replaced: the brake worked when the rope went slack, and the demonstration involved cutting it. Nothing is said about how fast lifts travelled; 'too fast' refers to falling, not to the lift's normal speed.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-032",
+    "kind": "elf",
+    "prompt": "What does the author mean by saying that 'that order was turned upside down'?",
+    "passage": "The passenger lift is often described as the invention that made the skyscraper possible, but lifting people was never the difficult part. Hoists of one kind or another had carried goods up and down buildings for centuries. What kept people off them was the fear of what would happen if the rope broke. The decisive step, taken in the 1850s, was a safety brake that locked the platform to its guide rails the moment the rope went slack—together with a public demonstration in which its inventor stood on a raised platform and ordered the rope to be cut. What he was selling, in other words, was not a way of going up but a reason to believe that one would not come down too fast.\n\nThe consequences reached far beyond engineering. In a building without a lift, the upper floors were the least desirable: every visit meant another flight of stairs, and the rooms under the roof went to servants and to those who could afford nothing better. Once the lift made height effortless, that order was turned upside down. The top floor, long the cheapest in the building, became the most expensive, and height, once a burden, became something people were willing to pay for.",
+    "options": [
+      "The rooms under the roof were given to servants and the poor.",
+      "The ground floor became the most expensive part of the building.",
+      "The floors that had been least wanted became the most sought after.",
+      "Lifts replaced stairs as the usual way of reaching the upper floors."
+    ],
+    "correctIndex": 2,
+    "explain": "Before lifts, the upper floors were 'the least desirable'; once the lift made height effortless, the top floor became 'the most expensive', so the ranking of the floors was reversed. Giving the rooms under the roof to servants and the poor describes the old order, not its reversal. Saying that the ground floor became the most expensive gets the reversal the wrong way round. And although the lift made height effortless, 'that order' refers to how desirable the different floors were, not to how people got to them.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-033",
+    "kind": "elf",
+    "prompt": "What is the main point of the text?",
+    "passage": "Walk through almost any city park and you will find them: narrow strips of bare earth cutting across the grass where the paved path takes a longer way round. Planners call them desire paths, and for a long time the standard response was to discourage them with a fence, a hedge or a sign asking people to keep to the path. More recently, a humbler view has gained ground. A desire path, on this view, is not vandalism but information: a record, written by thousands of feet, of where people actually want to go, and therefore of a mistake in the original design. Some designers even suggest leaving a new park without paved paths for a season and then paving the routes that walkers have worn.\n\nIt would be wrong, though, to treat every worn track as an instruction. Some shortcuts cross a cycle lane or a fragile meadow, and some reflect only the convenience of the moment rather than the needs of the place as a whole. A desire path can tell a planner where people want to walk; it cannot tell her where they ought to. That remains a judgement, and it is still hers to make.",
+    "options": [
+      "Planners should lay a paved path wherever walkers have worn a track across the grass.",
+      "Desire paths show where people want to walk, but planners must still decide where paths go.",
+      "Most desire paths show only what is convenient for walkers rather than what a park needs.",
+      "Planners may have been wrong to give up discouraging people from walking across the grass."
+    ],
+    "correctIndex": 1,
+    "explain": "The author accepts the newer view that desire paths are 'information' about 'a mistake in the original design', but warns that it would be wrong 'to treat every worn track as an instruction': a path shows where people want to walk, not where they ought to, and the decision remains the planner's. Paving every worn track is exactly what the author warns against. The text says that 'some' shortcuts reflect only the convenience of the moment, not most of them. And the author never suggests that planners were wrong to stop discouraging desire paths; the newer view is presented sympathetically.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-034",
+    "kind": "elf",
+    "prompt": "Why does the author call the newer view of desire paths 'humbler'?",
+    "passage": "Walk through almost any city park and you will find them: narrow strips of bare earth cutting across the grass where the paved path takes a longer way round. Planners call them desire paths, and for a long time the standard response was to discourage them with a fence, a hedge or a sign asking people to keep to the path. More recently, a humbler view has gained ground. A desire path, on this view, is not vandalism but information: a record, written by thousands of feet, of where people actually want to go, and therefore of a mistake in the original design. Some designers even suggest leaving a new park without paved paths for a season and then paving the routes that walkers have worn.\n\nIt would be wrong, though, to treat every worn track as an instruction. Some shortcuts cross a cycle lane or a fragile meadow, and some reflect only the convenience of the moment rather than the needs of the place as a whole. A desire path can tell a planner where people want to walk; it cannot tell her where they ought to. That remains a judgement, and it is still hers to make.",
+    "options": [
+      "Because it treats desire paths as largely harmless rather than as a form of vandalism",
+      "Because it suggests that a park may not need paved paths at all",
+      "Because it was first put forward by walkers rather than by professional designers",
+      "Because it admits that a park's designers may have misjudged where people would walk"
+    ],
+    "correctIndex": 3,
+    "explain": "The newer view treats a desire path as a record 'of a mistake in the original design', so it is humbler in that it accepts that planners can get things wrong and lets the evidence of use correct them. It does not call desire paths harmless; it calls them 'information' rather than vandalism, and the author later points out that some cross a fragile meadow. Nor does it do away with paved paths: the suggestion is to wait a season and then pave 'the routes that walkers have worn'. And nothing suggests that the view came from walkers; the text attributes the related proposal to 'some designers'.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-035",
+    "kind": "elf",
+    "prompt": "What does the author recommend?",
+    "passage": "Ask students how they prepare for an exam and most will describe some form of rereading: going over their notes, reading the chapter one more time, highlighting as they go. Ask psychologists what works and you will hear something rather different. One of the most robust findings in the study of memory is that trying to recall material—answering questions on it, or writing down what one remembers without looking—fixes it in the mind for longer than reading it again does. Rereading remains popular because it feels productive: the text grows more familiar each time, and familiarity is easily mistaken for knowledge. Recall, by contrast, feels like failure, because it exposes how much one has forgotten.\n\nIf this is right, schools have been using tests in a curiously limited way, treating them almost entirely as a means of finding out what students know rather than as a means of helping them learn it. The answer is not more exams. It is more questions—frequent, brief and with nothing riding on them—so that being tested becomes part of learning rather than only its verdict.",
+    "options": [
+      "Giving students frequent short quizzes that do not count towards their marks",
+      "Replacing final exams with a larger number of smaller graded tests",
+      "Teaching students to reread their notes in a more active and critical way",
+      "No longer using tests to find out what students have actually learned"
+    ],
+    "correctIndex": 0,
+    "explain": "The author calls for 'more questions—frequent, brief and with nothing riding on them', that is, questions whose results do not affect students' marks, so that being tested becomes part of learning. Smaller graded tests do not fit, since the author says that the answer is 'not more exams', and graded tests would have something riding on them. The text recommends recall rather than any improved form of rereading. And tests are not to stop measuring what students know: being tested should become part of learning 'rather than only its verdict', which still leaves room for the verdict.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-036",
+    "kind": "elf",
+    "prompt": "According to the text, why is rereading so popular among students?",
+    "passage": "Ask students how they prepare for an exam and most will describe some form of rereading: going over their notes, reading the chapter one more time, highlighting as they go. Ask psychologists what works and you will hear something rather different. One of the most robust findings in the study of memory is that trying to recall material—answering questions on it, or writing down what one remembers without looking—fixes it in the mind for longer than reading it again does. Rereading remains popular because it feels productive: the text grows more familiar each time, and familiarity is easily mistaken for knowledge. Recall, by contrast, feels like failure, because it exposes how much one has forgotten.\n\nIf this is right, schools have been using tests in a curiously limited way, treating them almost entirely as a means of finding out what students know rather than as a means of helping them learn it. The answer is not more exams. It is more questions—frequent, brief and with nothing riding on them—so that being tested becomes part of learning rather than only its verdict.",
+    "options": [
+      "It shows them clearly which parts of the material they have forgotten.",
+      "It keeps the material in the memory for longer than trying to recall it does.",
+      "Each reading makes the material seem more familiar, which feels like learning.",
+      "It makes them feel less anxious about the exams they are preparing for."
+    ],
+    "correctIndex": 2,
+    "explain": "The text says that rereading 'feels productive' because the text grows more familiar each time, and familiarity 'is easily mistaken for knowledge'. Showing what one has forgotten is what recall does, which is why recall 'feels like failure'. According to the psychologists, it is recall, not rereading, that keeps material in the memory for longer. And nothing is said about rereading making students less anxious about exams.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-037",
+    "kind": "elf",
+    "prompt": "Which alternative best fits gap 1?",
+    "passage": "Of all the ways in which humans alter their surroundings, light pollution may be the most easily __1__. Chemicals can linger in soil and water for decades, but a badly designed streetlamp stops doing harm the moment it is switched off. That makes it all the more striking that the problem keeps growing, and the reason is largely one of __2__. Light is associated with safety and progress, and a brightly lit street seems self-evidently better than a dark one.\n\nThe costs are nonetheless real. On brightly lit beaches, sea turtle hatchlings, which find the sea by heading for the brightest horizon, crawl inland towards hotels and roads. Night-flying insects circle lamps until many of them die of exhaustion, and migrating birds are drawn off course by illuminated buildings. For city dwellers, the most obvious loss is the night sky itself, now reduced in many places to a handful of stars.\n\nMuch of this damage is __3__. A lamp that shines sideways or upwards lights the sky rather than the street, and more light is no guarantee of better vision. __4__, the glare from a badly aimed lamp can make it harder to see what is on the ground. Shielding lamps so that their light is directed downwards, choosing warmer colours and dimming lights late at night would prevent much of the harm without leaving anyone in the dark.",
+    "options": [
+      "ignored",
+      "measured",
+      "justified",
+      "reversed"
+    ],
+    "correctIndex": 3,
+    "explain": "The next sentence contrasts chemicals that 'linger in soil and water for decades' with a streetlamp that 'stops doing harm the moment it is switched off', so the point is that light pollution can be undone more easily than other kinds: 'reversed'. 'Ignored' may seem to fit the later remark that a lit street seems self-evidently better than a dark one, but it does not match the contrast with lingering chemicals, and it would not make it 'all the more striking' that the problem keeps growing. Nothing in the passage concerns how easily light pollution can be 'measured' or 'justified'.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-038",
+    "kind": "elf",
+    "prompt": "Which alternative best fits gap 2?",
+    "passage": "Of all the ways in which humans alter their surroundings, light pollution may be the most easily __1__. Chemicals can linger in soil and water for decades, but a badly designed streetlamp stops doing harm the moment it is switched off. That makes it all the more striking that the problem keeps growing, and the reason is largely one of __2__. Light is associated with safety and progress, and a brightly lit street seems self-evidently better than a dark one.\n\nThe costs are nonetheless real. On brightly lit beaches, sea turtle hatchlings, which find the sea by heading for the brightest horizon, crawl inland towards hotels and roads. Night-flying insects circle lamps until many of them die of exhaustion, and migrating birds are drawn off course by illuminated buildings. For city dwellers, the most obvious loss is the night sky itself, now reduced in many places to a handful of stars.\n\nMuch of this damage is __3__. A lamp that shines sideways or upwards lights the sky rather than the street, and more light is no guarantee of better vision. __4__, the glare from a badly aimed lamp can make it harder to see what is on the ground. Shielding lamps so that their light is directed downwards, choosing warmer colours and dimming lights late at night would prevent much of the harm without leaving anyone in the dark.",
+    "options": [
+      "perception",
+      "cost",
+      "technology",
+      "regulation"
+    ],
+    "correctIndex": 0,
+    "explain": "The sentence after the gap explains why the problem keeps growing: light is associated with safety and progress, so a bright street seems self-evidently better than a dark one. The obstacle is how people see light, which is a matter of 'perception'. 'Technology' does not fit, since the passage presents the technical remedies (shielding, warmer colours, dimming) as available and effective. And nothing in the passage presents 'cost' or 'regulation' as the reason.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-039",
+    "kind": "elf",
+    "prompt": "Which alternative best fits gap 3?",
+    "passage": "Of all the ways in which humans alter their surroundings, light pollution may be the most easily __1__. Chemicals can linger in soil and water for decades, but a badly designed streetlamp stops doing harm the moment it is switched off. That makes it all the more striking that the problem keeps growing, and the reason is largely one of __2__. Light is associated with safety and progress, and a brightly lit street seems self-evidently better than a dark one.\n\nThe costs are nonetheless real. On brightly lit beaches, sea turtle hatchlings, which find the sea by heading for the brightest horizon, crawl inland towards hotels and roads. Night-flying insects circle lamps until many of them die of exhaustion, and migrating birds are drawn off course by illuminated buildings. For city dwellers, the most obvious loss is the night sky itself, now reduced in many places to a handful of stars.\n\nMuch of this damage is __3__. A lamp that shines sideways or upwards lights the sky rather than the street, and more light is no guarantee of better vision. __4__, the glare from a badly aimed lamp can make it harder to see what is on the ground. Shielding lamps so that their light is directed downwards, choosing warmer colours and dimming lights late at night would prevent much of the harm without leaving anyone in the dark.",
+    "options": [
+      "inevitable",
+      "unnecessary",
+      "exaggerated",
+      "deliberate"
+    ],
+    "correctIndex": 1,
+    "explain": "The rest of the paragraph shows that much of the light shines where nobody needs it and that simple measures 'would prevent much of the harm without leaving anyone in the dark', so the damage is 'unnecessary'. 'Inevitable' contradicts the existence of these simple remedies, and 'exaggerated' contradicts the statement that 'the costs are nonetheless real'. Nothing suggests that the harm is 'deliberate' either; it comes from badly designed and badly aimed lamps.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-elf-040",
+    "kind": "elf",
+    "prompt": "Which alternative best fits gap 4?",
+    "passage": "Of all the ways in which humans alter their surroundings, light pollution may be the most easily __1__. Chemicals can linger in soil and water for decades, but a badly designed streetlamp stops doing harm the moment it is switched off. That makes it all the more striking that the problem keeps growing, and the reason is largely one of __2__. Light is associated with safety and progress, and a brightly lit street seems self-evidently better than a dark one.\n\nThe costs are nonetheless real. On brightly lit beaches, sea turtle hatchlings, which find the sea by heading for the brightest horizon, crawl inland towards hotels and roads. Night-flying insects circle lamps until many of them die of exhaustion, and migrating birds are drawn off course by illuminated buildings. For city dwellers, the most obvious loss is the night sky itself, now reduced in many places to a handful of stars.\n\nMuch of this damage is __3__. A lamp that shines sideways or upwards lights the sky rather than the street, and more light is no guarantee of better vision. __4__, the glare from a badly aimed lamp can make it harder to see what is on the ground. Shielding lamps so that their light is directed downwards, choosing warmer colours and dimming lights late at night would prevent much of the harm without leaving anyone in the dark.",
+    "options": [
+      "All the same",
+      "In that case",
+      "If anything",
+      "For that reason"
+    ],
+    "correctIndex": 2,
+    "explain": "The writer first says that more light 'is no guarantee of better vision' and then goes further: glare can actually make it harder to see. 'If anything' introduces exactly such a stronger point, one that runs against what might be expected. 'All the same' would signal a concession, although the second statement supports the first. 'For that reason' gets the logic backwards, since glare is a reason why more light does not guarantee better vision, not a consequence of it, and 'In that case' needs a condition to refer back to, which the passage does not supply.",
+    "verification": "agreed"
   }
 ]

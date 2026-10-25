@@ -41,9 +41,9 @@
       "Region B, Region C och Region D"
     ],
     "correctIndex": 1,
-    "explain": "Antalet sysselsatta är antalet invånare gånger andelen sysselsatta. Region A och Region E ökade både i befolkning och i andel och kan uteslutas direkt. Region B: 268 · 0,740 ≈ 198,3 tusen år 2014 och 251 · 0,760 ≈ 190,8 tusen år 2024, alltså en minskning. Region C: 535 · 0,812 ≈ 434,4 tusen och 610 · 0,796 ≈ 485,6 tusen, en ökning trots att andelen sjönk, eftersom befolkningen växte kraftigt. Region D: 190 · 0,703 ≈ 133,6 tusen och 176 · 0,784 ≈ 138,0 tusen, en ökning trots att befolkningen minskade, eftersom andelen steg med 8,1 procentenheter. Bara Region B hade alltså färre sysselsatta. Svaren som tar med Region C eller Region D bygger på att man bara läser en av tabellerna.",
+    "explain": "Antalet sysselsatta är antalet invånare gånger andelen sysselsatta. Region A och Region E ökade både i befolkning och i andel och kan uteslutas direkt. Region B: 268 · 0,740 ≈ 198,3 tusen år 2014 och 251 · 0,760 ≈ 190,8 tusen år 2024, alltså en minskning. Region C: 535 · 0,812 ≈ 434,4 tusen och 610 · 0,796 ≈ 485,6 tusen, en ökning trots att andelen sjönk, eftersom befolkningen växte kraftigt. Region D: 190 · 0,703 ≈ 133,6 tusen och 176 · 0,784 ≈ 138,0 tusen, en ökning trots att befolkningen minskade, eftersom andelen steg med 8,1 procentenheter. Bara Region B hade alltså färre sysselsatta. Svaret Endast Region C får man om man bara ser att andelen sjönk där, svaret Region B och Region D om man bara ser vilka befolkningar som minskade, och svaret med alla tre om man räknar en region som lägre så fort någon av de två siffrorna minskat, utan att räkna ut antalet sysselsatta.",
     "verification": "disagreed",
-    "verificationNote": "Förklaringens sista mening (\"Svaren som tar med Region C eller Region D bygger på att man bara läser en av tabellerna\") stämmer inte för det fjärde alternativet (B, C och D): det svaret fås när man räknar en region som \"lägre\" om antingen befolkningen (tabell 1) eller andelen (tabell 2) minskat, utan att multiplicera. Nyckel och alla beräkningar är korrekta; justera bara meningen."
+    "verificationNote": "Rättat före uppladdning efter andra kontrollen: förklaringens sista mening beskriver nu felet bakom vart och ett av de felaktiga alternativen. Kontrollera och publicera."
   },
   {
     "id": "ovn-dtk-004",
@@ -66,15 +66,15 @@
     "prompt": "Vilken av följande slutsatser kan man dra utifrån tabellen?",
     "passage": "Prisindex för fyra varugrupper i ett fiktivt land (2018 = 100)\n\nLivsmedel – 2018: 100 | 2020: 104 | 2022: 117 | 2024: 130\nKläder – 2018: 100 | 2020: 96 | 2022: 102 | 2024: 108\nEnergi – 2018: 100 | 2020: 92 | 2022: 150 | 2024: 126\nTransporter – 2018: 100 | 2020: 106 | 2022: 120 | 2024: 135\n\nAnm.: Indexet för varje varugrupp anger prisnivån i förhållande till samma varugrupps prisnivå år 2018. Ett index på 110 betyder alltså att priserna i gruppen var 10 procent högre än år 2018.",
     "options": [
-      "Priserna på kläder var lägre än priserna på livsmedel år 2024.",
+      "Kläder var billigare än livsmedel år 2024.",
       "Energipriserna steg med 58 procent mellan 2020 och 2022.",
       "Energipriserna steg mer än livsmedelspriserna mellan 2018 och 2024.",
       "Energipriserna sjönk med mindre än 20 procent mellan 2022 och 2024."
     ],
     "correctIndex": 3,
-    "explain": "Energiindexet sjönk från 150 till 126, alltså med 24 indexenheter. Räknat från 2022 års nivå är det 24 / 150 = 0,16, en minskning med 16 procent, vilket är mindre än 20 procent. Den slutsatsen stämmer alltså. Att energipriserna steg med 58 procent mellan 2020 och 2022 är fel: 58 indexenheter från nivån 92 är 58 / 92 ≈ 0,63, alltså ungefär 63 procent. Mellan 2018 och 2024 steg energipriserna med 26 procent och livsmedelspriserna med 30 procent, så energipriserna steg inte mer. Om priserna på kläder var lägre än priserna på livsmedel går inte att avgöra, eftersom varje index bara jämför en varugrupp med samma varugrupp år 2018 och inte säger något om prisnivån i olika grupper.",
+    "explain": "Energiindexet sjönk från 150 till 126, alltså med 24 indexenheter. Räknat från 2022 års nivå är det 24 / 150 = 0,16, en minskning med 16 procent, vilket är mindre än 20 procent. Den slutsatsen stämmer alltså. Att energipriserna steg med 58 procent mellan 2020 och 2022 är fel: 58 indexenheter från nivån 92 är 58 / 92 ≈ 0,63, alltså ungefär 63 procent. Mellan 2018 och 2024 steg energipriserna med 26 procent och livsmedelspriserna med 30 procent, så energipriserna steg inte mer. Om kläder var billigare än livsmedel går inte att avgöra, eftersom varje index bara jämför en varugrupp med samma varugrupp år 2018 och inte säger något om prisnivån i olika grupper.",
     "verification": "disagreed",
-    "verificationNote": "Första alternativet (\"Priserna på kläder var lägre än priserna på livsmedel år 2024\") är avsiktligt en icke-slutsats, men kan läsas som \"indexet var lägre\" (108 mot 130) och då vara sant, så en elev kan uppleva två rätta svar. Överväg att göra det tydligt att det gäller prisnivå i kronor, t.ex. \"Kläder var billigare än livsmedel år 2024.\" Nyckeln (fjärde alternativet) och förklaringen är korrekta."
+    "verificationNote": "Rättat före uppladdning efter andra kontrollen: det första alternativet heter nu ”Kläder var billigare än livsmedel år 2024.”, så det inte kan läsas som en jämförelse av indexen. Kontrollera och publicera."
   },
   {
     "id": "ovn-dtk-006",
@@ -299,6 +299,306 @@
     ],
     "correctIndex": 0,
     "explain": "Kommun A ligger i klass 5 och hade alltså minst 100 · 420 = 42 000 invånare. En kommun hade med säkerhet färre invånare bara om även dess högsta möjliga antal ligger under 42 000. Kommun B ligger i klass 2 och hade färre än 25 · 1 350 = 33 750 invånare, alltså säkert färre än Kommun A. Kommun C ligger i en lägre klass än Kommun A men kan ha upp till nästan 50 · 860 = 43 000 invånare, alltså fler än Kommun A:s minimum. Kommun E kan ha nästan 100 · 610 = 61 000 och Kommun F nästan 25 · 1 900 = 47 500 invånare, så inte heller för dem är det säkert.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-021",
+    "kind": "dtk",
+    "prompt": "Hur mycket har kommunen budgeterat för grundskolan per invånare?",
+    "passage": "Budget för en fiktiv kommun, 2025\n\nKommunen har 40 000 invånare. De totala kostnaderna är budgeterade till 2 000 miljoner kronor.\n\nTabell 1. Intäkter (miljoner kronor)\nSkatteintäkter: 1 640\nStatsbidrag och utjämning: 280\nAvgifter och övriga intäkter: 130\nSumma intäkter: 2 050\n\nTabell 2. Kostnader efter verksamhet (procent av de totala kostnaderna)\nFörskola och skola: 40\nVård och omsorg: 34\nIndivid- och familjeomsorg: 9\nTeknisk verksamhet: 7\nÖvrig verksamhet: 6\nKultur och fritid: 4\n\nTabell 3. Kostnaderna för förskola och skola efter delpost (procent av kostnaderna för förskola och skola)\nFörskola: 30\nGrundskola: 50\nGymnasieskola: 15\nVuxenutbildning: 5",
+    "options": [
+      "6 000 kronor",
+      "10 000 kronor",
+      "20 000 kronor",
+      "25 000 kronor"
+    ],
+    "correctIndex": 1,
+    "explain": "Förskola och skola har 40 procent av de totala kostnaderna, alltså 0,40 · 2 000 = 800 miljoner kronor, och grundskolan står för 50 procent av dem: 0,50 · 800 = 400 miljoner kronor. Per invånare blir det 400 000 000 / 40 000 = 10 000 kronor. 20 000 kronor är kostnaden per invånare för hela verksamheten förskola och skola (800 miljoner kronor / 40 000). 25 000 kronor får man om man tar 50 procent av kommunens totala kostnader och hoppar över steget via förskola och skola (1 000 miljoner kronor / 40 000). 6 000 kronor gäller förskolan, 0,30 · 800 = 240 miljoner kronor, alltså fel delpost.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-022",
+    "kind": "dtk",
+    "prompt": "Hur många gånger så stora är kostnaderna för förskolan som kostnaderna för kultur och fritid?",
+    "passage": "Budget för en fiktiv kommun, 2025\n\nKommunen har 40 000 invånare. De totala kostnaderna är budgeterade till 2 000 miljoner kronor.\n\nTabell 1. Intäkter (miljoner kronor)\nSkatteintäkter: 1 640\nStatsbidrag och utjämning: 280\nAvgifter och övriga intäkter: 130\nSumma intäkter: 2 050\n\nTabell 2. Kostnader efter verksamhet (procent av de totala kostnaderna)\nFörskola och skola: 40\nVård och omsorg: 34\nIndivid- och familjeomsorg: 9\nTeknisk verksamhet: 7\nÖvrig verksamhet: 6\nKultur och fritid: 4\n\nTabell 3. Kostnaderna för förskola och skola efter delpost (procent av kostnaderna för förskola och skola)\nFörskola: 30\nGrundskola: 50\nGymnasieskola: 15\nVuxenutbildning: 5",
+    "options": [
+      "3 gånger",
+      "5 gånger",
+      "7,5 gånger",
+      "10 gånger"
+    ],
+    "correctIndex": 0,
+    "explain": "Förskolan står för 30 procent av kostnaderna för förskola och skola, som i sin tur är 40 procent av de totala kostnaderna. Förskolan kostar alltså 0,30 · 0,40 · 2 000 = 240 miljoner kronor, och kultur och fritid kostar 0,04 · 2 000 = 80 miljoner kronor. Kvoten blir 240 / 80 = 3. 7,5 gånger får man om man jämför procentsatserna 30 och 4 direkt (30 / 4), trots att de är andelar av olika helheter. 10 gånger är kvoten för hela verksamheten förskola och skola (40 / 4), och 5 gånger gäller grundskolan (400 / 80), alltså fel delpost.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-023",
+    "kind": "dtk",
+    "prompt": "Vilket av följande påståenden stämmer enligt tabellerna?",
+    "passage": "Budget för en fiktiv kommun, 2025\n\nKommunen har 40 000 invånare. De totala kostnaderna är budgeterade till 2 000 miljoner kronor.\n\nTabell 1. Intäkter (miljoner kronor)\nSkatteintäkter: 1 640\nStatsbidrag och utjämning: 280\nAvgifter och övriga intäkter: 130\nSumma intäkter: 2 050\n\nTabell 2. Kostnader efter verksamhet (procent av de totala kostnaderna)\nFörskola och skola: 40\nVård och omsorg: 34\nIndivid- och familjeomsorg: 9\nTeknisk verksamhet: 7\nÖvrig verksamhet: 6\nKultur och fritid: 4\n\nTabell 3. Kostnaderna för förskola och skola efter delpost (procent av kostnaderna för förskola och skola)\nFörskola: 30\nGrundskola: 50\nGymnasieskola: 15\nVuxenutbildning: 5",
+    "options": [
+      "Kostnaderna för grundskolan är större än kostnaderna för vård och omsorg.",
+      "Kostnaderna för vuxenutbildningen är större än kostnaderna för kultur och fritid.",
+      "Avgifterna och de övriga intäkterna är större än kostnaderna för teknisk verksamhet.",
+      "Intäkterna från statsbidrag och utjämning är större än kostnaderna för förskolan."
+    ],
+    "correctIndex": 3,
+    "explain": "Räkna om andelarna till miljoner kronor. Förskola och skola kostar 0,40 · 2 000 = 800 och förskolan 0,30 · 800 = 240, medan statsbidrag och utjämning ger 280. Intäkterna från statsbidrag och utjämning är alltså större än kostnaderna för förskolan, och det påståendet stämmer. Grundskolan kostar 0,50 · 800 = 400 och vård och omsorg 0,34 · 2 000 = 680; den som jämför 50 procent med 34 procent direkt glömmer att procentsatserna gäller olika helheter. Vuxenutbildningen kostar 0,05 · 800 = 40, bara hälften så mycket som kultur och fritid med 0,04 · 2 000 = 80. Teknisk verksamhet kostar 0,07 · 2 000 = 140, vilket är mer än avgifterna och de övriga intäkterna på 130.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-024",
+    "kind": "dtk",
+    "prompt": "Med hur många procent ökade företagets vinst mellan 2017 och 2024?",
+    "passage": "Omsättning och vinst för ett fiktivt företag, 2017–2024 (miljoner kronor)\n\n2017 – Omsättning: 200 | Vinst: 16\n2018 – Omsättning: 220 | Vinst: 22\n2019 – Omsättning: 250 | Vinst: 20\n2020 – Omsättning: 240 | Vinst: 12\n2021 – Omsättning: 280 | Vinst: 28\n2022 – Omsättning: 320 | Vinst: 32\n2023 – Omsättning: 300 | Vinst: 36\n2024 – Omsättning: 360 | Vinst: 40\n\nAnm.: Vinsten är det som återstår av omsättningen när företagets kostnader har dragits av.",
+    "options": [
+      "60 procent",
+      "80 procent",
+      "150 procent",
+      "250 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Vinsten ökade från 16 till 40 miljoner kronor, alltså med 24 miljoner kronor. Räknat från 2017 års nivå blir det 24 / 16 = 1,5, det vill säga en ökning med 150 procent. 250 procent får man om man tar kvoten 40 / 16 = 2,5 som ökningen; vinsten blev 2,5 gånger så stor, vilket är en ökning med 150 procent. 60 procent får man om man räknar ökningen från fel utgångsvärde (24 / 40), och 80 procent är omsättningens ökning (160 / 200), inte vinstens.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-025",
+    "kind": "dtk",
+    "prompt": "Vilket år var vinsten störst i förhållande till omsättningen?",
+    "passage": "Omsättning och vinst för ett fiktivt företag, 2017–2024 (miljoner kronor)\n\n2017 – Omsättning: 200 | Vinst: 16\n2018 – Omsättning: 220 | Vinst: 22\n2019 – Omsättning: 250 | Vinst: 20\n2020 – Omsättning: 240 | Vinst: 12\n2021 – Omsättning: 280 | Vinst: 28\n2022 – Omsättning: 320 | Vinst: 32\n2023 – Omsättning: 300 | Vinst: 36\n2024 – Omsättning: 360 | Vinst: 40\n\nAnm.: Vinsten är det som återstår av omsättningen när företagets kostnader har dragits av.",
+    "options": [
+      "2018",
+      "2021",
+      "2023",
+      "2024"
+    ],
+    "correctIndex": 2,
+    "explain": "Vinsten i förhållande till omsättningen är vinsten delad med omsättningen. År 2023 blir det 36 / 300 = 0,12, alltså 12 procent, vilket är högst av alla åren. År 2024 var vinsten störst räknat i kronor, men 40 / 360 ≈ 0,111, alltså ungefär 11 procent. År 2018 och år 2021 blir kvoten 22 / 220 = 0,10 respektive 28 / 280 = 0,10, alltså 10 procent; år 2021 ökade vinsten mest jämfört med året före, men frågan gäller vinsten i förhållande till omsättningen. Övriga år ligger mellan 5 och 10 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-026",
+    "kind": "dtk",
+    "prompt": "Med hur många miljoner kronor minskade företagets kostnader mellan 2019 och 2020?",
+    "passage": "Omsättning och vinst för ett fiktivt företag, 2017–2024 (miljoner kronor)\n\n2017 – Omsättning: 200 | Vinst: 16\n2018 – Omsättning: 220 | Vinst: 22\n2019 – Omsättning: 250 | Vinst: 20\n2020 – Omsättning: 240 | Vinst: 12\n2021 – Omsättning: 280 | Vinst: 28\n2022 – Omsättning: 320 | Vinst: 32\n2023 – Omsättning: 300 | Vinst: 36\n2024 – Omsättning: 360 | Vinst: 40\n\nAnm.: Vinsten är det som återstår av omsättningen när företagets kostnader har dragits av.",
+    "options": [
+      "2 miljoner kronor",
+      "8 miljoner kronor",
+      "10 miljoner kronor",
+      "18 miljoner kronor"
+    ],
+    "correctIndex": 0,
+    "explain": "Kostnaderna är omsättningen minus vinsten. År 2019 var de 250 − 20 = 230 miljoner kronor och år 2020 240 − 12 = 228 miljoner kronor, alltså en minskning med 2 miljoner kronor. 10 miljoner kronor är minskningen av omsättningen och 8 miljoner kronor minskningen av vinsten, och ingen av dem är kostnadernas förändring. 18 miljoner kronor får man om man lägger ihop de två minskningarna. När vinsten minskar nästan lika mycket som omsättningen förändras kostnaderna nästan inte alls: 10 − 8 = 2.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-027",
+    "kind": "dtk",
+    "prompt": "I vilken region var andelen medlemmar som var 40 år och äldre störst?",
+    "passage": "Antal medlemmar i ett fiktivt idrottsförbund efter region och åldersgrupp, 2024\n\nRegion A – 7–12 år: 1 600 | 13–19 år: 1 200 | 20–39 år: 800 | 40 år och äldre: 400 | Totalt: 4 000\nRegion B – 7–12 år: 700 | 13–19 år: 850 | 20–39 år: 700 | 40 år och äldre: 250 | Totalt: 2 500\nRegion C – 7–12 år: 2 400 | 13–19 år: 1 500 | 20–39 år: 1 200 | 40 år och äldre: 900 | Totalt: 6 000\nRegion D – 7–12 år: 300 | 13–19 år: 450 | 20–39 år: 300 | 40 år och äldre: 450 | Totalt: 1 500\nHela förbundet – 7–12 år: 5 000 | 13–19 år: 4 000 | 20–39 år: 3 000 | 40 år och äldre: 2 000 | Totalt: 14 000",
+    "options": [
+      "Region A",
+      "Region B",
+      "Region C",
+      "Region D"
+    ],
+    "correctIndex": 3,
+    "explain": "Andelen är antalet medlemmar som var 40 år och äldre delat med regionens totala antal medlemmar: Region A 400 / 4 000 = 0,10, Region B 250 / 2 500 = 0,10, Region C 900 / 6 000 = 0,15 och Region D 450 / 1 500 = 0,30, det vill säga 10, 10, 15 respektive 30 procent. Region D hade alltså störst andel. Region C hade flest medlemmar i åldersgruppen, 900, men också flest medlemmar totalt, så andelen blir bara 15 procent. Region A och Region B hade båda den lägsta andelen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-028",
+    "kind": "dtk",
+    "prompt": "Hur många procent fler medlemmar i åldern 7–12 år än i åldern 20–39 år hade Region C?",
+    "passage": "Antal medlemmar i ett fiktivt idrottsförbund efter region och åldersgrupp, 2024\n\nRegion A – 7–12 år: 1 600 | 13–19 år: 1 200 | 20–39 år: 800 | 40 år och äldre: 400 | Totalt: 4 000\nRegion B – 7–12 år: 700 | 13–19 år: 850 | 20–39 år: 700 | 40 år och äldre: 250 | Totalt: 2 500\nRegion C – 7–12 år: 2 400 | 13–19 år: 1 500 | 20–39 år: 1 200 | 40 år och äldre: 900 | Totalt: 6 000\nRegion D – 7–12 år: 300 | 13–19 år: 450 | 20–39 år: 300 | 40 år och äldre: 450 | Totalt: 1 500\nHela förbundet – 7–12 år: 5 000 | 13–19 år: 4 000 | 20–39 år: 3 000 | 40 år och äldre: 2 000 | Totalt: 14 000",
+    "options": [
+      "20 procent",
+      "50 procent",
+      "100 procent",
+      "200 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Region C hade 2 400 medlemmar i åldern 7–12 år och 1 200 i åldern 20–39 år. Skillnaden är 1 200, och räknat från gruppen 20–39 år blir det 1 200 / 1 200 = 1, alltså 100 procent fler. 200 procent får man om man tar kvoten 2 400 / 1 200 = 2 som svaret, men dubbelt så många är 100 procent fler. 50 procent får man om man räknar skillnaden från fel grupp (1 200 / 2 400); det anger i stället hur många procent färre 20–39-åringarna var. 20 procent får man om man jämför gruppernas andelar av regionens medlemmar, 2 400 / 6 000 = 0,40 och 1 200 / 6 000 = 0,20; skillnaden mellan andelarna är 20 procentenheter, inte 20 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-029",
+    "kind": "dtk",
+    "prompt": "Hur stor andel av medlemmarna i Region B och Region D tillsammans var 40 år och äldre?",
+    "passage": "Antal medlemmar i ett fiktivt idrottsförbund efter region och åldersgrupp, 2024\n\nRegion A – 7–12 år: 1 600 | 13–19 år: 1 200 | 20–39 år: 800 | 40 år och äldre: 400 | Totalt: 4 000\nRegion B – 7–12 år: 700 | 13–19 år: 850 | 20–39 år: 700 | 40 år och äldre: 250 | Totalt: 2 500\nRegion C – 7–12 år: 2 400 | 13–19 år: 1 500 | 20–39 år: 1 200 | 40 år och äldre: 900 | Totalt: 6 000\nRegion D – 7–12 år: 300 | 13–19 år: 450 | 20–39 år: 300 | 40 år och äldre: 450 | Totalt: 1 500\nHela förbundet – 7–12 år: 5 000 | 13–19 år: 4 000 | 20–39 år: 3 000 | 40 år och äldre: 2 000 | Totalt: 14 000",
+    "options": [
+      "17,5 procent",
+      "20 procent",
+      "35 procent",
+      "40 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "Region B hade 250 och Region D 450 medlemmar som var 40 år och äldre, tillsammans 700. Regionerna hade tillsammans 2 500 + 1 500 = 4 000 medlemmar, så andelen blir 700 / 4 000 = 0,175, alltså 17,5 procent. Var för sig är andelarna 250 / 2 500 = 0,10 i Region B och 450 / 1 500 = 0,30 i Region D. 20 procent är medelvärdet av de två andelarna, (10 + 30) / 2, men det tar inte hänsyn till att Region B, som har den lägre andelen, har fler medlemmar. 40 procent får man om man lägger ihop andelarna 10 och 30 procent. 35 procent är de två regionernas andel av förbundets alla medlemmar som var 40 år och äldre (700 / 2 000), alltså en andel av fel helhet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-030",
+    "kind": "dtk",
+    "prompt": "Hur många besökare hade akvariet år 2023?",
+    "passage": "De åtta mest besökta besöksmålen i en fiktiv region, 2024\n\nBesökare 2024 anges i tusental. Förändring anger den procentuella förändringen av antalet besökare från 2023 till 2024. Samma åtta besöksmål var de mest besökta även 2023.\n\nNöjesparken – Placering 2024: 1 | Placering 2023: 1 | Besökare 2024: 900 | Förändring: +20\nAkvariet – Placering 2024: 2 | Placering 2023: 3 | Besökare 2024: 600 | Förändring: +25\nSlottet – Placering 2024: 3 | Placering 2023: 2 | Besökare 2024: 540 | Förändring: −10\nKonstmuseet – Placering 2024: 4 | Placering 2023: 5 | Besökare 2024: 420 | Förändring: +5\nDjurparken – Placering 2024: 5 | Placering 2023: 4 | Besökare 2024: 360 | Förändring: −20\nÄventyrsbadet – Placering 2024: 6 | Placering 2023: 8 | Besökare 2024: 350 | Förändring: +40\nBotaniska trädgården – Placering 2024: 7 | Placering 2023: 6 | Besökare 2024: 330 | Förändring: +10\nFriluftsmuseet – Placering 2024: 8 | Placering 2023: 7 | Besökare 2024: 210 | Förändring: −25",
+    "options": [
+      "450 000",
+      "480 000",
+      "750 000",
+      "800 000"
+    ],
+    "correctIndex": 1,
+    "explain": "Akvariet hade 600 000 besökare år 2024, vilket var 25 procent fler än år 2023. Antalet 2024 är alltså 1,25 gånger antalet 2023, och 600 000 / 1,25 = 480 000. Kontroll: 25 procent av 480 000 är 120 000, och 480 000 + 120 000 = 600 000. 450 000 får man om man drar av 25 procent av 2024 års antal, men procentsatsen gäller 2023 års antal. 750 000 får man om man i stället lägger till 25 procent (600 000 · 1,25), och 800 000 om man räknar som om antalet hade minskat med 25 procent (600 000 / 0,75).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-031",
+    "kind": "dtk",
+    "prompt": "Vilket besöksmål hade störst ökning av antalet besökare från 2023 till 2024, räknat i antal och inte i procent?",
+    "passage": "De åtta mest besökta besöksmålen i en fiktiv region, 2024\n\nBesökare 2024 anges i tusental. Förändring anger den procentuella förändringen av antalet besökare från 2023 till 2024. Samma åtta besöksmål var de mest besökta även 2023.\n\nNöjesparken – Placering 2024: 1 | Placering 2023: 1 | Besökare 2024: 900 | Förändring: +20\nAkvariet – Placering 2024: 2 | Placering 2023: 3 | Besökare 2024: 600 | Förändring: +25\nSlottet – Placering 2024: 3 | Placering 2023: 2 | Besökare 2024: 540 | Förändring: −10\nKonstmuseet – Placering 2024: 4 | Placering 2023: 5 | Besökare 2024: 420 | Förändring: +5\nDjurparken – Placering 2024: 5 | Placering 2023: 4 | Besökare 2024: 360 | Förändring: −20\nÄventyrsbadet – Placering 2024: 6 | Placering 2023: 8 | Besökare 2024: 350 | Förändring: +40\nBotaniska trädgården – Placering 2024: 7 | Placering 2023: 6 | Besökare 2024: 330 | Förändring: +10\nFriluftsmuseet – Placering 2024: 8 | Placering 2023: 7 | Besökare 2024: 210 | Förändring: −25",
+    "options": [
+      "Nöjesparken",
+      "Akvariet",
+      "Äventyrsbadet",
+      "Botaniska trädgården"
+    ],
+    "correctIndex": 0,
+    "explain": "Antalet besökare 2023 får man genom att dela 2024 års antal med förändringsfaktorn, och ökningen är skillnaden mellan åren. Nöjesparken: 900 / 1,20 = 750 tusen, en ökning med 150 tusen. Akvariet: 600 / 1,25 = 480 tusen, en ökning med 120 tusen. Äventyrsbadet: 350 / 1,40 = 250 tusen, en ökning med 100 tusen. Botaniska trädgården: 330 / 1,10 = 300 tusen, en ökning med 30 tusen. Nöjesparken ökade alltså mest. Äventyrsbadet hade den största procentuella ökningen och klättrade flest placeringar, men utgick från ett mycket lägre antal besökare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-032",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån tabellen?",
+    "passage": "De åtta mest besökta besöksmålen i en fiktiv region, 2024\n\nBesökare 2024 anges i tusental. Förändring anger den procentuella förändringen av antalet besökare från 2023 till 2024. Samma åtta besöksmål var de mest besökta även 2023.\n\nNöjesparken – Placering 2024: 1 | Placering 2023: 1 | Besökare 2024: 900 | Förändring: +20\nAkvariet – Placering 2024: 2 | Placering 2023: 3 | Besökare 2024: 600 | Förändring: +25\nSlottet – Placering 2024: 3 | Placering 2023: 2 | Besökare 2024: 540 | Förändring: −10\nKonstmuseet – Placering 2024: 4 | Placering 2023: 5 | Besökare 2024: 420 | Förändring: +5\nDjurparken – Placering 2024: 5 | Placering 2023: 4 | Besökare 2024: 360 | Förändring: −20\nÄventyrsbadet – Placering 2024: 6 | Placering 2023: 8 | Besökare 2024: 350 | Förändring: +40\nBotaniska trädgården – Placering 2024: 7 | Placering 2023: 6 | Besökare 2024: 330 | Förändring: +10\nFriluftsmuseet – Placering 2024: 8 | Placering 2023: 7 | Besökare 2024: 210 | Förändring: −25",
+    "options": [
+      "Slottet förlorade fler besökare än friluftsmuseet från 2023 till 2024.",
+      "Friluftsmuseet hade färre besökare än äventyrsbadet år 2023.",
+      "Alla besöksmål som fick fler besökare 2024 än 2023 behöll eller förbättrade sin placering.",
+      "Djurparken hade fler besökare än konstmuseet år 2023."
+    ],
+    "correctIndex": 3,
+    "explain": "Placeringen 2023 visar ordningen mellan besöksmålen det året. Djurparken låg på plats 4 och konstmuseet på plats 5, så djurparken hade fler besökare år 2023 (360 / 0,80 = 450 tusen mot 420 / 1,05 = 400 tusen), och den slutsatsen stämmer. Friluftsmuseet låg på plats 7 och äventyrsbadet på plats 8 år 2023, så friluftsmuseet hade fler besökare, inte färre (280 tusen mot 250 tusen). Slottet förlorade 600 − 540 = 60 tusen besökare och friluftsmuseet 280 − 210 = 70 tusen, så det var friluftsmuseet som förlorade flest. Botaniska trädgården fick 10 procent fler besökare men föll ändå från plats 6 till plats 7, eftersom äventyrsbadet gick förbi.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-033",
+    "kind": "dtk",
+    "prompt": "Hur många av de svarande vid humaniora var nöjda med studiemiljön?",
+    "passage": "Enkät om studiemiljön vid fyra fakulteter på ett fiktivt universitet, 2024\n\nAlla studenter vid de fyra fakulteterna fick frågan om de var nöjda med studiemiljön. Svarsfrekvensen är andelen av studenterna som besvarade enkäten. Andelen nöjda är räknad bland dem som besvarade enkäten.\n\nTeknik – Antal studenter: 2 000 | Svarsfrekvens: 10 procent | Andel nöjda: 40 procent\nMedicin – Antal studenter: 1 000 | Svarsfrekvens: 80 procent | Andel nöjda: 90 procent\nHumaniora – Antal studenter: 800 | Svarsfrekvens: 50 procent | Andel nöjda: 60 procent\nSamhällsvetenskap – Antal studenter: 1 200 | Svarsfrekvens: 50 procent | Andel nöjda: 50 procent",
+    "options": [
+      "160",
+      "240",
+      "400",
+      "480"
+    ],
+    "correctIndex": 1,
+    "explain": "Vid humaniora fanns 800 studenter, och svarsfrekvensen var 50 procent, så 0,50 · 800 = 400 studenter besvarade enkäten. Av dem var 60 procent nöjda: 0,60 · 400 = 240. 480 får man om man tar 60 procent av alla 800 studenter och glömmer att andelen nöjda bara gäller dem som svarade. 400 är antalet svarande, och 160 är antalet svarande som inte var nöjda (0,40 · 400).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-034",
+    "kind": "dtk",
+    "prompt": "Hur stor andel av samtliga svarande vid de fyra fakulteterna var nöjda med studiemiljön?",
+    "passage": "Enkät om studiemiljön vid fyra fakulteter på ett fiktivt universitet, 2024\n\nAlla studenter vid de fyra fakulteterna fick frågan om de var nöjda med studiemiljön. Svarsfrekvensen är andelen av studenterna som besvarade enkäten. Andelen nöjda är räknad bland dem som besvarade enkäten.\n\nTeknik – Antal studenter: 2 000 | Svarsfrekvens: 10 procent | Andel nöjda: 40 procent\nMedicin – Antal studenter: 1 000 | Svarsfrekvens: 80 procent | Andel nöjda: 90 procent\nHumaniora – Antal studenter: 800 | Svarsfrekvens: 50 procent | Andel nöjda: 60 procent\nSamhällsvetenskap – Antal studenter: 1 200 | Svarsfrekvens: 50 procent | Andel nöjda: 50 procent",
+    "options": [
+      "26,8 procent",
+      "33 procent",
+      "60 procent",
+      "67 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Räkna först fram antalet svarande och antalet nöjda vid varje fakultet. Teknik: 0,10 · 2 000 = 200 svarande, varav 0,40 · 200 = 80 nöjda. Medicin: 800 svarande och 720 nöjda. Humaniora: 400 svarande och 240 nöjda. Samhällsvetenskap: 600 svarande och 300 nöjda. Sammanlagt svarade 2 000 studenter, och 80 + 720 + 240 + 300 = 1 340 av dem var nöjda. Andelen blir 1 340 / 2 000 = 0,67, alltså 67 procent. 60 procent är medelvärdet av de fyra andelarna, (40 + 90 + 60 + 50) / 4, men det tar inte hänsyn till att medicin, med den högsta andelen nöjda, har flest svarande. 26,8 procent får man om man delar med alla 5 000 studenter i stället för med de 2 000 svarande, och 33 procent är andelen svarande som inte var nöjda.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-035",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån tabellen?",
+    "passage": "Enkät om studiemiljön vid fyra fakulteter på ett fiktivt universitet, 2024\n\nAlla studenter vid de fyra fakulteterna fick frågan om de var nöjda med studiemiljön. Svarsfrekvensen är andelen av studenterna som besvarade enkäten. Andelen nöjda är räknad bland dem som besvarade enkäten.\n\nTeknik – Antal studenter: 2 000 | Svarsfrekvens: 10 procent | Andel nöjda: 40 procent\nMedicin – Antal studenter: 1 000 | Svarsfrekvens: 80 procent | Andel nöjda: 90 procent\nHumaniora – Antal studenter: 800 | Svarsfrekvens: 50 procent | Andel nöjda: 60 procent\nSamhällsvetenskap – Antal studenter: 1 200 | Svarsfrekvens: 50 procent | Andel nöjda: 50 procent",
+    "options": [
+      "Mer än hälften av alla studenter vid medicin var nöjda med studiemiljön.",
+      "Mer än hälften av alla studenter vid samhällsvetenskap var nöjda med studiemiljön.",
+      "Fler studenter vid teknik än vid humaniora besvarade enkäten.",
+      "Fler svarande vid humaniora än vid samhällsvetenskap var nöjda."
+    ],
+    "correctIndex": 0,
+    "explain": "Vid medicin besvarade 0,80 · 1 000 = 800 studenter enkäten, och 0,90 · 800 = 720 av dem var nöjda. Redan de nöjda svarande är alltså fler än hälften av fakultetens 1 000 studenter, oavsett vad de 200 som inte svarade tycker, så den slutsatsen kan man dra. Vid samhällsvetenskap var 0,50 · 600 = 300 svarande nöjda, bara en fjärdedel av de 1 200 studenterna; hur de 600 som inte svarade tycker vet man inte, och bland de svarande var exakt hälften nöjda, inte fler. Vid teknik svarade bara 0,10 · 2 000 = 200 studenter mot 0,50 · 800 = 400 vid humaniora, trots att teknik har fler studenter. Vid humaniora var 240 svarande nöjda mot 300 vid samhällsvetenskap; den högre andelen nöjda vid humaniora gäller färre svarande.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-036",
+    "kind": "dtk",
+    "prompt": "Vid slutet av vilken månad var lagret som störst?",
+    "passage": "Lagret av en vara hos ett fiktivt företag, januari–juni 2024\n\nDen 1 januari fanns 1 000 enheter av varan i lager. Tabellen visar hur många enheter som kom in till lagret (inleverans) och hur många som skickades ut från lagret (utleverans) under varje månad.\n\nJanuari – Inleverans: 900 | Utleverans: 600\nFebruari – Inleverans: 800 | Utleverans: 600\nMars – Inleverans: 1 000 | Utleverans: 1 100\nApril – Inleverans: 500 | Utleverans: 700\nMaj – Inleverans: 750 | Utleverans: 500\nJuni – Inleverans: 600 | Utleverans: 800",
+    "options": [
+      "Januari",
+      "Februari",
+      "Mars",
+      "Maj"
+    ],
+    "correctIndex": 1,
+    "explain": "Lagret vid slutet av en månad är lagret vid månadens början plus inleveransen minus utleveransen. Från 1 000 enheter blir det 1 000 + 900 − 600 = 1 300 i januari, 1 300 + 800 − 600 = 1 500 i februari, 1 500 + 1 000 − 1 100 = 1 400 i mars, 1 400 + 500 − 700 = 1 200 i april och 1 200 + 750 − 500 = 1 450 i maj. I juni minskade lagret igen, eftersom utleveransen var större än inleveransen. Lagret var alltså störst vid slutet av februari. Januari hade det största överskottet av inleveranser, 300 enheter, men lagret fortsatte att växa i februari. Mars hade den största inleveransen men en ännu större utleverans, och maj kom inte upp till februaris nivå eftersom lagret hade minskat i mars och april.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-037",
+    "kind": "dtk",
+    "prompt": "Hur många enheter fanns i lager vid slutet av juni?",
+    "passage": "Lagret av en vara hos ett fiktivt företag, januari–juni 2024\n\nDen 1 januari fanns 1 000 enheter av varan i lager. Tabellen visar hur många enheter som kom in till lagret (inleverans) och hur många som skickades ut från lagret (utleverans) under varje månad.\n\nJanuari – Inleverans: 900 | Utleverans: 600\nFebruari – Inleverans: 800 | Utleverans: 600\nMars – Inleverans: 1 000 | Utleverans: 1 100\nApril – Inleverans: 500 | Utleverans: 700\nMaj – Inleverans: 750 | Utleverans: 500\nJuni – Inleverans: 600 | Utleverans: 800",
+    "options": [
+      "250",
+      "750",
+      "1 250",
+      "1 450"
+    ],
+    "correctIndex": 2,
+    "explain": "Under januari–juni kom 900 + 800 + 1 000 + 500 + 750 + 600 = 4 550 enheter in och 600 + 600 + 1 100 + 700 + 500 + 800 = 4 300 enheter ut. Lagret ökade alltså med 4 550 − 4 300 = 250 enheter, från 1 000 till 1 250. 250 är bara förändringen; då har man glömt de 1 000 enheter som fanns från början. 750 får man om man drar förändringen från startlagret i stället för att lägga till den, och 1 450 är lagret vid slutet av maj, innan junis inleverans på 600 och utleverans på 800 har räknats med.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-038",
+    "kind": "dtk",
+    "prompt": "Hur många procent större var lagret vid slutet av februari än vid slutet av april?",
+    "passage": "Lagret av en vara hos ett fiktivt företag, januari–juni 2024\n\nDen 1 januari fanns 1 000 enheter av varan i lager. Tabellen visar hur många enheter som kom in till lagret (inleverans) och hur många som skickades ut från lagret (utleverans) under varje månad.\n\nJanuari – Inleverans: 900 | Utleverans: 600\nFebruari – Inleverans: 800 | Utleverans: 600\nMars – Inleverans: 1 000 | Utleverans: 1 100\nApril – Inleverans: 500 | Utleverans: 700\nMaj – Inleverans: 750 | Utleverans: 500\nJuni – Inleverans: 600 | Utleverans: 800",
+    "options": [
+      "20 procent",
+      "25 procent",
+      "80 procent",
+      "125 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Vid slutet av februari fanns 1 000 + 900 − 600 + 800 − 600 = 1 500 enheter, och vid slutet av april 1 500 + 1 000 − 1 100 + 500 − 700 = 1 200 enheter. Skillnaden är 300 enheter, och räknat från aprils lager blir det 300 / 1 200 = 0,25, alltså 25 procent större. 20 procent får man om man räknar skillnaden från februaris lager (300 / 1 500); det anger i stället hur många procent mindre lagret var i april. 125 procent är kvoten 1 500 / 1 200 = 1,25 uttryckt i procent: februaris lager var 125 procent av aprils, alltså 25 procent större. 80 procent är aprils lager som andel av februaris (1 200 / 1 500).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-039",
+    "kind": "dtk",
+    "prompt": "Hur stor andel av årets totala nederbörd föll under juni, juli och augusti?",
+    "passage": "Medeltemperatur och nederbörd per månad i en fiktiv ort\n\nVärdena är genomsnitt för många års mätningar.\n\nJanuari – Medeltemperatur: −7 °C | Nederbörd: 40 mm\nFebruari – Medeltemperatur: −6 °C | Nederbörd: 30 mm\nMars – Medeltemperatur: −2 °C | Nederbörd: 25 mm\nApril – Medeltemperatur: 4 °C | Nederbörd: 30 mm\nMaj – Medeltemperatur: 10 °C | Nederbörd: 40 mm\nJuni – Medeltemperatur: 15 °C | Nederbörd: 60 mm\nJuli – Medeltemperatur: 17 °C | Nederbörd: 90 mm\nAugusti – Medeltemperatur: 16 °C | Nederbörd: 90 mm\nSeptember – Medeltemperatur: 11 °C | Nederbörd: 60 mm\nOktober – Medeltemperatur: 5 °C | Nederbörd: 55 mm\nNovember – Medeltemperatur: −2 °C | Nederbörd: 45 mm\nDecember – Medeltemperatur: −5 °C | Nederbörd: 35 mm",
+    "options": [
+      "15 procent",
+      "25 procent",
+      "40 procent",
+      "60 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Årets nederbörd är summan för alla tolv månader: 40 + 30 + 25 + 30 + 40 + 60 + 90 + 90 + 60 + 55 + 45 + 35 = 600 mm. Under juni, juli och augusti föll 60 + 90 + 90 = 240 mm, och 240 / 600 = 0,40, alltså 40 procent. 60 procent är andelen som föll under årets övriga nio månader. 25 procent motsvarar tre av årets tolv månader och hade bara stämt om nederbörden varit jämnt fördelad över året. 15 procent är andelen för en enda sommarmånad, juli eller augusti (90 / 600).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-040",
+    "kind": "dtk",
+    "prompt": "Mellan vilka två på varandra följande månader sjönk medeltemperaturen mest?",
+    "passage": "Medeltemperatur och nederbörd per månad i en fiktiv ort\n\nVärdena är genomsnitt för många års mätningar.\n\nJanuari – Medeltemperatur: −7 °C | Nederbörd: 40 mm\nFebruari – Medeltemperatur: −6 °C | Nederbörd: 30 mm\nMars – Medeltemperatur: −2 °C | Nederbörd: 25 mm\nApril – Medeltemperatur: 4 °C | Nederbörd: 30 mm\nMaj – Medeltemperatur: 10 °C | Nederbörd: 40 mm\nJuni – Medeltemperatur: 15 °C | Nederbörd: 60 mm\nJuli – Medeltemperatur: 17 °C | Nederbörd: 90 mm\nAugusti – Medeltemperatur: 16 °C | Nederbörd: 90 mm\nSeptember – Medeltemperatur: 11 °C | Nederbörd: 60 mm\nOktober – Medeltemperatur: 5 °C | Nederbörd: 55 mm\nNovember – Medeltemperatur: −2 °C | Nederbörd: 45 mm\nDecember – Medeltemperatur: −5 °C | Nederbörd: 35 mm",
+    "options": [
+      "Juli–augusti",
+      "Augusti–september",
+      "September–oktober",
+      "Oktober–november"
+    ],
+    "correctIndex": 3,
+    "explain": "Minskningen är skillnaden mellan de två månadernas medeltemperaturer: juli–augusti 17 − 16 = 1 grad, augusti–september 16 − 11 = 5 grader, september–oktober 11 − 5 = 6 grader och oktober–november 5 − (−2) = 7 grader. Mest sjönk temperaturen alltså mellan oktober och november. Den som räknar 5 − 2 = 3 grader för oktober–november, och glömmer att −2 °C ligger under nollan, väljer i stället september–oktober. Mellan november och december sjönk temperaturen med 3 grader, och under årets första hälft steg den.",
     "verification": "agreed"
   }
 ]

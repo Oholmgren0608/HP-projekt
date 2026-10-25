@@ -1,0 +1,308 @@
+[
+  {
+    "id": "ovn-ord-001",
+    "kind": "ord",
+    "prompt": "Vad betyder ”gängse”?",
+    "options": [
+      "föråldrad",
+      "lång och smal",
+      "vanlig",
+      "omstridd",
+      "nyskapande"
+    ],
+    "correctIndex": 2,
+    "explain": "Gängse betyder vanlig eller allmänt förekommande, som i ”enligt gängse praxis” eller ”den gängse uppfattningen”. Föråldrad och nyskapande handlar om hur gammalt eller nytt något är, inte om hur utbrett det är, och omstridd passar inte eftersom det gängse just är det som de flesta tar för givet. Lång och smal är betydelsen av det liknande ordet gänglig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-002",
+    "kind": "ord",
+    "prompt": "Vad betyder ”lättja”?",
+    "options": [
+      "lättnad",
+      "smidighet",
+      "lättsinne",
+      "tristess",
+      "lathet"
+    ],
+    "correctIndex": 4,
+    "explain": "Lättja betyder lathet, alltså ovilja att arbeta eller anstränga sig: ”av ren lättja lät han disken stå kvar”. Lättnad (känslan när en oro släpper) och lättsinne (tanklöshet och vårdslöshet) liknar ordet till formen men betyder något annat. Smidighet handlar om att röra sig lätt och tristess om leda och enformighet, inte om ovilja att anstränga sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-003",
+    "kind": "ord",
+    "prompt": "Vad betyder ”beivra”?",
+    "options": [
+      "bevilja",
+      "ingripa rättsligt mot",
+      "bevittna",
+      "upphäva",
+      "överklaga"
+    ],
+    "correctIndex": 1,
+    "explain": "Att beivra är att ingripa rättsligt mot något, oftast ett brott eller en överträdelse: ”alla överträdelser av förbudet kommer att beivras”. Bevilja och bevittna liknar bara ordet till formen. Upphäva och överklaga är visserligen juridiska ord, men de betyder att ett beslut eller en regel slutar gälla respektive att man begär att ett beslut prövas på nytt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-004",
+    "kind": "ord",
+    "prompt": "Vad betyder ”pejorativ”?",
+    "options": [
+      "nedsättande",
+      "förskönande",
+      "ålderdomlig",
+      "vardaglig",
+      "överdriven"
+    ],
+    "correctIndex": 0,
+    "explain": "Pejorativ betyder nedsättande och används om ord och uttryck med en negativ värdering: ”pamp” är till exempel en pejorativ beteckning på en makthavare. Förskönande är närmast motsatsen, eftersom en förskönande omskrivning får något att låta mildare än det är. Ålderdomlig, vardaglig och överdriven beskriver också ord, men de anger ålder, stilnivå och grad, inte en negativ värdering.",
+    "verification": "disagreed",
+    "verificationNote": "Distraktorn ”förskönande” är närmast motsatsen till ”nedsättande” (förklaringen säger det själv) och pekar ut paret; byt mot en distraktor som inte är en motpol."
+  },
+  {
+    "id": "ovn-ord-005",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ömsom”?",
+    "options": [
+      "ömsesidigt",
+      "samtidigt",
+      "omsorgsfullt",
+      "växelvis",
+      "gradvis"
+    ],
+    "correctIndex": 3,
+    "explain": "Ömsom betyder växelvis och används oftast parvis: ”vädret var ömsom soligt, ömsom regnigt”. Ömsesidigt liknar ordet men betyder att något gäller åt båda hållen, som i ömsesidig respekt. Samtidigt är fel eftersom sakerna avlöser varandra i stället för att inträffa på en gång, och gradvis och omsorgsfullt anger en långsam förändring respektive noggrannhet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-006",
+    "kind": "ord",
+    "prompt": "Vad betyder ”tvehågsen”?",
+    "options": [
+      "tvär",
+      "tvåspråkig",
+      "missmodig",
+      "obeslutsam",
+      "nostalgisk"
+    ],
+    "correctIndex": 3,
+    "explain": "Tvehågsen betyder obeslutsam eller tveksam: ”länge var hon tvehågsen inför erbjudandet”. Ordet är bildat av tve- (två) och håg (sinne, vilja) och syftar på att viljan drar åt två håll, inte på två språk som i tvåspråkig. Tvär (kort och ovänlig), missmodig (nedslagen) och nostalgisk (som längtar tillbaka) beskriver helt andra egenskaper och stämningar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-007",
+    "kind": "ord",
+    "prompt": "Vad betyder ”förtiga”?",
+    "options": [
+      "förneka",
+      "hemlighålla",
+      "överdriva",
+      "förtydliga",
+      "upprepa"
+    ],
+    "correctIndex": 1,
+    "explain": "Att förtiga något är att medvetet låta bli att nämna det, alltså hemlighålla det: ”rapporten förtiger att projektet blev dubbelt så dyrt”. Förneka ligger nära men betyder att man påstår att något inte är sant, medan den som förtiger något inte säger något alls om saken. Överdriva, förtydliga och upprepa innebär tvärtom att man talar om saken – mer, tydligare eller flera gånger.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-008",
+    "kind": "ord",
+    "prompt": "Vad betyder ”abdikera”?",
+    "options": [
+      "avsätta en kung",
+      "bli krönt",
+      "ärva tronen",
+      "gå i landsflykt",
+      "avsäga sig tronen"
+    ],
+    "correctIndex": 4,
+    "explain": "Att abdikera är att frivilligt avsäga sig tronen, och i överförd betydelse att avstå från makt eller ansvar: ”drottningen abdikerade till förmån för sin son”. Avsätta en kung innebär tvärtom att någon annan tar ifrån kungen makten. Bli krönt och ärva tronen handlar om att få makten, och gå i landsflykt om att lämna landet, inte tronen.",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Förklaringen: ”frivilligt” är för snävt, en abdikation kan vara påtvingad (NE: frivillig eller framtvingad); stryk ordet."
+  },
+  {
+    "id": "ovn-ord-009",
+    "kind": "ord",
+    "prompt": "Vad betyder ”sinekur”?",
+    "options": [
+      "obotlig sjukdom",
+      "kurort",
+      "lätt och välbetald syssla",
+      "tillfällig tjänstledighet",
+      "provanställning"
+    ],
+    "correctIndex": 2,
+    "explain": "En sinekur är en lätt och välbetald syssla, alltså en tjänst som ger god lön men kräver lite eller inget arbete: ”styrelseposten var i praktiken en sinekur”. Ordet kommer av latinets sine cura, ”utan omsorg”, och har inget med kur i betydelsen behandling att göra, så kurort och obotlig sjukdom är fel. Tillfällig tjänstledighet och provanställning är andra slags anställningsvillkor och säger inget om att arbetet är lätt men välbetalt.",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Förklaringen: ”har inget med kur i betydelsen behandling att göra” är etymologiskt missvisande, både kur och sinekur kommer av latinets cura (omsorg, vård); skriv att betydelsen inte hänger ihop med behandling."
+  },
+  {
+    "id": "ovn-ord-010",
+    "kind": "ord",
+    "prompt": "Vad betyder ”slå dövörat till”?",
+    "options": [
+      "vägra lyssna",
+      "ge någon en örfil",
+      "höja rösten",
+      "lyssna i smyg",
+      "avbryta någon"
+    ],
+    "correctIndex": 0,
+    "explain": "Att slå dövörat till är att låtsas att man inte hör, alltså vägra lyssna på till exempel en begäran eller kritik: ”ledningen slog dövörat till personalens protester”. Ge någon en örfil bygger på en bokstavlig läsning av slå och öra. Höja rösten, lyssna i smyg och avbryta någon handlar om andra sätt att tala och lyssna, inte om att stänga ute det man inte vill höra.",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Exempelmeningen i förklaringen är ogrammatisk: ”slog dövörat till personalens protester” saknar ”för”; ska vara ”slog dövörat till för personalens protester”."
+  },
+  {
+    "id": "ovn-ord-011",
+    "kind": "ord",
+    "prompt": "Vad betyder ”anakronism”?",
+    "options": [
+      "tidsmätning",
+      "laglöshet",
+      "brist på tid",
+      "kort rolig berättelse",
+      "felplacering i tiden"
+    ],
+    "correctIndex": 4,
+    "explain": "En anakronism är en felplacering i tiden, till exempel ett armbandsur i en film om vikingatiden, eller något som verkar föråldrat i sin samtid. Tidsmätning och brist på tid har med tid att göra men inte med att något hamnat i fel tid. Laglöshet är betydelsen av anarki, och en kort rolig berättelse kallas anekdot.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-012",
+    "kind": "ord",
+    "prompt": "Vad betyder ”förment”?",
+    "options": [
+      "förmögen",
+      "påstådd",
+      "hemlig",
+      "förhastad",
+      "ökänd"
+    ],
+    "correctIndex": 1,
+    "explain": "Förment betyder påstådd eller inbillad, ofta med en antydan om att påståendet inte stämmer: ”de förmenta fördelarna med reformen uteblev”. Förmögen (rik) och förhastad (gjord utan eftertanke) liknar ordet till formen men betyder något helt annat. Ökänd betyder känd för något dåligt, och hemlig handlar om att något döljs, inte om att det bara påstås.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-013",
+    "kind": "ord",
+    "prompt": "Vad betyder ”likväl”?",
+    "options": [
+      "likaså",
+      "dessutom",
+      "följaktligen",
+      "ändå",
+      "uppenbarligen"
+    ],
+    "correctIndex": 3,
+    "explain": "Likväl betyder ändå eller trots det: ”kritiken var hård, men regeringen genomförde likväl reformen”. Likaså liknar ordet men betyder också eller på samma sätt. Dessutom lägger till något, följaktligen anger en följd och uppenbarligen att något är tydligt, medan likväl markerar att något sker trots ett hinder eller en invändning.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-014",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ofrånkomlig”?",
+    "options": [
+      "oundviklig",
+      "oåtkomlig",
+      "oersättlig",
+      "oförutsedd",
+      "ofullständig"
+    ],
+    "correctIndex": 0,
+    "explain": "Ofrånkomlig betyder oundviklig, alltså något man inte kan komma ifrån: ”en ofrånkomlig slutsats”. Oåtkomlig liknar ordet men betyder att något inte går att nå. Oersättlig (som inte kan ersättas), oförutsedd (som ingen räknat med) och ofullständig (som saknar delar) beskriver helt andra egenskaper.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-015",
+    "kind": "ord",
+    "prompt": "Vad betyder ”kverulant”?",
+    "options": [
+      "kvacksalvare",
+      "skvallerbytta",
+      "gnällspik",
+      "besserwisser",
+      "lycksökare"
+    ],
+    "correctIndex": 2,
+    "explain": "En kverulant är en person som ständigt klagar och gnäller, ofta över småsaker, alltså en gnällspik: ”hon ville inte framstå som en kverulant”. Kvacksalvare liknar ordet till ljudet men betecknar den som utan kunskap påstår sig kunna bota sjukdomar. Skvallerbytta, besserwisser och lycksökare är också nedsättande ord om personer, men om den som sprider skvaller, den som tror sig veta bäst och den som jagar snabb rikedom.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-016",
+    "kind": "ord",
+    "prompt": "Vad betyder ”vanhävd”?",
+    "options": [
+      "gammal sedvänja",
+      "vanära",
+      "äganderätt",
+      "vantro",
+      "vanskötsel"
+    ],
+    "correctIndex": 4,
+    "explain": "Vanhävd betyder vanskötsel eller försummelse, särskilt av jord, skog eller byggnader: ”de gamla ängarna har vuxit igen genom vanhävd”. Hävd betyder här brukande och skötsel av mark, och förledet van- anger att det görs dåligt, som i vanvård. Gammal sedvänja och äganderätt bygger på andra betydelser av hävd, medan vanära betyder skam och vantro betyder vidskepelse.",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Förklaringen: ”vantro betyder vidskepelse” är missvisande; SAOL/SAOB ger ”falsk tro; otro” (vidskepelse är bara ett medförekommande ord) och ”otro” är den gängse betydelsen; skriv ”otro” eller stryk glossen."
+  },
+  {
+    "id": "ovn-ord-017",
+    "kind": "ord",
+    "prompt": "Vad betyder ”lägga sordin på”?",
+    "options": [
+      "dämpa",
+      "sörja över",
+      "skylla på",
+      "sätta prägel på",
+      "ta initiativ till"
+    ],
+    "correctIndex": 0,
+    "explain": "Att lägga sordin på något är att dämpa det, till exempel en stämning eller en glädje: ”beskedet lade sordin på firandet”. Uttrycket kommer från musiken, där en sordin är en dämpare på ett instrument. Sörja över liknar sordin bara till ljudet, och skylla på, sätta prägel på och ta initiativ till har inget med dämpning att göra.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-018",
+    "kind": "ord",
+    "prompt": "Vad betyder ”dementera”?",
+    "options": [
+      "bekräfta",
+      "läcka",
+      "offentligt förneka",
+      "spekulera",
+      "bli förvirrad"
+    ],
+    "correctIndex": 2,
+    "explain": "Att dementera är att offentligt förneka en uppgift eller ett rykte: ”ministern dementerade uppgifterna om sin avgång”. Bekräfta är motsatsen. Läcka och spekulera hör till samma nyhetsvärld men betyder att föra ut hemliga uppgifter respektive att gissa, och bli förvirrad bygger på en felaktig koppling till ordet dement.",
+    "verification": "disagreed",
+    "verificationNote": "Distraktorn ”bekräfta” är den uppenbara motsatsen till ”offentligt förneka” (förklaringen säger det själv) och pekar ut paret; byt mot en distraktor som inte är en motsats."
+  },
+  {
+    "id": "ovn-ord-019",
+    "kind": "ord",
+    "prompt": "Vad betyder ”sinnrik”?",
+    "options": [
+      "sinnlig",
+      "rikt utsmyckad",
+      "känslosam",
+      "fyndig",
+      "lättretlig"
+    ],
+    "correctIndex": 3,
+    "explain": "Sinnrik betyder fyndig eller uppfinningsrik och används ofta om konstruktioner och lösningar: ”ett sinnrikt system av slussar och kanaler”. Sinnlig liknar ordet men handlar om sinnena och njutning, och känslosam och lättretlig beskriver sinnelag, inte förmågan att hitta på smarta lösningar. Rikt utsmyckad bygger på en felaktig koppling till rik.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-020",
+    "kind": "ord",
+    "prompt": "Vad betyder ”usurpator”?",
+    "options": [
+      "ockrare",
+      "tronrövare",
+      "uppviglare",
+      "tronarvinge",
+      "landsförrädare"
+    ],
+    "correctIndex": 1,
+    "explain": "En usurpator är en person som utan rätt har tagit makten, särskilt kungamakten, alltså en tronrövare: ”usurpatorn lät fängsla den rättmätige kungen”. Ockrare betecknar i stället den som lånar ut pengar mot orimligt hög ränta. En uppviglare hetsar till uppror och en landsförrädare sviker sitt land, medan en tronarvinge tvärtom har laglig rätt till tronen.",
+    "verification": "agreed"
+  }
+]
