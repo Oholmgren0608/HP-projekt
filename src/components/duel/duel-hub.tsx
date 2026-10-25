@@ -143,7 +143,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
   if (!user) {
     return (
       <div className="mx-auto max-w-xl space-y-6 text-center">
-        <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <p className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Duellera i realtid
         </p>
         <p className="text-[var(--ink-muted)]">
@@ -181,10 +181,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
   return (
     <div className="space-y-8 sm:space-y-10">
       <div>
-        <p className="text-xs font-medium text-[var(--brand)]">
-          PvP
-        </p>
-        <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+        <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Frågedueller
         </h1>
         <p className="mt-2 max-w-xl text-[var(--ink-muted)]">
@@ -245,7 +242,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
           onClick={() => void handleStartBot()}
         />
         <div className="flex flex-col rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
-          <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+          <h3 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             Privat duell
           </h3>
           <p className="mt-1 text-sm text-[var(--ink-muted)]">
@@ -282,7 +279,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
       <section className="grid gap-6 lg:grid-cols-2">
         {/* Topplista */}
         <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
-          <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+          <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             Topplista
           </h2>
           {profile === null && !error ? (
@@ -318,7 +315,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
         {/* Historik */}
         <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
-          <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+          <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             Matchhistorik
           </h2>
           {profile === null && !error ? (
@@ -349,7 +346,7 @@ function StatCard({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
-      <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
+      <p className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl tabular-nums text-[var(--ink)]">
         {value}
       </p>
     </div>
@@ -371,7 +368,7 @@ function ModeCard({
 }) {
   return (
     <div className="flex flex-col rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
-      <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+      <h3 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
         {title}
       </h3>
       <p className="mt-1 flex-1 text-sm text-[var(--ink-muted)]">{description}</p>

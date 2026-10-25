@@ -159,7 +159,7 @@ export function PracticeSession({
           <p className="text-xs font-medium text-[var(--brand)]">
             Vecka {week} · {kindLabels}
           </p>
-          <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+          <h3 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             {task.title}
           </h3>
           <p className="mt-1 text-sm text-[var(--ink-muted)]">{task.detail}</p>
@@ -237,7 +237,7 @@ export function PracticeSession({
         <div className="mt-5 space-y-5">
           <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5">
             <p className="text-sm text-[var(--ink-muted)]">Resultat</p>
-            <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
+            <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
               {score.correct}/{score.total}
               <span className="ml-2 text-xl text-[var(--ink-muted)]">
                 ({score.total ? Math.round((score.correct / score.total) * 100) : 0} %)
@@ -413,7 +413,7 @@ function ReflectForm({
 
   return (
     <div className="mt-5 space-y-5">
-      <h4 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">{title}</h4>
+      <h4 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">{title}</h4>
       {prompts.map((prompt, i) => (
         <label key={prompt} className="block space-y-2">
           <span className="text-sm font-medium text-[var(--ink)]">

@@ -177,10 +177,8 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
 
   return (
     <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6">
-      <p className="text-xs font-medium text-[var(--brand)]">
-        {duelModeLabel(mode)}
-      </p>
-      <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+      <p className="text-[13px] text-[var(--ink-muted)]">{duelModeLabel(mode)}</p>
+      <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
         {timedOut ? "Ingen motståndare hittades ännu" : "Söker motståndare…"}
       </h2>
 
@@ -196,7 +194,7 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
             Sökt i över {COUNTDOWN_SECONDS} sekunder
           </p>
         ) : (
-          <p className="font-[family-name:var(--font-display)] text-4xl tabular-nums text-[var(--ink)]">
+          <p className="font-[family-name:var(--font-display)] font-semibold text-4xl tabular-nums text-[var(--ink)]">
             {secondsLeft}
             <span className="text-base font-normal text-[var(--ink-muted)]"> s</span>
           </p>

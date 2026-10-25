@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { Lock } from "lucide-react";
+import { Check, Lock } from "lucide-react";
 import { Disclosure } from "@/components/disclosure";
 import { ACHIEVEMENTS } from "@/lib/gamification/config";
 import { useGamification } from "@/lib/gamification/provider";
@@ -62,10 +62,10 @@ export function AchievementsPanel({ className }: { className?: string }) {
               <span
                 className={cn(
                   "flex size-10 items-center justify-center rounded-full text-xl",
-                  unlocked ? "bg-[var(--card)] shadow-soft" : "bg-[var(--mist)] grayscale",
+                  unlocked ? "bg-[var(--success-soft)]" : "bg-[var(--mist)]",
                 )}
               >
-                {unlocked ? a.emoji : <Lock className="size-4 text-[var(--ink-muted)]" />}
+                {unlocked ? <Check className="size-4 text-[var(--success-ink)]" /> : <Lock className="size-4 text-[var(--ink-muted)]" />}
               </span>
               <span className={cn("text-xs font-semibold", unlocked ? "text-[var(--ink)]" : "text-[var(--ink-muted)]")}>
                 {unlocked ? a.title : "Låst"}

@@ -25,10 +25,7 @@ export function PlanView() {
     return (
       <div className="space-y-10">
         <div>
-          <p className="text-xs font-medium text-[var(--brand)]">
-            Plan
-          </p>
-          <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+          <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
             Ingen veckoplan än
           </h1>
           <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
@@ -70,10 +67,10 @@ export function PlanView() {
     <div className="space-y-10">
       {!sessionOpen ? (
         <div>
-          <p className="text-xs font-medium text-[var(--brand)]">
+          <p className="text-[13px] text-[var(--ink-muted)]">
             {profile.weeksUntilExam} veckor · {profile.hoursPerWeek} h/vecka
           </p>
-          <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+          <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
             Veckoplan
           </h1>
           <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
@@ -150,7 +147,7 @@ export function PlanView() {
           </Disclosure>
 
           <section>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+            <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
               Delprov — vad du gör med varje
             </h2>
             <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">

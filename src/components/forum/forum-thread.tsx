@@ -215,7 +215,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
           <span className="text-[var(--ink-muted)]">{questionId}</span>
         </div>
 
-        <h1 className="mt-2 font-[family-name:var(--font-display)] text-2xl tracking-tight text-[var(--ink)] sm:text-3xl">
+        <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl tracking-tight text-[var(--ink)] sm:text-3xl">
           {titel}
         </h1>
 

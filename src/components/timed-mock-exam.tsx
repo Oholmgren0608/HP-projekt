@@ -112,7 +112,7 @@ export function TimedMockExam() {
         <p className="text-xs font-medium text-[var(--brand)]">
           Mini-prov · appens egna frågor
         </p>
-        <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <h3 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Tidsatt provpass
         </h3>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
@@ -207,7 +207,7 @@ export function TimedMockExam() {
       <p className="text-xs font-medium text-[var(--brand)]">
         Genomgång
       </p>
-      <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
+      <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
         {score.correct}/{score.total}
         <span className="ml-2 text-xl text-[var(--ink-muted)]">
           ({score.total ? Math.round((score.correct / score.total) * 100) : 0} %)

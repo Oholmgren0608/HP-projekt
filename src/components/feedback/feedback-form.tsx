@@ -124,7 +124,7 @@ export function FeedbackForm() {
           aria-live="polite"
           className="rounded-[10px] border border-[var(--line)] bg-card/75 p-6 shadow-soft sm:p-8"
         >
-          <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+          <p className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             ✓ {channel.successTitle}
           </p>
           <p className="mt-2 text-[var(--ink-muted)]">{channel.successBody}</p>
@@ -144,10 +144,7 @@ export function FeedbackForm() {
   return (
     <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8">
       <header>
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Hjälp & feedback
-        </p>
-        <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+        <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Berätta vad du tycker
         </h1>
         <p className="mt-3 text-[var(--ink-muted)]">
@@ -186,7 +183,7 @@ export function FeedbackForm() {
         onSubmit={handleSubmit}
         className="space-y-6 rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6"
       >
-        <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           {channel.heading}
         </h2>
 

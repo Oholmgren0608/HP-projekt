@@ -89,10 +89,7 @@ export function OfficialExamsBrowser() {
 
       {/* Sekundär: original-PDF:er */}
       <section className="rounded-[10px] border border-[var(--line)] bg-[var(--paper)] p-5 sm:p-6">
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Original-PDF:er
-        </p>
-        <h2 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <h2 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Officiella provhäften och facit
         </h2>
         <div className="mt-3 rounded-lg border border-[var(--line)] bg-card/60 px-4 py-3 text-sm text-[var(--ink-muted)]">
@@ -187,7 +184,7 @@ export function OfficialExamsBrowser() {
                       <>
                         <div className="flex flex-wrap items-end justify-between gap-3">
                           <div>
-                            <h3 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+                            <h3 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
                               {activePdfExam.title}
                             </h3>
                             <p className="text-sm text-[var(--ink-muted)]">

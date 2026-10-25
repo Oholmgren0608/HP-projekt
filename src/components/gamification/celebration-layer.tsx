@@ -15,12 +15,12 @@ import {
   subscribeGamification,
   type GameNotification,
 } from "@/lib/gamification/engine";
+import { Check } from "lucide-react";
 import { play } from "@/lib/sound";
 
 type Toast = {
   id: number;
-  emoji: string;
-  title: string;
+    title: string;
   desc: string;
 };
 
@@ -69,7 +69,7 @@ export function CelebrationLayer() {
         const def = ACHIEVEMENTS.find((a) => a.id === next.id);
         if (def) {
           play("achievement");
-          showToast({ emoji: def.emoji, title: `Achievement: ${def.title}`, desc: def.desc });
+          showToast({ title: `Prestation: ${def.title}`, desc: def.desc });
         }
         finish();
         break;
@@ -79,7 +79,6 @@ export function CelebrationLayer() {
         if (def) {
           play("questdone");
           showToast({
-            emoji: def.emoji,
             title: "Uppdrag klart",
             desc: `${def.label} · +${def.xp} XP`,
           });
@@ -90,7 +89,6 @@ export function CelebrationLayer() {
       case "streak": {
         play("streak");
         showToast({
-          emoji: "🔥",
           title: `${next.count} dagar i rad!`,
           desc: "Din streak växer — fortsätt så!",
         });
@@ -174,7 +172,7 @@ export function CelebrationLayer() {
               className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-[10px] border border-[var(--line-strong)] bg-[var(--card)] p-3.5 text-left shadow-pop"
             >
               <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-xl">
-                {t.emoji}
+                <Check className="size-5 text-[var(--brand)]" />
               </span>
               <span className="min-w-0">
                 <span className="block truncate text-sm font-semibold text-[var(--ink)]">{t.title}</span>

@@ -93,7 +93,7 @@ export function DailySrsReview() {
           <p className="text-xs font-medium text-[var(--ink-muted)]">
             Dagens repetition
           </p>
-          <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+          <h3 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             {cards.length} felkort att repetera
           </h3>
         </div>

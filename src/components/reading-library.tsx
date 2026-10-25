@@ -98,7 +98,7 @@ export function ReadingLibrary() {
           <p className="text-xs font-medium text-[var(--brand)]">
             {text.kind} · ~{text.minutes} min
           </p>
-          <h3 className="mt-2 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+          <h3 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
             {text.title}
           </h3>
           <p className="mt-2 text-[var(--ink-muted)]">{text.teaser}</p>

@@ -25,10 +25,7 @@ export function ResultsView() {
   return (
     <div className="space-y-10">
       <div>
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Resultat
-        </p>
-        <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+        <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           {plan ? "Poäng och prognos" : "Mata in dina HP-resultat"}
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
@@ -49,7 +46,7 @@ export function ResultsView() {
       <StudyTimeNotice />
 
       <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Mata in dina HP-resultat
         </h2>
         <div className="mt-6">
@@ -136,7 +133,7 @@ function PlanBreakdown({ plan }: { plan: GeneratedPlan }) {
               key={t.label}
               className="rounded-[10px] border border-[var(--line)] bg-card/70 px-3 py-4 text-center"
             >
-              <div className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+              <div className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
                 {t.pct}%
               </div>
               <div className="mt-1 text-sm font-medium text-[var(--ink)]">

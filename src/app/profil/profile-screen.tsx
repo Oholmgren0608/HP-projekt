@@ -252,7 +252,7 @@ function UsernameEditor() {
   if (!showForm) {
     return (
       <div className="flex items-center gap-2">
-        <span className="font-[family-name:var(--font-display)] text-2xl tracking-tight text-[var(--ink)]">
+        <span className="font-[family-name:var(--font-display)] font-semibold text-2xl tracking-tight text-[var(--ink)]">
           {username}
         </span>
         <button
@@ -376,7 +376,7 @@ export function ProfileScreen() {
   if (!user) {
     return (
       <div className="mx-auto max-w-xl space-y-6 text-center">
-        <h1 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+        <h1 className="font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
           Din profil
         </h1>
         <p className="text-[var(--ink-muted)]">
@@ -433,10 +433,7 @@ export function ProfileScreen() {
   return (
     <div className="space-y-8 sm:space-y-10">
       <div>
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Konto
-        </p>
-        <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+        <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Din profil
         </h1>
       </div>
@@ -459,7 +456,7 @@ export function ProfileScreen() {
 
       {/* 2. Träningsstatistik */}
       <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           Träningsstatistik
         </h2>
         <div className="mt-4 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -487,7 +484,7 @@ export function ProfileScreen() {
 
       {/* 3. Duel-statistik */}
       <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           Duell-statistik
         </h2>
         <div className="mt-4 grid gap-5 sm:gap-6 sm:grid-cols-4">
@@ -526,7 +523,7 @@ export function ProfileScreen() {
 
       {/* 4. Kontoåtgärder */}
       <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           Kontoåtgärder
         </h2>
         <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -580,7 +577,7 @@ function LocalDataCard({ signedIn }: { signedIn: boolean }) {
 
   return (
     <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
-      <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+      <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
         Lokal data på den här enheten
       </h2>
       <p className="mt-2 text-sm text-[var(--ink-muted)]">
@@ -619,7 +616,7 @@ function HelpAndFeedbackCard() {
 
   return (
     <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
-      <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+      <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
         Hjälp & feedback
       </h2>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -644,7 +641,7 @@ function StatCard({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
-      <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
+      <p className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl tabular-nums text-[var(--ink)]">
         {value}
       </p>
     </div>

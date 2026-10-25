@@ -238,7 +238,7 @@ export function ScoreForm() {
       </div>
 
       <div>
-        <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+        <h3 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           Råpoäng per delprov
         </h3>
         <p className="mt-1 text-sm text-[var(--ink-muted)]">

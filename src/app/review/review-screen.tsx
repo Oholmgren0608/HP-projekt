@@ -272,7 +272,7 @@ export function ReviewScreen() {
   if (phase === "notconfigured") {
     return (
       <div className="mx-auto max-w-xl py-16 text-center">
-        <h1 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+        <h1 className="font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
           Granska utkast
         </h1>
         <p className="mt-4 text-[var(--ink-muted)]">
@@ -287,7 +287,7 @@ export function ReviewScreen() {
   if (phase === "signin") {
     return (
       <div className="mx-auto max-w-xl py-16 text-center">
-        <h1 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+        <h1 className="font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
           Granska utkast
         </h1>
         <p className="mt-4 text-[var(--ink-muted)]">
@@ -303,7 +303,7 @@ export function ReviewScreen() {
   if (phase === "forbidden") {
     return (
       <div className="mx-auto max-w-xl py-16 text-center">
-        <h1 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+        <h1 className="font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
           Ingen behörighet
         </h1>
         <p className="mt-4 text-[var(--ink-muted)]">
@@ -323,7 +323,7 @@ export function ReviewScreen() {
   if (phase === "error") {
     return (
       <div className="mx-auto max-w-xl py-16 text-center">
-        <h1 className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+        <h1 className="font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
           Granska utkast
         </h1>
         <p className="mt-4 text-[var(--ink-muted)]">Kunde inte läsa utkast just nu. Försök igen.</p>
@@ -346,10 +346,7 @@ export function ReviewScreen() {
     <div className="space-y-8 sm:space-y-10">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <p className="text-xs font-medium text-[var(--brand)]">
-            Administration
-          </p>
-          <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+          <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
             Granska frågor
           </h1>
           <p className="mt-2 text-[var(--ink-muted)]">

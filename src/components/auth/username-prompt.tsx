@@ -44,7 +44,7 @@ export function UsernamePrompt() {
         aria-label="Välj ett användarnamn"
         className="relative w-full max-w-sm rounded-[10px] border border-[var(--line)] bg-card p-6"
       >
-        <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           Välj ett användarnamn
         </h2>
         <p className="mt-1.5 text-sm text-[var(--ink-muted)]">

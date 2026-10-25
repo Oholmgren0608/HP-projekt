@@ -74,17 +74,14 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
 
   return (
     <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6">
-      <p className="text-xs font-medium text-[var(--brand)]">
-        Privat duell
-      </p>
-      <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+      <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
         Väntar på motståndare…
       </h2>
 
       <div className="mt-6 space-y-4">
         <div>
           <p className="text-sm text-[var(--ink-muted)]">Matchkod</p>
-          <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
+          <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
             {code}
           </p>
         </div>

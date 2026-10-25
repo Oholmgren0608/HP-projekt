@@ -67,7 +67,7 @@ export function DashboardHome() {
             <p className="text-[13px] font-medium text-[var(--ink-muted)]">
               {greeting()} · {plan ? "Dagens pass" : "Ditt HP-läge"}
             </p>
-            <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+            <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
               {plan ? "Vad du ska göra nu" : "Kom igång med din HP-plan"}
             </h1>
             {profile && summary ? (
@@ -91,7 +91,7 @@ export function DashboardHome() {
         <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
             <div className="max-w-lg">
-              <h2 className="font-[family-name:var(--font-display)] text-lg">
+              <h2 className="font-[family-name:var(--font-display)] font-semibold text-lg">
                 Ny här? Kom igång på 2 minuter
               </h2>
               <p className="mt-1 text-[var(--ink-muted)]">
@@ -133,7 +133,7 @@ export function DashboardHome() {
           <div className="grid gap-5 sm:gap-6 sm:grid-cols-2">
             <div className="rounded-[10px] border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
               <p className="text-sm font-semibold text-[var(--ink-muted)]">Kvant / verbal</p>
-              <p className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+              <p className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
                 {formatNorm(profile.previousQuant)} · {formatNorm(profile.previousVerbal)}
               </p>
             </div>
@@ -176,7 +176,7 @@ function NextTaskCard({ next }: { next: ReturnType<typeof findNextIncomplete> })
               <Timer className="size-3" />~{next.task.minutes} min
             </span>
           </p>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+          <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             {next.task.title}
           </h2>
           <p className="mt-2 font-medium text-[var(--ink-muted)]">{next.task.detail}</p>
@@ -198,7 +198,7 @@ function NextTaskCard({ next }: { next: ReturnType<typeof findNextIncomplete> })
         </>
       ) : (
         <>
-          <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+          <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             Alla uppgifter är klara
           </h2>
           <p className="mt-2 font-medium text-[var(--ink-muted)]">

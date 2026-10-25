@@ -93,10 +93,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
     <div className="space-y-8 sm:space-y-10">
       {/* Header */}
       <div>
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Välj antal frågor
-        </p>
-        <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+        <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           {info.title}
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">{info.description}</p>
@@ -205,7 +202,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
               </div>
             </div>
 
-            <p className="mt-4 font-[family-name:var(--font-display)] text-lg tabular-nums text-[var(--ink)]">
+            <p className="mt-4 font-[family-name:var(--font-display)] font-semibold text-lg tabular-nums text-[var(--ink)]">
               {effectiveCount} {effectiveCount === 1 ? "fråga" : "frågor"} · {limitText}
             </p>
           </div>
@@ -222,7 +219,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
 
       {/* Info */}
       <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-lg text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-lg text-[var(--ink)]">
           Om {info.label}
         </h2>
         <p className="mt-3 text-sm text-[var(--ink-muted)] leading-relaxed">

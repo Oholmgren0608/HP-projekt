@@ -262,7 +262,7 @@ export function WeekTracker({
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <p className="text-sm text-[var(--ink-muted)]">Totalt genomfört</p>
-            <p className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)]">
+            <p className="font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)]">
               {done}/{total}{" "}
               <span className="text-lg text-[var(--ink-muted)]">({percent}%)</span>
             </p>
@@ -314,7 +314,7 @@ export function WeekTracker({
             <p className="text-xs font-medium text-[var(--brand)]">
               {plan.phase} · Vecka {plan.week}
             </p>
-            <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+            <h3 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
               {plan.theme}
             </h3>
             <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">{plan.focus}</p>

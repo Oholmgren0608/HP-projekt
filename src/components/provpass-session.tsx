@@ -117,10 +117,7 @@ export function ProvpassSession() {
   if (phase === "intro") {
     return (
       <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Simulera provpass
-        </p>
-        <h2 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <h2 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Provpass i provets tempo
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
@@ -163,7 +160,7 @@ export function ProvpassSession() {
             Förlängd provtid (dyslexi) — 80 minuter
           </label>
 
-          <p className="mt-4 font-[family-name:var(--font-display)] text-lg tabular-nums text-[var(--ink)]">
+          <p className="mt-4 font-[family-name:var(--font-display)] font-semibold text-lg tabular-nums text-[var(--ink)]">
             {plannedCount} av {PASS_QUESTIONS} frågor · {Math.round(limitSeconds / 60)} minuter
           </p>
           {plannedCount < PASS_QUESTIONS ? (
@@ -299,7 +296,7 @@ export function ProvpassSession() {
       <p className="text-xs font-medium text-[var(--brand)]">
         Provpass · {BLOCK_LABELS[settings.block]} · genomgång
       </p>
-      <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
+      <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
         {score.correct}/{score.total}
         <span className="ml-2 text-xl text-[var(--ink-muted)]">
           ({score.total ? Math.round((score.correct / score.total) * 100) : 0} %)

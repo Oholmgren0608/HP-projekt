@@ -66,7 +66,7 @@ export function PasswordRecoveryPrompt() {
       >
         <h2
           id={`${uid}-title`}
-          className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]"
+          className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]"
         >
           {done ? "Lösenordet är bytt" : "Välj ett nytt lösenord"}
         </h2>

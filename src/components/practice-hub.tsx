@@ -10,7 +10,6 @@ export type SubTestInfo = {
   title: string;
   description: string;
   isReading: boolean; // true for LÄS and ELF only
-  icon: string;
 };
 
 // Names/labels come from src/lib/subtests.ts (single source of truth), keyed
@@ -38,7 +37,6 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     title: nameFor("ord"),
     description: "Synonymer och betydelser.",
     isReading: false,
-    icon: "📚",
   },
   {
     id: "mek",
@@ -46,7 +44,6 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     title: nameFor("mek"),
     description: "Konnektorer och ordval i meningar.",
     isReading: false,
-    icon: "✏️",
   },
   {
     id: "las",
@@ -54,7 +51,6 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     title: nameFor("las"),
     description: "Svenska texter med frågor.",
     isReading: true,
-    icon: "📖",
   },
   {
     id: "elf",
@@ -62,7 +58,6 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     title: nameFor("elf"),
     description: "Engelska texter med frågor.",
     isReading: true,
-    icon: "🌍",
   },
   {
     id: "xyz",
@@ -70,7 +65,6 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     title: nameFor("xyz"),
     description: "Räkning, algebra och geometri.",
     isReading: false,
-    icon: "🧮",
   },
   {
     id: "kva",
@@ -78,7 +72,6 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     title: nameFor("kva"),
     description: "A, B eller lika stora?",
     isReading: false,
-    icon: "🔢",
   },
   {
     id: "nog",
@@ -86,7 +79,6 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     title: nameFor("nog"),
     description: "Räcker informationen för att lösa uppgiften?",
     isReading: false,
-    icon: "🧩",
   },
   {
     id: "dtk",
@@ -94,7 +86,6 @@ export const PRACTICE_OPTIONS: SubTestInfo[] = [
     title: nameFor("dtk"),
     description: "Diagram, tabeller och kartor.",
     isReading: false,
-    icon: "📈",
   },
 ];
 
@@ -103,10 +94,7 @@ export function PracticeHub() {
     <div className="space-y-8 sm:space-y-10">
       {/* Header */}
       <div>
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Övning
-        </p>
-        <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+        <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Välj delprov att öva på
         </h1>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
@@ -124,10 +112,7 @@ export function PracticeHub() {
           >
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs font-medium text-[var(--brand)]">
-                  {subtest.label}
-                </p>
-                <h2 className="mt-2 font-[family-name:var(--font-display)] text-lg text-[var(--ink)] group-hover:text-[var(--brand)]">
+                <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-lg text-[var(--ink)] group-hover:text-[var(--brand)]">
                   {subtest.title}
                 </h2>
               </div>
@@ -147,10 +132,7 @@ export function PracticeHub() {
           href="/ova/flashcards"
           className="rounded-[10px] border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card sm:p-6"
         >
-          <p className="text-xs font-medium text-[var(--brand)]">
-            Verktyg
-          </p>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+          <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             ORD-Flashcards
           </h2>
           <p className="mt-2 text-sm text-[var(--ink-muted)]">
@@ -166,10 +148,7 @@ export function PracticeHub() {
           href="/bibliotek"
           className="rounded-[10px] border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card sm:p-6"
         >
-          <p className="text-xs font-medium text-[var(--brand)]">
-            Resurser
-          </p>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+          <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             Läsbibliotek
           </h2>
           <p className="mt-2 text-sm text-[var(--ink-muted)]">

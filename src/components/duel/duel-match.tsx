@@ -607,7 +607,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   if (phase === "error") {
     return (
       <div className="mx-auto max-w-lg rounded-[10px] border border-[var(--line)] bg-card/80 p-8 text-center">
-        <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <p className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Något gick fel
         </p>
         <p className="mt-2 text-[var(--ink-muted)]">{error}</p>
@@ -733,10 +733,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
 
       {phase === "waiting" ? (
         <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6 text-center">
-          <p className="text-xs font-medium text-[var(--brand)]">
-            Klar!
-          </p>
-          <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+          <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             Väntar på motståndaren…
           </h2>
           <p className="mt-2 text-[var(--ink-muted)]">
@@ -877,7 +874,7 @@ function PlayerCard({
       <p className="text-xs text-[var(--ink-muted)]">
         {elo != null ? `ELO ${elo}` : "—"}
       </p>
-      <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
+      <p className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl tabular-nums text-[var(--ink)]">
         {correct === null ? "—" : correct}
         {correct !== null ? (
           <span className="text-sm text-[var(--ink-muted)]"> rätt</span>
@@ -934,9 +931,6 @@ function ResultView({
 
   return (
     <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6 text-center">
-      <p className="text-xs font-medium text-[var(--brand)]">
-        {duelModeLabel(match.mode)}
-      </p>
       <h2 className={`mt-2 font-[family-name:var(--font-display)] text-3xl ${tone}`}>
         {title}
       </h2>
@@ -944,14 +938,14 @@ function ResultView({
       <div className="mt-5 flex items-center justify-center gap-4">
         <div className="flex-1 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-3">
           <p className="truncate text-xs text-[var(--ink-muted)]">Du</p>
-          <p className="font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
+          <p className="font-[family-name:var(--font-display)] font-semibold text-2xl tabular-nums text-[var(--ink)]">
             {myScore ?? "–"}
           </p>
         </div>
         <span className="text-lg font-medium text-[var(--ink-muted)]">–</span>
         <div className="flex-1 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-3">
           <p className="truncate text-xs text-[var(--ink-muted)]">{oppName}</p>
-          <p className="font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
+          <p className="font-[family-name:var(--font-display)] font-semibold text-2xl tabular-nums text-[var(--ink)]">
             {oppScore ?? "–"}
           </p>
         </div>

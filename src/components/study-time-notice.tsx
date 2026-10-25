@@ -61,7 +61,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
           <p className="text-xs text-[var(--ink-muted)]">
             Rekommenderad tid
           </p>
-          <p className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+          <p className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             {recommendedMin}–{recommendedMax}{" "}
             <span className="text-base text-[var(--ink-muted)]">h/vecka</span>
           </p>

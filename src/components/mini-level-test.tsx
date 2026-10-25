@@ -167,10 +167,7 @@ export function MiniLevelTest() {
 
   const heading = (
     <div>
-      <p className="text-xs font-medium text-[var(--brand)]">
-        Nivåtest
-      </p>
-      <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+      <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
         Var står du idag?
       </h1>
     </div>
@@ -181,7 +178,7 @@ export function MiniLevelTest() {
       <div className="space-y-8 sm:space-y-10">
         {heading}
         <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+          <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             Ny på HP — eller rostig?
           </h2>
           <div className="mt-3 space-y-3 text-[15px] leading-relaxed text-[var(--ink-muted)]">
@@ -262,7 +259,7 @@ export function MiniLevelTest() {
             </div>
             {timerEnabled ? (
               <>
-                <p className="mt-3 font-[family-name:var(--font-display)] text-xl tabular-nums text-[var(--ink)]">
+                <p className="mt-3 font-[family-name:var(--font-display)] font-semibold text-xl tabular-nums text-[var(--ink)]">
                   {totalQuestions} frågor · {recommendedMinutes} minuter
                 </p>
                 <p className="mt-1 text-sm text-[var(--ink-muted)]">
@@ -271,7 +268,7 @@ export function MiniLevelTest() {
               </>
             ) : (
               <>
-                <p className="mt-3 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
+                <p className="mt-3 font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
                   Ingen tidsgräns
                 </p>
                 <p className="mt-1 text-sm text-[var(--ink-muted)]">
@@ -431,7 +428,7 @@ export function MiniLevelTest() {
               key={box.label}
               className="rounded-[10px] border border-[var(--line)] bg-card/70 px-4 py-4 text-center"
             >
-              <div className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+              <div className="font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
                 {box.value}
               </div>
               <div className="mt-1 text-sm font-medium text-[var(--ink)]">{box.label}</div>
@@ -446,7 +443,7 @@ export function MiniLevelTest() {
       </section>
 
       <section>
-        <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Så här gick delproven
         </h2>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
@@ -480,7 +477,7 @@ export function MiniLevelTest() {
       </section>
 
       <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Skapa din veckoplan
         </h2>
         <p className="mt-2 text-[var(--ink-muted)]">
@@ -530,7 +527,7 @@ export function MiniLevelTest() {
       </section>
 
       <section>
-        <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Genomgång
         </h2>
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">

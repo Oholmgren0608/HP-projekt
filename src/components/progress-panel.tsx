@@ -87,13 +87,13 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
     <div className="flex flex-wrap items-end gap-8">
       <div>
         <p className="text-sm text-[var(--ink-muted)]">Inmatad norm</p>
-        <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
+        <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
           {savedOverall !== null ? formatNorm(savedOverall) : "—"}
         </p>
       </div>
       <div>
         <p className="text-sm text-[var(--ink-muted)]">Uppskattning från övningar</p>
-        <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
+        <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
           {estimated !== null ? formatNorm(estimated) : "—"}
         </p>
       </div>

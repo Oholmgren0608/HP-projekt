@@ -110,10 +110,7 @@ export function ForumHub() {
   return (
     <div className="space-y-7">
       <header className="space-y-3">
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Frågeforum
-        </p>
-        <h1 className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
+        <h1 className="font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
           Förstå varför svaret är rätt
         </h1>
         <p className="max-w-2xl text-[var(--ink-muted)]">
@@ -242,13 +239,10 @@ export function ForumHub() {
             <section className="rounded-[10px] border border-[var(--line)] bg-card p-5">
               <h2 className="text-sm font-medium text-[var(--ink)]">Ditt rykte</h2>
               <p className="mt-2 flex items-baseline gap-2">
-                <span className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
+                <span className="font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
                   {myReputation.points}
                 </span>
                 <span className="text-sm text-[var(--ink-muted)]">poäng</span>
-                <span aria-hidden title={reputationLevel(myReputation.points).label}>
-                  {reputationLevel(myReputation.points).emoji}
-                </span>
               </p>
               <p className="mt-1 text-xs text-[var(--ink-muted)]">
                 {reputationLevel(myReputation.points).label} · {myReputation.upvotes_received} uppröster ·{" "}
@@ -327,9 +321,7 @@ export function ForumHub() {
                           {index + 1}
                         </span>
                         <span className="truncate text-[var(--ink)]">{row.display_name}</span>
-                        <span aria-hidden title={level.label}>
-                          {level.emoji}
-                        </span>
+                        <span className="shrink-0 text-xs text-[var(--ink-muted)]">{level.label}</span>
                       </span>
                       <span className="shrink-0 font-medium tabular-nums text-[var(--ink-soft)]">
                         {row.points}
