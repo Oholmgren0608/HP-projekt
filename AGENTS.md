@@ -38,8 +38,7 @@ frontend/backend split, Express server, or Prisma layer.
 
 - Make schema changes as new numbered SQL migrations in `supabase/migrations`
   (next is `0018_<name>.sql`). Never edit already-applied migrations
-  (`npm run db -- migration list` shows which ones are; `0001`–`0016` are,
-  `0017_fragebank_skydd_och_flaggor` is written but not yet applied).
+  (`npm run db -- migration list` shows which ones are; `0001`–`0017` are).
 - Apply migrations with the Supabase CLI via the wrapper in `scripts/db.ts`
   (`npm run db:dry` först, sedan `npm run db:push`). Den läser
   `SUPABASE_DB_PASSWORD` och `SUPABASE_POOLER_URL` ur `.env.local` och skriver
