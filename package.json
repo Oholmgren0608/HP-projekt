@@ -16,7 +16,9 @@
     "fragebank:validate": "npx tsx scripts/fragebank/validate.ts",
     "fragebank:kontroll": "npx tsx scripts/fragebank/second-check.ts",
     "fragebank:upload": "npx tsx scripts/fragebank/upload.ts",
-    "fragebank:export": "npx tsx scripts/fragebank/export-fallback.ts"
+    "fragebank:export": "npx tsx scripts/fragebank/export-fallback.ts",
+    "fragebank:balansera": "npx tsx scripts/fragebank/balance-legacy.ts",
+    "fragebank:aldre": "npx tsx scripts/fragebank/legacy-check.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

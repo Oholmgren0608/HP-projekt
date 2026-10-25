@@ -36,6 +36,8 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 - `npm run lint` — ESLint
 - `npm run fragebank:validate` / `fragebank:kontroll` / `fragebank:upload` /
   `fragebank:export` — arbetsflödet för nya övningsfrågor (se nedan)
+- `npm run fragebank:aldre` / `fragebank:balansera` — andra kontrollen och
+  jämnare svarspositioner för de äldre frågorna (se nedan)
 
 ## Frågebanken
 
@@ -68,6 +70,21 @@ användare har öppna felrapporter dras frågan tillbaka till utkast, och
 rapporterna visas på `/review` (vyn "Att granska" visar även publicerade
 frågor med enstaka rapporter). Rapporterna stängs när frågan publiceras igen
 eller markeras som hanterade.
+
+### De äldre frågorna
+
+De 146 frågor som fanns innan `content/ovningsfragor/` har gått igenom samma
+andra kontroll. Resultatet ligger i `content/aldre-fragor/andra-kontrollen.json`
+(121 ense, 25 oense). När migration `0017` är körd:
+
+1. `npm run fragebank:aldre -- apply --dry-run`, sedan utan `--dry-run`, skriver
+   resultatet till databasen. De oense frågorna syns under "Att granska" på
+   `/review` tillsammans med anteckningen om vad som är fel.
+2. `npm run fragebank:balansera -- --dry-run`, sedan utan flaggan, jämnar ut
+   rätt svars position i ORD, LÄS och ELF (i dag är rätt svar B i 21 av 24
+   ORD-frågor). Bara ordningen ändras. XYZ och de flesta DTK-frågor har tal
+   eller etiketter i stigande ordning och behöver nya distraktorer för hand.
+3. `npm run fragebank:export` så att reservbanken följer med.
 
 Provfrågor som importeras ur UHR:s prov (`scripts/import-prov`) är
 upphovsrättsskyddade. De används bara som förlagor och kan aldrig publiceras

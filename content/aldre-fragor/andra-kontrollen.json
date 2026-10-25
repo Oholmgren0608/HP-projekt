@@ -1,0 +1,611 @@
+[
+  {
+    "id": "dtk-1",
+    "verification": "agreed"
+  },
+  {
+    "id": "dtk-2",
+    "verification": "agreed"
+  },
+  {
+    "id": "dtk-3",
+    "verification": "agreed"
+  },
+  {
+    "id": "dtk-4",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. I förklaringen är '(motsvarande enheter)' innehållslöst - skriv 'miljoner kr'. 'i diagrammet' hänvisar till ett diagram som inte finns (underlaget är text; bildförklaringen visas inte i daglig repetition och forum) - skriv i stället att 35 och 40 är Z:s och X:s försäljning."
+  },
+  {
+    "id": "dtk-5",
+    "verification": "agreed"
+  },
+  {
+    "id": "dtk-6",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Faktafel i förklaringen: '25 miljoner motsvarar snarare skillnaden mellan X och en annan produkt' stämmer inte - X-Z = 5, X-Y = 15, Z-Y = 10; 25 är Y:s egen försäljning. Förklara felsvaren så (15 = X-Y, 10 = Z-Y, 25 = Y:s värde) i stället för det vaga '10 och 15 miljoner är för stora skillnader'. Mindre: frågan saknar 'åt' ('skiljer sig X och Z åt')."
+  },
+  {
+    "id": "dtk-7",
+    "verification": "agreed"
+  },
+  {
+    "id": "dtk-8",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. I förklaringen är '(motsvarande enheter)' innehållslöst - skriv 'miljoner kr' ('8 av totalt 30 miljoner kr')."
+  },
+  {
+    "id": "elf-1",
+    "verification": "agreed"
+  },
+  {
+    "id": "elf-2",
+    "verification": "agreed"
+  },
+  {
+    "id": "elf-3",
+    "verification": "agreed"
+  },
+  {
+    "id": "elf-4",
+    "verification": "agreed"
+  },
+  {
+    "id": "kva-1",
+    "verification": "agreed"
+  },
+  {
+    "id": "kva-2",
+    "verification": "agreed"
+  },
+  {
+    "id": "kva-3",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Förklaringens sista mening är obegriplig: 'så varken I är större eller II är större eller lika stora kan gälla generellt' - skriv t.ex. 'så varken I är större, II är större eller lika stora gäller för alla x > 0'."
+  },
+  {
+    "id": "kva-4",
+    "verification": "agreed"
+  },
+  {
+    "id": "kva-5",
+    "verification": "agreed"
+  },
+  {
+    "id": "kva-6",
+    "verification": "agreed"
+  },
+  {
+    "id": "kva-7",
+    "verification": "agreed"
+  },
+  {
+    "id": "kva-8",
+    "verification": "agreed"
+  },
+  {
+    "id": "las-1",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Fel i förklaringen: om alternativet ”Googling är den viktigaste färdigheten” står att det är en ”för smal och konkret tolkning”, men texten säger tvärtom att informationskompetens är ”mindre en fråga om snabb googling och mer om tålamod” – påståendet motsägs alltså av texten. Skriv om den meningen."
+  },
+  {
+    "id": "las-2",
+    "verification": "agreed"
+  },
+  {
+    "id": "las-3",
+    "verification": "agreed"
+  },
+  {
+    "id": "las-4",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Fel i förklaringen: meningen om alternativet ”Lägre krav på metod” är förvirrad och påstår något texten inte säger (att lägre metodkrav skulle vara en följd av snedvridet urval). Skriv t.ex. att texten inte nämner lägre krav på metod – den lyfter tvärtom metoddisciplin som en del av forskningens värde."
+  },
+  {
+    "id": "las-5",
+    "verification": "agreed"
+  },
+  {
+    "id": "las-6",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-1",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-2",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-3",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-4",
+    "verification": "disagreed",
+    "verificationNote": "Mindre: ”koncist kort” är en pleonasm (koncis betyder redan kort och kärnfull). Stryk ”kort” i meningen och gör alternativen till adjektiv (”onödig”, ”vag”, ”muntlig”, ”koncis”); anpassa förklaringens första mening."
+  },
+  {
+    "id": "mek-5",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-6",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-7",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-8",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-9",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-10",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-11",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-12",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-13",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-14",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-15",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-16",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-17",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Facit ”ambivalent” (kluven, både och) passar dåligt mot ledtråden ”varken entusiastisk eller avvisande” (ingetdera, dvs. likgiltig/avvaktande). ”indifferent” passar bättre och är bara fel på grund av det konstruerade tillägget ”på ett skämtsamt sätt”, som dessutom sticker ut som alternativ. Förklaringen avfärdar ”indifferent” som ”likgiltighet”, vilket är just vad ledtråden beskriver. Skriv om ledtråden till t.ex. ”delvis positiv, delvis tveksam”, byt distraktorn mot ett vanligt ord och uppdatera förklaringen."
+  },
+  {
+    "id": "mek-18",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-19",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-20",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-21",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-22",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Tvetydigt: texten saknar ledtråd, så ”både / och” och ”såväl / som” (som dessutom är synonymer) ger lika naturliga meningar som facit ”varken / eller”. Förklaringens ”det motsatta av vad som avses” bygger på en negation som inte står i texten. Lägg in en ledtråd som kräver negation, t.ex. ”…, så förhandlingarna låste sig”, och ta bort ett av synonymparen."
+  },
+  {
+    "id": "mek-23",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-24",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Fel i förklaringen: ”tidskrävande” är ingen positiv egenskap, så ”två positiva egenskaper” stämmer inte. Dessutom ger ”dels / dels” en lika naturlig mening (”Metoden är dels tidskrävande, dels robust nog …”); texten kräver ingen ”förstärkande” innebörd. Byt distraktorn ”dels / dels” mot t.ex. ”ju / desto” och skriv ”två egenskaper” i förklaringen (eller byt ”tidskrävande” mot en positiv egenskap)."
+  },
+  {
+    "id": "mek-25",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-26",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. ”dels / dels” ger en lika naturlig mening (”Reformen var dels en ekonomisk fråga, dels en fråga om tillit …”); texten kräver ingen ”förstärkande, stegrande effekt”, så förklaringens argument håller inte. Byt distraktorn ”dels / dels” mot t.ex. ”ju / desto” (eller lägg in en ledtråd som kräver stegring) och skriv om förklaringens tredje mening."
+  },
+  {
+    "id": "mek-27",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-28",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-29",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Tvetydigt: texten saknar ledtråd, så ”både / och”, ”såväl / som” (synonymer) och ”dels / dels” ger lika naturliga meningar som facit ”varken / eller”. Förklaringens ”krävs för att negera båda leden” bygger på en negation som inte står i texten. Lägg in en ledtråd som kräver negation, t.ex. ”…, så beslutsfattarna står utan vägledning”, och ta bort ett av synonymparen."
+  },
+  {
+    "id": "mek-30",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-31",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-32",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-33",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-34",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-35",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-36",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Tvetydigt: ”I enlighet med tidigare prognoser visade utfallet en tydlig nedgång …” är lika naturligt som facit ”I motsats till”; inget i texten (”redan” är en svag antydan) visar att prognoserna sade något annat. Förklaringens ”den kontrast som avses” saknar stöd. Lägg in en ledtråd, t.ex. ”…, vilket ingen hade väntat sig”."
+  },
+  {
+    "id": "mek-37",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-38",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-39",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-40",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-41",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-42",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-43",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-44",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-45",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-46",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-47",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-48",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-49",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-50",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-51",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-52",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-53",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-54",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Fel i förklaringen: andra ledet (”saknades en realistisk riskbuffert”) omformulerar inte ”kostnaderna skenade” utan anger orsaken, så ”med andra ord” (”omformulerar samma poäng”) är fel länk; ”i synnerhet” passar inte heller. Inget alternativ fungerar, meningen kräver ett förklarande led. Skriv om till ”…; det saknades ____ en realistisk riskbuffert från början.” med ”nämligen” som facit och byt ”med andra ord” mot något som inte kan läsas som förklaring."
+  },
+  {
+    "id": "mek-55",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Tvetydigt: texten saknar ledtråd, så ”både / och”, ”såväl / som” (synonymer) och ”varken / eller” ger alla naturliga meningar. Förklaringens ”korrigerar ett påstående” och ”ett av dem faktiskt gäller” står inte i texten. Lägg in en ledtråd som kräver ”inte / utan”, t.ex. ”…: data finns, men begreppen används olika”, och ta bort ett av synonymparen."
+  },
+  {
+    "id": "mek-56",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-57",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-58",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-59",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-60",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Mindre: förklaringen kallar ”fäste avseende” en ”felaktig kollokation”, men ”fästa avseende vid” är ett etablerat (formellt, ålderdomligt) uttryck för ”beakta”. Skriv att det betyder ”beakta” och inte går att kombinera med att lägga fram en hypotes."
+  },
+  {
+    "id": "mek-61",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-62",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-63",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-64",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-65",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-66",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-67",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-68",
+    "verification": "disagreed",
+    "verificationNote": "Andra kontrollen valde ”emellertid” men facit är ”alltså”. Förklaringen godkändes inte. Facit ”alltså” är inte entydigt: ”emellertid” (lika premisser ställs mot en skillnad) passar minst lika bra, och ”nämligen” går att läsa som förklaring. Att skillnaden ligger just i osäkerhetshanteringen följer inte heller av första ledet, så ”slutsats” är det svagaste sambandet. Förklaringens avfärdande av ”emellertid” (”kontrast snarare än slutsats”) håller inte. Skriv om så att bara ett samband är möjligt, eller gör ”emellertid” till facit och byt ”alltså” och ”nämligen” mot alternativ som inte kan läsas som kontrast."
+  },
+  {
+    "id": "mek-69",
+    "verification": "disagreed",
+    "verificationNote": "Mindre: bisatsen har huvudsatsordföljd (”blev i praktiken omöjlig”). Skriv ”… att jämförbarhet mellan studierna i praktiken blev omöjlig”."
+  },
+  {
+    "id": "mek-70",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-71",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-72",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-73",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-74",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-75",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-76",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-77",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-78",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-79",
+    "verification": "agreed"
+  },
+  {
+    "id": "mek-80",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. ”dels / dels” ger en lika naturlig mening (”Förändringen var dels teknisk, dels institutionell: …”); texten kräver ingen ”gradvis utvidgning”, så förklaringens argument håller inte. Byt distraktorn ”dels / dels” mot t.ex. ”ju / desto” (eller lägg in en ledtråd som kräver stegring) och skriv om förklaringens sista mening."
+  },
+  {
+    "id": "nog-1",
+    "verification": "agreed"
+  },
+  {
+    "id": "nog-2",
+    "verification": "agreed"
+  },
+  {
+    "id": "nog-3",
+    "verification": "agreed"
+  },
+  {
+    "id": "nog-4",
+    "verification": "agreed"
+  },
+  {
+    "id": "nog-5",
+    "verification": "agreed"
+  },
+  {
+    "id": "nog-6",
+    "verification": "agreed"
+  },
+  {
+    "id": "nog-7",
+    "verification": "agreed"
+  },
+  {
+    "id": "nog-8",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-1",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-2",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-3",
+    "verification": "disagreed",
+    "verificationNote": "Mindre: frågeordet står i bestämd form singular, men alternativet ”slutsatserna” är plural medan de övriga är singular, vilket avslöjar att det inte passar. Byt ”slutsatserna” till ”slutsatsen”."
+  },
+  {
+    "id": "ord-4",
+    "verification": "disagreed",
+    "verificationNote": "Glossan ”dubbeltydigt sinnad” är oidiomatisk och oprecis: dubbeltydig (tvetydig) gäller uttryck, inte någons känslor. Glossan visas även som ORD-flashkortets baksida. Byt alternativet ”kluven / dubbeltydigt sinnad” till t.ex. ”kluven / med motstridiga känslor” (förklaringen säger redan ”motstridiga känslor”)."
+  },
+  {
+    "id": "ord-5",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-6",
+    "verification": "disagreed",
+    "verificationNote": "Mindre: ”absolutgöra” är inget etablerat svenskt verb (motsatsen till relativisera heter absolutisera). Byt alternativet ”absolutgöra” till ”absolutisera” och uppdatera förklaringens andra mening."
+  },
+  {
+    "id": "ord-7",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-8",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-9",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-10",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-11",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. Fel gloss: cirkelresonemang (cirkelbevis, petitio principii) är inte tautologi. Tautologi är upprepning av samma sak med andra ord (retorik) eller ett alltid sant påstående (logik). Ändra alternativet ”cirkelresonemang / upprepning av samma sak” till t.ex. ”upprepning av samma sak med andra ord” och stryk cirkelresonemang ur förklaringens första mening. Glossan visas även som ORD-flashkortets baksida och motsäger läsbibliotekets ”innehållslös upprepning av samma sak”."
+  },
+  {
+    "id": "ord-12",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-13",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-14",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-15",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-16",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-17",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-18",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-19",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-20",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-21",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-22",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-23",
+    "verification": "agreed"
+  },
+  {
+    "id": "ord-24",
+    "verification": "agreed"
+  },
+  {
+    "id": "xyz-1",
+    "verification": "agreed"
+  },
+  {
+    "id": "xyz-2",
+    "verification": "agreed"
+  },
+  {
+    "id": "xyz-3",
+    "verification": "agreed"
+  },
+  {
+    "id": "xyz-4",
+    "verification": "agreed"
+  },
+  {
+    "id": "xyz-5",
+    "verification": "agreed"
+  },
+  {
+    "id": "xyz-6",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringstexten är korrekt. Felet satt i bildförklaringen (resten av stapeln var märkt \"8 000 kr\" i stället för 95 % = 7 600 kr) och är rättat i koden (src/lib/content/explain-figures.tsx). Titta på figuren och markera frågan som granskad."
+  },
+  {
+    "id": "xyz-7",
+    "verification": "agreed"
+  },
+  {
+    "id": "xyz-8",
+    "verification": "disagreed",
+    "verificationNote": "Förklaringen godkändes inte. I förklaringen är '0,2 km är hundra gånger för litet' fel - 2 km / 0,2 km = 10, alltså 'tio gånger för litet'."
+  }
+]

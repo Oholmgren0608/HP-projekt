@@ -239,7 +239,10 @@ export function ReviewScreen() {
       view === "published"
         ? q.status === "published"
         : view === "drafts"
-          ? q.status === "draft" || q.status === "rejected" || q.openReports.length > 0
+          ? q.status === "draft" ||
+            q.status === "rejected" ||
+            q.openReports.length > 0 ||
+            q.verification === "disagreed"
           : true;
     return groups
       .map((g) => ({ ...g, questions: g.questions.filter(matches) }))
