@@ -281,7 +281,8 @@ export function validateDrafts(
 
 /** Läser en variabel ur .env.local (samma format som scripts/import-prov). */
 export function readEnvLocal(name: string): string {
-  if (process.env[name]) return process.env[name]!.trim();
+  const strip = (v: string) => v.trim().replace(/^["']|["']$/g, "");
+  if (process.env[name]) return strip(process.env[name]!);
   const envPath = join(PROJECT_ROOT, ".env.local");
   if (!existsSync(envPath)) return "";
   for (const line of readFileSync(envPath, "utf8").split("\n")) {

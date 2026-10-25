@@ -18,12 +18,12 @@
       "kind": "ord",
       "prompt": "Vad betyder ”implikation”?",
       "options": [
-        "direkt motsägelse",
         "följd / underförstådd betydelse",
+        "direkt motsägelse",
         "offentlig debatt",
         "formell ursäkt"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explain": "En implikation är en följd eller underförstådd betydelse som ett påstående för med sig. Direkt motsägelse är motsatsen, eftersom en implikation snarare hänger ihop med utsagan än strider mot den. Offentlig debatt handlar om diskussion, inte om logisk följd. Formell ursäkt saknar helt kopplingen till följd eller antydan."
     },
     {
@@ -32,11 +32,11 @@
       "prompt": "Vad betyder ”premissen”?",
       "options": [
         "slutsatserna",
-        "utgångspunkten / antagandet",
         "undantaget",
+        "utgångspunkten / antagandet",
         "bevisbördan"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explain": "Premissen är den utgångspunkt eller det antagande som ett resonemang bygger på. Slutsatserna är istället vad man kommer fram till efter resonemanget, alltså motsatt ände av tankekedjan. Undantaget rör avvikelser från en regel, inte grunden för argumentet. Bevisbördan handlar om vem som måste styrka ett påstående, vilket är en annan juridisk/logisk term."
     },
     {
@@ -57,12 +57,12 @@
       "kind": "ord",
       "prompt": "Vad betyder ”koncist”?",
       "options": [
-        "långrandigt",
         "kortfattat och precist",
+        "långrandigt",
         "poetiskt",
         "vardagligt"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explain": "Koncist betyder kortfattat och precist formulerat. Långrandigt är motsatsen, eftersom det syftar på utdragna och ordrika formuleringar. Poetiskt handlar om stilistiskt bildspråk, inte om korthet. Vardagligt beskriver register snarare än hur kort eller precis en text är."
     },
     {
@@ -71,11 +71,11 @@
       "prompt": "Vad betyder ”relativisera”?",
       "options": [
         "absolutgöra",
-        "sätta i perspektiv / tona ner absoluthet",
         "förstora",
+        "sätta i perspektiv / tona ner absoluthet",
         "bevisa"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explain": "Att relativisera är att sätta något i perspektiv eller tona ner dess absoluta karaktär genom att jämföra med annat. Absolutgöra är motsatsen, eftersom det förstärker snarare än nyanserar ett påstående. Förstora handlar om att göra något större, inte om att relativisera dess betydelse. Bevisa syftar på att styrka sanningshalt, vilket inte har med perspektivering att göra."
     },
     {
@@ -84,11 +84,11 @@
       "prompt": "Vad betyder ”diskrepans”?",
       "options": [
         "överensstämmelse",
-        "skillnad / bristande överensstämmelse",
+        "upprepning",
         "sammanfattning",
-        "upprepning"
+        "skillnad / bristande överensstämmelse"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explain": "Diskrepans betyder skillnad eller bristande överensstämmelse mellan till exempel två uppgifter. Överensstämmelse är motsatsen, då den beskriver att saker stämmer ihop. Sammanfattning handlar om att komprimera information, inte om att peka på skillnader. Upprepning innebär att säga samma sak igen, vilket är en annan process än att jämföra och hitta avvikelser."
     },
     {
@@ -97,11 +97,11 @@
       "prompt": "Vad betyder ”eminent”?",
       "options": [
         "medelmåttig",
-        "framstående",
+        "tillfällig",
         "okänd",
-        "tillfällig"
+        "framstående"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explain": "Eminent betyder framstående eller synnerligen skicklig. Medelmåttig är närmast motsatsen, eftersom det beskriver genomsnittlig kvalitet. Okänd beskriver brist på uppmärksamhet, vilket strider mot att vara framstående. Tillfällig handlar om varaktighet i tid och saknar koppling till skicklighet eller status."
     },
     {
@@ -123,11 +123,11 @@
       "prompt": "Vad betyder ”subversiv”?",
       "options": [
         "stödjande",
-        "omstörtande / underminerande",
+        "högtidlig",
         "neutral",
-        "högtidlig"
+        "omstörtande / underminerande"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explain": "Subversiv betyder omstörtande eller underminerande gentemot en rådande ordning. Stödjande är motsatsen, eftersom det innebär att man bidrar till att upprätthålla något snarare än att underminera det. Neutral beskriver avsaknad av ställningstagande, vilket inte stämmer med den aktiva undermineringen i subversiv. Högtidlig rör ett formellt tonläge och saknar den ifrågasättande innebörden."
     },
     {
@@ -135,12 +135,12 @@
       "kind": "ord",
       "prompt": "Vad betyder ”tautologi”?",
       "options": [
-        "cirkelresonemang / upprepning av samma sak",
-        "motsägelse",
         "exempel",
+        "motsägelse",
+        "cirkelresonemang / upprepning av samma sak",
         "bevis"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explain": "Tautologi är ett cirkelresonemang eller en upprepning av samma sak i andra ordalag. Motsägelse beskriver istället två påståenden som inte kan vara sanna samtidigt, vilket är motsatt logik. Exempel är en illustration av något, inte en upprepning av samma innebörd. Bevis syftar på belägg för ett påstående, vilket skiljer sig från att bara omformulera det."
     },
     {
@@ -148,12 +148,12 @@
       "kind": "ord",
       "prompt": "Vad betyder ”kontroversiell”?",
       "options": [
-        "allmänt accepterad",
         "omstridd",
+        "allmänt accepterad",
         "hemlig",
         "teknisk"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explain": "Kontroversiell betyder omstridd, det väcker starka och motstridiga åsikter. Allmänt accepterad är motsatsen, eftersom den beskriver bred enighet snarare än konflikt. Hemlig handlar om att vara dold, inte om att vara omdebatterad. Teknisk syftar på fackmässig karaktär och har ingen koppling till grad av oenighet."
     },
     {
@@ -175,11 +175,11 @@
       "prompt": "Vad betyder ”implicit”?",
       "options": [
         "uttryckligen sagt",
-        "underförstått",
+        "högljutt",
         "felaktigt",
-        "högljutt"
+        "underförstått"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explain": "Implicit betyder underförstått, det är antytt snarare än uttalat. Uttryckligen sagt är motsatsen, eftersom det betecknar det som sägs rakt ut. Felaktigt handlar om sanningshalt, inte om hur något förmedlas. Högljutt rör volym eller intensitet i uttryck, vilket saknar koppling till underförstådd betydelse."
     },
     {
@@ -188,11 +188,11 @@
       "prompt": "Vad betyder ”konsensus”?",
       "options": [
         "konflikt",
-        "samförstånd",
         "omröstning",
+        "samförstånd",
         "kompromisslöshet"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explain": "Konsensus betyder samförstånd eller allmän enighet. Konflikt är motsatsen, då den beskriver oenighet snarare än samstämmighet. Omröstning är en metod för att fatta beslut men innebär inte i sig enighet. Kompromisslöshet betecknar en ovilja att mötas, vilket är raka motsatsen till samförstånd."
     },
     {
@@ -227,11 +227,11 @@
       "prompt": "Vad betyder ”abstrahera”?",
       "options": [
         "göra konkret",
-        "lyfta ut det väsentliga / bortse från detaljer",
+        "översätta",
         "räkna",
-        "översätta"
+        "lyfta ut det väsentliga / bortse från detaljer"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explain": "Att abstrahera är att lyfta ut det väsentliga och bortse från enskilda detaljer. Göra konkret är motsatsen, då det innebär att knyta något till specifika, konkreta exempel snarare än att generalisera. Räkna handlar om matematisk bearbetning, inte om att bortse från detaljer. Översätta rör överföring mellan språk, vilket är en annan process än generalisering."
     },
     {
@@ -240,11 +240,11 @@
       "prompt": "Vad betyder ”legitim”?",
       "options": [
         "olaglig",
-        "berättigad / giltig",
         "hemlig",
+        "berättigad / giltig",
         "tillfällig"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explain": "Legitim betyder berättigad eller giltig, ofta i juridisk eller moralisk mening. Olaglig är motsatsen, eftersom den betecknar det som strider mot lagen. Hemlig handlar om att vara dold, vilket inte har med giltighet att göra. Tillfällig syftar på varaktighet i tid, en annan egenskap än att vara berättigad."
     },
     {
@@ -252,12 +252,12 @@
       "kind": "ord",
       "prompt": "Vad betyder ”paradox”?",
       "options": [
-        "självmotsägande påstående som kan rymma en sanning",
+        "citat",
         "enkel sanning",
         "statistik",
-        "citat"
+        "självmotsägande påstående som kan rymma en sanning"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "explain": "En paradox är ett självmotsägande påstående som trots det kan rymma en sanning. Enkel sanning är motsatsen, då den saknar den motsägelsefulla ytan som utmärker en paradox. Statistik handlar om sifferunderlag, inte om ett logiskt spänningsfullt påstående. Citat är ett återgivet uttalande, vilket inte i sig behöver innehålla någon motsägelse."
     },
     {
@@ -278,12 +278,12 @@
       "kind": "ord",
       "prompt": "Vad betyder ”dogmatisk”?",
       "options": [
-        "öppen för kritik",
         "låst vid fasta läror utan nyans",
+        "öppen för kritik",
         "humoristisk",
         "praktisk"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explain": "Dogmatisk betyder att vara låst vid fasta läror utan att öppna för nyans eller kritik. Öppen för kritik är motsatsen, eftersom den beskriver en beredskap att ompröva sina ståndpunkter. Humoristisk rör lekfullhet i uttryck, vilket saknar kopplingen till orubblig övertygelse. Praktisk handlar om verklighetsanpassning snarare än om orubblig fasthet vid en lära."
     },
     {
@@ -292,11 +292,11 @@
       "prompt": "Vad betyder ”implicera”?",
       "options": [
         "utesluta",
-        "innebära / antyda",
         "bevisa med experiment",
+        "innebära / antyda",
         "citera"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explain": "Att implicera är att innebära eller antyda något utan att säga det rakt ut. Utesluta är motsatsen, då det innebär att avlägsna eller frånta möjligheten, inte att antyda. Bevisa med experiment syftar på empirisk verifiering, vilket är en mycket starkare och annorlunda process än att antyda. Citera handlar om att återge någons ord, inte om att låta något förstås indirekt."
     },
     {
@@ -304,12 +304,12 @@
       "kind": "ord",
       "prompt": "Vad betyder ”koherent”?",
       "options": [
-        "osammanhängande",
         "sammanhängande / logiskt enhetlig",
+        "osammanhängande",
         "lång",
         "poetisk"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explain": "Koherent betyder sammanhängande och logiskt enhetlig, utan inbördes motsägelser. Osammanhängande är motsatsen, eftersom det just beskriver brist på inre logik. Lång handlar om omfång, vilket är oberoende av om resonemanget hänger ihop. Poetisk rör stilistiskt bildspråk, vilket inte har med logisk sammanhållning att göra."
     },
     {
@@ -1452,12 +1452,12 @@
       "prompt": "Vilket påstående stöds av texten?",
       "passage": "När medier talar om ”informationsöverflöd” är problemet sällan mängden fakta i sig. Snarare handlar det om att urval och inramning styr vad som uppfattas som viktigt. Den som bara samlar mer data utan att pröva källor och perspektiv riskerar att bli sämre informerad, inte bättre. Informationskompetens är därför mindre en fråga om snabb googling och mer om tålamod: att stanna kvar i en text tillräckligt länge för att se vad som faktiskt påstås.",
       "options": [
-        "Att samla mer data utan källkritik kan försämra förståelsen",
-        "Alla nyhetsmedier ljuger medvetet",
         "Tålamod är oviktigt vid läsning",
+        "Alla nyhetsmedier ljuger medvetet",
+        "Att samla mer data utan källkritik kan försämra förståelsen",
         "Fakta och inramning är samma sak"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explain": "Texten stödjer att det är problematiskt att samla mer data utan att pröva källorna, eftersom det är just denna okritiska datainsamling som texten varnar för. Att alla nyhetsmedier ljuger medvetet är en överdrift som går längre än vad texten påstår om brister i granskning. Att tålamod är oviktigt vid läsning strider mot textens betoning av tålamod som en dygd. Att fakta och inramning är samma sak motsäger textens poäng om att det är just skillnaden mellan dem som spelar roll."
     },
     {
@@ -1466,12 +1466,12 @@
       "prompt": "Vad menar författaren med att forskningens värde inte bara sitter i resultatet?",
       "passage": "I debatten om forskningsfinansiering framställs ofta ”nyttiga” resultat som det enda måttet på framgång. Men forskningens värde sitter lika mycket i metoddisciplin: att formulera frågor precist, att redovisa osäkerhet och att låta negativa fynd synas. När bara spektakulära resultat belönas uppstår ett snedvridet urval av vad som publiceras. Det skadar både vetenskapen och allmänhetens tillit, eftersom bilden av kunskap blir mer säker än den egentligen är.",
       "options": [
-        "Att negativa fynd bör döljas",
         "Att metod, osäkerhet och negativa fynd också är centrala",
+        "Att negativa fynd bör döljas",
         "Att spektakulära resultat alltid är bäst",
         "Att finansiering bör upphöra"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explain": "Författaren menar att forskningens värde också ligger i metoddisciplin, redovisad osäkerhet och negativa fynd, inte bara i det slutliga resultatet. Att negativa fynd bör döljas är motsatsen till vad som lyfts fram, eftersom texten snarare vill synliggöra dem. Att spektakulära resultat alltid är bäst är precis den syn som texten ifrågasätter genom att peka på andra värden i forskningen. Att finansiering bör upphöra är en långtgående slutsats som inte har stöd i resonemanget om vad som gör forskning värdefull."
     },
     {
@@ -1495,11 +1495,11 @@
       "passage": "Städers grönska beskrivs ibland som ren dekoration. Forskning visar dock att träd och parker påverkar temperatur, luftkvalitet och människors stressnivåer. Effekten är störst i täta områden där hårdgjorda ytor annars samlar värme. Samtidigt är grönska ojämnt fördelad: socioekonomiskt starka stadsdelar har ofta mer vegetation. Att plantera träd är därför inte bara estetik, utan en fråga om rättvisa och folkhälsa — förutsatt att skötsel och lokal förankring finns.",
       "options": [
         "Grönska är bara dekoration",
-        "Grönska har mätbara effekter och är ojämnt fördelad",
+        "Socioekonomi saknar betydelse för vegetation",
         "Träd hjälper bara på landsbygden",
-        "Socioekonomi saknar betydelse för vegetation"
+        "Grönska har mätbara effekter och är ojämnt fördelad"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explain": "Texten kopplar samman grönskans mätbara effekter, till exempel på temperatur och hälsa, med att den är ojämnt fördelad mellan olika områden. Att grönska bara är dekoration motsäger att texten lyfter fram konkreta, mätbara effekter. Att träd bara hjälper på landsbygden strider mot att resonemanget handlar om städer. Att socioekonomi saknar betydelse för vegetation går emot att texten just kopplar den ojämna fördelningen till sociala och ekonomiska skillnader."
     },
     {
@@ -1508,12 +1508,12 @@
       "prompt": "Vad krävs enligt texten för att trädsatsningar ska fungera?",
       "passage": "Städers grönska beskrivs ibland som ren dekoration. Forskning visar dock att träd och parker påverkar temperatur, luftkvalitet och människors stressnivåer. Effekten är störst i täta områden där hårdgjorda ytor annars samlar värme. Samtidigt är grönska ojämnt fördelad: socioekonomiskt starka stadsdelar har ofta mer vegetation. Att plantera träd är därför inte bara estetik, utan en fråga om rättvisa och folkhälsa — förutsatt att skötsel och lokal förankring finns.",
       "options": [
-        "Bara fler planteringsceremonier",
         "Skötsel och lokal förankring",
+        "Bara fler planteringsceremonier",
         "Att undvika täta områden",
         "Att ta bort parker i rika områden"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explain": "Texten anger uttryckligen att skötsel och lokal förankring krävs för att trädsatsningar ska fungera på sikt. Fler planteringsceremonier beskriver en engångshändelse och saknar den långsiktiga skötsel som texten kräver. Att undvika täta områden nämns inte som ett villkor för att satsningarna ska lyckas. Att ta bort parker i rika områden är en omfördelningsåtgärd som inte är det som texten anger som förutsättning."
     },
     {
@@ -1523,11 +1523,11 @@
       "passage": "Remote work is often framed as a simple trade-off between flexibility and productivity. Yet the more interesting shift is cultural: when colleagues no longer share the same hallway, informal learning shrinks. Junior staff lose the half-overheard conversations that once taught them how decisions are made. Companies that treat remote work as a logistics problem alone — desks, software, meetings — miss this quieter cost. The organizations that adapt best redesign mentorship deliberately, instead of hoping it happens by accident.",
       "options": [
         "Remote work always increases productivity",
-        "The hidden cost is lost informal learning, so mentorship must be redesigned",
+        "Junior staff prefer offices for social reasons only",
         "Hallways are more important than software",
-        "Junior staff prefer offices for social reasons only"
+        "The hidden cost is lost informal learning, so mentorship must be redesigned"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explain": "The passage's main claim is that remote work carries a hidden cost in lost informal learning, which means mentorship needs to be deliberately redesigned rather than left to chance. The claim that remote work always increases productivity overstates the passage's point, which is about a specific cultural cost rather than a blanket productivity effect. Saying hallways matter more than software takes a supporting image too literally instead of the broader argument about learning. Reducing junior staff's preference for offices to social reasons only ignores the passage's emphasis on learning, not just socializing."
     },
     {
@@ -1551,11 +1551,11 @@
       "passage": "Remote work is often framed as a simple trade-off between flexibility and productivity. Yet the more interesting shift is cultural: when colleagues no longer share the same hallway, informal learning shrinks. Junior staff lose the half-overheard conversations that once taught them how decisions are made. Companies that treat remote work as a logistics problem alone — desks, software, meetings — miss this quieter cost. The organizations that adapt best redesign mentorship deliberately, instead of hoping it happens by accident.",
       "options": [
         "Ban remote work",
-        "Redesign mentorship on purpose",
         "Add more hallways online",
+        "Redesign mentorship on purpose",
         "Ignore junior staff"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explain": "According to the author, successful organizations deliberately redesign mentorship to compensate for what remote work removes. Banning remote work contradicts the passage's assumption that remote work continues and simply needs better mentorship. Adding more hallways online is a literal misreading of the hallway image rather than the actual recommendation to redesign mentorship. Ignoring junior staff is the opposite of the intent, since the passage's concern is precisely about supporting them."
     },
     {
@@ -1573,24 +1573,10 @@
       "explain": "The passage's core idea is that sudden events attract more attention than slow-moving trends, so readers need to actively look for the underlying trend themselves. Saying journalists invent climate disasters goes beyond the claim, which is about attention bias, not fabrication. Calling floods unimportant misreads the point, since floods are used as an example of a sudden event, not dismissed as trivial. Saying insurance is unrelated to climate ignores that such details likely serve as evidence within the passage's argument, not as an unrelated aside."
     },
     {
-      "id": "dtk-1",
-      "kind": "dtk",
-      "prompt": "Vilken kommun hade högst andel cykelresor 2024?",
-      "passage": "Andel cykelresor av alla resor (procent)\nKommun A: 2022: 12  2023: 14  2024: 15\nKommun B: 2022: 18  2023: 17  2024: 19\nKommun C: 2022: 9   2023: 11  2024: 13\nKommun D: 2022: 16  2023: 16  2024: 18",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "correctIndex": 1,
-      "explain": "År 2024 hade B högst andel med 19 procent, jämfört med D:s 18, A:s 15 och C:s 13, vilket gör B till den kommun med störst cykelandel. A och C ligger klart lägre och kan uteslutas direkt, och D:s 18 procent är nära men ändå lägre än B:s 19."
-    },
-    {
       "id": "dtk-2",
       "kind": "dtk",
       "prompt": "Hur många procentenheter ökade Kommun A mellan 2022 och 2024?",
-      "passage": "Andel cykelresor av alla resor (procent)\nKommun A: 2022: 12  2023: 14  2024: 15\nKommun B: 2022: 18  2023: 17  2024: 19\nKommun C: 2022: 9   2023: 11  2024: 13\nKommun D: 2022: 16  2023: 16  2024: 18",
+      "passage": "Andel cykelresor av alla resor (procent)\r\nKommun A: 2022: 12  2023: 14  2024: 15\r\nKommun B: 2022: 18  2023: 17  2024: 19\r\nKommun C: 2022: 9   2023: 11  2024: 13\r\nKommun D: 2022: 16  2023: 16  2024: 18",
       "options": [
         "2",
         "3",
@@ -1604,7 +1590,7 @@
       "id": "dtk-3",
       "kind": "dtk",
       "prompt": "Vilken kommun minskade något mellan 2022 och 2023?",
-      "passage": "Andel cykelresor av alla resor (procent)\nKommun A: 2022: 12  2023: 14  2024: 15\nKommun B: 2022: 18  2023: 17  2024: 19\nKommun C: 2022: 9   2023: 11  2024: 13\nKommun D: 2022: 16  2023: 16  2024: 18",
+      "passage": "Andel cykelresor av alla resor (procent)\r\nKommun A: 2022: 12  2023: 14  2024: 15\r\nKommun B: 2022: 18  2023: 17  2024: 19\r\nKommun C: 2022: 9   2023: 11  2024: 13\r\nKommun D: 2022: 16  2023: 16  2024: 18",
       "options": [
         "A",
         "B",
@@ -1660,7 +1646,7 @@
       "id": "dtk-7",
       "kind": "dtk",
       "prompt": "Vilken avdelning hade lägst sjukfrånvaro i mars?",
-      "passage": "Sjukfrånvaro per avdelning (procent av arbetad tid)\nAvd. A: feb 6,2 · mars 5,4 · april 5,8\nAvd. B: feb 4,9 · mars 5,1 · april 4,7\nAvd. C: feb 7,3 · mars 6,8 · april 7,0\nAvd. D: feb 5,6 · mars 4,9 · april 5,3",
+      "passage": "Sjukfrånvaro per avdelning (procent av arbetad tid)\r\nAvd. A: feb 6,2 · mars 5,4 · april 5,8\r\nAvd. B: feb 4,9 · mars 5,1 · april 4,7\r\nAvd. C: feb 7,3 · mars 6,8 · april 7,0\r\nAvd. D: feb 5,6 · mars 4,9 · april 5,3",
       "options": [
         "A",
         "B",
@@ -1677,11 +1663,11 @@
       "passage": "Kostnader 2023 (miljoner kr): Personal 12 · Material 8 · Lokaler 4 · Övrigt 6. Totalt = 30.",
       "options": [
         "8 %",
-        "ungefär 27 %",
         "ungefär 40 %",
+        "ungefär 27 %",
         "ungefär 73 %"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explain": "Materialkostnaden var 8 av totalt 30 (motsvarande enheter), vilket ger 8/30 ≈ 0,27, det vill säga ungefär 27 procent. 8 procent förväxlar delvärdet med andelen, medan 40 och 73 procent bygger på fel jämförelsetal och blir alldeles för höga."
     },
     {
@@ -1903,7 +1889,7 @@
         "Inte ens båda räcker"
       ],
       "correctIndex": 2,
-      "explain": "Påstående (1) ger bara x = 4 utan information om y, så summan x + y kan inte beräknas.\nPåstående (2) ger bara y = 6 utan information om x, vilket av samma skäl inte räcker ensamt.\nTillsammans ger de x + y = 4 + 6 = 10, så båda behövs för att lösa uppgiften."
+      "explain": "Påstående (1) ger bara x = 4 utan information om y, så summan x + y kan inte beräknas.\r\nPåstående (2) ger bara y = 6 utan information om x, vilket av samma skäl inte räcker ensamt.\r\nTillsammans ger de x + y = 4 + 6 = 10, så båda behövs för att lösa uppgiften."
     },
     {
       "id": "nog-2",
@@ -1916,7 +1902,7 @@
         "Vardera räcker för sig"
       ],
       "correctIndex": 3,
-      "explain": "Påstående (1) säger att n är delbart med 4, och alla tal som är delbara med 4 är per definition jämna, så (1) räcker ensamt.\nPåstående (2) säger direkt att n är delbart med 2, vilket är samma sak som att n är jämnt, så även (2) räcker ensamt.\nEftersom båda påståendena var för sig avgör frågan, räcker vardera för sig."
+      "explain": "Påstående (1) säger att n är delbart med 4, och alla tal som är delbara med 4 är per definition jämna, så (1) räcker ensamt.\r\nPåstående (2) säger direkt att n är delbart med 2, vilket är samma sak som att n är jämnt, så även (2) räcker ensamt.\r\nEftersom båda påståendena var för sig avgör frågan, räcker vardera för sig."
     },
     {
       "id": "nog-3",
@@ -1929,7 +1915,7 @@
         "Inte ens båda räcker"
       ],
       "correctIndex": 2,
-      "explain": "Påstående (1) ger bara längden 8 cm utan information om bredden, så arean går inte att beräkna ensamt.\nPåstående (2) ger enbart omkretsen 24 cm, vilket i sig kan motsvara oändligt många kombinationer av längd och bredd.\nTillsammans ger de bredden 24/2 − 8 = 4 cm och därmed arean 8 × 4 = 32 cm², så båda behövs."
+      "explain": "Påstående (1) ger bara längden 8 cm utan information om bredden, så arean går inte att beräkna ensamt.\r\nPåstående (2) ger enbart omkretsen 24 cm, vilket i sig kan motsvara oändligt många kombinationer av längd och bredd.\r\nTillsammans ger de bredden 24/2 − 8 = 4 cm och därmed arean 8 × 4 = 32 cm², så båda behövs."
     },
     {
       "id": "nog-4",
@@ -1942,7 +1928,7 @@
         "Vardera räcker för sig"
       ],
       "correctIndex": 1,
-      "explain": "Påstående (1) ger k² = 16, vilket betyder att k är antingen 4 eller −4, så tecknet på k förblir okänt och räcker inte ensamt.\nPåstående (2) säger direkt att k > 0, vilket omedelbart avgör att k är positivt.\nDärför räcker bara (2) för att besvara frågan."
+      "explain": "Påstående (1) ger k² = 16, vilket betyder att k är antingen 4 eller −4, så tecknet på k förblir okänt och räcker inte ensamt.\r\nPåstående (2) säger direkt att k > 0, vilket omedelbart avgör att k är positivt.\r\nDärför räcker bara (2) för att besvara frågan."
     },
     {
       "id": "nog-5",
@@ -1955,7 +1941,7 @@
         "Vardera räcker för sig"
       ],
       "correctIndex": 0,
-      "explain": "Medelvärdet av a och b är (a + b)/2. Påstående (1) ger a + b = 20 direkt, vilket genast ger medelvärdet 10, så (1) räcker ensamt.\nPåstående (2) ger bara skillnaden a − b = 4, vilket inte säger något om summan och därför inte räcker ensamt för att bestämma medelvärdet."
+      "explain": "Medelvärdet av a och b är (a + b)/2. Påstående (1) ger a + b = 20 direkt, vilket genast ger medelvärdet 10, så (1) räcker ensamt.\r\nPåstående (2) ger bara skillnaden a − b = 4, vilket inte säger något om summan och därför inte räcker ensamt för att bestämma medelvärdet."
     },
     {
       "id": "nog-6",
@@ -1968,7 +1954,7 @@
         "Inte ens båda räcker"
       ],
       "correctIndex": 2,
-      "explain": "Påstående (1) ger bara att 40 procent är flickor, utan ett faktiskt antal går det inte att räkna ut klassens storlek.\nPåstående (2) ger enbart antalet flickor, 12, utan att veta vilken andel de utgör av klassen.\nTillsammans ger de att 12 motsvarar 40 procent, vilket ger totalt 12 / 0,4 = 30 elever, så båda behövs."
+      "explain": "Påstående (1) ger bara att 40 procent är flickor, utan ett faktiskt antal går det inte att räkna ut klassens storlek.\r\nPåstående (2) ger enbart antalet flickor, 12, utan att veta vilken andel de utgör av klassen.\r\nTillsammans ger de att 12 motsvarar 40 procent, vilket ger totalt 12 / 0,4 = 30 elever, så båda behövs."
     },
     {
       "id": "nog-7",
@@ -1981,7 +1967,7 @@
         "Inte ens båda räcker"
       ],
       "correctIndex": 0,
-      "explain": "Påstående (1) ger p = 0, och då blir produkten p · q alltid 0 oavsett vad q är, så (1) räcker ensamt.\nPåstående (2) ger bara q = 17 utan information om p, vilket inte räcker för att bestämma produkten.\nDärför räcker bara (1) för att besvara frågan."
+      "explain": "Påstående (1) ger p = 0, och då blir produkten p · q alltid 0 oavsett vad q är, så (1) räcker ensamt.\r\nPåstående (2) ger bara q = 17 utan information om p, vilket inte räcker för att bestämma produkten.\r\nDärför räcker bara (1) för att besvara frågan."
     },
     {
       "id": "nog-8",
@@ -1994,7 +1980,7 @@
         "Inte ens båda räcker"
       ],
       "correctIndex": 2,
-      "explain": "Påstående (1) ger bara x = 3 utan att ange y, så det går inte att kontrollera om punkten ligger på linjen.\nPåstående (2) ger bara y = 7 utan att ange x, vilket av samma skäl inte räcker ensamt.\nTillsammans ger de att 2 · 3 + 1 = 7, vilket stämmer med y-värdet, så båda behövs för att avgöra att punkten faktiskt ligger på linjen."
+      "explain": "Påstående (1) ger bara x = 3 utan att ange y, så det går inte att kontrollera om punkten ligger på linjen.\r\nPåstående (2) ger bara y = 7 utan att ange x, vilket av samma skäl inte räcker ensamt.\r\nTillsammans ger de att 2 · 3 + 1 = 7, vilket stämmer med y-värdet, så båda behövs för att avgöra att punkten faktiskt ligger på linjen."
     }
   ],
   "reflect": [
