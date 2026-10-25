@@ -144,7 +144,18 @@ function fetchAllQuestions(admin: AdminClient): Promise<QuestionRow[] | null> {
   );
 }
 
-function fetchOpenReports(admin: AdminClient): Promise<FlagRow[] | null> {
+/**
+ * Felkoder för en tabell som inte finns: PostgREST (schema-cachen) och Postgres.
+ * Innan migration 0017 är körd saknas question_flags; då finns inga rapporter
+ * och granskningen ska fungera som förut i stället för att stanna.
+ */
+const MISSING_TABLE_CODES = new Set(["PGRST205", "42P01"]);
+
+async function fetchOpenReports(admin: AdminClient): Promise<FlagRow[] | null> {
+  const probe = await admin
+    .from("question_flags")
+    .select("question_id", { count: "exact", head: true });
+  if (probe.error) return MISSING_TABLE_CODES.has(probe.error.code) ? [] : null;
   // Primärnyckeln (question_id, user_id) gör sorteringen entydig mellan sidor.
   return fetchAllPages((from, to) =>
     admin
@@ -298,7 +309,7 @@ export async function saveQuestion(input: SaveQuestionInput): Promise<MutateResu
   // form: "ense" gäller inte längre, så den publiceras en och en.
   const { data: current, error: readError } = await auth.admin
     .from("questions")
-    .select("prompt, passage, options, correct_index, explain")
+    .select("*")
     .eq("id", input.id)
     .maybeSingle();
   if (readError) return { ok: false, error: "UPSTREAM_ERROR" };
@@ -314,7 +325,8 @@ export async function saveQuestion(input: SaveQuestionInput): Promise<MutateResu
     current.options.some((o, i) => !same(o, update.options[i])) ||
     current.correct_index !== update.correct_index ||
     !same(current.explain, update.explain);
-  if (contentChanged) {
+  // Kolumnerna finns först efter migration 0017.
+  if (contentChanged && "verification" in current) {
     update.verification = null;
     update.verification_note = null;
   }
