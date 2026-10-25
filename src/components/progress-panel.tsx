@@ -46,7 +46,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
 
   if (!mounted) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar historik…</p>
       </div>
     );
@@ -75,7 +75,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
       {paceOver ? (
         <>
           {" "}
-          <Link href="/tips" className="font-semibold text-[var(--brand)] underline-offset-4 hover:underline">
+          <Link href="/tips" className="font-medium text-[var(--brand)] underline-offset-4 hover:underline">
             Se tips →
           </Link>
         </>
@@ -107,7 +107,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
       </p>
       <Link
         href="/resultat"
-        className="mt-2 inline-block text-sm font-semibold text-[var(--brand)] underline-offset-4 hover:underline"
+        className="mt-2 inline-block text-sm font-medium text-[var(--brand)] underline-offset-4 hover:underline"
       >
         Uppdatera resultat →
       </Link>
@@ -115,8 +115,8 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
   ) : null;
 
   const card = (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <p className="text-xs font-medium text-[var(--ink-muted)]">
         Poängprognos
       </p>
       <div className="mt-4">{numbers}</div>
@@ -158,8 +158,8 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
       bodyClassName="px-3 pb-3 pt-3"
     >
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-        <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+          <p className="text-xs font-medium text-[var(--ink-muted)]">
             Uppskattad poängprognos
           </p>
           <div className="mt-4">{numbers}</div>
@@ -173,14 +173,14 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
           <ProgressChart points={points} />
         </div>
 
-        <aside className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+        <aside className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+          <p className="text-xs font-medium text-[var(--ink-muted)]">
             Senaste övningar
           </p>
           <dl className="mt-4 grid grid-cols-2 gap-5">
             <div>
               <dt className="text-sm text-[var(--ink-muted)]">Verbalt</dt>
-              <dd className="text-xl font-semibold text-[var(--ink)]">
+              <dd className="text-xl font-medium text-[var(--ink)]">
                 {verbal ? `${verbal.percent} %` : "—"}
               </dd>
               {verbal ? (
@@ -189,7 +189,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
             </div>
             <div>
               <dt className="text-sm text-[var(--ink-muted)]">Kvant</dt>
-              <dd className="text-xl font-semibold text-[var(--ink)]">
+              <dd className="text-xl font-medium text-[var(--ink)]">
                 {quant ? `${quant.percent} %` : "—"}
               </dd>
               {quant ? (
@@ -241,7 +241,7 @@ function PrognosisThresholdChips({ prognosis }: { prognosis: ExercisePrognosis |
                 ? `${kindBadge(kind)} räknas in i prognosen`
                 : `${PROGNOSIS_MIN_KIND_QUESTIONS - n} frågor kvar innan ${kindBadge(kind)} räknas in`
             }
-            className={`rounded-md border px-2 py-1 text-[11px] font-semibold tabular-nums ${
+            className={`rounded-md border px-2 py-1 text-[11px] font-medium tabular-nums ${
               reached
                 ? "border-[var(--lagoon-ink)]/50 bg-[var(--lagoon-ink)]/10 text-[var(--ink)]"
                 : "border-[var(--line)] bg-card/60 text-[var(--ink-muted)]"

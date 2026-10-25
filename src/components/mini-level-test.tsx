@@ -167,7 +167,7 @@ export function MiniLevelTest() {
 
   const heading = (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+      <p className="text-xs font-medium text-[var(--brand)]">
         Nivåtest
       </p>
       <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -180,7 +180,7 @@ export function MiniLevelTest() {
     return (
       <div className="space-y-8 sm:space-y-10">
         {heading}
-        <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+        <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
           <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
             Ny på HP — eller rostig?
           </h2>
@@ -196,7 +196,7 @@ export function MiniLevelTest() {
             Appens egna frågor i HP-stil — de officiella häftena finns under <strong>Prov</strong>.
           </p>
           <div className="mt-6">
-            <p className="text-sm font-semibold text-[var(--ink)]">Antal frågor per delprov</p>
+            <p className="text-sm font-medium text-[var(--ink)]">Antal frågor per delprov</p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
               Fler frågor ger säkrare uppskattning.
             </p>
@@ -208,7 +208,7 @@ export function MiniLevelTest() {
                     key={id}
                     className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2.5"
                   >
-                    <span className="w-12 shrink-0 text-sm font-semibold text-[var(--ink)]">
+                    <span className="w-12 shrink-0 text-sm font-medium text-[var(--ink)]">
                       {kindBadge(kind)}
                     </span>
                     <div
@@ -224,7 +224,7 @@ export function MiniLevelTest() {
                             type="button"
                             aria-pressed={active}
                             onClick={() => updateCount(id, count)}
-                            className={`min-w-12 rounded-lg border px-4 py-2 font-semibold transition ${
+                            className={`min-w-12 rounded-lg border px-4 py-2 font-medium transition ${
                               active
                                 ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                                 : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
@@ -242,7 +242,7 @@ export function MiniLevelTest() {
           </div>
           <div className="mt-6 rounded-xl border border-[var(--line-strong)] bg-[var(--paper)] p-4">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="text-sm font-semibold text-[var(--ink)]">Tid för nivåtestet</p>
+              <p className="text-sm font-medium text-[var(--ink)]">Tid för nivåtestet</p>
               <label className="flex cursor-pointer items-center gap-2.5">
                 <span className="text-sm font-medium text-[var(--ink-muted)]">
                   {timerEnabled ? "På" : "Av"}
@@ -284,7 +284,7 @@ export function MiniLevelTest() {
           <button
             type="button"
             onClick={start}
-            className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+            className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
           >
             Starta nivåtest
           </button>
@@ -305,7 +305,7 @@ export function MiniLevelTest() {
       return (
         <div className="space-y-6">
           {heading}
-          <div className="flex items-center justify-center gap-2 rounded-2xl border border-[var(--line)] bg-card/75 py-10 text-sm text-[var(--ink-muted)]">
+          <div className="flex items-center justify-center gap-2 rounded-[10px] border border-[var(--line)] bg-card/75 py-10 text-sm text-[var(--ink-muted)]">
             <span className="size-4 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--brand)]" />
             Laddar frågor…
           </div>
@@ -317,10 +317,10 @@ export function MiniLevelTest() {
     return (
       <div className="space-y-6">
         {heading}
-        <div className="rounded-2xl border border-[var(--line)] bg-card p-5 sm:p-6">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+              <p className="text-xs font-medium text-[var(--brand)]">
                 Nivåtest · {kindBadge(current.kind)}
               </p>
               <p className="mt-1 text-sm text-[var(--ink-muted)]">
@@ -330,7 +330,7 @@ export function MiniLevelTest() {
             <div className="flex flex-wrap items-center gap-2">
               {remainingSeconds !== null ? (
                 <p
-                  className={`rounded-md px-3 py-1.5 text-sm font-semibold tabular-nums ${
+                  className={`rounded-md px-3 py-1.5 text-sm font-medium tabular-nums ${
                     warning
                       ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
                       : "bg-[var(--mist)] text-[var(--ink)]"
@@ -394,7 +394,7 @@ export function MiniLevelTest() {
               type="button"
               disabled={quiz.selected === null}
               onClick={quiz.submitAnswer}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
             >
               {quiz.index >= questions.length - 1 ? "Se resultat" : "Nästa"}
             </button>
@@ -417,8 +417,8 @@ export function MiniLevelTest() {
         </p>
       ) : null}
 
-      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Din uppskattade nivå
         </p>
         <div className="mt-3 grid gap-5 sm:gap-6 sm:grid-cols-3">
@@ -429,12 +429,12 @@ export function MiniLevelTest() {
           ].map((box) => (
             <div
               key={box.label}
-              className="rounded-2xl border border-[var(--line)] bg-card/70 px-4 py-4 text-center"
+              className="rounded-[10px] border border-[var(--line)] bg-card/70 px-4 py-4 text-center"
             >
               <div className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
                 {box.value}
               </div>
-              <div className="mt-1 text-sm font-semibold text-[var(--ink)]">{box.label}</div>
+              <div className="mt-1 text-sm font-medium text-[var(--ink)]">{box.label}</div>
               <div className="text-xs text-[var(--ink-muted)]">{box.note}</div>
             </div>
           ))}
@@ -459,11 +459,11 @@ export function MiniLevelTest() {
             .map((s) => (
               <li
                 key={s.id}
-                className="rounded-2xl border border-[var(--line)] bg-card/70 px-4 py-3"
+                className="rounded-[10px] border border-[var(--line)] bg-card/70 px-4 py-3"
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <div className="min-w-0">
-                    <span className="font-semibold text-[var(--ink)]">{sectionShort(s.id)}</span>
+                    <span className="font-medium text-[var(--ink)]">{sectionShort(s.id)}</span>
                     <span className="ml-2 text-sm text-[var(--ink-muted)]">{s.name}</span>
                   </div>
                   <span className="shrink-0 text-sm font-medium text-[var(--ink)]">
@@ -479,7 +479,7 @@ export function MiniLevelTest() {
         </ul>
       </section>
 
-      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Skapa din veckoplan
         </h2>
@@ -515,7 +515,7 @@ export function MiniLevelTest() {
             type="button"
             onClick={applyPlan}
             disabled={applied}
-            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition enabled:hover:brightness-110 disabled:opacity-60"
+            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition enabled:hover:brightness-110 disabled:opacity-60"
           >
             {applied ? "Skapar plan…" : "Använd resultatet & skapa plan"}
           </button>

@@ -214,7 +214,7 @@ function Avatar({
 }) {
   return (
     <div
-      className={`flex items-center justify-center rounded-full bg-[var(--brand)] font-semibold text-primary-foreground ${
+      className={`flex items-center justify-center rounded-full bg-[var(--brand)] font-medium text-primary-foreground ${
         size === "lg" ? "size-14 text-xl" : "size-8 text-xs"
       }`}
       aria-hidden
@@ -287,7 +287,7 @@ function UsernameEditor() {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex min-h-9 items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex min-h-9 items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {submitting ? "Sparar…" : "Spara"}
         </button>
@@ -433,7 +433,7 @@ export function ProfileScreen() {
   return (
     <div className="space-y-8 sm:space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Konto
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -442,7 +442,7 @@ export function ProfileScreen() {
       </div>
 
       {/* 1. Kontouppgifter */}
-      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <div className="flex items-start gap-4">
           <Avatar username={username} email={user.email ?? null} />
           <div className="min-w-0 space-y-2">
@@ -458,7 +458,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 2. Träningsstatistik */}
-      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Träningsstatistik
         </h2>
@@ -486,7 +486,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 3. Duel-statistik */}
-      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Duell-statistik
         </h2>
@@ -497,7 +497,7 @@ export function ProfileScreen() {
           <StatCard label="Oavgjorda" value={String(profile?.draws ?? 0)} />
         </div>
 
-        <h3 className="mt-6 text-sm font-semibold text-[var(--ink-muted)]">
+        <h3 className="mt-6 text-sm font-medium text-[var(--ink-muted)]">
           Senaste matcher
         </h3>
         {history.length === 0 ? (
@@ -525,7 +525,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 4. Kontoåtgärder */}
-      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Kontoåtgärder
         </h2>
@@ -579,7 +579,7 @@ function LocalDataCard({ signedIn }: { signedIn: boolean }) {
   }
 
   return (
-    <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
+    <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
       <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
         Lokal data på den här enheten
       </h2>
@@ -618,7 +618,7 @@ function HelpAndFeedbackCard() {
   ];
 
   return (
-    <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
+    <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
       <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
         Hjälp & feedback
       </h2>
@@ -629,8 +629,8 @@ function HelpAndFeedbackCard() {
             href={href}
             className="rounded-xl border border-[var(--line-strong)] bg-[var(--paper)] p-4 transition hover:border-[var(--brand)] hover:bg-card"
           >
-            <p className="text-sm font-bold text-[var(--ink)]">
-              {channel.emoji} {channel.label}
+            <p className="text-sm font-semibold text-[var(--ink)]">
+              {channel.label}
             </p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">{channel.description}</p>
           </Link>
@@ -642,7 +642,7 @@ function HelpAndFeedbackCard() {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
       <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
         {value}

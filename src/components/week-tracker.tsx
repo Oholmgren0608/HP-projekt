@@ -298,7 +298,7 @@ export function WeekTracker({
                   : "border-[var(--line-strong)] bg-card/60 text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
               }`}
             >
-              <div className="text-xs uppercase tracking-wide">Vecka {w.week}</div>
+              <div className="text-xs ">Vecka {w.week}</div>
               <div className="text-sm font-medium">{w.phase}</div>
               <div className="text-xs opacity-80">
                 {wDone}/{w.tasks.length}
@@ -308,10 +308,10 @@ export function WeekTracker({
         })}
       </div>
 
-      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 shadow-[0_12px_40px_-28px_rgba(18,42,48,0.45)] backdrop-blur-sm sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 backdrop-blur-sm sm:p-6">
         <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[var(--brand)]">
+            <p className="text-xs font-medium text-[var(--brand)]">
               {plan.phase} · Vecka {plan.week}
             </p>
             <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">

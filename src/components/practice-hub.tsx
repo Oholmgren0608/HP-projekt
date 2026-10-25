@@ -103,7 +103,7 @@ export function PracticeHub() {
     <div className="space-y-8 sm:space-y-10">
       {/* Header */}
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Övning
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -120,12 +120,11 @@ export function PracticeHub() {
           <Link
             key={subtest.id}
             href={`/ova/${subtest.id}`}
-            className="group rounded-2xl border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-[var(--accent-soft)] hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+            className="group rounded-[10px] border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-[var(--accent-soft)] sm:p-6"
           >
-            <div className="mb-4 text-4xl">{subtest.icon}</div>
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+                <p className="text-xs font-medium text-[var(--brand)]">
                   {subtest.label}
                 </p>
                 <h2 className="mt-2 font-[family-name:var(--font-display)] text-lg text-[var(--ink)] group-hover:text-[var(--brand)]">
@@ -134,7 +133,7 @@ export function PracticeHub() {
               </div>
             </div>
             <p className="mt-3 text-sm text-[var(--ink-muted)]">{subtest.description}</p>
-            <div className="mt-4 inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
+            <div className="mt-4 inline-block rounded-md bg-[var(--brand)]/10 px-3 py-1 text-xs font-medium text-[var(--brand)]">
               Börja öva →
             </div>
           </Link>
@@ -146,9 +145,9 @@ export function PracticeHub() {
         {/* Flashcards */}
         <Link
           href="/ova/flashcards"
-          className="rounded-2xl border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+          className="rounded-[10px] border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card sm:p-6"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+          <p className="text-xs font-medium text-[var(--brand)]">
             Verktyg
           </p>
           <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
@@ -157,7 +156,7 @@ export function PracticeHub() {
           <p className="mt-2 text-sm text-[var(--ink-muted)]">
             Se ordet, säg betydelsen, vänd kortet.
           </p>
-          <div className="mt-4 inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
+          <div className="mt-4 inline-block rounded-md bg-[var(--brand)]/10 px-3 py-1 text-xs font-medium text-[var(--brand)]">
             Öppna →
           </div>
         </Link>
@@ -165,9 +164,9 @@ export function PracticeHub() {
         {/* Reading Library */}
         <Link
           href="/bibliotek"
-          className="rounded-2xl border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card hover:shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6"
+          className="rounded-[10px] border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card sm:p-6"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+          <p className="text-xs font-medium text-[var(--brand)]">
             Resurser
           </p>
           <h2 className="mt-2 font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
@@ -176,7 +175,7 @@ export function PracticeHub() {
           <p className="mt-2 text-sm text-[var(--ink-muted)]">
             Läsetexter med ord och sammanfattning.
           </p>
-          <div className="mt-4 inline-block rounded-full bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
+          <div className="mt-4 inline-block rounded-md bg-[var(--brand)]/10 px-3 py-1 text-xs font-medium text-[var(--brand)]">
             Öppna →
           </div>
         </Link>

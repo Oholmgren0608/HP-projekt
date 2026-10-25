@@ -187,7 +187,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
 
   if (loading) {
     return (
-      <div className="flex items-center gap-2 rounded-2xl border border-[var(--line)] bg-card/70 p-6 text-sm text-[var(--ink-muted)]">
+      <div className="flex items-center gap-2 rounded-[10px] border border-[var(--line)] bg-card/70 p-6 text-sm text-[var(--ink-muted)]">
         <Loader2 size={16} className="animate-spin" aria-hidden />
         Hämtar diskussionen…
       </div>
@@ -198,16 +198,16 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
     <div className="space-y-6">
       <Link
         href="/forum"
-        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--ink-muted)] transition hover:text-[var(--ink)]"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--ink-muted)] transition hover:text-[var(--ink)]"
       >
         <ArrowLeft size={15} aria-hidden />
         Alla diskussioner
       </Link>
 
       {/* Frågan */}
-      <section className="rounded-2xl border border-[var(--line)] bg-card p-5 sm:p-6">
-        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-          <span className="rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-[var(--accent-foreground)]">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
+        <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
+          <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-[var(--accent-foreground)]">
             {info.short}
           </span>
           <span className="text-[var(--ink-muted)]">{info.blockLabel}</span>
@@ -237,7 +237,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
               />
             </div>
             <div className="mt-4 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+              <p className="text-xs font-medium text-[var(--ink-muted)]">
                 Förklaring
               </p>
               <p className="mt-1 text-sm leading-relaxed text-[var(--ink-soft)]">{question.explain}</p>
@@ -245,7 +245,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
             <p className="mt-3 text-sm">
               <Link
                 href={`/ova/${question.kind}`}
-                className="font-semibold text-[var(--brand)] underline-offset-2 hover:underline"
+                className="font-medium text-[var(--brand)] underline-offset-2 hover:underline"
               >
                 Öva mer på {kindBadge(question.kind)} →
               </Link>
@@ -262,25 +262,25 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
       {/* Diskussionen */}
       <section className="space-y-4">
         <header className="flex flex-wrap items-center justify-between gap-3">
-          <h2 className="flex items-center gap-2 text-lg font-semibold text-[var(--ink)]">
+          <h2 className="flex items-center gap-2 text-lg font-medium text-[var(--ink)]">
             <MessageSquare size={18} aria-hidden />
             Diskussion
             <span className="text-sm font-normal text-[var(--ink-muted)]">
               {posts.filter((p) => !p.is_deleted).length} inlägg
             </span>
           </h2>
-          <div className="flex items-center gap-2 text-xs font-semibold">
+          <div className="flex items-center gap-2 text-xs font-medium">
             {thread?.best_post_id ? (
-              <span className="rounded-full bg-[var(--success-soft)] px-2.5 py-1 text-[var(--success-ink)]">
+              <span className="rounded-md bg-[var(--success-soft)] px-2.5 py-1 text-[var(--success-ink)]">
                 Löst
               </span>
             ) : (
-              <span className="rounded-full bg-[var(--energy-soft)] px-2.5 py-1 text-[var(--energy-ink)]">
+              <span className="rounded-md bg-[var(--energy-soft)] px-2.5 py-1 text-[var(--energy-ink)]">
                 Obesvarad
               </span>
             )}
             {ärModerator ? (
-              <span className="inline-flex items-center gap-1 rounded-full border border-[var(--line-strong)] px-2.5 py-1 text-[var(--ink-muted)]">
+              <span className="inline-flex items-center gap-1 rounded-md border border-[var(--line-strong)] px-2.5 py-1 text-[var(--ink-muted)]">
                 <ShieldCheck size={13} aria-hidden />
                 Moderator
               </span>
@@ -289,7 +289,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
         </header>
 
         {posts.length === 0 ? (
-          <p className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 text-sm text-[var(--ink-muted)]">
+          <p className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 text-sm text-[var(--ink-muted)]">
             Ingen har skrivit här än. Beskriv vad du tycker är svårt med uppgiften – någon annan
             undrar oftast samma sak.
           </p>
@@ -324,8 +324,8 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
 
         {/* Skriv ett inlägg */}
         {user ? (
-          <div className="rounded-2xl border border-[var(--line)] bg-card p-4 sm:p-5">
-            <label htmlFor="forum-body" className="text-sm font-semibold text-[var(--ink)]">
+          <div className="rounded-[10px] border border-[var(--line)] bg-card p-4 sm:p-5">
+            <label htmlFor="forum-body" className="text-sm font-medium text-[var(--ink)]">
               {thread ? "Skriv ett inlägg" : "Ställ din fråga"}
             </label>
             <textarea
@@ -347,7 +347,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
                 type="button"
                 disabled={busy || body.trim().length === 0}
                 onClick={() => void handlePost(null)}
-                className="inline-flex min-h-10 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
+                className="inline-flex min-h-10 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
               >
                 {busy ? "Skickar…" : thread ? "Publicera" : "Starta diskussionen"}
               </button>
@@ -355,7 +355,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
             {error ? <p className="mt-2 text-sm text-[var(--destructive)]">{error}</p> : null}
           </div>
         ) : (
-          <div className="rounded-2xl border border-[var(--line)] bg-card p-5">
+          <div className="rounded-[10px] border border-[var(--line)] bg-card p-5">
             <LoginPanel
               compact
               note="Logga in eller skapa konto med e-post för att ställa frågor, svara och rösta på hjälpsamma förklaringar."
@@ -416,7 +416,7 @@ function PostItem({
     <li>
       <article
         className={cn(
-          "rounded-2xl border p-4 sm:p-5",
+          "rounded-[10px] border p-4 sm:p-5",
           node.is_best
             ? "border-[var(--lagoon-ink)]/40 bg-[var(--accent-soft)]/40"
             : node.is_deleted
@@ -425,14 +425,14 @@ function PostItem({
         )}
       >
         <header className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--ink-muted)]">
-          <span className="font-semibold text-[var(--ink)]">{node.author_name}</span>
+          <span className="font-medium text-[var(--ink)]">{node.author_name}</span>
           {node.is_op ? (
-            <span className="rounded-full bg-[var(--accent-soft)] px-2 py-0.5 font-semibold text-[var(--accent-foreground)]">
+            <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 font-medium text-[var(--accent-foreground)]">
               Frågeställare
             </span>
           ) : null}
           {node.is_best ? (
-            <span className="inline-flex items-center gap-1 rounded-full bg-[var(--success-soft)] px-2 py-0.5 font-semibold text-[var(--success-ink)]">
+            <span className="inline-flex items-center gap-1 rounded-md bg-[var(--success-soft)] px-2 py-0.5 font-medium text-[var(--success-ink)]">
               <BadgeCheck size={12} aria-hidden />
               Bästa svar
             </span>
@@ -452,7 +452,7 @@ function PostItem({
 
         {!node.is_deleted ? (
           <div className="mt-3 flex flex-wrap items-center gap-1.5">
-            <div className="flex items-center gap-0.5 rounded-full border border-[var(--line-strong)] px-1">
+            <div className="flex items-center gap-0.5 rounded-md border border-[var(--line-strong)] px-1">
               <button
                 type="button"
                 disabled={!user || node.is_mine}
@@ -466,7 +466,7 @@ function PostItem({
               >
                 <ArrowBigUp size={17} aria-hidden />
               </button>
-              <span className="min-w-5 text-center text-sm font-semibold tabular-nums text-[var(--ink)]">
+              <span className="min-w-5 text-center text-sm font-medium tabular-nums text-[var(--ink)]">
                 {score}
               </span>
               <button
@@ -493,7 +493,7 @@ function PostItem({
                   setReplyTo(svarar ? null : node.id);
                   setBody("");
                 }}
-                className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[var(--line-strong)] px-2.5 text-xs font-semibold text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
+                className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[var(--line-strong)] px-2.5 text-xs font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
               >
                 <CornerDownRight size={13} aria-hidden />
                 Svara
@@ -505,7 +505,7 @@ function PostItem({
                 type="button"
                 onClick={() => void onBest(node)}
                 className={cn(
-                  "inline-flex min-h-8 items-center gap-1.5 rounded-lg border px-2.5 text-xs font-semibold transition",
+                  "inline-flex min-h-8 items-center gap-1.5 rounded-lg border px-2.5 text-xs font-medium transition",
                   node.is_best
                     ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                     : "border-[var(--line-strong)] text-[var(--ink-muted)] hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]",
@@ -523,7 +523,7 @@ function PostItem({
                   setReportingId(anmäler ? null : node.id);
                   setReportReason("");
                 }}
-                className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[var(--line-strong)] px-2.5 text-xs font-semibold text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
+                className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[var(--line-strong)] px-2.5 text-xs font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
               >
                 <Flag size={13} aria-hidden />
                 Anmäl
@@ -534,7 +534,7 @@ function PostItem({
               <button
                 type="button"
                 onClick={() => void onDelete(node)}
-                className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[var(--line-strong)] px-2.5 text-xs font-semibold text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
+                className="inline-flex min-h-8 items-center gap-1.5 rounded-lg border border-[var(--line-strong)] px-2.5 text-xs font-medium text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
               >
                 <Trash2 size={13} aria-hidden />
                 Ta bort
@@ -545,7 +545,7 @@ function PostItem({
 
         {anmäler ? (
           <div className="mt-3 space-y-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] p-3">
-            <label htmlFor={`report-${node.id}`} className="text-xs font-semibold text-[var(--ink)]">
+            <label htmlFor={`report-${node.id}`} className="text-xs font-medium text-[var(--ink)]">
               Varför anmäler du inlägget?
             </label>
             <textarea
@@ -561,7 +561,7 @@ function PostItem({
               <button
                 type="button"
                 onClick={() => setReportingId(null)}
-                className="rounded-lg border border-[var(--line-strong)] px-3 py-1.5 text-xs font-semibold text-[var(--ink-muted)]"
+                className="rounded-lg border border-[var(--line-strong)] px-3 py-1.5 text-xs font-medium text-[var(--ink-muted)]"
               >
                 Avbryt
               </button>
@@ -569,7 +569,7 @@ function PostItem({
                 type="button"
                 disabled={busy}
                 onClick={() => void onReport(node)}
-                className="rounded-lg bg-[var(--destructive)] px-3 py-1.5 text-xs font-semibold text-primary-foreground disabled:opacity-50"
+                className="rounded-lg bg-[var(--destructive)] px-3 py-1.5 text-xs font-medium text-primary-foreground disabled:opacity-50"
               >
                 Skicka anmälan
               </button>
@@ -592,7 +592,7 @@ function PostItem({
               <button
                 type="button"
                 onClick={() => setReplyTo(null)}
-                className="rounded-lg border border-[var(--line-strong)] px-3 py-1.5 text-xs font-semibold text-[var(--ink-muted)]"
+                className="rounded-lg border border-[var(--line-strong)] px-3 py-1.5 text-xs font-medium text-[var(--ink-muted)]"
               >
                 Avbryt
               </button>
@@ -600,7 +600,7 @@ function PostItem({
                 type="button"
                 disabled={busy || body.trim().length === 0}
                 onClick={() => void onReply(node.id)}
-                className="rounded-lg bg-[var(--brand)] px-4 py-1.5 text-xs font-semibold text-primary-foreground disabled:opacity-50"
+                className="rounded-lg bg-[var(--brand)] px-4 py-1.5 text-xs font-medium text-primary-foreground disabled:opacity-50"
               >
                 Svara
               </button>

@@ -30,7 +30,7 @@ export function StreakCard() {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
+    <div className="rounded-[10px] border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <motion.span
@@ -46,13 +46,13 @@ export function StreakCard() {
             <Flame className={cn("size-6", current > 0 && "animate-flicker")} />
           </motion.span>
           <div>
-            <p className="text-2xl leading-none font-extrabold text-[var(--ink)] tabular-nums">
+            <p className="text-2xl leading-none font-semibold text-[var(--ink)] tabular-nums">
               {current}
-              <span className="ml-1 text-sm font-bold text-[var(--ink-muted)]">
+              <span className="ml-1 text-sm font-semibold text-[var(--ink-muted)]">
                 {current === 1 ? "dag i rad" : "dagar i rad"}
               </span>
             </p>
-            <p className="mt-0.5 text-xs font-semibold text-[var(--ink-muted)]">Bästa: {best} dagar</p>
+            <p className="mt-0.5 text-xs font-medium text-[var(--ink-muted)]">Bästa: {best} dagar</p>
           </div>
         </div>
       </div>
@@ -64,16 +64,16 @@ export function StreakCard() {
               animate={d.active ? { scale: [1, 1.15, 1] } : {}}
               transition={{ duration: 0.35 }}
               className={cn(
-                "flex size-7 items-center justify-center rounded-lg text-[10px] font-extrabold",
+                "flex size-7 items-center justify-center rounded-lg text-[10px] font-semibold",
                 d.active
-                  ? "bg-[linear-gradient(135deg,var(--energy-ink),var(--coral-ink))] text-primary-foreground shadow-soft"
+                  ? "bg-[var(--brand)] text-primary-foreground shadow-soft"
                   : "bg-[var(--mist)] text-[var(--ink-muted)]",
                 d.isToday && !d.active && "border-2 border-dashed border-[var(--energy-ink)]",
               )}
             >
               {d.active ? "✓" : ""}
             </motion.span>
-            <span className={cn("text-[9px] font-bold", d.isToday ? "text-[var(--energy-ink)]" : "text-[var(--ink-muted)]")}>
+            <span className={cn("text-[9px] font-semibold", d.isToday ? "text-[var(--energy-ink)]" : "text-[var(--ink-muted)]")}>
               {d.label}
             </span>
           </div>
@@ -81,8 +81,8 @@ export function StreakCard() {
       </div>
 
       {current === 0 && (
-        <p className="mt-3 text-center text-xs font-bold text-[var(--ink-muted)]">
-          Gör en uppgift idag och tänd din streak 🔥
+        <p className="mt-3 text-center text-xs font-semibold text-[var(--ink-muted)]">
+          Gör en uppgift idag och tänd din streak
         </p>
       )}
     </div>

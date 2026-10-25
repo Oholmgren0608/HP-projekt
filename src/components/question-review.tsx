@@ -42,7 +42,7 @@ function QuestionReviewItem({
           : "border-[var(--destructive)]/30 bg-[var(--coral-soft)]"
       }`}
     >
-      <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
+      <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-[var(--ink-muted)]">
         <span>
           {index + 1}. {kindBadge(q.kind)}
         </span>
@@ -75,7 +75,7 @@ function QuestionReviewItem({
               }`}
             >
               <span
-                className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
+                className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
                   isCorrect
                     ? "border-[var(--lagoon-ink)] bg-[var(--lagoon-ink)] text-primary-foreground"
                     : isChosen
@@ -86,7 +86,7 @@ function QuestionReviewItem({
                 {String.fromCharCode(65 + i)}
               </span>
               <span className="flex-1 text-[var(--ink)]">{opt}</span>
-              <span className="mt-0.5 flex shrink-0 flex-wrap justify-end gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-wide">
+              <span className="mt-0.5 flex shrink-0 flex-wrap justify-end gap-x-2 gap-y-1 text-xs font-medium ">
                 {isChosen ? <span className="text-[var(--ink-muted)]">Ditt svar</span> : null}
                 {isCorrect ? <span className="text-[var(--lagoon-ink)]">Rätt</span> : null}
               </span>
@@ -96,7 +96,7 @@ function QuestionReviewItem({
       </div>
 
       <div className="mt-3">
-        <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+        <p className="text-xs font-medium text-[var(--ink-muted)]">
           Förklaring
         </p>
         <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink-soft)]">

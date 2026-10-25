@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Nunito } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import { AppShell } from "@/components/app-shell";
 import { PlanProvider } from "@/components/plan-context";
 import { AuthProvider } from "@/lib/supabase/auth-context";
@@ -8,14 +8,10 @@ import { GamificationProvider } from "@/lib/gamification/provider";
 import { CelebrationLayer } from "@/components/gamification/celebration-layer";
 import "./globals.css";
 
-const display = Fraunces({
-  variable: "--font-display",
-  subsets: ["latin", "latin-ext"],
-});
-
-const sans = Nunito({
+const sans = IBM_Plex_Sans({
   variable: "--font-sans",
   subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -37,8 +33,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f5ef" },
-    { media: "(prefers-color-scheme: dark)", color: "#0d1417" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f7f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#121212" },
   ],
 };
 
@@ -47,7 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="sv"
       suppressHydrationWarning
-      className={`${display.variable} ${sans.variable} h-full antialiased`}
+      className={`${sans.variable} h-full antialiased`}
     >
       <head>
         {/* Sätt tema-klassen innan första målningen — undviker ljust flimmer

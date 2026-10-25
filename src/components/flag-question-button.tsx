@@ -91,7 +91,7 @@ export function FlagQuestionButton({ questionId }: { questionId: string }) {
         aria-expanded={phase !== "idle"}
         aria-controls={panelId}
         onClick={() => (phase === "idle" ? setPhase("open") : close())}
-        className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[var(--line-strong)] px-3 py-1.5 text-xs font-semibold text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)] sm:text-sm"
+        className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-[var(--line-strong)] px-3 py-1.5 text-xs font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)] sm:text-sm"
       >
         <Flag size={14} aria-hidden />
         Rapportera fel
@@ -107,7 +107,7 @@ export function FlagQuestionButton({ questionId }: { questionId: string }) {
         >
           {user ? (
             <>
-              <label htmlFor={fieldId} className="text-xs font-semibold text-[var(--ink)]">
+              <label htmlFor={fieldId} className="text-xs font-medium text-[var(--ink)]">
                 Vad är fel i frågan?
               </label>
               <textarea
@@ -128,7 +128,7 @@ export function FlagQuestionButton({ questionId }: { questionId: string }) {
                 <button
                   type="button"
                   onClick={close}
-                  className="rounded-lg border border-[var(--line-strong)] px-3 py-1.5 text-xs font-semibold text-[var(--ink-muted)]"
+                  className="rounded-lg border border-[var(--line-strong)] px-3 py-1.5 text-xs font-medium text-[var(--ink-muted)]"
                 >
                   Avbryt
                 </button>
@@ -138,7 +138,7 @@ export function FlagQuestionButton({ questionId }: { questionId: string }) {
                     phase === "sending" || length < FLAG_REASON_MIN || length > FLAG_REASON_MAX
                   }
                   onClick={() => void submit()}
-                  className="rounded-lg bg-[var(--destructive)] px-3 py-1.5 text-xs font-semibold text-primary-foreground disabled:opacity-50"
+                  className="rounded-lg bg-[var(--destructive)] px-3 py-1.5 text-xs font-medium text-primary-foreground disabled:opacity-50"
                 >
                   {phase === "sending" ? "Skickar…" : "Skicka rapport"}
                 </button>

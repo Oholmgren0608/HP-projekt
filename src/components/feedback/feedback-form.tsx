@@ -22,7 +22,7 @@ const INPUT_CLASS =
   "w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2";
 
 const BUTTON_PRIMARY =
-  "inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60";
 
 const BUTTON_OUTLINE =
   "inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]";
@@ -122,7 +122,7 @@ export function FeedbackForm() {
         <div
           role="status"
           aria-live="polite"
-          className="rounded-2xl border border-[var(--line)] bg-card/75 p-6 shadow-soft sm:p-8"
+          className="rounded-[10px] border border-[var(--line)] bg-card/75 p-6 shadow-soft sm:p-8"
         >
           <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
             ✓ {channel.successTitle}
@@ -144,7 +144,7 @@ export function FeedbackForm() {
   return (
     <div className="mx-auto max-w-2xl space-y-6 sm:space-y-8">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Hjälp & feedback
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -167,14 +167,14 @@ export function FeedbackForm() {
               aria-pressed={active}
               onClick={() => selectChannel(k)}
               className={cn(
-                "rounded-2xl border p-4 text-left transition active:scale-[0.99]",
+                "rounded-[10px] border p-4 text-left transition ",
                 active
                   ? "border-[var(--brand)] bg-[var(--accent-soft)]"
                   : "border-[var(--line-strong)] bg-card/70 hover:border-[var(--brand)] hover:bg-card",
               )}
             >
-              <p className="text-sm font-bold text-[var(--ink)]">
-                {c.emoji} {c.label}
+              <p className="text-sm font-semibold text-[var(--ink)]">
+                {c.label}
               </p>
               <p className="mt-1 text-sm text-[var(--ink-muted)]">{c.description}</p>
             </button>
@@ -184,7 +184,7 @@ export function FeedbackForm() {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6"
+        className="space-y-6 rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6"
       >
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           {channel.heading}
@@ -203,7 +203,7 @@ export function FeedbackForm() {
                   onChange={() => setCategory(c.value)}
                   className="peer sr-only"
                 />
-                <span className="inline-flex min-h-9 items-center rounded-full border border-[var(--line-strong)] px-3.5 text-sm font-medium text-[var(--ink-muted)] transition peer-checked:border-[var(--brand)] peer-checked:bg-[var(--accent-soft)] peer-checked:text-[var(--ink)] peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--brand)]">
+                <span className="inline-flex min-h-9 items-center rounded-md border border-[var(--line-strong)] px-3.5 text-sm font-medium text-[var(--ink-muted)] transition peer-checked:border-[var(--brand)] peer-checked:bg-[var(--accent-soft)] peer-checked:text-[var(--ink)] peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--brand)]">
                   {c.label}
                 </span>
               </label>

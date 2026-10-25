@@ -73,8 +73,8 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6">
+      <p className="text-xs font-medium text-[var(--brand)]">
         Privat duell
       </p>
       <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -84,7 +84,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
       <div className="mt-6 space-y-4">
         <div>
           <p className="text-sm text-[var(--ink-muted)]">Matchkod</p>
-          <p className="font-[family-name:var(--font-display)] text-4xl tracking-[0.2em] text-[var(--ink)]">
+          <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
             {code}
           </p>
         </div>
@@ -101,7 +101,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
             <button
               type="button"
               onClick={() => void copy()}
-              className="shrink-0 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              className="shrink-0 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-primary-foreground transition hover:brightness-110"
             >
               {copied ? "Kopierad!" : "Kopiera"}
             </button>

@@ -42,7 +42,7 @@ export function UsernamePrompt() {
         role="dialog"
         aria-modal="true"
         aria-label="Välj ett användarnamn"
-        className="relative w-full max-w-sm rounded-2xl border border-[var(--line)] bg-card p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+        className="relative w-full max-w-sm rounded-[10px] border border-[var(--line)] bg-card p-6"
       >
         <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
           Välj ett användarnamn
@@ -71,7 +71,7 @@ export function UsernamePrompt() {
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {submitting ? (
               <>

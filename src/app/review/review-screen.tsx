@@ -309,7 +309,7 @@ export function ReviewScreen() {
         <p className="mt-4 text-[var(--ink-muted)]">
           {forbiddenEmail ? (
             <>
-              Kontot <span className="font-semibold text-[var(--ink)]">{forbiddenEmail}</span> har
+              Kontot <span className="font-medium text-[var(--ink)]">{forbiddenEmail}</span> har
               inte behörighet att granska utkast.
             </>
           ) : (
@@ -330,7 +330,7 @@ export function ReviewScreen() {
         <button
           type="button"
           onClick={() => void refresh()}
-          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
         >
           Försök igen
         </button>
@@ -346,7 +346,7 @@ export function ReviewScreen() {
     <div className="space-y-8 sm:space-y-10">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+          <p className="text-xs font-medium text-[var(--brand)]">
             Administration
           </p>
           <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -408,7 +408,7 @@ export function ReviewScreen() {
       ) : null}
 
       {visibleGroups.length === 0 ? (
-        <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-10 text-center text-[var(--ink-muted)]">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-10 text-center text-[var(--ink-muted)]">
           Inga frågor att visa i den här vyn.
         </div>
       ) : (
@@ -497,7 +497,7 @@ function ExamGroup({
   }
 
   return (
-    <section className="overflow-hidden rounded-2xl border border-[var(--line)] bg-card/70">
+    <section className="overflow-hidden rounded-[10px] border border-[var(--line)] bg-card/70">
       <div className="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-5">
         <button
           type="button"
@@ -507,7 +507,7 @@ function ExamGroup({
         >
           <span className="text-sm text-[var(--ink-muted)]">{expanded ? "▾" : "▸"}</span>
           <span className="min-w-0">
-            <span className="block truncate font-semibold text-[var(--ink)]">{group.title}</span>
+            <span className="block truncate font-medium text-[var(--ink)]">{group.title}</span>
             <span className="block text-xs text-[var(--ink-muted)]">
               {group.examDate ?? "Inget datum"}
             </span>
@@ -515,26 +515,26 @@ function ExamGroup({
         </button>
 
         <div className="flex flex-wrap items-center gap-1.5">
-          <span className="rounded-full border border-[var(--line)] bg-card/70 px-2 py-0.5 text-xs text-[var(--ink-muted)]">
+          <span className="rounded-md border border-[var(--line)] bg-card/70 px-2 py-0.5 text-xs text-[var(--ink-muted)]">
             {draftCount} utkast
           </span>
           {rejectedCount > 0 ? (
-            <span className="rounded-full border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-2 py-0.5 text-xs text-[var(--destructive)]">
+            <span className="rounded-md border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-2 py-0.5 text-xs text-[var(--destructive)]">
               {countWithAdjective(rejectedCount, "avvisad", "avvisade")}
             </span>
           ) : null}
           {publishedCount > 0 ? (
-            <span className="rounded-full border border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)] px-2 py-0.5 text-xs text-[var(--brand)]">
+            <span className="rounded-md border border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)] px-2 py-0.5 text-xs text-[var(--brand)]">
               {countWithAdjective(publishedCount, "publicerad", "publicerade")}
             </span>
           ) : null}
           {flaggedCount > 0 ? (
-            <span className="rounded-full border border-[var(--energy-ink)]/30 bg-[var(--energy-soft)] px-2 py-0.5 text-xs text-[var(--energy-ink)]">
+            <span className="rounded-md border border-[var(--energy-ink)]/30 bg-[var(--energy-soft)] px-2 py-0.5 text-xs text-[var(--energy-ink)]">
               {countWithAdjective(flaggedCount, "flaggad", "flaggade")}
             </span>
           ) : null}
           {reportedCount > 0 ? (
-            <span className="rounded-full border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-2 py-0.5 text-xs text-[var(--destructive)]">
+            <span className="rounded-md border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-2 py-0.5 text-xs text-[var(--destructive)]">
               {reportedCount} med felrapporter
             </span>
           ) : null}
@@ -564,7 +564,7 @@ function ExamGroup({
                     type="button"
                     onClick={() => void bulk("published")}
                     disabled={bulkIds.length === 0}
-                    className="rounded-lg bg-[var(--lagoon-ink)] px-3 py-1.5 text-xs font-semibold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
+                    className="rounded-lg bg-[var(--lagoon-ink)] px-3 py-1.5 text-xs font-medium text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
                   >
                     Publicera {bulkIds.length} ense
                   </button>
@@ -572,7 +572,7 @@ function ExamGroup({
                 <button
                   type="button"
                   onClick={() => void bulk("rejected")}
-                  className="rounded-lg border border-[var(--destructive)]/40 bg-card px-3 py-1.5 text-xs font-semibold text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
+                  className="rounded-lg border border-[var(--destructive)]/40 bg-card px-3 py-1.5 text-xs font-medium text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
                 >
                   Avvisa alla
                 </button>
@@ -586,7 +586,7 @@ function ExamGroup({
               const rest = sg.questions.length - limit;
               return (
                 <div key={sg.key}>
-                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+                  <h3 className="mb-2 text-xs font-medium text-[var(--ink-muted)]">
                     {sg.label} · {questionCount(sg.questions.length)}
                   </h3>
                   <div className="space-y-2.5 sm:space-y-3">
@@ -598,7 +598,7 @@ function ExamGroup({
                     <button
                       type="button"
                       onClick={() => setShown((prev) => ({ ...prev, [sg.key]: limit + PAGE }))}
-                      className="mt-3 rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+                      className="mt-3 rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
                     >
                       Visa {Math.min(PAGE, rest)} till ({rest} kvar)
                     </button>
@@ -665,24 +665,24 @@ function QuestionCard({
 
   return (
     <div className="rounded-xl border border-[var(--line)] bg-card px-4 py-3">
-      <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
+      <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-[var(--ink-muted)]">
         <span>{kindLabel(q.kind)}</span>
         {q.passNumber != null ? <span>Pass {q.passNumber}</span> : null}
         {q.questionNumber != null ? <span># {q.questionNumber}</span> : null}
-        <span className={`rounded-full border px-2 py-0.5 normal-case tracking-normal ${statusBadgeClass(q.status)}`}>
+        <span className={`rounded-md border px-2 py-0.5 normal-case tracking-normal ${statusBadgeClass(q.status)}`}>
           {STATUS_LABEL[q.status] ?? q.status}
         </span>
         {isProvfraga(q) ? (
-          <span className="rounded-full border border-[var(--line)] bg-card/70 px-2 py-0.5 normal-case tracking-normal">
+          <span className="rounded-md border border-[var(--line)] bg-card/70 px-2 py-0.5 normal-case tracking-normal">
             Förlaga – publiceras aldrig
           </span>
         ) : null}
         {q.verification === "agreed" ? (
-          <span className="rounded-full border border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--brand)]">
+          <span className="rounded-md border border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--brand)]">
             Andra kontrollen: ense
           </span>
         ) : q.verification === "disagreed" ? (
-          <span className="rounded-full border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--destructive)]">
+          <span className="rounded-md border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--destructive)]">
             Andra kontrollen: oense
           </span>
         ) : null}
@@ -691,9 +691,9 @@ function QuestionCard({
             {flags.map((f, i) => (
               <span
                 key={i}
-                className="rounded-full border border-[var(--energy-ink)]/30 bg-[var(--energy-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--energy-ink)]"
+                className="rounded-md border border-[var(--energy-ink)]/30 bg-[var(--energy-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--energy-ink)]"
               >
-                ⚠ {f}
+                {f}
               </span>
             ))}
           </span>
@@ -708,7 +708,7 @@ function QuestionCard({
 
       {q.openReports.length > 0 ? (
         <div className="mt-2 rounded-lg border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-3 py-2 text-sm text-[var(--ink)]">
-          <p className="font-semibold">
+          <p className="font-medium">
             {q.openReports.length === 1
               ? "1 öppen felrapport"
               : `${q.openReports.length} öppna felrapporter från ${q.openReports.length} olika användare`}
@@ -725,7 +725,7 @@ function QuestionCard({
             <button
               type="button"
               onClick={() => void closeReports()}
-              className="mt-2 rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+              className="mt-2 rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
             >
               Markera rapporterna som hanterade
             </button>
@@ -760,7 +760,7 @@ function QuestionCard({
               }`}
             >
               <span
-                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
+                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-xs font-medium ${
                   isCorrect
                     ? "bg-[var(--lagoon-ink)] text-primary-foreground"
                     : "border border-[var(--line)] text-[var(--ink-muted)]"
@@ -770,7 +770,7 @@ function QuestionCard({
               </span>
               <span className="flex-1 whitespace-pre-wrap text-[var(--ink)]">{opt}</span>
               {isCorrect ? (
-                <span className="mt-0.5 shrink-0 text-xs font-semibold uppercase text-[var(--lagoon-ink)]">
+                <span className="mt-0.5 shrink-0 text-xs font-medium uppercase text-[var(--lagoon-ink)]">
                   Rätt
                 </span>
               ) : null}
@@ -781,7 +781,7 @@ function QuestionCard({
 
       {body.trim() ? (
         <div className="mt-3">
-          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+          <p className="text-xs font-medium text-[var(--ink-muted)]">
             Förklaring
           </p>
           <p className="mt-1 whitespace-pre-wrap text-sm leading-relaxed text-[var(--ink-soft)]">
@@ -795,7 +795,7 @@ function QuestionCard({
         <button
           type="button"
           onClick={() => setEditing(true)}
-          className="rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-semibold text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+          className="rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
         >
           Redigera
         </button>
@@ -803,7 +803,7 @@ function QuestionCard({
           <button
             type="button"
             onClick={() => void changeStatus("published")}
-            className="rounded-lg bg-[var(--lagoon-ink)] px-3 py-1.5 text-xs font-semibold text-primary-foreground transition hover:opacity-90"
+            className="rounded-lg bg-[var(--lagoon-ink)] px-3 py-1.5 text-xs font-medium text-primary-foreground transition hover:opacity-90"
           >
             Godkänn
           </button>
@@ -812,7 +812,7 @@ function QuestionCard({
           <button
             type="button"
             onClick={() => void changeStatus("rejected")}
-            className="rounded-lg bg-[var(--destructive)] px-3 py-1.5 text-xs font-semibold text-primary-foreground transition hover:brightness-110"
+            className="rounded-lg bg-[var(--destructive)] px-3 py-1.5 text-xs font-medium text-primary-foreground transition hover:brightness-110"
           >
             Markera som fel
           </button>
@@ -820,7 +820,7 @@ function QuestionCard({
           <button
             type="button"
             onClick={() => void changeStatus("rejected")}
-            className="rounded-lg border border-[var(--destructive)]/40 bg-card px-3 py-1.5 text-xs font-semibold text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
+            className="rounded-lg border border-[var(--destructive)]/40 bg-card px-3 py-1.5 text-xs font-medium text-[var(--destructive)] transition hover:bg-[var(--coral-soft)]"
           >
             Avvisa
           </button>
@@ -829,7 +829,7 @@ function QuestionCard({
           <button
             type="button"
             onClick={() => void changeStatus("draft")}
-            className="rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-semibold text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)]"
+            className="rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)]"
           >
             Ångra
           </button>
@@ -939,15 +939,15 @@ function EditForm({
   return (
     <div className="rounded-xl border border-[var(--brand)]/40 bg-card px-4 py-3 shadow-sm">
       <div className="mb-3 flex items-center justify-between">
-        <span className="text-xs font-semibold uppercase tracking-wide text-[var(--brand)]">
+        <span className="text-xs font-medium text-[var(--brand)]">
           Redigerar · {kindLabel(q.kind)}
           {q.questionNumber != null ? ` #${q.questionNumber}` : ""}
         </span>
-        <span className="text-xs text-[var(--ink-muted)]">⚠ Flaggor bevaras vid sparning</span>
+        <span className="text-xs text-[var(--ink-muted)]">Flaggor bevaras vid sparning</span>
       </div>
 
       <label className="block">
-        <span className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+        <span className="text-xs font-medium text-[var(--ink-muted)]">
           Frågetext
         </span>
         <textarea
@@ -959,7 +959,7 @@ function EditForm({
       </label>
 
       <label className="mt-3 block">
-        <span className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+        <span className="text-xs font-medium text-[var(--ink-muted)]">
           Text/passage (valfri)
         </span>
         <textarea
@@ -971,14 +971,14 @@ function EditForm({
       </label>
 
       <div className="mt-3">
-        <span className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+        <span className="text-xs font-medium text-[var(--ink-muted)]">
           Svarsalternativ
         </span>
         <div className="mt-1 space-y-2">
           {form.options.map((opt, i) => (
             <div key={i} className="flex items-center gap-2">
               <span
-                className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold ${
+                className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-medium ${
                   i === form.correctIndex
                     ? "bg-[var(--lagoon-ink)] text-primary-foreground"
                     : "border border-[var(--line)] text-[var(--ink-muted)]"
@@ -1014,7 +1014,7 @@ function EditForm({
       </div>
 
       <label className="mt-3 block">
-        <span className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+        <span className="text-xs font-medium text-[var(--ink-muted)]">
           Rätt svar
         </span>
         <select
@@ -1031,7 +1031,7 @@ function EditForm({
       </label>
 
       <label className="mt-3 block">
-        <span className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+        <span className="text-xs font-medium text-[var(--ink-muted)]">
           Förklaring
         </span>
         <textarea
@@ -1051,7 +1051,7 @@ function EditForm({
           type="button"
           onClick={() => void handleSave()}
           disabled={saving}
-          className="rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
+          className="rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
         >
           {saving ? "Sparar…" : "Spara"}
         </button>

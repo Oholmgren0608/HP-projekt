@@ -4,7 +4,7 @@ export function ExamsView() {
   return (
     <div className="space-y-8 sm:space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Prov
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">

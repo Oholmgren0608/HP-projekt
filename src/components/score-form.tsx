@@ -251,7 +251,7 @@ export function ScoreForm() {
               className="flex items-center justify-between gap-3 rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2"
             >
               <span className="min-w-0">
-                <span className="font-semibold text-[var(--ink)]">{m.id}</span>
+                <span className="font-medium text-[var(--ink)]">{m.id}</span>
                 <span className="mt-0.5 block truncate text-xs text-[var(--ink-muted)]">
                   {m.name}
                 </span>
@@ -276,7 +276,7 @@ export function ScoreForm() {
       <div className="flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
         >
           Skapa ny plan
         </button>
@@ -284,7 +284,7 @@ export function ScoreForm() {
           <button
             type="button"
             onClick={handleClear}
-            className="inline-flex min-h-11 items-center rounded-lg border border-[var(--destructive)] px-4 text-sm font-semibold text-[var(--destructive)] hover:bg-[var(--destructive)]/10"
+            className="inline-flex min-h-11 items-center rounded-lg border border-[var(--destructive)] px-4 text-sm font-medium text-[var(--destructive)] hover:bg-[var(--destructive)]/10"
           >
             Bekräfta: radera sparade resultat
           </button>

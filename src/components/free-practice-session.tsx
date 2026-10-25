@@ -140,10 +140,10 @@ export function FreePracticeSession({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-card p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6">
+    <div className="rounded-xl border border-[var(--line)] bg-card p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+          <p className="text-xs font-medium text-[var(--brand)]">
             Fri övning · {kindBadge(subtest)}
           </p>
           <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -174,7 +174,7 @@ export function FreePracticeSession({
             </span>
             {remainingSeconds !== null ? (
               <span
-                className={`rounded px-2 py-0.5 text-xs font-semibold tabular-nums ${
+                className={`rounded px-2 py-0.5 text-xs font-medium tabular-nums ${
                   warning
                     ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
                     : "bg-[var(--mist)] text-[var(--ink-soft)]"
@@ -183,7 +183,7 @@ export function FreePracticeSession({
                 Tid kvar: {formatCountdown(remainingSeconds)}
               </span>
             ) : (
-              <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
+              <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium text-[var(--ink-soft)]">
                 Tid: {formatClock(elapsedSeconds)}
               </span>
             )}
@@ -238,7 +238,7 @@ export function FreePracticeSession({
                   : "border-[var(--destructive)]/30 bg-[var(--coral-soft)]"
               }`}
             >
-              <p className="text-sm font-semibold text-[var(--ink)]">
+              <p className="text-sm font-medium text-[var(--ink)]">
                 {committed === current.correctIndex
                   ? "Rätt svar!"
                   : `Fel — rätt svar är ${String.fromCharCode(65 + current.correctIndex)}.`}
@@ -255,7 +255,7 @@ export function FreePracticeSession({
               type="button"
               disabled={committed === undefined && selected === null}
               onClick={committed !== undefined ? submitAnswer : handleSubmit}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
             >
               {primaryLabel}
             </button>
@@ -297,14 +297,14 @@ export function FreePracticeSession({
             <button
               type="button"
               onClick={handleRestart}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
             >
               Ny övning
             </button>
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+              className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
             >
               Till övningsval
             </button>

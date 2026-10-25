@@ -96,7 +96,7 @@ export function ReviewForm({
     <div className="mt-6 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-5 text-left sm:p-6">
       {isBot ? (
         <>
-          <p className="text-sm font-semibold text-[var(--ink)]">
+          <p className="text-sm font-medium text-[var(--ink)]">
             Hur var botens svårighetsgrad?
           </p>
           <p className="mt-1 text-xs text-[var(--ink-muted)]">
@@ -123,7 +123,7 @@ export function ReviewForm({
         </>
       ) : (
         <>
-          <p className="text-sm font-semibold text-[var(--ink)]">
+          <p className="text-sm font-medium text-[var(--ink)]">
             Betygsätt din motståndare
           </p>
           <div className="mt-3 flex gap-1" role="radiogroup" aria-label="Betyg">
@@ -149,7 +149,7 @@ export function ReviewForm({
 
           {showReport ? (
             <div className="mt-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+              <p className="text-xs font-medium text-[var(--ink-muted)]">
                 Rapportera (valfritt)
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
@@ -196,7 +196,7 @@ export function ReviewForm({
         type="button"
         disabled={!canSubmit || submitting}
         onClick={() => void handleSubmit()}
-        className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+        className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
       >
         {submitting ? "Skickar…" : "Skicka recension"}
       </button>

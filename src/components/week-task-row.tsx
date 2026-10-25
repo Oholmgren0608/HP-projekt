@@ -39,7 +39,7 @@ export function WeekTaskRow({
         <div className="flex flex-wrap items-start gap-3">
           <span
             aria-hidden
-            className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs font-bold ${
+            className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border text-xs font-semibold ${
               checked
                 ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
                 : "border-[var(--line)] bg-card text-transparent"
@@ -54,7 +54,7 @@ export function WeekTaskRow({
               >
                 {task.title}
               </span>
-              <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[var(--ink-soft)]">
+              <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[11px] font-medium text-[var(--ink-soft)]">
                 {sectionLabel(task.section)}
               </span>
               <span className="text-xs text-[var(--ink-muted)]">~{task.minutes} min</span>
@@ -76,7 +76,7 @@ export function WeekTaskRow({
               <button
                 type="button"
                 onClick={onStart}
-                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110"
               >
                 {checked
                   ? "Öva igen (nya frågor)"

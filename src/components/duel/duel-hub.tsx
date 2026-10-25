@@ -135,7 +135,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
     return (
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-40 animate-pulse rounded-2xl bg-card/70" />
+        <div className="h-40 animate-pulse rounded-[10px] bg-card/70" />
       </div>
     );
   }
@@ -181,7 +181,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
   return (
     <div className="space-y-8 sm:space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           PvP
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -190,7 +190,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
         <p className="mt-2 max-w-xl text-[var(--ink-muted)]">
           Möt spelare på din nivå i direkta dueller — samma frågor, svara rätt och
           snabbt. {displayNameFromUser(user)}, du har{" "}
-          <span className="font-semibold text-[var(--ink)]">{profile?.elo ?? 1200}</span>{" "}
+          <span className="font-medium text-[var(--ink)]">{profile?.elo ?? 1200}</span>{" "}
           i ranking.
         </p>
       </div>
@@ -244,7 +244,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
           disabled={busy}
           onClick={() => void handleStartBot()}
         />
-        <div className="flex flex-col rounded-2xl border border-[var(--line)] bg-card/75 p-5">
+        <div className="flex flex-col rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
           <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
             Privat duell
           </h3>
@@ -255,7 +255,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
             type="button"
             disabled={busy}
             onClick={() => void handleCreatePrivate()}
-            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
+            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
           >
             Skapa privat match
           </button>
@@ -265,7 +265,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
               onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
               placeholder="MATCHKOD"
               maxLength={6}
-              className="w-full rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2 text-sm uppercase tracking-widest text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
+              className="w-full rounded-lg border border-[var(--line-strong)] bg-[var(--paper)] px-3 py-2 text-sm st text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
             />
             <button
               type="button"
@@ -281,7 +281,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
       <section className="grid gap-6 lg:grid-cols-2">
         {/* Topplista */}
-        <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
           <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
             Topplista
           </h2>
@@ -294,7 +294,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
               {leaderboard.map((p, i) => (
                 <li key={p.user_id} className="flex items-center gap-3 py-2">
                   <span
-                    className={`w-6 text-center font-semibold tabular-nums ${
+                    className={`w-6 text-center font-medium tabular-nums ${
                       i < 3 ? "text-[var(--brand)]" : "text-[var(--ink-muted)]"
                     }`}
                   >
@@ -307,7 +307,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
                   <span className="text-xs text-[var(--ink-muted)]">
                     {p.wins}V / {p.losses}F
                   </span>
-                  <span className="w-12 text-right font-semibold tabular-nums text-[var(--ink)]">
+                  <span className="w-12 text-right font-medium tabular-nums text-[var(--ink)]">
                     {p.elo}
                   </span>
                 </li>
@@ -317,7 +317,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
         </div>
 
         {/* Historik */}
-        <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
           <h2 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
             Matchhistorik
           </h2>
@@ -347,7 +347,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
       <p className="mt-1 font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
         {value}
@@ -370,7 +370,7 @@ function ModeCard({
   disabled?: boolean;
 }) {
   return (
-    <div className="flex flex-col rounded-2xl border border-[var(--line)] bg-card/75 p-5">
+    <div className="flex flex-col rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
       <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--ink)]">
         {title}
       </h3>
@@ -379,7 +379,7 @@ function ModeCard({
         type="button"
         disabled={disabled}
         onClick={onClick}
-        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
+        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
       >
         {cta}
       </button>
@@ -430,7 +430,7 @@ function HistoryItem({
 
   return (
     <li className="flex items-center gap-3 py-2 text-sm">
-      <span className="w-16 shrink-0 text-xs uppercase tracking-wide text-[var(--ink-muted)]">
+      <span className="w-16 shrink-0 text-xs text-[var(--ink-muted)]">
         {duelModeLabel(match.mode)}
       </span>
       <span className={`flex-1 truncate font-medium ${resultColor}`}>

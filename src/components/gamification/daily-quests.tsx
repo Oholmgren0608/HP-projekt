@@ -14,9 +14,9 @@ export function DailyQuests({ className }: { className?: string }) {
   const { items, allDone } = state.quests;
 
   return (
-    <div className={cn("rounded-2xl border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft", className)}>
+    <div className={cn("rounded-[10px] border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft", className)}>
       <div className="flex items-center justify-between">
-        <h2 className="font-[family-name:var(--font-display)] text-lg font-bold text-[var(--ink)]">
+        <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold text-[var(--ink)]">
           Dagens uppdrag
         </h2>
         {allDone && (
@@ -24,9 +24,9 @@ export function DailyQuests({ className }: { className?: string }) {
             initial={{ scale: 0.6, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", bounce: 0.5 }}
-            className="rounded-full bg-[var(--success-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--success-ink)]"
+            className="rounded-md bg-[var(--success-soft)] px-2.5 py-1 text-xs font-semibold text-[var(--success-ink)]"
           >
-            Alla klara! 🎉
+            Alla klara!
           </motion.span>
         )}
       </div>
@@ -38,15 +38,12 @@ export function DailyQuests({ className }: { className?: string }) {
             <li
               key={q.id}
               className={cn(
-                "flex items-center gap-3 rounded-xl border border-[var(--line)] p-2.5 transition-opacity",
+                "flex items-center gap-3 rounded-lg border border-[var(--line)] px-3 py-2.5 transition-opacity",
                 q.done && "border-[var(--success-soft)] bg-[var(--success-soft)]/40 opacity-80",
               )}
             >
-              <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[var(--accent-soft)] text-lg">
-                {q.emoji}
-              </span>
               <div className="min-w-0 flex-1">
-                <p className={cn("truncate text-sm font-bold text-[var(--ink)]", q.done && "line-through opacity-70")}>
+                <p className={cn("truncate text-sm font-semibold text-[var(--ink)]", q.done && "line-through opacity-70")}>
                   {q.label}
                 </p>
                 <div className="mt-1.5 flex items-center gap-2">
@@ -54,14 +51,14 @@ export function DailyQuests({ className }: { className?: string }) {
                     <motion.div
                       className={cn(
                         "h-full rounded-full",
-                        q.done ? "bg-[var(--success-ink)]" : "bg-[linear-gradient(90deg,var(--brand),var(--lagoon-ink))]",
+                        q.done ? "bg-[var(--success-ink)]" : "bg-[var(--brand)]",
                       )}
                       initial={{ width: 0 }}
                       animate={{ width: `${pct}%` }}
                       transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                     />
                   </div>
-                  <span className="w-12 shrink-0 text-right text-[11px] font-bold text-[var(--ink-muted)] tabular-nums">
+                  <span className="w-12 shrink-0 text-right text-[11px] font-semibold text-[var(--ink-muted)] tabular-nums">
                     {q.progress}/{q.target}
                   </span>
                 </div>
@@ -77,7 +74,7 @@ export function DailyQuests({ className }: { className?: string }) {
                     <Check className="size-4" strokeWidth={3} />
                   </motion.span>
                 ) : (
-                  <span className="text-xs font-extrabold text-[var(--energy-ink)]">+{q.xp}</span>
+                  <span className="text-xs font-semibold text-[var(--energy-ink)]">+{q.xp}</span>
                 )}
               </div>
             </li>

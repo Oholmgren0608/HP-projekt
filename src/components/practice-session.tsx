@@ -153,10 +153,10 @@ export function PracticeSession({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--line)] bg-card p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.55)] sm:p-6">
+    <div className="rounded-xl border border-[var(--line)] bg-card p-5 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+          <p className="text-xs font-medium text-[var(--brand)]">
             Vecka {week} · {kindLabels}
           </p>
           <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -188,7 +188,7 @@ export function PracticeSession({
             <span>
               Fråga {quiz.index + 1} av {quiz.total}
             </span>
-            <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
+            <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium text-[var(--ink-soft)]">
               {kindBadge(current.kind)}
             </span>
           </div>
@@ -217,7 +217,7 @@ export function PracticeSession({
               type="button"
               disabled={quiz.selected === null}
               onClick={handleSubmit}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
             >
               {quiz.index >= quiz.total - 1 ? "Visa resultat" : "Nästa fråga"}
             </button>
@@ -269,7 +269,7 @@ export function PracticeSession({
             <button
               type="button"
               onClick={handleRestartSame}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
             >
               Ny övning
             </button>
@@ -277,7 +277,7 @@ export function PracticeSession({
               <button
                 type="button"
                 onClick={handleNextTask}
-                className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
+                className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]"
               >
                 Nästa i veckan
               </button>
@@ -326,13 +326,13 @@ function TimeRequirementBanner({
             </>
           ) : (
             <>
-              Krav: <span className="font-semibold">{timer.requiredMinutes} min</span> aktiv
+              Krav: <span className="font-medium">{timer.requiredMinutes} min</span> aktiv
               övningstid. Kvar:{" "}
-              <span className="font-semibold tabular-nums text-[var(--brand)]">
+              <span className="font-medium tabular-nums text-[var(--brand)]">
                 {formatClock(timer.remainingSeconds)}
               </span>
               {timer.paused ? (
-                <span className="ml-2 rounded bg-[var(--mist)] px-1.5 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-muted)]">
+                <span className="ml-2 rounded bg-[var(--mist)] px-1.5 py-0.5 text-xs font-medium text-[var(--ink-muted)]">
                   Pausad
                 </span>
               ) : null}
@@ -377,7 +377,7 @@ function CompleteButton({
         type="button"
         disabled={!ready}
         onClick={onClick}
-        className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+        className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
       >
         Markera uppgiften som klar
       </button>
@@ -437,7 +437,7 @@ function ReflectForm({
           type="button"
           disabled={!canFinish}
           onClick={onComplete}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
         >
           Markera som klar
         </button>

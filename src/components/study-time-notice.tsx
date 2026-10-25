@@ -29,31 +29,28 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
           border: "border-[var(--destructive)]/30",
           bg: "bg-[var(--coral-soft)]",
           title: "text-[var(--destructive)]",
-          icon: "⚠️",
         }
       : status === "tight"
         ? {
             border: "border-[var(--brand)]/30",
             bg: "bg-[var(--accent-soft)]/60",
             title: "text-[var(--ink)]",
-            icon: "⏳",
           }
         : {
             border: "border-[var(--lagoon-ink)]/40",
             bg: "bg-[var(--accent-soft)]/60",
             title: "text-[var(--ink)]",
-            icon: "✓",
           };
 
   return (
     <section
-      className={`rounded-2xl border ${tone.border} ${tone.bg} px-4 py-4 sm:px-5`}
+      className={`rounded-[10px] border ${tone.border} ${tone.bg} px-4 py-4 sm:px-5`}
       aria-live="polite"
     >
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
         <div className="min-w-0">
-          <p className={`text-sm font-semibold ${tone.title}`}>
-            {tone.icon} Hinner du med din studietid?
+          <p className={`text-sm font-medium ${tone.title}`}>
+            Hinner du med din studietid?
           </p>
           <p className="mt-1 max-w-2xl text-sm leading-relaxed text-[var(--ink-soft)]">
             {summary}
@@ -61,7 +58,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
         </div>
 
         <div className="shrink-0 rounded-xl border border-[var(--line)] bg-card/80 px-4 py-3 text-center">
-          <p className="text-xs uppercase tracking-[0.12em] text-[var(--ink-muted)]">
+          <p className="text-xs text-[var(--ink-muted)]">
             Rekommenderad tid
           </p>
           <p className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -76,14 +73,14 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
 
       {bottlenecks.length > 0 ? (
         <div className="mt-3 flex flex-wrap items-center gap-2">
-          <span className="text-xs font-medium uppercase tracking-[0.1em] text-[var(--ink-muted)]">
+          <span className="text-xs font-medium text-[var(--ink-muted)]">
             Flaskhalsar
           </span>
           {bottlenecks.map((b) => (
             <Link
               key={b.id}
               href={`/tips?section=${b.id}`}
-              className="rounded-full bg-card/80 px-3 py-1 text-xs font-medium text-[var(--ink)] ring-1 ring-[var(--line)] hover:ring-[var(--ink-soft)]"
+              className="rounded-md bg-card/80 px-3 py-1 text-xs font-medium text-[var(--ink)] ring-1 ring-[var(--line)] hover:ring-[var(--ink-soft)]"
             >
               {sectionShort(b.id)} {b.percent} %
             </Link>

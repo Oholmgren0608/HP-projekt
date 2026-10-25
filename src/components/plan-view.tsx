@@ -16,7 +16,7 @@ export function PlanView() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-56 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-48 animate-pulse rounded-2xl bg-card/70" />
+        <div className="h-48 animate-pulse rounded-[10px] bg-card/70" />
       </div>
     );
   }
@@ -25,7 +25,7 @@ export function PlanView() {
     return (
       <div className="space-y-10">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+          <p className="text-xs font-medium text-[var(--brand)]">
             Plan
           </p>
           <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -38,13 +38,13 @@ export function PlanView() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/nivatest"
-              className="inline-flex min-h-11 items-center rounded-full bg-[linear-gradient(120deg,var(--brand),var(--brand-deep))] px-6 text-sm font-extrabold text-primary-foreground shadow-soft transition hover:scale-[1.03] active:scale-95"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground shadow-soft transition "
             >
               Gör nivåtestet
             </Link>
             <Link
               href="/resultat"
-              className="inline-flex min-h-11 items-center rounded-full border border-[var(--line-strong)] px-5 text-sm font-bold text-[var(--ink)] transition hover:bg-[var(--mist)] active:scale-95"
+              className="inline-flex min-h-11 items-center rounded-md border border-[var(--line-strong)] px-5 text-sm font-semibold text-[var(--ink)] transition hover:bg-[var(--mist)] "
             >
               Mata in resultat
             </Link>
@@ -70,7 +70,7 @@ export function PlanView() {
     <div className="space-y-10">
       {!sessionOpen ? (
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+          <p className="text-xs font-medium text-[var(--brand)]">
             {profile.weeksUntilExam} veckor · {profile.hoursPerWeek} h/vecka
           </p>
           <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -116,9 +116,9 @@ export function PlanView() {
               {strategy.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-2xl border border-[var(--line)] bg-card/70 p-5"
+                  className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5"
                 >
-                  <h3 className="text-lg font-semibold text-[var(--ink)]">
+                  <h3 className="text-lg font-medium text-[var(--ink)]">
                     {item.title}
                   </h3>
                   <p className="mt-2 leading-relaxed text-[var(--ink-muted)]">

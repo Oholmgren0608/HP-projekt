@@ -58,7 +58,7 @@ export function QuizOptions({
               }`}
             >
               <span
-                className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
+                className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
                   isCorrect
                     ? "border-[var(--lagoon-ink)] bg-[var(--lagoon-ink)] text-primary-foreground"
                     : isChosen
@@ -89,7 +89,7 @@ export function QuizOptions({
             }`}
           >
             <span
-              className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
+              className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
                 active
                   ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
                   : "border-[var(--line)] bg-card text-[var(--ink-muted)]"

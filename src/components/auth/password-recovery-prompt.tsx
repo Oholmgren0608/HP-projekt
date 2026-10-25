@@ -62,7 +62,7 @@ export function PasswordRecoveryPrompt() {
         role="dialog"
         aria-modal="true"
         aria-labelledby={`${uid}-title`}
-        className="relative w-full max-w-sm rounded-2xl border border-[var(--line)] bg-card p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]"
+        className="relative w-full max-w-sm rounded-[10px] border border-[var(--line)] bg-card p-6"
       >
         <h2
           id={`${uid}-title`}
@@ -80,7 +80,7 @@ export function PasswordRecoveryPrompt() {
               type="button"
               onClick={close}
               autoFocus
-              className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110"
             >
               Klart
             </button>
@@ -132,7 +132,7 @@ export function PasswordRecoveryPrompt() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {submitting ? "Sparar…" : "Spara nytt lösenord"}
               </button>

@@ -19,7 +19,7 @@ export function TipsView() {
   return (
     <div className="space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Metoder
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -56,7 +56,7 @@ export function TipsView() {
             defaultOpen={highlight === tip.id}
             className={highlight === tip.id ? "border-[var(--brand)]" : undefined}
           >
-            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink-muted)]">
+            <h3 className="text-sm font-medium text-[var(--ink-muted)]">
               Vanliga fel
             </h3>
             <ul className="mt-2 space-y-2.5">
@@ -69,11 +69,11 @@ export function TipsView() {
             </ul>
 
             <p className="mt-4 rounded-lg bg-[var(--mist)] px-3 py-2 text-sm text-[var(--ink)]">
-              <span className="font-semibold">Tempo: </span>
+              <span className="font-medium">Tempo: </span>
               {tip.tempo}
             </p>
 
-            <h3 className="mt-5 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink-muted)]">
+            <h3 className="mt-5 text-sm font-medium text-[var(--ink-muted)]">
               Öva så här
             </h3>
             <ol className="mt-2 list-decimal space-y-2.5 pl-5 text-sm leading-relaxed text-[var(--ink-soft)]">

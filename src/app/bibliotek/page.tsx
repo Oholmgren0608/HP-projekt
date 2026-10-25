@@ -13,7 +13,7 @@ export default function ReadingLibraryPage() {
   return (
     <div className="space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Resurser
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -25,7 +25,7 @@ export default function ReadingLibraryPage() {
       </div>
 
       <section>
-        <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
           <ReadingLibrary />
         </div>
       </section>

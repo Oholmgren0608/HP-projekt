@@ -34,7 +34,7 @@ export function AchievementsPanel({ className }: { className?: string }) {
       onOpenChange={setExpanded}
       className={cn("shadow-soft", className)}
       hint={
-        <span className="rounded-full bg-[var(--accent-soft)] px-2.5 py-1 text-xs font-extrabold text-[var(--accent-foreground)]">
+        <span className="rounded-md bg-[var(--accent-soft)] px-2.5 py-1 text-xs font-semibold text-[var(--accent-foreground)]">
           {Object.keys(state.achievements).length} / {ACHIEVEMENTS.length}
         </span>
       }
@@ -67,11 +67,11 @@ export function AchievementsPanel({ className }: { className?: string }) {
               >
                 {unlocked ? a.emoji : <Lock className="size-4 text-[var(--ink-muted)]" />}
               </span>
-              <span className={cn("text-xs font-extrabold", unlocked ? "text-[var(--ink)]" : "text-[var(--ink-muted)]")}>
+              <span className={cn("text-xs font-semibold", unlocked ? "text-[var(--ink)]" : "text-[var(--ink-muted)]")}>
                 {unlocked ? a.title : "Låst"}
               </span>
               {unlocked && (
-                <span className="line-clamp-2 text-[10px] leading-tight font-semibold text-[var(--ink-muted)]">
+                <span className="line-clamp-2 text-[10px] leading-tight font-medium text-[var(--ink-muted)]">
                   {a.desc}
                 </span>
               )}
@@ -80,7 +80,7 @@ export function AchievementsPanel({ className }: { className?: string }) {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", bounce: 0.6, delay: 0.15 }}
-                  className="absolute -top-1.5 -right-1.5 flex size-5 items-center justify-center rounded-full bg-[var(--coral-ink)] text-[9px] font-extrabold text-primary-foreground shadow-pop"
+                  className="absolute -top-1.5 -right-1.5 flex size-5 items-center justify-center rounded-full bg-[var(--coral-ink)] text-[9px] font-semibold text-primary-foreground shadow-pop"
                 >
                   NY
                 </motion.span>

@@ -49,8 +49,8 @@ export function DailySrsReview() {
 
   if (cards.length === 0) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+        <p className="text-xs font-medium text-[var(--ink-muted)]">
           Dagens repetition
         </p>
         <p className="mt-3 text-[var(--ink-muted)]">
@@ -87,17 +87,17 @@ export function DailySrsReview() {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.4)] sm:p-6">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+          <p className="text-xs font-medium text-[var(--ink-muted)]">
             Dagens repetition
           </p>
           <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
             {cards.length} felkort att repetera
           </h3>
         </div>
-        <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
+        <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium text-[var(--ink-soft)]">
           {kindBadge(card.kind as PracticeKind)}
         </span>
       </div>
@@ -145,7 +145,7 @@ export function DailySrsReview() {
                 }`}
               >
                 <span
-                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
+                  className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
                     showCorrect
                       ? "border-[var(--lagoon-ink)] bg-[var(--lagoon-ink)] text-primary-foreground"
                       : showWrong
@@ -157,12 +157,12 @@ export function DailySrsReview() {
                 </span>
                 <span className="flex-1 text-[var(--ink)]">{opt}</span>
                 {showCorrect ? (
-                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--lagoon-ink)]">
+                  <span className="mt-0.5 text-xs font-medium text-[var(--lagoon-ink)]">
                     Rätt
                   </span>
                 ) : null}
                 {showWrong ? (
-                  <span className="mt-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--destructive)]">
+                  <span className="mt-0.5 text-xs font-medium text-[var(--destructive)]">
                     Fel
                   </span>
                 ) : null}
@@ -180,13 +180,13 @@ export function DailySrsReview() {
             </p>
           ) : null}
           <p className="rounded-lg border border-[var(--lagoon-ink)]/30 bg-[var(--accent-soft)] px-4 py-3 text-[var(--ink)]">
-            <span className="block text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+            <span className="block text-xs font-medium text-[var(--ink-muted)]">
               Rätt svar
             </span>
             {card.back}
           </p>
           <div className="text-sm leading-relaxed text-[var(--ink-soft)]">
-            <span className="block text-xs font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+            <span className="block text-xs font-medium text-[var(--ink-muted)]">
               Förklaring
             </span>
             <p className="mt-1 whitespace-pre-wrap">{card.explain}</p>
@@ -202,7 +202,7 @@ export function DailySrsReview() {
             <button
               type="button"
               onClick={() => grade(true)}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground hover:brightness-110"
             >
               Kommer ihåg
             </button>
@@ -212,7 +212,7 @@ export function DailySrsReview() {
         <button
           type="button"
           onClick={() => setRevealed(true)}
-          className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] hover:bg-[var(--ink-soft)]"
+          className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] hover:bg-[var(--ink-soft)]"
         >
           Visa svar
         </button>

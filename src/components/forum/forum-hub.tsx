@@ -110,7 +110,7 @@ export function ForumHub() {
   return (
     <div className="space-y-7">
       <header className="space-y-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Frågeforum
         </p>
         <h1 className="font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -156,7 +156,7 @@ export function ForumHub() {
                       setLoading(true);
                     }}
                     className={cn(
-                      "inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition sm:text-sm",
+                      "inline-flex min-h-9 items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition sm:text-sm",
                       active
                         ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                         : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]",
@@ -178,7 +178,7 @@ export function ForumHub() {
                   setLoading(true);
                 }}
                 className={cn(
-                  "rounded-full border px-2.5 py-1 text-xs font-semibold transition",
+                  "rounded-md border px-2.5 py-1 text-xs font-medium transition",
                   kind === null
                     ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                     : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]",
@@ -199,7 +199,7 @@ export function ForumHub() {
                       setLoading(true);
                     }}
                     className={cn(
-                      "rounded-full border px-2.5 py-1 text-xs font-semibold transition",
+                      "rounded-md border px-2.5 py-1 text-xs font-medium transition",
                       active
                         ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                         : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]",
@@ -214,13 +214,13 @@ export function ForumHub() {
 
           {/* Diskussioner */}
           {loading ? (
-            <div className="flex items-center gap-2 rounded-2xl border border-[var(--line)] bg-card/70 p-6 text-sm text-[var(--ink-muted)]">
+            <div className="flex items-center gap-2 rounded-[10px] border border-[var(--line)] bg-card/70 p-6 text-sm text-[var(--ink-muted)]">
               <Loader2 size={16} className="animate-spin" aria-hidden />
               Hämtar diskussioner…
             </div>
           ) : threads.length === 0 ? (
-            <div className="space-y-2 rounded-2xl border border-[var(--line)] bg-card/70 p-6">
-              <p className="font-semibold text-[var(--ink)]">Inga diskussioner här än</p>
+            <div className="space-y-2 rounded-[10px] border border-[var(--line)] bg-card/70 p-6">
+              <p className="font-medium text-[var(--ink)]">Inga diskussioner här än</p>
               <p className="text-sm text-[var(--ink-muted)]">
                 {query
                   ? "Inget matchade sökningen. Prova ett annat ord eller välj ett annat delprov."
@@ -239,8 +239,8 @@ export function ForumHub() {
         {/* Sidopanelen: rykte, anmälningar och så funkar det */}
         <aside className="space-y-4">
           {user && myReputation ? (
-            <section className="rounded-2xl border border-[var(--line)] bg-card p-5">
-              <h2 className="text-sm font-semibold text-[var(--ink)]">Ditt rykte</h2>
+            <section className="rounded-[10px] border border-[var(--line)] bg-card p-5">
+              <h2 className="text-sm font-medium text-[var(--ink)]">Ditt rykte</h2>
               <p className="mt-2 flex items-baseline gap-2">
                 <span className="font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
                   {myReputation.points}
@@ -258,8 +258,8 @@ export function ForumHub() {
           ) : null}
 
           {reports.length > 0 ? (
-            <section className="rounded-2xl border border-[var(--destructive)]/40 bg-card p-5">
-              <h2 className="flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+            <section className="rounded-[10px] border border-[var(--destructive)]/40 bg-card p-5">
+              <h2 className="flex items-center gap-2 text-sm font-medium text-[var(--ink)]">
                 <ShieldCheck size={16} className="text-[var(--destructive)]" aria-hidden />
                 Anmälningar ({reports.length})
               </h2>
@@ -269,12 +269,12 @@ export function ForumHub() {
                     <p className="text-xs text-[var(--ink-muted)]">
                       {report.question_id} · anmäld av {report.reporter_name}
                     </p>
-                    <p className="text-sm font-semibold text-[var(--ink)]">{report.reason}</p>
+                    <p className="text-sm font-medium text-[var(--ink)]">{report.reason}</p>
                     <p className="line-clamp-2 text-xs text-[var(--ink-muted)]">{report.body}</p>
                     <div className="flex flex-wrap items-center gap-2">
                       <Link
                         href={`/forum/fraga/${encodeURIComponent(report.question_id)}`}
-                        className="text-xs font-semibold text-[var(--brand)] underline-offset-2 hover:underline"
+                        className="text-xs font-medium text-[var(--brand)] underline-offset-2 hover:underline"
                       >
                         Öppna tråden
                       </Link>
@@ -285,7 +285,7 @@ export function ForumHub() {
                             setReports((rows) => rows.filter((r) => r.report_id !== report.report_id)),
                           );
                         }}
-                        className="rounded-lg border border-[var(--line-strong)] px-2.5 py-1 text-xs font-semibold text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
+                        className="rounded-lg border border-[var(--line-strong)] px-2.5 py-1 text-xs font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
                       >
                         Hanterad
                       </button>
@@ -296,7 +296,7 @@ export function ForumHub() {
                             setReports((rows) => rows.filter((r) => r.report_id !== report.report_id)),
                           );
                         }}
-                        className="rounded-lg border border-[var(--line-strong)] px-2.5 py-1 text-xs font-semibold text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
+                        className="rounded-lg border border-[var(--line-strong)] px-2.5 py-1 text-xs font-medium text-[var(--ink-muted)] transition hover:bg-[var(--accent-soft)] hover:text-[var(--ink)]"
                       >
                         Avvisa
                       </button>
@@ -307,8 +307,8 @@ export function ForumHub() {
             </section>
           ) : null}
 
-          <section className="rounded-2xl border border-[var(--line)] bg-card/70 p-5">
-            <h2 className="flex items-center gap-2 text-sm font-semibold text-[var(--ink)]">
+          <section className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5">
+            <h2 className="flex items-center gap-2 text-sm font-medium text-[var(--ink)]">
               <BadgeCheck size={16} className="text-[var(--success-ink)]" aria-hidden />
               Hjälpsamma medlemmar
             </h2>
@@ -323,7 +323,7 @@ export function ForumHub() {
                   return (
                     <li key={row.user_id} className="flex items-center justify-between gap-2 text-sm">
                       <span className="flex min-w-0 items-center gap-2">
-                        <span className="w-4 text-xs font-semibold text-[var(--ink-muted)]">
+                        <span className="w-4 text-xs font-medium text-[var(--ink-muted)]">
                           {index + 1}
                         </span>
                         <span className="truncate text-[var(--ink)]">{row.display_name}</span>
@@ -331,7 +331,7 @@ export function ForumHub() {
                           {level.emoji}
                         </span>
                       </span>
-                      <span className="shrink-0 font-semibold tabular-nums text-[var(--ink-soft)]">
+                      <span className="shrink-0 font-medium tabular-nums text-[var(--ink-soft)]">
                         {row.points}
                       </span>
                     </li>
@@ -341,8 +341,8 @@ export function ForumHub() {
             )}
           </section>
 
-          <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5 text-sm text-[var(--ink-soft)]">
-            <h2 className="text-sm font-semibold text-[var(--ink)]">Så funkar forumet</h2>
+          <section className="rounded-[10px] border border-[var(--line)] bg-[var(--paper)] p-5 text-sm text-[var(--ink-soft)]">
+            <h2 className="text-sm font-medium text-[var(--ink)]">Så funkar forumet</h2>
             <ul className="mt-2 space-y-1.5">
               <li>• Varje fråga har sin egen tråd – hittas via ”Behöver du hjälp?”.</li>
               <li>• Rösta upp svar som förklarade något bra (+2 rykte till skribenten).</li>
@@ -363,25 +363,25 @@ function ThreadCard({ thread }: { thread: ForumThreadSummary }) {
     <li>
       <Link
         href={`/forum/fraga/${encodeURIComponent(thread.question_id)}`}
-        className="block rounded-2xl border border-[var(--line)] bg-card/70 p-4 transition hover:border-[var(--brand)] hover:bg-card sm:p-5"
+        className="block rounded-[10px] border border-[var(--line)] bg-card/70 p-4 transition hover:border-[var(--brand)] hover:bg-card sm:p-5"
       >
-        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-          <span className="rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-[var(--accent-foreground)]">
+        <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
+          <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-[var(--accent-foreground)]">
             {info.short}
           </span>
           <span className="text-[var(--ink-muted)]">{info.blockLabel}</span>
           {thread.solved ? (
-            <span className="rounded-full bg-[var(--success-soft)] px-2 py-0.5 text-[var(--success-ink)]">
+            <span className="rounded-md bg-[var(--success-soft)] px-2 py-0.5 text-[var(--success-ink)]">
               Löst
             </span>
           ) : obesvarad ? (
-            <span className="rounded-full bg-[var(--energy-soft)] px-2 py-0.5 text-[var(--energy-ink)]">
+            <span className="rounded-md bg-[var(--energy-soft)] px-2 py-0.5 text-[var(--energy-ink)]">
               Obesvarad
             </span>
           ) : null}
         </div>
 
-        <h2 className="mt-2 font-semibold text-[var(--ink)]">{thread.title}</h2>
+        <h2 className="mt-2 font-medium text-[var(--ink)]">{thread.title}</h2>
         {thread.preview ? (
           <p className="mt-1 line-clamp-2 text-sm text-[var(--ink-muted)]">{thread.preview}</p>
         ) : null}

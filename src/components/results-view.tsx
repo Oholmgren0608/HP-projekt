@@ -17,7 +17,7 @@ export function ResultsView() {
     return (
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-56 animate-pulse rounded-2xl bg-card/70" />
+        <div className="h-56 animate-pulse rounded-[10px] bg-card/70" />
       </div>
     );
   }
@@ -25,7 +25,7 @@ export function ResultsView() {
   return (
     <div className="space-y-10">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Resultat
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -48,7 +48,7 @@ export function ResultsView() {
 
       <StudyTimeNotice />
 
-      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Mata in dina HP-resultat
         </h2>
@@ -81,7 +81,7 @@ function PlanBreakdown({ plan }: { plan: GeneratedPlan }) {
           ] as const
         ).map((group) => (
           <div key={group.block}>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--ink-muted)]">
+            <h3 className="text-sm font-medium text-[var(--ink-muted)]">
               {group.title}
             </h3>
             <ul className="mt-4 space-y-3">
@@ -94,11 +94,11 @@ function PlanBreakdown({ plan }: { plan: GeneratedPlan }) {
                   return (
                     <li
                       key={s.id}
-                      className="rounded-2xl border border-[var(--line)] bg-card/70 px-4 py-3"
+                      className="rounded-[10px] border border-[var(--line)] bg-card/70 px-4 py-3"
                     >
                       <div className="flex items-baseline justify-between gap-3">
                         <div>
-                          <span className="font-semibold text-[var(--ink)]">
+                          <span className="font-medium text-[var(--ink)]">
                             {s.id}
                           </span>
                           <span className="ml-2 text-sm text-[var(--ink-muted)]">
@@ -134,12 +134,12 @@ function PlanBreakdown({ plan }: { plan: GeneratedPlan }) {
           {timeSplit.map((t) => (
             <li
               key={t.label}
-              className="rounded-2xl border border-[var(--line)] bg-card/70 px-3 py-4 text-center"
+              className="rounded-[10px] border border-[var(--line)] bg-card/70 px-3 py-4 text-center"
             >
               <div className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
                 {t.pct}%
               </div>
-              <div className="mt-1 text-sm font-semibold text-[var(--ink)]">
+              <div className="mt-1 text-sm font-medium text-[var(--ink)]">
                 {t.label}
               </div>
               <div className="text-xs text-[var(--ink-muted)]">{t.note}</div>

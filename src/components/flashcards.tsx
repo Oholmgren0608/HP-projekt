@@ -84,7 +84,7 @@ export function Flashcards() {
   // och frågebanken är klara, annars mismatchar SSR- och klient-HTML.
   if (!hydrated) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar flashcards…</p>
       </div>
     );
@@ -171,10 +171,10 @@ export function Flashcards() {
           <button
             type="button"
             onClick={() => setFlipped((v) => !v)}
-            className="group relative w-full rounded-2xl border border-[var(--line-strong)] bg-card px-6 py-16 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] transition hover:border-[var(--ink-soft)]"
+            className="group relative w-full rounded-[10px] border border-[var(--line-strong)] bg-card px-6 py-16 text-center transition hover:border-[var(--ink-soft)]"
             aria-label={flipped ? "Visa frågesida" : "Visa svar"}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--ink-muted)]">
+            <p className="text-xs font-medium text-[var(--ink-muted)]">
               {flipped ? "Betydelse" : "Ord"} · {card.source}
             </p>
             <p
@@ -194,7 +194,7 @@ export function Flashcards() {
               <button
                 type="button"
                 onClick={() => setFlipped(true)}
-                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] transition hover:bg-[var(--ink-soft)]"
+                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] transition hover:bg-[var(--ink-soft)]"
               >
                 Visa svar
               </button>
@@ -203,14 +203,14 @@ export function Flashcards() {
                 <button
                   type="button"
                   onClick={() => rate("wrong")}
-                  className="inline-flex min-h-11 items-center rounded-lg border border-[var(--destructive)]/40 bg-[var(--coral-soft)] px-5 text-sm font-semibold text-[var(--destructive)] transition hover:brightness-95"
+                  className="inline-flex min-h-11 items-center rounded-lg border border-[var(--destructive)]/40 bg-[var(--coral-soft)] px-5 text-sm font-medium text-[var(--destructive)] transition hover:brightness-95"
                 >
                   Fel — visa igen
                 </button>
                 <button
                   type="button"
                   onClick={() => rate("correct")}
-                  className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+                  className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
                 >
                   Rätt — nästa
                 </button>

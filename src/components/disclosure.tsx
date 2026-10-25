@@ -55,7 +55,7 @@ export function Disclosure({
         onOpenChange?.(event.currentTarget.open);
       }}
       className={cn(
-        "group scroll-mt-24 overflow-hidden rounded-2xl border",
+        "group scroll-mt-24 overflow-hidden rounded-[10px] border",
         inverted
           ? "border-transparent bg-foreground text-background"
           : "border-[var(--line)] bg-card/75",

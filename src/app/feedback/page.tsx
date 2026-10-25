@@ -14,7 +14,7 @@ export default function FeedbackPage() {
       fallback={
         <div className="space-y-6">
           <div className="h-8 w-56 animate-pulse rounded-lg bg-[var(--mist)]" />
-          <div className="h-64 animate-pulse rounded-2xl bg-[var(--mist)]" />
+          <div className="h-64 animate-pulse rounded-[10px] bg-[var(--mist)]" />
         </div>
       }
     >

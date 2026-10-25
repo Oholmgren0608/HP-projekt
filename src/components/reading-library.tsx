@@ -35,7 +35,7 @@ export function ReadingLibrary() {
   // förrän hydrering är klar, annars mismatchar SSR- och klient-HTML.
   if (!ready) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar läsbibliotek…</p>
       </div>
     );
@@ -56,7 +56,7 @@ export function ReadingLibrary() {
           title="Välj text"
           subtitle={`${LIBRARY_TEXTS.length} texter`}
           hint={
-            <span className="max-w-[12rem] truncate rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--brand)]">
+            <span className="max-w-[12rem] truncate rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--brand)]">
               {text.title}
             </span>
           }
@@ -80,7 +80,7 @@ export function ReadingLibrary() {
                   <div className="flex items-start justify-between gap-2">
                     <span className="font-medium text-[var(--ink)]">{item.title}</span>
                     {done ? (
-                      <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wide text-[var(--lagoon-ink)]">
+                      <span className="shrink-0 text-[10px] font-medium text-[var(--lagoon-ink)]">
                         Läst
                       </span>
                     ) : null}
@@ -94,8 +94,8 @@ export function ReadingLibrary() {
           </div>
         </Disclosure>
 
-        <article className="rounded-2xl border border-[var(--line)] bg-card/80 p-5 shadow-[0_16px_40px_-28px_rgba(18,42,48,0.4)] sm:p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+        <article className="rounded-[10px] border border-[var(--line)] bg-card/80 p-5 sm:p-6">
+          <p className="text-xs font-medium text-[var(--brand)]">
             {text.kind} · ~{text.minutes} min
           </p>
           <h3 className="mt-2 font-[family-name:var(--font-display)] text-3xl text-[var(--ink)]">
@@ -113,18 +113,18 @@ export function ReadingLibrary() {
 
           <div className="mt-8 grid gap-5 border-t border-[var(--line)] pt-6 sm:grid-cols-2">
             <div>
-              <h4 className="text-sm font-semibold text-[var(--ink)]">ORD att plocka</h4>
+              <h4 className="text-sm font-medium text-[var(--ink)]">ORD att plocka</h4>
               <ul className="mt-3 space-y-2.5">
                 {text.focusWords.map((w) => (
                   <li key={w.word} className="text-sm leading-relaxed">
-                    <span className="font-semibold text-[var(--ink)]">{w.word}</span>
+                    <span className="font-medium text-[var(--ink)]">{w.word}</span>
                     <span className="text-[var(--ink-muted)]"> — {w.meaning}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-[var(--ink)]">Konnektorer i texten</h4>
+              <h4 className="text-sm font-medium text-[var(--ink)]">Konnektorer i texten</h4>
               <div className="mt-3 flex flex-wrap gap-2">
                 {text.connectors.map((c) => (
                   <span
@@ -135,7 +135,7 @@ export function ReadingLibrary() {
                   </span>
                 ))}
               </div>
-              <h4 className="mt-5 text-sm font-semibold text-[var(--ink)]">Efter läsning</h4>
+              <h4 className="mt-5 text-sm font-medium text-[var(--ink)]">Efter läsning</h4>
               <p className="mt-2 text-sm text-[var(--ink-muted)]">{text.summaryPrompt}</p>
               <textarea
                 value={summary}
@@ -155,7 +155,7 @@ export function ReadingLibrary() {
                 if (!read[text.id]) recordEvent({ type: "reading_done" });
                 setRead((prev) => ({ ...prev, [text.id]: true }));
               }}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110"
             >
               Markera som läst
             </button>

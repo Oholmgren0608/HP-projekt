@@ -88,8 +88,8 @@ export function OfficialExamsBrowser() {
       <TimedMockExam />
 
       {/* Sekundär: original-PDF:er */}
-      <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
+      <section className="rounded-[10px] border border-[var(--line)] bg-[var(--paper)] p-5 sm:p-6">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Original-PDF:er
         </p>
         <h2 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -152,7 +152,7 @@ export function OfficialExamsBrowser() {
                 subtitle={`${examLabel} · ${group.pdfCount} PDF:er`}
                 hint={
                   isActivePdfGroup && activePdfExam ? (
-                    <span className="max-w-[13rem] truncate rounded-full bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--brand)]">
+                    <span className="max-w-[13rem] truncate rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--brand)]">
                       {activePdfExam.title}
                     </span>
                   ) : undefined
@@ -218,7 +218,7 @@ export function OfficialExamsBrowser() {
                                     : "border-[var(--line-strong)] bg-card text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
                                 }`}
                               >
-                                <span className="mr-1.5 text-[10px] uppercase tracking-wide opacity-70">
+                                <span className="mr-1.5 text-[10px] opacity-70">
                                   {kindLabel(doc.kind)}
                                 </span>
                                 {doc.title}
@@ -228,7 +228,7 @@ export function OfficialExamsBrowser() {
                         </div>
 
                         {activeDoc ? (
-                          <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-card shadow-[0_16px_40px_-28px_rgba(18,42,48,0.45)]">
+                          <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-card">
                             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--line)] bg-[var(--paper)] px-4 py-2">
                               <p className="text-sm font-medium text-[var(--ink)]">{activeDoc.title}</p>
                               <a
@@ -254,7 +254,7 @@ export function OfficialExamsBrowser() {
                                 <button
                                   type="button"
                                   onClick={() => setLoadedDocUrl(activeDoc.url)}
-                                  className="rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+                                  className="rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
                                 >
                                   Visa PDF i läsaren
                                 </button>

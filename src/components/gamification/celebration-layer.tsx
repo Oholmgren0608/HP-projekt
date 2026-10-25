@@ -2,14 +2,12 @@
 
 /**
  * Firarlager — konsumerar motorns notiser och visar:
- *  - Konfetti (canvas-confetti) vid level-up, achievements och streak
  *  - Level-up-modal när användaren når en ny nivå
  *  - Toasts för achievements, uppdrag och streak
  * Allt respekterar prefers-reduced-motion och spelar ljud om det är på.
  */
 
 import { useEffect, useRef, useState } from "react";
-import confetti from "canvas-confetti";
 import { AnimatePresence, motion } from "motion/react";
 import { ACHIEVEMENTS, QUEST_POOL } from "@/lib/gamification/config";
 import {
@@ -18,31 +16,6 @@ import {
   type GameNotification,
 } from "@/lib/gamification/engine";
 import { play } from "@/lib/sound";
-
-const PALETTE = ["#0d7c6f", "#2ba89a", "#f59e0b", "#f2604f", "#ffffff"];
-
-function reducedMotion(): boolean {
-  return (
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
-}
-
-function burst(big: boolean) {
-  if (reducedMotion()) return;
-  confetti({
-    particleCount: big ? 160 : 70,
-    spread: big ? 100 : 70,
-    startVelocity: big ? 42 : 30,
-    gravity: 0.9,
-    scalar: big ? 1.1 : 0.85,
-    ticks: big ? 260 : 180,
-    origin: { x: 0.5, y: 0.35 },
-    colors: PALETTE,
-    disableForReducedMotion: true,
-    zIndex: 200,
-  });
-}
 
 type Toast = {
   id: number;
@@ -87,7 +60,6 @@ export function CelebrationLayer() {
 
     switch (next.kind) {
       case "levelup": {
-        burst(true);
         play("levelup");
         setLevelUp({ level: next.level, title: next.title });
         // Modal stänger sig själv; kön fortsätter när den stängs.
@@ -96,7 +68,6 @@ export function CelebrationLayer() {
       case "achievement": {
         const def = ACHIEVEMENTS.find((a) => a.id === next.id);
         if (def) {
-          burst(false);
           play("achievement");
           showToast({ emoji: def.emoji, title: `Achievement: ${def.title}`, desc: def.desc });
         }
@@ -109,7 +80,7 @@ export function CelebrationLayer() {
           play("questdone");
           showToast({
             emoji: def.emoji,
-            title: "Uppdrag klart!",
+            title: "Uppdrag klart",
             desc: `${def.label} · +${def.xp} XP`,
           });
         }
@@ -164,21 +135,21 @@ export function CelebrationLayer() {
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.85, y: 20, opacity: 0 }}
               transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}
-              className="relative w-full max-w-sm rounded-3xl border border-[var(--line)] bg-[var(--card)] p-8 text-center shadow-pop"
+              className="relative w-full max-w-sm rounded-[10px] border border-[var(--line)] bg-[var(--card)] p-8 text-center shadow-pop"
             >
-              <p className="text-sm font-extrabold tracking-widest text-[var(--energy-ink)] uppercase">
+              <p className="text-[13px] font-medium text-[var(--ink-muted)]">
                 Nivå upp!
               </p>
-              <h2 className="mt-1 font-[family-name:var(--font-display)] text-4xl font-bold text-[var(--ink)]">
+              <h2 className="mt-1 font-[family-name:var(--font-display)] text-4xl font-semibold text-[var(--ink)]">
                 Nivå {levelUp.level}
               </h2>
-              <p className="mt-1 text-lg font-bold text-[var(--brand)]">{levelUp.title}</p>
+              <p className="mt-1 text-lg font-semibold text-[var(--brand)]">{levelUp.title}</p>
               <button
                 type="button"
                 onClick={closeLevelUp}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand)] px-4 py-2.5 text-base font-semibold text-primary-foreground transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-[var(--brand)] px-4 py-2.5 text-base font-medium text-primary-foreground transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                Fortsätt plugga 🎉
+                Fortsätt plugga
               </button>
             </motion.div>
           </motion.div>
@@ -193,21 +164,21 @@ export function CelebrationLayer() {
               key={t.id}
               type="button"
               onClick={() => dismissToast(t.id)}
-              initial={{ opacity: 0, y: -16, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              transition={{ type: "spring", bounce: 0.35, duration: 0.5 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.16 }}
               onAnimationComplete={() => {
                 window.setTimeout(() => dismissToast(t.id), 4000);
               }}
-              className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-2xl border border-[var(--line-strong)] bg-[var(--card)] p-3.5 text-left shadow-pop"
+              className="pointer-events-auto flex w-full max-w-sm items-center gap-3 rounded-[10px] border border-[var(--line-strong)] bg-[var(--card)] p-3.5 text-left shadow-pop"
             >
               <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-xl">
                 {t.emoji}
               </span>
               <span className="min-w-0">
-                <span className="block truncate text-sm font-extrabold text-[var(--ink)]">{t.title}</span>
-                <span className="block truncate text-xs font-semibold text-[var(--ink-muted)]">{t.desc}</span>
+                <span className="block truncate text-sm font-semibold text-[var(--ink)]">{t.title}</span>
+                <span className="block truncate text-xs font-medium text-[var(--ink-muted)]">{t.desc}</span>
               </span>
             </motion.button>
           ))}

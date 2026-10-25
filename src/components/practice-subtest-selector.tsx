@@ -71,7 +71,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
 
   if (!info) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-6">
         <p className="text-[var(--ink-muted)]">Delprovet hittades inte.</p>
       </div>
     );
@@ -93,7 +93,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
     <div className="space-y-8 sm:space-y-10">
       {/* Header */}
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Välj antal frågor
         </p>
         <h1 className="mt-2 font-[family-name:var(--font-display)] text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
@@ -103,12 +103,12 @@ export function PracticeSubtestSelector({ subtest }: Props) {
       </div>
 
       {/* Question Count Selector */}
-      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-6 sm:p-8">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-6 sm:p-8">
         <div className="space-y-6">
           <div role="group" aria-labelledby="question-count-heading">
             <span
               id="question-count-heading"
-              className="block text-sm font-semibold text-[var(--ink)] mb-4"
+              className="block text-sm font-medium text-[var(--ink)] mb-4"
             >
               Hur många frågor vill du öva på?
             </span>
@@ -120,7 +120,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
                     type="button"
                     onClick={() => setQuestionCount(count)}
                                         aria-pressed={effectiveCount === count}
-                    className={`min-w-12 rounded-lg border px-4 py-2 font-semibold transition ${
+                    className={`min-w-12 rounded-lg border px-4 py-2 font-medium transition ${
                                             effectiveCount === count
                         ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                         : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
@@ -135,7 +135,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
 
           <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5">
             <p className="text-sm text-[var(--ink-soft)]">
-              <span className="font-semibold text-[var(--ink)]">Tip:</span> Börja med färre
+              <span className="font-medium text-[var(--ink)]">Tip:</span> Börja med färre
               frågor om du är ny på delprovet. Du kan öva hur många gånger du vill och ditt
               resultat sparas för analys.
             </p>
@@ -143,7 +143,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
 
           <div className="rounded-xl border border-[var(--line)] bg-[var(--paper)] p-4">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="text-sm font-semibold text-[var(--ink)]">Tid</p>
+              <p className="text-sm font-medium text-[var(--ink)]">Tid</p>
               <label className="flex cursor-pointer items-center gap-2.5">
                 <span className="text-sm font-medium text-[var(--ink-muted)]">
                   {settings.timeLimit === "off" ? "Av" : "På"}
@@ -185,7 +185,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
             ) : null}
 
             <div className="mt-4">
-              <p className="text-sm font-semibold text-[var(--ink)]">Rättning</p>
+              <p className="text-sm font-medium text-[var(--ink)]">Rättning</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {REVEAL_OPTIONS.map((opt) => (
                   <button
@@ -213,7 +213,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
           <button
             type="button"
             onClick={() => setSessionActive(true)}
-            className="inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-semibold text-primary-foreground transition hover:brightness-110"
+            className="inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-medium text-primary-foreground transition hover:brightness-110"
           >
             Starta övning
           </button>
@@ -221,7 +221,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
       </div>
 
       {/* Info */}
-      <div className="rounded-2xl border border-[var(--line)] bg-card/70 p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-6">
         <h2 className="font-[family-name:var(--font-display)] text-lg text-[var(--ink)]">
           Om {info.label}
         </h2>

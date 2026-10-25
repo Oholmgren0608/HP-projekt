@@ -176,7 +176,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
     compact ? "text-xs" : "text-sm",
   );
   const submitClass = cn(
-    "inline-flex w-full items-center justify-center rounded-lg bg-[var(--brand)] text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50",
+    "inline-flex w-full items-center justify-center rounded-lg bg-[var(--brand)] text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50",
     compact ? "min-h-9 px-3 py-2" : "min-h-11 px-4 py-2.5",
   );
 
@@ -187,11 +187,11 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
         className={cn(
           "space-y-3 text-left",
           !compact &&
-            "rounded-2xl border border-[var(--line)] bg-card/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]",
+            "rounded-[10px] border border-[var(--line)] bg-card/80 p-6",
         )}
         aria-live="polite"
       >
-        <p className="text-base font-semibold text-[var(--ink)]">
+        <p className="text-base font-medium text-[var(--ink)]">
           {isReset ? "Kolla din inkorg" : "Bekräfta din e-post"}
         </p>
         <p className="text-sm text-[var(--ink-muted)]">
@@ -219,7 +219,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
           className={
             isReset
               ? "text-sm font-medium text-[var(--brand)] transition hover:underline"
-              : "inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              : "inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110"
           }
         >
           {isReset ? "Tillbaka till inloggning" : "Logga in"}
@@ -233,7 +233,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
       className={cn(
         "space-y-3 text-left",
         !compact &&
-          "rounded-2xl border border-[var(--line)] bg-card/80 p-6 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]",
+          "rounded-[10px] border border-[var(--line)] bg-card/80 p-6",
       )}
     >
       {mode === "signin" ? (
@@ -281,7 +281,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
                 type="button"
                 disabled={resending}
                 onClick={() => void handleResend()}
-                className="text-xs font-semibold text-[var(--brand)] transition hover:underline disabled:opacity-50"
+                className="text-xs font-medium text-[var(--brand)] transition hover:underline disabled:opacity-50"
               >
                 {resending ? "Skickar…" : "Skicka nytt bekräftelsemejl"}
               </button>

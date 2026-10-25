@@ -108,8 +108,8 @@ export function TimedMockExam() {
 
   if (phase === "intro") {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
+      <div className="rounded-[10px] border border-[var(--line)] bg-[var(--paper)] p-5 sm:p-6">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Mini-prov · appens egna frågor
         </p>
         <h3 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -123,7 +123,7 @@ export function TimedMockExam() {
           type="button"
           onClick={start}
           disabled={!questionsReady}
-          className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {questionsReady ? `Starta mini-prov (${LIMIT_SECONDS / 60} min)` : "Laddar frågor…"}
         </button>
@@ -133,10 +133,10 @@ export function TimedMockExam() {
 
   if (phase === "quiz" && current) {
     return (
-      <div className="rounded-2xl border border-[var(--line)] bg-card p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+            <p className="text-xs font-medium text-[var(--brand)]">
               Mini-prov · {kindBadge(current.kind)}
             </p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
@@ -144,7 +144,7 @@ export function TimedMockExam() {
             </p>
           </div>
           <p
-            className={`rounded-md px-3 py-1.5 font-semibold tabular-nums ${
+            className={`rounded-md px-3 py-1.5 font-medium tabular-nums ${
               remainingSeconds <= 60
                 ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
                 : "bg-[var(--mist)] text-[var(--ink)]"
@@ -186,7 +186,7 @@ export function TimedMockExam() {
             type="button"
             disabled={quiz.selected === null}
             onClick={quiz.submitAnswer}
-            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
+            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
           >
             {quiz.index >= questions.length - 1 ? "Lämna in" : "Nästa"}
           </button>
@@ -203,8 +203,8 @@ export function TimedMockExam() {
   }
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card p-5 sm:p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
+      <p className="text-xs font-medium text-[var(--brand)]">
         Genomgång
       </p>
       <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
@@ -239,7 +239,7 @@ export function TimedMockExam() {
       <button
         type="button"
         onClick={start}
-        className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-semibold text-[var(--paper)] hover:bg-[var(--ink-soft)]"
+        className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--ink)] px-5 text-sm font-medium text-[var(--paper)] hover:bg-[var(--ink-soft)]"
       >
         Nytt mini-prov
       </button>

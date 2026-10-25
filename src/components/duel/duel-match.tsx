@@ -599,14 +599,14 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     return (
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-64 animate-pulse rounded-2xl bg-card/70" />
+        <div className="h-64 animate-pulse rounded-[10px] bg-card/70" />
       </div>
     );
   }
 
   if (phase === "error") {
     return (
-      <div className="mx-auto max-w-lg rounded-2xl border border-[var(--line)] bg-card/80 p-8 text-center">
+      <div className="mx-auto max-w-lg rounded-[10px] border border-[var(--line)] bg-card/80 p-8 text-center">
         <p className="font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
           Något gick fel
         </p>
@@ -614,7 +614,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         <button
           type="button"
           onClick={() => router.push("/duell")}
-          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground"
+          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground"
         >
           Tillbaka till Duell
         </button>
@@ -640,17 +640,17 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       />
 
       {phase === "playing" && current ? (
-        <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-5 sm:p-6">
           <div className="flex items-center justify-between gap-3">
             <span className="text-sm text-[var(--ink-muted)]">
               Fråga {index + 1} av {total}
             </span>
             <div className="flex items-center gap-2">
-              <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium uppercase tracking-wide text-[var(--ink-soft)]">
+              <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium text-[var(--ink-soft)]">
                 {kindBadge(current.kind)}
               </span>
               <span
-                className={`rounded-full px-2.5 py-0.5 text-sm font-semibold tabular-nums ${
+                className={`rounded-full px-2.5 py-0.5 text-sm font-medium tabular-nums ${
                   secondsLeft <= 5
                     ? "bg-[var(--destructive)]/10 text-[var(--destructive)]"
                     : "bg-[var(--accent-soft)] text-[var(--brand)]"
@@ -697,7 +697,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
                   }`}
                 >
                   <span
-                    className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold ${
+                    className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
                       active
                         ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
                         : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
@@ -723,7 +723,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
               type="button"
               disabled={selected === null}
               onClick={() => submitRef.current(selected)}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
             >
               Svara
             </button>
@@ -732,8 +732,8 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       ) : null}
 
       {phase === "waiting" ? (
-        <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6 text-center">
+          <p className="text-xs font-medium text-[var(--brand)]">
             Klar!
           </p>
           <h2 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -753,7 +753,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             <button
               type="button"
               onClick={() => void handleClaim()}
-              className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+              className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
             >
               Gör anspråk på vinst (motståndaren verkar ha lämnat)
             </button>
@@ -811,9 +811,9 @@ function MatchHeader({
   const opponentAhead = known && myCorrect < oppCorrect;
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-5 shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)] sm:p-6">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-5 sm:p-6">
       <div className="flex items-center justify-between">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+        <p className="text-xs font-medium text-[var(--brand)]">
           {duelModeLabel(mode)}
         </p>
         <p className="text-xs text-[var(--ink-muted)]">
@@ -864,12 +864,12 @@ function PlayerCard({
       <p className="flex items-center gap-2 truncate text-sm font-medium text-[var(--ink)]">
         {name}
         {isYou ? (
-          <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+          <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[10px] font-medium text-[var(--ink-muted)]">
             du
           </span>
         ) : null}
         {isBot ? (
-          <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[var(--ink-muted)]">
+          <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[10px] font-medium text-[var(--ink-muted)]">
             bot
           </span>
         ) : null}
@@ -933,8 +933,8 @@ function ResultView({
         : "text-[var(--destructive)]";
 
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-card/80 p-6 text-center shadow-[0_20px_50px_-30px_rgba(18,42,48,0.45)]">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6 text-center">
+      <p className="text-xs font-medium text-[var(--brand)]">
         {duelModeLabel(match.mode)}
       </p>
       <h2 className={`mt-2 font-[family-name:var(--font-display)] text-3xl ${tone}`}>
@@ -948,7 +948,7 @@ function ResultView({
             {myScore ?? "–"}
           </p>
         </div>
-        <span className="text-lg font-semibold text-[var(--ink-muted)]">–</span>
+        <span className="text-lg font-medium text-[var(--ink-muted)]">–</span>
         <div className="flex-1 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-3">
           <p className="truncate text-xs text-[var(--ink-muted)]">{oppName}</p>
           <p className="font-[family-name:var(--font-display)] text-2xl tabular-nums text-[var(--ink)]">
@@ -960,7 +960,7 @@ function ResultView({
       {myDelta != null && myDelta !== 0 ? (
         <p className="mt-4 text-sm text-[var(--ink-soft)]">
           Rankingförändring:{" "}
-          <span className={`font-semibold ${myDelta > 0 ? "text-[var(--lagoon-ink)]" : "text-[var(--destructive)]"}`}>
+          <span className={`font-medium ${myDelta > 0 ? "text-[var(--lagoon-ink)]" : "text-[var(--destructive)]"}`}>
             {myDelta > 0 ? `+${myDelta}` : myDelta} ELO
           </span>
         </p>
@@ -972,7 +972,7 @@ function ResultView({
         <button
           type="button"
           onClick={onAgain}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition hover:brightness-110"
         >
           Ny match
         </button>

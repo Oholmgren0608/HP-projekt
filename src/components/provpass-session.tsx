@@ -116,8 +116,8 @@ export function ProvpassSession() {
 
   if (phase === "intro") {
     return (
-      <section className="rounded-2xl border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+        <p className="text-xs font-medium text-[var(--brand)]">
           Simulera provpass
         </p>
         <h2 className="mt-1 font-[family-name:var(--font-display)] text-2xl text-[var(--ink)]">
@@ -129,7 +129,7 @@ export function ProvpassSession() {
         </p>
 
         <div className="mt-5 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-4">
-          <p className="text-sm font-semibold text-[var(--ink)]">Vilket pass vill du simulera?</p>
+          <p className="text-sm font-medium text-[var(--ink)]">Vilket pass vill du simulera?</p>
           <div className="mt-2 flex flex-wrap gap-2">
             {BLOCKS.map((block) => (
               <button
@@ -137,7 +137,7 @@ export function ProvpassSession() {
                 type="button"
                 aria-pressed={settings.block === block}
                 onClick={() => updateSettings({ ...settings, block })}
-                className={`rounded-lg border px-3.5 py-2 text-sm font-semibold transition ${
+                className={`rounded-lg border px-3.5 py-2 text-sm font-medium transition ${
                   settings.block === block
                     ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
                     : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
@@ -177,7 +177,7 @@ export function ProvpassSession() {
           type="button"
           onClick={start}
           disabled={!questionsReady || plannedCount === 0}
-          className="mt-5 inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-semibold text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-5 inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {questionsReady ? "Starta provpass" : "Laddar frågor…"}
         </button>
@@ -188,7 +188,7 @@ export function ProvpassSession() {
   if (phase === "quiz") {
     if (!questionsReady || questions.length === 0) {
       return (
-        <section className="flex items-center justify-center gap-2 rounded-2xl border border-[var(--line)] bg-card/75 py-10 text-sm text-[var(--ink-muted)]">
+        <section className="flex items-center justify-center gap-2 rounded-[10px] border border-[var(--line)] bg-card/75 py-10 text-sm text-[var(--ink-muted)]">
           <span className="size-4 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--brand)]" />
           Laddar frågor…
         </section>
@@ -199,10 +199,10 @@ export function ProvpassSession() {
     if (!current) return null;
 
     return (
-      <section className="rounded-2xl border border-[var(--line)] bg-card p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+            <p className="text-xs font-medium text-[var(--brand)]">
               Provpass · {BLOCK_LABELS[settings.block]} · {kindBadge(current.kind)}
             </p>
             <p className="mt-1 text-sm text-[var(--ink-muted)]">
@@ -212,7 +212,7 @@ export function ProvpassSession() {
           <div className="flex flex-wrap items-center gap-2">
             {remainingSeconds !== null ? (
               <p
-                className={`rounded-md px-3 py-1.5 text-sm font-semibold tabular-nums ${
+                className={`rounded-md px-3 py-1.5 text-sm font-medium tabular-nums ${
                   warning
                     ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
                     : "bg-[var(--mist)] text-[var(--ink)]"
@@ -268,7 +268,7 @@ export function ProvpassSession() {
             type="button"
             disabled={quiz.selected === null}
             onClick={quiz.submitAnswer}
-            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
+            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
           >
             {quiz.index >= questions.length - 1 ? "Lämna in passet" : "Nästa"}
           </button>
@@ -295,8 +295,8 @@ export function ProvpassSession() {
   const kinds = [...new Set(questions.map((q) => q.kind))];
 
   return (
-    <section className="rounded-2xl border border-[var(--line)] bg-card p-5 sm:p-6">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">
+    <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
+      <p className="text-xs font-medium text-[var(--brand)]">
         Provpass · {BLOCK_LABELS[settings.block]} · genomgång
       </p>
       <p className="font-[family-name:var(--font-display)] text-4xl text-[var(--ink)]">
@@ -334,7 +334,7 @@ export function ProvpassSession() {
         <button
           type="button"
           onClick={() => setPhase("intro")}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-semibold text-primary-foreground transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
         >
           Nytt provpass
         </button>
