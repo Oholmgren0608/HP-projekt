@@ -31,7 +31,7 @@
           "title": "Översikt — Lugn, sidebar",
           "visualDirection": "Lugn design system; left sidebar nav; dominant Dagens pass card, stats row, two columns; v2 hand-authored refinement (import, no credits)",
           "parentDraftId": "5a50eb90-89d0-49ed-85e2-70a340cd5464",
-          "currentVersion": 2
+          "currentVersion": 3
         },
         "4f471797-af3f-450a-b374-3247ba052713": {
           "title": "Idag — Lugn, top bar",
@@ -43,10 +43,10 @@
           "title": "Översikt – Lugn (mobil)",
           "visualDirection": "mobile copy of v2",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         }
       },
-      "updatedAt": "2026-10-25T12:00:00Z"
+      "updatedAt": "2026-10-25T15:00:00Z"
     },
     "/ova": {
       "targetKind": "existing-ui",
@@ -74,16 +74,16 @@
           "title": "Öva – Lugn",
           "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         },
         "b1677d7e-5ef7-489a-9d74-2169d1a58aab": {
           "title": "Öva – Lugn (mobil)",
           "visualDirection": "mobile copy",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         }
       },
-      "updatedAt": "2026-10-25T12:00:00Z"
+      "updatedAt": "2026-10-25T15:00:00Z"
     },
     "/ova/[subtest]": {
       "targetKind": "existing-ui",
@@ -109,16 +109,16 @@
           "title": "Övningsfråga KVA – Lugn",
           "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         },
         "62065ed1-48f7-4ff1-8969-a33522a7aabd": {
           "title": "Övningsfråga KVA – Lugn (mobil)",
           "visualDirection": "mobile copy",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         }
       },
-      "updatedAt": "2026-10-25T12:00:00Z"
+      "updatedAt": "2026-10-25T15:00:00Z"
     },
     "practice-session-summary": {
       "targetKind": "existing-ui",
@@ -144,16 +144,16 @@
           "title": "Resultat efter pass – Lugn",
           "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         },
         "a10ed659-5adb-45c9-b239-7d42d2a2870c": {
           "title": "Resultat efter pass – Lugn (mobil)",
           "visualDirection": "mobile copy",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         }
       },
-      "updatedAt": "2026-10-25T12:00:00Z"
+      "updatedAt": "2026-10-25T15:00:00Z"
     },
     "/plan": {
       "targetKind": "existing-ui",
@@ -179,16 +179,16 @@
           "title": "Veckoplan – Lugn",
           "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         },
         "f16d9544-2499-417e-b537-2ba8aebf1f17": {
           "title": "Veckoplan – Lugn (mobil)",
           "visualDirection": "mobile copy",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         }
       },
-      "updatedAt": "2026-10-25T12:00:00Z"
+      "updatedAt": "2026-10-25T15:00:00Z"
     },
     "/prov": {
       "targetKind": "existing-ui",
@@ -214,16 +214,16 @@
           "title": "Prov – Lugn",
           "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         },
         "f5151c96-e4cd-42f0-bfbb-2ed59a068314": {
           "title": "Prov – Lugn (mobil)",
           "visualDirection": "mobile copy",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         }
       },
-      "updatedAt": "2026-10-25T12:00:00Z"
+      "updatedAt": "2026-10-25T15:00:00Z"
     },
     "/profil": {
       "targetKind": "existing-ui",
@@ -249,16 +249,16 @@
           "title": "Profil – Lugn",
           "visualDirection": "Lugn, sidebar shell from Översikt v2; hand-authored import",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         },
         "c606d1d1-07a7-4276-868b-a80674bf77dd": {
           "title": "Profil – Lugn (mobil)",
           "visualDirection": "mobile copy",
           "parentDraftId": "8465c1f2-1d17-48e9-ba5a-e4b367991ecb",
-          "currentVersion": 1
+          "currentVersion": 2
         }
       },
-      "updatedAt": "2026-10-25T12:00:00Z"
+      "updatedAt": "2026-10-25T15:00:00Z"
     }
   }
 }
