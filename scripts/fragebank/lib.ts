@@ -83,6 +83,8 @@ const PASSAGE_FORBIDDEN = new Set<Kind>(["ord"]);
 
 export const ID_PATTERN = /^ovn-(ord|mek|las|elf|dtk|xyz|kva|nog)-\d{3}$/;
 
+const UNSUPPORTED_SUPERSCRIPT = /[⁰¹⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾ⁿˣʸ]/;
+
 export function letter(index: number): string {
   return String.fromCharCode(65 + index);
 }
@@ -238,12 +240,16 @@ export function validateDrafts(
   });
 
   // Inga blanksteg i kanterna: granskningsformuläret trimmar texterna, så
-  // annars ser en orörd fråga ändrad ut när den sparas.
+  // annars ser en orörd fråga ändrad ut när den sparas. Och bara ² och ³ som
+  // upphöjda tecken: övriga saknas i appens typsnitt och blir pyttesmå.
   questions.forEach((q, i) => {
     const at = `${kind}.json[${i}]${q && typeof q.id === "string" ? ` (${q.id})` : ""}`;
     const texts = [q?.prompt, q?.passage, q?.explain, ...(Array.isArray(q?.options) ? q.options : [])];
     if (texts.some((t) => typeof t === "string" && t !== t.trim())) {
       errors.push(`${at}: text börjar eller slutar med blanksteg eller radbrytning.`);
+    }
+    if (texts.some((t) => typeof t === "string" && UNSUPPORTED_SUPERSCRIPT.test(t))) {
+      errors.push(`${at}: upphöjda tecken utom ² och ³ saknas i typsnittet – skriv t.ex. 2^(x + 1).`);
     }
   });
 
