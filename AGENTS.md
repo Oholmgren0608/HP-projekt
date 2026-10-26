@@ -80,6 +80,10 @@ The dev server runs on `http://127.0.0.1:43123` (`npm run dev`).
   (`npm run fragebank:kontroll -- blind <delprov>`, let another AI answer
   without the key, then `-- merge <delprov>`), upload as drafts with
   `npm run fragebank:upload`, and publish after spot checks on `/review`.
+- DTK underlag are shown as real tables/diagrams/maps from
+  `src/lib/content/dtk-figures.ts`, keyed by a fingerprint of the passage text
+  (`passageKey`). A new DTK passage shows as plain text until it gets an entry
+  there; an edited passage falls back to text until the entry is updated.
 - Provfrågor (rows with `exam_id` or an `hp-…` id, imported from UHR's exams)
   are copyrighted: they may only be used as templates (Förlagor) and must never
   be published or shown to users. The database enforces this from `0017`.
