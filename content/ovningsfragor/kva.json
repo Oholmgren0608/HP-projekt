@@ -598,5 +598,110 @@
     "correctIndex": 3,
     "explain": "Grafen är en parabel som är symmetrisk kring linjen x = 3. Punkten x = 0 ligger 3 steg från symmetrilinjen och x = 5 ligger 2 steg från den. Om parabeln öppnar sig uppåt ökar funktionsvärdet ju längre från symmetrilinjen man kommer: f(x) = (x − 3)² ger f(0) = 9 och f(5) = 4, så I är större. Om parabeln öppnar sig nedåt är det tvärtom: f(x) = −(x − 3)² ger f(0) = −9 och f(5) = −4, så II är större. Båda fallen är möjliga, så varken att I är större, att II är större eller att de är lika gäller alltid. Fällan är att utan vidare anta att parabeln öppnar sig uppåt och svara att I är större.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-041",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Kvantitet I: 5^10 + 5^10\nKvantitet II: 10^10",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Kvantitet I är två likadana termer: 5^10 + 5^10 = 2 · 5^10. Kvantitet II kan skrivas 10^10 = (2 · 5)^10 = 2^10 · 5^10 = 1 024 · 5^10. II är alltså 512 gånger så stor som I, så II är större. Fällan är att lägga ihop baserna och få 10^10, så att kvantiteterna ser lika ut, eller att lägga ihop exponenterna och få 5^20, så att I ser större ut. Det finns inga okända, så informationen räcker.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-042",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Priset på en vara höjdes med 25 %.\nKvantitet I: 25 %\nKvantitet II: den procentuella sänkning av det nya priset som krävs för att varan ska få tillbaka sitt ursprungliga pris",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Kalla det ursprungliga priset p. Efter höjningen är priset 1,25p. För att komma tillbaka till p ska det nya priset multipliceras med p/(1,25p) = 0,8, alltså sänkas med 20 %. Sänkningen räknas på det högre priset och blir därför mindre i procent än höjningen. Eftersom 25 % > 20 % är I större. Fällan är att tro att en sänkning med 25 % tar ut höjningen och svara att de är lika – men 0,75 · 1,25p = 0,9375p, som är lägre än det ursprungliga priset. Det okända priset spelar ingen roll, så informationen räcker.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-043",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "En kvadrat är inskriven i en cirkel med radien 5 cm, det vill säga kvadratens fyra hörn ligger på cirkeln.\nKvantitet I: kvadratens area\nKvantitet II: 50 cm²",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Kvadratens diagonal går genom cirkelns medelpunkt, så den är lika lång som cirkelns diameter, 10 cm. Om kvadratens sida är s ger Pythagoras sats s² + s² = 10², alltså 2s² = 100 och s² = 50. Kvadratens area är s² = 50 cm², så kvantiteterna är lika. Fällan är att tro att kvadratens sida är lika lång som radien (arean blir då 25 cm²) eller som diametern (arean blir då 100 cm²). Allt som behövs är givet, så informationen räcker.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-044",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Talet a avrundat till närmaste heltal är 4, och talet b avrundat till närmaste heltal är 3.\nKvantitet I: a − b\nKvantitet II: 1",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Ett tal som avrundas till 4 ligger mellan 3,5 och 4,5, och ett tal som avrundas till 3 ligger mellan 2,5 och 3,5. Skillnaden a − b kan därför bli olika stor. Med a = 4 och b = 3 blir den 1, så kvantiteterna är lika. Med a = 4,4 och b = 2,6 blir den 1,8, så I är större. Med a = 3,6 och b = 3,4 blir den 0,2, så II är större. Eftersom alla tre fallen är möjliga gäller ingen av relationerna alltid, så informationen är otillräcklig. Fällan är att räkna med de avrundade talen, 4 − 3 = 1, och svara att de är lika.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-045",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "(x − 2)² = 9\nKvantitet I: x² − 4x\nKvantitet II: 5",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Utveckla kvadraten: (x − 2)² = x² − 4x + 4. Villkoret säger att detta är 9, så x² − 4x = 9 − 4 = 5, oavsett vilken lösning x har. Ekvationen har två lösningar, x = 5 och x = −1, och båda ger 5: 25 − 20 = 5 och 1 + 4 = 5. Kvantiteterna är alltså lika. Fällan är att se att x kan ha två olika värden och svara att informationen är otillräcklig utan att pröva vad uttrycket blir för dem.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-046",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Kvantitet I: antalet positiva heltal som går jämnt upp i 80\nKvantitet II: antalet positiva heltal som går jämnt upp i 100",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Para ihop de tal som går jämnt upp i 80 två och två, så att produkten i varje par blir 80: 1 · 80, 2 · 40, 4 · 20, 5 · 16 och 8 · 10. Det är 10 olika tal. Gör likadant för 100: 1 · 100, 2 · 50, 4 · 25, 5 · 20 och 10 · 10. I det sista paret är båda talen 10, som bara räknas en gång, så för 100 finns det 9 sådana tal. Det räcker att pröva tal tills paren möts: 3, 6 och 7 går inte jämnt upp i 80, och 3, 6, 7, 8 och 9 går inte jämnt upp i 100. Eftersom 10 > 9 är I större. Fällan är att räkna två tal i varje par även för 10 · 10 och svara att de är lika, eller att tro att det större talet har fler tal som går jämnt upp i det och svara att II är större. Det finns inga okända, så informationen räcker.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-047",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Klockan är halv fyra på en vanlig visarklocka.\nKvantitet I: den mindre av de två vinklarna mellan timvisaren och minutvisaren\nKvantitet II: 80°",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Minutvisaren pekar på 6, alltså 180° från 12. Timvisaren går 360°/12 = 30° på en timme, alltså 0,5° per minut. Klockan tre pekar den på 3, 90° från 12, och på 30 minuter flyttar den sig ytterligare 15°, till 105°. Vinkeln mellan visarna är därför 180° − 105° = 75°, och eftersom 75° < 80° är II större. Fällan är att tro att timvisaren fortfarande pekar exakt på 3, så att vinkeln blir 90°, och svara att I är större. Allt som behövs är givet, så informationen räcker.",
+    "verification": "agreed"
   }
 ]
