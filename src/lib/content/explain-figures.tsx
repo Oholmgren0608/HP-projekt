@@ -750,11 +750,11 @@ const FIGURES: Record<string, () => ReactNode> = {
   ),
   "xyz-6": () => (
     <PercentBar
-      label="Räntan 5 % av 8 000 kr är 400 kr, skulden blir 8 400 kr"
-      totalText="8 000 kr = 100 %"
+      label="Räntan är 5 % av hela lånet på 8 000 kr, alltså 400 kr, och skulden blir 8 400 kr"
+      totalText="lånet 8 000 kr = 100 %"
       percent={5}
       partText="5 % = 400 kr"
-      restText="95 % = 7 600 kr"
+      restText="räntan räknas på hela lånet"
       note="8 000 + 400 = 8 400 kr"
     />
   ),

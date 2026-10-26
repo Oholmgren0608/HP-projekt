@@ -67,6 +67,29 @@ function toRow(q: DraftQuestion): QuestionInsert {
   };
 }
 
+/**
+ * Öppna felrapporter från användarna, för den som granskar frågebanken: id,
+ * datum och skälet – aldrig vem som rapporterade. Gäller alla frågor, även de
+ * äldre, och tål att tabellen saknas (före 0017).
+ */
+async function printOpenReports(sb: ReturnType<typeof createClient<Database>>) {
+  const { data, error } = await sb
+    .from("question_flags")
+    .select("question_id, reason, created_at")
+    .is("resolved_at", null)
+    .order("question_id");
+  if (error) {
+    console.log(`Öppna felrapporter: kunde inte läsas (${error.message}).`);
+    return;
+  }
+  const rows = data ?? [];
+  console.log(`Öppna felrapporter: ${rows.length}.`);
+  for (const r of rows) {
+    const reason = r.reason.replace(/\s+/g, " ");
+    console.log(`  ${r.question_id} (${r.created_at.slice(0, 10)}): ${reason.length > 200 ? `${reason.slice(0, 200)}…` : reason}`);
+  }
+}
+
 async function main() {
   const unknown = kindArgs.filter((a) => !isKind(a));
   if (unknown.length > 0) throw new Error(`Okänt delprov: ${unknown.join(", ")}`);
@@ -141,6 +164,7 @@ async function main() {
       `kontrollen var oense. ${drafts.length - fresh.length} finns redan i databasen och lämnas orörda.`,
   );
   if (dryRun) {
+    await printOpenReports(sb);
     console.log("--dry-run: inget skrevs.");
     return;
   }

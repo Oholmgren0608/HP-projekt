@@ -50,15 +50,14 @@
     "prompt": "Vad betyder ”pejorativ”?",
     "options": [
       "nedsättande",
-      "förskönande",
+      "fackspråklig",
       "ålderdomlig",
       "vardaglig",
       "överdriven"
     ],
     "correctIndex": 0,
-    "explain": "Pejorativ betyder nedsättande och används om ord och uttryck med en negativ värdering: ”pamp” är till exempel en pejorativ beteckning på en makthavare. Förskönande är närmast motsatsen, eftersom en förskönande omskrivning får något att låta mildare än det är. Ålderdomlig, vardaglig och överdriven beskriver också ord, men de anger ålder, stilnivå och grad, inte en negativ värdering.",
-    "verification": "disagreed",
-    "verificationNote": "Distraktorn ”förskönande” är närmast motsatsen till ”nedsättande” (förklaringen säger det själv) och pekar ut paret; byt mot en distraktor som inte är en motpol."
+    "explain": "Pejorativ betyder nedsättande och används om ord och uttryck med en negativ värdering: ”pamp” är till exempel en pejorativ beteckning på en makthavare. Fackspråklig, ålderdomlig, vardaglig och överdriven beskriver också ord, men de anger fackområde, ålder, stilnivå och grad, inte en negativ värdering.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-ord-005",
@@ -117,9 +116,8 @@
       "avsäga sig tronen"
     ],
     "correctIndex": 4,
-    "explain": "Att abdikera är att frivilligt avsäga sig tronen, och i överförd betydelse att avstå från makt eller ansvar: ”drottningen abdikerade till förmån för sin son”. Avsätta en kung innebär tvärtom att någon annan tar ifrån kungen makten. Bli krönt och ärva tronen handlar om att få makten, och gå i landsflykt om att lämna landet, inte tronen.",
-    "verification": "disagreed",
-    "verificationNote": "Förklaringen godkändes inte. Förklaringen: ”frivilligt” är för snävt, en abdikation kan vara påtvingad (NE: frivillig eller framtvingad); stryk ordet."
+    "explain": "Att abdikera är att avsäga sig tronen, och i överförd betydelse att avstå från makt eller ansvar: ”drottningen abdikerade till förmån för sin son”. Den som abdikerar lämnar alltså själv tronen, ibland under tryck, medan avsätta en kung innebär att någon annan tar ifrån kungen makten. Bli krönt och ärva tronen handlar om att få makten, och gå i landsflykt om att lämna landet, inte tronen.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-ord-009",
@@ -133,9 +131,8 @@
       "provanställning"
     ],
     "correctIndex": 2,
-    "explain": "En sinekur är en lätt och välbetald syssla, alltså en tjänst som ger god lön men kräver lite eller inget arbete: ”styrelseposten var i praktiken en sinekur”. Ordet kommer av latinets sine cura, ”utan omsorg”, och har inget med kur i betydelsen behandling att göra, så kurort och obotlig sjukdom är fel. Tillfällig tjänstledighet och provanställning är andra slags anställningsvillkor och säger inget om att arbetet är lätt men välbetalt.",
-    "verification": "disagreed",
-    "verificationNote": "Förklaringen godkändes inte. Förklaringen: ”har inget med kur i betydelsen behandling att göra” är etymologiskt missvisande, både kur och sinekur kommer av latinets cura (omsorg, vård); skriv att betydelsen inte hänger ihop med behandling."
+    "explain": "En sinekur är en lätt och välbetald syssla, alltså en tjänst som ger god lön men kräver lite eller inget arbete: ”styrelseposten var i praktiken en sinekur”. Ordet kommer av latinets sine cura, ”utan omsorg”, och betydelsen hänger inte ihop med kur i betydelsen behandling, så kurort och obotlig sjukdom är fel. Tillfällig tjänstledighet och provanställning är andra slags anställningsvillkor och säger inget om att arbetet är lätt men välbetalt.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-ord-010",
@@ -149,9 +146,8 @@
       "avbryta någon"
     ],
     "correctIndex": 0,
-    "explain": "Att slå dövörat till är att låtsas att man inte hör, alltså vägra lyssna på till exempel en begäran eller kritik: ”ledningen slog dövörat till personalens protester”. Ge någon en örfil bygger på en bokstavlig läsning av slå och öra. Höja rösten, lyssna i smyg och avbryta någon handlar om andra sätt att tala och lyssna, inte om att stänga ute det man inte vill höra.",
-    "verification": "disagreed",
-    "verificationNote": "Förklaringen godkändes inte. Exempelmeningen i förklaringen är ogrammatisk: ”slog dövörat till personalens protester” saknar ”för”; ska vara ”slog dövörat till för personalens protester”."
+    "explain": "Att slå dövörat till är att låtsas att man inte hör, alltså vägra lyssna på till exempel en begäran eller kritik: ”ledningen slog dövörat till för personalens protester”. Ge någon en örfil bygger på en bokstavlig läsning av slå och öra. Höja rösten, lyssna i smyg och avbryta någon handlar om andra sätt att tala och lyssna, inte om att stänga ute det man inte vill höra.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-ord-011",
@@ -240,9 +236,8 @@
       "vanskötsel"
     ],
     "correctIndex": 4,
-    "explain": "Vanhävd betyder vanskötsel eller försummelse, särskilt av jord, skog eller byggnader: ”de gamla ängarna har vuxit igen genom vanhävd”. Hävd betyder här brukande och skötsel av mark, och förledet van- anger att det görs dåligt, som i vanvård. Gammal sedvänja och äganderätt bygger på andra betydelser av hävd, medan vanära betyder skam och vantro betyder vidskepelse.",
-    "verification": "disagreed",
-    "verificationNote": "Förklaringen godkändes inte. Förklaringen: ”vantro betyder vidskepelse” är missvisande; SAOL/SAOB ger ”falsk tro; otro” (vidskepelse är bara ett medförekommande ord) och ”otro” är den gängse betydelsen; skriv ”otro” eller stryk glossen."
+    "explain": "Vanhävd betyder vanskötsel eller försummelse, särskilt av jord, skog eller byggnader: ”de gamla ängarna har vuxit igen genom vanhävd”. Hävd betyder här brukande och skötsel av mark, och förledet van- anger att det görs dåligt, som i vanvård. Gammal sedvänja och äganderätt bygger på andra betydelser av hävd, medan vanära betyder skam och vantro betyder falsk tro eller otro.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-ord-017",
@@ -264,16 +259,15 @@
     "kind": "ord",
     "prompt": "Vad betyder ”dementera”?",
     "options": [
-      "bekräfta",
+      "kommentera",
       "läcka",
-      "offentligt förneka",
+      "förneka",
       "spekulera",
       "bli förvirrad"
     ],
     "correctIndex": 2,
-    "explain": "Att dementera är att offentligt förneka en uppgift eller ett rykte: ”ministern dementerade uppgifterna om sin avgång”. Bekräfta är motsatsen. Läcka och spekulera hör till samma nyhetsvärld men betyder att föra ut hemliga uppgifter respektive att gissa, och bli förvirrad bygger på en felaktig koppling till ordet dement.",
-    "verification": "disagreed",
-    "verificationNote": "Distraktorn ”bekräfta” är den uppenbara motsatsen till ”offentligt förneka” (förklaringen säger det själv) och pekar ut paret; byt mot en distraktor som inte är en motsats."
+    "explain": "Att dementera är att offentligt förneka en uppgift eller ett rykte: ”ministern dementerade uppgifterna om sin avgång”. Kommentera liknar ordet till formen men betyder bara att uttala sig om något. Läcka och spekulera hör till samma nyhetsvärld men betyder att föra ut hemliga uppgifter respektive att gissa, och bli förvirrad bygger på en felaktig koppling till ordet dement.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-ord-019",

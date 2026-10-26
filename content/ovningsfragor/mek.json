@@ -5,13 +5,13 @@
     "prompt": "Välj det alternativ som bäst fyller i meningen.",
     "passage": "Trots den kraftiga prissänkningen i januari ökade försäljningen bara ____; de flesta kunderna hade redan gjort sina inköp under julhandeln.",
     "options": [
-      "avsevärt",
+      "skenbart",
       "nämnvärt",
       "marginellt",
       "påtagligt"
     ],
     "correctIndex": 2,
-    "explain": "Marginellt betyder i liten, närmast obetydlig grad, vilket stämmer med bara och med att de flesta kunderna redan hade handlat under julhandeln. Avsevärt och påtagligt betyder att ökningen var stor eller tydligt märkbar och motsägs av förklaringen efter semikolon. Nämnvärt betyder värd att nämna, alltså betydande, och används nästan bara efter nekande ord som i ”inte nämnvärt”; efter bara ger det ingen mening.",
+    "explain": "Marginellt betyder i liten, närmast obetydlig grad, vilket stämmer med ”bara” och med att de flesta kunderna redan hade handlat under julhandeln. Påtagligt betyder att ökningen var tydligt märkbar och motsägs av förklaringen efter semikolon. Nämnvärt betyder så mycket att det är värt att nämna, alltså betydligt, och används nästan bara efter nekande ord som i ”inte nämnvärt”; efter ”bara” ger det ingen mening. Skenbart skulle betyda att ökningen inte var verklig utan bara såg ut att vara det, men inget i texten tyder på det; att kunderna redan hade handlat förklarar i stället varför ökningen blev så liten.",
     "verification": "agreed"
   },
   {
@@ -41,7 +41,7 @@
       "förebådade"
     ],
     "correctIndex": 3,
-    "explain": "Förebådade betyder varslade om något som skulle komma, och prisraset och bankkonkurserna beskrivs just som tidiga varningstecken på krisen. Förestod betyder ledde eller förvaltade, som när någon förestår en verksamhet, och ger ingen mening med tecken som subjekt. Förebrådde betyder klandrade och föreskrev betyder beordrade eller bestämde; inget av det kan tecken göra, och orden liknar förebådade bara till formen.",
+    "explain": "Förebådade betyder varslade om något som skulle komma, och prisraset och bankkonkurserna beskrivs just som tidiga varningstecken på krisen. Förestod betyder ledde eller förvaltade, som när någon förestår en verksamhet, och ger ingen mening med tecken som subjekt. Förestå kan också betyda att något snart ska inträffa, som i ”en förändring förestår”, men då tar verbet inget objekt, och det betyder inte heller föregick. Förebrådde betyder klandrade och föreskrev betyder beordrade eller bestämde; inget av det kan tecken göra, och orden liknar förebådade bara till formen.",
     "verification": "agreed"
   },
   {
@@ -266,7 +266,7 @@
       "dessutom"
     ],
     "correctIndex": 0,
-    "explain": "I synnerhet lyfter fram en del av det som just sagts som särskilt berörd, och de södra delarna, där det knappt regnade alls, pekas ut som extra hårt drabbade. Däremot skulle ställa de södra delarna i motsats till resten av landet, vilket motsägs av att det var torrast just där. Åtminstone skulle antyda att man bara vet säkert om de södra delarna, vilket strider mot i hela landet, och dessutom lägger till något som redan ingår, eftersom de södra delarna är en del av hela landet.",
+    "explain": "I synnerhet lyfter fram en del av det som just sagts som särskilt berörd, och de södra delarna, där det knappt regnade alls, pekas ut som extra hårt drabbade. Däremot skulle ställa de södra delarna i motsats till resten av landet, vilket motsägs av att det var torrast just där. Åtminstone skulle antyda att man bara vet säkert om de södra delarna, vilket strider mot i hela landet. Ordet dessutom passar inte heller, eftersom det lägger till något nytt, medan de södra delarna redan ingår i hela landet.",
     "verification": "agreed"
   },
   {
@@ -281,7 +281,7 @@
       "inte med nödvändighet / därmed"
     ],
     "correctIndex": 1,
-    "explain": "Det andra ledet ger en annan förklaring till att biobesöken minskar, så det första ledet måste avvisa att minskningen säkert beror på svalnat intresse, vilket inte med nödvändighet gör. Ovedersägligen betyder obestridligen och skulle tvärtom slå fast just den förklaring som texten sedan ersätter. Snarare inleder ett alternativ som framstår som mer sannolikt än det som just avvisats. Därmed anger en följd av det föregående, men att allt fler ser film hemma följer inte av det första ledet.",
+    "explain": "Det andra ledet ger en annan förklaring till att biobesöken minskar, så det första ledet måste avvisa att minskningen säkert beror på svalnat intresse, och det är just vad uttrycket ”inte med nödvändighet” gör. Ovedersägligen betyder obestridligen och skulle tvärtom slå fast just den förklaring som texten sedan ersätter. Snarare inleder ett alternativ som framstår som mer sannolikt än det som just avvisats. Därmed anger en följd av det föregående, men att allt fler ser film hemma följer inte av det första ledet.",
     "verification": "agreed"
   },
   {

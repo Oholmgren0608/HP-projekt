@@ -26,7 +26,7 @@
       "ca 190 000"
     ],
     "correctIndex": 0,
-    "explain": "År 2024 var 76,0 procent av invånarna 20–64 år i Region B sysselsatta, så 100 − 76,0 = 24,0 procent var inte sysselsatta. Regionen hade 251 tusen invånare i åldern, och 0,24 · 251 000 ≈ 60 200, vilket ligger närmast ca 60 000. Ca 190 000 är i stället antalet sysselsatta (0,76 · 251 000 ≈ 190 800). Ca 70 000 får man med 2014 års uppgifter (0,26 · 268 000 ≈ 69 700), och ca 80 000 om man blandar åren och drar 2024 års sysselsatta från 2014 års befolkning (268 000 − 190 800 ≈ 77 200).",
+    "explain": "År 2024 var 76,0 procent av invånarna 20–64 år i Region B sysselsatta, så 100 − 76,0 = 24,0 procent var inte sysselsatta. Regionen hade 251 tusen invånare i den åldern, och 0,24 · 251 000 ≈ 60 200, vilket ligger närmast ca 60 000. Ca 190 000 är i stället antalet sysselsatta (0,76 · 251 000 ≈ 190 800). Ca 70 000 får man med 2014 års uppgifter (0,26 · 268 000 ≈ 69 700), och ca 80 000 om man blandar åren och drar 2024 års sysselsatta från 2014 års befolkning (268 000 − 190 800 ≈ 77 200).",
     "verification": "agreed"
   },
   {
@@ -42,8 +42,7 @@
     ],
     "correctIndex": 1,
     "explain": "Antalet sysselsatta är antalet invånare gånger andelen sysselsatta. Region A och Region E ökade både i befolkning och i andel och kan uteslutas direkt. Region B: 268 · 0,740 ≈ 198,3 tusen år 2014 och 251 · 0,760 ≈ 190,8 tusen år 2024, alltså en minskning. Region C: 535 · 0,812 ≈ 434,4 tusen och 610 · 0,796 ≈ 485,6 tusen, en ökning trots att andelen sjönk, eftersom befolkningen växte kraftigt. Region D: 190 · 0,703 ≈ 133,6 tusen och 176 · 0,784 ≈ 138,0 tusen, en ökning trots att befolkningen minskade, eftersom andelen steg med 8,1 procentenheter. Bara Region B hade alltså färre sysselsatta. Svaret Endast Region C får man om man bara ser att andelen sjönk där, svaret Region B och Region D om man bara ser vilka befolkningar som minskade, och svaret med alla tre om man räknar en region som lägre så fort någon av de två siffrorna minskat, utan att räkna ut antalet sysselsatta.",
-    "verification": "disagreed",
-    "verificationNote": "Rättat före uppladdning efter andra kontrollen: förklaringens sista mening beskriver nu felet bakom vart och ett av de felaktiga alternativen. Kontrollera och publicera."
+    "verification": "agreed"
   },
   {
     "id": "ovn-dtk-004",
@@ -73,8 +72,7 @@
     ],
     "correctIndex": 3,
     "explain": "Energiindexet sjönk från 150 till 126, alltså med 24 indexenheter. Räknat från 2022 års nivå är det 24 / 150 = 0,16, en minskning med 16 procent, vilket är mindre än 20 procent. Den slutsatsen stämmer alltså. Att energipriserna steg med 58 procent mellan 2020 och 2022 är fel: 58 indexenheter från nivån 92 är 58 / 92 ≈ 0,63, alltså ungefär 63 procent. Mellan 2018 och 2024 steg energipriserna med 26 procent och livsmedelspriserna med 30 procent, så energipriserna steg inte mer. Om kläder var billigare än livsmedel går inte att avgöra, eftersom varje index bara jämför en varugrupp med samma varugrupp år 2018 och inte säger något om prisnivån i olika grupper.",
-    "verification": "disagreed",
-    "verificationNote": "Rättat före uppladdning efter andra kontrollen: det första alternativet heter nu ”Kläder var billigare än livsmedel år 2024.”, så det inte kan läsas som en jämförelse av indexen. Kontrollera och publicera."
+    "verification": "agreed"
   },
   {
     "id": "ovn-dtk-006",
@@ -109,7 +107,7 @@
   {
     "id": "ovn-dtk-008",
     "kind": "dtk",
-    "prompt": "Hur stor andel av företagets totala försäljning år 2024 kom från belysning?",
+    "prompt": "Hur stor andel av de fyra produktområdenas sammanlagda försäljning år 2024 kom från belysning?",
     "passage": "Försäljning för ett företag efter produktområde, 2022–2024\n\nTabell 1. Försäljning (miljoner kronor)\nMöbler – 2022: 46,0 | 2023: 52,5 | 2024: 50,4\nBelysning – 2022: 18,4 | 2023: 21,0 | 2024: 25,2\nTextil – 2022: 27,5 | 2023: 26,1 | 2024: 22,8\nInredningsdetaljer – 2022: 12,1 | 2023: 15,4 | 2024: 21,6\n\nTabell 2. Exportens andel av försäljningen år 2024 (procent)\nMöbler: 10\nBelysning: 65\nTextil: 15\nInredningsdetaljer: 60",
     "options": [
       "18 procent",
@@ -118,13 +116,13 @@
       "27 procent"
     ],
     "correctIndex": 1,
-    "explain": "Företagets totala försäljning 2024 är 50,4 + 25,2 + 22,8 + 21,6 = 120,0 miljoner kronor. Belysningen stod för 25,2 miljoner kronor, och 25,2 / 120,0 = 0,21, alltså 21 procent. 25 procent får man om man läser försäljningen 25,2 miljoner kronor som en andel, vilket bara stämmer om totalen är 100. 27 procent får man om man jämför belysningen med de övriga produktområdena (25,2 / 94,8 ≈ 0,27) i stället för med hela försäljningen. 18 procent är inredningsdetaljernas andel 2024 (21,6 / 120,0) och ungefär belysningens andel 2022 (18,4 / 104,0 ≈ 0,18), alltså fel rad eller fel år.",
+    "explain": "De fyra produktområdenas sammanlagda försäljning 2024 är 50,4 + 25,2 + 22,8 + 21,6 = 120,0 miljoner kronor. Belysningen stod för 25,2 miljoner kronor, och 25,2 / 120,0 = 0,21, alltså 21 procent. 25 procent får man om man läser försäljningen 25,2 miljoner kronor som en andel, vilket bara stämmer om totalen är 100. 27 procent får man om man jämför belysningen med de övriga produktområdena (25,2 / 94,8 ≈ 0,27) i stället för med hela försäljningen. 18 procent är inredningsdetaljernas andel 2024 (21,6 / 120,0) och ungefär belysningens andel 2022 (18,4 / 104,0 ≈ 0,18), alltså fel rad eller fel år.",
     "verification": "agreed"
   },
   {
     "id": "ovn-dtk-009",
     "kind": "dtk",
-    "prompt": "Ungefär hur stor andel av företagets totala försäljning år 2024 gick på export?",
+    "prompt": "Ungefär hur stor andel av de fyra produktområdenas sammanlagda försäljning år 2024 gick på export?",
     "passage": "Försäljning för ett företag efter produktområde, 2022–2024\n\nTabell 1. Försäljning (miljoner kronor)\nMöbler – 2022: 46,0 | 2023: 52,5 | 2024: 50,4\nBelysning – 2022: 18,4 | 2023: 21,0 | 2024: 25,2\nTextil – 2022: 27,5 | 2023: 26,1 | 2024: 22,8\nInredningsdetaljer – 2022: 12,1 | 2023: 15,4 | 2024: 21,6\n\nTabell 2. Exportens andel av försäljningen år 2024 (procent)\nMöbler: 10\nBelysning: 65\nTextil: 15\nInredningsdetaljer: 60",
     "options": [
       "ca 24 procent",
@@ -133,7 +131,7 @@
       "ca 46 procent"
     ],
     "correctIndex": 1,
-    "explain": "Exporten för varje produktområde är försäljningen 2024 gånger exportandelen: möbler 50,4 · 0,10 ≈ 5,0, belysning 25,2 · 0,65 ≈ 16,4, textil 22,8 · 0,15 ≈ 3,4 och inredningsdetaljer 21,6 · 0,60 ≈ 13,0 miljoner kronor. Sammanlagt exporterades 37,8 av 120,0 miljoner kronor, och 37,8 / 120,0 ≈ 0,315, alltså ca 32 procent. Ca 38 procent är medelvärdet av de fyra andelarna, (10 + 65 + 15 + 60) / 4 = 37,5, men det tar inte hänsyn till att möbler, som har lägst exportandel, står för den största försäljningen. Ca 46 procent får man om exporten jämförs med den övriga försäljningen (37,8 / 82,2 ≈ 0,46) i stället för med hela försäljningen, och ca 24 procent om man bara räknar med exporten av belysning och inredningsdetaljer ((16,38 + 12,96) / 120,0 ≈ 0,24).",
+    "explain": "Exporten för varje produktområde är försäljningen 2024 gånger exportandelen: möbler 50,4 · 0,10 = 5,04, belysning 25,2 · 0,65 = 16,38, textil 22,8 · 0,15 = 3,42 och inredningsdetaljer 21,6 · 0,60 = 12,96 miljoner kronor. Sammanlagt exporterades 37,8 av 120,0 miljoner kronor, och 37,8 / 120,0 = 0,315, alltså ca 32 procent. Ca 38 procent är medelvärdet av de fyra andelarna, (10 + 65 + 15 + 60) / 4 = 37,5, men det tar inte hänsyn till att möbler, som har lägst exportandel, står för den största försäljningen. Ca 46 procent får man om exporten jämförs med den övriga försäljningen (37,8 / 82,2 ≈ 0,46) i stället för med hela försäljningen, och ca 24 procent om man bara räknar med exporten av belysning och inredningsdetaljer ((16,38 + 12,96) / 120,0 ≈ 0,24).",
     "verification": "agreed"
   },
   {
@@ -253,7 +251,7 @@
       "ca 13 800"
     ],
     "correctIndex": 2,
-    "explain": "Antalet kollektivtrafikresor är andelen gånger det totala antalet arbetsresor: 0,24 · 42 000 = 10 080 år 2014 och 0,27 · 51 000 = 13 770 år 2024. Ökningen är 13 770 − 10 080 = 3 690, alltså ca 3 700. Ca 13 800 är antalet resor 2024, inte ökningen. Ca 1 500 får man om man bara räknar med att andelen ökade med 3 procentenheter (0,03 · 51 000 = 1 530) och glömmer att antalet resor också ökade. Ca 2 200 får man om man tvärtom bara räknar med att antalet resor ökade och använder 2014 års andel båda åren (0,24 · 51 000 − 10 080 = 2 160).",
+    "explain": "Antalet kollektivtrafikresor är andelen gånger det totala antalet arbetsresor: 0,24 · 42 000 = 10 080 år 2014 och 0,27 · 51 000 = 13 770 år 2024. Ökningen är 13 770 − 10 080 = 3 690, alltså ca 3 700. Ca 13 800 är antalet kollektivtrafikresor 2024, inte ökningen. Ca 1 500 får man om man bara räknar med att andelen ökade med 3 procentenheter (0,03 · 51 000 = 1 530) och glömmer att antalet resor också ökade. Ca 2 200 får man om man tvärtom bara räknar med att antalet resor ökade och använder 2014 års andel båda åren (0,24 · 51 000 − 10 080 = 2 160).",
     "verification": "agreed"
   },
   {
@@ -478,7 +476,7 @@
       "Djurparken hade fler besökare än konstmuseet år 2023."
     ],
     "correctIndex": 3,
-    "explain": "Placeringen 2023 visar ordningen mellan besöksmålen det året. Djurparken låg på plats 4 och konstmuseet på plats 5, så djurparken hade fler besökare år 2023 (360 / 0,80 = 450 tusen mot 420 / 1,05 = 400 tusen), och den slutsatsen stämmer. Friluftsmuseet låg på plats 7 och äventyrsbadet på plats 8 år 2023, så friluftsmuseet hade fler besökare, inte färre (280 tusen mot 250 tusen). Slottet förlorade 600 − 540 = 60 tusen besökare och friluftsmuseet 280 − 210 = 70 tusen, så det var friluftsmuseet som förlorade flest. Botaniska trädgården fick 10 procent fler besökare men föll ändå från plats 6 till plats 7, eftersom äventyrsbadet gick förbi.",
+    "explain": "Placeringen 2023 visar ordningen mellan besöksmålen det året. Djurparken låg på plats 4 och konstmuseet på plats 5, så djurparken hade fler besökare år 2023 (360 / 0,80 = 450 tusen mot 420 / 1,05 = 400 tusen), och den slutsatsen stämmer. Friluftsmuseet låg på plats 7 och äventyrsbadet på plats 8 år 2023, så friluftsmuseet hade fler besökare, inte färre (210 / 0,75 = 280 tusen mot 350 / 1,40 = 250 tusen). Slottet hade 540 / 0,90 = 600 tusen besökare år 2023 och förlorade alltså 600 − 540 = 60 tusen, medan friluftsmuseet förlorade 280 − 210 = 70 tusen, så det var friluftsmuseet som förlorade flest. Botaniska trädgården fick 10 procent fler besökare men föll ändå från plats 6 till plats 7, eftersom äventyrsbadet gick förbi.",
     "verification": "agreed"
   },
   {

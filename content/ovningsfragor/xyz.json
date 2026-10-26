@@ -208,8 +208,7 @@
     ],
     "correctIndex": 3,
     "explain": "Skriv 9 som 3²: 9^(x + 1) = 9^x · 9 = (3²)^x · 9 = (3^x)² · 9 = 4² · 9 = 16 · 9 = 144. 36 = 4 · 9 får man om man glömmer att 9^x = (3^x)² och räknar 9^x som 4. 48 = 16 · 3 får man om man skriver 9^(x + 1) som 3^(2x + 1) och alltså bara multiplicerar x med 2 i exponenten; rätt exponent är 2(x + 1) = 2x + 2. 17 = 16 + 1 får man om man tror att 9^(x + 1) = 9^x + 1.",
-    "verification": "disagreed",
-    "verificationNote": "Rättat före uppladdning efter andra kontrollen: exponenterna skrivs nu med ^ (t.ex. 9^(x + 1)) i stället för upphöjda tecken som typsnittet saknar. Kontrollera visningen och publicera."
+    "verification": "agreed"
   },
   {
     "id": "ovn-xyz-016",
@@ -544,9 +543,8 @@
       "2,6 dl"
     ],
     "correctIndex": 0,
-    "explain": "Vattnet bildar en mindre kon med spetsen nedåt som är likformig med hela struten, med längdskalan 2/3; både höjden och radien är två tredjedelar av strutens. Volymer förändras med kuben av längdskalan: (2/3)³ = 8/27. Vattnet är alltså 2,7 · 8/27 = 0,8 dl. 1,8 dl = 2,7 · 2/3 får man om man använder längdskalan direkt. 1,2 dl = 2,7 · 4/9 får man om man använder areaskalan (2/3)². 2,6 dl får man om man tror att det tomma utrymmet överst är en liten kon med skalan 1/3 och räknar 2,7 − 2,7/27; det hade stämt om struten hade hållits med spetsen uppåt.",
-    "verification": "disagreed",
-    "verificationNote": "Förklaringen godkändes inte. Förklaringen: bisatsen \"det hade stämt om struten hade hållits med spetsen uppåt\" är fel. Med spetsen uppåt och nivån 2/3 av höjden räknat från spetsen blir vattnet 2,7 · (1 − 8/27) = 1,9 dl; 2,6 dl hade krävt att nivån låg 2/3 upp från basen. Rätta eller stryk bisatsen (facit 0,8 dl och övriga distraktorer stämmer)."
+    "explain": "Vattnet bildar en mindre kon med spetsen nedåt som är likformig med hela struten, med längdskalan 2/3; både höjden och radien är två tredjedelar av strutens. Volymer förändras med kuben av längdskalan: (2/3)³ = 8/27. Vattnet är alltså 2,7 · 8/27 = 0,8 dl. 1,8 dl = 2,7 · 2/3 får man om man använder längdskalan direkt. 1,2 dl = 2,7 · 4/9 får man om man använder areaskalan (2/3)². 2,6 dl får man om man tror att det tomma utrymmet överst är en liten kon med skalan 1/3 och räknar 2,7 − 2,7/27. Men eftersom spetsen pekar nedåt är det tomma utrymmet ingen kon, utan det som återstår av struten ovanför vattenytan.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-xyz-040",

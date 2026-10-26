@@ -108,7 +108,7 @@
       "ej genom de båda påståendena"
     ],
     "correctIndex": 0,
-    "explain": "Medelhastigheten är hela sträckan delad med hela tiden. Kalla avståndet mellan A och B för s km.\n(1) Resan är 2s km lång och tar s/12 + s/18 = 5s/36 timmar. Medelhastigheten blir 2s/(5s/36) = 72/5 = 14,4 km/h. Avståndet s tar ut sig, så svaret blir detsamma vilket avståndet än är. (1) räcker.\n(2) ger bara sträckan. Utan uppgifter om tid eller hastighet går medelhastigheten inte att bestämma. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "explain": "Medelhastigheten är hela sträckan delad med hela tiden. Kalla avståndet mellan A och B för s km.\n(1) Resan är 2s km lång och tar s/12 + s/18 = 5s/36 timmar. Medelhastigheten blir 2s/(5s/36) = 72/5 = 14,4 km/h. Avståndet s förkortas bort, så svaret blir detsamma vilket avståndet än är. (1) räcker.\n(2) ger bara sträckan. Utan uppgifter om tid eller hastighet går medelhastigheten inte att bestämma. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
     "verification": "agreed"
   },
   {
@@ -156,7 +156,7 @@
       "ej genom de båda påståendena"
     ],
     "correctIndex": 4,
-    "explain": "Låt det stå x böcker på det översta, y på det mittersta och z på det nedersta hyllplanet.\n(1) ger x + y + z = 45, en ekvation med tre obekanta. (1) räcker inte.\n(2) ger y = z + 6 men säger inget om hur många böcker det är. (2) räcker inte.\nTillsammans: x + (z + 6) + z = 45, alltså x + 2z = 39. Det uppfylls till exempel både av z = 10, x = 19 och av z = 15, x = 9. Antalet böcker på det översta hyllplanet är okänt, så tillräcklig information erhålls ej genom de båda påståendena.",
+    "explain": "Låt det stå x böcker på det översta, y på det mittersta och z på det nedersta hyllplanet.\n(1) ger x + y + z = 45, en ekvation med tre obekanta. (1) räcker inte.\n(2) ger y = z + 6 men säger inget om hur många böcker det är. (2) räcker inte.\nTillsammans: x + (z + 6) + z = 45, alltså x + 2z = 39. Det uppfylls till exempel både av z = 10, x = 19 och av z = 15, x = 9. Det nedersta hyllplanet kan alltså ha både 10 och 15 böcker, så tillräcklig information erhålls ej genom de båda påståendena.",
     "verification": "agreed"
   },
   {
@@ -316,7 +316,7 @@
       "ej genom de båda påståendena"
     ],
     "correctIndex": 3,
-    "explain": "Låt Ola ha köpt x vykort för 5 kronor och y vykort för 8 kronor. Då är 5x + 8y = 53, där x och y är heltal som inte är negativa. För att 53 − 8y ska vara delbart med 5 måste y vara 1 eller 6 (y = 11 skulle kosta mer än 53 kronor). Det finns alltså två möjligheter: x = 9 och y = 1, eller x = 1 och y = 6.\n(1) Bara fallet x = 9, y = 1 har fler vykort för 5 kronor, så y = 1. (1) räcker.\n(2) Bara fallet x = 9, y = 1 ger 10 vykort (det andra fallet ger 7), så y = 1. (2) räcker.\nTillräcklig information erhålls i (1) och (2) var för sig.",
+    "explain": "Låt Ola ha köpt x vykort för 5 kronor och y vykort för 8 kronor. Då är 5x + 8y = 53, där x och y är heltal som inte är negativa. Eftersom 8 · 7 = 56 är mer än 53 är y högst 6. Av talen 53 − 8y för y = 0, 1, 2, 3, 4, 5 och 6, alltså 53, 45, 37, 29, 21, 13 och 5, är bara 45 och 5 delbara med 5. Det finns alltså två möjligheter: x = 9 och y = 1, eller x = 1 och y = 6.\n(1) Bara fallet x = 9, y = 1 har fler vykort för 5 kronor, så y = 1. (1) räcker.\n(2) Bara fallet x = 9, y = 1 ger 10 vykort (det andra fallet ger 7), så y = 1. (2) räcker.\nTillräcklig information erhålls i (1) och (2) var för sig.",
     "verification": "agreed"
   },
   {
@@ -412,9 +412,9 @@
       "ej genom de båda påståendena"
     ],
     "correctIndex": 1,
-    "explain": "(1) Talet 4 är delbart med 4 men inte med 8, medan talet 8 är delbart med både 4 och 8. (1) räcker inte.\n(2) Varje faktor 2 i n ger två faktorer 2 i n² = n · n, så n² innehåller faktorn 2 ett jämnt antal gånger. Eftersom 32 = 2 · 2 · 2 · 2 · 2 innehåller n² faktorn 2 minst fem gånger, och eftersom antalet är jämnt minst sex gånger. Då innehåller n faktorn 2 minst tre gånger, och n är delbart med 2 · 2 · 2 = 8. Svaret är ja, så (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "explain": "(1) Talet 4 är delbart med 4 men inte med 8, medan talet 8 är delbart med både 4 och 8. (1) räcker inte.\n(2) Varje faktor 2 i n ger två faktorer 2 i n² = n · n, så n² innehåller faktorn 2 ett jämnt antal gånger. Eftersom 32 = 2 · 2 · 2 · 2 · 2 innehåller n² faktorn 2 minst fem gånger. Antalet är jämnt, så n² innehåller faktorn 2 minst sex gånger. Då innehåller n faktorn 2 minst tre gånger, och n är delbart med 2 · 2 · 2 = 8. Svaret är ja, så (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
     "verification": "disagreed",
-    "verificationNote": "Liknar nära provuppgiften hp-2015-03-28, provpass 2, NOG 27 (”x är ett heltal. Är x jämnt delbart med 15? (1) x/10 är ett heltal. (2) x² är jämnt delbart med 30”): samma uppbyggnad (heltal, delbarhetsfråga, en kvadrat som är delbar med ett tal i (2)) och samma svar (bara (2) räcker), med nya tal och en egen vridning (32 = 2^5 kräver jämn exponent). Facit och förklaring är rätta, men en människa bör avgöra om förlagan syns för tydligt."
+    "verificationNote": "Förklaringen förtydligades vid granskningen 2026-10-26; facit och räkningar stämmer. Kvar att avgöra för en människa: uppgiften liknar provuppgiften hp-2015-03-28, provpass 2, NOG 27 (samma uppbyggnad med en kvadrat som är delbar med ett tal i (2) och samma svar, bara (2) räcker), med egna tal och en egen vridning (32 = 2^5 kräver jämn exponent). Publicera om likheten är acceptabel, annars avvisa."
   },
   {
     "id": "ovn-nog-027",

@@ -206,7 +206,7 @@
       "To show that a policy presented as fair was really designed to suit the restaurant"
     ],
     "correctIndex": 3,
-    "explain": "The author contrasts the 'democratic' way such restaurants present the policy with economics that are 'less high-minded': refusing bookings moves the risk of no-shows onto waiting diners and supplies free advertising, and the text ends by urging us to be clear about 'whom the arrangement was designed to serve'. The queue is part of this argument, as evidence of what the restaurant gains, but explaining it is not the purpose of the text. No recommendation is made that restaurants go back to taking bookings. And the claim that customers generally lose out is contradicted by 'Customers are not necessarily the losers'.",
+    "explain": "The author contrasts the way such restaurants present the policy, as 'a kind of democracy', with economics that are 'less high-minded': refusing bookings moves the risk of no-shows onto waiting diners and supplies free advertising, and the text ends by urging us to be clear about 'whom the arrangement was designed to serve'. The queue is part of this argument, as evidence of what the restaurant gains, but explaining it is not the purpose of the text. No recommendation is made that restaurants go back to taking bookings. And the claim that customers generally lose out is contradicted by 'Customers are not necessarily the losers'.",
     "verification": "agreed"
   },
   {
@@ -311,7 +311,7 @@
       "Screening ought to be offered only for diseases where large trials have shown that it prevents deaths."
     ],
     "correctIndex": 1,
-    "explain": "The author argues that survival figures can improve without anyone living longer, and that overdiagnosis creates grateful 'survivors' who were never in danger, so that even a programme that 'did nothing but harm' could look like a great success; the usual evidence therefore says little about whether screening saves lives. The idea that screening may do more harm than good runs against 'None of this means that screening is a mistake', and the text never says how many of the tumours found are harmless. Starting the count at diagnosis is only one of the two distortions described, so it is neither the chief reason nor the main point. Nor does the author say that screening should be restricted to diseases where trials have shown a benefit; the conclusion is that people deserve to be told what they are being offered.",
+    "explain": "The author argues that survival figures can improve without anyone living longer, and that overdiagnosis creates grateful 'survivors' who were never in danger, so that even a programme that 'did nothing but harm' could look like a great success; the usual evidence therefore says little about whether screening saves lives. The idea that screening may do more harm than good runs against 'None of this means that screening is a mistake', and the text never says how many of the tumours found are harmless. Starting the count at diagnosis is only one of the two distortions described, and the text does not single it out as the chief one; it even calls the second 'in some ways, more troubling'. A single distortion is in any case too narrow to be the main point. Nor does the author say that screening should be restricted to diseases where trials have shown a benefit; the conclusion is that people deserve to be told what they are being offered.",
     "verification": "agreed"
   },
   {
@@ -551,7 +551,7 @@
       "reversed"
     ],
     "correctIndex": 3,
-    "explain": "The next sentence contrasts chemicals that 'linger in soil and water for decades' with a streetlamp that 'stops doing harm the moment it is switched off', so the point is that light pollution can be undone more easily than other kinds: 'reversed'. 'Ignored' may seem to fit the later remark that a lit street seems self-evidently better than a dark one, but it does not match the contrast with lingering chemicals, and it would not make it 'all the more striking' that the problem keeps growing. Nothing in the passage concerns how easily light pollution can be 'measured' or 'justified'.",
+    "explain": "The next sentence contrasts chemicals that 'linger in soil and water for decades' with a streetlamp that 'stops doing harm the moment it is switched off', so the point is that light pollution can be undone more easily than other ways in which humans alter their surroundings: it is easily 'reversed'. That is also why it is 'all the more striking' that the problem keeps growing. 'Ignored' and 'justified' may seem to fit the later remark that a brightly lit street seems self-evidently better than a dark one, but neither matches the contrast with lingering chemicals, and neither would make the growth of the problem striking; both would rather help to explain it. Nothing in the passage concerns how easily light pollution can be 'measured'.",
     "verification": "agreed"
   },
   {

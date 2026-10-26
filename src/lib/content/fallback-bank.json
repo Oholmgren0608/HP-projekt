@@ -3,314 +3,338 @@
     {
       "id": "ord-1",
       "kind": "ord",
-      "prompt": "Vad betyder ordet ”adekvat”?",
+      "prompt": "Vad betyder ”adekvat”?",
       "options": [
-        "överdriven",
-        "lämplig / tillräcklig",
-        "otydlig",
-        "tillfällig"
+        "lämplig",
+        "akut",
+        "avancerad",
+        "kostnadsfri",
+        "omfattande"
       ],
-      "correctIndex": 1,
-      "explain": "Adekvat betyder lämplig eller tillräcklig för ett givet syfte. Överdriven beskriver något som gått för långt, vilket är en annan dimension än lämplighet. Otydlig handlar om klarhet, inte om att passa syftet. Tillfällig syftar på varaktighet i tid, inte på lämplighet."
+      "correctIndex": 0,
+      "explain": "Adekvat betyder lämplig, alltså att något passar sitt syfte och motsvarar det som behövs: ”patienten fick inte adekvat vård”. Akut, avancerad, kostnadsfri och omfattande kan också beskriva vård, men de betyder brådskande, högt specialiserad, gratis respektive stor till omfånget och säger inget om att vården passar behovet."
     },
     {
       "id": "ord-2",
       "kind": "ord",
       "prompt": "Vad betyder ”implikation”?",
       "options": [
-        "följd / underförstådd betydelse",
-        "direkt motsägelse",
-        "offentlig debatt",
-        "formell ursäkt"
+        "genomförande",
+        "följd",
+        "tillämpning",
+        "förveckling",
+        "efterapning"
       ],
-      "correctIndex": 0,
-      "explain": "En implikation är en följd eller underförstådd betydelse som ett påstående för med sig. Direkt motsägelse är motsatsen, eftersom en implikation snarare hänger ihop med utsagan än strider mot den. Offentlig debatt handlar om diskussion, inte om logisk följd. Formell ursäkt saknar helt kopplingen till följd eller antydan."
+      "correctIndex": 1,
+      "explain": "En implikation är en följd eller konsekvens av något, ofta en som inte sägs rakt ut: ”resultaten får viktiga implikationer för hur skolan bör arbeta”. Genomförande, tillämpning och efterapning är betydelser av de liknande orden implementering, applikation och imitation. Förveckling är betydelsen av komplikation, som också liknar ordet men syftar på en oväntad svårighet."
     },
     {
       "id": "ord-3",
       "kind": "ord",
       "prompt": "Vad betyder ”premissen”?",
       "options": [
-        "slutsatserna",
         "undantaget",
-        "utgångspunkten / antagandet",
-        "bevisbördan"
+        "belöningen",
+        "förutsättningen",
+        "bevisbördan",
+        "motargumentet"
       ],
       "correctIndex": 2,
-      "explain": "Premissen är den utgångspunkt eller det antagande som ett resonemang bygger på. Slutsatserna är istället vad man kommer fram till efter resonemanget, alltså motsatt ände av tankekedjan. Undantaget rör avvikelser från en regel, inte grunden för argumentet. Bevisbördan handlar om vem som måste styrka ett påstående, vilket är en annan juridisk/logisk term."
+      "explain": "En premiss är en förutsättning eller ett antagande som ett resonemang bygger på: ”om premissen är felaktig faller hela slutsatsen”. Belöningen är betydelsen av det liknande ordet premien. Undantaget, bevisbördan och motargumentet hör också hemma i argumentation och juridik, men betyder ett avsteg från en regel, skyldigheten att bevisa något respektive ett argument som talar emot en tes."
     },
     {
       "id": "ord-4",
       "kind": "ord",
       "prompt": "Vad betyder ”ambivalent”?",
       "options": [
-        "helt säker",
-        "kluven / dubbeltydigt sinnad",
-        "ointresserad",
-        "öppen och glad"
+        "ärelysten",
+        "likgiltig",
+        "kringresande",
+        "kluven",
+        "mångsidig"
       ],
-      "correctIndex": 1,
-      "explain": "Ambivalent betyder kluven eller att ha motstridiga känslor samtidigt. Helt säker är motsatsen, då det utesluter tvekan. Ointresserad beskriver brist på engagemang snarare än dubbelhet i känslor. Öppen och glad beskriver ett positivt, enhetligt sinnestillstånd utan den inneboende splittringen."
+      "correctIndex": 3,
+      "explain": "Ambivalent betyder kluven, alltså att man har motstridiga känslor eller inställningar till något på samma gång: ”hon var ambivalent inför flytten, glad över jobbet men ledsen över att lämna vännerna”. Ärelysten och kringresande är betydelser av de liknande orden ambitiös och ambulerande. Likgiltig förväxlas ibland med ambivalent, men den som är ambivalent bryr sig tvärtom och dras åt två håll, och mångsidig handlar om att kunna många saker, inte om inre splittring."
     },
     {
       "id": "ord-5",
       "kind": "ord",
       "prompt": "Vad betyder ”koncist”?",
       "options": [
-        "kortfattat och precist",
-        "långrandigt",
-        "poetiskt",
-        "vardagligt"
+        "konkret",
+        "sakligt",
+        "konsekvent",
+        "kortsiktigt",
+        "kortfattat"
       ],
-      "correctIndex": 0,
-      "explain": "Koncist betyder kortfattat och precist formulerat. Långrandigt är motsatsen, eftersom det syftar på utdragna och ordrika formuleringar. Poetiskt handlar om stilistiskt bildspråk, inte om korthet. Vardagligt beskriver register snarare än hur kort eller precis en text är."
+      "correctIndex": 4,
+      "explain": "Koncist betyder kortfattat och träffande, alltså utan onödiga ord: ”hon sammanfattade utredningen koncist på en enda sida”. Konkret och konsekvent liknar ordet till formen men betyder åskådligt respektive följdriktigt. Kortsiktigt handlar om tid snarare än omfång, och sakligt betyder att man håller sig till fakta, vilket går att göra både kort och utförligt."
     },
     {
       "id": "ord-6",
       "kind": "ord",
       "prompt": "Vad betyder ”relativisera”?",
       "options": [
-        "absolutgöra",
-        "förstora",
-        "sätta i perspektiv / tona ner absoluthet",
-        "bevisa"
+        "sätta i perspektiv",
+        "förverkliga",
+        "återge",
+        "arbeta om",
+        "förenkla"
       ],
-      "correctIndex": 2,
-      "explain": "Att relativisera är att sätta något i perspektiv eller tona ner dess absoluta karaktär genom att jämföra med annat. Absolutgöra är motsatsen, eftersom det förstärker snarare än nyanserar ett påstående. Förstora handlar om att göra något större, inte om att relativisera dess betydelse. Bevisa syftar på att styrka sanningshalt, vilket inte har med perspektivering att göra."
+      "correctIndex": 0,
+      "explain": "Att relativisera är att sätta något i perspektiv, alltså visa att det inte är absolut utan beror på vad man jämför med: ”forskaren relativiserade resultaten genom att jämföra dem med andra länders”. Förverkliga, återge och arbeta om är betydelser av de liknande orden realisera, relatera och revidera. Förenkla är fel eftersom den som relativiserar inte gör saken enklare utan ställer den i relation till något annat."
     },
     {
       "id": "ord-7",
       "kind": "ord",
       "prompt": "Vad betyder ”diskrepans”?",
       "options": [
-        "överensstämmelse",
-        "upprepning",
-        "sammanfattning",
-        "skillnad / bristande överensstämmelse"
+        "meningsutbyte",
+        "skillnad",
+        "tystlåtenhet",
+        "undantag",
+        "särbehandling"
       ],
-      "correctIndex": 3,
-      "explain": "Diskrepans betyder skillnad eller bristande överensstämmelse mellan till exempel två uppgifter. Överensstämmelse är motsatsen, då den beskriver att saker stämmer ihop. Sammanfattning handlar om att komprimera information, inte om att peka på skillnader. Upprepning innebär att säga samma sak igen, vilket är en annan process än att jämföra och hitta avvikelser."
+      "correctIndex": 1,
+      "explain": "Diskrepans betyder skillnad, särskilt mellan saker som borde stämma överens: ”det fanns en stor diskrepans mellan budgeten och de faktiska kostnaderna”. Meningsutbyte, tystlåtenhet, undantag och särbehandling är betydelser av de liknande orden diskussion, diskretion, dispens och diskriminering."
     },
     {
       "id": "ord-8",
       "kind": "ord",
       "prompt": "Vad betyder ”eminent”?",
       "options": [
-        "medelmåttig",
-        "tillfällig",
-        "okänd",
-        "framstående"
+        "överhängande",
+        "pensionerad",
+        "framstående",
+        "flitig",
+        "framåtsträvande"
       ],
-      "correctIndex": 3,
-      "explain": "Eminent betyder framstående eller synnerligen skicklig. Medelmåttig är närmast motsatsen, eftersom det beskriver genomsnittlig kvalitet. Okänd beskriver brist på uppmärksamhet, vilket strider mot att vara framstående. Tillfällig handlar om varaktighet i tid och saknar koppling till skicklighet eller status."
+      "correctIndex": 2,
+      "explain": "Eminent betyder framstående eller utmärkt: ”hon är en eminent kännare av 1700-talets litteratur”. Överhängande är betydelsen av engelskans imminent, och pensionerad bygger på en förväxling med emeritus, som i professor emeritus. Flitig och framåtsträvande säger något om hur hårt någon arbetar eller hur långt någon vill nå, inte om hur skicklig och ansedd personen faktiskt är."
     },
     {
       "id": "ord-9",
       "kind": "ord",
       "prompt": "Vad betyder ”provisorisk”?",
       "options": [
-        "slutgiltig",
+        "utmanande",
+        "småstadsaktig",
+        "framstegsvänlig",
         "tillfällig",
-        "laglig",
-        "dyr"
+        "förebyggande"
       ],
-      "correctIndex": 1,
-      "explain": "Provisorisk betyder tillfällig, ofta som en lösning i väntan på något bättre. Slutgiltig är motsatsen, då den betecknar det som är avgjort och bestående. Laglig rör lagenlighet, inte varaktighet. Dyr handlar om kostnad, vilket är en helt annan egenskap än hur länge något ska gälla."
+      "correctIndex": 3,
+      "explain": "Provisorisk betyder tillfällig, alltså tänkt att fungera bara tills en permanent lösning finns: ”efter stormen byggdes en provisorisk bro över ån”. Utmanande, småstadsaktig och framstegsvänlig är betydelser av de liknande orden provocerande, provinsiell och progressiv. Förebyggande handlar om att förhindra att något händer, inte om hur länge en lösning ska gälla."
     },
     {
       "id": "ord-10",
       "kind": "ord",
       "prompt": "Vad betyder ”subversiv”?",
       "options": [
-        "stödjande",
-        "högtidlig",
-        "neutral",
-        "omstörtande / underminerande"
+        "undermedveten",
+        "hårfin",
+        "personligt färgad",
+        "underordnad",
+        "omstörtande"
       ],
-      "correctIndex": 3,
-      "explain": "Subversiv betyder omstörtande eller underminerande gentemot en rådande ordning. Stödjande är motsatsen, eftersom det innebär att man bidrar till att upprätthålla något snarare än att underminera det. Neutral beskriver avsaknad av ställningstagande, vilket inte stämmer med den aktiva undermineringen i subversiv. Högtidlig rör ett formellt tonläge och saknar den ifrågasättande innebörden."
+      "correctIndex": 4,
+      "explain": "Subversiv betyder omstörtande, alltså att något syftar till att undergräva eller störta en rådande ordning: ”regimen förbjöd tidningen och kallade den subversiv”. Hårfin och personligt färgad är betydelser av de liknande orden subtil och subjektiv. Underordnad och undermedveten bygger på att sub- betyder under, men har inget med att störta en ordning att göra."
     },
     {
       "id": "ord-11",
       "kind": "ord",
       "prompt": "Vad betyder ”tautologi”?",
       "options": [
-        "exempel",
-        "motsägelse",
-        "cirkelresonemang / upprepning av samma sak",
-        "bevis"
+        "upprepning med andra ord",
+        "gudslära",
+        "överdrift",
+        "ordhärledning",
+        "förskönande omskrivning"
       ],
-      "correctIndex": 2,
-      "explain": "Tautologi är ett cirkelresonemang eller en upprepning av samma sak i andra ordalag. Motsägelse beskriver istället två påståenden som inte kan vara sanna samtidigt, vilket är motsatt logik. Exempel är en illustration av något, inte en upprepning av samma innebörd. Bevis syftar på belägg för ett påstående, vilket skiljer sig från att bara omformulera det."
+      "correctIndex": 0,
+      "explain": "En tautologi är en upprepning av samma sak med andra ord, som i ”ensam och allena”. I logiken kallas också ett påstående som alltid är sant, som ”antingen regnar det eller så regnar det inte”, för en tautologi. Gudslära och ordhärledning är betydelser av de liknande orden teologi och etymologi, och överdrift och förskönande omskrivning är andra stilfigurer, nämligen hyperbol och eufemism. Tautologi ska inte förväxlas med cirkelresonemang, där slutsatsen redan förutsätts i premisserna."
     },
     {
       "id": "ord-12",
       "kind": "ord",
       "prompt": "Vad betyder ”kontroversiell”?",
       "options": [
+        "förtrolig",
         "omstridd",
-        "allmänt accepterad",
-        "hemlig",
-        "teknisk"
+        "behärskad",
+        "affärsmässig",
+        "traditionsbunden"
       ],
-      "correctIndex": 0,
-      "explain": "Kontroversiell betyder omstridd, det väcker starka och motstridiga åsikter. Allmänt accepterad är motsatsen, eftersom den beskriver bred enighet snarare än konflikt. Hemlig handlar om att vara dold, inte om att vara omdebatterad. Teknisk syftar på fackmässig karaktär och har ingen koppling till grad av oenighet."
+      "correctIndex": 1,
+      "explain": "Kontroversiell betyder omstridd, alltså att något väcker strid och delade meningar: ”förslaget att riva den gamla teatern var mycket kontroversiellt”. Förtrolig, affärsmässig och traditionsbunden är betydelser av de liknande orden konfidentiell, kommersiell och konventionell, och behärskad hör ihop med kontrollerad, inte med strid och oenighet."
     },
     {
       "id": "ord-13",
       "kind": "ord",
       "prompt": "Vad betyder ”indignation”?",
       "options": [
-        "nöjdhet",
-        "rättmätig vrede / upprördhet",
-        "nyfikenhet",
-        "trötthet"
+        "förnedring",
+        "tecken",
+        "harm",
+        "nedstämdhet",
+        "inbillning"
       ],
-      "correctIndex": 1,
-      "explain": "Indignation betyder rättmätig vrede eller upprördhet över något som uppfattas som orätt. Nöjdhet är motsatsen, då den beskriver ett tillfredsställt sinnestillstånd. Nyfikenhet handlar om intresse för att veta mer, inte om upprördhet. Trötthet syftar på brist på energi och saknar den känslomässiga laddningen i indignation."
+      "correctIndex": 2,
+      "explain": "Indignation betyder harm, alltså vrede och upprördhet över något som man uppfattar som orätt eller kränkande: ”beslutet att stänga skolan väckte stor indignation bland föräldrarna”. Förnedring, tecken och inbillning är betydelser av de liknande orden indignity (på engelska), indikation och imagination. Nedstämdhet är ett slags sorgsenhet snarare än vrede."
     },
     {
       "id": "ord-14",
       "kind": "ord",
       "prompt": "Vad betyder ”implicit”?",
       "options": [
-        "uttryckligen sagt",
-        "högljutt",
-        "felaktigt",
-        "underförstått"
+        "inblandad",
+        "invecklad",
+        "näsvis",
+        "underförstådd",
+        "ståtlig"
       ],
       "correctIndex": 3,
-      "explain": "Implicit betyder underförstått, det är antytt snarare än uttalat. Uttryckligen sagt är motsatsen, eftersom det betecknar det som sägs rakt ut. Felaktigt handlar om sanningshalt, inte om hur något förmedlas. Högljutt rör volym eller intensitet i uttryck, vilket saknar koppling till underförstådd betydelse."
+      "explain": "Implicit betyder underförstådd, alltså att något inte sägs rakt ut men ändå framgår: ”i inbjudan låg en implicit förväntan på att alla skulle komma”. Inblandad, invecklad, näsvis och ståtlig är betydelser av de liknande orden implicerad, komplicerad, impertinent och imposant."
     },
     {
       "id": "ord-15",
       "kind": "ord",
       "prompt": "Vad betyder ”konsensus”?",
       "options": [
-        "konflikt",
+        "folkräkning",
+        "samvete",
         "omröstning",
-        "samförstånd",
-        "kompromisslöshet"
+        "eftergift",
+        "samförstånd"
       ],
-      "correctIndex": 2,
-      "explain": "Konsensus betyder samförstånd eller allmän enighet. Konflikt är motsatsen, då den beskriver oenighet snarare än samstämmighet. Omröstning är en metod för att fatta beslut men innebär inte i sig enighet. Kompromisslöshet betecknar en ovilja att mötas, vilket är raka motsatsen till samförstånd."
+      "correctIndex": 4,
+      "explain": "Konsensus betyder samförstånd eller enighet, alltså att alla inblandade är överens: ”efter långa förhandlingar nådde partierna konsensus om budgeten”. Folkräkning, samvete och eftergift är betydelser av de liknande orden census, conscience (på engelska) och koncession. Omröstning är ett sätt att fatta beslut när alla inte är överens, inte själva enigheten."
     },
     {
       "id": "ord-16",
       "kind": "ord",
       "prompt": "Vad betyder ”epitet”?",
       "options": [
-        "tillnamn / beskrivande beteckning",
-        "fotnot",
-        "citat",
-        "rubrik"
+        "tillnamn",
+        "gravskrift",
+        "slutord",
+        "valspråk",
+        "avsnitt"
       ],
       "correctIndex": 0,
-      "explain": "Epitet är ett tillnamn eller en beskrivande beteckning som fästs vid någon eller något. Fotnot är en förklarande not i en text, vilket är en annan textuell funktion än ett tillnamn. Citat är ett återgivet uttalande, inte en beskrivande benämning. Rubrik är en titel som inleder en text, vilket skiljer sig från ett epitet som beskriver en person eller sak."
+      "explain": "Ett epitet är ett tillnamn eller en karakteriserande benämning: ”Gustav II Adolf fick epitetet Lejonet från Norden”. Gravskrift, slutord och avsnitt är betydelser av de liknande orden epitafium, epilog och episod. Ett valspråk är en kort devis som någon själv väljer att leva efter, inte en benämning som beskriver personen."
     },
     {
       "id": "ord-17",
       "kind": "ord",
       "prompt": "Vad betyder ”fatal”?",
       "options": [
-        "ofarlig",
-        "ödesdiger / katastrofal",
-        "rolig",
-        "långsam"
+        "ödestroende",
+        "ödesdiger",
+        "förförisk",
+        "alldaglig",
+        "fullständig"
       ],
       "correctIndex": 1,
-      "explain": "Fatal betyder ödesdiger eller katastrofal, ofta med allvarliga eller dödliga följder. Ofarlig är motsatsen, eftersom den utesluter allvarlig skada. Rolig beskriver ett lustfyllt intryck, vilket är oförenligt med den allvarliga innebörden i fatal. Långsam handlar om hastighet, inte om graden av allvar i följderna."
+      "explain": "Fatal betyder ödesdiger, alltså att något får mycket olyckliga eller allvarliga följder: ”att inte byta de slitna bromsarna visade sig vara ett fatalt misstag”. Ödestroende är betydelsen av det besläktade ordet fatalistisk, och förförisk bygger på uttrycket femme fatale. Alldaglig och fullständig är betydelser av banal och total, som rimmar på fatal."
     },
     {
       "id": "ord-18",
       "kind": "ord",
       "prompt": "Vad betyder ”abstrahera”?",
       "options": [
-        "göra konkret",
-        "översätta",
-        "räkna",
-        "lyfta ut det väsentliga / bortse från detaljer"
+        "avhålla sig",
+        "störa",
+        "bortse från detaljer",
+        "dra till sig",
+        "suga upp"
       ],
-      "correctIndex": 3,
-      "explain": "Att abstrahera är att lyfta ut det väsentliga och bortse från enskilda detaljer. Göra konkret är motsatsen, då det innebär att knyta något till specifika, konkreta exempel snarare än att generalisera. Räkna handlar om matematisk bearbetning, inte om att bortse från detaljer. Översätta rör överföring mellan språk, vilket är en annan process än generalisering."
+      "correctIndex": 2,
+      "explain": "Att abstrahera är att bortse från detaljer och enskildheter för att få fram det allmänna och väsentliga: ”för att se mönstret måste man abstrahera från de enskilda fallen”. Störa, dra till sig och suga upp är betydelser av de liknande orden distrahera, attrahera och absorbera, och avhålla sig hör ihop med abstinens."
     },
     {
       "id": "ord-19",
       "kind": "ord",
       "prompt": "Vad betyder ”legitim”?",
       "options": [
-        "olaglig",
-        "hemlig",
-        "berättigad / giltig",
-        "tillfällig"
+        "lagstiftande",
+        "sagoomspunnen",
+        "vemodig",
+        "berättigad",
+        "kamratlig"
       ],
-      "correctIndex": 2,
-      "explain": "Legitim betyder berättigad eller giltig, ofta i juridisk eller moralisk mening. Olaglig är motsatsen, eftersom den betecknar det som strider mot lagen. Hemlig handlar om att vara dold, vilket inte har med giltighet att göra. Tillfällig syftar på varaktighet i tid, en annan egenskap än att vara berättigad."
+      "correctIndex": 3,
+      "explain": "Legitim betyder berättigad, alltså att något har stöd i lag, regler eller allmänt godtagna principer: ”hon hade ett legitimt skäl att utebli från mötet”. Lagstiftande, sagoomspunnen, vemodig och kamratlig är betydelser av de liknande orden legislativ, legendarisk, elegisk och kollegial."
     },
     {
       "id": "ord-20",
       "kind": "ord",
       "prompt": "Vad betyder ”paradox”?",
       "options": [
-        "citat",
-        "enkel sanning",
-        "statistik",
-        "självmotsägande påstående som kan rymma en sanning"
+        "liknelse",
+        "förebild",
+        "svårt val",
+        "omskrivning",
+        "skenbar motsägelse"
       ],
-      "correctIndex": 3,
-      "explain": "En paradox är ett självmotsägande påstående som trots det kan rymma en sanning. Enkel sanning är motsatsen, då den saknar den motsägelsefulla ytan som utmärker en paradox. Statistik handlar om sifferunderlag, inte om ett logiskt spänningsfullt påstående. Citat är ett återgivet uttalande, vilket inte i sig behöver innehålla någon motsägelse."
+      "correctIndex": 4,
+      "explain": "En paradox är en skenbar motsägelse, alltså ett påstående som verkar orimligt men som vid närmare eftertanke kan vara sant: ”det är en paradox att ju fler alternativ vi har, desto svårare blir det att välja”. Liknelse, förebild och omskrivning är betydelser av de liknande orden parabel, paradigm och parafras. Ett svårt val kallas dilemma, ett ord som ofta förväxlas med paradox."
     },
     {
       "id": "ord-21",
       "kind": "ord",
       "prompt": "Vad betyder ”resursstark”?",
       "options": [
-        "fattig på medel",
-        "som har goda tillgångar / kapacitet",
-        "ointresserad",
-        "svag"
+        "med goda tillgångar",
+        "kostsam",
+        "resolut",
+        "sparsam",
+        "med stor uthållighet"
       ],
-      "correctIndex": 1,
-      "explain": "Resursstark betyder att ha goda tillgångar eller kapacitet, till exempel ekonomiskt eller organisatoriskt. Fattig på medel är motsatsen, eftersom den beskriver brist snarare än överflöd av resurser. Ointresserad handlar om engagemang, inte om tillgång till resurser. Svag beskriver bristande kraft eller förmåga, vilket är motsatt innebörd till att vara resursstark."
+      "correctIndex": 0,
+      "explain": "Resursstark betyder att man har gott om resurser, till exempel pengar, kunskap och kontakter: ”barn till resursstarka föräldrar får ofta mer hjälp med läxorna”. Kostsam och sparsam har också med resurser att göra, men betyder att något kostar mycket respektive att man hushållar med det man har. Resolut (beslutsam) liknar ordet bara till formen, och med stor uthållighet bygger på en felaktig läsning av -stark som kroppslig eller psykisk styrka."
     },
     {
       "id": "ord-22",
       "kind": "ord",
       "prompt": "Vad betyder ”dogmatisk”?",
       "options": [
-        "låst vid fasta läror utan nyans",
-        "öppen för kritik",
-        "humoristisk",
-        "praktisk"
+        "taktfull",
+        "låst vid en lära",
+        "metodisk",
+        "noga med detaljer",
+        "teatralisk"
       ],
-      "correctIndex": 0,
-      "explain": "Dogmatisk betyder att vara låst vid fasta läror utan att öppna för nyans eller kritik. Öppen för kritik är motsatsen, eftersom den beskriver en beredskap att ompröva sina ståndpunkter. Humoristisk rör lekfullhet i uttryck, vilket saknar kopplingen till orubblig övertygelse. Praktisk handlar om verklighetsanpassning snarare än om orubblig fasthet vid en lära."
+      "correctIndex": 1,
+      "explain": "Dogmatisk betyder låst vid en lära, alltså att man håller fast vid vissa åsikter eller principer utan att pröva dem eller lyssna på invändningar: ”hans dogmatiska syn på uppfostran lämnade inget utrymme för diskussion”. Taktfull, metodisk och teatralisk är betydelser av de liknande orden diplomatisk, systematisk och dramatisk. Noga med detaljer beskriver den som är pedantisk, vilket inte är samma sak som att vara bunden vid en lära."
     },
     {
       "id": "ord-23",
       "kind": "ord",
       "prompt": "Vad betyder ”implicera”?",
       "options": [
-        "utesluta",
-        "bevisa med experiment",
-        "innebära / antyda",
-        "citera"
+        "förklara",
+        "försvåra",
+        "innebära",
+        "kopiera",
+        "stryka på"
       ],
       "correctIndex": 2,
-      "explain": "Att implicera är att innebära eller antyda något utan att säga det rakt ut. Utesluta är motsatsen, då det innebär att avlägsna eller frånta möjligheten, inte att antyda. Bevisa med experiment syftar på empirisk verifiering, vilket är en mycket starkare och annorlunda process än att antyda. Citera handlar om att återge någons ord, inte om att låta något förstås indirekt."
+      "explain": "Att implicera är att innebära eller medföra något som en följd: ”ett ja till förslaget implicerar att skatten måste höjas”. Förklara, försvåra, kopiera och stryka på är betydelser av de liknande orden explicera, komplicera, duplicera och applicera."
     },
     {
       "id": "ord-24",
       "kind": "ord",
       "prompt": "Vad betyder ”koherent”?",
       "options": [
-        "sammanhängande / logiskt enhetlig",
-        "osammanhängande",
-        "lång",
-        "poetisk"
+        "kunnig",
+        "inneboende",
+        "sammanstrålande",
+        "sammanhängande",
+        "oföränderlig"
       ],
-      "correctIndex": 0,
-      "explain": "Koherent betyder sammanhängande och logiskt enhetlig, utan inbördes motsägelser. Osammanhängande är motsatsen, eftersom det just beskriver brist på inre logik. Lång handlar om omfång, vilket är oberoende av om resonemanget hänger ihop. Poetisk rör stilistiskt bildspråk, vilket inte har med logisk sammanhållning att göra."
+      "correctIndex": 3,
+      "explain": "Koherent betyder sammanhängande, alltså att delarna hänger ihop logiskt och bildar en helhet: ”uppsatsen var koherent från inledning till slutsats”. Kunnig, inneboende, sammanstrålande och oföränderlig är betydelser av de liknande orden kompetent, inherent, konvergent och konstant."
     },
     {
       "id": "mek-1",
@@ -358,15 +382,15 @@
       "id": "mek-4",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Rapporten är ____ kort: den sammanfattar tre års forskning på tio sidor utan att tappa precisionsnivån.",
+      "passage": "Rapporten är ____: den sammanfattar tre års forskning på tio sidor utan att tappa i precision.",
       "options": [
-        "onödigt",
-        "vagt",
-        "muntligt",
-        "koncist"
+        "onödig",
+        "vag",
+        "muntlig",
+        "koncis"
       ],
       "correctIndex": 3,
-      "explain": "Koncist betyder kortfattat och precist, den positiva egenskap meningen beskriver. Onödigt är en värdering som inte beskriver språklig stil. Vagt är nästan motsatsen, eftersom det innebär otydlighet snarare än precision. Muntligt beskriver talspråklig framställning, inte kortfattad precision."
+      "explain": "Koncis betyder kortfattad men ändå innehållsrik och precis, och det är just vad förklaringen efter kolon beskriver: tre års forskning på tio sidor utan att precisionen går förlorad. Onödig är ett negativt omdöme som strider mot att resten av meningen framhåller rapportens förtjänster. Vag betyder otydlig, vilket motsägs av att rapporten behåller sin precision. Muntlig beskriver en talad framställning och passar inte en skriven rapport på tio sidor."
     },
     {
       "id": "mek-5",
@@ -442,7 +466,7 @@
       "id": "mek-10",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Förslaget vann gehör ____ bland dem som tidigare varit skeptiska.",
+      "passage": "Förslaget vann gehör ____ bland dem som tidigare varit skeptiska, eftersom det bemötte just deras invändningar.",
       "options": [
         "oaktat",
         "följaktligen",
@@ -450,7 +474,7 @@
         "däremot"
       ],
       "correctIndex": 2,
-      "explain": "I synnerhet förstärker att något gäller särskilt eller framför allt en viss grupp. Oaktat betyder trots och inför en motsägelse som inte hör hemma här. Följaktligen drar en slutsats i stället för att peka ut en särskild grupp. Däremot ställer två led i kontrast och passar inte när en grupp ska lyftas fram som särskilt berörd."
+      "explain": "I synnerhet betyder särskilt eller framför allt och lyfter fram de tidigare skeptiska som den grupp där förslaget fick mest gehör. Bisatsen förklarar varför: förslaget bemötte just deras invändningar. Oaktat är en preposition som betyder trots och kan inte stå framför ”bland dem”. Följaktligen drar en slutsats av något som redan sagts, men här kommer skälet i stället efteråt, i bisatsen med ”eftersom”. Däremot ställer något i kontrast mot ett tidigare led, och något sådant led finns inte i meningen."
     },
     {
       "id": "mek-11",
@@ -464,7 +488,7 @@
         "Till följd av"
       ],
       "correctIndex": 0,
-      "explain": "Oaktat betyder trots och är ett formellt uttryck som passar när något gäller trots en omständighet. Tack vare anger en positiv orsak, inte en motsägelse. På grund av anger orsak-verkan rakt av, vilket ger fel logik om meningen kräver en motsägelse. Till följd av uttrycker samma slags orsakssamband och passar därför inte heller."
+      "explain": "Oaktat betyder trots och passar eftersom osäkerhet normalt talar emot en investering: bolaget gick vidare trots osäkerheten. Tack vare anger en positiv orsak och skulle betyda att osäkerheten hjälpte bolaget att investera, vilket är ologiskt. På grund av gör osäkerheten till skälet för investeringen, vilket inte heller går ihop. Till följd av uttrycker samma slags orsakssamband och är fel av samma skäl."
     },
     {
       "id": "mek-12",
@@ -516,11 +540,11 @@
       "options": [
         "formellt",
         "talspråkligt",
-        "barnsligt",
+        "högtravande",
         "slangbetonat"
       ],
       "correctIndex": 0,
-      "explain": "Formellt register hör hemma i sakprosa och essäistik av det slag som beskrivs. Talspråkligt är motsatt register och passar inte i en formell text. Barnsligt beskriver en omogen framställning, inte den vårdade stil som avses. Slangbetonat innebär informellt och vardagsnära språk, vilket krockar med sammanhangets formella ton."
+      "explain": "Formellt register är vårdat och sakligt och hör hemma i vetenskaplig essäistik. Talspråkligt är det motsatta registret och passar inte i en vetenskaplig text. Högtravande betyder uppstyltat och överdrivet högtidligt, ett negativt omdöme som inte kan beskriva ett register som sägs passa. Slangbetonat innebär informellt och vardagsnära språk, vilket krockar med den vetenskapliga tonen."
     },
     {
       "id": "mek-16",
@@ -540,15 +564,15 @@
       "id": "mek-17",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Han var ____ till förslaget: varken entusiastisk eller avvisande.",
+      "passage": "Han var ____ till förslaget: både entusiastisk och avvisande på samma gång.",
       "options": [
         "entydig",
         "ambivalent",
         "aggressiv",
-        "indifferent på ett skämtsamt sätt"
+        "indifferent"
       ],
       "correctIndex": 1,
-      "explain": "Ambivalent betyder kluven, det vill säga att ha motstridiga känslor eller uppfattningar samtidigt. Entydig betyder tvärtom tydlig och utan tvetydighet, motsatsen till det sökta. Aggressiv beskriver fientlighet, inte inre kluvenhet. Indifferent på ett skämtsamt sätt beskriver likgiltighet snarare än att vara splittrad mellan två ståndpunkter."
+      "explain": "Ambivalent betyder kluven, att samtidigt ha motstridiga känslor, och det är precis vad förklaringen efter kolon beskriver: både entusiastisk och avvisande på samma gång. Entydig betyder tvärtom klar och otvetydig, motsatsen till en kluven hållning. Aggressiv beskriver fientlighet, inte en blandning av känslor. Indifferent betyder likgiltig, alltså att inte bry sig åt något håll, vilket strider mot att han är både entusiastisk och avvisande."
     },
     {
       "id": "mek-18",
@@ -590,7 +614,7 @@
         "dock"
       ],
       "correctIndex": 3,
-      "explain": "Dock uttrycker en kontrast: skillnaden är liten men ändå betydelsefull. Alltså drar en slutsats i stället för att införa en invändning. Nämligen förklarar eller preciserar något föregående utan att vända innebörden. Respektive parar ihop led var för sig och ger ingen kontrastiv nyans."
+      "explain": "Dock uttrycker en kontrast: skillnaden är liten men ändå statistiskt signifikant, det vill säga svår att förklara som en ren slump. Signifikant betyder här inte att skillnaden är stor eller viktig. Alltså drar en slutsats i stället för att införa en invändning. Nämligen förklarar eller preciserar något föregående utan att vända innebörden. Respektive parar ihop led var för sig och ger ingen kontrastiv nyans."
     },
     {
       "id": "mek-21",
@@ -610,7 +634,7 @@
       "id": "mek-22",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Kommittén var ____ beredd att kompromissa ____ villig att överge kärnfrågan.",
+      "passage": "Kommittén var ____ beredd att kompromissa ____ villig att överge kärnfrågan, så förhandlingarna låste sig.",
       "options": [
         "både / och",
         "varken / eller",
@@ -618,13 +642,13 @@
         "såväl / som"
       ],
       "correctIndex": 1,
-      "explain": "Varken … eller negerar båda leden samtidigt, vilket krävs när ingetdera alternativ gäller. Både … och skulle i stället bekräfta att båda leden gäller, det motsatta av vad som avses. Dels … dels räknar upp två sanna omständigheter utan negation. Såväl … som bekräftar likaså båda leden och ger fel innebörd."
+      "explain": "Varken … eller förnekar båda leden: kommittén var inte beredd att kompromissa och inte heller villig att överge kärnfrågan, och därför låste sig förhandlingarna. Både … och skulle i stället betyda att kommittén gav efter på båda punkterna, och då förklaras inte att förhandlingarna låste sig. Dels … dels räknar också upp två saker som båda gäller och ger samma motsägelse. Såväl … som betyder detsamma som både … och, och är fel av samma skäl."
     },
     {
       "id": "mek-23",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Utredningen var ____ försenad ____ underfinansierad, vilket förklarar det tunna underlaget.",
+      "passage": "Utredningen var ____ försenad, ____ underfinansierad – två problem som tillsammans förklarar det tunna underlaget.",
       "options": [
         "varken / eller",
         "antingen / eller",
@@ -632,27 +656,27 @@
         "inte / utan"
       ],
       "correctIndex": 2,
-      "explain": "Dels … dels räknar upp två parallella omständigheter som båda gäller samtidigt. Varken … eller negerar båda leden, vilket inte stämmer när båda faktiskt gäller. Antingen … eller uttrycker ett ömsesidigt uteslutande val mellan leden, inte en uppräkning. Inte … utan ersätter ett förkastat led med ett annat, vilket inte passar en ren uppräkning."
+      "explain": "Dels … dels räknar upp två omständigheter som båda gäller, och meningen talar just om två problem som tillsammans förklarar det tunna underlaget. Varken … eller förnekar båda leden, och då finns inga problem som kan förklara något. Antingen … eller säger att bara det ena gäller, vilket strider mot att det handlar om två problem. Inte … utan stryker förseningen och lämnar bara ett problem, så det går inte heller ihop med meningen."
     },
     {
       "id": "mek-24",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Metoden är ____ tidskrävande ____ robust nog för att användas i uppföljande studier.",
+      "passage": "Metoden är ____ tidskrävande ____ robust nog för att användas i uppföljande studier: den tar lång tid men ger tillförlitliga resultat.",
       "options": [
         "varken / eller",
         "antingen / eller",
-        "dels / dels",
+        "inte / utan",
         "både / och"
       ],
       "correctIndex": 3,
-      "explain": "Både … och förenar två positiva egenskaper som gäller samtidigt. Varken … eller negerar i stället båda leden. Antingen … eller ställer leden som ömsesidigt uteslutande alternativ. Dels … dels fungerar som uppräkning men saknar den sammanbindande, förstärkande innebörd som både … och ger här."
+      "explain": "Både … och anger att båda egenskaperna gäller samtidigt, och förklaringen efter kolon bekräftar just det: metoden tar lång tid men ger tillförlitliga resultat. Varken … eller skulle förneka båda egenskaperna, vilket strider mot förklaringen. Antingen … eller säger att bara den ena gäller, men enligt förklaringen gäller båda. Inte … utan förnekar att metoden är tidskrävande, trots att den enligt förklaringen tar lång tid."
     },
     {
       "id": "mek-25",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Förslaget vann gehör ____ bland forskarna ____ bland praktikerna i fältet.",
+      "passage": "Förslaget vann gehör ____ bland forskarna ____ bland praktikerna i fältet och kunde därför införas utan större motstånd.",
       "options": [
         "såväl / som",
         "varken / eller",
@@ -660,21 +684,21 @@
         "ju / desto"
       ],
       "correctIndex": 0,
-      "explain": "Såväl … som markerar att båda de nämnda grupperna avses, en bekräftande uppräkning. Varken … eller skulle i stället utesluta båda grupperna. Antingen … eller ställer grupperna som ett val mellan dem, inte som båda samtidigt. Ju … desto uttrycker en proportionell relation, inte en uppräkning av grupper."
+      "explain": "Såväl … som anger att förslaget fick stöd i båda grupperna, och det förklarar att det kunde införas utan större motstånd. Varken … eller skulle betyda att ingen av grupperna stödde förslaget, vilket inte går ihop med att det infördes utan motstånd. Antingen … eller anger att bara en av grupperna avses och lämnar öppet vilken, vilket inte förklarar varför motståndet uteblev. Ju … desto uttrycker ett proportionellt samband och kräver komparativer, så det passar inte i en uppräkning av grupper."
     },
     {
       "id": "mek-26",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Reformen var ____ en ekonomisk fråga ____ en fråga om tillit till institutionerna.",
+      "passage": "Reformen var ____ en ekonomisk fråga ____ en fråga om tillit till institutionerna, och den senare aspekten visade sig vara avgörande.",
       "options": [
         "varken / eller",
         "inte bara / utan också",
-        "dels / dels",
+        "ju / desto",
         "antingen / eller"
       ],
       "correctIndex": 1,
-      "explain": "Inte bara … utan också utvidgar påståendet genom att lägga till ytterligare ett led utöver det första. Varken … eller negerar båda leden, motsatsen till en utvidgning. Dels … dels räknar upp led parallellt utan den förstärkande, stegrande effekten. Antingen … eller ställer leden som ett ömsesidigt uteslutande val."
+      "explain": "Inte bara … utan också lägger till en aspekt utöver den första och lyfter fram den: reformen gällde ekonomin men också tilliten till institutionerna, och det var den senare aspekten som visade sig vara avgörande. Varken … eller förnekar båda aspekterna, men en aspekt som reformen inte gällde kan inte ha varit avgörande för den. Ju … desto kräver komparativer och uttrycker ett proportionellt samband, så det fungerar inte framför två substantivfraser. Antingen … eller ställer aspekterna mot varandra som ett val och lämnar öppet vilken som gäller, vilket inte går ihop med att den senare sägs vara avgörande."
     },
     {
       "id": "mek-27",
@@ -708,15 +732,15 @@
       "id": "mek-29",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Rapporten ger ____ en entydig rekommendation ____ en klar tidsplan för genomförandet.",
+      "passage": "Rapporten ger ____ en entydig rekommendation ____ en klar tidsplan för genomförandet, så beslutsfattarna står utan vägledning.",
       "options": [
         "varken / eller",
         "både / och",
-        "såväl / som",
+        "antingen / eller",
         "dels / dels"
       ],
       "correctIndex": 0,
-      "explain": "Varken … eller krävs för att negera båda leden samtidigt. Både … och skulle bekräfta att båda leden gäller, det motsatta. Såväl … som bekräftar likaså båda leden. Dels … dels räknar upp sanna omständigheter utan negation."
+      "explain": "Slutet av meningen, att beslutsfattarna står utan vägledning, visar att rapporten inte ger någon av de två delarna. Varken … eller negerar båda leden och ger därför en logisk mening. Både … och skulle i stället säga att rapporten ger båda delarna, vilket motsäger att beslutsfattarna står utan vägledning. Antingen … eller innebär att rapporten ger en av delarna, och då skulle beslutsfattarna ändå få viss vägledning. Dels … dels räknar också upp båda delarna som något rapporten ger och passar därför inte."
     },
     {
       "id": "mek-30",
@@ -772,7 +796,7 @@
         "till förmån för"
       ],
       "correctIndex": 0,
-      "explain": "Till följd av anger orsak, att något inträffar som en konsekvens av något annat. I stället för anger ett utbyte mellan alternativ, inte orsak. Oaktat betyder trots och vänder sambandet till en motsägelse. Till förmån för anger att något gynnas på bekostnad av något annat, en annan relation än ren orsak."
+      "explain": "Till följd av anger orsak, att något inträffar som en konsekvens av något annat. I stället för anger ett utbyte mellan alternativ, inte orsak. Oaktat betyder trots och vänder sambandet till en motsägelse. Till förmån för betyder att något eller någon gynnas, vilket är en annan relation än orsak."
     },
     {
       "id": "mek-34",
@@ -806,7 +830,7 @@
       "id": "mek-36",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "____ tidigare prognoser visade utfallet en tydlig nedgång redan under första kvartalet.",
+      "passage": "____ tidigare prognoser om fortsatt tillväxt visade utfallet en tydlig nedgång redan under första kvartalet.",
       "options": [
         "I enlighet med",
         "Till följd av",
@@ -814,13 +838,13 @@
         "I motsats till"
       ],
       "correctIndex": 3,
-      "explain": "I motsats till kontrasterar det aktuella resultatet mot de tidigare prognoserna. I enlighet med skulle i stället ange överensstämmelse, motsatsen till den kontrast som avses. Till följd av anger orsak-verkan, inte en motsättning mellan två uppgifter. Med avseende på pekar bara ut en aspekt utan att uttrycka någon kontrast."
+      "explain": "Prognoserna förutsåg fortsatt tillväxt, men utfallet visade en nedgång. I motsats till markerar just den kontrasten mellan prognos och utfall. I enlighet med skulle i stället betyda att utfallet stämde med prognoserna, vilket det inte gjorde. Till följd av anger orsak, men prognoserna orsakade inte nedgången. Med avseende på pekar bara ut en aspekt utan att uttrycka någon kontrast."
     },
     {
       "id": "mek-37",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Alla regioner, ____ tre glesbygdskommuner, nådde målet inom utsatt tid.",
+      "passage": "Alla kommuner, ____ tre glesbygdskommuner, nådde målet inom utsatt tid.",
       "options": [
         "med undantag av",
         "till följd av",
@@ -828,7 +852,7 @@
         "på grund av"
       ],
       "correctIndex": 0,
-      "explain": "Med undantag av avgränsar tre kommuner från resten av en större grupp. Till följd av anger orsak, inte en avgränsning av vissa enheter. I stället för anger utbyte mellan alternativ, inte undantag från en grupp. På grund av anger likaså orsak, vilket inte matchar en avgränsande betydelse."
+      "explain": "Med undantag av anger att tre kommuner inte omfattas av det som sägs om alla kommuner, alltså att just de inte nådde målet. Till följd av anger orsak, inte en avgränsning av vissa enheter. I stället för anger utbyte mellan alternativ, inte undantag från en grupp. På grund av anger likaså orsak, vilket inte matchar en avgränsande betydelse."
     },
     {
       "id": "mek-38",
@@ -856,13 +880,13 @@
         "fatta intresse"
       ],
       "correctIndex": 2,
-      "explain": "Dra slutsatsen (att) är den fasta kollokationen för att ange vad ett resonemang mynnar ut i. Ställa krav handlar om att kräva något, inte om att komma fram till en slutsats. Ge uttryck (för) kräver en annan preposition och en annan betydelse, att visa en känsla eller åsikt. Fatta intresse betyder att bli intresserad, vilket inte hör ihop med att dra en slutsats."
+      "explain": "Dra slutsatsen (att) är den fasta kollokationen för att ange vad ett resonemang mynnar ut i. Ställa krav handlar om att kräva något, inte om att komma fram till en slutsats. Ge uttryck kräver prepositionen för och betyder att visa en känsla eller åsikt, inte att komma fram till en slutsats. Fatta intresse betyder att bli intresserad, vilket inte hör ihop med att dra en slutsats."
     },
     {
       "id": "mek-40",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Författaren ____ sin oro för att debatten förenklas redan i förordet.",
+      "passage": "Författaren ____ sin oro för att debatten förenklas, och det redan i förordet.",
       "options": [
         "ställer krav på",
         "tar hänsyn till",
@@ -870,7 +894,7 @@
         "ger uttryck för"
       ],
       "correctIndex": 3,
-      "explain": "Ge uttryck för är den fasta kollokationen för att visa eller förmedla en känsla eller uppfattning. Ställer krav på handlar om att kräva något, en annan innebörd. Tar hänsyn till betyder att beakta något, inte att förmedla en uppfattning. Drar slutsatsen av anger att komma fram till en slutsats genom något, inte att uttrycka en känsla."
+      "explain": "Ge uttryck för är den fasta kollokationen för att visa eller förmedla en känsla eller uppfattning, här författarens oro. Ställer krav på handlar om att kräva något, en annan innebörd. Tar hänsyn till betyder att beakta något, inte att förmedla en uppfattning. Drar slutsatsen av anger att komma fram till en slutsats utifrån något, inte att uttrycka en känsla."
     },
     {
       "id": "mek-41",
@@ -890,7 +914,7 @@
       "id": "mek-42",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Tillsynsmyndigheten ____ strängare redovisning av bieffekter.",
+      "passage": "Tillsynsmyndigheten ____ noggrannare redovisning av biverkningar.",
       "options": [
         "tog hänsyn",
         "ställde krav på",
@@ -898,7 +922,7 @@
         "gav avkall"
       ],
       "correctIndex": 1,
-      "explain": "Kollokationen \"ställa krav på\" är den naturliga verbfrasen när någon kräver något av någon annan. \"Tog hänsyn\" betyder att beakta något, vilket är en annan handling än att kräva. \"Fattade intresse för\" betyder att bli intresserad, vilket har en helt annan innebörd. \"Gav avkall\" betyder att offra eller minska på något, alltså motsatt riktning mot att ställa krav."
+      "explain": "Kollokationen ”ställa krav på” är den naturliga verbfrasen när en myndighet kräver något av dem den granskar, här en noggrannare redovisning. Komparativen ”noggrannare” visar att myndigheten ville ha en bättre redovisning än den som fanns, alltså ett krav på förbättring. ”Tog hänsyn” betyder att beakta något, vilket är en annan handling än att kräva, och saknar dessutom prepositionen ”till”. ”Fattade intresse för” betyder att bli intresserad av något. Det säger inget om att myndigheten ville åstadkomma en förbättring och passar därför dåligt ihop med ”noggrannare”. ”Gav avkall” saknar prepositionen ”på”, och ”ge avkall på” betyder att avstå från något, alltså motsatt riktning mot att ställa krav."
     },
     {
       "id": "mek-43",
@@ -906,13 +930,13 @@
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
       "passage": "Osäkerheten i skattningarna är ____ beroende av urvalets storlek.",
       "options": [
-        "i synnerhet",
+        "i gengäld",
         "i stället",
         "i hög grad",
         "i enlighet"
       ],
       "correctIndex": 2,
-      "explain": "\"I hög grad\" betyder i stor utsträckning och passar därför som gradmarkör i meningen. \"I synnerhet\" lyfter fram ett särskilt fall snarare än att ange grad. \"I stället\" anger ersättning, inte omfattning. \"I enlighet\" kräver kompletteringen \"med\" och betyder överensstämmelse, inte grad."
+      "explain": "\"I hög grad\" betyder i stor utsträckning och anger hur starkt osäkerheten beror på urvalets storlek. \"I gengäld\" betyder som motprestation eller å andra sidan och förutsätter något i texten som det vägs mot, vilket saknas här. \"I stället\" anger ersättning och förutsätter också något som ersätts. \"I enlighet\" kräver kompletteringen \"med\" och betyder överensstämmelse, inte grad."
     },
     {
       "id": "mek-44",
@@ -1010,7 +1034,7 @@
         "för att"
       ],
       "correctIndex": 1,
-      "explain": "\"Fastän\" inför ett medgivande som ändå inte upphäver huvudsatsen, vilket är den logiska relationen i meningen. \"Därför att\" anger en orsak, inte ett medgivande. \"Så att\" anger en följd eller ett syfte, vilket inte matchar sammanhanget. \"För att\" anger ett syfte, vilket inte fyller samma funktion som ett medgivande."
+      "explain": "\"Fastän\" inför ett medgivande som ändå inte upphäver huvudsatsen, vilket är den logiska relationen i meningen. \"Därför att\" anger en orsak, inte ett medgivande. \"Så att\" anger en följd eller ett syfte, vilket inte matchar sammanhanget. \"För att\" följt av en hel sats anger här en orsak, precis som \"därför att\", och inte ett medgivande."
     },
     {
       "id": "mek-51",
@@ -1033,12 +1057,12 @@
       "passage": "Modellen kan generaliseras, ____ samma mätfel inte återkommer i nya stickprov.",
       "options": [
         "trots att",
-        "oaktat att",
+        "så att",
         "även om",
         "förutsatt att"
       ],
       "correctIndex": 3,
-      "explain": "\"Förutsatt att\" sätter ett tydligt villkor för att generaliseringen ska gälla, vilket matchar meningens logik. \"Trots att\" inför ett medgivande utan att ange något villkor. \"Oaktat att\" har samma medgivande betydelse och passar därför inte. \"Även om\" är också ett medgivande snarare än ett villkor för giltighet."
+      "explain": "\"Förutsatt att\" sätter ett villkor för att generaliseringen ska gälla, vilket matchar meningens logik. \"Trots att\" inför ett medgivande, men att mätfelet inte återkommer talar för en generalisering, inte emot den. \"Så att\" anger följd eller syfte, men en generalisering kan inte göra att mätfelet uteblir i nya stickprov. \"Även om\" uttrycker också ett medgivande och ger samma ologiska samband som \"trots att\"."
     },
     {
       "id": "mek-53",
@@ -1058,21 +1082,21 @@
       "id": "mek-54",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Kostnaderna skenade; ____ saknades en realistisk riskbuffert från början.",
+      "passage": "Kostnaderna skenade; det saknades ____ en realistisk riskbuffert från början.",
       "options": [
-        "i synnerhet",
-        "med andra ord",
+        "följaktligen",
+        "nämligen",
         "oaktat",
         "respektive"
       ],
       "correctIndex": 1,
-      "explain": "\"Med andra ord\" omformulerar samma poäng med andra ord, vilket är precis den funktionen som krävs här. \"I synnerhet\" lyfter fram ett specifikt exempel, inte en omformulering. \"Oaktat\" betyder trots, en helt annan betydelse. \"Respektive\" används vid uppräkningar och fyller inte samma funktion som en omformulering."
+      "explain": "\"Nämligen\" inleder en förklaring: att det saknades en realistisk riskbuffert från början anger varför kostnaderna skenade. \"Följaktligen\" skulle i stället göra bristen på riskbuffert till en följd av att kostnaderna skenade, men bufferten saknades redan från början, så sambandet går åt andra hållet. \"Oaktat\" betyder trots och är en preposition som inte kan stå här. \"Respektive\" används för att para ihop led i uppräkningar och fungerar inte heller."
     },
     {
       "id": "mek-55",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Problemet är ____ bristen på data ____ bristen på en gemensam definition.",
+      "passage": "Problemet är ____ bristen på data ____ bristen på en gemensam definition: det finns gott om data, men studierna använder begreppen på olika sätt.",
       "options": [
         "både / och",
         "såväl / som",
@@ -1080,7 +1104,7 @@
         "varken / eller"
       ],
       "correctIndex": 2,
-      "explain": "\"Inte … utan\" korrigerar ett påstående till ett annat och markerar att det är det senare ledet som är det egentliga problemet. \"Både … och\" anger addition av två saker som båda gäller, inte en korrigering. \"Såväl … som\" fyller samma additiva funktion och passar inte för att ersätta ett påstående med ett annat. \"Varken … eller\" nekar båda alternativen samtidigt, vilket inte stämmer med att ett av dem faktiskt gäller."
+      "explain": "\"Inte … utan\" avvisar det första ledet och pekar ut det andra som det egentliga problemet, och det stämmer med texten efter kolonet: det finns gott om data, men studierna använder begreppen på olika sätt. \"Både … och\" och \"såväl … som\" betyder samma sak och skulle göra även bristen på data till ett problem, vilket motsägs av att det finns gott om data. \"Varken … eller\" avvisar båda leden, men att studierna använder begreppen på olika sätt är just en brist på gemensam definition."
     },
     {
       "id": "mek-56",
@@ -1094,13 +1118,13 @@
         "Ju / desto"
       ],
       "correctIndex": 3,
-      "explain": "\"Ju … desto\" uttrycker en omvänd proportionalitet: ju mer komplexitet, desto färre som klarar kraven, vilket stämmer med meningens innehåll. \"Så … att\" anger en följdkonstruktion, inte en proportionalitet mellan två storheter. \"Varken … eller\" nekar båda leden och passar inte här. \"Dels … dels\" räknar bara upp led utan att uttrycka något samband mellan grader."
+      "explain": "\"Ju … desto\" knyter ihop två grader som förändras tillsammans, här att ju mer komplext regelverket blev, desto färre små aktörer klarade kraven. \"Så … att\" anger en följdkonstruktion, inte ett samband mellan två grader. \"Varken … eller\" nekar båda leden och passar inte här. \"Dels … dels\" räknar bara upp led utan att uttrycka något samband mellan grader."
     },
     {
       "id": "mek-57",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Strategin vilar ____ på styrmedel ____ på frivilliga överenskommelser med branschen.",
+      "passage": "Strategin vilar ____ på styrmedel, ____ på frivilliga överenskommelser med branschen, och de två ska komplettera varandra.",
       "options": [
         "dels / dels",
         "varken / eller",
@@ -1108,13 +1132,13 @@
         "ju / desto"
       ],
       "correctIndex": 0,
-      "explain": "\"Dels … dels\" räknar upp två kompletterande delar som tillsammans utgör helheten, vilket matchar meningens uppbyggnad. \"Varken … eller\" nekar båda leden, vilket är motsatt logik. \"Antingen … eller\" anger två ömsesidigt uteslutande alternativ, inte två samtidigt gällande delar. \"Ju … desto\" uttrycker proportionalitet och passar inte för en enkel uppräkning."
+      "explain": "\"Dels … dels\" räknar upp två delar som gäller samtidigt, vilket stämmer med att de två ska komplettera varandra. \"Varken … eller\" nekar båda leden, och då finns det inget som kan komplettera varandra. \"Antingen … eller\" anger två ömsesidigt uteslutande alternativ, inte två delar som gäller samtidigt. \"Ju … desto\" uttrycker ett samband mellan grader och passar inte för en enkel uppräkning."
     },
     {
       "id": "mek-58",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Utvärderingen belyser ____ genomförandet ____ de långsiktiga effekterna.",
+      "passage": "Utvärderingen belyser ____ genomförandet ____ de långsiktiga effekterna och ger därmed en heltäckande bild av programmet.",
       "options": [
         "varken / eller",
         "både / och",
@@ -1122,7 +1146,7 @@
         "så / att"
       ],
       "correctIndex": 1,
-      "explain": "\"Både … och\" täcker två aspekter samtidigt, vilket är den logik meningen bygger på. \"Varken … eller\" utesluter båda aspekterna, alltså motsatt betydelse. \"Antingen … eller\" anger att bara en av aspekterna gäller, inte båda. \"Så … att\" anger en följdkonstruktion och fyller inte samma funktion som en dubbel bekräftelse."
+      "explain": "\"Både … och\" anger att båda aspekterna belyses, och det krävs för att utvärderingen ska ge en heltäckande bild. \"Varken … eller\" utesluter båda aspekterna, och då kan bilden inte vara heltäckande. \"Antingen … eller\" anger att bara en av aspekterna belyses, inte båda. \"Så … att\" anger en följd och ger ingen grammatisk mening här."
     },
     {
       "id": "mek-59",
@@ -1150,7 +1174,7 @@
         "lade fram"
       ],
       "correctIndex": 3,
-      "explain": "\"Lade fram\" är den etablerade kollokationen för att presentera en hypotes eller ett förslag, vilket stämmer med sammanhanget. \"Ställde in\" betyder att avboka något, en helt annan betydelse. \"Tog avstånd\" betyder att markera oenighet med något, inte att presentera det. \"Fäste avseende\" är en ovanlig och felaktig kollokation som inte hör ihop med att lägga fram en hypotes."
+      "explain": "\"Lade fram\" är den etablerade kollokationen för att presentera en hypotes eller ett förslag, vilket stämmer med sammanhanget. \"Ställde in\" betyder att avboka något, en helt annan betydelse. \"Tog avstånd\" betyder att markera oenighet med något, inte att presentera det. \"Fäste avseende\" hör till det formella uttrycket \"fästa avseende vid\", som betyder beakta, och kan inte användas om att lägga fram en hypotes."
     },
     {
       "id": "mek-61",
@@ -1216,11 +1240,11 @@
       "options": [
         "Under",
         "Oaktat",
-        "Till följd",
-        "I enlighet"
+        "Till förmån för",
+        "I enlighet med"
       ],
       "correctIndex": 0,
-      "explain": "\"Under\" anger en tidsrymd, det vill säga medan förhandlingarna pågick, vilket är den betydelse meningen behöver. \"Oaktat\" betyder trots, vilket är en annan relation. \"Till följd\" anger en orsak och kräver dessutom kompletteringen \"av\", vilket inte passar tidsangivelsen. \"I enlighet\" anger överensstämmelse, inte tidsrymd."
+      "explain": "”Under” anger en tidsrymd, alltså medan förhandlingarna pågick. Det är den betydelse meningen behöver: att parterna inte lämnade bordet visar att tonen skärptes vid själva förhandlingsbordet, och ”men” ställer den hårdare tonen mot att parterna ändå stannade kvar. ”Oaktat” betyder trots och skulle framställa förhandlingarna som något som borde ha hindrat tonen från att skärpas. Fortsättningen om bordet visar dock att meningen beskriver vad som hände medan förhandlingarna pågick, och då behövs en tidsangivelse, inte ett medgivande. ”Till förmån för” anger att något gynnas, vilket saknar mening här. ”I enlighet med” anger överensstämmelse, inte tidsrymd."
     },
     {
       "id": "mek-66",
@@ -1240,7 +1264,7 @@
       "id": "mek-67",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Den ena skolan betonar struktur, ____ den andra lägger vikten vid aktörers handlingsutrymme.",
+      "passage": "Den ena skolan betonar struktur, ____ den andra lägger tonvikten vid aktörers handlingsutrymme.",
       "options": [
         "respektive",
         "således",
@@ -1248,27 +1272,27 @@
         "dessutom"
       ],
       "correctIndex": 2,
-      "explain": "\"Medan\" kontrasterar de två skolorna mot varandra, vilket är den relation meningen beskriver. \"Respektive\" används vid uppräkningar för att para ihop led, inte som kontrasterande konjunktion. \"Således\" anger en slutsats, inte en kontrast. \"Dessutom\" anger ett tillägg, vilket inte stämmer med att ställa två skolor mot varandra."
+      "explain": "\"Medan\" ställer de två skolorna mot varandra: den ena betonar struktur, den andra lägger tonvikten vid aktörers handlingsutrymme. \"Respektive\" används vid uppräkningar för att para ihop led, inte som kontrasterande konjunktion. \"Således\" anger en slutsats, inte en kontrast. \"Dessutom\" anger ett tillägg, vilket inte stämmer med att ställa två skolor mot varandra."
     },
     {
       "id": "mek-68",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
-      "passage": "Premisserna är desamma i båda modellerna; skillnaden ligger ____ i hur osäkerhet hanteras.",
+      "passage": "Premisserna är desamma i båda modellerna. Den skillnad som finns måste ____ bero på hur osäkerhet hanteras.",
       "options": [
         "oaktat",
-        "emellertid",
+        "likaledes",
         "nämligen",
         "alltså"
       ],
       "correctIndex": 3,
-      "explain": "\"Alltså\" preciserar var skillnaden ligger som en slutsats av det tidigare sagda, vilket matchar meningens logik. \"Oaktat\" betyder trots, en helt annan betydelse. \"Emellertid\" anger en kontrast snarare än en slutsats. \"Nämligen\" specificerar en orsak men drar inte samma slutsats som \"alltså\" gör här."
+      "explain": "\"Alltså\" markerar en slutsats: när premisserna är desamma måste skillnaden mellan modellerna bero på något annat, och meningen säger vad. \"Nämligen\" inleder en förklaring till det som just sagts, men att skillnaden beror på hur osäkerhet hanteras förklarar inte varför premisserna är desamma; det är en slutsats av det. \"Likaledes\" betyder på samma sätt och förutsätter att något likadant redan har nämnts. \"Oaktat\" betyder trots och är en preposition som måste följas av det den gäller, till exempel \"oaktat detta\", så den passar inte här."
     },
     {
       "id": "mek-69",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Definitionen var ____ vag ____ jämförbarhet mellan studierna blev i praktiken omöjlig.",
+      "passage": "Definitionen var ____ vag ____ jämförbarheten mellan studierna i praktiken blev omöjlig.",
       "options": [
         "så / att",
         "ju / desto",
@@ -1304,7 +1328,7 @@
         "På bekostnad av"
       ],
       "correctIndex": 2,
-      "explain": "\"I ljuset av\" betyder med de nya rönen som bakgrund, vilket är den innebörd meningen kräver. \"Oaktat\" betyder trots, en helt annan relation. \"Till följd av\" anger ett mer direkt kausalt samband än det stödjande sammanhang som avses. \"På bekostnad av\" betyder att något offras för något annat, vilket inte stämmer med att ge en bakgrund."
+      "explain": "\"I ljuset av\" betyder med de nya rönen som bakgrund, vilket är den innebörd meningen kräver. \"Oaktat\" betyder trots, en helt annan relation. \"Till följd av\" anger en direkt orsak till en händelse, men här handlar det om hur rekommendationen ter sig när den ses i ett nytt perspektiv. \"På bekostnad av\" betyder att något offras för något annat, vilket inte stämmer med att ge en bakgrund."
     },
     {
       "id": "mek-72",
@@ -1366,7 +1390,7 @@
       "id": "mek-76",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-      "passage": "Åtgärden berör ____ hushållen ____ de mindre företagen i innerstaden.",
+      "passage": "Åtgärden berör ____ hushållen ____ de mindre företagen i innerstaden, så båda grupperna måste anpassa sig.",
       "options": [
         "varken / eller",
         "antingen / eller",
@@ -1374,7 +1398,7 @@
         "såväl / som"
       ],
       "correctIndex": 3,
-      "explain": "\"Såväl … som\" inkluderar båda grupperna samtidigt, vilket är den betydelse meningen kräver. \"Varken … eller\" utesluter båda grupperna, motsatt betydelse. \"Antingen … eller\" anger att bara en av grupperna gäller. \"Ju … desto\" uttrycker proportionalitet och saknar den inkluderande funktionen helt."
+      "explain": "\"Såväl … som\" anger att åtgärden berör båda grupperna, vilket stämmer med att båda måste anpassa sig. \"Varken … eller\" utesluter båda grupperna, och då skulle ingen av dem behöva anpassa sig. \"Antingen … eller\" anger att bara en av grupperna berörs, inte båda. \"Ju … desto\" uttrycker proportionalitet och saknar den inkluderande funktionen helt."
     },
     {
       "id": "mek-77",
@@ -1402,7 +1426,7 @@
         "svävar"
       ],
       "correctIndex": 1,
-      "explain": "\"Avhåller\" hör till uttrycket \"avhålla sig från\" och passar det formella registret i meningen. \"Backar\" är vardagligt och beskriver en annan, mer konkret handling. \"Köttar\" är talspråklig slang som inte hör hemma i en formell text. \"Svävar\" betyder att vara osäker eller obestämd, vilket inte matchar betydelsen att avstå från något."
+      "explain": "\"Avhåller\" hör till uttrycket \"avhålla sig från\" och passar det formella registret i meningen. \"Backar\" kan inte stå med \"sig\": man backar från något, men \"backar sig från\" går inte. \"Köttar\" är talspråklig slang som inte hör hemma i en formell text. \"Svävar\" betyder att vara osäker eller obestämd, vilket inte matchar betydelsen att avstå från något."
     },
     {
       "id": "mek-79",
@@ -1426,11 +1450,11 @@
       "options": [
         "varken / eller",
         "antingen / eller",
-        "dels / dels",
+        "ju / desto",
         "inte bara / utan även"
       ],
       "correctIndex": 3,
-      "explain": "\"Inte bara … utan även\" utvidgar påståendet till att gälla mer än bara det tekniska, vilket är den betydelse meningen kräver. \"Varken … eller\" nekar båda leden, motsatt den utvidgande betydelsen. \"Antingen … eller\" anger ett ömsesidigt uteslutande val, inte en utvidgning. \"Dels … dels\" räknar bara upp led utan den gradvisa utvidgning som \"inte bara … utan även\" uttrycker."
+      "explain": "\"Inte bara … utan även\" anger att förändringen gick utöver det tekniska, och det visar texten efter kolonet: de nya rutinerna krävde en ny ansvarsfördelning. \"Varken … eller\" nekar båda leden, vilket motsägs av att ansvarsfördelningen måste ändras. \"Antingen … eller\" anger att bara det ena gäller, inte båda. \"Ju … desto\" kräver komparativ, till exempel \"ju mer …, desto …\", och ger här ingen grammatisk mening."
     },
     {
       "id": "las-1",
@@ -1438,13 +1462,13 @@
       "prompt": "Vad är textens huvudpoäng?",
       "passage": "När medier talar om ”informationsöverflöd” är problemet sällan mängden fakta i sig. Snarare handlar det om att urval och inramning styr vad som uppfattas som viktigt. Den som bara samlar mer data utan att pröva källor och perspektiv riskerar att bli sämre informerad, inte bättre. Informationskompetens är därför mindre en fråga om snabb googling och mer om tålamod: att stanna kvar i en text tillräckligt länge för att se vad som faktiskt påstås.",
       "options": [
-        "Fler fakta gör alltid människor bättre informerade",
-        "Problemet är främst urval och inramning, inte rå mängd information",
-        "Googling är den viktigaste färdigheten",
-        "Medier bör sluta publicera långa texter"
+        "Medierna överdriver hur mycket information som finns när de talar om informationsöverflöd.",
+        "Man blir bättre informerad av att granska det man läser noga än av att söka efter mer.",
+        "Informationskompetens handlar främst om att snabbt kunna hitta fram till många källor.",
+        "Medierna bör ta större ansvar för att välja ut och rama in det som är viktigt för läsarna."
       ],
       "correctIndex": 1,
-      "explain": "Texten framhåller att problemet är hur information väljs ut och ramas in, inte hur mycket information som finns, vilket gör att huvudpoängen handlar om urval och inramning snarare än mängd. Att fler fakta alltid gör människor bättre informerade motsägs av just den poängen, eftersom texten ifrågasätter att mer data i sig hjälper. Att googling är den viktigaste färdigheten är en för smal och konkret tolkning som inte fångar resonemanget om inramning. Att medier bör sluta publicera långa texter nämns inte och är en helt annan slutsats än den om urval och tålamod."
+      "explain": "Textens slutsats, markerad med ”därför”, är att informationskompetens är mindre en fråga om snabb googling och mer om tålamod: att stanna kvar i en text tillräckligt länge för att se vad som faktiskt påstås. Slutsatsen bygger på att problemet är urval och inramning snarare än mängden fakta, och på att den som bara samlar mer data utan att pröva källor och perspektiv riskerar att bli sämre informerad, inte bättre. Huvudpoängen är alltså att man blir bättre informerad av att granska det man läser noga än av att söka efter mer. Texten säger inte att medierna överdriver hur mycket information som finns, bara att problemet sällan är mängden i sig. Att snabbt hitta fram till många källor går emot slutsatsen. Texten uppmanar inte heller medierna att ta större ansvar för urvalet. Att urval och inramning styr vad som uppfattas som viktigt beskrivs som själva problemet, och slutsatsen gäller hur läsaren själv läser, inte vad medierna bör göra."
     },
     {
       "id": "las-2",
@@ -1452,13 +1476,13 @@
       "prompt": "Vilket påstående stöds av texten?",
       "passage": "När medier talar om ”informationsöverflöd” är problemet sällan mängden fakta i sig. Snarare handlar det om att urval och inramning styr vad som uppfattas som viktigt. Den som bara samlar mer data utan att pröva källor och perspektiv riskerar att bli sämre informerad, inte bättre. Informationskompetens är därför mindre en fråga om snabb googling och mer om tålamod: att stanna kvar i en text tillräckligt länge för att se vad som faktiskt påstås.",
       "options": [
-        "Tålamod är oviktigt vid läsning",
-        "Alla nyhetsmedier ljuger medvetet",
-        "Att samla mer data utan källkritik kan försämra förståelsen",
-        "Fakta och inramning är samma sak"
+        "Medierna väljer medvetet ut och vinklar nyheter för att styra vad läsarna tycker.",
+        "Den som söker snabbt i många källor blir oftast bättre informerad än den som läser noga.",
+        "Att samla in mer data utan källkritik kan försämra förståelsen i stället för att förbättra den.",
+        "Det är främst mängden fakta, inte urvalet, som gör det svårt att hålla sig informerad."
       ],
       "correctIndex": 2,
-      "explain": "Texten stödjer att det är problematiskt att samla mer data utan att pröva källorna, eftersom det är just denna okritiska datainsamling som texten varnar för. Att alla nyhetsmedier ljuger medvetet är en överdrift som går längre än vad texten påstår om brister i granskning. Att tålamod är oviktigt vid läsning strider mot textens betoning av tålamod som en dygd. Att fakta och inramning är samma sak motsäger textens poäng om att det är just skillnaden mellan dem som spelar roll."
+      "explain": "Texten säger att den som bara samlar mer data utan att pröva källor och perspektiv riskerar att bli sämre informerad, inte bättre. Att urval och inramning styr vad som uppfattas som viktigt står i texten, men inte att medierna gör det medvetet eller för att påverka vad läsarna tycker. Att den som söker snabbt i många källor skulle bli bättre informerad går emot slutsatsen att informationskompetens handlar mer om tålamod än om snabb googling. Att mängden fakta skulle vara det största problemet motsägs av första meningen, som säger att problemet sällan är mängden fakta i sig."
     },
     {
       "id": "las-3",
@@ -1466,13 +1490,13 @@
       "prompt": "Vad menar författaren med att forskningens värde inte bara sitter i resultatet?",
       "passage": "I debatten om forskningsfinansiering framställs ofta ”nyttiga” resultat som det enda måttet på framgång. Men forskningens värde sitter lika mycket i metoddisciplin: att formulera frågor precist, att redovisa osäkerhet och att låta negativa fynd synas. När bara spektakulära resultat belönas uppstår ett snedvridet urval av vad som publiceras. Det skadar både vetenskapen och allmänhetens tillit, eftersom bilden av kunskap blir mer säker än den egentligen är.",
       "options": [
-        "Att metod, osäkerhet och negativa fynd också är centrala",
-        "Att negativa fynd bör döljas",
-        "Att spektakulära resultat alltid är bäst",
-        "Att finansiering bör upphöra"
+        "Att det är lika viktigt hur forskningen bedrivs och redovisas som vad den kommer fram till.",
+        "Att forskning bör bedömas efter vilken nytta den gör för samhället på lång sikt.",
+        "Att negativa fynd ofta är mer värdefulla än positiva och därför bör prioriteras.",
+        "Att spektakulära resultat sällan håller när andra forskare försöker upprepa dem."
       ],
       "correctIndex": 0,
-      "explain": "Författaren menar att forskningens värde också ligger i metoddisciplin, redovisad osäkerhet och negativa fynd, inte bara i det slutliga resultatet. Att negativa fynd bör döljas är motsatsen till vad som lyfts fram, eftersom texten snarare vill synliggöra dem. Att spektakulära resultat alltid är bäst är precis den syn som texten ifrågasätter genom att peka på andra värden i forskningen. Att finansiering bör upphöra är en långtgående slutsats som inte har stöd i resonemanget om vad som gör forskning värdefull."
+      "explain": "Författaren skriver att forskningens värde ”lika mycket” sitter i metoddisciplin: att formulera frågor precist, redovisa osäkerhet och låta negativa fynd synas. Det gäller alltså hur forskningen bedrivs och redovisas, inte bara vad den kommer fram till. Att forskning ska bedömas efter den nytta den gör ligger nära den syn som texten ifrågasätter, att ”nyttiga” resultat är det enda måttet på framgång. Texten säger att negativa fynd ska få synas, men inte att de är mer värdefulla än positiva. Den säger inte heller något om huruvida spektakulära resultat håller när de upprepas, utan varnar för att urvalet av vad som publiceras blir snedvridet när bara sådana resultat belönas."
     },
     {
       "id": "las-4",
@@ -1480,13 +1504,13 @@
       "prompt": "Vilken följd varnar texten för?",
       "passage": "I debatten om forskningsfinansiering framställs ofta ”nyttiga” resultat som det enda måttet på framgång. Men forskningens värde sitter lika mycket i metoddisciplin: att formulera frågor precist, att redovisa osäkerhet och att låta negativa fynd synas. När bara spektakulära resultat belönas uppstår ett snedvridet urval av vad som publiceras. Det skadar både vetenskapen och allmänhetens tillit, eftersom bilden av kunskap blir mer säker än den egentligen är.",
       "options": [
-        "Ökad publicering av negativa fynd",
-        "Snedvridet urval och överdriven bild av säkerhet",
-        "Lägre krav på metod",
-        "Att forskare slutar formulera frågor"
+        "Att forskare frestas att förfalska data för att kunna visa upp spektakulära resultat.",
+        "Att osäkerheten i forskningen inte syns, eftersom bara vissa resultat publiceras.",
+        "Att det publiceras alltför många studier med svaga eller osäkra resultat.",
+        "Att forskningen blir långsammare när kraven på metoddisciplin skärps."
       ],
       "correctIndex": 1,
-      "explain": "Texten varnar för att belöning av spektakulära resultat leder till snedvridet urval och en överdriven bild av hur säker kunskapen egentligen är. Ökad publicering av negativa fynd är motsatt riktning mot vad som varnas för, eftersom det snarare skulle motverka snedvridningen. Lägre krav på metod är inte den konsekvens som texten pekar ut, utan snarare en följd av snedvridet urval än varningen i sig. Att forskare slutar formulera frågor nämns inte och ligger utanför det som beskrivs som konsekvens."
+      "explain": "Texten varnar för att det uppstår ett snedvridet urval av vad som publiceras när bara spektakulära resultat belönas, och att bilden av kunskapen då blir säkrare än den egentligen är. Osäkerheten syns alltså inte, och det skadar enligt texten både vetenskapen och allmänhetens tillit. Texten nämner inte fusk med data; problemet är vilka resultat som publiceras, inte att resultat förfalskas. Att för många studier med svaga eller osäkra resultat skulle publiceras är snarast motsatsen till varningen, eftersom det är de mindre spektakulära resultaten som riskerar att inte publiceras. Texten tar inte heller upp att forskningen skulle bli långsammare av krav på metod; metoddisciplin beskrivs tvärtom som en del av forskningens värde."
     },
     {
       "id": "las-5",
@@ -1494,13 +1518,13 @@
       "prompt": "Vilken beskrivning av städernas grönska stämmer bäst?",
       "passage": "Städers grönska beskrivs ibland som ren dekoration. Forskning visar dock att träd och parker påverkar temperatur, luftkvalitet och människors stressnivåer. Effekten är störst i täta områden där hårdgjorda ytor annars samlar värme. Samtidigt är grönska ojämnt fördelad: socioekonomiskt starka stadsdelar har ofta mer vegetation. Att plantera träd är därför inte bara estetik, utan en fråga om rättvisa och folkhälsa — förutsatt att skötsel och lokal förankring finns.",
       "options": [
-        "Grönska är bara dekoration",
-        "Socioekonomi saknar betydelse för vegetation",
-        "Träd hjälper bara på landsbygden",
-        "Grönska har mätbara effekter och är ojämnt fördelad"
+        "Grönska gör störst nytta i glest bebyggda områden.",
+        "Grönska påverkar främst luftkvaliteten, inte temperaturen.",
+        "Grönska är jämnt fördelad men olika väl skött.",
+        "Grönska har mätbara effekter och är ojämnt fördelad."
       ],
       "correctIndex": 3,
-      "explain": "Texten kopplar samman grönskans mätbara effekter, till exempel på temperatur och hälsa, med att den är ojämnt fördelad mellan olika områden. Att grönska bara är dekoration motsäger att texten lyfter fram konkreta, mätbara effekter. Att träd bara hjälper på landsbygden strider mot att resonemanget handlar om städer. Att socioekonomi saknar betydelse för vegetation går emot att texten just kopplar den ojämna fördelningen till sociala och ekonomiska skillnader."
+      "explain": "Texten säger att forskning visar att träd och parker påverkar temperatur, luftkvalitet och människors stressnivåer, alltså effekter som går att belägga, och att grönskan är ojämnt fördelad: socioekonomiskt starka stadsdelar har ofta mer vegetation. Effekten är enligt texten störst i täta områden, inte i glest bebyggda. Texten ger inte luftkvaliteten någon särställning: temperaturen nämns lika uttryckligen, och effekten är störst där hårdgjorda ytor annars samlar värme. Att grönskan skulle vara jämnt fördelad motsägs direkt av texten, som inte heller jämför hur väl den sköts i olika stadsdelar."
     },
     {
       "id": "las-6",
@@ -1508,13 +1532,13 @@
       "prompt": "Vad krävs enligt texten för att trädsatsningar ska fungera?",
       "passage": "Städers grönska beskrivs ibland som ren dekoration. Forskning visar dock att träd och parker påverkar temperatur, luftkvalitet och människors stressnivåer. Effekten är störst i täta områden där hårdgjorda ytor annars samlar värme. Samtidigt är grönska ojämnt fördelad: socioekonomiskt starka stadsdelar har ofta mer vegetation. Att plantera träd är därför inte bara estetik, utan en fråga om rättvisa och folkhälsa — förutsatt att skötsel och lokal förankring finns.",
       "options": [
-        "Skötsel och lokal förankring",
-        "Bara fler planteringsceremonier",
-        "Att undvika täta områden",
-        "Att ta bort parker i rika områden"
+        "Att träden underhålls och att satsningen har stöd i närområdet.",
+        "Att träden planteras där hårdgjorda ytor annars samlar mest värme.",
+        "Att satsningen motiveras med folkhälsa och rättvisa snarare än med estetik.",
+        "Att träden planteras i så stor skala att effekten märks i hela staden."
       ],
       "correctIndex": 0,
-      "explain": "Texten anger uttryckligen att skötsel och lokal förankring krävs för att trädsatsningar ska fungera på sikt. Fler planteringsceremonier beskriver en engångshändelse och saknar den långsiktiga skötsel som texten kräver. Att undvika täta områden nämns inte som ett villkor för att satsningarna ska lyckas. Att ta bort parker i rika områden är en omfördelningsåtgärd som inte är det som texten anger som förutsättning."
+      "explain": "Texten anger villkoret i sista meningen: att plantera träd är en fråga om rättvisa och folkhälsa ”förutsatt att skötsel och lokal förankring finns”, alltså att träden underhålls och att satsningen har stöd bland dem som bor i området. Att effekten är störst i täta områden där hårdgjorda ytor samlar värme säger var nyttan blir störst, men det ställs inte upp som ett krav. Texten säger att trädplantering inte bara är estetik utan också en fråga om rättvisa och folkhälsa, men den säger inget om hur en satsning ska motiveras. Att träden måste planteras i stor skala nämns inte."
     },
     {
       "id": "elf-1",
@@ -1522,27 +1546,27 @@
       "prompt": "What is the main claim of the passage?",
       "passage": "Remote work is often framed as a simple trade-off between flexibility and productivity. Yet the more interesting shift is cultural: when colleagues no longer share the same hallway, informal learning shrinks. Junior staff lose the half-overheard conversations that once taught them how decisions are made. Companies that treat remote work as a logistics problem alone — desks, software, meetings — miss this quieter cost. The organizations that adapt best redesign mentorship deliberately, instead of hoping it happens by accident.",
       "options": [
-        "Remote work always increases productivity",
-        "Junior staff prefer offices for social reasons only",
-        "Hallways are more important than software",
-        "The hidden cost is lost informal learning, so mentorship must be redesigned"
+        "Remote work is essentially a trade-off, so flexibility must be weighed against productivity.",
+        "Junior staff suffer most from remote work, so they should return to the office.",
+        "Remote work is mainly a logistics problem, so desks, software and meetings come first.",
+        "Remote work's hidden cost is lost informal learning, so mentorship must be redesigned."
       ],
       "correctIndex": 3,
-      "explain": "The passage's main claim is that remote work carries a hidden cost in lost informal learning, which means mentorship needs to be deliberately redesigned rather than left to chance. The claim that remote work always increases productivity overstates the passage's point, which is about a specific cultural cost rather than a blanket productivity effect. Saying hallways matter more than software takes a supporting image too literally instead of the broader argument about learning. Reducing junior staff's preference for offices to social reasons only ignores the passage's emphasis on learning, not just socializing."
+      "explain": "The passage notes that remote work is 'often framed' as a trade-off between flexibility and productivity, but argues that 'the more interesting shift is cultural': without a shared hallway, informal learning shrinks, and the organizations that adapt best respond by redesigning mentorship deliberately. The trade-off is therefore only the usual framing, not the author's own claim. Junior staff are mentioned because they lose the conversations that taught them how decisions are made, but the passage neither says that they suffer most nor suggests bringing them back to the office. And treating remote work as a logistics problem of desks, software and meetings is exactly the approach that, according to the passage, misses 'this quieter cost'."
     },
     {
       "id": "elf-2",
       "kind": "elf",
-      "prompt": "According to the passage, what do weaker remote strategies miss?",
+      "prompt": "According to the passage, what do companies that treat remote work as a logistics problem alone miss?",
       "passage": "Remote work is often framed as a simple trade-off between flexibility and productivity. Yet the more interesting shift is cultural: when colleagues no longer share the same hallway, informal learning shrinks. Junior staff lose the half-overheard conversations that once taught them how decisions are made. Companies that treat remote work as a logistics problem alone — desks, software, meetings — miss this quieter cost. The organizations that adapt best redesign mentorship deliberately, instead of hoping it happens by accident.",
       "options": [
         "The cultural cost of fewer informal learning moments",
-        "The price of office furniture",
-        "How to schedule more meetings",
-        "That flexibility never matters"
+        "The productivity that staff lose in exchange for flexibility",
+        "The strain that frequent video meetings put on staff",
+        "The formal training that junior staff no longer receive"
       ],
       "correctIndex": 0,
-      "explain": "Weaker remote strategies overlook the cultural cost of fewer informal learning moments, since they treat remote work only as a logistical matter. The price of office furniture is irrelevant and not something the passage discusses as a missed cost. Scheduling more meetings is not identified as the missing insight, since the issue is the quality of informal exchange, not meeting frequency. Claiming flexibility never matters overstates the passage's position, which criticizes shallow strategies, not flexibility itself."
+      "explain": "Companies that treat remote work as 'a logistics problem alone' are said to 'miss this quieter cost', and the cost referred to is the cultural one described just before: informal learning shrinks, and junior staff lose the half-overheard conversations that once taught them how decisions are made. Productivity is mentioned only as part of the usual way of framing remote work, not as the cost these companies overlook. Meetings appear only as one of the logistical matters such companies concentrate on, and nothing is said about any strain they cause. And what junior staff lose is the informal learning of overheard conversations, not formal training."
     },
     {
       "id": "elf-3",
@@ -1550,69 +1574,69 @@
       "prompt": "What does the author suggest successful organizations do?",
       "passage": "Remote work is often framed as a simple trade-off between flexibility and productivity. Yet the more interesting shift is cultural: when colleagues no longer share the same hallway, informal learning shrinks. Junior staff lose the half-overheard conversations that once taught them how decisions are made. Companies that treat remote work as a logistics problem alone — desks, software, meetings — miss this quieter cost. The organizations that adapt best redesign mentorship deliberately, instead of hoping it happens by accident.",
       "options": [
-        "Ban remote work",
-        "Add more hallways online",
+        "Bring junior staff back to the office",
+        "Let mentoring develop by itself",
         "Redesign mentorship on purpose",
-        "Ignore junior staff"
+        "Focus on desks, software and meetings"
       ],
       "correctIndex": 2,
-      "explain": "According to the author, successful organizations deliberately redesign mentorship to compensate for what remote work removes. Banning remote work contradicts the passage's assumption that remote work continues and simply needs better mentorship. Adding more hallways online is a literal misreading of the hallway image rather than the actual recommendation to redesign mentorship. Ignoring junior staff is the opposite of the intent, since the passage's concern is precisely about supporting them."
+      "explain": "The successful organizations in the passage are those that 'adapt best', and they 'redesign mentorship deliberately, instead of hoping it happens by accident'. Letting mentoring develop by itself is therefore exactly what they avoid. Bringing junior staff back to the office is never suggested; the passage is about adapting to remote work, not ending it. And concentrating on desks, software and meetings is the logistics-only approach that, according to the passage, misses the cultural cost of lost informal learning."
     },
     {
       "id": "elf-4",
       "kind": "elf",
       "prompt": "Which statement best matches the passage?",
-      "passage": "Climate reporting has improved at describing extreme weather, but it still struggles with time. Readers are shown a flood or a fire as a dramatic event, then the story ends. The slower processes — soil degradation, insurance retreat, rising baseline heat — get less airtime because they lack a single climax. This narrative bias does not mean journalists are dishonest; it means the formats that attract attention favour suddenness. Understanding climate risk therefore requires reading past the event to the trend underneath.",
+      "passage": "Climate reporting has improved at describing extreme weather, but it still struggles with time. Readers are shown a flood or a fire as a dramatic event, and then the story ends. The slower processes — soil degradation, insurance retreat, rising baseline heat — get less airtime because they lack a single climax. This narrative bias does not mean journalists are dishonest; it means the formats that attract attention favour suddenness. Understanding climate risk therefore requires reading past the event to the trend underneath.",
       "options": [
-        "Journalists invent climate disasters",
-        "Sudden events get more attention than slow trends, so readers must look for the trend",
-        "Floods are unimportant",
-        "Insurance is unrelated to climate"
+        "Journalists deliberately distort climate news to attract more readers.",
+        "Sudden events get more attention than slow trends, so readers must look for the trend.",
+        "Slow processes matter less than extreme events because they lack a single climax.",
+        "Climate reporting has become good at explaining long-term climate risk."
       ],
       "correctIndex": 1,
-      "explain": "The passage's core idea is that sudden events attract more attention than slow-moving trends, so readers need to actively look for the underlying trend themselves. Saying journalists invent climate disasters goes beyond the claim, which is about attention bias, not fabrication. Calling floods unimportant misreads the point, since floods are used as an example of a sudden event, not dismissed as trivial. Saying insurance is unrelated to climate ignores that such details likely serve as evidence within the passage's argument, not as an unrelated aside."
+      "explain": "The passage says that slow processes such as soil degradation and rising baseline heat 'get less airtime because they lack a single climax' and that 'the formats that attract attention favour suddenness'; it concludes that understanding climate risk 'requires reading past the event to the trend underneath'. Deliberate distortion is ruled out, since this bias 'does not mean journalists are dishonest'. The slow processes are not said to matter less; they get less coverage, which is why readers have to look for them. And although climate reporting has improved at describing extreme weather, it 'still struggles with time', so it has not become good at explaining long-term risk."
     },
     {
       "id": "dtk-2",
       "kind": "dtk",
-      "prompt": "Hur många procentenheter ökade Kommun A mellan 2022 och 2024?",
+      "prompt": "Med hur många procentenheter ökade andelen cykelresor i Kommun A mellan 2022 och 2024?",
       "passage": "Andel cykelresor av alla resor (procent)\r\nKommun A: 2022: 12  2023: 14  2024: 15\r\nKommun B: 2022: 18  2023: 17  2024: 19\r\nKommun C: 2022: 9   2023: 11  2024: 13\r\nKommun D: 2022: 16  2023: 16  2024: 18",
       "options": [
-        "2",
-        "3",
-        "4",
-        "15"
+        "2 procentenheter",
+        "3 procentenheter",
+        "4 procentenheter",
+        "15 procentenheter"
       ],
       "correctIndex": 1,
-      "explain": "Kommun A gick från 12 procent 2022 till 15 procent 2024, en ökning med 3 procentenheter. Alternativen 2 och 4 motsvarar inte differensen mellan dessa två värden, och 15 procentenheter vore orimligt stort eftersom det är själva slutvärdet, inte förändringen."
+      "explain": "Andelen cykelresor i Kommun A var 12 procent 2022 och 15 procent 2024. Skillnaden mellan två andelar mäts i procentenheter, så ökningen är 15 − 12 = 3 procentenheter. 2 procentenheter är ökningen bara mellan 2022 och 2023 (från 12 till 14 procent), och 4 procentenheter är ökningen i Kommun C (från 9 till 13 procent). 15 procentenheter får man om man tar andelen 2024 som ökningen."
     },
     {
       "id": "dtk-3",
       "kind": "dtk",
-      "prompt": "Vilken kommun minskade något mellan 2022 och 2023?",
+      "prompt": "I vilken kommun minskade andelen cykelresor mellan 2022 och 2023?",
       "passage": "Andel cykelresor av alla resor (procent)\r\nKommun A: 2022: 12  2023: 14  2024: 15\r\nKommun B: 2022: 18  2023: 17  2024: 19\r\nKommun C: 2022: 9   2023: 11  2024: 13\r\nKommun D: 2022: 16  2023: 16  2024: 18",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Kommun A",
+        "Kommun B",
+        "Kommun C",
+        "Kommun D"
       ],
       "correctIndex": 1,
-      "explain": "B är den enda kommun som minskade mellan 2022 och 2023, från 18 till 17 procent. A, C och D antingen ökade eller låg still under samma period och kan därför uteslutas."
+      "explain": "Andelen cykelresor i Kommun B minskade från 18 procent 2022 till 17 procent 2023, alltså med 1 procentenhet. I Kommun A (från 12 till 14 procent) och Kommun C (från 9 till 11 procent) ökade andelen, och i Kommun D var den oförändrad, 16 procent båda åren."
     },
     {
       "id": "dtk-4",
       "kind": "dtk",
-      "prompt": "Ungefär hur stor andel av total försäljning stod Produkt Y för?",
+      "prompt": "Hur stor andel av den totala försäljningen stod produkt Y för?",
       "passage": "Försäljning per produkt (miljoner kr): X = 40, Y = 25, Z = 35. Totalt = 100.",
       "options": [
-        "15 %",
-        "25 %",
-        "35 %",
-        "40 %"
+        "15 procent",
+        "25 procent",
+        "35 procent",
+        "40 procent"
       ],
       "correctIndex": 1,
-      "explain": "Produkt Y svarade för 25 av totalt 100 (motsvarande enheter), det vill säga 25 procent av den totala försäljningen. 15 procent är för lågt och 35/40 procent överskattar Y:s andel, vilka snarare stämmer med andra produkters värden i diagrammet."
+      "explain": "Produkt Y sålde för 25 av totalt 100 miljoner kronor, och 25 / 100 = 0,25, alltså 25 procent av den totala försäljningen. 35 procent och 40 procent är andelarna för Z och X, som sålde för 35 respektive 40 miljoner kronor. 15 procent motsvarar skillnaden mellan X och Y, 40 − 25 = 15 miljoner kronor, och är inte Y:s andel."
     },
     {
       "id": "dtk-5",
@@ -1623,24 +1647,24 @@
         "X",
         "Y",
         "Z",
-        "Y och Z lika"
+        "X och Z lika mycket"
       ],
       "correctIndex": 0,
-      "explain": "X hade störst försäljning med värdet 40, vilket är högre än både Y (25) och Z (35). Y och Z ligger båda under X och är dessutom inte lika stora som varandra, så det sista alternativet stämmer inte heller."
+      "explain": "X hade störst försäljning, 40 miljoner kronor, mot 35 miljoner kronor för Z och 25 miljoner kronor för Y. X och Z sålde alltså inte lika mycket, eftersom X sålde 5 miljoner kronor mer än Z."
     },
     {
       "id": "dtk-6",
       "kind": "dtk",
-      "prompt": "Med hur många miljoner skiljer sig X och Z?",
+      "prompt": "Med hur många miljoner kronor skiljer sig försäljningen av X och Z åt?",
       "passage": "Försäljning per produkt (miljoner kr): X = 40, Y = 25, Z = 35. Totalt = 100.",
       "options": [
-        "5",
-        "10",
-        "15",
-        "25"
+        "5 miljoner kronor",
+        "10 miljoner kronor",
+        "15 miljoner kronor",
+        "25 miljoner kronor"
       ],
       "correctIndex": 0,
-      "explain": "X ligger på 40 miljoner och Z på 35 miljoner, en skillnad på 5 miljoner. 10 och 15 miljoner är för stora skillnader utifrån dessa värden, och 25 miljoner motsvarar snarare skillnaden mellan X och en annan produkt."
+      "explain": "X sålde för 40 miljoner kronor och Z för 35 miljoner kronor, så försäljningen skiljer sig åt med 40 − 35 = 5 miljoner kronor. 15 miljoner kronor är skillnaden mellan X och Y (40 − 25), 10 miljoner kronor är skillnaden mellan Z och Y (35 − 25), och 25 miljoner kronor är Y:s egen försäljning."
     },
     {
       "id": "dtk-7",
@@ -1648,131 +1672,131 @@
       "prompt": "Vilken avdelning hade lägst sjukfrånvaro i mars?",
       "passage": "Sjukfrånvaro per avdelning (procent av arbetad tid)\r\nAvd. A: feb 6,2 · mars 5,4 · april 5,8\r\nAvd. B: feb 4,9 · mars 5,1 · april 4,7\r\nAvd. C: feb 7,3 · mars 6,8 · april 7,0\r\nAvd. D: feb 5,6 · mars 4,9 · april 5,3",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Avd. A",
+        "Avd. B",
+        "Avd. C",
+        "Avd. D"
       ],
       "correctIndex": 3,
-      "explain": "I mars hade D lägst sjukfrånvaro med 4,9 procent, vilket är lägre än B:s 5,1, A:s 5,4 och C:s 6,8. B (5,1) är näst lägst men ändå högre än D, och C sticker tvärtom ut som avdelningen med högst frånvaro."
+      "explain": "I mars var sjukfrånvaron 5,4 procent på Avd. A, 5,1 procent på Avd. B, 6,8 procent på Avd. C och 4,9 procent på Avd. D, så Avd. D hade lägst. Avd. B hade lägst sjukfrånvaro i februari och april, men inte i mars."
     },
     {
       "id": "dtk-8",
       "kind": "dtk",
-      "prompt": "Hur stor andel av företagets totala kostnader utgjorde material 2023?",
+      "prompt": "Ungefär hur stor andel av de totala kostnaderna 2023 gick till material?",
       "passage": "Kostnader 2023 (miljoner kr): Personal 12 · Material 8 · Lokaler 4 · Övrigt 6. Totalt = 30.",
       "options": [
-        "8 %",
-        "ungefär 40 %",
-        "ungefär 27 %",
-        "ungefär 73 %"
+        "8 procent",
+        "27 procent",
+        "40 procent",
+        "73 procent"
       ],
-      "correctIndex": 2,
-      "explain": "Materialkostnaden var 8 av totalt 30 (motsvarande enheter), vilket ger 8/30 ≈ 0,27, det vill säga ungefär 27 procent. 8 procent förväxlar delvärdet med andelen, medan 40 och 73 procent bygger på fel jämförelsetal och blir alldeles för höga."
+      "correctIndex": 1,
+      "explain": "Kostnaderna för material var 8 av totalt 30 miljoner kronor, och 8 / 30 ≈ 0,27, alltså ungefär 27 procent. 8 procent får man om man tar beloppet 8 miljoner kronor som andelen. 40 procent är andelen för personal (12 / 30), och 73 procent är andelen för alla kostnader utom material (22 / 30)."
     },
     {
       "id": "xyz-1",
       "kind": "xyz",
-      "prompt": "Ett rektangulärt rum är 6 m långt och 4 m brett. Hur stor är arean?",
+      "prompt": "Ett rektangulärt rum är 6 m långt och 4 m brett. Hur stor är rummets golvarea?",
       "options": [
+        "10 m²",
+        "12 m²",
         "20 m²",
-        "24 m²",
-        "28 m²",
-        "36 m²"
+        "24 m²"
       ],
-      "correctIndex": 1,
-      "explain": "Arean av en rektangel fås genom längd gånger bredd: 6 × 4 = 24 m². 20 m² och 28 m² kommer från felräkningar av multiplikationen, och 36 m² är istället kvadraten på 6, inte rektangelns area."
+      "correctIndex": 3,
+      "explain": "Golvet är en rektangel, och en rektangels area är längden gånger bredden: 6 · 4 = 24 m². 20 m² får man om man räknar ut omkretsen i stället för arean: 6 + 4 + 6 + 4 = 20. Men omkretsen är en längd i meter och ingen area. 12 m² får man om man delar med 2 som i formeln för en triangels area: 6 · 4/2 = 12. 10 m² får man om man adderar längden och bredden i stället för att multiplicera dem: 6 + 4 = 10."
     },
     {
       "id": "xyz-2",
       "kind": "xyz",
-      "prompt": "Priset sänks med 20 % från 250 kr. Vad kostar varan sedan?",
+      "prompt": "En vara kostar 250 kr. Priset sänks med 20 %. Vad kostar varan efter sänkningen?",
       "options": [
-        "180 kr",
         "200 kr",
-        "210 kr",
-        "230 kr"
+        "225 kr",
+        "230 kr",
+        "300 kr"
       ],
-      "correctIndex": 1,
-      "explain": "20 procent av 250 kr är 50 kr, och 250 − 50 = 200 kr efter sänkningen. 230 kr motsvarar en sänkning med bara 20 kr, 210 kr är för litet avdrag, och 180 kr är ett för stort avdrag för en 20-procentig sänkning."
+      "correctIndex": 0,
+      "explain": "20 % betyder 20 hundradelar, så sänkningen är 0,20 · 250 = 50 kr, och det nya priset är 250 − 50 = 200 kr. Man kan också räkna direkt: efter sänkningen återstår 80 % av priset, och 0,8 · 250 = 200 kr. 225 kr får man om man räknar ut 10 % av 250 kr, alltså 25 kr, och glömmer att dubbla det till 20 %. 230 kr får man om man drar av 20 kr i stället för 20 %. 300 kr får man om man höjer priset med 20 % i stället för att sänka det: 250 + 50 = 300."
     },
     {
       "id": "xyz-3",
       "kind": "xyz",
-      "prompt": "En cyklist kör 45 km på 1,5 timme. Vilken medelhastighet?",
+      "prompt": "En cyklist färdas 45 km på 1,5 timmar. Vilken medelhastighet har cyklisten?",
       "options": [
-        "25 km/h",
+        "15 km/h",
         "30 km/h",
-        "35 km/h",
-        "40 km/h"
+        "45 km/h",
+        "67,5 km/h"
       ],
       "correctIndex": 1,
-      "explain": "Medelhastigheten fås genom sträcka delat med tid: 45 km / 1,5 h = 30 km/h. 25 km/h och 35 km/h ligger nära men stämmer inte med divisionen, och 40 km/h skulle kräva en kortare tid än 1,5 timme."
+      "explain": "Medelhastigheten är sträckan delad med tiden: 45/1,5 = 30 km/h. Kontroll: med hastigheten 30 km/h hinner man 30 km på en timme och 15 km på en halvtimme, alltså 45 km på 1,5 timmar. 67,5 km/h får man om man multiplicerar sträckan med tiden i stället för att dela: 45 · 1,5 = 67,5. 45 km/h får man om man bortser från den halva timmen och räknar som om färden tog 1 timme. 15 km/h får man om man delar med 3 eftersom 1,5 timmar är 3 halvtimmar. Då är 15 km sträckan per halvtimme, och per timme blir det dubbelt så långt."
     },
     {
       "id": "xyz-4",
       "kind": "xyz",
-      "prompt": "Lös 3x − 7 = 14. Vad är x?",
+      "prompt": "Lös ekvationen 3x − 7 = 14. Vad är x?",
       "options": [
-        "5",
+        "1/7",
+        "7/3",
         "7",
-        "9",
         "21"
       ],
-      "correctIndex": 1,
-      "explain": "Ekvationen ger 3x = 14 + 7 = 21, vilket ger x = 21/3 = 7. x = 5 och x = 9 uppfyller inte ekvationen vid insättning, och 21 är värdet på 3x, inte på x."
+      "correctIndex": 2,
+      "explain": "Addera 7 till båda leden: 3x = 14 + 7 = 21. Dela sedan båda leden med 3: x = 21/3 = 7. Kontroll: 3 · 7 − 7 = 21 − 7 = 14. 21 får man om man glömmer att dela med 3; 21 är värdet av 3x, inte av x. 7/3 får man om man flyttar över −7 till högerledet utan att byta tecken och får 3x = 14 − 7 = 7. 1/7 får man om man delar åt fel håll och räknar 3/21 i stället för 21/3."
     },
     {
       "id": "xyz-5",
       "kind": "xyz",
-      "prompt": "En triangel har bas 10 cm och höjd 6 cm. Area?",
+      "prompt": "En triangel har basen 10 cm och höjden 6 cm. Hur stor är triangelns area?",
       "options": [
-        "16 cm²",
         "30 cm²",
+        "32 cm²",
         "60 cm²",
         "120 cm²"
       ],
-      "correctIndex": 1,
-      "explain": "Triangelns area beräknas som (bas × höjd)/2 = (10 × 6)/2 = 30 cm². 60 cm² är produkten bas gånger höjd utan att delas med 2, 120 cm² är dubbelt så mycket, och 16 cm² stämmer inte med formeln alls."
+      "correctIndex": 0,
+      "explain": "En triangels area är basen gånger höjden delat med 2: 10 · 6/2 = 30 cm². Man delar med 2 eftersom triangeln har hälften så stor area som en rektangel med samma bas och höjd. 60 cm² får man om man glömmer att dela med 2; det är rektangelns area. 120 cm² får man om man multiplicerar med 2 i stället för att dela med 2: 10 · 6 · 2 = 120. 32 cm² får man om man blandar ihop area och omkrets och räknar 2 · (10 + 6) = 32, som om figuren vore en rektangel med sidorna 10 cm och 6 cm."
     },
     {
       "id": "xyz-6",
       "kind": "xyz",
-      "prompt": "Ett lån på 8 000 kr ökar med 5 % ränta på ett år. Ny skuld?",
+      "prompt": "Ett lån på 8 000 kr har årsräntan 5 %. Ingenting betalas under året, så räntan läggs till skulden. Hur stor är skulden efter ett år?",
       "options": [
-        "8 200 kr",
+        "400 kr",
+        "7 600 kr",
         "8 400 kr",
-        "8 500 kr",
-        "8 800 kr"
+        "12 000 kr"
       ],
-      "correctIndex": 1,
-      "explain": "Räntan blir 5 procent av 8 000 kr, det vill säga 400 kr, så den nya skulden är 8 000 + 400 = 8 400 kr. 8 200 kr och 8 500 kr bygger på felaktig procentberäkning, och 8 800 kr motsvarar snarare en räntesats på 10 procent."
+      "correctIndex": 2,
+      "explain": "Räntan för ett år är 5 % av 8 000 kr, alltså 0,05 · 8 000 = 400 kr. Räntan läggs till skulden, som därför blir 8 000 + 400 = 8 400 kr. Man kan också räkna direkt: skulden ökar till 105 %, och 1,05 · 8 000 = 8 400 kr. 400 kr är bara räntan; man har glömt att lägga till själva lånet. 7 600 kr får man om man drar av räntan i stället för att lägga till den. 12 000 kr får man om man skriver 5 % som 0,5 i stället för 0,05. Då blir räntan 4 000 kr, vilket är 50 % av lånet."
     },
     {
       "id": "xyz-7",
       "kind": "xyz",
-      "prompt": "Medelvärdet av 4, 8 och 12 är 8. Vilket tal ska läggas till så att medelvärdet blir 10?",
+      "prompt": "Medelvärdet av talen 4, 8 och 12 är 8. Vilket fjärde tal ska läggas till för att medelvärdet av de fyra talen ska bli 10?",
       "options": [
+        "6",
         "10",
-        "16",
-        "18",
-        "20"
+        "12",
+        "16"
       ],
-      "correctIndex": 1,
-      "explain": "För att medelvärdet av fyra tal ska bli 10 måste summan vara 4 × 10 = 40. De tre kända talen summerar till 4 + 8 + 12 = 24, så det fjärde talet måste vara 40 − 24 = 16. 10 och 18 ger fel totalsumma, och 20 skulle ge ett medelvärde högre än 10."
+      "correctIndex": 3,
+      "explain": "Medelvärdet är summan av talen delad med antalet tal. Fyra tal med medelvärdet 10 har alltså summan 4 · 10 = 40. De tre givna talen har summan 4 + 8 + 12 = 24, så det fjärde talet är 40 − 24 = 16. Kontroll: (4 + 8 + 12 + 16)/4 = 40/4 = 10. 6 får man om man glömmer att antalet tal blir fyra och räknar med summan 3 · 10 = 30: 30 − 24 = 6. 10 får man om man tror att det nya talet ska vara lika stort som det önskade medelvärdet, men då blir medelvärdet bara 34/4 = 8,5. 12 får man om man lägger skillnaden mellan medelvärdena, 10 − 8 = 2, på 10. Men de tre givna talen ligger tillsammans 3 · 2 = 6 under 10, så det nya talet måste ligga 6 över 10."
     },
     {
       "id": "xyz-8",
       "kind": "xyz",
-      "prompt": "En karta har skalan 1:50 000. 4 cm på kartan motsvarar hur lång sträcka i verkligheten?",
+      "prompt": "En karta har skalan 1:50 000. Hur lång sträcka i verkligheten motsvarar 4 cm på kartan?",
       "options": [
-        "0,2 km",
+        "0,5 km",
         "2 km",
         "20 km",
         "200 km"
       ],
       "correctIndex": 1,
-      "explain": "Skalan 1:50 000 innebär att 4 cm på kartan motsvarar 4 × 50 000 = 200 000 cm i verkligheten, vilket är 2 000 m, det vill säga 2 km. 0,2 km är hundra gånger för litet, och 20 km respektive 200 km är för stora eftersom de bygger på en felaktig enhetsomvandling."
+      "explain": "Skalan 1:50 000 betyder att varje sträcka i verkligheten är 50 000 gånger så lång som på kartan. Sträckan 4 cm på kartan motsvarar alltså 4 · 50 000 = 200 000 cm i verkligheten. Eftersom 1 m = 100 cm och 1 km = 1 000 m är 200 000 cm = 2 000 m = 2 km. 0,5 km = 50 000 cm är vad 1 cm på kartan motsvarar; man har glömt att multiplicera med 4. 200 km får man om man tror att 200 000 cm är 200 000 m och bara delar med 1 000. 20 km får man om man tappar en nolla i omvandlingen och delar 200 000 med 10 000 i stället för med 100 000."
     },
     {
       "id": "kva-3",
@@ -1889,106 +1913,122 @@
     {
       "id": "nog-1",
       "kind": "nog",
-      "prompt": "Vad är värdet av x + y? (1) x = 4. (2) y = 6. Vilken information räcker?",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket värde har x + y?\n(1) x = 4\n(2) y = 6",
       "options": [
-        "Bara (1) räcker",
-        "Bara (2) räcker",
-        "Båda behövs tillsammans, ingen ensam",
-        "Inte ens båda räcker"
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
       ],
       "correctIndex": 2,
-      "explain": "Påstående (1) ger bara x = 4 utan information om y, så summan x + y kan inte beräknas.\r\nPåstående (2) ger bara y = 6 utan information om x, vilket av samma skäl inte räcker ensamt.\r\nTillsammans ger de x + y = 4 + 6 = 10, så båda behövs för att lösa uppgiften."
+      "explain": "(1) ger x = 4 men säger inget om y. Till exempel ger y = 1 summan 5 och y = 6 summan 10. (1) räcker inte.\n(2) ger y = 6 men säger inget om x. Till exempel ger x = 0 summan 6 och x = 4 summan 10. (2) räcker inte.\nTillsammans: x + y = 4 + 6 = 10. Tillräcklig information erhålls i (1) tillsammans med (2)."
     },
     {
       "id": "nog-2",
       "kind": "nog",
-      "prompt": "Är n jämnt? (1) n är delbart med 4. (2) n är delbart med 2. Vilken information räcker?",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "n är ett heltal. Är n jämnt?\n(1) n är delbart med 4.\n(2) n² är jämnt.",
       "options": [
-        "Bara (1) räcker",
-        "Bara (2) räcker",
-        "Båda behövs tillsammans, ingen ensam",
-        "Vardera räcker för sig"
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
       ],
       "correctIndex": 3,
-      "explain": "Påstående (1) säger att n är delbart med 4, och alla tal som är delbara med 4 är per definition jämna, så (1) räcker ensamt.\r\nPåstående (2) säger direkt att n är delbart med 2, vilket är samma sak som att n är jämnt, så även (2) räcker ensamt.\r\nEftersom båda påståendena var för sig avgör frågan, räcker vardera för sig."
+      "explain": "(1) Eftersom 4 = 2 · 2 är varje tal som är delbart med 4 också delbart med 2. n är alltså jämnt, och svaret är ja. (1) räcker.\n(2) Produkten av två udda tal är udda, så om n vore udda skulle även n² = n · n vara udda. Eftersom n² är jämnt måste n vara jämnt, och svaret är ja. (2) räcker.\nTillräcklig information erhålls i (1) och (2) var för sig."
     },
     {
       "id": "nog-3",
       "kind": "nog",
-      "prompt": "Vad är rektangelns area? (1) Längden är 8 cm. (2) Omkretsen är 24 cm. Vilken information räcker?",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur stor area har en viss rektangel?\n(1) Rektangelns längd är 8 cm.\n(2) Rektangelns omkrets är 24 cm.",
       "options": [
-        "Bara (1) räcker",
-        "Bara (2) räcker",
-        "Båda behövs tillsammans, ingen ensam",
-        "Inte ens båda räcker"
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
       ],
       "correctIndex": 2,
-      "explain": "Påstående (1) ger bara längden 8 cm utan information om bredden, så arean går inte att beräkna ensamt.\r\nPåstående (2) ger enbart omkretsen 24 cm, vilket i sig kan motsvara oändligt många kombinationer av längd och bredd.\r\nTillsammans ger de bredden 24/2 − 8 = 4 cm och därmed arean 8 × 4 = 32 cm², så båda behövs."
+      "explain": "(1) Med längden 8 cm kan bredden till exempel vara 1 cm eller 4 cm, och då blir arean 8 cm² respektive 32 cm². (1) räcker inte.\n(2) Omkretsen 24 cm betyder att längden och bredden tillsammans är 12 cm. Både sidorna 8 cm och 4 cm och sidorna 10 cm och 2 cm ger omkretsen 24 cm, men areorna blir 32 cm² respektive 20 cm². (2) räcker inte.\nTillsammans: bredden är 12 − 8 = 4 cm, och arean är 8 · 4 = 32 cm². Tillräcklig information erhålls i (1) tillsammans med (2)."
     },
     {
       "id": "nog-4",
       "kind": "nog",
-      "prompt": "Är heltalet k positivt? (1) k² = 16. (2) k > 0. Vilken information räcker?",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "k är ett heltal. Är k positivt?\n(1) k² = 16\n(2) k³ = 64",
       "options": [
-        "Bara (1) räcker",
-        "Bara (2) räcker",
-        "Båda behövs tillsammans, ingen ensam",
-        "Vardera räcker för sig"
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
       ],
       "correctIndex": 1,
-      "explain": "Påstående (1) ger k² = 16, vilket betyder att k är antingen 4 eller −4, så tecknet på k förblir okänt och räcker inte ensamt.\r\nPåstående (2) säger direkt att k > 0, vilket omedelbart avgör att k är positivt.\r\nDärför räcker bara (2) för att besvara frågan."
+      "explain": "(1) Både k = 4 och k = −4 ger k² = 16. Det första talet är positivt men inte det andra. (1) räcker inte.\n(2) Om k vore 0 eller negativt skulle även k³ = k · k · k vara 0 eller negativt. Eftersom k³ = 64 måste k vara positivt (k = 4), och svaret är ja. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1)."
     },
     {
       "id": "nog-5",
       "kind": "nog",
-      "prompt": "Vad är medelvärdet av a och b? (1) a + b = 20. (2) a − b = 4. Vilken information räcker?",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket är medelvärdet av a och b?\n(1) a + b = 20\n(2) a − b = 4",
       "options": [
-        "Bara (1) räcker",
-        "Bara (2) räcker",
-        "Båda behövs tillsammans, ingen ensam",
-        "Vardera räcker för sig"
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
       ],
       "correctIndex": 0,
-      "explain": "Medelvärdet av a och b är (a + b)/2. Påstående (1) ger a + b = 20 direkt, vilket genast ger medelvärdet 10, så (1) räcker ensamt.\r\nPåstående (2) ger bara skillnaden a − b = 4, vilket inte säger något om summan och därför inte räcker ensamt för att bestämma medelvärdet."
+      "explain": "Medelvärdet av a och b är (a + b)/2.\n(1) a + b = 20 ger medelvärdet 20/2 = 10. (1) räcker.\n(2) Både a = 6, b = 2 och a = 10, b = 6 uppfyller a − b = 4, men medelvärdet blir 4 respektive 8. (2) räcker inte.\nTillräcklig information erhålls i (1) men ej i (2)."
     },
     {
       "id": "nog-6",
       "kind": "nog",
-      "prompt": "Hur många elever finns i klassen? (1) 40 % är flickor. (2) Det finns 12 flickor. Vilken information räcker?",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur många elever går i en viss klass?\n(1) 40 procent av eleverna i klassen är flickor.\n(2) Det går 12 flickor i klassen.",
       "options": [
-        "Bara (1) räcker",
-        "Bara (2) räcker",
-        "Båda behövs tillsammans, ingen ensam",
-        "Inte ens båda räcker"
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
       ],
       "correctIndex": 2,
-      "explain": "Påstående (1) ger bara att 40 procent är flickor, utan ett faktiskt antal går det inte att räkna ut klassens storlek.\r\nPåstående (2) ger enbart antalet flickor, 12, utan att veta vilken andel de utgör av klassen.\r\nTillsammans ger de att 12 motsvarar 40 procent, vilket ger totalt 12 / 0,4 = 30 elever, så båda behövs."
+      "explain": "(1) ger bara andelen flickor, inte hur många eleverna är. Klassen kan till exempel ha 10 elever, varav 4 flickor, eller 30 elever, varav 12 flickor. (1) räcker inte.\n(2) ger bara antalet flickor, inte hur stor andel av klassen de utgör. Klassen kan till exempel ha 20 eller 30 elever. (2) räcker inte.\nTillsammans: de 12 flickorna är 40 procent av eleverna. Då är 10 procent 3 elever, och klassen har 30 elever. Tillräcklig information erhålls i (1) tillsammans med (2)."
     },
     {
       "id": "nog-7",
       "kind": "nog",
-      "prompt": "Vad är p · q? (1) p = 0. (2) q = 17. Vilken information räcker?",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket värde har produkten pq?\n(1) p = 0\n(2) q = 17",
       "options": [
-        "Bara (1) räcker",
-        "Bara (2) räcker",
-        "Båda behövs tillsammans, ingen ensam",
-        "Inte ens båda räcker"
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
       ],
       "correctIndex": 0,
-      "explain": "Påstående (1) ger p = 0, och då blir produkten p · q alltid 0 oavsett vad q är, så (1) räcker ensamt.\r\nPåstående (2) ger bara q = 17 utan information om p, vilket inte räcker för att bestämma produkten.\r\nDärför räcker bara (1) för att besvara frågan."
+      "explain": "(1) Om p = 0 är pq = 0 · q = 0, vilket tal q än är. (1) räcker.\n(2) Om q = 17 är pq = 17p, och det beror på p. Till exempel ger p = 1 produkten 17 och p = 2 produkten 34. (2) räcker inte.\nTillräcklig information erhålls i (1) men ej i (2)."
     },
     {
       "id": "nog-8",
       "kind": "nog",
-      "prompt": "Ligger punkten (x, y) på linjen y = 2x + 1? (1) x = 3. (2) y = 7. Vilken information räcker?",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Ligger punkten (x, y) på linjen y = 2x + 1?\n(1) x = 3\n(2) y = 7",
       "options": [
-        "Bara (1) räcker",
-        "Bara (2) räcker",
-        "Båda behövs tillsammans, ingen ensam",
-        "Inte ens båda räcker"
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
       ],
       "correctIndex": 2,
-      "explain": "Påstående (1) ger bara x = 3 utan att ange y, så det går inte att kontrollera om punkten ligger på linjen.\r\nPåstående (2) ger bara y = 7 utan att ange x, vilket av samma skäl inte räcker ensamt.\r\nTillsammans ger de att 2 · 3 + 1 = 7, vilket stämmer med y-värdet, så båda behövs för att avgöra att punkten faktiskt ligger på linjen."
+      "explain": "En punkt ligger på linjen om dess y-koordinat är 2 gånger x-koordinaten plus 1.\n(1) Punkten (3, 7) ligger på linjen, eftersom 2 · 3 + 1 = 7, men punkten (3, 0) gör det inte. (1) räcker inte.\n(2) Punkten (3, 7) ligger på linjen, men punkten (0, 7) gör det inte, eftersom 2 · 0 + 1 = 1. (2) räcker inte.\nTillsammans: punkten är (3, 7), och eftersom 2 · 3 + 1 = 7 ligger den på linjen. Svaret är ja, så tillräcklig information erhålls i (1) tillsammans med (2)."
     }
   ],
   "reflect": [

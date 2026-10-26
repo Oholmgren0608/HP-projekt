@@ -41,7 +41,7 @@
       "Ett träd vars löv fälls medan de ännu är gröna förlorar näring som det annars kunnat ta tillvara."
     ],
     "correctIndex": 3,
-    "explain": "Enligt texten monteras bladets fotosyntesapparat ned innan bladet fälls, och näringen förs in i grenar och stam för att användas igen nästa vår; det gula lövet beskrivs som ”ett blad som håller på att tömmas”. Ett löv som faller medan det ännu är grönt har alltså inte tömts, och trädet förlorar då näring som det annars kunnat ta tillvara. Att röda löv skulle ha mer kväve kvar vänder på sambandet, eftersom det röda enligt solskyddsförklaringen skyddar bladet just medan näringen förs ut. Att soliga höstar skulle ge tillbaka mer näring har inget stöd, eftersom texten bara säger att de ger rödare löv. Att träd med röda löv skulle lägga mindre resurser på bladen motsägs av att antocyaninerna beskrivs som en satsning på något nytt i ett skede då trädet annars sparar.",
+    "explain": "Enligt texten är klorofyllet bundet till kvävehaltiga proteiner, och innan bladet fälls monteras fotosyntesapparaten ned och näringen förs in i grenar och stam för att användas igen nästa vår; det gula lövet beskrivs som ”ett blad som håller på att tömmas”. Ett löv som faller medan det ännu är grönt har kvar sitt klorofyll och har alltså inte hunnit tömmas, så trädet förlorar näring som det annars kunnat ta tillvara. Att röda löv skulle ha mer kväve kvar vänder på sambandet, eftersom det röda enligt solskyddsförklaringen skyddar bladet just medan näringen förs ut. Att soliga höstar skulle föra tillbaka mer näring har inget stöd: det röda skyddar enligt texten mot det starka ljus som klara dagar för med sig, och under en mulen höst utsätts bladen inte för samma ljus, så rödare löv visar inte att mer näring tas tillvara. Att träd med röda löv skulle lägga mindre resurser på bladen motsägs av att antocyaninerna beskrivs som en satsning på något nytt i ett skede då trädet annars sparar.",
     "verification": "agreed"
   },
   {
@@ -101,7 +101,7 @@
       "Den stöder invändningen att ingen kan ställas till svars för rådens förslag."
     ],
     "correctIndex": 1,
-    "explain": "Författaren skriver att råden kan visa vad vanliga människor kommer fram till när de har fått tid och kunskap, något som opinionsmätningar, där man svarar ”på stående fot”, aldrig kan fånga; jämförelsen ringar alltså in rådens särskilda bidrag. Att råden skulle vara mer representativa än opinionsmätningarnas urval sägs inte; representativiteten tas upp som förespråkarnas argument och jämförs då med parlamentet. Att politiker sällan vågar lägga fram djärva förslag nämns i ett annat stycke och förklaras inte med hjälp av opinionsmätningarna. Jämförelsen hör till det stycke där författaren försvarar rådens värde, inte till invändningen om att ingen kan ställas till svars.",
+    "explain": "Författaren skriver att råden kan visa vad vanliga människor kommer fram till när de har fått tid och kunskap, något som opinionsmätningar, där man svarar ”på stående fot”, aldrig kan fånga; jämförelsen ringar alltså in rådens särskilda bidrag. Att råden skulle vara mer representativa än opinionsmätningarnas urval sägs inte; representativiteten tas upp som förespråkarnas argument och jämförs då med parlamentet. Jämförelsen förklarar inte heller varför politiker sällan vågar lägga fram djärva förslag: att rådens besked kan ge politiker mod nämns visserligen i meningen efter, men som en följd av det råden kan visa, inte som en förklaring till varför politiker saknar mod. Jämförelsen hör till det stycke där författaren försvarar rådens värde, inte till invändningen om att ingen kan ställas till svars.",
     "verification": "agreed"
   },
   {
@@ -132,8 +132,7 @@
     ],
     "correctIndex": 2,
     "explain": "Författaren skriver att bilden av ett tidigt läsande folk är ”inte felaktig” men behöver preciseras: läsningen var skild från skrivandet, gällde få och välbekanta texter och var något annat än det som dagens läsforskning frågar efter. Texten påstår inte att läskunnigheten har överdrivits eller att längderna är opålitliga, utan kallar dem ”en ovärderlig källa”. Att många knappt kunde skriva stämmer, men författaren betonar i fjärde stycket att kyrkans läsundervisning tvärtom hade stor betydelse. Att de flesta kunde både läsa och skriva motsägs av att kyrkan krävde läsning, inte skrivning, och att många som läste obehindrat knappt kunde skriva sitt namn.",
-    "verification": "disagreed",
-    "verificationNote": "Rättat före uppladdning efter andra kontrollen: förklaringen säger nu att många knappt kunde skriva, som i texten (inte att få kunde skriva). Kontrollera och publicera."
+    "verification": "agreed"
   },
   {
     "id": "ovn-las-010",
@@ -173,11 +172,11 @@
     "options": [
       "Att prövningen gällde ett fåtal texter som deltagarna redan kände väl.",
       "Att många som läste obehindrat i psalmboken knappt kunde skriva sitt namn.",
-      "Att prästerna på många håll skilde mellan läsning i bok och utantillkunskap.",
+      "Att prästerna sällan skilde mellan läsning i bok och utantillkunskap.",
       "Att längderna bara finns bevarade i en del av landets socknar."
     ],
     "correctIndex": 0,
-    "explain": "Författaren skriver att texterna i husförhören var få och välbekanta, och att även de bästa vitsorden därför säger mer om förtrogenhet med ett begränsat antal texter än om förmågan att ta sig an en okänd text. Att många som läste obehindrat knappt kunde skriva stämmer enligt texten, men det gäller skillnaden mellan läsning och skrivning, inte vad läsvitsorden säger. Att prästerna skilde mellan läsning i bok och utantillkunskap stämmer också, men det framställs som ett försök att hantera problemet, och meningen därefter inleds med ”Men även de bästa vitsorden”. Att längderna inte finns bevarade överallt kan man ana av texten, men det har inget med vitsordens innebörd att göra.",
+    "explain": "Författaren skriver att texterna i husförhören var få och välbekanta, och att även de bästa vitsorden därför säger mer om förtrogenhet med ett begränsat antal texter än om förmågan att ta sig an en okänd text. Att många som läste obehindrat knappt kunde skriva stämmer enligt texten, men det gäller skillnaden mellan läsning och skrivning, inte vad läsvitsorden säger. Att prästerna sällan skulle ha skilt mellan läsning i bok och utantillkunskap stämmer inte: enligt texten gjorde man den åtskillnaden på många håll, men även de bästa vitsorden gällde ändå ett fåtal välbekanta texter. Att längderna inte finns bevarade överallt kan man ana av texten, men det har inget med vitsordens innebörd att göra.",
     "verification": "agreed"
   },
   {
@@ -297,7 +296,7 @@
       "Att avhandlingar på engelska sällan når någon utanför den egna forskarvärlden."
     ],
     "correctIndex": 2,
-    "explain": "Exemplet inleds med att ”följderna märks inte genast”: forskaren klarar sig utmärkt i sitt arbete, och problemet uppstår först när hon ska förklara, undervisa eller debattera på svenska och märker att hon saknar orden. Texten säger inte att hon förlorar förmågan att uttrycka sig på svenska i allmänhet, bara att hon saknar orden när hon ska tala om sina resultat. Journalisten och gymnasieklassen nämns som exempel på sammanhang där bristen visar sig, men det är forskaren som saknar orden. Att avhandlingar på engelska sällan når utanför forskarvärlden sägs inte.",
+    "explain": "Stycket med exemplet inleds med konstaterandet att följderna inte märks genast: forskaren klarar sig utmärkt i sitt arbete, och problemet uppstår först när hon ska förklara, undervisa eller debattera på svenska och märker att hon saknar orden. Texten säger inte att hon förlorar förmågan att uttrycka sig på svenska i allmänhet, bara att hon saknar orden när hon ska tala om sitt ämne. Journalisten och gymnasieklassen nämns som exempel på sammanhang där bristen visar sig, men det är forskaren som saknar orden. Att avhandlingar på engelska sällan når utanför forskarvärlden sägs inte.",
     "verification": "agreed"
   },
   {
@@ -312,9 +311,8 @@
       "Att hypotesen också kunde förklara varför så få arter försvann i Afrika."
     ],
     "correctIndex": 1,
-    "explain": "Författaren invänder att anhängarnas svar gör hypotesen förenlig med både många och få fynd: talrika slaktplatser skulle räknas som bevis och sällsynta som ett väntat utfall. En förklaring som ”klarar sig oavsett vad man hittar löper ingen risk” och säger därför mindre än den verkar göra; den blir mer informativ först om den pekar ut fynd som skulle tala emot den. Fler slaktplatser skulle bara räknas som stöd och ändrar inte detta. Dateringarnas osäkerhet tas upp i ett annat stycke som ett problem för båda sidor, och Afrika förklarar hypotesen redan enligt anhängarna.",
-    "verification": "disagreed",
-    "verificationNote": "Förklaringen godkändes inte. Förklaringen: meningen ”Afrika förklarar hypotesen redan enligt anhängarna” är bakvänd; det är hypotesen som enligt anhängarna redan förklarar Afrika (de räknar det som stöd). Rätta meningen."
+    "explain": "Författaren invänder att anhängarnas svar gör hypotesen förenlig med både många och få fynd: talrika slaktplatser skulle räknas som bevis och sällsynta som ett väntat utfall. En förklaring som ”klarar sig oavsett vad man hittar löper ingen risk” och säger därför mindre än den verkar göra; den blir mer informativ först om den pekar ut fynd som skulle tala emot den. Fler slaktplatser skulle bara räknas som stöd och ändrar inte detta. Dateringarnas osäkerhet tas upp i ett annat stycke som ett problem för båda sidor, och hypotesen förklarar enligt anhängarna redan varför så få arter försvann i Afrika; de räknar det som ett stöd.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-las-022",
@@ -463,7 +461,7 @@
       "Det visar att svarthandel med biljetter och kontrakt uppstår först när köerna har blivit orimligt långa."
     ],
     "correctIndex": 2,
-    "explain": "Stycket beskriver hur det, när priset hålls under vad människor är beredda att betala, uppstår en andra marknad där någon annan tar ut mellanskillnaden; prismekanismen kommer tillbaka bakvägen, men pengarna hamnar hos andra än dem som skulle kunna öka utbudet. Kön håller alltså inte pengarna utanför; det är bara mellanskillnaden som hamnar hos andra. Att kön gynnar dem som vet hur systemet fungerar sägs i stycket före och är inte detta styckes poäng. Texten säger inte att svarthandel uppstår först när köerna har blivit orimligt långa.",
+    "explain": "Stycket beskriver hur det, när priset hålls under vad människor är beredda att betala, uppstår en andra marknad där någon annan tar ut mellanskillnaden; prismekanismen kommer tillbaka bakvägen, men mellanskillnaden hamnar hos andra än dem som skulle kunna öka utbudet. Kön håller alltså inte pengarna utanför frågan om vem som får varan; via andrahandsmarknaden avgör priset ändå. Att kön gynnar dem som vet hur systemet fungerar sägs i stycket före och är inte detta styckes poäng. Texten säger inte att svarthandel uppstår först när köerna har blivit orimligt långa.",
     "verification": "agreed"
   },
   {
@@ -493,7 +491,7 @@
       "Eftersom det ger samhällets fördömande större vikt än den misstänktes intresse av att lämnas i fred."
     ],
     "correctIndex": 1,
-    "explain": "Enligt sista stycket räcker det inte att visa att ett brott går att bevisa lång tid efteråt; man måste visa att skälen för att låta brottet vila inte gäller, och kravet är det enda som ”tar preskriptionens skäl på allvar”. Att kravet gör det svårare att utvidga undantagen stämmer, men författaren nämner det som en kostnad (”tyngre att uppfylla, men”), inte som skälet till att kravet är rätt, och texten säger inte att målet är att behålla preskriptionen. Att tekniken bara delvis gör tiden ofarlig för bevisningen är en del av författarens resonemang i fjärde stycket, men det är inte det som gör kravet rätt. Texten väger inte samhällets fördömande mot den misstänktes intresse av att lämnas i fred.",
+    "explain": "Enligt sista stycket räcker det inte att visa att ett brott går att bevisa lång tid efteråt; man måste visa att preskriptionens skäl inte gäller för just det brottet, alltså inte bara skälet som rör bevisningen utan också skälen som rör straffets mening och att låta saker vila. Kravet är det enda som ”tar preskriptionens skäl på allvar”. Att kravet gör det svårare att utvidga undantagen stämmer, men författaren nämner det som en kostnad (”tyngre att uppfylla, men”), inte som skälet till att kravet är rätt, och texten säger inte att målet är att behålla preskriptionen. Att tekniken bara delvis gör tiden ofarlig för bevisningen är en del av författarens resonemang i fjärde stycket, men det är inte det som gör kravet rätt. Texten väger inte samhällets fördömande mot den misstänktes intresse av att lämnas i fred.",
     "verification": "agreed"
   },
   {
@@ -568,7 +566,7 @@
       "Det visar att läsaren förändras mellan läsningarna, även när texten är exakt densamma som förra gången."
     ],
     "correctIndex": 0,
-    "explain": "I inledningen används barnens önskan att höra samma saga för att visa hur vuxna ser på omläsning: som ett stadium man växer ifrån och något som behöver en ursäkt. I sjätte stycket återkommer exemplet: barnet är ”inte likgiltigt för spänning” utan njuter av att vänta på något som det vet ska komma, vilket motsäger tanken i andra stycket att spänningen förutsätter ovisshet. Texten påstår inte att barn läser på ett mer ursprungligt sätt än vuxna. Att den som bara läser om samma få böcker har gett upp ovetandet sägs i sista stycket om vuxna läsare, och att läsaren förändras tas upp i sjunde stycket med en vuxen läsare som exempel.",
+    "explain": "I inledningen används barnens önskan att höra samma saga för att visa hur vuxna ser på omläsning: som ett stadium man växer ifrån och något som behöver en ursäkt. I sjätte stycket återkommer exemplet: barnet är ”inte likgiltigt för spänning” utan njuter av att vänta på något som det vet ska komma, vilket motsäger tanken i andra stycket att spänningen förutsätter ovisshet. Texten påstår inte att barn läser på ett mer ursprungligt sätt än vuxna. Att den som bara läser om samma få böcker har gett upp ovetandet sägs i sista stycket om läsare i allmänhet och knyts inte till barnet, och att läsaren förändras visas i sjunde stycket med romanen som man läser som sjuttonåring och läser om som femtioåring.",
     "verification": "agreed"
   },
   {
