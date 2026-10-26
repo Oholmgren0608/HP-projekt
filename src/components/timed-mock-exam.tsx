@@ -20,6 +20,7 @@ import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionPassage } from "@/components/question-passage";
 
 const QUESTION_COUNT = 24;
 const LIMIT_SECONDS = 20 * 60;
@@ -162,11 +163,11 @@ export function TimedMockExam() {
           />
         </div>
 
-        {current.passage ? (
-          <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
-            {current.passage}
-          </div>
-        ) : null}
+        <QuestionPassage
+          passage={current.passage}
+          className="mt-5"
+          textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
+        />
 
         <QuestionFigure question={current} position={quiz.index + 1} />
 

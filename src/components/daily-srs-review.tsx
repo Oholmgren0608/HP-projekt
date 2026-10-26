@@ -11,6 +11,7 @@ import {
   reviewSrsCard,
   type SrsCard,
 } from "@/lib/error-srs";
+import { QuestionPassage } from "@/components/question-passage";
 
 export function DailySrsReview() {
   const [cards, setCards] = useState<SrsCard[]>(dueCards);
@@ -107,11 +108,11 @@ export function DailySrsReview() {
           : "Visa svaret, sedan om du kommer ihåg eller behöver se kortet igen i morgon."}
       </p>
 
-      {card.passage ? (
-        <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
-          {card.passage}
-        </div>
-      ) : null}
+      <QuestionPassage
+        passage={card.passage}
+        className="mt-5"
+        textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
+      />
 
       <p className={`text-lg font-medium text-[var(--ink)] ${card.passage ? "mt-4" : "mt-5"}`}>
         {card.front}

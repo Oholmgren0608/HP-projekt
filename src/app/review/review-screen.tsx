@@ -21,6 +21,7 @@ import {
   type ReviewExamGroup,
   type ReviewQuestion,
 } from "./types";
+import { QuestionPassage } from "@/components/question-passage";
 
 const STATUS_LABEL: Record<string, string> = {
   draft: "Utkast",
@@ -738,11 +739,12 @@ function QuestionCard({
 
       <Figure q={q} />
 
-      {q.passage ? (
-        <p className="mt-2 whitespace-pre-wrap rounded-md border border-[var(--line)] bg-[var(--fog)]/60 px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]">
-          {q.passage}
-        </p>
-      ) : null}
+      <QuestionPassage
+        passage={q.passage}
+        className="mt-2"
+        textClassName="rounded-md border border-[var(--line)] bg-[var(--fog)]/60 px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]"
+        showSource
+      />
 
       <ul className="mt-3 space-y-2 sm:space-y-2.5">
         {q.options.map((opt, i) => {

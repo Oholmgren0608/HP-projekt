@@ -5,6 +5,7 @@ import { ExplainFigure } from "@/lib/content/explain-figures";
 import { QuestionFigure } from "@/components/question-figure";
 import { DiscussQuestionButton } from "@/components/forum/discuss-button";
 import { FlagQuestionButton } from "@/components/flag-question-button";
+import { QuestionPassage } from "@/components/question-passage";
 
 export function QuestionReviewList({
   questions,
@@ -48,11 +49,11 @@ function QuestionReviewItem({
       </div>
       <p className="mt-1 font-medium text-[var(--ink)]">{q.prompt}</p>
 
-      {q.passage ? (
-        <p className="mt-2 whitespace-pre-wrap rounded-md border border-[var(--line)] bg-card/70 px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]">
-          {q.passage}
-        </p>
-      ) : null}
+      <QuestionPassage
+        passage={q.passage}
+        className="mt-2"
+        textClassName="rounded-md border border-[var(--line)] bg-card/70 px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]"
+      />
 
       <QuestionFigure question={q} position={index + 1} />
 

@@ -34,6 +34,7 @@ import {
 } from "./duel-utils";
 import { ReviewForm } from "./review-form";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionPassage } from "@/components/question-passage";
 
 type Phase = "loading" | "error" | "playing" | "waiting" | "finished";
 
@@ -668,11 +669,11 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             />
           </div>
 
-          {current.passage ? (
-            <div className="mt-4 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
-              {current.passage}
-            </div>
-          ) : null}
+          <QuestionPassage
+            passage={current.passage}
+            className="mt-4"
+            textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
+          />
 
           <QuestionFigure question={current} position={index + 1} />
 

@@ -23,6 +23,7 @@ import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
 import { QuestionFigure } from "@/components/question-figure";
 import type { StudyTask } from "@/lib/study-plan";
+import { QuestionPassage } from "@/components/question-passage";
 
 type Props = {
   task: StudyTask;
@@ -195,11 +196,10 @@ export function PracticeSession({
 
           <QuizProgress current={answeredCount} total={quiz.total} />
 
-          {current.passage ? (
-            <div className="whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
-              {current.passage}
-            </div>
-          ) : null}
+          <QuestionPassage
+            passage={current.passage}
+            textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
+          />
 
           <QuestionFigure question={current} position={quiz.index + 1} />
 

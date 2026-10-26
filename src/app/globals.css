@@ -104,6 +104,17 @@
   --chart-3: var(--energy-ink);
   --chart-4: var(--coral-ink);
   --chart-5: var(--ink-soft);
+  /* DTK-figurer: kategorisk ordning (validerad för färgblindhet) och en
+     enfärgad skala för kartklasser, ljus → mörk. */
+  --viz-1: #2a78d6;
+  --viz-2: #eb6834;
+  --viz-3: #1baf7a;
+  --viz-4: #eda100;
+  --viz-seq-1: #9cb8e1;
+  --viz-seq-2: #7398d2;
+  --viz-seq-3: #4f7bc2;
+  --viz-seq-4: #2f5ea6;
+  --viz-seq-5: #1b3f78;
   --radius: 0.625rem;
   /* Höjd med kantlinje, inte skugga. Bara menyer och dialoger får en skugga. */
   --shadow-soft: none;
@@ -167,6 +178,15 @@
   --chart-3: var(--energy-ink);
   --chart-4: var(--coral-ink);
   --chart-5: var(--ink-soft);
+  --viz-1: #3987e5;
+  --viz-2: #d95926;
+  --viz-3: #199e70;
+  --viz-4: #c98500;
+  --viz-seq-1: #3a5480;
+  --viz-seq-2: #4a6ea8;
+  --viz-seq-3: #6a92cf;
+  --viz-seq-4: #98b8e6;
+  --viz-seq-5: #cbdcf5;
   --shadow-pop: 0 4px 16px rgb(0 0 0 / 0.4);
   --sidebar: #1b1b1b;
   --sidebar-foreground: var(--ink);

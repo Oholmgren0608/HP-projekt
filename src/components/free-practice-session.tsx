@@ -16,6 +16,7 @@ import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionPassage } from "@/components/question-passage";
 
 type Props = {
   subtest: PracticeKind;
@@ -204,11 +205,10 @@ export function FreePracticeSession({
 
           <QuizProgress current={answeredCount} total={total} />
 
-          {current.passage ? (
-            <div className="whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
-              {current.passage}
-            </div>
-          ) : null}
+          <QuestionPassage
+            passage={current.passage}
+            textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
+          />
 
           <QuestionFigure question={current} position={index + 1} />
 

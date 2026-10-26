@@ -26,6 +26,7 @@ import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionPassage } from "@/components/question-passage";
 
 /**
  * Simulera provpass: ett helt pass i provets tempo (55 minuter, eller 80 med
@@ -241,11 +242,11 @@ export function ProvpassSession() {
           <QuizProgress current={quiz.index + 1} total={questions.length} />
         </div>
 
-        {current.passage ? (
-          <div className="mt-5 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]">
-            {current.passage}
-          </div>
-        ) : null}
+        <QuestionPassage
+          passage={current.passage}
+          className="mt-5"
+          textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
+        />
 
         <QuestionFigure question={current} position={quiz.index + 1} />
 

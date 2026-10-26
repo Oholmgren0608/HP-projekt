@@ -35,6 +35,7 @@ import {
 } from "@/lib/forum";
 import { formatRelativeTime } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { QuestionPassage } from "@/components/question-passage";
 
 const MAX_INDENT = 3;
 
@@ -219,11 +220,11 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
           {titel}
         </h1>
 
-        {question?.passage ? (
-          <p className="mt-3 whitespace-pre-wrap rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-relaxed text-[var(--ink-soft)]">
-            {question.passage}
-          </p>
-        ) : null}
+        <QuestionPassage
+          passage={question?.passage}
+          className="mt-3"
+          textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-relaxed text-[var(--ink-soft)]"
+        />
 
         {question ? (
           <>
