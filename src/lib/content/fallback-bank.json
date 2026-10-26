@@ -323,6 +323,286 @@
       "explain": "Koherent betyder sammanhängande, alltså att delarna hänger ihop logiskt och bildar en helhet: ”uppsatsen var koherent från inledning till slutsats”. Kunnig, inneboende, sammanstrålande och oföränderlig är betydelser av de liknande orden kompetent, inherent, konvergent och konstant."
     },
     {
+      "id": "ovn-ord-001",
+      "kind": "ord",
+      "prompt": "Vad betyder ”gängse”?",
+      "options": [
+        "föråldrad",
+        "lång och smal",
+        "vanlig",
+        "omstridd",
+        "nyskapande"
+      ],
+      "correctIndex": 2,
+      "explain": "Gängse betyder vanlig eller allmänt förekommande, som i ”enligt gängse praxis” eller ”den gängse uppfattningen”. Föråldrad och nyskapande handlar om hur gammalt eller nytt något är, inte om hur utbrett det är, och omstridd passar inte eftersom det gängse just är det som de flesta tar för givet. Lång och smal är betydelsen av det liknande ordet gänglig."
+    },
+    {
+      "id": "ovn-ord-002",
+      "kind": "ord",
+      "prompt": "Vad betyder ”lättja”?",
+      "options": [
+        "lättnad",
+        "smidighet",
+        "lättsinne",
+        "tristess",
+        "lathet"
+      ],
+      "correctIndex": 4,
+      "explain": "Lättja betyder lathet, alltså ovilja att arbeta eller anstränga sig: ”av ren lättja lät han disken stå kvar”. Lättnad (känslan när en oro släpper) och lättsinne (tanklöshet och vårdslöshet) liknar ordet till formen men betyder något annat. Smidighet handlar om att röra sig lätt och tristess om leda och enformighet, inte om ovilja att anstränga sig."
+    },
+    {
+      "id": "ovn-ord-003",
+      "kind": "ord",
+      "prompt": "Vad betyder ”beivra”?",
+      "options": [
+        "bevilja",
+        "ingripa rättsligt mot",
+        "bevittna",
+        "upphäva",
+        "överklaga"
+      ],
+      "correctIndex": 1,
+      "explain": "Att beivra är att ingripa rättsligt mot något, oftast ett brott eller en överträdelse: ”alla överträdelser av förbudet kommer att beivras”. Bevilja och bevittna liknar bara ordet till formen. Upphäva och överklaga är visserligen juridiska ord, men de betyder att ett beslut eller en regel slutar gälla respektive att man begär att ett beslut prövas på nytt."
+    },
+    {
+      "id": "ovn-ord-004",
+      "kind": "ord",
+      "prompt": "Vad betyder ”pejorativ”?",
+      "options": [
+        "nedsättande",
+        "fackspråklig",
+        "ålderdomlig",
+        "vardaglig",
+        "överdriven"
+      ],
+      "correctIndex": 0,
+      "explain": "Pejorativ betyder nedsättande och används om ord och uttryck med en negativ värdering: ”pamp” är till exempel en pejorativ beteckning på en makthavare. Fackspråklig, ålderdomlig, vardaglig och överdriven beskriver också ord, men de anger fackområde, ålder, stilnivå och grad, inte en negativ värdering."
+    },
+    {
+      "id": "ovn-ord-005",
+      "kind": "ord",
+      "prompt": "Vad betyder ”ömsom”?",
+      "options": [
+        "ömsesidigt",
+        "samtidigt",
+        "omsorgsfullt",
+        "växelvis",
+        "gradvis"
+      ],
+      "correctIndex": 3,
+      "explain": "Ömsom betyder växelvis och används oftast parvis: ”vädret var ömsom soligt, ömsom regnigt”. Ömsesidigt liknar ordet men betyder att något gäller åt båda hållen, som i ömsesidig respekt. Samtidigt är fel eftersom sakerna avlöser varandra i stället för att inträffa på en gång, och gradvis och omsorgsfullt anger en långsam förändring respektive noggrannhet."
+    },
+    {
+      "id": "ovn-ord-006",
+      "kind": "ord",
+      "prompt": "Vad betyder ”tvehågsen”?",
+      "options": [
+        "tvär",
+        "tvåspråkig",
+        "missmodig",
+        "obeslutsam",
+        "nostalgisk"
+      ],
+      "correctIndex": 3,
+      "explain": "Tvehågsen betyder obeslutsam eller tveksam: ”länge var hon tvehågsen inför erbjudandet”. Ordet är bildat av tve- (två) och håg (sinne, vilja) och syftar på att viljan drar åt två håll, inte på två språk som i tvåspråkig. Tvär (kort och ovänlig), missmodig (nedslagen) och nostalgisk (som längtar tillbaka) beskriver helt andra egenskaper och stämningar."
+    },
+    {
+      "id": "ovn-ord-007",
+      "kind": "ord",
+      "prompt": "Vad betyder ”förtiga”?",
+      "options": [
+        "förneka",
+        "hemlighålla",
+        "överdriva",
+        "förtydliga",
+        "upprepa"
+      ],
+      "correctIndex": 1,
+      "explain": "Att förtiga något är att medvetet låta bli att nämna det, alltså hemlighålla det: ”rapporten förtiger att projektet blev dubbelt så dyrt”. Förneka ligger nära men betyder att man påstår att något inte är sant, medan den som förtiger något inte säger något alls om saken. Överdriva, förtydliga och upprepa innebär tvärtom att man talar om saken – mer, tydligare eller flera gånger."
+    },
+    {
+      "id": "ovn-ord-008",
+      "kind": "ord",
+      "prompt": "Vad betyder ”abdikera”?",
+      "options": [
+        "avsätta en kung",
+        "bli krönt",
+        "ärva tronen",
+        "gå i landsflykt",
+        "avsäga sig tronen"
+      ],
+      "correctIndex": 4,
+      "explain": "Att abdikera är att avsäga sig tronen, och i överförd betydelse att avstå från makt eller ansvar: ”drottningen abdikerade till förmån för sin son”. Den som abdikerar lämnar alltså själv tronen, ibland under tryck, medan avsätta en kung innebär att någon annan tar ifrån kungen makten. Bli krönt och ärva tronen handlar om att få makten, och gå i landsflykt om att lämna landet, inte tronen."
+    },
+    {
+      "id": "ovn-ord-009",
+      "kind": "ord",
+      "prompt": "Vad betyder ”sinekur”?",
+      "options": [
+        "obotlig sjukdom",
+        "kurort",
+        "lätt och välbetald syssla",
+        "tillfällig tjänstledighet",
+        "provanställning"
+      ],
+      "correctIndex": 2,
+      "explain": "En sinekur är en lätt och välbetald syssla, alltså en tjänst som ger god lön men kräver lite eller inget arbete: ”styrelseposten var i praktiken en sinekur”. Ordet kommer av latinets sine cura, ”utan omsorg”, och betydelsen hänger inte ihop med kur i betydelsen behandling, så kurort och obotlig sjukdom är fel. Tillfällig tjänstledighet och provanställning är andra slags anställningsvillkor och säger inget om att arbetet är lätt men välbetalt."
+    },
+    {
+      "id": "ovn-ord-010",
+      "kind": "ord",
+      "prompt": "Vad betyder ”slå dövörat till”?",
+      "options": [
+        "vägra lyssna",
+        "ge någon en örfil",
+        "höja rösten",
+        "lyssna i smyg",
+        "avbryta någon"
+      ],
+      "correctIndex": 0,
+      "explain": "Att slå dövörat till är att låtsas att man inte hör, alltså vägra lyssna på till exempel en begäran eller kritik: ”ledningen slog dövörat till för personalens protester”. Ge någon en örfil bygger på en bokstavlig läsning av slå och öra. Höja rösten, lyssna i smyg och avbryta någon handlar om andra sätt att tala och lyssna, inte om att stänga ute det man inte vill höra."
+    },
+    {
+      "id": "ovn-ord-011",
+      "kind": "ord",
+      "prompt": "Vad betyder ”anakronism”?",
+      "options": [
+        "tidsmätning",
+        "laglöshet",
+        "brist på tid",
+        "kort rolig berättelse",
+        "felplacering i tiden"
+      ],
+      "correctIndex": 4,
+      "explain": "En anakronism är en felplacering i tiden, till exempel ett armbandsur i en film om vikingatiden, eller något som verkar föråldrat i sin samtid. Tidsmätning och brist på tid har med tid att göra men inte med att något hamnat i fel tid. Laglöshet är betydelsen av anarki, och en kort rolig berättelse kallas anekdot."
+    },
+    {
+      "id": "ovn-ord-012",
+      "kind": "ord",
+      "prompt": "Vad betyder ”förment”?",
+      "options": [
+        "förmögen",
+        "påstådd",
+        "hemlig",
+        "förhastad",
+        "ökänd"
+      ],
+      "correctIndex": 1,
+      "explain": "Förment betyder påstådd eller inbillad, ofta med en antydan om att påståendet inte stämmer: ”de förmenta fördelarna med reformen uteblev”. Förmögen (rik) och förhastad (gjord utan eftertanke) liknar ordet till formen men betyder något helt annat. Ökänd betyder känd för något dåligt, och hemlig handlar om att något döljs, inte om att det bara påstås."
+    },
+    {
+      "id": "ovn-ord-013",
+      "kind": "ord",
+      "prompt": "Vad betyder ”likväl”?",
+      "options": [
+        "likaså",
+        "dessutom",
+        "följaktligen",
+        "ändå",
+        "uppenbarligen"
+      ],
+      "correctIndex": 3,
+      "explain": "Likväl betyder ändå eller trots det: ”kritiken var hård, men regeringen genomförde likväl reformen”. Likaså liknar ordet men betyder också eller på samma sätt. Dessutom lägger till något, följaktligen anger en följd och uppenbarligen att något är tydligt, medan likväl markerar att något sker trots ett hinder eller en invändning."
+    },
+    {
+      "id": "ovn-ord-014",
+      "kind": "ord",
+      "prompt": "Vad betyder ”ofrånkomlig”?",
+      "options": [
+        "oundviklig",
+        "oåtkomlig",
+        "oersättlig",
+        "oförutsedd",
+        "ofullständig"
+      ],
+      "correctIndex": 0,
+      "explain": "Ofrånkomlig betyder oundviklig, alltså något man inte kan komma ifrån: ”en ofrånkomlig slutsats”. Oåtkomlig liknar ordet men betyder att något inte går att nå. Oersättlig (som inte kan ersättas), oförutsedd (som ingen räknat med) och ofullständig (som saknar delar) beskriver helt andra egenskaper."
+    },
+    {
+      "id": "ovn-ord-015",
+      "kind": "ord",
+      "prompt": "Vad betyder ”kverulant”?",
+      "options": [
+        "kvacksalvare",
+        "skvallerbytta",
+        "gnällspik",
+        "besserwisser",
+        "lycksökare"
+      ],
+      "correctIndex": 2,
+      "explain": "En kverulant är en person som ständigt klagar och gnäller, ofta över småsaker, alltså en gnällspik: ”hon ville inte framstå som en kverulant”. Kvacksalvare liknar ordet till ljudet men betecknar den som utan kunskap påstår sig kunna bota sjukdomar. Skvallerbytta, besserwisser och lycksökare är också nedsättande ord om personer, men om den som sprider skvaller, den som tror sig veta bäst och den som jagar snabb rikedom."
+    },
+    {
+      "id": "ovn-ord-016",
+      "kind": "ord",
+      "prompt": "Vad betyder ”vanhävd”?",
+      "options": [
+        "gammal sedvänja",
+        "vanära",
+        "äganderätt",
+        "vantro",
+        "vanskötsel"
+      ],
+      "correctIndex": 4,
+      "explain": "Vanhävd betyder vanskötsel eller försummelse, särskilt av jord, skog eller byggnader: ”de gamla ängarna har vuxit igen genom vanhävd”. Hävd betyder här brukande och skötsel av mark, och förledet van- anger att det görs dåligt, som i vanvård. Gammal sedvänja och äganderätt bygger på andra betydelser av hävd, medan vanära betyder skam och vantro betyder falsk tro eller otro."
+    },
+    {
+      "id": "ovn-ord-017",
+      "kind": "ord",
+      "prompt": "Vad betyder ”lägga sordin på”?",
+      "options": [
+        "dämpa",
+        "sörja över",
+        "skylla på",
+        "sätta prägel på",
+        "ta initiativ till"
+      ],
+      "correctIndex": 0,
+      "explain": "Att lägga sordin på något är att dämpa det, till exempel en stämning eller en glädje: ”beskedet lade sordin på firandet”. Uttrycket kommer från musiken, där en sordin är en dämpare på ett instrument. Sörja över liknar sordin bara till ljudet, och skylla på, sätta prägel på och ta initiativ till har inget med dämpning att göra."
+    },
+    {
+      "id": "ovn-ord-018",
+      "kind": "ord",
+      "prompt": "Vad betyder ”dementera”?",
+      "options": [
+        "kommentera",
+        "läcka",
+        "förneka",
+        "spekulera",
+        "bli förvirrad"
+      ],
+      "correctIndex": 2,
+      "explain": "Att dementera är att offentligt förneka en uppgift eller ett rykte: ”ministern dementerade uppgifterna om sin avgång”. Kommentera liknar ordet till formen men betyder bara att uttala sig om något. Läcka och spekulera hör till samma nyhetsvärld men betyder att föra ut hemliga uppgifter respektive att gissa, och bli förvirrad bygger på en felaktig koppling till ordet dement."
+    },
+    {
+      "id": "ovn-ord-019",
+      "kind": "ord",
+      "prompt": "Vad betyder ”sinnrik”?",
+      "options": [
+        "sinnlig",
+        "rikt utsmyckad",
+        "känslosam",
+        "fyndig",
+        "lättretlig"
+      ],
+      "correctIndex": 3,
+      "explain": "Sinnrik betyder fyndig eller uppfinningsrik och används ofta om konstruktioner och lösningar: ”ett sinnrikt system av slussar och kanaler”. Sinnlig liknar ordet men handlar om sinnena och njutning, och känslosam och lättretlig beskriver sinnelag, inte förmågan att hitta på smarta lösningar. Rikt utsmyckad bygger på en felaktig koppling till rik."
+    },
+    {
+      "id": "ovn-ord-020",
+      "kind": "ord",
+      "prompt": "Vad betyder ”usurpator”?",
+      "options": [
+        "ockrare",
+        "tronrövare",
+        "uppviglare",
+        "tronarvinge",
+        "landsförrädare"
+      ],
+      "correctIndex": 1,
+      "explain": "En usurpator är en person som utan rätt har tagit makten, särskilt kungamakten, alltså en tronrövare: ”usurpatorn lät fängsla den rättmätige kungen”. Ockrare betecknar i stället den som lånar ut pengar mot orimligt hög ränta. En uppviglare hetsar till uppror och en landsförrädare sviker sitt land, medan en tronarvinge tvärtom har laglig rätt till tronen."
+    },
+    {
       "id": "ovn-mek-001",
       "kind": "mek",
       "prompt": "Välj det alternativ som bäst fyller i meningen.",
@@ -2802,6 +3082,566 @@
       ],
       "correctIndex": 0,
       "explain": "En andragradsfunktion med nollställena −1 och 7 kan skrivas f(x) = a(x + 1)(x − 7). Villkoret f(0) = a · 1 · (−7) = −7a = −14 ger a = 2. Grafen är symmetrisk kring linjen mitt emellan nollställena, x = (−1 + 7)/2 = 3, och eftersom a > 0 har den sin minimipunkt där: f(3) = 2 · 4 · (−4) = −32. −14 är f(0), där grafen skär y-axeln, inte det minsta värdet. −16 får man om man glömmer faktorn a och räknar (3 + 1)(3 − 7) = −16. −30 får man om man tar halva avståndet mellan nollställena, (7 − (−1))/2 = 4, som symmetrilinje i stället för mittpunkten: f(4) = 2 · 5 · (−3) = −30."
+    },
+    {
+      "id": "ovn-kva-001",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x² = 5x\nKvantitet I: x\nKvantitet II: 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Skriv ekvationen som x² − 5x = 0, alltså x(x − 5) = 0. Den har två lösningar: x = 0 och x = 5. Med x = 0 är II större (0 < 3), men med x = 5 är I större (5 > 3). Båda värdena är möjliga, så varken att I är större, att II är större eller att de är lika gäller alltid. Fällan är att dela båda leden med x och bara få x = 5 – det får man bara göra om x ≠ 0, och x = 0 är också en lösning."
+    },
+    {
+      "id": "ovn-kva-002",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En cirkel har arean 16π cm².\nEn kvadrat har sidan 6 cm.\nKvantitet I: cirkelns omkrets\nKvantitet II: kvadratens omkrets",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "Cirkelns area är πr² = 16π, så r² = 16 och radien är 4 cm. Omkretsen blir 2π · 4 = 8π cm. Kvadratens omkrets är 4 · 6 = 24 cm. Eftersom π > 3 är 8π > 8 · 3 = 24 (8π ≈ 25,1), så I är större. Den som avrundar π till 3 får felaktigt att de är lika, och II kan inte vara större eftersom 8π > 24. Båda omkretsarna går att beräkna exakt, så informationen räcker."
+    },
+    {
+      "id": "ovn-kva-003",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √50 − √8\nKvantitet II: √18",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "Bryt ut kvadrattal ur rötterna: √50 = √(25 · 2) = 5√2, √8 = √(4 · 2) = 2√2 och √18 = √(9 · 2) = 3√2. Kvantitet I blir 5√2 − 2√2 = 3√2, vilket är exakt kvantitet II, så de är lika. Fällan är att räkna √50 − √8 som √(50 − 8) = √42 och svara att I är större; en differens av rötter är inte roten ur differensen. Det finns inga okända, så informationen räcker, och II är inte heller större."
+    },
+    {
+      "id": "ovn-kva-004",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En dryck blandas så att förhållandet mellan koncentrat och vatten är 1 : 4.\nKvantitet I: koncentratets andel av drycken\nKvantitet II: 25 %",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "Förhållandet 1 : 4 betyder 1 del koncentrat på 4 delar vatten, alltså 1 del av totalt 1 + 4 = 5 delar. Koncentratets andel är 1/5 = 20 %, så II är större. Den som läser förhållandet som 1 del av 4 får 1/4 = 25 % och svarar felaktigt att de är lika; att I är större är inte heller möjligt. Andelen beror inte på hur mycket dryck som blandas, så informationen räcker."
+    },
+    {
+      "id": "ovn-kva-005",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Lisas månadslön höjdes med 10 % och Pers månadslön höjdes med 15 %.\nKvantitet I: Lisas löneökning i kronor\nKvantitet II: Pers löneökning i kronor",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Ökningen i kronor beror både på procentsatsen och på lönen före höjningen, och lönerna är okända. Om Lisa tjänade 40 000 kr och Per 20 000 kr blir ökningarna 4 000 kr och 3 000 kr, så I är större. Om båda tjänade 30 000 kr blir ökningarna 3 000 kr och 4 500 kr, så II är större. Jämförelsen kan alltså gå åt båda hållen, och varken att I är större, att II är större eller att de är lika gäller alltid. En högre procentsats ger inte automatiskt en större ökning i kronor."
+    },
+    {
+      "id": "ovn-kva-006",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Pump A tömmer en full bassäng på 4 timmar. Pump B tömmer samma bassäng på 12 timmar. Båda pumparna arbetar i jämn takt.\nKvantitet I: tiden det tar att tömma den fulla bassängen när båda pumparna arbetar samtidigt\nKvantitet II: 3 timmar",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "Pump A tömmer 1/4 av bassängen per timme och pump B 1/12. Tillsammans tömmer de 1/4 + 1/12 = 3/12 + 1/12 = 4/12 = 1/3 av bassängen per timme, så hela bassängen tar 3 timmar. Kvantiteterna är alltså lika. Den som tar medelvärdet av tiderna, (4 + 12)/2 = 8 timmar, får felaktigt att I är större. Båda takterna är kända, så tiden kan beräknas exakt; varken I eller II är större, och informationen räcker."
+    },
+    {
+      "id": "ovn-kva-007",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "3 < x < 5 och 1 < y < 2\nKvantitet I: x − y\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "Skillnaden x − y blir så liten som möjligt när x är litet och y är stort. Eftersom x > 3 och y < 2 är x − y > 3 − 2 = 1; till exempel ger x = 3,1 och y = 1,9 att x − y = 1,2. Värdet 1 nås aldrig, eftersom x = 3 och y = 2 inte är tillåtna (olikheterna är stränga). Alltså är x − y alltid större än 1 (och mindre än 5 − 1 = 4), så I är större för alla tillåtna värden och informationen räcker. Fällan är att tro att x − y kan bli 1 eller mindre, men varken likhet eller att II är större är möjligt."
+    },
+    {
+      "id": "ovn-kva-008",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Priset på en jacka sänktes med 25 %. Senare höjdes det sänkta priset med 30 %.\nKvantitet I: jackans pris efter höjningen\nKvantitet II: jackans pris före sänkningen",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "Kalla det ursprungliga priset p. Efter sänkningen är priset 0,75p och efter höjningen 1,30 · 0,75p = 0,975p. Slutpriset är alltså 2,5 % lägre än det ursprungliga, så II är större. Fällan är att räkna −25 % + 30 % = +5 % och svara att I är större; höjningen räknas på det lägre priset och väger därför mindre än sänkningen. Kvantiteterna är inte lika, och det okända priset spelar ingen roll eftersom 0,975p < p för alla positiva priser."
+    },
+    {
+      "id": "ovn-kva-009",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Två vanliga sexsidiga tärningar kastas.\nKvantitet I: sannolikheten att summan av tärningarnas tal blir 7\nKvantitet II: sannolikheten att båda tärningarna visar samma tal",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "Det finns 6 · 6 = 36 lika sannolika utfall. Summan 7 fås på 6 sätt: (1, 6), (2, 5), (3, 4), (4, 3), (5, 2) och (6, 1). Samma tal fås också på 6 sätt: (1, 1), (2, 2), …, (6, 6). Båda sannolikheterna är 6/36 = 1/6, så kvantiteterna är lika. Den som räknar talparen utan hänsyn till ordningen (3 par för summan 7) får felaktigt att II är större. Inget är okänt, så informationen räcker, och I är inte heller större."
+    },
+    {
+      "id": "ovn-kva-010",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En av vinklarna i en likbent triangel är 50°.\nKvantitet I: triangelns största vinkel\nKvantitet II: 70°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Vinkeln på 50° kan vara antingen toppvinkeln eller en av de två lika basvinklarna. Är den toppvinkeln blir basvinklarna (180° − 50°)/2 = 65° vardera, så den största vinkeln är 65° och II är större. Är den en basvinkel blir vinklarna 50°, 50° och 80°, så den största vinkeln är 80° och I är större. Båda trianglarna är möjliga, så varken att I är större, att II är större eller att de är lika gäller i alla fall."
+    },
+    {
+      "id": "ovn-kva-011",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 2^45\nKvantitet II: 3^30",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "Skriv båda talen med samma exponent: 2^45 = (2³)^15 = 8^15 och 3^30 = (3²)^15 = 9^15. Med samma exponent avgör basen, och eftersom 9 > 8 är 9^15 > 8^15, så II är större. Fällan är att låta den större exponenten avgöra och svara att I är större. Talen kan inte vara lika (2^45 är jämnt och 3^30 är udda), och informationen räcker eftersom inga okända finns."
+    },
+    {
+      "id": "ovn-kva-012",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Elin cyklar 30 km med medelhastigheten 20 km/h och direkt därefter 30 km till med medelhastigheten 30 km/h.\nKvantitet I: Elins medelhastighet för hela sträckan\nKvantitet II: 25 km/h",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "Medelhastighet är total sträcka delad med total tid. De första 30 km tar 30/20 = 1,5 timmar och de följande 30 km tar 30/30 = 1 timme. Hela sträckan på 60 km tar alltså 2,5 timmar, och medelhastigheten blir 60/2,5 = 24 km/h, så II är större. Fällan är att ta medelvärdet av hastigheterna, (20 + 30)/2 = 25, och svara att de är lika – men Elin cyklar längre tid med den lägre hastigheten, som därför väger tyngre. I kan inte vara större, och allt som behövs är givet."
+    },
+    {
+      "id": "ovn-kva-013",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En förening har 7 medlemmar.\nKvantitet I: antalet sätt att välja en ordförande och en kassör bland medlemmarna, om ingen får ha båda uppdragen\nKvantitet II: antalet sätt att välja ut tre av medlemmarna till en arbetsgrupp",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "Ordföranden kan väljas på 7 sätt och kassören därefter på 6 sätt, så I = 7 · 6 = 42; här spelar ordningen roll eftersom uppdragen är olika. I arbetsgruppen har alla samma roll. Väljer man en person i taget får man 7 · 6 · 5 = 210 ordnade val, men varje grupp om tre räknas då 3 · 2 · 1 = 6 gånger, så II = 210/6 = 35. Alltså är I större. Den som tror att fler valda personer alltid ger fler möjligheter svarar att II är större. Kvantiteterna är inte lika eftersom 42 ≠ 35, och inget är okänt, så informationen räcker."
+    },
+    {
+      "id": "ovn-kva-014",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x/y > 1\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Att x/y > 1 betyder att x och y har samma tecken och att x ligger längre från noll än y. Om x = 6 och y = 3 är x/y = 2 och I är större. Om x = −6 och y = −3 är också x/y = 2, men då är x < y och II är större. Båda fallen är möjliga, så det går inte att avgöra. Fällan är att multiplicera båda leden med y och få x > y – det gäller bara om y är positivt; är y negativt vänder olikheten. Likhet är inte heller möjlig, eftersom x = y ger x/y = 1."
+    },
+    {
+      "id": "ovn-kva-015",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "p och q är primtal, och p + q är ett udda tal.\nKvantitet I: p · q\nKvantitet II: 2(p + q − 2)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "En summa av två heltal är udda bara om det ena talet är jämnt och det andra udda. Det enda jämna primtalet är 2, så ett av talen är 2 – säg p = 2. Då är I = 2q och II = 2(2 + q − 2) = 2q, alltså lika. Båda uttrycken är symmetriska i p och q, så samma sak gäller om i stället q = 2. Exempel: p = 2 och q = 7 ger I = 14 och II = 2 · 7 = 14. Kvantiteterna är lika för alla tillåtna primtal, så varken I eller II är större, och informationen räcker."
+    },
+    {
+      "id": "ovn-kva-016",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En triangel har sidorna 6 cm, 8 cm och 11 cm.\nKvantitet I: triangelns största vinkel\nKvantitet II: 90°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "Den största vinkeln ligger mitt emot den längsta sidan, 11 cm, alltså mellan sidorna 6 cm och 8 cm. Om den vinkeln vore 90° skulle den tredje sidan enligt Pythagoras sats vara √(6² + 8²) = √100 = 10 cm. Ju större vinkeln mellan två givna sidor är, desto längre blir sidan mitt emot. Sidan är 11 cm, alltså längre än 10 cm, så vinkeln är större än 90° och I är större. En rät vinkel skulle ge exakt 10 cm och en spetsig vinkel en kortare sida, så varken likhet eller att II är större är möjligt; de tre sidorna bestämmer triangeln helt, så informationen räcker."
+    },
+    {
+      "id": "ovn-kva-017",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En påse innehåller bara röda och blå kulor, och det finns fler röda än blå kulor. Två kulor dras slumpmässigt ur påsen utan återläggning.\nKvantitet I: sannolikheten att båda kulorna är röda\nKvantitet II: 1/2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Sannolikheten beror på hur många kulor det finns av varje färg. Med 2 röda och 1 blå kula blir den 2/3 · 1/2 = 1/3, så II är större. Med 5 röda och 1 blå blir den 5/6 · 4/5 = 2/3, så I är större. (Med 3 röda och 1 blå blir den 3/4 · 2/3 = 1/2, alltså lika.) Olika fördelningar ger olika resultat, så varken att I är större, att II är större eller att de är lika gäller alltid. Att det finns fler röda kulor än blå räcker inte för att sannolikheten för två röda ska bli större än 1/2."
+    },
+    {
+      "id": "ovn-kva-018",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Tre tal har medelvärdet 12 och medianen 15.\nKvantitet I: det minsta av de tre talen\nKvantitet II: 7",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "Medelvärdet 12 betyder att summan av talen är 3 · 12 = 36. Medianen är det mittersta talet, 15, så det minsta och det största talet har tillsammans summan 36 − 15 = 21. Det största talet är minst 15, så det minsta är högst 21 − 15 = 6. Det minsta talet kan variera (till exempel 6, 15, 15 eller 1, 15, 20), men det är aldrig större än 6. Därför är II alltid större trots att talen inte är bestämda, och varken att I är större eller att de är lika är möjligt."
+    },
+    {
+      "id": "ovn-kva-019",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x + 1/x = 3\nKvantitet I: x² + 1/x²\nKvantitet II: 7",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "Kvadrera båda leden: (x + 1/x)² = x² + 2 · x · (1/x) + 1/x² = x² + 2 + 1/x². Eftersom x + 1/x = 3 är detta 3² = 9, så x² + 1/x² = 9 − 2 = 7. Kvantiteterna är alltså lika. Ekvationen har två lösningar, x = (3 + √5)/2 och x = (3 − √5)/2, men räkningen gäller för båda, så informationen räcker. Den som glömmer dubbla produkten 2 · x · (1/x) = 2 får 9 och svarar felaktigt att I är större; II kan inte heller vara större."
+    },
+    {
+      "id": "ovn-kva-020",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "−1 < x < 0\nKvantitet I: x³\nKvantitet II: x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "När ett tal mellan −1 och 0 upphöjs till 3 hamnar det närmare noll, eftersom |x| < 1 ger |x³| < |x|. Både x³ och x är negativa, och av två negativa tal är det som ligger närmast noll störst, så x³ > x. Exempel: x = −1/2 ger x³ = −1/8, och −1/8 > −1/2. Algebraiskt är x³ − x = x(x − 1)(x + 1), där x < 0, x − 1 < 0 och x + 1 > 0, så skillnaden är positiv för alla tillåtna x. I är alltså större. Likhet gäller bara för x = −1, 0 och 1, som inte är tillåtna, och II är aldrig större i intervallet."
+    },
+    {
+      "id": "ovn-kva-021",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fem tal har medelvärdet 10. Ett av talen är 14, och det talet tas bort.\nKvantitet I: medelvärdet av de fyra tal som är kvar\nKvantitet II: 9",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "Medelvärdet 10 för fem tal betyder att talens summa är 5 · 10 = 50. När talet 14 tas bort är summan av de fyra tal som är kvar 50 − 14 = 36, och deras medelvärde blir 36/4 = 9. Kvantiteterna är alltså lika. Vilka de andra talen är spelar ingen roll, eftersom bara summan behövs, så informationen räcker. Fällan är att dela den nya summan med 5 i stället för 4; då fås 7,2 och II ser ut att vara större. I är inte heller större."
+    },
+    {
+      "id": "ovn-kva-022",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < y och x · y < 0\nKvantitet I: 1/x\nKvantitet II: 1/y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "Att x · y < 0 betyder att x och y har olika tecken och att ingen av dem är 0. Eftersom x < y måste x vara det negativa talet och y det positiva. Då är 1/x negativt och 1/y positivt, så II är större för alla tillåtna värden. Exempel: x = −2 och y = 4 ger 1/x = −0,5 och 1/y = 0,25. Fällan är att resonera att 1/x > 1/y eftersom x < y och svara att I är större – att det mindre talet ger det större värdet av 1 delat med talet gäller bara när båda talen har samma tecken. Kvantiteterna kan inte vara lika, och informationen räcker."
+    },
+    {
+      "id": "ovn-kva-023",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "n är ett positivt heltal.\nKvantitet I: 2^(n)\nKvantitet II: n²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Pröva några värden på n. n = 1 ger 2 och 1, så I är större. n = 3 ger 2³ = 8 och 3² = 9, så II är större. (n = 2 och n = 4 ger dessutom lika: 4 och 4 respektive 16 och 16.) Eftersom olika tillåtna värden på n ger olika resultat gäller varken att I är större, att II är större eller att de är lika för alla n. Fällan är att tro att 2^(n) alltid är störst eftersom 2^(n) växer snabbare än n² när n blir stort – det stämmer för n = 1 och för alla n från 5 och uppåt (n = 5 ger 32 och 25), men inte för n = 2, 3 och 4."
+    },
+    {
+      "id": "ovn-kva-024",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √0,4\nKvantitet II: 0,6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "Båda kvantiteterna är positiva, så de kan jämföras genom att man kvadrerar dem. (√0,4)² = 0,4 och 0,6² = 0,36. Eftersom 0,4 > 0,36 är √0,4 > 0,6 (√0,4 ≈ 0,63), så I är större. Fällan är att tro att √0,4 = 0,2 och svara att II är större – men 0,2² = 0,04, inte 0,4. Kvantiteterna är inte lika, och inget är okänt, så informationen räcker."
+    },
+    {
+      "id": "ovn-kva-025",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "n är ett positivt heltal.\nKvantitet I: 3^(n + 2) − 3^(n)\nKvantitet II: 8 · 3^(n)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "Enligt potenslagarna är 3^(n + 2) = 3² · 3^(n) = 9 · 3^(n). Kvantitet I blir då 9 · 3^(n) − 3^(n) = 8 · 3^(n), vilket är exakt kvantitet II, så de är lika för varje n. Kontroll med n = 1: 3³ − 3 = 27 − 3 = 24 och 8 · 3 = 24. Fällan är att subtrahera exponenterna och få 3^(n + 2) − 3^(n) = 3² = 9; då ser II ut att vara större. Exponenter subtraheras bara när potenser med samma bas divideras. Informationen räcker, och I är inte heller större."
+    },
+    {
+      "id": "ovn-kva-026",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Två av sidorna i en triangel är 4 cm och 9 cm långa.\nKvantitet I: triangelns omkrets\nKvantitet II: 18 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "I en triangel är varje sida kortare än de två andra sidorna tillsammans. Kalla den tredje sidan c. Sidan 9 cm måste vara kortare än 4 + c, så c är större än 5 cm (och c är mindre än 4 + 9 = 13 cm). Omkretsen 4 + 9 + c = 13 + c är därför alltid större än 13 + 5 = 18 cm, så I är större. Fällan är att tro att den tredje sidan kan vara hur kort som helst och svara att informationen är otillräcklig. Med c = 5 cm skulle sidorna 4 cm och 5 cm precis räcka till 9 cm och lägga sig längs en rak linje, så ingen triangel bildas; varken likhet eller att II är större är möjligt."
+    },
+    {
+      "id": "ovn-kva-027",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En nötblandning består av cashewnötter och jordnötter i viktförhållandet 3 : 2.\nKvantitet I: vikten av cashewnötterna minus vikten av jordnötterna\nKvantitet II: 100 g",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Förhållandet 3 : 2 säger bara hur vikterna förhåller sig till varandra, inte hur mycket blandning det finns. Skillnaden är 1 av 5 delar, alltså en femtedel av blandningens vikt. I 250 g blandning finns 150 g cashewnötter och 100 g jordnötter, så skillnaden är 50 g och II är större. I 1 kg blandning finns 600 g och 400 g, så skillnaden är 200 g och I är större. (I 500 g blandning är skillnaden precis 100 g.) Eftersom blandningens vikt är okänd gäller varken att I är större, att II är större eller att de är lika i alla fall. Fällan är att läsa förhållandet som om vikterna var givna."
+    },
+    {
+      "id": "ovn-kva-028",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En cirkelformad damm har diametern 6 m. En annan cirkelformad damm har dubbelt så stor area som den första.\nKvantitet I: den andra dammens diameter\nKvantitet II: 12 m",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "En cirkels area är proportionell mot kvadraten på diametern, så om diametern fördubblades till 12 m skulle arean bli 2² = 4 gånger så stor, inte dubbelt så stor. Den första dammen har arean π · 3² = 9π m², så den andra har arean 18π m². Dess radie r uppfyller r² = 18, så r = √18 ≈ 4,24 m och diametern är ungefär 8,5 m (exakt 6√2 m). Eftersom 8,5 < 12 är II större. Fällan är att tro att dubbel area ger dubbel diameter och svara att de är lika. I kan inte vara större, och allt som behövs är givet."
+    },
+    {
+      "id": "ovn-kva-029",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a och b är positiva heltal och a · b = 36.\nKvantitet I: a + b\nKvantitet II: 12",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Om man bortser från ordningen kan 36 skrivas som en produkt av två positiva heltal på fem sätt: 1 · 36, 2 · 18, 3 · 12, 4 · 9 och 6 · 6, med summorna 37, 20, 15, 13 och 12. Om a = 4 och b = 9 är a + b = 13, så I är större. Om a = b = 6 är a + b = 12, så de är lika. Båda fallen är tillåtna, så jämförelsen går inte att avgöra. (II kan aldrig vara större, eftersom 12 är den minsta möjliga summan.) Fällan är att bara tänka på ett av fallen: den som glömmer att a och b får vara lika svarar att I är större, och den som bara prövar a = b = 6 svarar att de är lika."
+    },
+    {
+      "id": "ovn-kva-030",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Två räta linjer skär varandra och bildar fyra vinklar. En av vinklarna är tre gånger så stor som en annan av vinklarna.\nKvantitet I: den minsta av de fyra vinklarna\nKvantitet II: 45°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "När två linjer skär varandra är motstående vinklar (vertikalvinklar) lika stora, och två vinklar som ligger bredvid varandra är tillsammans 180°. De fyra vinklarna är alltså v, 180° − v, v och 180° − v. En vinkel kan inte vara tre gånger så stor som en lika stor vinkel, så det måste gälla två vinklar som ligger bredvid varandra: v + 3v = 180°, vilket ger v = 45°. Vinklarna är 45°, 135°, 45° och 135°, och den minsta är 45°, så kvantiteterna är lika. Fällan är att tro att vinklarna inte går att bestämma när man inte vet hur linjerna lutar och svara att informationen är otillräcklig. Varken I eller II kan vara större."
+    },
+    {
+      "id": "ovn-kva-031",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0 och y < 0\nKvantitet I: x − y\nKvantitet II: |x + y|",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "Eftersom y är negativt är −y positivt, så kvantitet I är x − y = x + |y|, summan av två positiva tal. I summan x + y dras |y| i stället ifrån x, så |x + y| är skillnaden mellan de positiva talen x och |y| (det större minus det mindre). En skillnad mellan två positiva tal är alltid mindre än deras summa. Exempel: x = 5 och y = −2 ger x − y = 7 och |x + y| = 3, och x = 2 och y = −6 ger x − y = 8 och |x + y| = 4. I är alltså större för alla tillåtna värden. Fällan är att tro att absolutbeloppet gör |x + y| lika stort som x − y; det skulle kräva att x eller y var 0, vilket inte är tillåtet. II kan aldrig vara större, och informationen räcker."
+    },
+    {
+      "id": "ovn-kva-032",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "För funktionen f(x) = kx + m gäller att f(2) = 5 och f(6) = 13.\nKvantitet I: f(10)\nKvantitet II: 2 · f(5)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "När x ökar från 2 till 6 ökar f(x) från 5 till 13, så k = (13 − 5)/(6 − 2) = 8/4 = 2. Av f(2) = 2 · 2 + m = 5 följer m = 1, alltså är f(x) = 2x + 1. Då är f(10) = 21 och 2 · f(5) = 2 · 11 = 22, så II är större. Fällan är att tro att f(10) = 2 · f(5) eftersom 10 = 2 · 5 och svara att de är lika – det gäller bara om m = 0, alltså om linjen går genom origo. Funktionen är helt bestämd, så informationen räcker, och I är inte större."
+    },
+    {
+      "id": "ovn-kva-033",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En bokstavsföljd är en ordning av alla bokstäverna i ett ord, även om den inte bildar ett riktigt ord. Följder som ser likadana ut räknas bara en gång.\nKvantitet I: antalet olika bokstavsföljder som kan bildas av bokstäverna i ANNA\nKvantitet II: antalet olika bokstavsföljder som kan bildas av bokstäverna i SOL",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "Om de fyra bokstäverna i ANNA vore olika skulle de kunna ordnas på 4 · 3 · 2 · 1 = 24 sätt. Men de två A:na kan byta plats med varandra utan att följden ändras, och likaså de två N:en, så varje följd räknas 2 · 2 = 4 gånger. Antalet olika följder är därför 24/4 = 6: AANN, ANAN, ANNA, NAAN, NANA och NNAA. De tre olika bokstäverna i SOL kan ordnas på 3 · 2 · 1 = 6 sätt. Kvantiteterna är alltså lika. Fällan är att räkna 24 följder för ANNA och svara att I är större. Inget är okänt, så informationen räcker, och II är inte större."
+    },
+    {
+      "id": "ovn-kva-034",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x² = 9 och |x − 1| > 3\nKvantitet I: x\nKvantitet II: −2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "Ekvationen x² = 9 har lösningarna x = 3 och x = −3. För x = 3 är |x − 1| = |2| = 2, som inte är större än 3, så det värdet uppfyller inte det andra villkoret. För x = −3 är |x − 1| = |−4| = 4, som är större än 3. Alltså är x = −3, och eftersom −3 < −2 är II större. Fällan är att bara använda x² = 9, se att x kan vara 3 eller −3 och svara att informationen är otillräcklig – det andra villkoret utesluter x = 3. Kvantiteterna är inte lika, och I är inte större."
+    },
+    {
+      "id": "ovn-kva-035",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x och y är positiva tal och x : y = 3 : 4.\nKvantitet I: (x + 1)/(y + 1)\nKvantitet II: 3/4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "Skriv x = 3t och y = 4t, där t > 0. Då är kvantitet I (3t + 1)/(4t + 1). Eftersom båda nämnarna är positiva kan bråken jämföras genom korsmultiplikation: 4(3t + 1) = 12t + 4 och 3(4t + 1) = 12t + 3. Eftersom 12t + 4 > 12t + 3 för alla t är I större. Exempel: x = 3 och y = 4 ger 4/5 = 0,8, och x = 30 och y = 40 ger 31/41 ≈ 0,756, båda större än 0,75. Fällan är att tro att förhållandet är oförändrat när man lägger till lika mycket i täljare och nämnare och svara att de är lika. Kvoten kommer närmare 3/4 ju större talen är men når aldrig ner dit, så II kan inte vara större, och informationen räcker."
+    },
+    {
+      "id": "ovn-kva-036",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Talen 2, 4, 9, 12 och x har variationsbredden 12, det vill säga skillnaden mellan det största och det minsta av de fem talen är 12.\nKvantitet I: x\nKvantitet II: 7",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Utan x är skillnaden mellan det största och det minsta talet 12 − 2 = 10. För att variationsbredden ska bli 12 måste x därför vara ett nytt minsta eller ett nytt största tal. Är x minst gäller 12 − x = 12, alltså x = 0, och då är II större. Är x störst gäller x − 2 = 12, alltså x = 14, och då är I större. Ett x mellan 2 och 12 ger variationsbredden 10 och är inte tillåtet. Både x = 0 och x = 14 är möjliga, så varken att I är större, att II är större eller att de är lika gäller alltid. Fällan är att bara tänka på fallet där x är det största talet."
+    },
+    {
+      "id": "ovn-kva-037",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Ett tal väljs slumpmässigt bland heltalen 1, 2, 3, …, 20, och alla talen har samma chans att väljas.\nKvantitet I: sannolikheten att talet är delbart med 3\nKvantitet II: sannolikheten att talet är ett primtal",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 1,
+      "explain": "Alla 20 tal är lika sannolika, så det räcker att räkna tal. Delbara med 3 är 3, 6, 9, 12, 15 och 18, alltså 6 tal, vilket ger sannolikheten 6/20. Primtalen är 2, 3, 5, 7, 11, 13, 17 och 19, alltså 8 tal, vilket ger 8/20 (1 är inte ett primtal). Eftersom 8/20 > 6/20 är II större. Att talet 3 finns i båda grupperna spelar ingen roll, eftersom sannolikheterna jämförs var för sig. Även den som glömmer att 2 är ett primtal får fler primtal än tal delbara med 3. Kvantiteterna är inte lika, I är inte större, och informationen räcker."
+    },
+    {
+      "id": "ovn-kva-038",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen y = kx + m skär x-axeln i en punkt med positiv x-koordinat och y-axeln i en punkt med negativ y-koordinat.\nKvantitet I: k\nKvantitet II: m",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 0,
+      "explain": "Linjen skär y-axeln där x = 0, alltså i punkten (0, m), så m är negativt. Linjen skär x-axeln där kx + m = 0, alltså där x = −m/k. Eftersom m är negativt är −m positivt, och för att −m/k ska vara positivt måste även k vara positivt. (k kan inte vara 0, för då vore linjen y = m parallell med x-axeln och skulle aldrig skära den.) Samma sak syns om man ritar linjen: den går genom en punkt på y-axeln under origo och en punkt på x-axeln till höger om origo och lutar alltså uppåt. Då är k > 0 > m, så I är större för alla sådana linjer. Fällan är att tro att lutningen kan ha vilket tecken som helst och svara att informationen är otillräcklig; varken likhet eller att II är större är möjligt."
+    },
+    {
+      "id": "ovn-kva-039",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "n är ett udda heltal.\nKvantitet I: resten när n² divideras med 8\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 2,
+      "explain": "Ett udda tal kan skrivas n = 2k + 1, där k är ett heltal. Då är n² = 4k² + 4k + 1 = 4k(k + 1) + 1. Av de två på varandra följande heltalen k och k + 1 är ett jämnt, så k(k + 1) är jämnt och 4k(k + 1) är delbart med 8. Resten blir därför alltid 1. Kontroll: 3² = 9 = 8 + 1, 5² = 25 = 3 · 8 + 1 och 7² = 49 = 6 · 8 + 1. Kvantiteterna är lika för alla udda n. Fällan är att tro att resten beror på vilket udda tal n är och svara att informationen är otillräcklig; varken I eller II kan vara större."
+    },
+    {
+      "id": "ovn-kva-040",
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f är en andragradsfunktion, och grafen till f har symmetrilinjen x = 3.\nKvantitet I: f(0)\nKvantitet II: f(5)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "correctIndex": 3,
+      "explain": "Grafen är en parabel som är symmetrisk kring linjen x = 3. Punkten x = 0 ligger 3 steg från symmetrilinjen och x = 5 ligger 2 steg från den. Om parabeln öppnar sig uppåt ökar funktionsvärdet ju längre från symmetrilinjen man kommer: f(x) = (x − 3)² ger f(0) = 9 och f(5) = 4, så I är större. Om parabeln öppnar sig nedåt är det tvärtom: f(x) = −(x − 3)² ger f(0) = −9 och f(5) = −4, så II är större. Båda fallen är möjliga, så varken att I är större, att II är större eller att de är lika gäller alltid. Fällan är att utan vidare anta att parabeln öppnar sig uppåt och svara att I är större."
     },
     {
       "id": "ovn-kva-041",
