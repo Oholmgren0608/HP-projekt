@@ -145,6 +145,20 @@ function kindLabel(kind: string): string {
   return SUBTESTS.find((s) => s.kind === kind)?.short ?? (kind ? kind.toUpperCase() : "?");
 }
 
+/** Om frågan hör till vyn (Att granska / Publicerade / Alla). */
+function inView(q: ReviewQuestion, view: View): boolean {
+  if (view === "published") return q.status === "published";
+  if (view === "drafts") {
+    return (
+      q.status === "draft" ||
+      q.status === "rejected" ||
+      q.openReports.length > 0 ||
+      q.verification === "disagreed"
+    );
+  }
+  return true;
+}
+
 // ---- Huvudskärm ------------------------------------------------------------
 
 export function ReviewScreen() {
@@ -153,6 +167,7 @@ export function ReviewScreen() {
   const [loadError, setLoadError] = useState<ReviewError | null>(null);
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
   const [view, setView] = useState<View>("drafts");
+  const [kindFilter, setKindFilter] = useState<string>("all");
   const [notice, setNotice] = useState<{ kind: "ok" | "err"; text: string } | null>(null);
 
   const supabaseConfigured = isSupabaseConfigured();
@@ -224,7 +239,9 @@ export function ReviewScreen() {
   }, [notice]);
 
   const counts = useMemo(() => {
-    const qs = (groups ?? []).flatMap((g) => g.questions);
+    const qs = (groups ?? [])
+      .flatMap((g) => g.questions)
+      .filter((q) => kindFilter === "all" || q.kind === kindFilter);
     return {
       draft: qs.filter((q) => q.status === "draft").length,
       rejected: qs.filter((q) => q.status === "rejected").length,
@@ -232,22 +249,24 @@ export function ReviewScreen() {
       reportedPublished: qs.filter((q) => q.status === "published" && q.openReports.length > 0)
         .length,
     };
-  }, [groups]);
+  }, [groups, kindFilter]);
 
   const visibleGroups = useMemo(() => {
     if (!groups) return [];
     const matches = (q: ReviewQuestion): boolean =>
-      view === "published"
-        ? q.status === "published"
-        : view === "drafts"
-          ? q.status === "draft" ||
-            q.status === "rejected" ||
-            q.openReports.length > 0 ||
-            q.verification === "disagreed"
-          : true;
+      inView(q, view) && (kindFilter === "all" || q.kind === kindFilter);
     return groups
       .map((g) => ({ ...g, questions: g.questions.filter(matches) }))
       .filter((g) => g.questions.length > 0);
+  }, [groups, view, kindFilter]);
+
+  // Delprovsfiltret: antal frågor per delprov i den valda vyn (oberoende av delprovsvalet).
+  const kindCounts = useMemo(() => {
+    const byKind = new Map<string, number>();
+    for (const q of (groups ?? []).flatMap((g) => g.questions)) {
+      if (inView(q, view)) byKind.set(q.kind, (byKind.get(q.kind) ?? 0) + 1);
+    }
+    return byKind;
   }, [groups, view]);
 
   // Fas härleds vid render — ingen setState i effekten (lint-säkert).
@@ -391,6 +410,32 @@ export function ReviewScreen() {
             {opt.label}
           </button>
         ))}
+      </div>
+
+      <div role="group" aria-label="Filtrera på delprov" className="-mt-5 flex flex-wrap gap-1.5 sm:-mt-7">
+        {[{ kind: "all", short: "Alla delprov" }, ...SUBTESTS].map((s) => {
+          const count =
+            s.kind === "all"
+              ? [...kindCounts.values()].reduce((sum, n) => sum + n, 0)
+              : (kindCounts.get(s.kind) ?? 0);
+          const active = kindFilter === s.kind;
+          return (
+            <button
+              key={s.kind}
+              type="button"
+              onClick={() => setKindFilter(s.kind)}
+              aria-pressed={active}
+              disabled={count === 0 && !active && s.kind !== "all"}
+              className={`rounded-md border px-2.5 py-1 text-xs font-medium transition disabled:cursor-not-allowed disabled:opacity-40 ${
+                active
+                  ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--brand)]"
+                  : "border-[var(--line-strong)] bg-card/70 text-[var(--ink)] hover:bg-[var(--accent-soft)]"
+              }`}
+            >
+              {s.short} <span className="tabular-nums text-[var(--ink-muted)]">{count}</span>
+            </button>
+          );
+        })}
       </div>
 
       {notice ? (
