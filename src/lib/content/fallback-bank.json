@@ -1803,15 +1803,16 @@
     {
       "id": "kva-3",
       "kind": "kva",
-      "prompt": "x > 0. Kvantitet I: 2x. Kvantitet II: x + 3. Vilken är störst?",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: 2x\nKvantitet II: x + 3",
       "options": [
-        "I är större",
-        "II är större",
-        "De är lika stora",
-        "Går inte att avgöra"
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
       ],
       "correctIndex": 3,
-      "explain": "Kvantitet I: 2x. Kvantitet II: x + 3. Om x = 1 blir I = 2 och II = 4, så II är större, men om x = 4 blir I = 8 och II = 7, så då är I större i stället. Eftersom relationen beror på vilket positivt värde x har går det inte att avgöra vilken kvantitet som är störst, så varken I är större eller II är större eller lika stora kan gälla generellt."
+      "explain": "Skillnaden mellan kvantiteterna är 2x − (x + 3) = x − 3, så vilken kvantitet som är störst beror på x. Med x = 1 blir I = 2 och II = 4, så II är större. Med x = 4 blir I = 8 och II = 7, så I är större. Med x = 3 blir båda 6. Alla tre fallen är möjliga när x > 0, så varken att I är större, att II är större eller att de är lika gäller för alla tillåtna x, och informationen är otillräcklig. Fällan är att pröva bara ett värde på x, till exempel x = 1, och svara att II är större."
     },
     {
       "id": "kva-4",

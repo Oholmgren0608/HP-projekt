@@ -26,6 +26,26 @@ import {
 } from "./lib";
 
 type QuestionInsert = Database["public"]["Tables"]["questions"]["Insert"];
+type ExistingRow = Pick<
+  Database["public"]["Tables"]["questions"]["Row"],
+  "id" | "prompt" | "passage" | "options" | "correct_index" | "explain" | "status" | "verification"
+>;
+
+/** Fält där databasens rad skiljer sig från filen (blanksteg i kanterna räknas inte, som på /review). */
+function differingFields(q: DraftQuestion, row: ExistingRow): string[] {
+  const same = (a: string | null | undefined, b: string | null | undefined) =>
+    (a ?? "").trim() === (b ?? "").trim();
+  const options = Array.isArray(row.options) ? row.options : [];
+  const fields: string[] = [];
+  if (!same(q.prompt, row.prompt)) fields.push("prompt");
+  if (!same(q.passage, row.passage)) fields.push("passage");
+  if (options.length !== q.options.length || q.options.some((o, i) => !same(o, options[i]))) {
+    fields.push("options");
+  }
+  if (q.correctIndex !== row.correct_index) fields.push("correctIndex");
+  if (!same(q.explain, row.explain)) fields.push("explain");
+  return fields;
+}
 
 const CHUNK = 200;
 const args = process.argv.slice(2);
@@ -74,23 +94,45 @@ async function main() {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
-  const inDatabase = new Map<string, string>(); // id -> prompt
+  const inDatabase = new Map<string, ExistingRow>();
   for (let i = 0; i < drafts.length; i += CHUNK) {
     const ids = drafts.slice(i, i + CHUNK).map((q) => q.id);
-    const { data, error } = await sb.from("questions").select("id, prompt").in("id", ids);
+    const { data, error } = await sb
+      .from("questions")
+      .select("id, prompt, passage, options, correct_index, explain, status, verification")
+      .in("id", ids);
     if (error) throw new Error(`Kunde inte läsa befintliga frågor: ${error.message}`);
-    for (const row of data ?? []) inDatabase.set(row.id, row.prompt);
+    for (const row of data ?? []) inDatabase.set(row.id, row);
   }
 
   const fresh = drafts.filter((q) => !inDatabase.has(q.id));
-  // Ett id som redan finns med en annan frågetext är antingen ändrat på /review
+  // Ett id som redan finns med annat innehåll är antingen ändrat på /review
   // (då gäller databasen) eller återanvänt av misstag (då når den nya frågan
-  // aldrig databasen). Skriv ut dem så att en person kan avgöra vilket.
-  const differing = drafts.filter((q) => inDatabase.has(q.id) && inDatabase.get(q.id) !== q.prompt);
+  // aldrig databasen). Skriv ut dem, med de fält som skiljer, så att en person
+  // kan avgöra vilket. Alla fält jämförs: i KVA och NOG är frågetexten
+  // densamma i varje fråga.
+  const differing = drafts
+    .filter((q) => inDatabase.has(q.id))
+    .map((q) => ({ id: q.id, fields: differingFields(q, inDatabase.get(q.id)!) }))
+    .filter((d) => d.fields.length > 0);
   if (differing.length > 0) {
     console.warn(
-      `Varning: ${differing.length} id finns redan i databasen med annan frågetext ` +
-        `(ändrade på /review eller återanvända id?): ${differing.map((q) => q.id).join(", ")}`,
+      `Varning: ${differing.length} id finns redan i databasen med annat innehåll ` +
+        `(ändrade på /review eller återanvända id?): ` +
+        differing.map((d) => `${d.id} (${d.fields.join(", ")})`).join(", "),
+    );
+  }
+  if (inDatabase.size > 0) {
+    const byStatus = new Map<string, number>();
+    for (const row of inDatabase.values()) {
+      const key = `${row.status}${row.verification ? `/${row.verification}` : ""}`;
+      byStatus.set(key, (byStatus.get(key) ?? 0) + 1);
+    }
+    console.log(
+      `I databasen (status/andra kontrollen): ${[...byStatus.entries()]
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([key, n]) => `${key} ${n}`)
+        .join(", ")}.`,
     );
   }
   const disagreed = fresh.filter((q) => q.verification === "disagreed").length;

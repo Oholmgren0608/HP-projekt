@@ -191,7 +191,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 0,
-    "explain": "Ordföranden kan väljas på 7 sätt och kassören därefter på 6 sätt, så I = 7 · 6 = 42; här spelar ordningen roll eftersom uppdragen är olika. I arbetsgruppen har alla samma roll. Väljer man en person i taget får man 7 · 6 · 5 = 210 ordnade val, men varje grupp om tre räknas då 3 · 2 · 1 = 6 gånger, så II = 210/6 = 35. Alltså är I större. Den som tror att fler valda personer alltid ger fler möjligheter svarar att II är större, kvantiteterna är inte lika eftersom 42 ≠ 35, och inget är okänt, så informationen räcker.",
+    "explain": "Ordföranden kan väljas på 7 sätt och kassören därefter på 6 sätt, så I = 7 · 6 = 42; här spelar ordningen roll eftersom uppdragen är olika. I arbetsgruppen har alla samma roll. Väljer man en person i taget får man 7 · 6 · 5 = 210 ordnade val, men varje grupp om tre räknas då 3 · 2 · 1 = 6 gånger, så II = 210/6 = 35. Alltså är I större. Den som tror att fler valda personer alltid ger fler möjligheter svarar att II är större. Kvantiteterna är inte lika eftersom 42 ≠ 35, och inget är okänt, så informationen räcker.",
     "verification": "agreed"
   },
   {
@@ -251,7 +251,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 3,
-    "explain": "Sannolikheten beror på hur många kulor det finns av varje färg. Med 2 röda och 1 blå kula blir den 2/3 · 1/2 = 1/3, så II är större. Med 5 röda och 1 blå blir den 5/6 · 4/5 = 2/3, så I är större. (Med 3 röda och 1 blå blir den 3/4 · 2/3 = 1/2, alltså lika.) Eftersom olika fördelningar ger olika resultat gäller varken att I är större, att II är större eller att de är lika. Att det finns fler röda kulor än blå räcker inte för att sannolikheten för två röda ska bli större än 1/2.",
+    "explain": "Sannolikheten beror på hur många kulor det finns av varje färg. Med 2 röda och 1 blå kula blir den 2/3 · 1/2 = 1/3, så II är större. Med 5 röda och 1 blå blir den 5/6 · 4/5 = 2/3, så I är större. (Med 3 röda och 1 blå blir den 3/4 · 2/3 = 1/2, alltså lika.) Olika fördelningar ger olika resultat, så varken att I är större, att II är större eller att de är lika gäller alltid. Att det finns fler röda kulor än blå räcker inte för att sannolikheten för två röda ska bli större än 1/2.",
     "verification": "agreed"
   },
   {
@@ -461,7 +461,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 0,
-    "explain": "Eftersom y är negativt är −y positivt, så kvantitet I är x − y = x + |y|, summan av två positiva tal. I summan x + y tar det negativa talet y i stället bort en del av x, så |x + y| är skillnaden mellan de positiva talen x och |y|, och en skillnad mellan två positiva tal är alltid mindre än deras summa. Exempel: x = 5 och y = −2 ger x − y = 7 och |x + y| = 3, och x = 2 och y = −6 ger x − y = 8 och |x + y| = 4. I är alltså större för alla tillåtna värden. Fällan är att tro att absolutbeloppet gör |x + y| lika stort som x − y; det skulle kräva att x eller y var 0, vilket inte är tillåtet. II kan aldrig vara större, och informationen räcker.",
+    "explain": "Eftersom y är negativt är −y positivt, så kvantitet I är x − y = x + |y|, summan av två positiva tal. I summan x + y dras |y| i stället ifrån x, så |x + y| är skillnaden mellan de positiva talen x och |y| (det större minus det mindre). En skillnad mellan två positiva tal är alltid mindre än deras summa. Exempel: x = 5 och y = −2 ger x − y = 7 och |x + y| = 3, och x = 2 och y = −6 ger x − y = 8 och |x + y| = 4. I är alltså större för alla tillåtna värden. Fällan är att tro att absolutbeloppet gör |x + y| lika stort som x − y; det skulle kräva att x eller y var 0, vilket inte är tillåtet. II kan aldrig vara större, och informationen räcker.",
     "verification": "agreed"
   },
   {
@@ -566,9 +566,8 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 0,
-    "explain": "Linjen skär y-axeln där x = 0, alltså i punkten (0, m), så m är negativt. Linjen skär x-axeln där kx + m = 0, alltså där x = −m/k. Eftersom m är negativt är −m positivt, och för att −m/k ska vara positivt måste även k vara positivt. (k kan inte vara 0, för då vore linjen y = m parallell med x-axeln och skulle aldrig skära den.) Det stämmer med bilden: linjen går från en punkt under origo till en punkt till höger om origo och lutar alltså uppåt. Då är k > 0 > m, så I är större för alla sådana linjer. Fällan är att tro att lutningen kan ha vilket tecken som helst och svara att informationen är otillräcklig; varken likhet eller att II är större är möjligt.",
-    "verification": "disagreed",
-    "verificationNote": "Förklaringen godkändes inte. Förklaringen hänvisar till ”bilden” (”Det stämmer med bilden”), men frågan har ingen bild. Skriv t.ex. ”Om man ritar linjen går den från en punkt under origo till en punkt till höger om origo och lutar alltså uppåt.” Matematiken och facit är rätt."
+    "explain": "Linjen skär y-axeln där x = 0, alltså i punkten (0, m), så m är negativt. Linjen skär x-axeln där kx + m = 0, alltså där x = −m/k. Eftersom m är negativt är −m positivt, och för att −m/k ska vara positivt måste även k vara positivt. (k kan inte vara 0, för då vore linjen y = m parallell med x-axeln och skulle aldrig skära den.) Samma sak syns om man ritar linjen: den går genom en punkt på y-axeln under origo och en punkt på x-axeln till höger om origo och lutar alltså uppåt. Då är k > 0 > m, så I är större för alla sådana linjer. Fällan är att tro att lutningen kan ha vilket tecken som helst och svara att informationen är otillräcklig; varken likhet eller att II är större är möjligt.",
+    "verification": "agreed"
   },
   {
     "id": "ovn-kva-039",
@@ -597,7 +596,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 3,
-    "explain": "Grafen är en parabel som är symmetrisk kring linjen x = 3. Punkten x = 0 ligger 3 steg från symmetrilinjen och x = 5 ligger 2 steg från den. Om parabeln öppnar sig uppåt ökar funktionsvärdet ju längre från symmetrilinjen man kommer: f(x) = (x − 3)² ger f(0) = 9 och f(5) = 4, så I är större. Om parabeln öppnar sig nedåt är det tvärtom: f(x) = −(x − 3)² ger f(0) = −9 och f(5) = −4, så II är större. Eftersom båda är möjliga gäller varken att I är större, att II är större eller att de är lika. Fällan är att utan vidare anta att parabeln öppnar sig uppåt och svara att I är större.",
+    "explain": "Grafen är en parabel som är symmetrisk kring linjen x = 3. Punkten x = 0 ligger 3 steg från symmetrilinjen och x = 5 ligger 2 steg från den. Om parabeln öppnar sig uppåt ökar funktionsvärdet ju längre från symmetrilinjen man kommer: f(x) = (x − 3)² ger f(0) = 9 och f(5) = 4, så I är större. Om parabeln öppnar sig nedåt är det tvärtom: f(x) = −(x − 3)² ger f(0) = −9 och f(5) = −4, så II är större. Båda fallen är möjliga, så varken att I är större, att II är större eller att de är lika gäller alltid. Fällan är att utan vidare anta att parabeln öppnar sig uppåt och svara att I är större.",
     "verification": "agreed"
   }
 ]
