@@ -633,10 +633,10 @@ const FIGURES: Record<string, () => ReactNode> = {
   ),
   "kva-5": () => (
     <RectangleSketch
-      label="Kvadrat med sidan 5, area 25"
-      widthText="5"
-      heightText="5"
-      areaText="5 × 5 = 25"
+      label="Kvadrat med sidan 5 cm, area 25 cm²"
+      widthText="5 cm"
+      heightText="5 cm"
+      areaText="5 × 5 = 25 cm²"
       box={{ w: 130, h: 130 }}
     />
   ),
