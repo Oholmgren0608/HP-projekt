@@ -86,6 +86,25 @@ export function useQuiz({ questions, onFinish }: UseQuizOptions) {
     setSelected(nextAnswers[questions[prevIndex]?.id] ?? null);
   }
 
+  /**
+   * Hoppar till en valfri fråga utan att kräva svar på den aktuella — som på
+   * provdagen, där man får hoppa över och gå tillbaka. Ett valt alternativ
+   * sparas innan bytet.
+   */
+  function goTo(target: number) {
+    if (target < 0 || target >= total || target === index) return;
+    const nextAnswers =
+      selected !== null && current ? { ...answers, [current.id]: selected } : answers;
+    if (nextAnswers !== answers) setAnswers(nextAnswers);
+    setIndex(target);
+    setSelected(nextAnswers[questions[target]?.id] ?? null);
+  }
+
+  /** Nästa fråga, med eller utan svar på den aktuella. */
+  function advance() {
+    goTo(index + 1);
+  }
+
   function reset() {
     setIndex(0);
     setAnswers({});
@@ -111,6 +130,8 @@ export function useQuiz({ questions, onFinish }: UseQuizOptions) {
     commitAnswer,
     goNext,
     goPrevious,
+    goTo,
+    advance,
     finish,
     reset,
     restart,

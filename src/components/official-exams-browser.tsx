@@ -2,8 +2,6 @@
 
 import { useMemo, useState } from "react";
 import { Disclosure } from "@/components/disclosure";
-import { TimedMockExam } from "@/components/timed-mock-exam";
-import { ProvpassSession } from "@/components/provpass-session";
 import {
   OFFICIAL_EXAMS,
   OFFICIAL_INDEX_URL,
@@ -82,18 +80,12 @@ export function OfficialExamsBrowser() {
   }
 
   return (
-    <div className="space-y-5">
-      <ProvpassSession />
-
-      <TimedMockExam />
-
-      {/* Sekundär: original-PDF:er */}
-      <section className="rounded-[10px] border border-[var(--line)] bg-[var(--paper)] p-5 sm:p-6">
-        <h2 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
-          Officiella provhäften och facit
-        </h2>
-        <div className="mt-3 rounded-lg border border-[var(--line)] bg-card/60 px-4 py-3 text-sm text-[var(--ink-muted)]">
-          PDF från studera.nu — vi omhostar inte filerna. ELF saknas ofta (UHR visar texterna kort tid). För fler år:{" "}
+    <div>
+      <section>
+        <h2 className="text-lg font-semibold text-[var(--ink)]">Gamla provhäften från UHR</h2>
+        <p className="mt-1 max-w-2xl text-sm text-[var(--ink-muted)]">
+          De officiella PDF:erna från studera.nu, med facit och normering. ELF-texterna saknas ofta
+          eftersom UHR bara visar dem en kort tid. Fler år finns i{" "}
           <a
             href={OFFICIAL_INDEX_URL}
             target="_blank"
@@ -103,7 +95,7 @@ export function OfficialExamsBrowser() {
             UHR:s arkiv
           </a>
           .
-        </div>
+        </p>
 
         <div className="mt-3 flex flex-wrap gap-2">
           <button

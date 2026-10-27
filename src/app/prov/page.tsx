@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ExamsView } from "@/components/exams-view";
 
 export const metadata: Metadata = {
-  title: "Gamla prov",
+  title: "Prov",
   description:
-    "Officiella gamla högskoleprov (PDF från UHR) för realistisk provträning.",
+    "Hela provpass och snabbprov i provets tempo, plus gamla högskoleprov (PDF från UHR).",
 };
 
 export default function ExamsPage() {

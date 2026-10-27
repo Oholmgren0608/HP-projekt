@@ -202,7 +202,7 @@ function NextTaskCard({ next }: { next: ReturnType<typeof findNextIncomplete> })
             Alla uppgifter är klara
           </h2>
           <p className="mt-2 font-medium text-[var(--ink-muted)]">
-            Bra jobbat! Repetera med flashcards, kör ett mini-prov eller utmana någon i en duell.
+            Bra jobbat! Repetera med flashcards, kör ett snabbprov eller utmana någon i en duell.
           </p>
           <div className="mt-auto flex flex-wrap gap-3 pt-5">
             <Link

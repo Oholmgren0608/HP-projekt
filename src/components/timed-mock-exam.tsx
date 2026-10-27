@@ -6,7 +6,6 @@ import { formatClock } from "@/lib/practice-timer";
 import { useQuestions } from "@/lib/content/use-questions";
 import {
   buildMockExam,
-  kindBadge,
   tally,
   type ChoiceQuestion,
   type PracticeKind,
@@ -17,18 +16,22 @@ import { paceVerdict } from "@/lib/practice-pace";
 import { estimateNormFromPercent } from "@/lib/progress-history";
 import { recordQuizOutcome } from "@/lib/quiz-outcome";
 import { useQuiz } from "@/lib/use-quiz";
-import { QuizOptions } from "@/components/quiz/quiz-options";
-import { QuizProgress } from "@/components/quiz/quiz-progress";
-import { QuestionFigure } from "@/components/question-figure";
-import { QuestionPassage } from "@/components/question-passage";
+import { ExamQuiz } from "@/components/quiz/exam-quiz";
+import type { ExamPhase } from "@/components/provpass-session";
 
 const QUESTION_COUNT = 24;
 const LIMIT_SECONDS = 20 * 60;
 
-type Phase = "intro" | "quiz" | "review";
-
-export function TimedMockExam() {
-  const [phase, setPhase] = useState<Phase>("intro");
+export function TimedMockExam({
+  onPhaseChange,
+}: {
+  onPhaseChange?: (phase: ExamPhase) => void;
+}) {
+  const [phase, setPhaseState] = useState<ExamPhase>("intro");
+  function setPhase(next: ExamPhase) {
+    setPhaseState(next);
+    onPhaseChange?.(next);
+  }
   const [seed, setSeed] = useState("");
   const [deadline, setDeadline] = useState<number | null>(null);
   const [now, setNow] = useState(() => Date.now());
@@ -109,105 +112,53 @@ export function TimedMockExam() {
 
   if (phase === "intro") {
     return (
-      <div className="rounded-[10px] border border-[var(--line)] bg-[var(--paper)] p-5 sm:p-6">
-        <p className="text-xs font-medium text-[var(--brand)]">
-          Mini-prov · appens egna frågor
+      <section className="flex h-full flex-col rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
+        <h2 className="text-lg font-semibold text-[var(--ink)]">Snabbprov</h2>
+        <p className="mt-1 text-sm leading-relaxed text-[var(--ink-muted)]">
+          Blandade frågor från alla åtta delprov, för när du inte har tid för ett helt pass. Rätt och
+          fel visas efteråt, och resultatet sparas i din historik.
         </p>
-        <h3 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
-          Tidsatt provpass
-        </h3>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
-          {QUESTION_COUNT} frågor från alla delprov.{" "}
-          {LIMIT_SECONDS / 60} minuter nedräkning och genomgång med rätt/fel efteråt. Inte ett officiellt UHR-prov.
-        </p>
-        <button
-          type="button"
-          onClick={start}
-          disabled={!questionsReady}
-          className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {questionsReady ? `Starta mini-prov (${LIMIT_SECONDS / 60} min)` : "Laddar frågor…"}
-        </button>
-      </div>
+        <div className="mt-auto pt-5">
+          <p className="text-sm font-medium tabular-nums text-[var(--ink)]">
+            {QUESTION_COUNT} frågor, {LIMIT_SECONDS / 60} minuter
+          </p>
+          <button
+            type="button"
+            onClick={start}
+            disabled={!questionsReady}
+            className="mt-3 inline-flex min-h-11 items-center rounded-md border border-[var(--line-strong)] bg-card px-5 text-sm font-medium text-[var(--ink)] transition-colors hover:bg-[var(--mist)] disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {questionsReady ? "Starta snabbprov" : "Laddar frågor…"}
+          </button>
+        </div>
+      </section>
     );
   }
 
   if (phase === "quiz" && current) {
     return (
-      <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
-        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
-          <div>
-            <p className="text-xs font-medium text-[var(--brand)]">
-              Mini-prov · {kindBadge(current.kind)}
-            </p>
-            <p className="mt-1 text-sm text-[var(--ink-muted)]">
-              Fråga {quiz.index + 1} av {questions.length}
-            </p>
-          </div>
+      <ExamQuiz
+        label="Snabbprov"
+        quiz={quiz}
+        questions={questions}
+        clock={
           <p
-            className={`rounded-md px-3 py-1.5 font-medium tabular-nums ${
+            className={`rounded-md px-3 py-1.5 text-sm font-medium tabular-nums ${
               remainingSeconds <= 60
                 ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
                 : "bg-[var(--mist)] text-[var(--ink)]"
             }`}
           >
-            {formatClock(remainingSeconds)}
+            Tid kvar: {formatClock(remainingSeconds)}
           </p>
-        </div>
-
-        <div className="mt-4">
-          <QuizProgress
-            current={quiz.index + 1}
-            total={questions.length}
-            transition={false}
-          />
-        </div>
-
-        <QuestionPassage
-          passage={current.passage}
-          className="mt-5"
-          textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
-        />
-
-        <QuestionFigure question={current} position={quiz.index + 1} />
-
-        <p className="mt-5 text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
-
-        <div className="mt-4">
-          <QuizOptions
-            questionId={current.id}
-            options={current.options}
-            selected={quiz.selected}
-            onSelect={quiz.setSelected}
-          />
-        </div>
-
-        <div className="mt-5 flex flex-wrap gap-3">
-          <button
-            type="button"
-            disabled={quiz.selected === null}
-            onClick={quiz.submitAnswer}
-            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
-          >
-            {quiz.index >= questions.length - 1 ? "Lämna in" : "Nästa"}
-          </button>
-          <button
-            type="button"
-            onClick={() => quiz.finish()}
-            className="rounded-md border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] hover:text-[var(--ink)]"
-          >
-            Avsluta nu
-          </button>
-        </div>
-      </div>
+        }
+      />
     );
   }
 
   return (
     <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
-      <p className="text-xs font-medium text-[var(--brand)]">
-        Genomgång
-      </p>
+      <p className="text-[13px] text-[var(--ink-muted)]">Snabbprov: genomgång</p>
       <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
         {score.correct}/{score.total}
         <span className="ml-2 text-xl text-[var(--ink-muted)]">
@@ -215,7 +166,7 @@ export function TimedMockExam() {
         </span>
       </p>
       <p className="mt-1 text-sm text-[var(--ink-muted)]">
-        Uppskattad norm {estimated.toFixed(1).replace(".", ",")} — inte UHR:s officiella tabell.
+        Uppskattad normerad poäng {estimated.toFixed(1).replace(".", ",")}, inte UHR:s officiella tabell.
         Resultatet är sparat i historiken. Missade frågor blir felkort.
       </p>
       <div className="mt-3">
@@ -237,13 +188,22 @@ export function TimedMockExam() {
         <QuestionReviewList questions={questions} answers={quiz.finalAnswers ?? {}} />
       </div>
 
-      <button
-        type="button"
-        onClick={start}
-        className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground hover:bg-[var(--ink-soft)]"
-      >
-        Nytt mini-prov
-      </button>
+      <div className="mt-5 flex flex-wrap gap-3">
+        <button
+          type="button"
+          onClick={start}
+          className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
+        >
+          Nytt snabbprov
+        </button>
+        <button
+          type="button"
+          onClick={() => setPhase("intro")}
+          className="inline-flex min-h-11 items-center rounded-md border border-[var(--line-strong)] bg-card px-5 text-sm font-medium text-[var(--ink)] transition-colors hover:bg-[var(--mist)]"
+        >
+          Tillbaka till Prov
+        </button>
+      </div>
     </div>
   );
 }

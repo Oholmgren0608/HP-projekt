@@ -177,7 +177,7 @@ const NAV: readonly (NavLeaf | NavGroup)[] = [
       { href: "/ova", label: "Öva delprov", icon: BookOpen },
       { href: "/ova/flashcards", label: "ORD-Flashcards", icon: Layers },
       { href: "/bibliotek", label: "Läsbibliotek", icon: Library },
-      { href: "/prov", label: "Gamla prov", icon: FileText },
+      { href: "/prov", label: "Prov", icon: FileText },
       { href: "/duell", label: "Duell", icon: Swords },
     ],
   },

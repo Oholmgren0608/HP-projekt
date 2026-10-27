@@ -23,10 +23,7 @@ import { formatCountdown } from "@/lib/countdown";
 import { paceVerdict } from "@/lib/practice-pace";
 import { useQuizCountdown } from "@/lib/use-quiz-countdown";
 import { useQuiz } from "@/lib/use-quiz";
-import { QuizOptions } from "@/components/quiz/quiz-options";
-import { QuizProgress } from "@/components/quiz/quiz-progress";
-import { QuestionFigure } from "@/components/question-figure";
-import { QuestionPassage } from "@/components/question-passage";
+import { ExamQuiz } from "@/components/quiz/exam-quiz";
 
 /**
  * Simulera provpass: ett helt pass i provets tempo (55 minuter, eller 80 med
@@ -34,11 +31,16 @@ import { QuestionPassage } from "@/components/question-passage";
  * är avslutat — under passet ser man varken rätt eller fel.
  */
 
-type Phase = "intro" | "quiz" | "review";
+export type ExamPhase = "intro" | "quiz" | "review";
 
 const BLOCKS: ProvpassBlock[] = ["verbal", "kvant"];
 
-export function ProvpassSession() {
+export function ProvpassSession({
+  onPhaseChange,
+}: {
+  /** Sidan döljer allt annat medan ett prov pågår eller gås igenom. */
+  onPhaseChange?: (phase: ExamPhase) => void;
+}) {
   const { ready: questionsReady, questions: bank } = useQuestions();
   const hydrated = useHydrated();
 
@@ -52,7 +54,11 @@ export function ProvpassSession() {
     setSettings(loadProvpassSettings());
   }
 
-  const [phase, setPhase] = useState<Phase>("intro");
+  const [phase, setPhaseState] = useState<ExamPhase>("intro");
+  function setPhase(next: ExamPhase) {
+    setPhaseState(next);
+    onPhaseChange?.(next);
+  }
   const [seed, setSeed] = useState("");
   const [deadline, setDeadline] = useState<number | null>(null);
   const [startedAt, setStartedAt] = useState<number | null>(null);
@@ -117,68 +123,64 @@ export function ProvpassSession() {
 
   if (phase === "intro") {
     return (
-      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <h2 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
-          Provpass i provets tempo
-        </h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
-          Ett helt provpass med {Math.round(limitSeconds / 60)} minuters timer. Rättningen visas
-          först när hela passet är avslutat — under passet ser du varken rätt eller fel.
+      <section className="flex h-full flex-col rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
+        <h2 className="text-lg font-semibold text-[var(--ink)]">Helt provpass</h2>
+        <p className="mt-1 text-sm leading-relaxed text-[var(--ink-muted)]">
+          Ett pass som på provdagen. Du får hoppa över frågor och gå tillbaka, och ser rätt och fel
+          först när du lämnat in.
         </p>
 
-        <div className="mt-5 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-4">
-          <p className="text-sm font-medium text-[var(--ink)]">Vilket pass vill du simulera?</p>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {BLOCKS.map((block) => (
-              <button
-                key={block}
-                type="button"
-                aria-pressed={settings.block === block}
-                onClick={() => updateSettings({ ...settings, block })}
-                className={`rounded-lg border px-3.5 py-2 text-sm font-medium transition ${
-                  settings.block === block
-                    ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                    : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
-                }`}
-              >
-                {BLOCK_LABELS[block]}
-              </button>
-            ))}
-          </div>
-          <p className="mt-2 text-sm text-[var(--ink-muted)]">
-            {Object.entries(PASS_DISTRIBUTION[settings.block])
-              .map(([kind, count]) => `${kindBadge(kind as PracticeKind)} ${count}`)
-              .join(" · ")}
-          </p>
+        <div className="mt-4 inline-flex w-fit rounded-md border border-[var(--line-strong)] p-0.5" role="group" aria-label="Pass">
+          {BLOCKS.map((block) => (
+            <button
+              key={block}
+              type="button"
+              aria-pressed={settings.block === block}
+              onClick={() => updateSettings({ ...settings, block })}
+              className={`rounded-[5px] px-3 py-1.5 text-sm font-medium transition-colors ${
+                settings.block === block
+                  ? "bg-[var(--accent-soft)] text-[var(--brand)]"
+                  : "text-[var(--ink-muted)] hover:text-[var(--ink)]"
+              }`}
+            >
+              {BLOCK_LABELS[block]}
+            </button>
+          ))}
+        </div>
+        <p className="mt-2 text-[13px] text-[var(--ink-muted)]">
+          {Object.entries(PASS_DISTRIBUTION[settings.block])
+            .map(([kind, count]) => `${kindBadge(kind as PracticeKind)} ${count}`)
+            .join(", ")}
+        </p>
 
-          <label className="mt-4 flex cursor-pointer items-center gap-2.5 text-sm text-[var(--ink)]">
-            <input
-              type="checkbox"
-              checked={settings.extendedTime}
-              onChange={(e) => updateSettings({ ...settings, extendedTime: e.target.checked })}
-              className="size-4 accent-[var(--brand)]"
-            />
-            Förlängd provtid (dyslexi) — 80 minuter
-          </label>
+        <label className="mt-3 flex cursor-pointer items-center gap-2.5 text-sm text-[var(--ink)]">
+          <input
+            type="checkbox"
+            checked={settings.extendedTime}
+            onChange={(e) => updateSettings({ ...settings, extendedTime: e.target.checked })}
+            className="size-4 accent-[var(--brand)]"
+          />
+          Förlängd provtid (80 minuter)
+        </label>
 
-          <p className="mt-4 font-[family-name:var(--font-display)] font-semibold text-lg tabular-nums text-[var(--ink)]">
-            {plannedCount} av {PASS_QUESTIONS} frågor · {Math.round(limitSeconds / 60)} minuter
+        <div className="mt-auto pt-5">
+          <p className="text-sm font-medium tabular-nums text-[var(--ink)]">
+            {plannedCount} frågor, {Math.round(limitSeconds / 60)} minuter
           </p>
           {plannedCount < PASS_QUESTIONS ? (
-            <p className="mt-1 text-sm text-[var(--ink-muted)]">
-              Frågebanken har inte fler frågor i det här passet ännu — passet får ändå full pass-tid.
+            <p className="mt-0.5 text-[13px] text-[var(--ink-muted)]">
+              Frågebanken räcker till {plannedCount} av {PASS_QUESTIONS} frågor. Passet får ändå full tid.
             </p>
           ) : null}
+          <button
+            type="button"
+            onClick={start}
+            disabled={!questionsReady || plannedCount === 0}
+            className="mt-3 inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {questionsReady ? "Starta provpass" : "Laddar frågor…"}
+          </button>
         </div>
-
-        <button
-          type="button"
-          onClick={start}
-          disabled={!questionsReady || plannedCount === 0}
-          className="mt-5 inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
-        >
-          {questionsReady ? "Starta provpass" : "Laddar frågor…"}
-        </button>
       </section>
     );
   }
@@ -186,107 +188,46 @@ export function ProvpassSession() {
   if (phase === "quiz") {
     if (!questionsReady || questions.length === 0) {
       return (
-        <section className="flex items-center justify-center gap-2 rounded-[10px] border border-[var(--line)] bg-card/75 py-10 text-sm text-[var(--ink-muted)]">
+        <section className="flex items-center justify-center gap-2 rounded-[10px] border border-[var(--line)] bg-card py-10 text-sm text-[var(--ink-muted)]">
           <span className="size-4 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--brand)]" />
           Laddar frågor…
         </section>
       );
     }
 
-    const current = quiz.current;
-    if (!current) return null;
-
     return (
-      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
-        <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
-          <div>
-            <p className="text-xs font-medium text-[var(--brand)]">
-              Provpass · {BLOCK_LABELS[settings.block]} · {kindBadge(current.kind)}
+      <ExamQuiz
+        label={`Helt provpass, ${BLOCK_LABELS[settings.block].toLowerCase()}`}
+        quiz={quiz}
+        questions={questions}
+        clock={
+          remainingSeconds !== null ? (
+            <p
+              className={`rounded-md px-3 py-1.5 text-sm font-medium tabular-nums ${
+                warning
+                  ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
+                  : "bg-[var(--mist)] text-[var(--ink)]"
+              }`}
+            >
+              Tid kvar: {formatCountdown(remainingSeconds)}
             </p>
-            <p className="mt-1 text-sm text-[var(--ink-muted)]">
-              Fråga {quiz.index + 1} av {questions.length}
+          ) : null
+        }
+        notice={
+          warning ? (
+            <p
+              role="status"
+              className={`mt-3 text-sm font-medium ${
+                warning === "final" ? "text-[var(--destructive)]" : "text-[var(--energy-ink)]"
+              }`}
+            >
+              {warning === "final"
+                ? "1 minut kvar. Passet lämnas in automatiskt."
+                : "5 minuter kvar."}
             </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            {remainingSeconds !== null ? (
-              <p
-                className={`rounded-md px-3 py-1.5 text-sm font-medium tabular-nums ${
-                  warning
-                    ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
-                    : "bg-[var(--mist)] text-[var(--ink)]"
-                }`}
-              >
-                Tid kvar: {formatCountdown(remainingSeconds)}
-              </p>
-            ) : null}
-            <p className="rounded-md bg-[var(--mist)] px-3 py-1.5 text-sm font-medium tabular-nums text-[var(--ink)]">
-              {quiz.answeredCount}/{questions.length} besvarade
-            </p>
-          </div>
-        </div>
-
-        {warning ? (
-          <p
-            role="status"
-            className={`mt-3 text-sm font-medium ${
-              warning === "final" ? "text-[var(--destructive)]" : "text-[var(--energy-ink)]"
-            }`}
-          >
-            {warning === "final"
-              ? "1 minut kvar — passet avslutas automatiskt."
-              : "5 minuter kvar."}
-          </p>
-        ) : null}
-
-        <div className="mt-4">
-          <QuizProgress current={quiz.index + 1} total={questions.length} />
-        </div>
-
-        <QuestionPassage
-          passage={current.passage}
-          className="mt-5"
-          textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
-        />
-
-        <QuestionFigure question={current} position={quiz.index + 1} />
-
-        <p className="mt-5 text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
-
-        <div className="mt-4">
-          <QuizOptions
-            questionId={current.id}
-            options={current.options}
-            selected={quiz.selected}
-            onSelect={quiz.setSelected}
-          />
-        </div>
-
-        <div className="mt-5 flex flex-wrap items-center gap-3">
-          <button
-            type="button"
-            disabled={quiz.selected === null}
-            onClick={quiz.submitAnswer}
-            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
-          >
-            {quiz.index >= questions.length - 1 ? "Lämna in passet" : "Nästa"}
-          </button>
-          <button
-            type="button"
-            onClick={quiz.goPrevious}
-            disabled={quiz.index === 0}
-            className="rounded-md border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] disabled:opacity-40"
-          >
-            Föregående
-          </button>
-          <button
-            type="button"
-            onClick={() => quiz.finish()}
-            className="rounded-md border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] hover:text-[var(--ink)]"
-          >
-            Avsluta passet
-          </button>
-        </div>
-      </section>
+          ) : null
+        }
+      />
     );
   }
 
@@ -294,8 +235,8 @@ export function ProvpassSession() {
 
   return (
     <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
-      <p className="text-xs font-medium text-[var(--brand)]">
-        Provpass · {BLOCK_LABELS[settings.block]} · genomgång
+      <p className="text-[13px] text-[var(--ink-muted)]">
+        Helt provpass, {BLOCK_LABELS[settings.block].toLowerCase()}: genomgång
       </p>
       <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
         {score.correct}/{score.total}
@@ -308,8 +249,7 @@ export function ProvpassSession() {
       </p>
       {timedOut ? (
         <p className="mt-2 text-sm text-[var(--ink)]">
-          Tiden tog slut — passet avslutades automatiskt. Besvarade frågor rättades och obesvarade
-          räknades som fel.
+          Tiden tog slut och passet lämnades in automatiskt. Obesvarade frågor räknades som fel.
         </p>
       ) : null}
 
@@ -331,10 +271,17 @@ export function ProvpassSession() {
       <div className="mt-5 flex flex-wrap gap-3">
         <button
           type="button"
-          onClick={() => setPhase("intro")}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+          onClick={start}
+          className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
         >
           Nytt provpass
+        </button>
+        <button
+          type="button"
+          onClick={() => setPhase("intro")}
+          className="inline-flex min-h-11 items-center rounded-md border border-[var(--line-strong)] bg-card px-5 text-sm font-medium text-[var(--ink)] transition-colors hover:bg-[var(--mist)]"
+        >
+          Tillbaka till Prov
         </button>
       </div>
     </section>
