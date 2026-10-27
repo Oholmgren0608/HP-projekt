@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { Disclosure } from "@/components/disclosure";
+import { useState } from "react";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 import {
   OFFICIAL_EXAMS,
   OFFICIAL_INDEX_URL,
@@ -9,261 +9,145 @@ import {
   type OfficialExam,
 } from "@/lib/official-exams";
 
-function kindLabel(kind: OfficialDocument["kind"]): string {
-  switch (kind) {
-    case "verbal":
-      return "Verbal";
-    case "kvantitativ":
-      return "Kvant";
-    case "facit":
-      return "Facit";
-    case "kallor":
-      return "Källor";
-    case "normering":
-      return "Normering";
-    default:
-      return "PDF";
+/** Så många provtillfällen visas innan "Visa alla". */
+const INITIAL_COUNT = 4;
+
+const BOOKLET_KINDS = new Set<OfficialDocument["kind"]>(["verbal", "kvantitativ", "provpass"]);
+
+/** Ordning i gruppen "Facit och normering". */
+const EXTRA_ORDER: Record<string, number> = { facit: 0, normering: 1, kallor: 2, ovrigt: 3 };
+
+/** Titlarna i datan använder " · " som avgränsare; i listan räcker ett kommatecken. */
+function plain(text: string): string {
+  return text.replace(/\s·\s/g, ", ");
+}
+
+function docLabel(doc: OfficialDocument): string {
+  if (doc.kind === "ovrigt" && !doc.title.includes(" ")) {
+    const words = doc.title.replace(/-/g, " ");
+    return words.charAt(0).toUpperCase() + words.slice(1);
   }
+  // "Provpass 1 · Kvantitativ" → "Provpass 1, kvantitativ"
+  return plain(doc.title).replace(/, ([A-ZÅÄÖ])/g, (_, c: string) => `, ${c.toLowerCase()}`);
+}
+
+function passNumber(doc: OfficialDocument): number {
+  const m = doc.title.match(/provpass\s*(\d+)/i);
+  return m ? Number(m[1]) : 99;
+}
+
+function splitDocuments(exam: OfficialExam) {
+  const booklets = exam.documents
+    .filter((d) => BOOKLET_KINDS.has(d.kind))
+    .sort((a, b) => passNumber(a) - passNumber(b));
+  const extras = exam.documents
+    .filter((d) => !BOOKLET_KINDS.has(d.kind))
+    .sort((a, b) => (EXTRA_ORDER[a.kind] ?? 9) - (EXTRA_ORDER[b.kind] ?? 9));
+  return { booklets, extras };
+}
+
+function summary(exam: OfficialExam): string {
+  const { booklets, extras } = splitDocuments(exam);
+  const parts = [booklets.length === 1 ? "1 provhäfte" : `${booklets.length} provhäften`];
+  if (extras.some((d) => d.kind === "facit")) parts.push("facit");
+  if (extras.some((d) => d.kind === "normering")) parts.push("normering");
+  return parts.join(", ");
+}
+
+function DocumentLinks({ title, docs }: { title: string; docs: OfficialDocument[] }) {
+  if (docs.length === 0) return null;
+  return (
+    <div>
+      <h4 className="text-[13px] text-[var(--ink-muted)]">{title}</h4>
+      <ul className="mt-1.5 space-y-0.5">
+        {docs.map((doc) => (
+          <li key={doc.url}>
+            <a
+              href={doc.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 rounded-md py-1 text-sm font-medium text-[var(--brand)] underline-offset-4 hover:underline"
+            >
+              {docLabel(doc)}
+              <ArrowUpRight
+                className="size-3.5 text-[var(--ink-muted)] group-hover:text-[var(--brand)]"
+                aria-hidden
+              />
+              <span className="sr-only">(PDF, öppnas i ny flik)</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export function OfficialExamsBrowser() {
-  const years = useMemo(
-    () => [...new Set(OFFICIAL_EXAMS.map((e) => e.year))].sort((a, b) => b - a),
-    [],
-  );
-  const [year, setYear] = useState<number | "alla">(years[0] ?? "alla");
-  const [activeExamId, setActiveExamId] = useState(OFFICIAL_EXAMS[0]?.id ?? "");
-  const [activeDocUrl, setActiveDocUrl] = useState(
-    OFFICIAL_EXAMS[0]?.documents.find((d) => d.kind === "verbal" || d.kind === "kvantitativ")
-      ?.url ??
-      OFFICIAL_EXAMS[0]?.documents[0]?.url ??
-      "",
-  );
-  // null = ingen extern PDF har begärts ännu (klick-för-att-ladda).
-  const [loadedDocUrl, setLoadedDocUrl] = useState<string | null>(null);
-
-  const pdfExams = useMemo(
-    () => OFFICIAL_EXAMS.filter((e) => year === "alla" || e.year === year),
-    [year],
-  );
-
-  /** Proven grupperade per år — varje år blir en vikbar sektion. */
-  const yearGroups = useMemo(() => {
-    const groups = new Map<number, OfficialExam[]>();
-    for (const exam of pdfExams) {
-      const list = groups.get(exam.year);
-      if (list) list.push(exam);
-      else groups.set(exam.year, [exam]);
-    }
-    return [...groups.entries()].map(([groupYear, exams]) => ({
-      year: groupYear,
-      exams,
-      pdfCount: exams.reduce((sum, exam) => sum + exam.documents.length, 0),
-    }));
-  }, [pdfExams]);
-
-  const activePdfExam: OfficialExam | undefined =
-    pdfExams.find((e) => e.id === activeExamId) ?? pdfExams[0];
-
-  const activeDoc =
-    activePdfExam?.documents.find((d) => d.url === activeDocUrl) ??
-    activePdfExam?.documents[0];
-
-  function selectPdfExam(exam: OfficialExam) {
-    setActiveExamId(exam.id);
-    const preferred =
-      exam.documents.find((d) => d.kind === "verbal") ??
-      exam.documents.find((d) => d.kind === "kvantitativ") ??
-      exam.documents[0];
-    setActiveDocUrl(preferred?.url ?? "");
-    setLoadedDocUrl(null);
-  }
+  const [showAll, setShowAll] = useState(false);
+  const exams = showAll ? OFFICIAL_EXAMS : OFFICIAL_EXAMS.slice(0, INITIAL_COUNT);
+  const hidden = OFFICIAL_EXAMS.length - INITIAL_COUNT;
 
   return (
-    <div>
-      <section>
-        <h2 className="text-lg font-semibold text-[var(--ink)]">Gamla provhäften från UHR</h2>
-        <p className="mt-1 max-w-2xl text-sm text-[var(--ink-muted)]">
-          De officiella PDF:erna från studera.nu, med facit och normering. ELF-texterna saknas ofta
-          eftersom UHR bara visar dem en kort tid. Fler år finns i{" "}
-          <a
-            href={OFFICIAL_INDEX_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-[var(--brand)] underline-offset-4 hover:underline"
-          >
-            UHR:s arkiv
-          </a>
-          .
-        </p>
+    <section>
+      <h2 className="text-lg font-semibold text-[var(--ink)]">Gamla provhäften från UHR</h2>
+      <p className="mt-1 max-w-2xl text-sm text-[var(--ink-muted)]">
+        De officiella PDF:erna från studera.nu, med facit och normering. De öppnas i en ny flik.
+        ELF-texterna saknas ofta eftersom UHR bara visar dem en kort tid. Fler år finns i{" "}
+        <a
+          href={OFFICIAL_INDEX_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-[var(--brand)] underline-offset-4 hover:underline"
+        >
+          UHR:s arkiv
+        </a>
+        .
+      </p>
 
-        <div className="mt-3 flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => setYear("alla")}
-            className={`rounded-md border px-3 py-1.5 text-sm transition ${
-              year === "alla"
-                ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                : "border-[var(--line-strong)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
-            }`}
-          >
-            Alla
-          </button>
-          {years.map((y) => (
-            <button
-              key={y}
-              type="button"
-              onClick={() => setYear(y)}
-              className={`rounded-md border px-3 py-1.5 text-sm transition ${
-                year === y
-                  ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                  : "border-[var(--line-strong)] text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
-              }`}
-            >
-              {y}
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-4 space-y-3">
-          {yearGroups.map((group) => {
-            const isActivePdfGroup = group.exams.some(
-              (exam) => exam.id === activePdfExam?.id,
-            );
-            const examLabel =
-              group.exams.length === 1
-                ? "1 provtillfälle"
-                : `${group.exams.length} provtillfällen`;
-            return (
-              <Disclosure
-                key={group.year}
-                title={group.year}
-                subtitle={`${examLabel} · ${group.pdfCount} PDF:er`}
-                hint={
-                  isActivePdfGroup && activePdfExam ? (
-                    <span className="max-w-[13rem] truncate rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-xs font-medium text-[var(--brand)]">
-                      {activePdfExam.title}
-                    </span>
-                  ) : undefined
-                }
-              >
-                <div className="grid gap-5 lg:gap-6 lg:grid-cols-[16rem_1fr]">
-                  <div className="space-y-2.5">
-                    {group.exams.map((exam) => {
-                      const selected = exam.id === activePdfExam?.id;
-                      return (
-                        <button
-                          key={exam.id}
-                          type="button"
-                          onClick={() => selectPdfExam(exam)}
-                          className={`w-full rounded-lg border px-3 py-3 text-left transition ${
-                            selected
-                              ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                              : "border-[var(--line-strong)] bg-card/70 hover:border-[var(--ink-soft)]"
-                          }`}
-                        >
-                          <div className="font-medium text-[var(--ink)]">{exam.title}</div>
-                          <div className="mt-1 text-xs text-[var(--ink-muted)]">
-                            {exam.documents.length} PDF:er
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  <div className="min-w-0 space-y-3">
-                    {isActivePdfGroup && activePdfExam ? (
-                      <>
-                        <div className="flex flex-wrap items-end justify-between gap-3">
-                          <div>
-                            <h3 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
-                              {activePdfExam.title}
-                            </h3>
-                            <p className="text-sm text-[var(--ink-muted)]">
-                              Välj häfte nedan — öppnas i läsaren på den här sidan.
-                            </p>
-                          </div>
-                          <a
-                            href={activePdfExam.pageUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm font-medium text-[var(--brand)] underline-offset-4 hover:underline"
-                          >
-                            UHR-sida →
-                          </a>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2">
-                          {activePdfExam.documents.map((doc) => {
-                            const selected = doc.url === activeDoc?.url;
-                            return (
-                              <button
-                                key={doc.url}
-                                type="button"
-                                onClick={() => { setActiveDocUrl(doc.url); setLoadedDocUrl(null); }}
-                                className={`rounded-md border px-3 py-1.5 text-sm transition ${
-                                  selected
-                                    ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--brand)]"
-                                    : "border-[var(--line-strong)] bg-card text-[var(--ink-soft)] hover:border-[var(--ink-soft)]"
-                                }`}
-                              >
-                                <span className="mr-1.5 text-[10px] opacity-70">
-                                  {kindLabel(doc.kind)}
-                                </span>
-                                {doc.title}
-                              </button>
-                            );
-                          })}
-                        </div>
-
-                        {activeDoc ? (
-                          <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-card">
-                            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--line)] bg-[var(--paper)] px-4 py-2">
-                              <p className="text-sm font-medium text-[var(--ink)]">{activeDoc.title}</p>
-                              <a
-                                href={activeDoc.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-sm text-[var(--brand)] underline-offset-4 hover:underline"
-                              >
-                                Öppna PDF i ny flik →
-                              </a>
-                            </div>
-                            {loadedDocUrl === activeDoc.url ? (
-                              <iframe
-                                title={activeDoc.title}
-                                src={`${activeDoc.url}#view=FitH`}
-                                className="h-[min(80vh,920px)] w-full bg-[#525659]"
-                              />
-                            ) : (
-                              <div className="flex flex-col items-center justify-center gap-3 bg-[var(--paper)] px-6 py-16 text-center">
-                                <p className="text-sm text-[var(--ink-muted)]">
-                                  PDF:en laddas inte automatiskt — studera.nu kan blockera inbäddning.
-                                </p>
-                                <button
-                                  type="button"
-                                  onClick={() => setLoadedDocUrl(activeDoc.url)}
-                                  className="rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
-                                >
-                                  Visa PDF i läsaren
-                                </button>
-                              </div>
-                            )}
-                          </div>
-                        ) : (
-                          <p className="text-sm text-[var(--ink-muted)]">
-                            Inga PDF:er hittades för detta prov.
-                          </p>
-                        )}
-                      </>
-                    ) : null}
-                  </div>
+      <ul className="mt-4 divide-y divide-[var(--line)] overflow-hidden rounded-[10px] border border-[var(--line)] bg-card">
+        {exams.map((exam, i) => {
+          const { booklets, extras } = splitDocuments(exam);
+          return (
+            <li key={exam.id}>
+              <details className="group" open={i === 0}>
+                <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 px-4 py-3 transition-colors hover:bg-[var(--mist)]/60 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--ring)] sm:px-5 [&::-webkit-details-marker]:hidden">
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-medium text-[var(--ink)]">{plain(exam.title)}</span>
+                    <span className="block text-[13px] text-[var(--ink-muted)]">{summary(exam)}</span>
+                  </span>
+                  <ChevronDown
+                    className="size-4 shrink-0 text-[var(--ink-muted)] transition-transform group-open:rotate-180"
+                    aria-hidden
+                  />
+                </summary>
+                <div className="grid gap-4 px-4 pb-4 pt-1 sm:grid-cols-2 sm:px-5">
+                  <DocumentLinks title="Provhäften" docs={booklets} />
+                  <DocumentLinks title="Facit och normering" docs={extras} />
+                  <a
+                    href={exam.pageUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[13px] text-[var(--ink-muted)] underline-offset-4 hover:text-[var(--ink)] hover:underline sm:col-span-2"
+                  >
+                    Provets sida hos UHR
+                  </a>
                 </div>
-              </Disclosure>
-            );
-          })}
-        </div>
-      </section>
-    </div>
+              </details>
+            </li>
+          );
+        })}
+      </ul>
+
+      {hidden > 0 ? (
+        <button
+          type="button"
+          onClick={() => setShowAll((v) => !v)}
+          aria-expanded={showAll}
+          className="mt-3 inline-flex min-h-10 items-center rounded-md border border-[var(--line-strong)] bg-card px-4 text-sm font-medium text-[var(--ink)] transition-colors hover:bg-[var(--mist)]"
+        >
+          {showAll ? "Visa färre" : `Visa alla ${OFFICIAL_EXAMS.length} provtillfällen`}
+        </button>
+      ) : null}
+    </section>
   );
 }
