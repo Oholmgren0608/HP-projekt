@@ -137,16 +137,16 @@
   {
     "id": "ovn-dtk-010",
     "kind": "dtk",
-    "prompt": "Hur stor areal skogsmark fanns i Län E?",
+    "prompt": "Ungefär hur stor areal skogsmark i Län E var inte skyddad?",
     "passage": "Landareal och skogsmark i sex län i ett fiktivt land, 2024\n\nLandareal anges i km². Skogsmark anges i procent av länets landareal och skyddad skogsmark i procent av länets skogsmark.\n\nLän A – Landareal: 16 600 | Skogsmark: 76 | Skyddad skogsmark: 4\nLän B – Landareal: 5 200 | Skogsmark: 45 | Skyddad skogsmark: 9\nLän C – Landareal: 21 400 | Skogsmark: 55 | Skyddad skogsmark: 3\nLän D – Landareal: 3 800 | Skogsmark: 30 | Skyddad skogsmark: 11\nLän E – Landareal: 9 500 | Skogsmark: 62 | Skyddad skogsmark: 6\nLän F – Landareal: 11 900 | Skogsmark: 84 | Skyddad skogsmark: 5",
     "options": [
       "353 km²",
-      "570 km²",
       "3 610 km²",
-      "5 890 km²"
+      "5 320 km²",
+      "5 537 km²"
     ],
     "correctIndex": 3,
-    "explain": "Skogsmarken utgör 62 procent av Län E:s landareal på 9 500 km², alltså 0,62 · 9 500 = 5 890 km². 3 610 km² är den del av landarealen som inte är skogsmark (0,38 · 9 500). 570 km² får man om man i stället tar andelen skyddad skogsmark, 6 procent, av hela landarealen (0,06 · 9 500), och 353 km² är bara den skyddade skogsmarken (0,06 · 5 890 ≈ 353), inte all skogsmark.",
+    "explain": "Skogsmarken utgör 62 procent av Län E:s landareal på 9 500 km², alltså 0,62 · 9 500 = 5 890 km². Av skogsmarken var 6 procent skyddad, så 94 procent var inte skyddad: 0,94 · 5 890 ≈ 5 537 km². 5 320 km² får man om man drar 6 procentenheter från 62 procent och tar 56 procent av hela landarealen (0,56 · 9 500), men andelen skyddad skogsmark är räknad på skogsmarken och inte på landarealen. 353 km² är den skyddade skogsmarken (0,06 · 5 890 ≈ 353), alltså motsatsen till det som efterfrågas, och 3 610 km² är den del av landarealen som inte är skogsmark (0,38 · 9 500).",
     "verification": "agreed"
   },
   {
@@ -182,16 +182,16 @@
   {
     "id": "ovn-dtk-013",
     "kind": "dtk",
-    "prompt": "Hur många invånare i åldersgruppen 35–44 år hade eftergymnasial utbildning?",
+    "prompt": "Hur många fler invånare i åldersgruppen 35–44 år än i åldersgruppen 55–64 år hade eftergymnasial utbildning?",
     "passage": "Befolkningen 25–64 år i en fiktiv kommun efter åldersgrupp och högsta utbildningsnivå, 2024\n\nTabell 1. Antal invånare\n25–34 år: 11 000\n35–44 år: 8 000\n45–54 år: 9 500\n55–64 år: 5 500\n\nTabell 2. Högsta utbildningsnivå (procent av invånarna i respektive åldersgrupp)\n25–34 år – Förgymnasial: 7 | Gymnasial: 38 | Eftergymnasial: 55\n35–44 år – Förgymnasial: 10 | Gymnasial: 44 | Eftergymnasial: 46\n45–54 år – Förgymnasial: 14 | Gymnasial: 50 | Eftergymnasial: 36\n55–64 år – Förgymnasial: 20 | Gymnasial: 52 | Eftergymnasial: 28",
     "options": [
-      "3 520",
-      "3 680",
-      "4 370",
-      "6 050"
+      "1 440",
+      "2 140",
+      "2 500",
+      "3 680"
     ],
     "correctIndex": 1,
-    "explain": "I åldersgruppen 35–44 år fanns 8 000 invånare, och 46 procent av dem hade eftergymnasial utbildning: 0,46 · 8 000 = 3 680. 3 520 är antalet med gymnasial utbildning i samma grupp (0,44 · 8 000), alltså fel kolumn. 4 370 får man om man använder antalet invånare i gruppen 45–54 år (0,46 · 9 500), och 6 050 är antalet med eftergymnasial utbildning bland 25–34-åringarna (0,55 · 11 000), alltså fel rad.",
+    "explain": "Antalet med eftergymnasial utbildning är antalet invånare gånger andelen: 0,46 · 8 000 = 3 680 i åldersgruppen 35–44 år och 0,28 · 5 500 = 1 540 i åldersgruppen 55–64 år. Skillnaden är 3 680 − 1 540 = 2 140. 1 440 får man om man drar procentsatserna från varandra (46 − 28 = 18 procentenheter) och tar 18 procent av 8 000, men procentsatserna gäller grupper av olika storlek. 2 500 är skillnaden i antal invånare mellan grupperna (8 000 − 5 500) och tar ingen hänsyn till utbildningsnivån. 3 680 är bara antalet med eftergymnasial utbildning i åldersgruppen 35–44 år, innan man har dragit av motsvarande antal i åldersgruppen 55–64 år.",
     "verification": "agreed"
   },
   {
@@ -476,7 +476,7 @@
       "Djurparken hade fler besökare än konstmuseet år 2023."
     ],
     "correctIndex": 3,
-    "explain": "Placeringen 2023 visar ordningen mellan besöksmålen det året. Djurparken låg på plats 4 och konstmuseet på plats 5, så djurparken hade fler besökare år 2023 (360 / 0,80 = 450 tusen mot 420 / 1,05 = 400 tusen), och den slutsatsen stämmer. Friluftsmuseet låg på plats 7 och äventyrsbadet på plats 8 år 2023, så friluftsmuseet hade fler besökare, inte färre (210 / 0,75 = 280 tusen mot 350 / 1,40 = 250 tusen). Slottet hade 540 / 0,90 = 600 tusen besökare år 2023 och förlorade alltså 600 − 540 = 60 tusen, medan friluftsmuseet förlorade 280 − 210 = 70 tusen, så det var friluftsmuseet som förlorade flest. Botaniska trädgården fick 10 procent fler besökare men föll ändå från plats 6 till plats 7, eftersom äventyrsbadet gick förbi.",
+    "explain": "Placeringen 2023 visar ordningen mellan besöksmålen det året. Djurparken låg på plats 4 och konstmuseet på plats 5, så djurparken hade fler besökare år 2023 (360 / 0,80 = 450 tusen mot 420 / 1,05 = 400 tusen), och den slutsatsen stämmer. Friluftsmuseet låg på plats 7 och äventyrsbadet på plats 8 år 2023, så friluftsmuseet hade fler besökare, inte färre (210 / 0,75 = 280 tusen mot 350 / 1,40 = 250 tusen). Slottet hade 540 / 0,90 = 600 tusen besökare år 2023 och förlorade alltså 600 − 540 = 60 tusen, medan friluftsmuseet förlorade 280 − 210 = 70 tusen, så det var friluftsmuseet som förlorade fler. Botaniska trädgården fick 10 procent fler besökare men föll ändå från plats 6 till plats 7, eftersom äventyrsbadet gick förbi.",
     "verification": "agreed"
   },
   {
@@ -876,12 +876,12 @@
     "passage": "Försäljning av cyklar i ett fiktivt land, 2020–2024\n\nDiagram. Antal sålda cyklar efter typ (tusental)\n2020 – Elcyklar: 60 | Övriga cyklar: 540\n2021 – Elcyklar: 95 | Övriga cyklar: 505\n2022 – Elcyklar: 110 | Övriga cyklar: 440\n2023 – Elcyklar: 120 | Övriga cyklar: 380\n2024 – Elcyklar: 150 | Övriga cyklar: 400\n\nTabell. Genomsnittligt pris per såld cykel (kronor)\nElcyklar – 2020: 22 000 | 2024: 18 000\nÖvriga cyklar – 2020: 4 000 | 2024: 5 000",
     "options": [
       "ca 17 procentenheter",
-      "ca 15 procentenheter",
+      "ca 20 procentenheter",
       "ca 26 procentenheter",
       "ca 27 procentenheter"
     ],
     "correctIndex": 0,
-    "explain": "Elcyklarnas andel var 60 / (60 + 540) = 60 / 600 = 10 procent år 2020 och 150 / (150 + 400) = 150 / 550 ≈ 27,3 procent år 2024. Andelen ökade alltså med ungefär 27,3 − 10 ≈ 17 procentenheter. Ca 15 procentenheter får man om man delar även 2024 års elcyklar med 2020 års totala försäljning (150 / 600 = 25 procent och 25 − 10 = 15), men det totala antalet sålda cyklar minskade till 550 000. Ca 26 procentenheter får man om man jämför elcyklarna med övriga cyklar i stället för med alla cyklar (150 / 400 = 37,5 procent och 60 / 540 ≈ 11,1 procent, en skillnad på ca 26). Ca 27 procentenheter är elcyklarnas andel år 2024, inte ökningen sedan 2020.",
+    "explain": "Elcyklarnas andel var 60 / (60 + 540) = 60 / 600 = 10 procent år 2020 och 150 / (150 + 400) = 150 / 550 ≈ 27,3 procent år 2024. Andelen ökade alltså med ungefär 27,3 − 10 ≈ 17 procentenheter. Ca 20 procentenheter får man om man räknar på intäkterna i stället för på antalet sålda cyklar: elcyklarna gav 60 000 · 22 000 kronor = 1 320 av 3 480 miljoner kronor (ca 37,9 procent) år 2020 och 150 000 · 18 000 kronor = 2 700 av 4 700 miljoner kronor (ca 57,4 procent) år 2024. Ca 26 procentenheter får man om man jämför elcyklarna med övriga cyklar i stället för med alla cyklar (150 / 400 = 37,5 procent och 60 / 540 ≈ 11,1 procent, en skillnad på ca 26). Ca 27 procentenheter är elcyklarnas andel år 2024, inte ökningen sedan 2020.",
     "verification": "agreed"
   },
   {
@@ -1057,11 +1057,11 @@
     "options": [
       "ca 7 procentenheter",
       "ca 8 procentenheter",
-      "ca 320 procentenheter",
-      "ca 800 procentenheter"
+      "ca 11 procentenheter",
+      "ca 39 procentenheter"
     ],
     "correctIndex": 0,
-    "explain": "Elbilarnas andel av personbilarna i trafik var 40 / 4 300 ≈ 0,9 procent år 2019 och 360 / 4 400 ≈ 8,2 procent år 2024. Ökningen är 8,2 − 0,9 ≈ 7,3, alltså ungefär 7 procentenheter. Ca 8 procentenheter får man om man glömmer att dra bort 2019 års andel. Ca 800 procentenheter kommer från den procentuella ökningen av antalet elbilar (från 40 000 till 360 000 är en ökning med 800 procent), och ca 320 procentenheter är ökningen räknad i tusental bilar – ingen av dem är en förändring av andelen.",
+    "explain": "Elbilarnas andel av personbilarna i trafik var 40 / 4 300 ≈ 0,9 procent år 2019 och 360 / 4 400 ≈ 8,2 procent år 2024. Ökningen är 8,2 − 0,9 ≈ 7,3, alltså ungefär 7 procentenheter. Ca 8 procentenheter får man om man glömmer att dra bort 2019 års andel. Ca 11 procentenheter får man om man räknar laddhybriderna som elbilar: (40 + 60) / 4 300 ≈ 2,3 procent år 2019 och (360 + 240) / 4 400 ≈ 13,6 procent år 2024. Ca 39 procentenheter får man om man tar elbilarnas andel av nyregistreringarna år 2024 (40 procent) som deras andel av alla bilar i trafik, men nyregistreringarna är bara en liten del av bilarna i trafik.",
     "verification": "agreed"
   },
   {
@@ -1427,16 +1427,16 @@
   {
     "id": "ovn-dtk-096",
     "kind": "dtk",
-    "prompt": "Hur många år ökade männens medellivslängd vid födseln mellan 1984 och 2024?",
+    "prompt": "Med ungefär hur många procent ökade männens medellivslängd vid födseln mellan 1984 och 2024?",
     "passage": "Medellivslängd vid födseln i ett fiktivt land, 1984–2024\n\nDiagram. Medellivslängd vid födseln efter kön (år)\n1984 – Kvinnor: 79,2 | Män: 72,8\n1989 – Kvinnor: 79,8 | Män: 73,7\n1994 – Kvinnor: 80,6 | Män: 74,9\n1999 – Kvinnor: 81,4 | Män: 75,9\n2004 – Kvinnor: 82,0 | Män: 77,1\n2009 – Kvinnor: 82,7 | Män: 78,3\n2014 – Kvinnor: 83,4 | Män: 79,4\n2019 – Kvinnor: 83,6 | Män: 79,8\n2024 – Kvinnor: 84,3 | Män: 80,7",
     "options": [
-      "3,6 år",
-      "5,1 år",
-      "6,4 år",
-      "7,9 år"
+      "ca 6,4 procent",
+      "ca 7,9 procent",
+      "ca 9,8 procent",
+      "ca 10,9 procent"
     ],
     "correctIndex": 3,
-    "explain": "Männens medellivslängd var 72,8 år 1984 och 80,7 år 2024, en ökning med 80,7 − 72,8 = 7,9 år. 5,1 år är kvinnornas ökning (84,3 − 79,2). 6,4 år och 3,6 år är skillnaden mellan kvinnor och män år 1984 respektive år 2024, inte männens ökning.",
+    "explain": "Männens medellivslängd ökade från 72,8 år 1984 till 80,7 år 2024, alltså med 80,7 − 72,8 = 7,9 år. I procent av värdet år 1984 är det 7,9/72,8 ≈ 0,109, dvs. ca 10,9 procent. Ca 9,8 procent får man om man delar ökningen med värdet år 2024 i stället för år 1984 (7,9/80,7). Ca 7,9 procent får man om man förväxlar ökningen på 7,9 år med en ökning i procent, och ca 6,4 procent är kvinnornas procentuella ökning (5,1/79,2).",
     "verification": "agreed"
   },
   {
@@ -1547,7 +1547,7 @@
   {
     "id": "ovn-dtk-104",
     "kind": "dtk",
-    "prompt": "I vilken åldersgrupp halverades andelen dagligrökare mellan 2014 och 2024?",
+    "prompt": "I vilken åldersgrupp minskade andelen dagligrökare procentuellt mest mellan 2014 och 2024?",
     "passage": "Dagligrökning i ett fiktivt land efter åldersgrupp, 2004, 2014 och 2024\n\nDiagram. Andel av befolkningen som röker dagligen (procent)\n16–29 år – 2004: 14 | 2014: 8 | 2024: 4\n30–44 år – 2004: 18 | 2014: 12 | 2024: 7\n45–64 år – 2004: 21 | 2014: 15 | 2024: 10\n65–84 år – 2004: 12 | 2014: 10 | 2024: 8\n\nTabell. Befolkning efter åldersgrupp (tusental)\n16–29 år – 2014: 1 500 | 2024: 1 400\n30–44 år – 2014: 1 600 | 2024: 1 300\n45–64 år – 2014: 1 900 | 2024: 2 000\n65–84 år – 2014: 1 200 | 2024: 1 600",
     "options": [
       "16–29 år",
@@ -1556,7 +1556,7 @@
       "65–84 år"
     ],
     "correctIndex": 0,
-    "explain": "I åldersgruppen 16–29 år sjönk andelen från 8 till 4 procent, alltså till hälften. I 30–44 år sjönk den från 12 till 7 procent och i 45–64 år från 15 till 10 procent. Där var minskningen visserligen större i procentenheter (5 mot 4), men andelen blev inte hälften så stor. I 65–84 år sjönk andelen bara från 10 till 8 procent.",
+    "explain": "Den procentuella minskningen är minskningen i procentenheter delad med andelen år 2014: 16–29 år (8 − 4)/8 = 50 procent, 30–44 år (12 − 7)/12 ≈ 42 procent, 45–64 år (15 − 10)/15 ≈ 33 procent och 65–84 år (10 − 8)/10 = 20 procent. Andelen minskade alltså procentuellt mest i åldersgruppen 16–29 år, där den halverades. I åldersgrupperna 30–44 år och 45–64 år var minskningen större i procentenheter (5 mot 4), men där var andelen också högre från början. I åldersgruppen 65–84 år minskade andelen minst, både i procentenheter och i procent.",
     "verification": "agreed"
   },
   {
@@ -1646,7 +1646,7 @@
       "Utbildning"
     ],
     "correctIndex": 1,
-    "explain": "Den procentuella ökningen är ökningen delad med antalet år 2014: byggverksamhet 55/310 ≈ 18 procent, information och kommunikation 95/190 = 50 procent, vård och omsorg 120/600 = 20 procent och utbildning 50/380 ≈ 13 procent. Information och kommunikation ökade alltså mest i procent. Vård och omsorg hade den största ökningen i antal (120 000), men utgick från en mycket högre nivå. Byggverksamhet och utbildning ökade både mindre i antal och i procent.",
+    "explain": "Den procentuella ökningen är ökningen delad med antalet år 2014: byggverksamhet 55/310 ≈ 18 procent, information och kommunikation 95/190 = 50 procent, vård och omsorg 120/600 = 20 procent och utbildning 50/380 ≈ 13 procent. Information och kommunikation ökade alltså mest i procent. Vård och omsorg hade den största ökningen i antal (120 000), men utgick från en mycket högre nivå. Byggverksamhet och utbildning ökade mindre än information och kommunikation både i antal och i procent.",
     "verification": "agreed"
   },
   {
@@ -1871,7 +1871,7 @@
       "ca 250 km"
     ],
     "correctIndex": 1,
-    "explain": "Enligt anmärkningen är den genomsnittliga sträckan transportarbetet delat med godsmängden. Sammanlagt var transportarbetet 77 miljarder, alltså 77 000 miljoner, tonkilometer och godsmängden 400 + 92 + 20 = 512 miljoner ton. 77 000 / 512 ≈ 150, alltså ca 150 km. Ca 220 km är medelvärdet av de tre trafikslagens sträckor – väg 48 000 / 400 = 120 km, järnväg 23 000 / 92 = 250 km och sjöfart 6 000 / 20 = 300 km – men det ovägda medelvärdet bortser från att det mesta godset går på väg. Ca 120 km gäller bara vägtransporterna och ca 250 km bara järnvägen.",
+    "explain": "Enligt anmärkningen är transportarbetet godsets vikt i ton gånger sträckan i kilometer, så den genomsnittliga sträckan är transportarbetet delat med godsmängden. Sammanlagt var transportarbetet 77 miljarder, alltså 77 000 miljoner, tonkilometer och godsmängden 400 + 92 + 20 = 512 miljoner ton. 77 000 / 512 ≈ 150, alltså ca 150 km. Ca 220 km är medelvärdet av de tre trafikslagens sträckor – väg 48 000 / 400 = 120 km, järnväg 23 000 / 92 = 250 km och sjöfart 6 000 / 20 = 300 km – men det ovägda medelvärdet bortser från att det mesta godset går på väg. Ca 120 km gäller bara vägtransporterna och ca 250 km bara järnvägen.",
     "verification": "agreed"
   },
   {
@@ -1892,7 +1892,7 @@
   {
     "id": "ovn-dtk-127",
     "kind": "dtk",
-    "prompt": "Ungefär vilket var hushållets genomsnittliga elpris för hela året 2024 med det rörliga priset?",
+    "prompt": "Ungefär hur mycket betalade hushållet i genomsnitt per kWh under 2024 med det rörliga priset?",
     "passage": "Elanvändning och elpris för ett fiktivt hushåll i en villa, 2024\n\nDiagram. Elanvändning per månad (kWh)\nJanuari: 2 400\nFebruari: 2 200\nMars: 1 800\nApril: 1 300\nMaj: 900\nJuni: 600\nJuli: 500\nAugusti: 600\nSeptember: 900\nOktober: 1 400\nNovember: 1 900\nDecember: 2 300\n\nTabell. Hushållets rörliga elpris per kvartal, inklusive skatter och avgifter (öre per kWh)\nJanuari–mars: 200\nApril–juni: 120\nJuli–september: 100\nOktober–december: 160\n\nAnm.: Elbolaget erbjöd också ett fast elpris på 150 öre per kWh för hela året. Hushållet har inga andra elkostnader än elpriset gånger elanvändningen.",
     "options": [
       "ca 112 öre per kWh",
@@ -1901,7 +1901,7 @@
       "ca 181 öre per kWh"
     ],
     "correctIndex": 2,
-    "explain": "Elanvändningen per kvartal var 2 400 + 2 200 + 1 800 = 6 400, 1 300 + 900 + 600 = 2 800, 500 + 600 + 900 = 2 000 och 1 400 + 1 900 + 2 300 = 5 600 kWh, totalt 16 800 kWh. Kostnaden blev 6 400 · 2,00 + 2 800 · 1,20 + 2 000 · 1,00 + 5 600 · 1,60 = 12 800 + 3 360 + 2 000 + 8 960 = 27 120 kronor. Genomsnittspriset är 27 120 / 16 800 ≈ 1,61 kronor, alltså ca 161 öre per kWh. Ca 145 öre är medelvärdet av de fyra kvartalspriserna, men det tar inte hänsyn till att hushållet använde mest el under de dyra vinterkvartalen. Ca 181 öre gäller bara första och fjärde kvartalet (21 760 / 12 000) och ca 112 öre bara andra och tredje kvartalet (5 360 / 4 800).",
+    "explain": "Elanvändningen per kvartal var 2 400 + 2 200 + 1 800 = 6 400, 1 300 + 900 + 600 = 2 800, 500 + 600 + 900 = 2 000 och 1 400 + 1 900 + 2 300 = 5 600 kWh, totalt 16 800 kWh. Kostnaden blev 6 400 · 2,00 + 2 800 · 1,20 + 2 000 · 1,00 + 5 600 · 1,60 = 12 800 + 3 360 + 2 000 + 8 960 = 27 120 kronor. I genomsnitt betalade hushållet alltså 27 120 / 16 800 ≈ 1,61 kronor per kWh, ca 161 öre. Ca 145 öre är medelvärdet av de fyra kvartalspriserna, men det tar inte hänsyn till att hushållet använde mest el under de dyra vinterkvartalen. Ca 181 öre gäller bara första och fjärde kvartalet (21 760 / 12 000) och ca 112 öre bara andra och tredje kvartalet (5 360 / 4 800).",
     "verification": "agreed"
   },
   {
@@ -1976,7 +1976,7 @@
       "18 000"
     ],
     "correctIndex": 1,
-    "explain": "Kommun E ligger i klass 2 och har alltså minst 0,20 · 30 000 = 6 000 och färre än 0,40 · 30 000 = 12 000 bostäder med fjärrvärme. Klass 3 kräver minst 12 000. Om kommunen bara har 6 000 behövs 6 000 nya anslutningar, och har den fler räcker 6 000 med marginal. Summan blir samtidigt färre än 12 000 + 6 000 = 18 000, alltså under 60 procent, så kommunen hamnar inte i klass 4. Därför krävs minst 6 000. 3 000 får man om man utgår från klassens mittvärde, 30 procent eller 9 000 bostäder, men det är inte säkert att kommunen har så många. 12 000 är det antal som krävs totalt för klass 3 – då glömmer man de bostäder som redan har fjärrvärme. 18 000 motsvarar 60 procent, som är gränsen till klass 4.",
+    "explain": "Kommun E ligger i klass 2 och har alltså minst 0,20 · 30 000 = 6 000 och färre än 0,40 · 30 000 = 12 000 bostäder med fjärrvärme. Klass 3 kräver minst 12 000. Om kommunen bara har 6 000 behövs 6 000 nya anslutningar, och har den fler räcker 6 000 med marginal. Antalet blir samtidigt lägre än 12 000 + 6 000 = 18 000, alltså under 60 procent, så kommunen hamnar inte i klass 4. Därför krävs minst 6 000. 3 000 får man om man utgår från klassens mittvärde, 30 procent eller 9 000 bostäder, men det är inte säkert att kommunen har så många. 12 000 är det antal som krävs totalt för klass 3 – då glömmer man de bostäder som redan har fjärrvärme. 18 000 motsvarar 60 procent, som är gränsen till klass 4.",
     "verification": "agreed"
   },
   {
@@ -2396,7 +2396,7 @@
       "2023 och 2024"
     ],
     "correctIndex": 0,
-    "explain": "Betas kurs steg mellan 2018 och 2019 med 15 / 60 = 25 procent, mellan 2019 och 2020 med 13 / 75 ≈ 17 procent, mellan 2022 och 2023 med 12 / 64 ≈ 19 procent och mellan 2023 och 2024 med 16 / 76 ≈ 21 procent (mellan 2020 och 2022 sjönk kursen). Den största procentuella ökningen var alltså mellan 2018 och 2019. Mellan 2023 och 2024 steg kursen mest i kronor, men från en högre nivå. Ökningen mellan 2022 och 2023 räknas från den lägsta kursen, men var bara 12 kronor, och ökningen mellan 2019 och 2020 räknas från en högre kurs än den mellan 2018 och 2019.",
+    "explain": "Betas kurs steg mellan 2018 och 2019 med 15 / 60 = 25 procent, mellan 2019 och 2020 med 13 / 75 ≈ 17 procent, mellan 2022 och 2023 med 12 / 64 ≈ 19 procent och mellan 2023 och 2024 med 16 / 76 ≈ 21 procent (mellan 2020 och 2022 sjönk kursen). Den största procentuella ökningen var alltså mellan 2018 och 2019. Mellan 2023 och 2024 steg kursen mest i kronor, men från en högre nivå. Ökningen mellan 2022 och 2023 räknas från en låg kurs, 64 kronor, men var bara 12 kronor, och ökningen mellan 2019 och 2020 räknas från en högre kurs än den mellan 2018 och 2019.",
     "verification": "agreed"
   },
   {
@@ -2501,7 +2501,7 @@
       "5"
     ],
     "correctIndex": 2,
-    "explain": "Villkoret är uppfyllt när de utländska gästnätterna är minst hälften av de inhemska. Februari: 35 av 70, exakt hälften. Juni: 70 av 140, exakt hälften. Juli: 110 av 190 (hälften är 95). Augusti: 80 av 150 (hälften är 75). Alla andra månader ligger under hälften, till exempel december med 30 av 65 (hälften är 32,5) och september med 35 av 90. Det blir alltså 4 månader. Svaret 2 får man om man kräver mer än hälften och därmed utesluter februari och juni, där andelen är exakt hälften. Svaret 3 får man om man bara ser till sommarmånaderna juni–augusti och missar februari. Svaret 5 får man om man också räknar med december, där de utländska gästnätterna ligger nära men under hälften.",
+    "explain": "Villkoret är uppfyllt när de utländska gästnätterna är minst hälften så många som de inhemska. Februari: 35 mot 70, exakt hälften. Juni: 70 mot 140, exakt hälften. Juli: 110 mot 190 (hälften är 95). Augusti: 80 mot 150 (hälften är 75). Alla andra månader ligger under hälften, till exempel december med 30 mot 65 (hälften är 32,5) och september med 35 mot 90. Det blir alltså 4 månader. Svaret 2 får man om man kräver mer än hälften och därmed utesluter februari och juni, där de utländska gästnätterna är exakt hälften så många som de inhemska. Svaret 3 får man om man bara ser till sommarmånaderna juni–augusti och missar februari. Svaret 5 får man om man också räknar med december, där de utländska gästnätterna ligger nära men under hälften.",
     "verification": "agreed"
   },
   {
@@ -2612,7 +2612,7 @@
   {
     "id": "ovn-dtk-175",
     "kind": "dtk",
-    "prompt": "Ungefär hur stor andel av länets totala landareal utgörs av kommuner där minst 10 procent av landarealen är skyddad natur?",
+    "prompt": "Ungefär hur stor andel av de sex kommunernas sammanlagda landareal utgörs av kommuner där minst 10 procent av landarealen är skyddad natur?",
     "passage": "Skyddad natur i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens landareal som är skyddad natur, till exempel naturreservat. Kartan har fem klasser:\nKlass 1: mindre än 2 procent\nKlass 2: från 2 till mindre än 5 procent\nKlass 3: från 5 till mindre än 10 procent\nKlass 4: från 10 till mindre än 20 procent\nKlass 5: 20 procent eller mer\n\nKommun A – Landareal: 1 200 km² | Klass: 2\nKommun B – Landareal: 3 500 km² | Klass: 4\nKommun C – Landareal: 800 km² | Klass: 1\nKommun D – Landareal: 2 000 km² | Klass: 5\nKommun E – Landareal: 1 500 km² | Klass: 3\nKommun F – Landareal: 600 km² | Klass: 3",
     "options": [
       "ca 21 procent",
@@ -2621,7 +2621,7 @@
       "ca 79 procent"
     ],
     "correctIndex": 2,
-    "explain": "Minst 10 procent skyddad natur har kommunerna i klass 4 och 5, alltså Kommun B och Kommun D med sammanlagt 3 500 + 2 000 = 5 500 km². Länets totala landareal är 1 200 + 3 500 + 800 + 2 000 + 1 500 + 600 = 9 600 km². Andelen är 5 500 / 9 600 ≈ 0,57, alltså ca 57 procent. Ca 21 procent får man om man bara räknar Kommun D i klass 5 (2 000 / 9 600). Ca 33 procent är andelen av kommunerna (2 av 6), som inte tar hänsyn till kommunernas olika storlek. Ca 79 procent får man om man även räknar med kommunerna i klass 3 (E och F), där andelen bara är minst 5 procent.",
+    "explain": "Minst 10 procent skyddad natur har kommunerna i klass 4 och 5, alltså Kommun B och Kommun D med sammanlagt 3 500 + 2 000 = 5 500 km². De sex kommunernas sammanlagda landareal är 1 200 + 3 500 + 800 + 2 000 + 1 500 + 600 = 9 600 km². Andelen är 5 500 / 9 600 ≈ 0,57, alltså ca 57 procent. Ca 21 procent får man om man bara räknar Kommun D i klass 5 (2 000 / 9 600). Ca 33 procent är andelen av kommunerna (2 av 6), som inte tar hänsyn till kommunernas olika storlek. Ca 79 procent får man om man även räknar med kommunerna i klass 3 (E och F), där andelen bara är minst 5 procent.",
     "verification": "agreed"
   },
   {
@@ -2897,7 +2897,7 @@
   {
     "id": "ovn-dtk-194",
     "kind": "dtk",
-    "prompt": "Under hur många av åren var antalet teaterbesök fler än en fjärdedel av antalet biografbesök?",
+    "prompt": "Under hur många av åren var antalet teaterbesök större än en fjärdedel av antalet biografbesök?",
     "passage": "Besök på biografer och teatrar i ett fiktivt land, 2016–2024\n\nDiagram. Antal besök (miljoner)\n2016 – Biograf: 16,0 | Teater: 4,0\n2017 – Biograf: 17,0 | Teater: 4,2\n2018 – Biograf: 16,0 | Teater: 3,9\n2019 – Biograf: 15,0 | Teater: 4,5\n2020 – Biograf: 5,0 | Teater: 1,0\n2021 – Biograf: 7,0 | Teater: 1,5\n2022 – Biograf: 11,0 | Teater: 3,6\n2023 – Biograf: 12,0 | Teater: 4,2\n2024 – Biograf: 13,0 | Teater: 4,6",
     "options": [
       "3",
@@ -2906,7 +2906,7 @@
       "6"
     ],
     "correctIndex": 1,
-    "explain": "En fjärdedel av biografbesöken (miljoner) var: 2016 4,0, 2017 4,25, 2018 4,0, 2019 3,75, 2020 1,25, 2021 1,75, 2022 2,75, 2023 3,0 och 2024 3,25. Teaterbesöken var fler än så 2019 (4,5), 2022 (3,6), 2023 (4,2) och 2024 (4,6), alltså under 4 år. Svaret 5 får man om man räknar med 2016, då teaterbesöken var exakt en fjärdedel (4,0) och alltså inte fler. Svaret 6 får man om man dessutom räknar med 2017 eller 2018, då teaterbesöken låg strax under en fjärdedel. Svaret 3 får man om man missar 2019, då teaterbesöken var 4,5 miljoner mot en fjärdedel på 3,75.",
+    "explain": "En fjärdedel av biografbesöken (miljoner) var: 2016 4,0, 2017 4,25, 2018 4,0, 2019 3,75, 2020 1,25, 2021 1,75, 2022 2,75, 2023 3,0 och 2024 3,25. Antalet teaterbesök var större än så 2019 (4,5), 2022 (3,6), 2023 (4,2) och 2024 (4,6), alltså under 4 år. Svaret 5 får man om man räknar med 2016, då antalet teaterbesök var exakt en fjärdedel (4,0) och alltså inte större. Svaret 6 får man om man dessutom räknar med 2017 eller 2018, då teaterbesöken låg strax under en fjärdedel. Svaret 3 får man om man missar 2019, då teaterbesöken var 4,5 miljoner mot en fjärdedel på 3,75.",
     "verification": "agreed"
   },
   {

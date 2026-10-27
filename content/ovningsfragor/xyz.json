@@ -353,7 +353,7 @@
   {
     "id": "ovn-xyz-026",
     "kind": "xyz",
-    "prompt": "I en påse är förhållandet mellan antalet röda och antalet gröna kulor 5 : 3. När man tar bort 6 röda kulor blir antalet röda kulor lika stort som antalet gröna. Hur många kulor låg i påsen från början?",
+    "prompt": "I en påse med bara röda och gröna kulor är förhållandet mellan antalet röda och antalet gröna 5 : 3. När man tar bort 6 röda kulor blir antalet röda kulor lika stort som antalet gröna. Hur många kulor låg i påsen från början?",
     "options": [
       "15",
       "18",
@@ -361,7 +361,7 @@
       "48"
     ],
     "correctIndex": 2,
-    "explain": "Låt antalet röda kulor vara 5k och antalet gröna 3k. Efter att 6 röda tagits bort gäller 5k − 6 = 3k, alltså 2k = 6 och k = 3. Från början fanns 15 röda och 9 gröna kulor, totalt 24. Kontroll: 15 − 6 = 9, lika många som de gröna. 15 är bara antalet röda kulor från början. 18 är antalet kulor som finns kvar efter att de 6 röda tagits bort. 48 får man om man tror att de 6 borttagna kulorna motsvarar en del i förhållandet; skillnaden mellan röda och gröna är 5 − 3 = 2 delar, så en del är 3 kulor och inte 6.",
+    "explain": "Låt antalet röda kulor vara 5k och antalet gröna 3k. Efter att 6 röda tagits bort gäller 5k − 6 = 3k, alltså 2k = 6 och k = 3. Från början fanns 15 röda och 9 gröna kulor och inga andra, totalt 24. Kontroll: 15 − 6 = 9, lika många som de gröna. 15 är bara antalet röda kulor från början. 18 är antalet kulor som finns kvar efter att de 6 röda tagits bort. 48 får man om man tror att de 6 borttagna kulorna motsvarar en del i förhållandet; skillnaden mellan röda och gröna är 5 − 3 = 2 delar, så en del är 3 kulor och inte 6.",
     "verification": "agreed"
   },
   {
@@ -1053,7 +1053,7 @@
   {
     "id": "ovn-xyz-076",
     "kind": "xyz",
-    "prompt": "När det positiva heltalet n delas med 7 blir resten 5. Vilken rest blir det när 3n + 4 delas med 7?",
+    "prompt": "När det positiva heltalet n delas med 7 blir resten 2. Vilken rest blir det när 3n + 6 delas med 7?",
     "options": [
       "1",
       "2",
@@ -1061,7 +1061,7 @@
       "6"
     ],
     "correctIndex": 2,
-    "explain": "Talet kan skrivas n = 7k + 5. Då är 3n + 4 = 21k + 15 + 4 = 21k + 19 = 7(3k + 2) + 5, så resten är 5. Kontroll med n = 5: 3 · 5 + 4 = 19 = 2 · 7 + 5. 1 får man om man glömmer att lägga till 4: 3 · 5 = 15 ger resten 1. 2 får man om man glömmer att multiplicera med 3: 5 + 4 = 9 ger resten 2. 6 får man om man räknar 3(n + 4): 3 · 9 = 27 ger resten 6.",
+    "explain": "Talet kan skrivas n = 7k + 2, där k är ett heltal. Då är 3n + 6 = 21k + 6 + 6 = 21k + 12 = 7(3k + 1) + 5, så resten är 5. Kontroll med n = 2: 3 · 2 + 6 = 12 = 7 + 5. 2 får man om man tror att 3n + 6 ger samma rest som n. 6 får man om man glömmer att lägga till 6: 3 · 2 = 6 ger resten 6. 1 får man om man glömmer att multiplicera med 3: 2 + 6 = 8 ger resten 1.",
     "verification": "agreed"
   },
   {
@@ -1089,7 +1089,7 @@
       "30 km/h"
     ],
     "correctIndex": 1,
-    "explain": "Medelhastigheten är hela sträckan delad med hela tiden. Anta att vägen är 36 km. Dit tar 36/18 = 2 timmar och hem 36/12 = 3 timmar. Hela sträckan är 72 km och hela tiden 5 timmar, så medelhastigheten är 72/5 = 14,4 km/h. 15 km/h är medelvärdet av hastigheterna, men Lisa cyklar längre tid med den lägre hastigheten. 7,2 km/h = 36/5 får man om man delar enkelvägen med den totala tiden. 30 km/h får man om man adderar hastigheterna.",
+    "explain": "Medelhastigheten är hela sträckan delad med hela tiden. Anta att vägen är 36 km. Dit tar det 36/18 = 2 timmar och hem 36/12 = 3 timmar. Hela sträckan är 72 km och hela tiden 5 timmar, så medelhastigheten är 72/5 = 14,4 km/h. 15 km/h är medelvärdet av hastigheterna, men Lisa cyklar längre tid med den lägre hastigheten. 7,2 km/h = 36/5 får man om man delar enkelvägen med den totala tiden. 30 km/h får man om man adderar hastigheterna.",
     "verification": "agreed"
   },
   {
@@ -1229,7 +1229,7 @@
       "ac/(c − a)"
     ],
     "correctIndex": 2,
-    "explain": "Lös ut 1/b: 1/b = 1/c − 1/a. Med gemensam nämnare ac blir högerledet a/(ac) − c/(ac) = (a − c)/(ac). Alltså är 1/b = (a − c)/(ac), och när man inverterar båda leden blir b = ac/(a − c). c − a får man om man inverterar varje term för sig, men 1/b = 1/c − 1/a betyder inte att b = c − a. (a − c)/(ac) är 1/b, inte b; man har glömt att invertera i sista steget. ac/(c − a) får man med ett teckenfel i den gemensamma nämnaren, när man räknar c/(ac) − a/(ac); det uttrycket är negativt, eftersom c < a när b är positivt.",
+    "explain": "Lös ut 1/b: 1/b = 1/c − 1/a. Med gemensam nämnare ac blir högerledet a/(ac) − c/(ac) = (a − c)/(ac). Alltså är 1/b = (a − c)/(ac), och när man inverterar båda leden blir b = ac/(a − c). c − a får man om man inverterar varje term för sig, men 1/b = 1/c − 1/a betyder inte att b = c − a. (a − c)/(ac) är 1/b, inte b; man har glömt att invertera i sista steget. ac/(c − a) får man om man förlänger bråken fel och räknar c/(ac) − a/(ac) i stället för a/(ac) − c/(ac); det uttrycket är negativt, eftersom c < a när b är positivt.",
     "verification": "agreed"
   },
   {
@@ -1350,12 +1350,12 @@
     "prompt": "Två på varandra följande positiva udda heltal har produkten 323. Vad är summan av de två talen?",
     "options": [
       "18",
-      "34",
+      "32",
       "36",
-      "38"
+      "40"
     ],
     "correctIndex": 2,
-    "explain": "Kalla det jämna talet mellan de två udda talen för m. Då är talen m − 1 och m + 1, och produkten är (m − 1)(m + 1) = m² − 1 = 323. Det ger m² = 324 och m = 18 (m är positivt). Talen är 17 och 19, och kontroll: 17 · 19 = 323. Summan är 17 + 19 = 36. 18 får man om man svarar med m i stället för summan 2m. 34 får man om man fördubblar det minsta talet, 2 · 17, och 38 om man fördubblar det största, 2 · 19.",
+    "explain": "Kalla det jämna talet mellan de två udda talen för m. Då är talen m − 1 och m + 1, och produkten är (m − 1)(m + 1) = m² − 1 = 323. Det ger m² = 324 och m = 18 (m är positivt). Talen är 17 och 19. Kontroll: 17 · 19 = 323. Summan är 17 + 19 = 36. 18 får man om man svarar med m i stället för summan 2m. 32 och 40 får man om man väljer fel par udda tal kring √323 ≈ 18: 15 + 17 = 32 och 19 + 21 = 40, men 15 · 17 = 255 och 19 · 21 = 399.",
     "verification": "agreed"
   },
   {
@@ -1523,7 +1523,7 @@
       "xy/(x + y)"
     ],
     "correctIndex": 3,
-    "explain": "x^(−1) + y^(−1) = 1/x + 1/y = y/(xy) + x/(xy) = (x + y)/(xy). Exponenten −1 utanför parentesen betyder att man inverterar summan: ((x + y)/(xy))^(−1) = xy/(x + y). Kontroll med x = y = 2: (1/2 + 1/2)^(−1) = 1 och 4/4 = 1. x + y får man om man tror att man kan invertera varje term för sig, som om (a + b)^(−1) vore a^(−1) + b^(−1). (x + y)/(xy) får man om man glömmer den yttre exponenten −1. xy får man om man tror att 1/x + 1/y = 1/(xy) och sedan inverterar det.",
+    "explain": "x^(−1) + y^(−1) = 1/x + 1/y = y/(xy) + x/(xy) = (x + y)/(xy). Exponenten −1 utanför parentesen betyder att man inverterar summan: ((x + y)/(xy))^(−1) = xy/(x + y). Kontroll med x = 1 och y = 2: (1 + 1/2)^(−1) = (3/2)^(−1) = 2/3, och xy/(x + y) = 2/3. x + y får man om man tror att man kan invertera varje term för sig, som om (a + b)^(−1) vore a^(−1) + b^(−1). (x + y)/(xy) får man om man glömmer den yttre exponenten −1. xy får man om man tror att 1/x + 1/y = 1/(xy) och sedan inverterar det.",
     "verification": "agreed"
   },
   {
@@ -1593,7 +1593,7 @@
       "x = 5"
     ],
     "correctIndex": 0,
-    "explain": "Uttrycken är bara definierade när x ≠ 2. Multiplicera båda leden med x − 2: x = 2 + 3(x − 2) = 3x − 4, vilket ger x = 2. Men x = 2 gör nämnarna noll och är därför ingen lösning. Man ser det också om man flyttar över bråket: (x − 2)/(x − 2) = 3, alltså 1 = 3 för alla tillåtna x. Ekvationen saknar alltså lösning. x = 2 får man om man glömmer att pröva svaret mot villkoret x ≠ 2. x = 5 får man om man glömmer att multiplicera 3 med x − 2 och skriver x = 2 + 3. x = 0 får man om man bara multiplicerar x-termen med 3 och skriver 3(x − 2) som 3x − 2; då blir x = 3x.",
+    "explain": "Uttrycken är bara definierade när x ≠ 2. Multiplicera båda leden med x − 2: x = 2 + 3(x − 2) = 3x − 4, vilket ger x = 2. Men x = 2 gör nämnarna noll och är därför ingen lösning. Man ser det också om man flyttar över bråket: (x − 2)/(x − 2) = 3. Vänsterledet är 1 för alla tillåtna x, och 1 = 3 är omöjligt. Ekvationen saknar alltså lösning. x = 2 får man om man glömmer att pröva svaret mot villkoret x ≠ 2. x = 5 får man om man glömmer att multiplicera 3 med x − 2 och skriver x = 2 + 3. x = 0 får man om man bara multiplicerar x-termen med 3 och skriver 3(x − 2) som 3x − 2; då blir x = 3x.",
     "verification": "agreed"
   },
   {

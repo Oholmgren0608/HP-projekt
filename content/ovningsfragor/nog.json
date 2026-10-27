@@ -172,7 +172,7 @@
       "ej genom de båda påståendena"
     ],
     "correctIndex": 4,
-    "explain": "(1) Antalet elever ger resten 3 vid division med 4. Klassen kan till exempel ha 11 eller 15 elever. (1) räcker inte.\n(2) Antalet elever ger resten 5 vid division med 6. Klassen kan till exempel ha 11 eller 17 elever. (2) räcker inte.\nTillsammans: det minsta antal som uppfyller båda villkoren är 11. Nästa är 11 + 12 = 23, eftersom 12 är det minsta tal som är delbart med både 4 och 6. Både 11 och 23 är färre än 30, så klassen kan ha 11 eller 23 elever. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "explain": "(1) Antalet elever ger resten 3 vid division med 4. Klassen kan till exempel ha 11 eller 15 elever. (1) räcker inte.\n(2) Antalet elever ger resten 5 vid division med 6. Klassen kan till exempel ha 11 eller 17 elever. (2) räcker inte.\nTillsammans: det minsta antal som uppfyller båda villkoren är 11. Nästa är 11 + 12 = 23, eftersom 12 är det minsta tal som är delbart med både 4 och 6. Både 11 och 23 är mindre än 30, så klassen kan ha 11 eller 23 elever. Tillräcklig information erhålls ej genom de båda påståendena.",
     "verification": "agreed"
   },
   {
@@ -740,7 +740,7 @@
     "id": "ovn-nog-047",
     "kind": "nog",
     "prompt": "Tillräcklig information för lösningen erhålls",
-    "passage": "En grupp består av 30 kvinnor och män. Kvinnorna i gruppen har medelåldern 40 år och männen medelåldern 50 år. Hur många män finns i gruppen?\n(1) Hela gruppens medelålder är 44 år.\n(2) Männens åldrar är sammanlagt 600 år.",
+    "passage": "En grupp består av 30 personer, kvinnor och män. Kvinnorna i gruppen har medelåldern 40 år och männen medelåldern 50 år. Hur många män finns i gruppen?\n(1) Hela gruppens medelålder är 44 år.\n(2) Männens åldrar är sammanlagt 600 år.",
     "options": [
       "i (1) men ej i (2)",
       "i (2) men ej i (1)",
@@ -749,7 +749,7 @@
       "ej genom de båda påståendena"
     ],
     "correctIndex": 3,
-    "explain": "Låt m vara antalet män. Då är antalet kvinnor 30 − m.\n(1) Åldrarna är sammanlagt 30 · 44 = 1 320 år. Kvinnornas åldrar är sammanlagt 40(30 − m) år och männens 50m år, så 1 200 + 10m = 1 320, alltså m = 12. (1) räcker.\n(2) Männens medelålder är 50 år, så antalet män är 600/50 = 12. (2) räcker också.\nVart och ett av påståendena ger ensamt antalet män, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "explain": "Gruppen har 30 personer. Låt m vara antalet män. Då är antalet kvinnor 30 − m.\n(1) Åldrarna är sammanlagt 30 · 44 = 1 320 år. Kvinnornas åldrar är sammanlagt 40(30 − m) år och männens 50m år, så 1 200 + 10m = 1 320, alltså m = 12. (1) räcker.\n(2) Männens medelålder är 50 år, så antalet män är 600/50 = 12. (2) räcker också.\nVart och ett av påståendena ger ensamt antalet män, så tillräcklig information erhålls i (1) och (2) var för sig.",
     "verification": "agreed"
   },
   {
@@ -1316,7 +1316,7 @@
     "id": "ovn-nog-083",
     "kind": "nog",
     "prompt": "Tillräcklig information för lösningen erhålls",
-    "passage": "x är ett tal. Vilket värde har x?\n(1) 5x − 3 = 2(x + 3)\n(2) (x + 1)/(x − 1) = 2",
+    "passage": "x är ett tal. Vilket värde har x?\n(1) x² + 9 = 6x\n(2) (x + 1)/(x − 1) = 2",
     "options": [
       "i (1) men ej i (2)",
       "i (2) men ej i (1)",
@@ -1325,7 +1325,7 @@
       "ej genom de båda påståendena"
     ],
     "correctIndex": 3,
-    "explain": "(1) 5x − 3 = 2x + 6 ger 3x = 9, alltså x = 3. (1) räcker.\n(2) Nämnaren x − 1 kan inte vara 0, så båda leden kan multipliceras med x − 1. Det ger x + 1 = 2x − 2, alltså x = 3. (2) räcker också.\nVart och ett av påståendena ger ensamt x = 3, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "explain": "(1) Ekvationen kan skrivas x² − 6x + 9 = 0, alltså (x − 3)² = 0. Det gäller bara när x − 3 = 0, så x = 3 är den enda lösningen. En andragradsekvation behöver alltså inte ha två olika lösningar. (1) räcker.\n(2) Nämnaren x − 1 kan inte vara 0, så båda leden kan multipliceras med x − 1. Det ger x + 1 = 2x − 2, alltså x = 3. (2) räcker också.\nVart och ett av påståendena ger ensamt x = 3, så tillräcklig information erhålls i (1) och (2) var för sig.",
     "verification": "agreed"
   },
   {
@@ -3124,7 +3124,7 @@
     "id": "ovn-nog-196",
     "kind": "nog",
     "prompt": "Tillräcklig information för lösningen erhålls",
-    "passage": "I en klass är 60 procent av eleverna flickor. Hur många pojkar går i klassen?\n(1) Antalet elever i klassen är ett jämnt tal.\n(2) Klassen har fler än 20 och färre än 30 elever.",
+    "passage": "I en klass är 60 procent av eleverna flickor. Hur många pojkar går i klassen?\n(1) Antalet elever i klassen är ett udda tal.\n(2) Klassen har fler än 20 och färre än 30 elever.",
     "options": [
       "i (1) men ej i (2)",
       "i (2) men ej i (1)",
@@ -3133,7 +3133,7 @@
       "ej genom de båda påståendena"
     ],
     "correctIndex": 1,
-    "explain": "Låt klassen ha n elever. Antalet flickor är 0,6n = 3n/5, och det måste vara ett heltal. Eftersom 3 inte är delbart med 5 måste n vara delbart med 5.\n(1) n är då delbart med 10. Klassen kan till exempel ha 20 elever, varav 8 pojkar, eller 30 elever, varav 12 pojkar. (1) räcker inte.\n(2) Det enda heltal mellan 20 och 30 som är delbart med 5 är 25. Klassen har 25 elever, varav 15 flickor och 10 pojkar. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "explain": "Låt klassen ha n elever. Antalet flickor är 0,6n = 3n/5, och det måste vara ett heltal. Eftersom 3 inte är delbart med 5 måste n vara delbart med 5.\n(1) n är då ett udda tal som är delbart med 5. Klassen kan till exempel ha 15 elever, varav 6 pojkar, eller 25 elever, varav 10 pojkar. (1) räcker inte.\n(2) Det enda heltal mellan 20 och 30 som är delbart med 5 är 25. Klassen har 25 elever, varav 15 flickor och 10 pojkar. Att (2) skulle tillåta vilket antal som helst från 21 till 29 är fel, eftersom till exempel 60 procent av 24 elever är 14,4 flickor. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
     "verification": "agreed"
   },
   {

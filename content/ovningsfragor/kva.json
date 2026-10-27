@@ -63,7 +63,7 @@
     "id": "ovn-kva-005",
     "kind": "kva",
     "prompt": "Jämför kvantitet I och kvantitet II.",
-    "passage": "Lisas månadslön höjdes med 10 % och Pers månadslön höjdes med 15 %.\nKvantitet I: Lisas löneökning i kronor\nKvantitet II: Pers löneökning i kronor",
+    "passage": "Lisas månadslön höjdes med 10 % och Pers månadslön höjdes med 15 %. Före höjningarna var Lisas månadslön högre än Pers.\nKvantitet I: Lisas löneökning i kronor\nKvantitet II: Pers löneökning i kronor",
     "options": [
       "I är större än II",
       "II är större än I",
@@ -71,7 +71,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 3,
-    "explain": "Ökningen i kronor beror både på procentsatsen och på lönen före höjningen, och lönerna är okända. Om Lisa tjänade 40 000 kr och Per 20 000 kr blir ökningarna 4 000 kr och 3 000 kr, så I är större. Om båda tjänade 30 000 kr blir ökningarna 3 000 kr och 4 500 kr, så II är större. Jämförelsen kan alltså gå åt båda hållen, och varken att I är större, att II är större eller att de är lika gäller alltid. En högre procentsats ger inte automatiskt en större ökning i kronor.",
+    "explain": "Ökningen i kronor beror både på procentsatsen och på lönen före höjningen. Lisa hade den högre lönen men fick den lägre procentsatsen, så de två faktorerna drar åt olika håll. Om Lisa tjänade 40 000 kr och Per 20 000 kr blir ökningarna 4 000 kr och 3 000 kr, så I är större. Om Lisa tjänade 32 000 kr och Per 30 000 kr blir ökningarna 3 200 kr och 4 500 kr, så II är större. (Om Lisa tjänade 30 000 kr och Per 20 000 kr blir båda ökningarna 3 000 kr.) Lisas ökning är större bara om hennes lön är mer än 1,5 gånger så hög som Pers, och det framgår inte av texten. Jämförelsen kan alltså gå åt båda hållen, och varken att I är större, att II är större eller att de är lika gäller alltid. Fällan är att låta den högre lönen avgöra och svara att I är större, eller att låta den högre procentsatsen avgöra och svara att II är större.",
     "verification": "agreed"
   },
   {
@@ -116,7 +116,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 1,
-    "explain": "Kalla det ursprungliga priset p. Efter sänkningen är priset 0,75p och efter höjningen 1,30 · 0,75p = 0,975p. Slutpriset är alltså 2,5 % lägre än det ursprungliga, så II är större. Fällan är att räkna −25 % + 30 % = +5 % och svara att I är större; höjningen räknas på det lägre priset och väger därför mindre än sänkningen. Kvantiteterna är inte lika, och det okända priset spelar ingen roll eftersom 0,975p < p för alla positiva priser.",
+    "explain": "Kalla det ursprungliga priset p. Efter sänkningen är priset 0,75p och efter höjningen 1,30 · 0,75p = 0,975p. Slutpriset är alltså 2,5 % lägre än det ursprungliga, så II är större. Fällan är att räkna −25 % + 30 % = +5 % och svara att I är större; höjningen räknas på det lägre priset 0,75p och blir därför bara 0,30 · 0,75p = 0,225p, vilket är mindre än sänkningen på 0,25p. Kvantiteterna är inte lika, och det okända priset spelar ingen roll eftersom 0,975p < p för alla positiva priser.",
     "verification": "agreed"
   },
   {
@@ -393,7 +393,7 @@
     "id": "ovn-kva-027",
     "kind": "kva",
     "prompt": "Jämför kvantitet I och kvantitet II.",
-    "passage": "En nötblandning består av cashewnötter och jordnötter i viktförhållandet 3 : 2.\nKvantitet I: vikten av cashewnötterna minus vikten av jordnötterna\nKvantitet II: 100 g",
+    "passage": "En nötblandning består av cashewnötter och jordnötter i viktförhållandet 3 : 2. Blandningen väger minst 500 g.\nKvantitet I: vikten av cashewnötterna minus vikten av jordnötterna\nKvantitet II: 100 g",
     "options": [
       "I är större än II",
       "II är större än I",
@@ -401,7 +401,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 3,
-    "explain": "Förhållandet 3 : 2 säger bara hur vikterna förhåller sig till varandra, inte hur mycket blandning det finns. Skillnaden är 1 av 5 delar, alltså en femtedel av blandningens vikt. I 250 g blandning finns 150 g cashewnötter och 100 g jordnötter, så skillnaden är 50 g och II är större. I 1 kg blandning finns 600 g och 400 g, så skillnaden är 200 g och I är större. (I 500 g blandning är skillnaden precis 100 g.) Eftersom blandningens vikt är okänd gäller varken att I är större, att II är större eller att de är lika i alla fall. Fällan är att läsa förhållandet som om vikterna var givna.",
+    "explain": "Förhållandet 3 : 2 betyder att blandningen består av 3 + 2 = 5 lika stora delar, och att skillnaden mellan vikterna är 3 − 2 = 1 del, alltså en femtedel av blandningens vikt. Eftersom blandningen väger minst 500 g är skillnaden minst 500/5 = 100 g. I 500 g blandning finns 300 g cashewnötter och 200 g jordnötter, så skillnaden är precis 100 g och kvantiteterna är lika. I 1 kg blandning finns 600 g cashewnötter och 400 g jordnötter, så skillnaden är 200 g och I är större. Båda fallen är möjliga, så jämförelsen går inte att avgöra. (II kan aldrig vara större, eftersom skillnaden är minst 100 g.) Fällan är att bara tänka på blandningar som väger mer än 500 g och svara att I är större, eller att bara pröva 500 g och svara att de är lika.",
     "verification": "agreed"
   },
   {
@@ -776,7 +776,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 0,
-    "explain": "Båda talen är negativa och a ligger längre till vänster på tallinjen, alltså längre från 0 än b. Därför är |a| > |b|, och kvadraten blir störst för det tal som ligger längst från 0: a² > b². Exempel: a = −5 och b = −2 ger a² = 25 och b² = 4. Fällan är att tro att olikheten a < b behålls när man kvadrerar och svara att II är större – det gäller bara när talen inte är negativa. Likhet skulle kräva |a| = |b|, vilket är omöjligt för två olika negativa tal. Det gäller för alla tillåtna värden, så I är större.",
+    "explain": "Båda talen är negativa och a ligger längre till vänster på tallinjen, alltså längre från 0 än b. Därför är |a| > |b|, och kvadraten blir störst för det tal som ligger längst från 0: a² > b². Exempel: a = −5 och b = −2 ger a² = 25 och b² = 4. Fällan är att tro att olikheten a < b behålls när man kvadrerar och svara att II är större – det gäller bara när talen inte är negativa. Likhet skulle kräva |a| = |b|, vilket är omöjligt för två olika negativa tal. Alltså är a² > b² för alla tillåtna värden, så I är större.",
     "verification": "agreed"
   },
   {
@@ -971,7 +971,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 2,
-    "explain": "Av medelvärdena följer att a + b = 20 och b + c = 28. Subtrahera den första ekvationen från den andra: (b + c) − (a + b) = 28 − 20, alltså c − a = 8. Talet b tar ut sig, så det spelar ingen roll att a, b och c inte går att bestämma var för sig. En fälla är att subtrahera medelvärdena direkt, 14 − 10 = 4, och svara att II är större. En annan är att tro att tre okända kräver tre ekvationer och svara att informationen är otillräcklig. c − a är alltid 8, så I är lika med II.",
+    "explain": "Av medelvärdena följer att a + b = 20 och b + c = 28. Subtrahera den första ekvationen från den andra: (b + c) − (a + b) = 28 − 20, alltså c − a = 8. Talet b försvinner, så det spelar ingen roll att a, b och c inte går att bestämma var för sig. En fälla är att subtrahera medelvärdena direkt, 14 − 10 = 4, och svara att II är större. En annan är att tro att tre okända kräver tre ekvationer och svara att informationen är otillräcklig. c − a är alltid 8, så I är lika med II.",
     "verification": "agreed"
   },
   {
@@ -1061,7 +1061,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 1,
-    "explain": "Förläng med konjugatet: (√11 − √10)(√11 + √10) = 11 − 10 = 1, så √11 − √10 = 1/(√11 + √10). På samma sätt är √10 − 3 = √10 − √9 = 1/(√10 + 3). Båda är 1 delat med en summa, och eftersom √11 > 3 är nämnaren i I störst, vilket gör I minst. Kvadratroten växer alltså allt långsammare: steget från 10 till 11 ger en mindre ökning än steget från 9 till 10. Närmevärden bekräftar det: √11 ≈ 3,317 och √10 ≈ 3,162 ger I ≈ 0,154 och II ≈ 0,162. Fällan är att tro att två steg på en enhet ger lika stor skillnad och svara att de är lika. Det finns inga okända, så II är större.",
+    "explain": "Förläng med konjugatet: (√11 − √10)(√11 + √10) = 11 − 10 = 1, så √11 − √10 = 1/(√11 + √10). På samma sätt är √10 − 3 = √10 − √9 = 1/(√10 + 3). Båda är 1 delat med en summa, och eftersom √11 > 3 är nämnaren i I störst, vilket gör I minst. Kvadratroten växer alltså allt långsammare: steget från 10 till 11 ger en mindre ökning än steget från 9 till 10. Närmevärden bekräftar det: √11 ≈ 3,3166 och √10 ≈ 3,1623 ger I ≈ 0,154 och II ≈ 0,162. Fällan är att tro att två steg på en enhet ger lika stor skillnad och svara att de är lika. Det finns inga okända, så informationen räcker, och II är större.",
     "verification": "agreed"
   },
   {
@@ -1211,7 +1211,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 0,
-    "explain": "f(3) = 9a + c och f(1) = a + c. Olikheten f(3) > f(1) blir 9a + c > a + c, och c tar ut sig: 8a > 0, alltså a > 0. Fällan är att tro att den okända konstanten c gör det omöjligt att avgöra och svara att informationen är otillräcklig. a = 0 är inte möjligt, eftersom f då vore konstant och f(3) = f(1), och ett negativt a skulle ge f(3) < f(1). a är alltså positivt, så I är större.",
+    "explain": "f(3) = 9a + c och f(1) = a + c. Olikheten f(3) > f(1) blir 9a + c > a + c. Subtrahera a + c från båda leden, så försvinner c och kvar blir 8a > 0, alltså a > 0. Fällan är att tro att den okända konstanten c gör det omöjligt att avgöra och svara att informationen är otillräcklig. a = 0 är inte möjligt, eftersom f då vore konstant och f(3) = f(1), och ett negativt a skulle ge f(3) < f(1). a är alltså positivt, så I är större.",
     "verification": "agreed"
   },
   {
@@ -1556,7 +1556,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 0,
-    "explain": "Kvadrera båda leden: x + 7 = (x − 5)² = x² − 10x + 25, alltså x² − 11x + 18 = 0, som kan skrivas (x − 2)(x − 9) = 0. Kvadreringen kan ge falska rötter, så båda måste prövas. x = 9 ger √16 = 4 och 9 − 5 = 4, vilket stämmer. x = 2 ger √9 = 3 men 2 − 5 = −3, vilket inte stämmer, eftersom en kvadratrot aldrig är negativ. Den enda lösningen är x = 9, och I är större. Den som behåller den falska roten tror att x kan vara både 2 och 9 och svarar att informationen är otillräcklig; den som bara prövar x = 2 svarar att II är större. Lika kan de inte vara, eftersom x = 8 ger √15 i vänsterledet men 3 i högerledet.",
+    "explain": "Kvadrera båda leden: x + 7 = (x − 5)² = x² − 10x + 25, alltså x² − 11x + 18 = 0, som kan skrivas (x − 2)(x − 9) = 0. Kvadreringen kan ge falska rötter, så båda måste prövas. x = 9 ger √16 = 4 och 9 − 5 = 4, vilket stämmer. x = 2 ger √9 = 3 men 2 − 5 = −3, vilket inte stämmer, eftersom en kvadratrot aldrig är negativ. Den enda lösningen är x = 9, och I är större. Den som behåller den falska roten tror att x kan vara både 2 och 9 och svarar att informationen är otillräcklig. Den som glömmer dubbla produkten och skriver (x − 5)² = x² − 25 får x² − x − 32 = 0, vars lösningar (ungefär 6,2 och −5,2) båda är mindre än 8, och svarar att II är större. Lika kan de inte vara, eftersom x = 8 ger √15 i vänsterledet men 3 i högerledet.",
     "verification": "agreed"
   },
   {
@@ -1946,7 +1946,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 1,
-    "explain": "Rita en rektangel runt triangeln med hörnen (0, 0), (4, 0), (4, 3) och (0, 3). Den har arean 4 · 3 = 12. Dra bort de tre rätvinkliga trianglar som ligger innanför rektangeln men utanför triangeln: mellan (0, 0) och (4, 1) är kateterna 4 och 1, arean 2; mellan (4, 1) och (1, 3) är kateterna 3 och 2, arean 3; mellan (1, 3) och (0, 0) är kateterna 1 och 3, arean 1,5. Triangelns area blir 12 − (2 + 3 + 1,5) = 5,5 areaenheter, så II är större. Fällan är att tro att triangeln täcker halva rektangeln och svara att de är lika – det gäller bara när en av triangelns sidor är en hel sida av rektangeln och det tredje hörnet ligger på den motsatta sidan, och här ligger bara ett av hörnen i rektangelns hörn. Arean är mindre än 6, så I är inte större, och hörnen är givna, så informationen räcker.",
+    "explain": "Rita en rektangel med hörnen (0, 0), (4, 0), (4, 3) och (0, 3) runt triangeln. Rektangeln har arean 4 · 3 = 12. Dra bort de tre rätvinkliga trianglar som ligger innanför rektangeln men utanför triangeln: mellan (0, 0) och (4, 1) är kateterna 4 och 1, arean 2; mellan (4, 1) och (1, 3) är kateterna 3 och 2, arean 3; mellan (1, 3) och (0, 0) är kateterna 1 och 3, arean 1,5. Triangelns area blir 12 − (2 + 3 + 1,5) = 5,5 areaenheter, så II är större. Fällan är att tro att triangeln täcker halva rektangeln och svara att de är lika – det gäller bara när en av triangelns sidor är en hel sida av rektangeln och det tredje hörnet ligger på den motsatta sidan, och här ligger bara ett av hörnen i rektangelns hörn. Arean är mindre än 6, så I är inte större, och hörnen är givna, så informationen räcker.",
     "verification": "agreed"
   },
   {
@@ -2411,7 +2411,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 2,
-    "explain": "Kalla bottenytans area B, konens höjd H och cylinderns höjd h. Konens volym är B · H/3 och cylinderns är B · h. Villkoret ger B · H/3 = 2 · B · h. Dela med B och multiplicera med 3: H = 6h. Kvantiteterna är lika. Den som glömmer att en kons volym är en tredjedel av motsvarande cylinders får H = 2h och svarar att II är större. Den som tror att höjderna inte går att jämföra utan mått missar att bottenytan tar ut sig, så informationen räcker, och I kan inte vara större.",
+    "explain": "Kalla bottenytans area B, konens höjd H och cylinderns höjd h. Konens volym är B · H/3 och cylinderns är B · h. Villkoret ger B · H/3 = 2 · B · h. Dela med B och multiplicera med 3: H = 6h. Kvantiteterna är lika. Den som glömmer att en kons volym är en tredjedel av motsvarande cylinders får H = 2h och svarar att II är större. Den som tror att höjderna inte går att jämföra utan mått missar att bottenytan försvinner när båda leden delas med B, så informationen räcker, och I kan inte vara större.",
     "verification": "agreed"
   },
   {
@@ -2456,7 +2456,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 3,
-    "explain": "Med sidan 6 cm som bas är höjden 2 · 12/6 = 4 cm. Det motstående hörnet ligger alltså 4 cm från linjen genom basen, och därför är var och en av de två andra sidorna minst 4 cm – en sträcka från en punkt till en linje är aldrig kortare än det vinkelräta avståndet. Basen är 6 cm, så den kortaste sidan är minst 4 cm. Är vinkeln vid ena basens ändpunkt rät är den sidan exakt 4 cm (sidorna blir 4 cm, 6 cm och √52 cm), och kvantiteterna är lika. Är triangeln likbent med sidorna 5 cm, 5 cm och 6 cm är den kortaste sidan 5 cm, och I är större. Fällan är att se att höjden är 4 cm och svara att de är lika, eller att se att ingen sida kan vara kortare än 4 cm och svara att I är större. Båda fallen är möjliga, så informationen är otillräcklig.",
+    "explain": "Med sidan 6 cm som bas är höjden 2 · 12/6 = 4 cm. Det motstående hörnet ligger alltså 4 cm från linjen genom basen, och därför är var och en av de två andra sidorna minst 4 cm – en sträcka från en punkt till en linje är aldrig kortare än det vinkelräta avståndet. Basen är 6 cm, så den kortaste sidan är minst 4 cm. Är vinkeln vid basens ena ändpunkt rät är sidan från den ändpunkten till det motstående hörnet exakt 4 cm (sidorna blir 4 cm, 6 cm och √52 cm), och kvantiteterna är lika. Är triangeln likbent med sidorna 5 cm, 5 cm och 6 cm är den kortaste sidan 5 cm, och I är större. Fällan är att se att höjden är 4 cm och svara att de är lika, eller att se att ingen sida kan vara kortare än 4 cm och svara att I är större. Båda fallen är möjliga, så informationen är otillräcklig.",
     "verification": "agreed"
   },
   {
@@ -2801,7 +2801,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 2,
-    "explain": "0,4 % är 0,004, och 0,004 · 2 500 000 = 10 000. 25 % är en fjärdedel, och 40 000/4 = 10 000. Fällan är att räkna 0,4 % som 0,04 i stället för 0,004. Då blir I tio gånger för stort, 100 000, och verkar större. Den som i stället delar med 1 000 en gång för mycket får 1 000 och tror att II är större. Kvantiteterna är lika.",
+    "explain": "0,4 % är 0,004, och 0,004 · 2 500 000 = 10 000. 25 % är en fjärdedel, och 40 000/4 = 10 000. Fällan är att räkna 0,4 % som 0,04 i stället för 0,004. Då blir I tio gånger för stort, 100 000, och verkar större. Den som i stället räknar 0,4 % som 0,0004 – alltså delar 0,4 med 1 000 i stället för med 100 – får 1 000 och tror att II är större. Kvantiteterna är lika.",
     "verification": "agreed"
   },
   {
@@ -3041,7 +3041,7 @@
       "Informationen är otillräcklig"
     ],
     "correctIndex": 1,
-    "explain": "Skriv faktorerna som avvikelser från 1 000: 998 · 1002 = (1 000 − 2)(1 000 + 2) = 1 000 000 − 4 = 999 996 och 999 · 1001 = (1 000 − 1)(1 000 + 1) = 1 000 000 − 1 = 999 999. Fällan är att tro att produkterna är lika eftersom faktorerna i båda fallen har summan 2 000. Men av två tal med samma summa ger de som ligger närmast varandra den största produkten. II är större.",
+    "explain": "Skriv faktorerna som avvikelser från 1 000: 998 · 1002 = (1 000 − 2)(1 000 + 2) = 1 000 000 − 4 = 999 996 och 999 · 1001 = (1 000 − 1)(1 000 + 1) = 1 000 000 − 1 = 999 999. Fällan är att tro att produkterna är lika eftersom faktorerna i båda fallen har summan 2 000. Men när två tal har en given summa blir produkten större ju närmare varandra talen ligger. II är större.",
     "verification": "agreed"
   },
   {

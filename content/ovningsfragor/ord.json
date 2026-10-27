@@ -37,11 +37,11 @@
       "bevilja",
       "ingripa rättsligt mot",
       "bevittna",
-      "upphäva",
+      "förklara ogiltig",
       "överklaga"
     ],
     "correctIndex": 1,
-    "explain": "Att beivra är att ingripa rättsligt mot något, oftast ett brott eller en överträdelse: ”alla överträdelser av förbudet kommer att beivras”. Bevilja och bevittna liknar bara ordet till formen. Upphäva och överklaga är visserligen juridiska ord, men de betyder att ett beslut eller en regel slutar gälla respektive att man begär att ett beslut prövas på nytt.",
+    "explain": "Att beivra är att ingripa rättsligt mot något, oftast ett brott eller en överträdelse: ”alla överträdelser av förbudet kommer att beivras”. Bevilja och bevittna liknar bara ordet till formen. Förklara ogiltig och överklaga är visserligen juridiska uttryck, men de betyder att slå fast att till exempel ett avtal inte gäller respektive att begära att ett beslut prövas på nytt.",
     "verification": "agreed"
   },
   {
@@ -245,13 +245,13 @@
     "prompt": "Vad betyder ”lägga sordin på”?",
     "options": [
       "dämpa",
-      "sörja över",
+      "sörja",
       "skylla på",
       "sätta prägel på",
       "ta initiativ till"
     ],
     "correctIndex": 0,
-    "explain": "Att lägga sordin på något är att dämpa det, till exempel en stämning eller en glädje: ”beskedet lade sordin på firandet”. Uttrycket kommer från musiken, där en sordin är en dämpare på ett instrument. Sörja över liknar sordin bara till ljudet, och skylla på, sätta prägel på och ta initiativ till har inget med dämpning att göra.",
+    "explain": "Att lägga sordin på något är att dämpa det, till exempel en stämning eller en glädje: ”beskedet lade sordin på firandet”. Uttrycket kommer från musiken, där en sordin är en dämpare på ett instrument. Sörja liknar sordin bara till ljudet, och skylla på, sätta prägel på och ta initiativ till har inget med dämpning att göra.",
     "verification": "agreed"
   },
   {
@@ -311,7 +311,7 @@
       "straffbar"
     ],
     "correctIndex": 2,
-    "explain": "Pekuniär betyder ekonomisk, alltså som gäller pengar: ”beslutet fick stora pekuniära följder för kommunen”. Förmögen (rik) och snål (ovillig att ge ut pengar) hör till samma ämnesfält men beskriver en person, inte att något rör pengar. Egendomlig bygger på en förväxling med engelskans peculiar, och straffbar lockar eftersom ordet ofta står i uttrycket pekuniärt straff, där det bara anger att straffet består av pengar, till exempel böter.",
+    "explain": "Pekuniär betyder ekonomisk, alltså som gäller pengar: ”beslutet fick stora pekuniära följder för kommunen”. Förmögen (rik) och snål (ovillig att ge ut pengar) hör till samma ämnesfält men beskriver en person, inte att något rör pengar. Egendomlig bygger på en förväxling med engelskans peculiar, och straffbar lockar eftersom ordet kan stå i uttrycket pekuniärt straff, där det bara anger att straffet består av pengar, till exempel böter.",
     "verification": "agreed"
   },
   {
@@ -487,11 +487,11 @@
       "hävda",
       "förfalska",
       "förakta",
-      "förbjuda",
+      "gestikulera",
       "förlöjliga"
     ],
     "correctIndex": 0,
-    "explain": "Förfäkta betyder att hävda eller ivrigt försvara en åsikt: ”hon förfäktade länge tanken att skolan borde vara avgiftsfri”. Förfalska, förakta, förbjuda och förlöjliga börjar likadant och kan förväxlas med förfäkta, men inget av dem handlar om att argumentera för en åsikt: man förfalskar en namnteckning, föraktar det man ser ned på, förbjuder det som inte ska vara tillåtet och förlöjligar det man gör narr av.",
+    "explain": "Förfäkta betyder att hävda eller ivrigt försvara en åsikt: ”hon förfäktade länge tanken att skolan borde vara avgiftsfri”. Förfalska, förakta och förlöjliga börjar likadant och kan förväxlas med förfäkta, men inget av dem handlar om att argumentera för en åsikt: man förfalskar en namnteckning, föraktar det man ser ned på och förlöjligar det man gör narr av. Gestikulera lockar eftersom den som fäktar med armarna gestikulerar, men förfäkta gör man med ord, inte med kroppen.",
     "verification": "agreed"
   },
   {
@@ -551,7 +551,7 @@
       "överallt"
     ],
     "correctIndex": 2,
-    "explain": "Allenast är ett ålderdomligt ord för endast eller bara: ”allenast medlemmar äger tillträde till klubbens bibliotek”. Ensam lockar eftersom det besläktade ordet allena betyder just ensam, men allenast är ett adverb som betyder endast. Fortfarande är betydelsen av alltjämt, tillsammans av allesammans och överallt av allestädes, tre andra gamla ord som också börjar på all-.",
+    "explain": "Allenast är ett ålderdomligt ord för endast eller bara: ”allenast medlemmar äger tillträde till klubbens bibliotek”. Ensam lockar eftersom det besläktade ordet allena betyder just ensam, men allenast är ett adverb som betyder endast. Tillsammans lockar genom likheten med allesammans, ett annat ord på all-, men allesammans betyder alla, och tillsammans betyder i sällskap med andra. Fortfarande är betydelsen av alltjämt och överallt av allestädes, två andra ord som också börjar på all-.",
     "verification": "agreed"
   },
   {
@@ -619,14 +619,14 @@
     "kind": "ord",
     "prompt": "Vad betyder ”esoterisk”?",
     "options": [
-      "främmande",
+      "från främmande länder",
       "för invigda",
       "konstnärlig",
       "sensuell",
       "självisk"
     ],
     "correctIndex": 1,
-    "explain": "Esoterisk betyder avsedd för eller begriplig bara för en liten krets invigda: ”diskussionen blev alltför esoterisk för de flesta åhörarna”. De andra alternativen är betydelser av ord som liknar esoterisk: främmande motsvarar exotisk, konstnärlig motsvarar estetisk, sensuell motsvarar erotisk och självisk motsvarar egoistisk.",
+    "explain": "Esoterisk betyder avsedd för eller begriplig bara för en liten krets invigda: ”diskussionen blev alltför esoterisk för de flesta åhörarna”. De andra alternativen är betydelser av ord som liknar esoterisk: från främmande länder motsvarar exotisk, konstnärlig motsvarar estetisk, sensuell motsvarar erotisk och självisk motsvarar egoistisk.",
     "verification": "agreed"
   },
   {
@@ -731,7 +731,7 @@
       "inställsam"
     ],
     "correctIndex": 3,
-    "explain": "Tarvlig betyder simpel, ohyfsad eller lumpen: ”det var tarvligt av honom att skratta åt hennes misstag”. Krävande och nödställd lockar eftersom verbet tarva betyder kräva eller behöva, men tarvlig har inte den betydelsen. Girig och inställsam beskriver också dåliga egenskaper, men girig gäller begär efter pengar och inställsam att fjäska, medan tarvlig betyder lågt och simpelt.",
+    "explain": "Tarvlig betyder simpel, ohyfsad eller lumpen: ”det var tarvligt av honom att skratta åt hennes misstag”. Krävande och nödställd lockar eftersom verbet tarva betyder kräva eller behöva, men tarvlig har inte den betydelsen. Girig och inställsam beskriver också dåliga egenskaper, men girig gäller begär efter pengar och inställsam att fjäska, medan tarvlig betyder låg och simpel.",
     "verification": "agreed"
   },
   {
@@ -773,10 +773,10 @@
       "skynda på",
       "dra sig ur",
       "utnyttja",
-      "ta risker"
+      "chansa"
     ],
     "correctIndex": 3,
-    "explain": "Att dra växlar på något betyder att utnyttja det till sin fördel: ”oppositionen drog växlar på ministerns misstag”. Byta spår och skynda på bygger på andra betydelser av växel, järnvägsväxeln och växeln i en bil. Dra sig ur betyder att lämna ett åtagande, och ta risker innebär att chansa, medan den som drar växlar på något använder en fördel som redan finns.",
+    "explain": "Att dra växlar på något betyder att utnyttja det till sin fördel: ”oppositionen drog växlar på ministerns misstag”. Byta spår och skynda på bygger på andra betydelser av växel, järnvägsväxeln och växeln i en bil. Dra sig ur betyder att lämna ett åtagande, och chansa innebär att ta risker, medan den som drar växlar på något använder en fördel som redan finns.",
     "verification": "agreed"
   },
   {
@@ -911,7 +911,7 @@
       "ordrikedom"
     ],
     "correctIndex": 2,
-    "explain": "Akribi betyder största möjliga noggrannhet och precision, särskilt i vetenskapligt arbete: ”utgåvan är gjord med filologisk akribi”. Överdriven försiktighet handlar om rädsla för risker, inte om exakthet i detaljer. Skarp ironi och stridslystnad kan man associera till av ordets hårda klang, men de har inget med det att göra, och ordrikedom betyder att man använder många ord, inte att man är exakt.",
+    "explain": "Akribi betyder största möjliga noggrannhet och precision, särskilt i vetenskapligt arbete: ”utgåvan är gjord med filologisk akribi”. Överdriven försiktighet handlar om rädsla för risker, inte om exakthet i detaljer. Skarp ironi och stridslystnad kan man komma att tänka på genom ordets hårda klang, men de har inget med akribi att göra, och ordrikedom betyder att man använder många ord, inte att man är exakt.",
     "verification": "agreed"
   },
   {
@@ -968,10 +968,10 @@
       "modfälldhet",
       "fallfärdighet",
       "medfött anlag",
-      "tillfällighet"
+      "ren tillfällighet"
     ],
     "correctIndex": 3,
-    "explain": "Fallenhet betyder naturlig begåvning eller anlag för något: ”hon har en fallenhet för språk”. Förfall och fallfärdighet (att något är nära att rasa ihop) bygger också på verbet falla men har inget med anlag att göra. Modfälldhet är nedstämdhet och liknar bara ordet till formen, och en tillfällighet är något som sker av en slump.",
+    "explain": "Fallenhet betyder naturlig begåvning eller anlag för något: ”hon har en fallenhet för språk”. Förfall och fallfärdighet (att något är nära att rasa ihop) bygger också på verbet falla men har inget med anlag att göra. Modfälldhet är nedstämdhet och liknar bara ordet till formen, och en ren tillfällighet är något som sker av en slump.",
     "verification": "agreed"
   },
   {
@@ -1256,7 +1256,7 @@
       "glömsk och virrig"
     ],
     "correctIndex": 2,
-    "explain": "Förnumstig beskriver den som gärna vill verka klok och belärande uttalar sig om allt, ofta om barn som låter lillgamla: ”den förnumstiga tonen retade hennes äldre syskon”. Ordet är nedsättande och betyder alltså inte förnuftig och eftertänksam, som är positiva egenskaper. Lätt att förnärma är den som är lättstött, och nyfiken och frågvis den som vill veta mer – snarare än den som tror sig veta allt. Glömsk och virrig har ingen koppling till ordet.",
+    "explain": "Förnumstig beskriver den som gärna vill verka klok och belärande uttalar sig om allt. Det kan till exempel gälla ett barn som låter lillgammalt: ”den förnumstiga tonen retade hennes äldre syskon”. Ordet är nedsättande och betyder alltså inte förnuftig och eftertänksam, som är positiva egenskaper. Lätt att förnärma är den som är lättstött, och nyfiken och frågvis den som vill veta mer – snarare än den som tror sig veta allt. Glömsk och virrig har ingen koppling till ordet.",
     "verification": "agreed"
   },
   {
@@ -1268,10 +1268,10 @@
       "bevisad slutsats",
       "kort tänkespråk",
       "inbyggd motsägelse",
-      "lös gissning"
+      "gissning"
     ],
     "correctIndex": 0,
-    "explain": "Ett axiom är en grundsats som tas för given utan bevis och som annat kan härledas ur: ”geometrin bygger på ett fåtal axiom”. En bevisad slutsats är tvärtom något som har härletts, inte något man utgår från. Ett kort tänkespråk heter aforism, och en inbyggd motsägelse heter paradox. En lös gissning saknar den självklarhet och grundläggande roll som ett axiom har.",
+    "explain": "Ett axiom är en grundsats som tas för given utan bevis och som annat kan härledas ur: ”geometrin bygger på ett fåtal axiom”. En bevisad slutsats är tvärtom något som har härletts, inte något man utgår från. Ett kort tänkespråk heter aforism, och en inbyggd motsägelse heter paradox. En gissning saknar den självklarhet och grundläggande roll som ett axiom har.",
     "verification": "agreed"
   },
   {
@@ -1451,7 +1451,7 @@
       "trötthet"
     ],
     "correctIndex": 1,
-    "explain": "Förtrytelse är ett ålderdomligt ord för förargelse eller harm: ”till hans stora förtrytelse fick rivalen priset”. Ånger kan locka eftersom danskans fortrydelse betyder just ånger, men på svenska betyder ordet harm. Förtryck och förtroende liknar ordet till formen, och trötthet kan man associera till verbet tryta (ta slut), men inget av dem stämmer.",
+    "explain": "Förtrytelse betyder förargelse eller harm: ”till hans stora förtrytelse fick rivalen priset”. Ånger kan locka eftersom danskans fortrydelse betyder just ånger, men på svenska betyder ordet harm. Förtryck och förtroende liknar ordet till formen, och trötthet kan man associera till verbet tryta (ta slut), men inget av dem stämmer.",
     "verification": "agreed"
   },
   {
@@ -1511,7 +1511,7 @@
       "eftergift"
     ],
     "correctIndex": 2,
-    "explain": "En gensaga är en invändning eller protest. Ordet används oftast i uttrycket ”utan gensaga”: ”förslaget antogs utan gensaga”. Folksaga och förutsägelse lockar eftersom de innehåller saga och säga, men gen- betyder här emot, inte berättelse eller spådom. Upprepning bygger på att gen- tolkas som igen. Eftergift, att ge med sig, är nästan motsatsen till att säga emot.",
+    "explain": "En gensaga är en invändning eller protest. Ordet används oftast i uttrycket ”utan gensaga”: ”förslaget antogs utan gensaga”. Folksaga och förutsägelse lockar eftersom de innehåller saga och säga, men gen- betyder här emot, och ordet handlar om att säga emot, inte om en berättelse eller en spådom. Upprepning bygger på att gen- tolkas som igen. Eftergift, att ge med sig, är nästan motsatsen till att säga emot.",
     "verification": "agreed"
   },
   {
@@ -1685,13 +1685,13 @@
     "prompt": "Vad betyder ”hålla tand för tunga”?",
     "options": [
       "bita ihop",
-      "hålla med",
+      "instämma",
       "tala tydligt",
       "tiga",
       "äta försiktigt"
     ],
     "correctIndex": 3,
-    "explain": "Att hålla tand för tunga är att tiga, att inte säga något man vet eller tycker: ”hon visste vem som låg bakom, men höll tand för tunga”. Bita ihop lockar eftersom även det handlar om tänderna, men det betyder att uthärda något utan att klaga. Tala tydligt är motsatsen, och äta försiktigt tar bilden bokstavligt. Hålla med betyder att instämma, inte att tiga.",
+    "explain": "Att hålla tand för tunga är att tiga, att inte säga något man vet eller tycker: ”hon visste vem som låg bakom, men höll tand för tunga”. Bita ihop lockar eftersom även det handlar om tänderna, men det betyder att uthärda något utan att klaga. Tala tydligt är motsatsen, och äta försiktigt tar bilden bokstavligt. Instämma betyder att hålla med, inte att tiga.",
     "verification": "agreed"
   },
   {
@@ -1706,7 +1706,7 @@
       "på obestämd tid"
     ],
     "correctIndex": 0,
-    "explain": "Inkognito betyder under falskt namn eller utan att ge sig till känna: ”kungen reste inkognito genom landet”. Ordet kommer från italienskans incognito, okänd. Utan att veta om det lockar eftersom kognitiv har med kunskap att göra, men det är den resande som är okänd, inte omgivningen som är ovetande. Utan förvarning, utan biljett och på obestämd tid kan passa in i berättelser om hemliga resor, men ingen av dem är vad ordet betyder.",
+    "explain": "Inkognito betyder under falskt namn eller utan att ge sig till känna: ”kungen reste inkognito genom landet”. Ordet kommer från italienskans incognito, okänd. Utan att veta om det lockar eftersom kognitiv har med kunskap att göra, men ordet säger att andra inte vet vem den resande är, inte att den resande själv är ovetande om något. Utan förvarning, utan biljett och på obestämd tid kan passa in i berättelser om hemliga resor, men ingen av dem är vad ordet betyder.",
     "verification": "agreed"
   },
   {
@@ -1841,7 +1841,7 @@
       "kortfattad"
     ],
     "correctIndex": 3,
-    "explain": "Kurant betyder säljbar eller gångbar: ”begagnade elcyklar är en kurant vara”. Ordet kommer från franskans courant, löpande. I vardagligt tal kan det också betyda frisk, som i ”jag känner mig inte riktigt kurant”. Strömmande lockar via engelskans current, nyfiken via curious och kursiv genom att det liknar kurs. Kortfattad har ingen koppling till ordet.",
+    "explain": "Kurant betyder säljbar eller gångbar: ”begagnade elcyklar är en kurant vara”. Ordet kommer från franskans courant, löpande. I vardagligt tal kan det också betyda frisk, som i ”jag känner mig inte riktigt kurant”. Strömmande lockar via engelskans current, nyfiken via curious och kursiv genom den gemensamma början kur-. Kortfattad har ingen koppling till ordet.",
     "verification": "agreed"
   },
   {
@@ -1871,7 +1871,7 @@
       "vara överdriven"
     ],
     "correctIndex": 1,
-    "explain": "Att vara legio betyder att vara mycket talrik: ”exemplen på misslyckade reformer är legio”. Legio är latin för legion, en stor truppstyrka, och det är mängden som har gett uttrycket dess betydelse. Vara organiserad lockar eftersom en legion är en ordnad militär enhet, och vara lagenlig eftersom legio påminner om legal. Vara föråldrad och vara överdriven säger något om sakens kvalitet, inte hur många de är.",
+    "explain": "Att vara legio betyder att vara mycket talrik: ”exemplen på misslyckade reformer är legio”. Legio är latin för legion, en stor truppstyrka, och det är mängden som har gett uttrycket dess betydelse. Vara organiserad lockar eftersom en legion är en ordnad militär enhet, och vara lagenlig eftersom legio påminner om legal. Vara föråldrad och vara överdriven säger något om hur sakerna är, inte om hur många de är.",
     "verification": "agreed"
   },
   {
@@ -1909,14 +1909,14 @@
     "kind": "ord",
     "prompt": "Vad betyder ”maklig”?",
     "options": [
-      "mäktig",
+      "med stor makt",
       "smaklig",
       "utan brådska",
       "omständlig",
       "maktfullkomlig"
     ],
     "correctIndex": 2,
-    "explain": "Maklig betyder lugn och bekväm, utan brådska: ”de promenerade i makligt tempo längs stranden”. Mäktig och maktfullkomlig lockar eftersom ordet påminner om makt, och smaklig är bara ljudlikt. Omständlig betyder krånglig och långrandig; den som är omständlig kan vara långsam, men ordet handlar om onödigt krångel, inte om ett lugnt tempo.",
+    "explain": "Maklig betyder lugn och bekväm, utan brådska: ”de promenerade i makligt tempo längs stranden”. Med stor makt och maktfullkomlig lockar eftersom ordet påminner om makt, och smaklig är bara ljudlikt. Omständlig betyder krånglig och långrandig; den som är omständlig kan vara långsam, men ordet handlar om onödigt krångel, inte om ett lugnt tempo.",
     "verification": "agreed"
   },
   {
@@ -1942,11 +1942,11 @@
       "fullända",
       "vinna",
       "härma",
-      "läxa upp",
+      "tillrättavisa",
       "förvalta"
     ],
     "correctIndex": 3,
-    "explain": "Att mästra någon är att läxa upp eller tillrättavisa, ofta på ett överlägset sätt: ”hon tröttnade på att bli mästrad av sin äldre kollega”. Fullända lockar via mästerverk och vinna via mästare, men ordet handlar om att någon spelar lärare. Härma och förvalta har ingen koppling till betydelsen.",
+    "explain": "Att mästra någon är att tillrättavisa eller läxa upp, ofta på ett överlägset sätt: ”hon tröttnade på att bli mästrad av sin äldre kollega”. Fullända lockar via mästerverk och vinna via mästare, men ordet handlar om att någon spelar lärare. Härma och förvalta har ingen koppling till betydelsen.",
     "verification": "agreed"
   },
   {
@@ -2156,7 +2156,7 @@
       "gå för långt"
     ],
     "correctIndex": 1,
-    "explain": "Att stryka på foten betyder att tvingas ge vika eller att förlora, ofta i en konkurrens: ”de små butikerna fick stryka på foten när köpcentret öppnade”. Smyga iväg och snava lockar eftersom uttrycket låter som en rörelse med foten, och ta det försiktigt kan låta som att gå varsamt fram. Gå för långt betyder att överskrida en gräns, vilket är något helt annat än att förlora.",
+    "explain": "Att stryka på foten betyder att tvingas ge vika eller att förlora, ofta i konkurrens med andra: ”de små butikerna fick stryka på foten när köpcentret öppnade”. Smyga iväg och snava lockar eftersom uttrycket låter som en rörelse med foten, och ta det försiktigt kan låta som att gå varsamt fram. Gå för långt betyder att överskrida en gräns, vilket är något helt annat än att förlora.",
     "verification": "agreed"
   },
   {
@@ -2286,12 +2286,12 @@
     "options": [
       "tanklös rutin",
       "slarvighet",
-      "slösaktighet",
+      "onödigt slöseri",
       "förvirring",
       "förströelse"
     ],
     "correctIndex": 0,
-    "explain": "Slentrian betyder tanklös rutin eller vana, att man gör något på samma sätt som alltid utan att reflektera: ”undervisningen hade stelnat i slentrian”. Slarvighet lockar eftersom orden börjar likadant och eftersom slentrian kan leda till ett sämre resultat, men slentrian handlar om vanemässighet, inte om brist på noggrannhet. Slösaktighet och förvirring har ingen koppling till ordet, och förströelse betyder tidsfördriv.",
+    "explain": "Slentrian betyder tanklös rutin eller vana, att man gör något på samma sätt som alltid utan att reflektera: ”undervisningen hade stelnat i slentrian”. Slarvighet lockar eftersom orden börjar likadant och eftersom slentrian kan leda till ett sämre resultat, men slentrian handlar om vanemässighet, inte om brist på noggrannhet. Onödigt slöseri och förvirring har ingen koppling till ordet, och förströelse betyder tidsfördriv.",
     "verification": "agreed"
   },
   {
@@ -2471,7 +2471,7 @@
       "med stöd av andra"
     ],
     "correctIndex": 3,
-    "explain": "På rak arm betyder utan förberedelse, direkt ur huvudet: ”det kan jag inte svara på rak arm, jag måste kontrollera siffrorna först”. Med full kraft och på armlängds avstånd lockar genom bilden av en utsträckt arm. Motvilligt och med stöd av andra handlar om inställning respektive hjälp, inte om huruvida man har förberett sig.",
+    "explain": "På rak arm betyder utan förberedelse, direkt ur huvudet: ”det kan jag inte säga på rak arm, jag måste kontrollera siffrorna först”. Med full kraft och på armlängds avstånd lockar genom bilden av en utsträckt arm. Motvilligt och med stöd av andra handlar om inställning respektive hjälp, inte om huruvida man har förberett sig.",
     "verification": "agreed"
   },
   {
@@ -2516,7 +2516,7 @@
       "anständighet"
     ],
     "correctIndex": 1,
-    "explain": "En åtbörd är en gest eller kroppsrörelse som uttrycker något: ”hon gjorde en avvärjande åtbörd med handen”. Börda och skyldighet lockar genom likheten med börda, något tungt man måste bära. Släkt lockar eftersom börd betyder härkomst. Anständighet lockar eftersom man kan tänka på hur någon uppför sig, men åtbörd syftar på en rörelse, inte på hur väluppfostrad någon är.",
+    "explain": "En åtbörd är en gest eller kroppsrörelse som uttrycker något: ”hon gjorde en avvärjande åtbörd med handen”. Börda lockar genom ljudlikheten, och skyldighet eftersom en skyldighet kan kännas som en börda, något tungt man måste bära. Släkt lockar eftersom börd betyder härkomst. Anständighet lockar eftersom man kan tänka på hur någon uppför sig, men åtbörd syftar på en rörelse, inte på hur väluppfostrad någon är.",
     "verification": "agreed"
   },
   {
@@ -2554,14 +2554,14 @@
     "kind": "ord",
     "prompt": "Vad betyder ”pragmatisk”?",
     "options": [
-      "principfast",
+      "fast i sina principer",
       "praktiskt inriktad",
       "pedantisk",
       "kortsiktig",
       "försiktig"
     ],
     "correctIndex": 1,
-    "explain": "Pragmatisk betyder praktiskt inriktad, att man utgår från vad som fungerar i praktiken snarare än från principer eller teorier: ”en pragmatisk lösning på konflikten”. Principfast är närmast motsatsen. Kortsiktig lockar eftersom en pragmatisk lösning ibland kritiseras för att bara lösa problemet för stunden, men det är inte vad ordet betyder. Pedantisk lockar genom ljudlikheten, och försiktig eftersom en pragmatisk person sällan intar extrema hållningar, men ingen av dem är ordets betydelse.",
+    "explain": "Pragmatisk betyder praktiskt inriktad, att man utgår från vad som fungerar i praktiken snarare än från principer eller teorier: ”en pragmatisk lösning på konflikten”. Fast i sina principer är närmast motsatsen. Kortsiktig lockar eftersom en pragmatisk lösning ibland kritiseras för att bara lösa problemet för stunden, men det är inte vad ordet betyder. Pedantisk lockar genom ljudlikheten, och försiktig eftersom en pragmatisk person sällan intar extrema hållningar, men ingen av dem är ordets betydelse.",
     "verification": "agreed"
   },
   {
@@ -2606,7 +2606,7 @@
       "hämnd"
     ],
     "correctIndex": 0,
-    "explain": "Vederlag betyder ersättning eller motprestation: ”markägaren fick ett skäligt vederlag när kommunen tog marken i anspråk”. Motbevis lockar eftersom det liknar vederläggning, och hämnd eftersom det liknar vedergällning. Motstånd lockar eftersom förledet veder- betyder mot, och lagbrott eftersom ordet slutar på -lag. Inget av lockbetena innebär att man får något i utbyte för det man har gett.",
+    "explain": "Vederlag betyder ersättning eller motprestation: ”markägaren fick ett skäligt vederlag när kommunen tog marken i anspråk”. Motbevis lockar eftersom ordet liknar vederläggning, och hämnd eftersom det liknar vedergällning. Motstånd lockar eftersom förledet veder- betyder mot, och lagbrott eftersom ordet slutar på -lag. Inget av lockbetena innebär att man får något i utbyte mot det man har gett.",
     "verification": "agreed"
   },
   {

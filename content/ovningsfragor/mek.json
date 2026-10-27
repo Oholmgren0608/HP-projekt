@@ -86,7 +86,7 @@
       "återhämtat sig / hotad"
     ],
     "correctIndex": 3,
-    "explain": "Emellertid och förbudet mot gifterna, som låg bakom nedgången, signalerar en vändning till det bättre: beståndet har återhämtat sig, och arten räknas inte längre som hotad. Minskat ytterligare strider mot den vändning som emellertid markerar och vore en orimlig följd av att orsaken till nedgången togs bort. Livskraftig går inte ihop med inte längre, eftersom en art som har återhämtat sig har blivit livskraftig och inte slutat vara det.",
+    "explain": "”Emellertid” och förbudet mot de gifter som låg bakom nedgången signalerar en vändning till det bättre: beståndet har återhämtat sig, och arten räknas inte längre som hotad. Minskat ytterligare strider mot den vändning som ”emellertid” markerar och vore en orimlig följd av att orsaken till nedgången togs bort. Livskraftig går inte ihop med ”inte längre”, eftersom en art som har återhämtat sig har blivit livskraftig och inte slutat vara det.",
     "verification": "agreed"
   },
   {
@@ -131,14 +131,14 @@
       "knappast / spridda / följaktligen"
     ],
     "correctIndex": 3,
-    "explain": "Men i första meningen inleder en invändning mot bilden av en revolution, och knappast ger just den, medan faktiskt skulle bekräfta att förändringen gick fort och motsägs av resten av texten. Att man främst tryckte texter som redan var spridda i handskrift visar att det nya till en början liknade det gamla; texter som var sällsynta skulle tvärtom tala för en snabb förnyelse. Sista meningen är en slutsats av det som sagts och kräver därför följaktligen, medan trots det skulle markera en motsättning som inte finns.",
+    "explain": "”Men” i första meningen inleder en invändning mot bilden av en revolution, och knappast ger just den, medan faktiskt skulle bekräfta att förändringen gick fort och motsägs av resten av texten. Att man främst tryckte texter som redan var spridda i handskrift visar att det nya till en början liknade det gamla; texter som var sällsynta skulle tvärtom tala för en snabb förnyelse. Sista meningen är en slutsats av det som sagts och kräver därför följaktligen, medan trots det skulle markera en motsättning som inte finns.",
     "verification": "agreed"
   },
   {
     "id": "ovn-mek-010",
     "kind": "mek",
     "prompt": "Välj det alternativ som bäst fyller i meningen.",
-    "passage": "Farhågorna för att datoriseringen skulle slå ut hela yrkesgruppen visade sig vara ____: tio år senare arbetade fler inom yrket än någonsin.",
+    "passage": "Farhågorna för att datoriseringen skulle slå ut hela yrkesgruppen visade sig vara ____: visserligen försvann många av de gamla arbetsuppgifterna, men tio år senare arbetade fler inom yrket än någonsin.",
     "options": [
       "obefogade",
       "befogade",
@@ -146,7 +146,7 @@
       "ofrånkomliga"
     ],
     "correctIndex": 0,
-    "explain": "Obefogade betyder att farhågorna saknade grund, och det bekräftas av att fler arbetade inom yrket tio år senare än någonsin tidigare. Befogade betyder tvärtom att farhågorna var berättigade, och framsynta skulle innebära att de förutsåg det som hände; båda motsägs av fortsättningen. Ofrånkomliga betyder oundvikliga och säger ingenting om huruvida farhågorna stämde, så ordet passar inte före ett kolon som visar att de var fel.",
+    "explain": "Obefogade betyder att farhågorna saknade grund, och det bekräftas av att fler arbetade inom yrket tio år senare än någonsin tidigare. Att många av de gamla arbetsuppgifterna försvann är bara ett medgivande, vilket ”visserligen … men” markerar; farhågan gällde att hela yrkesgruppen skulle slås ut, och det skedde inte. Befogade betyder tvärtom att farhågorna var berättigade, och framsynta skulle innebära att de förutsåg det som hände; båda motsägs av det som följer efter ”men”. Ofrånkomliga betyder oundvikliga och säger ingenting om huruvida farhågorna stämde, så ordet passar inte före ett kolon som visar att de var fel.",
     "verification": "agreed"
   },
   {
@@ -161,7 +161,7 @@
       "oklarheter / överskådlig"
     ],
     "correctIndex": 2,
-    "explain": "Oegentligheter betyder fusk eller otillåtna förfaranden, och texten säger att sådant inte fanns men att redovisningen hade en annan svaghet, vilket däremot markerar. Knapphändig betyder sparsam eller ofullständig och förklarar både att pengarna var svåra att följa och att revisorerna krävde en utförligare redogörelse. Oklarheter fungerar inte, eftersom en redovisning som är svår att följa just innehåller oklarheter, och texten skulle då motsäga sig själv. Överskådlig betyder lätt att få överblick över och kan inte vara skälet till att något är svårt att följa.",
+    "explain": "Oegentligheter betyder fusk eller otillåtna förfaranden, och texten säger att revisorerna inte fann några tecken på sådant men att redovisningen hade en annan svaghet, vilket ”däremot” markerar. Knapphändig betyder sparsam eller ofullständig och förklarar både att pengarna var svåra att följa och att revisorerna krävde en utförligare redogörelse. Oklarheter fungerar inte, eftersom en redovisning som är svår att följa just innehåller oklarheter, och texten skulle då motsäga sig själv. Överskådlig betyder lätt att få överblick över och kan inte vara skälet till att något är svårt att följa.",
     "verification": "agreed"
   },
   {
@@ -206,7 +206,7 @@
       "visserligen / stigande"
     ],
     "correctIndex": 3,
-    "explain": "Visserligen medger något som sedan begränsas av men: räntehöjningar fungerar mot inflationen men har nackdelar. Knappast skulle säga att räntorna inte dämpar inflationen, vilket motsägs av att de gör det med fördröjning. Till priset av anger vad något kostar, och stigande arbetslöshet är en sådan kostnad som också förklarar centralbankernas försiktighet, medan sjunkande arbetslöshet vore en fördel och inte ett pris.",
+    "explain": "Visserligen medger något som sedan begränsas av ”men”: räntehöjningar fungerar mot inflationen men har nackdelar. Knappast skulle säga att räntorna inte dämpar inflationen, vilket motsägs av att de gör det med fördröjning. ”Till priset av” anger vad något kostar, och stigande arbetslöshet är en sådan kostnad som också förklarar centralbankernas försiktighet, medan sjunkande arbetslöshet vore en fördel och inte ett pris.",
     "verification": "agreed"
   },
   {
@@ -221,7 +221,7 @@
       "subjektiv / framkalla / metodologiskt"
     ],
     "correctIndex": 2,
-    "explain": "Men ställer effekten i motsats till ren inbillning, och påtaglig, alltså konkret och märkbar, uttrycker just den motsatsen, vilket subjektiv inte gör eftersom inbillning redan är subjektiv. Eftersom hjärnan faktiskt frisätter smärtstillande ämnen går effekten att påvisa med hjärnavbildning; framkalla betyder att få något att uppstå, och det gör inte en undersökningsmetod. Förklaringen efter kolon, att nya preparat måste visa sig vara bättre än ett piller som också kan lindra besvären, beskriver ett metodologiskt problem, alltså ett problem för hur forskningen läggs upp, och inte ett etiskt.",
+    "explain": "”Men” ställer effekten i motsats till ren inbillning, och påtaglig, alltså konkret och märkbar, uttrycker just den motsatsen, vilket subjektiv inte gör eftersom inbillning redan är subjektiv. Eftersom hjärnan faktiskt frisätter smärtstillande ämnen går effekten att påvisa med hjärnavbildning; framkalla betyder att få något att uppstå, och det gör inte en undersökningsmetod. Förklaringen efter kolon, att nya preparat måste visa sig vara bättre än ett piller som också kan lindra besvären, beskriver ett metodologiskt problem, alltså ett problem för hur forskningen läggs upp, och inte ett etiskt.",
     "verification": "agreed"
   },
   {
@@ -431,7 +431,7 @@
       "fördrev / försvagade"
     ],
     "correctIndex": 1,
-    "explain": "Decimera betyder att kraftigt minska en grupp genom att många dör, vilket är vad en pestepidemi gör. Fördrev betyder drev bort, och en sjukdom driver inte bort människor utan dödar dem; dessutom förutsätter resten av texten att många hade dött och lämnat gårdar efter sig. Ordet ”dock” visar att andra meningen beskriver något positivt mitt i katastrofen, och när jordägarna konkurrerade om arbetskraften stärktes de överlevande böndernas ställning. Försvagade motsägs av att det fanns gott om gårdar och att jordägarna måste konkurrera om bönderna.",
+    "explain": "Decimera betyder att kraftigt minska en grupp genom att många dör, vilket är vad en pestepidemi gör. Fördrev betyder drev bort, men pesten minskade befolkningen genom att människor dog, inte genom att de drevs bort; dessutom förutsätter resten av texten att många hade dött och lämnat gårdar efter sig. Ordet ”dock” visar att andra meningen beskriver något positivt mitt i katastrofen, och när jordägarna konkurrerade om arbetskraften stärktes de överlevande böndernas ställning. Försvagade motsägs av att det fanns gott om gårdar och att jordägarna måste konkurrera om bönderna.",
     "verification": "agreed"
   },
   {
@@ -521,7 +521,7 @@
       "lindrar / mer lönsamt / hänvisad till"
     ],
     "correctIndex": 0,
-    "explain": "Ordet ”men” visar att ekonomerna pekar på en baksida av regleringen, och den är att den förvärrar bostadsbristen; lindrar skulle vara en fördel och ingen motsättning. När hyrorna hålls nere under vad efterfrågan motiverar ger nya hyresrätter lägre intäkter, så det blir mindre lönsamt att bygga dem. Mer lönsamt följer inte av att hyrorna inte får stiga. När det byggs få nya lägenheter och få flyttar blir det svårt att få ett eget kontrakt, och den som snabbt behöver bostad är därför hänvisad till andrahandsmarknaden. Ointresserad av följer inte av något i texten; bristen på förstahandskontrakt gör tvärtom andrahandsmarknaden till den enda utvägen.",
+    "explain": "Ordet ”men” visar att ekonomerna pekar på en baksida av regleringen, nämligen att den förvärrar bostadsbristen; lindrar skulle vara en fördel och ingen motsättning. När hyrorna hålls nere under vad efterfrågan motiverar ger nya hyresrätter lägre intäkter, så det blir mindre lönsamt att bygga dem. Mer lönsamt följer inte av att hyrorna inte får stiga. När det byggs få nya lägenheter och få flyttar blir det svårt att få ett eget kontrakt, och den som snabbt behöver bostad är därför ofta hänvisad till andrahandsmarknaden. Ointresserad av följer inte av något i texten; bristen på förstahandskontrakt gör tvärtom ofta andrahandsmarknaden till den enda utvägen.",
     "verification": "agreed"
   },
   {
@@ -607,18 +607,18 @@
     "options": [
       "oskuldspresumtionen / åklagaren",
       "legalitetsprincipen / åklagaren",
-      "oskuldspresumtionen / försvaret",
-      "legalitetsprincipen / försvaret"
+      "oskuldspresumtionen / domstolen",
+      "legalitetsprincipen / domstolen"
     ],
     "correctIndex": 0,
-    "explain": "Oskuldspresumtionen är principen att en misstänkt ska betraktas som oskyldig tills skulden är bevisad, och det är just den som förklaras efter kolon. Legalitetsprincipen är en annan rättsprincip, nämligen att ingen får straffas för en gärning som inte var brottslig enligt lag när den begicks; den stämmer inte med förklaringen. Eftersom den misstänkte ska betraktas som oskyldig ligger bevisbördan på åklagaren. Försvaret företräder den tilltalade, och att försvaret skulle visa att den tilltalade är skyldig säger emot både rollen och meningens slut.",
+    "explain": "Oskuldspresumtionen är principen att en misstänkt ska betraktas som oskyldig tills skulden är bevisad, och det är just den som förklaras efter kolon. Legalitetsprincipen är en annan rättsprincip, nämligen att ingen får straffas för en gärning som inte var brottslig enligt lag när den begicks; den stämmer inte med förklaringen. Eftersom den misstänkte ska betraktas som oskyldig ligger bevisbördan på åklagaren, som har väckt åtalet. Domstolen kan locka eftersom det är den som till slut avgör skuldfrågan, men den är ingen part i målet: den prövar om åklagaren har lyckats bevisa skulden och ska inte själv visa att den tilltalade är skyldig.",
     "verification": "agreed"
   },
   {
     "id": "ovn-mek-042",
     "kind": "mek",
     "prompt": "Välj det alternativ som bäst fyller i meningen.",
-    "passage": "Kritikern tyckte att filmens budskap var alltför ____: varje scen tycktes finnas till enbart för att inpränta samma moraliska poäng hos publiken.",
+    "passage": "Kritikern tyckte att filmens budskap var ____: varje scen tycktes finnas till enbart för att inpränta samma moraliska poäng hos publiken.",
     "options": [
       "subtilt",
       "tvetydigt",
@@ -695,13 +695,13 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "Mellan 1870 och 1950 förvandlades Sverige från ett jordbrukssamhälle till en industrination, och andelen av befolkningen som bodde i städer ____. Inflyttningen från landsbygden ____ en svår bostadsbrist, och trångboddheten i de svenska städerna var länge ____ jämfört med i andra västeuropeiska länder.",
     "options": [
-      "ökade kraftigt / avhjälpte / jämförelsevis låg",
-      "minskade / skapade / jämförelsevis låg",
+      "ökade kraftigt / avhjälpte / påfallande låg",
+      "minskade / skapade / påfallande låg",
       "ökade kraftigt / skapade / anmärkningsvärt hög",
       "minskade / avhjälpte / anmärkningsvärt hög"
     ],
     "correctIndex": 2,
-    "explain": "När ett land industrialiseras flyttar människor från landsbygden till städerna, där fabrikerna finns, och nästa mening talar just om inflyttningen; andelen stadsbor ökade alltså kraftigt, och minskade säger emot det. När många flyttar in snabbare än det hinner byggas skapas en bostadsbrist; inflyttning kan inte avhjälpa, alltså råda bot på, en brist på bostäder. Med en svår bostadsbrist får många dela på få bostäder, så trångboddheten blev anmärkningsvärt hög. Jämförelsevis låg går inte ihop med bostadsbristen.",
+    "explain": "När ett land industrialiseras flyttar människor från landsbygden till städerna, där fabrikerna finns, och nästa mening talar just om inflyttningen; andelen stadsbor ökade alltså kraftigt, och minskade säger emot det. När många flyttar in snabbare än det hinner byggas skapas en bostadsbrist; inflyttning kan inte avhjälpa, alltså råda bot på, en brist på bostäder. Med en svår bostadsbrist får många dela på få bostäder, så trångboddheten blev anmärkningsvärt hög. Påfallande låg går inte ihop med bostadsbristen.",
     "verification": "agreed"
   },
   {
@@ -806,7 +806,7 @@
       "bygga vidare på / överlastad / förfall"
     ],
     "correctIndex": 2,
-    "explain": "Arkitekterna ville bryta med den äldre stilen; ”i stället” visar att de ville något annat, så bygga vidare på passar inte. Kal betyder naken och utan utsmyckning, och det är en rimlig kritik mot en stil som har skalat bort all ornamentik och som också kallas opersonlig. Överlastad betyder översmyckad och beskriver snarare den stil som funktionalisterna vände sig mot. Debatten gällde två motsatta synsätt, och motsatsen till en befrielse är här ett förfall, alltså en försämring. Framsteg är också positivt och ger ingen motsättning mot befrielse.",
+    "explain": "Arkitekterna ville bryta med den äldre stilen; ”i stället” visar att de ville något annat, så bygga vidare på passar inte. Kal betyder naken och utan utsmyckning, och det är en rimlig kritik mot en stil som har skalat bort all ornamentik och som också kallas opersonlig. Överlastad betyder översmyckad och beskriver snarare den stil som funktionalisterna vände sig mot. Debatten gällde två motsatta synsätt, och motsatsen till en befrielse är här ett förfall, alltså en försämring. Framsteg är också positivt och står inte i motsats till en befrielse.",
     "verification": "agreed"
   },
   {
@@ -815,13 +815,13 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "Ett minoritetsspråk som bara talas av den äldre generationen är ____: när barnen inte längre lär sig språket hemma kan det försvinna när de sista talarna dör. Därför satsar många revitaliseringsprojekt på ____ i stället för att enbart dokumentera språket.",
     "options": [
-      "självbärande / översättningar till majoritetsspråket",
-      "utrotningshotat / översättningar till majoritetsspråket",
+      "självbärande / inspelningar av de äldre talarna",
+      "utrotningshotat / inspelningar av de äldre talarna",
       "självbärande / språkbad för barn",
       "utrotningshotat / språkbad för barn"
     ],
     "correctIndex": 3,
-    "explain": "Texten efter kolon beskriver att språket kan försvinna, och ett sådant språk är utrotningshotat. Självbärande betyder att något klarar sig av egen kraft, vilket är motsatsen till ett språk som inte längre förs vidare till barnen. Eftersom problemet är att barnen inte lär sig språket hemma, satsar projekten på språkbad för barn, där de får höra och använda språket. Översättningar till majoritetsspråket gör inte att någon lär sig minoritetsspråket och löser alltså inte problemet med att språket inte förs vidare.",
+    "explain": "Texten efter kolon beskriver att språket kan försvinna, och ett sådant språk är utrotningshotat. Självbärande betyder att något klarar sig av egen kraft, vilket är motsatsen till ett språk som inte längre förs vidare till barnen. Eftersom problemet är att barnen inte lär sig språket hemma, satsar projekten på språkbad för barn, där de får höra och använda språket. Inspelningar av de äldre talarna kan locka, eftersom det är de äldre som fortfarande kan språket, men inspelningar är just dokumentation, och texten säger att projekten satsar på något i stället för att enbart dokumentera språket. Inspelningar gör inte heller att barnen lär sig tala språket.",
     "verification": "agreed"
   },
   {
@@ -971,7 +971,7 @@
       "självuppfyllande / slippa betalningsproblem"
     ],
     "correctIndex": 2,
-    "explain": "En självuppfyllande farhåga får i sig det befarade att inträffa. Spararnas oro får dem att ta ut sina pengar, och uttagen kan ge banken betalningsproblem trots att den var sund från början; det är vad ”faktiskt” och ”även om” pekar på. Självförvållade liknar självuppfyllande men skulle betyda att banken själv hade orsakat farhågorna, och texten betonar tvärtom att bankens ekonomi var sund; det är spararnas reaktion som skapar problemen. Självreglerande betyder att något återgår i balans av sig självt, och att banken skulle slippa betalningsproblem stämmer inte med att spararna tömmer den på pengar. Självuppfyllande / slippa betalningsproblem börjar rätt men säger emot sig själv, eftersom farhågorna då inte skulle ha besannats.",
+    "explain": "En självuppfyllande farhåga bidrar själv till att det befarade inträffar. Spararnas oro får dem att ta ut sina pengar, och uttagen kan ge banken betalningsproblem trots att den var sund från början; det är vad ”faktiskt” och ”även om” pekar på. Självförvållade liknar självuppfyllande men skulle betyda att banken själv hade orsakat farhågorna, och texten betonar tvärtom att bankens ekonomi var sund; det är spararnas reaktion som skapar problemen. Självreglerande betyder att något återgår i balans av sig självt, och att banken skulle slippa betalningsproblem stämmer inte med att spararna tömmer den på pengar. Självuppfyllande / slippa betalningsproblem börjar rätt men säger emot sig själv, eftersom farhågorna då inte skulle ha besannats.",
     "verification": "agreed"
   },
   {
@@ -1175,13 +1175,13 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "Mercators världskarta från 1569 är ____ för sjöfarare, eftersom en kurs med konstant kompassriktning blir en rak linje på kartan. Priset för detta är att ytorna ____ ju närmare polerna man kommer. Grönland ser därför ungefär lika stort ut som Afrika, ____ Afrika i själva verket är omkring fjorton gånger större.",
     "options": [
-      "vilseledande / förstoras / trots att",
-      "ändamålsenlig / förminskas / trots att",
+      "vilseledande / förstoras / eftersom",
+      "ändamålsenlig / förminskas / eftersom",
       "ändamålsenlig / förstoras / trots att",
-      "ändamålsenlig / förstoras / eftersom"
+      "vilseledande / förminskas / trots att"
     ],
     "correctIndex": 2,
-    "explain": "Att en kurs med konstant kompassriktning blir en rak linje gör kartan lätt att navigera efter, alltså ändamålsenlig för sjöfarare. ”Priset för detta” anger en nackdel, och exemplet visar vilken: Grönland, som ligger nära polen, ser lika stort ut som det mycket större Afrika, så ytorna förstoras mot polerna. Att Grönland ser lika stort ut fast Afrika är fjorton gånger större är en motsättning, och den uttrycks med ”trots att”. Vilseledande kan locka eftersom kartan ger en felaktig bild av storlekarna, men den egenskap som nämns i första meningen är en fördel för sjöfarare, och ”priset för detta” förutsätter just en fördel. Om ytorna förminskades mot polerna skulle Grönland se mindre ut än det är, inte lika stort som Afrika. Eftersom gör Afrikas verkliga storlek till en orsak till att Grönland ser stort ut, vilket är ologiskt.",
+    "explain": "Att en kurs med konstant kompassriktning blir en rak linje gör kartan lätt att navigera efter, alltså ändamålsenlig för sjöfarare. ”Priset för detta” anger en nackdel, och exemplet visar vilken: Grönland, som ligger nära polen, ser lika stort ut som det mycket större Afrika, så ytorna förstoras mot polerna. Att Grönland ser lika stort ut fast Afrika är omkring fjorton gånger större är en motsättning, och den uttrycks med ”trots att”. Vilseledande kan locka eftersom kartan ger en felaktig bild av storlekarna, men den egenskap som nämns i första meningen är en fördel för sjöfarare, och ”priset för detta” förutsätter just en fördel. Om ytorna förminskades mot polerna skulle Grönland se mindre ut än det är, inte lika stort som Afrika. Eftersom gör Afrikas verkliga storlek till en orsak till att Grönland ser stort ut, vilket är ologiskt.",
     "verification": "agreed"
   },
   {
@@ -1433,7 +1433,7 @@
       "delades upp / genomgripande / splittrades",
       "slogs samman / marginella / splittrades",
       "slogs samman / genomgripande / splittrades",
-      "slogs samman / genomgripande / förtätades"
+      "delades upp / genomgripande / förtätades"
     ],
     "correctIndex": 2,
     "explain": "När många utspridda åkerlappar blir till större sammanhängande ägor har de slagits samman. ”Men” och kolonet visar att reformen också fick stora följder för bygemenskapen, alltså genomgripande följder, och när många gårdar flyttades ut splittrades den gamla bykärnan. Delades upp kan locka eftersom ordet skifte betyder fördelning och reformen faktiskt splittrade byarna, men åkerlapparna delades inte upp; de fördes samman till större ägor. Marginella följder strider mot det som räknas upp efter kolonet: att många gårdar flyttas ut ur byn är ingen liten förändring. Förtätades betyder att bebyggelsen blev tätare, vilket motsägs av att många gårdar flyttades ut.",
@@ -1488,7 +1488,7 @@
     "id": "ovn-mek-100",
     "kind": "mek",
     "prompt": "Välj det alternativ som bäst fyller i meningen.",
-    "passage": "När Per Albin Hansson 1928 beskrev Sverige som ett folkhem använde han ett ord som tidigare hade förekommit hos konservativa debattörer. Han ____ alltså inte begreppet själv, men han gav det ett nytt innehåll: en vision om ett samhälle präglat av jämlikhet och omsorg om alla medborgare.",
+    "passage": "När Per Albin Hansson 1928 talade om att Sverige skulle bli ett folkhem använde han ett ord som tidigare hade förekommit hos konservativa debattörer. Han ____ alltså inte begreppet själv, men han gav det ett nytt innehåll: en vision om ett samhälle präglat av jämlikhet och omsorg om alla medborgare.",
     "options": [
       "lånade",
       "förkastade",
@@ -1551,7 +1551,7 @@
     "passage": "Fram till 1866 bestod den svenska riksdagen av fyra stånd: adel, präster, borgare och bönder. Ståndsriksdagen hade länge kritiserats för att vara ____, eftersom växande grupper i samhället, till exempel lantarbetare och tjänstefolk, ____ representation. Den ersattes av en tvåkammarriksdag, men eftersom rösträtten var knuten till inkomst och förmögenhet blev förändringen ____ än många reformvänner hade hoppats.",
     "options": [
       "otidsenlig / åtnjöt / mindre genomgripande",
-      "otidsenlig / saknade / mer genomgripande",
+      "omständlig / saknade / mer genomgripande",
       "omständlig / saknade / mindre genomgripande",
       "otidsenlig / saknade / mindre genomgripande"
     ],
@@ -1640,13 +1640,13 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "Statarna var lantarbetare som fick en stor del av lönen i form av naturaprodukter, så kallad stat, och som bodde i bostäder som tillhörde godset. Systemet gjorde dem starkt ____ arbetsgivaren, eftersom den som sade upp sig också förlorade sitt hem. Efter decennier av kritik ____ statarsystemet 1945.",
     "options": [
-      "jämställda med / avskaffades",
+      "misstänksamma mot / avskaffades",
       "beroende av / avskaffades",
       "beroende av / infördes",
-      "jämställda med / infördes"
+      "misstänksamma mot / infördes"
     ],
     "correctIndex": 1,
-    "explain": "Den som riskerade att förlora sitt hem genom att säga upp sig kunde inte lätt byta arbete, och det gjorde statarna starkt beroende av arbetsgivaren. ”Efter decennier av kritik” visar att systemet redan hade funnits länge och att kritiken till slut ledde till att det avskaffades. Jämställda med skulle betyda att statarna hade samma ställning som arbetsgivaren, vilket strider mot att de riskerade att förlora sitt hem om de sade upp sig. Infördes går inte ihop med att systemet redan hade kritiserats i decennier; man kan inte kritisera ett system i årtionden innan det har införts.",
+    "explain": "Den som riskerade att förlora sitt hem genom att säga upp sig kunde inte lätt byta arbete, och det gjorde statarna starkt beroende av arbetsgivaren. ”Efter decennier av kritik” visar att systemet redan hade funnits länge och att kritiken till slut ledde till att det avskaffades. Misstänksamma mot kan locka, eftersom statarnas villkor var hårda, men luckan ska fyllas med en följd av det som ”eftersom” anger, och att inte kunna säga upp sig utan att förlora sitt hem skapar beroende, inte misstänksamhet. Infördes går inte ihop med att systemet redan hade kritiserats i decennier; man kan inte kritisera ett system i årtionden innan det har införts.",
     "verification": "agreed"
   },
   {
@@ -1700,7 +1700,7 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "Uttrycket ”bröd och skådespel” kommer från den romerske satirikern Juvenalis, som ____ att Roms invånare hade slutat bry sig om politik så länge de fick gratis spannmål och underhållning. I dag används uttrycket om makthavare som försöker ____ folkligt missnöje med förströelse i stället för att ____ dess orsaker.",
     "options": [
-      "välkomnade / dämpa / åtgärda",
+      "välkomnade / dämpa / dölja",
       "beklagade / väcka / åtgärda",
       "beklagade / dämpa / åtgärda",
       "beklagade / dämpa / dölja"
@@ -1713,7 +1713,7 @@
     "id": "ovn-mek-115",
     "kind": "mek",
     "prompt": "Välj det alternativ som bäst fyller i meningen.",
-    "passage": "Kritikerna avfärdade förslaget att höja straffet för ett brott som bara hade lett till en handfull domar under de senaste tio åren som ____: skärpningen skulle knappast påverka brottsligheten, men den gav partiet ett tillfälle att visa handlingskraft inför valet.",
+    "passage": "Ett parti föreslog att straffet skulle höjas för ett brott som bara hade lett till en handfull domar under de senaste tio åren. Kritikerna avfärdade förslaget som ____: skärpningen skulle knappast påverka brottsligheten, men den gav partiet ett tillfälle att visa handlingskraft inför valet.",
     "options": [
       "kohandel",
       "sakpolitik",
@@ -1762,7 +1762,7 @@
     "options": [
       "lönlöst / kontrollera",
       "olagligt / kontrollera",
-      "lönsamt / kontrollera",
+      "lönsamt / förhindra",
       "lönlöst / förhindra"
     ],
     "correctIndex": 0,
@@ -1818,7 +1818,7 @@
     "id": "ovn-mek-122",
     "kind": "mek",
     "prompt": "Välj det alternativ som bäst fyller i meningen.",
-    "passage": "Att is har lägre densitet än flytande vatten är ovanligt bland ämnen, och egenskapen är ____ för livet i sjöarna. Isen lägger sig som ett lock på ytan och isolerar vattnet under, så att djupa sjöar sällan bottenfryser och fiskarna kan övervintra.",
+    "passage": "Att is har lägre densitet än flytande vatten är ovanligt bland ämnen, och egenskapen är ____ för sjöarnas djur och växter. Isen lägger sig som ett lock på ytan och isolerar vattnet under, så att djupa sjöar sällan bottenfryser och fiskarna kan övervintra.",
     "options": [
       "livsviktig",
       "ödesdiger",
@@ -1826,7 +1826,7 @@
       "oväsentlig"
     ],
     "correctIndex": 0,
-    "explain": "Livsviktig betyder nödvändig för att något ska kunna leva, och det är just vad den andra meningen beskriver: tack vare att isen flyter och isolerar fryser sjöarna inte till botten, och fiskarna överlever vintern. Ödesdiger kan låta som ”avgörande”, men ordet betyder att något får olyckliga, ofta förödande följder, vilket är motsatsen till vad texten beskriver. Betecknande för betyder typisk för, och isens egenskap är inte typisk för livet i sjöarna utan en förutsättning för det. Oväsentlig, alltså utan betydelse, säger emot hela beskrivningen av hur isen skyddar fiskarna.",
+    "explain": "Livsviktig betyder nödvändig för att något ska kunna leva, och det är just vad den andra meningen beskriver: isen flyter och isolerar vattnet under, så att djupa sjöar sällan bottenfryser och fiskarna kan övervintra. Ödesdiger kan låta som ”avgörande”, men ordet betyder att något får olyckliga, ofta förödande följder, vilket är motsatsen till vad texten beskriver. Betecknande för betyder typisk för, och isens egenskap är inte typisk för sjöarnas djur och växter utan en förutsättning för att de ska överleva. Oväsentlig, alltså utan betydelse, säger emot hela beskrivningen av hur isen skyddar fiskarna.",
     "verification": "agreed"
   },
   {
@@ -1871,7 +1871,7 @@
       "fångar väl / överträffar"
     ],
     "correctIndex": 1,
-    "explain": "Den andra meningen, som inleds med ”nämligen”, förklarar varför uttrycket är missvisande: det som räknas är antalet avkommor och inte styrka. Uttrycket ger alltså en skev bild av evolutionen. Av samma skäl är den klena fågeln med många ungar mer framgångsrik, så den överträffar den starka men barnlösa artfränden. Förlorar mot bygger på just den föreställning som texten vänder sig emot, att styrka är det som avgör. Fångar väl passar inte, eftersom förklaringen efter ”nämligen” då skulle säga emot det påstående den ska motivera.",
+    "explain": "Den andra meningen förklarar med ordet ”nämligen” varför uttrycket är missvisande: det som räknas är antalet avkommor och inte styrka. Uttrycket ger alltså en skev bild av evolutionen. Av samma skäl är den klena fågeln med många ungar mer framgångsrik, så den överträffar den starka men barnlösa artfränden. Förlorar mot bygger på just den föreställning som texten vänder sig emot, att styrka är det som avgör. Fångar väl passar inte, eftersom förklaringen efter ”nämligen” då skulle säga emot det påstående den ska motivera.",
     "verification": "agreed"
   },
   {
@@ -1882,11 +1882,11 @@
     "options": [
       "slutit sig / flyktiga",
       "vidgats / långlivade",
-      "slutit sig / lättnedbrytbara",
+      "vidgats / flyktiga",
       "slutit sig / långlivade"
     ],
     "correctIndex": 3,
-    "explain": "”Ändå” visar att det trots förbudet dröjer innan problemet är löst, alltså innan ozonhålet har slutit sig. Förklaringen är att freonerna är långlivade: de bryts ned så långsamt att de finns kvar och skadar ozonlagret många år efter att utsläppen har upphört. Flyktiga kan låta som en passande egenskap hos en gas, men ordet betyder att ett ämne lätt förångas och förklarar inte varför det stannar kvar i atmosfären. Lättnedbrytbara ämnen skulle tvärtom försvinna snabbt, så då skulle det inte dröja flera decennier. Vidgats passar inte, eftersom det man väntar på efter ett förbud är att skadan ska läka och inte att den ska bli större.",
+    "explain": "”Ändå” visar att problemet inte är löst bara för att användningen av freoner nästan har upphört: det dröjer flera decennier innan ozonhålet har slutit sig. Förklaringen är att freonerna är långlivade: de bryts ned så långsamt att de finns kvar och skadar ozonlagret många år efter att utsläppen har upphört. Flyktiga kan låta som en passande egenskap hos en gas, men ordet betyder att ett ämne lätt förångas och förklarar inte varför det stannar kvar i atmosfären. Vidgats passar inte, eftersom det man väntar på när utsläppen har upphört är att skadan ska läka och inte att den ska bli större.",
     "verification": "agreed"
   },
   {
@@ -1998,7 +1998,7 @@
     "id": "ovn-mek-134",
     "kind": "mek",
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-    "passage": "Haven har tagit upp en stor del av den koldioxid som människan har släppt ut, och det har ____ den globala uppvärmningen. Men upptaget har ett pris: vattnet blir surare, vilket gör det ____ för musslor och koraller att bygga sina kalkskal.",
+    "passage": "Haven har tagit upp en stor del av den koldioxid som människan har släppt ut, och det har ____ den globala uppvärmningen. Men upptaget har ett pris: vattnet blir surare, vilket gör det ____ för musslor och koraller att bygga sina skal och skelett av kalk.",
     "options": [
       "påskyndat / svårare",
       "dämpat / lättare",
@@ -2006,7 +2006,7 @@
       "dämpat / svårare"
     ],
     "correctIndex": 3,
-    "explain": "Koldioxid som haven tar upp stannar inte i atmosfären och bidrar därför inte till växthuseffekten, så upptaget har dämpat uppvärmningen. ”Men upptaget har ett pris” visar att det som följer är en nackdel: surare vatten gör det svårare för musslor och koraller att bygga kalkskal. Påskyndat kan locka för den som tänker på koldioxid som något enbart skadligt, men då skulle ”men” inte inleda någon motsättning till ett pris. Lättare passar inte, eftersom det skulle beskriva en fördel och inte ett pris.",
+    "explain": "Koldioxid som haven tar upp stannar inte i atmosfären och bidrar därför inte till växthuseffekten, så upptaget har dämpat uppvärmningen. ”Men upptaget har ett pris” visar att det som följer är en nackdel: surare vatten gör det svårare för musslor och koraller att bygga sina skal och skelett av kalk. Påskyndat kan locka för den som tänker på koldioxid som något enbart skadligt, men om upptaget hade påskyndat uppvärmningen vore det redan en nackdel, och ”men upptaget har ett pris” skulle då inte ställa något mot en fördel. Lättare passar inte, eftersom det skulle beskriva en fördel och inte ett pris.",
     "verification": "agreed"
   },
   {
@@ -2030,13 +2030,13 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "Om två radioaktiva ämnen avger samma slags strålning och består av lika många atomer, är det ämne som har kortast halveringstid ____ farligt på kort sikt, eftersom fler av dess atomer sönderfaller varje sekund. Å andra sidan ____ faran från det betydligt snabbare.",
     "options": [
-      "mindre / klingar av",
-      "mer / klingar av",
+      "mindre / avtar",
+      "mer / avtar",
       "mer / tilltar",
       "mindre / tilltar"
     ],
     "correctIndex": 1,
-    "explain": "Om fler atomer sönderfaller varje sekund avger ämnet mer strålning, och det är alltså mer farligt på kort sikt. ”Å andra sidan” inleder en motvikt: eftersom atomerna sönderfaller så fort tar de snart slut, och faran klingar av betydligt snabbare än hos ämnet med lång halveringstid. Mindre / klingar av bygger på det vanliga antagandet att ett ämne som försvinner snabbt också är minst farligt, men det strider mot att fler atomer sönderfaller per sekund. Tilltar är fel eftersom antalet kvarvarande atomer bara minskar, och därmed minskar också strålningen över tid.",
+    "explain": "Om fler atomer sönderfaller varje sekund avger ämnet mer strålning, och det är alltså mer farligt på kort sikt. ”Å andra sidan” inleder en motvikt: eftersom atomerna sönderfaller så fort tar de snart slut, och faran avtar betydligt snabbare än hos ämnet med lång halveringstid. Mindre / avtar bygger på det vanliga antagandet att ett ämne som försvinner snabbt också är minst farligt, men det strider mot att fler atomer sönderfaller per sekund. Tilltar är fel eftersom antalet kvarvarande atomer bara minskar, och därmed minskar också strålningen över tid.",
     "verification": "agreed"
   },
   {
@@ -2213,7 +2213,7 @@
       "skadligt / dåligt / uteblir",
       "skadligt / bra / uteblir",
       "gynnsamt / dåligt / uteblir",
-      "skadligt / dåligt / ligger kvar länge"
+      "gynnsamt / bra / ligger kvar länge"
     ],
     "correctIndex": 0,
     "explain": "”Men i själva verket skyddar det dem” visar att snötäcket först kan verka skadligt. Luften i snön gör att den leder värme dåligt, och därför håller den kvar markens värme som ett isolerande täcke. Om snön skyddar växterna är det farligast när den uteblir, så att marken ligger bar mot den kalla luften. Bra passar inte, eftersom ett material som leder värme bra skulle släppa ut markens värme i stället för att isolera. Gynnsamt passar inte med ”men”, som kräver en motsättning till att snön skyddar. Ligger kvar länge säger emot att snön är ett skydd; om snön skyddar är det snarare bra att den ligger kvar.",
@@ -2481,12 +2481,12 @@
     "passage": "När en målning som länge har tillskrivits en berömd mästare visar sig vara utförd av en av hans elever, ____ värdet ofta dramatiskt, trots att ingenting på duken har förändrats. Det tyder på att priset ____ bestäms av vad betraktaren faktiskt ser.",
     "options": [
       "sjunker / inte alls",
-      "stiger / bara delvis",
+      "stiger / helt och hållet",
       "sjunker / i första hand",
       "sjunker / bara delvis"
     ],
     "correctIndex": 3,
-    "explain": "Att målningen visar sig vara gjord av en mindre känd elev får värdet att sjunka, och ”trots att” markerar det paradoxala i att värdet ändras fast duken är densamma. Slutsatsen blir att priset bara delvis bestäms av det man ser: namnet och berättelsen bakom verket väger också tungt. Stiger stämmer inte, eftersom eleven saknar mästarens ryktbarhet. I första hand ger motsatt slutsats, för om det man ser vore det viktigaste skulle värdet knappast rasa när bara upphovsmannen byts ut. Inte alls går för långt: texten säger att värdet sjunker, inte att det försvinner, och den visar bara att det man ser inte är det enda som avgör priset.",
+    "explain": "Att målningen visar sig vara gjord av en mindre känd elev får värdet att sjunka, och ”trots att” markerar det paradoxala i att värdet ändras fast duken är densamma. Slutsatsen blir att priset bara delvis bestäms av det man ser: namnet och berättelsen bakom verket väger också tungt. Stiger stämmer inte, eftersom eleven saknar mästarens ryktbarhet. I första hand ger motsatt slutsats, för om det man ser vore det viktigaste skulle värdet knappast rasa när bara upphovsmannen byts ut, och helt och hållet säger emot iakttagelsen ännu tydligare. Inte alls går för långt: iakttagelsen visar att det man ser inte är det enda som avgör priset, men inte att det saknar betydelse.",
     "verification": "agreed"
   },
   {
@@ -2540,13 +2540,13 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "Att publiken på klassiska konserter förväntas sitta tyst mellan satserna i en symfoni är en förhållandevis ____ ordning. Långt in på 1800-talet var det vanligt att publiken applåderade så snart en sats hade gjort intryck, och en uppskattad sats kunde till och med ____ på begäran. Tystnaden ____ alltså snarare en senare tids syn på konsertsalen som ett slags tempel för konsten än tonsättarnas egna förväntningar.",
     "options": [
-      "ny / strykas / speglar",
-      "gammal / spelas om / speglar",
-      "ny / spelas om / motsäger",
+      "ny / strykas / motsäger",
+      "gammal / strykas / speglar",
+      "gammal / spelas om / motsäger",
       "ny / spelas om / speglar"
     ],
     "correctIndex": 3,
-    "explain": "Om publiken applåderade mellan satserna långt in på 1800-talet är tystnaden en förhållandevis ny ordning. En sats som publiken tyckte särskilt mycket om kunde till och med spelas om, och ”till och med” anger det som ännu mer uppseendeväckande än applåderna. Tystnaden speglar därmed en senare syn på konsertsalen, inte tonsättarnas förväntningar. Gammal säger emot beskrivningen av 1800-talet. Att en uppskattad sats skulle strykas på begäran vore ologiskt. Motsäger passar inte i jämförelsen ”snarare … än”: meningen ställer det som tystnaden är ett uttryck för mot det som den inte är ett uttryck för, och då krävs speglar.",
+    "explain": "Om publiken applåderade mellan satserna långt in på 1800-talet är tystnaden en förhållandevis ny ordning. En sats som publiken tyckte särskilt mycket om kunde till och med spelas om, och ”till och med” anger det som ännu mer uppseendeväckande än applåderna. Tystnaden speglar därmed en senare syn på konsertsalen, inte tonsättarnas förväntningar. Gammal säger emot beskrivningen av 1800-talet. Att en uppskattad sats skulle strykas på begäran vore ologiskt. Motsäger vänder på innebörden: tystnaden går inte emot en senare tids syn på konsertsalen som ett tempel för konsten utan är ett uttryck för den, och det som tystnaden går emot är snarare tonsättarnas egna förväntningar.",
     "verification": "agreed"
   },
   {
@@ -2570,13 +2570,13 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "Att ett ord har tagits upp i Svenska Akademiens ordlista betyder inte att Akademien ____ det. Ordlistan utgår i första hand från hur svenskan faktiskt används, och ett nytt ord tas med när det har fått ____ spridning i skrift, ____ redaktionen tycker att ordet är vackert eller välbildat.",
     "options": [
-      "rekommenderar / tillfällig / oavsett om",
-      "ifrågasätter / tillräcklig / oavsett om",
+      "rekommenderar / tillfällig / eftersom",
+      "ifrågasätter / tillfällig / oavsett om",
       "rekommenderar / tillräcklig / oavsett om",
-      "rekommenderar / tillräcklig / eftersom"
+      "ifrågasätter / tillräcklig / eftersom"
     ],
     "correctIndex": 2,
-    "explain": "Eftersom ordlistan utgår från hur språket används och inte från vad redaktionen tycker om orden, betyder det inte att Akademien rekommenderar ett ord att det finns med. Det som avgör är att ordet har fått tillräcklig spridning, och det gäller oavsett om redaktionen gillar ordet eller inte. Eftersom skulle göra redaktionens smak till skälet att ta med ordet, vilket strider mot att ordlistan utgår från språkbruket. Tillfällig spridning går inte ihop med att ordlistan bygger på hur språket faktiskt används: ett ord som bara används under en kort tid har inte blivit en del av svenskan. Ifrågasätter ger ingen rimlig poäng, eftersom ingen skulle tro att Akademien ifrågasätter ett ord just för att det har tagits upp i ordlistan.",
+    "explain": "Ordlistan utgår från hur språket används och inte från vad redaktionen tycker om orden. Att ett ord finns med betyder därför inte att Akademien rekommenderar det. Det som avgör är att ordet har fått tillräcklig spridning, och det gäller oavsett om redaktionen gillar ordet eller inte. Eftersom skulle göra redaktionens smak till skälet att ta med ordet, vilket strider mot att ordlistan utgår från språkbruket. Tillfällig spridning går inte ihop med att ordlistan bygger på hur språket faktiskt används: ett ord som bara används under en kort tid har inte blivit en del av svenskan. Ifrågasätter ger ingen rimlig poäng, eftersom ingen skulle tro att Akademien ifrågasätter ett ord just för att det har tagits upp i ordlistan.",
     "verification": "agreed"
   },
   {
@@ -2691,12 +2691,12 @@
     "passage": "Att en roman blir en storsäljare säger inte mycket om huruvida den kommer att ____. Många av förra sekelskiftets mest lästa romaner är i dag bortglömda, medan flera verk som sålde dåligt när de kom ut nu räknas till ____.",
     "options": [
       "stå sig / bottennappen",
-      "säljas / klassikerna",
+      "översättas / bottennappen",
       "stå sig / klassikerna",
       "översättas / klassikerna"
     ],
     "correctIndex": 2,
-    "explain": "Exemplen handlar om vilka böcker som har blivit ihågkomna på lång sikt: storsäljare har glömts bort, och verk som sålde dåligt har blivit klassiker. Det visar att försäljningen säger lite om huruvida en roman kommer att stå sig. Säljas ger en självmotsägelse, eftersom en storsäljare redan har sålt bra. Översättas kan låta rimligt, men exemplen säger ingenting om översättningar. Bottennappen passar inte, eftersom ”medan” ställer de här verken mot de bortglömda storsäljarna; att böcker som sålde dåligt i dag räknas till bottennappen vore ingen motsättning.",
+    "explain": "Exemplen handlar om vilka böcker som har blivit ihågkomna på lång sikt: storsäljare har glömts bort, och verk som sålde dåligt har blivit klassiker. Det visar att försäljningen säger lite om huruvida en roman kommer att stå sig. Översättas kan låta rimligt, men exemplen säger ingenting om översättningar. Bottennappen passar inte, eftersom ”medan” ställer de här verken mot de bortglömda storsäljarna; att böcker som sålde dåligt i dag räknas till bottennappen vore ingen motsättning.",
     "verification": "agreed"
   },
   {
@@ -2721,9 +2721,9 @@
     "passage": "Försäkringar kan ____ hur människor beter sig. Den som vet att en stöld ersätts fullt ut har ____ skäl att låsa cykeln ordentligt, och därför har många försäkringar en självrisk: när ägaren själv får stå för en del av förlusten blir det ____ att vara slarvig.",
     "options": [
       "påverka / mindre / dyrare",
-      "avspegla / mindre / dyrare",
-      "påverka / större / dyrare",
-      "påverka / mindre / lönsammare"
+      "avspegla / större / dyrare",
+      "påverka / större / lönsammare",
+      "avspegla / mindre / lönsammare"
     ],
     "correctIndex": 0,
     "explain": "Exemplet visar hur försäkringen ändrar beteendet: den som får hela förlusten ersatt har mindre skäl att vara försiktig. Därför får ägaren själv bära en del av förlusten genom självrisken, så att slarv blir dyrare för ägaren. Avspegla betyder återge eller visa, och det ger fel poäng: texten handlar inte om att försäkringar återger hur människor beter sig utan om att de påverkar beteendet. Större skäl att låsa vore ologiskt när förlusten ersätts fullt ut. Lönsammare säger emot syftet med självrisken, som är att minska slarvet.",
@@ -2780,9 +2780,9 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "En villaförening vill sätta upp belysning längs områdets gångvägar och ber de boende om frivilliga bidrag. Många frestas då att ____, eftersom alla får nytta av belysningen ____ de själva har betalat. Problemet brukar bli större ju ____ gruppen är, eftersom den enskildes bidrag då märks mindre.",
     "options": [
-      "åka snålskjuts / bara om / större",
-      "dra sitt strå till stacken / oavsett om / större",
-      "åka snålskjuts / oavsett om / mindre",
+      "dra sitt strå till stacken / bara om / större",
+      "dra sitt strå till stacken / oavsett om / mindre",
+      "åka snålskjuts / bara om / mindre",
       "åka snålskjuts / oavsett om / större"
     ],
     "correctIndex": 3,
@@ -2810,10 +2810,10 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "När ett barn säger ”springde” i stället för ”sprang” är det inte nödvändigtvis ett tecken på att språkutvecklingen har ____. Tvärtom visar felet att barnet har ____ en regel för hur verb böjs i dåtid och nu använder den även där den inte gäller. Ofta har samma barn tidigare sagt ”sprang” korrekt, eftersom det då bara ____ formen som en helhet.",
     "options": [
-      "gått framåt / upptäckt / härmade",
+      "gått framåt / glömt / härmade",
       "gått bakåt / upptäckt / härmade",
-      "gått bakåt / glömt / härmade",
-      "gått bakåt / upptäckt / analyserade"
+      "gått bakåt / glömt / analyserade",
+      "gått framåt / upptäckt / analyserade"
     ],
     "correctIndex": 1,
     "explain": "Felet kan se ut som ett steg tillbaka, men ”tvärtom” visar att det är ett tecken på framsteg: barnet har upptäckt att dåtid ofta bildas med -de och använder den regeln också på verb som inte följer den. Att barnet tidigare sa ”sprang” rätt förklaras av att det då bara härmade formen som en helhet, utan att ha uppfattat hur den var uppbyggd. Gått framåt passar inte med ”inte nödvändigtvis … tvärtom”, eftersom det som följer efter ”tvärtom” just ska visa att felet är ett framsteg. Att barnet har glömt en regel kan inte förklara att det använder regeln. Analyserade säger emot ”bara … som en helhet”: att analysera en form är att dela upp den i delar.",
@@ -2841,9 +2841,9 @@
     "passage": "Många traditioner som uppfattas som urgamla är i själva verket förhållandevis ____. Luciafirandet med vitklädda tåg i skolor och på arbetsplatser fick till exempel sin stora spridning över landet först under 1900-talet, även om det ____ äldre seder. Att en tradition känns tidlös säger alltså mer om hur ____ den har blivit än om hur gammal den är.",
     "options": [
       "nya / bygger på / självklar",
-      "nya / har ersatts av / självklar",
-      "gamla / bygger på / självklar",
-      "nya / bygger på / ifrågasatt"
+      "nya / har ersatts av / ifrågasatt",
+      "gamla / har ersatts av / självklar",
+      "gamla / bygger på / ifrågasatt"
     ],
     "correctIndex": 0,
     "explain": "”I själva verket” ställer traditionernas verkliga ålder mot föreställningen att de är urgamla, så de är förhållandevis nya. Luciafirandet är ett exempel: det fick sin stora spridning först under 1900-talet, även om det bygger på äldre seder, och ”även om” markerar att de äldre rötterna inte gör hela firandet gammalt. Slutsatsen blir att känslan av tidlöshet beror på hur självklar traditionen har blivit. Gamla säger emot ”i själva verket”. Har ersatts av äldre seder är ologiskt, eftersom ett firande som sprids under 1900-talet inte kan ersättas av seder som är äldre. Ifrågasatt passar inte med tidlös: en tradition som många ifrågasätter känns knappast tidlös.",
@@ -2870,10 +2870,10 @@
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
     "passage": "För de flesta varor gäller att efterfrågan ____ när priset stiger. Vissa lyxvaror är dock ett undantag: en del köpare vill ha dem just för att de är dyra, eftersom priset ____ köparens status. Om en sådan vara plötsligt reas ut kan den därför bli ____ eftertraktad.",
     "options": [
-      "ökar / signalerar / mindre",
-      "minskar / döljer / mindre",
+      "ökar / signalerar / mer",
+      "ökar / döljer / mindre",
       "minskar / signalerar / mindre",
-      "minskar / signalerar / mer"
+      "minskar / döljer / mer"
     ],
     "correctIndex": 2,
     "explain": "Normalt minskar efterfrågan när priset stiger, och ”dock ett undantag” visar att vissa lyxvaror fungerar annorlunda. Köparna vill ha dem för att det höga priset signalerar status, det vill säga visar omgivningen att de har råd. Om varan reas ut försvinner en del av det som gjorde den attraktiv, och den kan därför bli mindre eftertraktad. Ökar gör att lyxvarorna inte längre blir något undantag. Döljer passar inte, eftersom köparna vill ha varorna just för att de är dyra; ett pris som dolde statusen vore inget skäl att köpa. Mer eftertraktad stämmer med vad som gäller för de flesta varor, men ”därför” knyter slutsatsen till att priset signalerar status, och ett lägre pris signalerar mindre status.",
@@ -2928,12 +2928,12 @@
     "id": "ovn-mek-196",
     "kind": "mek",
     "prompt": "Välj det alternativ som bäst fyller i luckorna.",
-    "passage": "Hushåll som får veta att grannarna gör av med mindre el än de själva brukar minska sin förbrukning. Men samma slags besked kan få motsatt verkan hos dem som redan förbrukar ____ än genomsnittet: när de får veta att de ligger bättre till än grannarna ____ en del av dem sin förbrukning, som om genomsnittet vore en norm att rätta sig efter. Den effekten kan motverkas om beskedet till dessa hushåll kompletteras med ____.",
+    "passage": "När hushåll får veta att grannarna gör av med mindre el än de själva, brukar de minska sin förbrukning. Men samma slags besked kan få motsatt verkan hos dem som redan förbrukar ____ än genomsnittet: när de får veta att de ligger bättre till än grannarna ____ en del av dem sin förbrukning, som om genomsnittet vore en norm att rätta sig efter. Den effekten kan motverkas om beskedet till dessa hushåll kompletteras med ____.",
     "options": [
-      "mindre / ökar / en jämförelse med fler hushåll",
-      "mer / ökar / ett tecken på gillande",
+      "mindre / minskar / en jämförelse med fler hushåll",
+      "mer / ökar / en jämförelse med fler hushåll",
       "mindre / ökar / ett tecken på gillande",
-      "mindre / minskar / ett tecken på gillande"
+      "mer / minskar / ett tecken på gillande"
     ],
     "correctIndex": 2,
     "explain": "”Motsatt verkan” betyder att några hushåll i stället ökar sin förbrukning, och det gäller dem som ligger bättre till än grannarna, alltså redan förbrukar mindre än genomsnittet. De beter sig som om genomsnittet vore en norm och närmar sig den. Effekten motverkas av ett tecken på gillande, eftersom det visar att en låg förbrukning är bra, så att genomsnittet inte längre framstår som något att rätta sig efter. Mer passar inte: hushåll som förbrukar mer än genomsnittet ligger inte bättre till än grannarna. Minskar vore ingen motsatt verkan. En jämförelse med fler hushåll ger bara ett nytt genomsnitt att rätta sig efter och tar därför inte bort det problem som texten beskriver.",
