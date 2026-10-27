@@ -9,7 +9,8 @@ import type {
   WeekPlan,
 } from "@/lib/study-plan";
 import { pct } from "@/lib/format";
-import { sectionToKinds } from "@/lib/section-kinds";
+import { kindToSection, sectionToKinds } from "@/lib/section-kinds";
+import { SUBTESTS } from "@/lib/subtests";
 import { adjustDeficit, type PracticeTrend } from "@/lib/practice-trends";
 
 export type TimeSplitItem = { label: string; pct: number; note: string };
@@ -43,6 +44,11 @@ export type GeneratePlanOptions = {
   trends?: PracticeTrend[];
   lockedWeeks?: Record<number, WeekPlan>;
   startedWeeks?: number[];
+  /**
+   * Antal publicerade frågor per övningstyp. Ett pass får aldrig fler frågor
+   * än banken har, annars visar planen tid för frågor som inte finns.
+   */
+  bankSizes?: Partial<Record<PracticeKind, number>>;
 };
 
 type Ranked = {
@@ -209,356 +215,291 @@ function allocateTime(ranked: Ranked[]): TimeSplitItem[] {
   return items;
 }
 
-/** Minuter per uppgift: kortare än så är inte ett meningsfullt pass, längre är orealistiskt. */
-const MIN_TASK_MINUTES = 20;
-const MAX_TASK_MINUTES = 180;
+/** Minsta tid för en uppgift i planen. */
+const MIN_TASK_MINUTES = 15;
 /** Andel av den angivna veckotiden planen lägger upp — resten är repetition och oförutsett. */
 const WEEKLY_LOAD_FACTOR = 0.8;
 /**
  * Nedtrappningsveckan ("Puts och vila") får en mindre del av veckotiden. Utan
  * det skalades den till samma budget som byggveckorna och nedtrappningen
- * försvann (i mallen är den 140 min mot 190–240 för veckorna närmast före).
+ * försvann.
  */
 const TAPER_WEEK_SHARE = 0.6;
+/** Svara i provtempo plus tid att läsa facit (samma faktor som practice-pace). */
+const REVIEW_FACTOR = 1.25;
+/** Ett pass är högst ett provpass stort; fler frågor än så blir ett annat pass. */
+const MAX_TASK_QUESTIONS = 40;
+const MIN_TASK_QUESTIONS = 4;
+const MAX_REFLECT_MINUTES = 60;
+/** Fler uppgifter än så i en vecka blir oöverskådligt; resten av tiden lämnas fri. */
+const MAX_TASKS_PER_WEEK = 7;
 
-function clampTaskMinutes(minutes: number): number {
-  return Math.min(MAX_TASK_MINUTES, Math.max(MIN_TASK_MINUTES, Math.round(minutes / 5) * 5));
+const SEC_PER_QUESTION = Object.fromEntries(SUBTESTS.map((s) => [s.id, s.secPerQuestion])) as Record<
+  SectionId,
+  number
+>;
+
+/** Provtempo i sekunder per fråga för ett pass med en eller flera övningstyper. */
+function secondsFor(kinds: PracticeKind[]): number {
+  const sections = kinds.map((k) => kindToSection(k)).filter((id): id is SectionId => Boolean(id));
+  if (sections.length === 0) return 82;
+  return sections.reduce((sum, id) => sum + SEC_PER_QUESTION[id], 0) / sections.length;
+}
+
+const round5 = (minutes: number) => Math.round(minutes / 5) * 5;
+
+function isReflect(task: StudyTask): boolean {
+  return task.practiceKinds.length === 1 && task.practiceKinds[0] === "reflect";
 }
 
 /**
- * Fördelar veckans tillgängliga tid (hoursPerWeek × 60 × WEEKLY_LOAD_FACTOR) på
- * veckans uppgifter, proportionellt mot mallens minuter så att tyngdpunkten
- * mellan uppgifterna behålls. Klampat per uppgift, och överskott från en
- * klampad uppgift flyttas över till de som har utrymme kvar.
+ * Ger en uppgift `minutes` minuter: antalet frågor räknas fram ur provtempot,
+ * och minuterna sätts sedan efter frågorna, så att den tid planen visar är den
+ * tid passet faktiskt tar. Förr skalades bara minuterna och en uppgift kunde
+ * stå som 155 min med fyra frågor.
  */
-function scaleTasksToWeeklyBudget(tasks: StudyTask[], hoursPerWeek: number): StudyTask[] {
-  const totalWeight = tasks.reduce((sum, t) => sum + t.minutes, 0);
-  if (totalWeight <= 0) return tasks;
-
-  const budget = Math.max(
-    tasks.length * MIN_TASK_MINUTES,
-    Math.round((hoursPerWeek * 60 * WEEKLY_LOAD_FACTOR) / 5) * 5,
-  );
-
-  const scaled = tasks.map((task) => ({
-    ...task,
-    minutes: clampTaskMinutes((task.minutes / totalWeight) * budget),
-  }));
-
-  let leftover = budget - scaled.reduce((sum, t) => sum + t.minutes, 0);
-  for (let pass = 0; pass < 4 && leftover >= scaled.length * 5; pass += 1) {
-    const room = scaled.filter((t) => t.minutes < MAX_TASK_MINUTES);
-    if (room.length === 0) break;
-    const step = Math.floor(leftover / room.length / 5) * 5;
-    if (step <= 0) break;
-    for (const task of room) {
-      const add = Math.min(step, MAX_TASK_MINUTES - task.minutes);
-      task.minutes += add;
-      leftover -= add;
-    }
+function sizeTask(
+  task: StudyTask,
+  minutes: number,
+  bankSizes?: Partial<Record<PracticeKind, number>>,
+): StudyTask {
+  if (isReflect(task)) {
+    return { ...task, minutes: Math.max(MIN_TASK_MINUTES, Math.min(MAX_REFLECT_MINUTES, round5(minutes))) };
   }
-
-  return scaled;
+  const perQuestion = (secondsFor(task.practiceKinds) * REVIEW_FACTOR) / 60;
+  const available = bankSizes
+    ? task.practiceKinds.reduce((sum, k) => sum + (bankSizes[k] ?? MAX_TASK_QUESTIONS), 0)
+    : MAX_TASK_QUESTIONS;
+  const questionCount = Math.max(
+    Math.min(MIN_TASK_QUESTIONS, Math.max(1, available)),
+    Math.min(MAX_TASK_QUESTIONS, available, Math.round(minutes / perQuestion)),
+  );
+  return {
+    ...task,
+    questionCount,
+    minutes: Math.max(MIN_TASK_MINUTES, round5(questionCount * perQuestion)),
+  };
 }
 
+/**
+ * Fördelar veckans tid (hoursPerWeek × 60 × WEEKLY_LOAD_FACTOR) på veckans
+ * uppgifter, proportionellt mot mallens vikter. Tid som blir över när ett pass
+ * når sitt tak blir extrapass i delprov ur rotationen, så att veckotiden används
+ * till övning och inte bara står som siffror.
+ */
+function fitWeekToBudget(
+  tasks: StudyTask[],
+  hoursPerWeek: number,
+  extras: SectionId[],
+  week: number,
+  bankSizes?: Partial<Record<PracticeKind, number>>,
+): StudyTask[] {
+  const totalWeight = tasks.reduce((sum, t) => sum + t.minutes, 0);
+  if (totalWeight <= 0) return tasks;
+  const budget = Math.max(tasks.length * MIN_TASK_MINUTES, round5(hoursPerWeek * 60 * WEEKLY_LOAD_FACTOR));
+
+  const sized = tasks.map((task) => sizeTask(task, (task.minutes / totalWeight) * budget, bankSizes));
+  let leftover = budget - sized.reduce((sum, t) => sum + t.minutes, 0);
+  for (let k = 0; k < extras.length && sized.length < MAX_TASKS_PER_WEEK && leftover >= 25; k += 1) {
+    const id = extras[k];
+    const extra = sizeTask(
+      {
+        id: `w${week}-x${k + 1}`,
+        title: `${METHODS[id].short}: extrapass`,
+        detail: "Veckans övriga tid: bredd i ett delprov utanför fokus.",
+        minutes: 0,
+        section: id,
+        practiceKinds: toPractice(id),
+      },
+      leftover,
+      bankSizes,
+    );
+    sized.push(extra);
+    leftover -= extra.minutes;
+  }
+  return sized;
+}
+
+const PHASES = [
+  { phase: "Bas", theme: "rutin" },
+  { phase: "Bas", theme: "under tid" },
+  { phase: "Bas", theme: "Djup felanalys" },
+  { phase: "Bas", theme: "Avstämning" },
+  { phase: "Teknik", theme: "Tempo" },
+  { phase: "Teknik", theme: "Halvprov" },
+  { phase: "Fullprov", theme: "Bred simulering" },
+  { phase: "Finish", theme: "Puts och vila" },
+] as const;
+
+/**
+ * Vilken fas (1–8) vecka i av n hör till. De två sista veckorna är alltid
+ * Fullprov och Finish; övriga veckor fördelas i ordning över de sex
+ * byggfaserna. En lång plan stannar längre i varje fas och en kort hoppar
+ * över några, men planen går aldrig tillbaka till en tidigare fas (förr
+ * cyklades faserna och en tioveckorsplan började om på Bas vecka 7).
+ */
+export function phaseForWeek(i: number, n: number): number {
+  if (i === n - 1) return 8;
+  if (i === n - 2) return 7;
+  const body = n - 2;
+  return Math.min(6, Math.floor((i * 6) / body) + 1);
+}
+
+/**
+ * Bygger veckorna. `focus` är [primär, andra blocket, tredje] och `rotation`
+ * resten av delproven, svagast först. Varje vecka får ett underhållspass ur
+ * rotationen (nästa delprov varje vecka), så att alla åtta delprov övas under
+ * planen och inget delprov får två pass samma vecka.
+ */
 function buildWeeklyPlans(
   focus: SectionId[],
+  rotation: SectionId[],
   weeks: number,
-  weakestQuant: SectionId = "DTK",
   hoursPerWeek = 10,
+  bankSizes?: Partial<Record<PracticeKind, number>>,
 ): WeekPlan[] {
-  const primary = focus[0] ?? "MEK";
-  const secondary = focus[1] ?? "ORD";
-  const tertiary = focus[2] ?? "LAS";
-  const quant: SectionId = ["DTK", "XYZ", "KVA", "NOG"].includes(weakestQuant)
-    ? weakestQuant
-    : "DTK";
-
-  const phases = [
-    {
-      phase: "Bas",
-      theme: `${METHODS[primary].short}-rutin + ${METHODS[secondary].short}`,
-      focus: `Bygg daglig rutin runt ${METHODS[primary].short} och ${METHODS[secondary].short}.`,
-    },
-    {
-      phase: "Bas",
-      theme: `${METHODS[primary].short} under tid`,
-      focus: `Öka volym och tempo på ${METHODS[primary].short}.`,
-    },
-    {
-      phase: "Bas",
-      theme: "Djup felanalys",
-      focus: "Fel ska bli mönster du känner igen.",
-    },
-    {
-      phase: "Bas",
-      theme: "Avstämning",
-      focus: "Mät lyftet på prioriterade delar och justera.",
-    },
-    {
-      phase: "Teknik",
-      theme: "Tempo",
-      focus: "Samma material, högre precision under tid.",
-    },
-    {
-      phase: "Teknik",
-      theme: "Halvprov",
-      focus: "Kombinera flaskhalsarna i längre pass.",
-    },
-    {
-      phase: "Fullprov",
-      theme: "Bred simulering",
-      focus: "Simulera bredd och utvärdera energi.",
-    },
-    {
-      phase: "Finish",
-      theme: "Puts och vila",
-      focus: "Repetition och energi — inga nya tunga system.",
-    },
-  ];
-
+  const [primary, secondary, tertiary] = focus;
+  const p = METHODS[primary].short;
+  const s = METHODS[secondary].short;
+  const t = METHODS[tertiary].short;
   const n = Math.min(Math.max(weeks, 1), 16);
   const plans: WeekPlan[] = [];
-
-  // Kroppen (Bas/Teknik) cyklas, men de två sista veckorna är alltid "Fullprov"
-  // och "Finish": nedtrappningen ska ligga före provet även när horisonten inte
-  // är exakt 8 eller 16 veckor. Förr hamnade "Puts och vila" på vecka 8 och en
-  // 10-veckorsplan började om på "Bas" två veckor före provet.
-  const bodyPhases = phases.length - 2;
+  const allKinds = [...new Set(DELPROV_META.flatMap((m) => toPractice(m.id)))];
 
   for (let i = 0; i < n; i++) {
     const week = i + 1;
-    const cycle =
-      i === n - 1
-        ? phases.length
-        : i === n - 2
-          ? phases.length - 1
-          : (i % bodyPhases) + 1;
-    const meta = phases[cycle - 1] ?? phases[phases.length - 1];
-    let tasks: StudyTask[] = [];
+    const cycle = phaseForWeek(i, n);
+    const rotated = rotation.map((_, k) => rotation[(i + k) % rotation.length]);
+    const upkeep = rotated[0];
+    const u = METHODS[upkeep].short;
+    const focusPass = (id: string, section: SectionId, title: string, detail: string, weight: number): StudyTask => ({
+      id: `w${week}-${id}`,
+      title,
+      detail,
+      minutes: weight,
+      section,
+      practiceKinds: toPractice(section),
+    });
+    const mixed = (id: string, title: string, detail: string, weight: number, sections: SectionId[]): StudyTask => ({
+      id: `w${week}-${id}`,
+      title,
+      detail,
+      minutes: weight,
+      section: sections[0],
+      practiceKinds: [...new Set(sections.flatMap((x) => toPractice(x)))],
+    });
+    const reflect = (id: string, title: string, detail: string, weight: number): StudyTask => ({
+      id: `w${week}-${id}`,
+      title,
+      detail,
+      minutes: weight,
+      section: primary,
+      practiceKinds: ["reflect"],
+    });
 
-    if (cycle <= 3) {
+    let tasks: StudyTask[];
+    let focusText: string;
+    let theme: string;
+    if (cycle === 1) {
+      theme = `${p}-rutin + ${s}`;
+      focusText = `Bygg daglig rutin runt ${p} och ${s}, utan tidspress.`;
       tasks = [
-        {
-          id: `w${week}-a`,
-          title: `${METHODS[primary].short}: fokuspass`,
-          detail: `Träna din svagaste del (${METHODS[primary].short}).`,
-          minutes: cycle === 1 ? 35 : 40,
-          section: primary,
-          practiceKinds: toPractice(primary),
-          questionCount: primary === "ORD" ? 10 : 8,
-        },
-        {
-          id: `w${week}-b`,
-          title: `${METHODS[secondary].short}: stödpass`,
-          detail: `Andra prioriteten (${METHODS[secondary].short}).`,
-          minutes: 35,
-          section: secondary,
-          practiceKinds: toPractice(secondary),
-          questionCount: 10,
-        },
-        {
-          id: `w${week}-c`,
-          title: `${METHODS[tertiary].short}: komplettering`,
-          detail: "Håll bredden utan att stjäla tid från flaskhalsarna.",
-          minutes: 25,
-          section: tertiary,
-          practiceKinds: toPractice(tertiary),
-          questionCount: tertiary === "LAS" ? 4 : 6,
-        },
-        {
-          id: `w${week}-d`,
-          title: `${METHODS[quant].short}: underhåll`,
-          detail: "Kvantitativ lucka / underhåll.",
-          minutes: 45,
-          section: quant,
-          practiceKinds: toPractice(quant),
-          questionCount: 4,
-        },
+        focusPass("a", primary, `${p}: fokuspass`, `Din svagaste del. Läs förklaringen till varje fel.`, 40),
+        focusPass("b", secondary, `${s}: fokuspass`, `Svagast i det andra blocket.`, 35),
+        focusPass("c", tertiary, `${t}: komplettering`, "Tredje prioriteten.", 25),
+        focusPass("d", upkeep, `${u}: underhåll`, "Håll nivån i ett delprov utanför fokus.", 20),
+      ];
+    } else if (cycle === 2) {
+      theme = `${p} under tid`;
+      focusText = `Samma delar i provtempo: håll tiden per fråga.`;
+      tasks = [
+        focusPass("a", primary, `${p}: i provtempo`, `Håll provets tid per fråga.`, 40),
+        focusPass("b", secondary, `${s}: i provtempo`, `Håll provets tid per fråga.`, 35),
+        focusPass("c", tertiary, `${t}: komplettering`, "Tredje prioriteten.", 25),
+        focusPass("d", upkeep, `${u}: underhåll`, "Håll nivån i ett delprov utanför fokus.", 20),
+      ];
+    } else if (cycle === 3) {
+      theme = "Djup felanalys";
+      focusText = "Fel ska bli mönster du känner igen.";
+      tasks = [
+        focusPass("a", primary, `${p}: fokuspass`, "Notera för varje fel om det var kunskap, slarv eller tid.", 40),
+        focusPass("b", secondary, `${s}: fokuspass`, "Notera för varje fel om det var kunskap, slarv eller tid.", 35),
+        reflect("analys", "Felanalys", `Gå igenom veckans fel i ${p} och ${s}. Skriv tre mönster.`, 25),
+        focusPass("d", upkeep, `${u}: underhåll`, "Håll nivån i ett delprov utanför fokus.", 20),
       ];
     } else if (cycle === 4) {
+      theme = "Avstämning";
+      focusText = "Mät lyftet på prioriterade delar och justera.";
       tasks = [
-        {
-          id: `w${week}-verbal`,
-          title: "Blandpass prioriterade delar",
-          detail: "Mät råpoäng på dina fokusdelar.",
-          minutes: 90,
-          section: primary,
-          practiceKinds: [
-            ...new Set([
-              ...toPractice(primary),
-              ...toPractice(secondary),
-              ...toPractice(tertiary),
-            ]),
-          ],
-          questionCount: 14,
-        },
-        {
-          id: `w${week}-analys`,
-          title: "Felanalys",
-          detail: "Kunskap / slarv / tid. Tre konkreta justeringar.",
-          minutes: 45,
-          section: secondary,
-          practiceKinds: ["reflect"],
-        },
-        {
-          id: `w${week}-patch`,
-          title: `Lappa ${METHODS[primary].short} + ${METHODS[secondary].short}`,
-          detail: "Dubbla det som föll mest.",
-          minutes: 50,
-          section: primary,
-          practiceKinds: [...toPractice(primary), ...toPractice(secondary)],
-          questionCount: 12,
-        },
-        {
-          id: `w${week}-q`,
-          title: `${METHODS[quant].short}-check`,
-          detail: "Bekräfta kvantnivån.",
-          minutes: 50,
-          section: quant,
-          practiceKinds: toPractice(quant),
-          questionCount: 5,
-        },
+        mixed("mix", "Blandpass prioriterade delar", `${p}, ${s} och ${t} i samma pass. Mät andelen rätt.`, 50, [primary, secondary, tertiary]),
+        reflect("analys", "Felanalys", "Kunskap / slarv / tid. Tre konkreta justeringar.", 25),
+        mixed("patch", `Lappa ${p} + ${s}`, "Dubbla det som föll mest.", 35, [primary, secondary]),
+        focusPass("d", upkeep, `${u}: kontroll`, "Bekräfta nivån utanför fokus.", 20),
       ];
-    } else if (cycle <= 6) {
+    } else if (cycle === 5) {
+      theme = "Tempo";
+      focusText = "Samma material, högre precision under tid.";
       tasks = [
-        {
-          id: `w${week}-a`,
-          title: `${METHODS[primary].short}: tempo`,
-          detail: "Eliminering under tid.",
-          minutes: 40,
-          section: primary,
-          practiceKinds: toPractice(primary),
-          questionCount: 10,
-        },
-        {
-          id: `w${week}-b`,
-          title: `${METHODS[secondary].short}: tempo`,
-          detail: "Snabb igenkänning utan panikgissning.",
-          minutes: 35,
-          section: secondary,
-          practiceKinds: toPractice(secondary),
-          questionCount: 10,
-        },
-        {
-          id: `w${week}-c`,
-          title: "Halvprov fokus",
-          detail: "Kombinera dina två svagaste delar.",
-          minutes: 70,
-          section: primary,
-          practiceKinds: [...toPractice(primary), ...toPractice(secondary)],
-          questionCount: 12,
-        },
-        {
-          id: `w${week}-d`,
-          title: `${METHODS[quant].short}: tempo`,
-          detail: "Kort hårt pass.",
-          minutes: 45,
-          section: quant,
-          practiceKinds: toPractice(quant),
-          questionCount: 5,
-        },
+        focusPass("a", primary, `${p}: tempo`, "Eliminera alternativ under tid.", 40),
+        focusPass("b", secondary, `${s}: tempo`, "Snabb igenkänning utan panikgissning.", 35),
+        focusPass("c", tertiary, `${t}: tempo`, "Kort pass i provtempo.", 25),
+        focusPass("d", upkeep, `${u}: underhåll`, "Håll nivån i ett delprov utanför fokus.", 20),
+      ];
+    } else if (cycle === 6) {
+      theme = "Halvprov";
+      focusText = "Kombinera flaskhalsarna i längre pass.";
+      tasks = [
+        mixed("halv", "Halvprov fokus", `${p} och ${s} blandat i ett längre pass.`, 60, [primary, secondary]),
+        focusPass("c", tertiary, `${t}: tempo`, "Kort pass i provtempo.", 25),
+        reflect("analys", "Felanalys", "Var tappade du tid eller precision?", 20),
+        focusPass("d", upkeep, `${u}: underhåll`, "Håll nivån i ett delprov utanför fokus.", 20),
       ];
     } else if (cycle === 7) {
+      theme = "Bred simulering";
+      focusText = "Alla delprov blandat. Notera var energin föll.";
       tasks = [
-        {
-          id: `w${week}-full`,
-          title: "Bred simulering",
-          detail: "Blandat set över flera delar. Notera var energin föll.",
-          minutes: 90,
-          section: primary,
-          practiceKinds: [
-            ...new Set<PracticeKind>([
-              "ord",
-              "mek",
-              "las",
-              "elf",
-              "dtk",
-              ...toPractice(quant),
-            ]),
-          ],
-          questionCount: 16,
-        },
-        {
-          id: `w${week}-review`,
-          title: "Analys efter simulering",
-          detail: "Mönster per delprov.",
-          minutes: 60,
-          section: secondary,
-          practiceKinds: ["reflect"],
-        },
-        {
-          id: `w${week}-patch`,
-          title: "Lappa största luckan",
-          detail: `Nästan alltid ${METHODS[primary].short} eller ${METHODS[secondary].short}.`,
-          minutes: 50,
-          section: primary,
-          practiceKinds: [...toPractice(primary), ...toPractice(secondary)],
-          questionCount: 12,
-        },
-        {
-          id: `w${week}-light`,
-          title: "Lätt underhåll",
-          detail: "Korta pass, ingen utmattning.",
-          minutes: 40,
-          section: quant,
-          practiceKinds: toPractice(quant),
-          questionCount: 4,
-        },
+        { ...mixed("full", "Bred simulering", "Blandat set över alla delprov.", 60, [primary]), practiceKinds: allKinds },
+        reflect("review", "Analys efter simulering", "Mönster per delprov.", 30),
+        mixed("patch", "Lappa största luckan", `Nästan alltid ${p} eller ${s}.`, 35, [primary, secondary]),
+        focusPass("light", upkeep, `${u}: lätt underhåll`, "Korta pass, ingen utmattning.", 20),
       ];
     } else {
+      theme = "Puts och vila";
+      focusText = "Repetition och energi — inga nya tunga system.";
       tasks = [
-        {
-          id: `w${week}-a`,
-          title: `${METHODS[primary].short}: lätt repetition`,
-          detail: "Inga nya knep.",
-          minutes: 30,
-          section: primary,
-          practiceKinds: toPractice(primary),
-          questionCount: 6,
-        },
-        {
-          id: `w${week}-b`,
-          title: `${METHODS[secondary].short}: lätt repetition`,
-          detail: "Bara bekanta uppgifter.",
-          minutes: 30,
-          section: secondary,
-          practiceKinds: toPractice(secondary),
-          questionCount: 8,
-        },
-        {
-          id: `w${week}-c`,
-          title: "Halvprov fokus",
-          detail: "Senast mitt i veckan.",
-          minutes: 60,
-          section: primary,
-          practiceKinds: [...toPractice(primary), ...toPractice(secondary)],
-          questionCount: 10,
-        },
-        {
-          id: `w${week}-d`,
-          title: "Provdags-check",
-          detail: "Logistik, sömn, sista lätta repetition.",
-          minutes: 20,
-          section: "ELF",
-          practiceKinds: ["reflect"],
-        },
+        focusPass("a", primary, `${p}: lätt repetition`, "Inga nya knep.", 30),
+        focusPass("b", secondary, `${s}: lätt repetition`, "Bara bekanta uppgifter.", 30),
+        mixed("c", "Halvprov fokus", "Senast mitt i veckan.", 45, [primary, secondary]),
+        reflect("d", "Provdags-check", "Logistik, sömn, sista lätta repetition.", 20),
       ];
     }
 
+    const budget = cycle === 8 ? hoursPerWeek * TAPER_WEEK_SHARE : hoursPerWeek;
     plans.push({
       week,
-      phase: meta.phase,
-      theme: meta.theme,
-      focus: meta.focus,
-      tasks: scaleTasksToWeeklyBudget(
-        tasks,
-        cycle === phases.length ? hoursPerWeek * TAPER_WEEK_SHARE : hoursPerWeek,
-      ),
+      phase: PHASES[cycle - 1].phase,
+      theme,
+      focus: focusText,
+      // Ingen extratid i nedtrappningen.
+      tasks: fitWeekToBudget(tasks, budget, cycle === 8 ? [] : rotated.slice(1), week, bankSizes),
     });
   }
 
   return plans;
+}
+
+/**
+ * Väljer planens tre fokusdelprov ur en rangordning (svagast först): det
+ * svagaste, det svagaste i det andra blocket och det näst svagaste av resten.
+ * Kvant och verbal normeras var för sig och väger lika, så båda blocken får
+ * alltid fokus — förr kunde tre kvantdelar ta all tid och MEK på 45 % få noll.
+ */
+function selectFocus(ranking: Ranked[]): { focus: SectionId[]; rotation: SectionId[] } {
+  const primary = ranking[0];
+  const secondary = ranking.find((r) => r.block !== primary.block) ?? ranking[1];
+  const tertiary = ranking.find((r) => r.id !== primary.id && r.id !== secondary.id)!;
+  const focus = [primary.id, secondary.id, tertiary.id];
+  return { focus, rotation: ranking.map((r) => r.id).filter((id) => !focus.includes(id)) };
 }
 
 /** Jämför två veckoplaner på de fält som faktiskt ändrar vad användaren ser/övar. */
@@ -681,20 +622,15 @@ export function generatePlan(
     weeklyGoal: "1 blandat underhållspass + DTK vid behov",
   });
 
-    const hpFocusIds = [
-    ...new Set(ranked.filter((r) => r.percent < 80).slice(0, 3).map((r) => r.id)),
-  ];
-  for (const row of ranked) {
-    if (hpFocusIds.length >= 2) break;
-    if (!hpFocusIds.includes(row.id)) hpFocusIds.push(row.id);
-  }
-
+  const hpSelection = selectFocus(ranked);
+  const hpFocusIds = hpSelection.focus;
   const hpWeakestQuant = ranked.filter((r) => r.block === "kvant")[0];
   const hpWeekly = buildWeeklyPlans(
     hpFocusIds,
+    hpSelection.rotation,
     weeks,
-    hpWeakestQuant.id,
     scores.hoursPerWeek,
+    options.bankSizes,
   );
 
   const trends =
@@ -703,6 +639,7 @@ export function generatePlan(
       : [];
 
   let focusIds = hpFocusIds;
+  let rotation = hpSelection.rotation;
   let weakestQuant = hpWeakestQuant;
 
   let effectiveRanking: Ranked[] = ranked;
@@ -714,17 +651,9 @@ export function generatePlan(
       return db - da;
     });
     effectiveRanking = blended;
-    focusIds = blended
-      .filter(
-        (r) =>
-          r.percent < 80 ||
-          trends.some((t) => t.id === r.id && t.direction === "weaker"),
-      )
-      .slice(0, 3)
-      .map((r) => r.id);
-    if (focusIds.length < 2) {
-      focusIds = blended.slice(0, 2).map((r) => r.id);
-    }
+    const selection = selectFocus(blended);
+    focusIds = selection.focus;
+    rotation = selection.rotation;
     weakestQuant =
       blended.filter((r) => r.block === "kvant")[0] ?? hpWeakestQuant;
   }
@@ -770,10 +699,11 @@ export function generatePlan(
   // Bygg bara om planen när anpassningen faktiskt ändrade fokus eller kvantdel;
   // annars återanvänds hpWeekly (samma innehåll, färre allokeringar och stabil
   // objektidentitet nedströms).
+  const rotationChanged = rotation.join("|") !== hpSelection.rotation.join("|");
   const built =
-    !focusChanged && weakestQuant.id === hpWeakestQuant.id
+    !focusChanged && !rotationChanged
       ? hpWeekly
-      : buildWeeklyPlans(focusIds, weeks, weakestQuant.id, scores.hoursPerWeek);
+      : buildWeeklyPlans(focusIds, rotation, weeks, scores.hoursPerWeek, options.bankSizes);
 
   const started = new Set(options.startedWeeks ?? []);
   const weeklyPlans = built.map((w) => {

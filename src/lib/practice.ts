@@ -56,6 +56,14 @@ function getBanks(): Record<Exclude<PracticeKind, "reflect">, ChoiceQuestion[]> 
   return banks;
 }
 
+/** Antal frågor per övningstyp i den laddade banken (för veckoplanens passlängder). */
+export function bankSizes(): Record<Exclude<PracticeKind, "reflect">, number> {
+  const banks = getBanks();
+  return Object.fromEntries(
+    Object.entries(banks).map(([kind, qs]) => [kind, qs.length]),
+  ) as Record<Exclude<PracticeKind, "reflect">, number>;
+}
+
 export function findQuestionById(id: string): ChoiceQuestion | undefined {
   for (const bank of Object.values(getBanks())) {
     const found = bank.find((q) => q.id === id);

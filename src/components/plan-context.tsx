@@ -17,6 +17,8 @@ import {
   type ScoreInput,
 } from "@/lib/hp-scores";
 import { generatePlan, type GeneratedPlan } from "@/lib/plan-generator";
+import { loadQuestions } from "@/lib/content/questions-provider";
+import { bankSizes } from "@/lib/practice";
 import { useHydrated } from "@/lib/use-hydrated";
 import {
   ADAPT_PLAN_EVENT,
@@ -80,6 +82,18 @@ export function PlanProvider({ children }: { children: ReactNode }) {
     if (saved) ensureScoreBaseline(saved);
   }, []);
 
+  // Passens längd beror på hur många frågor banken har; bygg om planen när
+  // banken (databas, cache eller reservbank) har laddats.
+  useEffect(() => {
+    let cancelled = false;
+    void loadQuestions().then(() => {
+      if (!cancelled) setRevision((n) => n + 1);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   useEffect(() => {
     const bump = () => {
       setAdaptEnabledState(loadAdaptPlanEnabled());
@@ -136,6 +150,7 @@ export function PlanProvider({ children }: { children: ReactNode }) {
     void revision;
     const trends = adaptEnabled ? detectPracticeTrends(scores, loadHistory()) : [];
     return generatePlan(scores, {
+      bankSizes: bankSizes(),
       adapt: adaptEnabled,
       trends,
       lockedWeeks: loadLockedWeeks(),
