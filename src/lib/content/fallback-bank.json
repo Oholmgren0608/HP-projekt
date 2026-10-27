@@ -2003,6 +2003,286 @@
       "explain": "Att iakttagelserna fick allmänt erkännande först några decennier senare visar att kollegorna avfärdade resultaten; anamma betyder ta till sig och anta, och det motsägs av det sena erkännandet. Den andra meningen förklarar motståndet: läkarna tog illa upp av tanken att de själva skulle föra smitta vidare och såg den som kränkande. Självklar går inte ihop med att idén möttes av motstånd och fick erkännande först långt senare."
     },
     {
+      "id": "ovn-mek-061",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Ett nyinlånat ord används till en början sällan ____. I tidningstexter står det ofta inom citattecken eller följs av en kort förklaring, som om skribenten inte räknar med att läsarna känner till det.",
+      "options": [
+        "okommenterat",
+        "ironiserande",
+        "nedlåtande",
+        "felaktigt"
+      ],
+      "correctIndex": 0,
+      "explain": "Okommenterat betyder utan att något sägs om saken, och citattecknen och förklaringarna är just kommentarer som visar att ordet ännu inte uppfattas som en självklar del av språket. Ironiserande kan locka eftersom citattecken ibland markerar ironi, men då skulle citattecknen tala för att ordet ofta används ironiskt, inte sällan; dessutom visar förklaringarna att skribenten är osäker på om läsarna förstår ordet, inte att skribenten driver med det. Nedlåtande och felaktigt passar grammatiskt, men varken citattecken eller förklaringar säger något om att ordet används föraktfullt eller på fel sätt."
+    },
+    {
+      "id": "ovn-mek-062",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Kampanjen mot nedskräpning visade sig vara ____: affischerna, som visade parker fulla av skräp, tycks ha gett många intrycket att det var normalt att slänga saker på marken, och under kampanjveckorna ökade mängden skräp i stadens parker.",
+      "options": [
+        "verkningslös",
+        "kortlivad",
+        "kontraproduktiv",
+        "kontroversiell"
+      ],
+      "correctIndex": 2,
+      "explain": "Kontraproduktiv betyder att något motverkar sitt eget syfte, och kampanjen som skulle minska nedskräpningen tycks i stället ha ökat den. Verkningslös ligger nära till hands eftersom kampanjen inte nådde sitt mål, men ordet betyder att den saknade verkan, och här hade den tvärtom en verkan, fast i fel riktning. Kortlivad skulle handla om att kampanjen pågick en kort tid, och kontroversiell om att den väckte strid; inget av det förklaras av det som står efter kolonet, som handlar om kampanjens effekt och inte om hur den togs emot."
+    },
+    {
+      "id": "ovn-mek-063",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "Att plugga hela natten före en tenta är en ____ strategi. Under sömnen ____ nämligen det man har lärt sig under dagen, så den som hoppar över sömnen riskerar att minnas mindre av det hon har läst, inte mer.",
+      "options": [
+        "vedertagen / befästs",
+        "tvivelaktig / befästs",
+        "tvivelaktig / bleknar",
+        "vedertagen / bleknar"
+      ],
+      "correctIndex": 1,
+      "explain": "Om det man har lärt sig befästs, alltså stärks och blir mer varaktigt, under sömnen, går den som vakar hela natten miste om den förstärkningen och minns mindre. Därför är strategin tvivelaktig. Tvivelaktig / bleknar börjar rätt, men om minnena bleknade under sömnen skulle den som hoppar över sömnen tvärtom minnas mer, och det motsäger slutet av texten. Vedertagen betyder allmänt accepterad; det kan låta rimligt eftersom många faktiskt pluggar hela natten, men ”nämligen” ska inleda ett skäl för omdömet, och texten ger skäl emot strategin, inte för den. Vedertagen / bleknar motsäger dessutom slutet av texten på samma sätt som tvivelaktig / bleknar."
+    },
+    {
+      "id": "ovn-mek-064",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Översättaren valde att ____ originalets rimschema. Hon ansåg att det var viktigare att återge dikternas bilder exakt än att få raderna att rimma, och läsare som känner originalet saknar ibland dess klang.",
+      "options": [
+        "efterlikna",
+        "förenkla",
+        "renodla",
+        "offra"
+      ],
+      "correctIndex": 3,
+      "explain": "Att offra något är att ge upp det för att vinna något annat, och översättaren gav upp rimmen för att kunna återge bilderna exakt; därför saknar en del läsare originalets klang. Förenkla kan locka, eftersom ett enklare rimschema också hade gett henne större frihet, men då skulle raderna fortfarande rimma, och hon ansåg ju att bilderna var viktigare än att få raderna att rimma alls. Efterlikna och renodla innebär att hon behöll eller till och med skärpte rimschemat, vilket strider mot att hon prioriterade bilderna framför rimmen."
+    },
+    {
+      "id": "ovn-mek-065",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "Farhågor om att en bank ska gå omkull kan vara ____. Om tillräckligt många sparare delar farhågorna och skyndar sig att ta ut sina pengar, kan banken faktiskt ____, även om dess ekonomi var sund från början.",
+      "options": [
+        "självförvållade / få betalningsproblem",
+        "självreglerande / slippa betalningsproblem",
+        "självuppfyllande / få betalningsproblem",
+        "självuppfyllande / slippa betalningsproblem"
+      ],
+      "correctIndex": 2,
+      "explain": "En självuppfyllande farhåga får i sig det befarade att inträffa. Spararnas oro får dem att ta ut sina pengar, och uttagen kan ge banken betalningsproblem trots att den var sund från början; det är vad ”faktiskt” och ”även om” pekar på. Självförvållade liknar självuppfyllande men skulle betyda att banken själv hade orsakat farhågorna, och texten betonar tvärtom att bankens ekonomi var sund; det är spararnas reaktion som skapar problemen. Självreglerande betyder att något återgår i balans av sig självt, och att banken skulle slippa betalningsproblem stämmer inte med att spararna tömmer den på pengar. Självuppfyllande / slippa betalningsproblem börjar rätt men säger emot sig själv, eftersom farhågorna då inte skulle ha besannats."
+    },
+    {
+      "id": "ovn-mek-066",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Hyresvärden lovade att stambytet skulle vara klart på tre veckor. Hyresgästerna tog beskedet med ____; samma löfte hade getts vid förra renoveringen, och då hade arbetet dragit ut över ett halvår.",
+      "options": [
+        "lättnad",
+        "en nypa salt",
+        "fattning",
+        "tillförsikt"
+      ],
+      "correctIndex": 1,
+      "explain": "Att ta något med en nypa salt är att inte helt tro på det, och hyresgästerna hade goda skäl att tvivla: samma löfte hade getts vid förra renoveringen, och då drog arbetet ut över ett halvår. Lättnad hade varit en naturlig reaktion om de trodde på löftet, men upplysningen efter semikolonet visar att samma löfte redan har svikits en gång, och det förklarar en misstro, inte en lättnad. Att ta något med fattning betyder att ta ett tråkigt besked lugnt, och här var beskedet i sig positivt. Tillförsikt betyder att man litar på att något ska gå bra, vilket strider mot att samma löfte inte hölls förra gången."
+    },
+    {
+      "id": "ovn-mek-067",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "Att bara en tredjedel av de röstberättigade deltog i den rådgivande folkomröstningen ____ resultatets tyngd. Kommunstyrelsen menade ändå att utfallet var så ____ att man borde följa det: nästan nio av tio röstande sa nej till förslaget.",
+      "options": [
+        "försvagade / entydigt",
+        "stärkte / entydigt",
+        "försvagade / jämnt",
+        "stärkte / jämnt"
+      ],
+      "correctIndex": 0,
+      "explain": "Ett lågt valdeltagande gör att resultatet säger mindre om vad alla röstberättigade tycker, så det försvagade resultatets tyngd. ”Ändå” visar att kommunstyrelsen hade ett skäl att följa resultatet trots denna svaghet, och skälet var att utfallet var entydigt: nästan nio av tio röstade nej. Jämnt passar inte, eftersom nio av tio är motsatsen till ett jämnt utfall, och ett jämnt utfall vore inte heller något skäl att följa resultatet. Stärkte gör ”ändå” obegripligt: om deltagandet hade gett resultatet större tyngd fanns det ingen svaghet som kommunstyrelsen behövde se förbi."
+    },
+    {
+      "id": "ovn-mek-068",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "När tillräckligt många i en befolkning är vaccinerade får även den som själv inte kan vaccineras ett ____ skydd: smittan har svårt att nå fram till henne, eftersom de flesta i hennes omgivning inte för den vidare.",
+      "options": [
+        "fullständigt",
+        "ömsesidigt",
+        "varaktigt",
+        "indirekt"
+      ],
+      "correctIndex": 3,
+      "explain": "Skyddet är indirekt eftersom det inte kommer från personens eget immunförsvar utan från att människorna omkring henne inte sprider smittan. Fullständigt kan locka, men texten säger bara att smittan har svårt att nå fram, inte att den aldrig gör det. Ömsesidigt skulle betyda att hon och de vaccinerade skyddar varandra, men hon bidrar inte själv till skyddet, eftersom hon inte kan vaccineras. Varaktigt handlar om hur länge skyddet håller; det som står efter kolonet förklarar varifrån skyddet kommer, inte hur länge det varar."
+    },
+    {
+      "id": "ovn-mek-069",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "När gågatan infördes befarade handlarna att kunderna skulle utebli om de inte längre kunde parkera utanför butikerna. Farhågorna kom på skam: omsättningen ____ under det första året, ____ fler människor nu tog sig tid att strosa runt i centrum.",
+      "options": [
+        "sjönk / eftersom",
+        "steg / eftersom",
+        "sjönk / trots att",
+        "steg / trots att"
+      ],
+      "correctIndex": 1,
+      "explain": "Att farhågor kommer på skam betyder att de visar sig vara obefogade. Handlarna fick alltså fel, och omsättningen steg. Att fler människor strosade runt i centrum är ett skäl till ökningen, så ”eftersom” är det rätta sambandsordet. Sjönk / trots att hänger ihop inbördes, men stämmer bara om man tolkar ”kom på skam” som att farhågorna besannades, och uttrycket betyder tvärtom att de var obefogade. Sjönk / eftersom är ologiskt, eftersom fler besökare inte förklarar en minskning, och steg / trots att framställer det som förklarar ökningen som om det talade emot den."
+    },
+    {
+      "id": "ovn-mek-070",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Påståendet att en viss huskur förkortar förkylningar vilar mest på ____ belägg. Många är övertygade om att de har blivit friska fortare när de har använt den, men ingen kan veta hur länge deras förkylning hade varat utan kuren.",
+      "options": [
+        "omfattande",
+        "hypotetiska",
+        "anekdotiska",
+        "motstridiga"
+      ],
+      "correctIndex": 2,
+      "explain": "Anekdotiska belägg bygger på enskilda människors berättelser och erfarenheter snarare än på systematiska undersökningar, och det är just vad stödet för huskuren består av: människor som minns att de blev friska fort. Omfattande kan locka eftersom det är många som är övertygade, men ”men” i andra meningen visar att texten ifrågasätter beläggens värde, och många personliga erfarenheter blir inte för det till starka belägg. Hypotetiska kan locka eftersom texten nämner hur länge förkylningen ”hade varat”, men beläggen själva är verkliga erfarenheter; det hypotetiska är det som saknas, nämligen en jämförelse. Motstridiga skulle betyda att beläggen pekar åt olika håll, men texten beskriver bara erfarenheter som talar för kuren."
+    },
+    {
+      "id": "ovn-mek-071",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "Mer koldioxid i luften får ofta växter att växa snabbare, och det har väckt förhoppningar om att skogarna ska kunna binda en allt större del av våra utsläpp. Effekten är ____ begränsad: tillväxten bromsas snart av brist på kväve och vatten, och ____ kan ett varmare klimat få marken att släppa ut mer kol än tidigare.",
+      "options": [
+        "emellertid / dessutom",
+        "alltså / dessutom",
+        "emellertid / därmed",
+        "alltså / därmed"
+      ],
+      "correctIndex": 0,
+      "explain": "Emellertid markerar en motsättning mot förhoppningarna i första meningen: effekten är begränsad. Efter kolonet följer två skäl till det, och ”dessutom” lägger till det andra skälet, att ett varmare klimat kan få marken att släppa ut kol. Alltså skulle göra begränsningen till en slutsats av det som sagts innan, men första meningen talar tvärtom för en stor effekt. Därmed skulle göra utsläppen från marken till en följd av bristen på kväve och vatten, men de två sakerna har inget sådant samband; det är två oberoende begränsningar."
+    },
+    {
+      "id": "ovn-mek-072",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Göta kanal, som invigdes 1832, hade kostat enorma summor och tagit över tjugo år att bygga. Redan några decennier senare började järnvägen ____ kanalen som transportled för gods, och i dag trafikeras den främst av fritidsbåtar och turister.",
+      "options": [
+        "komplettera",
+        "dra nytta av",
+        "ansluta till",
+        "konkurrera ut"
+      ],
+      "correctIndex": 3,
+      "explain": "Att konkurrera ut något är att ta över dess marknad så att det inte längre kan hävda sig, och det stämmer med att kanalen i dag främst används av fritidsbåtar och turister i stället för av godstrafik. Komplettera och ansluta till kan låta rimliga, eftersom järnväg och kanal mycket väl kan samverka, men då hade kanalen behållit eller stärkt sin roll för godset, och slutet av meningen visar att den har förlorat den. Dra nytta av skulle betyda att järnvägen hade fördel av kanalen, och det förklarar inte heller varför godstrafiken försvann från kanalen."
+    },
+    {
+      "id": "ovn-mek-073",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "Många befarade att radio och tv skulle ____ dialekterna, eftersom alla plötsligt fick höra samma rikssvenska varje dag. Utvecklingen har varit mer ____ än så: vissa ord och uttal har försvunnit, men regionala drag i satsmelodin lever kvar, och unga i en stad kan tala på ett sätt som tydligt skiljer sig från hur unga talar i grannlänet.",
+      "options": [
+        "gynna / komplex",
+        "utplåna / genomgripande",
+        "utplåna / komplex",
+        "gynna / genomgripande"
+      ],
+      "correctIndex": 2,
+      "explain": "Det man befarade var att den gemensamma rikssvenskan i radio och tv skulle utplåna dialekterna, alltså få dem att försvinna helt. Utvecklingen har i stället varit mer komplex än så: en del har försvunnit, men annat lever kvar. Genomgripande skulle betyda att förändringen har gått ännu längre än att dialekterna utplånats, vilket motsägs av att regionala drag lever kvar. Gynna passar inte med ”befarade”, och att alla fick höra samma rikssvenska är inget skäl till att dialekterna skulle stärkas."
+    },
+    {
+      "id": "ovn-mek-074",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Eftersom brottet hade begåtts för mer än trettio år sedan och inte hörde till de allra grövsta hade det hunnit ____, och mannen kunde inte längre åtalas, trots att han nu erkände.",
+      "options": [
+        "avkriminaliseras",
+        "preskriberas",
+        "sonas",
+        "glömmas bort"
+      ],
+      "correctIndex": 1,
+      "explain": "Ett brott preskriberas när så lång tid har gått sedan det begicks att man inte längre kan åtala för det, och preskriptionstiden är längre ju grövre brottet är. Därför spelar både de trettio åren och att brottet inte hörde till de allra grövsta roll. Avkriminaliseras kan locka eftersom ingen kan åtalas för en handling som inte längre är brottslig, men en avkriminalisering beror på ett politiskt beslut om en ändrad lag, inte på hur lång tid som har gått sedan just detta brott eller på hur grovt det var. Ett brott sonas genom att gärningsmannen avtjänar sitt straff, och mannen hade ju aldrig ens åtalats. Att ett brott har glömts bort hindrar inte i sig ett åtal, särskilt inte när gärningsmannen själv erkänner."
+    },
+    {
+      "id": "ovn-mek-075",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "När ångmaskinerna fick allt ____ verkningsgrad under 1800-talet väntade sig många att kolförbrukningen skulle minska. I stället ____ den: när det blev billigare att driva en maskin lönade det sig att använda ångkraft i allt fler verksamheter. Fenomenet brukar kallas Jevons paradox och visar att effektivare teknik ____ leder till att förbrukningen av en resurs minskar.",
+      "options": [
+        "högre / ökade / i regel",
+        "lägre / minskade / inte nödvändigtvis",
+        "högre / minskade / i regel",
+        "högre / ökade / inte nödvändigtvis"
+      ],
+      "correctIndex": 3,
+      "explain": "Högre verkningsgrad betyder att maskinerna behövde mindre kol för samma arbete, och därför väntade man sig en minskad förbrukning. ”I stället” visar att det motsatta inträffade: förbrukningen ökade, eftersom ångkraften blev billigare och användes till allt mer. Slutsatsen blir att effektivare teknik inte nödvändigtvis minskar förbrukningen. Högre / ökade / i regel börjar rätt men drar en slutsats som strider mot exemplet; det är just därför fenomenet kallas en paradox. Högre / minskade / i regel gör ”I stället” obegripligt, eftersom en minskning var just vad man väntade sig. Med lägre verkningsgrad hade det inte funnits något skäl att vänta sig en minskad förbrukning, och en minskning kan då inte heller beskrivas som något som hände ”i stället”."
+    },
+    {
+      "id": "ovn-mek-076",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Att det var uppenbart redan från början att projektet skulle misslyckas är en ____: under planeringen var det ingen av deltagarna som uttryckte några tvivel, och budgeten godkändes enhälligt.",
+      "options": [
+        "efterhandskonstruktion",
+        "bortförklaring",
+        "självklarhet",
+        "förhandsbedömning"
+      ],
+      "correctIndex": 0,
+      "explain": "En efterhandskonstruktion är en bild av ett förlopp som skapas i efterhand och inte stämmer med hur det faktiskt såg ut. Att ingen uttryckte tvivel under planeringen visar att misslyckandet inte alls framstod som uppenbart då; påståendet har alltså konstruerats efteråt. Självklarhet strider mot detta, eftersom ordet skulle bekräfta påståendet i stället för att avfärda det. Förhandsbedömning kan locka eftersom påståendet handlar om vad som gick att se i början, men påståendet görs efter att projektet har misslyckats, och texten visar att ingen gjorde en sådan bedömning i förväg. En bortförklaring är ett sätt att slippa ansvar, och att hävda att misslyckandet var uppenbart fritar ingen; texten handlar dessutom om huruvida påståendet stämmer, inte om vem som bär skulden."
+    },
+    {
+      "id": "ovn-mek-077",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "Att ställa upp bikupor hjälper inte de vilda bina; tvärtom kan stora bigårdar ____ dem, eftersom honungsbina konkurrerar med dem om samma blommor. Den som vill hjälpa vildbina gör därför ____ nytta genom att så blommande ängsväxter än genom att skaffa en bikupa.",
+      "options": [
+        "gynna / större",
+        "tränga undan / mindre",
+        "gynna / mindre",
+        "tränga undan / större"
+      ],
+      "correctIndex": 3,
+      "explain": "”Tvärtom” visar att bigårdarna inte bara låter bli att hjälpa vildbina utan kan skada dem, och konkurrensen om blommorna förklarar hur: honungsbina kan tränga undan vildbina. Därför gör den som vill hjälpa vildbina större nytta genom att så blommande växter, som ger dem mer föda, än genom att skaffa en kupa. Gynna strider både mot ”tvärtom” och mot att bina konkurrerar om samma föda. Tränga undan / mindre börjar rätt men drar fel slutsats: om kuporna skadar vildbina är det kupan som gör mindre nytta, inte blommorna."
+    },
+    {
+      "id": "ovn-mek-078",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i meningen.",
+      "passage": "Inspektörerna berömde visserligen skolans lärare, men berömmet var långt ifrån ____: rapporten ägnade lika mycket utrymme åt bristerna i elevhälsan och i schemaläggningen.",
+      "options": [
+        "oförtjänt",
+        "förbehållslöst",
+        "uppriktigt",
+        "återhållsamt"
+      ],
+      "correctIndex": 1,
+      "explain": "Förbehållslöst beröm ges utan reservationer. ”Visserligen … men” visar att berömmet begränsades, och det som står efter kolonet förklarar hur: rapporten tog lika mycket upp bristerna i elevhälsan och schemaläggningen. Oförtjänt passar grammatiskt, men ”långt ifrån oförtjänt” skulle betyda att berömmet var välförtjänt, och bristerna i elevhälsan säger inget om huruvida lärarna förtjänade beröm. Uppriktigt skulle betyda att berömmet var spelat, men att rapporten också tar upp brister på andra områden visar inte att inspektörerna inte menade vad de skrev om lärarna. ”Långt ifrån återhållsamt” skulle betyda att berömmet var översvallande, vilket strider mot att det vägdes upp av kritik."
+    },
+    {
+      "id": "ovn-mek-079",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "Mercators världskarta från 1569 är ____ för sjöfarare, eftersom en kurs med konstant kompassriktning blir en rak linje på kartan. Priset för detta är att ytorna ____ ju närmare polerna man kommer. Grönland ser därför ungefär lika stort ut som Afrika, ____ Afrika i själva verket är omkring fjorton gånger större.",
+      "options": [
+        "vilseledande / förstoras / trots att",
+        "ändamålsenlig / förminskas / trots att",
+        "ändamålsenlig / förstoras / trots att",
+        "ändamålsenlig / förstoras / eftersom"
+      ],
+      "correctIndex": 2,
+      "explain": "Att en kurs med konstant kompassriktning blir en rak linje gör kartan lätt att navigera efter, alltså ändamålsenlig för sjöfarare. ”Priset för detta” anger en nackdel, och exemplet visar vilken: Grönland, som ligger nära polen, ser lika stort ut som det mycket större Afrika, så ytorna förstoras mot polerna. Att Grönland ser lika stort ut fast Afrika är fjorton gånger större är en motsättning, och den uttrycks med ”trots att”. Vilseledande kan locka eftersom kartan ger en felaktig bild av storlekarna, men den egenskap som nämns i första meningen är en fördel för sjöfarare, och ”priset för detta” förutsätter just en fördel. Om ytorna förminskades mot polerna skulle Grönland se mindre ut än det är, inte lika stort som Afrika. Eftersom gör Afrikas verkliga storlek till en orsak till att Grönland ser stort ut, vilket är ologiskt."
+    },
+    {
+      "id": "ovn-mek-080",
+      "kind": "mek",
+      "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+      "passage": "Många nybörjare inom löpning ökar sin träningsmängd ____. Konditionen förbättras nämligen snabbare än senor och leder hinner anpassa sig, så den som ökar så snart passen börjar kännas ____ riskerar att belasta kroppen mer än den tål.",
+      "options": [
+        "för snabbt / lätta",
+        "för snabbt / tunga",
+        "för försiktigt / lätta",
+        "för försiktigt / tunga"
+      ],
+      "correctIndex": 0,
+      "explain": "När konditionen förbättras snabbare än senor och leder anpassar sig börjar passen snart kännas lätta, och den som ökar så snart det sker belastar senor och leder mer än de är redo för. Det förklarar varför många nybörjare ökar för snabbt. Tunga passar inte: att öka när passen börjar kännas tunga vore ologiskt och följer inte av att konditionen förbättras snabbt; det är när passen känns lätta som man frestas att öka. För försiktigt kan låta rimligt, eftersom många nybörjare säkert är osäkra på hur mycket de klarar, men texten varnar för att belasta kroppen mer än den tål, alltså för en ökning som går för fort och inte för långsamt."
+    },
+    {
       "id": "ovn-las-001",
       "kind": "las",
       "prompt": "Vad beror höstlövens gula färg på enligt texten?",
