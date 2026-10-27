@@ -4,6 +4,7 @@ import {
   getReflectPrompts,
 } from "@/lib/content/questions-provider";
 import { loadMasteredQuestionIds } from "@/lib/question-mastery";
+import { loadJson, saveJson } from "@/lib/storage";
 import { hashSeed, shuffle } from "@/lib/random";
 import { SUBTESTS } from "@/lib/subtests";
 import type {
@@ -72,53 +73,54 @@ export function findQuestionById(id: string): ChoiceQuestion | undefined {
   return undefined;
 }
 
-export function lastShownQuestionsKey(kind: Exclude<PracticeKind, "reflect">) {
-  return `hp-last-shown-questions:${kind}`;
+/**
+ * Visade frågor per delprov, äldst först. Sparas i localStorage och synkas vid
+ * inloggning, så att nya frågor väljs före redan visade även mellan dagar och
+ * enheter. När alla frågor i ett delprov har visats glöms den äldre hälften,
+ * så att de frågorna åter räknas som nya och banken roteras.
+ */
+export const SEEN_QUESTIONS_KEY = "hp-lift-seen-questions-v1";
+
+type SeenQuestions = Partial<Record<Exclude<PracticeKind, "reflect">, string[]>>;
+
+function loadSeenQuestions(): SeenQuestions {
+  const value = loadJson<unknown>(SEEN_QUESTIONS_KEY, null);
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  const seen: SeenQuestions = {};
+  for (const [kind, ids] of Object.entries(value)) {
+    if (!Array.isArray(ids)) continue;
+    seen[kind as Exclude<PracticeKind, "reflect">] = ids.filter(
+      (id): id is string => typeof id === "string" && id.length > 0,
+    );
+  }
+  return seen;
 }
 
 export function loadLastShownQuestionIds(
   kind: Exclude<PracticeKind, "reflect">,
 ): string[] {
   if (typeof window === "undefined") return [];
-  try {
-    const raw = window.sessionStorage.getItem(lastShownQuestionsKey(kind));
-    if (!raw) return [];
-    const parsed = JSON.parse(raw) as unknown;
-    if (!Array.isArray(parsed)) return [];
-    return parsed.filter((id): id is string => typeof id === "string" && id.length > 0);
-  } catch {
-    return [];
-  }
+  return loadSeenQuestions()[kind] ?? [];
 }
 
-export function saveLastShownQuestionIds(
-  kind: Exclude<PracticeKind, "reflect">,
-  ids: string[],
-) {
-  if (typeof window === "undefined") return;
-  window.sessionStorage.setItem(lastShownQuestionsKey(kind), JSON.stringify(ids));
-}
-
-/** Spara visade fråge-id:n per delprov — ackumuleras, skrivs inte över. */
+/** Spara visade fråge-id:n per delprov – ackumuleras, nyast sist. */
 export function rememberShownQuestions(questions: ChoiceQuestion[]) {
+  if (typeof window === "undefined" || questions.length === 0) return;
+  const seen = loadSeenQuestions();
+  const banks = getBanks();
   const byKind = new Map<Exclude<PracticeKind, "reflect">, string[]>();
-  for (const q of questions) {
-    const list = byKind.get(q.kind) ?? [];
-    list.push(q.id);
-    byKind.set(q.kind, list);
-  }
+  for (const q of questions) byKind.set(q.kind, [...(byKind.get(q.kind) ?? []), q.id]);
   for (const [kind, ids] of byKind) {
-    const prev = loadLastShownQuestionIds(kind);
-    const seen = new Set(prev);
-    const merged = [...prev];
-    for (const id of ids) {
-      if (!seen.has(id)) {
-        seen.add(id);
-        merged.push(id);
-      }
+    const fresh = new Set(ids);
+    let list = [...(seen[kind] ?? []).filter((id) => !fresh.has(id)), ...fresh];
+    const bankIds = new Set(banks[kind].map((q) => q.id));
+    list = list.filter((id) => bankIds.has(id));
+    if (bankIds.size > 0 && list.length >= bankIds.size) {
+      list = list.slice(list.length - Math.floor(bankIds.size / 2));
     }
-    saveLastShownQuestionIds(kind, merged);
+    seen[kind] = list;
   }
+  saveJson(SEEN_QUESTIONS_KEY, seen);
 }
 
 export function buildQuiz(

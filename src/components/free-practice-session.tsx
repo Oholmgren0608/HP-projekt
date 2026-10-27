@@ -61,7 +61,6 @@ export function FreePracticeSession({
       questions,
       answers: locked,
       kinds: [subtest],
-      rememberShown: false,
     });
     const result = tally(questions, locked);
     recordEvent({
