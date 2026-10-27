@@ -48,6 +48,7 @@ export function TimedMockExam({
 
   function logFinish(locked: Record<string, number>) {
     setPhase("review");
+    window.scrollTo({ top: 0 });
     if (loggedRef.current || questions.length === 0) return;
     loggedRef.current = true;
     recordEvent({ type: "mock_exam_complete" });

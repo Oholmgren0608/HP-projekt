@@ -155,7 +155,7 @@ export function CelebrationLayer() {
       </AnimatePresence>
 
       {/* Toasts */}
-      <div className="pointer-events-none fixed inset-x-0 top-16 z-[140] flex flex-col items-center gap-2 px-4 md:inset-x-auto md:bottom-6 md:right-6 md:top-auto md:items-end md:px-0">
+      <div className="pointer-events-none fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-[140] flex flex-col items-center gap-2 px-4 md:inset-x-auto md:bottom-6 md:right-6 md:items-end md:px-0">
         <AnimatePresence>
           {toasts.map((t) => (
             <motion.button

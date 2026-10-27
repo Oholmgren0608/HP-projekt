@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useQuestions } from "@/lib/content/use-questions";
 import { useHydrated } from "@/lib/use-hydrated";
 import {
@@ -23,6 +23,10 @@ import { formatCountdown } from "@/lib/countdown";
 import { paceVerdict } from "@/lib/practice-pace";
 import { useQuizCountdown } from "@/lib/use-quiz-countdown";
 import { useQuiz } from "@/lib/use-quiz";
+import { recordEvent } from "@/lib/gamification/engine";
+import { estimateNormFromPercent } from "@/lib/progress-history";
+import { formatNorm } from "@/lib/hp-scores";
+import { recordQuizOutcome } from "@/lib/quiz-outcome";
 import { ExamQuiz } from "@/components/quiz/exam-quiz";
 
 /**
@@ -84,12 +88,28 @@ export function ProvpassSession({
     saveProvpassSettings(next);
   }
 
+  const loggedRef = useRef(false);
+
   // Quizet skapas efter start; frågorna byggs om när seedet sätts.
   const quiz = useQuiz({
     questions,
-    onFinish: () => {
-      setFinishedAt(Date.now());
+    onFinish: (locked) => {
+      const now = Date.now();
+      setFinishedAt(now);
       setPhase("review");
+      // Resultatet visas överst; sidan står annars kvar där sista frågan var.
+      window.scrollTo({ top: 0 });
+      // Ett pass loggas en gång: i historiken (driver prognosen), som felkort
+      // för missade frågor och mot "bemästrad". Samma källa som snabbprovet.
+      if (loggedRef.current || questions.length === 0) return;
+      loggedRef.current = true;
+      recordEvent({ type: "mock_exam_complete" });
+      recordQuizOutcome({
+        source: "mock",
+        questions,
+        answers: locked,
+        durationMs: startedAt !== null ? now - startedAt : undefined,
+      });
     },
   });
 
@@ -107,6 +127,7 @@ export function ProvpassSession({
     const now = Date.now();
     setSeed(`provpass:${now}`);
     quiz.reset();
+    loggedRef.current = false;
     setTimedOut(false);
     setFinishedAt(null);
     setStartedAt(now);
@@ -232,20 +253,37 @@ export function ProvpassSession({
   }
 
   const kinds = [...new Set(questions.map((q) => q.kind))];
+  const percent = score.total ? Math.round((score.correct / score.total) * 100) : 0;
+  const estimated = score.total ? estimateNormFromPercent((score.correct / score.total) * 100) : 0;
+  const blockPart = settings.block === "verbal" ? "verbal del" : "kvantitativ del";
 
   return (
     <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
       <p className="text-[13px] text-[var(--ink-muted)]">
-        Helt provpass, {BLOCK_LABELS[settings.block].toLowerCase()}: genomgång
+        Helt provpass, {BLOCK_LABELS[settings.block].toLowerCase()}: resultat
       </p>
-      <p className="font-[family-name:var(--font-display)] font-semibold text-4xl text-[var(--ink)]">
-        {score.correct}/{score.total}
-        <span className="ml-2 text-xl text-[var(--ink-muted)]">
-          ({score.total ? Math.round((score.correct / score.total) * 100) : 0} %)
-        </span>
-      </p>
-      <p className="mt-1 text-sm text-[var(--ink-muted)]">
-        {Math.round(limitSeconds / 60)} minuters pass · råpoäng, ingen normering.
+      <dl className="mt-3 grid gap-3 sm:grid-cols-2">
+        <div className="rounded-lg border border-[var(--line)] px-4 py-3">
+          <dt className="text-[13px] text-[var(--ink-muted)]">Rätt svar</dt>
+          <dd className="mt-1 text-[28px] font-medium leading-tight tabular-nums text-[var(--ink)]">
+            {score.correct}/{score.total}
+            <span className="ml-2 text-base text-[var(--ink-muted)]">({percent} %)</span>
+          </dd>
+        </div>
+        <div className="rounded-lg border border-[var(--line)] px-4 py-3">
+          <dt className="text-[13px] text-[var(--ink-muted)]">
+            Uppskattad normerad poäng, {blockPart}
+          </dt>
+          <dd className="mt-1 text-[28px] font-medium leading-tight tabular-nums text-[var(--ink)]">
+            {formatNorm(estimated)}
+            <span className="ml-2 text-base text-[var(--ink-muted)]">av 2,0</span>
+          </dd>
+        </div>
+      </dl>
+      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--ink-muted)]">
+        Uppskattningen bygger på andelen rätt och är inte UHR:s normeringstabell, som ändras
+        från prov till prov. På provdagen räknas {blockPart} på två pass. Resultatet är sparat i
+        din historik och missade frågor blir felkort.
       </p>
       {timedOut ? (
         <p className="mt-2 text-sm text-[var(--ink)]">
