@@ -1198,5 +1198,1805 @@
     "correctIndex": 1,
     "explain": "Studentbiljetterna gav 9 000 · 250 = 2 250 000 kronor år 2024, och de totala biljettintäkterna var 16 000 · 450 + 9 000 · 250 + 7 500 · 320 = 11 850 000 kronor. Andelen är 2 250 000 / 11 850 000 ≈ 0,19, alltså ca 19 procent. Ca 28 procent är studentbiljetternas andel av antalet sålda biljetter (9 000 / 32 500) – men studentbiljetterna är billigast, så deras andel av intäkterna blir lägre. Ca 14 procent får man med 2023 års uppgifter (1 500 000 / 11 100 000). Ca 31 procent får man om man jämför studentintäkterna med bara de ordinarie biljetternas intäkter (2 250 000 / 7 200 000) i stället för med alla intäkter.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-081",
+    "kind": "dtk",
+    "prompt": "Hur stor var folkmängden i Kommun D vid slutet av 2024?",
+    "passage": "Befolkningsförändringar i fyra fiktiva kommuner, 2024\n\nTabell. Folkmängd den 1 januari 2024 samt antal födda, döda, inflyttade och utflyttade under 2024\nKommun A – Folkmängd 1 januari: 24 500 | Födda: 260 | Döda: 310 | Inflyttade: 1 450 | Utflyttade: 1 280\nKommun B – Folkmängd 1 januari: 61 200 | Födda: 720 | Döda: 540 | Inflyttade: 3 100 | Utflyttade: 3 380\nKommun C – Folkmängd 1 januari: 9 800 | Födda: 70 | Döda: 150 | Inflyttade: 620 | Utflyttade: 410\nKommun D – Folkmängd 1 januari: 38 400 | Födda: 410 | Döda: 380 | Inflyttade: 2 050 | Utflyttade: 1 760\n\nAnm.: Folkmängden förändras bara genom födda, döda, inflyttade och utflyttade. Födelseöverskottet är antalet födda minus antalet döda, och flyttningsnettot är antalet inflyttade minus antalet utflyttade.",
+    "options": [
+      "38 080",
+      "38 430",
+      "38 690",
+      "38 720"
+    ],
+    "correctIndex": 3,
+    "explain": "Folkmängden vid årets slut är folkmängden den 1 januari plus födelseöverskottet och flyttningsnettot. I Kommun D var födelseöverskottet 410 − 380 = 30 och flyttningsnettot 2 050 − 1 760 = 290, så folkmängden blev 38 400 + 30 + 290 = 38 720. 38 430 får man om man bara lägger till födelseöverskottet och 38 690 om man bara lägger till flyttningsnettot. 38 080 får man om man drar av båda i stället för att lägga till dem (38 400 − 30 − 290).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-082",
+    "kind": "dtk",
+    "prompt": "Vilken kommun hade under 2024 den största folkökningen i förhållande till folkmängden den 1 januari?",
+    "passage": "Befolkningsförändringar i fyra fiktiva kommuner, 2024\n\nTabell. Folkmängd den 1 januari 2024 samt antal födda, döda, inflyttade och utflyttade under 2024\nKommun A – Folkmängd 1 januari: 24 500 | Födda: 260 | Döda: 310 | Inflyttade: 1 450 | Utflyttade: 1 280\nKommun B – Folkmängd 1 januari: 61 200 | Födda: 720 | Döda: 540 | Inflyttade: 3 100 | Utflyttade: 3 380\nKommun C – Folkmängd 1 januari: 9 800 | Födda: 70 | Döda: 150 | Inflyttade: 620 | Utflyttade: 410\nKommun D – Folkmängd 1 januari: 38 400 | Födda: 410 | Döda: 380 | Inflyttade: 2 050 | Utflyttade: 1 760\n\nAnm.: Folkmängden förändras bara genom födda, döda, inflyttade och utflyttade. Födelseöverskottet är antalet födda minus antalet döda, och flyttningsnettot är antalet inflyttade minus antalet utflyttade.",
+    "options": [
+      "Kommun A",
+      "Kommun B",
+      "Kommun C",
+      "Kommun D"
+    ],
+    "correctIndex": 2,
+    "explain": "Folkökningen är födelseöverskottet plus flyttningsnettot: Kommun A (260 − 310) + (1 450 − 1 280) = −50 + 170 = 120, Kommun B 180 − 280 = −100, Kommun C −80 + 210 = 130 och Kommun D 30 + 290 = 320. I förhållande till folkmängden den 1 januari blir det för Kommun A 120/24 500 ≈ 0,5 procent, för Kommun C 130/9 800 ≈ 1,3 procent och för Kommun D 320/38 400 ≈ 0,8 procent. Kommun C ökade alltså mest i förhållande till sin storlek. Kommun D hade den största ökningen i antal personer, men den är mindre i förhållande till folkmängden. Kommun B hade det största födelseöverskottet, men dess folkmängd minskade eftersom fler flyttade ut än in.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-083",
+    "kind": "dtk",
+    "prompt": "De fyra kommunernas sammanlagda folkmängd ökade under 2024. Ungefär hur stor del av den sammanlagda ökningen svarade kommunernas sammanlagda flyttningsnetto för?",
+    "passage": "Befolkningsförändringar i fyra fiktiva kommuner, 2024\n\nTabell. Folkmängd den 1 januari 2024 samt antal födda, döda, inflyttade och utflyttade under 2024\nKommun A – Folkmängd 1 januari: 24 500 | Födda: 260 | Döda: 310 | Inflyttade: 1 450 | Utflyttade: 1 280\nKommun B – Folkmängd 1 januari: 61 200 | Födda: 720 | Döda: 540 | Inflyttade: 3 100 | Utflyttade: 3 380\nKommun C – Folkmängd 1 januari: 9 800 | Födda: 70 | Döda: 150 | Inflyttade: 620 | Utflyttade: 410\nKommun D – Folkmängd 1 januari: 38 400 | Födda: 410 | Döda: 380 | Inflyttade: 2 050 | Utflyttade: 1 760\n\nAnm.: Folkmängden förändras bara genom födda, döda, inflyttade och utflyttade. Födelseöverskottet är antalet födda minus antalet döda, och flyttningsnettot är antalet inflyttade minus antalet utflyttade.",
+    "options": [
+      "ca 17 procent",
+      "ca 74 procent",
+      "ca 83 procent",
+      "ca 92 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Flyttningsnettot var 170 i Kommun A, −280 i Kommun B, 210 i Kommun C och 290 i Kommun D, sammanlagt 390 personer. Födelseöverskottet var −50, 180, −80 och 30, sammanlagt 80 personer. Den sammanlagda ökningen var alltså 390 + 80 = 470 personer, och flyttningsnettots del av den är 390/470 ≈ 0,83, dvs. ca 83 procent. Ca 17 procent (80/470) är födelseöverskottets del. Ca 92 procent får man om man räknar Kommun B:s flyttningsnetto som positivt (950/1 030), och ca 74 procent om man bortser från alla minustecken (950/1 290).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-084",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många personer 15–24 år var arbetslösa år 2024?",
+    "passage": "Arbetslöshet i två åldersgrupper i ett fiktivt land, 2016–2024\n\nDiagram. Andel arbetslösa av arbetskraften efter åldersgrupp (procent)\n2016 – 15–24 år: 18,2 | 25–64 år: 5,8\n2017 – 15–24 år: 16,9 | 25–64 år: 5,4\n2018 – 15–24 år: 15,8 | 25–64 år: 5,1\n2019 – 15–24 år: 16,4 | 25–64 år: 5,3\n2020 – 15–24 år: 22,6 | 25–64 år: 7,2\n2021 – 15–24 år: 20,1 | 25–64 år: 6,6\n2022 – 15–24 år: 17,3 | 25–64 år: 5,5\n2023 – 15–24 år: 18,0 | 25–64 år: 5,7\n2024 – 15–24 år: 19,5 | 25–64 år: 6,1\n\nTabell. Arbetskraften år 2024 (tusental)\n15–24 år: 560\n25–64 år: 4 400\n\nAnm.: Arbetskraften består av alla som är sysselsatta eller arbetslösa.",
+    "options": [
+      "ca 34 000",
+      "ca 101 000",
+      "ca 109 000",
+      "ca 451 000"
+    ],
+    "correctIndex": 2,
+    "explain": "År 2024 var 19,5 procent av arbetskraften 15–24 år arbetslösa, och arbetskraften i den åldern var 560 000 personer. 0,195 · 560 000 = 109 200, alltså ca 109 000. Ca 101 000 får man med 2023 års andel (0,180 · 560 000 = 100 800), men arbetskraften i tabellen gäller 2024. Ca 34 000 får man om man läser av fel linje och använder andelen för 25–64 år (0,061 · 560 000 ≈ 34 200). Ca 451 000 är i stället de som inte var arbetslösa (0,805 · 560 000 = 450 800).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-085",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av alla arbetslösa 15–64 år var 15–24 år år 2024?",
+    "passage": "Arbetslöshet i två åldersgrupper i ett fiktivt land, 2016–2024\n\nDiagram. Andel arbetslösa av arbetskraften efter åldersgrupp (procent)\n2016 – 15–24 år: 18,2 | 25–64 år: 5,8\n2017 – 15–24 år: 16,9 | 25–64 år: 5,4\n2018 – 15–24 år: 15,8 | 25–64 år: 5,1\n2019 – 15–24 år: 16,4 | 25–64 år: 5,3\n2020 – 15–24 år: 22,6 | 25–64 år: 7,2\n2021 – 15–24 år: 20,1 | 25–64 år: 6,6\n2022 – 15–24 år: 17,3 | 25–64 år: 5,5\n2023 – 15–24 år: 18,0 | 25–64 år: 5,7\n2024 – 15–24 år: 19,5 | 25–64 år: 6,1\n\nTabell. Arbetskraften år 2024 (tusental)\n15–24 år: 560\n25–64 år: 4 400\n\nAnm.: Arbetskraften består av alla som är sysselsatta eller arbetslösa.",
+    "options": [
+      "ca 29 procent",
+      "ca 41 procent",
+      "ca 71 procent",
+      "ca 76 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "Antalet arbetslösa 15–24 år var 0,195 · 560 000 = 109 200 och antalet arbetslösa 25–64 år 0,061 · 4 400 000 = 268 400. Andelen 15–24 år blir 109 200/(109 200 + 268 400) = 109 200/377 600 ≈ 0,29, dvs. ca 29 procent. Ca 76 procent får man om man bara jämför andelarna (19,5/(19,5 + 6,1)) och bortser från att arbetskraften 25–64 år är nästan åtta gånger så stor. Ca 41 procent får man om man delar med antalet arbetslösa 25–64 år i stället för med alla arbetslösa (109 200/268 400), och ca 71 procent är andelen som var 25–64 år.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-086",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent ökade andelen arbetslösa i åldersgruppen 25–64 år mellan 2019 och 2020?",
+    "passage": "Arbetslöshet i två åldersgrupper i ett fiktivt land, 2016–2024\n\nDiagram. Andel arbetslösa av arbetskraften efter åldersgrupp (procent)\n2016 – 15–24 år: 18,2 | 25–64 år: 5,8\n2017 – 15–24 år: 16,9 | 25–64 år: 5,4\n2018 – 15–24 år: 15,8 | 25–64 år: 5,1\n2019 – 15–24 år: 16,4 | 25–64 år: 5,3\n2020 – 15–24 år: 22,6 | 25–64 år: 7,2\n2021 – 15–24 år: 20,1 | 25–64 år: 6,6\n2022 – 15–24 år: 17,3 | 25–64 år: 5,5\n2023 – 15–24 år: 18,0 | 25–64 år: 5,7\n2024 – 15–24 år: 19,5 | 25–64 år: 6,1\n\nTabell. Arbetskraften år 2024 (tusental)\n15–24 år: 560\n25–64 år: 4 400\n\nAnm.: Arbetskraften består av alla som är sysselsatta eller arbetslösa.",
+    "options": [
+      "ca 2 procent",
+      "ca 26 procent",
+      "ca 36 procent",
+      "ca 38 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Andelen ökade från 5,3 till 7,2 procent, dvs. med 1,9 procentenheter. Den procentuella ökningen är 1,9/5,3 ≈ 0,36, alltså ca 36 procent. Ca 2 procent blandar ihop procentenheter och procent. Ca 26 procent får man om man delar ökningen med värdet år 2020 i stället för år 2019 (1,9/7,2). Ca 38 procent är ökningen för åldersgruppen 15–24 år (från 16,4 till 22,6, dvs. 6,2/16,4).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-087",
+    "kind": "dtk",
+    "prompt": "I vilken sektor var skillnaden i sjukfrånvaro mellan kvinnor och män störst, räknat i procentenheter?",
+    "passage": "Sjukfrånvaro bland anställda i fem sektorer i ett fiktivt land, 2024\n\nDiagram. Sjukfrånvaro efter sektor och kön (procent av den ordinarie arbetstiden)\nOffentlig förvaltning – Kvinnor: 5,1 | Män: 2,1\nVård och omsorg – Kvinnor: 8,4 | Män: 5,6\nUtbildning – Kvinnor: 6,2 | Män: 4,1\nHandel – Kvinnor: 4,8 | Män: 3,2\nIndustri – Kvinnor: 5,0 | Män: 3,8\n\nTabell. Antal anställda efter sektor och kön (tusental)\nOffentlig förvaltning – Kvinnor: 150 | Män: 100\nVård och omsorg – Kvinnor: 420 | Män: 105\nUtbildning – Kvinnor: 280 | Män: 120\nHandel – Kvinnor: 180 | Män: 200\nIndustri – Kvinnor: 110 | Män: 330\n\nAnm.: Anta att alla anställda har samma ordinarie arbetstid.",
+    "options": [
+      "Offentlig förvaltning",
+      "Vård och omsorg",
+      "Utbildning",
+      "Handel"
+    ],
+    "correctIndex": 0,
+    "explain": "Skillnaden är kvinnornas värde minus männens: offentlig förvaltning 5,1 − 2,1 = 3,0, vård och omsorg 8,4 − 5,6 = 2,8, utbildning 6,2 − 4,1 = 2,1, handel 4,8 − 3,2 = 1,6 och industri 5,0 − 3,8 = 1,2 procentenheter. Skillnaden var alltså störst inom offentlig förvaltning. Vård och omsorg har den högsta sjukfrånvaron för både kvinnor och män, men frågan gäller skillnaden mellan könen och inte nivån. Utbildning har den näst högsta nivån men en klart mindre skillnad, och inom handeln är skillnaden bara 1,6 procentenheter. Antalet anställda i tabellen påverkar inte skillnaden i procentenheter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-088",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor var sjukfrånvaron bland samtliga anställda inom industrin?",
+    "passage": "Sjukfrånvaro bland anställda i fem sektorer i ett fiktivt land, 2024\n\nDiagram. Sjukfrånvaro efter sektor och kön (procent av den ordinarie arbetstiden)\nOffentlig förvaltning – Kvinnor: 5,1 | Män: 2,1\nVård och omsorg – Kvinnor: 8,4 | Män: 5,6\nUtbildning – Kvinnor: 6,2 | Män: 4,1\nHandel – Kvinnor: 4,8 | Män: 3,2\nIndustri – Kvinnor: 5,0 | Män: 3,8\n\nTabell. Antal anställda efter sektor och kön (tusental)\nOffentlig förvaltning – Kvinnor: 150 | Män: 100\nVård och omsorg – Kvinnor: 420 | Män: 105\nUtbildning – Kvinnor: 280 | Män: 120\nHandel – Kvinnor: 180 | Män: 200\nIndustri – Kvinnor: 110 | Män: 330\n\nAnm.: Anta att alla anställda har samma ordinarie arbetstid.",
+    "options": [
+      "ca 4,1 procent",
+      "ca 4,4 procent",
+      "ca 4,7 procent",
+      "ca 5,0 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "Andelarna ska vägas med antalet anställda. Inom industrin fanns 110 000 kvinnor med 5,0 procents frånvaro och 330 000 män med 3,8 procents frånvaro. Den sammanlagda frånvaron motsvarar 0,050 · 110 000 + 0,038 · 330 000 = 5 500 + 12 540 = 18 040 anställdas hela arbetstid, och 18 040/440 000 ≈ 0,041, dvs. ca 4,1 procent. Ca 4,4 procent är det ovägda medelvärdet (5,0 + 3,8)/2, som bortser från att männen är tre gånger så många. Ca 4,7 procent får man om man byter plats på vikterna (0,050 · 330 000 + 0,038 · 110 000 = 20 680, och 20 680/440 000 ≈ 0,047). Ca 5,0 procent gäller bara kvinnorna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-089",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av den sammanlagda sjukfrånvaron bland kvinnor i de fem sektorerna fanns inom vård och omsorg?",
+    "passage": "Sjukfrånvaro bland anställda i fem sektorer i ett fiktivt land, 2024\n\nDiagram. Sjukfrånvaro efter sektor och kön (procent av den ordinarie arbetstiden)\nOffentlig förvaltning – Kvinnor: 5,1 | Män: 2,1\nVård och omsorg – Kvinnor: 8,4 | Män: 5,6\nUtbildning – Kvinnor: 6,2 | Män: 4,1\nHandel – Kvinnor: 4,8 | Män: 3,2\nIndustri – Kvinnor: 5,0 | Män: 3,8\n\nTabell. Antal anställda efter sektor och kön (tusental)\nOffentlig förvaltning – Kvinnor: 150 | Män: 100\nVård och omsorg – Kvinnor: 420 | Män: 105\nUtbildning – Kvinnor: 280 | Män: 120\nHandel – Kvinnor: 180 | Män: 200\nIndustri – Kvinnor: 110 | Män: 330\n\nAnm.: Anta att alla anställda har samma ordinarie arbetstid.",
+    "options": [
+      "ca 28 procent",
+      "ca 37 procent",
+      "ca 39 procent",
+      "ca 47 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Eftersom alla har samma arbetstid kan frånvaron mätas som andel gånger antal anställda (i tusental). För kvinnorna blir det offentlig förvaltning 0,051 · 150 = 7,65, vård och omsorg 0,084 · 420 = 35,28, utbildning 0,062 · 280 = 17,36, handel 0,048 · 180 = 8,64 och industri 0,050 · 110 = 5,50, sammanlagt 74,43. Vård och omsorgs del är 35,28/74,43 ≈ 0,47, dvs. ca 47 procent. Ca 28 procent får man om man bara jämför andelarna utan att väga med antalet anställda (8,4/29,5). Ca 37 procent är vård och omsorgs andel av de anställda kvinnorna (420/1 140), vilket bortser från att frånvaron där är högre än i de andra sektorerna. Ca 39 procent är vård och omsorgs andel av frånvaron bland kvinnor och män tillsammans.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-090",
+    "kind": "dtk",
+    "prompt": "Hur förändrades antalet elever på yrkesprogram i första årskursen mellan 2014 och 2024?",
+    "passage": "Elever i gymnasieskolans första årskurs i ett fiktivt land efter programtyp, 2014 och 2024\n\nDiagram 1. Eleverna år 2014 fördelade efter programtyp (procent)\nEkonomi: 18\nSamhällsvetenskap: 22\nNaturvetenskap: 14\nTeknik: 8\nYrkesprogram: 30\nIntroduktionsprogram: 8\n\nDiagram 2. Eleverna år 2024 fördelade efter programtyp (procent)\nEkonomi: 21\nSamhällsvetenskap: 17\nNaturvetenskap: 14\nTeknik: 12\nYrkesprogram: 29\nIntroduktionsprogram: 7\n\nAnm.: Antalet elever i första årskursen var 105 000 år 2014 och 120 000 år 2024.",
+    "options": [
+      "Det minskade med 1 050.",
+      "Det minskade med 1 200.",
+      "Det ökade med 3 300.",
+      "Det ökade med 4 500."
+    ],
+    "correctIndex": 2,
+    "explain": "År 2014 gick 0,30 · 105 000 = 31 500 elever på yrkesprogram och år 2024 0,29 · 120 000 = 34 800. Antalet ökade alltså med 34 800 − 31 500 = 3 300, trots att andelen minskade med en procentenhet. Att det minskade med 1 050 eller 1 200 får man om man räknar om minskningen på en procentenhet till elever med bara det ena årets elevantal (0,01 · 105 000 respektive 0,01 · 120 000) och bortser från att det totala antalet elever ökade. Ökningen 4 500 får man om man tar 30 procent av ökningen med 15 000 elever och bortser från att andelen sjönk till 29 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-091",
+    "kind": "dtk",
+    "prompt": "För vilken programtyp var antalet elever i första årskursen lika stort år 2014 som år 2024?",
+    "passage": "Elever i gymnasieskolans första årskurs i ett fiktivt land efter programtyp, 2014 och 2024\n\nDiagram 1. Eleverna år 2014 fördelade efter programtyp (procent)\nEkonomi: 18\nSamhällsvetenskap: 22\nNaturvetenskap: 14\nTeknik: 8\nYrkesprogram: 30\nIntroduktionsprogram: 8\n\nDiagram 2. Eleverna år 2024 fördelade efter programtyp (procent)\nEkonomi: 21\nSamhällsvetenskap: 17\nNaturvetenskap: 14\nTeknik: 12\nYrkesprogram: 29\nIntroduktionsprogram: 7\n\nAnm.: Antalet elever i första årskursen var 105 000 år 2014 och 120 000 år 2024.",
+    "options": [
+      "Ekonomi",
+      "Introduktionsprogram",
+      "Naturvetenskap",
+      "Yrkesprogram"
+    ],
+    "correctIndex": 1,
+    "explain": "Introduktionsprogrammen hade 0,08 · 105 000 = 8 400 elever år 2014 och 0,07 · 120 000 = 8 400 elever år 2024, alltså lika många. Naturvetenskap hade samma andel båda åren (14 procent), men eftersom det totala antalet elever ökade steg antalet från 14 700 till 16 800. Yrkesprogrammen hade nästan samma andel men ökade från 31 500 till 34 800 elever, och ekonomi ökade från 18 900 till 25 200 elever.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-092",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent ökade antalet elever i första årskursen på teknik mellan 2014 och 2024?",
+    "passage": "Elever i gymnasieskolans första årskurs i ett fiktivt land efter programtyp, 2014 och 2024\n\nDiagram 1. Eleverna år 2014 fördelade efter programtyp (procent)\nEkonomi: 18\nSamhällsvetenskap: 22\nNaturvetenskap: 14\nTeknik: 8\nYrkesprogram: 30\nIntroduktionsprogram: 8\n\nDiagram 2. Eleverna år 2024 fördelade efter programtyp (procent)\nEkonomi: 21\nSamhällsvetenskap: 17\nNaturvetenskap: 14\nTeknik: 12\nYrkesprogram: 29\nIntroduktionsprogram: 7\n\nAnm.: Antalet elever i första årskursen var 105 000 år 2014 och 120 000 år 2024.",
+    "options": [
+      "ca 4 procent",
+      "ca 14 procent",
+      "ca 50 procent",
+      "ca 71 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Teknik hade 0,08 · 105 000 = 8 400 elever år 2014 och 0,12 · 120 000 = 14 400 elever år 2024. Ökningen är 6 000 elever, och 6 000/8 400 ≈ 0,71, dvs. ca 71 procent. Ca 50 procent är ökningen av andelen (från 8 till 12 procent), som bortser från att det totala antalet elever också ökade. Ca 4 procent blandar ihop ökningen i procentenheter med en ökning i procent, och ca 14 procent är ökningen av det totala antalet elever (15 000/105 000).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-093",
+    "kind": "dtk",
+    "prompt": "Vilket av följande antal kan ha varit antalet utpendlare från Kommun C?",
+    "passage": "Utpendling från sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av de förvärvsarbetande som bor i kommunen som arbetar i en annan kommun (utpendlare). Kartan har fem klasser:\nKlass 1: lägre än 15 procent\nKlass 2: från 15 till lägre än 30 procent\nKlass 3: från 30 till lägre än 45 procent\nKlass 4: från 45 till lägre än 60 procent\nKlass 5: från 60 till lägre än 75 procent\n\nKommun A – Förvärvsarbetande som bor i kommunen: 48 000 | Klass: 1\nKommun B – Förvärvsarbetande som bor i kommunen: 6 000 | Klass: 5\nKommun C – Förvärvsarbetande som bor i kommunen: 16 000 | Klass: 3\nKommun D – Förvärvsarbetande som bor i kommunen: 9 000 | Klass: 4\nKommun E – Förvärvsarbetande som bor i kommunen: 21 000 | Klass: 2\nKommun F – Förvärvsarbetande som bor i kommunen: 4 000 | Klass: 5",
+    "options": [
+      "4 500",
+      "5 200",
+      "7 200",
+      "7 800"
+    ],
+    "correctIndex": 1,
+    "explain": "Kommun C ligger i klass 3, så andelen utpendlare var minst 30 och lägre än 45 procent av de 16 000 förvärvsarbetande. Antalet utpendlare var alltså minst 0,30 · 16 000 = 4 800 och färre än 0,45 · 16 000 = 7 200. Av alternativen ligger bara 5 200 i det intervallet. 4 500 är för få (ca 28 procent, vilket hör till klass 2). 7 200 är exakt 45 procent och hör därför till klass 4, och 7 800 är ännu fler.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-094",
+    "kind": "dtk",
+    "prompt": "Vilken av följande kommuner hade med säkerhet fler utpendlare än Kommun B?",
+    "passage": "Utpendling från sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av de förvärvsarbetande som bor i kommunen som arbetar i en annan kommun (utpendlare). Kartan har fem klasser:\nKlass 1: lägre än 15 procent\nKlass 2: från 15 till lägre än 30 procent\nKlass 3: från 30 till lägre än 45 procent\nKlass 4: från 45 till lägre än 60 procent\nKlass 5: från 60 till lägre än 75 procent\n\nKommun A – Förvärvsarbetande som bor i kommunen: 48 000 | Klass: 1\nKommun B – Förvärvsarbetande som bor i kommunen: 6 000 | Klass: 5\nKommun C – Förvärvsarbetande som bor i kommunen: 16 000 | Klass: 3\nKommun D – Förvärvsarbetande som bor i kommunen: 9 000 | Klass: 4\nKommun E – Förvärvsarbetande som bor i kommunen: 21 000 | Klass: 2\nKommun F – Förvärvsarbetande som bor i kommunen: 4 000 | Klass: 5",
+    "options": [
+      "Kommun A",
+      "Kommun C",
+      "Kommun D",
+      "Kommun E"
+    ],
+    "correctIndex": 1,
+    "explain": "Kommun B ligger i klass 5 och hade alltså minst 0,60 · 6 000 = 3 600 och färre än 0,75 · 6 000 = 4 500 utpendlare. Kommun C (klass 3) hade minst 0,30 · 16 000 = 4 800 utpendlare, alltså säkert fler. Kommun D (klass 4) hade minst 0,45 · 9 000 = 4 050, vilket kan vara färre än Kommun B:s högsta möjliga antal. Kommun E (klass 2) hade minst 0,15 · 21 000 = 3 150, och Kommun A (klass 1) kan ha haft nästan inga utpendlare alls, trots att den har flest förvärvsarbetande. Ingen av dem hade alltså med säkerhet fler än Kommun B.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-095",
+    "kind": "dtk",
+    "prompt": "Hur många utpendlare fanns det som minst i de sex kommunerna sammanlagt?",
+    "passage": "Utpendling från sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av de förvärvsarbetande som bor i kommunen som arbetar i en annan kommun (utpendlare). Kartan har fem klasser:\nKlass 1: lägre än 15 procent\nKlass 2: från 15 till lägre än 30 procent\nKlass 3: från 30 till lägre än 45 procent\nKlass 4: från 45 till lägre än 60 procent\nKlass 5: från 60 till lägre än 75 procent\n\nKommun A – Förvärvsarbetande som bor i kommunen: 48 000 | Klass: 1\nKommun B – Förvärvsarbetande som bor i kommunen: 6 000 | Klass: 5\nKommun C – Förvärvsarbetande som bor i kommunen: 16 000 | Klass: 3\nKommun D – Förvärvsarbetande som bor i kommunen: 9 000 | Klass: 4\nKommun E – Förvärvsarbetande som bor i kommunen: 21 000 | Klass: 2\nKommun F – Förvärvsarbetande som bor i kommunen: 4 000 | Klass: 5",
+    "options": [
+      "18 000",
+      "25 200",
+      "25 800",
+      "33 600"
+    ],
+    "correctIndex": 0,
+    "explain": "Det minsta möjliga antalet får man med den lägsta andelen i varje kommuns klass: Kommun A 0 (klass 1 omfattar allt under 15 procent), Kommun B 0,60 · 6 000 = 3 600, Kommun C 0,30 · 16 000 = 4 800, Kommun D 0,45 · 9 000 = 4 050, Kommun E 0,15 · 21 000 = 3 150 och Kommun F 0,60 · 4 000 = 2 400. Summan är 18 000. 33 600 är summan av klassernas övre gränser och alltså ett antal som de sex kommunerna inte når upp till. 25 800 får man med mittvärdet i varje klass, och 25 200 om man räknar klass 1 som minst 15 procent (18 000 + 0,15 · 48 000).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-096",
+    "kind": "dtk",
+    "prompt": "Hur många år ökade männens medellivslängd vid födseln mellan 1984 och 2024?",
+    "passage": "Medellivslängd vid födseln i ett fiktivt land, 1984–2024\n\nDiagram. Medellivslängd vid födseln efter kön (år)\n1984 – Kvinnor: 79,2 | Män: 72,8\n1989 – Kvinnor: 79,8 | Män: 73,7\n1994 – Kvinnor: 80,6 | Män: 74,9\n1999 – Kvinnor: 81,4 | Män: 75,9\n2004 – Kvinnor: 82,0 | Män: 77,1\n2009 – Kvinnor: 82,7 | Män: 78,3\n2014 – Kvinnor: 83,4 | Män: 79,4\n2019 – Kvinnor: 83,6 | Män: 79,8\n2024 – Kvinnor: 84,3 | Män: 80,7",
+    "options": [
+      "3,6 år",
+      "5,1 år",
+      "6,4 år",
+      "7,9 år"
+    ],
+    "correctIndex": 3,
+    "explain": "Männens medellivslängd var 72,8 år 1984 och 80,7 år 2024, en ökning med 80,7 − 72,8 = 7,9 år. 5,1 år är kvinnornas ökning (84,3 − 79,2). 6,4 år och 3,6 år är skillnaden mellan kvinnor och män år 1984 respektive år 2024, inte männens ökning.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-097",
+    "kind": "dtk",
+    "prompt": "Under vilken femårsperiod minskade skillnaden mellan kvinnornas och männens medellivslängd mest?",
+    "passage": "Medellivslängd vid födseln i ett fiktivt land, 1984–2024\n\nDiagram. Medellivslängd vid födseln efter kön (år)\n1984 – Kvinnor: 79,2 | Män: 72,8\n1989 – Kvinnor: 79,8 | Män: 73,7\n1994 – Kvinnor: 80,6 | Män: 74,9\n1999 – Kvinnor: 81,4 | Män: 75,9\n2004 – Kvinnor: 82,0 | Män: 77,1\n2009 – Kvinnor: 82,7 | Män: 78,3\n2014 – Kvinnor: 83,4 | Män: 79,4\n2019 – Kvinnor: 83,6 | Män: 79,8\n2024 – Kvinnor: 84,3 | Män: 80,7",
+    "options": [
+      "1999–2004",
+      "2004–2009",
+      "2009–2014",
+      "2014–2019"
+    ],
+    "correctIndex": 0,
+    "explain": "Skillnaden (kvinnor minus män) var 5,5 år 1999, 4,9 år 2004, 4,4 år 2009, 4,0 år 2014 och 3,8 år 2019. Den minskade alltså med 0,6 år 1999–2004, med 0,5 år 2004–2009, med 0,4 år 2009–2014 och med 0,2 år 2014–2019. Även de tidigare perioderna har mindre minskningar (0,3, 0,4 och 0,2 år). Under 2004–2009 ökade männens medellivslängd lika mycket som 1999–2004 (1,2 år), men kvinnornas ökade då mer (0,7 år mot 0,6 år), så skillnaden minskade mindre.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-098",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många procent längre var kvinnornas medellivslängd än männens år 2024?",
+    "passage": "Medellivslängd vid födseln i ett fiktivt land, 1984–2024\n\nDiagram. Medellivslängd vid födseln efter kön (år)\n1984 – Kvinnor: 79,2 | Män: 72,8\n1989 – Kvinnor: 79,8 | Män: 73,7\n1994 – Kvinnor: 80,6 | Män: 74,9\n1999 – Kvinnor: 81,4 | Män: 75,9\n2004 – Kvinnor: 82,0 | Män: 77,1\n2009 – Kvinnor: 82,7 | Män: 78,3\n2014 – Kvinnor: 83,4 | Män: 79,4\n2019 – Kvinnor: 83,6 | Män: 79,8\n2024 – Kvinnor: 84,3 | Män: 80,7",
+    "options": [
+      "ca 3,6 procent",
+      "ca 4,3 procent",
+      "ca 4,5 procent",
+      "ca 8,8 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "År 2024 var skillnaden 84,3 − 80,7 = 3,6 år. Jämfört med männens medellivslängd är det 3,6/80,7 ≈ 0,045, dvs. ca 4,5 procent. Ca 4,3 procent får man om man delar med kvinnornas medellivslängd i stället (3,6/84,3), vilket svarar på hur mycket kortare männens medellivslängd var. Ca 3,6 procent tar skillnaden i år som om den vore procent, och ca 8,8 procent gäller år 1984 (6,4/72,8).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-099",
+    "kind": "dtk",
+    "prompt": "Vilket program hade flest förstahandssökande per plats?",
+    "passage": "Platser, sökande och antagna till fem utbildningsprogram vid ett fiktivt lärosäte, hösten 2024\n\nSjuksköterska – Platser: 120 | Förstahandssökande: 640 | Antagna: 140 | Kvinnor bland de antagna (procent): 85\nCivilingenjör i datateknik – Platser: 90 | Förstahandssökande: 315 | Antagna: 100 | Kvinnor bland de antagna (procent): 25\nGrundlärare – Platser: 150 | Förstahandssökande: 270 | Antagna: 160 | Kvinnor bland de antagna (procent): 80\nPsykolog – Platser: 140 | Förstahandssökande: 610 | Antagna: 160 | Kvinnor bland de antagna (procent): 75\nEkonom – Platser: 160 | Förstahandssökande: 720 | Antagna: 180 | Kvinnor bland de antagna (procent): 55\n\nAnm.: Förstahandssökande är de som har satt programmet som sitt första val. Fler antas än det finns platser, eftersom en del av de antagna inte börjar på programmet.",
+    "options": [
+      "Civilingenjör i datateknik",
+      "Ekonom",
+      "Psykolog",
+      "Sjuksköterska"
+    ],
+    "correctIndex": 3,
+    "explain": "Antalet förstahandssökande per plats var för sjuksköterska 640/120 ≈ 5,3, ekonom 720/160 = 4,5, psykolog 610/140 ≈ 4,4, civilingenjör i datateknik 315/90 = 3,5 och grundlärare 270/150 = 1,8. Sjuksköterskeprogrammet hade alltså flest sökande per plats. Ekonomprogrammet hade flest förstahandssökande totalt, men också flest platser. Psykologprogrammet hade nästan lika många sökande som sjuksköterskeprogrammet men 20 platser fler.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-100",
+    "kind": "dtk",
+    "prompt": "Till vilket program antogs flest män?",
+    "passage": "Platser, sökande och antagna till fem utbildningsprogram vid ett fiktivt lärosäte, hösten 2024\n\nSjuksköterska – Platser: 120 | Förstahandssökande: 640 | Antagna: 140 | Kvinnor bland de antagna (procent): 85\nCivilingenjör i datateknik – Platser: 90 | Förstahandssökande: 315 | Antagna: 100 | Kvinnor bland de antagna (procent): 25\nGrundlärare – Platser: 150 | Förstahandssökande: 270 | Antagna: 160 | Kvinnor bland de antagna (procent): 80\nPsykolog – Platser: 140 | Förstahandssökande: 610 | Antagna: 160 | Kvinnor bland de antagna (procent): 75\nEkonom – Platser: 160 | Förstahandssökande: 720 | Antagna: 180 | Kvinnor bland de antagna (procent): 55\n\nAnm.: Förstahandssökande är de som har satt programmet som sitt första val. Fler antas än det finns platser, eftersom en del av de antagna inte börjar på programmet.",
+    "options": [
+      "Civilingenjör i datateknik",
+      "Ekonom",
+      "Grundlärare",
+      "Psykolog"
+    ],
+    "correctIndex": 1,
+    "explain": "Antalet män är andelen män gånger antalet antagna. Till ekonomprogrammet antogs 180 personer, varav 100 − 55 = 45 procent män, alltså 0,45 · 180 = 81 män. Till civilingenjörsprogrammet var andelen män störst (75 procent), men där antogs bara 100 personer, alltså 75 män. Psykologprogrammet fick 0,25 · 160 = 40 män och grundlärarprogrammet 0,20 · 160 = 32 män (sjuksköterskeprogrammet 0,15 · 140 = 21).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-101",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av samtliga antagna till de fem programmen var kvinnor?",
+    "passage": "Platser, sökande och antagna till fem utbildningsprogram vid ett fiktivt lärosäte, hösten 2024\n\nSjuksköterska – Platser: 120 | Förstahandssökande: 640 | Antagna: 140 | Kvinnor bland de antagna (procent): 85\nCivilingenjör i datateknik – Platser: 90 | Förstahandssökande: 315 | Antagna: 100 | Kvinnor bland de antagna (procent): 25\nGrundlärare – Platser: 150 | Förstahandssökande: 270 | Antagna: 160 | Kvinnor bland de antagna (procent): 80\nPsykolog – Platser: 140 | Förstahandssökande: 610 | Antagna: 160 | Kvinnor bland de antagna (procent): 75\nEkonom – Platser: 160 | Förstahandssökande: 720 | Antagna: 180 | Kvinnor bland de antagna (procent): 55\n\nAnm.: Förstahandssökande är de som har satt programmet som sitt första val. Fler antas än det finns platser, eftersom en del av de antagna inte börjar på programmet.",
+    "options": [
+      "ca 34 procent",
+      "ca 64 procent",
+      "ca 66 procent",
+      "ca 74 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Antalet antagna kvinnor var 0,85 · 140 = 119 (sjuksköterska), 0,25 · 100 = 25 (civilingenjör), 0,80 · 160 = 128 (grundlärare), 0,75 · 160 = 120 (psykolog) och 0,55 · 180 = 99 (ekonom), sammanlagt 491. Det totala antalet antagna var 140 + 100 + 160 + 160 + 180 = 740, och 491/740 ≈ 0,66, dvs. ca 66 procent. Ca 64 procent är det ovägda medelvärdet av de fem andelarna, som bortser från att programmen antog olika många. Ca 74 procent får man om man delar med antalet platser (660) i stället för antalet antagna, och ca 34 procent är andelen män.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-102",
+    "kind": "dtk",
+    "prompt": "I vilket yrke var kvinnornas medianlön lägst i förhållande till männens?",
+    "passage": "Medianlön efter yrke och kön i ett fiktivt land, 2024\n\nDiagram. Medianlön per månad för heltidsanställda (kronor)\nUndersköterska – Kvinnor: 31 200 | Män: 32 000\nElektriker – Kvinnor: 36 900 | Män: 37 800\nGrundskollärare – Kvinnor: 39 500 | Män: 40 800\nMjukvaruutvecklare – Kvinnor: 48 600 | Män: 53 800\nLäkare – Kvinnor: 68 000 | Män: 74 500",
+    "options": [
+      "Elektriker",
+      "Grundskollärare",
+      "Läkare",
+      "Mjukvaruutvecklare"
+    ],
+    "correctIndex": 3,
+    "explain": "Kvinnornas medianlön i procent av männens var för undersköterskor 31 200/32 000 = 97,5 procent, elektriker 36 900/37 800 ≈ 97,6 procent, grundskollärare 39 500/40 800 ≈ 96,8 procent, mjukvaruutvecklare 48 600/53 800 ≈ 90,3 procent och läkare 68 000/74 500 ≈ 91,3 procent. Den var alltså lägst bland mjukvaruutvecklare. Bland läkare är skillnaden störst i kronor (6 500 kronor mot 5 200), men läkarnas löner är också mycket högre, så skillnaden blir mindre i förhållande till männens lön. Bland elektriker och grundskollärare är kvinnornas lön nästan lika hög som männens.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-103",
+    "kind": "dtk",
+    "prompt": "I hur många av de fem yrkena var männens medianlön mer än 1 000 kronor högre än kvinnornas?",
+    "passage": "Medianlön efter yrke och kön i ett fiktivt land, 2024\n\nDiagram. Medianlön per månad för heltidsanställda (kronor)\nUndersköterska – Kvinnor: 31 200 | Män: 32 000\nElektriker – Kvinnor: 36 900 | Män: 37 800\nGrundskollärare – Kvinnor: 39 500 | Män: 40 800\nMjukvaruutvecklare – Kvinnor: 48 600 | Män: 53 800\nLäkare – Kvinnor: 68 000 | Män: 74 500",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 1,
+    "explain": "Skillnaden mellan männens och kvinnornas medianlön var 800 kronor för undersköterskor, 900 kronor för elektriker, 1 300 kronor för grundskollärare, 5 200 kronor för mjukvaruutvecklare och 6 500 kronor för läkare. Skillnaden var alltså mer än 1 000 kronor i tre yrken: grundskollärare, mjukvaruutvecklare och läkare. Undersköterskor och elektriker ligger under gränsen, även om staplarna för män är högre i alla fem yrkena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-104",
+    "kind": "dtk",
+    "prompt": "I vilken åldersgrupp halverades andelen dagligrökare mellan 2014 och 2024?",
+    "passage": "Dagligrökning i ett fiktivt land efter åldersgrupp, 2004, 2014 och 2024\n\nDiagram. Andel av befolkningen som röker dagligen (procent)\n16–29 år – 2004: 14 | 2014: 8 | 2024: 4\n30–44 år – 2004: 18 | 2014: 12 | 2024: 7\n45–64 år – 2004: 21 | 2014: 15 | 2024: 10\n65–84 år – 2004: 12 | 2014: 10 | 2024: 8\n\nTabell. Befolkning efter åldersgrupp (tusental)\n16–29 år – 2014: 1 500 | 2024: 1 400\n30–44 år – 2014: 1 600 | 2024: 1 300\n45–64 år – 2014: 1 900 | 2024: 2 000\n65–84 år – 2014: 1 200 | 2024: 1 600",
+    "options": [
+      "16–29 år",
+      "30–44 år",
+      "45–64 år",
+      "65–84 år"
+    ],
+    "correctIndex": 0,
+    "explain": "I åldersgruppen 16–29 år sjönk andelen från 8 till 4 procent, alltså till hälften. I 30–44 år sjönk den från 12 till 7 procent och i 45–64 år från 15 till 10 procent. Där var minskningen visserligen större i procentenheter (5 mot 4), men andelen blev inte hälften så stor. I 65–84 år sjönk andelen bara från 10 till 8 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-105",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent minskade andelen dagligrökare i åldersgruppen 30–44 år mellan 2004 och 2024?",
+    "passage": "Dagligrökning i ett fiktivt land efter åldersgrupp, 2004, 2014 och 2024\n\nDiagram. Andel av befolkningen som röker dagligen (procent)\n16–29 år – 2004: 14 | 2014: 8 | 2024: 4\n30–44 år – 2004: 18 | 2014: 12 | 2024: 7\n45–64 år – 2004: 21 | 2014: 15 | 2024: 10\n65–84 år – 2004: 12 | 2014: 10 | 2024: 8\n\nTabell. Befolkning efter åldersgrupp (tusental)\n16–29 år – 2014: 1 500 | 2024: 1 400\n30–44 år – 2014: 1 600 | 2024: 1 300\n45–64 år – 2014: 1 900 | 2024: 2 000\n65–84 år – 2014: 1 200 | 2024: 1 600",
+    "options": [
+      "ca 11 procent",
+      "ca 39 procent",
+      "ca 42 procent",
+      "ca 61 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Andelen sjönk från 18 till 7 procent, alltså med 11 procentenheter. I procent av utgångsvärdet är det 11/18 ≈ 0,61, dvs. ca 61 procent. Ca 11 procent blandar ihop procentenheter och procent. Ca 39 procent (7/18) är hur stor andelen år 2024 var i förhållande till år 2004, inte minskningen. Ca 42 procent är minskningen mellan 2014 och 2024 (5/12), alltså fel period.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-106",
+    "kind": "dtk",
+    "prompt": "I vilken åldersgrupp minskade antalet dagligrökare mest mellan 2014 och 2024?",
+    "passage": "Dagligrökning i ett fiktivt land efter åldersgrupp, 2004, 2014 och 2024\n\nDiagram. Andel av befolkningen som röker dagligen (procent)\n16–29 år – 2004: 14 | 2014: 8 | 2024: 4\n30–44 år – 2004: 18 | 2014: 12 | 2024: 7\n45–64 år – 2004: 21 | 2014: 15 | 2024: 10\n65–84 år – 2004: 12 | 2014: 10 | 2024: 8\n\nTabell. Befolkning efter åldersgrupp (tusental)\n16–29 år – 2014: 1 500 | 2024: 1 400\n30–44 år – 2014: 1 600 | 2024: 1 300\n45–64 år – 2014: 1 900 | 2024: 2 000\n65–84 år – 2014: 1 200 | 2024: 1 600",
+    "options": [
+      "16–29 år",
+      "30–44 år",
+      "45–64 år",
+      "65–84 år"
+    ],
+    "correctIndex": 1,
+    "explain": "Antalet dagligrökare är andelen gånger befolkningen. I 16–29 år sjönk antalet från 0,08 · 1 500 000 = 120 000 till 0,04 · 1 400 000 = 56 000 (−64 000), i 30–44 år från 0,12 · 1 600 000 = 192 000 till 0,07 · 1 300 000 = 91 000 (−101 000), i 45–64 år från 0,15 · 1 900 000 = 285 000 till 0,10 · 2 000 000 = 200 000 (−85 000) och i 65–84 år ökade det från 120 000 till 128 000. Antalet minskade alltså mest i 30–44 år, där både andelen och befolkningen minskade. Andelen minskade lika mycket i 45–64 år, men där växte befolkningen. I 16–29 år halverades andelen, men gruppen hade färre rökare från början.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-107",
+    "kind": "dtk",
+    "prompt": "I vilken region var antalet patienter som hade väntat mer än 90 dagar störst?",
+    "passage": "Väntan på planerad operation i fyra fiktiva regioner, december 2024\n\nRegion A – Väntande patienter: 4 200 | Andel som väntat mer än 90 dagar (procent): 35 | Invånare (tusental): 520\nRegion B – Väntande patienter: 1 800 | Andel som väntat mer än 90 dagar (procent): 50 | Invånare (tusental): 210\nRegion C – Väntande patienter: 6 300 | Andel som väntat mer än 90 dagar (procent): 20 | Invånare (tusental): 900\nRegion D – Väntande patienter: 2 600 | Andel som väntat mer än 90 dagar (procent): 45 | Invånare (tusental): 330\n\nAnm.: Tabellen avser patienter som väntade på en planerad operation den 31 december 2024. Andelen som väntat mer än 90 dagar är räknad bland de väntande patienterna i regionen.",
+    "options": [
+      "Region A",
+      "Region B",
+      "Region C",
+      "Region D"
+    ],
+    "correctIndex": 0,
+    "explain": "Antalet som väntat mer än 90 dagar är andelen gånger antalet väntande: Region A 0,35 · 4 200 = 1 470, Region B 0,50 · 1 800 = 900, Region C 0,20 · 6 300 = 1 260 och Region D 0,45 · 2 600 = 1 170. Region A hade alltså flest. Region C hade flest väntande totalt men den lägsta andelen som väntat länge, och Region B hade den högsta andelen men få väntande.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-108",
+    "kind": "dtk",
+    "prompt": "Vilken region hade flest väntande patienter per 1 000 invånare?",
+    "passage": "Väntan på planerad operation i fyra fiktiva regioner, december 2024\n\nRegion A – Väntande patienter: 4 200 | Andel som väntat mer än 90 dagar (procent): 35 | Invånare (tusental): 520\nRegion B – Väntande patienter: 1 800 | Andel som väntat mer än 90 dagar (procent): 50 | Invånare (tusental): 210\nRegion C – Väntande patienter: 6 300 | Andel som väntat mer än 90 dagar (procent): 20 | Invånare (tusental): 900\nRegion D – Väntande patienter: 2 600 | Andel som väntat mer än 90 dagar (procent): 45 | Invånare (tusental): 330\n\nAnm.: Tabellen avser patienter som väntade på en planerad operation den 31 december 2024. Andelen som väntat mer än 90 dagar är räknad bland de väntande patienterna i regionen.",
+    "options": [
+      "Region A",
+      "Region B",
+      "Region C",
+      "Region D"
+    ],
+    "correctIndex": 1,
+    "explain": "Antalet väntande per 1 000 invånare blir för Region A 4 200/520 ≈ 8,1, Region B 1 800/210 ≈ 8,6, Region C 6 300/900 = 7,0 och Region D 2 600/330 ≈ 7,9. Region B hade alltså flest väntande i förhållande till folkmängden, trots att den hade minst antal väntande. Region C hade flest väntande men också flest invånare, och Region A ligger nära Region B men något lägre.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-109",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av samtliga väntande patienter i de fyra regionerna hade väntat mer än 90 dagar?",
+    "passage": "Väntan på planerad operation i fyra fiktiva regioner, december 2024\n\nRegion A – Väntande patienter: 4 200 | Andel som väntat mer än 90 dagar (procent): 35 | Invånare (tusental): 520\nRegion B – Väntande patienter: 1 800 | Andel som väntat mer än 90 dagar (procent): 50 | Invånare (tusental): 210\nRegion C – Väntande patienter: 6 300 | Andel som väntat mer än 90 dagar (procent): 20 | Invånare (tusental): 900\nRegion D – Väntande patienter: 2 600 | Andel som väntat mer än 90 dagar (procent): 45 | Invånare (tusental): 330\n\nAnm.: Tabellen avser patienter som väntade på en planerad operation den 31 december 2024. Andelen som väntat mer än 90 dagar är räknad bland de väntande patienterna i regionen.",
+    "options": [
+      "ca 32 procent",
+      "ca 38 procent",
+      "ca 48 procent",
+      "ca 68 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "Antalet som väntat mer än 90 dagar var 1 470 + 900 + 1 260 + 1 170 = 4 800, och det totala antalet väntande 4 200 + 1 800 + 6 300 + 2 600 = 14 900. Andelen är 4 800/14 900 ≈ 0,32, dvs. ca 32 procent. Ca 38 procent är det ovägda medelvärdet av de fyra andelarna ((35 + 50 + 20 + 45)/4 = 37,5), som bortser från att Region C med den lägsta andelen har flest väntande. Ca 48 procent får man om man delar med dem som väntat högst 90 dagar (4 800/10 100), och ca 68 procent är andelen som väntat högst 90 dagar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-110",
+    "kind": "dtk",
+    "prompt": "Vilken näringsgren hade den största procentuella ökningen av antalet sysselsatta mellan 2014 och 2024?",
+    "passage": "Sysselsatta i sju näringsgrenar i ett fiktivt land, 2014 och 2024\n\nDiagram. Antal sysselsatta efter näringsgren (tusental)\nJord- och skogsbruk – 2014: 95 | 2024: 80\nTillverkning – 2014: 620 | 2024: 560\nByggverksamhet – 2014: 310 | 2024: 365\nHandel – 2014: 560 | 2024: 590\nInformation och kommunikation – 2014: 190 | 2024: 285\nVård och omsorg – 2014: 600 | 2024: 720\nUtbildning – 2014: 380 | 2024: 430\n\nAnm.: Diagrammet visar bara sju av landets näringsgrenar.",
+    "options": [
+      "Byggverksamhet",
+      "Information och kommunikation",
+      "Vård och omsorg",
+      "Utbildning"
+    ],
+    "correctIndex": 1,
+    "explain": "Den procentuella ökningen är ökningen delad med antalet år 2014: byggverksamhet 55/310 ≈ 18 procent, information och kommunikation 95/190 = 50 procent, vård och omsorg 120/600 = 20 procent och utbildning 50/380 ≈ 13 procent. Information och kommunikation ökade alltså mest i procent. Vård och omsorg hade den största ökningen i antal (120 000), men utgick från en mycket högre nivå. Byggverksamhet och utbildning ökade både mindre i antal och i procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-111",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procentenheter minskade tillverkningens andel av de sysselsatta i de sju näringsgrenarna mellan 2014 och 2024?",
+    "passage": "Sysselsatta i sju näringsgrenar i ett fiktivt land, 2014 och 2024\n\nDiagram. Antal sysselsatta efter näringsgren (tusental)\nJord- och skogsbruk – 2014: 95 | 2024: 80\nTillverkning – 2014: 620 | 2024: 560\nByggverksamhet – 2014: 310 | 2024: 365\nHandel – 2014: 560 | 2024: 590\nInformation och kommunikation – 2014: 190 | 2024: 285\nVård och omsorg – 2014: 600 | 2024: 720\nUtbildning – 2014: 380 | 2024: 430\n\nAnm.: Diagrammet visar bara sju av landets näringsgrenar.",
+    "options": [
+      "ca 2 procentenheter",
+      "ca 4 procentenheter",
+      "ca 10 procentenheter",
+      "ca 18 procentenheter"
+    ],
+    "correctIndex": 1,
+    "explain": "De sju näringsgrenarna hade sammanlagt 2 755 000 sysselsatta år 2014 och 3 030 000 år 2024. Tillverkningens andel var 620/2 755 ≈ 22,5 procent år 2014 och 560/3 030 ≈ 18,5 procent år 2024, en minskning med ca 4 procentenheter. Ca 10 procentenheter är i stället den procentuella minskningen av antalet sysselsatta i tillverkningen (60/620 ≈ 9,7 procent). Ca 2 procentenheter får man om man delar minskningen med 60 000 med det totala antalet år 2024 (60/3 030), och 18 procent är andelen år 2024, inte förändringen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-112",
+    "kind": "dtk",
+    "prompt": "Det sammanlagda antalet sysselsatta i de sju näringsgrenarna ökade mellan 2014 och 2024. Ungefär hur stor del av den sammanlagda ökningen svarade vård och omsorg för?",
+    "passage": "Sysselsatta i sju näringsgrenar i ett fiktivt land, 2014 och 2024\n\nDiagram. Antal sysselsatta efter näringsgren (tusental)\nJord- och skogsbruk – 2014: 95 | 2024: 80\nTillverkning – 2014: 620 | 2024: 560\nByggverksamhet – 2014: 310 | 2024: 365\nHandel – 2014: 560 | 2024: 590\nInformation och kommunikation – 2014: 190 | 2024: 285\nVård och omsorg – 2014: 600 | 2024: 720\nUtbildning – 2014: 380 | 2024: 430\n\nAnm.: Diagrammet visar bara sju av landets näringsgrenar.",
+    "options": [
+      "ca 20 procent",
+      "ca 24 procent",
+      "ca 34 procent",
+      "ca 44 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Det sammanlagda antalet sysselsatta ökade från 2 755 000 till 3 030 000, alltså med 275 000. Vård och omsorg ökade med 720 000 − 600 000 = 120 000, och 120/275 ≈ 0,44, dvs. ca 44 procent. Ca 34 procent får man om man bara räknar med de näringsgrenar som ökade (55 + 30 + 95 + 120 + 50 = 350, och 120/350 ≈ 0,34) och glömmer att jord- och skogsbruk och tillverkning minskade. Ca 24 procent är vård och omsorgs andel av alla sysselsatta år 2024 (720/3 030), och ca 20 procent är hur mycket vård och omsorg själv ökade (120/600).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-113",
+    "kind": "dtk",
+    "prompt": "Hur många av nybörjarna på programmet Biomedicinsk analytiker tog examen mer än 3 år men högst 5 år efter studiestarten?",
+    "passage": "Examen bland nybörjarna hösten 2018 på fyra utbildningsprogram vid ett fiktivt lärosäte\n\nTabell. Antal nybörjare och andel av nybörjarna som hade tagit examen från programmet inom ett visst antal år efter studiestarten (procent)\nFysioterapeut – Nybörjare: 80 | Inom 3 år: 55 | Inom 4 år: 70 | Inom 5 år: 75 | Inom 6 år: 80\nBiomedicinsk analytiker – Nybörjare: 60 | Inom 3 år: 35 | Inom 4 år: 50 | Inom 5 år: 60 | Inom 6 år: 65\nTandhygienist – Nybörjare: 40 | Inom 3 år: 60 | Inom 4 år: 70 | Inom 5 år: 75 | Inom 6 år: 75\nRöntgensjuksköterska – Nybörjare: 120 | Inom 3 år: 45 | Inom 4 år: 65 | Inom 5 år: 70 | Inom 6 år: 75\n\nAnm.: Andelarna är kumulativa. Andelen inom 4 år omfattar alltså även dem som tog examen inom 3 år.",
+    "options": [
+      "15",
+      "21",
+      "30",
+      "36"
+    ],
+    "correctIndex": 0,
+    "explain": "Eftersom andelarna är kumulativa är det skillnaden mellan andelen inom 5 år och andelen inom 3 år som tog examen under det fjärde eller femte året: 60 − 35 = 25 procent. Av 60 nybörjare blir det 0,25 · 60 = 15 personer. 36 (0,60 · 60) är alla som tog examen inom 5 år, inklusive dem som blev klara inom 3 år. 30 (0,50 · 60) är alla som tog examen inom 4 år, och 21 (0,35 · 60) är de som tog examen inom 3 år.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-114",
+    "kind": "dtk",
+    "prompt": "Hur många av nybörjarna på de fyra programmen sammanlagt hade inte tagit examen inom 6 år?",
+    "passage": "Examen bland nybörjarna hösten 2018 på fyra utbildningsprogram vid ett fiktivt lärosäte\n\nTabell. Antal nybörjare och andel av nybörjarna som hade tagit examen från programmet inom ett visst antal år efter studiestarten (procent)\nFysioterapeut – Nybörjare: 80 | Inom 3 år: 55 | Inom 4 år: 70 | Inom 5 år: 75 | Inom 6 år: 80\nBiomedicinsk analytiker – Nybörjare: 60 | Inom 3 år: 35 | Inom 4 år: 50 | Inom 5 år: 60 | Inom 6 år: 65\nTandhygienist – Nybörjare: 40 | Inom 3 år: 60 | Inom 4 år: 70 | Inom 5 år: 75 | Inom 6 år: 75\nRöntgensjuksköterska – Nybörjare: 120 | Inom 3 år: 45 | Inom 4 år: 65 | Inom 5 år: 70 | Inom 6 år: 75\n\nAnm.: Andelarna är kumulativa. Andelen inom 4 år omfattar alltså även dem som tog examen inom 3 år.",
+    "options": [
+      "77",
+      "79",
+      "90",
+      "223"
+    ],
+    "correctIndex": 0,
+    "explain": "Andelen utan examen inom 6 år är 100 minus andelen inom 6 år. Det ger 0,20 · 80 = 16 (fysioterapeut), 0,35 · 60 = 21 (biomedicinsk analytiker), 0,25 · 40 = 10 (tandhygienist) och 0,25 · 120 = 30 (röntgensjuksköterska), sammanlagt 77. 223 är i stället antalet som hade tagit examen (300 − 77). 90 är antalet utan examen inom 5 år (20 + 24 + 10 + 36). 79 får man ungefär om man tar medelvärdet av de fyra andelarna (26,25 procent) gånger alla 300 nybörjare, vilket bortser från att programmen har olika många nybörjare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-115",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av de nybörjare på programmet Röntgensjuksköterska som inte hade tagit examen inom 3 år tog examen under det fjärde året?",
+    "passage": "Examen bland nybörjarna hösten 2018 på fyra utbildningsprogram vid ett fiktivt lärosäte\n\nTabell. Antal nybörjare och andel av nybörjarna som hade tagit examen från programmet inom ett visst antal år efter studiestarten (procent)\nFysioterapeut – Nybörjare: 80 | Inom 3 år: 55 | Inom 4 år: 70 | Inom 5 år: 75 | Inom 6 år: 80\nBiomedicinsk analytiker – Nybörjare: 60 | Inom 3 år: 35 | Inom 4 år: 50 | Inom 5 år: 60 | Inom 6 år: 65\nTandhygienist – Nybörjare: 40 | Inom 3 år: 60 | Inom 4 år: 70 | Inom 5 år: 75 | Inom 6 år: 75\nRöntgensjuksköterska – Nybörjare: 120 | Inom 3 år: 45 | Inom 4 år: 65 | Inom 5 år: 70 | Inom 6 år: 75\n\nAnm.: Andelarna är kumulativa. Andelen inom 4 år omfattar alltså även dem som tog examen inom 3 år.",
+    "options": [
+      "ca 20 procent",
+      "ca 31 procent",
+      "ca 36 procent",
+      "ca 44 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Inom 3 år hade 45 procent tagit examen, så 55 procent av nybörjarna återstod. Under det fjärde året tog ytterligare 65 − 45 = 20 procent av nybörjarna examen. Av dem som återstod är det 20/55 ≈ 0,36, dvs. ca 36 procent. Ca 20 procent är andelen av alla nybörjare, inte av dem som återstod. Ca 31 procent får man om man delar med andelen inom 4 år (20/65), och ca 44 procent om man delar med andelen inom 3 år (20/45).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-116",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor var försörjningskvoten år 2024?",
+    "passage": "Befolkningen i ett fiktivt land efter åldersgrupp, 2004, 2024 och prognos för 2044 (tusental)\n\n0–19 år – 2004: 2 100 | 2024: 2 300 | 2044 (prognos): 2 200\n20–64 år – 2004: 5 200 | 2024: 5 750 | 2044 (prognos): 5 900\n65 år och äldre – 2004: 1 500 | 2024: 2 050 | 2044 (prognos): 2 700\n\nAnm.: Försörjningskvoten är antalet personer 0–19 år och 65 år och äldre tillsammans, dividerat med antalet personer 20–64 år.",
+    "options": [
+      "0,36",
+      "0,43",
+      "0,57",
+      "0,76"
+    ],
+    "correctIndex": 3,
+    "explain": "År 2024 fanns 2 300 + 2 050 = 4 350 tusen personer som var 0–19 år eller 65 år och äldre, och 5 750 tusen personer 20–64 år. Försörjningskvoten blir 4 350/5 750 ≈ 0,76. 0,36 får man om man glömmer gruppen 0–19 år (2 050/5 750). 0,43 får man om man delar med hela befolkningen i stället för med gruppen 20–64 år (4 350/10 100), och 0,57 är andelen av befolkningen som var 20–64 år (5 750/10 100).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-117",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av befolkningen beräknas enligt prognosen vara 65 år och äldre år 2044?",
+    "passage": "Befolkningen i ett fiktivt land efter åldersgrupp, 2004, 2024 och prognos för 2044 (tusental)\n\n0–19 år – 2004: 2 100 | 2024: 2 300 | 2044 (prognos): 2 200\n20–64 år – 2004: 5 200 | 2024: 5 750 | 2044 (prognos): 5 900\n65 år och äldre – 2004: 1 500 | 2024: 2 050 | 2044 (prognos): 2 700\n\nAnm.: Försörjningskvoten är antalet personer 0–19 år och 65 år och äldre tillsammans, dividerat med antalet personer 20–64 år.",
+    "options": [
+      "ca 20 procent",
+      "ca 25 procent",
+      "ca 32 procent",
+      "ca 46 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Enligt prognosen blir befolkningen år 2044 sammanlagt 2 200 + 5 900 + 2 700 = 10 800 tusen, varav 2 700 tusen är 65 år och äldre. Andelen blir 2 700/10 800 = 0,25, dvs. ca 25 procent. Ca 20 procent är andelen år 2024 (2 050/10 100). Ca 46 procent får man om man delar med gruppen 20–64 år i stället för hela befolkningen (2 700/5 900), och ca 32 procent är hur mycket gruppen 65 år och äldre växer mellan 2024 och 2044 (650/2 050).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-118",
+    "kind": "dtk",
+    "prompt": "Anta att prognosen för grupperna 0–19 år och 65 år och äldre stämmer. Ungefär hur många fler personer 20–64 år än prognosen anger skulle landet behöva ha år 2044 för att försörjningskvoten ska bli densamma som år 2024?",
+    "passage": "Befolkningen i ett fiktivt land efter åldersgrupp, 2004, 2024 och prognos för 2044 (tusental)\n\n0–19 år – 2004: 2 100 | 2024: 2 300 | 2044 (prognos): 2 200\n20–64 år – 2004: 5 200 | 2024: 5 750 | 2044 (prognos): 5 900\n65 år och äldre – 2004: 1 500 | 2024: 2 050 | 2044 (prognos): 2 700\n\nAnm.: Försörjningskvoten är antalet personer 0–19 år och 65 år och äldre tillsammans, dividerat med antalet personer 20–64 år.",
+    "options": [
+      "ca 150 000",
+      "ca 440 000",
+      "ca 580 000",
+      "ca 730 000"
+    ],
+    "correctIndex": 2,
+    "explain": "År 2044 beräknas 2 200 + 2 700 = 4 900 tusen personer vara 0–19 år eller 65 år och äldre. För att kvoten ska bli densamma som år 2024 (4 350/5 750) behövs 4 900 · 5 750/4 350 ≈ 6 477 tusen personer 20–64 år. Prognosen anger 5 900 tusen, så det behövs ca 6 477 000 − 5 900 000 ≈ 577 000, alltså ca 580 000 fler. Räknar man med den avrundade kvoten 0,76 blir det 4 900/0,76 − 5 900 ≈ 547 000, vilket också ligger närmast ca 580 000. Ca 730 000 får man om man jämför med 2024 års 5 750 tusen i stället för med prognosen. Ca 440 000 får man om man multiplicerar kvotens ökning (från ca 0,757 till ca 0,831) med 5 900 tusen. Ca 150 000 är hur mycket gruppen 20–64 år ökar enligt prognosen (5 900 − 5 750 tusen), inte hur många fler som behövs.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-119",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av hela befolkningen 18–84 år bedömde sin hälsa som bra eller mycket bra?",
+    "passage": "Självskattad hälsa efter utbildningsnivå i ett fiktivt land, 2024\n\nDiagram 1. Befolkningen 18–84 år efter högsta utbildningsnivå (procent)\nFörgymnasial: 15\nGymnasial: 43\nEftergymnasial: 42\n\nDiagram 2. Andel av befolkningen 18–84 år som bedömer sin hälsa som bra eller mycket bra, efter högsta utbildningsnivå (procent)\nFörgymnasial: 54\nGymnasial: 70\nEftergymnasial: 80",
+    "options": [
+      "ca 28 procent",
+      "ca 34 procent",
+      "ca 68 procent",
+      "ca 72 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Andelarna i diagram 2 ska vägas med gruppernas storlek i diagram 1: 0,15 · 54 + 0,43 · 70 + 0,42 · 80 = 8,1 + 30,1 + 33,6 = 71,8, dvs. ca 72 procent. Ca 68 procent är det ovägda medelvärdet (54 + 70 + 80)/3, som ger gruppen med förgymnasial utbildning lika stor vikt som de andra trots att den bara är 15 procent av befolkningen. Ca 28 procent är andelen som inte bedömde sin hälsa som bra eller mycket bra. Ca 34 procent är bara bidraget från dem med eftergymnasial utbildning (0,42 · 80 ≈ 33,6), utan de två andra grupperna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-120",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av dem som inte bedömde sin hälsa som bra eller mycket bra hade förgymnasial utbildning?",
+    "passage": "Självskattad hälsa efter utbildningsnivå i ett fiktivt land, 2024\n\nDiagram 1. Befolkningen 18–84 år efter högsta utbildningsnivå (procent)\nFörgymnasial: 15\nGymnasial: 43\nEftergymnasial: 42\n\nDiagram 2. Andel av befolkningen 18–84 år som bedömer sin hälsa som bra eller mycket bra, efter högsta utbildningsnivå (procent)\nFörgymnasial: 54\nGymnasial: 70\nEftergymnasial: 80",
+    "options": [
+      "ca 7 procent",
+      "ca 15 procent",
+      "ca 24 procent",
+      "ca 46 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Andelen av befolkningen som har en viss utbildning och inte bedömer sin hälsa som bra eller mycket bra är förgymnasial 0,15 · 46 = 6,9 procent, gymnasial 0,43 · 30 = 12,9 procent och eftergymnasial 0,42 · 20 = 8,4 procent, sammanlagt 28,2 procent. De med förgymnasial utbildning utgör alltså 6,9/28,2 ≈ 0,24, dvs. ca 24 procent av gruppen. Ca 46 procent är andelen av dem med förgymnasial utbildning som inte bedömde sin hälsa som bra, alltså fel bas. Ca 15 procent är den förgymnasiala gruppens andel av hela befolkningen, och ca 7 procent är andelen av hela befolkningen som både har förgymnasial utbildning och inte bedömde sin hälsa som bra (6,9 procent), där man har glömt att dela med 28,2.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-121",
+    "kind": "dtk",
+    "prompt": "Med vilken handelspartner hade landet störst överskott i varuhandeln år 2024?",
+    "passage": "Varuhandel mellan ett fiktivt land och fem handelspartner, 2014 och 2024\n\nTabell 1. Export till respektive handelspartner (miljarder kronor)\nLand P – 2014: 84 | 2024: 112\nLand Q – 2014: 56 | 2024: 63\nLand R – 2014: 40 | 2024: 72\nLand S – 2014: 35 | 2024: 30\nLand T – 2014: 25 | 2024: 48\n\nTabell 2. Import från respektive handelspartner (miljarder kronor)\nLand P – 2014: 90 | 2024: 104\nLand Q – 2014: 48 | 2024: 70\nLand R – 2014: 22 | 2024: 40\nLand S – 2014: 41 | 2024: 52\nLand T – 2014: 30 | 2024: 36\n\nAnm.: Handelsnettot är exporten minus importen. Ett positivt handelsnetto kallas överskott och ett negativt underskott.",
+    "options": [
+      "Land P",
+      "Land R",
+      "Land S",
+      "Land T"
+    ],
+    "correctIndex": 1,
+    "explain": "Handelsnettot år 2024 är exporten minus importen: Land P 112 − 104 = 8, Land Q 63 − 70 = −7, Land R 72 − 40 = 32, Land S 30 − 52 = −22 och Land T 48 − 36 = 12 miljarder kronor. Överskottet var alltså störst med Land R. Land P var den största exportmarknaden, men importen därifrån var nästan lika stor. Land T hade den största procentuella exportökningen, men överskottet blev bara 12 miljarder. Med Land S var handelsnettot näst störst till beloppet (22 miljarder), men det var ett underskott och inte ett överskott.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-122",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent ökade landets sammanlagda export till de fem handelspartnerna mellan 2014 och 2024?",
+    "passage": "Varuhandel mellan ett fiktivt land och fem handelspartner, 2014 och 2024\n\nTabell 1. Export till respektive handelspartner (miljarder kronor)\nLand P – 2014: 84 | 2024: 112\nLand Q – 2014: 56 | 2024: 63\nLand R – 2014: 40 | 2024: 72\nLand S – 2014: 35 | 2024: 30\nLand T – 2014: 25 | 2024: 48\n\nTabell 2. Import från respektive handelspartner (miljarder kronor)\nLand P – 2014: 90 | 2024: 104\nLand Q – 2014: 48 | 2024: 70\nLand R – 2014: 22 | 2024: 40\nLand S – 2014: 41 | 2024: 52\nLand T – 2014: 30 | 2024: 36\n\nAnm.: Handelsnettot är exporten minus importen. Ett positivt handelsnetto kallas överskott och ett negativt underskott.",
+    "options": [
+      "ca 26 procent",
+      "ca 31 procent",
+      "ca 35 procent",
+      "ca 41 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Den sammanlagda exporten var 84 + 56 + 40 + 35 + 25 = 240 miljarder kronor år 2014 och 112 + 63 + 72 + 30 + 48 = 325 miljarder kronor år 2024. Ökningen är 85 miljarder, och 85 / 240 ≈ 0,35, alltså ca 35 procent. Ca 41 procent är medelvärdet av de fem ländernas procentuella förändringar (ungefär 33, 13, 80, −14 och 92 procent), men ett sådant ovägt medelvärde bortser från att exporten till länderna är olika stor. Ca 26 procent får man om man delar ökningen med 2024 års export (85 / 325) i stället för med 2014 års. Ca 31 procent är ökningen av importen (från 231 till 302 miljarder kronor), inte av exporten.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-123",
+    "kind": "dtk",
+    "prompt": "För hur många av de fem handelspartnerna var importens procentuella förändring större än exportens procentuella förändring mellan 2014 och 2024?",
+    "passage": "Varuhandel mellan ett fiktivt land och fem handelspartner, 2014 och 2024\n\nTabell 1. Export till respektive handelspartner (miljarder kronor)\nLand P – 2014: 84 | 2024: 112\nLand Q – 2014: 56 | 2024: 63\nLand R – 2014: 40 | 2024: 72\nLand S – 2014: 35 | 2024: 30\nLand T – 2014: 25 | 2024: 48\n\nTabell 2. Import från respektive handelspartner (miljarder kronor)\nLand P – 2014: 90 | 2024: 104\nLand Q – 2014: 48 | 2024: 70\nLand R – 2014: 22 | 2024: 40\nLand S – 2014: 41 | 2024: 52\nLand T – 2014: 30 | 2024: 36\n\nAnm.: Handelsnettot är exporten minus importen. Ett positivt handelsnetto kallas överskott och ett negativt underskott.",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "correctIndex": 3,
+    "explain": "Importen förändrades med: Land P 14 / 90 ≈ 16 procent, Land Q 22 / 48 ≈ 46 procent, Land R 18 / 22 ≈ 82 procent, Land S 11 / 41 ≈ 27 procent och Land T 6 / 30 = 20 procent. Exporten förändrades med: Land P 28 / 84 ≈ 33 procent, Land Q 7 / 56 = 12,5 procent, Land R 32 / 40 = 80 procent, Land S −5 / 35 ≈ −14 procent och Land T 23 / 25 = 92 procent. Importens förändring var alltså större för Land Q, Land R och Land S, vilket ger 3. Svaret 2 får man om man jämför förändringarna i miljarder kronor: för Land R ökade exporten mer i kronor (32 mot 18), men importen ökade mer i procent eftersom den utgick från en lägre nivå. Svaret 1 får man om man bara räknar Land S, där exporten minskade samtidigt som importen ökade. Svaret 0 får man om man bara ser till handeln totalt, där exporten ökade med ca 35 procent och importen med ca 31 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-124",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av det totala transportarbetet utgjordes av vägtransporter år 2024?",
+    "passage": "Inrikes godstransporter i ett fiktivt land efter trafikslag, 2000–2024\n\nDiagram. Transportarbete (miljarder tonkilometer)\n2000 – Väg: 32 | Järnväg: 20 | Sjöfart: 10\n2004 – Väg: 36 | Järnväg: 22 | Sjöfart: 9\n2008 – Väg: 41 | Järnväg: 23 | Sjöfart: 8\n2012 – Väg: 38 | Järnväg: 21 | Sjöfart: 8\n2016 – Väg: 42 | Järnväg: 22 | Sjöfart: 7\n2020 – Väg: 44 | Järnväg: 24 | Sjöfart: 7\n2024 – Väg: 48 | Järnväg: 23 | Sjöfart: 6\n\nTabell. Transporterad godsmängd år 2024 (miljoner ton)\nVäg: 400\nJärnväg: 92\nSjöfart: 20\n\nAnm.: Transportarbetet är godsets vikt i ton multiplicerad med den sträcka i kilometer som godset transporteras.",
+    "options": [
+      "ca 52 procent",
+      "ca 62 procent",
+      "ca 68 procent",
+      "ca 78 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "År 2024 var det totala transportarbetet 48 + 23 + 6 = 77 miljarder tonkilometer, och vägtransporterna stod för 48 / 77 ≈ 0,62, alltså ca 62 procent. Ca 52 procent är vägtransporternas andel år 2000 (32 / 62). Ca 68 procent får man om man glömmer sjöfarten och bara räknar 48 / (48 + 23). Ca 78 procent är vägens andel av den transporterade godsmängden (400 / 512 miljoner ton), inte av transportarbetet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-125",
+    "kind": "dtk",
+    "prompt": "Hur långt transporterades ett ton gods i genomsnitt år 2024, räknat för alla tre trafikslag tillsammans?",
+    "passage": "Inrikes godstransporter i ett fiktivt land efter trafikslag, 2000–2024\n\nDiagram. Transportarbete (miljarder tonkilometer)\n2000 – Väg: 32 | Järnväg: 20 | Sjöfart: 10\n2004 – Väg: 36 | Järnväg: 22 | Sjöfart: 9\n2008 – Väg: 41 | Järnväg: 23 | Sjöfart: 8\n2012 – Väg: 38 | Järnväg: 21 | Sjöfart: 8\n2016 – Väg: 42 | Järnväg: 22 | Sjöfart: 7\n2020 – Väg: 44 | Järnväg: 24 | Sjöfart: 7\n2024 – Väg: 48 | Järnväg: 23 | Sjöfart: 6\n\nTabell. Transporterad godsmängd år 2024 (miljoner ton)\nVäg: 400\nJärnväg: 92\nSjöfart: 20\n\nAnm.: Transportarbetet är godsets vikt i ton multiplicerad med den sträcka i kilometer som godset transporteras.",
+    "options": [
+      "ca 120 km",
+      "ca 150 km",
+      "ca 220 km",
+      "ca 250 km"
+    ],
+    "correctIndex": 1,
+    "explain": "Enligt anmärkningen är den genomsnittliga sträckan transportarbetet delat med godsmängden. Sammanlagt var transportarbetet 77 miljarder, alltså 77 000 miljoner, tonkilometer och godsmängden 400 + 92 + 20 = 512 miljoner ton. 77 000 / 512 ≈ 150, alltså ca 150 km. Ca 220 km är medelvärdet av de tre trafikslagens sträckor – väg 48 000 / 400 = 120 km, järnväg 23 000 / 92 = 250 km och sjöfart 6 000 / 20 = 300 km – men det ovägda medelvärdet bortser från att det mesta godset går på väg. Ca 120 km gäller bara vägtransporterna och ca 250 km bara järnvägen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-126",
+    "kind": "dtk",
+    "prompt": "Under hur många av perioderna mellan två på varandra följande år i diagrammet minskade det totala transportarbetet för de tre trafikslagen sammanlagt?",
+    "passage": "Inrikes godstransporter i ett fiktivt land efter trafikslag, 2000–2024\n\nDiagram. Transportarbete (miljarder tonkilometer)\n2000 – Väg: 32 | Järnväg: 20 | Sjöfart: 10\n2004 – Väg: 36 | Järnväg: 22 | Sjöfart: 9\n2008 – Väg: 41 | Järnväg: 23 | Sjöfart: 8\n2012 – Väg: 38 | Järnväg: 21 | Sjöfart: 8\n2016 – Väg: 42 | Järnväg: 22 | Sjöfart: 7\n2020 – Väg: 44 | Järnväg: 24 | Sjöfart: 7\n2024 – Väg: 48 | Järnväg: 23 | Sjöfart: 6\n\nTabell. Transporterad godsmängd år 2024 (miljoner ton)\nVäg: 400\nJärnväg: 92\nSjöfart: 20\n\nAnm.: Transportarbetet är godsets vikt i ton multiplicerad med den sträcka i kilometer som godset transporteras.",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "correctIndex": 0,
+    "explain": "Det totala transportarbetet var 62 (2000), 67 (2004), 72 (2008), 67 (2012), 71 (2016), 75 (2020) och 77 (2024) miljarder tonkilometer. Det minskade alltså bara mellan 2008 och 2012, under 1 period. Svaret 2 är antalet perioder då järnvägens transportarbete minskade (2008–2012 och 2020–2024), och 4 antalet perioder då sjöfartens minskade. Svaret 5 får man om man räknar alla perioder då minst ett av trafikslagen minskade – men utom mellan 2008 och 2012 vägdes minskningarna upp av ökningar för de andra trafikslagen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-127",
+    "kind": "dtk",
+    "prompt": "Ungefär vilket var hushållets genomsnittliga elpris för hela året 2024 med det rörliga priset?",
+    "passage": "Elanvändning och elpris för ett fiktivt hushåll i en villa, 2024\n\nDiagram. Elanvändning per månad (kWh)\nJanuari: 2 400\nFebruari: 2 200\nMars: 1 800\nApril: 1 300\nMaj: 900\nJuni: 600\nJuli: 500\nAugusti: 600\nSeptember: 900\nOktober: 1 400\nNovember: 1 900\nDecember: 2 300\n\nTabell. Hushållets rörliga elpris per kvartal, inklusive skatter och avgifter (öre per kWh)\nJanuari–mars: 200\nApril–juni: 120\nJuli–september: 100\nOktober–december: 160\n\nAnm.: Elbolaget erbjöd också ett fast elpris på 150 öre per kWh för hela året. Hushållet har inga andra elkostnader än elpriset gånger elanvändningen.",
+    "options": [
+      "ca 112 öre per kWh",
+      "ca 145 öre per kWh",
+      "ca 161 öre per kWh",
+      "ca 181 öre per kWh"
+    ],
+    "correctIndex": 2,
+    "explain": "Elanvändningen per kvartal var 2 400 + 2 200 + 1 800 = 6 400, 1 300 + 900 + 600 = 2 800, 500 + 600 + 900 = 2 000 och 1 400 + 1 900 + 2 300 = 5 600 kWh, totalt 16 800 kWh. Kostnaden blev 6 400 · 2,00 + 2 800 · 1,20 + 2 000 · 1,00 + 5 600 · 1,60 = 12 800 + 3 360 + 2 000 + 8 960 = 27 120 kronor. Genomsnittspriset är 27 120 / 16 800 ≈ 1,61 kronor, alltså ca 161 öre per kWh. Ca 145 öre är medelvärdet av de fyra kvartalspriserna, men det tar inte hänsyn till att hushållet använde mest el under de dyra vinterkvartalen. Ca 181 öre gäller bara första och fjärde kvartalet (21 760 / 12 000) och ca 112 öre bara andra och tredje kvartalet (5 360 / 4 800).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-128",
+    "kind": "dtk",
+    "prompt": "Med hur många procent var hushållets elanvändning i januari större än i juli?",
+    "passage": "Elanvändning och elpris för ett fiktivt hushåll i en villa, 2024\n\nDiagram. Elanvändning per månad (kWh)\nJanuari: 2 400\nFebruari: 2 200\nMars: 1 800\nApril: 1 300\nMaj: 900\nJuni: 600\nJuli: 500\nAugusti: 600\nSeptember: 900\nOktober: 1 400\nNovember: 1 900\nDecember: 2 300\n\nTabell. Hushållets rörliga elpris per kvartal, inklusive skatter och avgifter (öre per kWh)\nJanuari–mars: 200\nApril–juni: 120\nJuli–september: 100\nOktober–december: 160\n\nAnm.: Elbolaget erbjöd också ett fast elpris på 150 öre per kWh för hela året. Hushållet har inga andra elkostnader än elpriset gånger elanvändningen.",
+    "options": [
+      "ca 79 procent",
+      "380 procent",
+      "480 procent",
+      "1 900 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "I januari användes 2 400 kWh och i juli 500 kWh. Skillnaden är 1 900 kWh, och 1 900 / 500 = 3,8, alltså 380 procent mer. 480 procent får man om man tar kvoten 2 400 / 500 = 4,8 för den procentuella skillnaden – januari var 4,8 gånger så stor som juli, vilket betyder 380 procent större och inte 480 procent större. Ca 79 procent är hur mycket mindre juli var än januari (1 900 / 2 400), alltså räknat från fel bas. 1 900 procent får man om man tar skillnaden i kWh som om den vore en procentsats.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-129",
+    "kind": "dtk",
+    "prompt": "Hur mycket mer eller mindre hade hushållet betalat för elen under 2024 med det fasta elpriset i stället för det rörliga, vid samma elanvändning?",
+    "passage": "Elanvändning och elpris för ett fiktivt hushåll i en villa, 2024\n\nDiagram. Elanvändning per månad (kWh)\nJanuari: 2 400\nFebruari: 2 200\nMars: 1 800\nApril: 1 300\nMaj: 900\nJuni: 600\nJuli: 500\nAugusti: 600\nSeptember: 900\nOktober: 1 400\nNovember: 1 900\nDecember: 2 300\n\nTabell. Hushållets rörliga elpris per kvartal, inklusive skatter och avgifter (öre per kWh)\nJanuari–mars: 200\nApril–juni: 120\nJuli–september: 100\nOktober–december: 160\n\nAnm.: Elbolaget erbjöd också ett fast elpris på 150 öre per kWh för hela året. Hushållet har inga andra elkostnader än elpriset gånger elanvändningen.",
+    "options": [
+      "1 920 kronor mindre",
+      "840 kronor mer",
+      "1 840 kronor mer",
+      "1 920 kronor mer"
+    ],
+    "correctIndex": 0,
+    "explain": "Med det rörliga priset kostade elen 6 400 · 2,00 + 2 800 · 1,20 + 2 000 · 1,00 + 5 600 · 1,60 = 27 120 kronor (kvartalens elanvändning är summan av månaderna). Med det fasta priset hade den kostat 16 800 · 1,50 = 25 200 kronor, alltså 1 920 kronor mindre. 1 920 kronor mer är samma belopp med fel tecken. 840 kronor mer får man om man jämför med medelvärdet av kvartalspriserna, 145 öre: 16 800 · (1,50 − 1,45) = 840. 1 840 kronor mer är bara merkostnaden under andra och tredje kvartalet (2 800 · 0,30 + 2 000 · 0,50) – då glömmer man besparingen under första och fjärde kvartalet (6 400 · 0,50 + 5 600 · 0,10 = 3 760 kronor).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-130",
+    "kind": "dtk",
+    "prompt": "Minst hur stor andel av alla bostäder i de sex kommunerna värmdes med fjärrvärme år 2024?",
+    "passage": "Fjärrvärme i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens bostäder som värms med fjärrvärme. Kartan har fem klasser:\nKlass 1: färre än 20 procent\nKlass 2: från 20 till färre än 40 procent\nKlass 3: från 40 till färre än 60 procent\nKlass 4: från 60 till färre än 80 procent\nKlass 5: 80 procent eller fler\n\nKommun A – Antal bostäder: 52 000 | Klass: 4\nKommun B – Antal bostäder: 8 500 | Klass: 1\nKommun C – Antal bostäder: 21 000 | Klass: 3\nKommun D – Antal bostäder: 14 000 | Klass: 5\nKommun E – Antal bostäder: 30 000 | Klass: 2\nKommun F – Antal bostäder: 11 000 | Klass: 4",
+    "options": [
+      "ca 43 procent",
+      "ca 46 procent",
+      "ca 53 procent",
+      "ca 56 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Det minsta möjliga antalet bostäder med fjärrvärme får man med klassernas nedre gränser: Kommun A 0,60 · 52 000 = 31 200, Kommun B 0, Kommun C 0,40 · 21 000 = 8 400, Kommun D 0,80 · 14 000 = 11 200, Kommun E 0,20 · 30 000 = 6 000 och Kommun F 0,60 · 11 000 = 6 600, sammanlagt 63 400. Kommunerna har 136 500 bostäder, och 63 400 / 136 500 ≈ 0,46, alltså minst ca 46 procent. Ca 43 procent är medelvärdet av de sex nedre gränserna (60, 0, 40, 80, 20 och 60 procent), men det tar inte hänsyn till att kommunerna har olika många bostäder. Ca 56 procent får man om man räknar med klassernas mittvärden (77 050 / 136 500), och ca 53 procent om man tar ett ovägt medelvärde av mittvärdena – men mittvärdena ger bara en uppskattning och inte den minsta möjliga andelen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-131",
+    "kind": "dtk",
+    "prompt": "Hur många av de övriga fem kommunerna kan ha haft fler bostäder med fjärrvärme än Kommun C år 2024?",
+    "passage": "Fjärrvärme i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens bostäder som värms med fjärrvärme. Kartan har fem klasser:\nKlass 1: färre än 20 procent\nKlass 2: från 20 till färre än 40 procent\nKlass 3: från 40 till färre än 60 procent\nKlass 4: från 60 till färre än 80 procent\nKlass 5: 80 procent eller fler\n\nKommun A – Antal bostäder: 52 000 | Klass: 4\nKommun B – Antal bostäder: 8 500 | Klass: 1\nKommun C – Antal bostäder: 21 000 | Klass: 3\nKommun D – Antal bostäder: 14 000 | Klass: 5\nKommun E – Antal bostäder: 30 000 | Klass: 2\nKommun F – Antal bostäder: 11 000 | Klass: 4",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndex": 3,
+    "explain": "Kommun C ligger i klass 3 och hade minst 0,40 · 21 000 = 8 400 och färre än 0,60 · 21 000 = 12 600 bostäder med fjärrvärme. En annan kommun kan ha haft fler om dess största möjliga antal är större än 8 400. Kommun A har minst 31 200, Kommun D upp till 14 000, Kommun E nästan 0,40 · 30 000 = 12 000 och Kommun F nästan 0,80 · 11 000 = 8 800 – alla fyra kan alltså ha haft fler. Bara Kommun B, med färre än 0,20 · 8 500 = 1 700, kan inte det. Svaret 3 får man om man bara jämför klasserna (A, D och F ligger i högre klass än C), men Kommun E kan ha fler trots lägre klass. Svaret 2 får man om man räknar med klassernas mittvärden (C 10 500, men E 9 000 och F 7 700). Svaret 1 får man om man bara räknar den kommun som med säkerhet hade fler, Kommun A.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-132",
+    "kind": "dtk",
+    "prompt": "Anta att antalet bostäder i Kommun E är oförändrat. Minst hur många bostäder utan fjärrvärme i Kommun E skulle behöva anslutas för att kommunen med säkerhet skulle hamna i klass 3?",
+    "passage": "Fjärrvärme i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens bostäder som värms med fjärrvärme. Kartan har fem klasser:\nKlass 1: färre än 20 procent\nKlass 2: från 20 till färre än 40 procent\nKlass 3: från 40 till färre än 60 procent\nKlass 4: från 60 till färre än 80 procent\nKlass 5: 80 procent eller fler\n\nKommun A – Antal bostäder: 52 000 | Klass: 4\nKommun B – Antal bostäder: 8 500 | Klass: 1\nKommun C – Antal bostäder: 21 000 | Klass: 3\nKommun D – Antal bostäder: 14 000 | Klass: 5\nKommun E – Antal bostäder: 30 000 | Klass: 2\nKommun F – Antal bostäder: 11 000 | Klass: 4",
+    "options": [
+      "3 000",
+      "6 000",
+      "12 000",
+      "18 000"
+    ],
+    "correctIndex": 1,
+    "explain": "Kommun E ligger i klass 2 och har alltså minst 0,20 · 30 000 = 6 000 och färre än 0,40 · 30 000 = 12 000 bostäder med fjärrvärme. Klass 3 kräver minst 12 000. Om kommunen bara har 6 000 behövs 6 000 nya anslutningar, och har den fler räcker 6 000 med marginal. Summan blir samtidigt färre än 12 000 + 6 000 = 18 000, alltså under 60 procent, så kommunen hamnar inte i klass 4. Därför krävs minst 6 000. 3 000 får man om man utgår från klassens mittvärde, 30 procent eller 9 000 bostäder, men det är inte säkert att kommunen har så många. 12 000 är det antal som krävs totalt för klass 3 – då glömmer man de bostäder som redan har fjärrvärme. 18 000 motsvarar 60 procent, som är gränsen till klass 4.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-133",
+    "kind": "dtk",
+    "prompt": "Vilken flygplats hade den största procentuella minskningen av antalet passagerare mellan 2019 och 2024?",
+    "passage": "Passagerare vid fem fiktiva flygplatser, 2019 och 2024\n\nDiagram. Antal passagerare (tusental)\nFlygplats Norr – 2019: 2 400 | 2024: 1 900\nFlygplats Väst – 2019: 7 800 | 2024: 8 600\nFlygplats Syd – 2019: 4 200 | 2024: 4 000\nFlygplats Öst – 2019: 1 500 | 2024: 1 200\nFlygplats Mitt – 2019: 900 | 2024: 600\n\nTabell. Utrikespassagerarnas andel av alla passagerare år 2024 (procent)\nFlygplats Norr: 20\nFlygplats Väst: 75\nFlygplats Syd: 60\nFlygplats Öst: 25\nFlygplats Mitt: 10\n\nAnm.: Varje passagerare räknas antingen som inrikes- eller som utrikespassagerare.",
+    "options": [
+      "Flygplats Norr",
+      "Flygplats Syd",
+      "Flygplats Öst",
+      "Flygplats Mitt"
+    ],
+    "correctIndex": 3,
+    "explain": "Minskningarna var: Flygplats Norr 500 / 2 400 ≈ 21 procent, Flygplats Syd 200 / 4 200 ≈ 5 procent, Flygplats Öst 300 / 1 500 = 20 procent och Flygplats Mitt 300 / 900 ≈ 33 procent. Flygplats Mitt minskade alltså mest i procent. Flygplats Norr hade den största minskningen i antal passagerare (500 000), men utgick från en högre nivå. Flygplats Öst tappade lika många passagerare som Mitt, men från en större nivå, och Flygplats Syd minskade bara lite.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-134",
+    "kind": "dtk",
+    "prompt": "Hur många inrikespassagerare hade de fem flygplatserna sammanlagt år 2024?",
+    "passage": "Passagerare vid fem fiktiva flygplatser, 2019 och 2024\n\nDiagram. Antal passagerare (tusental)\nFlygplats Norr – 2019: 2 400 | 2024: 1 900\nFlygplats Väst – 2019: 7 800 | 2024: 8 600\nFlygplats Syd – 2019: 4 200 | 2024: 4 000\nFlygplats Öst – 2019: 1 500 | 2024: 1 200\nFlygplats Mitt – 2019: 900 | 2024: 600\n\nTabell. Utrikespassagerarnas andel av alla passagerare år 2024 (procent)\nFlygplats Norr: 20\nFlygplats Väst: 75\nFlygplats Syd: 60\nFlygplats Öst: 25\nFlygplats Mitt: 10\n\nAnm.: Varje passagerare räknas antingen som inrikes- eller som utrikespassagerare.",
+    "options": [
+      "6 710 000",
+      "7 485 000",
+      "9 590 000",
+      "10 106 000"
+    ],
+    "correctIndex": 0,
+    "explain": "Inrikesandelen är 100 procent minus utrikesandelen. Inrikespassagerarna var Flygplats Norr 0,80 · 1 900 = 1 520, Väst 0,25 · 8 600 = 2 150, Syd 0,40 · 4 000 = 1 600, Öst 0,75 · 1 200 = 900 och Mitt 0,90 · 600 = 540 tusen, sammanlagt 6 710 tusen, alltså 6 710 000. 9 590 000 är antalet utrikespassagerare (16 300 000 − 6 710 000). 10 106 000 får man om man tar medelvärdet av de fem inrikesandelarna, 62 procent, gånger alla 16 300 000 passagerare – det ovägda medelvärdet bortser från att den största flygplatsen har den lägsta inrikesandelen. 7 485 000 får man om man använder 2019 års passagerarantal i stället för 2024 års.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-135",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av alla utrikespassagerare vid de fem flygplatserna år 2024 reste via Flygplats Väst?",
+    "passage": "Passagerare vid fem fiktiva flygplatser, 2019 och 2024\n\nDiagram. Antal passagerare (tusental)\nFlygplats Norr – 2019: 2 400 | 2024: 1 900\nFlygplats Väst – 2019: 7 800 | 2024: 8 600\nFlygplats Syd – 2019: 4 200 | 2024: 4 000\nFlygplats Öst – 2019: 1 500 | 2024: 1 200\nFlygplats Mitt – 2019: 900 | 2024: 600\n\nTabell. Utrikespassagerarnas andel av alla passagerare år 2024 (procent)\nFlygplats Norr: 20\nFlygplats Väst: 75\nFlygplats Syd: 60\nFlygplats Öst: 25\nFlygplats Mitt: 10\n\nAnm.: Varje passagerare räknas antingen som inrikes- eller som utrikespassagerare.",
+    "options": [
+      "ca 40 procent",
+      "ca 53 procent",
+      "ca 67 procent",
+      "ca 75 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Utrikespassagerarna var Flygplats Norr 0,20 · 1 900 = 380, Väst 0,75 · 8 600 = 6 450, Syd 0,60 · 4 000 = 2 400, Öst 0,25 · 1 200 = 300 och Mitt 0,10 · 600 = 60 tusen, sammanlagt 9 590 tusen. Flygplats Väst stod för 6 450 / 9 590 ≈ 0,67, alltså ca 67 procent. Ca 75 procent är andelen utrikespassagerare bland Västs egna passagerare, vilket är något annat. Ca 53 procent är Västs andel av alla passagerare (8 600 / 16 300), och ca 40 procent får man om man delar Västs utrikespassagerare med alla passagerare (6 450 / 16 300) i stället för med alla utrikespassagerare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-136",
+    "kind": "dtk",
+    "prompt": "Inom vilken bransch var e-handelns försäljning störst år 2024, räknat i kronor?",
+    "passage": "Detaljhandelns försäljning i ett fiktivt land efter bransch, 2019 och 2024\n\nDiagram. Försäljning (miljarder kronor)\nDagligvaror – 2019: 280 | 2024: 320\nKläder och skor – 2019: 95 | 2024: 90\nBygg och trädgård – 2019: 60 | 2024: 70\nHemelektronik – 2019: 55 | 2024: 60\nMöbler och inredning – 2019: 45 | 2024: 50\nÖvrigt – 2019: 100 | 2024: 110\n\nTabell. E-handelns andel av försäljningen (procent)\nDagligvaror – 2019: 2 | 2024: 5\nKläder och skor – 2019: 22 | 2024: 35\nBygg och trädgård – 2019: 6 | 2024: 20\nHemelektronik – 2019: 35 | 2024: 45\nMöbler och inredning – 2019: 12 | 2024: 20\nÖvrigt – 2019: 15 | 2024: 25\n\nAnm.: Försäljningen i diagrammet omfattar både butikshandel och e-handel. All försäljning som inte sker via e-handel sker i butik.",
+    "options": [
+      "Kläder och skor",
+      "Bygg och trädgård",
+      "Hemelektronik",
+      "Övrigt"
+    ],
+    "correctIndex": 0,
+    "explain": "E-handelns försäljning år 2024 är branschens försäljning gånger e-handelns andel: kläder och skor 0,35 · 90 = 31,5, bygg och trädgård 0,20 · 70 = 14, hemelektronik 0,45 · 60 = 27 och övrigt 0,25 · 110 = 27,5 miljarder kronor (för dagligvaror 16 och för möbler och inredning 10). Kläder och skor hade alltså störst e-handel i kronor. Hemelektronik hade den högsta e-handelsandelen, men branschen är mindre. Övrigt har större försäljning totalt men en lägre andel, och bygg och trädgård ökade sin andel mest men har en liten e-handel i kronor.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-137",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av detaljhandelns sammanlagda försäljning år 2024 skedde via e-handel?",
+    "passage": "Detaljhandelns försäljning i ett fiktivt land efter bransch, 2019 och 2024\n\nDiagram. Försäljning (miljarder kronor)\nDagligvaror – 2019: 280 | 2024: 320\nKläder och skor – 2019: 95 | 2024: 90\nBygg och trädgård – 2019: 60 | 2024: 70\nHemelektronik – 2019: 55 | 2024: 60\nMöbler och inredning – 2019: 45 | 2024: 50\nÖvrigt – 2019: 100 | 2024: 110\n\nTabell. E-handelns andel av försäljningen (procent)\nDagligvaror – 2019: 2 | 2024: 5\nKläder och skor – 2019: 22 | 2024: 35\nBygg och trädgård – 2019: 6 | 2024: 20\nHemelektronik – 2019: 35 | 2024: 45\nMöbler och inredning – 2019: 12 | 2024: 20\nÖvrigt – 2019: 15 | 2024: 25\n\nAnm.: Försäljningen i diagrammet omfattar både butikshandel och e-handel. All försäljning som inte sker via e-handel sker i butik.",
+    "options": [
+      "ca 11 procent",
+      "ca 15 procent",
+      "ca 18 procent",
+      "ca 25 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "E-handeln år 2024 var 0,05 · 320 + 0,35 · 90 + 0,20 · 70 + 0,45 · 60 + 0,20 · 50 + 0,25 · 110 = 16 + 31,5 + 14 + 27 + 10 + 27,5 = 126 miljarder kronor, och den sammanlagda försäljningen var 320 + 90 + 70 + 60 + 50 + 110 = 700 miljarder kronor. Andelen är 126 / 700 = 0,18, alltså ca 18 procent. Ca 25 procent är medelvärdet av de sex branschernas andelar, men det tar inte hänsyn till att dagligvaruhandeln, som har den lägsta andelen, är störst. Ca 15 procent får man om man tror att e-handeln kommer utöver försäljningen i diagrammet och delar med 700 + 126 = 826. Ca 11 procent är e-handelns andel år 2019 (69,75 / 635).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-138",
+    "kind": "dtk",
+    "prompt": "Inom vilken av följande branscher var försäljningen i butik större år 2024 än år 2019?",
+    "passage": "Detaljhandelns försäljning i ett fiktivt land efter bransch, 2019 och 2024\n\nDiagram. Försäljning (miljarder kronor)\nDagligvaror – 2019: 280 | 2024: 320\nKläder och skor – 2019: 95 | 2024: 90\nBygg och trädgård – 2019: 60 | 2024: 70\nHemelektronik – 2019: 55 | 2024: 60\nMöbler och inredning – 2019: 45 | 2024: 50\nÖvrigt – 2019: 100 | 2024: 110\n\nTabell. E-handelns andel av försäljningen (procent)\nDagligvaror – 2019: 2 | 2024: 5\nKläder och skor – 2019: 22 | 2024: 35\nBygg och trädgård – 2019: 6 | 2024: 20\nHemelektronik – 2019: 35 | 2024: 45\nMöbler och inredning – 2019: 12 | 2024: 20\nÖvrigt – 2019: 15 | 2024: 25\n\nAnm.: Försäljningen i diagrammet omfattar både butikshandel och e-handel. All försäljning som inte sker via e-handel sker i butik.",
+    "options": [
+      "Kläder och skor",
+      "Bygg och trädgård",
+      "Hemelektronik",
+      "Möbler och inredning"
+    ],
+    "correctIndex": 3,
+    "explain": "Försäljningen i butik är den del av försäljningen som inte sker via e-handel. Kläder och skor: 0,78 · 95 = 74,1 år 2019 och 0,65 · 90 = 58,5 år 2024. Bygg och trädgård: 0,94 · 60 = 56,4 och 0,80 · 70 = 56,0. Hemelektronik: 0,65 · 55 = 35,75 och 0,55 · 60 = 33,0. Möbler och inredning: 0,88 · 45 = 39,6 och 0,80 · 50 = 40,0 miljarder kronor. Bara möbler och inredning ökade alltså sin butiksförsäljning. Bygg och trädgård ökade sin totala försäljning mest av de fyra, men hela ökningen och lite till gick till e-handeln. Hemelektronik ökade också totalt men inte i butik, och för kläder och skor minskade både den totala försäljningen och butiksandelen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-139",
+    "kind": "dtk",
+    "prompt": "I vilken region var kostnaden per resa lägst?",
+    "passage": "Kollektivtrafik i fyra fiktiva regioner, 2024\n\nTabell. Invånare (tusental), resor (miljoner) samt kostnader och biljettintäkter (miljoner kronor)\nRegion A – Invånare: 1 200 | Resor: 150 | Kostnader: 6 000 | Biljettintäkter: 2 700\nRegion B – Invånare: 450 | Resor: 36 | Kostnader: 2 160 | Biljettintäkter: 756\nRegion C – Invånare: 300 | Resor: 15 | Kostnader: 1 200 | Biljettintäkter: 360\nRegion D – Invånare: 800 | Resor: 72 | Kostnader: 3 600 | Biljettintäkter: 1 800\n\nAnm.: Den del av kostnaderna som inte täcks av biljettintäkterna betalas med skattemedel. Kostnadstäckningsgraden är biljettintäkterna i procent av kostnaderna.",
+    "options": [
+      "Region A",
+      "Region B",
+      "Region C",
+      "Region D"
+    ],
+    "correctIndex": 0,
+    "explain": "Kostnaden per resa är kostnaderna delat med antalet resor: Region A 6 000 / 150 = 40, Region B 2 160 / 36 = 60, Region C 1 200 / 15 = 80 och Region D 3 600 / 72 = 50 kronor. Region A hade alltså lägst kostnad per resa, trots att den hade de högsta kostnaderna totalt. Region D hade den högsta kostnadstäckningsgraden (50 procent), men den beror också på biljettintäkterna och inte bara på kostnaden per resa. Region C hade de lägsta kostnaderna totalt men också minst antal resor, och Region B hade 60 kronor per resa.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-140",
+    "kind": "dtk",
+    "prompt": "I vilken region var skattemedlen till kollektivtrafiken störst per invånare?",
+    "passage": "Kollektivtrafik i fyra fiktiva regioner, 2024\n\nTabell. Invånare (tusental), resor (miljoner) samt kostnader och biljettintäkter (miljoner kronor)\nRegion A – Invånare: 1 200 | Resor: 150 | Kostnader: 6 000 | Biljettintäkter: 2 700\nRegion B – Invånare: 450 | Resor: 36 | Kostnader: 2 160 | Biljettintäkter: 756\nRegion C – Invånare: 300 | Resor: 15 | Kostnader: 1 200 | Biljettintäkter: 360\nRegion D – Invånare: 800 | Resor: 72 | Kostnader: 3 600 | Biljettintäkter: 1 800\n\nAnm.: Den del av kostnaderna som inte täcks av biljettintäkterna betalas med skattemedel. Kostnadstäckningsgraden är biljettintäkterna i procent av kostnaderna.",
+    "options": [
+      "Region A",
+      "Region B",
+      "Region C",
+      "Region D"
+    ],
+    "correctIndex": 1,
+    "explain": "Skattemedlen är kostnaderna minus biljettintäkterna: Region A 3 300, Region B 1 404, Region C 840 och Region D 1 800 miljoner kronor. Per invånare blir det Region A 3 300 miljoner / 1 200 000 = 2 750, Region B 1 404 miljoner / 450 000 = 3 120, Region C 840 miljoner / 300 000 = 2 800 och Region D 1 800 miljoner / 800 000 = 2 250 kronor. Region B hade alltså störst skattemedel per invånare. Region A betalade mest skattemedel totalt men har också flest invånare. Region C hade den lägsta kostnadstäckningsgraden och den högsta kostnaden per resa, men invånarna reser så lite att skattemedlen per invånare blir lägre än i Region B. Region D hade lägst skattemedel per invånare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-141",
+    "kind": "dtk",
+    "prompt": "Med hur många procent skulle biljettintäkterna i Region C behöva öka för att regionen skulle få samma kostnadstäckningsgrad som Region A, om kostnaderna är oförändrade?",
+    "passage": "Kollektivtrafik i fyra fiktiva regioner, 2024\n\nTabell. Invånare (tusental), resor (miljoner) samt kostnader och biljettintäkter (miljoner kronor)\nRegion A – Invånare: 1 200 | Resor: 150 | Kostnader: 6 000 | Biljettintäkter: 2 700\nRegion B – Invånare: 450 | Resor: 36 | Kostnader: 2 160 | Biljettintäkter: 756\nRegion C – Invånare: 300 | Resor: 15 | Kostnader: 1 200 | Biljettintäkter: 360\nRegion D – Invånare: 800 | Resor: 72 | Kostnader: 3 600 | Biljettintäkter: 1 800\n\nAnm.: Den del av kostnaderna som inte täcks av biljettintäkterna betalas med skattemedel. Kostnadstäckningsgraden är biljettintäkterna i procent av kostnaderna.",
+    "options": [
+      "15 procent",
+      "ca 33 procent",
+      "50 procent",
+      "150 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Region A har kostnadstäckningsgraden 2 700 / 6 000 = 45 procent och Region C 360 / 1 200 = 30 procent. För 45 procent behöver Region C biljettintäkter på 0,45 · 1 200 = 540 miljoner kronor, alltså en ökning med 180 miljoner. 180 / 360 = 0,5, alltså 50 procent. 15 är skillnaden mellan kostnadstäckningsgraderna, men den är 15 procentenheter och inte en procentuell ökning av intäkterna. Ca 33 procent får man om man delar ökningen med det nya beloppet (180 / 540). 150 procent får man från kvoten 540 / 360 = 1,5 – de nya intäkterna blir 150 procent av de gamla, vilket är en ökning med 50 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-142",
+    "kind": "dtk",
+    "prompt": "Under hur många av åren 2017–2024 var bolåneräntan vid årets slut högre än vid slutet av året innan?",
+    "passage": "Räntor och bolån i ett fiktivt land, 2016–2024\n\nDiagram. Räntor vid årets slut (procent)\n2016 – Styrränta: 0,25 | Bolåneränta: 1,75\n2017 – Styrränta: 0,50 | Bolåneränta: 1,90\n2018 – Styrränta: 0,75 | Bolåneränta: 2,10\n2019 – Styrränta: 0,75 | Bolåneränta: 2,20\n2020 – Styrränta: 0,50 | Bolåneränta: 1,90\n2021 – Styrränta: 0,50 | Bolåneränta: 1,80\n2022 – Styrränta: 2,50 | Bolåneränta: 4,10\n2023 – Styrränta: 4,00 | Bolåneränta: 5,40\n2024 – Styrränta: 3,00 | Bolåneränta: 4,60\n\nTabell. Genomsnittligt bolån per hushåll med bolån vid årets slut (kronor)\n2016: 1 600 000\n2020: 1 900 000\n2024: 2 200 000\n\nAnm.: Bolåneräntan är den genomsnittliga rörliga räntan på bolån. Räntekostnaden för ett år beräknas här som lånebeloppet gånger räntan.",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 3,
+    "explain": "Bolåneräntan steg 2017 (från 1,75 till 1,90), 2018 (till 2,10), 2019 (till 2,20), 2022 (från 1,80 till 4,10) och 2023 (till 5,40), alltså under 5 år. Den sjönk 2020, 2021 och 2024. Svaret 4 får man om man räknar åren då styrräntan steg (2017, 2018, 2022 och 2023) – styrräntan var oförändrad 2019, men bolåneräntan steg ändå. Svaret 3 är antalet år då bolåneräntan sjönk, och 2 antalet år då styrräntan sjönk (2020 och 2024).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-143",
+    "kind": "dtk",
+    "prompt": "Hur mycket högre var den årliga räntekostnaden för det genomsnittliga bolånet år 2024 än år 2020, om man räknar med lånebeloppet och bolåneräntan vid respektive års slut?",
+    "passage": "Räntor och bolån i ett fiktivt land, 2016–2024\n\nDiagram. Räntor vid årets slut (procent)\n2016 – Styrränta: 0,25 | Bolåneränta: 1,75\n2017 – Styrränta: 0,50 | Bolåneränta: 1,90\n2018 – Styrränta: 0,75 | Bolåneränta: 2,10\n2019 – Styrränta: 0,75 | Bolåneränta: 2,20\n2020 – Styrränta: 0,50 | Bolåneränta: 1,90\n2021 – Styrränta: 0,50 | Bolåneränta: 1,80\n2022 – Styrränta: 2,50 | Bolåneränta: 4,10\n2023 – Styrränta: 4,00 | Bolåneränta: 5,40\n2024 – Styrränta: 3,00 | Bolåneränta: 4,60\n\nTabell. Genomsnittligt bolån per hushåll med bolån vid årets slut (kronor)\n2016: 1 600 000\n2020: 1 900 000\n2024: 2 200 000\n\nAnm.: Bolåneräntan är den genomsnittliga rörliga räntan på bolån. Räntekostnaden för ett år beräknas här som lånebeloppet gånger räntan.",
+    "options": [
+      "56 500 kronor",
+      "59 400 kronor",
+      "65 100 kronor",
+      "101 200 kronor"
+    ],
+    "correctIndex": 2,
+    "explain": "År 2020 var räntekostnaden 1 900 000 · 0,019 = 36 100 kronor och år 2024 2 200 000 · 0,046 = 101 200 kronor. Skillnaden är 101 200 − 36 100 = 65 100 kronor. 59 400 kronor får man om man räknar med 2024 års lånebelopp båda åren (2 200 000 · 0,027) och alltså glömmer att lånet också växte. 56 500 kronor får man om man använder styrräntan i stället för bolåneräntan (2 200 000 · 0,030 − 1 900 000 · 0,005 = 66 000 − 9 500). 101 200 kronor är hela räntekostnaden år 2024, inte ökningen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-144",
+    "kind": "dtk",
+    "prompt": "Med hur många procent ökade bolåneräntan mellan slutet av 2021 och slutet av 2023?",
+    "passage": "Räntor och bolån i ett fiktivt land, 2016–2024\n\nDiagram. Räntor vid årets slut (procent)\n2016 – Styrränta: 0,25 | Bolåneränta: 1,75\n2017 – Styrränta: 0,50 | Bolåneränta: 1,90\n2018 – Styrränta: 0,75 | Bolåneränta: 2,10\n2019 – Styrränta: 0,75 | Bolåneränta: 2,20\n2020 – Styrränta: 0,50 | Bolåneränta: 1,90\n2021 – Styrränta: 0,50 | Bolåneränta: 1,80\n2022 – Styrränta: 2,50 | Bolåneränta: 4,10\n2023 – Styrränta: 4,00 | Bolåneränta: 5,40\n2024 – Styrränta: 3,00 | Bolåneränta: 4,60\n\nTabell. Genomsnittligt bolån per hushåll med bolån vid årets slut (kronor)\n2016: 1 600 000\n2020: 1 900 000\n2024: 2 200 000\n\nAnm.: Bolåneräntan är den genomsnittliga rörliga räntan på bolån. Räntekostnaden för ett år beräknas här som lånebeloppet gånger räntan.",
+    "options": [
+      "3,6 procent",
+      "ca 67 procent",
+      "200 procent",
+      "300 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Bolåneräntan steg från 1,80 till 5,40 procent, alltså med 3,60 procentenheter. Ökningen i procent är 3,60 / 1,80 = 2, alltså 200 procent. 3,6 procent förväxlar procentenheter med procent. 300 procent får man från kvoten 5,40 / 1,80 = 3 – räntan blev tre gånger så hög, vilket är en ökning med 200 procent. Ca 67 procent får man om man delar ökningen med slutvärdet (3,60 / 5,40) i stället för med utgångsvärdet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-145",
+    "kind": "dtk",
+    "prompt": "Hur förändrades antalet enheter av Valuta B som man fick för en krona mellan 2020 och 2024?",
+    "passage": "Växelkurser och maskinpriser i fyra fiktiva valutaområden, 2020 och 2024\n\nTabell 1. Växelkurs (kronor per enhet av områdets valuta)\nValuta A – 2020: 10,00 | 2024: 11,50\nValuta B – 2020: 8,00 | 2024: 7,20\nValuta C – 2020: 1,25 | 2024: 1,50\nValuta D – 2020: 0,40 | 2024: 0,38\n\nTabell 2. Pris för en viss maskintyp hos en tillverkare i varje valutaområde (enheter av områdets egen valuta)\nTillverkaren i A-området – 2020: 2 000 | 2024: 2 200\nTillverkaren i B-området – 2020: 2 600 | 2024: 3 000\nTillverkaren i C-området – 2020: 16 000 | 2024: 16 000\nTillverkaren i D-området – 2020: 50 000 | 2024: 56 000\n\nAnm.: Priset i kronor är priset i områdets valuta gånger växelkursen. Frakt, tull och andra avgifter bortses från.",
+    "options": [
+      "Det ökade med ca 11 procent",
+      "Det ökade med 10 procent",
+      "Det minskade med 10 procent",
+      "Det minskade med ca 11 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "År 2020 fick man 1 / 8,00 = 0,125 enheter av Valuta B för en krona och år 2024 1 / 7,20 ≈ 0,139 enheter. Kvoten är 8,00 / 7,20 ≈ 1,11, alltså en ökning med ca 11 procent – när Valuta B blir billigare i kronor får man mer av den för varje krona. Att Valuta B:s kurs sjönk med 10 procent (från 8,00 till 7,20) betyder inte att antalet enheter per krona ökade med 10 procent, eftersom den omvända förändringen räknas från en annan bas. De båda minskningarna läser förändringen åt fel håll: det är Valuta B som blev billigare, så kronan räcker till fler enheter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-146",
+    "kind": "dtk",
+    "prompt": "Hos vilken tillverkare var maskinen billigast räknat i kronor år 2024?",
+    "passage": "Växelkurser och maskinpriser i fyra fiktiva valutaområden, 2020 och 2024\n\nTabell 1. Växelkurs (kronor per enhet av områdets valuta)\nValuta A – 2020: 10,00 | 2024: 11,50\nValuta B – 2020: 8,00 | 2024: 7,20\nValuta C – 2020: 1,25 | 2024: 1,50\nValuta D – 2020: 0,40 | 2024: 0,38\n\nTabell 2. Pris för en viss maskintyp hos en tillverkare i varje valutaområde (enheter av områdets egen valuta)\nTillverkaren i A-området – 2020: 2 000 | 2024: 2 200\nTillverkaren i B-området – 2020: 2 600 | 2024: 3 000\nTillverkaren i C-området – 2020: 16 000 | 2024: 16 000\nTillverkaren i D-området – 2020: 50 000 | 2024: 56 000\n\nAnm.: Priset i kronor är priset i områdets valuta gånger växelkursen. Frakt, tull och andra avgifter bortses från.",
+    "options": [
+      "Tillverkaren i A-området",
+      "Tillverkaren i B-området",
+      "Tillverkaren i C-området",
+      "Tillverkaren i D-området"
+    ],
+    "correctIndex": 3,
+    "explain": "Priset i kronor år 2024 var: A-området 2 200 · 11,50 = 25 300, B-området 3 000 · 7,20 = 21 600, C-området 16 000 · 1,50 = 24 000 och D-området 56 000 · 0,38 = 21 280 kronor. Maskinen från D-området var alltså billigast, trots att den har det högsta priset i egen valuta. Valuta B blev billigare, men tillverkaren i B-området höjde samtidigt sitt pris med drygt 15 procent. Tillverkaren i C-området höll priset oförändrat, men Valuta C blev 20 procent dyrare. Maskinen från A-området var dyrast.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-147",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent ökade priset i kronor på maskinen från tillverkaren i B-området mellan 2020 och 2024?",
+    "passage": "Växelkurser och maskinpriser i fyra fiktiva valutaområden, 2020 och 2024\n\nTabell 1. Växelkurs (kronor per enhet av områdets valuta)\nValuta A – 2020: 10,00 | 2024: 11,50\nValuta B – 2020: 8,00 | 2024: 7,20\nValuta C – 2020: 1,25 | 2024: 1,50\nValuta D – 2020: 0,40 | 2024: 0,38\n\nTabell 2. Pris för en viss maskintyp hos en tillverkare i varje valutaområde (enheter av områdets egen valuta)\nTillverkaren i A-området – 2020: 2 000 | 2024: 2 200\nTillverkaren i B-området – 2020: 2 600 | 2024: 3 000\nTillverkaren i C-området – 2020: 16 000 | 2024: 16 000\nTillverkaren i D-området – 2020: 50 000 | 2024: 56 000\n\nAnm.: Priset i kronor är priset i områdets valuta gånger växelkursen. Frakt, tull och andra avgifter bortses från.",
+    "options": [
+      "ca 3,8 procent",
+      "ca 5,4 procent",
+      "ca 15,4 procent",
+      "ca 25,4 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "I kronor kostade maskinen 2 600 · 8,00 = 20 800 kronor år 2020 och 3 000 · 7,20 = 21 600 kronor år 2024. Ökningen är 800 / 20 800 ≈ 0,038, alltså ca 3,8 procent. Ca 15,4 procent är prisökningen i Valuta B (400 / 2 600) – den bortser från att Valuta B blev 10 procent billigare. Ca 5,4 procent får man om man drar av valutans minskning från prisökningen (15,4 − 10), men förändringarna ska multipliceras: 1,154 · 0,90 ≈ 1,038. Ca 25,4 procent får man om man lägger ihop förändringarna och behandlar valutans nedgång som en uppgång (15,4 + 10).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-148",
+    "kind": "dtk",
+    "prompt": "I vilken hamn hanterades mest gods per fartygsanlöp år 2024?",
+    "passage": "Godshantering i fyra fiktiva hamnar, 2024\n\nDiagram. Hanterat gods efter godsslag (miljoner ton)\nHamn W – Containergods: 2,0 | Torrbulk: 0,5 | Flytande bulk: 3,0 | Övrigt: 0,5\nHamn X – Containergods: 6,0 | Torrbulk: 2,5 | Flytande bulk: 9,5 | Övrigt: 2,0\nHamn Y – Containergods: 1,5 | Torrbulk: 4,0 | Flytande bulk: 0,5 | Övrigt: 1,0\nHamn Z – Containergods: 3,0 | Torrbulk: 1,0 | Flytande bulk: 4,5 | Övrigt: 1,5\n\nTabell. Antal fartygsanlöp\nHamn W: 1 600\nHamn X: 5 000\nHamn Y: 2 000\nHamn Z: 2 000\n\nAnm.: Ett fartygsanlöp är ett besök av ett fartyg i hamnen.",
+    "options": [
+      "Hamn W",
+      "Hamn X",
+      "Hamn Y",
+      "Hamn Z"
+    ],
+    "correctIndex": 3,
+    "explain": "Hamnarnas sammanlagda godsmängd var Hamn W 2,0 + 0,5 + 3,0 + 0,5 = 6,0, Hamn X 6,0 + 2,5 + 9,5 + 2,0 = 20,0, Hamn Y 1,5 + 4,0 + 0,5 + 1,0 = 7,0 och Hamn Z 3,0 + 1,0 + 4,5 + 1,5 = 10,0 miljoner ton. Per anlöp blir det W 6 000 000 / 1 600 = 3 750, X 20 000 000 / 5 000 = 4 000, Y 7 000 000 / 2 000 = 3 500 och Z 10 000 000 / 2 000 = 5 000 ton. Hamn Z hanterade alltså mest gods per anlöp. Hamn X hanterade mest gods totalt men hade också flest anlöp. Hamn Y hade lika många anlöp som Hamn Z men mindre gods, och Hamn W hade minst gods men också få anlöp.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-149",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av all flytande bulk i de fyra hamnarna hanterades i Hamn X år 2024?",
+    "passage": "Godshantering i fyra fiktiva hamnar, 2024\n\nDiagram. Hanterat gods efter godsslag (miljoner ton)\nHamn W – Containergods: 2,0 | Torrbulk: 0,5 | Flytande bulk: 3,0 | Övrigt: 0,5\nHamn X – Containergods: 6,0 | Torrbulk: 2,5 | Flytande bulk: 9,5 | Övrigt: 2,0\nHamn Y – Containergods: 1,5 | Torrbulk: 4,0 | Flytande bulk: 0,5 | Övrigt: 1,0\nHamn Z – Containergods: 3,0 | Torrbulk: 1,0 | Flytande bulk: 4,5 | Övrigt: 1,5\n\nTabell. Antal fartygsanlöp\nHamn W: 1 600\nHamn X: 5 000\nHamn Y: 2 000\nHamn Z: 2 000\n\nAnm.: Ett fartygsanlöp är ett besök av ett fartyg i hamnen.",
+    "options": [
+      "ca 22 procent",
+      "ca 48 procent",
+      "ca 54 procent",
+      "ca 66 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Den flytande bulken var sammanlagt 3,0 + 9,5 + 0,5 + 4,5 = 17,5 miljoner ton, varav 9,5 i Hamn X. Andelen är 9,5 / 17,5 ≈ 0,54, alltså ca 54 procent. Ca 48 procent är den flytande bulkens andel av Hamn X:s eget gods (9,5 / 20). Ca 22 procent får man om man delar med allt gods i de fyra hamnarna (9,5 / 43). Ca 66 procent får man om man glömmer Hamn W och delar med 14,5.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-150",
+    "kind": "dtk",
+    "prompt": "Hur många kWh mer el använde Hus 1 än Hus 2 till uppvärmning under 2024?",
+    "passage": "Elanvändning i två fiktiva småhus, 2024\n\nDiagram 1. Hus 1 med direktverkande el: elanvändningen fördelad på ändamål (procent)\nUppvärmning: 55\nVarmvatten: 15\nHushållsel: 25\nÖvrigt: 5\n\nDiagram 2. Hus 2 med värmepump: elanvändningen fördelad på ändamål (procent)\nUppvärmning: 30\nVarmvatten: 15\nHushållsel: 43\nÖvrigt: 12\n\nAnm.: Hus 1 använde totalt 20 000 kWh el och Hus 2 totalt 10 000 kWh el under 2024.",
+    "options": [
+      "2 500 kWh",
+      "5 000 kWh",
+      "8 000 kWh",
+      "10 000 kWh"
+    ],
+    "correctIndex": 2,
+    "explain": "Hus 1 använde 0,55 · 20 000 = 11 000 kWh och Hus 2 0,30 · 10 000 = 3 000 kWh till uppvärmning. Skillnaden är 8 000 kWh. 5 000 kWh får man om man räknar skillnaden i procentenheter (55 − 30 = 25) på Hus 1:s elanvändning, och 2 500 kWh om man räknar den på Hus 2:s – men andelarna gäller olika stora totaler och måste räknas om till kWh var för sig. 10 000 kWh är skillnaden i total elanvändning mellan husen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-151",
+    "kind": "dtk",
+    "prompt": "För vilket ändamål använde Hus 2 mer el än Hus 1 under 2024, räknat i kWh?",
+    "passage": "Elanvändning i två fiktiva småhus, 2024\n\nDiagram 1. Hus 1 med direktverkande el: elanvändningen fördelad på ändamål (procent)\nUppvärmning: 55\nVarmvatten: 15\nHushållsel: 25\nÖvrigt: 5\n\nDiagram 2. Hus 2 med värmepump: elanvändningen fördelad på ändamål (procent)\nUppvärmning: 30\nVarmvatten: 15\nHushållsel: 43\nÖvrigt: 12\n\nAnm.: Hus 1 använde totalt 20 000 kWh el och Hus 2 totalt 10 000 kWh el under 2024.",
+    "options": [
+      "Uppvärmning",
+      "Varmvatten",
+      "Hushållsel",
+      "Övrigt"
+    ],
+    "correctIndex": 3,
+    "explain": "Hus 1 använde 11 000 kWh till uppvärmning, 3 000 till varmvatten, 5 000 till hushållsel och 1 000 till övrigt. Hus 2 använde 3 000, 1 500, 4 300 respektive 1 200 kWh. Bara för övrigt använde Hus 2 mer el (1 200 mot 1 000 kWh). Hushållselen är en mycket större andel i Hus 2 (43 mot 25 procent), men Hus 2 använde bara hälften så mycket el totalt, så det blir ändå färre kWh. För varmvatten är andelen densamma, 15 procent, vilket ger hälften så många kWh i Hus 2, och uppvärmningen är både en mindre andel och färre kWh.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-152",
+    "kind": "dtk",
+    "prompt": "Hur stor del av den mängd el som Hus 1 använde till uppvärmning och varmvatten sammanlagt använde Hus 2 till samma ändamål?",
+    "passage": "Elanvändning i två fiktiva småhus, 2024\n\nDiagram 1. Hus 1 med direktverkande el: elanvändningen fördelad på ändamål (procent)\nUppvärmning: 55\nVarmvatten: 15\nHushållsel: 25\nÖvrigt: 5\n\nDiagram 2. Hus 2 med värmepump: elanvändningen fördelad på ändamål (procent)\nUppvärmning: 30\nVarmvatten: 15\nHushållsel: 43\nÖvrigt: 12\n\nAnm.: Hus 1 använde totalt 20 000 kWh el och Hus 2 totalt 10 000 kWh el under 2024.",
+    "options": [
+      "ca 23 procent",
+      "ca 32 procent",
+      "ca 45 procent",
+      "ca 64 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Hus 1 använde (0,55 + 0,15) · 20 000 = 14 000 kWh till uppvärmning och varmvatten, och Hus 2 (0,30 + 0,15) · 10 000 = 4 500 kWh. Andelen är 4 500 / 14 000 ≈ 0,32, alltså ca 32 procent. Ca 64 procent får man om man jämför andelarna direkt (45 / 70) och glömmer att husen använde olika mycket el. Ca 45 procent är uppvärmningens och varmvattnets andel av Hus 2:s egen elanvändning. Ca 23 procent får man om man delar med hela Hus 1:s elanvändning (4 500 / 20 000 = 0,225) i stället för med den el som gick till uppvärmning och varmvatten.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-153",
+    "kind": "dtk",
+    "prompt": "Vilket av följande länder hade högst BNP per invånare år 2024?",
+    "passage": "BNP och befolkning i fem fiktiva länder, 2024\n\nDiagram. BNP (miljarder kronor)\nLand A: 1 800\nLand B: 600\nLand C: 2 400\nLand D: 450\nLand E: 900\n\nTabell. Befolkning (miljoner) och BNP-tillväxt (procent)\nLand A – Befolkning: 4,5 | BNP-tillväxt: 1,5\nLand B – Befolkning: 2,0 | BNP-tillväxt: 3,0\nLand C – Befolkning: 10,0 | BNP-tillväxt: 0,5\nLand D – Befolkning: 0,9 | BNP-tillväxt: 2,0\nLand E – Befolkning: 3,6 | BNP-tillväxt: 2,5\n\nAnm.: BNP-tillväxten anger med hur många procent landets BNP år 2024 var större än landets BNP år 2023. Alla belopp är räknade i fasta priser.",
+    "options": [
+      "Land A",
+      "Land B",
+      "Land C",
+      "Land D"
+    ],
+    "correctIndex": 3,
+    "explain": "BNP per invånare är BNP delat med befolkningen: Land A 1 800 miljarder / 4,5 miljoner = 400 000, Land B 600 miljarder / 2,0 miljoner = 300 000, Land C 2 400 miljarder / 10,0 miljoner = 240 000 och Land D 450 miljarder / 0,9 miljoner = 500 000 kronor. Land D hade alltså högst BNP per invånare, trots att landet hade lägst BNP. Land C hade högst BNP men också klart flest invånare och därför lägst BNP per invånare av de fyra. Land A hade den näst högsta och Land B den näst lägsta.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-154",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av de fem ländernas sammanlagda BNP år 2024 svarade Land C för?",
+    "passage": "BNP och befolkning i fem fiktiva länder, 2024\n\nDiagram. BNP (miljarder kronor)\nLand A: 1 800\nLand B: 600\nLand C: 2 400\nLand D: 450\nLand E: 900\n\nTabell. Befolkning (miljoner) och BNP-tillväxt (procent)\nLand A – Befolkning: 4,5 | BNP-tillväxt: 1,5\nLand B – Befolkning: 2,0 | BNP-tillväxt: 3,0\nLand C – Befolkning: 10,0 | BNP-tillväxt: 0,5\nLand D – Befolkning: 0,9 | BNP-tillväxt: 2,0\nLand E – Befolkning: 3,6 | BNP-tillväxt: 2,5\n\nAnm.: BNP-tillväxten anger med hur många procent landets BNP år 2024 var större än landets BNP år 2023. Alla belopp är räknade i fasta priser.",
+    "options": [
+      "20 procent",
+      "ca 39 procent",
+      "ca 48 procent",
+      "64 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Den sammanlagda BNP:n var 1 800 + 600 + 2 400 + 450 + 900 = 6 150 miljarder kronor, och 2 400 / 6 150 ≈ 0,39, alltså ca 39 procent. Ca 48 procent är Land C:s andel av de fem ländernas befolkning (10,0 / 21,0). 64 procent får man om man jämför Land C med de fyra andra länderna sammanlagt (2 400 / 3 750) i stället för med alla fem. 20 procent är vad varje land skulle ha haft om alla fem hade lika stor BNP.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-155",
+    "kind": "dtk",
+    "prompt": "Vilket av följande länder hade den största ökningen av BNP mellan 2023 och 2024, räknat i kronor?",
+    "passage": "BNP och befolkning i fem fiktiva länder, 2024\n\nDiagram. BNP (miljarder kronor)\nLand A: 1 800\nLand B: 600\nLand C: 2 400\nLand D: 450\nLand E: 900\n\nTabell. Befolkning (miljoner) och BNP-tillväxt (procent)\nLand A – Befolkning: 4,5 | BNP-tillväxt: 1,5\nLand B – Befolkning: 2,0 | BNP-tillväxt: 3,0\nLand C – Befolkning: 10,0 | BNP-tillväxt: 0,5\nLand D – Befolkning: 0,9 | BNP-tillväxt: 2,0\nLand E – Befolkning: 3,6 | BNP-tillväxt: 2,5\n\nAnm.: BNP-tillväxten anger med hur många procent landets BNP år 2024 var större än landets BNP år 2023. Alla belopp är räknade i fasta priser.",
+    "options": [
+      "Land A",
+      "Land B",
+      "Land C",
+      "Land E"
+    ],
+    "correctIndex": 0,
+    "explain": "BNP år 2023 är BNP år 2024 delat med 1 plus tillväxten, och ökningen är skillnaden: Land A 1 800 − 1 800 / 1,015 ≈ 26,6, Land B 600 − 600 / 1,03 ≈ 17,5, Land C 2 400 − 2 400 / 1,005 ≈ 11,9 och Land E 900 − 900 / 1,025 ≈ 22,0 miljarder kronor. Land A ökade alltså mest i kronor. Land B hade den högsta tillväxten i procent men en liten BNP, och Land C har störst BNP men växte bara med 0,5 procent. Land E växte snabbare än Land A i procent, men har bara halva Land A:s BNP.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-156",
+    "kind": "dtk",
+    "prompt": "Under vilket kvartal var antalet försenade avgångar störst, för de två linjerna sammanlagt?",
+    "passage": "Punktlighet på två fiktiva tåglinjer, 2024\n\nDiagram. Andel avgångar i tid per kvartal (procent)\nKvartal 1 – Linje 1: 94 | Linje 2: 80\nKvartal 2 – Linje 1: 90 | Linje 2: 88\nKvartal 3 – Linje 1: 85 | Linje 2: 92\nKvartal 4 – Linje 1: 72 | Linje 2: 95\n\nTabell. Antal avgångar per kvartal\nKvartal 1 – Linje 1: 4 000 | Linje 2: 1 500\nKvartal 2 – Linje 1: 4 000 | Linje 2: 2 000\nKvartal 3 – Linje 1: 5 000 | Linje 2: 2 000\nKvartal 4 – Linje 1: 3 000 | Linje 2: 1 000\n\nAnm.: En avgång räknas som i tid om tåget avgår högst fem minuter efter tidtabellen. Övriga avgångar räknas som försenade.",
+    "options": [
+      "Kvartal 1",
+      "Kvartal 2",
+      "Kvartal 3",
+      "Kvartal 4"
+    ],
+    "correctIndex": 2,
+    "explain": "Antalet försenade avgångar är antalet avgångar gånger andelen som inte var i tid. Kvartal 1: 0,06 · 4 000 + 0,20 · 1 500 = 240 + 300 = 540. Kvartal 2: 0,10 · 4 000 + 0,12 · 2 000 = 400 + 240 = 640. Kvartal 3: 0,15 · 5 000 + 0,08 · 2 000 = 750 + 160 = 910. Kvartal 4: 0,28 · 3 000 + 0,05 · 1 000 = 840 + 50 = 890. Flest förseningar var det alltså under kvartal 3. Kvartal 4 hade den lägsta andelen i tid för Linje 1, men färre avgångar än kvartal 3. Kvartal 1 hade den lägsta andelen i tid för Linje 2, men Linje 2 har få avgångar, och kvartal 2 hade jämnt hög punktlighet på båda linjerna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-157",
+    "kind": "dtk",
+    "prompt": "Hur många av Linje 1:s avgångar under 2024 var försenade?",
+    "passage": "Punktlighet på två fiktiva tåglinjer, 2024\n\nDiagram. Andel avgångar i tid per kvartal (procent)\nKvartal 1 – Linje 1: 94 | Linje 2: 80\nKvartal 2 – Linje 1: 90 | Linje 2: 88\nKvartal 3 – Linje 1: 85 | Linje 2: 92\nKvartal 4 – Linje 1: 72 | Linje 2: 95\n\nTabell. Antal avgångar per kvartal\nKvartal 1 – Linje 1: 4 000 | Linje 2: 1 500\nKvartal 2 – Linje 1: 4 000 | Linje 2: 2 000\nKvartal 3 – Linje 1: 5 000 | Linje 2: 2 000\nKvartal 4 – Linje 1: 3 000 | Linje 2: 1 000\n\nAnm.: En avgång räknas som i tid om tåget avgår högst fem minuter efter tidtabellen. Övriga avgångar räknas som försenade.",
+    "options": [
+      "2 230",
+      "2 360",
+      "2 980",
+      "4 480"
+    ],
+    "correctIndex": 0,
+    "explain": "Linje 1 hade 6, 10, 15 och 28 procent försenade avgångar av 4 000, 4 000, 5 000 respektive 3 000 avgångar, alltså 240 + 400 + 750 + 840 = 2 230 försenade avgångar. 2 360 får man om man räknar med medelvärdet av kvartalens andelar i tid, 85,25 procent, på alla 16 000 avgångar – men kvartalen har olika många avgångar. 2 980 är de försenade avgångarna för båda linjerna (2 230 + 750). 4 480 får man om man räknar med fjärde kvartalets andel försenade, 28 procent, för hela året.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-158",
+    "kind": "dtk",
+    "prompt": "Under vilket kvartal var andelen avgångar i tid lägst, för de två linjerna sammanlagt?",
+    "passage": "Punktlighet på två fiktiva tåglinjer, 2024\n\nDiagram. Andel avgångar i tid per kvartal (procent)\nKvartal 1 – Linje 1: 94 | Linje 2: 80\nKvartal 2 – Linje 1: 90 | Linje 2: 88\nKvartal 3 – Linje 1: 85 | Linje 2: 92\nKvartal 4 – Linje 1: 72 | Linje 2: 95\n\nTabell. Antal avgångar per kvartal\nKvartal 1 – Linje 1: 4 000 | Linje 2: 1 500\nKvartal 2 – Linje 1: 4 000 | Linje 2: 2 000\nKvartal 3 – Linje 1: 5 000 | Linje 2: 2 000\nKvartal 4 – Linje 1: 3 000 | Linje 2: 1 000\n\nAnm.: En avgång räknas som i tid om tåget avgår högst fem minuter efter tidtabellen. Övriga avgångar räknas som försenade.",
+    "options": [
+      "Kvartal 1",
+      "Kvartal 2",
+      "Kvartal 3",
+      "Kvartal 4"
+    ],
+    "correctIndex": 3,
+    "explain": "För båda linjerna sammanlagt var andelen i tid: kvartal 1 (3 760 + 1 200) / 5 500 ≈ 90 procent, kvartal 2 (3 600 + 1 760) / 6 000 ≈ 89 procent, kvartal 3 (4 250 + 1 840) / 7 000 = 87 procent och kvartal 4 (2 160 + 950) / 4 000 ≈ 78 procent. Andelen var alltså lägst under kvartal 4, trots att Linje 2 då hade sin högsta andel – Linje 1 hade tre gånger så många avgångar och väger tyngst. Kvartal 3 hade flest försenade avgångar i antal, men också flest avgångar. Kvartal 1 hade Linje 2:s lägsta andel, och under kvartal 2 låg båda linjerna nära 90 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-159",
+    "kind": "dtk",
+    "prompt": "Vilket bolags aktiekurs ökade med störst procentandel mellan slutet av 2018 och slutet av 2024?",
+    "passage": "Aktiekurser för fyra fiktiva bolag, 2018–2024\n\nDiagram. Aktiekurs vid årets slut (kronor)\n2018 – Alfa: 120 | Beta: 60 | Gamma: 200 | Delta: 40\n2019 – Alfa: 135 | Beta: 75 | Gamma: 230 | Delta: 44\n2020 – Alfa: 150 | Beta: 88 | Gamma: 240 | Delta: 50\n2021 – Alfa: 110 | Beta: 75 | Gamma: 260 | Delta: 42\n2022 – Alfa: 140 | Beta: 64 | Gamma: 210 | Delta: 36\n2023 – Alfa: 165 | Beta: 76 | Gamma: 230 | Delta: 46\n2024 – Alfa: 180 | Beta: 92 | Gamma: 250 | Delta: 58",
+    "options": [
+      "Alfa",
+      "Beta",
+      "Gamma",
+      "Delta"
+    ],
+    "correctIndex": 1,
+    "explain": "Ökningarna var: Alfa 60 / 120 = 50 procent, Beta 32 / 60 ≈ 53 procent, Gamma 50 / 200 = 25 procent och Delta 18 / 40 = 45 procent. Beta ökade alltså mest i procent. Alfa ökade mest i kronor (60 kronor), men från en dubbelt så hög kurs som Beta. Gamma hade den högsta kursen under hela perioden men den lägsta procentuella ökningen, och Delta ökade kraftigt det sista året men inte lika mycket som Beta över hela perioden.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-160",
+    "kind": "dtk",
+    "prompt": "Mellan slutet av vilka två på varandra följande år ökade Betas aktiekurs med störst procentandel?",
+    "passage": "Aktiekurser för fyra fiktiva bolag, 2018–2024\n\nDiagram. Aktiekurs vid årets slut (kronor)\n2018 – Alfa: 120 | Beta: 60 | Gamma: 200 | Delta: 40\n2019 – Alfa: 135 | Beta: 75 | Gamma: 230 | Delta: 44\n2020 – Alfa: 150 | Beta: 88 | Gamma: 240 | Delta: 50\n2021 – Alfa: 110 | Beta: 75 | Gamma: 260 | Delta: 42\n2022 – Alfa: 140 | Beta: 64 | Gamma: 210 | Delta: 36\n2023 – Alfa: 165 | Beta: 76 | Gamma: 230 | Delta: 46\n2024 – Alfa: 180 | Beta: 92 | Gamma: 250 | Delta: 58",
+    "options": [
+      "2018 och 2019",
+      "2019 och 2020",
+      "2022 och 2023",
+      "2023 och 2024"
+    ],
+    "correctIndex": 0,
+    "explain": "Betas kurs steg mellan 2018 och 2019 med 15 / 60 = 25 procent, mellan 2019 och 2020 med 13 / 75 ≈ 17 procent, mellan 2022 och 2023 med 12 / 64 ≈ 19 procent och mellan 2023 och 2024 med 16 / 76 ≈ 21 procent (mellan 2020 och 2022 sjönk kursen). Den största procentuella ökningen var alltså mellan 2018 och 2019. Mellan 2023 och 2024 steg kursen mest i kronor, men från en högre nivå. Ökningen mellan 2022 och 2023 räknas från den lägsta kursen, men var bara 12 kronor, och ökningen mellan 2019 och 2020 räknas från en högre kurs än den mellan 2018 och 2019.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-161",
+    "kind": "dtk",
+    "prompt": "Vilken sektors andel av landets totala utsläpp ökade med flest procentenheter mellan 2005 och 2024?",
+    "passage": "Utsläpp av växthusgaser i ett fiktivt land efter sektor, 2005, 2015 och 2024\n\nDiagram. Utsläpp per sektor (miljoner ton koldioxidekvivalenter)\nTransporter – 2005: 20 | 2015: 18 | 2024: 14\nIndustri – 2005: 18 | 2015: 16 | 2024: 15\nJordbruk – 2005: 8 | 2015: 8 | 2024: 7\nEl och värme – 2005: 12 | 2015: 8 | 2024: 4\nÖvrigt – 2005: 6 | 2015: 5 | 2024: 4\n\nAnm.: De fem sektorerna omfattar landets samtliga utsläpp. Landets mål är att de totala utsläppen år 2030 ska vara 50 procent lägre än år 2005.",
+    "options": [
+      "Transporter",
+      "Jordbruk",
+      "Övrigt",
+      "Industri"
+    ],
+    "correctIndex": 3,
+    "explain": "De totala utsläppen var 20 + 18 + 8 + 12 + 6 = 64 miljoner ton år 2005 och 14 + 15 + 7 + 4 + 4 = 44 miljoner ton år 2024. Industrins andel ökade från 18 / 64 ≈ 28,1 procent till 15 / 44 ≈ 34,1 procent, alltså med ca 6,0 procentenheter. Jordbrukets andel ökade från 8 / 64 = 12,5 procent till 7 / 44 ≈ 15,9 procent, alltså med ca 3,4 procentenheter. Jordbruket minskade visserligen minst i procent (med 12,5 procent mot industrins ca 17 procent), men eftersom industrin står för en mycket större del av utsläppen blir ökningen i procentenheter större där. Transporterna var den största sektorn år 2005, men deras andel ökade bara från 31,25 till ca 31,8 procent. Andelen för Övrigt minskade från ca 9,4 till ca 9,1 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-162",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent måste de totala utsläppen minska från 2024 års nivå för att landets mål för år 2030 ska nås?",
+    "passage": "Utsläpp av växthusgaser i ett fiktivt land efter sektor, 2005, 2015 och 2024\n\nDiagram. Utsläpp per sektor (miljoner ton koldioxidekvivalenter)\nTransporter – 2005: 20 | 2015: 18 | 2024: 14\nIndustri – 2005: 18 | 2015: 16 | 2024: 15\nJordbruk – 2005: 8 | 2015: 8 | 2024: 7\nEl och värme – 2005: 12 | 2015: 8 | 2024: 4\nÖvrigt – 2005: 6 | 2015: 5 | 2024: 4\n\nAnm.: De fem sektorerna omfattar landets samtliga utsläpp. Landets mål är att de totala utsläppen år 2030 ska vara 50 procent lägre än år 2005.",
+    "options": [
+      "ca 19 procent",
+      "ca 27 procent",
+      "ca 31 procent",
+      "ca 38 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "De totala utsläppen var 64 miljoner ton år 2005, så målet för 2030 är 0,5 · 64 = 32 miljoner ton. År 2024 var utsläppen 44 miljoner ton. Minskningen som återstår är 44 − 32 = 12 miljoner ton, och 12 / 44 ≈ 0,27, alltså ca 27 procent. Ca 19 procent får man om man delar de 12 miljoner tonen med 2005 års utsläpp (12 / 64) i stället för med 2024 års. Ca 31 procent är hur mycket utsläppen redan har minskat mellan 2005 och 2024 (20 / 64 ≈ 0,31). Ca 38 procent får man om man delar med målnivån (12 / 32 = 0,375) i stället för med utgångsläget år 2024.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-163",
+    "kind": "dtk",
+    "prompt": "Hur stor andel av landets totala utsläpp kom från transporter år 2015?",
+    "passage": "Utsläpp av växthusgaser i ett fiktivt land efter sektor, 2005, 2015 och 2024\n\nDiagram. Utsläpp per sektor (miljoner ton koldioxidekvivalenter)\nTransporter – 2005: 20 | 2015: 18 | 2024: 14\nIndustri – 2005: 18 | 2015: 16 | 2024: 15\nJordbruk – 2005: 8 | 2015: 8 | 2024: 7\nEl och värme – 2005: 12 | 2015: 8 | 2024: 4\nÖvrigt – 2005: 6 | 2015: 5 | 2024: 4\n\nAnm.: De fem sektorerna omfattar landets samtliga utsläpp. Landets mål är att de totala utsläppen år 2030 ska vara 50 procent lägre än år 2005.",
+    "options": [
+      "ca 28 procent",
+      "ca 31 procent",
+      "ca 33 procent",
+      "ca 36 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "År 2015 var de totala utsläppen 18 + 16 + 8 + 8 + 5 = 55 miljoner ton, varav transporterna stod för 18 miljoner ton. Andelen är 18 / 55 ≈ 0,33, alltså ca 33 procent. Ca 28 procent får man om man delar 2015 års transportutsläpp med 2005 års totala utsläpp (18 / 64). Ca 31 procent är transporternas andel år 2005 (20 / 64 ≈ 0,31). Ca 36 procent får man om man tar transporternas utsläpp år 2005 i stället för år 2015 (20 / 55 ≈ 0,36).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-164",
+    "kind": "dtk",
+    "prompt": "För vilken av grödorna var totalskörden större år 2024 än år 2014?",
+    "passage": "Spannmålsodling i ett fiktivt land, 2014 och 2024\n\nDiagram. Odlad areal (tusen hektar)\nVete – 2014: 480 | 2024: 450\nKorn – 2014: 350 | 2024: 280\nHavre – 2014: 200 | 2024: 210\nRåg – 2014: 30 | 2024: 45\n\nTabell. Hektarskörd (ton per hektar)\nVete – 2014: 6,5 | 2024: 8,0\nKorn – 2014: 4,8 | 2024: 5,0\nHavre – 2014: 4,5 | 2024: 4,0\nRåg – 2014: 6,0 | 2024: 4,0\n\nAnm.: Hektarskörden är den skördade mängden per hektar odlad areal. En grödas totalskörd är alltså den odlade arealen multiplicerad med hektarskörden. Landet odlade inga andra spannmålsgrödor än de fyra som redovisas.",
+    "options": [
+      "Vete",
+      "Korn",
+      "Havre",
+      "Råg"
+    ],
+    "correctIndex": 0,
+    "explain": "Totalskörden är arealen gånger hektarskörden. Vete: 480 · 6,5 = 3 120 tusen ton år 2014 och 450 · 8,0 = 3 600 tusen ton år 2024, alltså en ökning trots att arealen minskade. Korn: 350 · 4,8 = 1 680 och 280 · 5,0 = 1 400 tusen ton – hektarskörden ökade något, men arealen minskade med 20 procent. Havre: 200 · 4,5 = 900 och 210 · 4,0 = 840 tusen ton – arealen ökade, men hektarskörden minskade mer. Råg: 30 · 6,0 = 180 och 45 · 4,0 = 180 tusen ton – arealen ökade med hälften men hektarskörden minskade med en tredjedel, så totalskörden blev exakt lika stor och alltså inte större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-165",
+    "kind": "dtk",
+    "prompt": "Hur stor var den genomsnittliga hektarskörden för de fyra grödorna sammantaget år 2024?",
+    "passage": "Spannmålsodling i ett fiktivt land, 2014 och 2024\n\nDiagram. Odlad areal (tusen hektar)\nVete – 2014: 480 | 2024: 450\nKorn – 2014: 350 | 2024: 280\nHavre – 2014: 200 | 2024: 210\nRåg – 2014: 30 | 2024: 45\n\nTabell. Hektarskörd (ton per hektar)\nVete – 2014: 6,5 | 2024: 8,0\nKorn – 2014: 4,8 | 2024: 5,0\nHavre – 2014: 4,5 | 2024: 4,0\nRåg – 2014: 6,0 | 2024: 4,0\n\nAnm.: Hektarskörden är den skördade mängden per hektar odlad areal. En grödas totalskörd är alltså den odlade arealen multiplicerad med hektarskörden. Landet odlade inga andra spannmålsgrödor än de fyra som redovisas.",
+    "options": [
+      "ca 5,3 ton per hektar",
+      "ca 5,5 ton per hektar",
+      "ca 5,7 ton per hektar",
+      "ca 6,1 ton per hektar"
+    ],
+    "correctIndex": 3,
+    "explain": "Den genomsnittliga hektarskörden är den sammanlagda totalskörden delad med den sammanlagda arealen. År 2024 var totalskörden 3 600 + 1 400 + 840 + 180 = 6 020 tusen ton och arealen 450 + 280 + 210 + 45 = 985 tusen hektar, vilket ger 6 020 / 985 ≈ 6,1 ton per hektar. Ca 5,3 ton per hektar är det ovägda medelvärdet av de fyra hektarskördarna, (8,0 + 5,0 + 4,0 + 4,0) / 4 = 5,25, som inte tar hänsyn till att vete odlades på mycket större areal än råg. Ca 5,5 ton per hektar är genomsnittet för år 2014 (5 880 / 1 060). Ca 5,7 ton per hektar får man om man delar 2024 års totalskörd med 2014 års areal (6 020 / 1 060).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-166",
+    "kind": "dtk",
+    "prompt": "Hur förändrades totalskörden av råg mellan 2014 och 2024?",
+    "passage": "Spannmålsodling i ett fiktivt land, 2014 och 2024\n\nDiagram. Odlad areal (tusen hektar)\nVete – 2014: 480 | 2024: 450\nKorn – 2014: 350 | 2024: 280\nHavre – 2014: 200 | 2024: 210\nRåg – 2014: 30 | 2024: 45\n\nTabell. Hektarskörd (ton per hektar)\nVete – 2014: 6,5 | 2024: 8,0\nKorn – 2014: 4,8 | 2024: 5,0\nHavre – 2014: 4,5 | 2024: 4,0\nRåg – 2014: 6,0 | 2024: 4,0\n\nAnm.: Hektarskörden är den skördade mängden per hektar odlad areal. En grödas totalskörd är alltså den odlade arealen multiplicerad med hektarskörden. Landet odlade inga andra spannmålsgrödor än de fyra som redovisas.",
+    "options": [
+      "Den var oförändrad",
+      "Den ökade med ca 17 procent",
+      "Den ökade med 50 procent",
+      "Den minskade med ca 33 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "Totalskörden av råg var 30 · 6,0 = 180 tusen ton år 2014 och 45 · 4,0 = 180 tusen ton år 2024, alltså oförändrad. Arealen ökade med 50 procent (faktorn 1,5) och hektarskörden minskade med en tredjedel (faktorn 2/3), och 1,5 · 2/3 = 1. En ökning med ca 17 procent får man om man felaktigt adderar förändringarna i procent (50 − 33). En ökning med 50 procent gäller bara arealen, och en minskning med ca 33 procent gäller bara hektarskörden.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-167",
+    "kind": "dtk",
+    "prompt": "Under hur många av årets månader var antalet gästnätter för utländska gäster minst hälften så stort som antalet gästnätter för gäster bosatta i landet?",
+    "passage": "Gästnätter på hotell i en fiktiv region per månad, 2024\n\nDiagram. Antal gästnätter (tusental)\nJanuari – Gäster bosatta i landet: 60 | Utländska gäster: 20\nFebruari – Gäster bosatta i landet: 70 | Utländska gäster: 35\nMars – Gäster bosatta i landet: 75 | Utländska gäster: 25\nApril – Gäster bosatta i landet: 80 | Utländska gäster: 20\nMaj – Gäster bosatta i landet: 95 | Utländska gäster: 30\nJuni – Gäster bosatta i landet: 140 | Utländska gäster: 70\nJuli – Gäster bosatta i landet: 190 | Utländska gäster: 110\nAugusti – Gäster bosatta i landet: 150 | Utländska gäster: 80\nSeptember – Gäster bosatta i landet: 90 | Utländska gäster: 35\nOktober – Gäster bosatta i landet: 85 | Utländska gäster: 20\nNovember – Gäster bosatta i landet: 75 | Utländska gäster: 15\nDecember – Gäster bosatta i landet: 65 | Utländska gäster: 30\n\nAnm.: Alla gäster är antingen bosatta i landet eller utländska. En gäst som övernattar tre nätter räknas som tre gästnätter.",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 2,
+    "explain": "Villkoret är uppfyllt när de utländska gästnätterna är minst hälften av de inhemska. Februari: 35 av 70, exakt hälften. Juni: 70 av 140, exakt hälften. Juli: 110 av 190 (hälften är 95). Augusti: 80 av 150 (hälften är 75). Alla andra månader ligger under hälften, till exempel december med 30 av 65 (hälften är 32,5) och september med 35 av 90. Det blir alltså 4 månader. Svaret 2 får man om man kräver mer än hälften och därmed utesluter februari och juni, där andelen är exakt hälften. Svaret 3 får man om man bara ser till sommarmånaderna juni–augusti och missar februari. Svaret 5 får man om man också räknar med december, där de utländska gästnätterna ligger nära men under hälften.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-168",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av årets samtliga gästnätter i regionen gjordes under juni, juli och augusti?",
+    "passage": "Gästnätter på hotell i en fiktiv region per månad, 2024\n\nDiagram. Antal gästnätter (tusental)\nJanuari – Gäster bosatta i landet: 60 | Utländska gäster: 20\nFebruari – Gäster bosatta i landet: 70 | Utländska gäster: 35\nMars – Gäster bosatta i landet: 75 | Utländska gäster: 25\nApril – Gäster bosatta i landet: 80 | Utländska gäster: 20\nMaj – Gäster bosatta i landet: 95 | Utländska gäster: 30\nJuni – Gäster bosatta i landet: 140 | Utländska gäster: 70\nJuli – Gäster bosatta i landet: 190 | Utländska gäster: 110\nAugusti – Gäster bosatta i landet: 150 | Utländska gäster: 80\nSeptember – Gäster bosatta i landet: 90 | Utländska gäster: 35\nOktober – Gäster bosatta i landet: 85 | Utländska gäster: 20\nNovember – Gäster bosatta i landet: 75 | Utländska gäster: 15\nDecember – Gäster bosatta i landet: 65 | Utländska gäster: 30\n\nAnm.: Alla gäster är antingen bosatta i landet eller utländska. En gäst som övernattar tre nätter räknas som tre gästnätter.",
+    "options": [
+      "ca 41 procent",
+      "ca 44 procent",
+      "ca 47 procent",
+      "ca 53 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Under juni–augusti var gästnätterna 140 + 190 + 150 = 480 tusen för gäster bosatta i landet och 70 + 110 + 80 = 260 tusen för utländska gäster, totalt 740 tusen. Hela året var det 1 175 tusen inhemska och 490 tusen utländska gästnätter, totalt 1 665 tusen. Andelen är 740 / 1 665 ≈ 0,44, alltså ca 44 procent. Ca 41 procent gäller bara gäster bosatta i landet (480 / 1 175) och ca 53 procent bara utländska gäster (260 / 490). Ca 47 procent är medelvärdet av de två andelarna, men ett sådant ovägt medelvärde ger de utländska gästerna för stor vikt eftersom de har betydligt färre gästnätter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-169",
+    "kind": "dtk",
+    "prompt": "Under vilken månad ökade det totala antalet gästnätter mest i procent jämfört med månaden före?",
+    "passage": "Gästnätter på hotell i en fiktiv region per månad, 2024\n\nDiagram. Antal gästnätter (tusental)\nJanuari – Gäster bosatta i landet: 60 | Utländska gäster: 20\nFebruari – Gäster bosatta i landet: 70 | Utländska gäster: 35\nMars – Gäster bosatta i landet: 75 | Utländska gäster: 25\nApril – Gäster bosatta i landet: 80 | Utländska gäster: 20\nMaj – Gäster bosatta i landet: 95 | Utländska gäster: 30\nJuni – Gäster bosatta i landet: 140 | Utländska gäster: 70\nJuli – Gäster bosatta i landet: 190 | Utländska gäster: 110\nAugusti – Gäster bosatta i landet: 150 | Utländska gäster: 80\nSeptember – Gäster bosatta i landet: 90 | Utländska gäster: 35\nOktober – Gäster bosatta i landet: 85 | Utländska gäster: 20\nNovember – Gäster bosatta i landet: 75 | Utländska gäster: 15\nDecember – Gäster bosatta i landet: 65 | Utländska gäster: 30\n\nAnm.: Alla gäster är antingen bosatta i landet eller utländska. En gäst som övernattar tre nätter räknas som tre gästnätter.",
+    "options": [
+      "Februari",
+      "Maj",
+      "Juni",
+      "Juli"
+    ],
+    "correctIndex": 2,
+    "explain": "Det totala antalet gästnätter (tusental) var 80 i januari, 105 i februari, 100 i april, 125 i maj, 210 i juni och 300 i juli. Ökningarna jämfört med månaden före blir: februari 25 / 80 ≈ 31 procent, maj 25 / 100 = 25 procent, juni 85 / 125 = 68 procent och juli 90 / 210 ≈ 43 procent. Juni hade alltså störst procentuell ökning. Juli hade den största ökningen i antal (90 tusen mot 85 tusen i juni), men utgick från en högre nivå. Februari och maj hade lika stora ökningar i antal, men båda var betydligt mindre i procent än juni.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-170",
+    "kind": "dtk",
+    "prompt": "Hur förändrades antalet utlån av barn- och ungdomsböcker mellan 2014 och 2024?",
+    "passage": "Utlån på folkbiblioteken i en fiktiv kommun efter medietyp, 2014 och 2024\n\nDiagram 1. Utlånen år 2014 fördelade på medietyp (procent)\nSkönlitteratur för vuxna: 38\nBarn- och ungdomsböcker: 30\nFacklitteratur: 18\nE-böcker och e-ljudböcker: 4\nÖvriga medier: 10\n\nDiagram 2. Utlånen år 2024 fördelade på medietyp (procent)\nSkönlitteratur för vuxna: 32\nBarn- och ungdomsböcker: 36\nFacklitteratur: 12\nE-böcker och e-ljudböcker: 15\nÖvriga medier: 5\n\nAnm.: Det totala antalet utlån var 500 000 år 2014 och 400 000 år 2024. Övriga medier omfattar bland annat film, musik och tidskrifter.",
+    "options": [
+      "Det minskade med 4 procent",
+      "Det minskade med 20 procent",
+      "Det ökade med 6 procent",
+      "Det ökade med 20 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "År 2014 var antalet utlån av barn- och ungdomsböcker 0,30 · 500 000 = 150 000 och år 2024 0,36 · 400 000 = 144 000. Antalet minskade alltså med 6 000, och 6 000 / 150 000 = 0,04, det vill säga 4 procent. Att andelen ökade beror på att de totala utlånen minskade mer. En minskning med 20 procent gäller det totala antalet utlån (från 500 000 till 400 000). En ökning med 6 procent förväxlar procent med procentenheter: andelen ökade från 30 till 36 procent. En ökning med 20 procent är hur mycket andelen ökade relativt sett (36 / 30 = 1,2), men den säger inget om antalet när totalen har minskat.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-171",
+    "kind": "dtk",
+    "prompt": "Hur många fler utlån av e-böcker och e-ljudböcker gjordes år 2024 än år 2014?",
+    "passage": "Utlån på folkbiblioteken i en fiktiv kommun efter medietyp, 2014 och 2024\n\nDiagram 1. Utlånen år 2014 fördelade på medietyp (procent)\nSkönlitteratur för vuxna: 38\nBarn- och ungdomsböcker: 30\nFacklitteratur: 18\nE-böcker och e-ljudböcker: 4\nÖvriga medier: 10\n\nDiagram 2. Utlånen år 2024 fördelade på medietyp (procent)\nSkönlitteratur för vuxna: 32\nBarn- och ungdomsböcker: 36\nFacklitteratur: 12\nE-böcker och e-ljudböcker: 15\nÖvriga medier: 5\n\nAnm.: Det totala antalet utlån var 500 000 år 2014 och 400 000 år 2024. Övriga medier omfattar bland annat film, musik och tidskrifter.",
+    "options": [
+      "40 000",
+      "44 000",
+      "55 000",
+      "60 000"
+    ],
+    "correctIndex": 0,
+    "explain": "År 2014 var antalet utlån av e-böcker och e-ljudböcker 0,04 · 500 000 = 20 000 och år 2024 0,15 · 400 000 = 60 000. Det var alltså 60 000 − 20 000 = 40 000 fler utlån år 2024. Svaret 44 000 får man om man multiplicerar ökningen i andel, 11 procentenheter, med 2024 års totala antal (0,11 · 400 000), och 55 000 om man multiplicerar den med 2014 års totala antal (0,11 · 500 000). Båda bortser från att totalen ändrades mellan åren. Svaret 60 000 är antalet utlån år 2024, inte ökningen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-172",
+    "kind": "dtk",
+    "prompt": "Vilken medietyp hade störst procentuell minskning av antalet utlån mellan 2014 och 2024?",
+    "passage": "Utlån på folkbiblioteken i en fiktiv kommun efter medietyp, 2014 och 2024\n\nDiagram 1. Utlånen år 2014 fördelade på medietyp (procent)\nSkönlitteratur för vuxna: 38\nBarn- och ungdomsböcker: 30\nFacklitteratur: 18\nE-böcker och e-ljudböcker: 4\nÖvriga medier: 10\n\nDiagram 2. Utlånen år 2024 fördelade på medietyp (procent)\nSkönlitteratur för vuxna: 32\nBarn- och ungdomsböcker: 36\nFacklitteratur: 12\nE-böcker och e-ljudböcker: 15\nÖvriga medier: 5\n\nAnm.: Det totala antalet utlån var 500 000 år 2014 och 400 000 år 2024. Övriga medier omfattar bland annat film, musik och tidskrifter.",
+    "options": [
+      "Skönlitteratur för vuxna",
+      "Barn- och ungdomsböcker",
+      "Facklitteratur",
+      "Övriga medier"
+    ],
+    "correctIndex": 3,
+    "explain": "Antalet utlån år 2014 respektive 2024 blir: skönlitteratur för vuxna 190 000 och 128 000 (en minskning med ca 33 procent), barn- och ungdomsböcker 150 000 och 144 000 (4 procent), facklitteratur 90 000 och 48 000 (ca 47 procent) samt övriga medier 50 000 och 20 000 (60 procent). Övriga medier minskade alltså mest i procent. Skönlitteratur för vuxna minskade mest i antal (62 000 utlån) och lika mycket i procentenheter som facklitteraturen (6 procentenheter), men från en högre nivå. Barn- och ungdomsböckernas andel ökade, men antalet utlån minskade ändå något eftersom de totala utlånen minskade.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-173",
+    "kind": "dtk",
+    "prompt": "I hur många av kommunerna är det möjligt att den skyddade naturen omfattar mindre än 100 km²?",
+    "passage": "Skyddad natur i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens landareal som är skyddad natur, till exempel naturreservat. Kartan har fem klasser:\nKlass 1: mindre än 2 procent\nKlass 2: från 2 till mindre än 5 procent\nKlass 3: från 5 till mindre än 10 procent\nKlass 4: från 10 till mindre än 20 procent\nKlass 5: 20 procent eller mer\n\nKommun A – Landareal: 1 200 km² | Klass: 2\nKommun B – Landareal: 3 500 km² | Klass: 4\nKommun C – Landareal: 800 km² | Klass: 1\nKommun D – Landareal: 2 000 km² | Klass: 5\nKommun E – Landareal: 1 500 km² | Klass: 3\nKommun F – Landareal: 600 km² | Klass: 3",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndex": 3,
+    "explain": "Den skyddade arealen ligger i följande intervall: Kommun A från 0,02 · 1 200 = 24 till under 0,05 · 1 200 = 60 km², Kommun B från 350 till under 700 km², Kommun C under 0,02 · 800 = 16 km², Kommun D minst 0,20 · 2 000 = 400 km², Kommun E från 75 till under 150 km² och Kommun F från 30 till under 60 km². Mindre än 100 km² är möjligt i A, C, E och F, alltså 4 kommuner. Svaret 3 får man om man bara räknar de kommuner där arealen med säkerhet är mindre än 100 km² och därmed utesluter E, som kan ha allt från 75 till nästan 150 km². Svaret 2 får man om man bara räknar kommunerna i de två lägsta klasserna (A och C) och glömmer att F är så liten att även klass 3 ger under 60 km². Svaret 1 får man om man bara räknar Kommun C i den lägsta klassen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-174",
+    "kind": "dtk",
+    "prompt": "Vilket av följande kan vara den sammanlagda arealen skyddad natur i Kommun A och Kommun E?",
+    "passage": "Skyddad natur i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens landareal som är skyddad natur, till exempel naturreservat. Kartan har fem klasser:\nKlass 1: mindre än 2 procent\nKlass 2: från 2 till mindre än 5 procent\nKlass 3: från 5 till mindre än 10 procent\nKlass 4: från 10 till mindre än 20 procent\nKlass 5: 20 procent eller mer\n\nKommun A – Landareal: 1 200 km² | Klass: 2\nKommun B – Landareal: 3 500 km² | Klass: 4\nKommun C – Landareal: 800 km² | Klass: 1\nKommun D – Landareal: 2 000 km² | Klass: 5\nKommun E – Landareal: 1 500 km² | Klass: 3\nKommun F – Landareal: 600 km² | Klass: 3",
+    "options": [
+      "95 km²",
+      "205 km²",
+      "215 km²",
+      "240 km²"
+    ],
+    "correctIndex": 1,
+    "explain": "I Kommun A (klass 2) är den skyddade arealen från 0,02 · 1 200 = 24 till under 0,05 · 1 200 = 60 km². I Kommun E (klass 3) är den från 0,05 · 1 500 = 75 till under 0,10 · 1 500 = 150 km². Summan ligger alltså från 99 km² upp till strax under 210 km², och av alternativen är det bara 205 km² som ryms i det intervallet. 95 km² är för lite; det blir möjligt bara om man byter plats på kommunernas landarealer (minst 0,02 · 1 500 + 0,05 · 1 200 = 90 km²). 215 km² är mer än det största möjliga, eftersom båda kommunerna måste ligga under sina övre klassgränser. 240 km² skulle kräva att Kommun E låg i klass 4.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-175",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av länets totala landareal utgörs av kommuner där minst 10 procent av landarealen är skyddad natur?",
+    "passage": "Skyddad natur i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens landareal som är skyddad natur, till exempel naturreservat. Kartan har fem klasser:\nKlass 1: mindre än 2 procent\nKlass 2: från 2 till mindre än 5 procent\nKlass 3: från 5 till mindre än 10 procent\nKlass 4: från 10 till mindre än 20 procent\nKlass 5: 20 procent eller mer\n\nKommun A – Landareal: 1 200 km² | Klass: 2\nKommun B – Landareal: 3 500 km² | Klass: 4\nKommun C – Landareal: 800 km² | Klass: 1\nKommun D – Landareal: 2 000 km² | Klass: 5\nKommun E – Landareal: 1 500 km² | Klass: 3\nKommun F – Landareal: 600 km² | Klass: 3",
+    "options": [
+      "ca 21 procent",
+      "ca 33 procent",
+      "ca 57 procent",
+      "ca 79 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Minst 10 procent skyddad natur har kommunerna i klass 4 och 5, alltså Kommun B och Kommun D med sammanlagt 3 500 + 2 000 = 5 500 km². Länets totala landareal är 1 200 + 3 500 + 800 + 2 000 + 1 500 + 600 = 9 600 km². Andelen är 5 500 / 9 600 ≈ 0,57, alltså ca 57 procent. Ca 21 procent får man om man bara räknar Kommun D i klass 5 (2 000 / 9 600). Ca 33 procent är andelen av kommunerna (2 av 6), som inte tar hänsyn till kommunernas olika storlek. Ca 79 procent får man om man även räknar med kommunerna i klass 3 (E och F), där andelen bara är minst 5 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-176",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av den ekologiskt odlade åkermarken i de fem regionerna fanns i Region Syd?",
+    "passage": "Ekologisk odling i fem regioner i ett fiktivt land, 2024\n\nDiagram. Andel av åkermarken som odlas ekologiskt (procent)\nRegion Nord: 18\nRegion Väst: 24\nRegion Mitt: 16\nRegion Öst: 10\nRegion Syd: 5\n\nTabell. Åkermark (tusen hektar)\nRegion Nord: 100\nRegion Väst: 250\nRegion Mitt: 400\nRegion Öst: 550\nRegion Syd: 700",
+    "options": [
+      "ca 5 procent",
+      "ca 7 procent",
+      "ca 15 procent",
+      "ca 35 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Den ekologiskt odlade åkermarken är andelen gånger åkermarken: Nord 0,18 · 100 = 18, Väst 0,24 · 250 = 60, Mitt 0,16 · 400 = 64, Öst 0,10 · 550 = 55 och Syd 0,05 · 700 = 35 tusen hektar, totalt 232 tusen hektar. Region Syds andel är 35 / 232 ≈ 0,15, alltså ca 15 procent. Ca 5 procent är andelen av Region Syds egen åkermark som odlas ekologiskt. Ca 7 procent får man om man delar Region Syds procentsats med summan av alla fem procentsatserna (5 / 73) och därmed bortser från att regionerna har olika mycket åkermark. Ca 35 procent är Region Syds andel av all åkermark (700 / 2 000), inte av den ekologiskt odlade.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-177",
+    "kind": "dtk",
+    "prompt": "I vilken region var den ekologiskt odlade arealen störst?",
+    "passage": "Ekologisk odling i fem regioner i ett fiktivt land, 2024\n\nDiagram. Andel av åkermarken som odlas ekologiskt (procent)\nRegion Nord: 18\nRegion Väst: 24\nRegion Mitt: 16\nRegion Öst: 10\nRegion Syd: 5\n\nTabell. Åkermark (tusen hektar)\nRegion Nord: 100\nRegion Väst: 250\nRegion Mitt: 400\nRegion Öst: 550\nRegion Syd: 700",
+    "options": [
+      "Region Mitt",
+      "Region Väst",
+      "Region Öst",
+      "Region Syd"
+    ],
+    "correctIndex": 0,
+    "explain": "Den ekologiskt odlade arealen är andelen gånger åkermarken: Region Mitt 0,16 · 400 = 64 tusen hektar, Region Väst 0,24 · 250 = 60 tusen hektar, Region Öst 0,10 · 550 = 55 tusen hektar och Region Syd 0,05 · 700 = 35 tusen hektar. Region Mitt hade alltså störst ekologiskt odlad areal. Region Väst hade den högsta andelen ekologisk odling, men mindre åkermark. Region Syd hade mest åkermark, men den lägsta andelen, och Region Öst kommer inte riktigt upp i Mitts nivå trots sin större åkermark.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-178",
+    "kind": "dtk",
+    "prompt": "Hur många hektar åkermark i Region Syd skulle behöva ställas om till ekologisk odling för att andelen ekologiskt odlad åkermark där skulle bli lika stor som i Region Öst? Anta att den totala åkermarken i Region Syd är oförändrad.",
+    "passage": "Ekologisk odling i fem regioner i ett fiktivt land, 2024\n\nDiagram. Andel av åkermarken som odlas ekologiskt (procent)\nRegion Nord: 18\nRegion Väst: 24\nRegion Mitt: 16\nRegion Öst: 10\nRegion Syd: 5\n\nTabell. Åkermark (tusen hektar)\nRegion Nord: 100\nRegion Väst: 250\nRegion Mitt: 400\nRegion Öst: 550\nRegion Syd: 700",
+    "options": [
+      "20 000 hektar",
+      "27 500 hektar",
+      "35 000 hektar",
+      "70 000 hektar"
+    ],
+    "correctIndex": 2,
+    "explain": "För att andelen i Region Syd ska bli 10 procent som i Region Öst krävs 0,10 · 700 000 = 70 000 hektar ekologiskt odlad åkermark. I dag odlas 0,05 · 700 000 = 35 000 hektar ekologiskt, så ytterligare 70 000 − 35 000 = 35 000 hektar behöver ställas om. 20 000 hektar är skillnaden mellan Region Östs och Region Syds ekologiska arealer (55 000 − 35 000), vilket skulle göra arealerna lika stora men inte andelarna. 27 500 hektar får man om man räknar skillnaden på 5 procentenheter på Region Östs åkermark (0,05 · 550 000) i stället för på Region Syds. 70 000 hektar är hela den ekologiska areal som krävs, utan att den som redan finns har dragits av.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-179",
+    "kind": "dtk",
+    "prompt": "Vilket museum hade störst procentuell ökning av antalet besök mellan 2019 och 2024?",
+    "passage": "Besök och statligt bidrag vid fem fiktiva museer, 2019 och 2024\n\nKonstmuseet – Besök 2019: 180 | Besök 2024: 210 | Statligt bidrag 2024: 63\nHistoriska museet – Besök 2019: 240 | Besök 2024: 252 | Statligt bidrag 2024: 57\nTekniska museet – Besök 2019: 150 | Besök 2024: 195 | Statligt bidrag 2024: 39\nNaturhistoriska museet – Besök 2019: 300 | Besök 2024: 285 | Statligt bidrag 2024: 81\nSjöfartsmuseet – Besök 2019: 90 | Besök 2024: 126 | Statligt bidrag 2024: 27\n\nAnm.: Antalet besök anges i tusental och det statliga bidraget i miljoner kronor.",
+    "options": [
+      "Konstmuseet",
+      "Historiska museet",
+      "Tekniska museet",
+      "Sjöfartsmuseet"
+    ],
+    "correctIndex": 3,
+    "explain": "Ökningarna var: Konstmuseet 30 / 180 ≈ 17 procent, Historiska museet 12 / 240 = 5 procent, Tekniska museet 45 / 150 = 30 procent och Sjöfartsmuseet 36 / 90 = 40 procent. Sjöfartsmuseet ökade alltså mest i procent. Tekniska museet hade den största ökningen i antal (45 tusen besök mot Sjöfartsmuseets 36 tusen), men utgick från en högre nivå. Konstmuseet ökade med 30 tusen besök men från 180 tusen, och Historiska museet hade många besök men bara en liten ökning.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-180",
+    "kind": "dtk",
+    "prompt": "Vilket museum fick lägst statligt bidrag per besök år 2024?",
+    "passage": "Besök och statligt bidrag vid fem fiktiva museer, 2019 och 2024\n\nKonstmuseet – Besök 2019: 180 | Besök 2024: 210 | Statligt bidrag 2024: 63\nHistoriska museet – Besök 2019: 240 | Besök 2024: 252 | Statligt bidrag 2024: 57\nTekniska museet – Besök 2019: 150 | Besök 2024: 195 | Statligt bidrag 2024: 39\nNaturhistoriska museet – Besök 2019: 300 | Besök 2024: 285 | Statligt bidrag 2024: 81\nSjöfartsmuseet – Besök 2019: 90 | Besök 2024: 126 | Statligt bidrag 2024: 27\n\nAnm.: Antalet besök anges i tusental och det statliga bidraget i miljoner kronor.",
+    "options": [
+      "Tekniska museet",
+      "Historiska museet",
+      "Naturhistoriska museet",
+      "Sjöfartsmuseet"
+    ],
+    "correctIndex": 0,
+    "explain": "Bidraget per besök är bidraget delat med antalet besök år 2024: Tekniska museet 39 000 000 / 195 000 = 200 kronor, Historiska museet 57 000 000 / 252 000 ≈ 226 kronor, Naturhistoriska museet 81 000 000 / 285 000 ≈ 284 kronor och Sjöfartsmuseet 27 000 000 / 126 000 ≈ 214 kronor. Tekniska museet fick alltså lägst bidrag per besök. Sjöfartsmuseet fick det lägsta bidraget totalt, men hade också minst antal besök. Naturhistoriska museet hade flest besök, men också det största bidraget. Historiska museet hade fler besök än Tekniska museet, men fick också betydligt mer i bidrag.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-181",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent ökade det sammanlagda antalet besök vid de fem museerna mellan 2019 och 2024?",
+    "passage": "Besök och statligt bidrag vid fem fiktiva museer, 2019 och 2024\n\nKonstmuseet – Besök 2019: 180 | Besök 2024: 210 | Statligt bidrag 2024: 63\nHistoriska museet – Besök 2019: 240 | Besök 2024: 252 | Statligt bidrag 2024: 57\nTekniska museet – Besök 2019: 150 | Besök 2024: 195 | Statligt bidrag 2024: 39\nNaturhistoriska museet – Besök 2019: 300 | Besök 2024: 285 | Statligt bidrag 2024: 81\nSjöfartsmuseet – Besök 2019: 90 | Besök 2024: 126 | Statligt bidrag 2024: 27\n\nAnm.: Antalet besök anges i tusental och det statliga bidraget i miljoner kronor.",
+    "options": [
+      "ca 10 procent",
+      "ca 11 procent",
+      "ca 14 procent",
+      "ca 17 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Det sammanlagda antalet besök var 180 + 240 + 150 + 300 + 90 = 960 tusen år 2019 och 210 + 252 + 195 + 285 + 126 = 1 068 tusen år 2024. Ökningen är 108 tusen, och 108 / 960 ≈ 0,11, alltså ca 11 procent. Ca 10 procent får man om man delar ökningen med 2024 års antal (108 / 1 068) i stället för med 2019 års. Ca 14 procent får man om man räknar Naturhistoriska museets minskning med 15 tusen besök som en ökning (138 / 960). Ca 17 procent är medelvärdet av de fem museernas procentuella förändringar (ca 17, 5, 30, −5 och 40 procent), ett ovägt medelvärde som ger de små museerna för stor vikt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-182",
+    "kind": "dtk",
+    "prompt": "Under hur många av vintrarna hade Kustby fler än en tredjedel så många dagar med snötäcke som Fjällby?",
+    "passage": "Dagar med snötäcke i två fiktiva orter, vintrarna 2015/16–2023/24\n\nDiagram. Antal dagar med snötäcke per vinter\n2015/16 – Fjällby: 160 | Kustby: 60\n2016/17 – Fjällby: 148 | Kustby: 42\n2017/18 – Fjällby: 175 | Kustby: 85\n2018/19 – Fjällby: 152 | Kustby: 50\n2019/20 – Fjällby: 130 | Kustby: 5\n2020/21 – Fjällby: 165 | Kustby: 70\n2021/22 – Fjällby: 150 | Kustby: 8\n2022/23 – Fjällby: 140 | Kustby: 44\n2023/24 – Fjällby: 170 | Kustby: 58\n\nAnm.: En dag räknas som en dag med snötäcke om minst hälften av marken runt mätplatsen är täckt av snö.",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 0,
+    "explain": "En tredjedel av Fjällbys antal är: 2015/16 ca 53,3, 2016/17 ca 49,3, 2017/18 ca 58,3, 2018/19 ca 50,7, 2019/20 ca 43,3, 2020/21 55, 2021/22 50, 2022/23 ca 46,7 och 2023/24 ca 56,7. Kustby låg över gränsen vintrarna 2015/16 (60), 2017/18 (85), 2020/21 (70) och 2023/24 (58), alltså 4 vintrar. Övriga svar får man om man också räknar vintrar där Kustby låg nära men under en tredjedel: 2018/19 (50 mot ca 50,7) ger 5, även 2022/23 (44 mot ca 46,7) ger 6 och även 2016/17 (42 mot ca 49,3) ger 7.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-183",
+    "kind": "dtk",
+    "prompt": "Vilken var medianen för antalet dagar med snötäcke i Kustby under de nio vintrarna?",
+    "passage": "Dagar med snötäcke i två fiktiva orter, vintrarna 2015/16–2023/24\n\nDiagram. Antal dagar med snötäcke per vinter\n2015/16 – Fjällby: 160 | Kustby: 60\n2016/17 – Fjällby: 148 | Kustby: 42\n2017/18 – Fjällby: 175 | Kustby: 85\n2018/19 – Fjällby: 152 | Kustby: 50\n2019/20 – Fjällby: 130 | Kustby: 5\n2020/21 – Fjällby: 165 | Kustby: 70\n2021/22 – Fjällby: 150 | Kustby: 8\n2022/23 – Fjällby: 140 | Kustby: 44\n2023/24 – Fjällby: 170 | Kustby: 58\n\nAnm.: En dag räknas som en dag med snötäcke om minst hälften av marken runt mätplatsen är täckt av snö.",
+    "options": [
+      "5 dagar",
+      "45 dagar",
+      "ca 47 dagar",
+      "50 dagar"
+    ],
+    "correctIndex": 3,
+    "explain": "Ordnade efter storlek är Kustbys värden 5, 8, 42, 44, 50, 58, 60, 70 och 85. Medianen är det mittersta av de nio värdena, alltså det femte: 50 dagar. 5 dagar är värdet för den mittersta vintern i tidsordning (2019/20), men värdena måste sorteras efter storlek. 45 dagar är medelvärdet av det största och det minsta värdet, (85 + 5) / 2. Ca 47 dagar är medelvärdet, 422 / 9 ≈ 46,9, som dras ned av de två snöfattiga vintrarna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-184",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av alla i åldern 16–84 år som hade fiskat var 30–49 år?",
+    "passage": "Deltagande i fritids- och kulturaktiviteter efter ålder i ett fiktivt land, 2024\n\nTabell 1. Andel som minst en gång under de senaste tolv månaderna har gjort aktiviteten (procent)\nGått på teater – 16–29 år: 20 | 30–49 år: 25 | 50–64 år: 30 | 65–84 år: 45\nGått på konsert – 16–29 år: 60 | 30–49 år: 45 | 50–64 år: 35 | 65–84 år: 20\nBesökt bibliotek – 16–29 år: 50 | 30–49 år: 40 | 50–64 år: 35 | 65–84 år: 45\nFiskat – 16–29 år: 10 | 30–49 år: 30 | 50–64 år: 25 | 65–84 år: 10\n\nTabell 2. Befolkning (tusental)\n16–29 år: 1 200\n30–49 år: 2 400\n50–64 år: 1 800\n65–84 år: 1 600",
+    "options": [
+      "ca 30 procent",
+      "ca 34 procent",
+      "ca 40 procent",
+      "ca 50 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Antalet som hade fiskat är andelen gånger befolkningen: 16–29 år 0,10 · 1 200 = 120 tusen, 30–49 år 0,30 · 2 400 = 720 tusen, 50–64 år 0,25 · 1 800 = 450 tusen och 65–84 år 0,10 · 1 600 = 160 tusen, totalt 1 450 tusen. Andelen som var 30–49 år är 720 / 1 450 ≈ 0,50, alltså ca 50 procent. Ca 30 procent är andelen av 30–49-åringarna som hade fiskat, vilket är något annat. Ca 34 procent är 30–49-åringarnas andel av hela befolkningen (2 400 / 7 000). Ca 40 procent får man om man delar 30 med summan av de fyra procentsatserna (30 / 75) och därmed bortser från att åldersgrupperna är olika stora.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-185",
+    "kind": "dtk",
+    "prompt": "I vilken åldersgrupp var antalet personer som hade besökt bibliotek störst?",
+    "passage": "Deltagande i fritids- och kulturaktiviteter efter ålder i ett fiktivt land, 2024\n\nTabell 1. Andel som minst en gång under de senaste tolv månaderna har gjort aktiviteten (procent)\nGått på teater – 16–29 år: 20 | 30–49 år: 25 | 50–64 år: 30 | 65–84 år: 45\nGått på konsert – 16–29 år: 60 | 30–49 år: 45 | 50–64 år: 35 | 65–84 år: 20\nBesökt bibliotek – 16–29 år: 50 | 30–49 år: 40 | 50–64 år: 35 | 65–84 år: 45\nFiskat – 16–29 år: 10 | 30–49 år: 30 | 50–64 år: 25 | 65–84 år: 10\n\nTabell 2. Befolkning (tusental)\n16–29 år: 1 200\n30–49 år: 2 400\n50–64 år: 1 800\n65–84 år: 1 600",
+    "options": [
+      "16–29 år",
+      "30–49 år",
+      "50–64 år",
+      "65–84 år"
+    ],
+    "correctIndex": 1,
+    "explain": "Antalet som hade besökt bibliotek är andelen gånger befolkningen: 16–29 år 0,50 · 1 200 = 600 tusen, 30–49 år 0,40 · 2 400 = 960 tusen, 50–64 år 0,35 · 1 800 = 630 tusen och 65–84 år 0,45 · 1 600 = 720 tusen. Antalet var alltså störst bland 30–49-åringarna. 16–29-åringarna hade den högsta andelen biblioteksbesökare, men är den minsta åldersgruppen. 65–84-åringarna hade den näst högsta andelen men är betydligt färre än 30–49-åringarna, och 50–64-åringarna hade den lägsta andelen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-186",
+    "kind": "dtk",
+    "prompt": "Hur många procent fler personer i åldern 16–29 år hade gått på konsert än på teater?",
+    "passage": "Deltagande i fritids- och kulturaktiviteter efter ålder i ett fiktivt land, 2024\n\nTabell 1. Andel som minst en gång under de senaste tolv månaderna har gjort aktiviteten (procent)\nGått på teater – 16–29 år: 20 | 30–49 år: 25 | 50–64 år: 30 | 65–84 år: 45\nGått på konsert – 16–29 år: 60 | 30–49 år: 45 | 50–64 år: 35 | 65–84 år: 20\nBesökt bibliotek – 16–29 år: 50 | 30–49 år: 40 | 50–64 år: 35 | 65–84 år: 45\nFiskat – 16–29 år: 10 | 30–49 år: 30 | 50–64 år: 25 | 65–84 år: 10\n\nTabell 2. Befolkning (tusental)\n16–29 år: 1 200\n30–49 år: 2 400\n50–64 år: 1 800\n65–84 år: 1 600",
+    "options": [
+      "40 procent",
+      "ca 67 procent",
+      "200 procent",
+      "300 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Bland 16–29-åringarna hade 60 procent gått på konsert och 20 procent på teater. Eftersom båda andelarna gäller samma åldersgrupp är antalen i samma proportion: 0,60 · 1 200 = 720 tusen mot 0,20 · 1 200 = 240 tusen. Skillnaden är 480 tusen, och 480 / 240 = 2, alltså 200 procent fler. 40 procent är skillnaden i procentenheter (60 − 20), inte hur många procent fler. Ca 67 procent får man om man räknar skillnaden från konsertbesökarna (40 / 60) i stället för från teaterbesökarna, vilket svarar på hur många procent färre som hade gått på teater. 300 procent förväxlar ”tre gånger så många” med ”300 procent fler”; tre gånger så många är 200 procent fler.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-187",
+    "kind": "dtk",
+    "prompt": "Med hur många procent minskade det totala antalet jordbruksföretag mellan 2004 och 2024?",
+    "passage": "Jordbruksföretag i ett fiktivt land efter storlek, 2004, 2014 och 2024\n\nDiagram. Antal jordbruksföretag efter åkerareal (tusental)\n2 till under 10 hektar – 2004: 30 | 2014: 24 | 2024: 18\n10 till under 50 hektar – 2004: 35 | 2014: 28 | 2024: 20\n50 till under 100 hektar – 2004: 10 | 2014: 9 | 2024: 8\n100 hektar eller mer – 2004: 5 | 2014: 7 | 2024: 10\n\nAnm.: Företag med mindre än 2 hektar åkermark ingår inte. De redovisade företagens sammanlagda åkerareal var 2,8 miljoner hektar år 2004 och 2,5 miljoner hektar år 2024.",
+    "options": [
+      "24 procent",
+      "30 procent",
+      "ca 43 procent",
+      "70 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Det totala antalet företag var 30 + 35 + 10 + 5 = 80 tusen år 2004 och 18 + 20 + 8 + 10 = 56 tusen år 2024. Minskningen är 24 tusen, och 24 / 80 = 0,30, alltså 30 procent. 24 procent förväxlar minskningen i antal (24 tusen företag) med en minskning i procent. Ca 43 procent får man om man delar minskningen med 2024 års antal (24 / 56) i stället för med 2004 års. 70 procent är hur stor andel av företagen som fanns kvar (56 / 80 = 0,70), inte hur mycket antalet minskade.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-188",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor var den genomsnittliga åkerarealen per jordbruksföretag år 2024?",
+    "passage": "Jordbruksföretag i ett fiktivt land efter storlek, 2004, 2014 och 2024\n\nDiagram. Antal jordbruksföretag efter åkerareal (tusental)\n2 till under 10 hektar – 2004: 30 | 2014: 24 | 2024: 18\n10 till under 50 hektar – 2004: 35 | 2014: 28 | 2024: 20\n50 till under 100 hektar – 2004: 10 | 2014: 9 | 2024: 8\n100 hektar eller mer – 2004: 5 | 2014: 7 | 2024: 10\n\nAnm.: Företag med mindre än 2 hektar åkermark ingår inte. De redovisade företagens sammanlagda åkerareal var 2,8 miljoner hektar år 2004 och 2,5 miljoner hektar år 2024.",
+    "options": [
+      "ca 31 hektar",
+      "ca 35 hektar",
+      "ca 37 hektar",
+      "ca 45 hektar"
+    ],
+    "correctIndex": 3,
+    "explain": "År 2024 fanns 56 tusen företag med sammanlagt 2,5 miljoner hektar åkermark. Genomsnittet är 2 500 000 / 56 000 ≈ 44,6, alltså ca 45 hektar per företag. Ca 31 hektar får man om man delar 2024 års areal med 2004 års antal företag (2 500 000 / 80 000). Ca 35 hektar är genomsnittet år 2004 (2 800 000 / 80 000). Ca 37 hektar får man om man delar 2024 års areal med antalet företag år 2014 (2 500 000 / 68 000).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-189",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procentenheter ökade andelen jordbruksföretag med minst 50 hektar åkermark mellan 2004 och 2024?",
+    "passage": "Jordbruksföretag i ett fiktivt land efter storlek, 2004, 2014 och 2024\n\nDiagram. Antal jordbruksföretag efter åkerareal (tusental)\n2 till under 10 hektar – 2004: 30 | 2014: 24 | 2024: 18\n10 till under 50 hektar – 2004: 35 | 2014: 28 | 2024: 20\n50 till under 100 hektar – 2004: 10 | 2014: 9 | 2024: 8\n100 hektar eller mer – 2004: 5 | 2014: 7 | 2024: 10\n\nAnm.: Företag med mindre än 2 hektar åkermark ingår inte. De redovisade företagens sammanlagda åkerareal var 2,8 miljoner hektar år 2004 och 2,5 miljoner hektar år 2024.",
+    "options": [
+      "ca 13 procentenheter",
+      "ca 20 procentenheter",
+      "ca 32 procentenheter",
+      "ca 71 procentenheter"
+    ],
+    "correctIndex": 0,
+    "explain": "År 2004 hade 10 + 5 = 15 tusen av 80 tusen företag minst 50 hektar, vilket är 18,75 procent. År 2024 var det 8 + 10 = 18 tusen av 56 tusen, vilket är ca 32,1 procent. Andelen ökade alltså med ca 32,1 − 18,75 ≈ 13 procentenheter. Ca 20 procentenheter får man om man tar den procentuella ökningen av antalet sådana företag (från 15 till 18 tusen är 20 procent) och behandlar den som en förändring i procentenheter. Ca 32 procentenheter är andelen år 2024, inte ökningen. Ca 71 procentenheter förväxlar procentenheter med procent: andelen ökade med ca 71 procent (32,1 / 18,75 ≈ 1,71) men med ca 13 procentenheter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-190",
+    "kind": "dtk",
+    "prompt": "Vilken säsong hade flest åkdagar per öppetdag?",
+    "passage": "Skidåkning vid en fiktiv skidanläggning, säsongerna 2018/19–2023/24\n\nDiagram. Antal åkdagar (tusental)\n2018/19: 420\n2019/20: 310\n2020/21: 380\n2021/22: 450\n2022/23: 400\n2023/24: 470\n\nTabell. Antal öppetdagar och pris för ett dagkort för vuxen (kronor)\n2018/19 – Öppetdagar: 150 | Dagkort: 400\n2019/20 – Öppetdagar: 100 | Dagkort: 440\n2020/21 – Öppetdagar: 140 | Dagkort: 470\n2021/22 – Öppetdagar: 150 | Dagkort: 510\n2022/23 – Öppetdagar: 125 | Dagkort: 555\n2023/24 – Öppetdagar: 160 | Dagkort: 590\n\nAnm.: En åkdag är en dag då en person åker skidor i anläggningen.",
+    "options": [
+      "2018/19",
+      "2019/20",
+      "2021/22",
+      "2022/23"
+    ],
+    "correctIndex": 3,
+    "explain": "Antalet åkdagar per öppetdag (tusental) var: 2018/19 420 / 150 = 2,8, 2019/20 310 / 100 = 3,1, 2021/22 450 / 150 = 3,0 och 2022/23 400 / 125 = 3,2. Säsongen 2022/23 hade alltså flest åkdagar per öppetdag, trots att antalet åkdagar var lägre än säsongen före. 2019/20 hade minst antal åkdagar, men också den kortaste säsongen, och kommer därför ganska högt. 2021/22 och 2018/19 hade lika många öppetdagar, men 2021/22 hade fler åkdagar; ingen av dem når upp till 2022/23.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-191",
+    "kind": "dtk",
+    "prompt": "Under vilken säsong ökade priset för ett dagkort mest i procent jämfört med säsongen före?",
+    "passage": "Skidåkning vid en fiktiv skidanläggning, säsongerna 2018/19–2023/24\n\nDiagram. Antal åkdagar (tusental)\n2018/19: 420\n2019/20: 310\n2020/21: 380\n2021/22: 450\n2022/23: 400\n2023/24: 470\n\nTabell. Antal öppetdagar och pris för ett dagkort för vuxen (kronor)\n2018/19 – Öppetdagar: 150 | Dagkort: 400\n2019/20 – Öppetdagar: 100 | Dagkort: 440\n2020/21 – Öppetdagar: 140 | Dagkort: 470\n2021/22 – Öppetdagar: 150 | Dagkort: 510\n2022/23 – Öppetdagar: 125 | Dagkort: 555\n2023/24 – Öppetdagar: 160 | Dagkort: 590\n\nAnm.: En åkdag är en dag då en person åker skidor i anläggningen.",
+    "options": [
+      "2019/20",
+      "2020/21",
+      "2021/22",
+      "2022/23"
+    ],
+    "correctIndex": 0,
+    "explain": "Prisökningarna jämfört med säsongen före var: 2019/20 40 / 400 = 10 procent, 2020/21 30 / 440 ≈ 6,8 procent, 2021/22 40 / 470 ≈ 8,5 procent och 2022/23 45 / 510 ≈ 8,8 procent. Den största procentuella ökningen var alltså 2019/20. 2022/23 hade den största ökningen i kronor (45 kronor), men från ett högre pris. 2021/22 ökade lika många kronor som 2019/20, men från ett högre utgångspris och därmed mindre i procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-192",
+    "kind": "dtk",
+    "prompt": "Anta att varje åkdag motsvarade ett sålt dagkort för vuxen till det pris som anges. Med ungefär hur många procent var intäkterna från dagkorten större säsongen 2023/24 än säsongen 2018/19?",
+    "passage": "Skidåkning vid en fiktiv skidanläggning, säsongerna 2018/19–2023/24\n\nDiagram. Antal åkdagar (tusental)\n2018/19: 420\n2019/20: 310\n2020/21: 380\n2021/22: 450\n2022/23: 400\n2023/24: 470\n\nTabell. Antal öppetdagar och pris för ett dagkort för vuxen (kronor)\n2018/19 – Öppetdagar: 150 | Dagkort: 400\n2019/20 – Öppetdagar: 100 | Dagkort: 440\n2020/21 – Öppetdagar: 140 | Dagkort: 470\n2021/22 – Öppetdagar: 150 | Dagkort: 510\n2022/23 – Öppetdagar: 125 | Dagkort: 555\n2023/24 – Öppetdagar: 160 | Dagkort: 590\n\nAnm.: En åkdag är en dag då en person åker skidor i anläggningen.",
+    "options": [
+      "ca 12 procent",
+      "ca 48 procent",
+      "ca 59 procent",
+      "ca 65 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Intäkterna är antalet åkdagar gånger priset: 2018/19 420 000 · 400 = 168 miljoner kronor och 2023/24 470 000 · 590 = 277,3 miljoner kronor. Kvoten är 277,3 / 168 ≈ 1,65, alltså ca 65 procent större. Ca 12 procent är bara ökningen av antalet åkdagar (50 / 420) och ca 48 procent bara prisökningen (190 / 400 = 47,5 procent). Ca 59 procent får man om man adderar de två procentuella ökningarna; de ska i stället multipliceras (1,119 · 1,475 ≈ 1,65).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-193",
+    "kind": "dtk",
+    "prompt": "Hur stor del av minskningen av biografbesöken mellan 2019 och 2020 hade återhämtats år 2023?",
+    "passage": "Besök på biografer och teatrar i ett fiktivt land, 2016–2024\n\nDiagram. Antal besök (miljoner)\n2016 – Biograf: 16,0 | Teater: 4,0\n2017 – Biograf: 17,0 | Teater: 4,2\n2018 – Biograf: 16,0 | Teater: 3,9\n2019 – Biograf: 15,0 | Teater: 4,5\n2020 – Biograf: 5,0 | Teater: 1,0\n2021 – Biograf: 7,0 | Teater: 1,5\n2022 – Biograf: 11,0 | Teater: 3,6\n2023 – Biograf: 12,0 | Teater: 4,2\n2024 – Biograf: 13,0 | Teater: 4,6",
+    "options": [
+      "30 procent",
+      "70 procent",
+      "80 procent",
+      "140 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Biografbesöken minskade från 15 till 5 miljoner, alltså med 10 miljoner. År 2023 var de 12 miljoner, vilket är 7 miljoner mer än år 2020. Av minskningen hade alltså 7 / 10 = 70 procent återhämtats. 30 procent är den del av minskningen som återstod (3 av 10 miljoner). 80 procent är 2023 års besök i förhållande till 2019 års (12 / 15), vilket inte är samma sak som andelen av minskningen. 140 procent är hur mycket besöken ökade från 2020 till 2023 (7 / 5).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-194",
+    "kind": "dtk",
+    "prompt": "Under hur många av åren var antalet teaterbesök fler än en fjärdedel av antalet biografbesök?",
+    "passage": "Besök på biografer och teatrar i ett fiktivt land, 2016–2024\n\nDiagram. Antal besök (miljoner)\n2016 – Biograf: 16,0 | Teater: 4,0\n2017 – Biograf: 17,0 | Teater: 4,2\n2018 – Biograf: 16,0 | Teater: 3,9\n2019 – Biograf: 15,0 | Teater: 4,5\n2020 – Biograf: 5,0 | Teater: 1,0\n2021 – Biograf: 7,0 | Teater: 1,5\n2022 – Biograf: 11,0 | Teater: 3,6\n2023 – Biograf: 12,0 | Teater: 4,2\n2024 – Biograf: 13,0 | Teater: 4,6",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctIndex": 1,
+    "explain": "En fjärdedel av biografbesöken (miljoner) var: 2016 4,0, 2017 4,25, 2018 4,0, 2019 3,75, 2020 1,25, 2021 1,75, 2022 2,75, 2023 3,0 och 2024 3,25. Teaterbesöken var fler än så 2019 (4,5), 2022 (3,6), 2023 (4,2) och 2024 (4,6), alltså under 4 år. Svaret 5 får man om man räknar med 2016, då teaterbesöken var exakt en fjärdedel (4,0) och alltså inte fler. Svaret 6 får man om man dessutom räknar med 2017 eller 2018, då teaterbesöken låg strax under en fjärdedel. Svaret 3 får man om man missar 2019, då teaterbesöken var 4,5 miljoner mot en fjärdedel på 3,75.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-195",
+    "kind": "dtk",
+    "prompt": "Hur stort var det sammanlagda antalet besök på biografer och teatrar år 2024 i förhållande till år 2019?",
+    "passage": "Besök på biografer och teatrar i ett fiktivt land, 2016–2024\n\nDiagram. Antal besök (miljoner)\n2016 – Biograf: 16,0 | Teater: 4,0\n2017 – Biograf: 17,0 | Teater: 4,2\n2018 – Biograf: 16,0 | Teater: 3,9\n2019 – Biograf: 15,0 | Teater: 4,5\n2020 – Biograf: 5,0 | Teater: 1,0\n2021 – Biograf: 7,0 | Teater: 1,5\n2022 – Biograf: 11,0 | Teater: 3,6\n2023 – Biograf: 12,0 | Teater: 4,2\n2024 – Biograf: 13,0 | Teater: 4,6",
+    "options": [
+      "ca 87 procent",
+      "ca 90 procent",
+      "ca 94 procent",
+      "ca 102 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Sammanlagt var besöken 15,0 + 4,5 = 19,5 miljoner år 2019 och 13,0 + 4,6 = 17,6 miljoner år 2024. Kvoten är 17,6 / 19,5 ≈ 0,90, alltså ca 90 procent av 2019 års nivå. Ca 87 procent gäller bara biograferna (13 / 15) och ca 102 procent bara teatrarna (4,6 / 4,5). Ca 94 procent är medelvärdet av de två kvoterna, men ett sådant ovägt medelvärde ger teatrarna för stor vikt eftersom de har betydligt färre besök än biograferna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-196",
+    "kind": "dtk",
+    "prompt": "För hur många av materialen nåddes målet för återvinningsgraden?",
+    "passage": "Förpackningar och insamling för materialåtervinning i ett fiktivt land, 2024\n\nTabell. Förpackningar efter material\nGlas – På marknaden: 200 | Insamlat: 186 | Mål: 90\nPapper och kartong – På marknaden: 500 | Insamlat: 390 | Mål: 85\nPlast – På marknaden: 300 | Insamlat: 80 | Mål: 50\nMetall – På marknaden: 80 | Insamlat: 64 | Mål: 80\n\nAnm.: På marknaden anger mängden förpackningar som såldes i landet och Insamlat den mängd förpackningar som samlades in för materialåtervinning, båda i tusen ton. Återvinningsgraden är den insamlade mängden i procent av mängden på marknaden. Mål anger den lägsta återvinningsgrad i procent som ska uppnås.",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "correctIndex": 2,
+    "explain": "Återvinningsgraderna var: glas 186 / 200 = 93 procent (mål 90), papper och kartong 390 / 500 = 78 procent (mål 85), plast 80 / 300 ≈ 27 procent (mål 50) och metall 64 / 80 = 80 procent (mål 80). Målet nåddes alltså för glas och för metall, där återvinningsgraden var exakt lika med den lägsta godtagbara nivån – 2 material. Svaret 1 får man om man inte räknar metall, men målet anger den lägsta nivå som ska uppnås, och den nåddes. Svaret 3 får man om man jämför målet med den insamlade mängden i tusen ton i stället för med återvinningsgraden. Svaret 0 får man om man räknar varje materials insamlade mängd i procent av alla förpackningar på marknaden (1 080 tusen ton), till exempel 186 / 1 080 ≈ 17 procent för glas, i stället för i procent av samma materials mängd.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-197",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av den mängd förpackningar som inte samlades in för materialåtervinning bestod av plast?",
+    "passage": "Förpackningar och insamling för materialåtervinning i ett fiktivt land, 2024\n\nTabell. Förpackningar efter material\nGlas – På marknaden: 200 | Insamlat: 186 | Mål: 90\nPapper och kartong – På marknaden: 500 | Insamlat: 390 | Mål: 85\nPlast – På marknaden: 300 | Insamlat: 80 | Mål: 50\nMetall – På marknaden: 80 | Insamlat: 64 | Mål: 80\n\nAnm.: På marknaden anger mängden förpackningar som såldes i landet och Insamlat den mängd förpackningar som samlades in för materialåtervinning, båda i tusen ton. Återvinningsgraden är den insamlade mängden i procent av mängden på marknaden. Mål anger den lägsta återvinningsgrad i procent som ska uppnås.",
+    "options": [
+      "ca 20 procent",
+      "ca 28 procent",
+      "ca 61 procent",
+      "ca 73 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Den mängd som inte samlades in är mängden på marknaden minus den insamlade: glas 200 − 186 = 14, papper och kartong 500 − 390 = 110, plast 300 − 80 = 220 och metall 80 − 64 = 16 tusen ton, totalt 360 tusen ton. Plastens andel är 220 / 360 ≈ 0,61, alltså ca 61 procent. Ca 20 procent får man om man delar plastens 220 tusen ton med all förpackning på marknaden (1 080 tusen ton) i stället för med den del som inte samlades in. Ca 28 procent är plastens andel av alla förpackningar på marknaden (300 / 1 080). Ca 73 procent är den andel av plastförpackningarna som inte samlades in (220 / 300).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-198",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av det totala fångstvärdet för de fem arterna år 2024 kom från nordhavsräka och havskräfta tillsammans?",
+    "passage": "Yrkesfiske i ett fiktivt land, 2014 och 2024\n\nTabell. Fångst och förstahandsvärde efter art\nSill – Fångst 2014: 60 000 | Fångst 2024: 45 000 | Förstahandsvärde 2024: 7\nSkarpsill – Fångst 2014: 50 000 | Fångst 2024: 70 000 | Förstahandsvärde 2024: 3\nTorsk – Fångst 2014: 12 000 | Fångst 2024: 3 000 | Förstahandsvärde 2024: 40\nNordhavsräka – Fångst 2014: 2 000 | Fångst 2024: 1 500 | Förstahandsvärde 2024: 100\nHavskräfta – Fångst 2014: 1 000 | Fångst 2024: 1 200 | Förstahandsvärde 2024: 150\n\nAnm.: Fångsten anges i ton och förstahandsvärdet, det vill säga det pris som fiskaren får vid den första försäljningen, i kronor per kilogram. Fångstvärdet är fångsten multiplicerad med förstahandsvärdet.",
+    "options": [
+      "ca 2 procent",
+      "ca 34 procent",
+      "ca 40 procent",
+      "ca 83 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Fångstvärdet år 2024 (fångst i kilogram gånger kilopris) var: sill 45 000 000 · 7 = 315, skarpsill 70 000 000 · 3 = 210, torsk 3 000 000 · 40 = 120, nordhavsräka 1 500 000 · 100 = 150 och havskräfta 1 200 000 · 150 = 180 miljoner kronor, totalt 975 miljoner kronor. Räka och havskräfta stod för 150 + 180 = 330 miljoner kronor, och 330 / 975 ≈ 0,34, alltså ca 34 procent. Ca 2 procent är deras andel av fångsten i ton (2 700 / 120 700), som inte tar hänsyn till det höga kilopriset. Ca 40 procent är andelen av arterna (2 av 5). Ca 83 procent får man om man delar deras kilopriser med summan av alla fem kilopriserna (250 / 300) och bortser från fångstmängderna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-199",
+    "kind": "dtk",
+    "prompt": "Anta att torskfångsten år 2024 hade varit lika stor som år 2014 och att förstahandsvärdet för torsk hade varit detsamma som det verkliga år 2024. Med ungefär hur många procent hade det totala fångstvärdet för de fem arterna år 2024 då varit större?",
+    "passage": "Yrkesfiske i ett fiktivt land, 2014 och 2024\n\nTabell. Fångst och förstahandsvärde efter art\nSill – Fångst 2014: 60 000 | Fångst 2024: 45 000 | Förstahandsvärde 2024: 7\nSkarpsill – Fångst 2014: 50 000 | Fångst 2024: 70 000 | Förstahandsvärde 2024: 3\nTorsk – Fångst 2014: 12 000 | Fångst 2024: 3 000 | Förstahandsvärde 2024: 40\nNordhavsräka – Fångst 2014: 2 000 | Fångst 2024: 1 500 | Förstahandsvärde 2024: 100\nHavskräfta – Fångst 2014: 1 000 | Fångst 2024: 1 200 | Förstahandsvärde 2024: 150\n\nAnm.: Fångsten anges i ton och förstahandsvärdet, det vill säga det pris som fiskaren får vid den första försäljningen, i kronor per kilogram. Fångstvärdet är fångsten multiplicerad med förstahandsvärdet.",
+    "options": [
+      "ca 7 procent",
+      "ca 27 procent",
+      "ca 37 procent",
+      "ca 300 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Det verkliga totala fångstvärdet år 2024 var 315 + 210 + 120 + 150 + 180 = 975 miljoner kronor. Med 12 000 i stället för 3 000 ton torsk hade fångsten varit 9 000 ton större, vilket ger 9 000 000 · 40 = 360 miljoner kronor mer. Ökningen blir 360 / 975 ≈ 0,37, alltså ca 37 procent. Ca 7 procent är hur mycket den totala fångsten i ton hade ökat (9 000 / 120 700), men torsk är mycket dyrare än sill och skarpsill. Ca 27 procent får man om man delar ökningen med det nya totalvärdet (360 / 1 335) i stället för med det verkliga. Ca 300 procent är hur mycket själva torskfångsten hade ökat (från 3 000 till 12 000 ton), inte det totala fångstvärdet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-200",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stort var det genomsnittliga förstahandsvärdet per kilogram för den sammanlagda fångsten av de fem arterna år 2024?",
+    "passage": "Yrkesfiske i ett fiktivt land, 2014 och 2024\n\nTabell. Fångst och förstahandsvärde efter art\nSill – Fångst 2014: 60 000 | Fångst 2024: 45 000 | Förstahandsvärde 2024: 7\nSkarpsill – Fångst 2014: 50 000 | Fångst 2024: 70 000 | Förstahandsvärde 2024: 3\nTorsk – Fångst 2014: 12 000 | Fångst 2024: 3 000 | Förstahandsvärde 2024: 40\nNordhavsräka – Fångst 2014: 2 000 | Fångst 2024: 1 500 | Förstahandsvärde 2024: 100\nHavskräfta – Fångst 2014: 1 000 | Fångst 2024: 1 200 | Förstahandsvärde 2024: 150\n\nAnm.: Fångsten anges i ton och förstahandsvärdet, det vill säga det pris som fiskaren får vid den första försäljningen, i kronor per kilogram. Fångstvärdet är fångsten multiplicerad med förstahandsvärdet.",
+    "options": [
+      "ca 8 kronor",
+      "ca 11 kronor",
+      "ca 40 kronor",
+      "ca 60 kronor"
+    ],
+    "correctIndex": 0,
+    "explain": "Det totala fångstvärdet år 2024 var 975 miljoner kronor och den totala fångsten 45 000 + 70 000 + 3 000 + 1 500 + 1 200 = 120 700 ton, alltså 120,7 miljoner kilogram. Genomsnittet är 975 / 120,7 ≈ 8,1, alltså ca 8 kronor per kilogram. Ca 11 kronor får man om man väger kilopriserna med 2014 års fångster i stället för 2024 års (1 400 miljoner kronor / 125 miljoner kilogram). Ca 40 kronor är medianen av de fem kilopriserna och ca 60 kronor deras ovägda medelvärde (300 / 5); båda bortser från att de billiga arterna sill och skarpsill står för nästan hela fångsten.",
+    "verification": "agreed"
   }
 ]

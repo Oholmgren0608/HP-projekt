@@ -307,21 +307,28 @@ function VerticalChart({
                 strokeLinejoin="round"
               />
               {s.values.map((v, i) => {
-                // Med flera linjer hamnar den översta etiketten ovanför och den
-                // understa under, så att närliggande värden inte skriver över
-                // varandra. Annars ovanför toppar och under dalar, så att
-                // etiketten inte ligger på linjen.
-                const atCategory = series.map((o) => o.values[i]);
-                const top = atCategory.findIndex((o) => o === Math.max(...atCategory));
-                const bottom = atCategory.findLastIndex((o) => o === Math.min(...atCategory));
-                const prev = s.values[i - 1] ?? v;
-                const next = s.values[i + 1] ?? v;
-                const below =
-                  series.length > 1 && si === top && top !== bottom
-                    ? false
-                    : series.length > 1 && si === bottom && top !== bottom
-                      ? true
-                      : v < (prev + next) / 2;
+                // Med flera linjer hamnar etiketten på den sida där det är
+                // längst till nästa linje (eller till kanten), så att
+                // närliggande värden inte skriver över varandra. Med en linje
+                // hamnar den ovanför toppar och under dalar, så att den inte
+                // ligger på linjen. Nära x-axeln skulle den krocka med
+                // kategorinamnen.
+                const floor = H - pad.bottom;
+                let below: boolean;
+                if (series.length > 1) {
+                  const others = series
+                    .map((o, oi) => ({ v: o.values[i], oi }))
+                    .filter((o) => o.oi !== si);
+                  const isAbove = (o: { v: number; oi: number }) => o.v > v || (o.v === v && o.oi < si);
+                  const up = Math.min(y(v), ...others.filter(isAbove).map((o) => y(v) - y(o.v)));
+                  const down = Math.min(floor - y(v), ...others.filter((o) => !isAbove(o)).map((o) => y(o.v) - y(v)));
+                  below = down > up;
+                } else {
+                  const prev = s.values[i - 1] ?? v;
+                  const next = s.values[i + 1] ?? v;
+                  below = v < (prev + next) / 2;
+                }
+                if (y(v) + 16 > floor - 2) below = false;
                 return (
                   <g key={i}>
                     <circle cx={center(i)} cy={y(v)} r={4} fill={SERIES_COLORS[si]} stroke="var(--card)" strokeWidth={2}>

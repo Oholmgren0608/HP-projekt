@@ -898,5 +898,1805 @@
     "correctIndex": 3,
     "explain": "En elegi är en sorgedikt eller klagodikt, en dikt i vemodig ton, ofta om död eller förlust: ”efter vännens död skrev poeten en elegi”. Lovtal lockar eftersom elegi liknar engelskans eulogy, som betyder lovtal, och eftersom ett lovtal kan hållas vid en begravning. Men ett lovtal prisar någon och är inte en dikt. Herdedikt (idyll), smädeskrift (pamflett) och hjältedikt (epos) är andra litterära former med en annan ton och ett annat innehåll.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-061",
+    "kind": "ord",
+    "prompt": "Vad betyder ”akribi”?",
+    "options": [
+      "skarp ironi",
+      "stridslystnad",
+      "yttersta noggrannhet",
+      "överdriven försiktighet",
+      "ordrikedom"
+    ],
+    "correctIndex": 2,
+    "explain": "Akribi betyder största möjliga noggrannhet och precision, särskilt i vetenskapligt arbete: ”utgåvan är gjord med filologisk akribi”. Överdriven försiktighet handlar om rädsla för risker, inte om exakthet i detaljer. Skarp ironi och stridslystnad kan man associera till av ordets hårda klang, men de har inget med det att göra, och ordrikedom betyder att man använder många ord, inte att man är exakt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-062",
+    "kind": "ord",
+    "prompt": "Vad betyder ”allmoge”?",
+    "options": [
+      "landsbygdens bönder",
+      "stadens borgare",
+      "gemensam betesmark",
+      "det lägre prästerskapet",
+      "folkligt hantverk"
+    ],
+    "correctIndex": 0,
+    "explain": "Allmoge är ett äldre ord för landsbygdens befolkning, främst bönderna: ”1700-talets allmoge levde av jordbruk och boskapsskötsel”. Borgarna i städerna och prästerskapet utgjorde egna stånd, skilda från allmogen. Gemensam betesmark heter allmänning, som bara liknar ordet. Folkligt hantverk förknippas med ordet genom sammansättningar som allmogemöbler, men allmoge betecknar själva människorna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-063",
+    "kind": "ord",
+    "prompt": "Vad betyder ”elda för kråkorna”?",
+    "options": [
+      "tala för döva öron",
+      "ge något fint åt den som inte uppskattar det",
+      "skrämma bort objudna gäster",
+      "sprida rykten",
+      "slösa bort värme"
+    ],
+    "correctIndex": 4,
+    "explain": "Att elda för kråkorna är att slösa bort värme, till exempel genom att elda medan fönster eller dörrar står öppna: ”stäng dörren, vi ska inte elda för kråkorna”. Att ge något fint åt den som inte uppskattar det heter att kasta pärlor för svin, och att tala utan att någon lyssnar är att tala för döva öron. Uttrycket handlar inte heller om att skrämma bort gäster eller sprida rykten; kråkorna står för dem utomhus som får del av värmen som går förlorad.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-064",
+    "kind": "ord",
+    "prompt": "Vad betyder ”apati”?",
+    "options": [
+      "medkänsla",
+      "likgiltighet",
+      "motvilja",
+      "matlust",
+      "ängslan"
+    ],
+    "correctIndex": 1,
+    "explain": "Apati är ett tillstånd av likgiltighet och håglöshet där man saknar engagemang och energi: ”efter förlusten föll han i apati”. Medkänsla och motvilja ligger nära de liknande orden sympati och antipati, och matlust heter aptit, som bara påminner om ordet till ljudet. Ängslan är oro, medan apati snarare innebär att man inte bryr sig alls.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-065",
+    "kind": "ord",
+    "prompt": "Vad betyder ”fallenhet”?",
+    "options": [
+      "förfall",
+      "modfälldhet",
+      "fallfärdighet",
+      "medfött anlag",
+      "tillfällighet"
+    ],
+    "correctIndex": 3,
+    "explain": "Fallenhet betyder naturlig begåvning eller anlag för något: ”hon har en fallenhet för språk”. Förfall och fallfärdighet (att något är nära att rasa ihop) bygger också på verbet falla men har inget med anlag att göra. Modfälldhet är nedstämdhet och liknar bara ordet till formen, och en tillfällighet är något som sker av en slump.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-066",
+    "kind": "ord",
+    "prompt": "Vad betyder ”försumlig”?",
+    "options": [
+      "slarvig med sina plikter",
+      "hänsynsfull och tillbakadragen",
+      "benägen att förlåta",
+      "överdrivet försiktig",
+      "sömnig och trög"
+    ],
+    "correctIndex": 0,
+    "explain": "Den som är försumlig sköter inte det den borde, utan slarvar med sina plikter: ”en försumlig hyresvärd som aldrig lagade något”. Hänsynsfull och tillbakadragen är betydelsen av försynt, och benägen att förlåta betydelsen av försonlig – två ord som bara liknar försumlig till formen. Överdrivet försiktig är närmast motsatsen, och sömnig och trög har man lätt att associera till ordet sömn, men försumlig hör ihop med verbet försumma.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-067",
+    "kind": "ord",
+    "prompt": "Vad betyder ”dekorum”?",
+    "options": [
+      "prålig utsmyckning",
+      "beslutsförhet",
+      "högtidlig ceremoni",
+      "yttre anständighet",
+      "hedersbetygelse"
+    ],
+    "correctIndex": 3,
+    "explain": "Dekorum betyder det som är passande och anständigt i det yttre uppträdandet: ”trots grälet bevarade de dekorum inför gästerna”. Prålig utsmyckning ligger nära dekor och dekoration, som bara liknar ordet. Beslutsförhet heter kvorum, ett annat latinskt ord på -um. En högtidlig ceremoni och en hedersbetygelse kan kräva att man iakttar dekorum, men ordet betecknar själva anständigheten, inte tillställningen eller äran.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-068",
+    "kind": "ord",
+    "prompt": "Vad betyder ”bryderi”?",
+    "options": [
+      "gräl",
+      "svek",
+      "förlägenhet",
+      "uppbrott",
+      "villfarelse"
+    ],
+    "correctIndex": 2,
+    "explain": "Bryderi betyder förlägenhet eller ett besvärligt läge där man inte vet hur man ska göra: ”frågan försatte honom i stort bryderi”. Ordet hör ihop med bry, som i huvudbry, och inte med bryta, så uppbrott är fel. Svek kan locka genom likheten med bedrägeri, och ett gräl är en öppen konflikt snarare än villrådighet. En villfarelse är en felaktig föreställning, men den som är i bryderi har inte missuppfattat något utan är osäker på vad den ska göra.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-069",
+    "kind": "ord",
+    "prompt": "Vad betyder ”eftergiven”?",
+    "options": [
+      "försummad",
+      "efterklok",
+      "eftertänksam",
+      "efterlängtad",
+      "släpphänt"
+    ],
+    "correctIndex": 4,
+    "explain": "Den som är eftergiven ger lätt efter för andras krav och viljor och är släpphänt: ”en alltför eftergiven förälder”. Försummad är betydelsen av eftersatt. Efterklok, eftertänksam och efterlängtad är andra ord med samma förled men helt andra betydelser: klok när det redan är för sent, benägen att tänka efter noga respektive länge väntad.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-070",
+    "kind": "ord",
+    "prompt": "Vad betyder ”avfälling”?",
+    "options": [
+      "utstött",
+      "överlöpare",
+      "nyomvänd",
+      "eftersläntrare",
+      "eremit"
+    ],
+    "correctIndex": 1,
+    "explain": "En avfälling är en person som har övergett sin tro, sitt parti eller sin sak, alltså en överlöpare: ”de gamla partikamraterna såg honom som en avfälling”. En utstött har blivit bortkörd av gruppen, medan avfällingen själv har lämnat den. En nyomvänd har tvärtom just anslutit sig till en tro. En eftersläntrare kommer efter de andra och en eremit lever avskild – ingen av dem behöver ha övergett något.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-071",
+    "kind": "ord",
+    "prompt": "Vad betyder ”bräcklig”?",
+    "options": [
+      "brokig",
+      "salthaltig",
+      "skrytsam",
+      "skrovlig",
+      "skör"
+    ],
+    "correctIndex": 4,
+    "explain": "Bräcklig betyder skör och lätt att skada eller bryta sönder: ”en bräcklig hälsa”, ”ett bräckligt fredsavtal”. Salthaltig kan man komma att tänka på genom bräckt vatten, och skrytsam genom verbet bräcka, som betyder att överträffa någon. Brokig betyder mångfärgad och liknar bara ordet till ljudet, och skrovlig (ojämn och sträv) beskriver en yta, inte hur lätt något går sönder.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-072",
+    "kind": "ord",
+    "prompt": "Vad betyder ”autodidakt”?",
+    "options": [
+      "envåldshärskare",
+      "självlärd person",
+      "privatlärare",
+      "självupptagen person",
+      "fritänkare"
+    ],
+    "correctIndex": 1,
+    "explain": "En autodidakt är en person som har skaffat sig sina kunskaper på egen hand, utan formell undervisning: ”som autodidakt lärde han sig latin ur gamla grammatikböcker”. Förledet auto- betyder själv, och -didakt hör ihop med undervisning, som i didaktik. En envåldshärskare heter autokrat, och en privatlärare undervisar andra. En självupptagen person kallas egocentriker, och en fritänkare har frigjort sig från religiösa dogmer – ingen av dem behöver vara självlärd.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-073",
+    "kind": "ord",
+    "prompt": "Vad betyder ”emellanåt”?",
+    "options": [
+      "ibland",
+      "dock",
+      "fortfarande",
+      "i förväg",
+      "så småningom"
+    ],
+    "correctIndex": 0,
+    "explain": "Emellanåt betyder ibland eller då och då: ”emellanåt hördes tåget i fjärran”. Dock är betydelsen av det liknande ordet emellertid. Fortfarande, i förväg och så småningom beskriver också tid men på andra sätt: att något pågår ännu, att det sker före något annat respektive att det sker efter en tid.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-074",
+    "kind": "ord",
+    "prompt": "Vad betyder ”arbiträr”?",
+    "options": [
+      "opartisk",
+      "auktoritär",
+      "ärftlig",
+      "godtycklig",
+      "tvingande"
+    ],
+    "correctIndex": 3,
+    "explain": "Arbiträr betyder godtycklig, alltså bestämd efter tycke och smak snarare än enligt fasta regler: ”gränsdragningen blev helt arbiträr”. Ordet är besläktat med arbiter (skiljedomare), vilket kan locka mot opartisk, men en arbiträr bedömning är tvärtom inte bunden av några principer. Auktoritär liknar ordet till ljudet och betyder maktfullkomlig. Ärftlig och tvingande har ingen koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-075",
+    "kind": "ord",
+    "prompt": "Vad betyder ”dekadens”?",
+    "options": [
+      "tioårsperiod",
+      "rytm",
+      "förfall",
+      "nedskärning",
+      "återhållsamhet"
+    ],
+    "correctIndex": 2,
+    "explain": "Dekadens betyder förfall, särskilt moraliskt eller kulturellt: ”romarrikets dekadens”. En tioårsperiod heter dekad, och rytm eller tonfall heter kadens – båda orden liknar dekadens till formen. En nedskärning är en minskning av resurser, inte ett förfall, och återhållsamhet är snarast motsatsen till det överflöd och den njutningslystnad som ofta förknippas med dekadens.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-076",
+    "kind": "ord",
+    "prompt": "Vad betyder ”bära hundhuvudet”?",
+    "options": [
+      "vara på dåligt humör",
+      "få skulden",
+      "visa sig undfallande",
+      "göra grovjobbet",
+      "vara envis"
+    ],
+    "correctIndex": 1,
+    "explain": "Att bära hundhuvudet är att få skulden för något, ofta orättvist eller som ensam syndabock: ”det var projektledaren som fick bära hundhuvudet för förseningen”. Uttrycket handlar inte om humör eller envishet, och den som är undfallande ger efter för andra utan att för den skull ha fått någon skuld. Att göra grovjobbet är att utföra det tunga arbetet, vilket är något annat än att bli utpekad som ansvarig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-077",
+    "kind": "ord",
+    "prompt": "Vad betyder ”befogad”?",
+    "options": [
+      "överdriven",
+      "befriad",
+      "berättigad",
+      "beordrad",
+      "förhastad"
+    ],
+    "correctIndex": 2,
+    "explain": "Befogad betyder berättigad, alltså grundad på goda skäl: ”kritiken mot beslutet var helt befogad”. Överdriven och förhastad kan passa in i samma sammanhang, men de säger tvärtom att en reaktion är för stark eller för snabb, medan en befogad reaktion är rimlig. Befriad och beordrad liknar ordet bara till formen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-078",
+    "kind": "ord",
+    "prompt": "Vad betyder ”distingerad”?",
+    "options": [
+      "tankspridd och virrig",
+      "reserverad",
+      "mångsidig",
+      "pratsam",
+      "förnäm i sättet"
+    ],
+    "correctIndex": 4,
+    "explain": "Distingerad betyder förnäm och värdig i sitt sätt och uppträdande: ”en distingerad äldre herre i välskräddad kostym”. Tankspridd och virrig är betydelsen av det ljudlika distraherad, och reserverad ligger nära distanserad, som också börjar på dist-. Mångsidig och pratsam saknar koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-079",
+    "kind": "ord",
+    "prompt": "Vad betyder ”dra sitt strå till stacken”?",
+    "options": [
+      "bidra med sin del",
+      "förlora en lottdragning",
+      "samla för egen räkning",
+      "överdriva sin insats",
+      "ge upp i sista stund"
+    ],
+    "correctIndex": 0,
+    "explain": "Att dra sitt strå till stacken är att bidra med sin del till en gemensam uppgift: ”alla drog sitt strå till stacken inför festen”. Bilden är myrorna som var och en bär sitt strå till myrstacken – för det gemensamma, inte för egen räkning. Att förlora en lottdragning heter att dra det kortaste strået, och uttrycket säger ingenting om att överdriva sin insats eller att ge upp.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-080",
+    "kind": "ord",
+    "prompt": "Vad betyder ”epigon”?",
+    "options": [
+      "föregångare",
+      "efterskrift",
+      "kvickhuvud",
+      "efterapare",
+      "uppkomling"
+    ],
+    "correctIndex": 3,
+    "explain": "En epigon är en efterföljare som härmar en förebild utan att tillföra något eget: ”mästaren fick många epigoner men ingen verklig efterträdare”. En föregångare är snarast motsatsen. Efterskrift heter epilog, som liknar ordet till formen, och kvickhuvud kan man associera till epigram, en kort och spetsig dikt. En uppkomling har snabbt stigit i samhället och behöver inte härma någon.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-081",
+    "kind": "ord",
+    "prompt": "Vad betyder ”flegmatisk”?",
+    "options": [
+      "lättretlig",
+      "svårmodig",
+      "sorglöst glad",
+      "lugn och oberörd",
+      "överdrivet noggrann"
+    ],
+    "correctIndex": 3,
+    "explain": "Flegmatisk betyder lugn, trög och svår att uppröra: ”den flegmatiske målvakten brydde sig inte om buropen”. Ordet kommer från den gamla läran om fyra temperament, där flegmatikern ställdes mot kolerikern (lättretlig), melankolikern (svårmodig) och sangvinikern (glad och sorglös). Därför lockar de alternativen, men de beskriver de andra tre temperamenten. Överdrivet noggrann beskriver en pedant, inte en flegmatiker.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-082",
+    "kind": "ord",
+    "prompt": "Vad betyder ”under någons egid”?",
+    "options": [
+      "i någons ställe",
+      "i hemlighet för någon",
+      "i någons frånvaro",
+      "mot någons vilja",
+      "med någons beskydd"
+    ],
+    "correctIndex": 4,
+    "explain": "Egid betyder beskydd, och uttrycket under någons egid betyder med någons beskydd och stöd: ”konferensen hölls under FN:s egid”. Ordet går tillbaka på grekiskans aigis, en skyddande sköld i den grekiska mytologin. Att göra något i någons ställe är att göra det i stället för personen, och i någons frånvaro säger bara att personen inte är på plats. I hemlighet för någon och mot någons vilja säger att personen inte står bakom det som sker – tvärtemot vad uttrycket betyder.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-083",
+    "kind": "ord",
+    "prompt": "Vad betyder ”avog”?",
+    "options": [
+      "avsides belägen",
+      "negativt inställd",
+      "avundsjuk",
+      "frånvarande",
+      "förvirrad och vilsen"
+    ],
+    "correctIndex": 1,
+    "explain": "Avog betyder ovilligt eller negativt inställd: ”styrelsen var avog mot förslaget”. Avsides belägen och frånvarande handlar om avstånd, som förledet av- kan få en att tänka på, och avundsjuk liknar ordet till ljudet. Förvirrad och vilsen har ingen koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-084",
+    "kind": "ord",
+    "prompt": "Vad betyder ”förnumstig”?",
+    "options": [
+      "förnuftig och eftertänksam",
+      "lätt att förnärma",
+      "som vill verka klok",
+      "nyfiken och frågvis",
+      "glömsk och virrig"
+    ],
+    "correctIndex": 2,
+    "explain": "Förnumstig beskriver den som gärna vill verka klok och belärande uttalar sig om allt, ofta om barn som låter lillgamla: ”den förnumstiga tonen retade hennes äldre syskon”. Ordet är nedsättande och betyder alltså inte förnuftig och eftertänksam, som är positiva egenskaper. Lätt att förnärma är den som är lättstött, och nyfiken och frågvis den som vill veta mer – snarare än den som tror sig veta allt. Glömsk och virrig har ingen koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-085",
+    "kind": "ord",
+    "prompt": "Vad betyder ”axiom”?",
+    "options": [
+      "grundsats",
+      "bevisad slutsats",
+      "kort tänkespråk",
+      "inbyggd motsägelse",
+      "lös gissning"
+    ],
+    "correctIndex": 0,
+    "explain": "Ett axiom är en grundsats som tas för given utan bevis och som annat kan härledas ur: ”geometrin bygger på ett fåtal axiom”. En bevisad slutsats är tvärtom något som har härletts, inte något man utgår från. Ett kort tänkespråk heter aforism, och en inbyggd motsägelse heter paradox. En lös gissning saknar den självklarhet och grundläggande roll som ett axiom har.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-086",
+    "kind": "ord",
+    "prompt": "Vad betyder ”exalterad”?",
+    "options": [
+      "utmattad",
+      "egendomlig",
+      "uppjagad",
+      "förlägen",
+      "uttråkad"
+    ],
+    "correctIndex": 2,
+    "explain": "Exalterad betyder överspänt upphetsad eller hänförd, uppjagad: ”de exalterade fansen skrek när bandet kom ut på scenen”. Utmattad kan förväxlas med ordet via engelskans exhausted, och egendomlig via excentrisk, som också börjar på ex-. Förlägen betyder generad, och uttråkad är närmast motsatsen till exalterad.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-087",
+    "kind": "ord",
+    "prompt": "Vad betyder ”chosefri”?",
+    "options": [
+      "okonstlad",
+      "kostnadsfri",
+      "slarvig",
+      "självsäker",
+      "tvångsmässig"
+    ],
+    "correctIndex": 0,
+    "explain": "Chosefri betyder okonstlad, utan tillgjordhet eller krusiduller: ”ett chosefritt bemötande”, ”en chosefri lunchrestaurang”. Ordet är bildat av choser, som betyder tillgjort beteende eller krumbukter. Kostnadsfri kan locka eftersom båda orden slutar på -fri, men chosefri har inget med pengar att göra. Den som är chosefri är inte därför slarvig, och självsäker och tvångsmässig saknar koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-088",
+    "kind": "ord",
+    "prompt": "Vad betyder ”decimera”?",
+    "options": [
+      "avrunda till heltal",
+      "dela upp i tio lika delar",
+      "dämpa ljudet av",
+      "kraftigt minska",
+      "skingra"
+    ],
+    "correctIndex": 3,
+    "explain": "Att decimera är att kraftigt minska antalet av något: ”epidemin decimerade befolkningen”. Ordet kommer av latinets decem (tio) och syftade på ett romerskt straff där var tionde soldat dödades, men det betyder inte att dela upp något i tio delar. Avrunda till heltal kan man associera till decimaler och dämpa ljudet till decibel, men ingetdera har med ordet att göra. Skingra betyder att sprida ut, inte att minska i antal.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-089",
+    "kind": "ord",
+    "prompt": "Vad betyder ”fadäs”?",
+    "options": [
+      "överdriven artighet",
+      "fast vana",
+      "medveten förolämpning",
+      "plötsligt infall",
+      "pinsamt misstag"
+    ],
+    "correctIndex": 4,
+    "explain": "En fadäs är ett pinsamt misstag eller en klumpig blunder, ofta i sociala sammanhang: ”det var en fadäs att glömma bort värdinnans namn”. En fadäs är just ofrivillig, så en medveten förolämpning är fel. Överdriven artighet och fast vana saknar koppling till ordet, och ett plötsligt infall kallas snarare en nyck.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-090",
+    "kind": "ord",
+    "prompt": "Vad betyder ”bekväma sig”?",
+    "options": [
+      "göra det bekvämt för sig",
+      "motvilligt förmå sig",
+      "slå sig till ro",
+      "skynda sig",
+      "ge upp"
+    ],
+    "correctIndex": 1,
+    "explain": "Att bekväma sig (till något) är att motvilligt eller efter lång tvekan förmå sig att göra det: ”till slut bekvämade han sig att svara på mejlet”. Trots likheten med adjektivet bekväm handlar det inte om att göra det bekvämt för sig eller att slå sig till ro. Att skynda sig är att öka takten, medan den som bekvämar sig ofta har dröjt länge, och att ge upp är närmast motsatsen – att avstå i stället för att till sist göra något.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-091",
+    "kind": "ord",
+    "prompt": "Vad betyder ”empiri”?",
+    "options": [
+      "erfarenhetsbaserad kunskap",
+      "rent tankemässig slutledning",
+      "inlevelseförmåga",
+      "kejsarvälde",
+      "vetenskaplig hypotes"
+    ],
+    "correctIndex": 0,
+    "explain": "Empiri är kunskap som bygger på erfarenhet, observationer och mätningar: ”teorin saknar stöd i empirin”. Rent tankemässig slutledning är det som brukar ställas mot empiri, och en vetenskaplig hypotes är ett antagande som kan prövas mot empirin men som ännu inte är belagt. Inlevelseförmåga heter empati, och kejsarvälde kan man associera till engelskans empire – båda liknar ordet bara till formen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-092",
+    "kind": "ord",
+    "prompt": "Vad betyder ”frejdad”?",
+    "options": [
+      "frimodig",
+      "fredlös",
+      "fruktad",
+      "förtjust",
+      "ryktbar"
+    ],
+    "correctIndex": 4,
+    "explain": "Frejdad är ett ålderdomligt ord för berömd eller ryktbar och hör ihop med frejd, som betyder gott rykte eller ära: ”en frejdad hjälte”. Frimodig är betydelsen av det nästan likalydande frejdig. Fredlös och förtjust liknar bara ordet till formen, och den som är fruktad är känd för att väcka rädsla, vilket är något annat än att ha gott rykte.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-093",
+    "kind": "ord",
+    "prompt": "Vad betyder ”deliberera”?",
+    "options": [
+      "befria",
+      "sammanfatta",
+      "överlägga",
+      "fatta beslut",
+      "dra sig tillbaka"
+    ],
+    "correctIndex": 2,
+    "explain": "Att deliberera är att överlägga, alltså noga diskutera och väga skälen innan man bestämmer sig: ”juryn delibererade i två dagar”. Att fatta beslut är det som kommer efter överläggningen, inte själva överläggningen. Befria kan förväxlas med ordet via engelskans liberate. Att sammanfatta och att dra sig tillbaka har ingen koppling till ordet, även om en jury brukar dra sig tillbaka för att överlägga.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-094",
+    "kind": "ord",
+    "prompt": "Vad betyder ”falla till föga”?",
+    "options": [
+      "falla i onåd",
+      "ge med sig",
+      "misslyckas",
+      "tröttna",
+      "göra bort sig"
+    ],
+    "correctIndex": 1,
+    "explain": "Att falla till föga är att ge med sig och göra som någon annan vill, ofta efter att först ha gjort motstånd: ”efter veckor av protester föll ledningen till föga”. Den som faller i onåd förlorar någons gunst, vilket är något annat. Att misslyckas, tröttna eller göra bort sig kan vara skäl till att man ger efter, men uttrycket betyder själva eftergivandet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-095",
+    "kind": "ord",
+    "prompt": "Vad betyder ”förskingra”?",
+    "options": [
+      "förfalska handlingar",
+      "smuggla varor",
+      "undanhålla inkomster från skatt",
+      "stjäla anförtrodda pengar",
+      "ta ut ockerränta"
+    ],
+    "correctIndex": 3,
+    "explain": "Att förskingra är att olovligen tillgodogöra sig pengar eller egendom som man har anförtrotts, till exempel av en arbetsgivare eller en förening: ”kassören förskingrade klubbens medel”. Att undanhålla inkomster från skatt är skattebrott, inte förskingring, eftersom det gäller ens egna pengar och inte något som någon annan har anförtrott en. Att förfalska handlingar, smuggla varor och ta ut ockerränta är andra brott med egna namn: urkundsförfalskning, smuggling och ocker.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-096",
+    "kind": "ord",
+    "prompt": "Vad betyder ”efemär”?",
+    "options": [
+      "överjordisk",
+      "spröd",
+      "omtvistad",
+      "kortlivad",
+      "dagdrömmande"
+    ],
+    "correctIndex": 3,
+    "explain": "Efemär betyder kortlivad eller snabbt övergående: ”en efemär trend som var glömd efter en sommar”. Ordet kommer av ett grekiskt ord för 'som varar en dag'. Överjordisk ligger nära det ljudlika eterisk, och spröd kan locka eftersom det efemära är förgängligt, men ordet handlar om tid, inte om hållfasthet. Dagdrömmande har inget med ordet att göra trots kopplingen till dag, och omtvistad saknar koppling helt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-097",
+    "kind": "ord",
+    "prompt": "Vad betyder ”förtrytelse”?",
+    "options": [
+      "förtryck",
+      "förargelse",
+      "ånger",
+      "förtroende",
+      "trötthet"
+    ],
+    "correctIndex": 1,
+    "explain": "Förtrytelse är ett ålderdomligt ord för förargelse eller harm: ”till hans stora förtrytelse fick rivalen priset”. Ånger kan locka eftersom danskans fortrydelse betyder just ånger, men på svenska betyder ordet harm. Förtryck och förtroende liknar ordet till formen, och trötthet kan man associera till verbet tryta (ta slut), men inget av dem stämmer.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-098",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ana ugglor i mossen”?",
+    "options": [
+      "misstänka oråd",
+      "vara vidskeplig",
+      "förutse oväder",
+      "vara dåligt förberedd",
+      "känna sig ensam"
+    ],
+    "correctIndex": 0,
+    "explain": "Att ana ugglor i mossen är att misstänka att något inte står rätt till: ”när ingen svarade i telefonen anade hon ugglor i mossen”. Uttrycket handlar inte om vidskepelse eller om att förutse väder, även om ugglor och mossar kan leda tankarna till folktro och natur. Att vara dåligt förberedd och att känna sig ensam har ingen koppling till uttrycket.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-099",
+    "kind": "ord",
+    "prompt": "Vad betyder ”emfas”?",
+    "options": [
+      "inlevelse",
+      "utvikning",
+      "eftertryck",
+      "tvekan",
+      "underdrift"
+    ],
+    "correctIndex": 2,
+    "explain": "Emfas betyder eftertryck eller kraftig betoning: ”hon sade nej med emfas”. Inlevelse heter empati, ett ord som börjar nästan likadant. En utvikning är ett sidospår i ett resonemang, tvekan är snarast motsatsen till att säga något med emfas, och underdrift är att uttrycka sig svagare än man menar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-100",
+    "kind": "ord",
+    "prompt": "Vad betyder ”beskäftig”?",
+    "options": [
+      "foglig och snäll",
+      "full av bekymmer",
+      "skämtsam och retsam",
+      "skamsen och förlägen",
+      "påträngande hjälpsam"
+    ],
+    "correctIndex": 4,
+    "explain": "Beskäftig betyder överdrivet ivrig att hjälpa till eller lägga sig i, så att det blir påträngande: ”en beskäftig granne som alltid hade synpunkter på hur man skötte trädgården”. Foglig och snäll är betydelsen av det ljudlika beskedlig, och full av bekymmer motsvarar bekymrad. Skämtsam och retsam liksom skamsen och förlägen har ingen koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-101",
+    "kind": "ord",
+    "prompt": "Vad betyder ”gensaga”?",
+    "options": [
+      "upprepning",
+      "folksaga",
+      "invändning",
+      "förutsägelse",
+      "eftergift"
+    ],
+    "correctIndex": 2,
+    "explain": "En gensaga är en invändning eller protest. Ordet används oftast i uttrycket ”utan gensaga”: ”förslaget antogs utan gensaga”. Folksaga och förutsägelse lockar eftersom de innehåller saga och säga, men gen- betyder här emot, inte berättelse eller spådom. Upprepning bygger på att gen- tolkas som igen. Eftergift, att ge med sig, är nästan motsatsen till att säga emot.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-102",
+    "kind": "ord",
+    "prompt": "Vad betyder ”gryende”?",
+    "options": [
+      "begynnande",
+      "gråaktig",
+      "grubblande",
+      "dröjande",
+      "avtagande"
+    ],
+    "correctIndex": 0,
+    "explain": "Gryende betyder begynnande, något som just håller på att uppstå, med bilden av att dagen gryr: ”ett gryende intresse för politik”. Gråaktig och grubblande liknar bara ordet till ljudet. Dröjande antyder att något väntar eller går långsamt, inte att det börjar, och avtagande är det motsatta, något som blir mindre.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-103",
+    "kind": "ord",
+    "prompt": "Vad betyder ”gunås”?",
+    "options": [
+      "gudskelov",
+      "naturligtvis",
+      "kanske",
+      "ändå",
+      "tyvärr"
+    ],
+    "correctIndex": 4,
+    "explain": "Gunås, ursprungligen ”Gud nåde oss”, är ett något ålderdomligt sätt att säga tyvärr eller dessvärre: ”det blev, gunås, inget av med resan”. Gudskelov lockar eftersom även det innehåller Gud, men det uttrycker lättnad, inte beklagande. Naturligtvis anger att något är självklart, kanske uttrycker osäkerhet och ändå anger att något gäller trots något annat; inget av dem beklagar något.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-104",
+    "kind": "ord",
+    "prompt": "Vad betyder ”habil”?",
+    "options": [
+      "vanemässig",
+      "skicklig",
+      "hövlig",
+      "återställd",
+      "beskedlig"
+    ],
+    "correctIndex": 1,
+    "explain": "Habil betyder skicklig eller duglig: ”en habil pianist som klarade de svåra passagerna”. Vanemässig lockar via engelskans habit, vana, och återställd via rehabiliterad, men inget av dem är betydelser av habil. Hövlig och beskedlig beskriver ett vänligt eller fogligt sätt, inte förmåga.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-105",
+    "kind": "ord",
+    "prompt": "Vad betyder ”halsstarrig”?",
+    "options": [
+      "hes",
+      "högfärdig",
+      "lättretlig",
+      "envis",
+      "skygg"
+    ],
+    "correctIndex": 3,
+    "explain": "Halsstarrig betyder envis och omedgörlig, som någon som vägrar böja sig: ”trots alla argument höll han halsstarrigt fast vid sin plan”. Hes lockar eftersom ordet innehåller hals, men det handlar inte om rösten. Högfärdig (som tycker sig vara förmer) och lättretlig (som lätt blir arg) beskriver andra egenskaper än ovilja att ge med sig, och skygg betyder blyg och försiktig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-106",
+    "kind": "ord",
+    "prompt": "Vad betyder ”handfallen”?",
+    "options": [
+      "rådvill",
+      "fumlig",
+      "handfast",
+      "tomhänt",
+      "hjälpsam"
+    ],
+    "correctIndex": 0,
+    "explain": "Handfallen betyder rådvill, att inte veta vad man ska göra och därför inte handla alls: ”personalen stod handfallen när larmet gick”. Fumlig, tomhänt och hjälpsam lockar eftersom de alla har med händerna att göra, men fumlig betyder klumpig, tomhänt att man inte har något med sig och hjälpsam att man gärna hjälper till. Handfast betyder bestämd och kraftfull, alltså nästan det motsatta.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-107",
+    "kind": "ord",
+    "prompt": "Vad betyder ”harang”?",
+    "options": [
+      "hånfull kommentar",
+      "sillstim",
+      "långrandigt tal",
+      "rangordning",
+      "hastigt uppbrott"
+    ],
+    "correctIndex": 2,
+    "explain": "En harang är ett långt, ofta högtravande och tröttande tal: ”efter en lång harang om laganda fick spelarna äntligen gå ut på planen”. Hånfull kommentar lockar genom likheten med hån, och rangordning genom ändelsen -rang. Sillstim bygger på det franska ordet för sill, hareng, som liknar harang men är ett annat ord. Hastigt uppbrott saknar koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-108",
+    "kind": "ord",
+    "prompt": "Vad betyder ”grannlaga”?",
+    "options": [
+      "prålig",
+      "lagenlig",
+      "närbelägen",
+      "omständlig",
+      "ömtålig"
+    ],
+    "correctIndex": 4,
+    "explain": "Grannlaga betyder ömtålig eller känslig, något som kräver finkänslighet: ”det är ett grannlaga uppdrag att meddela anhöriga”. Prålig lockar eftersom grann kan betyda vacker och färggrann, lagenlig eftersom ordet slutar på laga och närbelägen eftersom det börjar som granne. Omständlig betyder krånglig och långrandig, vilket är något annat än att en sak måste hanteras varsamt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-109",
+    "kind": "ord",
+    "prompt": "Vad betyder ”hybris”?",
+    "options": [
+      "blandform",
+      "hysteri",
+      "självförakt",
+      "övermod",
+      "hämndlystnad"
+    ],
+    "correctIndex": 3,
+    "explain": "Hybris är övermod, en självöverskattning som ofta straffar sig: ”det var ren hybris att tro att bolaget kunde ta över hela marknaden på ett år”. Blandform lockar eftersom hybrid liknar ordet, och hysteri är också ljudlikt. Självförakt är snarast motsatsen. Hämndlystnad lockar eftersom hybris i grekiska myter följs av nemesis, gudarnas vedergällning, men det är straffet, inte övermodet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-110",
+    "kind": "ord",
+    "prompt": "Vad betyder ”hägn”?",
+    "options": [
+      "förtroende",
+      "skydd",
+      "hägring",
+      "ansvar",
+      "gästfrihet"
+    ],
+    "correctIndex": 1,
+    "explain": "Hägn betyder skydd och används mest i uttryck som ”under lagens hägn”: ”de små företagen växte upp i statens hägn”. Ordet är släkt med hägna in, att skydda med ett stängsel. Hägring, en synvilla, liknar bara ordet till formen. Förtroende, ansvar och gästfrihet kan finnas i samma situationer som ett skydd, men ingen av dem betyder att någon skyddas.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-111",
+    "kind": "ord",
+    "prompt": "Vad betyder ”idog”?",
+    "options": [
+      "enfaldig",
+      "flitig",
+      "dåsig",
+      "trofast",
+      "självgod"
+    ],
+    "correctIndex": 1,
+    "explain": "Idog betyder flitig och ihärdig, att arbeta träget och länge: ”efter år av idogt arbete blev ordboken klar”. Enfaldig lockar eftersom ordets början påminner om idiot, men idog säger inget om förstånd. Dåsig är närmast motsatsen. Trofast och självgod beskriver lojalitet respektive självbelåtenhet, inte arbetsflit.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-112",
+    "kind": "ord",
+    "prompt": "Vad betyder ”immanent”?",
+    "options": [
+      "nära förestående",
+      "överhängande",
+      "överjordisk",
+      "omedelbar",
+      "inneboende"
+    ],
+    "correctIndex": 4,
+    "explain": "Immanent betyder inneboende, något som finns i själva saken: ”konflikten är immanent i systemet”. Nära förestående och överhängande lockar eftersom de är betydelser av det nästan likadana ordet imminent (engelska imminent). Omedelbar lockar via engelskans immediate. Överjordisk är snarast motsatsen; det som går utöver världen kallas transcendent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-113",
+    "kind": "ord",
+    "prompt": "Vad betyder ”hålla tand för tunga”?",
+    "options": [
+      "bita ihop",
+      "hålla med",
+      "tala tydligt",
+      "tiga",
+      "äta försiktigt"
+    ],
+    "correctIndex": 3,
+    "explain": "Att hålla tand för tunga är att tiga, att inte säga något man vet eller tycker: ”hon visste vem som låg bakom, men höll tand för tunga”. Bita ihop lockar eftersom även det handlar om tänderna, men det betyder att uthärda något utan att klaga. Tala tydligt är motsatsen, och äta försiktigt tar bilden bokstavligt. Hålla med betyder att instämma, inte att tiga.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-114",
+    "kind": "ord",
+    "prompt": "Vad betyder ”inkognito”?",
+    "options": [
+      "under falskt namn",
+      "utan förvarning",
+      "utan biljett",
+      "utan att veta om det",
+      "på obestämd tid"
+    ],
+    "correctIndex": 0,
+    "explain": "Inkognito betyder under falskt namn eller utan att ge sig till känna: ”kungen reste inkognito genom landet”. Ordet kommer från italienskans incognito, okänd. Utan att veta om det lockar eftersom kognitiv har med kunskap att göra, men det är den resande som är okänd, inte omgivningen som är ovetande. Utan förvarning, utan biljett och på obestämd tid kan passa in i berättelser om hemliga resor, men ingen av dem är vad ordet betyder.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-115",
+    "kind": "ord",
+    "prompt": "Vad betyder ”intrikat”?",
+    "options": [
+      "fängslande",
+      "listig",
+      "påträngande",
+      "invecklad",
+      "inbilsk"
+    ],
+    "correctIndex": 3,
+    "explain": "Intrikat betyder invecklad eller svårlöst: ”en intrikat juridisk fråga som domstolen behövde lång tid för”. Fängslande lockar via engelskans intriguing, och listig via intrig och intrigant, men intrikat säger inget om att något är spännande eller slugt. Påträngande och inbilsk liknar bara ordet till ljudet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-116",
+    "kind": "ord",
+    "prompt": "Vad betyder ”invektiv”?",
+    "options": [
+      "inbjudan",
+      "invändning",
+      "skällsord",
+      "påhitt",
+      "investering"
+    ],
+    "correctIndex": 2,
+    "explain": "Ett invektiv är ett skällsord eller en grov förolämpning: ”debatten urartade i en skur av invektiv”. Invändning lockar eftersom båda kan höras i en debatt, men en invändning är ett sakligt motargument. Inbjudan lockar via engelskans invite, påhitt via invention och investering via den gemensamma början inve-.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-117",
+    "kind": "ord",
+    "prompt": "Vad betyder ”irreversibel”?",
+    "options": [
+      "oberäknelig",
+      "ovidkommande",
+      "motsatt riktad",
+      "obeständig",
+      "oåterkallelig"
+    ],
+    "correctIndex": 4,
+    "explain": "Irreversibel betyder oåterkallelig, något som inte kan göras ogjort eller gå tillbaka: ”skadorna på nervsystemet är irreversibla”. Motsatt riktad lockar eftersom reverse betyder vända på, men ordet säger att något inte kan vändas tillbaka. Ovidkommande lockar via irrelevant, som börjar likadant. Oberäknelig betyder oförutsägbar och obeständig att något inte varar, vilket snarast är motsatsen till en bestående förändring.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-118",
+    "kind": "ord",
+    "prompt": "Vad betyder ”jovialisk”?",
+    "options": [
+      "ungdomlig",
+      "gemytlig",
+      "majestätisk",
+      "rättvis",
+      "smyckad"
+    ],
+    "correctIndex": 1,
+    "explain": "Jovialisk betyder gemytlig, glad och hjärtlig på ett lättsamt sätt: ”en jovialisk värd som skämtade med alla gäster”. Ungdomlig lockar via juvenil, smyckad via juvel och rättvis via ord som juridik och justitie. Majestätisk lockar eftersom ordet kommer av Jovis, ett namn på den romerske guden Jupiter, men betydelsen är glad och vänlig, inte upphöjd.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-119",
+    "kind": "ord",
+    "prompt": "Vad betyder ”jämka”?",
+    "options": [
+      "jämföra",
+      "jämställa",
+      "justera",
+      "avgöra",
+      "klaga"
+    ],
+    "correctIndex": 2,
+    "explain": "Att jämka är att justera något lite så att det passar, ofta för att nå en kompromiss: ”parterna jämkade sina krav tills de kunde enas”, ”domstolen jämkade skadeståndet”. Jämföra och jämställa lockar genom den gemensamma början jäm-, men de betyder att väga saker mot varandra respektive att ge lika värde eller rättigheter. Avgöra är att fatta det slutliga beslutet, och klaga lockar genom likheten med jämra sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-120",
+    "kind": "ord",
+    "prompt": "Vad betyder ”kompromettera”?",
+    "options": [
+      "misskreditera",
+      "nå en uppgörelse",
+      "ge efter",
+      "förplikta",
+      "komplettera"
+    ],
+    "correctIndex": 0,
+    "explain": "Att kompromettera någon är att misskreditera, alltså skada personens anseende: ”de läckta mejlen komprometterade ministern”. Nå en uppgörelse och ge efter lockar eftersom ordet liknar kompromissa, men det är ett annat ord. Förplikta lockar via engelskans commit, och komplettera, att göra fullständig, liknar bara ordet till ljudet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-121",
+    "kind": "ord",
+    "prompt": "Vad betyder ”kutym”?",
+    "options": [
+      "dräkt",
+      "tull",
+      "hövlighet",
+      "sedvänja",
+      "kundkrets"
+    ],
+    "correctIndex": 3,
+    "explain": "Kutym betyder sedvänja eller praxis, det som brukar göras inom ett visst område: ”enligt kutym håller den avgående ordföranden ett tal”. Dräkt lockar eftersom kutym påminner om kostym. Tull och kundkrets lockar via engelskans custom, som i formen customs betyder tull och i äldre bruk kan betyda kundkrets, men det svenska ordet har inte de betydelserna. Hövlighet är en sorts gott uppförande, inte en etablerad vana.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-122",
+    "kind": "ord",
+    "prompt": "Vad betyder ”med berått mod”?",
+    "options": [
+      "modigt",
+      "efter samråd",
+      "i upprört tillstånd",
+      "med gott samvete",
+      "avsiktligt"
+    ],
+    "correctIndex": 4,
+    "explain": "Med berått mod betyder avsiktligt och efter att ha tänkt efter: ”han lämnade dörren olåst med berått mod”. Mod betyder här sinnelag, inte tapperhet, så modigt är fel. Efter samråd lockar eftersom berått liknar rådslå, men uttrycket kräver inte att man frågat någon annan. I upprört tillstånd motsvarar det motsatta uttrycket i hastigt mod, och med gott samvete säger inget om att handlingen var genomtänkt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-123",
+    "kind": "ord",
+    "prompt": "Vad betyder ”kurant”?",
+    "options": [
+      "kursiv",
+      "strömmande",
+      "nyfiken",
+      "säljbar",
+      "kortfattad"
+    ],
+    "correctIndex": 3,
+    "explain": "Kurant betyder säljbar eller gångbar: ”begagnade elcyklar är en kurant vara”. Ordet kommer från franskans courant, löpande. I vardagligt tal kan det också betyda frisk, som i ”jag känner mig inte riktigt kurant”. Strömmande lockar via engelskans current, nyfiken via curious och kursiv genom att det liknar kurs. Kortfattad har ingen koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-124",
+    "kind": "ord",
+    "prompt": "Vad betyder ”latent”?",
+    "options": [
+      "försenad",
+      "lättjefull",
+      "dold",
+      "framträdande",
+      "smittsam"
+    ],
+    "correctIndex": 2,
+    "explain": "Latent betyder dold, något som finns men ännu inte har visat sig: ”en latent konflikt som blossade upp vid budgetförhandlingen”. Försenad lockar via engelskans late och lättjefull via lat, men ingen av dem är betydelser av latent. Smittsam lockar eftersom ordet används om infektioner, ”en latent infektion”, men där betyder det att sjukdomen ligger vilande. Framträdande är snarast motsatsen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-125",
+    "kind": "ord",
+    "prompt": "Vad betyder ”vara legio”?",
+    "options": [
+      "vara lagenlig",
+      "vara talrik",
+      "vara organiserad",
+      "vara föråldrad",
+      "vara överdriven"
+    ],
+    "correctIndex": 1,
+    "explain": "Att vara legio betyder att vara mycket talrik: ”exemplen på misslyckade reformer är legio”. Legio är latin för legion, en stor truppstyrka, och det är mängden som har gett uttrycket dess betydelse. Vara organiserad lockar eftersom en legion är en ordnad militär enhet, och vara lagenlig eftersom legio påminner om legal. Vara föråldrad och vara överdriven säger något om sakens kvalitet, inte hur många de är.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-126",
+    "kind": "ord",
+    "prompt": "Vad betyder ”lukrativ”?",
+    "options": [
+      "lysande",
+      "lustfylld",
+      "klarsynt",
+      "lättsam",
+      "lönsam"
+    ],
+    "correctIndex": 4,
+    "explain": "Lukrativ betyder lönsam eller vinstgivande, av latinets lucrum, vinst: ”ett lukrativt avtal med en stor kund”. Lysande lockar eftersom ordet påminner om latinets lux, ljus, och klarsynt via engelskans lucid. Lustfylld och lättsam liknar bara ordet till ljudet och säger inget om pengar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-127",
+    "kind": "ord",
+    "prompt": "Vad betyder ”lyte”?",
+    "options": [
+      "kroppsfel",
+      "lögn",
+      "lynne",
+      "ljusskimmer",
+      "lydnad"
+    ],
+    "correctIndex": 0,
+    "explain": "Ett lyte är ett kroppsfel eller en skavank: ”sagans prins hade ett lyte som han dolde för hovet”. Lynne, en persons sinnelag, liknar bara ordet till ljudet. Ljusskimmer lockar via lysa, lydnad via lyda och lögn via ljuga, men inget av dem har med betydelsen att göra.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-128",
+    "kind": "ord",
+    "prompt": "Vad betyder ”maklig”?",
+    "options": [
+      "mäktig",
+      "smaklig",
+      "utan brådska",
+      "omständlig",
+      "maktfullkomlig"
+    ],
+    "correctIndex": 2,
+    "explain": "Maklig betyder lugn och bekväm, utan brådska: ”de promenerade i makligt tempo längs stranden”. Mäktig och maktfullkomlig lockar eftersom ordet påminner om makt, och smaklig är bara ljudlikt. Omständlig betyder krånglig och långrandig; den som är omständlig kan vara långsam, men ordet handlar om onödigt krångel, inte om ett lugnt tempo.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-129",
+    "kind": "ord",
+    "prompt": "Vad betyder ”mondän”?",
+    "options": [
+      "elegant och världsvan",
+      "enformig och vardaglig",
+      "jordnära och enkel",
+      "månatligen återkommande",
+      "gammaldags och stel"
+    ],
+    "correctIndex": 0,
+    "explain": "Mondän betyder elegant och världsvan, präglad av den fina världens sällskapsliv: ”en mondän badort med kasino och lyxhotell”. Ordet kommer av franskans monde, värld. Enformig och vardaglig lockar eftersom engelskans mundane betyder just det, men det är en falsk vän. Jordnära och enkel ligger nära samma missförstånd. Månatligen återkommande bygger på likheten med engelskans Monday och month, och gammaldags och stel är snarare motsatsen till det mondäna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-130",
+    "kind": "ord",
+    "prompt": "Vad betyder ”mästra”?",
+    "options": [
+      "fullända",
+      "vinna",
+      "härma",
+      "läxa upp",
+      "förvalta"
+    ],
+    "correctIndex": 3,
+    "explain": "Att mästra någon är att läxa upp eller tillrättavisa, ofta på ett överlägset sätt: ”hon tröttnade på att bli mästrad av sin äldre kollega”. Fullända lockar via mästerverk och vinna via mästare, men ordet handlar om att någon spelar lärare. Härma och förvalta har ingen koppling till betydelsen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-131",
+    "kind": "ord",
+    "prompt": "Vad betyder ”nalkas”?",
+    "options": [
+      "fördröjas",
+      "smyga",
+      "avlägsna sig",
+      "förbereda sig",
+      "närma sig"
+    ],
+    "correctIndex": 4,
+    "explain": "Att nalkas är att närma sig, ofta om tid eller något hotfullt: ”hösten nalkas”, ”ett oväder nalkades från väster”. Smyga lockar eftersom det som nalkas ofta kommer långsamt och obemärkt, men ordet säger bara att något kommer närmare. Avlägsna sig är motsatsen. Fördröjas och förbereda sig handlar om att något dröjer respektive att man gör sig redo.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-132",
+    "kind": "ord",
+    "prompt": "Vad betyder ”nitisk”?",
+    "options": [
+      "orubblig",
+      "ivrig",
+      "nedstämd",
+      "nyfiken",
+      "skarpsinnig"
+    ],
+    "correctIndex": 1,
+    "explain": "Nitisk betyder ivrig, ofta överdrivet ivrig att göra sin plikt: ”en nitisk vakt som kontrollerade varje passerkort två gånger”. Ordet kommer av nit, iver. Nedstämd lockar via nitlott, en lott som inte vinner, och orubblig via verbet nita, att fästa med nitar. Nyfiken och skarpsinnig beskriver vetgirighet och skarp tankeförmåga, inte iver i arbetet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-133",
+    "kind": "ord",
+    "prompt": "Vad betyder ”kasta handsken”?",
+    "options": [
+      "ge upp",
+      "förolämpa",
+      "utmana",
+      "sluta arbeta",
+      "försona sig"
+    ],
+    "correctIndex": 2,
+    "explain": "Att kasta handsken är att utmana någon, från den gamla seden att kasta sin handske framför motståndaren för att utmana till duell: ”oppositionen kastade handsken och krävde en debatt”. Ge upp lockar eftersom det liknar uttrycket kasta in handduken, och sluta arbeta tar bilden med handskarna bokstavligt. Förolämpa kan ha föregått en utmaning, men det är inte vad uttrycket betyder, och försona sig är motsatsen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-134",
+    "kind": "ord",
+    "prompt": "Vad betyder ”nyck”?",
+    "options": [
+      "vana",
+      "knep",
+      "nackdel",
+      "nickning",
+      "infall"
+    ],
+    "correctIndex": 4,
+    "explain": "En nyck är ett plötsligt och oberäkneligt infall: ”av en nyck köpte hon en tågbiljett till Rom”. Vana är snarast motsatsen, något man gör regelbundet. Knep betyder list eller trick, och nackdel och nickning liknar bara ordet till ljudet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-135",
+    "kind": "ord",
+    "prompt": "Vad betyder ”offerera”?",
+    "options": [
+      "offra",
+      "beställa",
+      "göra avkall på",
+      "lämna pris på",
+      "fakturera"
+    ],
+    "correctIndex": 3,
+    "explain": "Att offerera är att lämna pris på något, att ge en offert: ”tre byggfirmor offererade takbytet”. Offra och göra avkall på lockar eftersom ordet liknar offer, men de betyder att uppoffra något. Beställa och fakturera hör också till affärer, men det är köparen som beställer, och en faktura skickas först när arbetet är utfört.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-136",
+    "kind": "ord",
+    "prompt": "Vad betyder ”opportun”?",
+    "options": [
+      "beräknande",
+      "motsträvig",
+      "läglig",
+      "möjlig",
+      "angelägen"
+    ],
+    "correctIndex": 2,
+    "explain": "Opportun betyder läglig eller lämplig i det rådande läget: ”styrelsen ansåg det inte opportunt att höja priserna mitt i krisen”. Beräknande lockar via opportunist, någon som utnyttjar varje tillfälle för egen vinning, och möjlig via engelskans opportunity, möjlighet. Motsträvig bygger på likheten med opponera. Angelägen betyder viktig eller ivrig, vilket inte är samma sak som att tidpunkten är rätt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-137",
+    "kind": "ord",
+    "prompt": "Vad betyder ”hugget som stucket”?",
+    "options": [
+      "våldsamt",
+      "kvittar lika",
+      "plötsligt",
+      "slarvigt utfört",
+      "helt avgjort"
+    ],
+    "correctIndex": 1,
+    "explain": "Hugget som stucket betyder att det kvittar lika, att två alternativ är lika bra eller lika dåliga: ”om vi tar bussen eller tåget är hugget som stucket”. Våldsamt tar orden hugga och sticka bokstavligt. Plötsligt och slarvigt utfört lockar eftersom ett hugg kan gå fort och vara ovarsamt, men uttrycket jämför två saker. Helt avgjort betyder att saken är klar, inte att valet är oviktigt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-138",
+    "kind": "ord",
+    "prompt": "Vad betyder ”oförvitlig”?",
+    "options": [
+      "oklanderlig",
+      "beständig",
+      "oförklarlig",
+      "oförsiktig",
+      "obegriplig"
+    ],
+    "correctIndex": 0,
+    "explain": "Oförvitlig betyder oklanderlig, att ingen kan förebrå en något: ”hon hade ett oförvitligt rykte som domare”. Beständig lockar eftersom ordet liknar förvittra, att vittra sönder, så att oförvitlig kan misstas för något som inte vittrar. Oförklarlig och obegriplig liknar ordet till formen, och oförsiktig är snarast det motsatta till hur en oförvitlig person beter sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-139",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ombytlig”?",
+    "options": [
+      "utbytbar",
+      "ostadig",
+      "omsorgsfull",
+      "envis",
+      "omvänd"
+    ],
+    "correctIndex": 1,
+    "explain": "Ombytlig betyder ostadig, att ofta ändra sig eller skifta: ”ombytligt aprilväder”, ”en ombytlig publik”. Utbytbar lockar eftersom båda har med byte att göra, men utbytbar betyder att något kan ersättas av något annat. Envis är motsatsen, och omsorgsfull och omvänd liknar bara ordet genom förledet om-.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-140",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ge sig till tåls”?",
+    "options": [
+      "vänta lugnt",
+      "ge efter",
+      "tåla smärta",
+      "ge sig av",
+      "ta illa upp"
+    ],
+    "correctIndex": 0,
+    "explain": "Att ge sig till tåls är att vänta lugnt och tålmodigt: ”resultaten kommer i juni, så tills dess får ni ge er till tåls”. Tåla smärta lockar eftersom tåls påminner om tåla, men uttrycket handlar om tålamod, inte uthärdande av smärta. Ge efter och ge sig av bygger på verbet ge sig, som annars kan betyda att ge upp eller att gå. Ta illa upp betyder att bli förnärmad.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-141",
+    "kind": "ord",
+    "prompt": "Vad betyder ”tendentiös”?",
+    "options": [
+      "spänd",
+      "trendkänslig",
+      "vinklad",
+      "ömtålig",
+      "tvekande"
+    ],
+    "correctIndex": 2,
+    "explain": "Tendentiös betyder vinklad eller partisk, alltså framställd så att den gynnar en viss uppfattning: ”en tendentiös rapport som bara redovisade de siffror som stödde regeringens linje”. Ordet hör ihop med tendens i betydelsen avsiktlig inriktning. Trendkänslig lockar genom ljudlikheten med trend, och spänd genom likheten med engelskans tension. Ömtålig lockar eftersom engelskans tender kan betyda öm eller känslig. Tvekande har ingen koppling till ordet, och inget av lockbetena handlar om partiskhet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-142",
+    "kind": "ord",
+    "prompt": "Vad betyder ”äventyra”?",
+    "options": [
+      "riskera",
+      "uppleva",
+      "utforska",
+      "förhindra",
+      "ifrågasätta"
+    ],
+    "correctIndex": 0,
+    "explain": "Äventyra betyder riskera eller sätta på spel: ”det nya beslutet kan äventyra hela projektet”. Uppleva och utforska lockar eftersom ordet påminner om substantivet äventyr, men verbet handlar om att utsätta något för fara, inte om att vara med om något spännande. Förhindra och ifrågasätta passar i liknande sammanhang, men att hota något är inte detsamma som att stoppa det eller att betvivla det.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-143",
+    "kind": "ord",
+    "prompt": "Vad betyder ”pietet”?",
+    "options": [
+      "medlidande",
+      "noggrannhet",
+      "ståndaktighet",
+      "sparsamhet",
+      "vördnad"
+    ],
+    "correctIndex": 4,
+    "explain": "Pietet betyder vördnad och respektfull hänsyn, särskilt mot de döda, mot det som är äldre och mot traditioner: ”gravarna flyttades med största pietet”. Medlidande lockar eftersom ordet liknar engelskans pity, men pietet handlar om respekt, inte om att tycka synd om någon. Noggrannhet kan verka rimligt eftersom den som visar pietet ofta går varsamt fram, men det är inte vad ordet betyder. Ståndaktighet och sparsamhet saknar koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-144",
+    "kind": "ord",
+    "prompt": "Vad betyder ”stryka på foten”?",
+    "options": [
+      "smyga iväg",
+      "få ge vika",
+      "ta det försiktigt",
+      "snava",
+      "gå för långt"
+    ],
+    "correctIndex": 1,
+    "explain": "Att stryka på foten betyder att tvingas ge vika eller att förlora, ofta i en konkurrens: ”de små butikerna fick stryka på foten när köpcentret öppnade”. Smyga iväg och snava lockar eftersom uttrycket låter som en rörelse med foten, och ta det försiktigt kan låta som att gå varsamt fram. Gå för långt betyder att överskrida en gräns, vilket är något helt annat än att förlora.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-145",
+    "kind": "ord",
+    "prompt": "Vad betyder ”redbar”?",
+    "options": [
+      "beredd",
+      "begriplig",
+      "rödlätt",
+      "hederlig",
+      "anspråkslös"
+    ],
+    "correctIndex": 3,
+    "explain": "Redbar betyder hederlig och rättskaffens: ”en redbar tjänsteman som aldrig tog emot mutor”. Ordet är något ålderdomligt. Beredd lockar genom likheten med redo, begriplig genom likheten med redig och rödlätt genom likheten med röd, men ingen av dem har med ordet att göra. Anspråkslös beskriver liksom redbar en god egenskap hos en person, men handlar om att vara blygsam, inte om att vara ärlig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-146",
+    "kind": "ord",
+    "prompt": "Vad betyder ”utopi”?",
+    "options": [
+      "pessimistisk framtidsbild",
+      "vetenskaplig prognos",
+      "orealistisk idealbild",
+      "längtan bakåt i tiden",
+      "omvälvande samhällsförändring"
+    ],
+    "correctIndex": 2,
+    "explain": "En utopi är ett tänkt idealsamhälle eller en idealbild som inte går att förverkliga: ”tanken på en värld helt utan konflikter är en utopi”. En pessimistisk framtidsbild är närmast motsatsen, en dystopi. En vetenskaplig prognos bygger på fakta och sannolikheter, medan en utopi är en drömbild. Längtan bakåt i tiden är nostalgi, och en omvälvande samhällsförändring är en revolution, även om en sådan kan ha utopiska mål.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-147",
+    "kind": "ord",
+    "prompt": "Vad betyder ”åberopa”?",
+    "options": [
+      "hänvisa till",
+      "överklaga",
+      "frånsäga sig",
+      "anklaga",
+      "förkunna"
+    ],
+    "correctIndex": 0,
+    "explain": "Att åberopa betyder att hänvisa till något som stöd för sin sak: ”han åberopade ett tidigare avtal”. Överklaga lockar eftersom båda orden hör hemma i juridiska sammanhang, men att överklaga är att begära att ett beslut prövas på nytt. Förkunna, som betyder att tillkännage högtidligt, lockar genom ropa i ordet. Anklaga och frånsäga sig betyder att beskylla någon respektive att avstå från något.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-148",
+    "kind": "ord",
+    "prompt": "Vad betyder ”persiflera”?",
+    "options": [
+      "övertala",
+      "framhärda",
+      "genomskåda",
+      "ställa till svars",
+      "driva med"
+    ],
+    "correctIndex": 4,
+    "explain": "Att persiflera är att driva med eller förlöjliga någon eller något, ofta genom att härma och överdriva: ”revyn persiflerade ministrarnas presskonferenser”. Övertala lockar eftersom ordet liknar engelskans persuade, och framhärda eftersom det liknar engelskans persist. Genomskåda och ställa till svars handlar om att avslöja någon respektive att kräva att någon tar ansvar, inte om att göra sig lustig över någon.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-149",
+    "kind": "ord",
+    "prompt": "Vad betyder ”svada”?",
+    "options": [
+      "skryt",
+      "ordflöde",
+      "smicker",
+      "gräl",
+      "ordlek"
+    ],
+    "correctIndex": 1,
+    "explain": "Svada betyder ordflöde eller talförhet, en ström av ord: ”han överöste publiken med en lång svada”. Skryt lockar eftersom den som håller en svada ofta talar om sig själv, men det är mängden ord som är kärnan, inte innehållet. Smicker och gräl är också sätt att tala som kan vara ordrika, men ordet anger varken att man berömmer någon eller att man grälar. En ordlek är en vits som bygger på att ord kan ha flera betydelser.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-150",
+    "kind": "ord",
+    "prompt": "Vad betyder ”skära alla över en kam”?",
+    "options": [
+      "straffa alla hårt",
+      "dela lika mellan alla",
+      "lura alla samtidigt",
+      "bedöma alla likadant",
+      "ta alla i försvar"
+    ],
+    "correctIndex": 3,
+    "explain": "Att skära alla över en kam betyder att bedöma eller behandla alla likadant utan att ta hänsyn till skillnader mellan dem: ”man ska inte skära alla ungdomar över en kam”. Uttrycket används nästan alltid kritiskt. Dela lika mellan alla lockar eftersom även det handlar om att behandla alla lika, men det gäller fördelning av något, inte omdömen om människor. Straffa alla hårt lockar genom bilden av att skära. Lura alla samtidigt och ta alla i försvar har ingen koppling till uttrycket.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-151",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ödesdiger”?",
+    "options": [
+      "förutbestämd",
+      "olycksbringande",
+      "ödslig",
+      "högtidlig",
+      "oåterkallelig"
+    ],
+    "correctIndex": 1,
+    "explain": "Ödesdiger betyder olycksbringande, med svåra följder: ”ett ödesdigert misstag”. Förutbestämd lockar eftersom ordet innehåller öde, men ödesdiger handlar om att något får allvarliga konsekvenser, inte om att det var bestämt på förhand. Ödslig, som betyder övergiven eller folktom, lockar genom ljudlikheten. Högtidlig och oåterkallelig kan passa i samma sammanhang, som i ett högtidligt eller oåterkalleligt beslut, men ingen av dem säger att följderna blir olyckliga.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-152",
+    "kind": "ord",
+    "prompt": "Vad betyder ”prerogativ”?",
+    "options": [
+      "förutsättning",
+      "förebyggande åtgärd",
+      "förhandsbesked",
+      "förbehåll",
+      "företrädesrätt"
+    ],
+    "correctIndex": 4,
+    "explain": "Ett prerogativ är en företrädesrätt eller ett privilegium som hör till en viss person eller ett visst ämbete: ”att utse ministrarna är statsministerns prerogativ”. Förutsättning lockar eftersom ordet liknar engelskans prerequisite, och förebyggande åtgärd eftersom det liknar preventiv. Förhandsbesked och förbehåll lockar genom förledet pre-, som betyder före, men ingen av dem handlar om en särskild rätt som tillkommer någon.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-153",
+    "kind": "ord",
+    "prompt": "Vad betyder ”slentrian”?",
+    "options": [
+      "tanklös rutin",
+      "slarvighet",
+      "slösaktighet",
+      "förvirring",
+      "förströelse"
+    ],
+    "correctIndex": 0,
+    "explain": "Slentrian betyder tanklös rutin eller vana, att man gör något på samma sätt som alltid utan att reflektera: ”undervisningen hade stelnat i slentrian”. Slarvighet lockar eftersom orden börjar likadant och eftersom slentrian kan leda till ett sämre resultat, men slentrian handlar om vanemässighet, inte om brist på noggrannhet. Slösaktighet och förvirring har ingen koppling till ordet, och förströelse betyder tidsfördriv.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-154",
+    "kind": "ord",
+    "prompt": "Vad betyder ”vurm”?",
+    "options": [
+      "förfall",
+      "agg",
+      "svärmeri",
+      "nedstämdhet",
+      "oro"
+    ],
+    "correctIndex": 2,
+    "explain": "Vurm betyder svärmeri eller passionerat intresse för något: ”hans vurm för gamla motorcyklar”. Förfall lockar eftersom ordet liknar engelskans worm (mask), som man kan förknippa med förruttnelse. Agg, som betyder gammal ovilja mot någon, och nedstämdhet är också känslor men av ett helt annat slag än entusiasm. Oro har ingen koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-155",
+    "kind": "ord",
+    "prompt": "Vad betyder ”plädera”?",
+    "options": [
+      "intyga",
+      "förhandla",
+      "beklaga",
+      "argumentera",
+      "tillfredsställa"
+    ],
+    "correctIndex": 3,
+    "explain": "Att plädera betyder att argumentera för något eller föra någons talan: ”försvarsadvokaten pläderade för frikännande”, ”hon pläderade för en mer generös politik”. Tillfredsställa lockar eftersom ordet låter likt engelskans please. Förhandla och intyga hör liksom plädera hemma i juridiska och politiska sammanhang, men att förhandla är att försöka komma överens och att intyga är att skriftligt eller muntligt bekräfta något. Beklaga betyder att uttrycka sorg eller ånger.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-156",
+    "kind": "ord",
+    "prompt": "Vad betyder ”tilltagsen”?",
+    "options": [
+      "växande",
+      "företagsam",
+      "glupsk",
+      "tillgjord",
+      "inbilsk"
+    ],
+    "correctIndex": 1,
+    "explain": "Tilltagsen betyder företagsam och djärv, att man gärna tar egna initiativ och vågar sig på saker: ”en tilltagsen pojke som byggde en flotte och gav sig ut på sjön”. Växande lockar eftersom ordet liknar tilltagande, och glupsk eftersom man kan tro att den som är tilltagsen tar för sig av maten. Tillgjord, som betyder konstlad, lockar genom att orden börjar likadant. Inbilsk beskriver en person som tror sig vara förmer än andra, vilket inte är vad tilltagsen betyder.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-157",
+    "kind": "ord",
+    "prompt": "Vad betyder ”på tu man hand”?",
+    "options": [
+      "bara två, i enrum",
+      "halva var",
+      "i tur och ordning",
+      "med handslag",
+      "med gemensamma krafter"
+    ],
+    "correctIndex": 0,
+    "explain": "På tu man hand betyder i enrum, bara två personer: ”chefen ville tala med henne på tu man hand”. Tu är en gammal form av två. Halva var lockar eftersom uttrycket handlar om två personer, och med handslag och med gemensamma krafter lockar genom ordet hand. I tur och ordning har ingen koppling till uttrycket.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-158",
+    "kind": "ord",
+    "prompt": "Vad betyder ”sardonisk”?",
+    "options": [
+      "tungsint",
+      "skrytsam",
+      "inställsam",
+      "hånfull",
+      "förvirrad"
+    ],
+    "correctIndex": 3,
+    "explain": "Sardonisk betyder bittert hånfull: ”han svarade med ett sardoniskt leende”. Tungsint, som betyder dyster och melankolisk, lockar eftersom ett sardoniskt leende ofta är dystert och bittert, men ordet handlar om hån, inte om nedstämdhet. Skrytsam och inställsam beskriver andra sätt att uppträda: att framhäva sig själv respektive att ställa sig in hos andra. Förvirrad har ingen koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-159",
+    "kind": "ord",
+    "prompt": "Vad betyder ”uppsåt”?",
+    "options": [
+      "påföljd",
+      "misstanke",
+      "medhjälp",
+      "uppsving",
+      "avsikt"
+    ],
+    "correctIndex": 4,
+    "explain": "Uppsåt betyder avsikt, särskilt avsikten att utföra en brottslig handling: ”domstolen fann att han hade slagit till med uppsåt”. Påföljd, misstanke och medhjälp lockar eftersom de, liksom uppsåt, hör hemma i juridiska sammanhang, men en påföljd är den följd ett brott får, till exempel ett straff, en misstanke är en förmodan om att någon är skyldig och medhjälp är hjälp åt den som begår ett brott. Uppsving, som betyder uppgång eller förbättring, lockar genom att orden börjar likadant.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-160",
+    "kind": "ord",
+    "prompt": "Vad betyder ”stagnera”?",
+    "options": [
+      "stelna",
+      "sjunka",
+      "avstanna",
+      "läcka",
+      "svänga"
+    ],
+    "correctIndex": 2,
+    "explain": "Att stagnera betyder att avstanna, att sluta utvecklas eller växa: ”efter några goda år stagnerade försäljningen”. Sjunka lockar eftersom stagnation ofta förknippas med kris, men det som stagnerar står still i stället för att gå ner. Stelna lockar eftersom det också beskriver att något blir orörligt, men stelna betyder att något blir hårt eller stelt. Läcka och svänga beskriver rörelse och förändring, vilket är närmast motsatsen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-161",
+    "kind": "ord",
+    "prompt": "Vad betyder ”perfid”?",
+    "options": [
+      "lömsk",
+      "fulländad",
+      "överlägsen",
+      "självgod",
+      "nyckfull"
+    ],
+    "correctIndex": 0,
+    "explain": "Perfid betyder lömsk eller förrädisk: ”en perfid plan för att lura pensionärer på deras besparingar”. Fulländad lockar genom ljudlikheten med perfekt. Överlägsen och självgod beskriver också osympatiska egenskaper, men de handlar om att se ner på andra respektive vara nöjd med sig själv, inte om svek. Nyckfull betyder ombytlig och oberäknelig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-162",
+    "kind": "ord",
+    "prompt": "Vad betyder ”respit”?",
+    "options": [
+      "aktning",
+      "avslag",
+      "anstånd",
+      "påminnelse",
+      "kvitto"
+    ],
+    "correctIndex": 2,
+    "explain": "Respit betyder anstånd eller uppskov, en frist innan något måste göras: ”vi fick två veckors respit med betalningen”. Aktning lockar genom ljudlikheten med respekt. Påminnelse och kvitto hör, liksom respit, ofta ihop med betalningar, men inget av dem innebär att man får mer tid på sig. Avslag betyder att en begäran nekas.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-163",
+    "kind": "ord",
+    "prompt": "Vad betyder ”vederkvicka”?",
+    "options": [
+      "motbevisa",
+      "hämnas",
+      "skrämma",
+      "tillrättavisa",
+      "uppfriska"
+    ],
+    "correctIndex": 4,
+    "explain": "Att vederkvicka betyder att uppfriska eller ge ny kraft: ”ett dopp i sjön vederkvickte oss efter vandringen”. Motbevisa lockar eftersom det är betydelsen av det liknande ordet vederlägga, och hämnas eftersom det liknar vedergälla. Skrämma och tillrättavisa saknar koppling till ordet; båda är dessutom något obehagligt, medan det som vederkvicker är välgörande.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-164",
+    "kind": "ord",
+    "prompt": "Vad betyder ”servil”?",
+    "options": [
+      "allvarlig",
+      "inställsam",
+      "hövlig",
+      "lättstött",
+      "omständlig"
+    ],
+    "correctIndex": 1,
+    "explain": "Servil betyder krypande inställsam och underdånig: ”den servile tjänstemannen höll alltid med sin chef”. Hövlig lockar eftersom en servil person ofta är överdrivet artig, men hövlig är ett neutralt eller positivt ord, medan servil är nedsättande och betonar underdånigheten. Allvarlig lockar genom likheten med seriös. Lättstött och omständlig beskriver andra egenskaper: att lätt bli sårad respektive att vara krånglig och långrandig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-165",
+    "kind": "ord",
+    "prompt": "Vad betyder ”på rak arm”?",
+    "options": [
+      "med full kraft",
+      "på armlängds avstånd",
+      "motvilligt",
+      "utan förberedelse",
+      "med stöd av andra"
+    ],
+    "correctIndex": 3,
+    "explain": "På rak arm betyder utan förberedelse, direkt ur huvudet: ”det kan jag inte svara på rak arm, jag måste kontrollera siffrorna först”. Med full kraft och på armlängds avstånd lockar genom bilden av en utsträckt arm. Motvilligt och med stöd av andra handlar om inställning respektive hjälp, inte om huruvida man har förberett sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-166",
+    "kind": "ord",
+    "prompt": "Vad betyder ”trilsk”?",
+    "options": [
+      "motspänstig",
+      "trist",
+      "skygg",
+      "skör",
+      "slarvig"
+    ],
+    "correctIndex": 0,
+    "explain": "Trilsk betyder motspänstig eller envis: ”den trilska åsnan vägrade gå ett steg till”. Ordet kan också användas om saker som krånglar. Trist lockar genom ljudlikheten. Skygg lockar eftersom ett skyggt djur, liksom ett trilskt, kan vägra att göra som man vill, men skygg betyder rädd och tillbakadragen, inte envis. Skör och slarvig saknar koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-167",
+    "kind": "ord",
+    "prompt": "Vad betyder ”postum”?",
+    "options": [
+      "under pseudonym",
+      "i begränsad upplaga",
+      "utan författarens tillstånd",
+      "i förkortad form",
+      "efter upphovsmannens död"
+    ],
+    "correctIndex": 4,
+    "explain": "Postum betyder att något sker efter upphovsmannens eller mottagarens död: ”romanen gavs ut postumt”, ”han tilldelades medaljen postumt”. De andra alternativen beskriver också omständigheter kring hur ett verk kan ges ut. Utan författarens tillstånd lockar eftersom en postum utgivning ibland sker utan att författaren hunnit godkänna den, men ordet säger bara att det sker efter döden, inte något om tillstånd, upplaga, namn eller längd.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-168",
+    "kind": "ord",
+    "prompt": "Vad betyder ”åtbörd”?",
+    "options": [
+      "börda",
+      "gest",
+      "skyldighet",
+      "släkt",
+      "anständighet"
+    ],
+    "correctIndex": 1,
+    "explain": "En åtbörd är en gest eller kroppsrörelse som uttrycker något: ”hon gjorde en avvärjande åtbörd med handen”. Börda och skyldighet lockar genom likheten med börda, något tungt man måste bära. Släkt lockar eftersom börd betyder härkomst. Anständighet lockar eftersom man kan tänka på hur någon uppför sig, men åtbörd syftar på en rörelse, inte på hur väluppfostrad någon är.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-169",
+    "kind": "ord",
+    "prompt": "Vad betyder ”stringent”?",
+    "options": [
+      "snål",
+      "stickande",
+      "strikt logisk",
+      "trådig",
+      "skarp i tonen"
+    ],
+    "correctIndex": 2,
+    "explain": "Stringent betyder strikt logisk, stram och konsekvent: ”en stringent argumentation”, ”en stringent definition”. Snål lockar eftersom ordet liknar engelskans stingy, stickande eftersom det liknar engelskans sting och trådig eftersom det liknar engelskans string. Skarp i tonen lockar eftersom stringent kan förväxlas med sträng i betydelsen barsk, men en stringent text är stram i sin logik, inte ovänlig i sitt tilltal.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-170",
+    "kind": "ord",
+    "prompt": "Vad betyder ”tillmäle”?",
+    "options": [
+      "tillägg",
+      "anklagelse",
+      "beröm",
+      "skällsord",
+      "tilltro"
+    ],
+    "correctIndex": 3,
+    "explain": "Ett tillmäle är ett nedsättande ord eller en nedsättande benämning som någon använder om en annan: ”hon fick ta emot grova tillmälen i kommentarsfälten”. Anklagelse lockar eftersom båda kan riktas mot någon i fientlig avsikt, men en anklagelse påstår att någon har gjort något, medan ett tillmäle är ett skällsord eller öknamn. Tillägg och tilltro lockar genom att orden börjar likadant, och beröm är närmast motsatsen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-171",
+    "kind": "ord",
+    "prompt": "Vad betyder ”pragmatisk”?",
+    "options": [
+      "principfast",
+      "praktiskt inriktad",
+      "pedantisk",
+      "kortsiktig",
+      "försiktig"
+    ],
+    "correctIndex": 1,
+    "explain": "Pragmatisk betyder praktiskt inriktad, att man utgår från vad som fungerar i praktiken snarare än från principer eller teorier: ”en pragmatisk lösning på konflikten”. Principfast är närmast motsatsen. Kortsiktig lockar eftersom en pragmatisk lösning ibland kritiseras för att bara lösa problemet för stunden, men det är inte vad ordet betyder. Pedantisk lockar genom ljudlikheten, och försiktig eftersom en pragmatisk person sällan intar extrema hållningar, men ingen av dem är ordets betydelse.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-172",
+    "kind": "ord",
+    "prompt": "Vad betyder ”sticka under stol med”?",
+    "options": [
+      "skjuta upp",
+      "ge efter för",
+      "hålla tyst om",
+      "smita från",
+      "skämmas över"
+    ],
+    "correctIndex": 2,
+    "explain": "Att sticka under stol med något betyder att dölja det eller hålla tyst om det, och uttrycket används oftast nekande: ”han stack inte under stol med att han var kritisk”. Skämmas över lockar eftersom man ofta döljer det man skäms för, men uttrycket handlar om att hemlighålla något, inte om känslan. Skjuta upp och smita från lockar eftersom man kan tänka sig att något läggs undan, men de betyder att vänta med respektive att undvika något. Ge efter för betyder att låta sig övertalas eller påverkas.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-173",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ruelse”?",
+    "options": [
+      "förödelse",
+      "upprördhet",
+      "vemod",
+      "avund",
+      "ånger"
+    ],
+    "correctIndex": 4,
+    "explain": "Ruelse betyder ånger eller samvetskval: ”han kände ruelse över att ha svikit sin vän”. Ordet är något ålderdomligt och förekommer mest i uttrycket ånger och ruelse. Förödelse lockar genom likheten med ruin, och upprördhet genom likheten med rörelse. Vemod lockar eftersom det också är en tung känsla, men vemod är en stilla sorgsenhet utan ångerns inslag av skuld. Avund betyder att man missunnar någon något.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-174",
+    "kind": "ord",
+    "prompt": "Vad betyder ”vederlag”?",
+    "options": [
+      "ersättning",
+      "motbevis",
+      "motstånd",
+      "lagbrott",
+      "hämnd"
+    ],
+    "correctIndex": 0,
+    "explain": "Vederlag betyder ersättning eller motprestation: ”markägaren fick ett skäligt vederlag när kommunen tog marken i anspråk”. Motbevis lockar eftersom det liknar vederläggning, och hämnd eftersom det liknar vedergällning. Motstånd lockar eftersom förledet veder- betyder mot, och lagbrott eftersom ordet slutar på -lag. Inget av lockbetena innebär att man får något i utbyte för det man har gett.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-175",
+    "kind": "ord",
+    "prompt": "Vad betyder ”pittoresk”?",
+    "options": [
+      "lantlig",
+      "förfallen",
+      "överlastad",
+      "målerisk",
+      "avlägsen"
+    ],
+    "correctIndex": 3,
+    "explain": "Pittoresk betyder målerisk, alltså så egenartat vacker att det kunde vara motiv för en målning: ”ett pittoreskt fiskeläge med röda bodar”. Lantlig och avlägsen lockar eftersom ordet ofta används om små byar och kustsamhällen, men det beskriver hur något ser ut, inte var det ligger. Förfallen lockar eftersom pittoreska miljöer ofta är gamla och lite slitna, och överlastad eftersom de kan vara fulla av detaljer, men inget av dem är ordets betydelse.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-176",
+    "kind": "ord",
+    "prompt": "Vad betyder ”urbota”?",
+    "options": [
+      "urgammal",
+      "ursinnig",
+      "lagom",
+      "uppenbart",
+      "ytterst"
+    ],
+    "correctIndex": 4,
+    "explain": "Urbota är ett förstärkningsord som betyder ytterst eller enormt och används främst om något negativt: ”en urbota tråkig föreläsning”. Urgammal och ursinnig lockar eftersom de också börjar på ur-, men de betyder mycket gammal respektive mycket arg. Lagom är närmast motsatsen. Uppenbart lockar eftersom det också kan stå framför ett adjektiv, som i ”uppenbart felaktig”, men det anger hur tydligt något är, inte i hur hög grad.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-177",
+    "kind": "ord",
+    "prompt": "Vad betyder ”tentativ”?",
+    "options": [
+      "frestande",
+      "uppmärksam",
+      "trevande",
+      "påfrestande",
+      "fördröjd"
+    ],
+    "correctIndex": 2,
+    "explain": "Tentativ betyder trevande eller preliminär, att något görs försöksvis och kan komma att ändras: ”parterna nådde en tentativ överenskommelse”. Frestande lockar eftersom ordet låter likt engelskans tempting, och uppmärksam eftersom det liknar engelskans attentive. Påfrestande lockar eftersom man kan tänka på en tentamen. Fördröjd lockar eftersom något tentativt ännu inte är slutgiltigt, men ordet säger inget om att något har skjutits upp.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-178",
+    "kind": "ord",
+    "prompt": "Vad betyder ”åthutning”?",
+    "options": [
+      "knuff",
+      "uppmuntran",
+      "inbjudan",
+      "utskällning",
+      "hejarop"
+    ],
+    "correctIndex": 3,
+    "explain": "En åthutning är en utskällning eller skarp tillrättavisning: ”efter förseningen fick han en ordentlig åthutning av chefen”. Uppmuntran och hejarop lockar eftersom de också är något man säger till någon för att påverka den, men de är vänliga, medan en åthutning är sträng. Knuff lockar eftersom ordet kan låta som en fysisk handling. Inbjudan saknar koppling till ordet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-179",
+    "kind": "ord",
+    "prompt": "Vad betyder ”platityd”?",
+    "options": [
+      "intetsägande fras",
+      "kärnfullt tänkespråk",
+      "skämtsam omskrivning",
+      "förolämpning",
+      "överdrift"
+    ],
+    "correctIndex": 0,
+    "explain": "En platityd är en banal och intetsägande fras, något självklart som sägs som om det vore klokt: ”talet bestod mest av platityder om att framtiden börjar i dag”. Kärnfullt tänkespråk lockar eftersom en platityd ofta är formulerad som en visdom, men ett tänkespråk är träffande och tankeväckande, medan en platityd är tom. Förolämpning lockar genom likheten med platt i betydelsen plump, men en platityd behöver inte vara elak. Skämtsam omskrivning och överdrift är andra språkliga grepp.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-180",
+    "kind": "ord",
+    "prompt": "Vad betyder ”vända kappan efter vinden”?",
+    "options": [
+      "göra det bästa av läget",
+      "byta åsikt efter vad som lönar sig",
+      "ge upp så snart det blir motstånd",
+      "skydda sig mot kritik",
+      "bryta ett löfte"
+    ],
+    "correctIndex": 1,
+    "explain": "Att vända kappan efter vinden betyder att byta åsikt efter vad som för tillfället lönar sig eller är populärt: ”politikern anklagades för att vända kappan efter vinden”. Uttrycket är nedsättande. Göra det bästa av läget lockar eftersom det också handlar om att anpassa sig, men det gäller att acceptera en situation, inte att byta åsikt. Skydda sig mot kritik lockar genom bilden av en kappa som skyddar mot vinden, och ge upp så snart det blir motstånd genom tanken på motvind. Bryta ett löfte handlar om svek, inte om att ändra uppfattning.",
+    "verification": "agreed"
   }
 ]

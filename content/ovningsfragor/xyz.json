@@ -1119,5 +1119,1686 @@
     "correctIndex": 2,
     "explain": "Under den första halvtimmen kör tåg A 40 km, så 260 km återstår mellan tågen. Därefter närmar de sig varandra med 80 + 120 = 200 km/h och möts efter 260/200 = 1,3 timmar. Tåg A har då kört totalt 0,5 + 1,3 = 1,8 timmar och 80 · 1,8 = 144 km. Kontroll: tåg B har kört 120 · 1,3 = 156 km, och 144 + 156 = 300. 120 km = 80 · 1,5 får man om man låter båda tågen starta samtidigt. 104 km = 80 · 1,3 får man om man glömmer tåg A:s första halvtimme. 156 km är avståndet från staden där tåg B startade.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-081",
+    "kind": "xyz",
+    "prompt": "Lös ekvationen 5(2x − 3) − 3(x − 4) = 2x + 7. Vad är x?",
+    "options": [
+      "0,8",
+      "2",
+      "3,6",
+      "6,8"
+    ],
+    "correctIndex": 1,
+    "explain": "Lös upp parenteserna: 10x − 15 − 3x + 12 = 2x + 7, alltså 7x − 3 = 2x + 7. Det ger 5x = 10 och x = 2. Kontroll: 5 · 1 − 3 · (−2) = 5 + 6 = 11 och 2 · 2 + 7 = 11. 6,8 får man med ett teckenfel när den andra parentesen löses upp: skriver man −3(x − 4) som −3x − 12 blir det 7x − 27 = 2x + 7 och 5x = 34. 3,6 får man om man glömmer att multiplicera −4 med 3 och skriver −3x + 4; då blir det 7x − 11 = 2x + 7 och 5x = 18. 0,8 får man om man flyttar −3 till högerledet utan att byta tecken: 5x = 7 − 3 = 4.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-082",
+    "kind": "xyz",
+    "prompt": "Förenkla (a³b^(−2))²/(a^(−1)b)³, där a och b är positiva tal.",
+    "options": [
+      "a³/b^7",
+      "a^8/b^7",
+      "a^9/b^5",
+      "a^9/b^7"
+    ],
+    "correctIndex": 3,
+    "explain": "Täljaren blir (a³b^(−2))² = a^6 · b^(−4) och nämnaren (a^(−1)b)³ = a^(−3) · b³. Vid division subtraheras exponenterna: a^(6 − (−3)) = a^9 och b^(−4 − 3) = b^(−7). Uttrycket är alltså a^9 · b^(−7) = a^9/b^7. a³/b^7 får man om man räknar 6 − 3 i stället för 6 − (−3) för a. a^8/b^7 får man om man adderar exponenterna i (a³)² och får a^5 i stället för a^6. a^9/b^5 får man om man bara upphöjer a^(−1) till 3 och glömmer att b i nämnaren också ska upphöjas till 3; då blir det b^(−4)/b = b^(−5).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-083",
+    "kind": "xyz",
+    "prompt": "Vilket uttryck är lika med x^4 − 16 för alla x?",
+    "options": [
+      "(x − 2)(x + 2)(x² + 4)",
+      "(x² − 4)²",
+      "(x − 2)²(x² + 4)",
+      "(x − 2)(x + 2)(x² + 2)"
+    ],
+    "correctIndex": 0,
+    "explain": "Uttrycket är en skillnad mellan två kvadrater: x^4 − 16 = (x²)² − 4² = (x² − 4)(x² + 4) enligt konjugatregeln. Faktorn x² − 4 är också en skillnad mellan kvadrater, x² − 4 = (x − 2)(x + 2). Alltså är x^4 − 16 = (x − 2)(x + 2)(x² + 4). (x² − 4)² får man om man tror att a² − b² = (a − b)²; det uttrycket är x^4 − 8x² + 16. (x − 2)²(x² + 4) får man om man skriver x² − 4 som (x − 2)², men (x − 2)² = x² − 4x + 4. (x − 2)(x + 2)(x² + 2) får man om man felaktigt drar roten ur 4 i faktorn x² + 4; den faktorn går inte att dela upp vidare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-084",
+    "kind": "xyz",
+    "prompt": "För vilka x gäller olikheten (2x − 1)/3 − (x + 2)/2 > 1?",
+    "options": [
+      "x > 2",
+      "x > 9",
+      "x > 13",
+      "x > 14"
+    ],
+    "correctIndex": 3,
+    "explain": "Multiplicera båda leden med 6, som är positivt, så att olikhetstecknet behålls: 2(2x − 1) − 3(x + 2) > 6. Det ger 4x − 2 − 3x − 6 > 6, alltså x − 8 > 6 och x > 14. x > 2 får man med ett teckenfel: skriver man −3(x + 2) som −3x + 6 blir det x + 4 > 6. x > 9 får man om man glömmer att multiplicera högerledet med 6 och får x − 8 > 1. x > 13 får man om man bara multiplicerar x-termen med 2 och skriver 2(2x − 1) som 4x − 1; då blir det x − 7 > 6.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-085",
+    "kind": "xyz",
+    "prompt": "Vad är (√3 + √12)²?",
+    "options": [
+      "9",
+      "15",
+      "21",
+      "27"
+    ],
+    "correctIndex": 3,
+    "explain": "Eftersom √12 = √(4 · 3) = 2√3 är √3 + √12 = 3√3, och (3√3)² = 9 · 3 = 27. Med kvadreringsregeln blir det samma sak: 3 + 2 · √3 · √12 + 12 = 3 + 2 · 6 + 12 = 27. 15 får man om man glömmer mittentermen och bara adderar kvadraterna, 3 + 12. 21 får man om man tar med mittentermen men glömmer faktorn 2: 3 + 6 + 12. 9 får man om man bara kvadrerar √3 i 3√3 och glömmer att också kvadrera faktorn 3: 3 · 3 = 9.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-086",
+    "kind": "xyz",
+    "prompt": "Ekvationen x² + bx − 12 = 0, där b är en konstant, har lösningen x = 3. Vilken är ekvationens andra lösning?",
+    "options": [
+      "−4",
+      "−3",
+      "−1",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explain": "Sätt in x = 3: 9 + 3b − 12 = 0, så b = 1. Ekvationen är x² + x − 12 = 0, och x² + x − 12 = (x − 3)(x + 4). Den andra lösningen är x = −4. Snabbare: produkten av lösningarna är −12, och 3 · (−4) = −12. 4 får man om man tror att produkten av lösningarna ska vara 12 i stället för −12. −3 får man om man tror att lösningarna alltid ligger symmetriskt kring 0, vilket bara gäller när b = 0. −1 är summan av lösningarna (3 + (−4) = −1), inte den andra lösningen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-087",
+    "kind": "xyz",
+    "prompt": "Funktionerna f och g definieras av f(x) = 3x − 2 och g(x) = x² + 1. Vad är f(g(2)) − g(f(2))?",
+    "options": [
+      "−20",
+      "−4",
+      "0",
+      "4"
+    ],
+    "correctIndex": 1,
+    "explain": "Räkna inifrån och ut. g(2) = 4 + 1 = 5, så f(g(2)) = f(5) = 15 − 2 = 13. f(2) = 6 − 2 = 4, så g(f(2)) = g(4) = 16 + 1 = 17. Skillnaden är 13 − 17 = −4. 0 får man om man tror att det inte spelar någon roll i vilken ordning funktionerna används; det gör det inte. 4 får man om man blandar ihop ordningen och räknar g(f(2)) − f(g(2)). −20 får man om man först tar fram g(f(x)) = (3x − 2)² + 1 och kvadrerar fel, (3x − 2)² = 9x² − 4; då blir g(f(2)) = 36 − 4 + 1 = 33 och skillnaden 13 − 33.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-088",
+    "kind": "xyz",
+    "prompt": "För de positiva talen a, b och c gäller att 1/a + 1/b = 1/c. Vilket uttryck är lika med b?",
+    "options": [
+      "c − a",
+      "(a − c)/(ac)",
+      "ac/(a − c)",
+      "ac/(c − a)"
+    ],
+    "correctIndex": 2,
+    "explain": "Lös ut 1/b: 1/b = 1/c − 1/a. Med gemensam nämnare ac blir högerledet a/(ac) − c/(ac) = (a − c)/(ac). Alltså är 1/b = (a − c)/(ac), och när man inverterar båda leden blir b = ac/(a − c). c − a får man om man inverterar varje term för sig, men 1/b = 1/c − 1/a betyder inte att b = c − a. (a − c)/(ac) är 1/b, inte b; man har glömt att invertera i sista steget. ac/(c − a) får man med ett teckenfel i den gemensamma nämnaren, när man räknar c/(ac) − a/(ac); det uttrycket är negativt, eftersom c < a när b är positivt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-089",
+    "kind": "xyz",
+    "prompt": "Grafen till funktionen f(x) = −x² + 6x − 5 har en maximipunkt. Vilka koordinater har den?",
+    "options": [
+      "(−3, −32)",
+      "(3, −4)",
+      "(3, 4)",
+      "(3, 22)"
+    ],
+    "correctIndex": 2,
+    "explain": "Kvadratkomplettera: f(x) = −(x² − 6x + 5) = −((x − 3)² − 4) = −(x − 3)² + 4. Största värdet 4 antas när x = 3, så maximipunkten är (3, 4). Kontroll: f(3) = −9 + 18 − 5 = 4. (3, −4) får man om man glömmer att minustecknet framför parentesen också byter tecken på −4. (3, 22) får man om man räknar −3² som +9: 9 + 18 − 5 = 22. (−3, −32) får man med ett teckenfel i symmetrilinjen x = −6/(2 · (−1)) = 3; med x = −3 blir f(−3) = −9 − 18 − 5 = −32.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-090",
+    "kind": "xyz",
+    "prompt": "Talet y är omvänt proportionellt mot x². När x = 3 är y = 8. Vad är y när x = 6?",
+    "options": [
+      "2",
+      "4",
+      "16",
+      "32"
+    ],
+    "correctIndex": 0,
+    "explain": "Omvänd proportionalitet mot x² betyder att y = k/x² för någon konstant k, alltså att y · x² är konstant. Här är k = 8 · 3² = 72, och när x = 6 blir y = 72/6² = 72/36 = 2. Att x fördubblas gör alltså att y blir 2² = 4 gånger så litet. 4 får man om man räknar som om y vore omvänt proportionellt mot x, så att y bara halveras. 16 får man om man räknar som om y vore proportionellt mot x. 32 får man om man räknar som om y vore proportionellt mot x², så att y blir fyra gånger så stort.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-091",
+    "kind": "xyz",
+    "prompt": "Hur många heltal x uppfyller olikheten x² − 2x − 15 < 0?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "Oändligt många"
+    ],
+    "correctIndex": 0,
+    "explain": "Faktorisera: x² − 2x − 15 = (x − 5)(x + 3). Produkten är negativ när faktorerna har olika tecken, det vill säga när −3 < x < 5. Heltalen i intervallet är −2, −1, 0, 1, 2, 3 och 4, alltså 7 stycken. 8 får man om man bara räknar avståndet 5 − (−3) mellan nollställena. 9 får man om man tar med ändpunkterna −3 och 5, men där är uttrycket 0 och alltså inte mindre än 0. Oändligt många får man om man tror att olikheten gäller utanför nollställena, x < −3 eller x > 5; där är uttrycket positivt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-092",
+    "kind": "xyz",
+    "prompt": "Förenkla 2/(x − 1) − 2/(x + 1), där x ≠ 1 och x ≠ −1.",
+    "options": [
+      "4/(x² − 1)",
+      "4x/(x² − 1)",
+      "−4/(x² − 1)",
+      "0"
+    ],
+    "correctIndex": 0,
+    "explain": "Den gemensamma nämnaren är (x − 1)(x + 1) = x² − 1. Täljaren blir 2(x + 1) − 2(x − 1) = 2x + 2 − 2x + 2 = 4, så uttrycket är 4/(x² − 1). Kontroll med x = 3: 2/2 − 2/4 = 1/2 och 4/8 = 1/2. 0 får man med ett teckenfel när den andra parentesen löses upp: −2(x − 1) skrivs som −2x − 2, och då tar allt ut varandra. 4x/(x² − 1) får man om man adderar bråken i stället för att subtrahera dem: 2(x + 1) + 2(x − 1) = 4x. −4/(x² − 1) får man om man subtraherar i fel ordning och räknar 2(x − 1) − 2(x + 1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-093",
+    "kind": "xyz",
+    "prompt": "Vad är (8/27)^(−2/3)?",
+    "options": [
+      "−4/9",
+      "4/9",
+      "3/2",
+      "9/4"
+    ],
+    "correctIndex": 3,
+    "explain": "Den negativa exponenten betyder att man inverterar bråket: (8/27)^(−2/3) = (27/8)^(2/3). Exponenten 2/3 betyder att man först drar tredjeroten och sedan kvadrerar: tredjeroten ur 27/8 är 3/2, och (3/2)² = 9/4. 4/9 får man om man bortser från minustecknet i exponenten och räknar (8/27)^(2/3). −4/9 får man om man tror att en negativ exponent gör talet negativt. 3/2 får man om man bara drar tredjeroten och glömmer att kvadrera.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-094",
+    "kind": "xyz",
+    "prompt": "Det gäller att x/y = 3/4, där y ≠ 0. Vad är (2x + y)/(x − y)?",
+    "options": [
+      "−14",
+      "−10",
+      "−1/10",
+      "10"
+    ],
+    "correctIndex": 1,
+    "explain": "Eftersom x/y = 3/4 är x = 3y/4. Då är 2x + y = 6y/4 + 4y/4 = 10y/4 och x − y = 3y/4 − 4y/4 = −y/4. Kvoten blir (10y/4)/(−y/4) = −10. Man kan också sätta in x = 3 och y = 4: (6 + 4)/(3 − 4) = 10/(−1) = −10. 10 får man om man räknar nämnaren som y − x i stället för x − y. −1/10 får man om man vänder på kvoten. −14 får man om man läser täljaren som 2(x + y) = 2 · 7 = 14 i stället för 2x + y.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-095",
+    "kind": "xyz",
+    "prompt": "Vad är 2026² − 2024²?",
+    "options": [
+      "4",
+      "4050",
+      "8096",
+      "8100"
+    ],
+    "correctIndex": 3,
+    "explain": "Enligt konjugatregeln är a² − b² = (a − b)(a + b). Här blir det (2026 − 2024)(2026 + 2024) = 2 · 4050 = 8100. 4 får man om man tror att a² − b² = (a − b)² och räknar 2². 4050 får man om man glömmer faktorn a − b = 2 och bara tar summan. 8096 får man om man skriver 2026² = (2024 + 2)² men glömmer termen 2² = 4 i kvadreringsregeln; då blir skillnaden bara 2 · 2 · 2024 = 8096 i stället för 8096 + 4 = 8100.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-096",
+    "kind": "xyz",
+    "prompt": "Hur många olika reella lösningar har ekvationen x^4 = 9x²?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndex": 2,
+    "explain": "Flytta över allt till ena ledet och faktorisera: x^4 − 9x² = x²(x² − 9) = x²(x − 3)(x + 3) = 0. Produkten är noll när x = 0, x = 3 eller x = −3, alltså tre olika lösningar. 2 får man om man dividerar båda leden med x² och får x² = 9; då förlorar man lösningen x = 0. 1 får man om man dessutom bara tar den positiva roten x = 3. 4 får man om man tror att en ekvation av fjärde graden alltid har fyra olika lösningar, men x = 0 är en dubbelrot och räknas bara en gång.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-097",
+    "kind": "xyz",
+    "prompt": "Två på varandra följande positiva udda heltal har produkten 323. Vad är summan av de två talen?",
+    "options": [
+      "18",
+      "34",
+      "36",
+      "38"
+    ],
+    "correctIndex": 2,
+    "explain": "Kalla det jämna talet mellan de två udda talen för m. Då är talen m − 1 och m + 1, och produkten är (m − 1)(m + 1) = m² − 1 = 323. Det ger m² = 324 och m = 18 (m är positivt). Talen är 17 och 19, och kontroll: 17 · 19 = 323. Summan är 17 + 19 = 36. 18 får man om man svarar med m i stället för summan 2m. 34 får man om man fördubblar det minsta talet, 2 · 17, och 38 om man fördubblar det största, 2 · 19.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-098",
+    "kind": "xyz",
+    "prompt": "Vad är (3^20 + 3^20 + 3^20)/3^19?",
+    "options": [
+      "3",
+      "9",
+      "3^21",
+      "3^41"
+    ],
+    "correctIndex": 1,
+    "explain": "Summan av tre lika termer är 3 · 3^20 = 3^21. Då blir kvoten 3^21/3^19 = 3^(21 − 19) = 3² = 9. 3 får man om man glömmer att det är tre termer i täljaren och bara räknar 3^20/3^19. 3^41 får man om man tror att 3^20 + 3^20 + 3^20 = 3^60, alltså multiplicerar exponenten med 3; då blir det 3^(60 − 19). 3^21 får man om man adderar baserna och skriver täljaren som 9^20 = 3^40; då blir det 3^(40 − 19).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-099",
+    "kind": "xyz",
+    "prompt": "Vilket är det största heltal x som uppfyller olikheten 3(x − 4) − 2(2x − 1) > x − 26?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correctIndex": 2,
+    "explain": "Lös upp parenteserna: 3x − 12 − 4x + 2 > x − 26, alltså −x − 10 > x − 26. Addera x + 26 till båda leden: 16 > 2x, så x < 8. Det största heltalet som är mindre än 8 är 7. 8 får man om man tror att gränsen 8 själv uppfyller olikheten, men för x = 8 är båda leden −18. 5 får man med ett teckenfel: skriver man −2(2x − 1) som −4x − 2 blir det −x − 14 > x − 26 och x < 6. 6 får man om man glömmer att multiplicera −1 med −2 och skriver −4x − 1; då blir det −x − 13 > x − 26 och x < 6,5.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-100",
+    "kind": "xyz",
+    "prompt": "Funktionen f definieras av f(x) = x² + ax + 4, där a är en konstant. Det gäller att f(3) = f(−1). Vad är a?",
+    "options": [
+      "−4",
+      "−2",
+      "−1",
+      "2"
+    ],
+    "correctIndex": 1,
+    "explain": "f(3) = 9 + 3a + 4 = 13 + 3a och f(−1) = 1 − a + 4 = 5 − a. Likheten 13 + 3a = 5 − a ger 4a = −8 och a = −2. Man kan också se att grafen är symmetrisk kring x = 1, mitt emellan 3 och −1, och symmetrilinjen är x = −a/2, så a = −2. 2 får man med ett teckenfel, till exempel om man tror att symmetrilinjen är x = a/2. −4 får man om man räknar 3a + a som 2a i stället för 4a och får 2a = −8. −1 får man om man glömmer att dela med 2 och tror att symmetrilinjen är x = −a.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-101",
+    "kind": "xyz",
+    "prompt": "Vilket av följande tal är störst?",
+    "options": [
+      "2√7",
+      "3√3",
+      "√26",
+      "5,2"
+    ],
+    "correctIndex": 0,
+    "explain": "Jämför talens kvadrater, eftersom alla talen är positiva: (2√7)² = 4 · 7 = 28, (3√3)² = 9 · 3 = 27, (√26)² = 26 och 5,2² = 27,04. Störst är 28, så 2√7 är störst. 3√3 kan se störst ut eftersom faktorn framför roten är större än i 2√7, men det som avgör är hela produkten. √26 har det största talet under rottecknet, men det saknar faktor framför roten. 5,2 ligger nära, men 5,2² = 27,04 är mindre än 28.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-102",
+    "kind": "xyz",
+    "prompt": "En kropps rörelseenergi är E = mv²/2, där m är massan och v hastigheten. Hastigheten ökar med 50 %, medan massan är oförändrad. Med hur många procent ökar rörelseenergin?",
+    "options": [
+      "50 %",
+      "100 %",
+      "125 %",
+      "225 %"
+    ],
+    "correctIndex": 2,
+    "explain": "Den nya hastigheten är 1,5v, och eftersom v är kvadrerad blir den nya energin m(1,5v)²/2 = 1,5² · mv²/2 = 2,25E. Energin blir alltså 2,25 gånger så stor, vilket är en ökning med 125 %. 225 % får man om man glömmer att dra bort den ursprungliga energin; 225 % är den nya energin som andel av den gamla. 100 % får man om man fördubblar procentsatsen i stället för att kvadrera förändringsfaktorn. 50 % får man om man bortser från kvadraten och räknar som om energin vore proportionell mot hastigheten.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-103",
+    "kind": "xyz",
+    "prompt": "En kons volym V ges av formeln V = πr²h/3, där r är bottenytans radie och h är höjden. Vilket uttryck är lika med r?",
+    "options": [
+      "√(3V/(πh))",
+      "√(V/(3πh))",
+      "3V/(πh)",
+      "√(3V)/(πh)"
+    ],
+    "correctIndex": 0,
+    "explain": "Multiplicera båda leden med 3: 3V = πr²h. Dividera med πh: r² = 3V/(πh). Eftersom r är positivt är r = √(3V/(πh)). √(V/(3πh)) får man om man dividerar med 3 i stället för att multiplicera, alltså flyttar 3:an till fel plats. 3V/(πh) är r², inte r; där har man glömt att dra roten ur. √(3V)/(πh) får man om man bara drar roten ur täljaren, men roten ska dras ur hela kvoten.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-104",
+    "kind": "xyz",
+    "prompt": "Det gäller att x + 1/x = 5. Vad är x² + 1/x²?",
+    "options": [
+      "10",
+      "23",
+      "25",
+      "27"
+    ],
+    "correctIndex": 1,
+    "explain": "Kvadrera båda leden: (x + 1/x)² = x² + 2 · x · 1/x + 1/x² = x² + 2 + 1/x². Alltså är x² + 2 + 1/x² = 25, och x² + 1/x² = 25 − 2 = 23. 25 får man om man tror att (x + 1/x)² = x² + 1/x² och glömmer mittentermen 2 · x · 1/x = 2. 27 får man om man tar med mittentermen men adderar 2 i stället för att subtrahera den. 10 får man om man multiplicerar 5 med 2 i stället för att kvadrera.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-105",
+    "kind": "xyz",
+    "prompt": "Funktionen f definieras av f(x) = (x + 1)/(x − 2), där x ≠ 2. För vilket x är f(x) = 4?",
+    "options": [
+      "−7/3",
+      "1",
+      "5/2",
+      "3"
+    ],
+    "correctIndex": 3,
+    "explain": "Ekvationen (x + 1)/(x − 2) = 4 ger, efter multiplikation med x − 2, x + 1 = 4(x − 2) = 4x − 8. Då är 3x = 9 och x = 3. Kontroll: f(3) = 4/1 = 4. 1 får man om man bara multiplicerar x med 4 och skriver 4(x − 2) som 4x − 2; då blir 3x = 3. −7/3 får man med ett teckenfel, 4(x − 2) = 4x + 8, som ger −3x = 7. 5/2 är f(4), alltså funktionsvärdet när x = 4, inte det x som ger funktionsvärdet 4.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-106",
+    "kind": "xyz",
+    "prompt": "Linjen y = x + 1 skär parabeln y = x² − 2x − 3 i två punkter. Vad är summan av de två skärningspunkternas y-koordinater?",
+    "options": [
+      "−1",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 3,
+    "explain": "I skärningspunkterna är x + 1 = x² − 2x − 3, alltså x² − 3x − 4 = 0, som kan skrivas (x − 4)(x + 1) = 0. Då är x = 4 eller x = −1, och y-koordinaterna blir 4 + 1 = 5 och −1 + 1 = 0. Summan är 5. 3 är summan av x-koordinaterna, inte y-koordinaterna. 4 får man om man i stället använder parabelns nollställen, x = 3 och x = −1, och sätter in dem i linjens ekvation: 4 + 0. −1 får man med ett teckenfel i faktoriseringen, (x + 4)(x − 1), som ger x = −4 och x = 1 och y-koordinaterna −3 och 2.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-107",
+    "kind": "xyz",
+    "prompt": "För vilket värde på konstanten k är x − 2 en faktor i polynomet x² + kx − 10?",
+    "options": [
+      "−3",
+      "3",
+      "5",
+      "7"
+    ],
+    "correctIndex": 1,
+    "explain": "Om x − 2 är en faktor är polynomet 0 när x = 2. Det ger 4 + 2k − 10 = 0, alltså 2k = 6 och k = 3. Kontroll: x² + 3x − 10 = (x − 2)(x + 5). −3 får man om man sätter in x = −2 i stället för x = 2; då är det x + 2 som blir en faktor. 5 får man om man blandar ihop k med konstanten i den andra faktorn, x + 5. 7 får man om man adderar 5 och 2 utan att ta hänsyn till tecknet; koefficienten för x är 5 + (−2) = 3.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-108",
+    "kind": "xyz",
+    "prompt": "Antalet bakterier i en odling fördubblas var tredje timme. Efter hur många timmar har antalet blivit 32 gånger så stort som från början?",
+    "options": [
+      "15",
+      "18",
+      "93",
+      "96"
+    ],
+    "correctIndex": 0,
+    "explain": "Efter t timmar har antalet multiplicerats med 2^(t/3). Eftersom 32 = 2^5 behövs 5 fördubblingar, och 5 · 3 = 15 timmar. Steg för steg: 1, 2, 4, 8, 16, 32 efter 0, 3, 6, 9, 12 och 15 timmar. 18 får man om man räknar de sex talen i den raden som sex fördubblingar, men det första talet är utgångsläget. 93 får man om man tror att det var tredje timme tillkommer lika många bakterier som det fanns från början; då behövs 31 sådana perioder, 31 · 3 = 93. 96 får man om man tror att det behövs 32 perioder om tre timmar, alltså räknar 32 · 3.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-109",
+    "kind": "xyz",
+    "prompt": "Vilket uttryck är lika med (x^(−1) + y^(−1))^(−1), där x och y är positiva tal?",
+    "options": [
+      "x + y",
+      "xy",
+      "(x + y)/(xy)",
+      "xy/(x + y)"
+    ],
+    "correctIndex": 3,
+    "explain": "x^(−1) + y^(−1) = 1/x + 1/y = y/(xy) + x/(xy) = (x + y)/(xy). Exponenten −1 utanför parentesen betyder att man inverterar summan: ((x + y)/(xy))^(−1) = xy/(x + y). Kontroll med x = y = 2: (1/2 + 1/2)^(−1) = 1 och 4/4 = 1. x + y får man om man tror att man kan invertera varje term för sig, som om (a + b)^(−1) vore a^(−1) + b^(−1). (x + y)/(xy) får man om man glömmer den yttre exponenten −1. xy får man om man tror att 1/x + 1/y = 1/(xy) och sedan inverterar det.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-110",
+    "kind": "xyz",
+    "prompt": "Grafen till andragradsfunktionen f har minimipunkten (2, −3), och f(0) = 5. Vad är f(5)?",
+    "options": [
+      "6",
+      "15",
+      "21",
+      "95"
+    ],
+    "correctIndex": 1,
+    "explain": "En andragradsfunktion med minimipunkten (2, −3) kan skrivas f(x) = a(x − 2)² − 3, där a > 0. Villkoret f(0) = 5 ger 4a − 3 = 5, alltså a = 2. Då är f(5) = 2 · 3² − 3 = 18 − 3 = 15. 6 får man om man glömmer att bestämma a och räknar med a = 1: 9 − 3. 21 får man om man tar fel tecken på minimivärdet i sista steget och räknar 18 + 3. 95 får man om man skriver funktionen som a(x + 2)² − 3; f(0) ger då också a = 2, men f(5) blir 2 · 7² − 3 = 95.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-111",
+    "kind": "xyz",
+    "prompt": "Vad är summan av alla lösningar till ekvationen 4^x − 6 · 2^x + 8 = 0?",
+    "options": [
+      "1",
+      "3",
+      "6",
+      "8"
+    ],
+    "correctIndex": 1,
+    "explain": "Eftersom 4^x = (2²)^x = (2^x)² kan man sätta t = 2^x. Ekvationen blir t² − 6t + 8 = 0, alltså (t − 2)(t − 4) = 0, så t = 2 eller t = 4. 2^x = 2 ger x = 1 och 2^x = 4 ger x = 2. Summan av lösningarna är 1 + 2 = 3. 6 är summan av t-värdena, 2 + 4; där har man glömt att gå tillbaka från t till x. 8 är produkten av t-värdena, 2 · 4, som man kan läsa av som konstanttermen. 1 får man om man skriver 4^x som 2 · 2^x i stället för (2^x)²; då blir ekvationen 2t − 6t + 8 = 0 med den enda lösningen t = 2, alltså x = 1.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-112",
+    "kind": "xyz",
+    "prompt": "Talen x och y uppfyller (x + y)² = 49 och xy = 10. Vad är (x − y)²?",
+    "options": [
+      "9",
+      "29",
+      "39",
+      "89"
+    ],
+    "correctIndex": 0,
+    "explain": "Kvadreringsreglerna ger (x + y)² = x² + 2xy + y² och (x − y)² = x² − 2xy + y². Skillnaden mellan dem är 4xy, så (x − y)² = (x + y)² − 4xy = 49 − 40 = 9. Kontroll: talen 5 och 2 uppfyller villkoren, och (5 − 2)² = 9. 29 får man om man bara drar bort 2xy och därmed räknar ut x² + y² = 49 − 20 i stället för (x − y)². 39 får man om man drar bort xy en gång: 49 − 10. 89 får man om man adderar 4xy i stället för att subtrahera.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-113",
+    "kind": "xyz",
+    "prompt": "Grafen till y = x² flyttas 3 steg åt höger och 2 steg nedåt. Vilken ekvation har den flyttade grafen?",
+    "options": [
+      "y = x² + 6x + 7",
+      "y = x² − 6x + 11",
+      "y = x² − 6x + 7",
+      "y = x² + 7"
+    ],
+    "correctIndex": 2,
+    "explain": "Att flytta grafen 3 steg åt höger innebär att x byts mot x − 3, och att flytta den 2 steg nedåt innebär att man drar bort 2. Den nya ekvationen är y = (x − 3)² − 2 = x² − 6x + 9 − 2 = x² − 6x + 7. Kontroll: den nya minimipunkten ska vara (3, −2), och 9 − 18 + 7 = −2. y = x² + 6x + 7 kommer från (x + 3)² − 2, som flyttar grafen 3 steg åt vänster. y = x² − 6x + 11 kommer från (x − 3)² + 2, som flyttar grafen uppåt i stället för nedåt. y = x² + 7 får man om man skriver (x − 3)² som x² + 9 och glömmer mittentermen −6x.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-114",
+    "kind": "xyz",
+    "prompt": "Lös ekvationen x/(x − 2) = 2/(x − 2) + 3.",
+    "options": [
+      "Ekvationen saknar lösning",
+      "x = 0",
+      "x = 2",
+      "x = 5"
+    ],
+    "correctIndex": 0,
+    "explain": "Uttrycken är bara definierade när x ≠ 2. Multiplicera båda leden med x − 2: x = 2 + 3(x − 2) = 3x − 4, vilket ger x = 2. Men x = 2 gör nämnarna noll och är därför ingen lösning. Man ser det också om man flyttar över bråket: (x − 2)/(x − 2) = 3, alltså 1 = 3 för alla tillåtna x. Ekvationen saknar alltså lösning. x = 2 får man om man glömmer att pröva svaret mot villkoret x ≠ 2. x = 5 får man om man glömmer att multiplicera 3 med x − 2 och skriver x = 2 + 3. x = 0 får man om man bara multiplicerar x-termen med 3 och skriver 3(x − 2) som 3x − 2; då blir x = 3x.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-115",
+    "kind": "xyz",
+    "passage": "ax + 2y = 4\n3x + y = 5",
+    "prompt": "För vilket värde på konstanten a saknar ekvationssystemet ovan lösning?",
+    "options": [
+      "−6",
+      "2/3",
+      "3/2",
+      "6"
+    ],
+    "correctIndex": 3,
+    "explain": "Lös ut y ur den andra ekvationen: y = 5 − 3x. Insättning i den första ger ax + 10 − 6x = 4, alltså (a − 6)x = −6. Om a = 6 blir vänsterledet 0 för alla x, och 0 = −6 är omöjligt, så systemet saknar lösning. För alla andra a finns exakt en lösning. Geometriskt är linjerna då parallella: 6x + 2y = 4 är samma sak som 3x + y = 2, som aldrig kan gälla samtidigt som 3x + y = 5. −6 får man med ett teckenfel när man flyttar 6x. 3/2 får man om man ställer upp proportionen mellan koefficienterna fel, a/3 = 1/2 i stället för a/3 = 2/1. 2/3 får man om man jämför koefficienterna korsvis fel och räknar 3a = 2 i stället för a · 1 = 2 · 3.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-116",
+    "kind": "xyz",
+    "prompt": "Vad är √(2^10 + 2^10)?",
+    "options": [
+      "32",
+      "32√2",
+      "64",
+      "1024"
+    ],
+    "correctIndex": 1,
+    "explain": "2^10 + 2^10 = 2 · 2^10 = 2^11. Då är √(2^11) = √(2^10 · 2) = √(2^10) · √2 = 2^5 · √2 = 32√2. 1024 får man om man adderar exponenterna och tror att 2^10 + 2^10 = 2^20; roten ur det är 2^10 = 1024. 64 får man om man flyttar ut faktorn 2 ur roten utan att dra roten ur den: 2 · 2^5. 32 får man om man bara drar roten ur den ena termen, √(2^10) = 2^5.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-117",
+    "kind": "xyz",
+    "prompt": "Funktionen f definieras av f(x) = 3^x. Vilket uttryck är lika med f(x + 1) · f(x − 1) för alla x?",
+    "options": [
+      "f(x)",
+      "2 · f(x)",
+      "f(2x)",
+      "f(x² − 1)"
+    ],
+    "correctIndex": 2,
+    "explain": "f(x + 1) · f(x − 1) = 3^(x + 1) · 3^(x − 1). Vid multiplikation av potenser med samma bas adderas exponenterna: (x + 1) + (x − 1) = 2x. Produkten är alltså 3^(2x) = f(2x). Kontroll med x = 1: f(2) · f(0) = 9 · 1 = 9 och f(2) = 9. f(x) får man om man tror att +1 och −1 tar ut varandra utan att man tar hänsyn till att det finns två faktorer 3^x. 2 · f(x) får man om man tror att 3^x · 3^x = 2 · 3^x. f(x² − 1) får man om man multiplicerar exponenterna i stället för att addera dem: (x + 1)(x − 1) = x² − 1.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-118",
+    "kind": "xyz",
+    "prompt": "Vilket är det minsta positiva heltal n som uppfyller (2/3)^n < 1/10?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 2,
+    "explain": "Räkna potenserna exakt: (2/3)^5 = 32/243, som är större än 1/10 eftersom 320 > 243. (2/3)^6 = 64/729, som är mindre än 1/10 eftersom 640 < 729. Det minsta n är alltså 6. De andra svaren får man om man avrundar 2/3 för grovt. Med 0,5 blir 0,5^4 = 0,0625 < 0,1, vilket ger 4. Med 0,6 blir 0,6^5 = 0,07776 < 0,1 men 0,6^4 = 0,1296, vilket ger 5. Med 0,7 blir 0,7^6 ≈ 0,118 men 0,7^7 ≈ 0,082, vilket ger 7.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-119",
+    "kind": "xyz",
+    "prompt": "Talen a och b är positiva heltal sådana att a² − b² = 21. Vad är summan av alla möjliga värden på a?",
+    "options": [
+      "5",
+      "11",
+      "12",
+      "16"
+    ],
+    "correctIndex": 3,
+    "explain": "Konjugatregeln ger (a − b)(a + b) = 21. Eftersom a och b är positiva heltal är a + b ett positivt heltal som är större än a − b, och 21 kan skrivas som 1 · 21 eller 3 · 7. a − b = 1 och a + b = 21 ger a = 11 och b = 10. a − b = 3 och a + b = 7 ger a = 5 och b = 2. Kontroll: 121 − 100 = 21 och 25 − 4 = 21. Summan av de möjliga värdena på a är 11 + 5 = 16. 11 får man om man bara hittar uppdelningen 1 · 21 och 5 om man bara hittar 3 · 7. 12 är summan av de möjliga värdena på b, 10 + 2, inte på a.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-120",
+    "kind": "xyz",
+    "prompt": "Funktionen f definieras av f(x) = x² − 2x. Hur många olika reella tal x uppfyller f(f(x)) = 3?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctIndex": 2,
+    "explain": "Sätt y = f(x). Ekvationen f(y) = 3 blir y² − 2y − 3 = 0, alltså (y − 3)(y + 1) = 0, så y = 3 eller y = −1. Fall 1: x² − 2x = 3 ger (x − 3)(x + 1) = 0, alltså x = 3 eller x = −1. Fall 2: x² − 2x = −1 ger (x − 1)² = 0, alltså bara x = 1. Sammanlagt finns tre olika lösningar: −1, 1 och 3. 4 får man om man tror att varje fall ger två olika lösningar, men x = 1 är en dubbelrot. 2 får man om man bara löser fall 1, till exempel för att man tror att f(x) inte kan bli negativt. 1 får man om man bara löser fall 2.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-121",
+    "kind": "xyz",
+    "prompt": "Summan av de inre vinklarna i en regelbunden månghörning är 1 440°. Hur stor är var och en av månghörningens yttervinklar?",
+    "options": [
+      "36°",
+      "45°",
+      "60°",
+      "144°"
+    ],
+    "correctIndex": 0,
+    "explain": "Vinkelsumman i en n-hörning är (n − 2) · 180°. Ekvationen (n − 2) · 180 = 1 440 ger n − 2 = 8, alltså n = 10. Yttervinklarna i en månghörning har alltid summan 360°, så varje yttervinkel är 360°/10 = 36°. Kontroll: varje inre vinkel är 1 440°/10 = 144°, och 180° − 144° = 36°. 45° får man om man glömmer −2 i formeln och tror att månghörningen har 1 440/180 = 8 hörn. 60° får man om man drar ifrån 2 i stället för att lägga till 2 och får n = 6. 144° är storleken på varje inre vinkel, inte på yttervinkeln.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-122",
+    "kind": "xyz",
+    "prompt": "I triangeln ABC är vinkeln A 50° och vinkeln B 70°. Bisektrisen till vinkeln C, det vill säga den linje som delar vinkeln C mitt itu, skär sidan AB i punkten D. Hur stor är vinkeln ADC?",
+    "options": [
+      "70°",
+      "80°",
+      "100°",
+      "130°"
+    ],
+    "correctIndex": 2,
+    "explain": "Vinkeln C är 180° − 50° − 70° = 60°, och bisektrisen delar den i två vinklar på 30°. I triangeln ADC är alltså vinkeln A 50° och vinkeln ACD 30°, så vinkeln ADC är 180° − 50° − 30° = 100°. 80° är vinkeln BDC i den andra deltriangeln (180° − 70° − 30°). 70° får man om man glömmer att halvera vinkeln C och räknar 180° − 50° − 60°. 130° får man om man använder att vinkeln ADC är yttervinkel till triangeln BDC men lägger ihop vinkeln B med hela vinkeln C, 70° + 60°, i stället för med halva, 70° + 30°.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-123",
+    "kind": "xyz",
+    "prompt": "Ett akvarium har formen av ett rätblock med innermåtten längd 60 cm, bredd 30 cm och höjd 40 cm. Det är fyllt med vatten upp till tre fjärdedelar av höjden. Hur många liter vatten innehåller akvariet?",
+    "options": [
+      "5,4 liter",
+      "18 liter",
+      "54 liter",
+      "72 liter"
+    ],
+    "correctIndex": 2,
+    "explain": "Vattnet står 3/4 · 40 = 30 cm högt, så vattnets volym är 60 · 30 · 30 = 54 000 cm³. Eftersom 1 liter = 1 dm³ = 1 000 cm³ är det 54 liter. 72 liter är hela akvariets volym, 60 · 30 · 40 = 72 000 cm³; man har glömt att det bara är fyllt till tre fjärdedelar. 18 liter är volymen av den tomma delen överst, alltså en fjärdedel av akvariet. 5,4 liter får man om man tror att 1 liter är 10 000 cm³.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-124",
+    "kind": "xyz",
+    "prompt": "För en viss cirkel gäller att areans mätetal i cm² är lika stort som omkretsens mätetal i cm. Hur lång är cirkelns diameter?",
+    "options": [
+      "1 cm",
+      "2 cm",
+      "4 cm",
+      "8 cm"
+    ],
+    "correctIndex": 2,
+    "explain": "Med radien r är arean πr² och omkretsen 2πr. Villkoret πr² = 2πr ger, efter division med πr (r > 0), att r = 2 cm. Diametern är 2r = 4 cm. 2 cm är radien, inte diametern. 1 cm får man om man skriver arean som πd² i stället för πr² = πd²/4: då ger πd² = πd att d = 1. 8 cm får man om man blandar ihop radie och diameter i omkretsformeln och skriver omkretsen som 2πd = 4πr: då ger πr² = 4πr att r = 4 och d = 8.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-125",
+    "kind": "xyz",
+    "prompt": "Hur långt är det mellan punkterna (−2, 3) och (4, −5) i ett koordinatsystem med samma längdenhet på båda axlarna?",
+    "options": [
+      "2√2",
+      "2√10",
+      "2√17",
+      "10"
+    ],
+    "correctIndex": 3,
+    "explain": "Skillnaden i x-led är 4 − (−2) = 6 och skillnaden i y-led är −5 − 3 = −8. Enligt Pythagoras sats är avståndet √(6² + 8²) = √(36 + 64) = √100 = 10. 2√17 = √68 får man med ett teckenfel i x-led, 4 − 2 = 2, så att avståndet blir √(2² + 8²). 2√10 = √40 får man med ett teckenfel i y-led, −5 + 3 = −2, så att avståndet blir √(6² + 2²). 2√2 = √8 får man med teckenfel i båda leden, √(2² + 2²).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-126",
+    "kind": "xyz",
+    "prompt": "En triangel har hörnen i punkterna (0, 0), (6, 2) och (2, 5) i ett koordinatsystem. Hur stor är triangelns area, räknad i areaenheter?",
+    "options": [
+      "13",
+      "15",
+      "17",
+      "18"
+    ],
+    "correctIndex": 0,
+    "explain": "Rita en rektangel med hörnen (0, 0), (6, 0), (6, 5) och (0, 5) runt triangeln. Rektangeln har arean 6 · 5 = 30. Utanför triangeln men inuti rektangeln finns tre rätvinkliga trianglar: en under sidan från (0, 0) till (6, 2) med arean 6 · 2/2 = 6, en till höger om sidan från (6, 2) till (2, 5) med arean 4 · 3/2 = 6 och en till vänster om sidan från (2, 5) till (0, 0) med arean 2 · 5/2 = 5. Triangelns area är 30 − 6 − 6 − 5 = 13. 18 får man om man bara drar bort två av de tre trianglarna; den smala triangeln vid y-axeln är lätt att missa eftersom ett hörn ligger i origo. 17 är summan av de tre bortskurna trianglarna, inte triangelns egen area. 15 får man om man räknar som om basen 6 låg längs x-axeln och höjden var 5, alltså 6 · 5/2, men ingen av triangelns sidor ligger längs en axel.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-127",
+    "kind": "xyz",
+    "prompt": "Kateterna i en rätvinklig triangel förhåller sig som 3 : 4, och triangelns omkrets är 36 cm. Hur stor är triangelns area?",
+    "options": [
+      "18 cm²",
+      "54 cm²",
+      "90 cm²",
+      "108 cm²"
+    ],
+    "correctIndex": 1,
+    "explain": "Om kateterna är 3x och 4x är hypotenusan √(9x² + 16x²) = 5x. Omkretsen blir 3x + 4x + 5x = 12x = 36, alltså x = 3. Kateterna är 9 cm och 12 cm, och arean är 9 · 12/2 = 54 cm². 18 cm² får man om man utgår från triangeln med sidorna 3, 4 och 5, som har omkretsen 12 och arean 6, och multiplicerar arean med längdskalan 3 i stället för med 3² = 9. 108 cm² får man om man glömmer att dela med 2. 90 cm² = 12 · 15/2 får man om man använder hypotenusan 15 cm som om den vore en katet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-128",
+    "kind": "xyz",
+    "prompt": "En figur består av en kvadrat med sidan 4 cm och en halvcirkel. Halvcirkelns diameter är en av kvadratens sidor, och halvcirkeln ligger utanför kvadraten. Hur lång är figurens omkrets?",
+    "options": [
+      "(12 + 2π) cm",
+      "(16 + 2π) cm",
+      "(12 + 4π) cm",
+      "(16 + 4π) cm"
+    ],
+    "correctIndex": 0,
+    "explain": "Figurens kant består av tre av kvadratens sidor, 3 · 4 = 12 cm, och halvcirkelbågen. En hel cirkel med diametern 4 cm har omkretsen π · 4 = 4π cm, så halvcirkelbågen är 2π cm. Omkretsen blir (12 + 2π) cm. (16 + 2π) cm får man om man räknar med alla fyra kvadratsidorna, men den sida som är halvcirkelns diameter ligger inuti figuren. (12 + 4π) cm får man om man använder 4 cm som radie, så att halvcirkelbågen blir π · 4. (16 + 4π) cm får man om man gör båda misstagen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-129",
+    "kind": "xyz",
+    "prompt": "En cylinderformad tunna har innerdiametern 60 cm och innerhöjden 80 cm. Hur många liter rymmer tunnan?",
+    "options": [
+      "7,2π liter",
+      "24π liter",
+      "72π liter",
+      "288π liter"
+    ],
+    "correctIndex": 2,
+    "explain": "Radien är 30 cm, så volymen är π · 30² · 80 = π · 900 · 80 = 72 000π cm³. Eftersom 1 liter = 1 000 cm³ rymmer tunnan 72π liter. 288π liter får man om man använder diametern 60 cm som radie: π · 3 600 · 80 = 288 000π cm³. 24π liter får man om man delar med 3 som i formeln för en kons volym; en cylinder ska inte delas med 3. 7,2π liter får man om man tror att 1 liter är 10 000 cm³.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-130",
+    "kind": "xyz",
+    "prompt": "En gatlampa sitter 6 m upp på en lodrät stolpe. En person som är 1,5 m lång står på plan mark 3 m från stolpen. Hur lång är personens skugga från lampans ljus?",
+    "options": [
+      "0,6 m",
+      "0,75 m",
+      "1 m",
+      "4 m"
+    ],
+    "correctIndex": 2,
+    "explain": "Kalla skuggans längd s. Ljusstrålen från lampan över personens huvud till skuggans spets bildar två likformiga rätvinkliga trianglar: en med stolpen (6 m) och sträckan från stolpen till skuggans spets (3 + s) som kateter, och en med personen (1,5 m) och skuggan (s). Det ger 1,5/6 = s/(3 + s), alltså 6s = 1,5s + 4,5 och s = 1 m. Kontroll: 1,5/1 = 6/4. 4 m är avståndet från stolpen till skuggans spets, inte skuggans längd. 0,75 m får man om man jämför med sträckan 3 m i stället för 3 + s, alltså s/3 = 1,5/6. 0,6 m får man om man använder den lilla triangeln ovanför personens huvud men lägger ihop höjderna i stället för att ta skillnaden: 1,5/s = (6 + 1,5)/3 i stället för 1,5/s = (6 − 1,5)/3.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-131",
+    "kind": "xyz",
+    "prompt": "Den räta linjen L går genom punkten (2, 3) och är vinkelrät mot linjen y = 2x − 1. För vilket värde på x skär L x-axeln?",
+    "options": [
+      "−4",
+      "0,5",
+      "3,5",
+      "8"
+    ],
+    "correctIndex": 3,
+    "explain": "Två linjer är vinkelräta när produkten av deras riktningskoefficienter är −1, så L har riktningskoefficienten −1/2. Genom (2, 3) ger det y = 3 − (x − 2)/2. Sätt y = 0: (x − 2)/2 = 3, alltså x − 2 = 6 och x = 8. −4 får man om man glömmer teckenbytet och använder riktningskoefficienten 1/2: då ger 0 = 3 + (x − 2)/2 att x = −4. 3,5 får man om man byter tecken men inte inverterar och använder −2: 0 = 3 − 2(x − 2) ger x = 3,5. 0,5 får man om man använder samma riktningskoefficient 2 som den givna linjen, men då blir linjerna parallella i stället för vinkelräta.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-132",
+    "kind": "xyz",
+    "prompt": "På en karta i skala 1 : 25 000 har ett naturreservat arean 8 cm². Hur stor är reservatets verkliga area? (1 hektar = 10 000 m².)",
+    "options": [
+      "0,2 hektar",
+      "0,5 hektar",
+      "50 hektar",
+      "500 hektar"
+    ],
+    "correctIndex": 2,
+    "explain": "1 cm på kartan motsvarar 25 000 cm = 250 m i verkligheten. Då motsvarar 1 cm² på kartan 250 m · 250 m = 62 500 m², och 8 cm² motsvarar 8 · 62 500 = 500 000 m² = 50 hektar. Areor skalas med kvadraten av längdskalan. 0,2 hektar får man om man bara multiplicerar med längdskalan en gång: 8 · 250 = 2 000 m². 0,5 hektar får man om man gör fel i omvandlingen och tror att 25 000 cm är 25 m; då motsvarar 1 cm² bara 625 m², och 8 · 625 = 5 000 m². 500 hektar får man om man räknar rätt till 500 000 m² men tror att 1 hektar är 1 000 m².",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-133",
+    "kind": "xyz",
+    "prompt": "En rak cirkulär kon har bottenradien 6 cm. Avståndet från konens spets till en punkt på bottenytans kant är 10 cm. Hur stor är konens volym?",
+    "options": [
+      "48π cm³",
+      "96π cm³",
+      "120π cm³",
+      "288π cm³"
+    ],
+    "correctIndex": 1,
+    "explain": "Höjden, radien och sträckan från spetsen till bottenytans kant bildar en rätvinklig triangel med hypotenusan 10 cm. Höjden är √(10² − 6²) = √64 = 8 cm. Volymen är πr²h/3 = π · 36 · 8/3 = 96π cm³. 120π cm³ får man om man använder sträckan 10 cm som höjd: π · 36 · 10/3. 48π cm³ får man om man räknar höjden som 10 − 6 = 4 cm i stället för att använda Pythagoras sats. 288π cm³ får man om man glömmer att dela med 3 och räknar som för en cylinder.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-134",
+    "kind": "xyz",
+    "prompt": "En romb har diagonalerna 10 cm och 24 cm. Hur stort är det vinkelräta avståndet mellan två motstående sidor i romben?",
+    "options": [
+      "120/13 cm",
+      "10 cm",
+      "13 cm",
+      "240/13 cm"
+    ],
+    "correctIndex": 0,
+    "explain": "Diagonalerna i en romb halverar varandra under rät vinkel. Varje sida är därför hypotenusa i en rätvinklig triangel med kateterna 5 cm och 12 cm, och sidan är √(25 + 144) = 13 cm. Rombens area är diagonalernas produkt delad med 2: 10 · 24/2 = 120 cm². Romben är en parallellogram, så arean är också sida gånger höjd: 13h = 120, och höjden är h = 120/13 cm, ungefär 9,2 cm. 13 cm är sidans längd; avståndet mellan två motstående sidor är kortare än sidan eftersom sidorna inte står vinkelrätt mot varandra. 10 cm är den kortare diagonalen, som inte är vinkelrät mot sidorna. 240/13 cm får man om man glömmer att dela diagonalernas produkt med 2 när man räknar ut arean.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-135",
+    "kind": "xyz",
+    "prompt": "En rätvinklig triangel har sidorna 6 cm, 8 cm och 10 cm. En cirkel är inskriven i triangeln, det vill säga cirkeln ligger inuti triangeln och tangerar alla tre sidorna. Hur stor är cirkelns radie?",
+    "options": [
+      "1 cm",
+      "2 cm",
+      "2,4 cm",
+      "5 cm"
+    ],
+    "correctIndex": 1,
+    "explain": "Dra sträckor från cirkelns medelpunkt till triangelns tre hörn. Triangeln delas då i tre trianglar som alla har höjden r mot var sin sida av den stora triangeln. Deras areor blir tillsammans 6r/2 + 8r/2 + 10r/2 = 12r, och det ska vara lika med triangelns area 6 · 8/2 = 24 cm². Alltså är r = 2 cm. 1 cm får man om man delar arean med hela omkretsen, 24/24, i stället för med halva omkretsen. 2,4 cm är halva höjden mot hypotenusan (höjden är 6 · 8/10 = 4,8 cm), men den inskrivna cirkelns diameter är inte lika med den höjden. 5 cm är radien i den omskrivna cirkeln, som går genom triangelns hörn och har hypotenusan som diameter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-136",
+    "kind": "xyz",
+    "prompt": "En vanlig analog klocka visar 3.40 (tjugo i fyra). Hur stor är den minsta vinkeln mellan timvisaren och minutvisaren?",
+    "options": [
+      "110°",
+      "120°",
+      "130°",
+      "150°"
+    ],
+    "correctIndex": 2,
+    "explain": "Minutvisaren rör sig 360°/60 = 6° per minut och pekar efter 40 minuter 240° från tolvan. Timvisaren rör sig 360°/12 = 30° per timme, alltså 0,5° per minut. Klockan 3.40 har den rört sig 3 · 30° + 40 · 0,5° = 110° från tolvan. Vinkeln mellan visarna är 240° − 110° = 130°, och den andra vinkeln runt urtavlan är 230°, så den minsta är 130°. 150° får man om man låter timvisaren stå kvar exakt på trean (90°). 120° får man om man i stället låter timvisaren peka rakt på fyran (120°); den har bara hunnit två tredjedelar av vägen dit. 110° är timvisarens vinkel från tolvan, inte vinkeln mellan visarna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-137",
+    "kind": "xyz",
+    "prompt": "En myra går på utsidan av en kub med kanten 3 cm, från ett hörn till det motsatta hörnet, det vill säga det hörn som ligger längst bort. Myran kan inte gå genom kuben. Hur lång är den kortaste möjliga vägen?",
+    "options": [
+      "3√2 cm",
+      "3√3 cm",
+      "6 cm",
+      "3√5 cm"
+    ],
+    "correctIndex": 3,
+    "explain": "Den kortaste vägen går över två intilliggande sidoytor. Viker man ut de två ytorna så att de ligger i samma plan bildar de en rektangel som är 3 cm bred och 6 cm lång, och de två hörnen hamnar i rektangelns motstående hörn. Den kortaste vägen är rektangelns diagonal: √(3² + 6²) = √45 = 3√5 cm, ungefär 6,7 cm. 3√3 cm är rymddiagonalen, som går rakt genom kuben, och den vägen kan myran inte ta. 3√2 cm är diagonalen i en sidoyta, men den leder till ett hörn på samma sidoyta, inte till det motsatta hörnet. 6 cm är bara den utvikta rektangelns långsida; man har glömt att vägen samtidigt går 3 cm i sidled.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-138",
+    "kind": "xyz",
+    "prompt": "En triangel har sidorna 4 cm, 9 cm och x cm, där x är ett positivt heltal. Hur många olika värden kan x ha?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correctIndex": 1,
+    "explain": "I en triangel är varje sida kortare än summan av de två andra (triangelolikheten). Det ger x < 4 + 9 = 13 och 9 < 4 + x, alltså x > 5. Heltalen som uppfyller 5 < x < 13 är 6, 7, 8, 9, 10, 11 och 12, sju stycken. 9 får man om man tar med båda gränsvärdena 5 och 13; då ligger de tre punkterna på en rät linje och bildar ingen triangel. 8 får man om man tar med det ena gränsvärdet. 6 får man om man räknar antalet som 12 − 6 och glömmer att båda ändpunkterna ingår.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-139",
+    "kind": "xyz",
+    "prompt": "Punkten P ligger på x-axeln och är lika långt från punkterna A = (1, 4) och B = (7, 2). Vilken x-koordinat har P?",
+    "options": [
+      "−5",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctIndex": 1,
+    "explain": "Låt P = (x, 0). Kvadraterna på avstånden ska vara lika: (x − 1)² + 4² = (x − 7)² + 2². Det ger x² − 2x + 17 = x² − 14x + 53, alltså 12x = 36 och x = 3. Kontroll: avståndet i kvadrat till A är 2² + 4² = 20 och till B är 4² + 2² = 20. 4 är x-koordinaten för mittpunkten på AB, men den punkten ligger inte på x-axeln, och punkten (4, 0) ligger närmare B än A. P ligger på mittpunktsnormalen till AB, som går genom (4, 3) och har riktningskoefficienten 3 eftersom AB har riktningskoefficienten −1/3. 5 får man om man använder −3 i stället för 3: 0 − 3 = −3(x − 4) ger x = 5. −5 får man om man bara byter tecken och använder 1/3: 0 − 3 = (x − 4)/3 ger x = −5.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-140",
+    "kind": "xyz",
+    "prompt": "Från ett rektangulärt pappark som är 30 cm långt och 20 cm brett klipper man bort en kvadrat med sidan 4 cm i vart och ett av de fyra hörnen. Sedan viker man upp kanterna så att det blir en öppen låda. Hur stor är lådans volym?",
+    "options": [
+      "1 056 cm³",
+      "1 664 cm³",
+      "2 144 cm³",
+      "2 400 cm³"
+    ],
+    "correctIndex": 0,
+    "explain": "Från varje sida klipps en kvadrat bort i båda ändarna, så lådans botten blir 30 − 2 · 4 = 22 cm lång och 20 − 2 · 4 = 12 cm bred. Höjden är 4 cm, och volymen är 22 · 12 · 4 = 1 056 cm³. 1 664 cm³ = 26 · 16 · 4 får man om man bara drar bort 4 cm från längden och bredden, alltså bara en kvadrat per sida. 2 144 cm³ får man om man drar bort de fyra kvadraternas area från arket, 600 − 4 · 16 = 536 cm², och multiplicerar med höjden; men kanterna som viks upp blir lådans väggar och inte en del av botten. 2 400 cm³ = 30 · 20 · 4 får man om man inte drar bort något alls.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-141",
+    "kind": "xyz",
+    "prompt": "En cirkel har medelpunkten O och radien 5 cm. Punkten P ligger 13 cm från O. Från P dras de två tangenterna till cirkeln, och de tangerar cirkeln i punkterna A och B. Hur stor är fyrhörningen PAOB:s area?",
+    "options": [
+      "30 cm²",
+      "60 cm²",
+      "65 cm²",
+      "120 cm²"
+    ],
+    "correctIndex": 1,
+    "explain": "En tangent är vinkelrät mot radien i tangeringspunkten, så trianglarna OAP och OBP är rätvinkliga med hypotenusan OP = 13 cm och kateten 5 cm. Den andra kateten, tangentsträckan, är √(13² − 5²) = √144 = 12 cm. Varje triangel har arean 5 · 12/2 = 30 cm², och fyrhörningen består av två sådana trianglar: 60 cm². 30 cm² är arean av bara den ena triangeln. 120 cm² får man om man glömmer att dela med 2 i triangelarean. 65 cm² får man om man använder formeln för en drake, diagonalernas produkt delad med 2, med diagonalerna 13 cm och 10 cm; men diagonalen AB är en korda och inte en diameter, så den är kortare än 10 cm.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-142",
+    "kind": "xyz",
+    "prompt": "Två cirklar har båda radien 6 cm, och var och en av cirklarna går genom den andras medelpunkt. Hur långt är det mellan cirklarnas två skärningspunkter?",
+    "options": [
+      "3√3 cm",
+      "6 cm",
+      "6√2 cm",
+      "6√3 cm"
+    ],
+    "correctIndex": 3,
+    "explain": "Avståndet mellan medelpunkterna är 6 cm, eftersom varje medelpunkt ligger på den andra cirkeln. En skärningspunkt ligger 6 cm från båda medelpunkterna, så den bildar tillsammans med medelpunkterna en liksidig triangel med sidan 6 cm. Höjden i en sådan triangel är √(6² − 3²) = √27 = 3√3 cm. Skärningspunkterna ligger symmetriskt på var sin sida om sträckan mellan medelpunkterna, så avståndet mellan dem är 2 · 3√3 = 6√3 cm. 3√3 cm är bara den ena triangelns höjd. 6 cm får man om man tror att avståndet är lika med radien. 6√2 cm får man om man antar att radierna till en skärningspunkt bildar rät vinkel, men vinkeln är 60°.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-143",
+    "kind": "xyz",
+    "prompt": "Sträckan AB är diameter i en halvcirkel, och AB = 10 cm. Punkten C ligger på halvcirkelns båge, och AC = 6 cm. Hur stor är den del av halvcirkelns yta som ligger utanför triangeln ABC?",
+    "options": [
+      "(12,5π − 30) cm²",
+      "(12,5π − 24) cm²",
+      "(25π − 24) cm²",
+      "(50π − 24) cm²"
+    ],
+    "correctIndex": 1,
+    "explain": "En triangel med ena sidan som diameter och tredje hörnet på cirkeln är rätvinklig, med den räta vinkeln vid C (Thales sats). Då är BC = √(10² − 6²) = 8 cm, och triangeln har arean 6 · 8/2 = 24 cm². Halvcirkeln har radien 5 cm och arean π · 5²/2 = 12,5π cm². Den del som ligger utanför triangeln är (12,5π − 24) cm². (12,5π − 30) cm² får man om man räknar triangelns area som 6 · 10/2, som om AC och AB vore vinkelräta. (25π − 24) cm² får man om man drar triangeln från hela cirkelns area. (50π − 24) cm² får man om man använder diametern 10 cm som radie i halvcirkelns area.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-144",
+    "kind": "xyz",
+    "prompt": "Linjerna y = x och y = −2x + 6 och x-axeln begränsar tillsammans en triangel. Hur stor är triangelns area, räknad i areaenheter?",
+    "options": [
+      "2",
+      "3",
+      "6",
+      "9"
+    ],
+    "correctIndex": 1,
+    "explain": "Linjerna skär varandra där x = −2x + 6, alltså i punkten (2, 2). Linjen y = x skär x-axeln i origo och linjen y = −2x + 6 skär x-axeln i (3, 0). Triangeln har hörnen (0, 0), (3, 0) och (2, 2), så basen längs x-axeln är 3 och höjden är 2. Arean är 3 · 2/2 = 3. 2 får man om man tar skärningspunktens x-koordinat 2 som bas i stället för avståndet 3 mellan linjernas skärningar med x-axeln. 6 får man om man glömmer att dela med 2. 9 = 3 · 6/2 får man om man använder den andra linjens skärning med y-axeln, 6, som höjd, men den punkten är inte ett hörn i triangeln.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-145",
+    "kind": "xyz",
+    "prompt": "I triangeln ABC är M mittpunkten på sidan BC, och N är mittpunkten på sträckan AM. Triangeln ABC har arean 48 cm². Hur stor är triangeln BNC:s area?",
+    "options": [
+      "8 cm²",
+      "12 cm²",
+      "16 cm²",
+      "24 cm²"
+    ],
+    "correctIndex": 3,
+    "explain": "Trianglarna ABC och NBC har samma bas BC. Eftersom N ligger mitt på sträckan från A till punkten M på BC, ligger N på halva höjden över BC jämfört med A. Triangeln NBC har alltså samma bas och halva höjden, och därmed halva arean: 48/2 = 24 cm². 12 cm² är arean av triangeln ABN: triangeln ABM är halva ABC, alltså 24 cm², och N halverar den. 16 cm² är en tredjedel av arean, vilket gäller om N är tyngdpunkten, men tyngdpunkten ligger två tredjedelar av vägen från A till M, inte halvvägs. 8 cm² är en sjättedel av arean, storleken på var och en av de sex delar som triangelns tre medianer tillsammans delar den i.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-146",
+    "kind": "xyz",
+    "prompt": "En regelbunden sexhörning har sidan 4 cm. Hur stor är sexhörningens area?",
+    "options": [
+      "12√3 cm²",
+      "24 cm²",
+      "16√3 cm²",
+      "24√3 cm²"
+    ],
+    "correctIndex": 3,
+    "explain": "Sträckor från mittpunkten till hörnen delar en regelbunden sexhörning i sex liksidiga trianglar med sidan 4 cm. Höjden i en sådan triangel är √(4² − 2²) = √12 = 2√3 cm, så varje triangel har arean 4 · 2√3/2 = 4√3 cm². Sexhörningens area är 6 · 4√3 = 24√3 cm². 16√3 cm² är arean av bara rektangeln i mitten, 4 cm gånger 4√3 cm; man har glömt de två trianglarna på sidorna, som har arean 4√3 cm² vardera. 24 cm² får man om man tar halva sidan, 2 cm, som höjd i varje triangel. 12√3 cm² får man om man tror att sexhörningen består av tre liksidiga trianglar i stället för sex.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-147",
+    "kind": "xyz",
+    "prompt": "En cirkel i ett koordinatsystem har ekvationen x² + y² − 6x + 8y = 0. Hur stor är cirkelns radie?",
+    "options": [
+      "5",
+      "7",
+      "10",
+      "25"
+    ],
+    "correctIndex": 0,
+    "explain": "Kvadratkomplettera: x² − 6x = (x − 3)² − 9 och y² + 8y = (y + 4)² − 16. Ekvationen blir (x − 3)² + (y + 4)² = 25, alltså en cirkel med medelpunkten (3, −4) och radien √25 = 5. 25 är kvadraten på radien; man har glömt att dra roten ur. 7 får man om man lägger ihop 3 och 4 i stället för att använda Pythagoras sats på 3 och 4. 10 = √(6² + 8²) får man om man använder koefficienterna 6 och 8 direkt utan att halvera dem; 10 är cirkelns diameter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-148",
+    "kind": "xyz",
+    "prompt": "En cirkel har medelpunkten O. I punkten A på cirkeln dras en tangent, och kordan AB bildar den spetsiga vinkeln 35° med tangenten. Hur stor är medelpunktsvinkeln AOB, räknad som den vinkel som är mindre än 180°?",
+    "options": [
+      "35°",
+      "55°",
+      "70°",
+      "110°"
+    ],
+    "correctIndex": 2,
+    "explain": "Radien OA är vinkelrät mot tangenten, så vinkeln OAB är 90° − 35° = 55°. Triangeln OAB är likbent eftersom OA och OB är radier, så även vinkeln OBA är 55°. Medelpunktsvinkeln blir AOB = 180° − 2 · 55° = 70°. Det stämmer med regeln att vinkeln mellan en tangent och en korda är hälften av medelpunktsvinkeln. 55° är basvinkeln OAB, inte vinkeln vid O. 110° är summan av de två basvinklarna, 2 · 55°, som man glömt att dra från 180°. 35° får man om man tror att medelpunktsvinkeln är lika stor som vinkeln mot tangenten; det är i stället en randvinkel mot samma båge som är 35°.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-149",
+    "kind": "xyz",
+    "prompt": "En cirkelformad rabatt har radien 4 m. Runt hela rabatten går en gång som är 1 m bred. Hur stor är gångens area?",
+    "options": [
+      "π m²",
+      "4,25π m²",
+      "8π m²",
+      "9π m²"
+    ],
+    "correctIndex": 3,
+    "explain": "Rabatten och gången bildar tillsammans en cirkel med radien 4 + 1 = 5 m. Gångens area är skillnaden mellan de två cirklarnas areor: π · 5² − π · 4² = 25π − 16π = 9π m². 8π m² får man om man multiplicerar rabattens omkrets, 2π · 4 = 8π m, med gångens bredd; det ger för lite eftersom gångens yttre kant är längre än den inre. 4,25π m² får man om man tror att den yttre radien bara blir 4,5 m, som om gångens bredd lades till diametern i stället för till radien. π m² = π · 1² får man om man räknar som om gången vore en cirkel med radien 1 m.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-150",
+    "kind": "xyz",
+    "prompt": "En kvadrat har diagonalen 6√2 cm. En liksidig triangel har samma omkrets som kvadraten. Hur stor är triangelns area?",
+    "options": [
+      "8√3 cm²",
+      "9√3 cm²",
+      "16 cm²",
+      "16√3 cm²"
+    ],
+    "correctIndex": 3,
+    "explain": "En kvadrat med sidan s har diagonalen s√2, så kvadratens sida är 6 cm och omkretsen 24 cm. Triangeln har då sidan 24/3 = 8 cm. Höjden i triangeln är √(8² − 4²) = √48 = 4√3 cm, och arean är 8 · 4√3/2 = 16√3 cm². 8√3 cm² får man om man tror att kvadratens sida är halva diagonalen, 3√2 cm; då blir omkretsen 12√2 cm, triangelns sida 4√2 cm och arean 8√3 cm². 9√3 cm² är arean av en liksidig triangel med sidan 6 cm, alltså samma sida som kvadraten i stället för samma omkrets. 16 cm² får man om man använder halva sidan, 4 cm, som höjd i triangeln.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-151",
+    "kind": "xyz",
+    "prompt": "I triangeln ABC är AB = AC och vinkeln A är 40°. Punkten D ligger på sidan AC så att BD = BC. Hur stor är vinkeln ABD?",
+    "options": [
+      "30°",
+      "35°",
+      "40°",
+      "70°"
+    ],
+    "correctIndex": 0,
+    "explain": "Triangeln ABC är likbent med AB = AC, så basvinklarna B och C är lika stora: (180° − 40°)/2 = 70° vardera. Triangeln BCD är också likbent, med BD = BC, så vinkeln BDC är lika stor som vinkeln BCD, alltså 70°. Då är vinkeln DBC = 180° − 70° − 70° = 40°, och vinkeln ABD = 70° − 40° = 30°. 40° är vinkeln DBC, den andra delen av vinkeln B. 35° får man om man antar att BD delar vinkeln B mitt itu, men det framgår inte av uppgiften och stämmer inte. 70° är hela vinkeln ABC.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-152",
+    "kind": "xyz",
+    "prompt": "En burk utan lock har formen av en cylinder med radien 3 cm och höjden 10 cm. Hur stor är burkens yttre area, det vill säga bottenytan och mantelytan tillsammans?",
+    "options": [
+      "39π cm²",
+      "60π cm²",
+      "69π cm²",
+      "78π cm²"
+    ],
+    "correctIndex": 2,
+    "explain": "Bottenytan är en cirkel med arean π · 3² = 9π cm². Mantelytan är en rektangel med höjden 10 cm och bredden lika med bottenytans omkrets, 2π · 3 = 6π cm, så den har arean 60π cm². Tillsammans blir det 9π + 60π = 69π cm². 78π cm² får man om man även räknar med ett lock, 9π cm² till, men burken saknar lock. 60π cm² är bara mantelytan. 39π cm² får man om man räknar mantelytan som πrh = 30π cm² i stället för 2πrh.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-153",
+    "kind": "xyz",
+    "prompt": "Punkten P = (3, −2) speglas först i linjen y = x. Den punkt man då får speglas sedan i y-axeln. Vilka koordinater har den slutliga punkten?",
+    "options": [
+      "(−3, −2)",
+      "(−2, −3)",
+      "(−2, 3)",
+      "(2, 3)"
+    ],
+    "correctIndex": 3,
+    "explain": "Spegling i linjen y = x byter plats på koordinaterna: (3, −2) blir (−2, 3). Spegling i y-axeln byter tecken på x-koordinaten: (−2, 3) blir (2, 3). (−2, 3) är punkten efter den första speglingen; man har glömt den andra. (−2, −3) får man om man speglar i x-axeln i stället för i y-axeln i det andra steget. (−3, −2) får man om man bara speglar den ursprungliga punkten i y-axeln och hoppar över speglingen i linjen y = x.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-154",
+    "kind": "xyz",
+    "prompt": "En triangel har två sidor som är 8 cm och 10 cm långa, och vinkeln mellan dessa två sidor är 30°. Hur stor är triangelns area?",
+    "options": [
+      "20 cm²",
+      "20√3 cm²",
+      "40 cm²",
+      "40√3 cm²"
+    ],
+    "correctIndex": 0,
+    "explain": "Använd sidan 10 cm som bas. Höjden från det motstående hörnet är kateten mitt emot 30°-vinkeln i en rätvinklig triangel med hypotenusan 8 cm. I en sådan triangel med vinklarna 30°, 60° och 90° är kateten mot 30°-vinkeln halva hypotenusan, så höjden är 4 cm. Arean blir 10 · 4/2 = 20 cm². 20√3 cm² får man om man i stället tar den längre kateten, 4√3 cm, som höjd; den ligger mot 60°-vinkeln och är inte höjden mot basen. 40 cm² får man om man glömmer att dela med 2. 40√3 cm² får man om man gör båda misstagen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-155",
+    "kind": "xyz",
+    "prompt": "En cirkelsektor med radien 12 cm och medelpunktsvinkeln 90° rullas ihop till mantelytan på en kon, så att sektorns två raka kanter möts och cirkelbågen bildar kanten på konens bottenyta. Hur hög blir konen?",
+    "options": [
+      "9 cm",
+      "6√3 cm",
+      "3√15 cm",
+      "12 cm"
+    ],
+    "correctIndex": 2,
+    "explain": "Cirkelbågen är en fjärdedel av omkretsen 2π · 12 = 24π cm, alltså 6π cm. Den blir omkretsen på konens bottenyta: 2πr = 6π, så bottenradien är r = 3 cm. Sektorns radie, 12 cm, blir avståndet från spetsen till bottenytans kant. Höjden är kateten i en rätvinklig triangel med hypotenusan 12 cm och den andra kateten 3 cm: √(12² − 3²) = √135 = 3√15 cm, ungefär 11,6 cm. 12 cm får man om man tror att sektorns radie blir konens höjd. 9 cm = 12 − 3 får man om man subtraherar längderna i stället för att använda Pythagoras sats. 6√3 cm = √(144 − 36) får man om man räknar omkretsen som πr i stället för 2πr och därför får bottenradien 6 cm.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-156",
+    "kind": "xyz",
+    "prompt": "I den regelbundna femhörningen ABCDE dras diagonalerna AC och AD. Hur stor är vinkeln CAD?",
+    "options": [
+      "36°",
+      "54°",
+      "60°",
+      "72°"
+    ],
+    "correctIndex": 0,
+    "explain": "Vinkelsumman i en femhörning är 3 · 180° = 540°, så varje inre vinkel är 108°. Triangeln ABC är likbent eftersom AB = BC, och vinkeln B är 108°, så vinkeln BAC är (180° − 108°)/2 = 36°. På samma sätt är vinkeln DAE 36°. Vinkeln CAD är det som återstår av vinkeln A: 108° − 36° − 36° = 36°. 72° får man om man bara drar bort den ena av de två vinklarna på 36°. 54° är halva vinkeln A, som om bara en diagonal delade vinkeln mitt itu. 60° får man om man antar att triangeln ACD är liksidig; den är likbent med två diagonaler som ben, men basen CD är en sida och är kortare än diagonalerna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-157",
+    "kind": "xyz",
+    "prompt": "En rak pyramid har en kvadratisk bottenyta med sidan 6 cm. Varje sidoyta är en likbent triangel vars höjd, från mitten av bottenkanten upp till toppen, är 5 cm. Hur stor är pyramidens volym?",
+    "options": [
+      "48 cm³",
+      "60 cm³",
+      "144 cm³",
+      "180 cm³"
+    ],
+    "correctIndex": 0,
+    "explain": "Pyramidens höjd går från toppen rakt ned till bottenytans mittpunkt, som ligger 3 cm från mitten av varje bottenkant. Höjden, de 3 cm och sidoytans höjd 5 cm bildar en rätvinklig triangel, så pyramidens höjd är √(5² − 3²) = 4 cm. Volymen är bottenarean gånger höjden delat med 3: 36 · 4/3 = 48 cm³. 60 cm³ = 36 · 5/3 får man om man använder sidoytans höjd som pyramidens höjd. 144 cm³ får man om man glömmer att dela med 3. 180 cm³ får man om man gör båda misstagen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-158",
+    "kind": "xyz",
+    "prompt": "En liksidig triangel har höjden 6 cm. Hur stor är triangelns area?",
+    "options": [
+      "6√3 cm²",
+      "9√3 cm²",
+      "18 cm²",
+      "12√3 cm²"
+    ],
+    "correctIndex": 3,
+    "explain": "Höjden delar triangeln i två rätvinkliga trianglar med vinklarna 30°, 60° och 90°, där halva sidan s/2 ligger mot 30°-vinkeln. Pythagoras sats ger s² = (s/2)² + 6², alltså 3s²/4 = 36, s² = 48 och s = 4√3 cm. Arean är bas gånger höjd delat med 2: 4√3 · 6/2 = 12√3 cm², ungefär 20,8 cm². 18 cm² får man om man tror att sidan också är 6 cm och räknar 6 · 6/2. 9√3 cm² är arean av en liksidig triangel med sidan 6 cm, alltså samma misstag med formeln s²√3/4. 6√3 cm² får man om man tror att sidan är 6/√3 = 2√3 cm i stället för 2 · 6/√3.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-159",
+    "kind": "xyz",
+    "prompt": "Tre av sidoytorna i ett rätblock möts i ett gemensamt hörn och har areorna 12 cm², 15 cm² och 20 cm². Hur stor är rätblockets volym?",
+    "options": [
+      "47 cm³",
+      "60 cm³",
+      "94 cm³",
+      "3 600 cm³"
+    ],
+    "correctIndex": 1,
+    "explain": "Kalla kantlängderna a, b och c, så att ab = 12, ac = 15 och bc = 20. Multipliceras de tre ekvationerna får man (abc)² = 12 · 15 · 20 = 3 600, och volymen är abc = √3 600 = 60 cm³. Kanterna är 3, 4 och 5 cm, och 3 · 4 · 5 = 60. 3 600 cm³ får man om man glömmer att dra roten ur produkten av areorna. 47 cm³ är bara summan av de tre areorna, 12 + 15 + 20. 94 cm³ får man om man räknar ut rätblockets hela begränsningsarea, 2 · 47 = 94 cm², i stället för volymen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-160",
+    "kind": "xyz",
+    "prompt": "En rätvinklig triangel har kateterna 6 cm och 3 cm. I triangeln ligger en kvadrat som har ett hörn i triangelns räta vinkel och två sidor längs kateterna. Kvadratens motstående hörn ligger på hypotenusan. Hur stor är kvadratens area?",
+    "options": [
+      "1 cm²",
+      "4 cm²",
+      "4,5 cm²",
+      "7,2 cm²"
+    ],
+    "correctIndex": 1,
+    "explain": "Placera triangeln så att kateten 6 cm är vågrät och kateten 3 cm lodrät, och låt kvadratens sida vara s. Ovanför kvadraten bildas en liten rätvinklig triangel med den vågräta kateten s och den lodräta kateten 3 − s. Den är likformig med hela triangeln, så dess lodräta katet är hälften av den vågräta, precis som 3 är hälften av 6: 3 − s = s/2, alltså s = 2 cm. Kvadratens area är 4 cm². 1 cm² får man om man vänder på förhållandet och sätter 3 − s = 2s; då blir s = 1 cm. 4,5 cm² är halva triangelns area, 6 · 3/2 = 9 cm², men det finns ingen regel om att kvadraten täcker halva triangeln. 7,2 cm² får man om man tror att kvadratens sida är lika med höjden mot hypotenusan, 6 · 3/√45 = 6/√5 cm, så att arean blir 36/5 = 7,2 cm²; men med den sidan skulle kvadratens motstående hörn hamna utanför triangeln.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-161",
+    "kind": "xyz",
+    "prompt": "Vad är 0,02 % av 3 · 10^5?",
+    "options": [
+      "60",
+      "600",
+      "6 000",
+      "60 000"
+    ],
+    "correctIndex": 0,
+    "explain": "0,02 % = 0,02/100 = 0,0002, och 3 · 10^5 = 300 000. Alltså är 0,02 % av talet 0,0002 · 300 000 = 60. 600 får man om man flyttar decimalkommat bara ett steg och räknar med 0,002. 6 000 får man om man glömmer att dela med 100 och räknar med 0,02. 60 000 får man om man räknar med 0,2, det vill säga 20 %.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-162",
+    "kind": "xyz",
+    "prompt": "Vilket tal ligger mitt emellan 2/3 och 4/5 på tallinjen?",
+    "options": [
+      "1/15",
+      "11/15",
+      "3/4",
+      "22/15"
+    ],
+    "correctIndex": 1,
+    "explain": "Talet mitt emellan är medelvärdet av de två talen. Med den gemensamma nämnaren 15 är 2/3 = 10/15 och 4/5 = 12/15, så medelvärdet är (10/15 + 12/15)/2 = 22/30 = 11/15. 22/15 är summan av talen; då har man glömt att dela med 2. 3/4 får man om man adderar täljarna och nämnarna var för sig: (2 + 4)/(3 + 5) = 6/8. 1/15 är halva avståndet mellan talen, (12/15 − 10/15)/2, alltså hur långt det är från vart och ett av talen till mittpunkten, inte själva mittpunkten.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-163",
+    "kind": "xyz",
+    "prompt": "Andelen invånare i en kommun som har fyllt 65 år ökade under en tioårsperiod från 20 % till 25 %. Med hur många procent ökade andelen?",
+    "options": [
+      "5 %",
+      "20 %",
+      "25 %",
+      "125 %"
+    ],
+    "correctIndex": 2,
+    "explain": "Andelen ökade med 25 − 20 = 5 procentenheter. Jämfört med den ursprungliga andelen är ökningen 5/20 = 0,25, alltså 25 %. 5 % blandar ihop procentenheter och procent. 20 % får man om man jämför ökningen med den nya andelen, 5/25; det anger hur många procent lägre den gamla andelen är än den nya. 125 % är den nya andelen uttryckt i procent av den gamla (25/20 = 1,25), inte ökningen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-164",
+    "kind": "xyz",
+    "prompt": "En vara kostar 750 kr inklusive 25 % moms. Momsen räknas på priset utan moms. Hur många kronor av priset är moms?",
+    "options": [
+      "150 kr",
+      "187,50 kr",
+      "562,50 kr",
+      "600 kr"
+    ],
+    "correctIndex": 0,
+    "explain": "Priset med moms är 125 % av priset utan moms. Priset utan moms är därför 750/1,25 = 600 kr, och momsen är 750 − 600 = 150 kr. Kontroll: 25 % av 600 kr är 150 kr. 187,50 kr får man om man räknar 25 % av 750 kr, alltså av priset med moms. 562,50 kr får man om man drar av den felaktiga momsen 187,50 kr från 750 kr. 600 kr är priset utan moms, inte momsen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-165",
+    "kind": "xyz",
+    "prompt": "I en kommun är 40 % av invånarna yngre än 30 år. Av dem som är yngre än 30 år studerar 15 %, och av dem som är 30 år eller äldre studerar 5 %. Hur stor andel av de invånare som studerar är yngre än 30 år?",
+    "options": [
+      "1/3",
+      "2/5",
+      "2/3",
+      "3/4"
+    ],
+    "correctIndex": 2,
+    "explain": "Andelen av alla invånare som både är yngre än 30 år och studerar är 0,40 · 0,15 = 0,06. Andelen som är 30 år eller äldre och studerar är 0,60 · 0,05 = 0,03. De som studerar utgör alltså 0,09 av invånarna, och av dem är 0,06/0,09 = 2/3 yngre än 30 år. 3/4 får man om man jämför 15 % och 5 % direkt, 15/(15 + 5), utan att ta hänsyn till att den äldre gruppen är större. 2/5 är andelen av alla invånare som är yngre än 30 år, inte andelen av dem som studerar. 1/3 är andelen av dem som studerar som är 30 år eller äldre.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-166",
+    "kind": "xyz",
+    "prompt": "För de positiva talen a, b och c gäller att a : b = 2 : 3 och b : c = 4 : 5. Vad är a : c?",
+    "options": [
+      "2 : 5",
+      "15 : 8",
+      "5 : 6",
+      "8 : 15"
+    ],
+    "correctIndex": 3,
+    "explain": "a/c = (a/b) · (b/c) = 2/3 · 4/5 = 8/15. Man kan också skriva om förhållandena så att b får samma tal i båda: a : b = 8 : 12 och b : c = 12 : 15, alltså a : b : c = 8 : 12 : 15. 2 : 5 får man om man tar a:s tal från det första förhållandet och c:s tal från det andra, trots att b motsvaras av olika tal i dem (3 respektive 4). 5 : 6 får man om man dividerar förhållandena i stället för att multiplicera dem: (2/3)/(4/5) = 10/12. 15 : 8 är rätt förhållande i omvänd ordning, alltså c : a.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-167",
+    "kind": "xyz",
+    "prompt": "En saftblandning består av saftkoncentrat och vatten i volymförhållandet 1 : 4. Man har 3 liter av blandningen och vill hälla i mer koncentrat så att förhållandet mellan koncentrat och vatten blir 1 : 3. Hur mycket koncentrat ska man hälla i?",
+    "options": [
+      "2 dl",
+      "4 dl",
+      "6 dl",
+      "8 dl"
+    ],
+    "correctIndex": 0,
+    "explain": "I blandningen är 1/5 koncentrat och 4/5 vatten, alltså 0,6 liter koncentrat och 2,4 liter vatten. Vattenmängden ändras inte. För förhållandet 1 : 3 ska koncentratet vara en tredjedel av vattenmängden, 2,4/3 = 0,8 liter. Man ska alltså hälla i 0,8 − 0,6 = 0,2 liter = 2 dl. 8 dl är den mängd koncentrat som blandningen ska innehålla efteråt; då har man glömt att 0,6 liter redan finns i den. 6 dl får man om man tolkar 1 : 3 som att koncentratet ska vara 1/3 av hela blandningen: (0,6 + x)/(3 + x) = 1/3 ger x = 0,6 liter. 4 dl får man om man dessutom glömmer att blandningen blir större och kräver att koncentratet ska vara 1/3 av 3 liter, alltså 1 liter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-168",
+    "kind": "xyz",
+    "prompt": "Hur många av heltalen 1, 2, 3, …, 100 är delbara med 3 men inte med 5?",
+    "options": [
+      "6",
+      "13",
+      "26",
+      "27"
+    ],
+    "correctIndex": 3,
+    "explain": "Bland talen 1–100 är 33 delbara med 3 (3, 6, …, 99). Ett tal som är delbart med både 3 och 5 är delbart med 15, och sådana tal är 15, 30, 45, 60, 75 och 90, alltså 6 stycken. Svaret är 33 − 6 = 27. 26 får man om man avrundar 100/15 ≈ 6,7 uppåt och drar bort 7 tal. 13 får man om man drar bort alla 20 tal som är delbara med 5, 33 − 20, fast de flesta av dem inte är delbara med 3. 6 är antalet tal som är delbara med både 3 och 5, alltså de tal som ska dras bort.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-169",
+    "kind": "xyz",
+    "prompt": "Från en busshållplats går linje 1 var 12:e minut och linje 2 var 18:e minut. Båda linjerna har en avgång kl. 7.00. Hur många gånger från och med kl. 7.00 till och med kl. 13.00 avgår de två linjerna samtidigt?",
+    "options": [
+      "2",
+      "10",
+      "11",
+      "61"
+    ],
+    "correctIndex": 2,
+    "explain": "Linjerna avgår samtidigt med ett intervall som är den minsta gemensamma multipeln av 12 och 18, alltså 36 minuter. Från 7.00 till 13.00 är det 6 timmar = 360 minuter, och 360/36 = 10. Samtidiga avgångar sker alltså 0, 36, 72, …, 360 minuter efter kl. 7.00, vilket är 10 + 1 = 11 gånger. 10 får man om man glömmer avgången kl. 7.00. 2 får man om man använder produkten 12 · 18 = 216 minuter som intervall; då blir det bara avgångarna 0 och 216 minuter efter kl. 7.00. 61 får man om man använder den största gemensamma delaren 6 i stället för den minsta gemensamma multipeln: 360/6 + 1 = 61.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-170",
+    "kind": "xyz",
+    "prompt": "Det femsiffriga talet 4a7a2 är delbart med 9. Båda a står för samma siffra. Vilken siffra är a?",
+    "options": [
+      "1",
+      "4",
+      "5",
+      "7"
+    ],
+    "correctIndex": 3,
+    "explain": "Ett tal är delbart med 9 om dess siffersumma är delbar med 9. Siffersumman är 4 + a + 7 + a + 2 = 13 + 2a. Eftersom a är en siffra ligger 13 + 2a mellan 13 och 31, och de multipler av 9 som finns där är 18 och 27. 13 + 2a = 18 ger inget heltal, medan 13 + 2a = 27 ger a = 7. Kontroll: 47 772 = 9 · 5 308. 5 får man om man räknar med a bara en gång: 13 + a = 18. 1 och 4 ger siffersummorna 15 och 21, som är delbara med 3 men inte med 9.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-171",
+    "kind": "xyz",
+    "prompt": "Hur många nollor slutar talet 1 · 2 · 3 · … · 25 på?",
+    "options": [
+      "2",
+      "5",
+      "6",
+      "7"
+    ],
+    "correctIndex": 2,
+    "explain": "Varje nolla i slutet kommer från en faktor 10 = 2 · 5. Produkten innehåller många fler faktorer 2 än 5, så antalet nollor bestäms av antalet faktorer 5. Talen 5, 10, 15, 20 och 25 är delbara med 5, och 25 = 5 · 5 bidrar med en extra femma. Det ger 5 + 1 = 6 faktorer 5 och därmed 6 nollor. 5 får man om man missar att 25 innehåller två femmor. 2 får man om man bara räknar talen 10 och 20, som själva slutar på 0. 7 får man om man räknar de fem multiplerna av 5 och sedan dessutom räknar 10 och 20 en gång till, fast deras femmor redan är medräknade.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-172",
+    "kind": "xyz",
+    "prompt": "Summan av fem på varandra följande udda tal är 135. Vilket är det minsta av talen?",
+    "options": [
+      "23",
+      "25",
+      "27",
+      "31"
+    ],
+    "correctIndex": 0,
+    "explain": "De fem talen ligger symmetriskt kring det mittersta talet, så det mittersta talet är medelvärdet 135/5 = 27. Talen är 23, 25, 27, 29 och 31, och 23 + 25 + 27 + 29 + 31 = 135. 25 får man om man räknar med fem på varandra följande heltal, 25, 26, 27, 28 och 29, i stället för udda tal. 27 är det mittersta talet och 31 det största.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-173",
+    "kind": "xyz",
+    "prompt": "Två positiva heltal har den största gemensamma delaren 6 och den minsta gemensamma multipeln 180. Det ena talet är 36. Vilket är det andra talet?",
+    "options": [
+      "30",
+      "45",
+      "60",
+      "90"
+    ],
+    "correctIndex": 0,
+    "explain": "För två positiva heltal är produkten av talen lika med produkten av deras största gemensamma delare och minsta gemensamma multipel. Det andra talet är därför 6 · 180/36 = 30. Kontroll: 36 = 2² · 3² och 30 = 2 · 3 · 5, så den största gemensamma delaren är 2 · 3 = 6 och den minsta gemensamma multipeln är 2² · 3² · 5 = 180. Också 45, 60 och 90 har den minsta gemensamma multipeln 180 tillsammans med 36, men deras största gemensamma delare med 36 är 9, 12 respektive 18. Den som bara kontrollerar villkoret om multipeln kan därför välja något av dem.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-174",
+    "kind": "xyz",
+    "prompt": "En kod består av fyra siffror, där varje siffra kan vara 0–9 och samma siffra får förekomma flera gånger. Hur många sådana koder innehåller minst en sjua?",
+    "options": [
+      "2 916",
+      "3 439",
+      "4 000",
+      "6 561"
+    ],
+    "correctIndex": 1,
+    "explain": "Totalt finns 10^4 = 10 000 koder. En kod utan sjua har 9 möjliga siffror på varje plats, så det finns 9^4 = 6 561 sådana koder. Koderna med minst en sjua är 10 000 − 6 561 = 3 439. 6 561 är antalet koder utan sjua. 2 916 = 4 · 9³ är antalet koder med exakt en sjua; då saknas koderna med två eller fler sjuor. 4 000 = 4 · 1 000 får man om man placerar en sjua på en av de fyra platserna och låter de tre andra siffrorna vara valfria; då räknas koder med flera sjuor flera gånger.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-175",
+    "kind": "xyz",
+    "prompt": "En restaurang har 4 förrätter, 5 varmrätter och 3 efterrätter. En middag består av exakt en varmrätt och dessutom antingen en förrätt, en efterrätt eller både en förrätt och en efterrätt. Hur många olika middagar kan man sätta ihop?",
+    "options": [
+      "35",
+      "60",
+      "95",
+      "100"
+    ],
+    "correctIndex": 2,
+    "explain": "Till varmrätten kan man välja bara en förrätt (4 sätt), bara en efterrätt (3 sätt) eller både förrätt och efterrätt (4 · 3 = 12 sätt), totalt 4 + 3 + 12 = 19 sätt. Med 5 varmrätter blir det 5 · 19 = 95 middagar. 60 = 4 · 5 · 3 räknar bara middagarna med alla tre rätterna. 35 = 5 · (4 + 3) missar middagarna med både förrätt och efterrätt. 100 = 5 · (4 + 1) · (3 + 1) får man om man räknar med möjligheten att avstå både förrätt och efterrätt; då kommer även de 5 middagarna med bara en varmrätt med.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-176",
+    "kind": "xyz",
+    "prompt": "En förening med 8 medlemmar ska välja en ordförande, en kassör och en sekreterare samt två revisorer med likadana uppdrag. Ingen medlem får ha mer än ett uppdrag. På hur många sätt kan valet göras?",
+    "options": [
+      "336",
+      "3 360",
+      "6 720",
+      "9 408"
+    ],
+    "correctIndex": 1,
+    "explain": "Ordförande, kassör och sekreterare är olika poster, så ordningen spelar roll: 8 · 7 · 6 = 336 sätt. Revisorerna väljs bland de 5 som är kvar, och eftersom deras uppdrag är likadana spelar ordningen ingen roll: 5 · 4/2 = 10 sätt. Totalt blir det 336 · 10 = 3 360 sätt. 336 får man om man glömmer revisorerna. 6 720 = 336 · 5 · 4 får man om man väljer revisorerna i ordning, som om de vore två olika poster. 9 408 = 336 · 28 får man om man väljer revisorerna bland alla 8 medlemmarna (8 · 7/2 = 28 sätt), trots att ingen får ha två uppdrag.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-177",
+    "kind": "xyz",
+    "prompt": "Sex personer ska delas upp i tre par. Det spelar ingen roll i vilken ordning paren bildas eller i vilken ordning personerna i ett par nämns. På hur många olika sätt kan uppdelningen göras?",
+    "options": [
+      "15",
+      "30",
+      "45",
+      "90"
+    ],
+    "correctIndex": 0,
+    "explain": "Ta en bestämd person. Hen kan bilda par med 5 olika personer. Bland de 4 som återstår tar man åter en bestämd person, som kan bilda par med 3 olika personer. De två sista bildar det tredje paret. Det ger 5 · 3 · 1 = 15 sätt. 90 får man om man väljer det första paret på 6 · 5/2 = 15 sätt, det andra på 4 · 3/2 = 6 sätt och det tredje på 1 sätt; då räknas varje uppdelning en gång för varje ordning som de tre paren kan väljas i, och eftersom det finns 3 · 2 · 1 = 6 sådana ordningar måste 90 delas med 6. 45 får man om man bara delar 90 med 2, och 30 om man delar med antalet par, 3, i stället för med antalet ordningar, 6.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-178",
+    "kind": "xyz",
+    "prompt": "Tre personer väljer var för sig och helt slumpmässigt ett av heltalen 1, 2, 3, 4 och 5. Hur stor är sannolikheten att alla tre väljer olika tal?",
+    "options": [
+      "2/25",
+      "12/25",
+      "16/25",
+      "24/25"
+    ],
+    "correctIndex": 1,
+    "explain": "Den första personen kan välja vilket tal som helst. Sannolikheten att den andra väljer ett annat tal är 4/5, och sannolikheten att den tredje sedan väljer ett tal som skiljer sig från båda de första är 3/5. Sannolikheten blir 4/5 · 3/5 = 12/25. 16/25 = 4/5 · 4/5 får man om man bara kräver att den tredje väljer ett annat tal än den andra. 24/25 = 1 − 1/25 är sannolikheten att inte alla tre väljer samma tal, vilket är något annat än att alla väljer olika tal. 2/25 får man om man delar de 10 möjliga uppsättningarna av tre olika tal med alla 5³ = 125 utfall; då har man glömt att varje uppsättning kan väljas i 3 · 2 · 1 = 6 ordningar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-179",
+    "kind": "xyz",
+    "prompt": "I en grupp människor har 10 % en viss sjukdom. Ett test ger positivt utslag hos 90 % av dem som har sjukdomen och hos 10 % av dem som inte har den. En slumpmässigt vald person i gruppen får positivt utslag. Hur stor är sannolikheten att personen har sjukdomen?",
+    "options": [
+      "9 %",
+      "10 %",
+      "50 %",
+      "90 %"
+    ],
+    "correctIndex": 2,
+    "explain": "Tänk dig 1 000 personer. 100 av dem har sjukdomen, och 90 av dessa får positivt utslag. Av de 900 som inte har sjukdomen får 10 %, alltså 90 personer, också positivt utslag. Av de 90 + 90 = 180 som får positivt utslag har 90 sjukdomen, och 90/180 = 50 %. 90 % är andelen av de sjuka som får positivt utslag; den som väljer det blandar ihop sannolikheten för positivt utslag hos en sjuk med sannolikheten för sjukdom hos en person med positivt utslag. 10 % är andelen sjuka i hela gruppen, och 9 % (90 av 1 000) är andelen av alla som både har sjukdomen och får positivt utslag.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-180",
+    "kind": "xyz",
+    "prompt": "I klass A går 20 elever, och deras medelpoäng på ett prov var 14. I klass B var medelpoängen 16. För de två klasserna tillsammans var medelpoängen 15,2. Hur många elever går i klass B?",
+    "options": [
+      "20",
+      "24",
+      "30",
+      "50"
+    ],
+    "correctIndex": 2,
+    "explain": "Om klass B har n elever är den sammanlagda poängen 20 · 14 + 16n = 280 + 16n. Den ska vara lika med 15,2(20 + n) = 304 + 15,2n. Det ger 0,8n = 24 och n = 30. Kontroll: (280 + 30 · 16)/50 = 760/50 = 15,2. 20 får man om man antar att klasserna är lika stora, men då skulle medelpoängen ha blivit 15. 24 är högerledet i 0,8n = 24; då har man glömt att dela med 0,8. 50 är antalet elever i båda klasserna tillsammans.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-181",
+    "kind": "xyz",
+    "prompt": "Sannolikheten att det regnar på lördag är 0,3, och sannolikheten att det regnar på söndag är 0,4. Vädret de två dagarna är oberoende av varandra. Hur stor är sannolikheten att det regnar minst en av dagarna?",
+    "options": [
+      "0,12",
+      "0,46",
+      "0,58",
+      "0,70"
+    ],
+    "correctIndex": 2,
+    "explain": "Sannolikheten att det inte regnar någon av dagarna är 0,7 · 0,6 = 0,42. Sannolikheten att det regnar minst en av dagarna är därför 1 − 0,42 = 0,58. 0,70 = 0,3 + 0,4 får man om man adderar sannolikheterna; då räknas fallet med regn båda dagarna (0,3 · 0,4 = 0,12) två gånger. 0,12 är sannolikheten för regn båda dagarna, och 0,46 = 0,3 · 0,6 + 0,7 · 0,4 är sannolikheten för regn exakt en av dagarna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-182",
+    "kind": "xyz",
+    "prompt": "En basketspelare sätter ett straffkast med sannolikheten 0,6, oberoende av hur hennes tidigare kast har gått. Hon kastar tre straffkast. Hur stor är sannolikheten att hon sätter exakt två av dem?",
+    "options": [
+      "0,144",
+      "0,288",
+      "0,36",
+      "0,432"
+    ],
+    "correctIndex": 3,
+    "explain": "Sannolikheten för en bestämd ordning med två träffar och en miss, till exempel träff, träff, miss, är 0,6 · 0,6 · 0,4 = 0,144. Missen kan komma i det första, det andra eller det tredje kastet, så det finns 3 sådana ordningar, och sannolikheten är 3 · 0,144 = 0,432. 0,144 får man om man bara räknar med en av ordningarna, och 0,288 om man räknar med två ordningar i stället för tre. 0,36 = 0,6 · 0,6 får man om man glömmer att det tredje kastet måste vara en miss.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-183",
+    "kind": "xyz",
+    "prompt": "Ett fotbollslag spelade 25 matcher under en säsong. I 9 matcher gjorde laget 0 mål, i 4 matcher 1 mål, i 2 matcher 2 mål, i 6 matcher 3 mål och i 4 matcher 4 mål. Vad är medianen för antalet mål per match?",
+    "options": [
+      "1",
+      "1,68",
+      "2",
+      "4"
+    ],
+    "correctIndex": 0,
+    "explain": "Med 25 matcher är medianen det 13:e värdet när målantalen ordnas i storleksordning. De 9 första värdena är 0, och värde nummer 10–13 är 1. Medianen är alltså 1. 1,68 är medelvärdet, (9 · 0 + 4 · 1 + 2 · 2 + 6 · 3 + 4 · 4)/25 = 42/25. 2 är det mittersta av de fem möjliga målantalen 0–4, men det tar ingen hänsyn till hur många matcher som har varje målantal. 4 är medianen av antalen matcher (2, 4, 4, 6 och 9), alltså av fel tal.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-184",
+    "kind": "xyz",
+    "prompt": "Man blandar 2 kg av en lösning som innehåller 30 % socker med 3 kg av en lösning som innehåller 10 % socker. Halterna är räknade i viktprocent. Vilken sockerhalt får blandningen?",
+    "options": [
+      "12 %",
+      "18 %",
+      "20 %",
+      "22 %"
+    ],
+    "correctIndex": 1,
+    "explain": "Den första lösningen innehåller 0,30 · 2 = 0,6 kg socker och den andra 0,10 · 3 = 0,3 kg. Blandningen väger 5 kg och innehåller 0,9 kg socker, och 0,9/5 = 0,18 = 18 %. 20 % är medelvärdet av 30 % och 10 %, men det tar ingen hänsyn till att det finns mer av den svagare lösningen. 22 % får man om man byter plats på vikterna: (3 · 30 + 2 · 10)/5 = 22. 12 % får man om man glömmer sockret i den svagare lösningen och bara räknar 0,6/5.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-185",
+    "kind": "xyz",
+    "prompt": "I butik A gäller erbjudandet ”köp 3, betala för 2” på en viss vara. I butik B säljs samma vara med 30 % rabatt på styckpriset. Varans ordinarie styckpris är detsamma i båda butikerna. Hur många procent mer betalar man i butik B än i butik A om man köper 3 exemplar av varan?",
+    "options": [
+      "ca 3,3 %",
+      "ca 4,8 %",
+      "5 %",
+      "10 %"
+    ],
+    "correctIndex": 2,
+    "explain": "Med det ordinarie styckpriset p betalar man 2p för tre exemplar i butik A och 3 · 0,7p = 2,1p i butik B. Skillnaden 0,1p är 0,1p/2p = 5 % av priset i butik A. Ungefär 4,8 % får man om man jämför skillnaden med priset i butik B, 0,1p/2,1p; det anger hur många procent mindre man betalar i butik A. Ungefär 3,3 % är skillnaden mellan rabatterna, cirka 33,3 % och 30 %, men det är en skillnad i procentenheter och inte hur mycket mer man betalar. 10 % får man om man jämför skillnaden 0,1p med ordinarie pris för ett enda exemplar, p.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-186",
+    "kind": "xyz",
+    "prompt": "För fem år sedan var Kim tre gånger så gammal som Alva. Om fem år kommer Kim att vara dubbelt så gammal som Alva. Hur gammal är Kim nu?",
+    "options": [
+      "15 år",
+      "20 år",
+      "30 år",
+      "35 år"
+    ],
+    "correctIndex": 3,
+    "explain": "Om Alva är a år och Kim k år nu gäller k − 5 = 3(a − 5) och k + 5 = 2(a + 5). Den första ekvationen ger k = 3a − 10, och insatt i den andra ger den 3a − 5 = 2a + 10, alltså a = 15 och k = 35. Kontroll: för fem år sedan var de 30 och 10 år, och om fem år blir de 40 och 20 år. 30 år är Kims ålder för fem år sedan. 15 år får man om man bortser från de fem åren i det första villkoret och skriver k = 3a; då blir 3a + 5 = 2a + 10, a = 5 och k = 15. 20 år får man om man bara multiplicerar a med 2 i det andra villkoret och skriver k + 5 = 2a + 5; då blir 3a − 5 = 2a + 5, a = 10 och k = 20.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-187",
+    "kind": "xyz",
+    "prompt": "Vad är 1/(1 · 2) + 1/(2 · 3) + 1/(3 · 4) + … + 1/(9 · 10)?",
+    "options": [
+      "8/9",
+      "9/10",
+      "10/11",
+      "1"
+    ],
+    "correctIndex": 1,
+    "explain": "Varje term kan skrivas som en differens: 1/(n(n + 1)) = 1/n − 1/(n + 1), till exempel 1/(2 · 3) = 1/2 − 1/3. Summan blir (1 − 1/2) + (1/2 − 1/3) + … + (1/9 − 1/10), där alla termer utom den första och den sista tar ut varandra. Kvar blir 1 − 1/10 = 9/10. 8/9 får man om man slutar ett steg för tidigt, vid 1 − 1/9, och 10/11 om man fortsätter ett steg för långt, till 1 − 1/11. 1 är det värde som summan närmar sig om den fortsätter med allt fler termer, men med nio termer är summan mindre än 1.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-188",
+    "kind": "xyz",
+    "prompt": "Hur många av heltalen 1, 2, 3, …, 50 har ett udda antal positiva delare?",
+    "options": [
+      "6",
+      "7",
+      "15",
+      "25"
+    ],
+    "correctIndex": 1,
+    "explain": "Delarna till ett positivt heltal n kan paras ihop två och två som d och n/d. Bara när d = n/d, alltså när n är kvadraten av ett heltal, blir en delare utan partner, och då blir antalet delare udda. Kvadraterna bland 1–50 är 1, 4, 9, 16, 25, 36 och 49, alltså 7 stycken. 6 får man om man glömmer att 1 = 1² också är en kvadrat; 1 har en enda delare, och 1 är ett udda antal. 25 är antalet udda tal, men till exempel 3 har två delare. 15 är antalet primtal till och med 50, men ett primtal har två delare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-189",
+    "kind": "xyz",
+    "prompt": "Vilket är det största heltal som säkert är en delare till produkten n(n + 1)(n + 2)(n + 3) för varje positivt heltal n?",
+    "options": [
+      "4",
+      "6",
+      "12",
+      "24"
+    ],
+    "correctIndex": 3,
+    "explain": "Bland fyra på varandra följande heltal finns alltid ett som är delbart med 4 och ytterligare ett som är jämnt, så produkten innehåller faktorn 4 · 2 = 8. Det finns också alltid ett tal som är delbart med 3. Produkten är därför alltid delbar med 8 · 3 = 24. Någon större delare kan det inte finnas, eftersom n = 1 ger produkten 1 · 2 · 3 · 4 = 24. 12 = 4 · 3 får man om man missar att det finns två jämna tal bland de fyra. 6 är det största tal som säkert delar en produkt av tre på varandra följande heltal. 4 får man om man bara tar hänsyn till att ett av talen är delbart med 4.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-190",
+    "kind": "xyz",
+    "prompt": "Medelvärdet av fyra tal är 15. Medelvärdet av de tre första talen är 13, och medelvärdet av de tre sista talen är 16. Hur mycket större är det fjärde talet än det första?",
+    "options": [
+      "3",
+      "6",
+      "9",
+      "12"
+    ],
+    "correctIndex": 2,
+    "explain": "Summan av alla fyra talen är 4 · 15 = 60. De tre första har summan 3 · 13 = 39, så det fjärde talet är 60 − 39 = 21. De tre sista har summan 3 · 16 = 48, så det första talet är 60 − 48 = 12. Skillnaden är 21 − 12 = 9. Det går också att se direkt: summorna 48 och 39 innehåller samma två mellersta tal, så skillnaden mellan det fjärde och det första talet är 48 − 39 = 9. 3 = 16 − 13 är skillnaden mellan medelvärdena; den måste multipliceras med 3 eftersom varje medelvärde gäller tre tal. 12 är det första talet, inte skillnaden. 6 = 21 − 15 får man om man jämför det fjärde talet med medelvärdet av alla fyra tal i stället för med det första talet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-191",
+    "kind": "xyz",
+    "prompt": "Vad är siffersumman i talet 10^20 − 20?",
+    "options": [
+      "170",
+      "171",
+      "179",
+      "180"
+    ],
+    "correctIndex": 0,
+    "explain": "10^20 är en etta följd av 20 nollor. 10^20 − 20 = (10^20 − 100) + 80, och 10^20 − 100 skrivs med 18 nior följda av två nollor. Talet 10^20 − 20 består alltså av 18 nior, en åtta och en nolla, totalt 20 siffror, och siffersumman är 18 · 9 + 8 = 170. 180 = 20 · 9 är siffersumman i 10^20 − 1. 179 = 19 · 9 + 8 får man om man tar med en nia för mycket. 171 = 19 · 9 är siffersumman i 10^20 − 10, som består av 19 nior och en nolla; då har man dragit bort 10 i stället för 20.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-192",
+    "kind": "xyz",
+    "prompt": "En kaffesort som kostar 70 kr/kg blandas med en kaffesort som kostar 120 kr/kg. Blandningen ska kosta 90 kr/kg, räknat som det sammanlagda priset delat med den sammanlagda vikten. I vilket viktförhållande ska det billigare och det dyrare kaffet blandas?",
+    "options": [
+      "2 : 3",
+      "3 : 5",
+      "7 : 12",
+      "3 : 2"
+    ],
+    "correctIndex": 3,
+    "explain": "Om man tar x kg av det billigare och y kg av det dyrare kaffet gäller 70x + 120y = 90(x + y), alltså 30y = 20x och x : y = 30 : 20 = 3 : 2. Kontroll: 3 kg för 210 kr och 2 kg för 240 kr ger 5 kg för 450 kr, alltså 90 kr/kg. 2 : 3 får man om man kastar om skillnaderna 20 kr och 30 kr; det ska vara mer av det billigare kaffet, eftersom blandningens pris ligger närmare dess pris. 3 : 5 kommer av att det billigare kaffet ska utgöra 3/5 av blandningen, men det är en andel av hela blandningen och inte förhållandet mellan de två sorterna. 7 : 12 är förhållandet mellan kilopriserna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-193",
+    "kind": "xyz",
+    "prompt": "Vad är 3/8 av 2 2/3 (två hela och två tredjedelar)?",
+    "options": [
+      "1/4",
+      "1/2",
+      "3/4",
+      "1"
+    ],
+    "correctIndex": 3,
+    "explain": "2 2/3 = 6/3 + 2/3 = 8/3, så 3/8 av talet är 3/8 · 8/3 = 24/24 = 1. 3/4 = 3/8 · 2 får man om man bara multiplicerar med heltalsdelen 2. 1/4 = 3/8 · 2/3 får man om man bara multiplicerar med bråkdelen 2/3. 1/2 får man om man läser 2 2/3 som 2 · 2/3 = 4/3; då blir det 3/8 · 4/3 = 12/24.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-194",
+    "kind": "xyz",
+    "prompt": "Vilken är den 50:e siffran efter decimalkommat i decimalutvecklingen av 3/7?",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "correctIndex": 1,
+    "explain": "3/7 = 0,428571428571…, där de sex siffrorna 428571 upprepas. Eftersom 50 = 6 · 8 + 2 avslutar siffra nummer 48 den åttonde perioden, och siffra nummer 50 är den andra siffran i nästa period, alltså 2. 1 är siffra nummer 48; den får man om man stannar vid den sista hela perioden och glömmer resten 2. 4 får man om man räknar ett steg för kort (siffra nummer 49) och 8 om man räknar ett steg för långt (siffra nummer 51).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-195",
+    "kind": "xyz",
+    "prompt": "Ett heltal väljs slumpmässigt bland 1, 2, 3, …, 30, där alla talen är lika sannolika. Hur stor är sannolikheten att det valda talet är ett primtal?",
+    "options": [
+      "3/10",
+      "1/3",
+      "11/30",
+      "1/2"
+    ],
+    "correctIndex": 1,
+    "explain": "Primtalen till och med 30 är 2, 3, 5, 7, 11, 13, 17, 19, 23 och 29, alltså 10 stycken. Sannolikheten är 10/30 = 1/3. 3/10 får man om man glömmer att 2 är ett primtal; 2 är det enda jämna primtalet. 11/30 får man om man räknar 1 som primtal, men ett primtal ska ha exakt två positiva delare och 1 har bara en. 1/2 är sannolikheten för ett udda tal, men många udda tal, till exempel 9, 15 och 21, är inte primtal.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-196",
+    "kind": "xyz",
+    "prompt": "En robot rör sig mellan punkterna i ett rutnät. Varje steg går en längdenhet åt höger eller en längdenhet uppåt. Hur många olika vägar kan roboten ta från punkten (0, 0) till punkten (4, 2)?",
+    "options": [
+      "15",
+      "30",
+      "64",
+      "720"
+    ],
+    "correctIndex": 0,
+    "explain": "Varje väg består av 6 steg, varav 4 åt höger och 2 uppåt. En väg bestäms helt av vilka 2 av de 6 stegen som går uppåt, och de kan väljas på 6 · 5/2 = 15 sätt. 30 = 6 · 5 får man om man glömmer att dela med 2; de två uppåtstegen är likadana, så det spelar ingen roll vilket av dem man väljer först. 64 = 2^6 räknar alla följder av 6 steg med två val i varje steg, även de som inte slutar i (4, 2). 720 = 6 · 5 · 4 · 3 · 2 · 1 behandlar alla sex stegen som olika.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-197",
+    "kind": "xyz",
+    "prompt": "Fem par, alltså tio personer, träffas på en fest. Alla skakar hand med varandra, utom att ingen skakar hand med sin egen partner. Varje handskakning sker mellan två personer och räknas en gång. Hur många handskakningar blir det?",
+    "options": [
+      "40",
+      "45",
+      "80",
+      "90"
+    ],
+    "correctIndex": 0,
+    "explain": "Varje person skakar hand med alla utom sig själv och sin partner, alltså med 8 personer. 10 · 8 = 80 räknar varje handskakning två gånger, en gång för var och en av de två personerna, så antalet är 80/2 = 40. Man kan också räkna alla möjliga par av personer, 10 · 9/2 = 45, och dra bort de 5 paren: 45 − 5 = 40. 45 får man om man glömmer att partnerna inte skakar hand. 80 får man om man glömmer att dela med 2. 90 = 10 · 9 får man om man gör båda misstagen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-198",
+    "kind": "xyz",
+    "prompt": "Hur många siffror har talet 2^12 · 5^10?",
+    "options": [
+      "10",
+      "11",
+      "13",
+      "22"
+    ],
+    "correctIndex": 1,
+    "explain": "2^12 · 5^10 = 2² · 2^10 · 5^10 = 4 · 10^10, alltså en fyra följd av 10 nollor. Talet har 11 siffror. 10 är antalet nollor; då har man glömt fyran. 13 är antalet siffror i 10^12, och det får man om man parar ihop alla tolv tvåor med femmor, fast det bara finns tio femmor. 22 får man om man adderar exponenterna 12 och 10.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-199",
+    "kind": "xyz",
+    "prompt": "På en marknad kostar 6 äpplen lika mycket som 4 päron, och 3 päron kostar lika mycket som 6 apelsiner. Hur många apelsiner kostar lika mycket som 12 äpplen?",
+    "options": [
+      "4",
+      "8",
+      "9",
+      "16"
+    ],
+    "correctIndex": 3,
+    "explain": "12 äpplen är dubbelt så många som 6 äpplen och kostar därför lika mycket som 2 · 4 = 8 päron. Eftersom 3 päron kostar lika mycket som 6 apelsiner kostar ett päron som 2 apelsiner, och 8 päron kostar som 16 apelsiner. 8 är antalet päron; då har man glömt det sista steget. 4 får man om man vänder på det andra förhållandet och tror att ett päron kostar som en halv apelsin. 9 får man om man vänder på båda förhållandena: 12 äpplen blir då 12 · 6/4 = 18 päron, och 18 päron blir 18 · 3/6 = 9 apelsiner.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-xyz-200",
+    "kind": "xyz",
+    "prompt": "Mira och Sam turas om att kasta en vanlig sexsidig tärning, och Mira kastar först. Den som först får en sexa vinner, och då slutar spelet. Hur stor är sannolikheten att Mira vinner?",
+    "options": [
+      "1/6",
+      "5/11",
+      "1/2",
+      "6/11"
+    ],
+    "correctIndex": 3,
+    "explain": "Mira vinner i sitt första kast med sannolikheten 1/6. Om varken Mira eller Sam får en sexa i sina första kast, vilket har sannolikheten 5/6 · 5/6 = 25/36, är läget detsamma som från början. Om p är sannolikheten att Mira vinner gäller därför p = 1/6 + 25/36 · p, alltså 11/36 · p = 1/6 och p = 36/66 = 6/11. 1/2 får man om man tror att spelet är rättvist, men den som börjar har ett försprång. 5/11 = 1 − 6/11 är sannolikheten att Sam vinner. 1/6 är bara sannolikheten att Mira vinner redan i sitt första kast.",
+    "verification": "agreed"
   }
 ]
