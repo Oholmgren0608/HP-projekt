@@ -93,6 +93,27 @@ function normalize(text: string): string {
   return text.toLocaleLowerCase("sv").replace(/\s+/g, " ").trim();
 }
 
+/**
+ * MEK med flera luckor ("ord1 / ord2 / ord3"): om varje lockbete skiljer sig
+ * från rätt svar i bara en lucka har rätt svar det vanligaste ordet i varje
+ * lucka och kan väljas utan att man läser texten.
+ */
+function majorityGivesAnswer(options: string[], correctIndex: number): boolean {
+  const parts = options.map((o) => o.split(" / ").map(normalize));
+  const gaps = parts[0]?.length ?? 0;
+  if (gaps < 2 || !parts.every((p) => p.length === gaps)) return false;
+  const score = parts.map((p) => p.reduce((sum, word, g) => sum + parts.filter((x) => x[g] === word).length, 0));
+  const best = Math.max(...score);
+  return score[correctIndex] === best && score.filter((s) => s === best).length === 1;
+}
+
+/** ORD: rätt svar är ensamt om att vara en fras – eller ensamt om att vara ett ord. */
+function aloneInForm(options: string[], correctIndex: number): boolean {
+  const isPhrase = (o: string) => o.trim().split(/\s+/).length > 1;
+  const key = isPhrase(options[correctIndex] ?? "");
+  return options.every((o, i) => i === correctIndex || isPhrase(o) !== key);
+}
+
 export function contentPath(kind: Kind): string {
   return join(CONTENT_DIR, `${kind}.json`);
 }
@@ -204,6 +225,15 @@ export function validateDrafts(
       if (new Set(normalized).size !== normalized.length) errors.push(`${at}: två svarsalternativ är lika.`);
       if (fixedOptions && q.options.join("|") !== fixedOptions.join("|")) {
         errors.push(`${at}: svarsalternativen ska vara exakt ${JSON.stringify(fixedOptions)}.`);
+      }
+      if (kind === "mek" && Number.isInteger(q.correctIndex) && majorityGivesAnswer(q.options, q.correctIndex)) {
+        errors.push(
+          `${at}: rätt svar har det vanligaste ordet i varje lucka och kan väljas utan att läsa texten – ` +
+            "låt varje ord förekomma lika många gånger.",
+        );
+      }
+      if (kind === "ord" && Number.isInteger(q.correctIndex) && aloneInForm(q.options, q.correctIndex)) {
+        warnings.push(`${at}: rätt svar är ensamt om att vara en fras (eller ett enda ord) bland alternativen.`);
       }
     }
 
