@@ -37,8 +37,8 @@ frontend/backend split, Express server, or Prisma layer.
 **Trigger:** Apply when editing `supabase/migrations` or `src/lib/supabase`.
 
 - Make schema changes as new numbered SQL migrations in `supabase/migrations`
-  (next is `0025_<name>.sql`). Never edit already-applied migrations
-  (`npm run db -- migration list` shows which ones are; `0001`–`0024` are).
+  (next is `0026_<name>.sql`). Never edit already-applied migrations
+  (`npm run db -- migration list` shows which ones are; `0001`–`0025` are).
 - Apply migrations with the Supabase CLI via the wrapper in `scripts/db.ts`
   (`npm run db:dry` först, sedan `npm run db:push`). Den läser
   `SUPABASE_DB_PASSWORD` och `SUPABASE_POOLER_URL` ur `.env.local` och skriver
@@ -94,7 +94,7 @@ The dev server runs on `http://127.0.0.1:43123` (`npm run dev`).
 
 <!-- BEGIN:nextjs-agent-rules -->
 
-# This is NOT the Next.js you know
+## This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
 

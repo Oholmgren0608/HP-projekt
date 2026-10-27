@@ -639,5 +639,645 @@
     "correctIndex": 4,
     "explain": "Om det första talet är a är talföljden a, ak, ak², ak³, …\n(1) Av 2k² = 18 följer k² = 9, alltså k = 3 eller k = −3. Med k = 3 blir talföljden 2, 6, 18, 54, … och med k = −3 blir den 2, −6, 18, −54, … Det fjärde talet kan alltså vara 54 eller −54. (1) räcker inte.\n(2) säger ingenting om hur stora talen är. Både 1, 2, 4, 8, … och 1, 3, 9, 27, … uppfyller villkoret. (2) räcker inte.\nTillsammans: i båda talföljderna från (1) är det tredje talet, 18, större än det andra, som är 6 respektive −6. Påstående (2) utesluter alltså ingen av dem, och det fjärde talet kan fortfarande vara 54 eller −54. Tillräcklig information erhålls ej genom de båda påståendena.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-041",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En biograf tar 120 kronor för en vuxenbiljett och 80 kronor för en barnbiljett. En kväll sålde biografen biljetter för sammanlagt 9 600 kronor. Hur många barnbiljetter sålde biografen den kvällen?\n(1) Biografen sålde sammanlagt 90 biljetter den kvällen.\n(2) Biografen sålde dubbelt så många vuxenbiljetter som barnbiljetter den kvällen.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Låt v vara antalet vuxenbiljetter och b antalet barnbiljetter. Då är 120v + 80b = 9 600, vilket kan förenklas till 3v + 2b = 240. Den ekvationen har ensam flera lösningar, till exempel v = 40 och b = 60 eller v = 60 och b = 30.\n(1) v + b = 90 ger v = 90 − b. Insättning ger 3(90 − b) + 2b = 240, alltså 270 − b = 240 och b = 30. (1) räcker.\n(2) v = 2b ger 6b + 2b = 240, alltså 8b = 240 och b = 30. (2) räcker också.\nVart och ett av påståendena ger ensamt antalet barnbiljetter, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-042",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En mamma är 28 år äldre än sin son. Hur gammal är sonen?\n(1) Om 4 år är mamman tre gånger så gammal som sonen.\n(2) För 2 år sedan var mamman mer än fyra gånger så gammal som sonen.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "Låt sonen vara s år. Då är mamman s + 28 år.\n(1) Om 4 år är mamman s + 32 år och sonen s + 4 år. Ekvationen s + 32 = 3(s + 4) ger 2s = 20, alltså s = 10. Sonen är 10 år. (1) räcker.\n(2) För 2 år sedan var mamman s + 26 år och sonen s − 2 år. Olikheten s + 26 > 4(s − 2) ger 34 > 3s, alltså s < 34/3 ≈ 11,3. Sonen kan till exempel vara 8 år (34 > 24) eller 10 år (36 > 32). Olikheten ger bara en övre gräns. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-043",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Två cirklar har samma medelpunkt, och den ena cirkeln har större radie än den andra. Hur stor är arean av det ringformade området mellan cirklarna?\n(1) Den större cirkelns radie är 3 cm längre än den mindre cirkelns radie.\n(2) Summan av de två cirklarnas radier är 7 cm.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "Med radierna R (den större) och r (den mindre) är arean mellan cirklarna πR² − πr² = π(R² − r²) = π(R − r)(R + r).\n(1) R − r = 3, men arean beror också på R + r. Med r = 1 och R = 4 är arean π(16 − 1) = 15π cm², och med r = 2 och R = 5 är den π(25 − 4) = 21π cm². (1) räcker inte.\n(2) R + r = 7, men R − r är okänd. Med r = 3 och R = 4 är arean π(16 − 9) = 7π cm², och med r = 2 och R = 5 är den 21π cm². (2) räcker inte.\nTillsammans: arean är π · 3 · 7 = 21π cm². Tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-044",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "n är ett positivt heltal. Är n delbart med 6?\n(1) n är delbart med 4.\n(2) n är summan av tre på varandra följande positiva jämna tal.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "(1) n = 12 är delbart med både 4 och 6, men n = 8 är delbart med 4 och inte med 6. (1) räcker inte.\n(2) Tre på varandra följande jämna tal kan skrivas 2k, 2k + 2 och 2k + 4, där k är ett positivt heltal. Summan är 6k + 6 = 6(k + 1), som alltid är delbar med 6. Till exempel är 2 + 4 + 6 = 12 och 4 + 6 + 8 = 18. Svaret är ja. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-045",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Fem mätvärden är 4, 7, 9, 12 och x. Vilken är medianen av de fem mätvärdena?\n(1) x > 7\n(2) x < 12",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "Medianen är det mittersta värdet när de fem värdena ordnas efter storlek.\n(1) Med x = 8 blir ordningen 4, 7, 8, 9, 12 och medianen 8. Med x = 10 blir ordningen 4, 7, 9, 10, 12 och medianen 9. (1) räcker inte.\n(2) Med x = 1 blir ordningen 1, 4, 7, 9, 12 och medianen 7. Med x = 10 blir medianen 9. (2) räcker inte.\nTillsammans: både x = 8 och x = 10 uppfyller 7 < x < 12, men de ger medianerna 8 och 9. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-046",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Priset på en vara höjdes först med 25 procent. Det nya priset sänktes sedan med x procent. Blev priset efter sänkningen lägre än priset före höjningen?\n(1) x = 20\n(2) x > 15",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "Om priset före höjningen var P blir priset efter båda ändringarna 1,25 · (1 − x/100) · P. Priset blir lägre än P bara om 1,25 · (1 − x/100) < 1, alltså om 1 − x/100 < 0,8, vilket betyder x > 20. Gränsfallet är x = 20. Då blir priset exakt detsamma som från början.\n(1) x = 20 är just gränsfallet: 1,25 · 0,80 = 1,00, så priset efter sänkningen är lika med priset före höjningen. Priset blev alltså inte lägre, och svaret är ett entydigt nej. Ett entydigt nej räcker lika bra som ett ja, så (1) räcker.\n(2) x > 15 omfattar värden på båda sidor om gränsen 20. x = 16 ger 1,25 · 0,84 = 1,05, alltså ett högre pris än från början. x = 30 ger 1,25 · 0,70 = 0,875, alltså ett lägre pris. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-047",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En grupp består av 30 kvinnor och män. Kvinnorna i gruppen har medelåldern 40 år och männen medelåldern 50 år. Hur många män finns i gruppen?\n(1) Hela gruppens medelålder är 44 år.\n(2) Männens åldrar är sammanlagt 600 år.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Låt m vara antalet män. Då är antalet kvinnor 30 − m.\n(1) Åldrarna är sammanlagt 30 · 44 = 1 320 år. Kvinnornas åldrar är sammanlagt 40(30 − m) år och männens 50m år, så 1 200 + 10m = 1 320, alltså m = 12. (1) räcker.\n(2) Männens medelålder är 50 år, så antalet män är 600/50 = 12. (2) räcker också.\nVart och ett av påståendena ger ensamt antalet män, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-048",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Man blandar x liter av en lösning som innehåller 10 procent syra med y liter av en lösning som innehåller 40 procent syra. Hur många procent syra innehåller blandningen?\n(1) x + y = 6\n(2) x = 2y",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "Blandningen innehåller 0,1x + 0,4y liter syra av sammanlagt x + y liter.\n(1) Halten beror på hur de 6 litrarna fördelas. Med x = 3 och y = 3 blir halten (0,3 + 1,2)/6 = 0,25, alltså 25 procent. Med x = 4 och y = 2 blir den (0,4 + 0,8)/6 = 0,2, alltså 20 procent. (1) räcker inte.\n(2) Insättning av x = 2y ger halten (0,2y + 0,4y)/(2y + y) = 0,6y/(3y) = 0,2, alltså 20 procent, oavsett hur mycket som blandas. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-049",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "a och b är heltal. Är a ett jämnt tal?\n(1) a + b är ett jämnt tal.\n(2) ab är ett jämnt tal.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "(1) a = 2 och b = 4 ger den jämna summan 6 och a är jämnt, men a = 3 och b = 5 ger den jämna summan 8 och a är udda. (1) räcker inte.\n(2) a = 2 och b = 3 ger den jämna produkten 6 och a är jämnt, men a = 3 och b = 2 ger också produkten 6 och a är udda. (2) räcker inte.\nTillsammans: enligt (1) är a och b antingen båda jämna eller båda udda. Om båda vore udda skulle ab vara udda, vilket strider mot (2). Alltså är båda jämna, och svaret är ja. Tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-050",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "p och q är primtal. Är p + q ett jämnt tal?\n(1) p > 2\n(2) pq > 10",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "Det enda jämna primtalet är 2. Alla andra primtal är udda.\n(1) p är udda. Med q = 3 blir p + q jämnt, men med q = 2 blir p + q udda. (1) räcker inte.\n(2) p = 5 och q = 3 ger pq = 15 och den jämna summan 8. p = 7 och q = 2 ger pq = 14 och den udda summan 9. (2) räcker inte.\nTillsammans: båda exemplen i (2) har p > 2, så p + q kan fortfarande vara både jämnt och udda. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-051",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En kvadrat har alla sina fyra hörn på en cirkel. Hur stor är kvadratens area?\n(1) Kvadratens omkrets är större än 20 cm.\n(2) Cirkelns area är 18π cm².",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "Kvadratens diagonaler är diametrar i cirkeln.\n(1) Kvadratens sida är längre än 5 cm, men mer än så vet man inte. Arean kan till exempel vara 36 cm² eller 49 cm². (1) räcker inte.\n(2) πr² = 18π ger r² = 18. Diagonalen d i kvadraten är 2r, och en kvadrats area är d²/2. Arean blir (2r)²/2 = 2r² = 36 cm². (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-052",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Ada, Bo och Cia har sammanlagt 600 kronor. Hur mycket pengar har Cia?\n(1) Ada och Bo har tillsammans dubbelt så mycket pengar som Cia.\n(2) Ada har 100 kronor mer än Bo.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "Låt Ada ha a kronor, Bo b kronor och Cia c kronor. Då är a + b + c = 600.\n(1) a + b = 2c ger 2c + c = 600, alltså 3c = 600 och c = 200. Cia har 200 kronor. Hur pengarna fördelas mellan Ada och Bo behövs inte. (1) räcker.\n(2) a = b + 100 ger 2b + 100 + c = 600, alltså c = 500 − 2b. Till exempel ger b = 100 att c = 300 och b = 150 att c = 200. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-053",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "I en regelbunden månghörning är alla sidor lika långa och alla vinklar lika stora. Hur många hörn har en viss regelbunden månghörning?\n(1) Varje vinkel i månghörningen är 140°.\n(2) Summan av månghörningens vinklar är 1 260°.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "En månghörning med n hörn har vinkelsumman (n − 2) · 180°.\n(1) Månghörningen har n vinklar på 140°, så vinkelsumman är också 140n°. Ekvationen (n − 2) · 180 = 140n ger 180n − 360 = 140n, alltså 40n = 360 och n = 9. (1) räcker.\n(2) (n − 2) · 180 = 1 260 ger n − 2 = 7, alltså n = 9. (2) räcker också.\nVart och ett av påståendena ger ensamt att månghörningen har 9 hörn, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-054",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "x och y är positiva tal. Är x > 2y?\n(1) x > y + 3\n(2) y > 2",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "(1) x = 5 och y = 1 uppfyller 5 > 4 och ger x > 2y = 2. Men x = 10 och y = 6 uppfyller 10 > 9 och ger x < 2y = 12. (1) räcker inte.\n(2) säger ingenting om x. (2) räcker inte.\nTillsammans: x = 6 och y = 2,5 uppfyller båda påståendena (6 > 5,5 och 2,5 > 2) och ger x > 2y = 5. Men x = 10 och y = 6 uppfyller också båda och ger x < 2y = 12. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-055",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En tehandlare blandar svart te som kostar 200 kronor per kilogram med grönt te som kostar 320 kronor per kilogram. Hur många kilogram svart te ingår i blandningen?\n(1) Blandningen väger 12 kg.\n(2) Teet i blandningen kostar i genomsnitt 250 kronor per kilogram.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "Låt blandningen innehålla s kg svart te och g kg grönt te.\n(1) s + g = 12 säger inget om hur blandningen är fördelad. Den kan till exempel innehålla 6 kg eller 7 kg svart te. (1) räcker inte.\n(2) 200s + 320g = 250(s + g) ger 70g = 50s, alltså s : g = 7 : 5. Det bestämmer bara förhållandet, så blandningen kan till exempel innehålla 7 kg eller 14 kg svart te. (2) räcker inte.\nTillsammans: förhållandet 7 : 5 och totalvikten 12 kg ger s = 7 och g = 5. Kontroll: 200 · 7 + 320 · 5 = 3 000 kronor, och 3 000/12 = 250 kronor per kilogram. Blandningen innehåller 7 kg svart te, så tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-056",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Ett basketlag har 12 spelare med medellängden 190 cm. En av spelarna byts ut mot en ny spelare. Vilken medellängd har laget efter bytet?\n(1) Den nya spelaren är 198 cm lång.\n(2) Den nya spelaren är 18 cm längre än den spelare som byts ut.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "Före bytet är spelarnas sammanlagda längd 12 · 190 = 2 280 cm.\n(1) Den nya medellängden beror också på hur lång spelaren som byts ut är. Byts en spelare på 186 cm ut blir summan 2 280 + 12 = 2 292 cm och medellängden 191 cm. Byts en spelare på 198 cm ut är medellängden fortfarande 190 cm. (1) räcker inte.\n(2) Summan ökar med 18 cm till 2 298 cm, så medellängden blir 2 298/12 = 191,5 cm. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-057",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "n är ett positivt heltal. Vilken rest får man när n divideras med 6?\n(1) När n divideras med 12 blir resten 7.\n(2) När n divideras med 3 blir resten 1.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "(1) n = 12k + 7 för något heltal k ≥ 0. Eftersom 12k + 7 = 6(2k + 1) + 1 blir resten 1 vid division med 6. Till exempel ger både 7 och 19 resten 1. (1) räcker.\n(2) n kan till exempel vara 4 eller 7. Vid division med 6 ger 4 resten 4 och 7 resten 1. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-058",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "x och y är tal. Vilket värde har y?\n(1) 3x + 6y = 24\n(2) x + 2y = 8",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "(1) är en ekvation med två obekanta. Den uppfylls till exempel av x = 8 och y = 0 och av x = 0 och y = 4. (1) räcker inte.\n(2) Samma talpar uppfyller även (2), så y kan vara 0 eller 4. (2) räcker inte.\nTillsammans: ekvationen i (1) är ekvationen i (2) multiplicerad med 3. Påståendena ger alltså samma samband och inget nytt, och talparen ovan uppfyller båda. y kan fortfarande vara 0 eller 4. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-059",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "x är ett tal. Vilket värde har x?\n(1) 4^x = 2^(x + 4)\n(2) x² − 8x + 16 = 0",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "(1) 4^x = (2²)^x = 2^(2x). Ekvationen 2^(2x) = 2^(x + 4) ger 2x = x + 4, alltså x = 4. (1) räcker.\n(2) x² − 8x + 16 = (x − 4)². Ekvationen (x − 4)² = 0 har bara lösningen x = 4, eftersom en kvadrat är 0 bara om det som kvadreras är 0. (2) räcker också, trots att det är en andragradsekvation.\nVart och ett av påståendena ger ensamt x = 4, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-060",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "a är ett tal. Är a > 0?\n(1) a² > a\n(2) a³ < a²",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "(1) a² > a betyder a(a − 1) > 0, vilket gäller när a > 1 eller a < 0. Till exempel uppfyller både a = 2 och a = −1 villkoret. (1) räcker inte.\n(2) a³ < a² betyder a²(a − 1) < 0. Då kan a inte vara 0, så a² > 0 och a − 1 < 0, alltså a < 1. Till exempel uppfyller både a = 1/2 och a = −1 villkoret. (2) räcker inte.\nTillsammans: (1) ger a > 1 eller a < 0, och (2) ger a < 1. Alltså är a < 0, och svaret på frågan är nej. Svaret är entydigt, så tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-061",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En idrottsförening har två sektioner, fotboll och handboll, och varje medlem tillhör exakt en av dem. Hur många procent av medlemmarna tillhör handbollssektionen?\n(1) Handbollssektionen har 120 fler medlemmar än fotbollssektionen.\n(2) Handbollssektionen har 50 procent fler medlemmar än fotbollssektionen.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "(1) Med 200 medlemmar i fotboll och 320 i handboll är andelen 320/520 ≈ 62 procent. Med 240 i fotboll och 360 i handboll är den 360/600 = 60 procent. (1) räcker inte.\n(2) Om fotbollssektionen har f medlemmar har handbollssektionen 1,5f. Andelen är 1,5f/(f + 1,5f) = 1,5/2,5 = 0,6, alltså 60 procent, oavsett hur stor föreningen är. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-062",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En rätvinklig triangel har hypotenusan 10 cm. Hur stor är triangelns area?\n(1) Den ena kateten är 6 cm.\n(2) Triangelns omkrets är 24 cm.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Låt kateterna vara a och b. Pythagoras sats ger a² + b² = 100, och arean är ab/2.\n(1) Med a = 6 blir b² = 100 − 36 = 64, alltså b = 8. Arean är 6 · 8/2 = 24 cm². (1) räcker.\n(2) a + b = 24 − 10 = 14. Då är (a + b)² = a² + 2ab + b² = 196, och eftersom a² + b² = 100 blir 2ab = 96. Arean är ab/2 = 24 cm². Man behöver alltså inte känna kateterna var för sig. (2) räcker också.\nVart och ett av påståendena ger ensamt arean, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-063",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "25 elever skrev ett prov där poängen var heltal och maxpoängen var 50. Fick fler än hälften av eleverna minst 30 poäng?\n(1) Medianen av elevernas poäng var 32.\n(2) Medelvärdet av elevernas poäng var 35.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "Fler än hälften av 25 elever betyder minst 13 elever.\n(1) Med 25 elever är medianen det trettonde värdet när poängen ordnas från lägst till högst. Det trettonde värdet och de tolv värdena över det är minst 32, så minst 13 elever fick minst 32 poäng och därmed minst 30 poäng. Svaret är ja. (1) räcker.\n(2) Om alla elever fick 35 poäng är svaret ja. Men om 13 elever fick 29 poäng, 6 elever fick 41 poäng och 6 elever fick 42 poäng är summan 377 + 246 + 252 = 875 och medelvärdet 875/25 = 35. Ingen fick mer än maxpoängen 50, och bara 12 elever fick minst 30 poäng. Då är svaret nej. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-064",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "n är ett positivt heltal. Är n ett primtal?\n(1) n − 2 är ett primtal.\n(2) n + 2 är ett primtal.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "(1) n = 5 ger n − 2 = 3 och n är ett primtal, men n = 4 ger n − 2 = 2 och n är inte ett primtal. (1) räcker inte.\n(2) n = 5 ger n + 2 = 7 och n = 9 ger n + 2 = 11. 5 är ett primtal men inte 9. (2) räcker inte.\nTillsammans: n = 5 ger primtalen 3 och 7, och n är ett primtal. Men n = 9 ger primtalen 7 och 11, och 9 = 3 · 3 är inte ett primtal. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-065",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Före en rea kostade en skjorta och ett par byxor sammanlagt 900 kronor. Hur mycket kostade byxorna före rean?\n(1) På rean sänktes priset på skjortan med 20 procent och priset på byxorna med 30 procent.\n(2) På rean kostade skjortan och byxorna sammanlagt 660 kronor.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "Låt s och b vara priserna i kronor på skjortan och byxorna före rean. Då är s + b = 900.\n(1) ger reapriserna 0,8s och 0,7b, men inget om vad de blev. Byxorna kan till exempel ha kostat 300 eller 600 kronor före rean. (1) räcker inte.\n(2) säger inget om hur mycket vart och ett av plaggen sänktes. Byxorna kan ha kostat 600 kronor och skjortan 300 kronor, men också 400 respektive 500 kronor om båda plaggen sänktes med 120 kronor. (2) räcker inte.\nTillsammans: 0,8s + 0,7b = 660 och s = 900 − b ger 720 − 0,8b + 0,7b = 660, alltså 0,1b = 60 och b = 600. Byxorna kostade 600 kronor, så tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-066",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Per har en syster som är 20 år. Hur gammal är Per?\n(1) Per är äldre än sin syster.\n(2) Om 6 år är Per dubbelt så gammal som han var för 9 år sedan.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "Låt Per vara p år.\n(1) ger bara att p > 20. Per kan till exempel vara 22 eller 30 år. (1) räcker inte.\n(2) p + 6 = 2(p − 9) ger p + 6 = 2p − 18, alltså p = 24. Kontroll: om 6 år är Per 30 år, och för 9 år sedan var han 15 år. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-067",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En legering består enbart av koppar och zink. Hur många procent av legeringens vikt är koppar?\n(1) Legeringen innehåller tre gånger så mycket koppar som zink, räknat i vikt.\n(2) Legeringen innehåller 3 kg mer koppar än zink.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "(1) Om zinken väger z kg väger kopparn 3z kg och hela legeringen 4z kg. Andelen koppar är 3z/(4z) = 3/4, alltså 75 procent, oavsett hur mycket legeringen väger. (1) räcker.\n(2) Kopparn och zinken kan till exempel väga 4 kg och 1 kg, vilket ger 80 procent koppar, eller 4,5 kg och 1,5 kg, vilket ger 75 procent koppar. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-068",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Under ett år ökade antalet medlemmar i Löparklubben med 10 procent och antalet medlemmar i Simklubben med 20 procent. Hade Löparklubben fler medlemmar än Simklubben i slutet av året?\n(1) I början av året hade Löparklubben 50 fler medlemmar än Simklubben.\n(2) I början av året hade Simklubben fler än 200 medlemmar.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "Låt Simklubben ha s medlemmar i början av året. I slutet av året har den 1,2s medlemmar.\n(1) Löparklubben hade s + 50 medlemmar och har i slutet av året 1,1(s + 50) = 1,1s + 55. Den har fler än Simklubben om 1,1s + 55 > 1,2s, alltså om s < 550. Med s = 300 blir det 385 mot 360 (ja), och med s = 600 blir det 715 mot 720 (nej). (1) räcker inte.\n(2) säger ingenting om Löparklubben. (2) räcker inte.\nTillsammans: både s = 300 och s = 600 är större än 200, och de ger olika svar. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-069",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "n är ett heltal. Är n udda?\n(1) n² + 2n är udda.\n(2) 3n + 1 är jämnt.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "(1) n² + 2n = n(n + 2). Om n vore jämnt skulle produkten vara jämn. Eftersom produkten är udda måste n vara udda, och svaret är ja. (1) räcker.\n(2) Om 3n + 1 är jämnt är 3n udda. En produkt av heltal är udda bara om alla faktorer är udda, så n är udda. (2) räcker också.\nVart och ett av påståendena ger ensamt att n är udda, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-070",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "n är ett positivt heltal som är mindre än 50. Vilket tal är n?\n(1) n är delbart med 7.\n(2) n + 1 är delbart med 9.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "(1) n kan vara 7, 14, 21, 28, 35, 42 eller 49. (1) räcker inte.\n(2) n + 1 kan vara 9, 18, 27, 36 eller 45, så n kan vara 8, 17, 26, 35 eller 44. (2) räcker inte.\nTillsammans: det enda talet som finns i båda uppräkningarna är 35. Tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-071",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "a och b är positiva heltal. Vad är produkten ab?\n(1) a + b = 28\n(2) Den största gemensamma delaren till a och b är 4, och den minsta gemensamma multipeln av a och b är 48.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "(1) a = 14 och b = 14 ger ab = 196, men a = 1 och b = 27 ger ab = 27. (1) räcker inte.\n(2) Båda talen är multipler av 4 och delare till 48. De talpar som har största gemensamma delaren 4 och minsta gemensamma multipeln 48 är 4 och 48 samt 12 och 16. Båda paren ger produkten 192. Det stämmer med regeln att produkten av två positiva heltal är lika med deras största gemensamma delare gånger deras minsta gemensamma multipel: 4 · 48 = 192. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-072",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Punkten P = (a, b) ligger på linjen y = 2x + 1. Ligger P i första kvadranten, där både x och y är positiva?\n(1) a > 0\n(2) b > 0",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "Eftersom P ligger på linjen är b = 2a + 1.\n(1) Om a > 0 är b = 2a + 1 > 1. Både a och b är positiva, så svaret är ja. (1) räcker.\n(2) b > 0 ger 2a + 1 > 0, alltså a > −1/2. Med a = 1 är P = (1, 3), som ligger i första kvadranten. Med a = −1/4 är P = (−1/4, 1/2), som inte gör det. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-073",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "I triangeln ABC är sidan AB 7 cm och sidan BC 4 cm. Hur lång är sidan AC?\n(1) AC är ett helt antal centimeter.\n(2) AC är den längsta sidan i triangeln.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "I en triangel är varje sida kortare än summan av de två andra sidorna. Därför gäller 7 − 4 < AC < 7 + 4, alltså 3 < AC < 11.\n(1) AC kan vara 4, 5, 6, 7, 8, 9 eller 10 cm. (1) räcker inte.\n(2) AC är längre än 7 cm och kortare än 11 cm, till exempel 8 cm eller 9,5 cm. (2) räcker inte.\nTillsammans: AC kan vara 8, 9 eller 10 cm. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-074",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Antalet invånare i en kommun ökade med 8 procent från år 2020 till år 2024. Hur många invånare hade kommunen år 2020?\n(1) Antalet invånare ökade med 1 200 från år 2020 till år 2024.\n(2) Om ökningen i stället hade varit 10 procent skulle kommunen ha haft 300 fler invånare år 2024 än den hade.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Låt x vara antalet invånare år 2020.\n(1) 8 procent av x är 1 200, så 0,08x = 1 200 och x = 15 000. (1) räcker.\n(2) En ökning med 10 procent i stället för 8 procent ger 2 procent av x fler invånare. Alltså är 0,02x = 300 och x = 15 000. (2) räcker också.\nVart och ett av påståendena ger ensamt att kommunen hade 15 000 invånare, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-075",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "Tre paket, ett rött, ett blått och ett gult, ska skickas. Hur mycket väger det gula paketet?\n(1) De tre paketen väger sammanlagt 39 kg.\n(2) Det röda paketet väger dubbelt så mycket som det blå, och det gula paketet väger 3 kg mer än det blå.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "Låt det blå paketet väga b kg.\n(1) Summan säger inget om hur vikten är fördelad. Det gula paketet kan till exempel väga 12 kg (med det röda 18 kg och det blå 9 kg) eller 15 kg (med det röda 14 kg och det blå 10 kg). (1) räcker inte.\n(2) Det röda paketet väger 2b kg och det gula b + 3 kg, men b är okänt. (2) räcker inte.\nTillsammans: 2b + b + (b + 3) = 39 ger 4b = 36, alltså b = 9. Det gula paketet väger 9 + 3 = 12 kg, så tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-076",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "x är ett tal. Är x > 1?\n(1) x² > 1\n(2) x³ > 1",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 1,
+    "explain": "(1) x = 2 ger x² = 4 > 1 och x > 1. Men x = −2 ger också x² = 4 > 1, och då är x < 1. (1) räcker inte.\n(2) Ett negativt tal eller 0 har en kub som är högst 0, och ett tal mellan 0 och 1 (eller lika med 1) har en kub som är högst 1. Alltså gäller x³ > 1 bara om x > 1, och svaret är ja. (2) räcker.\nTillräcklig information erhålls i (2) men ej i (1).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-077",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En burk har formen av en rak cirkulär cylinder. Hur stor är burkens volym?\n(1) Burkens radie är 4 cm, och dess höjd är dubbelt så stor som dess diameter.\n(2) Burkens mantelarea, alltså arean av den buktiga ytan, är 128π cm².",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 0,
+    "explain": "En cylinder med radien r och höjden h har volymen πr²h och mantelarean 2πrh.\n(1) Diametern är 8 cm, så höjden är 16 cm. Volymen är π · 4² · 16 = 256π cm³. (1) räcker.\n(2) 2πrh = 128π ger rh = 64. Med r = 4 och h = 16 är volymen 256π cm³, men med r = 8 och h = 8 är den π · 64 · 8 = 512π cm³. (2) räcker inte.\nTillräcklig information erhålls alltså i (1) men ej i (2).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-078",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "I en grupp med 10 personer är medelvärdet av månadsinkomsterna 30 000 kronor. En av personerna lämnar gruppen. Blir medelvärdet av de kvarvarande personernas månadsinkomster högre än 30 000 kronor?\n(1) Personen som lämnar gruppen har lägre månadsinkomst än medianen i gruppen.\n(2) Medianen av månadsinkomsterna i gruppen är 32 000 kronor.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 4,
+    "explain": "Medelvärdet för de kvarvarande blir högre än 30 000 kronor precis när den som lämnar har lägre inkomst än 30 000 kronor. Tänk på en grupp där inkomsterna i tusental kronor är 10, 31, 31, 31, 31, 33, 33, 33, 33 och 34. Summan är 300, så medelvärdet är 30, och medianen är (31 + 33)/2 = 32.\n(1) Både personen med 10 och personerna med 31 har lägre inkomst än medianen. Lämnar personen med 10 blir medelvärdet 290/9 ≈ 32,2, alltså högre. Lämnar en person med 31 blir det 269/9 ≈ 29,9, alltså lägre. (1) räcker inte.\n(2) säger inget om vem som lämnar, och i exemplet ovan, där medianen är 32 000 kronor, beror svaret på det. (2) räcker inte.\nTillsammans: exemplet uppfyller båda påståendena men kan ge båda svaren. Tillräcklig information erhålls ej genom de båda påståendena.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-079",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En schackklubb har 24 medlemmar, och varje medlem är antingen junior eller senior. Hur många seniorer har klubben?\n(1) Om 4 av juniorerna slutade skulle klubben ha lika många juniorer som seniorer.\n(2) Klubben har 40 procent fler juniorer än seniorer.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 3,
+    "explain": "Låt klubben ha j juniorer och s seniorer. Då är j + s = 24.\n(1) j − 4 = s ger j = s + 4. Insättning ger (s + 4) + s = 24, alltså 2s = 20 och s = 10. (1) räcker.\n(2) j = 1,4s ger 1,4s + s = 24, alltså 2,4s = 24 och s = 10. (2) räcker också.\nVart och ett av påståendena ger ensamt att klubben har 10 seniorer, så tillräcklig information erhålls i (1) och (2) var för sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-nog-080",
+    "kind": "nog",
+    "prompt": "Tillräcklig information för lösningen erhålls",
+    "passage": "En bil körde från ort P till ort Q med konstant hastighet. Hur lång tid tog resan?\n(1) Om bilen hade kört 20 km/h fortare hade resan tagit 1 timme kortare tid.\n(2) Avståndet mellan P och Q är 240 km.",
+    "options": [
+      "i (1) men ej i (2)",
+      "i (2) men ej i (1)",
+      "i (1) tillsammans med (2)",
+      "i (1) och (2) var för sig",
+      "ej genom de båda påståendena"
+    ],
+    "correctIndex": 2,
+    "explain": "Låt hastigheten vara v km/h och avståndet s km. Restiden är s/v timmar.\n(1) Både s och v är okända. Villkoret uppfylls till exempel av s = 240 och v = 60 (4 timmar mot 3 timmar med 80 km/h) och av s = 120 och v = 40 (3 timmar mot 2 timmar med 60 km/h). (1) räcker inte.\n(2) Restiden beror på hastigheten, som är okänd. (2) räcker inte.\nTillsammans: 240/v − 240/(v + 20) = 1. Multiplikation med v(v + 20) ger 240 · 20 = v(v + 20), alltså v² + 20v − 4 800 = 0. Lösningarna är v = 60 och v = −80, och bara den positiva är möjlig. Resan tog 240/60 = 4 timmar, så tillräcklig information erhålls i (1) tillsammans med (2).",
+    "verification": "agreed"
   }
 ]

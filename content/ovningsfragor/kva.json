@@ -703,5 +703,605 @@
     "correctIndex": 1,
     "explain": "Minutvisaren pekar på 6, alltså 180° från 12. Timvisaren går 360°/12 = 30° på en timme, alltså 0,5° per minut. Klockan tre pekar den på 3, 90° från 12, och på 30 minuter flyttar den sig ytterligare 15°, till 105°. Vinkeln mellan visarna är därför 180° − 105° = 75°, och eftersom 75° < 80° är II större. Fällan är att tro att timvisaren fortfarande pekar exakt på 3, så att vinkeln blir 90°, och svara att I är större. Allt som behövs är givet, så informationen räcker.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-048",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "a − b = 3 och a² − b² = 21\nKvantitet I: a\nKvantitet II: 5",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Faktorisera med konjugatregeln: a² − b² = (a + b)(a − b). Eftersom a − b = 3 blir (a + b) · 3 = 21, så a + b = 7. Addera ekvationerna a + b = 7 och a − b = 3: 2a = 10, alltså a = 5 och b = 2. Kontroll: 5² − 2² = 25 − 4 = 21. Fällan är att tro att kvadraterna gör att det finns flera lösningar och svara att informationen är otillräcklig – men eftersom a − b är känt kan man dela med det, och då bestäms a och b entydigt. a är exakt 5, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-049",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "I en kommun ökade andelen elever som cyklar till skolan från 20 % till 25 %.\nKvantitet I: den procentuella ökningen av andelen cyklande elever\nKvantitet II: 20 %",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Andelen ökade med 25 − 20 = 5 procentenheter. Den procentuella ökningen anger hur stor ökningen är i förhållande till värdet före ökningen: 5/20 = 0,25 = 25 %. En fälla är att blanda ihop procentenheter och procent och tro att ökningen är 5 %, vilket skulle göra II större. En annan är att dela med det nya värdet, 5/25 = 20 %, och svara att de är lika – en procentuell förändring räknas alltid från värdet före förändringen. Andelarna är givna, så antalet elever behövs inte. Ökningen är 25 %, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-050",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "x ≤ 0\nKvantitet I: x²\nKvantitet II: x³",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Om x är negativt är x² positivt (två negativa faktorer) medan x³ är negativt (tre negativa faktorer), så då är I större. Exempel: x = −2 ger x² = 4 och x³ = −8. Men villkoret x ≤ 0 tillåter också x = 0, och då är x² = 0 och x³ = 0, så kvantiteterna är lika. Fällan är att bara tänka på negativa tal och svara att I är större. II kan aldrig vara större, men både I större och likhet är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-051",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "f(x) = 3^x\nKvantitet I: f(2) · f(3)\nKvantitet II: f(6)",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "f(2) = 3² = 9 och f(3) = 3³ = 27, så f(2) · f(3) = 9 · 27 = 243. Enligt potenslagarna adderas exponenterna när potenser med samma bas multipliceras, så produkten är 3^(2 + 3) = 3^5 = f(5). Kvantitet II är f(6) = 3^6 = 729, alltså tre gånger så mycket. Fällan är att multiplicera exponenterna, 2 · 3 = 6, och svara att kvantiteterna är lika. Båda värdena går att räkna ut exakt, så informationen räcker, och 243 < 729, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-052",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "a < b < 0\nKvantitet I: a²\nKvantitet II: b²",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Båda talen är negativa och a ligger längre till vänster på tallinjen, alltså längre från 0 än b. Därför är |a| > |b|, och kvadraten blir störst för det tal som ligger längst från 0: a² > b². Exempel: a = −5 och b = −2 ger a² = 25 och b² = 4. Fällan är att tro att olikheten a < b behålls när man kvadrerar och svara att II är större – det gäller bara när talen inte är negativa. Likhet skulle kräva |a| = |b|, vilket är omöjligt för två olika negativa tal. Det gäller för alla tillåtna värden, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-053",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Ett rätblock har kanterna 2 cm, 3 cm och 6 cm.\nKvantitet I: längden av en rymddiagonal, det vill säga avståndet mellan två motstående hörn i rätblocket\nKvantitet II: 7 cm",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Använd Pythagoras sats två gånger. Diagonalen i sidoytan med kanterna 3 cm och 6 cm är √(3² + 6²) = √45 cm. Den diagonalen och den återstående kanten 2 cm är kateter i en rätvinklig triangel där rymddiagonalen är hypotenusa: √(45 + 2²) = √49 = 7 cm. Kortare uttryckt är rymddiagonalen √(2² + 3² + 6²). Fällan är att stanna vid en sidodiagonal, till exempel √45 ≈ 6,7 cm, och svara att II är större. Alla mått är givna, så informationen räcker, och rymddiagonalen är exakt 7 cm, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-054",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "I januari sålde butik A 20 % fler cyklar än butik B.\nKvantitet I: antalet cyklar som butik A sålde i januari\nKvantitet II: antalet cyklar som butik B sålde i januari plus 20",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Kalla antalet cyklar som butik B sålde för b. Då sålde butik A 1,2b cyklar, och jämförelsen gäller 1,2b och b + 20. Skillnaden 1,2b − (b + 20) = 0,2b − 20 är 0 precis när b = 100. Med b = 100 sålde A 120 cyklar och II är också 120, så de är lika. Med b = 50 sålde A 60 cyklar medan II är 70. Med b = 200 sålde A 240 cyklar medan II är 220. Fällan är att likställa 20 % med 20 stycken och svara att kvantiteterna är lika – 20 % fler är bara 20 cyklar om B sålde exakt 100. Alla tre fallen är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-055",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Ett mynt kastas fyra gånger. Varje kast ger krona eller klave med samma sannolikhet.\nKvantitet I: sannolikheten att det blir krona exakt två gånger\nKvantitet II: 1/2",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Fyra kast ger 2^4 = 16 lika sannolika utfall. Skriv K för krona och L för klave. Exakt två krona får man i utfallen KKLL, KLKL, KLLK, LKKL, LKLK och LLKK, alltså 6 utfall. Sannolikheten är 6/16 = 3/8 = 0,375. Fällan är att resonera att hälften av kasten i genomsnitt blir krona och att exakt två krona därför har sannolikheten 1/2, och svara att de är lika. Två krona är visserligen det vanligaste antalet, men det inträffar i mindre än hälften av fallen. 0,375 < 0,5, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-056",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Två likformiga trianglar har areorna 9 cm² och 36 cm². Den mindre triangeln har omkretsen 12 cm.\nKvantitet I: den större triangelns omkrets\nKvantitet II: 48 cm",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "När två figurer är likformiga med längdskalan k är areaskalan k². Här är areaskalan 36/9 = 4, så längdskalan är √4 = 2. Alla sträckor i den större triangeln är dubbelt så långa, och därmed också omkretsen: 2 · 12 = 24 cm. Fällan är att använda areaskalan på omkretsen, 4 · 12 = 48 cm, och svara att kvantiteterna är lika. Omkretsen är entydigt bestämd, så informationen räcker, och 24 cm < 48 cm, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-057",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Kvantitet I: 8^(−2/3)\nKvantitet II: 0,25",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Dela upp exponenten: 8^(1/3) är kubikroten ur 8, alltså 2, så 8^(2/3) = 2² = 4. En negativ exponent betyder det inverterade värdet: 8^(−2/3) = 1/8^(2/3) = 1/4 = 0,25. En fälla är att tro att en negativ exponent ger ett negativt tal, till exempel −4, och svara att II är större. En annan är att räkna 8 · (2/3) eller att strunta i minustecknet och få ett tal större än 1, och svara att I är större. Det finns inga okända, så informationen räcker, och 8^(−2/3) är exakt 0,25, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-058",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "I en låda ligger fem lappar med talen 1, 2, 3, 4 och 5. Två lappar dras slumpmässigt, en i taget.\nKvantitet I: sannolikheten att båda lapparna har udda tal om den första lappen läggs tillbaka innan den andra dras\nKvantitet II: sannolikheten att båda lapparna har udda tal om den första lappen inte läggs tillbaka",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Tre av de fem lapparna har udda tal: 1, 3 och 5. Med återläggning är chansen 3/5 vid båda dragningarna: 3/5 · 3/5 = 9/25 = 0,36. Utan återläggning finns efter ett udda första drag bara 2 udda lappar kvar av 4: 3/5 · 2/4 = 6/20 = 0,3. Fällan är att tro att återläggningen inte spelar någon roll och svara att de är lika. Utan återläggning minskar andelen udda lappar efter det första draget, så chansen att även det andra blir udda är lägre. 0,36 > 0,3, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-059",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "xy = 12 och x + y = 7\nKvantitet I: x\nKvantitet II: y",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Sätt in y = 7 − x i xy = 12: x(7 − x) = 12, alltså x² − 7x + 12 = 0 och (x − 3)(x − 4) = 0. Då är x = 3 eller x = 4. Om x = 4 är y = 3 och I är större, men om x = 3 är y = 4 och II är större. Villkoren ändras inte om x och y byter plats, så ingenting avgör vilket av talen som är 4. Fällan är att hitta lösningen x = 4, y = 3 och svara att I är större. Kvantiteterna kan aldrig vara lika, men båda ordningarna är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-060",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "En regelbunden åttahörning har åtta lika långa sidor och åtta lika stora vinklar.\nKvantitet I: storleken av en av åttahörningens vinklar\nKvantitet II: 135°",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Vinkelsumman i en n-hörning är (n − 2) · 180°, eftersom den kan delas i n − 2 trianglar med diagonaler från ett hörn. För en åttahörning blir vinkelsumman 6 · 180° = 1 080°. Alla åtta vinklarna är lika stora, så varje vinkel är 1 080°/8 = 135°. Fällan är att dela ett helt varv, 360°, med 8 och få 45° – det är yttervinkeln, inte vinkeln i hörnet – och svara att II är större. Vinkeln är entydigt bestämd, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-061",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Datamängden 3, 5, 10, 14, 15, n består av sex heltal.\nKvantitet I: datamängdens median\nKvantitet II: 9",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Med sex tal är medianen medelvärdet av de två mittersta talen när talen står i storleksordning, och vilka de är beror på n. Om n = 8 blir ordningen 3, 5, 8, 10, 14, 15 och medianen (8 + 10)/2 = 9, så kvantiteterna är lika. Om n = 1 är de mittersta talen 5 och 10, och medianen 7,5 är mindre än 9. Om n = 20 är de mittersta talen 10 och 14, och medianen 12 är större än 9. Fällan är att ta medianen av de fem kända talen, 10, och svara att I är större, utan att tänka på att n kan hamna var som helst i ordningen. Alla tre fallen är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-062",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "x < 0\nKvantitet I: 2^x\nKvantitet II: 3^x",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "En negativ exponent ger det inverterade värdet: om x = −t, där t > 0, är 2^x = 1/2^t och 3^x = 1/3^t. Eftersom 3^t > 2^t för alla positiva t är 1/3^t < 1/2^t. Exempel: x = −1 ger 2^x = 1/2 och 3^x = 1/3, och x = −2 ger 1/4 och 1/9. Fällan är att tro att den större basen alltid ger den större potensen och svara att II är större – det gäller bara för positiva exponenter. Likhet gäller bara för x = 0, som inte är tillåtet. För alla negativa x är 2^x störst, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-063",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "a > 0\nKvantitet I: √(a² + 9)\nKvantitet II: a + 3",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Båda kvantiteterna är positiva, så man kan jämföra deras kvadrater. Kvadraten av I är a² + 9 och kvadraten av II är (a + 3)² = a² + 6a + 9. Skillnaden är 6a, som är positiv eftersom a > 0. Exempel: a = 4 ger √25 = 5 mot 4 + 3 = 7. Fällan är att ta roten ur varje term för sig, √(a² + 9) = a + 3, och svara att de är lika – det stämmer bara för a = 0, som inte är tillåtet. Skillnaden 6a är positiv för alla tillåtna a, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-064",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "I klass A går 20 elever, och deras medelpoäng på ett prov var 14. I klass B går 30 elever, och deras medelpoäng på samma prov var 19.\nKvantitet I: medelpoängen för alla 50 elever\nKvantitet II: 16,5",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Räkna ut poängsummorna: klass A har tillsammans 20 · 14 = 280 poäng och klass B 30 · 19 = 570 poäng. Det blir 850 poäng för 50 elever, alltså medelpoängen 850/50 = 17. Fällan är att ta medelvärdet av de två medelvärdena, (14 + 19)/2 = 16,5, och svara att de är lika – det fungerar bara om klasserna är lika stora. Här väger klass B tyngre eftersom den har fler elever, så medelvärdet hamnar närmare 19. 17 > 16,5, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-065",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Medelvärdet av a och b är 10, och medelvärdet av b och c är 14.\nKvantitet I: c − a\nKvantitet II: 8",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Av medelvärdena följer att a + b = 20 och b + c = 28. Subtrahera den första ekvationen från den andra: (b + c) − (a + b) = 28 − 20, alltså c − a = 8. Talet b tar ut sig, så det spelar ingen roll att a, b och c inte går att bestämma var för sig. En fälla är att subtrahera medelvärdena direkt, 14 − 10 = 4, och svara att II är större. En annan är att tro att tre okända kräver tre ekvationer och svara att informationen är otillräcklig. c − a är alltid 8, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-066",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Sannolikheten att det regnar en viss dag är 0,3, oberoende av vädret andra dagar.\nKvantitet I: sannolikheten att det regnar minst en av två bestämda dagar\nKvantitet II: 0,6",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Räkna med komplementhändelsen. Sannolikheten att det inte regnar en viss dag är 1 − 0,3 = 0,7, och att det inte regnar någon av de två dagarna är 0,7 · 0,7 = 0,49. Sannolikheten för minst en regndag är då 1 − 0,49 = 0,51. Fällan är att addera sannolikheterna, 0,3 + 0,3 = 0,6, och svara att de är lika. Additionen räknar fallet att det regnar båda dagarna två gånger: 0,6 − 0,3 · 0,3 = 0,51. 0,51 < 0,6, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-067",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "En parallellogram har sidlängderna 6 cm och 4 cm.\nKvantitet I: parallellogrammens area\nKvantitet II: 24 cm²",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "En parallellograms area är basen gånger höjden. Med sidan 6 cm som bas är höjden avståndet mellan de två långa sidorna, och den kan aldrig vara längre än den lutande sidan på 4 cm. Om vinklarna är räta är parallellogrammen en rektangel, höjden 4 cm och arean 6 · 4 = 24 cm², så kvantiteterna är lika. Lutar sidorna blir höjden kortare; med till exempel höjden 2 cm är arean 12 cm² och II är större. Fällan är att räkna 6 · 4 = 24 cm² som om figuren alltid vore en rektangel och svara att de är lika. I kan aldrig vara större, men både likhet och II större är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-068",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "z är ett positivt tal. x är 30 % större än y, och y är 40 % mindre än z.\nKvantitet I: x\nKvantitet II: 78 % av z",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Skriv förändringarna som förändringsfaktorer: 30 % större betyder x = 1,3y och 40 % mindre betyder y = 0,6z. Sätt in y: x = 1,3 · 0,6z = 0,78z, alltså 78 % av z. Det gäller hur stort z än är, eftersom båda kvantiteterna då är samma uttryck 0,78z. En fälla är att räkna ihop procentsatserna, +30 % och −40 % blir −10 %, få x = 0,9z och svara att I är större. En annan är att tro att man måste känna till z och svara att informationen är otillräcklig. x är alltid exakt 78 % av z, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-069",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "x och y är positiva heltal och 2x + 3y = 12.\nKvantitet I: x\nKvantitet II: y",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Eftersom 2x och 12 är jämna måste 3y vara jämnt, så y är jämnt. y = 2 ger 2x = 6 och x = 3. y = 4 ger 2x = 0 och x = 0, som inte är positivt, och större y ger negativa x. Den enda lösningen är alltså x = 3 och y = 2. Fällan är att se en ekvation med två okända och svara att informationen är otillräcklig – utan kravet på heltal finns oändligt många lösningar, till exempel x = 1,5 och y = 3, men kravet att båda ska vara positiva heltal lämnar bara en. 3 > 2, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-070",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "n är ett positivt heltal som är delbart både med 4 och med 6.\nKvantitet I: n\nKvantitet II: 24",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "De tal som är delbara med både 4 och 6 är multiplerna av deras minsta gemensamma multipel. Eftersom 4 = 2 · 2 och 6 = 2 · 3 är den 2 · 2 · 3 = 12, så n kan vara 12, 24, 36 och så vidare. Med n = 12 är II större, med n = 24 är de lika och med n = 36 är I större. Fällan är att multiplicera 4 · 6 = 24 och tro att det är det enda talet som är delbart med båda, och svara att de är lika – 4 och 6 har den gemensamma faktorn 2, så redan 12 fungerar. Alla tre fallen är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-071",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Kvantitet I: √11 − √10\nKvantitet II: √10 − 3",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Förläng med konjugatet: (√11 − √10)(√11 + √10) = 11 − 10 = 1, så √11 − √10 = 1/(√11 + √10). På samma sätt är √10 − 3 = √10 − √9 = 1/(√10 + 3). Båda är 1 delat med en summa, och eftersom √11 > 3 är nämnaren i I störst, vilket gör I minst. Kvadratroten växer alltså allt långsammare: steget från 10 till 11 ger en mindre ökning än steget från 9 till 10. Närmevärden bekräftar det: √11 ≈ 3,317 och √10 ≈ 3,162 ger I ≈ 0,154 och II ≈ 0,162. Fällan är att tro att två steg på en enhet ger lika stor skillnad och svara att de är lika. Det finns inga okända, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-072",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Vid ett slumpförsök har händelsen A sannolikheten 0,5 och händelsen B sannolikheten 0,4.\nKvantitet I: sannolikheten att både A och B inträffar\nKvantitet II: 0,2",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Produkten 0,5 · 0,4 = 0,2 gäller bara om A och B är oberoende, och det står inte i uppgiften. Tänk på ett lyckohjul med tio lika stora fält numrerade 1–10, och låt A vara att hjulet stannar på 1–5. Om B är att det stannar på 1–4 inträffar båda med sannolikheten 0,4, så I är större. Om B är 6–9 kan de aldrig inträffa samtidigt, sannolikheten är 0 och II är större. Om B är 4–7 inträffar båda vid 4 och 5, med sannolikheten 0,2, så de är lika. Fällan är att multiplicera sannolikheterna utan att veta att händelserna är oberoende och svara att de är lika. Alla tre fallen är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-073",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "f(x) = x² − 6x + 10\nKvantitet I: det minsta värde som f(x) kan anta\nKvantitet II: 1",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Kvadratkomplettera: x² − 6x + 10 = (x − 3)² − 9 + 10 = (x − 3)² + 1. En kvadrat är aldrig negativ och är 0 när x = 3, så det minsta värdet är f(3) = 1. Kontroll: 3² − 6 · 3 + 10 = 9 − 18 + 10 = 1. Fällan är att tro att det minsta värdet är konstanttermen, f(0) = 10, och svara att I är större. Grafen är en parabel som öppnar sig uppåt med minimipunkten (3, 1), så det minsta värdet är exakt 1, och I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-074",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "En cirkelsektor har radien 6 cm och medelpunktsvinkeln 60°.\nKvantitet I: längden av sektorns cirkelbåge\nKvantitet II: 6 cm",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "60° är 60/360 = 1/6 av ett helt varv. Hela cirkelns omkrets är 2π · 6 = 12π cm, så bågen är 12π/6 = 2π cm ≈ 6,28 cm. Fällan är att avrunda π till 3, få bågen till 6 cm och svara att de är lika. Man kan också se det utan räkning: de två radierna och den raka sträckan mellan bågens ändpunkter bildar en liksidig triangel, eftersom vinkeln mellan radierna är 60°. Den raka sträckan är alltså 6 cm, och bågen är längre än den raka sträckan. Bågen är 2π cm > 6 cm, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-075",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "På en skola är 60 % av eleverna flickor och resten pojkar. Av flickorna spelar 25 % ett instrument, och av pojkarna spelar 40 % ett instrument.\nKvantitet I: andelen av skolans elever som spelar ett instrument\nKvantitet II: 32,5 %",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Flickor som spelar utgör 25 % av 60 %, alltså 0,25 · 0,60 = 0,15 av alla elever. Pojkarna är 40 % av eleverna, och de som spelar utgör 0,40 · 0,40 = 0,16 av alla elever. Totalt spelar 0,15 + 0,16 = 0,31, det vill säga 31 %. Fällan är att ta medelvärdet av 25 % och 40 %, vilket ger 32,5 %, och svara att de är lika – det stämmer bara om det finns lika många flickor som pojkar. Här är flickorna fler, så den lägre andelen väger tyngre. Antalet elever behövs inte eftersom alla uppgifter är andelar. 31 % < 32,5 %, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-076",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "En diagonal i en månghörning är en sträcka mellan två hörn som inte ligger bredvid varandra.\nKvantitet I: antalet diagonaler i en sexhörning\nKvantitet II: 9",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "Från varje hörn i en sexhörning går det diagonaler till alla hörn utom hörnet självt och de två grannhörnen, alltså till 6 − 3 = 3 hörn. Det ger 6 · 3 = 18, men då har varje diagonal räknats två gånger, en gång från varje ände, så antalet är 18/2 = 9. Kontroll: det finns 6 · 5/2 = 15 sträckor mellan två hörn, och 6 av dem är sidor, så 15 − 6 = 9 är diagonaler. En fälla är att glömma att dela med 2 och svara att I är större. En annan är att bara räkna de tre långa diagonalerna genom mitten och svara att II är större. Sexhörningen behöver inte vara regelbunden; det finns alltid 9 diagonaler, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-077",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "−3 < x < 2\nKvantitet I: x²\nKvantitet II: 9",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "x² är större ju längre från 0 talet x ligger. På den positiva sidan når x bara upp mot 2, där x² närmar sig 4. På den negativa sidan når x ner mot −3, där x² närmar sig 9 – men eftersom −3 inte är tillåtet blir x² aldrig 9. Exempel: x = −2,9 ger x² = 8,41. För alla tillåtna x är alltså |x| < 3 och x² < 9. Fällan är att behandla −3 som tillåtet, så att x² = 9 verkar möjligt, och svara att informationen är otillräcklig. Det går inte heller att kvadrera gränserna direkt, eftersom kvadrering inte bevarar olikheter när talen kan vara negativa. x² är alltid mindre än 9, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-078",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Sju tal har medelvärdet 8. Varje tal ökas först med 3, och därefter multipliceras varje resultat med 2. Till sist läggs talet 26 till som ett åttonde tal.\nKvantitet I: medelvärdet av de åtta talen\nKvantitet II: 22",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Om alla sju tal ökas med 3 ökar medelvärdet med 3, till 11. Om alla sedan multipliceras med 2 fördubblas medelvärdet, till 22. Summan av de sju nya talen är då 7 · 22 = 154. När talet 26 läggs till blir summan 154 + 26 = 180 och antalet tal 8, så medelvärdet blir 180/8 = 22,5. De enskilda talen behövs inte. En fälla är att glömma det åttonde talet, få 22 och svara att de är lika. En annan är att göra stegen i fel ordning, 2 · 8 + 3 = 19, vilket ger summan 7 · 19 + 26 = 159 och medelvärdet 159/8 ≈ 19,9, och svara att II är större. Medelvärdet blir 22,5, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-079",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "2 < x < 3\nKvantitet I: x²\nKvantitet II: 2x + 1",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Undersök skillnaden: x² − (2x + 1) = x² − 2x − 1 = (x − 1)² − 2. Den är 0 när (x − 1)² = 2, alltså när x = 1 + √2 ≈ 2,41, och det värdet ligger i intervallet. Med x = 1 + √2 är kvantiteterna alltså lika. Med x = 2,1 är x² = 4,41 och 2x + 1 = 5,2, så II är större. Med x = 2,9 är x² = 8,41 och 2x + 1 = 6,8, så I är större. Fällan är att pröva bara ett värde, till exempel x = 2,5, som ger 6,25 mot 6, och svara att I är större. Alla tre fallen är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-080",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "|x − 3| = |x + 1|\nKvantitet I: x\nKvantitet II: 1",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "|x − 3| är avståndet från x till 3 på tallinjen och |x + 1| är avståndet från x till −1. Det enda tal som ligger lika långt från 3 och −1 är mittpunkten (3 + (−1))/2 = 1. Algebraiskt: antingen är x − 3 = x + 1, som ger −3 = 1 och saknar lösning, eller x − 3 = −(x + 1), som ger 2x = 2 och x = 1. Kontroll: |1 − 3| = 2 och |1 + 1| = 2. Fällan är att tro att en ekvation med absolutbelopp alltid har två lösningar och svara att informationen är otillräcklig. x = 1 är den enda lösningen, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-081",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "f(x) = ax² + c, där a och c är konstanter, och f(3) > f(1).\nKvantitet I: a\nKvantitet II: 0",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "f(3) = 9a + c och f(1) = a + c. Olikheten f(3) > f(1) blir 9a + c > a + c, och c tar ut sig: 8a > 0, alltså a > 0. Fällan är att tro att den okända konstanten c gör det omöjligt att avgöra och svara att informationen är otillräcklig. a = 0 är inte möjligt, eftersom f då vore konstant och f(3) = f(1), och ett negativt a skulle ge f(3) < f(1). a är alltså positivt, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-082",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "x och y är positiva tal och x + y = 10.\nKvantitet I: x · y\nKvantitet II: 25",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Sätt y = 10 − x. Då är xy = x(10 − x) = 10x − x² = 25 − (x − 5)². Eftersom (x − 5)² aldrig är negativt är xy högst 25, och det värdet nås bara när x = y = 5. Med x = y = 5 är kvantiteterna alltså lika, men med till exempel x = 2 och y = 8 är xy = 16 och II är större. En fälla är att pröva bara x = y = 5 och svara att de är lika. En annan är att se att produkten aldrig överstiger 25 och svara att II är större utan att tänka på likhetsfallet. I kan aldrig vara större, men både likhet och II större är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-083",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "Kvantitet I: entalssiffran (den sista siffran) i 7^23\nKvantitet II: entalssiffran (den sista siffran) i 3^23",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Entalssiffran i en produkt beror bara på faktorernas entalssiffror, så entalssiffrorna i en potens upprepar sig i ett mönster. För 7 ger 7, 7² = 49, 7³ = 343 och 7^4 = 2 401 entalssiffrorna 7, 9, 3, 1, och sedan börjar mönstret om. För 3 ger 3, 9, 27 och 81 entalssiffrorna 3, 9, 7, 1. Båda mönstren har längden 4, och 23 = 4 · 5 + 3, så exponenten 23 hamnar på tredje platsen. Entalssiffran i 7^23 är därför 3 och i 3^23 är den 7. En fälla är att tro att den större basen ger den större entalssiffran och svara att I är större. En annan är att se att mönstren innehåller samma siffror och svara att de är lika. 3 < 7, så II är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-084",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "f(x) = |x − 2| + |x + 2| och −2 ≤ a ≤ 2\nKvantitet I: f(a)\nKvantitet II: 4",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 2,
+    "explain": "|a − 2| är avståndet från a till 2 och |a + 2| är avståndet från a till −2. När a ligger mellan −2 och 2 är summan av avstånden till intervallets ändpunkter lika med intervallets längd, 4. Algebraiskt: för −2 ≤ a ≤ 2 är a − 2 ≤ 0 och a + 2 ≥ 0, så f(a) = (2 − a) + (a + 2) = 4. Exempel: f(0) = 2 + 2 = 4 och f(1,5) = 0,5 + 3,5 = 4, och även ändpunkterna ger f(2) = f(−2) = 4. Fällan är att tro att f(a) måste bero på a och svara att informationen är otillräcklig; utanför intervallet blir f större än 4, men det är uteslutet här. f(a) är alltid 4, så I är lika med II.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-085",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "x³ > x\nKvantitet I: x\nKvantitet II: 1",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 3,
+    "explain": "Skriv olikheten som x³ − x > 0, alltså x(x − 1)(x + 1) > 0. Produkten är positiv när x > 1 och när −1 < x < 0. Med x = 2 är 8 > 2, så villkoret gäller och I är större. Med x = −0,5 är x³ = −0,125, som är större än −0,5, så villkoret gäller och II är större. Fällan är att dela båda leden med x utan att tänka på att olikheten vänder när x är negativt, få x² > 1 och tro att x > 1, och svara att I är större. Likhet är omöjlig, eftersom x = 1 ger 1 > 1, som inte stämmer. Både I större och II större är möjliga, så informationen är otillräcklig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-086",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "x > 0\nKvantitet I: x/(x + 1)\nKvantitet II: (x − 1)/x",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 0,
+    "explain": "Bilda skillnaden med gemensam nämnare: x/(x + 1) − (x − 1)/x = (x² − (x − 1)(x + 1))/(x(x + 1)) = (x² − x² + 1)/(x(x + 1)) = 1/(x(x + 1)). När x > 0 är nämnaren positiv, så skillnaden är positiv. Exempel: x = 1 ger 1/2 mot 0, och x = 4 ger 4/5 = 0,8 mot 3/4 = 0,75. Fällan är att se att båda bråken närmar sig 1 när x växer och svara att de är lika, men skillnaden 1/(x(x + 1)) blir aldrig 0. Villkoret x > 0 behövs: för −1 < x < 0 vore nämnaren negativ och II större. Skillnaden är positiv för alla tillåtna x, så I är större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-kva-087",
+    "kind": "kva",
+    "prompt": "Jämför kvantitet I och kvantitet II.",
+    "passage": "I triangeln ABC är sidan AB 5 cm och sidan BC 7 cm.\nKvantitet I: triangelns area\nKvantitet II: 18 cm²",
+    "options": [
+      "I är större än II",
+      "II är större än I",
+      "I är lika med II",
+      "Informationen är otillräcklig"
+    ],
+    "correctIndex": 1,
+    "explain": "Vinkeln vid B är okänd, så arean kan variera, men den har ett största värde. Räkna BC som bas. Höjden mot BC är avståndet från A till linjen genom B och C, och det kan aldrig vara längre än sträckan AB = 5 cm. Arean är därför högst 7 · 5/2 = 17,5 cm², och det värdet nås bara när vinkeln vid B är rät. Fällan är att se att vinkeln saknas och svara att informationen är otillräcklig – arean kan visserligen variera, men den når aldrig upp till 18 cm². Arean är alltid högst 17,5 cm², så II är större.",
+    "verification": "agreed"
   }
 ]

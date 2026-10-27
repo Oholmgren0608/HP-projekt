@@ -107,7 +107,7 @@ function Part({ part }: { part: FigurePart }) {
             ))}
           </ul>
           <SrTable
-            head={["Kommun", "Landareal", "Klass"]}
+            head={["Kommun", part.detailLabel ?? "Uppgift", "Klass"]}
             rows={part.regions.map((r) => [r.name, r.detail ?? "", String(r.cls)])}
           />
         </Section>
@@ -307,10 +307,21 @@ function VerticalChart({
                 strokeLinejoin="round"
               />
               {s.values.map((v, i) => {
-                // Etiketten hamnar ovanför toppar och under dalar, så att den inte ligger på linjen.
+                // Med flera linjer hamnar den översta etiketten ovanför och den
+                // understa under, så att närliggande värden inte skriver över
+                // varandra. Annars ovanför toppar och under dalar, så att
+                // etiketten inte ligger på linjen.
+                const atCategory = series.map((o) => o.values[i]);
+                const top = atCategory.findIndex((o) => o === Math.max(...atCategory));
+                const bottom = atCategory.findLastIndex((o) => o === Math.min(...atCategory));
                 const prev = s.values[i - 1] ?? v;
                 const next = s.values[i + 1] ?? v;
-                const below = v < (prev + next) / 2;
+                const below =
+                  series.length > 1 && si === top && top !== bottom
+                    ? false
+                    : series.length > 1 && si === bottom && top !== bottom
+                      ? true
+                      : v < (prev + next) / 2;
                 return (
                   <g key={i}>
                     <circle cx={center(i)} cy={y(v)} r={4} fill={SERIES_COLORS[si]} stroke="var(--card)" strokeWidth={2}>

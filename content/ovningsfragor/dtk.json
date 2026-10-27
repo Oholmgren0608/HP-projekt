@@ -598,5 +598,605 @@
     "correctIndex": 3,
     "explain": "Minskningen är skillnaden mellan de två månadernas medeltemperaturer: juli–augusti 17 − 16 = 1 grad, augusti–september 16 − 11 = 5 grader, september–oktober 11 − 5 = 6 grader och oktober–november 5 − (−2) = 7 grader. Mest sjönk temperaturen alltså mellan oktober och november. Den som räknar 5 − 2 = 3 grader för oktober–november, och glömmer att −2 °C ligger under nollan, väljer i stället september–oktober. Mellan november och december sjönk temperaturen med 3 grader, och under årets första hälft steg den.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-041",
+    "kind": "dtk",
+    "prompt": "Hur många röster fick Parti M år 2024?",
+    "passage": "Kommunalval i en fiktiv kommun, 2020 och 2024\n\nTabell 1. Röstberättigade och valdeltagande\n2020 – Röstberättigade: 48 000 | Valdeltagande: 80 procent\n2024 – Röstberättigade: 56 000 | Valdeltagande: 75 procent\n\nTabell 2. Partiernas andel av rösterna (procent)\nParti K – 2020: 32 | 2024: 27\nParti L – 2020: 24 | 2024: 26\nParti M – 2020: 18 | 2024: 22\nParti N – 2020: 15 | 2024: 12\nÖvriga partier – 2020: 11 | 2024: 13\n\nAnm.: Valdeltagandet är andelen av de röstberättigade som röstade. Alla röster antas ha varit giltiga.",
+    "options": [
+      "6 912",
+      "8 448",
+      "9 240",
+      "12 320"
+    ],
+    "correctIndex": 2,
+    "explain": "År 2024 röstade 75 procent av de 56 000 röstberättigade, alltså 0,75 · 56 000 = 42 000 personer. Parti M fick 22 procent av rösterna: 0,22 · 42 000 = 9 240 röster. 12 320 får man om man tar 22 procent av alla röstberättigade och glömmer valdeltagandet (0,22 · 56 000). 8 448 får man om man blandar åren och tar 2024 års andel av 2020 års antal röster (0,22 · 38 400), och 6 912 är Parti M:s röster år 2020 (0,18 · 38 400).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-042",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent minskade antalet röster på Parti K mellan 2020 och 2024?",
+    "passage": "Kommunalval i en fiktiv kommun, 2020 och 2024\n\nTabell 1. Röstberättigade och valdeltagande\n2020 – Röstberättigade: 48 000 | Valdeltagande: 80 procent\n2024 – Röstberättigade: 56 000 | Valdeltagande: 75 procent\n\nTabell 2. Partiernas andel av rösterna (procent)\nParti K – 2020: 32 | 2024: 27\nParti L – 2020: 24 | 2024: 26\nParti M – 2020: 18 | 2024: 22\nParti N – 2020: 15 | 2024: 12\nÖvriga partier – 2020: 11 | 2024: 13\n\nAnm.: Valdeltagandet är andelen av de röstberättigade som röstade. Alla röster antas ha varit giltiga.",
+    "options": [
+      "ca 2 procent",
+      "ca 5 procent",
+      "ca 8 procent",
+      "ca 16 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "År 2020 röstade 0,80 · 48 000 = 38 400 personer och år 2024 0,75 · 56 000 = 42 000 personer. Parti K fick 0,32 · 38 400 = 12 288 röster år 2020 och 0,27 · 42 000 = 11 340 röster år 2024. Minskningen är 948 röster, och 948 / 12 288 ≈ 0,077, alltså ungefär 8 procent. Ca 5 procent är minskningen av andelen i procentenheter (32 − 27), inte av antalet röster. Ca 16 procent är den relativa minskningen av andelen (5 / 32), men den bortser från att fler personer röstade år 2024. Ca 2 procent får man om man glömmer valdeltagandet och räknar på alla röstberättigade (0,32 · 48 000 = 15 360 och 0,27 · 56 000 = 15 120).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-043",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån tabellerna?",
+    "passage": "Kommunalval i en fiktiv kommun, 2020 och 2024\n\nTabell 1. Röstberättigade och valdeltagande\n2020 – Röstberättigade: 48 000 | Valdeltagande: 80 procent\n2024 – Röstberättigade: 56 000 | Valdeltagande: 75 procent\n\nTabell 2. Partiernas andel av rösterna (procent)\nParti K – 2020: 32 | 2024: 27\nParti L – 2020: 24 | 2024: 26\nParti M – 2020: 18 | 2024: 22\nParti N – 2020: 15 | 2024: 12\nÖvriga partier – 2020: 11 | 2024: 13\n\nAnm.: Valdeltagandet är andelen av de röstberättigade som röstade. Alla röster antas ha varit giltiga.",
+    "options": [
+      "Parti L fick fler än 10 000 röster år 2024.",
+      "Färre personer röstade år 2024 än år 2020.",
+      "Parti M fick 4 procent fler röster år 2024 än år 2020.",
+      "Mer än hälften av de röstberättigade röstade på Parti K eller Parti L år 2020."
+    ],
+    "correctIndex": 0,
+    "explain": "År 2020 röstade 0,80 · 48 000 = 38 400 personer och år 2024 0,75 · 56 000 = 42 000 personer. Parti L fick 0,26 · 42 000 = 10 920 röster år 2024, alltså fler än 10 000, så den slutsatsen stämmer. Fler personer röstade alltså år 2024, trots att valdeltagandet sjönk, eftersom antalet röstberättigade ökade. Parti M:s andel ökade med 4 procentenheter, men antalet röster ökade från 0,18 · 38 400 ≈ 6 900 till 0,22 · 42 000 = 9 240, alltså med ungefär 34 procent och inte med 4 procent. Parti K och Parti L fick tillsammans 56 procent av rösterna år 2020, men det är 56 procent av dem som röstade: 0,56 · 38 400 ≈ 21 500, vilket bara är ungefär 45 procent av de 48 000 röstberättigade.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-044",
+    "kind": "dtk",
+    "prompt": "Med hur många TWh ökade elproduktionen från vindkraft mellan 2014 och 2024?",
+    "passage": "Elproduktion i ett fiktivt land efter kraftslag, 2014 och 2024\n\nDiagram 1. Elproduktionen år 2014 fördelad på kraftslag (procent)\nVattenkraft: 45\nKärnkraft: 35\nVindkraft: 8\nSolkraft: 1\nKraftvärme: 11\n\nDiagram 2. Elproduktionen år 2024 fördelad på kraftslag (procent)\nVattenkraft: 41\nKärnkraft: 28\nVindkraft: 20\nSolkraft: 4\nKraftvärme: 7\n\nAnm.: Den totala elproduktionen var 150 TWh år 2014 och 160 TWh år 2024.",
+    "options": [
+      "12 TWh",
+      "18 TWh",
+      "19,2 TWh",
+      "20 TWh"
+    ],
+    "correctIndex": 3,
+    "explain": "Vindkraften stod för 8 procent av 150 TWh år 2014, alltså 0,08 · 150 = 12 TWh, och för 20 procent av 160 TWh år 2024, alltså 0,20 · 160 = 32 TWh. Ökningen var 32 − 12 = 20 TWh. 12 TWh är ökningen i procentenheter (20 − 8) läst som TWh. 18 TWh och 19,2 TWh får man om man tar de 12 procentenheterna av 2014 års respektive 2024 års totala produktion (0,12 · 150 och 0,12 · 160), men då bortser man från att den totala produktionen ändrades mellan åren.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-045",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent minskade elproduktionen från kärnkraft mellan 2014 och 2024?",
+    "passage": "Elproduktion i ett fiktivt land efter kraftslag, 2014 och 2024\n\nDiagram 1. Elproduktionen år 2014 fördelad på kraftslag (procent)\nVattenkraft: 45\nKärnkraft: 35\nVindkraft: 8\nSolkraft: 1\nKraftvärme: 11\n\nDiagram 2. Elproduktionen år 2024 fördelad på kraftslag (procent)\nVattenkraft: 41\nKärnkraft: 28\nVindkraft: 20\nSolkraft: 4\nKraftvärme: 7\n\nAnm.: Den totala elproduktionen var 150 TWh år 2014 och 160 TWh år 2024.",
+    "options": [
+      "ca 7 procent",
+      "ca 15 procent",
+      "ca 20 procent",
+      "ca 25 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Kärnkraften producerade 0,35 · 150 = 52,5 TWh år 2014 och 0,28 · 160 = 44,8 TWh år 2024. Minskningen var 7,7 TWh, och 7,7 / 52,5 ≈ 0,147, alltså ungefär 15 procent. Ca 7 procent får man om man tar minskningen i procentenheter (35 − 28) för en procentuell minskning. Ca 20 procent är den relativa minskningen av andelen (7 / 35), men den tar inte hänsyn till att den totala produktionen ökade. Ca 25 procent får man om man delar de 7 procentenheterna med 2024 års andel (7 / 28), alltså räknar från fel år.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-046",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån diagrammen?",
+    "passage": "Elproduktion i ett fiktivt land efter kraftslag, 2014 och 2024\n\nDiagram 1. Elproduktionen år 2014 fördelad på kraftslag (procent)\nVattenkraft: 45\nKärnkraft: 35\nVindkraft: 8\nSolkraft: 1\nKraftvärme: 11\n\nDiagram 2. Elproduktionen år 2024 fördelad på kraftslag (procent)\nVattenkraft: 41\nKärnkraft: 28\nVindkraft: 20\nSolkraft: 4\nKraftvärme: 7\n\nAnm.: Den totala elproduktionen var 150 TWh år 2014 och 160 TWh år 2024.",
+    "options": [
+      "Elproduktionen från kärnkraft minskade med 20 procent.",
+      "Elproduktionen från vattenkraft var större år 2024 än år 2014.",
+      "Vind- och solkraft producerade tillsammans mer el än kärnkraft år 2024.",
+      "Elproduktionen från kraftvärme minskade procentuellt mer än elproduktionen från kärnkraft."
+    ],
+    "correctIndex": 3,
+    "explain": "Kraftvärmen producerade 0,11 · 150 = 16,5 TWh år 2014 och 0,07 · 160 = 11,2 TWh år 2024, en minskning med 5,3 / 16,5 ≈ 32 procent. Kärnkraften minskade från 0,35 · 150 = 52,5 TWh till 0,28 · 160 = 44,8 TWh, alltså med 7,7 / 52,5 ≈ 15 procent. Kraftvärmen minskade alltså procentuellt mer, och den slutsatsen stämmer. Att kärnkraften minskade med 20 procent stämmer inte – 20 procent är andelens relativa minskning (7 / 35), men produktionen minskade bara med ungefär 15 procent eftersom den totala produktionen ökade. Vattenkraften minskade från 0,45 · 150 = 67,5 TWh till 0,41 · 160 = 65,6 TWh, så den var inte större år 2024. Vind- och solkraft stod tillsammans för 20 + 4 = 24 procent år 2024, alltså mindre än kärnkraftens 28 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-047",
+    "kind": "dtk",
+    "prompt": "Under vilket av åren 2021–2024 utgjorde aktiebolagen störst andel av de nyregistrerade företagen?",
+    "passage": "Nyregistrerade företag i ett fiktivt land, 2016–2024\n\nDiagram. Antal nyregistrerade företag per år (tusental)\n2016 – Aktiebolag: 22 | Enskilda firmor: 30\n2017 – Aktiebolag: 24 | Enskilda firmor: 31\n2018 – Aktiebolag: 25 | Enskilda firmor: 29\n2019 – Aktiebolag: 28 | Enskilda firmor: 27\n2020 – Aktiebolag: 31 | Enskilda firmor: 34\n2021 – Aktiebolag: 40 | Enskilda firmor: 32\n2022 – Aktiebolag: 36 | Enskilda firmor: 26\n2023 – Aktiebolag: 33 | Enskilda firmor: 21\n2024 – Aktiebolag: 38 | Enskilda firmor: 27\n\nAnm.: Alla nyregistrerade företag var antingen aktiebolag eller enskilda firmor.",
+    "options": [
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "correctIndex": 2,
+    "explain": "Andelen aktiebolag är antalet aktiebolag delat med det totala antalet nyregistrerade företag (aktiebolag plus enskilda firmor). 2021: 40 / 72 ≈ 0,556. 2022: 36 / 62 ≈ 0,581. 2023: 33 / 54 ≈ 0,611. 2024: 38 / 65 ≈ 0,585. Andelen var alltså störst år 2023, trots att det registrerades färre aktiebolag då än de andra tre åren – det var antalet enskilda firmor som var särskilt lågt. År 2021 registrerades flest aktiebolag, men då registrerades också många enskilda firmor. År 2022 och år 2024 var andelen ungefär 58 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-048",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procent ökade antalet nyregistrerade aktiebolag mellan 2016 och 2024?",
+    "passage": "Nyregistrerade företag i ett fiktivt land, 2016–2024\n\nDiagram. Antal nyregistrerade företag per år (tusental)\n2016 – Aktiebolag: 22 | Enskilda firmor: 30\n2017 – Aktiebolag: 24 | Enskilda firmor: 31\n2018 – Aktiebolag: 25 | Enskilda firmor: 29\n2019 – Aktiebolag: 28 | Enskilda firmor: 27\n2020 – Aktiebolag: 31 | Enskilda firmor: 34\n2021 – Aktiebolag: 40 | Enskilda firmor: 32\n2022 – Aktiebolag: 36 | Enskilda firmor: 26\n2023 – Aktiebolag: 33 | Enskilda firmor: 21\n2024 – Aktiebolag: 38 | Enskilda firmor: 27\n\nAnm.: Alla nyregistrerade företag var antingen aktiebolag eller enskilda firmor.",
+    "options": [
+      "ca 16 procent",
+      "ca 42 procent",
+      "ca 58 procent",
+      "ca 73 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Antalet nyregistrerade aktiebolag ökade från 22 000 år 2016 till 38 000 år 2024, alltså med 16 000. Räknat från 2016 års nivå är det 16 / 22 ≈ 0,73, en ökning med ungefär 73 procent. Ca 16 procent är ökningen i tusental läst som procent. Ca 42 procent får man om man delar ökningen med 2024 års värde (16 / 38) i stället för med startvärdet. Ca 58 procent är 2016 års värde i förhållande till 2024 års (22 / 38), vilket inte är någon ökning.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-049",
+    "kind": "dtk",
+    "prompt": "Under hur många av åren 2017–2024 var det totala antalet nyregistrerade företag större än året före?",
+    "passage": "Nyregistrerade företag i ett fiktivt land, 2016–2024\n\nDiagram. Antal nyregistrerade företag per år (tusental)\n2016 – Aktiebolag: 22 | Enskilda firmor: 30\n2017 – Aktiebolag: 24 | Enskilda firmor: 31\n2018 – Aktiebolag: 25 | Enskilda firmor: 29\n2019 – Aktiebolag: 28 | Enskilda firmor: 27\n2020 – Aktiebolag: 31 | Enskilda firmor: 34\n2021 – Aktiebolag: 40 | Enskilda firmor: 32\n2022 – Aktiebolag: 36 | Enskilda firmor: 26\n2023 – Aktiebolag: 33 | Enskilda firmor: 21\n2024 – Aktiebolag: 38 | Enskilda firmor: 27\n\nAnm.: Alla nyregistrerade företag var antingen aktiebolag eller enskilda firmor.",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correctIndex": 2,
+    "explain": "Det totala antalet nyregistrerade företag (i tusental) var 52 år 2016, 55 år 2017, 54 år 2018, 55 år 2019, 65 år 2020, 72 år 2021, 62 år 2022, 54 år 2023 och 65 år 2024. Totalen var större än året före 2017, 2019, 2020, 2021 och 2024, alltså under 5 år. Svaret 6 får man om man bara ser till aktiebolagen, som ökade alla år utom 2022 och 2023. Svaret 3 får man om man bara ser till de enskilda firmorna, som ökade 2017, 2020 och 2024. Svaret 4 får man om man missar 2019, då aktiebolagen ökade med 3 000 medan de enskilda firmorna minskade med 2 000 – totalen ökade alltså med 1 000.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-050",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av den sammanlagda tiden för förvärvsarbete och hushållsarbete ägnade männen åt hushållsarbete?",
+    "passage": "Tidsanvändning för personer 20–64 år i ett fiktivt land, 2024\n\nDiagram. Genomsnittlig tid per dygn efter aktivitet och kön (minuter)\nFörvärvsarbete – Kvinnor: 270 | Män: 330\nHushållsarbete – Kvinnor: 210 | Män: 150\nPersonlig omsorg och sömn – Kvinnor: 630 | Män: 615\nFritid – Kvinnor: 270 | Män: 300\nÖvrigt – Kvinnor: 60 | Män: 45\n\nAnm.: Genomsnitten avser alla veckans dagar. Aktiviteterna täcker tillsammans hela dygnet (1 440 minuter).",
+    "options": [
+      "ca 10 procent",
+      "ca 31 procent",
+      "ca 44 procent",
+      "ca 69 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Männen ägnade 330 minuter åt förvärvsarbete och 150 minuter åt hushållsarbete, sammanlagt 480 minuter. Hushållsarbetets andel är 150 / 480 ≈ 0,31, alltså ungefär 31 procent. Ca 10 procent är hushållsarbetets andel av hela dygnet (150 / 1 440). Ca 44 procent är motsvarande andel för kvinnorna (210 / 480), alltså fel stapel. Ca 69 procent är förvärvsarbetets andel för männen (330 / 480).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-051",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många procent mer tid än männen ägnade kvinnorna åt hushållsarbete?",
+    "passage": "Tidsanvändning för personer 20–64 år i ett fiktivt land, 2024\n\nDiagram. Genomsnittlig tid per dygn efter aktivitet och kön (minuter)\nFörvärvsarbete – Kvinnor: 270 | Män: 330\nHushållsarbete – Kvinnor: 210 | Män: 150\nPersonlig omsorg och sömn – Kvinnor: 630 | Män: 615\nFritid – Kvinnor: 270 | Män: 300\nÖvrigt – Kvinnor: 60 | Män: 45\n\nAnm.: Genomsnitten avser alla veckans dagar. Aktiviteterna täcker tillsammans hela dygnet (1 440 minuter).",
+    "options": [
+      "ca 29 procent",
+      "ca 40 procent",
+      "ca 60 procent",
+      "ca 71 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Kvinnorna ägnade 210 minuter och männen 150 minuter åt hushållsarbete, en skillnad på 60 minuter. Hur många procent mer tid kvinnorna ägnade räknas i förhållande till männens tid: 60 / 150 = 0,40, alltså 40 procent mer. Ca 29 procent får man om man delar skillnaden med kvinnornas tid (60 / 210) – det svarar i stället på hur många procent mindre tid männen ägnade. Ca 60 procent är skillnaden i minuter läst som procent. Ca 71 procent är männens tid i förhållande till kvinnornas (150 / 210).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-052",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån diagrammet?",
+    "passage": "Tidsanvändning för personer 20–64 år i ett fiktivt land, 2024\n\nDiagram. Genomsnittlig tid per dygn efter aktivitet och kön (minuter)\nFörvärvsarbete – Kvinnor: 270 | Män: 330\nHushållsarbete – Kvinnor: 210 | Män: 150\nPersonlig omsorg och sömn – Kvinnor: 630 | Män: 615\nFritid – Kvinnor: 270 | Män: 300\nÖvrigt – Kvinnor: 60 | Män: 45\n\nAnm.: Genomsnitten avser alla veckans dagar. Aktiviteterna täcker tillsammans hela dygnet (1 440 minuter).",
+    "options": [
+      "Kvinnorna ägnade sammanlagt lika mycket tid som männen åt förvärvsarbete och hushållsarbete.",
+      "Männen ägnade mindre än en sjättedel av dygnet åt fritid.",
+      "Männen ägnade mer tid åt fritid än åt förvärvsarbete.",
+      "Skillnaden mellan kvinnors och mäns tid var procentuellt störst för förvärvsarbete."
+    ],
+    "correctIndex": 0,
+    "explain": "Kvinnorna ägnade 270 + 210 = 480 minuter åt förvärvsarbete och hushållsarbete, och männen 330 + 150 = 480 minuter. Den sammanlagda tiden var alltså lika stor, och den slutsatsen stämmer. En sjättedel av dygnet är 1 440 / 6 = 240 minuter, och männen ägnade 300 minuter åt fritid, alltså mer än en sjättedel. Männen ägnade 330 minuter åt förvärvsarbete och 300 minuter åt fritid, alltså mer tid åt förvärvsarbete. Skillnaden mellan könen var procentuellt störst för hushållsarbete (60 minuter, vilket är 40 procent av männens tid och ca 29 procent av kvinnornas), inte för förvärvsarbete (60 minuter, ca 22 procent av kvinnornas tid och ca 18 procent av männens).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-053",
+    "kind": "dtk",
+    "prompt": "Vilken kommun hade flest invånare som var 65 år eller äldre?",
+    "passage": "Andel invånare 65 år och äldre i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens invånare som var 65 år eller äldre. Kartan har fem klasser:\nKlass 1: från 14 till lägre än 18 procent\nKlass 2: från 18 till lägre än 22 procent\nKlass 3: från 22 till lägre än 26 procent\nKlass 4: från 26 till lägre än 30 procent\nKlass 5: från 30 till lägre än 34 procent\n\nKommun A – Invånare: 85 000 | Klass: 1\nKommun B – Invånare: 12 000 | Klass: 5\nKommun C – Invånare: 30 000 | Klass: 3\nKommun D – Invånare: 8 000 | Klass: 4\nKommun E – Invånare: 45 000 | Klass: 2\nKommun F – Invånare: 20 000 | Klass: 4\n\nAnm.: Länet består av de sex kommunerna.",
+    "options": [
+      "Kommun A",
+      "Kommun B",
+      "Kommun C",
+      "Kommun E"
+    ],
+    "correctIndex": 0,
+    "explain": "Antalet invånare 65 år och äldre ligger mellan klassens lägsta och högsta andel gånger kommunens folkmängd. Kommun A ligger visserligen i klass 1, men den har 85 000 invånare och alltså minst 0,14 · 85 000 = 11 900 invånare som är 65 år eller äldre. Kommun E har färre än 0,22 · 45 000 = 9 900, Kommun C färre än 0,26 · 30 000 = 7 800 och Kommun B färre än 0,34 · 12 000 = 4 080 (Kommun D och Kommun F har också färre än Kommun A). Kommun A hade alltså flest, trots att den har den lägsta andelen. Kommun B har den högsta andelen men få invånare, och Kommun C och Kommun E har högre andel än Kommun A men betydligt färre invånare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-054",
+    "kind": "dtk",
+    "prompt": "Vilket av följande antal kan ha varit det sammanlagda antalet invånare 65 år och äldre i Kommun C och Kommun E?",
+    "passage": "Andel invånare 65 år och äldre i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens invånare som var 65 år eller äldre. Kartan har fem klasser:\nKlass 1: från 14 till lägre än 18 procent\nKlass 2: från 18 till lägre än 22 procent\nKlass 3: från 22 till lägre än 26 procent\nKlass 4: från 26 till lägre än 30 procent\nKlass 5: från 30 till lägre än 34 procent\n\nKommun A – Invånare: 85 000 | Klass: 1\nKommun B – Invånare: 12 000 | Klass: 5\nKommun C – Invånare: 30 000 | Klass: 3\nKommun D – Invånare: 8 000 | Klass: 4\nKommun E – Invånare: 45 000 | Klass: 2\nKommun F – Invånare: 20 000 | Klass: 4\n\nAnm.: Länet består av de sex kommunerna.",
+    "options": [
+      "13 800",
+      "14 600",
+      "16 900",
+      "18 100"
+    ],
+    "correctIndex": 2,
+    "explain": "Kommun C ligger i klass 3 och hade alltså minst 0,22 · 30 000 = 6 600 och färre än 0,26 · 30 000 = 7 800 invånare 65 år och äldre. Kommun E ligger i klass 2 och hade minst 0,18 · 45 000 = 8 100 och färre än 0,22 · 45 000 = 9 900. Tillsammans hade de alltså minst 6 600 + 8 100 = 14 700 och färre än 7 800 + 9 900 = 17 700. Av alternativen ligger bara 16 900 inom det intervallet. 13 800 och 14 600 är lägre än det minsta möjliga antalet och 18 100 är högre än det största möjliga.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-055",
+    "kind": "dtk",
+    "prompt": "Vilken av följande andelar kan ha varit andelen invånare 65 år och äldre i hela länet?",
+    "passage": "Andel invånare 65 år och äldre i sex kommuner i ett fiktivt län, 2024\n\nPå en karta över länet är varje kommun färgad efter hur stor andel av kommunens invånare som var 65 år eller äldre. Kartan har fem klasser:\nKlass 1: från 14 till lägre än 18 procent\nKlass 2: från 18 till lägre än 22 procent\nKlass 3: från 22 till lägre än 26 procent\nKlass 4: från 26 till lägre än 30 procent\nKlass 5: från 30 till lägre än 34 procent\n\nKommun A – Invånare: 85 000 | Klass: 1\nKommun B – Invånare: 12 000 | Klass: 5\nKommun C – Invånare: 30 000 | Klass: 3\nKommun D – Invånare: 8 000 | Klass: 4\nKommun E – Invånare: 45 000 | Klass: 2\nKommun F – Invånare: 20 000 | Klass: 4\n\nAnm.: Länet består av de sex kommunerna.",
+    "options": [
+      "17 procent",
+      "20 procent",
+      "23 procent",
+      "25 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Länet har 85 000 + 12 000 + 30 000 + 8 000 + 45 000 + 20 000 = 200 000 invånare. Det minsta möjliga antalet invånare 65 år och äldre får man med varje klass lägsta andel: 11 900 + 3 600 + 6 600 + 2 080 + 8 100 + 5 200 = 37 480, alltså 18,74 procent av länets invånare. Det största möjliga får man med klassernas övre gränser: 15 300 + 4 080 + 7 800 + 2 400 + 9 900 + 6 000 = 45 480, och andelen måste alltså vara lägre än 22,74 procent. Bara 20 procent ligger i intervallet. 25 procent får man om man tar medelvärdet av kommunernas klassmitter (16, 32, 24, 28, 20 och 28) utan att ta hänsyn till att kommunerna har olika många invånare – Kommun A, med den lägsta andelen, har mer än 40 procent av länets invånare. 23 procent ligger strax över det högsta möjliga värdet och 17 procent under det lägsta.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-056",
+    "kind": "dtk",
+    "prompt": "I vilken region minskade antalet mjölkkor mest mellan 2004 och 2024, räknat i procent?",
+    "passage": "Mjölkproduktion i fyra regioner i ett fiktivt land, 2004 och 2024\n\nTabell 1. Antal mjölkgårdar\nRegion Nord – 2004: 1 200 | 2024: 420\nRegion Väst – 2004: 2 500 | 2024: 900\nRegion Öst – 2004: 1 800 | 2024: 700\nRegion Syd – 2004: 3 000 | 2024: 1 250\n\nTabell 2. Genomsnittligt antal mjölkkor per gård\nRegion Nord – 2004: 30 | 2024: 80\nRegion Väst – 2004: 40 | 2024: 95\nRegion Öst – 2004: 35 | 2024: 75\nRegion Syd – 2004: 45 | 2024: 120\n\nAnm.: I alla fyra regionerna gav en mjölkko i genomsnitt 8 ton mjölk per år 2004 och 10 ton mjölk per år 2024.",
+    "options": [
+      "Region Nord",
+      "Region Väst",
+      "Region Öst",
+      "Region Syd"
+    ],
+    "correctIndex": 2,
+    "explain": "Antalet mjölkkor är antalet gårdar gånger antalet kor per gård. Nord: 1 200 · 30 = 36 000 och 420 · 80 = 33 600, en minskning med 2 400 / 36 000 ≈ 6,7 procent. Väst: 2 500 · 40 = 100 000 och 900 · 95 = 85 500, en minskning med 14,5 procent. Öst: 1 800 · 35 = 63 000 och 700 · 75 = 52 500, en minskning med 10 500 / 63 000 ≈ 16,7 procent. Syd: 3 000 · 45 = 135 000 och 1 250 · 120 = 150 000, alltså en ökning. Öst minskade alltså mest i procent. Väst minskade mest i antal kor (14 500), men från en högre nivå. Nord hade den största procentuella minskningen av antalet gårdar (65 procent), men där blev gårdarna i gengäld mycket större.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-057",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av mjölkkorna i de fyra regionerna fanns i Region Syd år 2024?",
+    "passage": "Mjölkproduktion i fyra regioner i ett fiktivt land, 2004 och 2024\n\nTabell 1. Antal mjölkgårdar\nRegion Nord – 2004: 1 200 | 2024: 420\nRegion Väst – 2004: 2 500 | 2024: 900\nRegion Öst – 2004: 1 800 | 2024: 700\nRegion Syd – 2004: 3 000 | 2024: 1 250\n\nTabell 2. Genomsnittligt antal mjölkkor per gård\nRegion Nord – 2004: 30 | 2024: 80\nRegion Väst – 2004: 40 | 2024: 95\nRegion Öst – 2004: 35 | 2024: 75\nRegion Syd – 2004: 45 | 2024: 120\n\nAnm.: I alla fyra regionerna gav en mjölkko i genomsnitt 8 ton mjölk per år 2004 och 10 ton mjölk per år 2024.",
+    "options": [
+      "ca 25 procent",
+      "ca 32 procent",
+      "ca 38 procent",
+      "ca 47 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "År 2024 fanns 420 · 80 + 900 · 95 + 700 · 75 + 1 250 · 120 = 33 600 + 85 500 + 52 500 + 150 000 = 321 600 mjölkkor i de fyra regionerna, varav 150 000 i Region Syd. Andelen är 150 000 / 321 600 ≈ 0,47, alltså ca 47 procent. Ca 38 procent är Region Syds andel av gårdarna (1 250 / 3 270), men gårdarna i Syd är större än i de andra regionerna. Ca 32 procent får man om man bara jämför antalet kor per gård (120 / (80 + 95 + 75 + 120)) utan att väga in antalet gårdar. Ca 25 procent får man om man antar att korna var jämnt fördelade på de fyra regionerna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-058",
+    "kind": "dtk",
+    "prompt": "Hur förändrades den sammanlagda mjölkproduktionen i de fyra regionerna mellan 2004 och 2024?",
+    "passage": "Mjölkproduktion i fyra regioner i ett fiktivt land, 2004 och 2024\n\nTabell 1. Antal mjölkgårdar\nRegion Nord – 2004: 1 200 | 2024: 420\nRegion Väst – 2004: 2 500 | 2024: 900\nRegion Öst – 2004: 1 800 | 2024: 700\nRegion Syd – 2004: 3 000 | 2024: 1 250\n\nTabell 2. Genomsnittligt antal mjölkkor per gård\nRegion Nord – 2004: 30 | 2024: 80\nRegion Väst – 2004: 40 | 2024: 95\nRegion Öst – 2004: 35 | 2024: 75\nRegion Syd – 2004: 45 | 2024: 120\n\nAnm.: I alla fyra regionerna gav en mjölkko i genomsnitt 8 ton mjölk per år 2004 och 10 ton mjölk per år 2024.",
+    "options": [
+      "Den minskade med ca 4 procent.",
+      "Den ökade med ca 20 procent.",
+      "Den ökade med ca 25 procent.",
+      "Den minskade med ca 62 procent."
+    ],
+    "correctIndex": 1,
+    "explain": "Antalet mjölkkor var 36 000 + 100 000 + 63 000 + 135 000 = 334 000 år 2004 och 33 600 + 85 500 + 52 500 + 150 000 = 321 600 år 2024. Mjölkproduktionen var alltså 334 000 · 8 = 2 672 000 ton år 2004 och 321 600 · 10 = 3 216 000 ton år 2024. Ökningen är 544 000 / 2 672 000 ≈ 0,20, alltså ca 20 procent. En minskning med ca 4 procent är förändringen av antalet kor (321 600 / 334 000 ≈ 0,963) – då har man glömt att varje ko gav mer mjölk. En ökning med 25 procent gäller bara mjölken per ko (från 8 till 10 ton) – då har man glömt att antalet kor minskade. En minskning med ca 62 procent är förändringen av antalet gårdar (från 8 500 till 3 270).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-059",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procentenheter ökade elcyklarnas andel av alla sålda cyklar mellan 2020 och 2024?",
+    "passage": "Försäljning av cyklar i ett fiktivt land, 2020–2024\n\nDiagram. Antal sålda cyklar efter typ (tusental)\n2020 – Elcyklar: 60 | Övriga cyklar: 540\n2021 – Elcyklar: 95 | Övriga cyklar: 505\n2022 – Elcyklar: 110 | Övriga cyklar: 440\n2023 – Elcyklar: 120 | Övriga cyklar: 380\n2024 – Elcyklar: 150 | Övriga cyklar: 400\n\nTabell. Genomsnittligt pris per såld cykel (kronor)\nElcyklar – 2020: 22 000 | 2024: 18 000\nÖvriga cyklar – 2020: 4 000 | 2024: 5 000",
+    "options": [
+      "ca 17 procentenheter",
+      "ca 15 procentenheter",
+      "ca 26 procentenheter",
+      "ca 27 procentenheter"
+    ],
+    "correctIndex": 0,
+    "explain": "Elcyklarnas andel var 60 / (60 + 540) = 60 / 600 = 10 procent år 2020 och 150 / (150 + 400) = 150 / 550 ≈ 27,3 procent år 2024. Andelen ökade alltså med ungefär 27,3 − 10 ≈ 17 procentenheter. Ca 15 procentenheter får man om man delar även 2024 års elcyklar med 2020 års totala försäljning (150 / 600 = 25 procent och 25 − 10 = 15), men det totala antalet sålda cyklar minskade till 550 000. Ca 26 procentenheter får man om man jämför elcyklarna med övriga cyklar i stället för med alla cyklar (150 / 400 = 37,5 procent och 60 / 540 ≈ 11,1 procent, en skillnad på ca 26). Ca 27 procentenheter är elcyklarnas andel år 2024, inte ökningen sedan 2020.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-060",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av de sammanlagda intäkterna från cykelförsäljningen år 2024 kom från elcyklar?",
+    "passage": "Försäljning av cyklar i ett fiktivt land, 2020–2024\n\nDiagram. Antal sålda cyklar efter typ (tusental)\n2020 – Elcyklar: 60 | Övriga cyklar: 540\n2021 – Elcyklar: 95 | Övriga cyklar: 505\n2022 – Elcyklar: 110 | Övriga cyklar: 440\n2023 – Elcyklar: 120 | Övriga cyklar: 380\n2024 – Elcyklar: 150 | Övriga cyklar: 400\n\nTabell. Genomsnittligt pris per såld cykel (kronor)\nElcyklar – 2020: 22 000 | 2024: 18 000\nÖvriga cyklar – 2020: 4 000 | 2024: 5 000",
+    "options": [
+      "ca 27 procent",
+      "ca 38 procent",
+      "ca 57 procent",
+      "ca 78 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "År 2024 såldes 150 000 elcyklar för i genomsnitt 18 000 kronor, alltså för 150 000 · 18 000 = 2 700 miljoner kronor, och 400 000 övriga cyklar för 5 000 kronor, alltså för 2 000 miljoner kronor. Elcyklarnas andel av de sammanlagda intäkterna på 4 700 miljoner kronor är 2 700 / 4 700 ≈ 0,57, alltså ca 57 procent. Ca 27 procent är elcyklarnas andel av antalet sålda cyklar (150 / 550). Ca 38 procent får man med 2020 års uppgifter (1 320 av 3 480 miljoner kronor). Ca 78 procent får man om man bara jämför priserna (18 000 / 23 000) utan att ta hänsyn till hur många cyklar av varje typ som såldes.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-061",
+    "kind": "dtk",
+    "prompt": "Hur förändrades de sammanlagda intäkterna från försäljningen av övriga cyklar mellan 2020 och 2024?",
+    "passage": "Försäljning av cyklar i ett fiktivt land, 2020–2024\n\nDiagram. Antal sålda cyklar efter typ (tusental)\n2020 – Elcyklar: 60 | Övriga cyklar: 540\n2021 – Elcyklar: 95 | Övriga cyklar: 505\n2022 – Elcyklar: 110 | Övriga cyklar: 440\n2023 – Elcyklar: 120 | Övriga cyklar: 380\n2024 – Elcyklar: 150 | Övriga cyklar: 400\n\nTabell. Genomsnittligt pris per såld cykel (kronor)\nElcyklar – 2020: 22 000 | 2024: 18 000\nÖvriga cyklar – 2020: 4 000 | 2024: 5 000",
+    "options": [
+      "De minskade med ca 1 procent.",
+      "De minskade med ca 7 procent.",
+      "De minskade med ca 26 procent.",
+      "De ökade med 25 procent."
+    ],
+    "correctIndex": 1,
+    "explain": "Övriga cyklar gav 540 000 · 4 000 = 2 160 miljoner kronor år 2020 och 400 000 · 5 000 = 2 000 miljoner kronor år 2024. Intäkterna minskade alltså med 160 / 2 160 ≈ 0,074, ungefär 7 procent. En minskning med ca 26 procent gäller bara antalet sålda cyklar (från 540 000 till 400 000), och en ökning med 25 procent gäller bara priset (från 4 000 till 5 000 kronor). En minskning med ca 1 procent får man om man lägger ihop de två procentsatserna (−26 + 25), men procentuella förändringar ska multipliceras och inte adderas: 0,74 · 1,25 ≈ 0,93, alltså en minskning med ca 7 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-062",
+    "kind": "dtk",
+    "prompt": "Vilken utgiftsgrupp ökade mest mellan 2014 och 2024, räknat i kronor per hushåll?",
+    "passage": "Hushållens utgifter i ett fiktivt land, 2014 och 2024\n\nDiagram. Utgifterna per hushåll år 2024 fördelade på utgiftsgrupper (procent)\nBoende: 28\nLivsmedel: 14\nTransporter: 15\nFritid och kultur: 12\nKläder: 5\nRestauranger: 6\nÖvrigt: 20\n\nTabell. Genomsnittliga utgifter per hushåll år 2014 (kronor per år)\nBoende: 96 000\nLivsmedel: 50 000\nTransporter: 54 000\nFritid och kultur: 30 000\nKläder: 22 000\nRestauranger: 14 000\nÖvrigt: 74 000\nSumma: 340 000\n\nAnm.: År 2024 var de genomsnittliga utgifterna 400 000 kronor per hushåll.",
+    "options": [
+      "Boende",
+      "Transporter",
+      "Fritid och kultur",
+      "Restauranger"
+    ],
+    "correctIndex": 2,
+    "explain": "Utgifterna år 2024 får man genom att ta procentandelarna av 400 000 kronor: boende 0,28 · 400 000 = 112 000, transporter 60 000, fritid och kultur 48 000 och restauranger 24 000 kronor. Jämfört med 2014 ökade boende med 112 000 − 96 000 = 16 000, transporter med 60 000 − 54 000 = 6 000, fritid och kultur med 48 000 − 30 000 = 18 000 och restauranger med 24 000 − 14 000 = 10 000 kronor. Fritid och kultur ökade alltså mest i kronor. Boende är den största utgiftsgruppen och ökade nästan lika mycket, men inte mest. Restauranger ökade mest i procent (ca 71 procent) men inte i kronor.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-063",
+    "kind": "dtk",
+    "prompt": "Med hur många procent ökade utgifterna för livsmedel per hushåll mellan 2014 och 2024?",
+    "passage": "Hushållens utgifter i ett fiktivt land, 2014 och 2024\n\nDiagram. Utgifterna per hushåll år 2024 fördelade på utgiftsgrupper (procent)\nBoende: 28\nLivsmedel: 14\nTransporter: 15\nFritid och kultur: 12\nKläder: 5\nRestauranger: 6\nÖvrigt: 20\n\nTabell. Genomsnittliga utgifter per hushåll år 2014 (kronor per år)\nBoende: 96 000\nLivsmedel: 50 000\nTransporter: 54 000\nFritid och kultur: 30 000\nKläder: 22 000\nRestauranger: 14 000\nÖvrigt: 74 000\nSumma: 340 000\n\nAnm.: År 2024 var de genomsnittliga utgifterna 400 000 kronor per hushåll.",
+    "options": [
+      "12 procent",
+      "14 procent",
+      "18 procent",
+      "112 procent"
+    ],
+    "correctIndex": 0,
+    "explain": "Utgifterna för livsmedel var 50 000 kronor per hushåll år 2014 och 0,14 · 400 000 = 56 000 kronor år 2024. Ökningen är 6 000 / 50 000 = 0,12, alltså 12 procent. 14 procent är livsmedlens andel av utgifterna år 2024, inte en förändring. 18 procent är ungefär ökningen av de totala utgifterna (från 340 000 till 400 000 kronor, ca 17,6 procent), inte av livsmedelsutgifterna. 112 procent får man om man tar kvoten 56 000 / 50 000 = 1,12 som svar – den betyder att utgifterna var 112 procent av 2014 års nivå, alltså 12 procent högre.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-064",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån diagrammet och tabellen?",
+    "passage": "Hushållens utgifter i ett fiktivt land, 2014 och 2024\n\nDiagram. Utgifterna per hushåll år 2024 fördelade på utgiftsgrupper (procent)\nBoende: 28\nLivsmedel: 14\nTransporter: 15\nFritid och kultur: 12\nKläder: 5\nRestauranger: 6\nÖvrigt: 20\n\nTabell. Genomsnittliga utgifter per hushåll år 2014 (kronor per år)\nBoende: 96 000\nLivsmedel: 50 000\nTransporter: 54 000\nFritid och kultur: 30 000\nKläder: 22 000\nRestauranger: 14 000\nÖvrigt: 74 000\nSumma: 340 000\n\nAnm.: År 2024 var de genomsnittliga utgifterna 400 000 kronor per hushåll.",
+    "options": [
+      "Utgifterna för transporter per hushåll ökade med 15 procent.",
+      "Boende utgjorde en större andel av utgifterna år 2024 än år 2014.",
+      "Utgifterna för restauranger per hushåll ökade med mer än 75 procent.",
+      "Hushållen lade i genomsnitt mindre pengar på kläder år 2024 än år 2014."
+    ],
+    "correctIndex": 3,
+    "explain": "Utgifterna för kläder var 22 000 kronor per hushåll år 2014 och 0,05 · 400 000 = 20 000 kronor år 2024, alltså lägre, och den slutsatsen stämmer. Transporterna ökade från 54 000 till 0,15 · 400 000 = 60 000 kronor, alltså med 6 000 / 54 000 ≈ 11 procent – 15 procent är transporternas andel år 2024, inte en förändring. Boendets andel år 2014 var 96 000 / 340 000 ≈ 28,2 procent, alltså något större än de 28 procenten år 2024. Restaurangutgifterna ökade från 14 000 till 0,06 · 400 000 = 24 000 kronor, alltså med 10 000 / 14 000 ≈ 71 procent, vilket inte är mer än 75 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-065",
+    "kind": "dtk",
+    "prompt": "I vilken region färdigställdes flest bostäder i förhållande till folkmängden?",
+    "passage": "Färdigställda bostäder och folkmängd i ett fiktivt land med fyra regioner, 2024\n\nTabell 1. Antal färdigställda bostäder efter hustyp\nRegion A – Flerbostadshus: 4 200 | Småhus: 1 800 | Totalt: 6 000\nRegion B – Flerbostadshus: 1 300 | Småhus: 1 200 | Totalt: 2 500\nRegion C – Flerbostadshus: 2 900 | Småhus: 1 100 | Totalt: 4 000\nRegion D – Flerbostadshus: 900 | Småhus: 600 | Totalt: 1 500\nHela landet – Flerbostadshus: 9 300 | Småhus: 4 700 | Totalt: 14 000\n\nTabell 2. Folkmängd (tusental)\nRegion A: 900\nRegion B: 270\nRegion C: 480\nRegion D: 150\nHela landet: 1 800",
+    "options": [
+      "Region A",
+      "Region B",
+      "Region C",
+      "Region D"
+    ],
+    "correctIndex": 3,
+    "explain": "Antalet färdigställda bostäder per 1 000 invånare är: Region A 6 000 / 900 ≈ 6,7, Region B 2 500 / 270 ≈ 9,3, Region C 4 000 / 480 ≈ 8,3 och Region D 1 500 / 150 = 10,0. Region D hade alltså flest i förhållande till folkmängden, trots att det byggdes minst där räknat i antal. I Region A färdigställdes flest bostäder, men där bor också överlägset flest. Region B kommer tvåa och Region C trea.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-066",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av de färdigställda bostäderna i flerbostadshus i hela landet fanns i Region C?",
+    "passage": "Färdigställda bostäder och folkmängd i ett fiktivt land med fyra regioner, 2024\n\nTabell 1. Antal färdigställda bostäder efter hustyp\nRegion A – Flerbostadshus: 4 200 | Småhus: 1 800 | Totalt: 6 000\nRegion B – Flerbostadshus: 1 300 | Småhus: 1 200 | Totalt: 2 500\nRegion C – Flerbostadshus: 2 900 | Småhus: 1 100 | Totalt: 4 000\nRegion D – Flerbostadshus: 900 | Småhus: 600 | Totalt: 1 500\nHela landet – Flerbostadshus: 9 300 | Småhus: 4 700 | Totalt: 14 000\n\nTabell 2. Folkmängd (tusental)\nRegion A: 900\nRegion B: 270\nRegion C: 480\nRegion D: 150\nHela landet: 1 800",
+    "options": [
+      "ca 21 procent",
+      "ca 29 procent",
+      "ca 31 procent",
+      "ca 73 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "I hela landet färdigställdes 9 300 bostäder i flerbostadshus, varav 2 900 i Region C. Andelen är 2 900 / 9 300 ≈ 0,31, alltså ca 31 procent. Ca 29 procent är Region C:s andel av alla färdigställda bostäder (4 000 / 14 000), alltså fel kolumn. Ca 21 procent får man om man delar Region C:s bostäder i flerbostadshus med alla bostäder i landet (2 900 / 14 000). Ca 73 procent är flerbostadshusens andel av bostäderna i Region C (2 900 / 4 000 ≈ 0,725), alltså en andel räknad åt fel håll.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-067",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många småhus färdigställdes per 1 000 invånare i hela landet?",
+    "passage": "Färdigställda bostäder och folkmängd i ett fiktivt land med fyra regioner, 2024\n\nTabell 1. Antal färdigställda bostäder efter hustyp\nRegion A – Flerbostadshus: 4 200 | Småhus: 1 800 | Totalt: 6 000\nRegion B – Flerbostadshus: 1 300 | Småhus: 1 200 | Totalt: 2 500\nRegion C – Flerbostadshus: 2 900 | Småhus: 1 100 | Totalt: 4 000\nRegion D – Flerbostadshus: 900 | Småhus: 600 | Totalt: 1 500\nHela landet – Flerbostadshus: 9 300 | Småhus: 4 700 | Totalt: 14 000\n\nTabell 2. Folkmängd (tusental)\nRegion A: 900\nRegion B: 270\nRegion C: 480\nRegion D: 150\nHela landet: 1 800",
+    "options": [
+      "ca 2,6",
+      "ca 3,2",
+      "ca 5,2",
+      "ca 7,8"
+    ],
+    "correctIndex": 0,
+    "explain": "I hela landet färdigställdes 4 700 småhus och folkmängden var 1 800 tusen. Det blir 4 700 / 1 800 ≈ 2,6 småhus per 1 000 invånare. Ca 3,2 får man om man räknar ut värdet för varje region (2,0, 4,4, 2,3 och 4,0) och tar medelvärdet av dem utan att väga efter folkmängden – då får de små regionerna B och D, som har höga värden, för stor vikt. Ca 5,2 gäller flerbostadshus (9 300 / 1 800) och ca 7,8 alla bostäder (14 000 / 1 800).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-068",
+    "kind": "dtk",
+    "prompt": "Under vilken månad ökade antalet resenärer mest mellan 2023 och 2024, räknat i procent?",
+    "passage": "Resenärer på en fiktiv färjelinje per månad, 2023 och 2024\n\nDiagram. Antal resenärer (tusental)\nJanuari – 2023: 40 | 2024: 44\nFebruari – 2023: 38 | 2024: 40\nMars – 2023: 45 | 2024: 50\nApril – 2023: 55 | 2024: 52\nMaj – 2023: 70 | 2024: 84\nJuni – 2023: 110 | 2024: 121\nJuli – 2023: 150 | 2024: 156\nAugusti – 2023: 120 | 2024: 138\nSeptember – 2023: 75 | 2024: 72\nOktober – 2023: 60 | 2024: 63\nNovember – 2023: 45 | 2024: 50\nDecember – 2023: 52 | 2024: 54",
+    "options": [
+      "Maj",
+      "Juni",
+      "Juli",
+      "Augusti"
+    ],
+    "correctIndex": 0,
+    "explain": "Den procentuella ökningen räknas från 2023 års värde. Maj: från 70 000 till 84 000, alltså 14 / 70 = 0,20 eller 20 procent. Juni: 11 / 110 = 10 procent. Juli: 6 / 150 = 4 procent. Augusti: 18 / 120 = 15 procent. Maj hade alltså den största procentuella ökningen. Augusti hade den största ökningen i antal resenärer (18 000), men från en högre nivå, och juli hade flest resenärer men ökade minst av de fyra månaderna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-069",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många procent fler resenärer reste med färjan i juli 2024 än i januari 2024?",
+    "passage": "Resenärer på en fiktiv färjelinje per månad, 2023 och 2024\n\nDiagram. Antal resenärer (tusental)\nJanuari – 2023: 40 | 2024: 44\nFebruari – 2023: 38 | 2024: 40\nMars – 2023: 45 | 2024: 50\nApril – 2023: 55 | 2024: 52\nMaj – 2023: 70 | 2024: 84\nJuni – 2023: 110 | 2024: 121\nJuli – 2023: 150 | 2024: 156\nAugusti – 2023: 120 | 2024: 138\nSeptember – 2023: 75 | 2024: 72\nOktober – 2023: 60 | 2024: 63\nNovember – 2023: 45 | 2024: 50\nDecember – 2023: 52 | 2024: 54",
+    "options": [
+      "ca 112 procent",
+      "ca 255 procent",
+      "ca 275 procent",
+      "ca 355 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "I januari 2024 reste 44 000 och i juli 2024 156 000. Juli hade alltså 156 − 44 = 112 tusen fler resenärer, och 112 / 44 ≈ 2,55, vilket betyder ungefär 255 procent fler. Ca 112 procent är skillnaden i tusental läst som procent. Ca 275 procent får man med 2023 års värden (110 / 40), alltså fel år. Ca 355 procent får man om man tar kvoten 156 / 44 ≈ 3,55 som svar – juli hade ungefär 355 procent av januaris antal, alltså ungefär 255 procent fler.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-070",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån diagrammet?",
+    "passage": "Resenärer på en fiktiv färjelinje per månad, 2023 och 2024\n\nDiagram. Antal resenärer (tusental)\nJanuari – 2023: 40 | 2024: 44\nFebruari – 2023: 38 | 2024: 40\nMars – 2023: 45 | 2024: 50\nApril – 2023: 55 | 2024: 52\nMaj – 2023: 70 | 2024: 84\nJuni – 2023: 110 | 2024: 121\nJuli – 2023: 150 | 2024: 156\nAugusti – 2023: 120 | 2024: 138\nSeptember – 2023: 75 | 2024: 72\nOktober – 2023: 60 | 2024: 63\nNovember – 2023: 45 | 2024: 50\nDecember – 2023: 52 | 2024: 54",
+    "options": [
+      "Under andra halvåret reste fler än 30 000 fler resenärer med färjan år 2024 än år 2023.",
+      "Antalet resenärer under första halvåret ökade med mer än 10 procent mellan 2023 och 2024.",
+      "Mer än hälften av ökningen av antalet resenärer mellan 2023 och 2024 skedde i maj och augusti.",
+      "Den månad som hade flest resenärer år 2024 hade också den största procentuella ökningen jämfört med 2023."
+    ],
+    "correctIndex": 0,
+    "explain": "Under andra halvåret (juli–december) reste 150 + 120 + 75 + 60 + 45 + 52 = 502 tusen år 2023 och 156 + 138 + 72 + 63 + 50 + 54 = 533 tusen år 2024, alltså 31 000 fler. Den slutsatsen stämmer. Under första halvåret ökade antalet från 358 till 391 tusen, alltså med 33 / 358 ≈ 9 procent, vilket inte är mer än 10 procent. Hela årets ökning var 924 − 860 = 64 tusen, och maj och augusti stod för 14 + 18 = 32 tusen – exakt hälften och alltså inte mer än hälften. Juli hade flest resenärer år 2024 men ökade bara med 4 procent, medan till exempel maj ökade med 20 procent.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-071",
+    "kind": "dtk",
+    "prompt": "Med ungefär hur många procentenheter ökade elbilarnas andel av personbilarna i trafik mellan 2019 och 2024?",
+    "passage": "Personbilar i ett fiktivt land efter drivmedel, 2019 och 2024\n\nTabell 1. Antal personbilar i trafik vid årets slut (tusental)\nBensin – 2019: 2 600 | 2024: 2 300\nDiesel – 2019: 1 500 | 2024: 1 400\nEl – 2019: 40 | 2024: 360\nLaddhybrid – 2019: 60 | 2024: 240\nÖvriga – 2019: 100 | 2024: 100\nTotalt – 2019: 4 300 | 2024: 4 400\n\nTabell 2. Nyregistrerade personbilar år 2024 efter drivmedel (procent)\nBensin: 25\nDiesel: 10\nEl: 40\nLaddhybrid: 20\nÖvriga: 5\n\nAnm.: År 2024 nyregistrerades totalt 280 000 personbilar.",
+    "options": [
+      "ca 7 procentenheter",
+      "ca 8 procentenheter",
+      "ca 320 procentenheter",
+      "ca 800 procentenheter"
+    ],
+    "correctIndex": 0,
+    "explain": "Elbilarnas andel av personbilarna i trafik var 40 / 4 300 ≈ 0,9 procent år 2019 och 360 / 4 400 ≈ 8,2 procent år 2024. Ökningen är 8,2 − 0,9 ≈ 7,3, alltså ungefär 7 procentenheter. Ca 8 procentenheter får man om man glömmer att dra bort 2019 års andel. Ca 800 procentenheter kommer från den procentuella ökningen av antalet elbilar (från 40 000 till 360 000 är en ökning med 800 procent), och ca 320 procentenheter är ökningen räknad i tusental bilar – ingen av dem är en förändring av andelen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-072",
+    "kind": "dtk",
+    "prompt": "Antag att alla elbilar som nyregistrerades år 2024 fortfarande var i trafik vid årets slut. Ungefär hur stor andel av elbilarna i trafik vid slutet av 2024 hade då nyregistrerats under 2024?",
+    "passage": "Personbilar i ett fiktivt land efter drivmedel, 2019 och 2024\n\nTabell 1. Antal personbilar i trafik vid årets slut (tusental)\nBensin – 2019: 2 600 | 2024: 2 300\nDiesel – 2019: 1 500 | 2024: 1 400\nEl – 2019: 40 | 2024: 360\nLaddhybrid – 2019: 60 | 2024: 240\nÖvriga – 2019: 100 | 2024: 100\nTotalt – 2019: 4 300 | 2024: 4 400\n\nTabell 2. Nyregistrerade personbilar år 2024 efter drivmedel (procent)\nBensin: 25\nDiesel: 10\nEl: 40\nLaddhybrid: 20\nÖvriga: 5\n\nAnm.: År 2024 nyregistrerades totalt 280 000 personbilar.",
+    "options": [
+      "ca 8 procent",
+      "ca 31 procent",
+      "ca 35 procent",
+      "ca 40 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "År 2024 nyregistrerades 280 000 personbilar, varav 40 procent var elbilar: 0,40 · 280 000 = 112 000. Vid slutet av 2024 fanns 360 000 elbilar i trafik. Andelen som nyregistrerats under 2024 är alltså 112 000 / 360 000 ≈ 0,31, ca 31 procent. Ca 35 procent får man om man delar med ökningen av antalet elbilar sedan 2019 (360 000 − 40 000 = 320 000) i stället för med alla elbilar i trafik. Ca 40 procent är elbilarnas andel av nyregistreringarna och ca 8 procent elbilarnas andel av alla personbilar i trafik.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-073",
+    "kind": "dtk",
+    "prompt": "Vilken av följande slutsatser kan man dra utifrån tabellerna?",
+    "passage": "Personbilar i ett fiktivt land efter drivmedel, 2019 och 2024\n\nTabell 1. Antal personbilar i trafik vid årets slut (tusental)\nBensin – 2019: 2 600 | 2024: 2 300\nDiesel – 2019: 1 500 | 2024: 1 400\nEl – 2019: 40 | 2024: 360\nLaddhybrid – 2019: 60 | 2024: 240\nÖvriga – 2019: 100 | 2024: 100\nTotalt – 2019: 4 300 | 2024: 4 400\n\nTabell 2. Nyregistrerade personbilar år 2024 efter drivmedel (procent)\nBensin: 25\nDiesel: 10\nEl: 40\nLaddhybrid: 20\nÖvriga: 5\n\nAnm.: År 2024 nyregistrerades totalt 280 000 personbilar.",
+    "options": [
+      "Antalet laddhybrider i trafik ökade med 400 procent mellan 2019 och 2024.",
+      "Övriga bilar utgjorde lika stor andel av personbilarna i trafik 2019 som 2024.",
+      "Elbilarna utgjorde mer än en tiondel av personbilarna i trafik vid slutet av 2024.",
+      "Antalet bensinbilar i trafik minskade med mer än 10 procent mellan 2019 och 2024."
+    ],
+    "correctIndex": 3,
+    "explain": "Antalet bensinbilar i trafik minskade från 2 600 000 till 2 300 000, alltså med 300 / 2 600 ≈ 11,5 procent, vilket är mer än 10 procent. Den slutsatsen stämmer. Laddhybriderna ökade från 60 000 till 240 000; de blev fyra gånger så många, men det är en ökning med 180 / 60 = 300 procent och inte 400 procent. Övriga bilar var 100 000 båda åren, men eftersom det totala antalet bilar ökade från 4 300 000 till 4 400 000 minskade deras andel något (från ca 2,33 till ca 2,27 procent). Elbilarna var 360 / 4 400 ≈ 8,2 procent av bilarna i trafik vid slutet av 2024, alltså mindre än en tiondel.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-074",
+    "kind": "dtk",
+    "prompt": "Vilken kommun behandlade störst andel av sitt hushållsavfall med materialåtervinning?",
+    "passage": "Hushållsavfall i fyra fiktiva kommuner, 2024\n\nDiagram. Hushållsavfall per invånare efter behandlingsmetod (kg)\nKommun A – Materialåtervinning: 160 | Biologisk behandling: 60 | Energiåtervinning: 220\nKommun B – Materialåtervinning: 200 | Biologisk behandling: 100 | Energiåtervinning: 180\nKommun C – Materialåtervinning: 140 | Biologisk behandling: 40 | Energiåtervinning: 260\nKommun D – Materialåtervinning: 180 | Biologisk behandling: 90 | Energiåtervinning: 150\n\nTabell. Antal invånare\nKommun A: 50 000\nKommun B: 20 000\nKommun C: 80 000\nKommun D: 30 000\n\nAnm.: Allt hushållsavfall behandlades med någon av de tre metoderna.",
+    "options": [
+      "Kommun A",
+      "Kommun B",
+      "Kommun C",
+      "Kommun D"
+    ],
+    "correctIndex": 3,
+    "explain": "Varje kommuns totala avfall per invånare är summan av de tre staplarna: Kommun A 440 kg, Kommun B 480 kg, Kommun C 440 kg och Kommun D 420 kg. Materialåtervinningens andel blir då: Kommun A 160 / 440 ≈ 36 procent, Kommun B 200 / 480 ≈ 42 procent, Kommun C 140 / 440 ≈ 32 procent och Kommun D 180 / 420 ≈ 43 procent. Kommun D hade alltså störst andel. Kommun B hade flest kilo materialåtervinning per invånare, men också mest avfall totalt per invånare, så andelen blir något lägre. Antalet invånare behövs inte, eftersom andelen är densamma oavsett folkmängd.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-075",
+    "kind": "dtk",
+    "prompt": "Hur många ton hushållsavfall gick sammanlagt till biologisk behandling i de fyra kommunerna?",
+    "passage": "Hushållsavfall i fyra fiktiva kommuner, 2024\n\nDiagram. Hushållsavfall per invånare efter behandlingsmetod (kg)\nKommun A – Materialåtervinning: 160 | Biologisk behandling: 60 | Energiåtervinning: 220\nKommun B – Materialåtervinning: 200 | Biologisk behandling: 100 | Energiåtervinning: 180\nKommun C – Materialåtervinning: 140 | Biologisk behandling: 40 | Energiåtervinning: 260\nKommun D – Materialåtervinning: 180 | Biologisk behandling: 90 | Energiåtervinning: 150\n\nTabell. Antal invånare\nKommun A: 50 000\nKommun B: 20 000\nKommun C: 80 000\nKommun D: 30 000\n\nAnm.: Allt hushållsavfall behandlades med någon av de tre metoderna.",
+    "options": [
+      "1 090 ton",
+      "10 900 ton",
+      "13 050 ton",
+      "52 200 ton"
+    ],
+    "correctIndex": 1,
+    "explain": "Mängden är kilo per invånare gånger antalet invånare: Kommun A 60 · 50 000 = 3 000 000 kg, Kommun B 100 · 20 000 = 2 000 000 kg, Kommun C 40 · 80 000 = 3 200 000 kg och Kommun D 90 · 30 000 = 2 700 000 kg. Sammanlagt blir det 10 900 000 kg, alltså 10 900 ton (1 ton = 1 000 kg). 1 090 ton blir det om man räknar fel på en tiopotens vid omvandlingen till ton. 13 050 ton får man om man tar medelvärdet av kommunernas kilo per invånare (72,5 kg) gånger alla 180 000 invånare – då får de små kommunerna B och D, som har höga värden, för stor vikt. 52 200 ton får man om man multiplicerar summan av de fyra kilotalen (290 kg) med alla invånare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-076",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av allt hushållsavfall i de fyra kommunerna gick till energiåtervinning?",
+    "passage": "Hushållsavfall i fyra fiktiva kommuner, 2024\n\nDiagram. Hushållsavfall per invånare efter behandlingsmetod (kg)\nKommun A – Materialåtervinning: 160 | Biologisk behandling: 60 | Energiåtervinning: 220\nKommun B – Materialåtervinning: 200 | Biologisk behandling: 100 | Energiåtervinning: 180\nKommun C – Materialåtervinning: 140 | Biologisk behandling: 40 | Energiåtervinning: 260\nKommun D – Materialåtervinning: 180 | Biologisk behandling: 90 | Energiåtervinning: 150\n\nTabell. Antal invånare\nKommun A: 50 000\nKommun B: 20 000\nKommun C: 80 000\nKommun D: 30 000\n\nAnm.: Allt hushållsavfall behandlades med någon av de tre metoderna.",
+    "options": [
+      "ca 36 procent",
+      "ca 46 procent",
+      "ca 50 procent",
+      "ca 59 procent"
+    ],
+    "correctIndex": 2,
+    "explain": "Energiåtervinningen var 220 · 50 000 kg = 11 000 ton i Kommun A, 180 · 20 000 kg = 3 600 ton i Kommun B, 260 · 80 000 kg = 20 800 ton i Kommun C och 150 · 30 000 kg = 4 500 ton i Kommun D, sammanlagt 39 900 ton. Allt hushållsavfall var 440 · 50 000 + 480 · 20 000 + 440 · 80 000 + 420 · 30 000 kg, alltså 22 000 + 9 600 + 35 200 + 12 600 = 79 400 ton. Andelen är 39 900 / 79 400 ≈ 0,50, ca 50 procent. Ca 46 procent får man om man inte väger in antalet invånare, till exempel genom att bara lägga ihop kilotalen per invånare (810 / 1 780) – men Kommun C, som har störst andel energiåtervinning, har också flest invånare. Ca 59 procent är andelen i Kommun C (260 / 440) och ca 36 procent andelen i Kommun D (150 / 420).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-077",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av kommunens invånare 60 år och äldre var kvinnor?",
+    "passage": "Befolkningen i en fiktiv kommun efter ålder och kön, 2024\n\nDiagram. Antal invånare efter åldersgrupp och kön\n0–19 år – Kvinnor: 3 400 | Män: 3 600\n20–39 år – Kvinnor: 3 000 | Män: 3 400\n40–59 år – Kvinnor: 3 600 | Män: 3 700\n60–79 år – Kvinnor: 3 200 | Män: 2 900\n80 år och äldre – Kvinnor: 800 | Män: 400",
+    "options": [
+      "ca 26 procent",
+      "ca 29 procent",
+      "ca 50 procent",
+      "ca 55 procent"
+    ],
+    "correctIndex": 3,
+    "explain": "Kommunen hade 3 200 + 2 900 = 6 100 invånare i åldern 60–79 år och 800 + 400 = 1 200 invånare som var 80 år och äldre, sammanlagt 7 300 invånare som var 60 år och äldre. Av dem var 3 200 + 800 = 4 000 kvinnor. Andelen är 4 000 / 7 300 ≈ 0,55, alltså ca 55 procent. Ca 50 procent är kvinnornas andel av hela befolkningen (14 000 av 28 000). Ca 29 procent är andelen av kvinnorna som var 60 år och äldre (4 000 / 14 000), alltså en andel räknad åt fel håll. Ca 26 procent är andelen av alla invånare som var 60 år och äldre (7 300 / 28 000).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-078",
+    "kind": "dtk",
+    "prompt": "Ungefär hur många invånare som var 0–19 år eller 60 år och äldre fanns det per 100 invånare i åldern 20–59 år?",
+    "passage": "Befolkningen i en fiktiv kommun efter ålder och kön, 2024\n\nDiagram. Antal invånare efter åldersgrupp och kön\n0–19 år – Kvinnor: 3 400 | Män: 3 600\n20–39 år – Kvinnor: 3 000 | Män: 3 400\n40–59 år – Kvinnor: 3 600 | Män: 3 700\n60–79 år – Kvinnor: 3 200 | Män: 2 900\n80 år och äldre – Kvinnor: 800 | Män: 400",
+    "options": [
+      "ca 51",
+      "ca 53",
+      "ca 96",
+      "ca 104"
+    ],
+    "correctIndex": 3,
+    "explain": "Invånare 0–19 år: 3 400 + 3 600 = 7 000. Invånare 60 år och äldre: 3 200 + 2 900 + 800 + 400 = 7 300. Tillsammans 14 300. Invånare 20–59 år: 3 000 + 3 400 + 3 600 + 3 700 = 13 700. Per 100 invånare i åldern 20–59 år blir det 14 300 / 13 700 · 100 ≈ 104. Ca 96 får man om man vänder på kvoten (13 700 / 14 300). Ca 53 får man om man bara räknar med dem som är 60 år och äldre (7 300 / 13 700). Ca 51 är de yngstas och de äldstas andel av hela befolkningen (14 300 / 28 000) – då delar man med alla invånare i stället för med dem som är 20–59 år.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-079",
+    "kind": "dtk",
+    "prompt": "Ungefär hur mycket högre var det genomsnittliga priset per såld biljett år 2024 än år 2023?",
+    "passage": "Biljettförsäljning på en fiktiv teater, 2023 och 2024\n\nTabell 1. Biljettpris (kronor)\nOrdinarie – 2023: 400 | 2024: 450\nStudent – 2023: 250 | 2024: 250\nPensionär – 2023: 300 | 2024: 320\n\nTabell 2. Antal sålda biljetter\nOrdinarie – 2023: 18 000 | 2024: 16 000\nStudent – 2023: 6 000 | 2024: 9 000\nPensionär – 2023: 8 000 | 2024: 7 500",
+    "options": [
+      "ca 18 kronor",
+      "ca 23 kronor",
+      "ca 50 kronor",
+      "ca 70 kronor"
+    ],
+    "correctIndex": 0,
+    "explain": "Intäkterna år 2023 var 18 000 · 400 + 6 000 · 250 + 8 000 · 300 = 7 200 000 + 1 500 000 + 2 400 000 = 11 100 000 kronor för 32 000 biljetter, i genomsnitt 11 100 000 / 32 000 ≈ 347 kronor per biljett. År 2024 var intäkterna 16 000 · 450 + 9 000 · 250 + 7 500 · 320 = 7 200 000 + 2 250 000 + 2 400 000 = 11 850 000 kronor för 32 500 biljetter, i genomsnitt ≈ 365 kronor. Skillnaden är ca 18 kronor. Ca 23 kronor får man om man jämför det enkla medelvärdet av de tre priserna (ca 317 och 340 kronor) utan att väga in hur många biljetter av varje slag som såldes – år 2024 såldes fler av de billiga studentbiljetterna, vilket drog ner genomsnittet. Ca 50 kronor är prisökningen för ordinarie biljetter och ca 70 kronor summan av de tre prisökningarna (50 + 0 + 20).",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-dtk-080",
+    "kind": "dtk",
+    "prompt": "Ungefär hur stor andel av teaterns biljettintäkter år 2024 kom från studentbiljetter?",
+    "passage": "Biljettförsäljning på en fiktiv teater, 2023 och 2024\n\nTabell 1. Biljettpris (kronor)\nOrdinarie – 2023: 400 | 2024: 450\nStudent – 2023: 250 | 2024: 250\nPensionär – 2023: 300 | 2024: 320\n\nTabell 2. Antal sålda biljetter\nOrdinarie – 2023: 18 000 | 2024: 16 000\nStudent – 2023: 6 000 | 2024: 9 000\nPensionär – 2023: 8 000 | 2024: 7 500",
+    "options": [
+      "ca 14 procent",
+      "ca 19 procent",
+      "ca 28 procent",
+      "ca 31 procent"
+    ],
+    "correctIndex": 1,
+    "explain": "Studentbiljetterna gav 9 000 · 250 = 2 250 000 kronor år 2024, och de totala biljettintäkterna var 16 000 · 450 + 9 000 · 250 + 7 500 · 320 = 11 850 000 kronor. Andelen är 2 250 000 / 11 850 000 ≈ 0,19, alltså ca 19 procent. Ca 28 procent är studentbiljetternas andel av antalet sålda biljetter (9 000 / 32 500) – men studentbiljetterna är billigast, så deras andel av intäkterna blir lägre. Ca 14 procent får man med 2023 års uppgifter (1 500 000 / 11 100 000). Ca 31 procent får man om man jämför studentintäkterna med bara de ordinarie biljetternas intäkter (2 250 000 / 7 200 000) i stället för med alla intäkter.",
+    "verification": "agreed"
   }
 ]

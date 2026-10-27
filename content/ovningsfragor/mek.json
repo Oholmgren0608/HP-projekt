@@ -298,5 +298,605 @@
     "correctIndex": 2,
     "explain": "Andra meningen förklarar varför en teori som inte har motbevisats ändå inte kan sägas vara sann: hur många observationer som än stöder den kan den inte slutgiltigt bekräftas. Motsäger ger ingen mening, eftersom observationer som strider mot teorin enligt samma mening kan kullkasta den, och falsk passar inte eftersom fortsättningen handlar om varför en teori inte kan bevisas. Det sista ledet kräver prövbar, eftersom teorin enligt förklaringen efter kolon måste kunna visa sig vara fel. Väl underbyggd ligger nära till hands men motsägs av resonemanget: enligt Popper är det inte stödet från många observationer som gör en teori vetenskaplig.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-021",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Studien omfattade bara fjorton deltagare och saknade kontrollgrupp. Forskarnas slutsatser bör därför betraktas som ____, även om de pekar i samma riktning som tidigare forskning.",
+    "options": [
+      "preliminära",
+      "vedertagna",
+      "tendentiösa",
+      "triviala"
+    ],
+    "correctIndex": 0,
+    "explain": "Preliminära betyder att något gäller tills vidare, i väntan på ett säkrare besked, och det är rimligt för slutsatser från en liten studie utan kontrollgrupp. ”Även om” visar att överensstämmelsen med tidigare forskning visserligen stärker slutsatserna men inte räcker för att göra dem säkra. Vedertagna betyder allmänt accepterade; ordet kan locka eftersom resultaten stämmer med tidigare forskning, men ”därför” knyter ordet till studiens brister, och de gör inte slutsatserna accepterade. Med vedertagna blir dessutom ”även om” ologiskt, eftersom överensstämmelsen med tidigare forskning då skulle tala för ordet i stället för emot det. Tendentiösa betyder vinklade för att driva en viss linje, men texten kritiserar studiens storlek och upplägg, inte forskarnas avsikter. Triviala betyder självklara eller betydelselösa; ett litet urval gör inte slutsatserna självklara, bara osäkra.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-022",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Den allmänna och lika rösträtten, som infördes 1921, var inte ett plötsligt genombrott utan ____ flera decenniers opinionsarbete, där kvinnorörelsen och arbetarrörelsen drev frågan år efter år.",
+    "options": [
+      "upptakten till",
+      "ett avsteg från",
+      "kulmen på",
+      "ett förstadium till"
+    ],
+    "correctIndex": 2,
+    "explain": "Kulmen på betyder höjdpunkten eller slutpunkten för en lång utveckling, och reformen beskrivs just som resultatet av flera decenniers arbete snarare än som ett plötsligt genombrott. Upptakten till är början på något, men reformen kom efter opinionsarbetet, inte före det. Ett avsteg från betyder en avvikelse från en linje, och reformen var tvärtom det som opinionsarbetet hade strävat efter. Ett förstadium till är ett tidigt steg på vägen mot något, men här var reformen själva målet som arbetet ledde fram till.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-023",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Kommunen har länge ____ frågan om en ny simhall, och beslutet har skjutits upp vid tre budgetmöten i rad. Föreningarna som väntar på besked menar att politikerna borde ____ i stället för att låta den ena utredningen avlösa den andra.",
+    "options": [
+      "forcerat / ta ställning",
+      "förhalat / ta ställning",
+      "förhalat / skynda långsamt",
+      "forcerat / skynda långsamt"
+    ],
+    "correctIndex": 1,
+    "explain": "Att förhala en fråga är att dra ut på den och skjuta upp avgörandet, vilket stämmer med att beslutet har skjutits upp tre gånger i rad. Föreningarna vill att politikerna ska ta ställning, alltså bestämma sig, i stället för att beställa nya utredningar. Forcera betyder att driva igenom något i högt tempo och motsägs av de upprepade uppskjutningarna. Att skynda långsamt betyder att gå försiktigt och eftertänksamt fram, och det är just vad föreningarna kritiserar politikerna för; det kan därför inte vara det de kräver i stället för fler utredningar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-024",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Romanen fick ett ____ mottagande: samma drag som en del kritiker lyfte fram som modiga och nyskapande, beskrev andra som pretentiösa manér.",
+    "options": [
+      "ljumt",
+      "översvallande",
+      "välvilligt",
+      "splittrat"
+    ],
+    "correctIndex": 3,
+    "explain": "Splittrat betyder att omdömena gick isär, och texten efter kolon beskriver just det: samma drag som vissa kritiker berömde som modiga och nyskapande, avfärdade andra som pretentiösa manér. Översvallande betyder överströmmande entusiastiskt och välvilligt betyder vänligt inställt; båda passar de positiva omdömena men motsägs av kritikerna som kallade samma drag pretentiösa. Ljumt betyder svalt och oengagerat, men både berömmet och avfärdandet visar att kritikerna tog tydlig ställning.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-025",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Antibiotikaresistens uppstår inte genom att enskilda bakterier vänjer sig vid läkemedlet. ____ överlever de bakterier som av en slump redan bär på en skyddande mutation, och när de känsliga bakterierna slås ut får de motståndskraftiga ____ föröka sig. Varje onödig antibiotikakur ____ därför urvalet av resistenta bakterier.",
+    "options": [
+      "Likväl / allt svårare att / påskyndar",
+      "I stället / allt svårare att / hejdar",
+      "I stället / fritt utrymme att / påskyndar",
+      "Likväl / fritt utrymme att / hejdar"
+    ],
+    "correctIndex": 2,
+    "explain": "Första meningen avfärdar en felaktig förklaring, och den andra ger den riktiga; det kräver i stället. Likväl betyder ändå och skulle markera en motsättning mot något som sagts, men här ersätts en förklaring med en annan. När de känsliga bakterierna slås ut försvinner konkurrensen, så de motståndskraftiga får fritt utrymme att föröka sig; allt svårare att säger emot det. Eftersom varje kur slår ut känsliga bakterier och lämnar de resistenta kvar, påskyndar onödiga kurer urvalet. Hejdar skulle betyda att kurerna bromsade urvalet, vilket strider mot hela resonemanget.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-026",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Utvärderingen visade att det nya bidraget hade ____ effekt: det kostade staten stora summor men påverkade knappt hushållens beteende.",
+    "options": [
+      "ringa",
+      "avsedd",
+      "omvänd",
+      "bestående"
+    ],
+    "correctIndex": 0,
+    "explain": "Ringa betyder liten eller obetydlig, och det stämmer med att bidraget knappt påverkade hushållens beteende trots de stora kostnaderna. Avsedd effekt skulle betyda att bidraget fungerade som det var tänkt, men kontrasten mellan stora kostnader och nästan ingen påverkan visar motsatsen. Omvänd effekt skulle betyda att beteendet ändrades åt motsatt håll mot det avsedda, men enligt texten ändrades det knappt alls. Bestående betyder långvarig, och det går inte ihop med en effekt som knappt märktes.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-027",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Bröderna Grimm återgav inte folksagorna ordagrant efter sina berättare. Särskilt i de senare upplagorna ____ Wilhelm Grimm texterna: han strök inslag som kunde uppfattas som anstötliga och gav berättelserna en mer ____ prägel.",
+    "options": [
+      "bevarade / moraliserande",
+      "bevarade / ursprunglig",
+      "tillrättalade / ursprunglig",
+      "tillrättalade / moraliserande"
+    ],
+    "correctIndex": 3,
+    "explain": "Att tillrättalägga en text är att justera den så att den passar vissa normer eller förväntningar, och det är vad förklaringen efter kolon beskriver: anstötliga inslag ströks. Bevarade säger emot både första meningen, där det framgår att sagorna inte återgavs ordagrant, och strykningarna. När anstötliga inslag tas bort och berättelserna anpassas efter rådande moral får de en mer moraliserande prägel. En mer ursprunglig prägel skulle innebära att texterna fördes närmare berättarnas versioner, men strykningar och anpassningar gör tvärtom att de fjärmar sig från dem.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-028",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Vulkanen hade inte haft något utbrott i mannaminne och betraktades därför som ____ och ofarlig, trots att geologerna varnade för att magmakammaren under den fortfarande var aktiv.",
+    "options": [
+      "vilande",
+      "slocknad",
+      "verksam",
+      "instabil"
+    ],
+    "correctIndex": 1,
+    "explain": "En slocknad vulkan väntas aldrig mer få utbrott och kan därför betraktas som ofarlig, och det är just den bedömningen som geologernas varning om en aktiv magmakammare står i motsättning till; därför inleds varningen med ”trots att”. Vilande ligger nära till hands, men en vilande vulkan är en som kan vakna igen; den är alltså inte ofarlig, och varningen vore ingen motsättning utan en bekräftelse. Verksam betyder att vulkanen är aktiv och går inte ihop med att den inte haft något utbrott i mannaminne eller med att den ansågs ofarlig. Instabil följer inte av att vulkanen länge varit lugn, så ”därför” blir ologiskt, och en instabil vulkan är inte heller ofarlig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-029",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Digerdöden nådde Skandinavien kring 1350 och ____ befolkningen på kort tid. Den efterföljande bristen på arbetskraft ____ dock ställningen för många av de bönder som överlevde, eftersom det nu fanns gott om övergivna gårdar och jordägarna konkurrerade om dem som kunde bruka jorden.",
+    "options": [
+      "fördrev / stärkte",
+      "decimerade / stärkte",
+      "decimerade / försvagade",
+      "fördrev / försvagade"
+    ],
+    "correctIndex": 1,
+    "explain": "Decimera betyder att kraftigt minska en grupp genom att många dör, vilket är vad en pestepidemi gör. Fördrev betyder drev bort, och en sjukdom driver inte bort människor utan dödar dem; dessutom förutsätter resten av texten att många hade dött och lämnat gårdar efter sig. Ordet ”dock” visar att andra meningen beskriver något positivt mitt i katastrofen, och när jordägarna konkurrerade om arbetskraften stärktes de överlevande böndernas ställning. Försvagade motsägs av att det fanns gott om gårdar och att jordägarna måste konkurrera om bönderna.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-030",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Den sjunkande arbetslösheten ger en ____ bild av arbetsmarknaden: antalet sysselsatta är oförändrat, och nedgången beror främst på att många långtidsarbetslösa har slutat söka arbete och därför inte längre räknas som arbetslösa.",
+    "options": [
+      "dyster",
+      "heltäckande",
+      "nyanserad",
+      "missvisande"
+    ],
+    "correctIndex": 3,
+    "explain": "Missvisande betyder att något ger en felaktig bild, och texten efter kolon förklarar varför: siffran sjunker inte för att fler har fått jobb, utan för att människor har slutat söka arbete. Dyster går åt fel håll, eftersom en sjunkande arbetslöshet ser positiv ut medan det verkliga läget är sämre. Heltäckande betyder att bilden täcker allt väsentligt, men det viktigaste, att sysselsättningen inte har ökat, framgår inte av siffran. Nyanserad betyder att bilden visar olika sidor av saken, vilket inte heller stämmer när en enda siffra döljer det som faktiskt har hänt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-031",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Ordet kiosk kommer ytterst från persiskan, där det ____ ett slags paviljong eller lusthus. På vägen via turkiskan och franskan har betydelsen ____, och i dag tänker de flesta på ett litet försäljningsstånd. Lånord är alltså ofta ____ till sin betydelse än man kan tro.",
+    "options": [
+      "betecknade / förskjutits / mer föränderliga",
+      "betecknade / bevarats / mer beständiga",
+      "ersatte / förskjutits / mer beständiga",
+      "ersatte / bevarats / mer föränderliga"
+    ],
+    "correctIndex": 0,
+    "explain": "Ett ord betecknar det som det syftar på, och i persiskan syftade ordet på en paviljong; ersatte ger ingen mening, eftersom ett ord inte kan ersätta en byggnad. Att betydelsen har förskjutits, alltså glidit över till något annat, stämmer med att de flesta i dag tänker på ett litet försäljningsstånd. Bevarats går inte ihop med att den persiska och den nutida betydelsen skiljer sig åt. Slutsatsen sammanfattar exemplet: lånord är mer föränderliga till sin betydelse än man kan tro. Mer beständiga skulle tvärtom betyda att betydelsen sällan ändras, vilket motsägs av exemplet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-032",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Den nya lagen ska ge anställda som slår larm om missförhållanden på sin arbetsplats ett starkare skydd mot ____ från arbetsgivaren, till exempel uppsägning eller omplacering.",
+    "options": [
+      "reservationer",
+      "rekvisitioner",
+      "repressalier",
+      "resolutioner"
+    ],
+    "correctIndex": 2,
+    "explain": "Repressalier är straff- eller hämndåtgärder mot någon, och uppsägning eller omplacering av den som har slagit larm är just sådana åtgärder. Reservationer är formella invändningar mot ett beslut, till exempel när en ledamot reserverar sig i en nämnd; det är inget en arbetsgivare riktar mot en anställd. Rekvisitioner är skriftliga beställningar av varor eller material. Resolutioner är formella uttalanden som antas av en församling eller organisation. Inget av de tre sista orden kan exemplifieras med uppsägning eller omplacering.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-033",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Mellan mitten av 1800-talet och 1930 utvandrade över en miljon svenskar till Nordamerika. Missväxtåren i slutet av 1860-talet var en viktig ____, men utvandringen ____ även under goda år, när brev och biljetter från släktingar som redan hade rest lockade allt fler att följa efter.",
+    "options": [
+      "drivkraft / minskade",
+      "konsekvens / fortsatte",
+      "konsekvens / minskade",
+      "drivkraft / fortsatte"
+    ],
+    "correctIndex": 3,
+    "explain": "Missväxtåren fick många att lämna landet och var alltså en drivkraft bakom utvandringen. Konsekvens skulle innebära att missväxten var en följd av något, men texten anger inget som den skulle vara en följd av; tvärtom beskrivs den som en orsak. Ordet ”även” och bisatsen om att allt fler lockades att följa efter visar att utvandringen fortsatte också när skördarna var goda. Minskade säger emot att allt fler lockades att resa, och med ”även” blir meningen ologisk.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-034",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Regissören valde att ____ pjäsens 1700-talsmiljö och i stället förlägga handlingen till ett nutida kontorslandskap, vilket fick flera recensenter att ifrågasätta om texten verkligen tålde förflyttningen.",
+    "options": [
+      "framhäva",
+      "frångå",
+      "efterlikna",
+      "återskapa"
+    ],
+    "correctIndex": 1,
+    "explain": "Frångå betyder överge eller avvika från, och regissören lämnade just 1700-talsmiljön när handlingen flyttades till ett nutida kontor. Framhäva betyder lyfta fram och betona, efterlikna betyder göra något likt förebilden och återskapa betyder bygga upp något på nytt så som det var. Alla tre skulle innebära att 1700-talsmiljön behölls eller förstärktes, vilket strider mot ”i stället förlägga handlingen till ett nutida kontorslandskap” och mot recensenternas tvekan inför förflyttningen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-035",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Hyresreglering syftar till att hålla nere boendekostnaderna, men många ekonomer menar att den ____ bostadsbristen. När hyrorna inte får stiga i takt med efterfrågan blir det ____ att bygga nya hyresrätter, och de som redan har ett kontrakt har små skäl att flytta. Den som snabbt behöver en bostad är därför ofta ____ andrahandsmarknaden.",
+    "options": [
+      "förvärrar / mindre lönsamt / hänvisad till",
+      "lindrar / mindre lönsamt / ointresserad av",
+      "förvärrar / mer lönsamt / ointresserad av",
+      "lindrar / mer lönsamt / hänvisad till"
+    ],
+    "correctIndex": 0,
+    "explain": "Ordet ”men” visar att ekonomerna pekar på en baksida av regleringen, och den är att den förvärrar bostadsbristen; lindrar skulle vara en fördel och ingen motsättning. När hyrorna hålls nere under vad efterfrågan motiverar ger nya hyresrätter lägre intäkter, så det blir mindre lönsamt att bygga dem. Mer lönsamt följer inte av att hyrorna inte får stiga. När det byggs få nya lägenheter och få flyttar blir det svårt att få ett eget kontrakt, och den som snabbt behöver bostad är därför hänvisad till andrahandsmarknaden. Ointresserad av följer inte av något i texten; bristen på förstahandskontrakt gör tvärtom andrahandsmarknaden till den enda utvägen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-036",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Kritiker hade befarat att utredningen skulle skydda myndigheten, men rapporten var ____: den gick igenom varje tänkbar orsak till olyckan, även myndighetens egna brister.",
+    "options": [
+      "summarisk",
+      "partisk",
+      "uttömmande",
+      "lakonisk"
+    ],
+    "correctIndex": 2,
+    "explain": "Uttömmande betyder att något behandlas fullständigt, så att inget väsentligt utelämnas, och det är vad texten efter kolon beskriver: varje tänkbar orsak gicks igenom, även myndighetens egna brister. Därmed visade sig farhågan om att utredningen skulle skydda myndigheten vara obefogad, vilket ”men” markerar. Partisk betyder att rapporten tar ställning för en sida; det var just vad kritikerna hade befarat, men ”men” visar att det inte blev så, och att även myndighetens brister togs upp talar emot det. Summarisk betyder kortfattad och översiktlig och lakonisk betyder fåordig; båda motsägs av att rapporten gick igenom varje tänkbar orsak.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-037",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Att stjärnorna tycks blinka beror inte på stjärnorna själva utan på jordens atmosfär. Luftens ständiga rörelser ____ ljuset på dess väg mot betraktaren, och därför blinkar stjärnorna ____ när de står lågt över horisonten, där ljuset måste passera ett tjockare luftlager.",
+    "options": [
+      "förstärker / minst",
+      "förstärker / mest",
+      "förvränger / mest",
+      "förvränger / minst"
+    ],
+    "correctIndex": 2,
+    "explain": "Blinkandet beror på att luftens rörelser hela tiden ändrar ljusets väg, alltså förvränger det. Förstärker ger ingen förklaring till blinkandet; luft i rörelse gör inte ljuset starkare. Om det är luften som orsakar blinkandet, blir effekten störst där ljuset måste passera mest luft, det vill säga nära horisonten, så stjärnorna blinkar mest där. Minst säger emot slutet av meningen, där det tjockare luftlagret anges som skäl.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-038",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Avrättningarna vid Stockholms blodbad 1520 var tänkta att krossa motståndet mot unionskungen Kristian II, men i stället kom de att ____ motståndet: under de följande åren fick Gustav Vasas uppror allt bredare stöd.",
+    "options": [
+      "elda på",
+      "kväva",
+      "avvärja",
+      "splittra"
+    ],
+    "correctIndex": 0,
+    "explain": "Elda på betyder underblåsa eller förstärka, och det stämmer med att upproret fick allt bredare stöd efter avrättningarna. ”Men i stället” visar att resultatet blev det motsatta mot avsikten att krossa motståndet. Kväva och avvärja skulle betyda att avrättningarna lyckades stoppa motståndet, alltså att avsikten uppfylldes, vilket strider mot ”i stället”. Splittra betyder att motståndet delades upp och försvagades, och det motsägs av att upproret fick allt bredare stöd.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-039",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Sociala medier beskrivs ofta som en demokratiserande kraft, eftersom vem som helst kan nå ut med sina åsikter. Men att ____ till ett forum är inte detsamma som att bli hörd. Algoritmerna ____ de inlägg som väcker starka reaktioner, och uppmärksamheten koncentreras därför till ett ____ antal konton.",
+    "options": [
+      "sakna tillgång / premierar / ökande",
+      "sakna tillgång / begränsar / litet",
+      "ha tillträde / begränsar / ökande",
+      "ha tillträde / premierar / litet"
+    ],
+    "correctIndex": 3,
+    "explain": "Den andra meningen invänder mot den första: alla har visserligen tillträde till forumet, men det betyder inte att alla blir hörda. Sakna tillgång passar inte, eftersom den första meningen just säger att vem som helst kan nå ut, och invändningen skulle då bli meningslös. Premierar betyder belönar eller gynnar; när algoritmerna gynnar inlägg som väcker starka reaktioner samlas uppmärksamheten hos ett litet antal konton. Begränsar skulle inte förklara varför uppmärksamheten koncentreras, och ett ökande antal konton går inte ihop med att uppmärksamheten koncentreras.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-040",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Jordlagren i schaktet såg orörda ut, men ett mynt från 1600-talet låg under ett mynt från 1300-talet, vilket tyder på att lagren i själva verket har ____.",
+    "options": [
+      "bevarats orörda",
+      "rörts om",
+      "eroderat",
+      "packats samman"
+    ],
+    "correctIndex": 1,
+    "explain": "Normalt ligger äldre lager under yngre, så om ett yngre mynt ligger under ett äldre har lagren rörts om, till exempel genom grävning eller plöjning. ”Men” och ”i själva verket” visar att intrycket av orörda lager var falskt. Bevarats orörda upprepar bara det felaktiga intrycket; i orörda lager skulle det äldsta myntet ha legat längst ned. Eroderat betyder att jord har nötts bort, vilket kan ta bort lager men inte förklarar att ordningen mellan dem har kastats om. Packats samman betyder att lagren har pressats ihop, och det ändrar inte heller i vilken ordning de ligger.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-041",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Enligt svensk rätt gäller ____: den som är misstänkt för ett brott ska betraktas som oskyldig tills motsatsen har bevisats. Det är därför ____ som ska visa att den tilltalade är skyldig, inte den tilltalade som ska bevisa sin oskuld.",
+    "options": [
+      "oskuldspresumtionen / åklagaren",
+      "legalitetsprincipen / åklagaren",
+      "oskuldspresumtionen / försvaret",
+      "legalitetsprincipen / försvaret"
+    ],
+    "correctIndex": 0,
+    "explain": "Oskuldspresumtionen är principen att en misstänkt ska betraktas som oskyldig tills skulden är bevisad, och det är just den som förklaras efter kolon. Legalitetsprincipen är en annan rättsprincip, nämligen att ingen får straffas för en gärning som inte var brottslig enligt lag när den begicks; den stämmer inte med förklaringen. Eftersom den misstänkte ska betraktas som oskyldig ligger bevisbördan på åklagaren. Försvaret företräder den tilltalade, och att försvaret skulle visa att den tilltalade är skyldig säger emot både rollen och meningens slut.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-042",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Kritikern tyckte att filmens budskap var alltför ____: varje scen tycktes finnas till enbart för att inpränta samma moraliska poäng hos publiken.",
+    "options": [
+      "subtilt",
+      "tvetydigt",
+      "spretigt",
+      "övertydligt"
+    ],
+    "correctIndex": 3,
+    "explain": "Övertydligt betyder att något sägs så tydligt att det blir påträngande, och det stämmer med att varje scen tycks finnas till för att inpränta, alltså trumma in, samma poäng. Subtilt betyder finstämt och svårt att upptäcka, vilket är motsatsen till ett budskap som upprepas i varje scen. Tvetydigt betyder att budskapet kan tolkas på flera sätt, men en film som hela tiden driver samma moraliska poäng lämnar just inget tolkningsutrymme. Spretigt betyder att något drar åt många olika håll; det kan låta som rimlig kritik mot en film, men här driver varje scen samma poäng, så budskapet är tvärtom ensidigt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-043",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Vargen utrotades i Yellowstone under 1920-talet. Utan sitt viktigaste rovdjur ____ antalet wapitihjortar, och betestrycket på unga träd längs vattendragen blev så hårt att många bestånd av asp och vide ____. När vargen återinfördes 1995 ____ en del av vegetationen, även om forskarna är oense om hur stor vargens egen roll har varit.",
+    "options": [
+      "växte / bredde ut sig / försvann",
+      "växte / knappt föryngrades / återhämtade sig",
+      "minskade / knappt föryngrades / försvann",
+      "minskade / bredde ut sig / återhämtade sig"
+    ],
+    "correctIndex": 1,
+    "explain": "När rovdjuret försvinner kan bytesdjuren föröka sig fritt, så antalet hjortar växte, vilket också förklarar det hårda betestrycket; minskade går inte ihop med det. Föryngras betyder att nya, unga träd växer upp och ersätter de gamla, och när hjortarna äter upp de unga träden föryngras bestånden knappt alls. Bredde ut sig säger emot att betestrycket var hårt. Med vargen tillbaka minskade betestrycket, och en del av vegetationen återhämtade sig; bisatsen om att forskarna är oense om vargens roll förutsätter att det skedde en förbättring. Försvann skulle inte heller följa av att rovdjuret återvände.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-044",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Partiet gick till val på att sänka skatterna, men i regeringsställning tvingades det ____ löftet när statsfinanserna försämrades.",
+    "options": [
+      "infria",
+      "tidigarelägga",
+      "överge",
+      "upprepa"
+    ],
+    "correctIndex": 2,
+    "explain": "Överge betyder släppa eller ge upp, och det stämmer med att försämrade statsfinanser tvingade partiet att släppa löftet om skattesänkningar. Infria betyder uppfylla, men ”men” och ”tvingades” visar att det gick emot partiets vilja, och sämre finanser gör det svårare, inte lättare, att sänka skatterna. Tidigarelägga betyder genomföra tidigare än planerat, vilket inte heller följer av att pengarna blev knappare. Upprepa ger ingen rimlig mening; ingen tvingas upprepa ett vallöfte för att finanserna försämras.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-045",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "När Alfred Wegener 1912 lade fram teorin om att kontinenterna rör sig, möttes den med stor ____ av de flesta geologer. Han kunde nämligen inte förklara vilken kraft som skulle driva rörelsen, och först på 1960-talet, när man kartlade havsbottnarna, fick teorin ett ____ genombrott.",
+    "options": [
+      "entusiasm / brett",
+      "skepsis / tillfälligt",
+      "entusiasm / tillfälligt",
+      "skepsis / brett"
+    ],
+    "correctIndex": 3,
+    "explain": "Ordet ”nämligen” inleder en förklaring till geologernas reaktion, och att Wegener inte kunde förklara drivkraften är ett skäl till skepsis, alltså tvivel, inte till entusiasm. ”Först på 1960-talet” visar att teorin till slut blev allmänt accepterad, och ett brett genombrott betyder just att den fick stöd av många. Tillfälligt skulle betyda att genombrottet snart gick över, men inget i texten tyder på det; kartläggningen av havsbottnarna beskrivs som det som avgjorde saken.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-046",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Den nya behandlingen botar inte sjukdomen och kan inte heller reparera de skador som redan har uppstått, men den kan ____ förloppet så mycket att många patienter får flera år med god livskvalitet.",
+    "options": [
+      "bromsa",
+      "förutsäga",
+      "påskynda",
+      "vända"
+    ],
+    "correctIndex": 0,
+    "explain": "Att bromsa förloppet betyder att sjukdomen utvecklas långsammare, och det förklarar att patienterna får flera år med god livskvalitet trots att behandlingen varken botar sjukdomen eller reparerar skador som redan har uppstått. Att vända förloppet skulle betyda att sjukdomen gick tillbaka och att skadorna läkte, men texten säger just att behandlingen inte kan reparera dem. Påskynda skulle tvärtom göra att sjukdomen förvärrades snabbare. Förutsäga handlar om att förstå förloppet, inte om att påverka det, och kan därför inte ge patienterna fler goda år.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-047",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Mellan 1870 och 1950 förvandlades Sverige från ett jordbrukssamhälle till en industrination, och andelen av befolkningen som bodde i städer ____. Inflyttningen från landsbygden ____ en svår bostadsbrist, och trångboddheten i de svenska städerna var länge ____ jämfört med i andra västeuropeiska länder.",
+    "options": [
+      "ökade kraftigt / avhjälpte / jämförelsevis låg",
+      "minskade / skapade / jämförelsevis låg",
+      "ökade kraftigt / skapade / anmärkningsvärt hög",
+      "minskade / avhjälpte / anmärkningsvärt hög"
+    ],
+    "correctIndex": 2,
+    "explain": "När ett land industrialiseras flyttar människor från landsbygden till städerna, där fabrikerna finns, och nästa mening talar just om inflyttningen; andelen stadsbor ökade alltså kraftigt, och minskade säger emot det. När många flyttar in snabbare än det hinner byggas skapas en bostadsbrist; inflyttning kan inte avhjälpa, alltså råda bot på, en brist på bostäder. Med en svår bostadsbrist får många dela på få bostäder, så trångboddheten blev anmärkningsvärt hög. Jämförelsevis låg går inte ihop med bostadsbristen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-048",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Många runstenar var inte bara minnesmärken över de döda. Enligt en del forskare ____ de också arvsanspråk, eftersom inskriften visade vem som hade rätt att ärva efter den döde.",
+    "options": [
+      "ersatte",
+      "styrkte",
+      "dolde",
+      "avstod från"
+    ],
+    "correctIndex": 1,
+    "explain": "Styrka ett anspråk betyder att ge stöd åt det, och en inskrift som visade vem som hade rätt att ärva kunde just användas som bevis för den personens anspråk. Ersatte skulle betyda att stenarna trädde i stället för arvsanspråken, vilket inte ger någon mening; stenen var ett stöd för anspråket, inte en ersättning för det. Dolde går emot att inskriften öppet visade vem som var arvinge. Avstod från skulle betyda att den som reste stenen gav upp sin rätt, men en inskrift som pekar ut arvingen gör tvärtom anspråket tydligare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-049",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Avsmältningen av havsisen i Arktis ____ sig själv: när den vita isen ersätts av mörkt öppet vatten reflekteras ____ av solljuset, och havet värms upp ännu mer.",
+    "options": [
+      "bromsar / mindre",
+      "förstärker / mindre",
+      "förstärker / mer",
+      "bromsar / mer"
+    ],
+    "correctIndex": 1,
+    "explain": "Ljusa ytor reflekterar mycket solljus, medan mörka ytor tar upp mer av det. När isen ersätts av mörkt vatten reflekteras alltså mindre solljus och mer värme stannar kvar, så att havet värms upp ännu mer. Mer reflekterat solljus skulle tvärtom kyla och kan inte förklara att havet värms upp. Eftersom uppvärmningen leder till ännu mer avsmältning förstärker processen sig själv; bromsar säger emot ”ännu mer” i slutet av meningen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-050",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i meningen.",
+    "passage": "Ända fram till 1921 var gifta kvinnor i Sverige ____: de fick i regel inte själva förvalta sin egendom eller ingå avtal, utan det var maken som företrädde dem i rättsliga och ekonomiska frågor.",
+    "options": [
+      "ofrälse",
+      "obesuttna",
+      "underåriga",
+      "omyndiga"
+    ],
+    "correctIndex": 3,
+    "explain": "Omyndig är den som inte själv får råda över sin egendom eller ingå avtal utan företräds av någon annan, och det är vad texten efter kolon beskriver; gifta kvinnor stod under makens förmynderskap tills den nya giftermålsbalken trädde i kraft 1921. Underårig betyder att man inte har uppnått myndighetsåldern; underåriga är visserligen omyndiga, men här gäller det vuxna kvinnor som var omyndiga för att de var gifta, inte på grund av sin ålder. Ofrälse betyder att man inte tillhör adeln, vilket gällde de flesta, både män och kvinnor, och har inget med förmynderskap att göra. Obesutten betyder att man saknar egen jord, men texten förutsätter att kvinnorna hade egendom som någon annan förvaltade.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-051",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "De isländska sagorna skrevs ned på 1200- och 1300-talen, men de skildrar händelser som hade ____ flera hundra år tidigare. Historiker är därför ____ att använda dem som källor till vikingatiden, eftersom berättelserna kan ha ____ under den långa tid då de fördes vidare muntligt.",
+    "options": [
+      "utspelat sig / angelägna om / skrivits om",
+      "tecknats ned / försiktiga med / skrivits om",
+      "utspelat sig / försiktiga med / förvanskats",
+      "tecknats ned / angelägna om / förvanskats"
+    ],
+    "correctIndex": 2,
+    "explain": "Sagorna skildrar händelser som hade utspelat sig, alltså ägt rum, flera hundra år innan de skrevs ned. Tecknats ned motsägs av att berättelserna fördes vidare muntligt under den tiden. Det långa avståndet mellan händelserna och nedteckningen gör att historiker är försiktiga med att använda sagorna som källor; angelägna om skulle betyda att de gärna gör det, vilket inte går ihop med ”därför” och med skälet som ges. Skälet är att berättelserna kan ha förvanskats, alltså ändrats och förvrängts, när de fördes vidare. Skrivits om kan locka, eftersom det också betyder att berättelserna har ändrats, men under den långa tiden fördes de vidare muntligt och fanns alltså inte i skrift.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-052",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Elpriset i Sverige kan skilja sig kraftigt mellan olika delar av landet. Det beror ____ på att mycket av elen produceras i norr medan förbrukningen är störst i söder, och på att överföringskapaciteten mellan landsdelarna är ____. När ledningarna är fullt utnyttjade kan inte mer el föras söderut, och priset i söder ____ därför.",
+    "options": [
+      "främst / begränsad / stiger",
+      "knappast / begränsad / sjunker",
+      "främst / överdimensionerad / sjunker",
+      "knappast / överdimensionerad / stiger"
+    ],
+    "correctIndex": 0,
+    "explain": "Texten förklarar prisskillnaderna med att produktion och förbrukning finns på olika håll, så ordet ska ange att det är den främsta orsaken; knappast skulle avfärda just den förklaring som resten av texten bygger vidare på. Att ledningarna kan bli fullt utnyttjade visar att överföringskapaciteten är begränsad. Överdimensionerad betyder att ledningarna har mer kapacitet än som behövs, och då skulle de inte slå i taket. När ingen mer el kan föras söderut blir utbudet i söder mindre än efterfrågan, och priset stiger; sjunker skulle inte följa av att tillgången begränsas.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-053",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Vittnesmål är mindre ____ än många tror. Minnet fungerar inte som en inspelning som spelas upp, utan ____ varje gång vi plockar fram det, och ledande frågor kan därför få ett vittne att minnas detaljer som aldrig har funnits.",
+    "options": [
+      "tillförlitliga / rekonstrueras",
+      "subjektiva / rekonstrueras",
+      "tillförlitliga / förstärks",
+      "subjektiva / förstärks"
+    ],
+    "correctIndex": 0,
+    "explain": "Texten visar att vittnen kan minnas saker som aldrig har hänt, och slutsatsen är alltså att vittnesmål är mindre tillförlitliga än man tror. Subjektiva går åt fel håll: att minnet kan påverkas av ledande frågor visar att vittnesmål är mer, inte mindre, subjektiva än många tror. Rekonstrueras betyder att minnet byggs upp på nytt varje gång, och det förklarar att nya, felaktiga detaljer kan komma in. Förstärks ställs inte i motsats till en inspelning och förklarar inte varför falska detaljer uppstår, så ”inte … utan” och ”därför” blir ologiska.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-054",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Funktionalismen slog igenom i Sverige i samband med Stockholmsutställningen 1930. Arkitekterna ville ____ den tunga, ornamenterade stilen från sekelskiftet och i stället bygga ljusa och ändamålsenliga bostäder. Kritiker såg dock stilen som ____ och opersonlig, och debatten om huruvida funktionalismen innebar en befrielse eller ett ____ pågick länge.",
+    "options": [
+      "bygga vidare på / kal / framsteg",
+      "bryta med / överlastad / framsteg",
+      "bryta med / kal / förfall",
+      "bygga vidare på / överlastad / förfall"
+    ],
+    "correctIndex": 2,
+    "explain": "Arkitekterna ville bryta med den äldre stilen; ”i stället” visar att de ville något annat, så bygga vidare på passar inte. Kal betyder naken och utan utsmyckning, och det är en rimlig kritik mot en stil som har skalat bort all ornamentik och som också kallas opersonlig. Överlastad betyder översmyckad och beskriver snarare den stil som funktionalisterna vände sig mot. Debatten gällde två motsatta synsätt, och motsatsen till en befrielse är här ett förfall, alltså en försämring. Framsteg är också positivt och ger ingen motsättning mot befrielse.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-055",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Ett minoritetsspråk som bara talas av den äldre generationen är ____: när barnen inte längre lär sig språket hemma kan det försvinna när de sista talarna dör. Därför satsar många revitaliseringsprojekt på ____ i stället för att enbart dokumentera språket.",
+    "options": [
+      "självbärande / översättningar till majoritetsspråket",
+      "utrotningshotat / översättningar till majoritetsspråket",
+      "självbärande / språkbad för barn",
+      "utrotningshotat / språkbad för barn"
+    ],
+    "correctIndex": 3,
+    "explain": "Texten efter kolon beskriver att språket kan försvinna, och ett sådant språk är utrotningshotat. Självbärande betyder att något klarar sig av egen kraft, vilket är motsatsen till ett språk som inte längre förs vidare till barnen. Eftersom problemet är att barnen inte lär sig språket hemma, satsar projekten på språkbad för barn, där de får höra och använda språket. Översättningar till majoritetsspråket gör inte att någon lär sig minoritetsspråket och löser alltså inte problemet med att språket inte förs vidare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-056",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Hansan, ett förbund av nordtyska handelsstäder, ____ under senmedeltiden handeln i Östersjöområdet. Förbundets makt ____ under 1500-talet, när de framväxande nationalstaterna började ____ sina egna köpmän och nya handelsvägar över Atlanten fick allt större betydelse.",
+    "options": [
+      "dominerade / kulminerade / motarbeta",
+      "dominerade / avtog / gynna",
+      "övergav / avtog / motarbeta",
+      "övergav / kulminerade / gynna"
+    ],
+    "correctIndex": 1,
+    "explain": "Ett förbund av handelsstäder som hade makt i Östersjöområdet dominerade handeln där; övergav skulle betyda att förbundet lämnade den handel som var grunden för dess makt. Båda förklaringarna i bisatsen, att staterna gynnade egna köpmän och att handeln över Atlanten blev viktigare, är skäl till att Hansans makt avtog, alltså minskade. Kulminerade betyder nådde sin höjdpunkt och går inte ihop med orsaker som försvagar förbundet. Nationalstaterna gynnade sina egna köpmän på Hansans bekostnad; att motarbeta sina egna köpmän skulle inte ha försvagat Hansan.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-057",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Ett screeningtest som upptäcker nästan alla sjuka har hög ____. Men om sjukdomen är ovanlig kan ändå en stor del av de positiva svaren vara ____, eftersom även en liten andel felaktiga utslag bland alla de friska blir många personer.",
+    "options": [
+      "specificitet / korrekta",
+      "sensitivitet / korrekta",
+      "specificitet / falskt positiva",
+      "sensitivitet / falskt positiva"
+    ],
+    "correctIndex": 3,
+    "explain": "Sensitivitet är ett tests förmåga att ge utslag hos dem som verkligen är sjuka, och ett test som upptäcker nästan alla sjuka har därför hög sensitivitet. Specificitet är förmågan att ge negativt svar hos dem som är friska, vilket är något annat än att hitta de sjuka. ”Men” och ”ändå” visar att andra meningen pekar på ett problem, och bisatsen förklarar att felaktiga utslag bland de friska blir många; då är en stor del av de positiva svaren falskt positiva. Korrekta svar vore inget problem och säger emot bisatsen om felaktiga utslag.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-058",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Offentlighetsprincipen ger alla rätt att ta del av allmänna handlingar, men rätten är inte ____. Uppgifter kan ____ om ett utlämnande till exempel skulle skada rikets säkerhet eller enskilda personers integritet, och det är då myndigheten som måste ____ varför handlingen inte lämnas ut.",
+    "options": [
+      "obegränsad / sekretessbeläggas / motivera",
+      "villkorad / sekretessbeläggas / förtiga",
+      "villkorad / offentliggöras / motivera",
+      "obegränsad / offentliggöras / förtiga"
+    ],
+    "correctIndex": 0,
+    "explain": "Ordet ”men” och fortsättningen om undantag visar att rätten inte är obegränsad. Villkorad blir fel, eftersom texten tvärtom beskriver villkor som begränsar rätten. När ett utlämnande skulle skada till exempel rikets säkerhet kan uppgifterna sekretessbeläggas, alltså hållas hemliga; offentliggöras är motsatsen och går inte ihop med att handlingen inte lämnas ut. Myndigheten måste motivera, alltså ange skälen för, sitt beslut. Förtiga betyder att hålla tyst om något, och att myndigheten skulle vara skyldig att tiga om sina skäl strider mot tanken bakom offentlighetsprincipen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-059",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "Restaureringen av takmålningarna var ____: konservatorerna avlägsnade lager av sot och senare övermålningar, och färgerna framträdde med en lyster som ingen nu levande hade sett. Somliga konsthistoriker menade dock att ingreppet hade varit alltför ____ och att en del av målningarnas ursprungliga skuggningar hade försvunnit med smutsen.",
+    "options": [
+      "obetydlig / hårdhänt",
+      "spektakulär / hårdhänt",
+      "spektakulär / konservativt",
+      "obetydlig / konservativt"
+    ],
+    "correctIndex": 1,
+    "explain": "Texten efter kolon beskriver ett resultat som ingen nu levande hade sett, och restaureringen var alltså spektakulär, det vill säga uppseendeväckande. Obetydlig motsägs av den kraftiga förändringen. ”Dock” inleder kritik, och om ursprungliga skuggningar har försvunnit tillsammans med smutsen har konservatorerna tagit bort för mycket; ingreppet var alltså alltför hårdhänt. Konservativt betyder här återhållsamt och bevarande; ordet kan locka eftersom det påminner om konservatorerna, men ett alltför återhållsamt ingrepp hade snarare lämnat för mycket kvar och kan inte förklara att något av originalet gick förlorat.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-mek-060",
+    "kind": "mek",
+    "prompt": "Välj det alternativ som bäst fyller i luckorna.",
+    "passage": "När Ignaz Semmelweis på 1840-talet visade att barnsängsfebern minskade kraftigt om läkarna tvättade händerna i klorkalklösning, ____ många av hans kollegor resultaten. Tanken att läkarna själva skulle sprida sjukdomen uppfattades som ____, och först när bakteriologin vann mark några decennier senare fick hans iakttagelser ett allmänt erkännande.",
+    "options": [
+      "anammade / kränkande",
+      "anammade / självklar",
+      "avfärdade / kränkande",
+      "avfärdade / självklar"
+    ],
+    "correctIndex": 2,
+    "explain": "Att iakttagelserna fick allmänt erkännande först några decennier senare visar att kollegorna avfärdade resultaten; anamma betyder ta till sig och anta, och det motsägs av det sena erkännandet. Den andra meningen förklarar motståndet: läkarna tog illa upp av tanken att de själva skulle föra smitta vidare och såg den som kränkande. Självklar går inte ihop med att idén möttes av motstånd och fick erkännande först långt senare.",
+    "verification": "agreed"
   }
 ]

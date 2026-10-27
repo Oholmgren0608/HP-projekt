@@ -298,5 +298,605 @@
     "correctIndex": 1,
     "explain": "En usurpator är en person som utan rätt har tagit makten, särskilt kungamakten, alltså en tronrövare: ”usurpatorn lät fängsla den rättmätige kungen”. Ockrare betecknar i stället den som lånar ut pengar mot orimligt hög ränta. En uppviglare hetsar till uppror och en landsförrädare sviker sitt land, medan en tronarvinge tvärtom har laglig rätt till tronen.",
     "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-021",
+    "kind": "ord",
+    "prompt": "Vad betyder ”pekuniär”?",
+    "options": [
+      "förmögen",
+      "snål",
+      "ekonomisk",
+      "egendomlig",
+      "straffbar"
+    ],
+    "correctIndex": 2,
+    "explain": "Pekuniär betyder ekonomisk, alltså som gäller pengar: ”beslutet fick stora pekuniära följder för kommunen”. Förmögen (rik) och snål (ovillig att ge ut pengar) hör till samma ämnesfält men beskriver en person, inte att något rör pengar. Egendomlig bygger på en förväxling med engelskans peculiar, och straffbar lockar eftersom ordet ofta står i uttrycket pekuniärt straff, där det bara anger att straffet består av pengar, till exempel böter.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-022",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ombesörja”?",
+    "options": [
+      "ordna med",
+      "sörja över",
+      "bekosta",
+      "besvara",
+      "övervaka"
+    ],
+    "correctIndex": 0,
+    "explain": "Ombesörja betyder ordna med eller se till att något blir gjort: ”hotellet ombesörjer transporten till flygplatsen”. Sörja över (känna sorg) lockar eftersom ordet innehåller sörja, men ombesörja har inget med sorg att göra. Bekosta betyder att betala för något, och den som ombesörjer något behöver inte stå för kostnaden. Övervaka är att hålla uppsikt över det som andra gör, och besvara är att ge svar, vilket inte heller är att själv ta hand om en uppgift.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-023",
+    "kind": "ord",
+    "prompt": "Vad betyder ”vederhäftig”?",
+    "options": [
+      "hämndlysten",
+      "upprorisk",
+      "vidlyftig",
+      "våldsam",
+      "pålitlig"
+    ],
+    "correctIndex": 4,
+    "explain": "Vederhäftig betyder pålitlig eller tillförlitlig: ”rapporten bygger på vederhäftiga källor”. Hämndlysten och upprorisk lockar eftersom förleden veder- finns i vedergällning (hämnd) och betyder mot i ord som vederlägga, men vederhäftig har ingen sådan betydelse. Våldsam är en betydelse av häftig, inte av vederhäftig, och vidlyftig (omfattande eller utsvävande) liknar ordet bara till formen.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-024",
+    "kind": "ord",
+    "prompt": "Vad betyder ”på eget bevåg”?",
+    "options": [
+      "på egen bekostnad",
+      "på eget initiativ",
+      "i egen hög person",
+      "i god tro",
+      "under eget namn"
+    ],
+    "correctIndex": 1,
+    "explain": "På eget bevåg betyder på eget initiativ och ansvar, utan att någon har bett om det eller gett lov: ”vaktmästaren bytte låset på eget bevåg”. På egen bekostnad gäller vem som betalar, och i egen hög person betyder personligen, att man själv är på plats. I god tro betyder att man handlar i övertygelsen att det är rätt eller lagligt, och under eget namn handlar om i vems namn något görs, inte om vem som tog initiativet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-025",
+    "kind": "ord",
+    "prompt": "Vad betyder ”obsolet”?",
+    "options": [
+      "tvångsmässig",
+      "dunkel",
+      "total",
+      "föråldrad",
+      "envis"
+    ],
+    "correctIndex": 3,
+    "explain": "Obsolet betyder föråldrad eller ur bruk: ”med de nya reglerna blev den gamla blanketten obsolet”. De andra alternativen är betydelser av ord som liknar obsolet till formen: tvångsmässig motsvarar obsessiv, dunkel motsvarar obskyr, total motsvarar absolut och envis motsvarar obstinat.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-026",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ränker”?",
+    "options": [
+      "intriger",
+      "rangordningar",
+      "räntor",
+      "klätterväxter",
+      "gräl"
+    ],
+    "correctIndex": 0,
+    "explain": "Ränker är ett ålderdomligt ord för intriger, alltså hemliga och listiga planer för att skada någon eller vinna fördelar: ”hovet var fullt av avund och ränker”. Rangordningar och räntor lockar eftersom rang och ränta liknar ordet till formen, och klätterväxter bygger på en förväxling med rankor. Gräl är öppna konflikter, medan ränker smids i det fördolda.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-027",
+    "kind": "ord",
+    "prompt": "Vad betyder ”lakonisk”?",
+    "options": [
+      "högtravande",
+      "lantlig",
+      "sorgsen",
+      "kortfattad",
+      "grovkornig"
+    ],
+    "correctIndex": 3,
+    "explain": "Lakonisk betyder kortfattad, ofta på ett torrt och träffande sätt: ”på frågan om resan svarade hon lakoniskt: ’Blött.’” Ordet kommer av landskapet Lakonien kring Sparta, vars invånare var kända för att vara fåordiga, men det betyder inte lantlig. Högtravande (uppstyltad) och grovkornig (rå och plump) beskriver också sätt att uttrycka sig, men inte fåordighet. Sorgsen hör ihop med melankolisk, som bara liknar lakonisk i ljudet.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-028",
+    "kind": "ord",
+    "prompt": "Vad betyder ”filantrop”?",
+    "options": [
+      "frimärkssamlare",
+      "välgörare",
+      "språkvetare",
+      "människoforskare",
+      "tänkare"
+    ],
+    "correctIndex": 1,
+    "explain": "En filantrop är en välgörare eller människovän, någon som ger pengar eller arbetar för andras bästa: ”en okänd filantrop bekostade det nya biblioteket”. Ordet är bildat av grekiskans fil- (som älskar) och anthropos (människa). Frimärkssamlare (filatelist), språkvetare (filolog) och tänkare (filosof) är betydelser av andra ord på fil-, och människoforskare är en antropolog, ett ord som delar ordets andra del.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-029",
+    "kind": "ord",
+    "prompt": "Vad betyder ”försåtlig”?",
+    "options": [
+      "slarvig",
+      "förlåtande",
+      "varsam",
+      "anspråkslös",
+      "lömsk"
+    ],
+    "correctIndex": 4,
+    "explain": "Försåtlig betyder lömsk eller bedräglig, alltså att något döljer en fara eller ett vilseledande syfte: ”provet innehöll några försåtliga frågor”. De andra alternativen är betydelser av ord som börjar likadant: slarvig motsvarar försumlig, förlåtande motsvarar försonlig, varsam motsvarar försiktig och anspråkslös motsvarar förnöjsam.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-030",
+    "kind": "ord",
+    "prompt": "Vad betyder ”hålla god min”?",
+    "options": [
+      "vara på gott humör",
+      "hålla sig väl med alla",
+      "dölja sitt missnöje",
+      "uppföra sig väl",
+      "hålla vad man lovat"
+    ],
+    "correctIndex": 2,
+    "explain": "Hålla god min betyder att dölja sitt missnöje och låtsas vara nöjd, ofta i uttrycket hålla god min i elakt spel: ”han förlorade valet men höll god min och gratulerade vinnaren”. Den som håller god min är alltså inte på gott humör, utan låtsas bara vara det. Hålla sig väl med alla (vara vän med alla för att vinna fördelar) och uppföra sig väl handlar om relationer och uppförande, inte om att dölja en känsla, och hålla vad man lovat motsvarar uttrycket hålla ord.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-031",
+    "kind": "ord",
+    "prompt": "Vad betyder ”sporadisk”?",
+    "options": [
+      "smittsam",
+      "enstaka",
+      "sportslig",
+      "kortlivad",
+      "sporbildande"
+    ],
+    "correctIndex": 1,
+    "explain": "Sporadisk betyder enstaka, alltså som förekommer då och då och utan regelbundenhet: ”det kom bara sporadiska rapporter från fronten”. Smittsam lockar eftersom ordet ofta används om sjukdomsfall, men sporadiska fall säger bara att fallen är få och spridda. Sportslig och sporbildande liknar ordet till formen (sport, spor), och kortlivad gäller hur länge något varar, inte hur ofta det förekommer.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-032",
+    "kind": "ord",
+    "prompt": "Vad betyder ”eklektisk”?",
+    "options": [
+      "kyrklig",
+      "hänryckt",
+      "förmörkad",
+      "uppseendeväckande",
+      "sammanplockad"
+    ],
+    "correctIndex": 4,
+    "explain": "Eklektisk betyder sammanplockad, alltså att något väljer ut och förenar idéer eller stilar från olika håll: ”husets inredning var eklektisk, med kinesiska vaser bredvid svenska allmogemöbler”. De andra alternativen är betydelser av ord som liknar eklektisk: kyrklig motsvarar ecklesiastik, hänryckt motsvarar extatisk, förmörkad motsvarar engelskans eclipse (förmörkelse) och uppseendeväckande motsvarar eklatant.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-033",
+    "kind": "ord",
+    "prompt": "Vad betyder ”förfäkta”?",
+    "options": [
+      "hävda",
+      "förfalska",
+      "förakta",
+      "förbjuda",
+      "förlöjliga"
+    ],
+    "correctIndex": 0,
+    "explain": "Förfäkta betyder att hävda eller ivrigt försvara en åsikt: ”hon förfäktade länge tanken att skolan borde vara avgiftsfri”. Förfalska, förakta, förbjuda och förlöjliga börjar likadant och kan förväxlas med förfäkta, men inget av dem handlar om att argumentera för en åsikt: man förfalskar en namnteckning, föraktar det man ser ned på, förbjuder det som inte ska vara tillåtet och förlöjligar det man gör narr av.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-034",
+    "kind": "ord",
+    "prompt": "Vad betyder ”harmsen”?",
+    "options": [
+      "samstämmig",
+      "ofarlig",
+      "förargad",
+      "nedstämd",
+      "avundsjuk"
+    ],
+    "correctIndex": 2,
+    "explain": "Harmsen betyder förargad eller stött, av ordet harm (förtrytelse): ”hon blev harmsen över att ingen hade frågat henne”. Samstämmig är betydelsen av harmonisk och ofarlig av harmlös, två ord som liknar harmsen till formen. Nedstämd och avundsjuk beskriver också känslor, men nedstämdhet är sorg och avund är missunnsamhet, inte förargelse över en oförrätt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-035",
+    "kind": "ord",
+    "prompt": "Vad betyder ”palliativ”?",
+    "options": [
+      "blek",
+      "kronisk",
+      "dödlig",
+      "lindrande",
+      "förebyggande"
+    ],
+    "correctIndex": 3,
+    "explain": "Palliativ betyder lindrande, särskilt om vård som minskar besvär utan att bota sjukdomen: ”patienten fick palliativ vård under sina sista veckor”. Dödlig lockar eftersom palliativ vård ofta ges i livets slutskede, men ordet beskriver vården, inte sjukdomen. Förebyggande heter preventiv och kronisk betyder långvarig, två andra medicinska termer, medan blek bygger på en förväxling med engelskans pallid.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-036",
+    "kind": "ord",
+    "prompt": "Vad betyder ”medgörlig”?",
+    "options": [
+      "genomförbar",
+      "medverkande",
+      "medlidsam",
+      "foglig",
+      "medansvarig"
+    ],
+    "correctIndex": 3,
+    "explain": "Medgörlig betyder foglig eller lätt att komma överens med: ”efter en stunds förhandling blev hyresvärden mer medgörlig”. Genomförbar lockar eftersom görlig betyder möjlig att göra, men medgörlig beskriver en människas inställning, inte en plan. Medverkande, medlidsam och medansvarig börjar likadant men betyder att vara med i något, att känna medlidande och att dela ansvaret.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-037",
+    "kind": "ord",
+    "prompt": "Vad betyder ”allenast”?",
+    "options": [
+      "ensam",
+      "fortfarande",
+      "endast",
+      "tillsammans",
+      "överallt"
+    ],
+    "correctIndex": 2,
+    "explain": "Allenast är ett ålderdomligt ord för endast eller bara: ”allenast medlemmar äger tillträde till klubbens bibliotek”. Ensam lockar eftersom det besläktade ordet allena betyder just ensam, men allenast är ett adverb som betyder endast. Fortfarande är betydelsen av alltjämt, tillsammans av allesammans och överallt av allestädes, tre andra gamla ord som också börjar på all-.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-038",
+    "kind": "ord",
+    "prompt": "Vad betyder ”nepotism”?",
+    "options": [
+      "svågerpolitik",
+      "mutbrott",
+      "tvångsstyre",
+      "förfäderskult",
+      "ämbetsmannavälde"
+    ],
+    "correctIndex": 0,
+    "explain": "Nepotism betyder svågerpolitik, alltså att någon med makt gynnar sina släktingar och vänner, till exempel när tjänster tillsätts: ”bolagets vd anklagades för nepotism när hans son fick chefsjobbet”. Mutbrott gäller att ge eller ta emot mutor, och tvångsstyre lockar eftersom despotism rimmar på nepotism. Förfäderskult är dyrkan av förfäder, inte att gynna levande släktingar, och ämbetsmannavälde är detsamma som byråkrati.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-039",
+    "kind": "ord",
+    "prompt": "Vad betyder ”faiblesse”?",
+    "options": [
+      "förfining",
+      "artighet",
+      "misslyckande",
+      "fåfänga",
+      "förkärlek"
+    ],
+    "correctIndex": 4,
+    "explain": "Faiblesse betyder förkärlek eller svaghet för något: ”han har en faiblesse för gamla franska filmer”. Förfining och artighet är betydelserna av finess och politess, två andra franska lånord på -ess, och misslyckande är betydelsen av fiasko. Fåfänga är en egenskap hos personen själv, medan en faiblesse alltid riktar sig mot något man tycker särskilt mycket om.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-040",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ta sig vatten över huvudet”?",
+    "options": [
+      "ta på sig skulden",
+      "åta sig för mycket",
+      "klara sig ekonomiskt",
+      "frånsäga sig ansvaret",
+      "drabbas av otur"
+    ],
+    "correctIndex": 1,
+    "explain": "Att ta sig vatten över huvudet betyder att åta sig mer än man klarar av: ”med tre jobb och en husrenovering hade hon tagit sig vatten över huvudet”. Klara sig ekonomiskt motsvarar att hålla sig flytande, som också är en bild från vattnet men betyder något annat. Ta på sig skulden och frånsäga sig ansvaret handlar om ansvar för något som redan har hänt, och drabbas av otur är något som händer en, medan den som tar sig vatten över huvudet själv har tagit på sig för mycket.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-041",
+    "kind": "ord",
+    "prompt": "Vad betyder ”prekär”?",
+    "options": [
+      "exakt",
+      "förebyggande",
+      "dyrbar",
+      "förhastad",
+      "vansklig"
+    ],
+    "correctIndex": 4,
+    "explain": "Prekär betyder vansklig, osäker eller besvärlig: ”efter varslen var företagets läge prekärt”. Exakt är betydelsen av precis och förebyggande av preventiv, två ord som börjar på samma sätt. Dyrbar bygger på en förväxling med engelskans precious, och förhastad motsvarar prematur, alltså för tidig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-042",
+    "kind": "ord",
+    "prompt": "Vad betyder ”esoterisk”?",
+    "options": [
+      "främmande",
+      "för invigda",
+      "konstnärlig",
+      "sensuell",
+      "självisk"
+    ],
+    "correctIndex": 1,
+    "explain": "Esoterisk betyder avsedd för eller begriplig bara för en liten krets invigda: ”diskussionen blev alltför esoterisk för de flesta åhörarna”. De andra alternativen är betydelser av ord som liknar esoterisk: främmande motsvarar exotisk, konstnärlig motsvarar estetisk, sensuell motsvarar erotisk och självisk motsvarar egoistisk.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-043",
+    "kind": "ord",
+    "prompt": "Vad betyder ”fadd”?",
+    "options": [
+      "besk",
+      "härsken",
+      "fet",
+      "smaklös",
+      "sötsliskig"
+    ],
+    "correctIndex": 3,
+    "explain": "Fadd betyder smaklös eller avslagen, och bildligt intetsägande: ”soppan var fadd och behövde mer salt”. Besk, härsken och sötsliskig är alla tydliga smaker (bitter, gammal och unken, äckligt söt), medan det som är fadd nästan saknar smak. Fet beskriver mat som innehåller mycket fett, vilket inte säger något om hur mycket den smakar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-044",
+    "kind": "ord",
+    "prompt": "Vad betyder ”stå sitt kast”?",
+    "options": [
+      "ta följderna",
+      "stå på sig",
+      "pröva lyckan",
+      "hålla sitt löfte",
+      "vänta på sin tur"
+    ],
+    "correctIndex": 0,
+    "explain": "Att stå sitt kast betyder att ta följderna av det man har gjort: ”den som fuskar på provet får stå sitt kast”. Stå på sig betyder att inte ge efter i en diskussion, och pröva lyckan lockar eftersom kast kan få en att tänka på tärningskast. Hålla sitt löfte handlar om att göra det man har lovat, och vänta på sin tur om ordningen i en kö, inte om att bära konsekvenserna av sitt handlande.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-045",
+    "kind": "ord",
+    "prompt": "Vad betyder ”bedagad”?",
+    "options": [
+      "förtjust",
+      "domnad",
+      "ålderstigen",
+      "dagdrömmande",
+      "kortvarig"
+    ],
+    "correctIndex": 2,
+    "explain": "Bedagad betyder ålderstigen, ofta om någon eller något som har passerat sin bästa tid: ”den bedagade filmstjärnan bodde ensam i en stor villa”. Förtjust är betydelsen av betagen och domnad av bedövad, två ord som liknar bedagad till formen. Dagdrömmande och kortvarig lockar eftersom ordet innehåller dag, men bedagad handlar om att ha levt många dagar, inte om drömmar eller korta förlopp.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-046",
+    "kind": "ord",
+    "prompt": "Vad betyder ”eskapism”?",
+    "options": [
+      "verklighetsflykt",
+      "gradvis upptrappning",
+      "rymningsförsök",
+      "beskydd",
+      "äventyrslust"
+    ],
+    "correctIndex": 0,
+    "explain": "Eskapism betyder verklighetsflykt, att fly vardagen genom till exempel böcker, spel eller dagdrömmar: ”för många är fantasyromaner ren eskapism”. Rymningsförsök lockar eftersom ordet kommer av engelskans escape, men eskapism handlar om att fly i tanken, inte bokstavligen. Gradvis upptrappning är betydelsen av eskalering och beskydd hör ihop med eskort, och äventyrslust bygger på en förväxling med eskapad, ett djärvt upptåg.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-047",
+    "kind": "ord",
+    "prompt": "Vad betyder ”fordom”?",
+    "options": [
+      "med all säkerhet",
+      "därför",
+      "förr i tiden",
+      "i förväg",
+      "till slut"
+    ],
+    "correctIndex": 2,
+    "explain": "Fordom är ett ålderdomligt ord för förr i tiden: ”här stod fordom en väderkvarn”. Med all säkerhet motsvarar det gamla ordet förvisso och därför motsvarar förty, och båda liknar fordom genom förleden. I förväg betyder innan något händer, inte i en avlägsen tid, och till slut motsvarar omsider, ytterligare ett ålderdomligt tidsord.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-048",
+    "kind": "ord",
+    "prompt": "Vad betyder ”rekognoscera”?",
+    "options": [
+      "känna igen",
+      "spana",
+      "återhämta sig",
+      "bygga om",
+      "förorda"
+    ],
+    "correctIndex": 1,
+    "explain": "Rekognoscera betyder spana eller undersöka, särskilt terrängen inför en militär operation: ”patrullen skickades ut för att rekognoscera området”. Känna igen lockar eftersom engelskans recognize liknar ordet, men på svenska betyder rekognoscera att spana. Återhämta sig hör ihop med rekonvalescent, bygga om motsvarar rekonstruera och förorda motsvarar rekommendera, tre andra ord som börjar på rek-.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-049",
+    "kind": "ord",
+    "prompt": "Vad betyder ”tarvlig”?",
+    "options": [
+      "krävande",
+      "nödställd",
+      "girig",
+      "simpel",
+      "inställsam"
+    ],
+    "correctIndex": 3,
+    "explain": "Tarvlig betyder simpel, ohyfsad eller lumpen: ”det var tarvligt av honom att skratta åt hennes misstag”. Krävande och nödställd lockar eftersom verbet tarva betyder kräva eller behöva, men tarvlig har inte den betydelsen. Girig och inställsam beskriver också dåliga egenskaper, men girig gäller begär efter pengar och inställsam att fjäska, medan tarvlig betyder lågt och simpelt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-050",
+    "kind": "ord",
+    "prompt": "Vad betyder ”eufemism”?",
+    "options": [
+      "behagligt ljud",
+      "stark lyckokänsla",
+      "medveten överdrift",
+      "ordlek",
+      "förskönande ord"
+    ],
+    "correctIndex": 4,
+    "explain": "En eufemism är ett förskönande ord eller uttryck som ersätter ett obehagligt: ”att gå bort är en eufemism för att dö”. Behagligt ljud är betydelsen av eufoni och stark lyckokänsla av eufori, två ord som börjar likadant. Medveten överdrift heter hyperbol, och en ordlek bygger på att ord har flera betydelser eller låter lika, inte på att något obehagligt ska låta mildare.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-051",
+    "kind": "ord",
+    "prompt": "Vad betyder ”hegemoni”?",
+    "options": [
+      "självstyre",
+      "maktbalans",
+      "överhöghet",
+      "folkvälde",
+      "samförstånd"
+    ],
+    "correctIndex": 2,
+    "explain": "Hegemoni betyder överhöghet, alltså en ledande eller dominerande ställning, ofta mellan stater: ”Sparta och Aten kämpade om hegemonin i Grekland”. Självstyre heter autonomi och folkvälde demokrati, och samförstånd är detsamma som konsensus. Maktbalans innebär att makten är jämnt fördelad, medan hegemoni betyder att en part dominerar.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-052",
+    "kind": "ord",
+    "prompt": "Vad betyder ”dra växlar på”?",
+    "options": [
+      "byta spår",
+      "skynda på",
+      "dra sig ur",
+      "utnyttja",
+      "ta risker"
+    ],
+    "correctIndex": 3,
+    "explain": "Att dra växlar på något betyder att utnyttja det till sin fördel: ”oppositionen drog växlar på ministerns misstag”. Byta spår och skynda på bygger på andra betydelser av växel, järnvägsväxeln och växeln i en bil. Dra sig ur betyder att lämna ett åtagande, och ta risker innebär att chansa, medan den som drar växlar på något använder en fördel som redan finns.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-053",
+    "kind": "ord",
+    "prompt": "Vad betyder ”frände”?",
+    "options": [
+      "vapenbroder",
+      "granne",
+      "fiende",
+      "förmyndare",
+      "släkting"
+    ],
+    "correctIndex": 4,
+    "explain": "Frände är ett högtidligt eller ålderdomligt ord för släkting: ”vid begravningen samlades fränder från hela landet”. Vapenbroder, granne och förmyndare är personer man kan stå nära utan att vara släkt med dem: en kamrat i strid, någon som bor intill och någon som förvaltar en annans angelägenheter. Fiende lockar eftersom det liknar frände i ljudet, men betydelsen är en helt annan.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-054",
+    "kind": "ord",
+    "prompt": "Vad betyder ”gälda”?",
+    "options": [
+      "betala",
+      "vara giltig",
+      "pantsätta",
+      "ärva",
+      "beskatta"
+    ],
+    "correctIndex": 0,
+    "explain": "Gälda betyder betala, särskilt en skuld, och hör ihop med det gamla ordet gäld (skuld): ”han arbetade i åratal för att gälda sina skulder”. Vara giltig är betydelsen av gälla, som liknar gälda till formen. Pantsätta, ärva och beskatta hör till samma ämnesfält som skulder och pengar, men innebär att lämna något som säkerhet, att få egendom efter någon som har dött och att ta ut skatt.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-055",
+    "kind": "ord",
+    "prompt": "Vad betyder ”insinuera”?",
+    "options": [
+      "envisas",
+      "antyda",
+      "tränga in",
+      "förvränga",
+      "inbilla sig"
+    ],
+    "correctIndex": 1,
+    "explain": "Insinuera betyder att antyda något, oftast något nedsättande, utan att säga det rakt ut: ”hon insinuerade att kollegan hade fuskat”. Envisas är betydelsen av insistera och tränga in av infiltrera, två ord som börjar likadant. Den reflexiva formen insinuera sig betyder att ställa sig in hos någon, inte att tränga in. Förvränga betyder att återge något felaktigt och inbilla sig att tro något som inte stämmer, men inget av dem innebär en förtäckt anklagelse.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-056",
+    "kind": "ord",
+    "prompt": "Vad betyder ”pastisch”?",
+    "options": [
+      "pastellmålning",
+      "stilimitation",
+      "skämtteckning",
+      "stilleben",
+      "predikan"
+    ],
+    "correctIndex": 1,
+    "explain": "En pastisch är en stilimitation, ett verk som medvetet efterliknar en annan konstnärs eller epoks stil: ”romanen är en pastisch på äldre tiders detektivromaner”. Pastellmålning och predikan lockar genom de liknande orden pastell och pastor. En skämtteckning är en tecknad bild som skämtar om något, och ett stilleben är en målning av döda föremål; ingen av dem är en efterbildning av en stil.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-057",
+    "kind": "ord",
+    "prompt": "Vad betyder ”nonchalera”?",
+    "options": [
+      "strunta i",
+      "slappna av",
+      "förolämpa",
+      "avbryta",
+      "skjuta upp"
+    ],
+    "correctIndex": 0,
+    "explain": "Nonchalera betyder strunta i eller låtsas inte se: ”han nonchalerade varningsskylten och gick ut på isen”. Slappna av lockar eftersom adjektivet nonchalant kan betyda obekymrad och avslappnad, men verbet betyder att inte bry sig om något. Förolämpa är att kränka någon, vilket är något annat än att ignorera. Avbryta är att få något att upphöra, och den som skjuter upp något tänker ta itu med det senare, medan den som nonchalerar något inte bryr sig om det alls.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-058",
+    "kind": "ord",
+    "prompt": "Vad betyder ”spörja”?",
+    "options": [
+      "följa spår",
+      "driva på",
+      "fråga",
+      "förutsäga",
+      "sprida"
+    ],
+    "correctIndex": 2,
+    "explain": "Spörja är ett ålderdomligt ord för fråga, och samma rot finns i spörsmål (fråga, problem): ”han sporde de gamla om traktens historia”. Följa spår, driva på och förutsäga är betydelserna av spåra, sporra och spå, som liknar spörja till formen. Sprida betyder att fördela över ett större område och har ingenting med att fråga att göra.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-059",
+    "kind": "ord",
+    "prompt": "Vad betyder ”ta skeden i vacker hand”?",
+    "options": [
+      "visa gott bordsskick",
+      "ta för sig",
+      "vara gästvänlig",
+      "ta chansen",
+      "finna sig i det"
+    ],
+    "correctIndex": 4,
+    "explain": "Att ta skeden i vacker hand betyder att finna sig i något som inte går att ändra: ”när tåget var inställt fick vi ta skeden i vacker hand och vänta”. Visa gott bordsskick och ta för sig lockar eftersom bilden kommer från matbordet, men uttrycket handlar inte om att äta. Vara gästvänlig hör också till måltiden, och ta chansen betyder att utnyttja ett tillfälle, inte att foga sig.",
+    "verification": "agreed"
+  },
+  {
+    "id": "ovn-ord-060",
+    "kind": "ord",
+    "prompt": "Vad betyder ”elegi”?",
+    "options": [
+      "lovtal",
+      "herdedikt",
+      "smädeskrift",
+      "sorgedikt",
+      "hjältedikt"
+    ],
+    "correctIndex": 3,
+    "explain": "En elegi är en sorgedikt eller klagodikt, en dikt i vemodig ton, ofta om död eller förlust: ”efter vännens död skrev poeten en elegi”. Lovtal lockar eftersom elegi liknar engelskans eulogy, som betyder lovtal, och eftersom ett lovtal kan hållas vid en begravning. Men ett lovtal prisar någon och är inte en dikt. Herdedikt (idyll), smädeskrift (pamflett) och hjältedikt (epos) är andra litterära former med en annan ton och ett annat innehåll.",
+    "verification": "agreed"
   }
 ]

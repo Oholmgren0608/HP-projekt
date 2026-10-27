@@ -45,6 +45,8 @@ export type FigurePart =
       title: string;
       /** Klassernas förklaring, klass 1 först. */
       classes: string[];
+      /** Rubrik för `detail` i tabellen till skärmläsare, t.ex. "Landareal". */
+      detailLabel?: string;
       regions: { name: string; detail?: string; cls: number; shape: RegionShape }[];
     }
   | { kind: "note"; text: string };
@@ -254,6 +256,7 @@ const FIGURES: Record<string, DtkFigureData> = {
       {
         kind: "map",
         title: "Invånare per km²",
+        detailLabel: "Landareal",
         classes: [
           "färre än 10",
           "från 10 till färre än 25",
@@ -498,6 +501,385 @@ const FIGURES: Record<string, DtkFigureData> = {
         unit: "miljoner kr",
       },
       { kind: "note", text: "Totalt: 30 miljoner kr." },
+    ],
+  },
+  // ovn-dtk-041–043
+  fh7kyk: {
+    title: "Kommunalval i en fiktiv kommun, 2020 och 2024",
+    parts: [
+      {
+        kind: "table",
+        title: "Tabell 1. Röstberättigade och valdeltagande",
+        head: ["År", "Röstberättigade", "Valdeltagande (procent)"],
+        rows: [
+          ["2020", "48 000", "80"],
+          ["2024", "56 000", "75"],
+        ],
+      },
+      {
+        kind: "table",
+        title: "Tabell 2. Partiernas andel av rösterna (procent)",
+        head: ["Parti", "2020", "2024"],
+        rows: [
+          ["Parti K", "32", "27"],
+          ["Parti L", "24", "26"],
+          ["Parti M", "18", "22"],
+          ["Parti N", "15", "12"],
+          ["Övriga partier", "11", "13"],
+        ],
+      },
+      {
+        kind: "note",
+        text: "Anm.: Valdeltagandet är andelen av de röstberättigade som röstade. Alla röster antas ha varit giltiga.",
+      },
+    ],
+  },
+  // ovn-dtk-044–046
+  "11cdpvt": {
+    title: "Elproduktion i ett fiktivt land efter kraftslag, 2014 och 2024",
+    parts: [
+      {
+        kind: "pie",
+        title: "Diagram 1. Elproduktionen år 2014 fördelad på kraftslag (procent)",
+        slices: [
+          { name: "Vattenkraft", value: 45 },
+          { name: "Kärnkraft", value: 35 },
+          { name: "Vindkraft", value: 8 },
+          { name: "Solkraft", value: 1 },
+          { name: "Kraftvärme", value: 11 },
+        ],
+        unit: "procent",
+      },
+      {
+        kind: "pie",
+        title: "Diagram 2. Elproduktionen år 2024 fördelad på kraftslag (procent)",
+        slices: [
+          { name: "Vattenkraft", value: 41 },
+          { name: "Kärnkraft", value: 28 },
+          { name: "Vindkraft", value: 20 },
+          { name: "Solkraft", value: 4 },
+          { name: "Kraftvärme", value: 7 },
+        ],
+        unit: "procent",
+      },
+      {
+        kind: "note",
+        text: "Anm.: Den totala elproduktionen var 150 TWh år 2014 och 160 TWh år 2024.",
+      },
+    ],
+  },
+  // ovn-dtk-047–049
+  "1mj4f1a": {
+    title: "Nyregistrerade företag i ett fiktivt land, 2016–2024",
+    parts: [
+      {
+        kind: "line",
+        title: "Diagram. Antal nyregistrerade företag per år (tusental)",
+        categories: ["2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+        series: [
+          { name: "Aktiebolag", values: [22, 24, 25, 28, 31, 40, 36, 33, 38] },
+          { name: "Enskilda firmor", values: [30, 31, 29, 27, 34, 32, 26, 21, 27] },
+        ],
+        axis: { max: 50, step: 10 },
+      },
+      {
+        kind: "note",
+        text: "Anm.: Alla nyregistrerade företag var antingen aktiebolag eller enskilda firmor.",
+      },
+    ],
+  },
+  // ovn-dtk-050–052
+  "18dgr90": {
+    title: "Tidsanvändning för personer 20–64 år i ett fiktivt land, 2024",
+    parts: [
+      {
+        kind: "bars",
+        title: "Diagram. Genomsnittlig tid per dygn efter aktivitet och kön (minuter)",
+        categories: ["Förvärvsarbete", "Hushållsarbete", "Personlig omsorg och sömn", "Fritid", "Övrigt"],
+        series: [
+          { name: "Kvinnor", values: [270, 210, 630, 270, 60] },
+          { name: "Män", values: [330, 150, 615, 300, 45] },
+        ],
+        axis: { max: 700, step: 100 },
+      },
+      {
+        kind: "note",
+        text: "Anm.: Genomsnitten avser alla veckans dagar. Aktiviteterna täcker tillsammans hela dygnet (1 440 minuter).",
+      },
+    ],
+  },
+  // ovn-dtk-053–055
+  "5esc7g": {
+    title: "Andel invånare 65 år och äldre i sex kommuner i ett fiktivt län, 2024",
+    intro: "Varje kommun är färgad efter hur stor andel av kommunens invånare som var 65 år eller äldre. Kommunens antal invånare står i kartan.",
+    parts: [
+      {
+        kind: "map",
+        title: "Andel invånare 65 år och äldre",
+        classes: ["från 14 till lägre än 18 procent", "från 18 till lägre än 22 procent", "från 22 till lägre än 26 procent", "från 26 till lägre än 30 procent", "från 30 till lägre än 34 procent"],
+        regions: [
+          { name: "Kommun B", detail: "12 000 invånare", cls: 5, shape: "nv" },
+          { name: "Kommun D", detail: "8 000 invånare", cls: 4, shape: "n" },
+          { name: "Kommun F", detail: "20 000 invånare", cls: 4, shape: "no" },
+          { name: "Kommun E", detail: "45 000 invånare", cls: 2, shape: "sv" },
+          { name: "Kommun A", detail: "85 000 invånare", cls: 1, shape: "s" },
+          { name: "Kommun C", detail: "30 000 invånare", cls: 3, shape: "so" },
+        ],
+        detailLabel: "Invånare",
+      },
+      { kind: "note", text: "Anm.: Länet består av de sex kommunerna." },
+    ],
+  },
+  // ovn-dtk-056–058
+  f3dsl8: {
+    title: "Mjölkproduktion i fyra regioner i ett fiktivt land, 2004 och 2024",
+    parts: [
+      {
+        kind: "table",
+        title: "Tabell 1. Antal mjölkgårdar",
+        head: ["Region", "2004", "2024"],
+        rows: [
+          ["Region Nord", "1 200", "420"],
+          ["Region Väst", "2 500", "900"],
+          ["Region Öst", "1 800", "700"],
+          ["Region Syd", "3 000", "1 250"],
+        ],
+      },
+      {
+        kind: "table",
+        title: "Tabell 2. Genomsnittligt antal mjölkkor per gård",
+        head: ["Region", "2004", "2024"],
+        rows: [
+          ["Region Nord", "30", "80"],
+          ["Region Väst", "40", "95"],
+          ["Region Öst", "35", "75"],
+          ["Region Syd", "45", "120"],
+        ],
+      },
+      {
+        kind: "note",
+        text: "Anm.: I alla fyra regionerna gav en mjölkko i genomsnitt 8 ton mjölk per år 2004 och 10 ton mjölk per år 2024.",
+      },
+    ],
+  },
+  // ovn-dtk-059–061
+  q7euzj: {
+    title: "Försäljning av cyklar i ett fiktivt land, 2020–2024",
+    parts: [
+      {
+        kind: "columns",
+        title: "Diagram. Antal sålda cyklar efter typ (tusental)",
+        categories: ["2020", "2021", "2022", "2023", "2024"],
+        series: [
+          { name: "Elcyklar", values: [60, 95, 110, 120, 150] },
+          { name: "Övriga cyklar", values: [540, 505, 440, 380, 400] },
+        ],
+        axis: { max: 600, step: 100 },
+      },
+      {
+        kind: "table",
+        title: "Tabell. Genomsnittligt pris per såld cykel (kronor)",
+        head: ["Typ", "2020", "2024"],
+        rows: [
+          ["Elcyklar", "22 000", "18 000"],
+          ["Övriga cyklar", "4 000", "5 000"],
+        ],
+      },
+    ],
+  },
+  // ovn-dtk-062–064
+  kbibmp: {
+    title: "Hushållens utgifter i ett fiktivt land, 2014 och 2024",
+    parts: [
+      {
+        kind: "pie",
+        title: "Diagram. Utgifterna per hushåll år 2024 fördelade på utgiftsgrupper (procent)",
+        slices: [
+          { name: "Boende", value: 28 },
+          { name: "Livsmedel", value: 14 },
+          { name: "Transporter", value: 15 },
+          { name: "Fritid och kultur", value: 12 },
+          { name: "Kläder", value: 5 },
+          { name: "Restauranger", value: 6 },
+          { name: "Övrigt", value: 20 },
+        ],
+        unit: "procent",
+      },
+      {
+        kind: "table",
+        title: "Tabell. Genomsnittliga utgifter per hushåll år 2014 (kronor per år)",
+        head: ["Utgiftsgrupp", "Kronor"],
+        rows: [
+          ["Boende", "96 000"],
+          ["Livsmedel", "50 000"],
+          ["Transporter", "54 000"],
+          ["Fritid och kultur", "30 000"],
+          ["Kläder", "22 000"],
+          ["Restauranger", "14 000"],
+          ["Övrigt", "74 000"],
+          ["Summa", "340 000"],
+        ],
+        totalRow: true,
+      },
+      {
+        kind: "note",
+        text: "Anm.: År 2024 var de genomsnittliga utgifterna 400 000 kronor per hushåll.",
+      },
+    ],
+  },
+  // ovn-dtk-065–067
+  "8shb26": {
+    title: "Färdigställda bostäder och folkmängd i ett fiktivt land med fyra regioner, 2024",
+    parts: [
+      {
+        kind: "table",
+        title: "Tabell 1. Antal färdigställda bostäder efter hustyp",
+        head: ["Region", "Flerbostadshus", "Småhus", "Totalt"],
+        rows: [
+          ["Region A", "4 200", "1 800", "6 000"],
+          ["Region B", "1 300", "1 200", "2 500"],
+          ["Region C", "2 900", "1 100", "4 000"],
+          ["Region D", "900", "600", "1 500"],
+          ["Hela landet", "9 300", "4 700", "14 000"],
+        ],
+        totalRow: true,
+      },
+      {
+        kind: "table",
+        title: "Tabell 2. Folkmängd (tusental)",
+        head: ["Region", "Folkmängd"],
+        rows: [
+          ["Region A", "900"],
+          ["Region B", "270"],
+          ["Region C", "480"],
+          ["Region D", "150"],
+          ["Hela landet", "1 800"],
+        ],
+        totalRow: true,
+      },
+    ],
+  },
+  // ovn-dtk-068–070
+  aag593: {
+    title: "Resenärer på en fiktiv färjelinje per månad, 2023 och 2024",
+    parts: [
+      {
+        kind: "line",
+        title: "Diagram. Antal resenärer (tusental)",
+        categories: ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"],
+        series: [
+          { name: "2023", values: [40, 38, 45, 55, 70, 110, 150, 120, 75, 60, 45, 52] },
+          { name: "2024", values: [44, 40, 50, 52, 84, 121, 156, 138, 72, 63, 50, 54] },
+        ],
+        axis: { max: 160, step: 40 },
+      },
+    ],
+  },
+  // ovn-dtk-071–073
+  a2ff5z: {
+    title: "Personbilar i ett fiktivt land efter drivmedel, 2019 och 2024",
+    parts: [
+      {
+        kind: "table",
+        title: "Tabell 1. Antal personbilar i trafik vid årets slut (tusental)",
+        head: ["Drivmedel", "2019", "2024"],
+        rows: [
+          ["Bensin", "2 600", "2 300"],
+          ["Diesel", "1 500", "1 400"],
+          ["El", "40", "360"],
+          ["Laddhybrid", "60", "240"],
+          ["Övriga", "100", "100"],
+          ["Totalt", "4 300", "4 400"],
+        ],
+        totalRow: true,
+      },
+      {
+        kind: "table",
+        title: "Tabell 2. Nyregistrerade personbilar år 2024 efter drivmedel (procent)",
+        head: ["Drivmedel", "Procent"],
+        rows: [
+          ["Bensin", "25"],
+          ["Diesel", "10"],
+          ["El", "40"],
+          ["Laddhybrid", "20"],
+          ["Övriga", "5"],
+        ],
+      },
+      { kind: "note", text: "Anm.: År 2024 nyregistrerades totalt 280 000 personbilar." },
+    ],
+  },
+  // ovn-dtk-074–076
+  ewfob8: {
+    title: "Hushållsavfall i fyra fiktiva kommuner, 2024",
+    parts: [
+      {
+        kind: "columns",
+        title: "Diagram. Hushållsavfall per invånare efter behandlingsmetod (kg)",
+        categories: ["Kommun A", "Kommun B", "Kommun C", "Kommun D"],
+        series: [
+          { name: "Materialåtervinning", values: [160, 200, 140, 180] },
+          { name: "Biologisk behandling", values: [60, 100, 40, 90] },
+          { name: "Energiåtervinning", values: [220, 180, 260, 150] },
+        ],
+        axis: { max: 300, step: 50 },
+      },
+      {
+        kind: "table",
+        title: "Tabell. Antal invånare",
+        head: ["Kommun", "Invånare"],
+        rows: [
+          ["Kommun A", "50 000"],
+          ["Kommun B", "20 000"],
+          ["Kommun C", "80 000"],
+          ["Kommun D", "30 000"],
+        ],
+      },
+      {
+        kind: "note",
+        text: "Anm.: Allt hushållsavfall behandlades med någon av de tre metoderna.",
+      },
+    ],
+  },
+  // ovn-dtk-077–078
+  "6n7uy9": {
+    title: "Befolkningen i en fiktiv kommun efter ålder och kön, 2024",
+    parts: [
+      {
+        kind: "bars",
+        title: "Diagram. Antal invånare efter åldersgrupp och kön",
+        categories: ["0–19 år", "20–39 år", "40–59 år", "60–79 år", "80 år och äldre"],
+        series: [
+          { name: "Kvinnor", values: [3400, 3000, 3600, 3200, 800] },
+          { name: "Män", values: [3600, 3400, 3700, 2900, 400] },
+        ],
+        axis: { max: 4000, step: 1000 },
+      },
+    ],
+  },
+  // ovn-dtk-079–080
+  "4tntlm": {
+    title: "Biljettförsäljning på en fiktiv teater, 2023 och 2024",
+    parts: [
+      {
+        kind: "table",
+        title: "Tabell 1. Biljettpris (kronor)",
+        head: ["Biljett", "2023", "2024"],
+        rows: [
+          ["Ordinarie", "400", "450"],
+          ["Student", "250", "250"],
+          ["Pensionär", "300", "320"],
+        ],
+      },
+      {
+        kind: "table",
+        title: "Tabell 2. Antal sålda biljetter",
+        head: ["Biljett", "2023", "2024"],
+        rows: [
+          ["Ordinarie", "18 000", "16 000"],
+          ["Student", "6 000", "9 000"],
+          ["Pensionär", "8 000", "7 500"],
+        ],
+      },
     ],
   },
 };
