@@ -1,4 +1,14 @@
 import { createClient } from "@supabase/supabase-js";
+import type {
+  AdminApplication,
+  AuditEntry,
+  ExpertDirectoryEntry,
+  ExpertProfileRow,
+  ExpertSearchRow,
+  MyApplication,
+  QueueRow,
+  StaffMember,
+} from "@/lib/studiehjalp/types";
 
 /**
  * Typad vy över public-schemat (user_state). Den här supabase-js-versionen
@@ -517,6 +527,65 @@ export type Database = {
         };
         Relationships: [];
       };
+      staff_roles: {
+        Row: { user_id: string; role: string; granted_by: string | null; granted_at: string };
+        Insert: never;
+        Update: never;
+        Relationships: [];
+      };
+      feature_flags: {
+        Row: { key: string; mode: "off" | "staff" | "on"; note: string; updated_by: string | null; updated_at: string };
+        Insert: never;
+        Update: never;
+        Relationships: [];
+      };
+      expert_applications: {
+        Row: {
+          id: string;
+          user_id: string;
+          track: "hp" | "teacher";
+          status: "draft" | "submitted" | "needs_completion" | "approved" | "rejected" | "blocked";
+          legal_name: string;
+          claimed_total: number | null;
+          claimed_test: string;
+          teacher_subjects: string;
+          message: string;
+          adult_confirmed: boolean;
+          consent_at: string | null;
+          created_at: string;
+          updated_at: string;
+          submitted_at: string | null;
+          decided_at: string | null;
+        };
+        Insert: never;
+        Update: never;
+        Relationships: [];
+      };
+      expert_documents: {
+        Row: {
+          id: string;
+          application_id: string;
+          user_id: string;
+          kind: "hp_result" | "teacher_license" | "identity" | "other";
+          storage_path: string;
+          file_name: string;
+          mime: string;
+          size_bytes: number;
+          status: "pending" | "uploaded";
+          created_at: string;
+          delete_after: string | null;
+          deleted_at: string | null;
+        };
+        Insert: never;
+        Update: { status?: "pending" | "uploaded"; deleted_at?: string | null };
+        Relationships: [];
+      };
+      expert_profiles: {
+        Row: ExpertProfileRow;
+        Insert: never;
+        Update: never;
+        Relationships: [];
+      };
     };
     Views: {
       duel_public_profiles: {
@@ -752,6 +821,118 @@ export type Database = {
         };
         Returns: string;
       };
+      has_role: { Args: { p_role: string }; Returns: boolean };
+      is_staff: { Args: Record<string, never>; Returns: boolean };
+      flag_enabled: { Args: { p_key: string }; Returns: boolean };
+      studiehjalp_access: {
+        Args: Record<string, never>;
+        Returns: { flags: Record<string, boolean>; roles: string[] }[];
+      };
+      expert_application_start: { Args: { p_track: string }; Returns: string };
+      expert_application_save: {
+        Args: {
+          p_application_id: string;
+          p_legal_name: string;
+          p_claimed_total: number | null;
+          p_claimed_test: string;
+          p_teacher_subjects: string;
+          p_message: string;
+          p_adult_confirmed: boolean;
+        };
+        Returns: null;
+      };
+      expert_application_submit: {
+        Args: { p_application_id: string; p_consent: boolean };
+        Returns: null;
+      };
+      expert_application_mine: { Args: Record<string, never>; Returns: MyApplication[] };
+      expert_document_begin: {
+        Args: {
+          p_application_id: string;
+          p_kind: string;
+          p_file_name: string;
+          p_mime: string;
+          p_size: number;
+        };
+        Returns: { id: string; storage_path: string }[];
+      };
+      expert_document_remove: { Args: { p_document_id: string }; Returns: string };
+      expert_document_confirmable: {
+        Args: { p_document_id: string };
+        Returns: { storage_path: string; mime: string; size_bytes: number }[];
+      };
+      expert_application_withdraw: { Args: { p_application_id: string }; Returns: string[] };
+      expert_storage_orphans: { Args: { p_limit?: number }; Returns: { name: string }[] };
+      admin_flags: {
+        Args: Record<string, never>;
+        Returns: { key: string; mode: "off" | "staff" | "on"; note: string; updated_at: string }[];
+      };
+      expert_queue: { Args: { p_status?: string }; Returns: QueueRow[] };
+      expert_application_admin: { Args: { p_application_id: string }; Returns: AdminApplication };
+      expert_application_decide: {
+        Args: {
+          p_application_id: string;
+          p_decision: string;
+          p_check_type: string | null;
+          p_verified_total: number | null;
+          p_verified_test: string;
+          p_verified_subjects: string;
+          p_identity_checked: boolean;
+          p_source_ref: string;
+          p_reason: string;
+        };
+        Returns: null;
+      };
+      expert_document_open: { Args: { p_document_id: string }; Returns: string };
+      expert_documents_due: {
+        Args: { p_limit?: number };
+        Returns: { id: string; storage_path: string }[];
+      };
+      expert_documents_mark_deleted: { Args: { p_ids: string[] }; Returns: number };
+      expert_profile_mine: {
+        Args: Record<string, never>;
+        Returns: { profile: ExpertProfileRow | null; approved: boolean };
+      };
+      expert_profile_save: {
+        Args: {
+          p_display_name: string;
+          p_headline: string;
+          p_bio: string;
+          p_method: string;
+          p_experience: string;
+          p_subtests: string[];
+          p_languages: string[];
+          p_formats: string[];
+          p_city: string;
+          p_price_30: number | null;
+          p_price_60: number | null;
+          p_price_90: number | null;
+          p_free_consultation: boolean;
+          p_show_hp_score: boolean;
+        };
+        Returns: null;
+      };
+      expert_profile_publish: { Args: { p_published: boolean }; Returns: null };
+      expert_directory: { Args: { p_public_id?: string | null }; Returns: ExpertDirectoryEntry[] };
+      expert_search: {
+        Args: {
+          p_subtest?: string | null;
+          p_format?: string | null;
+          p_language?: string | null;
+          p_max_price?: number | null;
+          p_min_hp?: number | null;
+          p_query?: string | null;
+          p_sort?: string;
+          p_limit?: number;
+          p_offset?: number;
+        };
+        Returns: ExpertSearchRow[];
+      };
+      admin_staff_list: { Args: Record<string, never>; Returns: StaffMember[] };
+      admin_grant_role: { Args: { p_email: string; p_role: string }; Returns: string };
+      admin_revoke_role: { Args: { p_user_id: string; p_role: string }; Returns: null };
+      admin_set_flag: { Args: { p_key: string; p_mode: string }; Returns: null };
+      admin_audit_recent: { Args: { p_limit?: number }; Returns: AuditEntry[] };
     };
   };
 };

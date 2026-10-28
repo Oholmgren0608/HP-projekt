@@ -12,12 +12,14 @@ import {
   ClipboardCheck,
   FileText,
   Gauge,
+  GraduationCap,
   Layers,
   Library,
   Lightbulb,
   LogOut,
   MessagesSquare,
   Moon,
+  ShieldCheck,
   Sun,
   Swords,
   User,
@@ -26,6 +28,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useAuth } from "@/lib/supabase/auth-context";
+import { useStudiehjalpAccess } from "@/lib/studiehjalp/access";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
 import { LoginPanel } from "@/components/auth/login-panel";
 import { PasswordRecoveryPrompt } from "@/components/auth/password-recovery-prompt";
@@ -37,6 +40,7 @@ import { cn } from "@/lib/utils";
 
 function AuthCluster({ placement }: { placement: "sidebar" | "bar" }) {
   const { user, loading, username, signOut } = useAuth();
+  const studiehjalp = useStudiehjalpAccess();
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -89,6 +93,12 @@ function AuthCluster({ placement }: { placement: "sidebar" | "bar" }) {
               <ClipboardCheck size={16} className="text-[var(--ink-muted)]" aria-hidden />
               Granska
             </Link>
+            {studiehjalp.isStaff ? (
+              <Link href="/studiehjalp/admin" onClick={() => setOpen(false)} role="menuitem" className={itemClass}>
+                <ShieldCheck size={16} className="text-[var(--ink-muted)]" aria-hidden />
+                Studiehjälp-admin
+              </Link>
+            ) : null}
             <div className="my-1.5 h-px bg-[var(--line)]" />
             <button type="button" onClick={() => void signOut()} role="menuitem" className={itemClass}>
               <LogOut size={16} className="text-[var(--ink-muted)]" aria-hidden />
@@ -185,6 +195,16 @@ const NAV: readonly (NavLeaf | NavGroup)[] = [
   { href: "/tips", label: "Tips", icon: Lightbulb },
 ];
 
+const STUDIEHJALP: NavLeaf = { href: "/studiehjalp", label: "Studiehjälp", icon: GraduationCap };
+
+/** Menyn, med Studiehjälp efter Forum när flaggan är påslagen för användaren. */
+function useNavItems(): readonly (NavLeaf | NavGroup)[] {
+  const access = useStudiehjalpAccess();
+  if (!access.hasFlag("studiehjalp")) return NAV;
+  const forum = NAV.findIndex((item) => "href" in item && item.href === "/forum");
+  return [...NAV.slice(0, forum + 1), STUDIEHJALP, ...NAV.slice(forum + 1)];
+}
+
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -230,7 +250,7 @@ function Wordmark() {
 const NAV_ITEM =
   "flex h-9 w-full items-center gap-2.5 rounded-md px-2.5 text-sm font-medium transition-colors";
 
-function SidebarNav({ pathname }: { pathname: string }) {
+function SidebarNav({ pathname, items }: { pathname: string; items: readonly (NavLeaf | NavGroup)[] }) {
   const link = (item: NavLeaf) => {
     const Icon = item.icon;
     const active = isActive(pathname, item.href);
@@ -259,7 +279,7 @@ function SidebarNav({ pathname }: { pathname: string }) {
   return (
     <nav className="flex flex-col gap-0.5" aria-label="Huvudmeny">
       {link(HOME)}
-      {NAV.map((item) =>
+      {items.map((item) =>
         "children" in item ? (
           <div key={item.label} className="mt-5 flex flex-col gap-0.5">
             <p className="px-2.5 pb-1 text-[13px] text-[var(--ink-muted)]">{item.label}</p>
@@ -333,6 +353,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const { resolvedTheme, toggleTheme, sound, setSound } = usePreferences();
   const mounted = useHydrated();
+  const navItems = useNavItems();
 
   const soundLabel = !mounted ? "Ljud" : sound ? "Stäng av ljud" : "Sätt på ljud";
   const themeLabel = !mounted ? "Tema" : resolvedTheme === "dark" ? "Ljust läge" : "Mörkt läge";
@@ -347,7 +368,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <Wordmark />
         </div>
         <div className="flex-1 overflow-y-auto px-3 py-3">
-          <SidebarNav pathname={pathname} />
+          <SidebarNav pathname={pathname} items={navItems} />
         </div>
         <div className="flex flex-col gap-1 border-t border-[var(--line)] p-3">
           <div className="flex items-center gap-1">
@@ -417,8 +438,8 @@ export function AppShell({ children }: { children: ReactNode }) {
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
         aria-label="Huvudmeny"
       >
-        <ul className="mx-auto grid max-w-md grid-cols-4">
-          {NAV.map((item) => {
+        <ul className={cn("mx-auto grid max-w-md", navItems.length > 4 ? "grid-cols-5" : "grid-cols-4")}>
+          {navItems.map((item) => {
             if ("children" in item) {
               return <MobileGroup key={item.label} item={item} pathname={pathname} />;
             }

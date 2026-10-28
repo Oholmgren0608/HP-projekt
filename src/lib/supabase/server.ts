@@ -105,3 +105,19 @@ export async function verifyUser(accessToken: string): Promise<string | null> {
     return null;
   }
 }
+
+/**
+ * Supabase-klient som agerar som användaren bakom access-token (anon-nyckel +
+ * användarens JWT). RPC:er körs då med användarens auth.uid(), så rollkontroller
+ * och RLS i databasen gäller. Används av server actions som först verifierat
+ * token med `verifyUser`.
+ */
+export function createUserClient(accessToken: string): AdminClient | null {
+  const url = serverUrl();
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !anonKey || !accessToken) return null;
+  return createClient<Database>(url, anonKey, {
+    auth: { persistSession: false, autoRefreshToken: false },
+    global: { headers: { Authorization: `Bearer ${accessToken}` } },
+  });
+}

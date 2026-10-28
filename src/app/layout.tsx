@@ -3,6 +3,7 @@ import { IBM_Plex_Sans } from "next/font/google";
 import { AppShell } from "@/components/app-shell";
 import { PlanProvider } from "@/components/plan-context";
 import { AuthProvider } from "@/lib/supabase/auth-context";
+import { StudiehjalpAccessProvider } from "@/lib/studiehjalp/access";
 import { PreferencesProvider } from "@/lib/preferences";
 import { GamificationProvider } from "@/lib/gamification/provider";
 import { CelebrationLayer } from "@/components/gamification/celebration-layer";
@@ -102,12 +103,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col font-sans">
         <PreferencesProvider>
           <AuthProvider>
-            <GamificationProvider>
-              <PlanProvider>
-                <AppShell>{children}</AppShell>
-                <CelebrationLayer />
-              </PlanProvider>
-            </GamificationProvider>
+            <StudiehjalpAccessProvider>
+              <GamificationProvider>
+                <PlanProvider>
+                  <AppShell>{children}</AppShell>
+                  <CelebrationLayer />
+                </PlanProvider>
+              </GamificationProvider>
+            </StudiehjalpAccessProvider>
           </AuthProvider>
         </PreferencesProvider>
       </body>

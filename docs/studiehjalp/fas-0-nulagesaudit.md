@@ -6,6 +6,8 @@ Inte granskat: Vercel-projektets inställningar och miljövariabler, Supabase-pr
 
 Specen kräver i Fas 0 att den här rapporten levereras innan skarpa produktionsmigreringar görs (§9.1, §10 Fas 0). Inget i Studiehjälp är byggt än.
 
+> **Uppdatering 2026-10-28:** besluten i §4 är fattade och Fas 1 (steg 1a–1c, utom entitlement-lagret) är byggd i migration `0029`. Se [fas-1-experter.md](fas-1-experter.md).
+
 ---
 
 ## 1. Sammanfattning
@@ -128,6 +130,8 @@ Inget av detta finns: ingen betaltjänst (Stripe, Klarna, Swish), inga priser el
 
 ## 4. Beslut som behövs från produktägaren
 
+*Besvarade 2026-10-28 – svaren står i [fas-1-experter.md](fas-1-experter.md#beslut-oscar-2026-10-28).*
+
 1. **Abonnemangen.** Finns de tre nivåerna någon annanstans, med beslutade namn och priser? Om inte: ska de byggas nu (betaltjänst, priser, moms, villkor) eller senare?
    - *Rekommendation:* bygg Fas 1 nu, eftersom den inte beror på abonnemangen. Ta abonnemangen som ett eget projekt.
 2. **Forumspärren.** Ska det öppna forumet verkligen låsas till nivå 3, och i så fall från vilket datum? Behåller befintliga skribenter åtkomst?
@@ -210,6 +214,8 @@ Inget av detta finns: ingen betaltjänst (Stripe, Klarna, Swish), inga priser el
 | **3** | Videor och guider, spelare, sök, rankning | Beslut 9; annonser kräver beslut 3 |
 | **4** | Creator-potter, ledger, avräkning, utbetalningar | Fas 2–3 och verklig intäkt |
 | **–** | Abonnemangen (nivå 2 och 3), forumspärren | Beslut 1–2 |
+
+Status 2026-10-28: 1a–1c är klara i `0029`. Entitlement-lagret i 1a skjuts upp till abonnemangen (beslut 1). Steg 0b väntar på klartecken.
 
 ## 7. Migrations- och rollbackplan
 - Varje steg är en egen numrerad migration. Varje migration testas i PGlite mot hela kedjan `0001`–`00NN` innan den körs, enligt samma rutin som `0017`–`0028`.

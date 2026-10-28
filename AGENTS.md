@@ -37,8 +37,8 @@ frontend/backend split, Express server, or Prisma layer.
 **Trigger:** Apply when editing `supabase/migrations` or `src/lib/supabase`.
 
 - Make schema changes as new numbered SQL migrations in `supabase/migrations`
-  (next is `0029_<name>.sql`). Never edit already-applied migrations
-  (`npm run db -- migration list` shows which ones are; `0001`–`0028` are).
+  (next is `0030_<name>.sql`). Never edit already-applied migrations
+  (`npm run db -- migration list` shows which ones are; `0001`–`0029` are).
 - Apply migrations with the Supabase CLI via the wrapper in `scripts/db.ts`
   (`npm run db:dry` först, sedan `npm run db:push`). Den läser
   `SUPABASE_DB_PASSWORD` och `SUPABASE_POOLER_URL` ur `.env.local` och skriver
@@ -87,6 +87,14 @@ The dev server runs on `http://127.0.0.1:43123` (`npm run dev`).
 - Provfrågor (rows with `exam_id` or an `hp-…` id, imported from UHR's exams)
   are copyrighted: they may only be used as templates (Förlagor) and must never
   be published or shown to users. The database enforces this from `0017`.
+- Studiehjälp (`/studiehjalp`, `0029`) is gated by `feature_flags`
+  (`off`/`staff`/`on`) and `staff_roles`; it is a staff-only pilot until the
+  privacy texts exist. Expert documents live in the private
+  `expert-documents` bucket, are reached only through signed URLs from
+  `src/app/studiehjalp/actions.ts`, and are purged by the Vercel cron
+  `/api/cron/studiehjalp-purge` (needs `CRON_SECRET`). Badges are derived from
+  review decisions — never claim BankID or a register check that did not
+  happen. See `docs/studiehjalp/`.
 - `src/lib/sync/storage-sync.ts` is a drop-in replacement for
   `localStorage.getItem/setItem` and handles the cloud merge on login.
 - Swedish user-facing copy and identifiers (`delprov`, `veckoplan`, `nivatest`,
