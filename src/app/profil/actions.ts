@@ -11,11 +11,12 @@ export type DeleteAccountResult =
 /**
  * Raderar den inloggade användarens konto (inkl. alla relaterade rader).
  *
- * Alla user_id-främmandenycklar i public-schemat (user_state,
- * player_profiles, duel_matches.player_a/player_b, duel_answers,
- * duel_queue, duel_reviews.reviewer_id/target_user) har redan
- * ON DELETE CASCADE mot auth.users, så `auth.admin.deleteUser` räcker för
- * databasen. Filer i Storage (expertansökningarnas underlag) raderas först.
+ * Användarens rader i public-schemat (user_state, player_profiles,
+ * duel_matches.player_a/player_b, duel_answers, duel_queue,
+ * duel_reviews.reviewer_id/target_user m.fl.) har ON DELETE CASCADE mot
+ * auth.users, så `auth.admin.deleteUser` räcker för databasen. Foruminläggen
+ * raderas inte utan anonymiseras (0030), så att andras svar finns kvar.
+ * Filer i Storage (expertansökningarnas underlag) raderas först.
  */
 export async function deleteAccount(
   accessToken: string,

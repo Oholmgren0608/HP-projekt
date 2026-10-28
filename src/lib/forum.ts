@@ -43,7 +43,8 @@ export type ForumThreadMeta = {
 export type ForumPost = {
   id: string;
   parent_id: string | null;
-  author_id: string;
+  /** null när författaren har raderat sitt konto (inlägget är då anonymiserat). */
+  author_id: string | null;
   author_name: string;
   body: string;
   created_at: string;

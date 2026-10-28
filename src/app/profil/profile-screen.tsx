@@ -393,7 +393,7 @@ export function ProfileScreen() {
   async function handleDeleteAccount() {
     if (
       !window.confirm(
-        "Är du säker på att du vill radera ditt konto? All statistik och all matchhistorik raderas permanent. Det går inte att ångra.",
+        "Är du säker på att du vill radera ditt konto? All statistik och all matchhistorik raderas permanent, och texten i dina foruminlägg tas bort (andras svar finns kvar). Det går inte att ångra.",
       )
     ) {
       return;

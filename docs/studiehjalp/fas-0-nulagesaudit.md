@@ -103,6 +103,9 @@ Inget av detta finns: ingen betaltjänst (Stripe, Klarna, Swish), inga priser el
 - **Konto:** användaren kan radera sitt konto själv från `/profil`.
 
 ### 2.10 Fel i befintlig funktion
+
+*Rättat 2026-10-28 i `0030_forum_kontoradering.sql`: inläggen anonymiseras i stället för att raderas, och andras svar finns kvar.*
+
 - **Kontoradering raderar andras forumsvar.** `forum_posts.author_id` har `on delete cascade` mot `auth.users`, och `parent_id` har `on delete cascade` mot `forum_posts` (`0012`, rad 37–38). När någon raderar sitt konto försvinner därför alla svar som andra har skrivit på den personens inlägg.
   - Det strider mot specens krav att forumets gamla diskussioner ska finnas kvar (§10).
   - Föreslagen rättelse, i en egen liten migration:
@@ -215,7 +218,7 @@ Inget av detta finns: ingen betaltjänst (Stripe, Klarna, Swish), inga priser el
 | **4** | Creator-potter, ledger, avräkning, utbetalningar | Fas 2–3 och verklig intäkt |
 | **–** | Abonnemangen (nivå 2 och 3), forumspärren | Beslut 1–2 |
 
-Status 2026-10-28: 1a–1c är klara i `0029`. Entitlement-lagret i 1a skjuts upp till abonnemangen (beslut 1). Steg 0b väntar på klartecken.
+Status 2026-10-28: 1a–1c är klara i `0029`. Entitlement-lagret i 1a skjuts upp till abonnemangen (beslut 1). Steg 0b är klart i `0030`.
 
 ## 7. Migrations- och rollbackplan
 - Varje steg är en egen numrerad migration. Varje migration testas i PGlite mot hela kedjan `0001`–`00NN` innan den körs, enligt samma rutin som `0017`–`0028`.

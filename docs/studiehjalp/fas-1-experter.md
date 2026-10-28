@@ -108,4 +108,3 @@ Slå sedan på `experts_public` och `studiehjalp` först. `experts_apply` öppna
 - BankID (beslut 5).
 - Fas 2, bokning och betalning, väntar på bolaget (beslut 8).
 - Fas 3, video, väntar på leverantör (beslut 9).
-- Kontoraderingsfelet i forumet (auditen 2.10) är inte rättat än.

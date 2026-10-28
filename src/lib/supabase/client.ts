@@ -394,7 +394,7 @@ export type Database = {
           id: string;
           thread_id: string;
           parent_id: string | null;
-          author_id: string;
+          author_id: string | null;
           body: string;
           created_at: string;
           is_best: boolean;
@@ -407,7 +407,7 @@ export type Database = {
           id?: string;
           thread_id: string;
           parent_id?: string | null;
-          author_id: string;
+          author_id?: string | null;
           body: string;
           created_at?: string;
           is_best?: boolean;
@@ -741,7 +741,7 @@ export type Database = {
         Returns: {
           id: string;
           parent_id: string | null;
-          author_id: string;
+          author_id: string | null;
           author_name: string;
           body: string;
           created_at: string;
