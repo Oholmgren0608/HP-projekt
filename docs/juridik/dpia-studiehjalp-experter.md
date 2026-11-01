@@ -143,7 +143,7 @@ Ingen kvarstående risk är hög, så något förhandssamråd med IMY behövs in
 | A3 | Inför gallring av ansökningsuppgifter. Förslag:<ul><li>Avslagna och tillbakadragna ansökningar: namn, resultat och meddelande raderas 12 månader efter beslutet.</li><li>Utkast som inte har ändrats på 6 månader raderas.</li><li>Godkända ansökningar sparas så länge experten är aktiv.</li></ul> | Beslutat av Oscar 2026-11-01, även för ansökningar som väntar på komplettering. Spärrade ansökningar sparas. | **Klar** i `0031` |
 | A4 | Revisionsloggen sparas i 24 månader och gallras automatiskt. | Beslutat av Oscar 2026-11-01 | **Klar** i `0031` |
 | A5 | Rutin för granskare: inga nedladdningar till egen dator, inga skärmdumpar, granskning bara på en egen och låst enhet. Skriftlig sekretessförbindelse för varje granskare. | Oscar | **Ja** |
-| A6 | Godkänn personuppgiftsbiträdesavtal (DPA) med Supabase och Vercel, och spara kopior. | Oscar | **Ja** |
+| A6 | Godkänn personuppgiftsbiträdesavtal (DPA) med Supabase och Vercel, och spara kopior. Steg för steg: [`a6-personuppgiftsbitraden.md`](a6-personuppgiftsbitraden.md). Vercels DPA kräver Pro-plan. | Oscar | **Ja** |
 | A7 | Slå på "Confirm email" i Supabase Auth och sätt `CRON_SECRET` i Vercel. Kontrollera i Vercels logg att gallringsjobbet går utan fel. | Oscar | **Ja** |
 | A8 | Rutin för personuppgiftsincidenter: vem som gör vad, och anmälan till IMY inom 72 timmar. | Oscar | **Ja** |
 | A9 | Rutin för registerutdrag och dataportabilitet: svar inom en månad. | Oscar | Ja |

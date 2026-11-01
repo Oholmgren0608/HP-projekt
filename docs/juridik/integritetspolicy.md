@@ -92,8 +92,8 @@ Vi säljer aldrig dina uppgifter. Vi använder följande leverantörer, som beha
 
 | Leverantör | Vad | Var |
 |---|---|---|
-| Supabase Inc. | Databas, inloggning, lagring av filer, e-post vid inloggning och lösenordsåterställning | Data lagras inom EU (Irland). Supabase är ett amerikanskt bolag. Överföring utanför EU skyddas av EU-kommissionens standardavtalsklausuler. [**Kontrollera:** att Supabases personuppgiftsbiträdesavtal (DPA) är accepterat för projektet] |
-| Vercel Inc. | Webbhotell, serverfunktioner och schemalagda jobb. Tar emot IP-adress och teknisk information när du besöker sidan. | USA och EU. Vercel omfattas av EU–US Data Privacy Framework och standardavtalsklausuler. [**Kontrollera:** Vercels DPA och vilken region funktionerna körs i] |
+| Supabase Pte. Ltd. (Singapore, del av amerikanska Supabase Inc.) | Databas, inloggning, lagring av filer, e-post vid inloggning och lösenordsåterställning | Data lagras inom EU (Irland). Överföring utanför EU skyddas av EU-kommissionens standardavtalsklausuler, som ingår i Supabases personuppgiftsbiträdesavtal. [**Kontrollera:** se `a6-personuppgiftsbitraden.md`] |
+| Vercel Inc. | Webbhotell, serverfunktioner och schemalagda jobb. Tar emot IP-adress och teknisk information när du besöker sidan. | USA och EU. Vercel omfattas av EU–US Data Privacy Framework och standardavtalsklausuler. [**Kontrollera:** gäller bara på Vercels Pro-plan, se `a6-personuppgiftsbitraden.md`] |
 
 Om du väljer att logga in med Google får vi ditt namn, din e-postadress och eventuellt din profilbild från Google. Google behandlar då uppgifter enligt sin egen integritetspolicy.
 

@@ -268,10 +268,10 @@ export default function IntegritetspolicyPage() {
         <Rows
           rows={[
             {
-              title: "Supabase Inc.",
+              title: "Supabase Pte. Ltd. (Singapore, del av amerikanska Supabase Inc.)",
               fields: [
                 ["Vad", "Databas, inloggning, lagring av filer, e-post vid inloggning och lösenordsåterställning"],
-                ["Var", "Data lagras inom EU (Irland). Supabase är ett amerikanskt bolag, och överföring utanför EU skyddas av EU-kommissionens standardavtalsklausuler."],
+                ["Var", "Data lagras inom EU (Irland). Överföring utanför EU skyddas av EU-kommissionens standardavtalsklausuler, som ingår i Supabases personuppgiftsbiträdesavtal."],
               ],
             },
             {
