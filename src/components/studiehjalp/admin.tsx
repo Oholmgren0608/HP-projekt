@@ -671,6 +671,7 @@ const ACTION_LABEL: Record<string, string> = {
   expert_decision: "Beslut om expertansökan",
   document_viewed: "Dokument öppnat",
   documents_purged: "Underlag gallrade",
+  retention_purged: "Gamla ansökningar och logg gallrade",
   role_granted: "Roll given",
   role_revoked: "Roll borttagen",
   flag_changed: "Flagga ändrad",

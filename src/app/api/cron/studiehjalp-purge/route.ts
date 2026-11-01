@@ -5,6 +5,9 @@ import { createAdminClient } from "@/lib/supabase/server";
  * Schemalagd gallring av Studiehjälps underlag (Vercel Cron, se vercel.json):
  * filer vars lagringstid har gått ut (30 dagar efter beslut, högst 90 dagar),
  * uppladdningar som aldrig bekräftades och filer i bucketen som saknar en rad.
+ * Därefter gamla ansökningar och revisionsloggen (0031): avslagna och
+ * tillbakadragna efter 12 månader, orörda utkast efter 6 månader, loggen
+ * efter 24 månader.
  *
  * Kräver miljövariabeln CRON_SECRET; Vercel skickar den som Bearer-token.
  * Utan den svarar routen 503 och gör ingenting.
@@ -47,5 +50,15 @@ export async function GET(request: Request) {
     if (removed.error) return Response.json({ error: removed.error.message, purged }, { status: 500 });
   }
 
-  return Response.json({ purged, orphansRemoved: names.length });
+  const retention = await admin.rpc("expert_retention_purge");
+  if (retention.error) {
+    return Response.json({ error: retention.error.message, purged, orphansRemoved: names.length }, { status: 500 });
+  }
+
+  return Response.json({
+    purged,
+    orphansRemoved: names.length,
+    applicationsRemoved: retention.data?.applications ?? 0,
+    auditLogRowsRemoved: retention.data?.audit_log_rows ?? 0,
+  });
 }

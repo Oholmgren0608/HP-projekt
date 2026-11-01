@@ -79,9 +79,9 @@ Ditt konto-id och din e-postadress visas aldrig.
 | Konto, profil, studiedata, dueller och topplistor | Så länge du har kontot. Raderas när du tar bort kontot. |
 | Foruminlägg | Tills du tar bort inlägget eller kontot. När kontot tas bort raderas texten och inlägget visas som "Raderat konto", så att andras svar i tråden finns kvar. |
 | Underlag i expertansökan | Högst 90 dagar, högst 30 dagar efter beslut, och direkt om du drar tillbaka ansökan |
-| Övriga uppgifter i expertansökan och granskningsbeslut | Så länge du har kontot [**Kontrollera:** se DPIA, åtgärd A3] |
+| Övriga uppgifter i expertansökan och granskningsbeslut | Avslagna och tillbakadragna ansökningar: 12 månader efter beslutet. Utkast och ansökningar som väntar på komplettering: 6 månader efter senaste ändringen. Godkända och spärrade ansökningar: så länge du har kontot. |
 | Önskemål och felrapporter | Tills ärendet är avslutat. När du tar bort kontot kopplas rapporten bort från dig, men texten sparas. |
-| Logg över administrativa åtgärder | [**Kontrollera:** se DPIA, åtgärd A4] |
+| Logg över administrativa åtgärder, t.ex. vem som har öppnat ett dokument | 24 månader |
 | Tekniska loggar hos våra leverantörer | Enligt leverantörens rutiner, normalt några dagar till några veckor |
 
 Du tar själv bort ditt konto på profilsidan under "Ta bort konto".

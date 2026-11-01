@@ -59,10 +59,10 @@ Resten av appen bedöms inte kräva en DPIA: konto, övning, dueller och forum. 
 
 | Uppgift | Var | Lagringstid i dag |
 |---|---|---|
-| Namn enligt handlingar, uppgivet resultat och provtillfälle, lärarämnen, meddelande, åldersintyg, tidpunkt för samtycke | `expert_applications` | Så länge kontot finns |
+| Namn enligt handlingar, uppgivet resultat och provtillfälle, lärarämnen, meddelande, åldersintyg, tidpunkt för samtycke | `expert_applications` | Avslagna och tillbakadragna: 12 månader efter beslutet. Utkast och kompletteringar: 6 månader utan ändring. Godkända och spärrade: så länge kontot finns (`0031`) |
 | Underlag: resultatbesked, legitimation eller registerutdrag, ID-handling | Privat bucket `expert-documents` och metadata i `expert_documents` | Högst 90 dagar, högst 30 dagar efter beslut, direkt vid tillbakadragande |
-| Beslut, kontrolltyp, verifierat resultat eller behörighet, källa, motivering, granskare | `expert_verification_reviews` | Så länge kontot finns |
-| Vem som öppnade vad och när | `admin_audit_log` | Ingen gräns i dag |
+| Beslut, kontrolltyp, verifierat resultat eller behörighet, källa, motivering, granskare | `expert_verification_reviews` | Som ansökan de hör till |
+| Vem som öppnade vad och när | `admin_audit_log` | 24 månader (`0031`) |
 | Publik profil och märken | `expert_profiles` | Tills experten avpublicerar eller tar bort kontot |
 
 Personnummer sparas aldrig i databasen, men kan synas i en uppladdad ID-handling.
@@ -84,8 +84,8 @@ Personnummer sparas aldrig i databasen, men kan synas i en uppladdad ID-handling
 |---|---|
 | Behövs uppgifterna för syftet? | Ja. Utan underlag går det inte att kontrollera ett resultat eller en legitimation. Utan ID-kontroll kan någon ladda upp en annan persons resultatbesked. |
 | Finns mindre ingripande alternativ? | BankID och en direkt kontroll mot UHR eller Skolverket vore bättre för integriteten, eftersom inga dokument då behöver sparas. Det är planerat men inte möjligt i piloten (beslut 5). Under tiden används manuell kontroll med kort lagringstid. |
-| Minimering | Personnummer sparas inte. Bara namn, resultat eller behörighet och beslut sparas strukturerat. Filerna raderas automatiskt. **Förbättring:** be sökande täcka över de fyra sista siffrorna i personnumret (åtgärd A1). |
-| Lagringsbegränsning | Underlagen gallras automatiskt. **Brist:** ansökningsuppgifter för avslagna och tillbakadragna ansökningar, samt loggen, saknar gallring (åtgärderna A3 och A4). |
+| Minimering | Personnummer sparas inte. Bara namn, resultat eller behörighet och beslut sparas strukturerat. Filerna raderas automatiskt. Vid ID-handlingen uppmanas sökanden att täcka över de fyra sista siffrorna i personnumret (A1, klar). |
+| Lagringsbegränsning | Underlagen, gamla ansökningar och loggen gallras automatiskt av det dagliga jobbet (A3 och A4, klara i `0031`). |
 | Korrekthet | Granskaren antecknar verifierat värde och källa. Sökanden kan komplettera, och ett beslut kan omprövas. |
 | Information till de registrerade | Integritetspolicyn, avsnitt 4. **Brist:** policyn är inte publicerad och länkas inte från ansökan (åtgärd A2). |
 | Rättigheter | Radering: dra tillbaka ansökan eller ta bort kontot (båda finns). Registerutdrag och dataportabilitet: via e-post (manuellt). |
@@ -129,7 +129,7 @@ Sannolikhet (S) och allvarlighet (A) bedöms som 1 = låg, 2 = medel och 3 = hö
 | R1, R2 | Låg. Dokumenten finns kvar högst 30 dagar efter beslut, åtkomsten loggas och är begränsad. |
 | R3 | Låg |
 | R4, R5, R6 | Låg till medel. Manuell kontroll kan göra fel, så risken minskar ytterligare med BankID och direkt registerkontroll längre fram. |
-| R7 | **Medel tills A3 och A4 är gjorda**, sedan låg. |
+| R7 | Låg (A3 och A4 är klara). |
 | R8, R9 | Låg |
 | R10 | **Medel tills A2 är gjord**, sedan låg. |
 
@@ -139,10 +139,10 @@ Ingen kvarstående risk är hög, så något förhandssamråd med IMY behövs in
 
 | # | Åtgärd | Vem | Krävs före `experts_apply = on`? |
 |---|---|---|---|
-| A1 | I ansökan: uppmana sökande att täcka över de fyra sista siffrorna i personnumret på ID-handlingen. | Utvecklare (liten ändring i ansökningsformuläret) | Rekommenderas |
+| A1 | I ansökan: uppmana sökande att täcka över de fyra sista siffrorna i personnumret på ID-handlingen. | Utvecklare | **Klar** 2026-11-01 |
 | A2 | Publicera integritetspolicyn och länka den från ansökan och från samtyckesrutan. | [ansvarig] + utvecklare | **Ja** |
-| A3 | Inför gallring av ansökningsuppgifter. Förslag:<ul><li>Avslagna och tillbakadragna ansökningar: namn, resultat och meddelande raderas 12 månader efter beslutet.</li><li>Utkast som inte har ändrats på 6 månader raderas.</li><li>Godkända ansökningar sparas så länge experten är aktiv.</li></ul> | [beslut], sedan utvecklare (migration + det dagliga jobbet) | **Ja** |
-| A4 | Bestäm lagringstid för revisionsloggen, till exempel 24 månader, och gallra automatiskt. | [beslut], sedan utvecklare | **Ja** |
+| A3 | Inför gallring av ansökningsuppgifter. Förslag:<ul><li>Avslagna och tillbakadragna ansökningar: namn, resultat och meddelande raderas 12 månader efter beslutet.</li><li>Utkast som inte har ändrats på 6 månader raderas.</li><li>Godkända ansökningar sparas så länge experten är aktiv.</li></ul> | Beslutat av Oscar 2026-11-01, även för ansökningar som väntar på komplettering. Spärrade ansökningar sparas. | **Klar** i `0031` |
+| A4 | Revisionsloggen sparas i 24 månader och gallras automatiskt. | Beslutat av Oscar 2026-11-01 | **Klar** i `0031` |
 | A5 | Rutin för granskare: inga nedladdningar till egen dator, inga skärmdumpar, granskning bara på en egen och låst enhet. Skriftlig sekretessförbindelse för varje granskare. | [ansvarig] | **Ja** |
 | A6 | Godkänn personuppgiftsbiträdesavtal (DPA) med Supabase och Vercel, och spara kopior. | [ansvarig] | **Ja** |
 | A7 | Slå på "Confirm email" i Supabase Auth och sätt `CRON_SECRET` i Vercel. Kontrollera i Vercels logg att gallringsjobbet går utan fel. | [ansvarig] | **Ja** |
@@ -159,6 +159,6 @@ Ingen kvarstående risk är hög, så något förhandssamråd med IMY behövs in
 ## 9. Beslut
 
 - [ ] Behandlingen får starta som pilot (bara för personalen), vilket gäller i dag.
-- [ ] Behandlingen får öppnas för alla när åtgärderna A2–A8 är genomförda.
+- [ ] Behandlingen får öppnas för alla när åtgärderna A2 och A5–A8 är genomförda.
 
 Namn, datum: ______________________

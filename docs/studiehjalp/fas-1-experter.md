@@ -74,6 +74,11 @@ Alla skrivningar går via `SECURITY DEFINER`-funktioner som kontrollerar `auth.u
   - Högst 90 dagar från uppladdning och högst 30 dagar efter beslut.
   - Om sökanden drar tillbaka ansökan raderas underlagen direkt.
   - Om kontot raderas tas filerna bort ur Storage först (`src/app/profil/actions.ts`).
+- **Gallring av ansökningar och logg (`0031`):**
+  - Avslagna och tillbakadragna ansökningar raderas 12 månader efter beslutet.
+  - Utkast och ansökningar som väntar på komplettering raderas efter 6 månader utan ändring.
+  - Revisionsloggen sparas i 24 månader.
+  - Gallringen körs av samma dagliga jobb via `expert_retention_purge()`.
 - **Endast 18 år och äldre:** sökanden måste intyga ålder och lämna samtycke för att kunna skicka in.
 
 ## Drift

@@ -407,8 +407,10 @@ function ApplicationEditor({ app, onChange }: { app: MyApplication; onChange: ()
         <PanelTitle>Underlag</PanelTitle>
         <p className="mt-2 text-sm text-[var(--ink-muted)]">
           PDF, JPEG eller PNG, högst 10 MB per fil. Underlagen sparas i ett privat arkiv som bara
-          granskare med särskild behörighet kan öppna, och raderas 30 dagar efter beslutet. Dölj gärna
-          de fyra sista siffrorna i personnumret. Vi ber aldrig om ditt lösenord eller din inloggning.
+          granskare med särskild behörighet kan öppna, och raderas 30 dagar efter beslutet (senast 90
+          dagar efter uppladdningen). Dölj gärna de fyra sista siffrorna i personnumret. Vi ber aldrig om
+          ditt lösenord eller din inloggning. Uppgifterna i en avslagen eller tillbakadragen ansökan
+          raderas efter 12 månader, och ett utkast som inte har ändrats på 6 månader raderas.
         </p>
         {app.track === "hp" ? (
           <p className="mt-2 text-sm text-[var(--ink-muted)]">
@@ -534,6 +536,12 @@ function DocumentSlot({
           Ladda upp
         </label>
       </div>
+      {kind === "identity" ? (
+        <p className="mt-1 text-xs text-[var(--ink-muted)]">
+          Namn, bild och födelsedatum ska synas. Täck över de fyra sista siffrorna i personnumret innan du
+          laddar upp – vi behöver dem inte.
+        </p>
+      ) : null}
       {docs.length > 0 ? (
         <ul className="mt-2 space-y-1">
           {docs.map((d) => (

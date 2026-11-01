@@ -863,6 +863,10 @@ export type Database = {
       };
       expert_application_withdraw: { Args: { p_application_id: string }; Returns: string[] };
       expert_storage_orphans: { Args: { p_limit?: number }; Returns: { name: string }[] };
+      expert_retention_purge: {
+        Args: Record<string, never>;
+        Returns: { applications: number; audit_log_rows: number };
+      };
       admin_flags: {
         Args: Record<string, never>;
         Returns: { key: string; mode: "off" | "staff" | "on"; note: string; updated_at: string }[];
