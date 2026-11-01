@@ -1,18 +1,18 @@
 # Integritetspolicy för HP Lift
 
-> **Utkast 2026-11-01. Ska inte publiceras än.**
-> Fyll i allt inom `[hakparentes]` och kontrollera punkterna som är märkta **Kontrollera**. Låt gärna en jurist läsa texten innan den publiceras.
-> Texten beskriver hur appen faktiskt fungerar den 1 november 2026 (migration `0030`). När något ändras måste policyn också uppdateras, till exempel annonser, betalning eller nya tjänster.
+> **Källtext för sidan `/integritetspolicy`** (`src/app/integritetspolicy/page.tsx`). Ändra båda samtidigt.
+> Texten beskriver hur appen faktiskt fungerar den 1 november 2026 (migration `0031`). När något ändras måste policyn också uppdateras, till exempel annonser, betalning eller nya tjänster.
+> Punkterna märkta **Kontrollera** är interna anteckningar och visas inte på sidan. Låt gärna en jurist läsa texten.
 
-**Senast uppdaterad:** [datum]
+**Senast uppdaterad:** 1 november 2026
 
 Den här policyn förklarar vilka personuppgifter HP Lift behandlar, varför vi gör det och vilka rättigheter du har.
 
 ## 1. Vem ansvarar för dina uppgifter?
 
-Personuppgiftsansvarig är [ditt fullständiga namn], [postadress]. Den som är personuppgiftsansvarig avgör hur och varför uppgifterna behandlas. När bolaget är bildat blir det i stället [bolagets namn och organisationsnummer], och då uppdaterar vi policyn.
+Personuppgiftsansvarig är Oscar Holmgren. Den som är personuppgiftsansvarig avgör hur och varför uppgifterna behandlas. När HP Lifts bolag är bildat tar det över ansvaret, och då uppdaterar vi policyn.
 
-Kontakt i frågor om personuppgifter: [e-postadress, t.ex. integritet@…]
+Kontakt i frågor om personuppgifter: oholmgren32@gmail.com
 
 ## 2. Använda appen utan konto
 
@@ -46,7 +46,7 @@ Studiehjälp är just nu en pilot. Bara du som är 18 år eller äldre kan ansö
 
 **Varför:** för att kontrollera att du uppfyller kraven och visa ärliga märken, till exempel "HP-resultat granskat" eller "Legitimerad lärare".
 
-**Rättslig grund:** ditt samtycke, som du lämnar när du skickar in ansökan. Du kan återkalla samtycket när du vill genom att dra tillbaka ansökan. Då raderas dina underlag direkt. Beslut som redan har fattats sparas så länge du har kontot. Vi har nämligen ett berättigat intresse av att kunna visa varför ett märke gavs.
+**Rättslig grund:** ditt samtycke, som du lämnar när du skickar in ansökan. Du kan återkalla samtycket när du vill genom att dra tillbaka ansökan. Då raderas dina underlag direkt. Beslut som redan har fattats sparas enligt avsnitt 6, eftersom vi har ett berättigat intresse av att kunna visa varför ett märke gavs.
 
 **Personnummer:** vi sparar aldrig personnummer i databasen. Om din ID-handling visar personnummer kan du täcka över de fyra sista siffrorna innan du laddar upp den. Vi behöver bara se ditt namn, din bild och ditt födelsedatum.
 
@@ -122,7 +122,7 @@ Du har rätt att:
 - återkalla ditt samtycke, till exempel genom att dra tillbaka en expertansökan,
 - begära att behandlingen begränsas.
 
-Kontakta oss på [e-postadress] för att använda dina rättigheter. Vi svarar inom en månad.
+Kontakta oss på oholmgren32@gmail.com för att använda dina rättigheter. Vi svarar inom en månad.
 
 Om du tycker att vi behandlar dina uppgifter fel kan du klaga hos Integritetsskyddsmyndigheten (IMY), www.imy.se.
 

@@ -448,9 +448,16 @@ function ApplicationEditor({ app, onChange }: { app: MyApplication; onChange: ()
             className="mt-0.5 size-4 accent-[var(--brand)]"
           />
           Jag samtycker till att HP Lift behandlar mina uppgifter och underlag för att granska ansökan.
-          Underlagen raderas 30 dagar efter beslutet, och jag kan dra tillbaka samtycket genom att radera
-          mitt konto.
+          Underlagen raderas senast 30 dagar efter beslutet, och jag kan återkalla samtycket när som helst
+          genom att dra tillbaka ansökan.
         </label>
+        <p className="mt-2 pl-6 text-xs text-[var(--ink-muted)]">
+          Läs mer i{" "}
+          <Link href="/integritetspolicy#studiehjalp" target="_blank" className="font-medium text-[var(--brand)] hover:underline">
+            integritetspolicyn
+          </Link>
+          .
+        </p>
         {notice ? (
           <Notice tone={notice.tone} className="mt-4">
             {notice.text}

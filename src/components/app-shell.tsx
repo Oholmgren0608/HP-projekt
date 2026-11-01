@@ -428,6 +428,9 @@ export function AppShell({ children }: { children: ReactNode }) {
             >
               Rapportera ett problem
             </Link>
+            <Link href="/integritetspolicy" className="text-sm font-medium text-[var(--ink-muted)] hover:underline">
+              Integritetspolicy
+            </Link>
           </div>
         </div>
       </footer>

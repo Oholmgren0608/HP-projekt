@@ -89,7 +89,7 @@ Alla skrivningar går via `SECURITY DEFINER`-funktioner som kontrollerar `auth.u
 
 ## Innan flaggorna slås på för alla (`on`)
 
-1. Integritetspolicy, expertvillkor och användarvillkor finns och länkas från ansökan (beslut 7). Utkast till policyn: [`docs/juridik/integritetspolicy.md`](../juridik/integritetspolicy.md).
+1. Integritetspolicy, expertvillkor och användarvillkor finns och länkas från ansökan (beslut 7). Integritetspolicyn är klar: [`docs/juridik/integritetspolicy.md`](../juridik/integritetspolicy.md), publicerad på `/integritetspolicy` och länkad från samtycket, inloggningen och sidfoten (2026-11-01). Expert- och användarvillkor saknas fortfarande.
 2. En DPIA är gjord för behandlingen av HP-resultat, lärarlegitimationer och ID-handlingar. Utkast: [`docs/juridik/dpia-studiehjalp-experter.md`](../juridik/dpia-studiehjalp-experter.md). Där finns åtgärderna A1–A11.
 3. "Confirm email" är påslaget i Supabase Auth.
 4. `CRON_SECRET` är satt och gallringsjobbet har gått utan fel i Vercels cron-logg.

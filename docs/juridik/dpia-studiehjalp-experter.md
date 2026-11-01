@@ -1,7 +1,6 @@
 # Konsekvensbedömning (DPIA): Studiehjälp – verifiering av experter
 
 > **Utkast 2026-11-01.**
-> - Fyll i det som står inom `[hakparentes]`.
 > - Ta ställning till åtgärderna i avsnitt 7.
 > - Signera i avsnitt 9.
 >
@@ -9,9 +8,9 @@
 
 | | |
 |---|---|
-| Personuppgiftsansvarig | [namn / bolag] |
-| Ansvarig för bedömningen | [namn] |
-| Datum | [datum] |
+| Personuppgiftsansvarig | Oscar Holmgren (privatperson, tills bolaget är bildat) |
+| Ansvarig för bedömningen | Oscar Holmgren |
+| Datum | 2026-11-01 |
 | Version | 0.1 (utkast) |
 | Ska omprövas | Före skarp start, vid BankID, betalning eller bokning (Fas 2), och minst en gång per år |
 
@@ -87,7 +86,7 @@ Personnummer sparas aldrig i databasen, men kan synas i en uppladdad ID-handling
 | Minimering | Personnummer sparas inte. Bara namn, resultat eller behörighet och beslut sparas strukturerat. Filerna raderas automatiskt. Vid ID-handlingen uppmanas sökanden att täcka över de fyra sista siffrorna i personnumret (A1, klar). |
 | Lagringsbegränsning | Underlagen, gamla ansökningar och loggen gallras automatiskt av det dagliga jobbet (A3 och A4, klara i `0031`). |
 | Korrekthet | Granskaren antecknar verifierat värde och källa. Sökanden kan komplettera, och ett beslut kan omprövas. |
-| Information till de registrerade | Integritetspolicyn, avsnitt 4. **Brist:** policyn är inte publicerad och länkas inte från ansökan (åtgärd A2). |
+| Information till de registrerade | Integritetspolicyn, avsnitt 4. Policyn är publicerad på `/integritetspolicy` och länkad från samtycket (A2, klar). |
 | Rättigheter | Radering: dra tillbaka ansökan eller ta bort kontot (båda finns). Registerutdrag och dataportabilitet: via e-post (manuellt). |
 | Överföring till tredje land | Lagring sker i EU. Leverantörerna är amerikanska bolag, och åtkomst skyddas av standardavtalsklausuler respektive Data Privacy Framework (åtgärd A6). |
 
@@ -131,7 +130,7 @@ Sannolikhet (S) och allvarlighet (A) bedöms som 1 = låg, 2 = medel och 3 = hö
 | R4, R5, R6 | Låg till medel. Manuell kontroll kan göra fel, så risken minskar ytterligare med BankID och direkt registerkontroll längre fram. |
 | R7 | Låg (A3 och A4 är klara). |
 | R8, R9 | Låg |
-| R10 | **Medel tills A2 är gjord**, sedan låg. |
+| R10 | Låg (A2 är klar). |
 
 Ingen kvarstående risk är hög, så något förhandssamråd med IMY behövs inte (artikel 36).
 
@@ -140,25 +139,25 @@ Ingen kvarstående risk är hög, så något förhandssamråd med IMY behövs in
 | # | Åtgärd | Vem | Krävs före `experts_apply = on`? |
 |---|---|---|---|
 | A1 | I ansökan: uppmana sökande att täcka över de fyra sista siffrorna i personnumret på ID-handlingen. | Utvecklare | **Klar** 2026-11-01 |
-| A2 | Publicera integritetspolicyn och länka den från ansökan och från samtyckesrutan. | [ansvarig] + utvecklare | **Ja** |
+| A2 | Publicera integritetspolicyn och länka den från ansökan och från samtyckesrutan. | Oscar + utvecklare | **Klar** 2026-11-01: `/integritetspolicy`, länkad från samtycket, inloggningen och sidfoten |
 | A3 | Inför gallring av ansökningsuppgifter. Förslag:<ul><li>Avslagna och tillbakadragna ansökningar: namn, resultat och meddelande raderas 12 månader efter beslutet.</li><li>Utkast som inte har ändrats på 6 månader raderas.</li><li>Godkända ansökningar sparas så länge experten är aktiv.</li></ul> | Beslutat av Oscar 2026-11-01, även för ansökningar som väntar på komplettering. Spärrade ansökningar sparas. | **Klar** i `0031` |
 | A4 | Revisionsloggen sparas i 24 månader och gallras automatiskt. | Beslutat av Oscar 2026-11-01 | **Klar** i `0031` |
-| A5 | Rutin för granskare: inga nedladdningar till egen dator, inga skärmdumpar, granskning bara på en egen och låst enhet. Skriftlig sekretessförbindelse för varje granskare. | [ansvarig] | **Ja** |
-| A6 | Godkänn personuppgiftsbiträdesavtal (DPA) med Supabase och Vercel, och spara kopior. | [ansvarig] | **Ja** |
-| A7 | Slå på "Confirm email" i Supabase Auth och sätt `CRON_SECRET` i Vercel. Kontrollera i Vercels logg att gallringsjobbet går utan fel. | [ansvarig] | **Ja** |
-| A8 | Rutin för personuppgiftsincidenter: vem som gör vad, och anmälan till IMY inom 72 timmar. | [ansvarig] | **Ja** |
-| A9 | Rutin för registerutdrag och dataportabilitet: svar inom en månad. | [ansvarig] | Ja |
+| A5 | Rutin för granskare: inga nedladdningar till egen dator, inga skärmdumpar, granskning bara på en egen och låst enhet. Skriftlig sekretessförbindelse för varje granskare. | Oscar | **Ja** |
+| A6 | Godkänn personuppgiftsbiträdesavtal (DPA) med Supabase och Vercel, och spara kopior. | Oscar | **Ja** |
+| A7 | Slå på "Confirm email" i Supabase Auth och sätt `CRON_SECRET` i Vercel. Kontrollera i Vercels logg att gallringsjobbet går utan fel. | Oscar | **Ja** |
+| A8 | Rutin för personuppgiftsincidenter: vem som gör vad, och anmälan till IMY inom 72 timmar. | Oscar | **Ja** |
+| A9 | Rutin för registerutdrag och dataportabilitet: svar inom en månad. | Oscar | Ja |
 | A10 | Gå igenom loggen regelbundet, till exempel en gång i månaden: vem har öppnat vilka dokument? | Admin | Rekommenderas |
-| A11 | Ompröva bedömningen vid BankID, Fas 2 (bokning och betalning) och full lansering. | [ansvarig] | – |
+| A11 | Ompröva bedömningen vid BankID, Fas 2 (bokning och betalning) och full lansering. | Oscar | – |
 
 ## 8. Synpunkter
 
-- Dataskyddsombud: [inget utsett, krävs normalt inte i den här omfattningen; kontrollera]
-- Registrerades synpunkter (artikel 35.9), till exempel från pilotens experter: [anteckna]
+- Dataskyddsombud: inget utsett. Det krävs inte enligt artikel 37, eftersom HP Lift inte är en myndighet och inte behandlar känsliga uppgifter i stor omfattning eller övervakar personer systematiskt.
+- Registrerades synpunkter (artikel 35.9): be pilotens experter om synpunkter innan skarp start, och anteckna dem här.
 
 ## 9. Beslut
 
 - [ ] Behandlingen får starta som pilot (bara för personalen), vilket gäller i dag.
-- [ ] Behandlingen får öppnas för alla när åtgärderna A2 och A5–A8 är genomförda.
+- [ ] Behandlingen får öppnas för alla när åtgärderna A5–A8 är genomförda.
 
 Namn, datum: ______________________

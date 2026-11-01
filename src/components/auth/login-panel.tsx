@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { AuthForms } from "@/components/auth/auth-forms";
 import { cn } from "@/lib/utils";
@@ -55,6 +56,12 @@ export function LoginPanel({
         <span className="h-px flex-1 bg-[var(--line)]" />
       </div>
       <GoogleButton />
+      <p className="text-center text-xs text-[var(--ink-muted)]">
+        Så hanterar vi dina uppgifter:{" "}
+        <Link href="/integritetspolicy" className="font-medium text-[var(--brand)] hover:underline">
+          integritetspolicy
+        </Link>
+      </p>
     </div>
   );
 }
