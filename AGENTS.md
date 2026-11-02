@@ -1,111 +1,80 @@
-# AGENTS.md - Repository Guidelines
+# AGENTS.md — HP Lift
 
-You are an expert engineer working on **HP Lift**, a Swedish Högskoleprov (HP)
-study-plan web app. It is a single Next.js application — there is no separate
-frontend/backend split, Express server, or Prisma layer.
+Read this before every task. If anything here conflicts with a task request, STOP and ask.
 
-## Stack
+## 1. Non-negotiable rules (never break these)
+1. **UHR questions are never shown to users.** UHR material is used only as a model for writing new questions.
+   Never remove, weaken, or route around the database block. Every new query, API route or view that reads
+   questions must keep the block in place.
+2. **Staff-only stays staff-only.** The Studiehjälp pilot (expert applications, reviews, expert profiles, admin, audit log)
+   must only be reachable by users with the staff/admin role. Check access on the server and in RLS, not only in the UI.
+3. **Expert documents are private.** Only admins can read uploaded application documents. Never make the storage bucket public
+   and never create public or long-lived URLs for these files.
+4. **No secrets in client code.** The Supabase service-role key and other secrets must never be imported into a client component
+   or a `NEXT_PUBLIC_*` variable.
+5. **The app works without an account.** Guest data lives in the browser and syncs after login. Never make a core study feature
+   require login unless the task explicitly says so.
+6. **Don't change database security silently.** Any change to RLS policies, roles or storage rules goes in a migration,
+   gets called out in your summary, and gets a test.
+7. **Every audit-logged action stays audit-logged.** Admin and review actions write to the audit log.
 
-- **Frontend:** Next.js 16 (App Router), React 19, TypeScript (strict),
-  Tailwind CSS v4, shadcn/ui (`base-nova` style on `@base-ui/react`),
-  `lucide-react` icons, and `cva`/`clsx`/`tailwind-merge`.
-- **Data & auth:** Supabase (Postgres + auth) via `@supabase/supabase-js` v2,
-  with a typed client. Data lives in `localStorage` and optionally syncs to
-  Supabase on login.
-- **Layout:** routes in `src/app`, UI in `src/components`, logic in `src/lib`,
-  SQL migrations in `supabase/migrations`.
+## 2. Out of scope right now (do NOT build, even though the v2.0 spec mentions them)
+- Payments and payouts (waiting for the company to be registered)
+- Video / Creator Studio (no provider chosen yet)
+- Subscription tiers and ads (decision pending)
+If a task seems to need one of these, stop and ask.
 
-## 🎨 Frontend
+## 3. Stack
+- Next.js 16 (App Router), React 19, TypeScript (strict), Tailwind CSS
+- Supabase: Postgres, Auth, Storage, RLS
+- Hosted on Vercel
+- UI language: **Swedish**. Code, comments and commit messages: TODO (English or Swedish — pick one).
 
-**Trigger:** Apply when editing files under `src/app` or `src/components`.
+## 4. Commands
+<!-- TODO: replace with your real scripts from package.json -->
+- Dev server: `npm run dev`
+- Type check: `npm run typecheck`  (TODO: confirm this script exists)
+- Lint: `npm run lint`
+- Tests: `npm test`  (TODO)
+- DB migrations: TODO (e.g. `supabase migration new <name>`, `supabase db push`)
 
-- Use React functional components only. Never use class components.
-- Use Tailwind utility classes. Do not create new `.css` files or use inline
-  `style={{}}` unless dynamically calculating dimensions.
-- Use shadcn/ui components from `src/components/ui`; do not add dependencies.
-- Fetch data with the typed Supabase client from `@/lib/supabase/client` and
-  auth via `@/lib/supabase/auth-context`. Never use raw `fetch`, and do **not**
-  add React Query.
-- Add `"use client"` only when a component genuinely needs hooks, state, or
-  browser APIs.
-- Use the `@/*` path alias (maps to `./src/*`).
-- Read `localStorage`/`window` only behind `@/lib/use-hydrated` to avoid
-  hydration mismatches.
+## 5. Project map
+<!-- TODO: fill in the real folders so the agent doesn't have to guess -->
+- `app/` — routes and pages
+- `components/` — shared UI
+- `lib/` — Supabase clients, scoring, plan logic
+- `supabase/migrations/` — schema and RLS
+- Question bank: lives in the database (about 1,600 questions, 8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK)
 
-## ⚙️ Backend / Data (Supabase)
+## 6. Domain rules
+- Full test: 40 questions in 55 min (80 min with extended time). Quick test: 24 questions in 20 min.
+- Every question has an explanation. DTK questions have real tables, charts and maps.
+- New questions: automatic checks → solved by a second AI without the key → saved as **draft** → published only after a human spot check.
+  Never publish questions directly.
+- Missed questions become error cards in "Dagens repetition".
+- Score forecast / normerad poäng: TODO (point to the file holding the conversion logic, and don't change it without being asked).
 
-**Trigger:** Apply when editing `supabase/migrations` or `src/lib/supabase`.
+## 7. Design system "Lugn"
+- Flat surfaces, no heavy shadows or gradients.
+- One accent colour: TODO (name the Tailwind token).
+- Green and red are used **only** for right and wrong answers — never for buttons, badges or decoration.
+- Font: IBM Plex Sans.
+- Sidebar on desktop, tab bar on mobile.
+- Every screen must work in both light and dark mode.
 
-- Make schema changes as new numbered SQL migrations in `supabase/migrations`
-  (next is `0032_<name>.sql`). Never edit already-applied migrations
-  (`npm run db -- migration list` shows which ones are; `0001`–`0031` are).
-- Apply migrations with the Supabase CLI via the wrapper in `scripts/db.ts`
-  (`npm run db:dry` först, sedan `npm run db:push`). Den läser
-  `SUPABASE_DB_PASSWORD` och `SUPABASE_POOLER_URL` ur `.env.local` och skriver
-  CLI:ts länkfil (`supabase/.temp/pooler-url`) - CLI:t självt läser inte
-  `.env.local`. Andra kommandon: `npm run db -- migration list`. (`db dump`
-  och `gen types` kräver Docker - använd SQL mot katalograderna i stället.)
-  `supabase link` kräver `SUPABASE_ACCESS_TOKEN` (personlig access token från
-  Dashboard → Account → Access Tokens) och behövs bara om länkfilen saknas.
-- Enable Row Level Security on every table with least-privilege policies using
-  `auth.uid()` / `auth.role()`.
-- Put atomic/anti-cheat logic (e.g. ELO and stat updates) in `SECURITY DEFINER`
-  functions so the client can never write those values directly. Set
-  `search_path = public` and re-check `auth.uid()` inside.
-- After a schema change, update the typed `Database` in
-  `src/lib/supabase/client.ts`.
-- `user_state` is a generic key/value `jsonb` sync table using "newest wins"
-  (`updated_at`) semantics — do not add per-feature columns there.
-- Never log sensitive user data or tokens.
+## 8. How to work
+1. For anything bigger than a small fix: read the relevant files and **propose a plan first. Don't write code until I approve.**
+2. Keep changes small and focused on the task. No drive-by refactors.
+3. Reuse existing components and helpers before writing new ones.
+4. Ask instead of guessing when requirements are unclear.
 
-## ✅ Verification
+## 9. Definition of done
+A task is done only when all of these hold:
+- [ ] Type check, lint and tests pass
+- [ ] New logic has tests; any security change has a test that tries to break it
+- [ ] Works on a mobile width and in dark mode
+- [ ] No rule in section 1 is weakened
+- [ ] You give a short summary: what changed, which files, any migration or RLS changes, and what I should check by hand
 
-Run these checks after changes (there is **no** `npm run test` script):
-
-- `npm run lint`
-- `npx tsc --noEmit`
-- `npm run build`
-
-The dev server runs on `http://127.0.0.1:43123` (`npm run dev`).
-
-## Gotchas
-
-- `src/lib/subtests.ts` is the single source of truth for the eight HP subtests
-  (names, short labels, question counts, block, and pace).
-- The question bank lives in the database (`public.questions`); it is the
-  source of truth. `src/lib/content/fallback-bank.json` is the offline copy,
-  generated with `npm run fragebank:export` — never edit it by hand.
-- New Övningsfrågor: write them in `content/ovningsfragor/<delprov>.json`, run
-  `npm run fragebank:validate`, the independent second check
-  (`npm run fragebank:kontroll -- blind <delprov>`, let another AI answer
-  without the key, then `-- merge <delprov>`), upload as drafts with
-  `npm run fragebank:upload`, and publish after spot checks on `/review`.
-- DTK underlag are shown as real tables/diagrams/maps from
-  `src/lib/content/dtk-figures.ts`, keyed by a fingerprint of the passage text
-  (`passageKey`). A new DTK passage shows as plain text until it gets an entry
-  there; an edited passage falls back to text until the entry is updated.
-- Provfrågor (rows with `exam_id` or an `hp-…` id, imported from UHR's exams)
-  are copyrighted: they may only be used as templates (Förlagor) and must never
-  be published or shown to users. The database enforces this from `0017`.
-- Studiehjälp (`/studiehjalp`, `0029`) is gated by `feature_flags`
-  (`off`/`staff`/`on`) and `staff_roles`; it is a staff-only pilot until the
-  privacy texts exist. Expert documents live in the private
-  `expert-documents` bucket, are reached only through signed URLs from
-  `src/app/studiehjalp/actions.ts`, and are purged by the Vercel cron
-  `/api/cron/studiehjalp-purge` (needs `CRON_SECRET`). Badges are derived from
-  review decisions — never claim BankID or a register check that did not
-  happen. See `docs/studiehjalp/`.
-- `src/lib/sync/storage-sync.ts` is a drop-in replacement for
-  `localStorage.getItem/setItem` and handles the cloud merge on login.
-- Swedish user-facing copy and identifiers (`delprov`, `veckoplan`, `nivatest`,
-  `prov`) are intentional — do not "correct" them to English.
-
-<!-- BEGIN:nextjs-agent-rules -->
-
-## This is NOT the Next.js you know
-
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
-
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
+## 10. Keep this file current
+When a decision changes (for example, a feature leaves "out of scope"), update this file in the same change.
