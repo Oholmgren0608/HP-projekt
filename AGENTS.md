@@ -71,8 +71,8 @@ If a task seems to need one of these, stop and ask.
   0001–0009 that is already applied; don't run it.
 - `scripts/` — `db.ts` (Supabase CLI wrapper), `fragebank/` (question-bank pipeline), `import-prov/` (imports UHR exams, used only as models)
 - `content/ovningsfragor/` — new practice questions per delprov (JSON) before upload; `content/aldre-fragor/` — second check of the older questions
-- `docs/` — `studiehjalp/` (v2.0 spec and phase docs), `juridik/` (privacy policy, DPIA), `agents/` (issue tracker, labels, domain docs);
-  `GLOSSARY.md` is at the root
+- `docs/` — `studiehjalp/` (v2.0 spec and phase docs), `juridik/` (privacy policy, DPIA), `agents/` (issue tracker, labels, domain docs),
+  `KNOWN_ISSUES.md` (open problems); `GLOSSARY.md` is at the root
 - `future-changes/` — deferred follow-up work (mostly duels); `anteckningar/` — project notes; `.agents/agents/` — agent definitions;
   `.superdesign/` — the Lugn design system and drafts
 - Question bank: lives in the database (about 1,600 questions, 8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK)

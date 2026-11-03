@@ -28,6 +28,11 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 - **Gamification** — XP, nivåer, streak, dagliga uppdrag och achievements,
   med en vecko-XP-topplista
 
+## Kända problem
+
+Öppna problem med påverkan och status står i
+[docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md).
+
 ## Scripts
 
 - `npm run dev` — utvecklingsserver
@@ -106,77 +111,25 @@ i projektöversikten, eller gå till **Settings → API Keys**. Använd en
 
 ### 2. Databas
 
-Kör migrationsfilerna i Supabase Dashboard → SQL Editor, i nummerordning.
-`supabase/migrations/` innehåller nu exakt `0001`–`0009`. Statusen nedan är
-verifierad mot live-databasen (Management-API-frågor + en Playwright-körning
-av appen mot live-DB). Samtliga migrationer `0001`–`0010` finns nu i
-live-databasen; `0004`–`0007` kördes i dag, `0008`–`0010` kördes tidigare
-under sina dåvarande namn.
+Migrationerna ligger i `supabase/migrations/` och appliceras med
+`npm run db:push` (provkör först med `npm run db:dry`). Hur kommandona sätts
+upp (Supabase CLI och variablerna i `.env.local`) står i
+[AGENTS.md §4](AGENTS.md#4-commands).
 
-| Migration | Innehåll | Status i live-DB | Bevis |
-| --- | --- | --- | --- |
-| `0001_user_state` | `user_state`-tabellen med RLS (varje användare ser bara sina egna rader), för molnsynk | APPLIED | — |
-| `0002_duel_pvp` | spelarprofiler (ELO/statistik), matcher, per-fråga-svar och matchmaking-kö, plus ranking-RPC:er | APPLIED | — |
-| `0003_duel_reviews` | recensioner och betyg efter dueller, rapporter, flaggning och bot-svårighetsjustering | APPLIED | — |
-| `0004_duel_integrity` | server-auktoritativ rättning (`duel_questions`), tätare RLS, vyn `duel_public_profiles` och viktad `received_rating_count` | APPLIED (i dag) | `duel_questions` 136 rader och vyn `duel_public_profiles` finns; RPC-signaturerna matchar klienten och de gamla 5/3/4-args-varianterna är borta |
-| `0005_questions` | Supabase-backade övningsfrågor: `questions` och `reflect_prompts` (ORD, MEK, LÄS, ELF, DTK, XYZ, KVA, NOG) | APPLIED (i dag) | `questions` 146 rader, `reflect_prompts` 3 rader; publika SELECT-policyer för anon+authenticated |
-| `0006_exam_import` | kolumner och tabeller för import-pipelinen (`exams`, frågemetadata och `prov-figures`-bucketen) | APPLIED (i dag) | `exams` finns med 0 rader (ingen import körd ännu) |
-| `0007_usernames` | unikt användarnamn per profil (`username`, skiftlägesokänsligt index och profil-RPC:er) | APPLIED (i dag) | kolumnen `player_profiles.username` finns |
-| `0008_duel_rpc_hardening` | härdar kö-/avboknings-RPC:erna (`search_path` och rättigheter) | APPLIED UNDER OLD NAME | kördes tidigare som `0004_duel_rpc_hardening` (går inte att verifiera via REST) |
-| `0009_leaderboard` | vecko-XP-topplista för gamification | APPLIED UNDER OLD NAME | `leaderboard_entries` finns med 3 policyer; kördes tidigare som `0005_leaderboard` |
-| `0010_duel_rpc_wrapper_hardening` | flyttar RPC-implementationerna till `private` och exponerar tunna `public`-wrappers | APPLIED UNDER OLD NAME | `private.*`-implementationerna för de 16 RPC:erna finns kvar; kördes tidigare som `0006_duel_rpc_wrapper_hardening` |
+Två saker i `supabase/` är inte migrationer:
 
-Kontrollerat i den applicerade databasen:
+- `supabase/manual/` innehåller SQL som körs för hand, som rollback och
+  kontroller. `apply-0004-0007.sql` i den mappen är redan körd och sparas bara
+  som dokumentation.
+- `supabase/combined_migrations.sql` är en gammal kopia av `0001`–`0009`, som
+  redan finns i live-databasen. Kör den inte.
 
-- `duel_questions` har RLS påslaget och **0 policyer** — facit går inte att
-  läsa från klienten.
-- `questions`, `reflect_prompts` och `exams` har publika SELECT-policyer för
-  `anon` och `authenticated`.
-- Publika RPC-signaturer matchar klienten:
-  `duel_submit_answer(uuid, text, integer, integer)`,
-  `duel_mark_finished(uuid)`, `duel_finish_bot(uuid, integer)`,
-  `duel_start_bot_match(text)` och
-  `duel_submit_review(uuid, integer, text, text, text)`. `EXECUTE` = true för
-  `authenticated`, false för `anon`.
-- Körning av appen mot live-DB (anonymt, ingen inloggning): alla sidor 200,
-  ORD-övning hämtar frågor från Supabase (`/rest/v1/questions` 200, 146
-  rader; `/rest/v1/reflect_prompts` 200, 3 rader), ingen `PGRST205` och
-  ingen lokal fallback behövs. `/prov` visar "Inga importerade prov ännu"
-  eftersom `exams` har 0 rader — import-pipelinen måste köras för att fylla
-  den. 404-sidorna är fortsatt korrekta och inga databasskrivningar skedde
-  (endast läsningar).
-
-**Status för åtgärden:** `supabase/manual/apply-0004-0007.sql` är **körd**
-(consumed) — den kördes i sin helhet i dag och sparas bara som dokumentation
-över exakt vad som applicerades. Ingen ny migration behövs.
-
-`supabase/combined_migrations.sql` (0001 → 0009) ska fortfarande **inte**
-klistras in blint: samtliga `0001`–`0009` finns redan i live-databasen och
-skulle köras om i onödan.
-
-> **OBS `0010` (kvar i `supabase/manual/`):**
-> `0010_duel_rpc_wrapper_hardening.sql` är inte längre en migration. Den
-> återskapar de **gamla** RPC-signaturerna och skulle därför backa
-> `0004_duel_integrity`s server-auktoritativa design och bryta klienten.
-> Resultatet av den finns redan i live-databasen (de 16
-> `private.*`-implementationerna), men de är nu **föräldralösa** — de publika
-> funktionerna kommer från `0004` i stället. Det är ofarliga rester. Filen
-> får **aldrig** köras igen och sparas bara som referens, tillsammans med
-> `..._rollback.sql` och `..._verify.sql` i `supabase/manual/`.
-
-### Duellpoäng: server-auktoritativ rättning i live (risken stängd)
-
-Risken är **stängd i live-databasen**. `0004_duel_integrity` är applicerad, så
-rättningen är server-auktoritativ: facit ligger i `duel_questions` (RLS påslaget
-med **0 policyer**, alltså oläsbart från klienten) och klienten skickar varken
-rätt/fel eller totalpoäng. De gamla klienttrustade RPC-signaturerna (5/3/4
-argument) är borttagna och ersatta av de server-auktoritativa varianterna som
-klienten anropar.
-
-**Kvarvarande kunskapslucka:** de klientflöden som kräver en inloggad session
-är fortfarande **otestade** mot live-DB — matchmaking och poängsättning i
-dueller, att sätta användarnamn, publicering av recensioner samt
-provimporten. Det är en testlucka, inte en känd bugg.
+> **OBS `supabase/manual/0010_duel_rpc_wrapper_hardening.sql`:** filen är inte
+> en migration (migrationen `0010` är `0010_duel_queue_ttl.sql`) och får
+> **aldrig** köras. Den återskapar de gamla duell-RPC:erna som tar emot
+> rätt/fel och poäng från klienten och skulle backa den server-auktoritativa
+> rättningen från `0004_duel_integrity`. Den sparas bara som referens,
+> tillsammans med `..._rollback.sql` och `..._verify.sql`.
 
 ### 3. Google-inloggning
 
