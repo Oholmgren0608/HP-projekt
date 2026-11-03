@@ -154,20 +154,6 @@ Kontrollerat i den applicerade databasen:
 klistras in blint: samtliga `0001`–`0009` finns redan i live-databasen och
 skulle köras om i onödan.
 
-> **Varning:** `supabase_migrations.schema_migrations` är fortfarande **tom**
-> — Management-API-körningen registrerar inga versioner. Därför misslyckas
-> `supabase db push` — den tror att inga migrationer är applicerade. Markera
-> de redan körda som tillämpade en gång:
->
-> ```bash
-> supabase migration repair --status applied 0001 0002 0003 0004 0005 0006 0007 0008 0009 0010 --linked
-> ```
->
-> Obs: `0010` kördes i praktiken under sitt gamla namn
-> `0006_duel_rpc_wrapper_hardening`, så dess ledger-rad motsvarar inte någon
-> fil i `supabase/migrations/`. Alternativet är att fortsätta köra filerna
-> manuellt i nummerordning.
-
 > **OBS `0010` (kvar i `supabase/manual/`):**
 > `0010_duel_rpc_wrapper_hardening.sql` är inte längre en migration. Den
 > återskapar de **gamla** RPC-signaturerna och skulle därför backa
