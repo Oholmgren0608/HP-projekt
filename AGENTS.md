@@ -80,6 +80,8 @@ If a task seems to need one of these, stop and ask.
 - Score forecast / normerad poäng: the conversion is in `src/lib/progress-history.ts`. `estimateNormFromPercent()` turns % correct into a
   rough 0,0–2,0 (not UHR's official normering table) and `prognosisFromExercises()` builds the forecast (a delprov counts from 10 answers);
   rounding and limits are in `clampNorm()` in `src/lib/hp-scores.ts`. Don't change this logic without being asked.
+- Practice answers are public by design (offline/guest). Anything competitive or paid must never depend on secrets that exist in the public bank, bundle or localStorage.
+- Duel answers are graded only on the server. Duel-pool questions never reach the client with correct_index.
 
 ## 7. Design system "Lugn"
 - Flat surfaces, no heavy shadows or gradients.
