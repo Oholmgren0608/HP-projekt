@@ -34,7 +34,7 @@ If a task seems to need one of these, stop and ask.
 
 ## 4. Commands
 - Dev server: `npm run dev` (http://127.0.0.1:43123)
-- Build: `npm run build` (run the built app with `npm run start`)
+- Build: `npm run build`; `npm run start` serves the built app on the same port
 - Type check: `npx tsc --noEmit` (there is no `typecheck` script)
 - Lint: `npm run lint`
 - Tests: none yet. There is no `test` script and no test framework in `package.json`. Until one exists, lint, type check
@@ -42,7 +42,13 @@ If a task seems to need one of these, stop and ask.
 - DB migrations: add a new file `supabase/migrations/NNNN_<name>.sql` by hand, numbered after the highest one
   (not `supabase migration new`, which names files by timestamp). Never edit a migration that is already applied.
   Dry run: `npm run db:dry`. Apply: `npm run db:push`. See what is applied: `npm run db -- migration list`.
-  These run the Supabase CLI through `scripts/db.ts`, which reads `SUPABASE_DB_PASSWORD` (and `SUPABASE_POOLER_URL`) from `.env.local`.
+  These pass their arguments to the Supabase CLI through `scripts/db.ts`, which needs:
+  - The Supabase CLI. It is not an npm dependency: install it (the script looks on `PATH` and in `~/.local/bin`) or set
+    `SUPABASE_CLI` to its path.
+  - `SUPABASE_DB_PASSWORD` in `.env.local`; the script stops without it. `SUPABASE_POOLER_URL` (optional) makes the CLI use
+    the IPv4 pooler instead of the IPv6-only direct connection. Neither variable is in `.env.local.example`.
+  - On a fresh clone, a one-time link: `npm run db -- link --project-ref <ref>`. The ref is in the comment at the top of
+    `scripts/db.ts`, and `link` also needs `SUPABASE_ACCESS_TOKEN` in `.env.local`.
 - Question bank: `npm run fragebank:validate` → `fragebank:kontroll` → `fragebank:upload` (as drafts) → `fragebank:export`
   (rewrites the offline copy); `fragebank:aldre` and `fragebank:balansera` handle the older questions. Code in `scripts/fragebank/`, steps in `README.md`.
 
@@ -109,3 +115,13 @@ A task is done only when all of these hold:
 
 ## 10. Keep this file current
 When a decision changes (for example, a feature leaves "out of scope"), update this file in the same change.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
