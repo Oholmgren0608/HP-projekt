@@ -49,19 +49,19 @@ export function DtkFigure({ figure }: { figure: DtkFigureData }) {
       ) : null}
       <div className="mt-4 space-y-6">
         {figure.parts.map((part, i) => (
-          <Part key={i} part={part} />
+          <Part key={i} part={part} figureTitle={figure.title} />
         ))}
       </div>
     </figure>
   );
 }
 
-function Part({ part }: { part: FigurePart }) {
+function Part({ part, figureTitle }: { part: FigurePart; figureTitle: string }) {
   switch (part.kind) {
     case "table":
       return (
         <Section title={part.title}>
-          <Table head={part.head} rows={part.rows} totalRow={part.totalRow} />
+          <Table head={part.head} rows={part.rows} totalRow={part.totalRow} label={part.title ?? figureTitle} />
         </Section>
       );
     case "columns":
@@ -126,9 +126,20 @@ function Section({ title, children }: { title?: string; children: ReactNode }) {
   );
 }
 
-function Table({ head, rows, totalRow }: { head: string[]; rows: string[][]; totalRow?: boolean }) {
+function Table({
+  head,
+  rows,
+  totalRow,
+  label,
+}: {
+  head: string[];
+  rows: string[][];
+  totalRow?: boolean;
+  label?: string;
+}) {
   return (
-    <div className="overflow-x-auto">
+    // Fokuserbar region: en bred tabell på mobil går då att scrolla med piltangenterna.
+    <div className="overflow-x-auto" tabIndex={0} role="region" aria-label={label ?? "Tabell"}>
       <table className="w-full border-collapse text-sm tabular-nums">
         <thead>
           <tr className="border-b-2 border-[var(--line-strong)]">

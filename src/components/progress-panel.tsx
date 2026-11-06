@@ -66,11 +66,11 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
   const paceCap = pace ? capForKinds(pace.kinds) : MIXED_SEC_PER_QUESTION_CAP;
   const paceOver = pace ? pace.secPerQ > paceCap : false;
   const paceLine = pace ? (
-    <p className={`mt-3 text-sm ${paceOver ? "font-medium text-[var(--destructive)]" : "text-[var(--ink-muted)]"}`}>
+    <p className={`mt-3 text-sm ${paceOver ? "font-medium text-[var(--energy-ink)]" : "text-[var(--ink-muted)]"}`}>
       Tempo {formatSecondsPerQuestion(pace.secPerQ)}/fråga
       {paceOver
-        ? ` — över taket ${formatSecondsPerQuestion(MIXED_SEC_PER_QUESTION_CAP)} (HP 55 min / 40 frågor).`
-        : ` (tak ${formatSecondsPerQuestion(MIXED_SEC_PER_QUESTION_CAP)}).`}{" "}
+        ? ` — över taket ${formatSecondsPerQuestion(paceCap)}${paceCap === MIXED_SEC_PER_QUESTION_CAP ? " (HP 55 min / 40 frågor)" : ""}.`
+        : ` (tak ${formatSecondsPerQuestion(paceCap)}).`}{" "}
       {pace.n} tidsatta frågor.
       {paceOver ? (
         <>
