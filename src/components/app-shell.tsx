@@ -419,9 +419,11 @@ export function AppShell({ children }: { children: ReactNode }) {
       <PasswordRecoveryPrompt />
       <UsernamePrompt />
 
+      {/* Minst en skärmhöjd: sidfoten hamnar under vecket och knuffas inte
+          ned när sidans innehåll laddats klart (layoutskift). */}
       <main
         key={pathname}
-        className="animate-fade-in mx-auto w-full min-w-0 max-w-[1080px] flex-1 px-4 pb-10 pt-6 sm:px-8 sm:pt-10 md:pb-16"
+        className="animate-fade-in mx-auto min-h-[calc(100dvh-3.5rem)] w-full min-w-0 max-w-[1080px] flex-1 px-4 pb-10 pt-6 sm:px-8 sm:pt-10 md:min-h-dvh md:pb-16"
       >
         {children}
       </main>
