@@ -1,0 +1,22 @@
+-- 0034_user_state_bara_via_put.sql
+-- ---------------------------------------------------------------------------
+-- Mål: klienter skriver bara till user_state via user_state_put (0032), så att
+-- ingen skrivning kan ersätta en ändring som klienten inte har sett.
+--
+-- Bakgrund: synken slår ihop post för post och skriver med versionskontroll
+-- sedan 6384103. Äldre klienter (flikar som öppnades före driftsättningen)
+-- skrev hela värden direkt med upsert och kunde skriva över sammanslagna
+-- värden. Läggs på först när den nya klienten är driftsatt.
+--
+-- Ändring: anon och authenticated förlorar INSERT och UPDATE på
+-- public.user_state. SELECT (synkens hämtning, profilsidans statistik) och
+-- RLS-policyerna är oförändrade. user_state_put är SECURITY DEFINER och
+-- skriver fortfarande. service_role (kontoradering) berörs inte.
+--
+-- En gammal flik som försöker skriva får ett fel som bara loggas. Datan ligger
+-- kvar lokalt och slås ihop när fliken laddas om med den nya koden.
+--
+-- Tester: ~/.cache/hp-db-test/test-0034.mjs (PGlite).
+-- ---------------------------------------------------------------------------
+
+revoke insert, update on public.user_state from anon, authenticated;

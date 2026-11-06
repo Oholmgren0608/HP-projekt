@@ -31,11 +31,11 @@ sides have changed, the values are merged item by item (`src/lib/sync/merge.ts`)
 instead of one replacing the other. Changed keys are uploaded 2 s after a write,
 when the connection comes back and when the tab becomes visible.
 
-**Still to do / limits:**
+**Limits:**
 
-- Migration 0034 (not written yet) should close direct INSERT/UPDATE on
-  `user_state` once the new client is deployed, so that old open tabs can no
-  longer overwrite merged values.
+- Migration 0034 (applied 2026-11-06, after the new client was deployed) closed
+  direct INSERT/UPDATE on `user_state`, so old open tabs can no longer overwrite
+  merged values; their writes fail and are merged after a reload.
 - A conflict found while the app is open is merged at the next app start, not
   immediately.
 - Merging two devices' copies can pay a daily-quest reward twice.
