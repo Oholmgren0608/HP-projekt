@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
-import { Flame } from "lucide-react";
+import { Check, Flame } from "lucide-react";
 import { useGamification } from "@/lib/gamification/provider";
 import { dateKey } from "@/lib/gamification/engine";
 import { cn } from "@/lib/utils";
@@ -10,7 +9,7 @@ const WEEKDAY_LABELS = ["M", "T", "O", "T", "F", "L", "S"];
 
 /**
  * Streak-kort: flammikon + antal dagar i rad + senaste 7 dagarnas aktivitet.
- * Dagens ruta fylls med en studs när man pluggar.
+ * Dagens ruta fylls när man pluggar.
  */
 export function StreakCard() {
   const { state } = useGamification();
@@ -33,18 +32,14 @@ export function StreakCard() {
     <div className="rounded-[10px] border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <motion.span
-            key={current}
-            initial={{ scale: 1.4, rotate: -8 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ type: "spring", bounce: 0.5 }}
+          <span
             className={cn(
               "flex size-11 items-center justify-center rounded-xl",
-              current > 0 ? "bg-[var(--energy-soft)] text-[var(--energy-ink)]" : "bg-[var(--mist)] text-[var(--ink-muted)]",
+              current > 0 ? "bg-[var(--accent-soft)] text-[var(--brand)]" : "bg-[var(--mist)] text-[var(--ink-muted)]",
             )}
           >
-            <Flame className={cn("size-6", current > 0 && "animate-flicker")} />
-          </motion.span>
+            <Flame className="size-6" strokeWidth={1.5} aria-hidden />
+          </span>
           <div>
             <p className="text-2xl leading-none font-semibold text-[var(--ink)] tabular-nums">
               {current}
@@ -60,20 +55,18 @@ export function StreakCard() {
       <div className="mt-4 grid grid-cols-7 gap-1.5">
         {days.map((d) => (
           <div key={d.key} className="flex flex-col items-center gap-1">
-            <motion.span
-              animate={d.active ? { scale: [1, 1.15, 1] } : {}}
-              transition={{ duration: 0.35 }}
+            <span
               className={cn(
                 "flex size-7 items-center justify-center rounded-lg text-[10px] font-semibold",
                 d.active
-                  ? "bg-[var(--brand)] text-primary-foreground shadow-soft"
+                  ? "bg-[var(--brand)] text-primary-foreground"
                   : "bg-[var(--mist)] text-[var(--ink-muted)]",
-                d.isToday && !d.active && "border-2 border-dashed border-[var(--energy-ink)]",
+                d.isToday && !d.active && "border border-dashed border-[var(--brand)]",
               )}
             >
-              {d.active ? "✓" : ""}
-            </motion.span>
-            <span className={cn("text-[9px] font-semibold", d.isToday ? "text-[var(--energy-ink)]" : "text-[var(--ink-muted)]")}>
+              {d.active ? <Check className="size-3.5" strokeWidth={2} aria-label="Aktiv" /> : null}
+            </span>
+            <span className={cn("text-[9px] font-semibold", d.isToday ? "text-[var(--brand)]" : "text-[var(--ink-muted)]")}>
               {d.label}
             </span>
           </div>

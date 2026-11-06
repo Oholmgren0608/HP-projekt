@@ -303,7 +303,7 @@ export function ForumHub() {
 
           <section className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5">
             <h2 className="flex items-center gap-2 text-sm font-medium text-[var(--ink)]">
-              <BadgeCheck size={16} className="text-[var(--success-ink)]" aria-hidden />
+              <BadgeCheck size={16} className="text-[var(--brand)]" aria-hidden />
               Hjälpsamma medlemmar
             </h2>
             {reputation.length === 0 ? (
@@ -363,11 +363,11 @@ function ThreadCard({ thread }: { thread: ForumThreadSummary }) {
           </span>
           <span className="text-[var(--ink-muted)]">{info.blockLabel}</span>
           {thread.solved ? (
-            <span className="rounded-md bg-[var(--success-soft)] px-2 py-0.5 text-[var(--success-ink)]">
+            <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-[var(--brand)]">
               Löst
             </span>
           ) : obesvarad ? (
-            <span className="rounded-md bg-[var(--energy-soft)] px-2 py-0.5 text-[var(--energy-ink)]">
+            <span className="rounded-md bg-[var(--mist)] px-2 py-0.5 text-[var(--ink-soft)]">
               Obesvarad
             </span>
           ) : null}

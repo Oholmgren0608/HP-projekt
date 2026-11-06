@@ -272,11 +272,11 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
           </h2>
           <div className="flex items-center gap-2 text-xs font-medium">
             {thread?.best_post_id ? (
-              <span className="rounded-md bg-[var(--success-soft)] px-2.5 py-1 text-[var(--success-ink)]">
+              <span className="rounded-md bg-[var(--accent-soft)] px-2.5 py-1 text-[var(--brand)]">
                 Löst
               </span>
             ) : (
-              <span className="rounded-md bg-[var(--energy-soft)] px-2.5 py-1 text-[var(--energy-ink)]">
+              <span className="rounded-md bg-[var(--mist)] px-2.5 py-1 text-[var(--ink-soft)]">
                 Obesvarad
               </span>
             )}
@@ -419,7 +419,7 @@ function PostItem({
         className={cn(
           "rounded-[10px] border p-4 sm:p-5",
           node.is_best
-            ? "border-[var(--success-ink)]/40 bg-[var(--success-soft)]/40"
+            ? "border-[var(--brand)]/40 bg-[var(--accent-soft)]/40"
             : node.is_deleted
               ? "border-[var(--line)] bg-[var(--paper)]"
               : "border-[var(--line)] bg-card/70",
@@ -433,7 +433,7 @@ function PostItem({
             </span>
           ) : null}
           {node.is_best ? (
-            <span className="inline-flex items-center gap-1 rounded-md bg-[var(--success-soft)] px-2 py-0.5 font-medium text-[var(--success-ink)]">
+            <span className="inline-flex items-center gap-1 rounded-md bg-[var(--accent-soft)] px-2 py-0.5 font-medium text-[var(--brand)]">
               <BadgeCheck size={12} aria-hidden />
               Bästa svar
             </span>
@@ -462,7 +462,7 @@ function PostItem({
                 aria-pressed={node.my_vote === 1}
                 className={cn(
                   "flex size-8 items-center justify-center rounded-full transition disabled:opacity-40",
-                  node.my_vote === 1 ? "text-[var(--success-ink)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
+                  node.my_vote === 1 ? "text-[var(--brand)]" : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
                 )}
               >
                 <ArrowBigUp size={17} aria-hidden />
@@ -479,7 +479,7 @@ function PostItem({
                 className={cn(
                   "flex size-8 items-center justify-center rounded-full transition disabled:opacity-40",
                   node.my_vote === -1
-                    ? "text-[var(--destructive)]"
+                    ? "text-[var(--ink)]"
                     : "text-[var(--ink-muted)] hover:text-[var(--ink)]",
                 )}
               >

@@ -101,7 +101,7 @@ Full reference: `DESIGN.md` (tokens, components, rules) with its sidecar `.impec
 - One accent colour: blue `--brand` (`#2b4c7e` light, `#8da9d6` dark) in `src/app/globals.css`. Tailwind token: `primary`
   (`bg-primary`, `text-primary`; `ring` and `chart-1` also point to `--brand`); components also use `[var(--brand)]` directly.
   The shadcn `accent` token is only the pale tint `--accent-soft`, not the accent colour.
-- Green and red are used **only** for right and wrong answers — never for buttons, badges or decoration.
+- Green and red are used **only** for right and wrong answers — never for buttons, badges or decoration. One exception (Oscar, 2026-11-06): the veckoplan's priority badges ("Kritiskt" red, "Styrka" green).
 - Font: IBM Plex Sans.
 - Sidebar on desktop, tab bar on mobile.
 - Every screen must work in both light and dark mode.

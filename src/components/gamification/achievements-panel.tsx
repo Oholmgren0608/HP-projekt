@@ -46,8 +46,8 @@ export function AchievementsPanel({ className }: { className?: string }) {
           return (
             <motion.li
               key={a.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ delay: Math.min(i * 0.03, 0.3) }}
               onAnimationComplete={() => {
                 if (expanded && isNew) markAchievementsSeen([a.id]);
@@ -55,17 +55,17 @@ export function AchievementsPanel({ className }: { className?: string }) {
               className={cn(
                 "relative flex flex-col items-center gap-1 rounded-xl border p-3 text-center transition",
                 unlocked
-                  ? "border-[var(--energy-soft)] bg-[var(--energy-soft)]/50"
+                  ? "border-[var(--line)] bg-[var(--card)]"
                   : "border-[var(--line)] bg-[var(--mist)]/40 opacity-70",
               )}
             >
               <span
                 className={cn(
                   "flex size-10 items-center justify-center rounded-full text-xl",
-                  unlocked ? "bg-[var(--success-soft)]" : "bg-[var(--mist)]",
+                  unlocked ? "bg-[var(--accent-soft)]" : "bg-[var(--mist)]",
                 )}
               >
-                {unlocked ? <Check className="size-4 text-[var(--success-ink)]" /> : <Lock className="size-4 text-[var(--ink-muted)]" />}
+                {unlocked ? <Check className="size-4 text-[var(--brand)]" /> : <Lock className="size-4 text-[var(--ink-muted)]" />}
               </span>
               <span className={cn("text-xs font-semibold", unlocked ? "text-[var(--ink)]" : "text-[var(--ink-muted)]")}>
                 {unlocked ? a.title : "Låst"}
@@ -76,14 +76,9 @@ export function AchievementsPanel({ className }: { className?: string }) {
                 </span>
               )}
               {isNew && (
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", bounce: 0.6, delay: 0.15 }}
-                  className="absolute -top-1.5 -right-1.5 flex size-5 items-center justify-center rounded-full bg-[var(--coral-ink)] text-[9px] font-semibold text-primary-foreground shadow-pop"
-                >
+                <span className="absolute -top-1.5 -right-1.5 flex h-5 items-center justify-center rounded-md bg-[var(--brand)] px-1.5 text-[10px] font-semibold text-primary-foreground">
                   NY
-                </motion.span>
+                </span>
               )}
             </motion.li>
           );

@@ -1,13 +1,12 @@
 "use client";
 
-import { motion } from "motion/react";
 import { Check } from "lucide-react";
 import { useGamification } from "@/lib/gamification/provider";
 import { cn } from "@/lib/utils";
 
 /**
  * Dagens tre uppdrag med framstegsindikatorer. Klara uppdrag får en
- * studsig bock och mjukt genomskinlig stil.
+ * bock och tonas ned.
  */
 export function DailyQuests({ className }: { className?: string }) {
   const { state } = useGamification();
@@ -20,14 +19,9 @@ export function DailyQuests({ className }: { className?: string }) {
           Dagens uppdrag
         </h2>
         {allDone && (
-          <motion.span
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", bounce: 0.5 }}
-            className="rounded-md bg-[var(--success-soft)] px-2.5 py-1 text-xs font-semibold text-[var(--success-ink)]"
-          >
-            Alla klara!
-          </motion.span>
+          <span className="rounded-md bg-[var(--accent-soft)] px-2.5 py-1 text-xs font-medium text-[var(--brand)]">
+            Alla klara
+          </span>
         )}
       </div>
 
@@ -39,7 +33,7 @@ export function DailyQuests({ className }: { className?: string }) {
               key={q.id}
               className={cn(
                 "flex items-center gap-3 rounded-lg border border-[var(--line)] px-3 py-2.5 transition-opacity",
-                q.done && "border-[var(--success-soft)] bg-[var(--success-soft)]/40 opacity-80",
+                q.done && "opacity-80",
               )}
             >
               <div className="min-w-0 flex-1">
@@ -48,14 +42,9 @@ export function DailyQuests({ className }: { className?: string }) {
                 </p>
                 <div className="mt-1.5 flex items-center gap-2">
                   <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[var(--mist)]">
-                    <motion.div
-                      className={cn(
-                        "h-full rounded-full",
-                        q.done ? "bg-[var(--success-ink)]" : "bg-[var(--brand)]",
-                      )}
-                      initial={{ width: 0 }}
-                      animate={{ width: `${pct}%` }}
-                      transition={{ type: "spring", bounce: 0, duration: 0.6 }}
+                    <div
+                      className="h-full rounded-full bg-[var(--brand)] transition-[width] duration-300 ease-out motion-reduce:transition-none"
+                      style={{ width: `${pct}%` }}
                     />
                   </div>
                   <span className="w-12 shrink-0 text-right text-[11px] font-semibold text-[var(--ink-muted)] tabular-nums">
@@ -65,16 +54,14 @@ export function DailyQuests({ className }: { className?: string }) {
               </div>
               <div className="flex w-12 shrink-0 flex-col items-center gap-0.5">
                 {q.done ? (
-                  <motion.span
-                    initial={{ scale: 0, rotate: -30 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ type: "spring", bounce: 0.6 }}
-                    className="flex size-7 items-center justify-center rounded-full bg-[var(--success-ink)] text-primary-foreground"
+                  <span
+                    aria-label="Klart"
+                    className="flex size-7 items-center justify-center rounded-full bg-[var(--accent-soft)] text-[var(--brand)]"
                   >
-                    <Check className="size-4" strokeWidth={3} />
-                  </motion.span>
+                    <Check className="size-4" strokeWidth={2} aria-hidden />
+                  </span>
                 ) : (
-                  <span className="text-xs font-semibold text-[var(--energy-ink)]">+{q.xp}</span>
+                  <span className="text-xs font-medium text-[var(--ink-muted)] tabular-nums">+{q.xp}</span>
                 )}
               </div>
             </li>

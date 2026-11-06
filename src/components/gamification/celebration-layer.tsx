@@ -155,10 +155,10 @@ export function CelebrationLayer() {
               role="dialog"
               aria-modal="true"
               aria-label={`Nivå upp: ${levelUp.title}`}
-              initial={{ scale: 0.7, y: 40, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.85, y: 20, opacity: 0 }}
-              transition={{ type: "spring", bounce: 0.4, duration: 0.6 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.16, ease: "easeOut" }}
               className="relative w-full max-w-sm rounded-[10px] border border-[var(--line)] bg-[var(--card)] p-8 text-center shadow-pop"
             >
               <p className="text-[13px] font-medium text-[var(--ink-muted)]">

@@ -178,7 +178,7 @@ DTK tables, charts and maps use their own colour-blind-checked categorical set (
 ### Named Rules
 **The One Direction Rule.** Skymningsblå marks where to go next: at most one solid blue button per view, plus active and selected states. If two things on a screen are solid blue, one of them is wrong.
 
-**The Right-or-Wrong Rule.** Green and red mean correct and incorrect answers (and errors). They are never used for buttons, badges, streaks or decoration.
+**The Right-or-Wrong Rule.** Green and red mean correct and incorrect answers (and errors). They are never used for buttons, badges, streaks or decoration. The one exception, chosen by Oscar on 2026-11-06: the veckoplan's priority badges, where "Kritiskt" is red and "Styrka" green.
 
 ## Typography
 
