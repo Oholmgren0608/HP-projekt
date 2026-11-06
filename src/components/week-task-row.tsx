@@ -12,6 +12,8 @@ type Props = {
   bankedMin: number;
   inProgressQuiz: boolean;
   onStart: () => void;
+  /** Kort notering under titeln, t.ex. "Flyttad från måndag". */
+  note?: string;
 };
 
 /**
@@ -26,6 +28,7 @@ export function WeekTaskRow({
   bankedMin,
   inProgressQuiz,
   onStart,
+  note,
 }: Props) {
   return (
     <li>
@@ -59,6 +62,7 @@ export function WeekTaskRow({
               </span>
               <span className="text-xs text-[var(--ink-muted)]">~{task.minutes} min</span>
             </div>
+            {note ? <p className="mt-1 text-xs font-medium text-[var(--brand)]">{note}</p> : null}
             <p className="mt-1 text-sm leading-relaxed text-[var(--ink-muted)]">
               {task.detail}
             </p>

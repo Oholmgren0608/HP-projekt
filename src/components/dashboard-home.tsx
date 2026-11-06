@@ -7,8 +7,11 @@ import { DailySrsReview } from "@/components/daily-srs-review";
 import { usePlan } from "@/components/plan-context";
 import { usePlanAccess } from "@/components/plan-preview";
 import { TodayCard, useStudyDays } from "@/components/study-days";
-import { todayKey } from "@/lib/exam-date";
-import { todayInPlan } from "@/lib/study-days";
+import { WeekSummaryCard } from "@/components/week-summary-card";
+import { planWeekRange, todayKey } from "@/lib/exam-date";
+import { loadHistory } from "@/lib/progress-history";
+import { todayInPlan, weekdayOf } from "@/lib/study-days";
+import { weekSummary } from "@/lib/week-summary";
 import { ProgressPanel } from "@/components/progress-panel";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatNorm } from "@/lib/hp-scores";
@@ -73,6 +76,22 @@ export function DashboardHome() {
           studyDays,
           progress,
           today: todayKey(),
+        })
+      : null;
+  // Söndag: veckoavstämning för veckan som går mot sitt slut.
+  const now = todayKey();
+  const sundayWeek =
+    today && today.kind !== "not-started" && weekdayOf(now) === 6 && plan && scores?.planStart
+      ? plan.weeklyPlans.find((w) => w.week === today.week) ?? null
+      : null;
+  const sundaySummary =
+    sundayWeek && plan && scores?.planStart
+      ? weekSummary({
+          weekPlan: sundayWeek,
+          nextWeekPlan: plan.weeklyPlans.find((w) => w.week === sundayWeek.week + 1) ?? null,
+          progress,
+          history: loadHistory(),
+          weekStart: planWeekRange(scores.planStart, sundayWeek.week).start,
         })
       : null;
   const profile = plan?.profile ?? null;
@@ -185,6 +204,8 @@ export function DashboardHome() {
           </div>
         </section>
       ) : null}
+
+      {sundaySummary ? <WeekSummaryCard summary={sundaySummary} /> : null}
 
       <DailySrsReview />
 

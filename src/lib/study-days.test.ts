@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { distributeTasks, normalizeStudyDays, todayInPlan, weekdayOf } from "./study-days";
+import { distributeTasks, normalizeStudyDays, scheduleWeek, todayInPlan, weekdayOf } from "./study-days";
 import type { StudyTask, WeekPlan } from "./study-plan";
 
 const task = (id: string, minutes: number): StudyTask => ({
@@ -51,8 +51,58 @@ describe("distributeTasks", () => {
   });
 });
 
+describe("scheduleWeek", () => {
+  const tasks = [task("a", 60), task("b", 60), task("c", 60)];
+  const ids = (items: { task: StudyTask }[]) => items.map((i) => i.task.id);
+  const base = { tasks, week: 1, studyDays: [0, 2, 4] };
+
+  it("är den vanliga fördelningen för en vecka som inte är den aktuella", () => {
+    const s = scheduleWeek({ ...base, progress: {}, weekday: null });
+    expect(s.days.map((d) => ids(d.items))).toEqual([["a"], ["b"], ["c"]]);
+    expect(s.dropped).toEqual([]);
+  });
+
+  it("ändrar ingenting när allt hittills är gjort", () => {
+    const s = scheduleWeek({ ...base, progress: { "w1:a": true }, weekday: 2 });
+    expect(s.days.map((d) => ids(d.items))).toEqual([["a"], ["b"], ["c"]]);
+    expect(s.dropped).toEqual([]);
+    expect(s.days[1].items[0].movedFrom).toBeNull();
+  });
+
+  it("flyttar ett missat pass framåt och krymper veckan i stället för att stapla", () => {
+    const s = scheduleWeek({ ...base, progress: {}, weekday: 2 }); // onsdag, måndagens pass ogjort
+    expect(ids(s.days[0].items)).toEqual([]);
+    expect(ids(s.days[1].items)).toEqual(["a"]);
+    expect(s.days[1].items[0].movedFrom).toBe(0);
+    expect(ids(s.days[2].items)).toEqual(["b"]);
+    expect(s.days[2].items[0].movedFrom).toBe(2);
+    expect(ids(s.dropped)).toEqual(["c"]); // lägst prioritet ryker
+  });
+
+  it("lägger aldrig mer än ~25 % över snittet på en dag", () => {
+    const five = [task("a", 70), task("b", 90), task("c", 80), task("d", 60), task("e", 85)];
+    const s = scheduleWeek({ tasks: five, week: 1, studyDays: [0, 1, 2, 3, 4], progress: {}, weekday: 3 });
+    const perDay = (70 + 90 + 80 + 60 + 85) / 5;
+    for (const d of s.days) {
+      const minutes = d.items.filter((i) => !i.done).reduce((sum, i) => sum + i.task.minutes, 0);
+      expect(minutes).toBeLessThanOrEqual(Math.max(perDay * 1.25, 90));
+    }
+    expect(s.days.flatMap((d) => ids(d.items)).length + s.dropped.length).toBe(5);
+  });
+
+  it("låter gjorda pass stå kvar på sin dag", () => {
+    const s = scheduleWeek({ ...base, progress: { "w1:c": true }, weekday: 2 });
+    // c är gjord i förväg och står kvar på fredag utan att ta tid. Måndagens
+    // missade a går först idag, och b får plats på fredag bredvid c.
+    expect(ids(s.days[1].items)).toEqual(["a"]);
+    expect(ids(s.days[2].items)).toEqual(["b", "c"]);
+    expect(s.dropped).toEqual([]);
+    expect(s.days[2].items.find((i) => i.task.id === "c")?.done).toBe(true);
+  });
+});
+
 describe("todayInPlan", () => {
-  // Planen börjar måndag 2 nov 2026, provet 30 jan 2027.
+  // Planen börjar måndag 2 nov 2026, provet 30 jan 2027. Pluggdagar mån, ons, fre.
   const plans = [
     week(1, [task("w1a", 60), task("w1b", 60), task("w1c", 60)]),
     week(2, [task("w2a", 60), task("w2b", 60), task("w2c", 60)]),
@@ -63,28 +113,33 @@ describe("todayInPlan", () => {
     expect(weekdayOf("2026-11-04")).toBe(2); // onsdag
   });
 
-  it("visar dagens uppgifter en pluggdag", () => {
-    const s = todayInPlan({ ...base, progress: {}, today: "2026-11-04" });
-    expect(s).toMatchObject({ kind: "study-day", week: 1, openEarlier: 1 });
+  it("visar dagens uppgift en pluggdag", () => {
+    const s = todayInPlan({ ...base, progress: { "w1:w1a": true }, today: "2026-11-04" });
+    expect(s).toMatchObject({ kind: "study-day", week: 1, dropped: 0 });
     if (s.kind === "study-day") expect(s.tasks.map((t) => t.task.id)).toEqual(["w1b"]);
   });
 
-  it("räknar inte gjorda uppgifter från tidigare dagar", () => {
-    const s = todayInPlan({ ...base, progress: { "w1:w1a": true }, today: "2026-11-04" });
-    expect(s).toMatchObject({ kind: "study-day", openEarlier: 0 });
+  it("tar med ett missat pass från tidigare i veckan i dagens lista", () => {
+    const s = todayInPlan({ ...base, progress: {}, today: "2026-11-04" });
+    expect(s).toMatchObject({ kind: "study-day", dropped: 1 });
+    if (s.kind === "study-day") {
+      expect(s.tasks.map((t) => t.task.id)).toEqual(["w1a"]);
+      expect(s.tasks[0].movedFrom).toBe(0);
+    }
   });
 
-  it("visar nästa pluggdag en vilodag", () => {
+  it("visar nästa pluggdag en vilodag, med flyttade pass", () => {
     const s = todayInPlan({ ...base, progress: {}, today: "2026-11-05" }); // torsdag
     expect(s.kind).toBe("rest-day");
     if (s.kind === "rest-day") {
       expect(s.next?.date).toBe("2026-11-06");
-      expect(s.next?.tasks.map((t) => t.task.id)).toEqual(["w1c"]);
+      expect(s.next?.tasks.map((t) => t.task.id)).toEqual(["w1a"]);
+      expect(s.dropped).toBe(2);
     }
   });
 
   it("hoppar till nästa vecka efter veckans sista pluggdag", () => {
-    const s = todayInPlan({ ...base, progress: {}, today: "2026-11-08" }); // söndag
+    const s = todayInPlan({ ...base, progress: { "w1:w1a": true, "w1:w1b": true, "w1:w1c": true }, today: "2026-11-08" });
     expect(s.kind).toBe("rest-day");
     if (s.kind === "rest-day") {
       expect(s.next?.date).toBe("2026-11-09");

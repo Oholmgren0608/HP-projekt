@@ -8,7 +8,7 @@ import { WeekTaskRow } from "@/components/week-task-row";
 import { usePlan } from "@/components/plan-context";
 import { addDays, currentPlanWeek, formatDateLong, formatWeekRange, planWeekRange, todayKey } from "@/lib/exam-date";
 import { useStudyDays } from "@/components/study-days";
-import { WEEKDAY_NAMES, distributeTasks } from "@/lib/study-days";
+import { WEEKDAY_NAMES, scheduleWeek, weekdayOf, type TodayTask } from "@/lib/study-days";
 import { Progress } from "@/components/ui/progress";
 import { useHydrated } from "@/lib/use-hydrated";
 import { requiredPracticeMinutes } from "@/lib/practice-pace";
@@ -164,7 +164,17 @@ export function WeekTracker({
     onSessionChange?.(Boolean(activeTask));
   }, [activeTask, onSessionChange]);
 
-  const { done, total, percent } = useMemo(
+  // Den aktuella veckan: missade pass flyttas framåt och veckan krymper i
+  // stället för att staplas (scheduleWeek). Andra veckor: vanlig fördelning.
+  const schedule = scheduleWeek({
+    tasks: plan?.tasks ?? [],
+    week: plan?.week ?? 0,
+    studyDays,
+    progress,
+    weekday: plan && nowWeek === plan.week ? weekdayOf(todayKey()) : null,
+  });
+
+    const { done, total, percent } = useMemo(
     () => weekProgressSummary(weeklyPlans, progress),
     [progress, weeklyPlans],
   );
@@ -197,6 +207,34 @@ export function WeekTracker({
   if (!plan) return null;
 
   const weekDone = plan.tasks.filter((t) => progress[taskKey(plan.week, t.id)]).length;
+
+  function renderTask(item: TodayTask) {
+    const { task } = item;
+    const key = taskKey(plan.week, task.id);
+    const checked = Boolean(progress[key]);
+    const timer = timerStates.get(task.id);
+    const inProgressQuiz = timer?.inProgressQuiz ?? false;
+    return (
+      <WeekTaskRow
+        key={task.id}
+        task={task}
+        requiredMinutes={requiredPracticeMinutes(task)}
+        checked={checked}
+        score={scores[key]}
+        bankedMin={timer?.bankedMin ?? 0}
+        inProgressQuiz={inProgressQuiz}
+        note={!checked && item.movedFrom !== null ? `Flyttad från ${WEEKDAY_NAMES[item.movedFrom]}` : undefined}
+        onStart={() => {
+          if (checked) {
+            resetPracticeSession(plan.week, task.id);
+          } else if (!inProgressQuiz) {
+            newPracticeAttempt(plan.week, task.id);
+          }
+          setActiveTaskId(task.id);
+        }}
+      />
+    );
+  }
 
   function markComplete(task: StudyTask, result: { correct: number; total: number }) {
     saveLockedWeekIfAbsent(plan);
@@ -352,48 +390,35 @@ export function WeekTracker({
           </p>
         </div>
 
-        {(planStart
-          ? distributeTasks(plan.tasks, studyDays).filter((b) => b.tasks.length > 0)
-          : [{ day: -1, tasks: plan.tasks, minutes: 0 }]
-        ).map((bucket) => (
-          <div key={bucket.day} className="mt-5 first:mt-0">
-            {bucket.day >= 0 && planStart ? (
-              <h4 className="mb-2 text-sm font-medium text-[var(--ink-muted)]">
-                {capitalize(WEEKDAY_NAMES[bucket.day])}{" "}
-                {formatDayMonth(addDays(planWeekRange(planStart, plan.week).start, bucket.day))}
-              </h4>
+        {planStart ? (
+          <>
+            {schedule.days
+              .filter((d) => d.items.length > 0)
+              .map((d) => (
+                <div key={d.day} className="mt-5 first:mt-0">
+                  <h4 className="mb-2 text-sm font-medium text-[var(--ink-muted)]">
+                    {capitalize(WEEKDAY_NAMES[d.day])}{" "}
+                    {formatDayMonth(addDays(planWeekRange(planStart, plan.week).start, d.day))}
+                  </h4>
+                  <ul className="space-y-3">{d.items.map(renderTask)}</ul>
+                </div>
+              ))}
+            {schedule.dropped.length > 0 ? (
+              <div className="mt-6 rounded-xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <h4 className="text-sm font-medium text-[var(--ink)]">Får inte plats den här veckan</h4>
+                <p className="mt-1 text-sm text-[var(--ink-muted)]">
+                  Veckan har krympt så att dagarna inte blir för tunga. De viktigaste passen ligger
+                  kvar; de här kan du göra om du hinner.
+                </p>
+                <ul className="mt-3 space-y-3">{schedule.dropped.map(renderTask)}</ul>
+              </div>
             ) : null}
-            <ul className="space-y-3">
-              {bucket.tasks.map((task) => {
-                const key = taskKey(plan.week, task.id);
-                const checked = Boolean(progress[key]);
-                const score = scores[key];
-                const timer = timerStates.get(task.id);
-                const bankedMin = timer?.bankedMin ?? 0;
-                const inProgressQuiz = timer?.inProgressQuiz ?? false;
-                return (
-                  <WeekTaskRow
-                    key={task.id}
-                    task={task}
-                    requiredMinutes={requiredPracticeMinutes(task)}
-                    checked={checked}
-                    score={score}
-                    bankedMin={bankedMin}
-                    inProgressQuiz={inProgressQuiz}
-                    onStart={() => {
-                      if (checked) {
-                        resetPracticeSession(plan.week, task.id);
-                      } else if (!inProgressQuiz) {
-                        newPracticeAttempt(plan.week, task.id);
-                      }
-                      setActiveTaskId(task.id);
-                    }}
-                  />
-                );
-              })}
-            </ul>
-          </div>
-        ))}
+          </>
+        ) : (
+          <ul className="space-y-3">
+            {plan.tasks.map((task) => renderTask({ week: plan.week, task, done: false, movedFrom: null }))}
+          </ul>
+        )}
       </div>
     </div>
   );

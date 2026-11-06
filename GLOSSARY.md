@@ -33,7 +33,7 @@ Formuläret där användaren själv matar in sina HP-resultat (normpoäng per bl
 _Avoid_: Poängformulär
 
 **Veckoplan**:
-Den genererade studieplanen med övningar per delprov, byggd på nivå, timmar per vecka och provdatumet. Veckorna följer kalendern fram till provet, högst 16 veckor. Varje veckas uppgifter fördelas på elevens pluggdagar. Kräver konto; en gäst ser vecka 1 som förhandsvisning.
+Den genererade studieplanen med övningar per delprov, byggd på nivå, timmar per vecka och provdatumet. Veckorna följer kalendern fram till provet, högst 16 veckor. Varje veckas uppgifter fördelas på elevens pluggdagar. Missade pass flyttas till nästa pluggdag; får de inte plats krymper veckan (pass med lägst prioritet tas bort) i stället för att staplas. På söndagen visas en veckoavstämning. Kräver konto; en gäst ser vecka 1 som förhandsvisning.
 _Avoid_: Schema, studieplan (som synonym för veckoplanen)
 
 ## Resultat och nivå

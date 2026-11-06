@@ -103,6 +103,7 @@ function TaskLine({ item }: { item: TodayTask }) {
         <span className="flex items-center gap-1 text-xs text-[var(--ink-muted)]">
           <Timer className="size-3" aria-hidden />~{item.task.minutes} min
           {item.done ? " · klar" : ""}
+          {!item.done && item.movedFrom !== null ? ` · flyttad från ${WEEKDAY_NAMES[item.movedFrom]}` : ""}
         </span>
       </span>
     </li>
@@ -141,10 +142,13 @@ export function TodayCard({ state }: { state: TodayState }) {
     );
   }
 
+  // Missade pass har flyttats framåt (scheduleWeek). Får något inte plats har
+  // veckan krympt: säg det lugnt, utan att räkna upp vad som missats.
   const earlier =
-    state.openEarlier > 0 ? (
+    state.dropped > 0 ? (
       <p className="mt-3 text-sm text-[var(--ink-muted)]">
-        {state.openEarlier} pass från tidigare i veckan är inte klara.{" "}
+        Veckan har krympt så att dagarna inte blir för tunga: {state.dropped} pass med lägst
+        prioritet får inte plats längre.{" "}
         <Link href={`/plan?week=${state.week}`} className="font-medium text-[var(--brand)] underline-offset-4 hover:underline">
           Visa veckan
         </Link>
