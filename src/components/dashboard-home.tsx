@@ -6,6 +6,9 @@ import { ArrowRight, Lock, Play, Timer } from "lucide-react";
 import { DailySrsReview } from "@/components/daily-srs-review";
 import { usePlan } from "@/components/plan-context";
 import { usePlanAccess } from "@/components/plan-preview";
+import { TodayCard, useStudyDays } from "@/components/study-days";
+import { todayKey } from "@/lib/exam-date";
+import { todayInPlan } from "@/lib/study-days";
 import { ProgressPanel } from "@/components/progress-panel";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatNorm } from "@/lib/hp-scores";
@@ -30,8 +33,9 @@ function greeting(): string {
 }
 
 export function DashboardHome() {
-  const { plan, ready } = usePlan();
+  const { plan, scores, ready } = usePlan();
   const access = usePlanAccess();
+  const [studyDays] = useStudyDays();
   const [progress, setProgress] = useState<ProgressMap>(loadWeekProgress);
   const mounted = useHydrated();
 
@@ -59,6 +63,18 @@ export function DashboardHome() {
   const planOpen = plan !== null && access === "full";
   const next = plan && planOpen ? findNextIncomplete(plan.weeklyPlans, progress) : null;
   const summary = plan && planOpen ? weekProgressSummary(plan.weeklyPlans, progress) : null;
+  // Med provdatum (steg 2) vet planen vilken dag det är: visa dagens pass.
+  const today =
+    plan && planOpen && scores?.planStart && scores.examDate
+      ? todayInPlan({
+          weeklyPlans: plan.weeklyPlans,
+          planStart: scores.planStart,
+          examDate: scores.examDate,
+          studyDays,
+          progress,
+          today: todayKey(),
+        })
+      : null;
   const profile = plan?.profile ?? null;
   const focusIds = plan?.focusIds ?? [];
 
@@ -129,7 +145,15 @@ export function DashboardHome() {
       <section className="grid items-stretch gap-5 lg:gap-6 lg:grid-cols-2">
         <DailyQuests />
 
-        {planOpen ? <NextTaskCard next={next} /> : plan ? <PlanPreviewCard /> : <StreakCard />}
+        {today ? (
+          <TodayCard state={today} />
+        ) : planOpen ? (
+          <NextTaskCard next={next} />
+        ) : plan ? (
+          <PlanPreviewCard />
+        ) : (
+          <StreakCard />
+        )}
       </section>
 
       {/* ---- Streak + statistik ---------------------------------------------- */}

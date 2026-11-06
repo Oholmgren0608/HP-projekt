@@ -6,7 +6,9 @@ import { recordEvent } from "@/lib/gamification/engine";
 import { PracticeSession } from "@/components/practice-session";
 import { WeekTaskRow } from "@/components/week-task-row";
 import { usePlan } from "@/components/plan-context";
-import { currentPlanWeek, formatWeekRange, planWeekRange, todayKey } from "@/lib/exam-date";
+import { addDays, currentPlanWeek, formatDateLong, formatWeekRange, planWeekRange, todayKey } from "@/lib/exam-date";
+import { useStudyDays } from "@/components/study-days";
+import { WEEKDAY_NAMES, distributeTasks } from "@/lib/study-days";
 import { Progress } from "@/components/ui/progress";
 import { useHydrated } from "@/lib/use-hydrated";
 import { requiredPracticeMinutes } from "@/lib/practice-pace";
@@ -40,12 +42,22 @@ import {
 // Stabil identitet: annars byter useMemo-beroendena referens varje render.
 const NO_WEEKS: GeneratedPlan["weeklyPlans"] = [];
 
+function capitalize(word: string): string {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+/** "9 november" (utan år) för dagens rubrik i veckan. */
+function formatDayMonth(date: string): string {
+  return formatDateLong(date).replace(/ \d{4}$/, "");
+}
+
 export function WeekTracker({
   onSessionChange,
 }: {
   onSessionChange?: (open: boolean) => void;
 }) {
   const { plan: generated, scores: planScores } = usePlan();
+  const [studyDays] = useStudyDays();
   // Stabil tom lista när inget underlag sparats; PlanView visar då ingen WeekTracker.
   const weeklyPlans = generated?.weeklyPlans ?? NO_WEEKS;
   // Med provdatum vet planen vilken vecka det är nu (0 = planen har inte börjat).
@@ -340,35 +352,48 @@ export function WeekTracker({
           </p>
         </div>
 
-        <ul className="space-y-3">
-          {plan.tasks.map((task) => {
-            const key = taskKey(plan.week, task.id);
-            const checked = Boolean(progress[key]);
-            const score = scores[key];
-            const timer = timerStates.get(task.id);
-            const bankedMin = timer?.bankedMin ?? 0;
-            const inProgressQuiz = timer?.inProgressQuiz ?? false;
-            return (
-              <WeekTaskRow
-                key={task.id}
-                task={task}
-                requiredMinutes={requiredPracticeMinutes(task)}
-                checked={checked}
-                score={score}
-                bankedMin={bankedMin}
-                inProgressQuiz={inProgressQuiz}
-                onStart={() => {
-                  if (checked) {
-                    resetPracticeSession(plan.week, task.id);
-                  } else if (!inProgressQuiz) {
-                    newPracticeAttempt(plan.week, task.id);
-                  }
-                  setActiveTaskId(task.id);
-                }}
-              />
-            );
-          })}
-        </ul>
+        {(planStart
+          ? distributeTasks(plan.tasks, studyDays).filter((b) => b.tasks.length > 0)
+          : [{ day: -1, tasks: plan.tasks, minutes: 0 }]
+        ).map((bucket) => (
+          <div key={bucket.day} className="mt-5 first:mt-0">
+            {bucket.day >= 0 && planStart ? (
+              <h4 className="mb-2 text-sm font-medium text-[var(--ink-muted)]">
+                {capitalize(WEEKDAY_NAMES[bucket.day])}{" "}
+                {formatDayMonth(addDays(planWeekRange(planStart, plan.week).start, bucket.day))}
+              </h4>
+            ) : null}
+            <ul className="space-y-3">
+              {bucket.tasks.map((task) => {
+                const key = taskKey(plan.week, task.id);
+                const checked = Boolean(progress[key]);
+                const score = scores[key];
+                const timer = timerStates.get(task.id);
+                const bankedMin = timer?.bankedMin ?? 0;
+                const inProgressQuiz = timer?.inProgressQuiz ?? false;
+                return (
+                  <WeekTaskRow
+                    key={task.id}
+                    task={task}
+                    requiredMinutes={requiredPracticeMinutes(task)}
+                    checked={checked}
+                    score={score}
+                    bankedMin={bankedMin}
+                    inProgressQuiz={inProgressQuiz}
+                    onStart={() => {
+                      if (checked) {
+                        resetPracticeSession(plan.week, task.id);
+                      } else if (!inProgressQuiz) {
+                        newPracticeAttempt(plan.week, task.id);
+                      }
+                      setActiveTaskId(task.id);
+                    }}
+                  />
+                );
+              })}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

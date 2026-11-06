@@ -6,6 +6,7 @@ import { Disclosure } from "@/components/disclosure";
 import { PriorityBadge } from "@/components/plan-badges";
 import { usePlan } from "@/components/plan-context";
 import { PlanPreview, usePlanAccess } from "@/components/plan-preview";
+import { StudyDaysPicker, useStudyDays } from "@/components/study-days";
 import { StudyTimeNotice } from "@/components/study-time-notice";
 import { WeekTracker } from "@/components/week-tracker";
 import { currentPlanWeek, formatDateLong, formatWeekRange, planWeekRange, todayKey, weeksLeft } from "@/lib/exam-date";
@@ -13,6 +14,7 @@ import { currentPlanWeek, formatDateLong, formatWeekRange, planWeekRange, todayK
 export function PlanView() {
   const { plan, scores, ready, adaptEnabled, setAdaptEnabled } = usePlan();
   const access = usePlanAccess();
+  const [studyDays, setStudyDays] = useStudyDays();
   const [sessionOpen, setSessionOpen] = useState(false);
 
   if (!ready || access === "loading") {
@@ -118,6 +120,17 @@ export function PlanView() {
                 </span>
               </span>
             </label>
+          ) : null}
+          {!preview ? (
+            <StudyDaysPicker
+              days={studyDays}
+              onChange={setStudyDays}
+              minutesPerDay={
+                plan.weeklyPlans.length
+                  ? Math.round(plannedMinutes / plan.weeklyPlans.length / studyDays.length)
+                  : null
+              }
+            />
           ) : null}
           {!preview && adaptEnabled && plan.adaptedFromPractice ? (
             <p className="mt-3 max-w-xl text-sm text-[var(--ink)]">

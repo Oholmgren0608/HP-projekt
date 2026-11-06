@@ -19,8 +19,8 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 
 - **Nivåtest** — för dig som är ny på HP eller känner dig rostig: ett kort, otidsatt minitest med frågor från alla delprov. Resultatet uppskattar din nivå och bygger veckoplanen automatiskt.
 - **Resultatformulär** — spara normpoäng, delprovspoäng, timmar/vecka och provdatum; planen genereras om lokalt och följer kalendern fram till provet
-- Interaktiv veckoplan med övningar för alla åtta delprov (KVA, DTK, XYZ, NOG, ORD, LÄS, MEK, ELF). Kräver konto;
-  utan konto syns vecka 1 som förhandsvisning
+- Interaktiv veckoplan med övningar för alla åtta delprov (KVA, DTK, XYZ, NOG, ORD, LÄS, MEK, ELF). Uppgifterna fördelas på
+  dina pluggdagar, och översikten visar dagens pass. Kräver konto; utan konto syns vecka 1 som förhandsvisning
 - Övningshubbar per delprov med valfritt antal frågor, tidtaget mini-prov och daglig repetition (SRS)
 - Flashcards, läsbibliotek och officiella gamla HP-prov (PDF från UHR)
 - **Duell** — frågedueller mot andra spelare (PvP) eller en bot, med
