@@ -173,4 +173,71 @@ describe("synk mellan två enheter", () => {
     expect(JSON.parse(world.cloud(UID, PRACTICE_MODE) ?? "{}")).toMatchObject({ timeLimit: "extended" });
     expect(JSON.parse(a.storage.getItem(PRACTICE_MODE) ?? "{}")).toMatchObject({ timeLimit: "extended" });
   });
+
+  it("T8: data som synkades med den äldre koden räknas inte dubbelt", async () => {
+    const quiz = (minute: number) => ({
+      type: "quiz",
+      at: `2026-11-01T08:${String(minute).padStart(2, "0")}:00.000Z`,
+      source: "free",
+      kinds: ["ord"],
+      correct: 1,
+      total: 2,
+    });
+    const shared = Array.from({ length: 5 }, (_, i) => quiz(i));
+    const game = (xp: number, answered: number) =>
+      JSON.stringify({ xp, stats: { questionsAnswered: answered }, streak: { current: 1, best: 1, lastActive: "2026-11-01" } });
+    for (const [key, value] of [
+      [HISTORY, JSON.stringify(shared)],
+      [GAMIFICATION, game(500, 10)],
+    ] as const) {
+      world.server.rows.set(`${UID}|${key}`, {
+        user_id: UID,
+        storage_key: key,
+        value: { v: value },
+        updated_at: world.server.stamp(),
+      });
+    }
+    // Enheten har samma historik plus ett pass som aldrig hann upp, och ingen synkpost.
+    const a = world.device("A");
+    a.storage.setItem(HISTORY, JSON.stringify([...shared, quiz(30)]));
+    a.storage.setItem(GAMIFICATION, game(520, 12));
+    a.storage.setItem("hp-lift-sync-meta-v1", JSON.stringify({ [HISTORY]: 1, [GAMIFICATION]: 1 }));
+    a.userId = UID;
+    await world.openApp(a);
+
+    expect(answered(world.cloud(UID, HISTORY))).toBe(12);
+    expect(xpOf(world.cloud(UID, GAMIFICATION))).toMatchObject({ xp: 520, questionsAnswered: 12 });
+  });
+
+  it("T9: utloggning, gästövning och ny inloggning på samma konto tappar ingenting", async () => {
+    const a = world.device("A");
+    await world.openApp(a);
+    await world.login(a, UID);
+    world.practice(a, "ord", 6, "a1");
+    await world.settle(a);
+
+    await world.logout(a);
+    expect(answered(a.storage.getItem(HISTORY))).toBe(0);
+    world.practice(a, "kva", 4, "a2");
+    await world.settle(a);
+    await world.login(a, UID);
+
+    expect(answered(a.storage.getItem(HISTORY))).toBe(10);
+    expect(answered(world.cloud(UID, HISTORY))).toBe(10);
+    expect(xpOf(world.cloud(UID, GAMIFICATION)).questionsAnswered).toBe(10);
+  });
+
+  it("T10: ett raderat konto lämnar ingen undanlagd data på enheten", async () => {
+    const a = world.device("A");
+    await world.openApp(a);
+    await world.login(a, UID);
+    world.practice(a, "ord", 4, "a1");
+    await world.settle(a);
+
+    a.mods.sync.forgetAccountOnDevice(UID);
+    await world.logout(a);
+
+    expect(a.storage.getItem(`hp-lift-archive-${UID}`)).toBeNull();
+    expect(a.storage.getItem(HISTORY)).toBeNull();
+  });
 });

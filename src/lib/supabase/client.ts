@@ -623,6 +623,15 @@ export type Database = {
           username: string | null;
         } | null;
       };
+      /** Skriver en synkad nyckel om versionen fortfarande är p_base (0032). */
+      user_state_put: {
+        Args: { p_key: string; p_base: string | null; p_value: { v: string } };
+        Returns: {
+          applied: boolean;
+          stored_value: { v?: string } | null;
+          stored_at: string | null;
+        }[];
+      };
       duel_join_queue: {
         Args: { p_mode: string };
         Returns: string | null;

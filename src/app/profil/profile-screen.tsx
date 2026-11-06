@@ -7,7 +7,7 @@ import { getSupabase } from "@/lib/supabase/client";
 import { LoginPanel } from "@/components/auth/login-panel";
 import { getMatchHistory, getMyProfile } from "@/lib/duel/profile";
 import type { DuelMatch, DuelProfile } from "@/lib/duel/types";
-import { clearLocalData } from "@/lib/sync/storage-sync";
+import { clearLocalData, forgetAccountOnDevice } from "@/lib/sync/storage-sync";
 import {
   countMastered,
   MASTERY_STORAGE_KEY,
@@ -410,6 +410,8 @@ export function ProfileScreen() {
     const token = data.session?.access_token ?? "";
     const res = await deleteAccount(token);
     if (res.ok) {
+      // Kontot finns inte längre: dess data ska inte läggas undan på enheten.
+      if (data.session?.user.id) forgetAccountOnDevice(data.session.user.id);
       // Sign-out laddar om sidan via onAuthChanged och rensar lokal session.
       await signOut();
     } else {

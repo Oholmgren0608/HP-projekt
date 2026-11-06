@@ -149,12 +149,47 @@ export class FakeClient {
     };
   }
 
+  /** Som user_state_put i migration 0032: skriv bara om versionen stämmer. */
   rpc(fn: string, args?: Record<string, unknown>) {
-    void args;
-    return this.server.run(() => ({
-      data: null,
-      error: { message: `Could not find the function public.${fn}`, code: "PGRST202" },
-      status: 404,
-    }));
+    const { server, session } = this;
+    return server.run(() => {
+      if (fn !== "user_state_put") {
+        return {
+          data: null,
+          error: { message: `Could not find the function public.${fn}`, code: "PGRST202" },
+          status: 404,
+        };
+      }
+      const user = session();
+      if (!user) return { data: null, error: { message: "NOT_AUTHENTICATED", code: "42501" }, status: 403 };
+      const key = String(args?.p_key ?? "");
+      const base = (args?.p_base as string | null | undefined) ?? null;
+      const value = args?.p_value as { v?: unknown } | undefined;
+      if (!key || typeof value?.v !== "string") {
+        return { data: null, error: { message: "INVALID_VALUE", code: "22023" }, status: 400 };
+      }
+      const id = `${user}|${key}`;
+      const current = server.rows.get(id);
+      const reply = (applied: boolean, row: CloudRow | undefined) => ({
+        data: [
+          {
+            applied,
+            stored_value: row ? structuredClone(row.value) : null,
+            stored_at: row?.updated_at ?? null,
+          },
+        ],
+        error: null,
+        status: 200,
+      });
+      if ((current?.updated_at ?? null) !== base) return reply(false, current);
+      const row: CloudRow = {
+        user_id: user,
+        storage_key: key,
+        value: { v: value.v },
+        updated_at: server.stamp(),
+      };
+      server.rows.set(id, row);
+      return reply(true, row);
+    });
   }
 }
