@@ -1,0 +1,498 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T20:39:32+00:00",
+  "title": "Design System: HP Lift",
+  "extensions": {
+    "colorMeta": {
+      "skymningsbla": {
+        "role": "primary",
+        "displayName": "Skymningsblå",
+        "canonical": "#2b4c7e",
+        "tonalRamp": [
+          "#0d1726",
+          "#16263f",
+          "#1e3558",
+          "#26436f",
+          "#2b4c7e",
+          "#758bab",
+          "#b5c0d2",
+          "#eaedf2"
+        ]
+      },
+      "skymningsbla-deep": {
+        "role": "primary",
+        "displayName": "Djup skymningsblå",
+        "canonical": "#223d66",
+        "tonalRamp": [
+          "#0a121f",
+          "#111e33",
+          "#182b47",
+          "#1e365a",
+          "#223d66",
+          "#6f819c",
+          "#b2bbc9",
+          "#e9ecf0"
+        ]
+      },
+      "skymningsbla-tint": {
+        "role": "primary",
+        "displayName": "Skymningsblå ton",
+        "canonical": "#e9eef6",
+        "tonalRamp": [
+          "#46474a",
+          "#74777b",
+          "#a3a7ac",
+          "#cdd1d8",
+          "#e9eef6",
+          "#f1f4f9",
+          "#f7f9fc",
+          "#fdfdfe"
+        ]
+      },
+      "skymningsbla-dark": {
+        "role": "primary",
+        "displayName": "Skymningsblå, natt",
+        "canonical": "#8da9d6",
+        "tonalRamp": [
+          "#2a3340",
+          "#46546b",
+          "#637696",
+          "#7c95bc",
+          "#8da9d6",
+          "#b5c7e4",
+          "#d7e1f1",
+          "#f4f6fb"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Bläck",
+        "canonical": "#1c1c1a",
+        "tonalRamp": [
+          "#080808",
+          "#0e0e0d",
+          "#141412",
+          "#191917",
+          "#1c1c1a",
+          "#6b6b6a",
+          "#b0b0af",
+          "#e8e8e8"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Mjukt bläck",
+        "canonical": "#55544f",
+        "tonalRamp": [
+          "#1a1918",
+          "#2a2a28",
+          "#3b3b37",
+          "#4b4a46",
+          "#55544f",
+          "#90908d",
+          "#c4c3c1",
+          "#eeeeed"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Dämpat bläck",
+        "canonical": "#6f6d67",
+        "tonalRamp": [
+          "#21211f",
+          "#383634",
+          "#4e4c48",
+          "#62605b",
+          "#6f6d67",
+          "#a1a09c",
+          "#cdccca",
+          "#f1f0f0"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papper",
+        "canonical": "#f7f7f5",
+        "tonalRamp": [
+          "#4a4a4a",
+          "#7c7c7a",
+          "#adadac",
+          "#d9d9d8",
+          "#f7f7f5",
+          "#fafaf8",
+          "#fcfcfc",
+          "#fefefe"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Dimma",
+        "canonical": "#f0efec",
+        "tonalRamp": [
+          "#484847",
+          "#787876",
+          "#a8a7a5",
+          "#d3d2d0",
+          "#f0efec",
+          "#f5f5f3",
+          "#faf9f8",
+          "#fefdfd"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Yta",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#4d4d4d",
+          "#808080",
+          "#b2b2b2",
+          "#e0e0e0",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Linje",
+        "canonical": "#e4e2dd",
+        "tonalRamp": [
+          "#444442",
+          "#72716e",
+          "#a09e9b",
+          "#c9c7c2",
+          "#e4e2dd",
+          "#edece9",
+          "#f6f5f3",
+          "#fcfcfc"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Stark linje",
+        "canonical": "#cfccc5",
+        "tonalRamp": [
+          "#3e3d3b",
+          "#686662",
+          "#918f8a",
+          "#b6b4ad",
+          "#cfccc5",
+          "#e0ded9",
+          "#eeedeb",
+          "#fafaf9"
+        ]
+      },
+      "night-paper": {
+        "role": "neutral",
+        "displayName": "Nattpapper",
+        "canonical": "#121212",
+        "tonalRamp": [
+          "#050505",
+          "#090909",
+          "#0d0d0d",
+          "#101010",
+          "#121212",
+          "#656565",
+          "#acacac",
+          "#e7e7e7"
+        ]
+      },
+      "night-surface": {
+        "role": "neutral",
+        "displayName": "Nattyta",
+        "canonical": "#1b1b1b",
+        "tonalRamp": [
+          "#080808",
+          "#0e0e0e",
+          "#131313",
+          "#181818",
+          "#1b1b1b",
+          "#6b6b6b",
+          "#afafaf",
+          "#e8e8e8"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Nattbläck",
+        "canonical": "#ecece8",
+        "tonalRamp": [
+          "#474746",
+          "#767674",
+          "#a5a5a2",
+          "#d0d0cc",
+          "#ecece8",
+          "#f3f3f0",
+          "#f8f8f7",
+          "#fdfdfd"
+        ]
+      },
+      "correct": {
+        "role": "status",
+        "displayName": "Rätt",
+        "canonical": "#2e7044",
+        "tonalRamp": [
+          "#0e2214",
+          "#173822",
+          "#204e30",
+          "#28633c",
+          "#2e7044",
+          "#77a285",
+          "#b6cdbe",
+          "#eaf1ec"
+        ]
+      },
+      "correct-soft": {
+        "role": "status",
+        "displayName": "Rätt, mjuk",
+        "canonical": "#eaf3ec",
+        "tonalRamp": [
+          "#464947",
+          "#757a76",
+          "#a4aaa5",
+          "#ced6d0",
+          "#eaf3ec",
+          "#f1f7f3",
+          "#f8fbf8",
+          "#fdfefd"
+        ]
+      },
+      "incorrect": {
+        "role": "status",
+        "displayName": "Fel",
+        "canonical": "#a23a2a",
+        "tonalRamp": [
+          "#31110d",
+          "#511d15",
+          "#71291d",
+          "#8f3325",
+          "#a23a2a",
+          "#c37f75",
+          "#debab4",
+          "#f6ebea"
+        ]
+      },
+      "incorrect-soft": {
+        "role": "status",
+        "displayName": "Fel, mjuk",
+        "canonical": "#f7ebe8",
+        "tonalRamp": [
+          "#4a4746",
+          "#7c7674",
+          "#ada4a2",
+          "#d9cfcc",
+          "#f7ebe8",
+          "#faf2f0",
+          "#fcf8f7",
+          "#fefdfd"
+        ]
+      },
+      "caution": {
+        "role": "status",
+        "displayName": "Varning",
+        "canonical": "#8a6212",
+        "tonalRamp": [
+          "#291d05",
+          "#453109",
+          "#61450d",
+          "#795610",
+          "#8a6212",
+          "#b39965",
+          "#d6c8ac",
+          "#f3efe7"
+        ]
+      },
+      "caution-soft": {
+        "role": "status",
+        "displayName": "Varning, mjuk",
+        "canonical": "#f6f0e1",
+        "tonalRamp": [
+          "#4a4844",
+          "#7b7870",
+          "#aca89e",
+          "#d8d3c6",
+          "#f6f0e1",
+          "#f9f5ec",
+          "#fcfaf4",
+          "#fefefc"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page title, one per page; 30px on mobile, 36px from sm."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card and dialog titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default UI text."
+      },
+      "reading": {
+        "displayName": "Reading",
+        "purpose": "LÄS/ELF passages and long explanations, max ~68ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, nav items, field labels."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Chips, meta lines, tab-bar labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "pop",
+        "value": "0 4px 16px rgb(0 0 0 / 0.08)",
+        "purpose": "Menus, popovers and dialogs only; 0.4 alpha in dark mode."
+      }
+    ],
+    "motion": [
+      {
+        "name": "fade-in",
+        "value": "opacity 0.16s ease-out",
+        "purpose": "Page content and popovers; disabled under prefers-reduced-motion."
+      },
+      {
+        "name": "color-transition",
+        "value": "background-color/border-color 0.15s ease-out",
+        "purpose": "Hover and selection state changes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one solid action per view.",
+      "html": "<button class=\"ds-btn-primary\">Starta dagens pass</button>",
+      "css": ".ds-btn-primary { font-family: \"IBM Plex Sans\", ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border:none; border-radius:8px; background:var(--brand,#2b4c7e); color:var(--primary-foreground,#fff); font-size:14px; font-weight:500; transition:background-color .15s ease-out; cursor:pointer; } .ds-btn-primary:hover { background:var(--brand-deep,#223d66); } .ds-btn-primary:focus-visible { outline:2px solid var(--brand,#2b4c7e); outline-offset:2px; } .ds-btn-primary:disabled { opacity:.5; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet alternative actions such as Hoppa över or Avbryt.",
+      "html": "<button class=\"ds-btn-secondary\">Hoppa över</button>",
+      "css": ".ds-btn-secondary { font-family: \"IBM Plex Sans\", ui-sans-serif, system-ui, sans-serif; padding:10px 16px; border:1px solid var(--line-strong,#cfccc5); border-radius:8px; background:var(--card,#fff); color:var(--ink-muted,#6f6d67); font-size:14px; transition:background-color .15s ease-out; cursor:pointer; } .ds-btn-secondary:hover { background:var(--mist,#f0efec); color:var(--ink,#1c1c1a); } .ds-btn-secondary:focus-visible { outline:2px solid var(--brand,#2b4c7e); outline-offset:2px; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat Yta panel with a hairline border; one idea per card.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Dagens pass</h3><p class=\"ds-card-meta\">ORD · 20 min</p></div>",
+      "css": ".ds-card { font-family: \"IBM Plex Sans\", ui-sans-serif, system-ui, sans-serif; background:var(--card,#fff); border:1px solid var(--line,#e4e2dd); border-radius:10px; padding:20px; color:var(--ink,#1c1c1a); } .ds-card-title { margin:0; font-size:16px; font-weight:600; letter-spacing:-.01em; } .ds-card-meta { margin:4px 0 0; font-size:13px; color:var(--ink-muted,#6f6d67); }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Fields in forms and the forum.",
+      "html": "<input class=\"ds-input\" placeholder=\"Ditt användarnamn\">",
+      "css": ".ds-input { font-family: \"IBM Plex Sans\", ui-sans-serif, system-ui, sans-serif; width:100%; padding:8px 12px; border:1px solid var(--line-strong,#cfccc5); border-radius:10px; background:var(--card,#fff); color:var(--ink,#1c1c1a); font-size:14px; outline:none; } .ds-input::placeholder { color:var(--ink-muted,#6f6d67); } .ds-input:focus { border-color:var(--brand,#2b4c7e); box-shadow:0 0 0 1px var(--brand,#2b4c7e); }"
+    },
+    {
+      "name": "Sidebar Nav",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Desktop sidebar items; active uses the blue tint.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-item ds-active\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg>Översikt</a><a class=\"ds-nav-item\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M16 2v4M8 2v4M3 10h18\"/></svg>Plan</a></nav>",
+      "css": ".ds-nav { font-family: \"IBM Plex Sans\", ui-sans-serif, system-ui, sans-serif; display:flex; flex-direction:column; gap:2px; width:216px; } .ds-nav-item { display:flex; align-items:center; gap:10px; height:36px; padding:0 10px; border-radius:8px; font-size:14px; font-weight:500; color:var(--ink-soft,#55544f); text-decoration:none; transition:background-color .15s ease-out; } .ds-nav-item svg { color:var(--ink-muted,#6f6d67); } .ds-nav-item:hover { background:var(--mist,#f0efec); color:var(--ink,#1c1c1a); } .ds-nav-item.ds-active { background:var(--accent-soft,#e9eef6); color:var(--brand,#2b4c7e); } .ds-nav-item.ds-active svg { color:var(--brand,#2b4c7e); } .ds-nav-item:focus-visible { outline:2px solid var(--brand,#2b4c7e); outline-offset:2px; }"
+    },
+    {
+      "name": "Delprov Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Delprov codes and small neutral tags.",
+      "html": "<span class=\"ds-chip\">KVA</span> <span class=\"ds-chip ds-chip-brand\">Rekommenderad</span>",
+      "css": ".ds-chip { font-family: \"IBM Plex Sans\", ui-sans-serif, system-ui, sans-serif; display:inline-flex; align-items:center; height:20px; padding:2px 8px; border-radius:8px; background:var(--mist,#f0efec); color:var(--ink-soft,#55544f); font-size:12px; font-weight:500; } .ds-chip-brand { background:color-mix(in oklab, var(--brand,#2b4c7e) 10%, transparent); color:var(--brand,#2b4c7e); }"
+    },
+    {
+      "name": "Answer Option",
+      "kind": "custom",
+      "refersTo": "answer-option",
+      "description": "Practice answer rows: neutral, selected, then right/wrong after submit.",
+      "html": "<div class=\"ds-opts\"><button class=\"ds-opt\"><span class=\"ds-letter\">A</span>4,5</button><button class=\"ds-opt ds-selected\"><span class=\"ds-letter\">B</span>6</button><div class=\"ds-opt ds-correct\"><span class=\"ds-letter\">C</span>7,5</div><div class=\"ds-opt ds-wrong\"><span class=\"ds-letter\">D</span>9</div></div>",
+      "css": ".ds-opts { font-family: \"IBM Plex Sans\", ui-sans-serif, system-ui, sans-serif; display:flex; flex-direction:column; gap:10px; width:360px; } .ds-opt { display:flex; align-items:flex-start; gap:12px; width:100%; padding:12px 16px; border:1px solid var(--line-strong,#cfccc5); border-radius:10px; background:var(--paper,#f7f7f5); color:var(--ink,#1c1c1a); font:inherit; font-size:14px; text-align:left; transition:border-color .15s ease-out; cursor:pointer; } .ds-opt:hover { border-color:var(--ink-soft,#55544f); } .ds-opt:focus-visible { outline:2px solid var(--brand,#2b4c7e); outline-offset:2px; } .ds-letter { display:flex; align-items:center; justify-content:center; width:24px; height:24px; flex-shrink:0; border:1px solid var(--line,#e4e2dd); border-radius:9999px; background:var(--card,#fff); color:var(--ink-muted,#6f6d67); font-size:12px; font-weight:500; } .ds-selected { border-color:var(--brand,#2b4c7e); background:var(--accent-soft,#e9eef6); } .ds-selected .ds-letter { border-color:var(--brand,#2b4c7e); background:var(--brand,#2b4c7e); color:#fff; } .ds-correct { background:var(--card,#fff); border-color:color-mix(in oklab, var(--success-ink,#2e7044) 40%, transparent); cursor:default; } .ds-correct .ds-letter { border-color:var(--success-ink,#2e7044); background:var(--success-ink,#2e7044); color:#fff; } .ds-wrong { background:var(--card,#fff); border-color:color-mix(in oklab, var(--destructive,#a23a2a) 30%, transparent); cursor:default; } .ds-wrong .ds-letter { border-color:var(--destructive,#a23a2a); background:var(--destructive,#a23a2a); color:#fff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Lugn kompass",
+    "overview": "HP Lift points the way without raising its voice. A user opening the app during a stressful test period should see, within a glance, what to do today and nothing that competes with it. The compass is the veckoplan and \"Dagens pass\"; everything else (practice, repetition, results) sits around it on flat paper surfaces, in ink tones, with one quiet blue to mark the direction.\n\nThe interface is friendly and clear rather than severe: gently rounded corners, generous touch targets (44px buttons), sentence-case Swedish copy, and soft tinted fills for selected states. Density is moderate. Cards hold one idea each, lists are preferred over mosaics, and practice and reading views narrow to a single column so the question has the stage.\n\nThe system grew out of a deliberate rejection of the earlier \"AI-generated\" look: no gradients, glows, glassmorphism, emoji, confetti, bouncing motion, pill-shaped primary buttons, tracked-out uppercase eyebrows or competing accent colours. Gamification (XP, streaks, achievements) stays, but quiet: plain numbers and small line icons, never celebratory banners.",
+    "keyCharacteristics": [
+      "One accent colour, Skymningsblå, for direction: the primary action, links, active navigation, focus.",
+      "Green and red exist only to say right or wrong.",
+      "Flat surfaces separated by 1px hairlines; shadows only on things that float.",
+      "IBM Plex Sans for everything, weights 400/500/600.",
+      "Sidebar on desktop, tab bar on mobile; every screen in light and dark mode.",
+      "Motion is a 160ms fade, nothing more."
+    ],
+    "rules": [
+      {
+        "name": "The One Direction Rule",
+        "body": "Skymningsblå marks where to go next: at most one solid blue button per view, plus active and selected states. If two things on a screen are solid blue, one of them is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Right-or-Wrong Rule",
+        "body": "Green and red mean correct and incorrect answers (and errors). They are never used for buttons, badges, streaks or decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Every heading, button and label is in Swedish sentence case with normal letter-spacing. No uppercase eyebrows above headings; if context is needed, use a plain muted 13px label.",
+        "section": "typography"
+      },
+      {
+        "name": "The Three Weights Rule",
+        "body": "400, 500, 600. Nothing heavier.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "A resting surface is separated by a 1px line, never by a shadow. If it does not float, it does not cast.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** take every colour from the CSS custom properties in `src/app/globals.css` (`var(--brand)`, `var(--ink-muted)`, `bg-primary`…) so dark mode follows automatically.",
+      "**Do** check every new screen in light and dark mode and at mobile width.",
+      "**Do** keep one solid Skymningsblå action per view (The One Direction Rule).",
+      "**Do** separate resting surfaces with 1px Linje borders and keep the Pop shadow for floating layers.",
+      "**Do** use lucide-react line icons at 16–18px with a 1.5 stroke, muted at rest.",
+      "**Do** use `tabular-nums` for timers, scores and the normerad poäng (0,0–2,0, decimal comma).",
+      "**Do** keep motion to the 160ms fade (`animate-fade-in`) and respect `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** use green or red for buttons, badges, streaks or decoration (The Right-or-Wrong Rule).",
+      "**Don't** use gradients, glows, glassmorphism, frosted bars or background blobs.",
+      "**Don't** use pill-shaped primary buttons or radii above 12px on containers.",
+      "**Don't** add emoji, sparkles, confetti, or bouncing, wiggling or flickering animation.",
+      "**Don't** put tracked-out uppercase eyebrows above headings or use weights above 600.",
+      "**Don't** introduce a second accent colour; the DTK `--viz-*` colours stay inside figures.",
+      "**Don't** celebrate gamification with banners; XP and streaks are plain numbers with small icons."
+    ]
+  }
+}

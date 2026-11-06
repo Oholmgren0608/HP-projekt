@@ -96,6 +96,7 @@ If a task seems to need one of these, stop and ask.
 - Duel answers are graded only on the server. Duel-pool questions never reach the client with correct_index.
 
 ## 7. Design system "Lugn"
+Full reference: `DESIGN.md` (tokens, components, rules) with its sidecar `.impeccable/design.json`; product context in `PRODUCT.md`.
 - Flat surfaces, no heavy shadows or gradients.
 - One accent colour: blue `--brand` (`#2b4c7e` light, `#8da9d6` dark) in `src/app/globals.css`. Tailwind token: `primary`
   (`bg-primary`, `text-primary`; `ring` and `chart-1` also point to `--brand`); components also use `[var(--brand)]` directly.
