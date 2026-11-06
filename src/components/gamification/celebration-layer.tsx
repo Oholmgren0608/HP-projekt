@@ -32,6 +32,8 @@ export function CelebrationLayer() {
   const [tick, setTick] = useState(0);
   const queueRef = useRef<GameNotification[]>([]);
   const busyRef = useRef(false);
+  const continueRef = useRef<HTMLButtonElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     return subscribeGamification(() => {
@@ -105,6 +107,30 @@ export function CelebrationLayer() {
     busyRef.current = false;
   };
 
+  // Modalen tar fokus när den öppnas och lämnar tillbaka det när den stängs.
+  // Escape stänger; Tab stannar på knappen, den enda kontrollen i dialogen.
+  const open = levelUp !== null;
+  useEffect(() => {
+    if (!open) return;
+    returnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    continueRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setLevelUp(null);
+        busyRef.current = false;
+      } else if (e.key === "Tab") {
+        e.preventDefault();
+        continueRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      returnFocusRef.current?.focus();
+    };
+  }, [open]);
+
   const dismissToast = (id: number) => {
     setToasts((prev) => prev.filter((t) => t.id !== id));
   };
@@ -122,7 +148,7 @@ export function CelebrationLayer() {
             exit={{ opacity: 0 }}
           >
             <div
-              className="absolute inset-0 bg-[var(--ink)]/40"
+              className="absolute inset-0 bg-black/40 dark:bg-black/60"
               onClick={closeLevelUp}
             />
             <motion.div
@@ -143,6 +169,7 @@ export function CelebrationLayer() {
               </h2>
               <p className="mt-1 text-lg font-semibold text-[var(--brand)]">{levelUp.title}</p>
               <button
+                ref={continueRef}
                 type="button"
                 onClick={closeLevelUp}
                 className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-[var(--brand)] px-4 py-2.5 text-base font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
@@ -155,7 +182,10 @@ export function CelebrationLayer() {
       </AnimatePresence>
 
       {/* Toasts */}
-      <div className="pointer-events-none fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-[140] flex flex-col items-center gap-2 px-4 md:inset-x-auto md:bottom-6 md:right-6 md:items-end md:px-0">
+      <div
+        aria-live="polite"
+        className="pointer-events-none fixed inset-x-0 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-[140] flex flex-col items-center gap-2 px-4 md:inset-x-auto md:bottom-6 md:right-6 md:items-end md:px-0"
+      >
         <AnimatePresence>
           {toasts.map((t) => (
             <motion.button
