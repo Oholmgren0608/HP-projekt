@@ -7,8 +7,16 @@ import { PracticeSession } from "@/components/practice-session";
 import { WeekTaskRow } from "@/components/week-task-row";
 import { usePlan } from "@/components/plan-context";
 import { addDays, currentPlanWeek, formatDateLong, formatWeekRange, planWeekRange, todayKey } from "@/lib/exam-date";
-import { useStudyDays } from "@/components/study-days";
-import { WEEKDAY_NAMES, scheduleWeek, weekdayOf, type TodayTask } from "@/lib/study-days";
+import { useSkippedTasks, useStudyDays } from "@/components/study-days";
+import {
+  WEEKDAY_NAMES,
+  scheduleWeek,
+  skipTask,
+  skippedWeekdays,
+  unskipTask,
+  weekdayOf,
+  type TodayTask,
+} from "@/lib/study-days";
 import { Progress } from "@/components/ui/progress";
 import { useHydrated } from "@/lib/use-hydrated";
 import { requiredPracticeMinutes } from "@/lib/practice-pace";
@@ -58,6 +66,7 @@ export function WeekTracker({
 }) {
   const { plan: generated, scores: planScores } = usePlan();
   const [studyDays] = useStudyDays();
+  const skippedTasks = useSkippedTasks();
   // Stabil tom lista när inget underlag sparats; PlanView visar då ingen WeekTracker.
   const weeklyPlans = generated?.weeklyPlans ?? NO_WEEKS;
   // Med provdatum vet planen vilken vecka det är nu (0 = planen har inte börjat).
@@ -172,7 +181,13 @@ export function WeekTracker({
     studyDays,
     progress,
     weekday: plan && nowWeek === plan.week ? weekdayOf(todayKey()) : null,
+    skippedOn:
+      plan && planStart && nowWeek === plan.week
+        ? skippedWeekdays(skippedTasks, plan.week, planWeekRange(planStart, plan.week).start)
+        : {},
   });
+  // Dagens veckodag när veckan är den aktuella: där kan pass hoppas över.
+  const todayWeekday = plan && nowWeek === plan.week ? weekdayOf(todayKey()) : null;
 
     const { done, total, percent } = useMemo(
     () => weekProgressSummary(weeklyPlans, progress),
@@ -208,7 +223,7 @@ export function WeekTracker({
 
   const weekDone = plan.tasks.filter((t) => progress[taskKey(plan.week, t.id)]).length;
 
-  function renderTask(item: TodayTask) {
+  function renderTask(item: TodayTask, day: number | null = null) {
     const { task } = item;
     const key = taskKey(plan.week, task.id);
     const checked = Boolean(progress[key]);
@@ -223,7 +238,21 @@ export function WeekTracker({
         score={scores[key]}
         bankedMin={timer?.bankedMin ?? 0}
         inProgressQuiz={inProgressQuiz}
-        note={!checked && item.movedFrom !== null ? `Flyttad från ${WEEKDAY_NAMES[item.movedFrom]}` : undefined}
+        note={
+          checked
+            ? undefined
+            : item.skipped
+              ? "Överhoppad, flyttad till nästa pluggdag"
+              : item.movedFrom !== null
+                ? `Flyttad från ${WEEKDAY_NAMES[item.movedFrom]}`
+                : undefined
+        }
+        onSkip={
+          !checked && !item.skipped && day !== null && day === todayWeekday
+            ? () => skipTask(plan.week, task.id, todayKey())
+            : undefined
+        }
+        onUndoSkip={!checked && item.skipped ? () => unskipTask(plan.week, task.id) : undefined}
         onStart={() => {
           if (checked) {
             resetPracticeSession(plan.week, task.id);
@@ -400,7 +429,7 @@ export function WeekTracker({
                     {capitalize(WEEKDAY_NAMES[d.day])}{" "}
                     {formatDayMonth(addDays(planWeekRange(planStart, plan.week).start, d.day))}
                   </h4>
-                  <ul className="space-y-3">{d.items.map(renderTask)}</ul>
+                  <ul className="space-y-3">{d.items.map((item) => renderTask(item, d.day))}</ul>
                 </div>
               ))}
             {schedule.dropped.length > 0 ? (
@@ -410,7 +439,7 @@ export function WeekTracker({
                   Veckan har krympt så att dagarna inte blir för tunga. De viktigaste passen ligger
                   kvar; de här kan du göra om du hinner.
                 </p>
-                <ul className="mt-3 space-y-3">{schedule.dropped.map(renderTask)}</ul>
+                <ul className="mt-3 space-y-3">{schedule.dropped.map((item) => renderTask(item))}</ul>
               </div>
             ) : null}
           </>

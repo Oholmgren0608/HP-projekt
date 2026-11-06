@@ -212,3 +212,11 @@ describe("canonical", () => {
     expect(canonical({ b: 1, a: [1, { d: 2, c: 3 }] })).toBe(canonical({ a: [1, { c: 3, d: 2 }], b: 1 }));
   });
 });
+
+describe("överhoppade pass", () => {
+  it("är unionen och behåller det senaste datumet", () => {
+    expect(
+      merge("hp-lift-skipped-tasks-v1", empty, { "w1:a": "2026-11-02", "w1:b": "2026-11-03" }, { "w1:a": "2026-11-04", "w1:c": "2026-11-05" }),
+    ).toEqual({ "w1:a": "2026-11-04", "w1:b": "2026-11-03", "w1:c": "2026-11-05" });
+  });
+});

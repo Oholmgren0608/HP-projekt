@@ -6,11 +6,11 @@ import { ArrowRight, Lock, Play, Timer } from "lucide-react";
 import { DailySrsReview } from "@/components/daily-srs-review";
 import { usePlan } from "@/components/plan-context";
 import { usePlanAccess } from "@/components/plan-preview";
-import { TodayCard, useStudyDays } from "@/components/study-days";
+import { TodayCard, useSkippedTasks, useStudyDays } from "@/components/study-days";
 import { WeekSummaryCard } from "@/components/week-summary-card";
 import { planWeekRange, todayKey } from "@/lib/exam-date";
 import { loadHistory } from "@/lib/progress-history";
-import { todayInPlan, weekdayOf } from "@/lib/study-days";
+import { skipTask, todayInPlan, weekdayOf } from "@/lib/study-days";
 import { weekSummary } from "@/lib/week-summary";
 import { ProgressPanel } from "@/components/progress-panel";
 import { useHydrated } from "@/lib/use-hydrated";
@@ -39,6 +39,7 @@ export function DashboardHome() {
   const { plan, scores, ready } = usePlan();
   const access = usePlanAccess();
   const [studyDays] = useStudyDays();
+  const skippedTasks = useSkippedTasks();
   const [progress, setProgress] = useState<ProgressMap>(loadWeekProgress);
   const mounted = useHydrated();
 
@@ -76,6 +77,7 @@ export function DashboardHome() {
           studyDays,
           progress,
           today: todayKey(),
+          skipped: skippedTasks,
         })
       : null;
   // Söndag: veckoavstämning för veckan som går mot sitt slut.
@@ -165,7 +167,10 @@ export function DashboardHome() {
         <DailyQuests />
 
         {today ? (
-          <TodayCard state={today} />
+          <TodayCard
+            state={today}
+            onSkip={(item) => skipTask(item.week, item.task.id, todayKey())}
+          />
         ) : planOpen ? (
           <NextTaskCard next={next} />
         ) : plan ? (

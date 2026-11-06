@@ -11,6 +11,52 @@ import { taskKey, type ProgressMap } from "@/lib/week-progress";
 export const STUDY_DAYS_KEY = "hp-lift-study-days-v1";
 export const STUDY_DAYS_EVENT = "hp-lift-study-days";
 
+/**
+ * Pass som eleven har hoppat över: { "w3:w3-x1": "2026-11-06" } (taskKey →
+ * dagen då passet hoppades över). Passet flyttas då till nästa pluggdag efter
+ * den dagen. Gäller bara inom samma vecka.
+ */
+export const SKIPPED_TASKS_KEY = "hp-lift-skipped-tasks-v1";
+export const SKIPPED_TASKS_EVENT = "hp-lift-skipped-tasks";
+
+export type SkippedTasks = Record<string, string>;
+
+export function loadSkippedTasks(): SkippedTasks {
+  const raw = loadJson<unknown>(SKIPPED_TASKS_KEY, {});
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return {};
+  const out: SkippedTasks = {};
+  for (const [key, value] of Object.entries(raw as Record<string, unknown>)) {
+    if (typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value)) out[key] = value;
+  }
+  return out;
+}
+
+/** Hoppa över ett pass idag. */
+export function skipTask(week: number, taskId: string, today: string): void {
+  saveJson(SKIPPED_TASKS_KEY, { ...loadSkippedTasks(), [taskKey(week, taskId)]: today });
+  emitEvent(SKIPPED_TASKS_EVENT);
+}
+
+/** Ångra att ett pass hoppades över. */
+export function unskipTask(week: number, taskId: string): void {
+  const next = { ...loadSkippedTasks() };
+  delete next[taskKey(week, taskId)];
+  saveJson(SKIPPED_TASKS_KEY, next);
+  emitEvent(SKIPPED_TASKS_EVENT);
+}
+
+/** Veckodagen varje pass i veckan hoppades över, för scheduleWeek. */
+export function skippedWeekdays(skipped: SkippedTasks, week: number, weekStart: string): Record<string, number> {
+  const prefix = `w${week}:`;
+  const out: Record<string, number> = {};
+  for (const [key, date] of Object.entries(skipped)) {
+    if (!key.startsWith(prefix)) continue;
+    const day = daysBetween(weekStart, date);
+    if (day >= 0 && day <= 6) out[key.slice(prefix.length)] = day;
+  }
+  return out;
+}
+
 /** Måndag–fredag tills eleven väljer själv. */
 export const DEFAULT_STUDY_DAYS: readonly number[] = [0, 1, 2, 3, 4];
 
@@ -72,6 +118,8 @@ export type TodayTask = {
   done: boolean;
   /** Veckodagen uppgiften flyttades från, när den inte hanns med då. */
   movedFrom: number | null;
+  /** Eleven hoppade över passet (och det är inte gjort). */
+  skipped?: boolean;
 };
 
 export type ScheduledDay = { day: number; items: TodayTask[] };
@@ -98,8 +146,11 @@ export function scheduleWeek(input: {
   progress: ProgressMap;
   /** Dagens veckodag om veckan är den aktuella, annars null. */
   weekday: number | null;
+  /** Pass som hoppats över: uppgiftens id → veckodagen det hoppades över. */
+  skippedOn?: Record<string, number>;
 }): WeekSchedule {
   const { tasks, week, progress, weekday } = input;
+  const skippedOn = input.skippedOn ?? {};
   const buckets = distributeTasks(tasks, input.studyDays);
   const item = (task: StudyTask, movedFrom: number | null = null): TodayTask => ({
     week,
@@ -116,6 +167,11 @@ export function scheduleWeek(input: {
   const perDay = total / Math.max(1, buckets.length);
   const largest = tasks.reduce((max, t) => Math.max(max, t.minutes), 0);
   const capacity = Math.max(perDay * 1.25, largest);
+
+  // En dags egna planerade pass ska alltid få plats, även när fördelningen
+  // har lagt mer än taket på dagen.
+  const capacityOf = (day: number) =>
+    Math.max(capacity, buckets.find((b) => b.day === day)?.minutes ?? 0);
 
   const days: ScheduledDay[] = buckets.map((b) => ({ day: b.day, items: [] }));
   const used = new Map<number, number>(buckets.map((b) => [b.day, 0]));
@@ -135,16 +191,19 @@ export function scheduleWeek(input: {
   for (const t of tasks) {
     if (item(t).done) continue;
     const own = originalDay.get(t.id) ?? weekday;
-    const earliest = Math.max(own, weekday);
+    // Ett överhoppat pass hamnar tidigast dagen efter att det hoppades över.
+    const skipDay = skippedOn[t.id];
+    const earliest = Math.max(own, weekday, skipDay !== undefined ? skipDay + 1 : -1);
     const target = remaining.find(
-      (d) => d >= earliest && ((used.get(d) ?? 0) + t.minutes <= capacity || (used.get(d) ?? 0) === 0),
+      (d) => d >= earliest && ((used.get(d) ?? 0) + t.minutes <= capacityOf(d) || (used.get(d) ?? 0) === 0),
     );
+    const skipped = skipDay !== undefined;
     if (target === undefined) {
-      dropped.push(item(t, own < weekday ? own : null));
+      dropped.push({ ...item(t, own < weekday ? own : null), skipped });
       continue;
     }
     used.set(target, (used.get(target) ?? 0) + t.minutes);
-    days.find((d) => d.day === target)!.items.push(item(t, target !== own ? own : null));
+    days.find((d) => d.day === target)!.items.push({ ...item(t, target !== own ? own : null), skipped });
   }
   // Inom en dag: i planens ordning.
   const order = new Map(tasks.map((t, i) => [t.id, i]));
@@ -170,8 +229,10 @@ export function todayInPlan(input: {
   studyDays: readonly number[];
   progress: ProgressMap;
   today: string;
+  skipped?: SkippedTasks;
 }): TodayState {
   const { weeklyPlans, planStart, examDate, progress, today, studyDays } = input;
+  const skipped = input.skipped ?? {};
   const week = currentPlanWeek(planStart, examDate, today);
   if (week === 0) return { kind: "not-started", startsOn: planWeekRange(planStart, 1).start };
 
@@ -179,7 +240,14 @@ export function todayInPlan(input: {
   const scheduleFor = (w: number, current: boolean) => {
     const plan = weeklyPlans.find((p) => p.week === w);
     return plan
-      ? scheduleWeek({ tasks: plan.tasks, week: w, studyDays, progress, weekday: current ? weekday : null })
+      ? scheduleWeek({
+          tasks: plan.tasks,
+          week: w,
+          studyDays,
+          progress,
+          weekday: current ? weekday : null,
+          skippedOn: current ? skippedWeekdays(skipped, w, planWeekRange(planStart, w).start) : {},
+        })
       : { days: [], dropped: [] };
   };
 

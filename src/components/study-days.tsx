@@ -9,12 +9,32 @@ import {
   STUDY_DAYS_EVENT,
   WEEKDAY_NAMES,
   WEEKDAY_SHORT,
+  SKIPPED_TASKS_EVENT,
+  loadSkippedTasks,
   loadStudyDays,
   saveStudyDays,
+  type SkippedTasks,
   weekdayOf,
   type TodayState,
   type TodayTask,
 } from "@/lib/study-days";
+
+/** Överhoppade pass, uppdaterade när de ändras här eller i en annan flik. */
+export function useSkippedTasks(): SkippedTasks {
+  const [skipped, setSkipped] = useState<SkippedTasks>(() =>
+    typeof window === "undefined" ? {} : loadSkippedTasks(),
+  );
+  useEffect(() => {
+    const refresh = () => setSkipped(loadSkippedTasks());
+    window.addEventListener(SKIPPED_TASKS_EVENT, refresh);
+    window.addEventListener("storage", refresh);
+    return () => {
+      window.removeEventListener(SKIPPED_TASKS_EVENT, refresh);
+      window.removeEventListener("storage", refresh);
+    };
+  }, []);
+  return skipped;
+}
 
 /** Pluggdagarna, uppdaterade när de ändras här eller i en annan flik. */
 export function useStudyDays(): [number[], (days: number[]) => void] {
@@ -85,7 +105,7 @@ export function StudyDaysPicker({
   );
 }
 
-function TaskLine({ item }: { item: TodayTask }) {
+function TaskLine({ item, onSkip }: { item: TodayTask; onSkip?: (item: TodayTask) => void }) {
   return (
     <li className="flex items-start gap-3">
       <span
@@ -96,16 +116,29 @@ function TaskLine({ item }: { item: TodayTask }) {
       >
         {item.done ? <Check className="size-3" /> : null}
       </span>
-      <span className="min-w-0">
+      <span className="min-w-0 flex-1">
         <span className={`block font-medium ${item.done ? "text-[var(--ink-muted)] line-through" : "text-[var(--ink)]"}`}>
           {item.task.title}
         </span>
         <span className="flex items-center gap-1 text-xs text-[var(--ink-muted)]">
           <Timer className="size-3" aria-hidden />~{item.task.minutes} min
           {item.done ? " · klar" : ""}
-          {!item.done && item.movedFrom !== null ? ` · flyttad från ${WEEKDAY_NAMES[item.movedFrom]}` : ""}
+          {!item.done && item.skipped
+            ? " · överhoppad"
+            : !item.done && item.movedFrom !== null
+              ? ` · flyttad från ${WEEKDAY_NAMES[item.movedFrom]}`
+              : ""}
         </span>
       </span>
+      {onSkip && !item.done && !item.skipped ? (
+        <button
+          type="button"
+          onClick={() => onSkip(item)}
+          className="min-h-11 shrink-0 rounded-md px-2 text-sm font-medium text-[var(--brand)] underline-offset-4 hover:underline"
+        >
+          Hoppa över
+        </button>
+      ) : null}
     </li>
   );
 }
@@ -118,7 +151,14 @@ function startHref(item: TodayTask) {
 }
 
 /** "Idag"-kortet på översikten: dagens pass enligt pluggdagarna. */
-export function TodayCard({ state }: { state: TodayState }) {
+export function TodayCard({
+  state,
+  onSkip,
+}: {
+  state: TodayState;
+  /** Hoppa över ett av dagens pass (flyttas till nästa pluggdag). */
+  onSkip?: (item: TodayTask) => void;
+}) {
   if (state.kind === "not-started") {
     return (
       <div className={cardClass}>
@@ -192,7 +232,7 @@ export function TodayCard({ state }: { state: TodayState }) {
       </h2>
       <ul className="mt-4 space-y-3">
         {state.tasks.map((item) => (
-          <TaskLine key={item.task.id} item={item} />
+          <TaskLine key={item.task.id} item={item} onSkip={onSkip} />
         ))}
       </ul>
       {earlier}

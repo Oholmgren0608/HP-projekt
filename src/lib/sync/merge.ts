@@ -394,6 +394,18 @@ function mergeGamification(base: Base, local: string, remote: string): string {
   return JSON.stringify(out);
 }
 
+/** Överhoppade pass ({ taskKey: datum }): union, senaste datumet vinner. */
+function mergeLatestDate(_base: Base, local: string, remote: string): string {
+  const l = objectOr(parse(local));
+  const r = objectOr(parse(remote));
+  const out: JsonObject = { ...r };
+  for (const [key, value] of Object.entries(l)) {
+    const other = out[key];
+    out[key] = typeof other === "string" && typeof value === "string" && other > value ? other : value;
+  }
+  return JSON.stringify(out);
+}
+
 const MERGERS: Record<string, Merger> = {
   "hp-lift-history-v1": mergeHistory,
   "hp-lift-seen-questions-v1": mergeSeen,
@@ -407,6 +419,7 @@ const MERGERS: Record<string, Merger> = {
   "hp-lift-gamification-v1": mergeGamification,
   "hp-lift-weeks-rewarded-v1": mergeUnionSet,
   "hp-lift-reported-duels-v1": mergeUnionSet,
+  "hp-lift-skipped-tasks-v1": mergeLatestDate,
 };
 
 /** Nycklar vars regel behöver värdet vid förra synken (basen). */

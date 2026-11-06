@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { distributeTasks, normalizeStudyDays, scheduleWeek, todayInPlan, weekdayOf } from "./study-days";
+import { distributeTasks, normalizeStudyDays, scheduleWeek, skippedWeekdays, todayInPlan, weekdayOf } from "./study-days";
 import type { StudyTask, WeekPlan } from "./study-plan";
 
 const task = (id: string, minutes: number): StudyTask => ({
@@ -90,6 +90,13 @@ describe("scheduleWeek", () => {
     expect(s.days.flatMap((d) => ids(d.items)).length + s.dropped.length).toBe(5);
   });
 
+  it("släpper inget pass på veckans första dag när inget är missat", () => {
+    const five = [task("a", 70), task("b", 90), task("c", 80), task("d", 60), task("e", 85)];
+    const s = scheduleWeek({ tasks: five, week: 1, studyDays: [0, 2, 4], progress: {}, weekday: 0 });
+    expect(s.dropped).toEqual([]);
+    expect(s.days.flatMap((d) => ids(d.items))).toEqual(["a", "b", "c", "d", "e"]);
+  });
+
   it("låter gjorda pass stå kvar på sin dag", () => {
     const s = scheduleWeek({ ...base, progress: { "w1:c": true }, weekday: 2 });
     // c är gjord i förväg och står kvar på fredag utan att ta tid. Måndagens
@@ -152,5 +159,45 @@ describe("todayInPlan", () => {
       kind: "not-started",
       startsOn: "2026-11-02",
     });
+  });
+});
+
+describe("hoppa över", () => {
+  const tasks = [task("a", 60), task("b", 60), task("c", 60)];
+  const ids = (items: { task: StudyTask }[]) => items.map((i) => i.task.id);
+
+  it("flyttar ett pass som hoppas över idag till nästa pluggdag", () => {
+    // Måndag, pluggdagar mån/ons/fre: a hoppas över och hamnar på onsdag.
+    const s = scheduleWeek({ tasks, week: 1, studyDays: [0, 2, 4], progress: {}, weekday: 0, skippedOn: { a: 0 } });
+    expect(ids(s.days[0].items)).toEqual([]);
+    expect(ids(s.days[1].items)).toEqual(["a"]);
+    expect(s.days[1].items[0].skipped).toBe(true);
+  });
+
+  it("krymper veckan om det överhoppade passet inte får plats", () => {
+    const s = scheduleWeek({ tasks, week: 1, studyDays: [0, 2, 4], progress: {}, weekday: 4, skippedOn: { c: 4 } });
+    expect(ids(s.dropped)).toContain("c");
+    expect(s.dropped.find((i) => i.task.id === "c")?.skipped).toBe(true);
+  });
+
+  it("läser bara överhoppningar i rätt vecka", () => {
+    const skipped = { "w1:a": "2026-11-02", "w2:b": "2026-11-10", "w1:c": "2026-10-20" };
+    expect(skippedWeekdays(skipped, 1, "2026-11-02")).toEqual({ a: 0 });
+    expect(skippedWeekdays(skipped, 2, "2026-11-09")).toEqual({ b: 1 });
+  });
+
+  it("gör det i todayInPlan också", () => {
+    const plans = [week(1, [task("w1a", 60), task("w1b", 60), task("w1c", 60)])];
+    const s = todayInPlan({
+      weeklyPlans: plans,
+      planStart: "2026-11-02",
+      examDate: "2027-01-30",
+      studyDays: [0, 2, 4],
+      progress: {},
+      today: "2026-11-02",
+      skipped: { "w1:w1a": "2026-11-02" },
+    });
+    expect(s.kind).toBe("rest-day");
+    if (s.kind === "rest-day") expect(s.next?.tasks.map((t) => t.task.id)).toEqual(["w1a"]);
   });
 });

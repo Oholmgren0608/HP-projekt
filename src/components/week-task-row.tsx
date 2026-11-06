@@ -14,6 +14,10 @@ type Props = {
   onStart: () => void;
   /** Kort notering under titeln, t.ex. "Flyttad från måndag". */
   note?: string;
+  /** Visar "Hoppa över" (flyttar passet till nästa pluggdag). */
+  onSkip?: () => void;
+  /** Visar "Ångra" för ett pass som hoppats över. */
+  onUndoSkip?: () => void;
 };
 
 /**
@@ -29,6 +33,8 @@ export function WeekTaskRow({
   inProgressQuiz,
   onStart,
   note,
+  onSkip,
+  onUndoSkip,
 }: Props) {
   return (
     <li>
@@ -88,6 +94,24 @@ export function WeekTaskRow({
                     ? "Fortsätt övning"
                     : "Starta övning"}
               </button>
+              {onSkip ? (
+                <button
+                  type="button"
+                  onClick={onSkip}
+                  className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-4 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--mist)]"
+                >
+                  Hoppa över
+                </button>
+              ) : null}
+              {onUndoSkip ? (
+                <button
+                  type="button"
+                  onClick={onUndoSkip}
+                  className="inline-flex min-h-11 items-center rounded-lg border border-[var(--line-strong)] px-4 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--mist)]"
+                >
+                  Ångra
+                </button>
+              ) : null}
               {checked && score ? (
                 <span className="self-center text-xs text-[var(--ink-muted)]">
                   Klar · {score.correct}/{score.total}

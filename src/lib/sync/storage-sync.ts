@@ -75,6 +75,7 @@ export const SYNCED_KEYS = [
   "hp-lift-weeks-rewarded-v1",
   "hp-lift-reported-duels-v1",
   "hp-lift-study-days-v1",
+  "hp-lift-skipped-tasks-v1",
 ] as const;
 
 const SYNCED = new Set<string>(SYNCED_KEYS);
