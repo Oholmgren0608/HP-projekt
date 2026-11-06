@@ -200,7 +200,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
             : `Vi har skickat en bekräftelselänk till ${success}. Klicka på länken i mejlet för att aktivera ditt konto.`}
         </p>
         {resentTo ? (
-          <p className="text-sm text-[var(--success-ink)]" aria-live="polite">
+          <p className="text-sm text-[var(--ink-soft)]" aria-live="polite">
             Nytt mejl skickat till {resentTo}. Kolla även skräpposten.
           </p>
         ) : (
@@ -273,7 +273,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
           {needsResend || resentTo ? (
             <div className="space-y-1.5">
               {resentTo ? (
-                <p className="text-xs text-[var(--success-ink)]" aria-live="polite">
+                <p className="text-xs text-[var(--ink-soft)]" aria-live="polite">
                   Nytt bekräftelsemejl skickat till {resentTo}.
                 </p>
               ) : null}

@@ -127,7 +127,7 @@ export function OfficialExamsBrowser() {
                     href={exam.pageUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[13px] text-[var(--ink-muted)] underline-offset-4 hover:text-[var(--ink)] hover:underline sm:col-span-2"
+                    className="inline-flex min-h-8 items-center justify-self-start text-[13px] text-[var(--ink-muted)] underline-offset-4 hover:text-[var(--ink)] hover:underline sm:col-span-2"
                   >
                     Provets sida hos UHR
                   </a>

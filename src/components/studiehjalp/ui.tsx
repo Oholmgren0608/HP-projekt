@@ -62,7 +62,7 @@ export function PanelTitle({ children }: { children: ReactNode }) {
 
 const NOTICE_TONE = {
   info: "border-[var(--line)] bg-[var(--accent-soft)] text-[var(--ink)]",
-  ok: "border-transparent bg-[var(--success-soft)] text-[var(--success-ink)]",
+  ok: "border-transparent bg-[var(--accent-soft)] text-[var(--brand)]",
   warn: "border-transparent bg-[var(--energy-soft)] text-[var(--energy-ink)]",
   error: "border-transparent bg-[var(--coral-soft)] text-[var(--coral-ink)]",
 };
@@ -211,7 +211,7 @@ export function ExpertBadges({
             <li key={item.title}>
               <span
                 title={item.detail}
-                className="inline-flex items-center gap-1 rounded-full bg-[var(--success-soft)] px-2.5 py-0.5 text-xs font-medium text-[var(--success-ink)]"
+                className="inline-flex items-center gap-1 rounded-md bg-[var(--accent-soft)] px-2.5 py-0.5 text-xs font-medium text-[var(--brand)]"
               >
                 <Icon size={13} aria-hidden />
                 {item.title}
@@ -229,7 +229,7 @@ export function ExpertBadges({
         const Icon = item.icon;
         return (
           <li key={item.title} className="flex gap-2.5">
-            <Icon size={18} className="mt-0.5 shrink-0 text-[var(--success-ink)]" aria-hidden />
+            <Icon size={18} className="mt-0.5 shrink-0 text-[var(--brand)]" aria-hidden />
             <div>
               <p className="text-sm font-medium text-[var(--ink)]">{item.title}</p>
               <p className="text-xs text-[var(--ink-muted)]">

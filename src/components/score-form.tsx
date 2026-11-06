@@ -310,7 +310,7 @@ export function ScoreForm() {
           </button>
         )}
         {shownMessage ? (
-          <p className="text-sm text-[var(--success-ink)]" role="status">
+          <p className="text-sm text-[var(--ink-soft)]" role="status">
             {shownMessage}
           </p>
         ) : null}

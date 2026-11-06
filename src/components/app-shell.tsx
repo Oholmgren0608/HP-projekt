@@ -433,16 +433,16 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="flex flex-col gap-3 border-t border-[var(--line)] pt-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-[var(--ink-muted)]">HP Lift byggs vidare med dina förslag</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            <Link href="/feedback" className="text-sm font-medium text-[var(--brand)] hover:underline">
+            <Link href="/feedback" className="inline-flex min-h-6 items-center text-sm font-medium text-[var(--brand)] hover:underline">
               Skicka önskemål
             </Link>
             <Link
               href="/feedback?typ=problem"
-              className="text-sm font-medium text-[var(--ink-muted)] hover:underline"
+              className="inline-flex min-h-6 items-center text-sm font-medium text-[var(--ink-muted)] hover:underline"
             >
               Rapportera ett problem
             </Link>
-            <Link href="/integritetspolicy" className="text-sm font-medium text-[var(--ink-muted)] hover:underline">
+            <Link href="/integritetspolicy" className="inline-flex min-h-6 items-center text-sm font-medium text-[var(--ink-muted)] hover:underline">
               Integritetspolicy
             </Link>
           </div>
