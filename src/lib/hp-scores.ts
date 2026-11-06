@@ -24,6 +24,11 @@ export type ScoreInput = {
   examDate?: string;
   /** Planens första måndag, "YYYY-MM-DD". Sätts tillsammans med examDate. */
   planStart?: string;
+  /**
+   * Dagen planen skapades, "YYYY-MM-DD". Skapas den mitt i en vecka räknas
+   * veckans tidigare dagar inte som missade.
+   */
+  planCreated?: string;
   /** correct answers per delprov id */
   delprov: Record<SectionId, number>;
 };
@@ -34,16 +39,21 @@ export type ScoreInput = {
  * den här veckan (eller en senare måndag om provet är mer än 16 veckor bort).
  */
 export function withExamDate(
-  scores: Omit<ScoreInput, "examDate" | "planStart">,
+  scores: Omit<ScoreInput, "examDate" | "planStart" | "planCreated">,
   examDate: string,
   today: string,
-  previous?: Pick<ScoreInput, "examDate" | "planStart"> | null,
+  previous?: Pick<ScoreInput, "examDate" | "planStart" | "planCreated"> | null,
 ): ScoreInput {
-  const planStart =
-    previous?.examDate === examDate && previous.planStart && isDateKey(previous.planStart)
-      ? previous.planStart
-      : planStartFor(examDate, today);
-  return { ...scores, examDate, planStart, weeksUntilExam: planWeekCount(planStart, examDate) };
+  const keep = previous?.examDate === examDate && previous.planStart && isDateKey(previous.planStart);
+  const planStart = keep ? previous!.planStart! : planStartFor(examDate, today);
+  const planCreated = keep ? (isDateKey(previous!.planCreated) ? previous!.planCreated : undefined) : today;
+  return {
+    ...scores,
+    examDate,
+    planStart,
+    ...(planCreated ? { planCreated } : {}),
+    weeksUntilExam: planWeekCount(planStart, examDate),
+  };
 }
 
 /**
@@ -128,6 +138,7 @@ export function loadScores(): ScoreInput | null {
         ...base,
         examDate: parsed.examDate,
         planStart: parsed.planStart,
+        ...(isDateKey(parsed.planCreated) ? { planCreated: parsed.planCreated } : {}),
         weeksUntilExam: planWeekCount(parsed.planStart, parsed.examDate),
       };
     }

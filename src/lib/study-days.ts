@@ -107,6 +107,13 @@ export function distributeTasks(tasks: readonly StudyTask[], studyDays: readonly
   return buckets;
 }
 
+/** Första veckodagen som räknas i planens vecka `week` (planen skapades mitt i vecka 1). */
+export function firstDayOfWeek(week: number, planStart: string, planCreated: string | undefined): number {
+  if (week !== 1 || !planCreated) return 0;
+  const day = daysBetween(mondayOf(planStart), planCreated);
+  return day > 0 && day <= 6 ? day : 0;
+}
+
 /** Veckodagen för ett datum (0 = måndag). */
 export function weekdayOf(date: string): number {
   return daysBetween(mondayOf(date), date);
@@ -148,10 +155,20 @@ export function scheduleWeek(input: {
   weekday: number | null;
   /** Pass som hoppats över: uppgiftens id → veckodagen det hoppades över. */
   skippedOn?: Record<string, number>;
+  /**
+   * Första veckodagen som räknas (planen skapades mitt i veckan). Pluggdagar
+   * före den används inte; finns ingen pluggdag kvar används veckans
+   * återstående dagar.
+   */
+  firstDay?: number;
 }): WeekSchedule {
   const { tasks, week, progress, weekday } = input;
   const skippedOn = input.skippedOn ?? {};
-  const buckets = distributeTasks(tasks, input.studyDays);
+  const firstDay = input.firstDay ?? 0;
+  const normalized = normalizeStudyDays(input.studyDays) ?? [...DEFAULT_STUDY_DAYS];
+  const usable = normalized.filter((d) => d >= firstDay);
+  const days7 = [0, 1, 2, 3, 4, 5, 6].filter((d) => d >= firstDay);
+  const buckets = distributeTasks(tasks, usable.length > 0 ? usable : days7);
   const item = (task: StudyTask, movedFrom: number | null = null): TodayTask => ({
     week,
     task,
@@ -164,14 +181,16 @@ export function scheduleWeek(input: {
   }
 
   const total = tasks.reduce((sum, t) => sum + Math.max(0, t.minutes), 0);
-  const perDay = total / Math.max(1, buckets.length);
+  // Snittet räknas på en hel veckas pluggdagar, så att en första vecka som
+  // börjar mitt i veckan blir kortare i stället för att samlas på få dagar.
+  const perDay = total / Math.max(1, normalized.length);
   const largest = tasks.reduce((max, t) => Math.max(max, t.minutes), 0);
   const capacity = Math.max(perDay * 1.25, largest);
 
   // En dags egna planerade pass ska alltid få plats, även när fördelningen
   // har lagt mer än taket på dagen.
   const capacityOf = (day: number) =>
-    Math.max(capacity, buckets.find((b) => b.day === day)?.minutes ?? 0);
+    firstDay > 0 ? capacity : Math.max(capacity, buckets.find((b) => b.day === day)?.minutes ?? 0);
 
   const days: ScheduledDay[] = buckets.map((b) => ({ day: b.day, items: [] }));
   const used = new Map<number, number>(buckets.map((b) => [b.day, 0]));
@@ -213,8 +232,15 @@ export function scheduleWeek(input: {
 
 export type TodayState =
   | { kind: "not-started"; startsOn: string }
-  | { kind: "study-day"; date: string; week: number; tasks: TodayTask[]; dropped: number }
-  | { kind: "rest-day"; date: string; week: number; dropped: number; next: { date: string; tasks: TodayTask[] } | null };
+  | { kind: "study-day"; date: string; week: number; tasks: TodayTask[]; dropped: number; shortWeek?: boolean }
+  | {
+      kind: "rest-day";
+      date: string;
+      week: number;
+      dropped: number;
+      shortWeek?: boolean;
+      next: { date: string; tasks: TodayTask[] } | null;
+    };
 
 /**
  * Vad som gäller idag i veckoplanen. Kräver provdatum och planstart (steg 2).
@@ -230,6 +256,8 @@ export function todayInPlan(input: {
   progress: ProgressMap;
   today: string;
   skipped?: SkippedTasks;
+  /** Dagen planen skapades (ScoreInput.planCreated). */
+  planCreated?: string;
 }): TodayState {
   const { weeklyPlans, planStart, examDate, progress, today, studyDays } = input;
   const skipped = input.skipped ?? {};
@@ -247,15 +275,18 @@ export function todayInPlan(input: {
           progress,
           weekday: current ? weekday : null,
           skippedOn: current ? skippedWeekdays(skipped, w, planWeekRange(planStart, w).start) : {},
+          firstDay: firstDayOfWeek(w, planStart, input.planCreated),
         })
       : { days: [], dropped: [] };
   };
 
   const schedule = scheduleFor(week, true);
   const dropped = schedule.dropped.length;
+  // Planen skapades mitt i den här veckan: veckan är kortare, inget är missat.
+  const shortWeek = firstDayOfWeek(week, planStart, input.planCreated) > 0;
   const todays = schedule.days.find((d) => d.day === weekday);
   if (todays && todays.items.length > 0) {
-    return { kind: "study-day", date: today, week, tasks: todays.items, dropped };
+    return { kind: "study-day", date: today, week, tasks: todays.items, dropped, shortWeek };
   }
 
   // Vilodag: nästa dag med ogjorda uppgifter, i den här veckan eller nästa.
@@ -268,5 +299,5 @@ export function todayInPlan(input: {
     const first = scheduleFor(week + 1, false).days.find((d) => d.items.length > 0);
     if (first) next = { date: addDays(weekStart, 7 + first.day), tasks: first.items };
   }
-  return { kind: "rest-day", date: today, week, dropped, next };
+  return { kind: "rest-day", date: today, week, dropped, shortWeek, next };
 }

@@ -17,6 +17,13 @@ describe("withExamDate", () => {
     expect(later.weeksUntilExam).toBe(12);
   });
 
+  it("sparar dagen planen skapades och behåller den vid nya resultat", () => {
+    const first = withExamDate(base, "2027-01-30", "2026-11-06");
+    expect(first).toMatchObject({ planStart: "2026-11-02", planCreated: "2026-11-06" });
+    const later = withExamDate(base, "2027-01-30", "2026-11-20", first);
+    expect(later.planCreated).toBe("2026-11-06");
+  });
+
   it("startar om kalendern när provdatumet ändras", () => {
     const first = withExamDate(base, "2027-04-10", "2027-01-20");
     const moved = withExamDate(base, "2027-10-24", "2027-02-10", first);

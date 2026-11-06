@@ -296,7 +296,16 @@ function SidebarNav({ pathname, items }: { pathname: string; items: readonly (Na
 }
 
 /** Gruppflik i mobilens bottenmeny: öppnar barnen i en meny ovanför baren. */
-function MobileGroup({ item, pathname }: { item: NavGroup; pathname: string }) {
+function MobileGroup({
+  item,
+  pathname,
+  align,
+}: {
+  item: NavGroup;
+  pathname: string;
+  /** Var menyn hänger: flikar i kanten öppnar inåt så att menyn inte hamnar utanför skärmen. */
+  align: "start" | "end";
+}) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLLIElement>(null);
   useDismiss(open, setOpen, containerRef);
@@ -323,7 +332,10 @@ function MobileGroup({ item, pathname }: { item: NavGroup; pathname: string }) {
         <div
           role="menu"
           aria-label={item.label}
-          className="absolute bottom-full left-1/2 z-50 mb-2 w-56 max-w-[calc(100vw-1.5rem)] -translate-x-1/2 rounded-[10px] border border-[var(--line)] bg-card p-1.5 shadow-pop"
+          className={cn(
+            "absolute bottom-full z-50 mb-2 w-56 max-w-[calc(100vw-1.5rem)] rounded-[10px] border border-[var(--line)] bg-card p-1.5 shadow-pop",
+            align === "start" ? "left-2" : "right-2",
+          )}
         >
           {item.children.map((child) => {
             const ChildIcon = child.icon;
@@ -442,9 +454,10 @@ export function AppShell({ children }: { children: ReactNode }) {
         aria-label="Huvudmeny"
       >
         <ul className={cn("mx-auto grid max-w-md", navItems.length > 4 ? "grid-cols-5" : "grid-cols-4")}>
-          {navItems.map((item) => {
+          {navItems.map((item, index) => {
             if ("children" in item) {
-              return <MobileGroup key={item.label} item={item} pathname={pathname} />;
+              const align = index < navItems.length / 2 ? "start" : "end";
+              return <MobileGroup key={item.label} item={item} pathname={pathname} align={align} />;
             }
             const Icon = item.icon;
             const active = isActive(pathname, item.href);

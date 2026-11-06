@@ -10,6 +10,7 @@ import { addDays, currentPlanWeek, formatDateLong, formatWeekRange, planWeekRang
 import { useSkippedTasks, useStudyDays } from "@/components/study-days";
 import {
   WEEKDAY_NAMES,
+  firstDayOfWeek,
   scheduleWeek,
   skipTask,
   skippedWeekdays,
@@ -181,6 +182,7 @@ export function WeekTracker({
     studyDays,
     progress,
     weekday: plan && nowWeek === plan.week ? weekdayOf(todayKey()) : null,
+    firstDay: plan && planStart ? firstDayOfWeek(plan.week, planStart, planScores?.planCreated) : 0,
     skippedOn:
       plan && planStart && nowWeek === plan.week
         ? skippedWeekdays(skippedTasks, plan.week, planWeekRange(planStart, plan.week).start)

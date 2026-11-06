@@ -78,6 +78,7 @@ export function DashboardHome() {
           progress,
           today: todayKey(),
           skipped: skippedTasks,
+          planCreated: scores.planCreated,
         })
       : null;
   // Söndag: veckoavstämning för veckan som går mot sitt slut.

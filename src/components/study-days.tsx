@@ -187,8 +187,9 @@ export function TodayCard({
   const earlier =
     state.dropped > 0 ? (
       <p className="mt-3 text-sm text-[var(--ink-muted)]">
-        Veckan har krympt så att dagarna inte blir för tunga: {state.dropped} pass med lägst
-        prioritet får inte plats längre.{" "}
+        {state.shortWeek
+          ? `Första veckan är kortare eftersom planen började mitt i veckan: ${state.dropped} pass med lägst prioritet ryms inte.`
+          : `Veckan har krympt så att dagarna inte blir för tunga: ${state.dropped} pass med lägst prioritet får inte plats längre.`}{" "}
         <Link href={`/plan?week=${state.week}`} className="font-medium text-[var(--brand)] underline-offset-4 hover:underline">
           Visa veckan
         </Link>

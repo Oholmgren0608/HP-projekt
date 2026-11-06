@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { distributeTasks, normalizeStudyDays, scheduleWeek, skippedWeekdays, todayInPlan, weekdayOf } from "./study-days";
+import { distributeTasks, firstDayOfWeek, normalizeStudyDays, scheduleWeek, skippedWeekdays, todayInPlan, weekdayOf } from "./study-days";
 import type { StudyTask, WeekPlan } from "./study-plan";
 
 const task = (id: string, minutes: number): StudyTask => ({
@@ -199,5 +199,30 @@ describe("hoppa över", () => {
     });
     expect(s.kind).toBe("rest-day");
     if (s.kind === "rest-day") expect(s.next?.tasks.map((t) => t.task.id)).toEqual(["w1a"]);
+  });
+});
+
+describe("plan som skapas mitt i veckan", () => {
+  const tasks = [task("a", 60), task("b", 60), task("c", 60)];
+  const ids = (items: { task: StudyTask }[]) => items.map((i) => i.task.id);
+
+  it("räknar första veckan från skapandedagen", () => {
+    expect(firstDayOfWeek(1, "2026-11-02", "2026-11-06")).toBe(4); // fredag
+    expect(firstDayOfWeek(2, "2026-11-02", "2026-11-06")).toBe(0);
+    expect(firstDayOfWeek(1, "2026-11-02", undefined)).toBe(0);
+  });
+
+  it("räknar inga pass som missade och gör första veckan kortare när planen skapas på en fredag", () => {
+    const s = scheduleWeek({ tasks, week: 1, studyDays: [0, 1, 2, 3, 4], progress: {}, weekday: 4, firstDay: 4 });
+    expect(s.days.flatMap((d) => d.items).every((i) => i.movedFrom === null)).toBe(true);
+    // En dags normala mängd (snittet för en hel vecka) i stället för hela veckan på fredagen.
+    expect(ids(s.days.find((d) => d.day === 4)!.items)).toEqual(["a"]);
+    expect(ids(s.dropped)).toEqual(["b", "c"]);
+  });
+
+  it("använder helgen om inga pluggdagar finns kvar i veckan", () => {
+    const s = scheduleWeek({ tasks, week: 1, studyDays: [0, 1, 2, 3, 4], progress: {}, weekday: 5, firstDay: 5 });
+    expect(s.days.map((d) => d.day)).toEqual([5, 6]);
+    expect(s.days.flatMap((d) => ids(d.items)).length + s.dropped.length).toBe(3);
   });
 });
