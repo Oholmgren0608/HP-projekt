@@ -15,9 +15,9 @@
 export const MAX_PLAN_WEEKS = 16;
 
 /**
- * Kommande högskoleprov. Vårprovet 2027 är kontrollerat mot Örebro
- * universitets sida (2026-11-06). Höstprovet 2027 är hämtat från
- * förberedelsesajter och väntar på Oscars bekräftelse mot studera.nu.
+ * Kommande högskoleprov, bekräftade av Oscar 2026-11-06 (vårprovet 2027 även
+ * mot Örebro universitets sida). Lägg till nya datum när UHR publicerar dem;
+ * passerade datum visas inte.
  */
 export const HP_EXAM_DATES: ReadonlyArray<{ date: string; label: string }> = [
   { date: "2027-04-10", label: "Våren 2027" },
