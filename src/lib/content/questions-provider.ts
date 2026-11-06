@@ -195,10 +195,17 @@ function writeCache(value: QuestionBank): void {
 // ---- Laddning --------------------------------------------------------------
 
 /**
+ * Längsta tid som databasen får på sig innan övningen startar med cachen eller
+ * den bundlade banken. En hel nedladdning tar normalt några sekunder.
+ */
+const BANK_DEADLINE_MS = 8_000;
+
+/**
  * Hämtar alla publicerade frågor sida för sida (sorterade på id så att
  * sidorna inte överlappar). Utan sidindelning kapas banken tyst vid radtaket.
+ * Inga automatiska omförsök: utan nät ska reservbanken användas direkt.
  */
-async function fetchPublishedQuestionRows(): Promise<{
+async function fetchPublishedQuestionRows(signal: AbortSignal): Promise<{
   rows: Record<string, unknown>[];
   error: boolean;
 }> {
@@ -210,9 +217,52 @@ async function fetchPublishedQuestionRows(): Promise<{
       .select(QUESTION_COLUMNS, { count: "exact" })
       .eq("status", "published")
       .order("id")
-      .range(from, to),
+      .range(from, to)
+      .retry(false)
+      .abortSignal(signal),
   );
   return rows ? { rows: rows as Record<string, unknown>[], error: false } : { rows: [], error: true };
+}
+
+/** Banken från databasen, eller null om den inte gick att hämta. */
+async function fetchBankFromDatabase(signal: AbortSignal): Promise<QuestionBank | null> {
+  const supabase = getSupabase();
+  if (!supabase) return null;
+  const [questionsRes, reflectRes] = await Promise.all([
+    fetchPublishedQuestionRows(signal),
+    supabase.from("reflect_prompts").select("*").retry(false).abortSignal(signal),
+  ]);
+  const qRows = questionsRes.rows;
+  if (questionsRes.error || reflectRes.error || qRows.length === 0) return null;
+  const rRows = (reflectRes.data ?? []) as Record<string, unknown>[];
+  return {
+    questions: qRows.map(questionFromRow).filter((q): q is ChoiceQuestion => q !== null),
+    reflect: rRows.map(reflectFromRow).filter((r): r is ReflectPrompt => r !== null),
+  };
+}
+
+/**
+ * Kör `work` men ger upp efter `ms`: anropen avbryts och resultatet blir null.
+ * Den yttre gränsen behövs eftersom en utgången session kan hänga i
+ * token-förnyelsen innan själva anropet (och dess abort-signal) ens startar.
+ */
+async function withDeadline<T>(
+  work: (signal: AbortSignal) => Promise<T>,
+  ms: number,
+): Promise<T | null> {
+  const controller = new AbortController();
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const deadline = new Promise<null>((resolve) => {
+    timer = setTimeout(() => {
+      controller.abort();
+      resolve(null);
+    }, ms);
+  });
+  try {
+    return await Promise.race([work(controller.signal), deadline]);
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 /**
@@ -277,34 +327,16 @@ export function loadQuestions(): Promise<QuestionBank> {
 
   loadPromise = (async () => {
     if (isSupabaseConfigured()) {
-      const supabase = getSupabase();
-      if (supabase) {
-        try {
-          const [questionsRes, reflectRes] = await Promise.all([
-            fetchPublishedQuestionRows(),
-            supabase.from("reflect_prompts").select("*"),
-          ]);
-
-          const qRows = questionsRes.rows;
-          const rRows = (reflectRes.data ?? []) as Record<string, unknown>[];
-
-          if (!questionsRes.error && !reflectRes.error && qRows.length > 0) {
-            const next: QuestionBank = {
-              questions: qRows
-                .map(questionFromRow)
-                .filter((q): q is ChoiceQuestion => q !== null),
-              reflect: rRows
-                .map(reflectFromRow)
-                .filter((r): r is ReflectPrompt => r !== null),
-            };
-            writeCache(next);
-            bank = next;
-            bankSource = "database";
-            return next;
-          }
-        } catch (err) {
-          console.warn("[questions] Supabase-hämtning misslyckades — använder fallback:", err);
+      try {
+        const next = await withDeadline(fetchBankFromDatabase, BANK_DEADLINE_MS);
+        if (next) {
+          writeCache(next);
+          bank = next;
+          bankSource = "database";
+          return next;
         }
+      } catch (err) {
+        console.warn("[questions] Supabase-hämtning misslyckades — använder fallback:", err);
       }
     }
 

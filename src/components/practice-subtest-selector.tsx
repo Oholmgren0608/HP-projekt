@@ -40,7 +40,7 @@ function getQuestionCountRange(subtest: PracticeKind, poolSize: number): { min: 
 
 export function PracticeSubtestSelector({ subtest }: Props) {
     const info = getSubtestInfo(subtest);
-    const { questions } = useQuestions();
+    const { ready, questions } = useQuestions();
   const poolSize = questions.filter((q) => q.kind === subtest).length;
   const range = getQuestionCountRange(subtest, poolSize);
   const [questionCount, setQuestionCount] = useState(10);
@@ -109,6 +109,11 @@ export function PracticeSubtestSelector({ subtest }: Props) {
             >
               Hur många frågor vill du öva på?
             </span>
+            {!ready ? (
+              <p role="status" className="text-sm text-[var(--ink-muted)]">
+                Laddar frågor…
+              </p>
+            ) : (
             <div className="flex flex-wrap gap-2">
               {Array.from({ length: range.max - range.min + 1 }, (_, i) => range.min + i).map(
                 (count) => (
@@ -128,6 +133,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
                 ),
               )}
             </div>
+            )}
           </div>
 
           <div className="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5">
@@ -203,14 +209,17 @@ export function PracticeSubtestSelector({ subtest }: Props) {
             </div>
 
             <p className="mt-4 font-[family-name:var(--font-display)] font-semibold text-lg tabular-nums text-[var(--ink)]">
-              {effectiveCount} {effectiveCount === 1 ? "fråga" : "frågor"} · {limitText}
+              {ready
+                ? `${effectiveCount} ${effectiveCount === 1 ? "fråga" : "frågor"} · ${limitText}`
+                : limitText}
             </p>
           </div>
 
           <button
             type="button"
             onClick={() => setSessionActive(true)}
-            className="inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-medium text-primary-foreground transition hover:brightness-110"
+            disabled={!ready}
+            className="inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:brightness-100"
           >
             Starta övning
           </button>
