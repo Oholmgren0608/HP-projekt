@@ -234,7 +234,7 @@ export function ForumHub() {
         </div>
 
         {/* Sidopanelen: rykte, anmälningar och så funkar det */}
-        <aside className="space-y-4">
+        <aside aria-label="Forumets sidopanel" className="space-y-4">
           {user && myReputation ? (
             <section className="rounded-[10px] border border-[var(--line)] bg-card p-5">
               <h2 className="text-sm font-medium text-[var(--ink)]">Ditt rykte</h2>

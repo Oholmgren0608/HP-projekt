@@ -98,9 +98,9 @@ export function ReadingLibrary() {
           <p className="text-xs font-medium text-[var(--brand)]">
             {text.kind} · ~{text.minutes} min
           </p>
-          <h3 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
+          <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
             {text.title}
-          </h3>
+          </h2>
           <p className="mt-2 text-[var(--ink-muted)]">{text.teaser}</p>
 
           <div className="mt-6 space-y-4">
@@ -113,7 +113,7 @@ export function ReadingLibrary() {
 
           <div className="mt-8 grid gap-5 border-t border-[var(--line)] pt-6 sm:grid-cols-2">
             <div>
-              <h4 className="text-sm font-medium text-[var(--ink)]">ORD att plocka</h4>
+              <h3 className="text-sm font-medium text-[var(--ink)]">ORD att plocka</h3>
               <ul className="mt-3 space-y-2.5">
                 {text.focusWords.map((w) => (
                   <li key={w.word} className="text-sm leading-relaxed">
@@ -124,7 +124,7 @@ export function ReadingLibrary() {
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-medium text-[var(--ink)]">Konnektorer i texten</h4>
+              <h3 className="text-sm font-medium text-[var(--ink)]">Konnektorer i texten</h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {text.connectors.map((c) => (
                   <span
@@ -135,7 +135,7 @@ export function ReadingLibrary() {
                   </span>
                 ))}
               </div>
-              <h4 className="mt-5 text-sm font-medium text-[var(--ink)]">Efter läsning</h4>
+              <h3 className="mt-5 text-sm font-medium text-[var(--ink)]">Efter läsning</h3>
               <p className="mt-2 text-sm text-[var(--ink-muted)]">{text.summaryPrompt}</p>
               <textarea
                 value={summary}

@@ -55,6 +55,8 @@
 /*  Ljust tema — varmt, vänligt "paper & ink" med spelkänsla           */
 /* ------------------------------------------------------------------ */
 :root {
+  /* Inbyggda kontroller (kryssrutor, datumfält, scrollbars) följer temat. */
+  color-scheme: light;
   --font-display: var(--font-sans);
   --ink: #1c1c1a;
   --ink-soft: #55544f;
@@ -131,6 +133,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --ink: #ecece8;
   --ink-soft: #b3b2ad;
   --ink-muted: #8f8e89;

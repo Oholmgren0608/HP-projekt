@@ -173,7 +173,7 @@ export function FeedbackForm() {
               <p className="text-sm font-semibold text-[var(--ink)]">
                 {c.label}
               </p>
-              <p className="mt-1 text-sm text-[var(--ink-muted)]">{c.description}</p>
+              <p className="mt-1 text-sm text-[var(--ink-soft)]">{c.description}</p>
             </button>
           );
         })}

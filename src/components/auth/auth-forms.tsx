@@ -294,14 +294,14 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
             <button
               type="button"
               onClick={() => switchMode("reset")}
-              className="font-medium text-[var(--ink-muted)] transition hover:text-[var(--brand)]"
+              className="min-h-6 font-medium text-[var(--ink-muted)] transition hover:text-[var(--brand)]"
             >
               Glömt lösenord?
             </button>
             <button
               type="button"
               onClick={() => switchMode("signup")}
-              className="font-medium text-[var(--brand)] transition hover:underline"
+              className="min-h-6 font-medium text-[var(--brand)] transition hover:underline"
             >
               Skapa konto
             </button>

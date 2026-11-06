@@ -58,7 +58,7 @@ function DocumentLinks({ title, docs }: { title: string; docs: OfficialDocument[
   if (docs.length === 0) return null;
   return (
     <div>
-      <h4 className="text-[13px] text-[var(--ink-muted)]">{title}</h4>
+      <h3 className="text-[13px] text-[var(--ink-muted)]">{title}</h3>
       <ul className="mt-1.5 space-y-0.5">
         {docs.map((doc) => (
           <li key={doc.url}>

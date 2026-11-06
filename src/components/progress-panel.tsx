@@ -173,7 +173,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
           <ProgressChart points={points} />
         </div>
 
-        <aside className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+        <aside aria-label="Senaste övningar" className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
           <p className="text-xs font-medium text-[var(--ink-muted)]">
             Senaste övningar
           </p>

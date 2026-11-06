@@ -143,9 +143,9 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
   if (!user) {
     return (
       <div className="mx-auto max-w-xl space-y-6 text-center">
-        <p className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
+        <h1 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Duellera i realtid
-        </p>
+        </h1>
         <p className="text-[var(--ink-muted)]">
           Logga in för att tävla mot andra, klättra i ranking och spara din
           matchhistorik.
