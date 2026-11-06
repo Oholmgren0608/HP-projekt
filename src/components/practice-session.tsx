@@ -217,7 +217,7 @@ export function PracticeSession({
               type="button"
               disabled={quiz.selected === null}
               onClick={handleSubmit}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
             >
               {quiz.index >= quiz.total - 1 ? "Visa resultat" : "Nästa fråga"}
             </button>
@@ -269,7 +269,7 @@ export function PracticeSession({
             <button
               type="button"
               onClick={handleRestartSame}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
             >
               Ny övning
             </button>
@@ -377,7 +377,7 @@ function CompleteButton({
         type="button"
         disabled={!ready}
         onClick={onClick}
-        className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+        className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors enabled:hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-40"
       >
         Markera uppgiften som klar
       </button>
@@ -437,7 +437,7 @@ function ReflectForm({
           type="button"
           disabled={!canFinish}
           onClick={onComplete}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition enabled:hover:bg-[var(--ink-soft)] disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors enabled:hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-40"
         >
           Markera som klar
         </button>

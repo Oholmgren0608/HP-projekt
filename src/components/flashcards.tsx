@@ -194,7 +194,7 @@ export function Flashcards() {
               <button
                 type="button"
                 onClick={() => setFlipped(true)}
-                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:bg-[var(--ink-soft)]"
+                className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
               >
                 Visa svar
               </button>
@@ -210,7 +210,7 @@ export function Flashcards() {
                 <button
                   type="button"
                   onClick={() => rate("correct")}
-                  className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+                  className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
                 >
                   Rätt — nästa
                 </button>

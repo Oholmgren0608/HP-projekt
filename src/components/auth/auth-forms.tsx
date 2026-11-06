@@ -176,7 +176,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
     compact ? "text-xs" : "text-sm",
   );
   const submitClass = cn(
-    "inline-flex w-full items-center justify-center rounded-lg bg-[var(--brand)] text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50",
+    "inline-flex w-full items-center justify-center rounded-md bg-[var(--brand)] text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-50",
     compact ? "min-h-9 px-3 py-2" : "min-h-11 px-4 py-2.5",
   );
 
@@ -219,7 +219,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
           className={
             isReset
               ? "text-sm font-medium text-[var(--brand)] transition hover:underline"
-              : "inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+              : "inline-flex min-h-11 w-full items-center justify-center rounded-md bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
           }
         >
           {isReset ? "Tillbaka till inloggning" : "Logga in"}

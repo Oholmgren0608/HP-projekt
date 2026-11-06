@@ -86,7 +86,7 @@ export function WeekTaskRow({
               <button
                 type="button"
                 onClick={onStart}
-                className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+                className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
               >
                 {checked
                   ? "Öva igen (nya frågor)"

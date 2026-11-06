@@ -80,7 +80,7 @@ export function PasswordRecoveryPrompt() {
               type="button"
               onClick={close}
               autoFocus
-              className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+              className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-md bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
             >
               Klart
             </button>
@@ -132,7 +132,7 @@ export function PasswordRecoveryPrompt() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="inline-flex min-h-11 w-full items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex min-h-11 w-full items-center justify-center rounded-md bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {submitting ? "Sparar…" : "Spara nytt lösenord"}
               </button>

@@ -287,7 +287,7 @@ function UsernameEditor() {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex min-h-9 items-center justify-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex min-h-9 items-center justify-center rounded-md bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-50"
         >
           {submitting ? "Sparar…" : "Spara"}
         </button>

@@ -219,7 +219,7 @@ export function PracticeSubtestSelector({ subtest }: Props) {
             type="button"
             onClick={() => setSessionActive(true)}
             disabled={!ready}
-            className="inline-flex min-h-12 items-center rounded-lg bg-[var(--brand)] px-6 font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:brightness-100"
+            className="inline-flex min-h-12 items-center rounded-md bg-[var(--brand)] px-6 font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-60"
           >
             Starta övning
           </button>

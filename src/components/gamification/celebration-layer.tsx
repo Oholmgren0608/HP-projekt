@@ -145,7 +145,7 @@ export function CelebrationLayer() {
               <button
                 type="button"
                 onClick={closeLevelUp}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-[var(--brand)] px-4 py-2.5 text-base font-medium text-primary-foreground transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-md bg-[var(--brand)] px-4 py-2.5 text-base font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand)] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Fortsätt plugga
               </button>

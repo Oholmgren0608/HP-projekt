@@ -196,7 +196,7 @@ export function ReviewForm({
         type="button"
         disabled={!canSubmit || submitting}
         onClick={() => void handleSubmit()}
-        className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+        className="mt-3 inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-40"
       >
         {submitting ? "Skickar…" : "Skicka recension"}
       </button>

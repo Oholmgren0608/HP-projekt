@@ -155,7 +155,7 @@ export function ReadingLibrary() {
                 if (!read[text.id]) recordEvent({ type: "reading_done" });
                 setRead((prev) => ({ ...prev, [text.id]: true }));
               }}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
             >
               Markera som läst
             </button>

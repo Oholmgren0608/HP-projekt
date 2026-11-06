@@ -252,7 +252,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
             type="button"
             disabled={busy}
             onClick={() => void handleCreatePrivate()}
-            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
+            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:opacity-50"
           >
             Skapa privat match
           </button>
@@ -376,7 +376,7 @@ function ModeCard({
         type="button"
         disabled={disabled}
         onClick={onClick}
-        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
+        className="mt-4 inline-flex min-h-11 items-center justify-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:opacity-50"
       >
         {cta}
       </button>

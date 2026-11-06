@@ -172,7 +172,7 @@ export function TodayCard({
         <div className="mt-auto flex flex-wrap gap-3 pt-5">
           <Link
             href="/plan"
-            className="inline-flex min-h-11 items-center gap-2 rounded-md bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground shadow-soft transition hover:shadow-pop"
+            className="inline-flex min-h-11 items-center gap-2 rounded-md bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
           >
             Se veckoplanen
             <ArrowRight className="size-4" />
@@ -241,7 +241,7 @@ export function TodayCard({
         {next ? (
           <Link
             href={startHref(next)}
-            className="inline-flex min-h-11 items-center gap-2 rounded-md bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground shadow-soft transition hover:shadow-pop"
+            className="inline-flex min-h-11 items-center gap-2 rounded-md bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
           >
             Starta övning
             <ArrowRight className="size-4" />

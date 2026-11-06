@@ -8,7 +8,7 @@ import { formatDate, formatHp, type CheckType } from "@/lib/studiehjalp/types";
 
 export const buttonClass = {
   primary:
-    "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60",
+    "inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-60",
   secondary:
     "inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--line-strong)] bg-card px-4 text-sm font-medium text-[var(--ink)] transition hover:bg-[var(--mist)] disabled:cursor-not-allowed disabled:opacity-60",
   ghost:

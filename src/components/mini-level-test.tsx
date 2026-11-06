@@ -291,7 +291,7 @@ export function MiniLevelTest() {
           <button
             type="button"
             onClick={start}
-            className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+            className="mt-5 inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
           >
             Starta nivåtest
           </button>
@@ -401,7 +401,7 @@ export function MiniLevelTest() {
               type="button"
               disabled={quiz.selected === null}
               onClick={quiz.submitAnswer}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground enabled:hover:brightness-110 disabled:opacity-40"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground enabled:hover:bg-[var(--brand-deep)] disabled:opacity-40"
             >
               {quiz.index >= questions.length - 1 ? "Se resultat" : "Nästa"}
             </button>
@@ -518,7 +518,7 @@ export function MiniLevelTest() {
             type="button"
             onClick={applyPlan}
             disabled={applied || !examValid}
-            className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition enabled:hover:brightness-110 disabled:opacity-60"
+            className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors enabled:hover:bg-[var(--brand-deep)] disabled:opacity-60"
           >
             {applied ? "Skapar plan…" : "Använd resultatet & skapa plan"}
           </button>

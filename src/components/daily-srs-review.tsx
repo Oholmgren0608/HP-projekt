@@ -203,7 +203,7 @@ export function DailySrsReview() {
             <button
               type="button"
               onClick={() => grade(true)}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-4 text-sm font-medium text-primary-foreground hover:bg-[var(--brand-deep)]"
             >
               Kommer ihåg
             </button>
@@ -213,7 +213,7 @@ export function DailySrsReview() {
         <button
           type="button"
           onClick={() => setRevealed(true)}
-          className="mt-5 inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground hover:bg-[var(--ink-soft)]"
+          className="mt-5 inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground hover:bg-[var(--brand-deep)]"
         >
           Visa svar
         </button>

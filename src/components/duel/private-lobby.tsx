@@ -98,7 +98,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
             <button
               type="button"
               onClick={() => void copy()}
-              className="shrink-0 rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+              className="shrink-0 rounded-md bg-[var(--brand)] px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
             >
               {copied ? "Kopierad!" : "Kopiera"}
             </button>

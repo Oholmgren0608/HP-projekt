@@ -254,7 +254,7 @@ export function FreePracticeSession({
               type="button"
               disabled={committed === undefined && selected === null}
               onClick={committed !== undefined ? submitAnswer : handleSubmit}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:opacity-50"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:opacity-50"
             >
               {primaryLabel}
             </button>
@@ -296,7 +296,7 @@ export function FreePracticeSession({
             <button
               type="button"
               onClick={handleRestart}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
             >
               Ny övning
             </button>

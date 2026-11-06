@@ -283,7 +283,7 @@ export function ScoreForm() {
       <div className="flex flex-wrap items-center gap-3">
         <button
           type="submit"
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
         >
           Skapa ny plan
         </button>

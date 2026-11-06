@@ -22,7 +22,7 @@ const INPUT_CLASS =
   "w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] placeholder:text-[var(--ink-muted)] focus:ring-2";
 
 const BUTTON_PRIMARY =
-  "inline-flex min-h-11 items-center justify-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex min-h-11 items-center justify-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-60";
 
 const BUTTON_OUTLINE =
   "inline-flex min-h-11 items-center justify-center rounded-lg border border-[var(--line-strong)] px-5 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--ink-soft)]";

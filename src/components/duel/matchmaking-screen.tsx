@@ -212,9 +212,9 @@ export function MatchmakingScreen({ mode, onMatched, onCancel }: Props) {
           type="button"
           disabled={startingBot}
           onClick={() => void handleStartBot()}
-          className={`rounded-lg px-5 py-2.5 text-sm font-medium transition disabled:opacity-50 ${
+          className={`rounded-md px-5 py-2.5 text-sm font-medium transition disabled:opacity-50 ${
             timedOut
-              ? "bg-[var(--brand)] text-primary-foreground hover:brightness-110"
+              ? "bg-[var(--brand)] text-primary-foreground hover:bg-[var(--brand-deep)]"
               : "border border-[var(--line-strong)] font-medium text-[var(--ink-muted)] hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
           }`}
         >

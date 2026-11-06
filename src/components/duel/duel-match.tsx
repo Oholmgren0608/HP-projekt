@@ -724,7 +724,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
               type="button"
               disabled={selected === null}
               onClick={() => submitRef.current(selected)}
-              className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-40"
             >
               Svara
             </button>
@@ -751,7 +751,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
             <button
               type="button"
               onClick={() => void handleClaim()}
-              className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+              className="mt-6 rounded-md bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
             >
               Gör anspråk på vinst (motståndaren verkar ha lämnat)
             </button>
@@ -967,7 +967,7 @@ function ResultView({
         <button
           type="button"
           onClick={onAgain}
-          className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition hover:brightness-110"
+          className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
         >
           Ny match
         </button>

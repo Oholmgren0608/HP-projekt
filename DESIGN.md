@@ -228,9 +228,9 @@ Gently rounded, never pill-shaped. Small controls (chips, nav items, icon button
 
 ### Buttons
 Friendly, clear and solid; they never scale or glow.
-- **Shape:** gently rounded (8px; some older screens use 10px).
+- **Shape:** gently rounded (8px).
 - **Primary:** solid Skymningsblå, white text (near-black `#10161f` on the light blue in dark mode), 14px weight 500, at least 44px tall, 20px side padding.
-- **Hover / Focus:** colour shifts to Djup skymningsblå (some older buttons brighten instead); focus shows a 2px Skymningsblå outline offset 2px. Disabled drops to 50% opacity.
+- **Hover / Focus:** colour shifts to Djup skymningsblå, never a brightness filter, opacity change or shadow; focus shows a 2px Skymningsblå outline offset 2px. Disabled drops to 50% opacity.
 - **Secondary:** Yta background, 1px Stark linje border, muted ink text; hover fills with Dimma.
 - **Ghost / icon:** no border, muted ink; hover fills with Dimma and darkens the text. Icon buttons are 36px squares.
 - **Text link:** Skymningsblå, weight 500, underline on hover.

@@ -58,20 +58,20 @@ Rules: the accent is used for at most one primary action per view plus active/se
 - Grids align to a 12-column structure; prefer lists and tables over decorative card mosaics.
 
 ## Shape & elevation
-- Radius: 6px buttons/inputs/chips, 10px cards/panels, 12px modals. No `rounded-full` except avatars and tiny status dots.
+- Radius: 8px buttons, chips and nav items, 10px inputs, cards and panels, 12px modals. `rounded-full` only for avatars, status dots, progress bars, switches and the A–E answer letters. (`DESIGN.md` is the full reference.)
 - Elevation by border, not shadow. Cards: 1px `--border`, no shadow. Popovers/menus/modals only: `0 4px 16px rgba(0,0,0,0.08)`.
 
 ## Components
-- **Primary button**: solid `--accent` bg, white text, 500 weight, 14px, height 40px, px 16px, radius 6px; hover `--accent-hover`. No scale on hover/press.
+- **Primary button**: solid `--accent` bg, white text, 500 weight, 14px, min height 44px, px 20px, radius 8px; hover `--accent-hover`. No scale on hover/press.
 - **Secondary button**: `--surface` bg, 1px `--border-strong`, `--text`; hover `--surface-muted`.
 - **Ghost/text button**: no border, `--text-secondary`, hover `--surface-muted`.
 - **Card**: `--surface`, 1px `--border`, radius 10px, padding 20–24px. Header row = title (16px 600) + optional muted meta right-aligned.
 - **List row**: 48–56px tall, divider lines between rows, hover `--surface-muted`, chevron at right.
 - **Stat**: muted 13px label above a 28px tabular number; delta in `--correct`/`--incorrect` 13px.
 - **Progress bar**: 6px tall, `--surface-muted` track, `--accent` fill, square-ish (radius 3px). No shimmer.
-- **Tag/chip**: 24px tall, radius 6px, `--surface-muted` bg, 13px 500 `--text-secondary`. Delprov codes (ORD, KVA…) shown as these chips.
-- **Answer option** (practice): full-width row, 1px `--border-strong`, radius 8px, letter (A–E) in a 28px square; selected = `--accent` border + `--accent-subtle` bg; correct/incorrect use status colours after submit.
-- **Nav item**: 36px tall, 14px 500, icon 18px `--text-muted`; active = `--accent-subtle` bg + `--accent` text/icon, radius 6px.
+- **Tag/chip**: 20px tall, radius 8px, `--surface-muted` bg, 13px 500 `--text-secondary`. Delprov codes (ORD, KVA…) shown as these chips.
+- **Answer option** (practice): full-width row, 1px `--border-strong`, radius 10px, letter (A–E) in a 24px circle; selected = `--accent` border + `--accent-subtle` bg; correct/incorrect use status colours after submit.
+- **Nav item**: 36px tall, 14px 500, icon 18px `--text-muted`; active = `--accent-subtle` bg + `--accent` text/icon, radius 8px.
 - Icons: lucide-react, 1.5px stroke, 16–18px, muted by default.
 - Gamification (XP, streak, achievements, daily quests) is kept but quiet: plain numbers and small line icons in a compact stats row, never celebratory banners.
 

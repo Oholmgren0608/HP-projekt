@@ -350,7 +350,7 @@ export function ReviewScreen() {
         <button
           type="button"
           onClick={() => void refresh()}
-          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+          className="mt-6 rounded-md bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
         >
           Försök igen
         </button>
@@ -1095,7 +1095,7 @@ function EditForm({
           type="button"
           onClick={() => void handleSave()}
           disabled={saving}
-          className="rounded-lg bg-[var(--brand)] px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
+          className="rounded-md bg-[var(--brand)] px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:opacity-50"
         >
           {saving ? "Sparar…" : "Spara"}
         </button>
