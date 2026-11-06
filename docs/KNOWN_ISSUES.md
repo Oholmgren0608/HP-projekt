@@ -1,6 +1,6 @@
 # Known issues
 
-Open problems found in code review and browser tests on 2026-11-03. When one is
+Problems found in code review and browser tests on 2026-11-03. When one is
 fixed, change its status to fixed and name the commit.
 
 ## Duel answers reach the browser
@@ -22,7 +22,25 @@ duel-pool questions never reach the client with `correct_index`.
 
 ## Login sync can overwrite progress
 
-**Status:** open
+**Status:** fixed in 36708c2 (migration 0032) and 6384103. Tests: T1–T6 and
+T8–T10 in `src/lib/sync/storage-sync.test.ts`, plus `src/lib/sync/merge.test.ts`.
+
+**Fix:** writes go through `user_state_put`, which only writes if the row still
+has the version the device last saw, and the server sets `updated_at`. When both
+sides have changed, the values are merged item by item (`src/lib/sync/merge.ts`)
+instead of one replacing the other. Changed keys are uploaded 2 s after a write,
+when the connection comes back and when the tab becomes visible.
+
+**Still to do / limits:**
+
+- Migration 0034 (not written yet) should close direct INSERT/UPDATE on
+  `user_state` once the new client is deployed, so that old open tabs can no
+  longer overwrite merged values.
+- A conflict found while the app is open is merged at the next app start, not
+  immediately.
+- Merging two devices' copies can pay a daily-quest reward twice.
+
+The original problem:
 
 `src/lib/sync/storage-sync.ts` merges guest data with the account one
 `localStorage` key at a time. The whole value with the newer timestamp wins, and
@@ -38,7 +56,15 @@ back, only at the next sync (in the test, the next app start).
 
 ## Question bank download has no timeout
 
-**Status:** open
+**Status:** fixed in d370212. Tests: T7a and T7b in
+`src/lib/content/questions-provider.test.ts`.
+
+**Fix:** `loadQuestions()` gives the database at most 8 s, aborts the requests
+and turns off the automatic retries, so the cache or the bundled copy is used
+straight away when there is no network. The practice start screen shows
+"Laddar frågor…" until the bank is ready.
+
+The original problem:
 
 `loadQuestions()` in `src/lib/content/questions-provider.ts` downloads the whole
 published bank on every page load. It waits for the download without a timeout
@@ -54,7 +80,11 @@ offered "1" question.
 
 ## Weekly XP leaderboard trusts client-reported XP
 
-**Status:** open
+**Status:** fixed in cc637fd (migration 0033). The leaderboard was removed
+(Oscar's decision on 2026-11-06, including deleting the `leaderboard_entries`
+data). XP, levels and streaks are personal; duels with ELO are the only ranking.
+
+The original problem:
 
 XP is calculated in the browser (`src/lib/gamification/engine.ts`) and sent with
 `leaderboard_submit`, which only caps it at 25,000 per week (migration 0016).
