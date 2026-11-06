@@ -176,7 +176,7 @@ export function FreePracticeSession({
               <span
                 className={`rounded px-2 py-0.5 text-xs font-medium tabular-nums ${
                   warning
-                    ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
+                    ? "bg-[var(--energy-soft)] text-[var(--energy-ink)]"
                     : "bg-[var(--mist)] text-[var(--ink-soft)]"
                 }`}
               >
@@ -192,9 +192,7 @@ export function FreePracticeSession({
           {warning ? (
             <p
               role="status"
-              className={`text-sm font-medium ${
-                warning === "final" ? "text-[var(--destructive)]" : "text-[var(--energy-ink)]"
-              }`}
+              className="text-sm font-medium text-[var(--energy-ink)]"
             >
               {warning === "final"
                 ? "1 minut kvar — övningen avslutas automatiskt."

@@ -339,7 +339,7 @@ export function MiniLevelTest() {
                 <p
                   className={`rounded-md px-3 py-1.5 text-sm font-medium tabular-nums ${
                     warning
-                      ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
+                      ? "bg-[var(--energy-soft)] text-[var(--energy-ink)]"
                       : "bg-[var(--mist)] text-[var(--ink)]"
                   }`}
                 >
@@ -355,9 +355,7 @@ export function MiniLevelTest() {
           {warning ? (
             <p
               role="status"
-              className={`mt-3 text-sm font-medium ${
-                warning === "final" ? "text-[var(--destructive)]" : "text-[var(--energy-ink)]"
-              }`}
+              className="mt-3 text-sm font-medium text-[var(--energy-ink)]"
             >
               {warning === "final"
                 ? "1 minut kvar — testet avslutas automatiskt."
@@ -418,7 +416,7 @@ export function MiniLevelTest() {
       {heading}
 
       {timedOut ? (
-        <p className="rounded-xl border border-[var(--energy-ink)]/40 bg-[var(--accent-soft)]/60 px-4 py-3 text-sm text-[var(--ink)]">
+        <p className="rounded-xl border border-[var(--energy-ink)]/30 bg-[var(--energy-soft)] px-4 py-3 text-sm text-[var(--ink)]">
           Tiden tog slut — testet avslutades automatiskt. Besvarade frågor rättades och
           obesvarade räknades som fel.
         </p>

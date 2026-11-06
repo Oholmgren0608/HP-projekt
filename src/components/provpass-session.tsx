@@ -226,7 +226,7 @@ export function ProvpassSession({
             <p
               className={`rounded-md px-3 py-1.5 text-sm font-medium tabular-nums ${
                 warning
-                  ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
+                  ? "bg-[var(--energy-soft)] text-[var(--energy-ink)]"
                   : "bg-[var(--mist)] text-[var(--ink)]"
               }`}
             >
@@ -238,9 +238,7 @@ export function ProvpassSession({
           warning ? (
             <p
               role="status"
-              className={`mt-3 text-sm font-medium ${
-                warning === "final" ? "text-[var(--destructive)]" : "text-[var(--energy-ink)]"
-              }`}
+              className="mt-3 text-sm font-medium text-[var(--energy-ink)]"
             >
               {warning === "final"
                 ? "1 minut kvar. Passet lämnas in automatiskt."

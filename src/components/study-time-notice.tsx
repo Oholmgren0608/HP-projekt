@@ -29,9 +29,9 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
   const tone =
     status === "insufficient"
       ? {
-          border: "border-[var(--destructive)]/30",
-          bg: "bg-[var(--coral-soft)]",
-          title: "text-[var(--destructive)]",
+          border: "border-[var(--energy-ink)]/30",
+          bg: "bg-[var(--energy-soft)]",
+          title: "text-[var(--energy-ink)]",
         }
       : status === "tight"
         ? {

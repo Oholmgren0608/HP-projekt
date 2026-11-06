@@ -146,7 +146,7 @@ export function TimedMockExam({
           <p
             className={`rounded-md px-3 py-1.5 text-sm font-medium tabular-nums ${
               remainingSeconds <= 60
-                ? "bg-[var(--coral-soft)] text-[var(--destructive)]"
+                ? "bg-[var(--energy-soft)] text-[var(--energy-ink)]"
                 : "bg-[var(--mist)] text-[var(--ink)]"
             }`}
           >

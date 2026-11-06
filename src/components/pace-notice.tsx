@@ -27,8 +27,8 @@ export function PaceNotice({
   const tipsHref = section ? `/tips?section=${section}` : "/tips";
 
   return (
-    <div className="rounded-xl border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-4 py-3">
-      <p className="text-sm font-medium tabular-nums text-[var(--destructive)]">{paceLine}</p>
+    <div className="rounded-xl border border-[var(--energy-ink)]/30 bg-[var(--energy-soft)] px-4 py-3">
+      <p className="text-sm font-medium tabular-nums text-[var(--energy-ink)]">{paceLine}</p>
       <Link
         href={tipsHref}
         className="mt-1 inline-block text-sm font-medium text-[var(--brand)] underline-offset-4 hover:underline"
