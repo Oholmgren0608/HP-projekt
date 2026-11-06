@@ -146,9 +146,10 @@ export function FreePracticeSession({
           <p className="text-xs font-medium text-[var(--brand)]">
             Fri övning · {kindBadge(subtest)}
           </p>
-          <h3 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
+          {/* Sidans h1 göms under passet, så passets namn är h1. */}
+          <h1 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             {kindBadge(subtest)}-övning
-          </h3>
+          </h1>
         </div>
         <button
           type="button"

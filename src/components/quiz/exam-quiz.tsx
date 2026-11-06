@@ -80,7 +80,8 @@ export function ExamQuiz({
     >
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[var(--line)] pb-4">
         <div>
-          <p className="text-[13px] text-[var(--ink-muted)]">{label}</p>
+          {/* Provsidans h1 göms under provet, så provets namn är h1. */}
+          <h1 className="text-[13px] font-normal tracking-normal text-[var(--ink-muted)]">{label}</h1>
           <p className="mt-0.5 font-medium text-[var(--ink)]">
             Fråga {quiz.index + 1} av {questions.length}
             <span className="ml-2 rounded-md bg-[var(--mist)] px-1.5 py-0.5 text-xs font-medium text-[var(--ink-soft)]">

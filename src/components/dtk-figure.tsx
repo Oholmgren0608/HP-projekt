@@ -87,7 +87,7 @@ function Part({ part, figureTitle }: { part: FigurePart; figureTitle: string }) 
         <Section title={part.title}>
           <Pie slices={part.slices} unit={part.unit} />
           <SrTable
-            head={["", part.unit]}
+            head={["Kategori", part.unit]}
             rows={part.slices.map((slice) => [slice.name, fmt(slice.value)])}
           />
         </Section>
@@ -121,7 +121,7 @@ function Part({ part, figureTitle }: { part: FigurePart; figureTitle: string }) 
 function Section({ title, children }: { title?: string; children: ReactNode }) {
   return (
     <section>
-      {title ? <h3 className="mb-2 text-sm font-medium text-[var(--ink)]">{title}</h3> : null}
+      {title ? <h2 className="mb-2 text-sm font-medium tracking-normal text-[var(--ink)]">{title}</h2> : null}
       {children}
     </section>
   );
@@ -185,24 +185,28 @@ function Table({
 
 function SrTable({ head, rows }: { head: string[]; rows: string[][] }) {
   return (
-    <table className="sr-only">
-      <thead>
-        <tr>
-          {head.map((cell, i) => (
-            <th key={i} scope="col">
-              {cell}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {rows.map((row, r) => (
-          <tr key={r}>
-            {row.map((cell, i) => (i === 0 ? <th key={i} scope="row">{cell}</th> : <td key={i}>{cell}</td>))}
+    // sr-only på själva tabellen klipper inte cellerna (tabellayout struntar i
+    // bredden), så långa rubriker gjorde sidan bredare på mobil.
+    <div className="sr-only">
+      <table>
+        <thead>
+          <tr>
+            {head.map((cell, i) => (
+              <th key={i} scope="col">
+                {cell}
+              </th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {rows.map((row, r) => (
+            <tr key={r}>
+              {row.map((cell, i) => (i === 0 ? <th key={i} scope="row">{cell}</th> : <td key={i}>{cell}</td>))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -217,7 +221,7 @@ function SeriesTable({
 }) {
   return (
     <SrTable
-      head={["", ...series.map((s) => s.name)]}
+      head={["Kategori", ...series.map((s) => s.name)]}
       rows={categories.map((c, i) => [c, ...series.map((s) => fmt(s.values[i], decimals))])}
     />
   );

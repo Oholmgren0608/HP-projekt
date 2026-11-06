@@ -160,9 +160,10 @@ export function PracticeSession({
           <p className="text-xs font-medium text-[var(--brand)]">
             Vecka {week} · {kindLabels}
           </p>
-          <h3 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
+          {/* Veckoplanens h1 göms under passet, så passets namn är h1. */}
+          <h1 className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             {task.title}
-          </h3>
+          </h1>
           <p className="mt-1 text-sm text-[var(--ink-muted)]">{task.detail}</p>
         </div>
         <button

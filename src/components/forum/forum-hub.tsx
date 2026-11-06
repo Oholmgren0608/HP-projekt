@@ -252,9 +252,9 @@ export function ForumHub() {
           ) : null}
 
           {reports.length > 0 ? (
-            <section className="rounded-[10px] border border-[var(--destructive)]/40 bg-card p-5">
+            <section className="rounded-[10px] border border-[var(--energy-ink)]/40 bg-card p-5">
               <h2 className="flex items-center gap-2 text-sm font-medium text-[var(--ink)]">
-                <ShieldCheck size={16} className="text-[var(--destructive)]" aria-hidden />
+                <ShieldCheck size={16} className="text-[var(--energy-ink)]" aria-hidden />
                 Anmälningar ({reports.length})
               </h2>
               <ul className="mt-3 space-y-3">

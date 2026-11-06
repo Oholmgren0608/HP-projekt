@@ -60,7 +60,7 @@ export function TipsView() {
             <ul className="mt-2 space-y-2.5">
               {tip.mistakes.map((m) => (
                 <li key={m} className="flex gap-2 text-sm leading-relaxed text-[var(--ink-soft)]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--destructive)]" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--ink-muted)]" aria-hidden />
                   <span>{m}</span>
                 </li>
               ))}
