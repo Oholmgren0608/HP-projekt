@@ -343,25 +343,6 @@ export type Database = {
         };
         Relationships: [];
       };
-      leaderboard_entries: {
-        Row: {
-          user_id: string;
-          week: string;
-          xp: number;
-          updated_at: string;
-        };
-        Insert: {
-          user_id: string;
-          week: string;
-          xp?: number;
-          updated_at?: string;
-        };
-        Update: {
-          xp?: number;
-          updated_at?: string;
-        };
-        Relationships: [];
-      };
       forum_threads: {
         Row: {
           id: string;
@@ -693,20 +674,6 @@ export type Database = {
           p_comment: string | null;
         };
         Returns: { status: string };
-      };
-      leaderboard_submit: {
-        Args: { p_week: string; p_xp: number };
-        Returns: null;
-      };
-      leaderboard_get: {
-        Args: { p_week: string; p_limit?: number };
-        Returns: {
-          rank: number;
-          user_id: string;
-          display_name: string;
-          xp: number;
-          is_me: boolean;
-        }[];
       };
       forum_thread_list: {
         Args: {

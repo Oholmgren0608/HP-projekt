@@ -96,7 +96,6 @@ export type GamificationState = {
   quests: { date: string; items: QuestInstance[]; allDone: boolean };
   stats: GameStats;
   today: TodayState;
-  weeklyXp: Record<string, number>;
   onboarded: boolean;
 };
 
@@ -139,17 +138,6 @@ export function dayIndex(d: Date = new Date()): number {
   // rotation följer lokal tid (inte UTC) precis som resten av datumlogiken.
   const localMidnight = new Date(d.getFullYear(), d.getMonth(), d.getDate());
   return Math.floor(localMidnight.getTime() / 86400000);
-}
-
-/** ISO-veckonyckel, ex. "2025-W37" (måndag som veckostart). */
-export function weekKey(d: Date = new Date()): string {
-  const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-  const day = t.getUTCDay() || 7; // söndag=0 → 7
-  t.setUTCDate(t.getUTCDate() + 4 - day); // torsdagen i veckan
-  const isoYear = t.getUTCFullYear();
-  const jan1 = new Date(Date.UTC(isoYear, 0, 1));
-  const week = Math.ceil(((t.getTime() - jan1.getTime()) / 86400000 + 1) / 7);
-  return `${isoYear}-W${String(week).padStart(2, "0")}`;
 }
 
 // ---- Default-tillstånd -------------------------------------------------------
@@ -221,7 +209,6 @@ function defaultState(): GamificationState {
     quests: makeQuests(),
     stats: emptyStats(),
     today: emptyToday(),
-    weeklyXp: {},
     onboarded: false,
   };
 }
@@ -269,11 +256,6 @@ function loadState(): GamificationState {
       quests: parsed.quests && typeof parsed.quests === "object" ? parsed.quests : base.quests,
       achievements: parsed.achievements && typeof parsed.achievements === "object" ? parsed.achievements : {},
       activeDays: parsed.activeDays && typeof parsed.activeDays === "object" ? parsed.activeDays : {},
-      weeklyXp: Object.fromEntries(
-        Object.entries(parsed.weeklyXp ?? {}).filter(
-          ([, v]) => typeof v === "number" && Number.isFinite(v),
-        ),
-      ) as GamificationState["weeklyXp"],
     };
     } catch {
     return defaultState();
@@ -312,12 +294,10 @@ function rolloverIfNeeded(s: GamificationState): GamificationState {
 
 function addXp(s: GamificationState, amount: number): GamificationState {
   if (amount <= 0) return s;
-  const wk = weekKey();
   return {
     ...s,
     xp: s.xp + amount,
     today: { ...s.today, xp: s.today.xp + amount },
-    weeklyXp: { ...s.weeklyXp, [wk]: (s.weeklyXp[wk] ?? 0) + amount },
   };
 }
 

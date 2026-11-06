@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const CONTACT = "oholmgren32@gmail.com";
-const UPDATED = "1 november 2026";
+const UPDATED = "6 november 2026";
 
 function Section({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
@@ -120,7 +120,7 @@ export default function IntegritetspolicyPage() {
             {
               title: "Studiedata",
               fields: [
-                ["Exempel", "Övningsresultat, provresultat, historik, veckoplan, repetitionskort, vilka frågor du har sett"],
+                ["Exempel", "Övningsresultat, provresultat, historik, veckoplan, repetitionskort, vilka frågor du har sett, XP och streak"],
                 ["Varför", "Så att dina framsteg följer med mellan enheter"],
                 ["Rättslig grund", "Avtal"],
               ],
@@ -128,7 +128,7 @@ export default function IntegritetspolicyPage() {
             {
               title: "Dueller och topplista",
               fields: [
-                ["Exempel", "Matcher, svar, tider, ELO-poäng, vinster och förluster, veckans XP, betyg och anmälningar efter en duell"],
+                ["Exempel", "Matcher, svar, tider, ELO-poäng, vinster och förluster, betyg och anmälningar efter en duell"],
                 ["Varför", "För att dueller och topplistor ska fungera och för att stoppa fusk"],
                 ["Rättslig grund", "Avtal; berättigat intresse (fusk och missbruk)"],
               ],

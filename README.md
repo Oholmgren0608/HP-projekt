@@ -25,8 +25,7 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 - **Duell** — frågedueller mot andra spelare (PvP) eller en bot, med
   ELO-ranking, matchmaking-kö, privata matcher via kod, matchhistorik och
   recensioner efter avslutad match
-- **Gamification** — XP, nivåer, streak, dagliga uppdrag och achievements,
-  med en vecko-XP-topplista
+- **Gamification** — XP, nivåer, streak, dagliga uppdrag och achievements
 
 ## Kända problem
 

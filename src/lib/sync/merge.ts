@@ -305,7 +305,6 @@ function mergeGamification(base: Base, local: string, remote: string): string {
   const out: JsonObject = { ...R, ...L };
   out.xp = addDeltas(num(B?.xp), num(L.xp), num(R.xp), known);
   out.stats = mergeCounterMap(B ? objectOr(B.stats) : null, objectOr(L.stats), objectOr(R.stats));
-  out.weeklyXp = mergeCounterMap(B ? objectOr(B.weeklyXp) : null, objectOr(L.weeklyXp), objectOr(R.weeklyXp));
 
   // Dagens mätare: samma dag = räknare, olika dagar = den senare dagen.
   const lt = objectOr(L.today);

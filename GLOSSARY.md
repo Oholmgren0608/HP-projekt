@@ -103,7 +103,7 @@ _Avoid_: Rank, rating
 ## Spelmoment
 
 **XP**:
-Poäng som användaren tjänar för studieaktivitet och som avgör spelnivå och veckotopplista.
+Poäng som användaren tjänar för studieaktivitet och som avgör spelnivå. XP är personlig och rankas inte.
 _Avoid_: Erfarenhetspoäng
 
 **Spelnivå**:

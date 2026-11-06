@@ -4,7 +4,7 @@
 > Texten beskriver hur appen faktiskt fungerar den 1 november 2026 (migration `0031`). När något ändras måste policyn också uppdateras, till exempel annonser, betalning eller nya tjänster.
 > Punkterna märkta **Kontrollera** är interna anteckningar och visas inte på sidan. Låt gärna en jurist läsa texten.
 
-**Senast uppdaterad:** 1 november 2026
+**Senast uppdaterad:** 6 november 2026
 
 Den här policyn förklarar vilka personuppgifter HP Lift behandlar, varför vi gör det och vilka rättigheter du har.
 
@@ -26,8 +26,8 @@ För att visa sidan måste vår webbhotelltjänst ta emot din IP-adress och tekn
 |---|---|---|---|
 | Kontouppgifter | E-postadress, lösenord (lagras krypterat som hash), namn och eventuell profilbild från Google om du loggar in med Google, när kontot skapades | För att du ska kunna logga in | Avtal: för att tillhandahålla tjänsten du har bett om |
 | Profil | Användarnamn, visningsnamn | Visas i dueller, topplistor och forumet | Avtal |
-| Studiedata | Övningsresultat, provresultat, historik, veckoplan, repetitionskort, vilka frågor du har sett | Så att dina framsteg följer med mellan enheter | Avtal |
-| Dueller och topplista | Matcher, svar, tider, ELO-poäng, vinster och förluster, veckans XP, betyg och anmälningar efter en duell | För att dueller och topplistor ska fungera och för att stoppa fusk | Avtal; berättigat intresse (fusk och missbruk) |
+| Studiedata | Övningsresultat, provresultat, historik, veckoplan, repetitionskort, vilka frågor du har sett, XP och streak | Så att dina framsteg följer med mellan enheter | Avtal |
+| Dueller och topplista | Matcher, svar, tider, ELO-poäng, vinster och förluster, betyg och anmälningar efter en duell | För att dueller och topplistor ska fungera och för att stoppa fusk | Avtal; berättigat intresse (fusk och missbruk) |
 | Forum | Inlägg, röster, anmälningar, rykte | För att forumet ska fungera och kunna modereras | Avtal; berättigat intresse (moderering) |
 | Rapporter om frågor | Fråga och din motivering | För att rätta fel i frågebanken | Berättigat intresse (rätta frågor) |
 | Önskemål och felrapporter | Kategori, rubrik, beskrivning, och ditt konto om du är inloggad | För att förbättra appen | Berättigat intresse (förbättra tjänsten) |
