@@ -8,7 +8,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { ACHIEVEMENTS, QUEST_POOL } from "@/lib/gamification/config";
 import {
   consumeNotifications,
@@ -28,6 +28,8 @@ let toastId = 0;
 
 export function CelebrationLayer() {
   const [levelUp, setLevelUp] = useState<{ level: number; title: string } | null>(null);
+  // Minska rörelse: inga toningar, allt visas direkt.
+  const fade = useReducedMotion() ? { duration: 0 } : { duration: 0.16, ease: "easeOut" as const };
   const [toasts, setToasts] = useState<Toast[]>([]);
   const [tick, setTick] = useState(0);
   const queueRef = useRef<GameNotification[]>([]);
@@ -144,6 +146,7 @@ export function CelebrationLayer() {
             key="levelup"
             className="fixed inset-0 z-[150] flex items-center justify-center p-6"
             initial={{ opacity: 0 }}
+            transition={fade}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
@@ -158,7 +161,7 @@ export function CelebrationLayer() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.16, ease: "easeOut" }}
+              transition={fade}
               className="relative w-full max-w-sm rounded-[10px] border border-[var(--line)] bg-[var(--card)] p-8 text-center shadow-pop"
             >
               <p className="text-[13px] font-medium text-[var(--ink-muted)]">
@@ -195,7 +198,7 @@ export function CelebrationLayer() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.16 }}
+              transition={fade}
               onAnimationComplete={() => {
                 window.setTimeout(() => dismissToast(t.id), 4000);
               }}

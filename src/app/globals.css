@@ -276,7 +276,8 @@
   .animate-pop,
   .animate-rise,
   .animate-rise-delay,
-  .animate-fade-in {
+  .animate-fade-in,
+  .animate-pulse {
     animation: none;
   }
 }

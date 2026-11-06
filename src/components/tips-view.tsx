@@ -13,7 +13,8 @@ export function TipsView() {
   useEffect(() => {
     if (!highlight) return;
     const el = document.getElementById(highlight);
-    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    el?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   }, [highlight]);
 
   return (

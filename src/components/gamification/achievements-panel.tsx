@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { Check, Lock } from "lucide-react";
 import { Disclosure } from "@/components/disclosure";
 import { ACHIEVEMENTS } from "@/lib/gamification/config";
@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 export function AchievementsPanel({ className }: { className?: string }) {
   const { state, markAchievementsSeen } = useGamification();
   const [expanded, setExpanded] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   // Stängd panel animerar klart utan att någon ser markeringen; kvittera därför
   // "NY" först när panelen faktiskt är öppen och användaren hunnit se den.
@@ -48,7 +49,7 @@ export function AchievementsPanel({ className }: { className?: string }) {
               key={a.id}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: Math.min(i * 0.03, 0.3) }}
+              transition={reduceMotion ? { duration: 0 } : { delay: Math.min(i * 0.03, 0.3) }}
               onAnimationComplete={() => {
                 if (expanded && isNew) markAchievementsSeen([a.id]);
               }}
