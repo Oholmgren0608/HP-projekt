@@ -10,6 +10,8 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 43123",
     "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "db": "npx tsx scripts/db.ts",
     "db:push": "npx tsx scripts/db.ts db push",
     "db:dry": "npx tsx scripts/db.ts db push --dry-run",
@@ -45,6 +47,7 @@
     "eslint-config-next": "16.4.2",
     "shadcn": "^4.18.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "~4.0.18"
   }
 }

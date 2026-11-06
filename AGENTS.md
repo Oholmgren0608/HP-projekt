@@ -37,8 +37,10 @@ If a task seems to need one of these, stop and ask.
 - Build: `npm run build`; `npm run start` serves the built app on the same port
 - Type check: `npx tsc --noEmit` (there is no `typecheck` script)
 - Lint: `npm run lint`
-- Tests: none yet. There is no `test` script and no test framework in `package.json`. Until one exists, lint, type check
-  and `npm run build` are the checks, and your summary must say that no tests were run.
+- Tests: Vitest. `npm test` runs all tests once; `npm run test:watch` watches. Test files are `*.test.ts` next to the code
+  they test, and shared helpers live in `src/test/` (an in-memory Supabase and simulated devices for sync tests). Tests run
+  in the `node` environment. Type check, lint, `npm test` and `npm run build` are the checks, and your summary must say which
+  tests you ran and whether they passed.
 - DB migrations: add a new file `supabase/migrations/NNNN_<name>.sql` by hand, numbered after the highest one
   (not `supabase migration new`, which names files by timestamp). Never edit a migration that is already applied.
   Dry run: `npm run db:dry`. Apply: `npm run db:push`. See what is applied: `npm run db -- migration list`.
