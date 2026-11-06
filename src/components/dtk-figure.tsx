@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import type { DtkFigureData, FigurePart, RegionShape, SeriesData } from "@/lib/content/dtk-figures";
+import { DtkTableScroll } from "@/components/dtk-table-scroll";
 
 /**
  * Ritar en DTK-figur (tabell, stapel-, linje- och cirkeldiagram, karta) från
@@ -138,16 +139,15 @@ function Table({
   label?: string;
 }) {
   return (
-    // Fokuserbar region: en bred tabell på mobil går då att scrolla med piltangenterna.
-    <div className="overflow-x-auto" tabIndex={0} role="region" aria-label={label ?? "Tabell"}>
-      <table className="w-full border-collapse text-sm tabular-nums">
+    <DtkTableScroll label={label ?? "Tabell"}>
+      <table className="w-full border-collapse text-[13px] tabular-nums sm:text-sm">
         <thead>
           <tr className="border-b-2 border-[var(--line-strong)]">
             {head.map((cell, i) => (
               <th
                 key={i}
                 scope="col"
-                className={`px-2 py-1.5 align-bottom font-medium text-[var(--ink-soft)] first:pl-0 last:pr-0 ${i === 0 ? "text-left" : "text-right"}`}
+                className={`px-2 py-1.5 align-bottom font-medium text-[var(--ink-soft)] first:pl-0 last:pr-0 ${i === 0 ? "sticky left-0 z-[1] bg-card max-sm:shadow-[inset_-1px_0_0_var(--line)] text-left" : "text-right"}`}
               >
                 {cell}
               </th>
@@ -164,7 +164,8 @@ function Table({
               >
                 {row.map((cell, i) =>
                   i === 0 ? (
-                    <th key={i} scope="row" className={`py-1.5 pr-2 text-left ${isTotal ? "font-semibold" : "font-normal"}`}>
+                    // Första kolumnen ligger kvar när tabellen scrollas i sidled.
+                    <th key={i} scope="row" className={`sticky left-0 z-[1] bg-card max-sm:shadow-[inset_-1px_0_0_var(--line)] py-1.5 pr-2 text-left ${isTotal ? "font-semibold" : "font-normal"}`}>
                       {cell}
                     </th>
                   ) : (
@@ -178,7 +179,7 @@ function Table({
           })}
         </tbody>
       </table>
-    </div>
+    </DtkTableScroll>
   );
 }
 
