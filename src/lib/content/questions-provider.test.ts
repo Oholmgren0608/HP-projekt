@@ -37,6 +37,9 @@ const offlineFetch: typeof fetch = () => Promise.reject(new TypeError("fetch fai
 
 async function startLoad() {
   vi.resetModules();
+  // Den bundlade banken är en egen chunk. Förladda den så att testet mäter
+  // tidsgränsen och inte hur lång tid det tar att tolka 2,6 MB JSON.
+  await import("@/lib/content/fallback-bank.json");
   const provider = await import("@/lib/content/questions-provider");
   let done = false;
   void provider.loadQuestions().then(() => {
@@ -69,5 +72,20 @@ describe("nedladdning av frågebanken", () => {
     await vi.advanceTimersByTimeAsync(500);
     expect(isDone()).toBe(true);
     expect(provider.isBankFromDatabase()).toBe(false);
+  });
+});
+
+describe("den bundlade banken laddas först när den behövs", () => {
+  it("T7c: före loadQuestions() är den synkrona banken tom, efteråt fylld", async () => {
+    hoisted.fetch = offlineFetch;
+    vi.resetModules();
+    const provider = await import("@/lib/content/questions-provider");
+    expect(provider.getQuestionBankSync().questions).toHaveLength(0);
+    const loaded = provider.loadQuestions();
+    await vi.advanceTimersByTimeAsync(500);
+    const bank = await loaded;
+    expect(bank.questions.length).toBeGreaterThan(1000);
+    expect(provider.getQuestionBankSync()).toBe(bank);
+    expect(provider.getFallbackReflectPrompts().length).toBeGreaterThan(0);
   });
 });

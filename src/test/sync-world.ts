@@ -117,6 +117,8 @@ export class World {
       engine: await import("@/lib/gamification/engine"),
       modes: await import("@/lib/practice-modes"),
     };
+    // Som i appen: övningen väntar på att frågebanken har laddats.
+    await (await import("@/lib/content/questions-provider")).loadQuestions();
   }
 
   /** Som AuthProvider: getSession och INITIAL_SESSION anropar båda onAuthChanged. */

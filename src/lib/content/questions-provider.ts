@@ -1,4 +1,3 @@
-import fallbackBank from "@/lib/content/fallback-bank.json";
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { fetchAllPages } from "@/lib/supabase/paginate";
 import type { ChoiceQuestion, ReflectPrompt } from "@/lib/practice-types";
@@ -12,7 +11,8 @@ import type { ChoiceQuestion, ReflectPrompt } from "@/lib/practice-types";
  * localStorage. Vid fel, tomt resultat eller utan Supabase används den bundlade
  * banken (`fallback-bank.json`) så att appen fungerar offline. Den filen
  * genereras från databasen med `npm run fragebank:export` och redigeras inte
- * för hand.
+ * för hand. Den är 2,6 MB och laddas därför som en egen chunk först när den
+ * behövs, inte på varje sida.
  */
 
 export type QuestionBank = {
@@ -47,21 +47,35 @@ let loadPromise: Promise<QuestionBank> | null = null;
 let bankSource: "database" | "cache" | "fallback" | null = null;
 
 let fallback: QuestionBank | null = null;
+let fallbackPromise: Promise<QuestionBank> | null = null;
+
+const EMPTY_BANK: QuestionBank = { questions: [], reflect: [] };
 
 /** Den bundlade banken, validerad med samma regler som cachen. */
-function getFallback(): QuestionBank {
-  if (!fallback) {
+function loadFallback(): Promise<QuestionBank> {
+  if (fallback) return Promise.resolve(fallback);
+  fallbackPromise ??= import("@/lib/content/fallback-bank.json").then((mod) => {
+    const data = mod.default;
     fallback = {
-      questions: (fallbackBank.questions as unknown[]).filter(isChoiceQuestion),
-      reflect: (fallbackBank.reflect as unknown[]).filter(isReflectPrompt),
+      questions: (data.questions as unknown[]).filter(isChoiceQuestion),
+      reflect: (data.reflect as unknown[]).filter(isReflectPrompt),
     };
-  }
-  return fallback;
+    return fallback;
+  }).catch((err) => {
+    // Chunken kunde inte hämtas (t.ex. offline innan den cachats). Försök igen nästa gång.
+    console.warn("[questions] Kunde inte ladda den bundlade banken:", err);
+    fallbackPromise = null;
+    return EMPTY_BANK;
+  });
+  return fallbackPromise;
 }
 
-/** Bundlade reflektionsfrågor, för när databasen saknar egna. */
+/**
+ * Bundlade reflektionsfrågor, för när databasen saknar egna. `loadQuestions()`
+ * laddar dem i så fall, så de finns här när banken är klar.
+ */
 export function getFallbackReflectPrompts(): ReflectPrompt[] {
-  return getFallback().reflect;
+  return fallback?.reflect ?? [];
 }
 
 // ---- Row-mappning (Supabase) ----------------------------------------------
@@ -330,6 +344,7 @@ export function loadQuestions(): Promise<QuestionBank> {
       try {
         const next = await withDeadline(fetchBankFromDatabase, BANK_DEADLINE_MS);
         if (next) {
+          if (next.reflect.length === 0) await loadFallback();
           writeCache(next);
           bank = next;
           bankSource = "database";
@@ -342,12 +357,13 @@ export function loadQuestions(): Promise<QuestionBank> {
 
     const cached = readCache();
     if (cached) {
+      if (cached.reflect.length === 0) await loadFallback();
       bank = cached;
       bankSource = "cache";
       return cached;
     }
 
-    bank = getFallback();
+    bank = await loadFallback();
     bankSource = "fallback";
     return bank;
   })();
@@ -356,11 +372,11 @@ export function loadQuestions(): Promise<QuestionBank> {
 }
 
 /**
- * Synkron accessor för befintliga sync-kodvägar: returnerar den laddade banken
- * eller fallback om inget laddats ännu.
+ * Synkron accessor för befintliga sync-kodvägar: returnerar den laddade banken,
+ * eller en tom bank om `loadQuestions()` inte är klar än.
  */
 export function getQuestionBankSync(): QuestionBank {
-  return bank ?? getFallback();
+  return bank ?? EMPTY_BANK;
 }
 
 export function getQuestions(): ChoiceQuestion[] {

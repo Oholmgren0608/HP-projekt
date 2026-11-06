@@ -192,6 +192,10 @@ export function getReflectPrompt(seed: string): ReflectPrompt {
   const prompts = getReflectPrompts();
   // Guard: om Supabase-data saknar reflektioner, fall tillbaka på den bundlade.
   const list = prompts.length > 0 ? prompts : getFallbackReflectPrompts();
+  // Tom bara om den bundlade banken inte gick att ladda (offline innan den cachats).
+  if (list.length === 0) {
+    return { id: "reflect-reserv", title: "Reflektion", prompts: ["Vad var svårast i dagens pass, och varför?"] };
+  }
   const idx = hashSeed(seed) % list.length;
   return list[idx];
 }

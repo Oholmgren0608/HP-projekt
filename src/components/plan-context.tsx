@@ -72,6 +72,7 @@ const PlanContext = createContext<PlanContextValue | null>(null);
 export function PlanProvider({ children }: { children: ReactNode }) {
   const [scores, setScores] = useState<ScoreInput | null>(loadScores);
   const ready = useHydrated();
+  const [bankLoaded, setBankLoaded] = useState(false);
   const [adaptEnabled, setAdaptEnabledState] = useState(loadAdaptPlanEnabled);
   const [revision, setRevision] = useState(0);
 
@@ -87,7 +88,9 @@ export function PlanProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     let cancelled = false;
     void loadQuestions().then(() => {
-      if (!cancelled) setRevision((n) => n + 1);
+      if (cancelled) return;
+      setBankLoaded(true);
+      setRevision((n) => n + 1);
     });
     return () => {
       cancelled = true;
@@ -150,13 +153,14 @@ export function PlanProvider({ children }: { children: ReactNode }) {
     void revision;
     const trends = adaptEnabled ? detectPracticeTrends(scores, loadHistory()) : [];
     return generatePlan(scores, {
-      bankSizes: bankSizes(),
+      // Innan banken laddats är den tom; utan storlekar räknar planen med fulla pass.
+      bankSizes: bankLoaded ? bankSizes() : undefined,
       adapt: adaptEnabled,
       trends,
       lockedWeeks: loadLockedWeeks(),
       startedWeeks: startedWeekNumbers(loadWeekProgress()),
     });
-  }, [scores, adaptEnabled, revision, ready]);
+  }, [scores, adaptEnabled, revision, ready, bankLoaded]);
 
   const value = useMemo(
     () => ({
