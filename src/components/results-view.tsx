@@ -46,8 +46,9 @@ export function ResultsView() {
       <StudyTimeNotice />
 
       <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+        {/* Utan plan säger sidrubriken redan "Mata in dina HP-resultat". */}
         <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
-          Mata in dina HP-resultat
+          {plan ? "Mata in dina HP-resultat" : "Dina poäng per delprov"}
         </h2>
         <div className="mt-6">
           <ScoreForm />
