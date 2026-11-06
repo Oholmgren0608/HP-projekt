@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Play, Timer } from "lucide-react";
+import { ArrowRight, Lock, Play, Timer } from "lucide-react";
 import { DailySrsReview } from "@/components/daily-srs-review";
 import { usePlan } from "@/components/plan-context";
+import { usePlanAccess } from "@/components/plan-preview";
 import { ProgressPanel } from "@/components/progress-panel";
 import { useHydrated } from "@/lib/use-hydrated";
 import { formatNorm } from "@/lib/hp-scores";
@@ -30,6 +31,7 @@ function greeting(): string {
 
 export function DashboardHome() {
   const { plan, ready } = usePlan();
+  const access = usePlanAccess();
   const [progress, setProgress] = useState<ProgressMap>(loadWeekProgress);
   const mounted = useHydrated();
 
@@ -43,7 +45,7 @@ export function DashboardHome() {
     };
   }, []);
 
-  if (!ready || !mounted) {
+  if (!ready || !mounted || access === "loading") {
     return (
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
@@ -53,8 +55,10 @@ export function DashboardHome() {
     );
   }
 
-  const next = plan ? findNextIncomplete(plan.weeklyPlans, progress) : null;
-  const summary = plan ? weekProgressSummary(plan.weeklyPlans, progress) : null;
+  // Veckoplanen kräver konto; gäster med en plan ser en länk till förhandsvisningen.
+  const planOpen = plan !== null && access === "full";
+  const next = plan && planOpen ? findNextIncomplete(plan.weeklyPlans, progress) : null;
+  const summary = plan && planOpen ? weekProgressSummary(plan.weeklyPlans, progress) : null;
   const profile = plan?.profile ?? null;
   const focusIds = plan?.focusIds ?? [];
 
@@ -65,15 +69,19 @@ export function DashboardHome() {
         <div className="flex flex-col gap-5">
           <div>
             <p className="text-[13px] font-medium text-[var(--ink-muted)]">
-              {greeting()} · {plan ? "Dagens pass" : "Ditt HP-läge"}
+              {greeting()} · {planOpen ? "Dagens pass" : "Ditt HP-läge"}
             </p>
             <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
-              {plan ? "Vad du ska göra nu" : "Kom igång med din HP-plan"}
+              {planOpen ? "Vad du ska göra nu" : plan ? "Din veckoplan är klar" : "Kom igång med din HP-plan"}
             </h1>
             {profile && summary ? (
               <p className="mt-2 max-w-xl font-medium text-[var(--ink-muted)]">
                 Snitt {formatNorm(profile.overall)} · {summary.done}/{summary.total} uppgifter klara (
                 {summary.percent} %).
+              </p>
+            ) : profile ? (
+              <p className="mt-2 max-w-xl font-medium text-[var(--ink-muted)]">
+                Snitt {formatNorm(profile.overall)}. Logga in för att följa veckoplanen vecka för vecka.
               </p>
             ) : (
               <p className="mt-2 max-w-xl font-medium text-[var(--ink-muted)]">
@@ -121,7 +129,7 @@ export function DashboardHome() {
       <section className="grid items-stretch gap-5 lg:gap-6 lg:grid-cols-2">
         <DailyQuests />
 
-        {plan ? <NextTaskCard next={next} /> : <StreakCard />}
+        {planOpen ? <NextTaskCard next={next} /> : plan ? <PlanPreviewCard /> : <StreakCard />}
       </section>
 
       {/* ---- Streak + statistik ---------------------------------------------- */}
@@ -163,6 +171,34 @@ export function DashboardHome() {
   );
 }
 
+
+/** För gäster med en plan: veckoplanen kräver konto, vecka 1 går att förhandsvisa. */
+function PlanPreviewCard() {
+  return (
+    <div className="relative flex flex-col overflow-hidden rounded-[10px] border border-[var(--line)] bg-[var(--card)] p-5 shadow-soft sm:p-6">
+      <p className="flex items-center gap-2 text-[13px] font-medium text-[var(--ink-muted)]">
+        <Lock className="size-3.5" aria-hidden />
+        Veckoplan
+      </p>
+      <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
+        Följ planen med ett konto
+      </h2>
+      <p className="mt-2 font-medium text-[var(--ink-muted)]">
+        Se vecka 1 nu. Med ett konto får du hela planen, bockar av uppgifterna och har
+        dina framsteg på alla enheter.
+      </p>
+      <div className="mt-auto flex flex-wrap gap-3 pt-5">
+        <Link
+          href="/plan"
+          className="inline-flex min-h-11 items-center gap-2 rounded-md bg-[var(--brand)] px-6 text-sm font-semibold text-primary-foreground shadow-soft transition hover:shadow-pop "
+        >
+          Se vecka 1
+          <ArrowRight className="size-4" />
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 /** Dagens pass-kortet. `next === null` betyder att alla uppgifter är klara. */
 function NextTaskCard({ next }: { next: ReturnType<typeof findNextIncomplete> }) {

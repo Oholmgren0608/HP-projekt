@@ -5,14 +5,16 @@ import { useState } from "react";
 import { Disclosure } from "@/components/disclosure";
 import { PriorityBadge } from "@/components/plan-badges";
 import { usePlan } from "@/components/plan-context";
+import { PlanPreview, usePlanAccess } from "@/components/plan-preview";
 import { StudyTimeNotice } from "@/components/study-time-notice";
 import { WeekTracker } from "@/components/week-tracker";
 
 export function PlanView() {
   const { plan, ready, adaptEnabled, setAdaptEnabled } = usePlan();
+  const access = usePlanAccess();
   const [sessionOpen, setSessionOpen] = useState(false);
 
-  if (!ready) {
+  if (!ready || access === "loading") {
     return (
       <div className="space-y-6">
         <div className="h-8 w-56 animate-pulse rounded-lg bg-[var(--mist)]" />
@@ -52,6 +54,7 @@ export function PlanView() {
   }
 
   const { profile, sections, strategy, dailyTemplate } = plan;
+  const preview = access === "preview";
 
   // Planen lägger upp ca 80 % av den angivna veckotiden (resten är repetition
   // och oförutsett) — visa summan så att den inte behöver gissas.
@@ -74,26 +77,29 @@ export function PlanView() {
             Veckoplan
           </h1>
           <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
-            Byggs om från dina resultat · ca {plannedHoursPerWeek} h planerad träning per vecka ·
-            progress sparas lokalt.
+            {preview
+              ? `Byggd från dina resultat · ca ${plannedHoursPerWeek} h planerad träning per vecka. Här ser du vecka 1 — logga in för hela planen.`
+              : `Byggs om från dina resultat · ca ${plannedHoursPerWeek} h planerad träning per vecka · framstegen sparas på ditt konto.`}
           </p>
-          <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line-strong)] bg-card/70 px-4 py-3">
-            <input
-              type="checkbox"
-              className="mt-1 size-4 accent-[var(--brand)]"
-              checked={adaptEnabled}
-              onChange={(e) => setAdaptEnabled(e.target.checked)}
-            />
-            <span>
-              <span className="block text-sm font-medium text-[var(--ink)]">
-                Anpassa kommande veckor efter övningstrend
+          {!preview ? (
+            <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line-strong)] bg-card/70 px-4 py-3">
+              <input
+                type="checkbox"
+                className="mt-1 size-4 accent-[var(--brand)]"
+                checked={adaptEnabled}
+                onChange={(e) => setAdaptEnabled(e.target.checked)}
+              />
+              <span>
+                <span className="block text-sm font-medium text-[var(--ink)]">
+                  Anpassa kommande veckor efter övningstrend
+                </span>
+                <span className="mt-0.5 block text-sm text-[var(--ink-muted)]">
+                  Kräver tre pass på samma delprov som pekar åt samma håll.
+                </span>
               </span>
-              <span className="mt-0.5 block text-sm text-[var(--ink-muted)]">
-                Kräver tre pass på samma delprov som pekar åt samma håll.
-              </span>
-            </span>
-          </label>
-          {adaptEnabled && plan.adaptedFromPractice ? (
+            </label>
+          ) : null}
+          {!preview && adaptEnabled && plan.adaptedFromPractice ? (
             <p className="mt-3 max-w-xl text-sm text-[var(--ink)]">
               Kommande veckor är justerade efter en konsekvent övningstrend.
               Påbörjade veckor är oförändrade.
@@ -104,7 +110,11 @@ export function PlanView() {
 
       {!sessionOpen ? <StudyTimeNotice /> : null}
 
-      <WeekTracker onSessionChange={setSessionOpen} />
+      {preview ? (
+        <PlanPreview weeklyPlans={plan.weeklyPlans} />
+      ) : (
+        <WeekTracker onSessionChange={setSessionOpen} />
+      )}
 
       {!sessionOpen ? (
         <>

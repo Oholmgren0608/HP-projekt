@@ -13,7 +13,10 @@ Read this before every task. If anything here conflicts with a task request, STO
 4. **No secrets in client code.** The Supabase service-role key and other secrets must never be imported into a client component
    or a `NEXT_PUBLIC_*` variable.
 5. **The app works without an account.** Guest data lives in the browser and syncs after login. Never make a core study feature
-   require login unless the task explicitly says so.
+   require login unless the task explicitly says so. The one exception (Oscar's decision, 2026-11-06): the veckoplan's weeks and
+   tasks require an account; guests see week 1 as a preview (`src/lib/plan-access.ts`). Practice, the nivåtest, results and the
+   per-delprov priorities stay open. This gate is UI-only, because the plan is built in the browser; a paid gate must be checked
+   on the server (§6).
 6. **Don't change database security silently.** Any change to RLS policies, roles or storage rules goes in a migration,
    gets called out in your summary, and gets a test.
 7. **Every audit-logged action stays audit-logged.** Admin and review actions write to the audit log.
@@ -21,7 +24,8 @@ Read this before every task. If anything here conflicts with a task request, STO
 ## 2. Out of scope right now (do NOT build, even though the v2.0 spec mentions them)
 - Payments and payouts (waiting for the company to be registered)
 - Video / Creator Studio (no provider chosen yet)
-- Subscription tiers and ads (decision pending)
+- Subscription tiers and ads (decision pending). The veckoplan is meant to become a subscriber feature; until subscriptions
+  leave this list it only requires an account (rule 5).
 If a task seems to need one of these, stop and ask.
 
 ## 3. Stack
