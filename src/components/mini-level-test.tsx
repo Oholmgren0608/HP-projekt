@@ -5,10 +5,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { recordEvent } from "@/lib/gamification/engine";
 import { usePlan } from "@/components/plan-context";
+import { ExamDateField } from "@/components/exam-date-field";
+import { isDateKey, todayKey, upcomingExamDates } from "@/lib/exam-date";
+import { useHydrated } from "@/lib/use-hydrated";
 import { useQuestions } from "@/lib/content/use-questions";
 import { ScoreBar } from "@/components/plan-badges";
 import { QuestionReviewList } from "@/components/question-review";
-import { formatNorm } from "@/lib/hp-scores";
+import { formatNorm, withExamDate } from "@/lib/hp-scores";
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import { recordQuizOutcome } from "@/lib/quiz-outcome";
 import type { SectionId } from "@/lib/study-plan";
@@ -47,7 +50,8 @@ export function MiniLevelTest() {
   const [phase, setPhase] = useState<Phase>("intro");
   const [seed, setSeed] = useState("");
   const [hoursPerWeek, setHoursPerWeek] = useState(10);
-  const [weeksUntilExam, setWeeksUntilExam] = useState(8);
+  /** Valt provdatum; tomt = nästa högskoleprov föreslås. */
+  const [examDate, setExamDate] = useState("");
   const [applied, setApplied] = useState(false);
 
   // Antal frågor per delprov — standard 3, sedan användarens sparade val.
@@ -84,7 +88,7 @@ export function MiniLevelTest() {
     // som redigerbara utgångsvärden.
     if (scores) {
       setHoursPerWeek(scores.hoursPerWeek);
-      setWeeksUntilExam(scores.weeksUntilExam);
+      setExamDate(scores.examDate ?? "");
     }
   }
 
@@ -135,9 +139,13 @@ export function MiniLevelTest() {
 
   const finalAnswers = quiz.finalAnswers ?? EMPTY_ANSWERS;
   const outcome = useMemo(
-    () => miniTestToScoreInput(questions, finalAnswers, { hoursPerWeek, weeksUntilExam }),
-    [questions, finalAnswers, hoursPerWeek, weeksUntilExam],
+    () => miniTestToScoreInput(questions, finalAnswers, { hoursPerWeek, weeksUntilExam: 0 }),
+    [questions, finalAnswers, hoursPerWeek],
   );
+  // Dagens datum först efter hydrering, så att server och klient renderar lika.
+  const today = useHydrated() ? todayKey() : "";
+  const chosenExam = examDate || upcomingExamDates(today)[0]?.date || "";
+  const examValid = Boolean(today) && isDateKey(chosenExam) && chosenExam >= today;
 
   function updateCount(id: SectionId, count: number) {
     const next = { ...counts, [id]: count };
@@ -161,7 +169,8 @@ export function MiniLevelTest() {
   }
 
   function applyPlan() {
-    updateScores(outcome.input);
+    if (!examValid) return;
+    updateScores(withExamDate(outcome.input, chosenExam, todayKey(), scores));
     setApplied(true);
     router.push("/plan");
   }
@@ -482,7 +491,8 @@ export function MiniLevelTest() {
           Skapa din veckoplan
         </h2>
         <p className="mt-2 text-[var(--ink-muted)]">
-          Sista steget: hur mycket tid har du? Sedan bygger vi planen från ditt resultat.
+          Sista steget: hur mycket tid har du, och när skriver du provet? Sedan bygger vi
+          planen från ditt resultat.
         </p>
         <div className="mt-4 grid gap-5 sm:gap-6 sm:grid-cols-2">
           <label className="block space-y-2">
@@ -496,23 +506,18 @@ export function MiniLevelTest() {
               className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
             />
           </label>
-          <label className="block space-y-2">
-            <span className="text-sm font-medium text-[var(--ink)]">Veckor till prov</span>
-            <input
-              type="number"
-              min={1}
-              max={16}
-              value={weeksUntilExam}
-              onChange={(e) => setWeeksUntilExam(Number(e.target.value))}
-              className="w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2"
-            />
-          </label>
+          <ExamDateField
+            className="sm:col-span-2"
+            value={chosenExam}
+            today={today}
+            onChange={setExamDate}
+          />
         </div>
         <div className="mt-5 flex flex-wrap items-center gap-3">
           <button
             type="button"
             onClick={applyPlan}
-            disabled={applied}
+            disabled={applied || !examValid}
             className="inline-flex min-h-11 items-center rounded-lg bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition enabled:hover:brightness-110 disabled:opacity-60"
           >
             {applied ? "Skapar plan…" : "Använd resultatet & skapa plan"}

@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { ExamDateField } from "@/components/exam-date-field";
 import { usePlan } from "@/components/plan-context";
+import { isDateKey, todayKey } from "@/lib/exam-date";
 import {
   DELPROV_META,
   clampDelprov,
   clampHoursPerWeek,
   clampNorm,
-  clampWeeksUntilExam,
+  withExamDate,
   type ScoreInput,
 } from "@/lib/hp-scores";
+import { useHydrated } from "@/lib/use-hydrated";
 import type { SectionId } from "@/lib/study-plan";
 
 /** Formuläret håller strängar: tomt fält är ett giltigt läge (inget sparat). */
@@ -17,7 +20,8 @@ type Draft = {
   quantNorm: string;
   verbalNorm: string;
   hoursPerWeek: string;
-  weeksUntilExam: string;
+  /** "YYYY-MM-DD", eller tomt (äldre underlag har inget provdatum). */
+  examDate: string;
   delprov: Record<SectionId, string>;
 };
 
@@ -30,7 +34,7 @@ function toDraft(scores: ScoreInput | null): Draft {
       quantNorm: "",
       verbalNorm: "",
       hoursPerWeek: "",
-      weeksUntilExam: "",
+      examDate: "",
       delprov: emptyDelprov(),
     };
   }
@@ -38,7 +42,7 @@ function toDraft(scores: ScoreInput | null): Draft {
     quantNorm: String(scores.quantNorm),
     verbalNorm: String(scores.verbalNorm),
     hoursPerWeek: String(scores.hoursPerWeek),
-    weeksUntilExam: String(scores.weeksUntilExam),
+    examDate: scores.examDate ?? "",
     delprov: Object.fromEntries(
       DELPROV_META.map((m) => [m.id, String(scores.delprov[m.id])]),
     ) as Record<SectionId, string>,
@@ -55,6 +59,8 @@ function parseNumber(value: string): number | null {
 
 export function ScoreForm() {
   const { scores, plan, updateScores, clearScores, ready } = usePlan();
+  // Dagens datum först efter hydrering, så att server och klient renderar lika.
+  const today = useHydrated() ? todayKey() : "";
   const [draft, setDraft] = useState<Draft>(() => toDraft(scores));
   const [missing, setMissing] = useState<ReadonlySet<string>>(new Set());
   const [confirmClear, setConfirmClear] = useState(false);
@@ -93,13 +99,14 @@ export function ScoreForm() {
     const quant = parseNumber(draft.quantNorm);
     const verbal = parseNumber(draft.verbalNorm);
     const hours = parseNumber(draft.hoursPerWeek);
-    const weeks = parseNumber(draft.weeksUntilExam);
+    const now = todayKey();
+    const examDate = isDateKey(draft.examDate) && draft.examDate >= now ? draft.examDate : null;
 
     const missingKeys = new Set<string>();
     if (quant === null) missingKeys.add("quantNorm");
     if (verbal === null) missingKeys.add("verbalNorm");
     if (hours === null) missingKeys.add("hoursPerWeek");
-    if (weeks === null) missingKeys.add("weeksUntilExam");
+    if (examDate === null) missingKeys.add("examDate");
 
     const delprov = {} as Record<SectionId, number>;
     for (const m of DELPROV_META) {
@@ -116,7 +123,7 @@ export function ScoreForm() {
       quant === null ||
       verbal === null ||
       hours === null ||
-      weeks === null
+      examDate === null
     ) {
       setMissing(missingKeys);
       setPendingSave(false);
@@ -126,13 +133,18 @@ export function ScoreForm() {
       return;
     }
 
-    const next: ScoreInput = {
-      quantNorm: clampNorm(quant),
-      verbalNorm: clampNorm(verbal),
-      hoursPerWeek: clampHoursPerWeek(hours),
-      weeksUntilExam: clampWeeksUntilExam(weeks),
-      delprov,
-    };
+    const next: ScoreInput = withExamDate(
+      {
+        quantNorm: clampNorm(quant),
+        verbalNorm: clampNorm(verbal),
+        hoursPerWeek: clampHoursPerWeek(hours),
+        weeksUntilExam: 0,
+        delprov,
+      },
+      examDate,
+      now,
+      scores,
+    );
     updateScores(next);
     setMissing(new Set());
     setConfirmClear(false);
@@ -220,21 +232,16 @@ export function ScoreForm() {
             className={`w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2 ${missing.has("hoursPerWeek") ? invalidClass : ""}`}
           />
         </label>
-        <label className="block space-y-2">
-          <span className="text-sm font-medium text-[var(--ink)]">Veckor till prov</span>
-          <input
-            type="number"
-            min={1}
-            max={16}
-            value={draft.weeksUntilExam}
-            aria-invalid={missing.has("weeksUntilExam")}
-            onChange={(e) => {
-              clearMissing("weeksUntilExam");
-              setDraft((d) => ({ ...d, weeksUntilExam: e.target.value }));
-            }}
-            className={`w-full rounded-lg border border-[var(--line-strong)] bg-card px-3 py-2 text-[var(--ink)] outline-none ring-[var(--brand)] focus:ring-2 ${missing.has("weeksUntilExam") ? invalidClass : ""}`}
-          />
-        </label>
+        <ExamDateField
+          className="sm:col-span-2 lg:col-span-4"
+          value={draft.examDate}
+          today={today}
+          invalid={missing.has("examDate")}
+          onChange={(date) => {
+            clearMissing("examDate");
+            setDraft((d) => ({ ...d, examDate: date }));
+          }}
+        />
       </div>
 
       <div>

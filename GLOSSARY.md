@@ -33,7 +33,7 @@ Formuläret där användaren själv matar in sina HP-resultat (normpoäng per bl
 _Avoid_: Poängformulär
 
 **Veckoplan**:
-Den genererade studieplanen med övningar per delprov, byggd på nivå, timmar per vecka och veckor kvar till provet. Kräver konto; en gäst ser vecka 1 som förhandsvisning.
+Den genererade studieplanen med övningar per delprov, byggd på nivå, timmar per vecka och provdatumet. Veckorna följer kalendern fram till provet, högst 16 veckor. Kräver konto; en gäst ser vecka 1 som förhandsvisning.
 _Avoid_: Schema, studieplan (som synonym för veckoplanen)
 
 ## Resultat och nivå

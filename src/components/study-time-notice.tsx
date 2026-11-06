@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePlan } from "@/components/plan-context";
+import { todayKey, weeksLeft } from "@/lib/exam-date";
 import { recommendStudyTime } from "@/lib/study-time-recommendation";
 import type { StudyTimeVerdict } from "@/lib/study-time-recommendation";
 import { sectionShort } from "@/lib/subtests";
@@ -9,7 +10,9 @@ import { sectionShort } from "@/lib/subtests";
 export function StudyTimeNotice() {
   const { scores, ready } = usePlan();
   if (!ready || !scores) return null;
-  const verdict = recommendStudyTime(scores);
+  // Med provdatum räknas rådet på veckorna som faktiskt är kvar, inte planens längd.
+  const left = scores.examDate ? weeksLeft(scores.examDate, todayKey()) : null;
+  const verdict = recommendStudyTime(left ? { ...scores, weeksUntilExam: left } : scores);
   return <NoticeBody verdict={verdict} />;
 }
 

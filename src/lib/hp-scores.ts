@@ -2,6 +2,7 @@ import type { SectionId } from "@/lib/study-plan";
 import { SUBTESTS } from "@/lib/subtests";
 import { storageGet, storageRemove, storageSet } from "@/lib/sync/storage-sync";
 import { loadJson } from "@/lib/storage";
+import { isDateKey, planStartFor, planWeekCount } from "@/lib/exam-date";
 
 export const DELPROV_META: {
   id: SectionId;
@@ -14,10 +15,36 @@ export type ScoreInput = {
   quantNorm: number;
   verbalNorm: number;
   hoursPerWeek: number;
+  /**
+   * Veckor i planen. Med provdatum räknas det fram ur `planStart` och
+   * `examDate` (se exam-date.ts); äldre sparade underlag har bara talet.
+   */
   weeksUntilExam: number;
+  /** Provdatum, "YYYY-MM-DD". Saknas i underlag från före provdatumen. */
+  examDate?: string;
+  /** Planens första måndag, "YYYY-MM-DD". Sätts tillsammans med examDate. */
+  planStart?: string;
   /** correct answers per delprov id */
   delprov: Record<SectionId, number>;
 };
+
+/**
+ * Sätter provdatumet på ett underlag. Planens start behålls om provdatumet är
+ * detsamma som förut (nya resultat ska inte flytta kalendern), annars blir den
+ * den här veckan (eller en senare måndag om provet är mer än 16 veckor bort).
+ */
+export function withExamDate(
+  scores: Omit<ScoreInput, "examDate" | "planStart">,
+  examDate: string,
+  today: string,
+  previous?: Pick<ScoreInput, "examDate" | "planStart"> | null,
+): ScoreInput {
+  const planStart =
+    previous?.examDate === examDate && previous.planStart && isDateKey(previous.planStart)
+      ? previous.planStart
+      : planStartFor(examDate, today);
+  return { ...scores, examDate, planStart, weeksUntilExam: planWeekCount(planStart, examDate) };
+}
 
 /**
  * Neutrala reservvärden för enskilda fält som saknar giltigt värde i *sparad*
@@ -89,13 +116,22 @@ export function loadScores(): ScoreInput | null {
     if (typeof parsed.quantNorm !== "number" || typeof parsed.verbalNorm !== "number") {
       return null;
     }
-    return {
+    const base = {
       quantNorm: clampNorm(parsed.quantNorm),
       verbalNorm: clampNorm(parsed.verbalNorm),
       hoursPerWeek: clampHoursPerWeek(parsed.hoursPerWeek),
       weeksUntilExam: clampWeeksUntilExam(parsed.weeksUntilExam),
       delprov,
     };
+    if (isDateKey(parsed.examDate) && isDateKey(parsed.planStart)) {
+      return {
+        ...base,
+        examDate: parsed.examDate,
+        planStart: parsed.planStart,
+        weeksUntilExam: planWeekCount(parsed.planStart, parsed.examDate),
+      };
+    }
+    return base;
   } catch {
     return null;
   }

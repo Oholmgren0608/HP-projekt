@@ -8,9 +8,10 @@ import { usePlan } from "@/components/plan-context";
 import { PlanPreview, usePlanAccess } from "@/components/plan-preview";
 import { StudyTimeNotice } from "@/components/study-time-notice";
 import { WeekTracker } from "@/components/week-tracker";
+import { currentPlanWeek, formatDateLong, formatWeekRange, planWeekRange, todayKey, weeksLeft } from "@/lib/exam-date";
 
 export function PlanView() {
-  const { plan, ready, adaptEnabled, setAdaptEnabled } = usePlan();
+  const { plan, scores, ready, adaptEnabled, setAdaptEnabled } = usePlan();
   const access = usePlanAccess();
   const [sessionOpen, setSessionOpen] = useState(false);
 
@@ -55,6 +56,10 @@ export function PlanView() {
 
   const { profile, sections, strategy, dailyTemplate } = plan;
   const preview = access === "preview";
+  const today = todayKey();
+  const examDate = scores?.examDate;
+  const left = examDate ? weeksLeft(examDate, today) : null;
+  const nowWeek = examDate && scores?.planStart ? currentPlanWeek(scores.planStart, examDate, today) : null;
 
   // Planen lägger upp ca 80 % av den angivna veckotiden (resten är repetition
   // och oförutsett) — visa summan så att den inte behöver gissas.
@@ -71,7 +76,9 @@ export function PlanView() {
       {!sessionOpen ? (
         <div>
           <p className="text-[13px] text-[var(--ink-muted)]">
-            {profile.weeksUntilExam} veckor · {profile.hoursPerWeek} h/vecka
+            {examDate && left !== null
+              ? `Provet ${formatDateLong(examDate)} · ${left === 0 ? "provet har varit" : `${left} ${left === 1 ? "vecka" : "veckor"} kvar`} · ${profile.hoursPerWeek} h/vecka`
+              : `${profile.weeksUntilExam} veckor · ${profile.hoursPerWeek} h/vecka`}
           </p>
           <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-3xl tracking-tight text-[var(--ink)] sm:text-4xl">
             Veckoplan
@@ -81,6 +88,19 @@ export function PlanView() {
               ? `Byggd från dina resultat · ca ${plannedHoursPerWeek} h planerad träning per vecka. Här ser du vecka 1 — logga in för hela planen.`
               : `Byggs om från dina resultat · ca ${plannedHoursPerWeek} h planerad träning per vecka · framstegen sparas på ditt konto.`}
           </p>
+          {!examDate ? (
+            <p className="mt-3 max-w-xl text-sm text-[var(--ink)]">
+              <Link href="/resultat" className="font-medium text-[var(--brand)] underline-offset-4 hover:underline">
+                Välj ditt provdatum
+              </Link>{" "}
+              så följer veckorna kalendern och planen visar vilken vecka det är nu.
+            </p>
+          ) : nowWeek === 0 && scores?.planStart ? (
+            <p className="mt-3 max-w-xl text-sm text-[var(--ink)]">
+              Planen täcker de sista 16 veckorna före provet och börjar{" "}
+              {formatWeekRange(planWeekRange(scores.planStart, 1))}. Du kan börja på vecka 1 redan nu.
+            </p>
+          ) : null}
           {!preview ? (
             <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line-strong)] bg-card/70 px-4 py-3">
               <input

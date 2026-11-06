@@ -6,6 +6,7 @@ import { recordEvent } from "@/lib/gamification/engine";
 import { PracticeSession } from "@/components/practice-session";
 import { WeekTaskRow } from "@/components/week-task-row";
 import { usePlan } from "@/components/plan-context";
+import { currentPlanWeek, formatWeekRange, planWeekRange, todayKey } from "@/lib/exam-date";
 import { Progress } from "@/components/ui/progress";
 import { useHydrated } from "@/lib/use-hydrated";
 import { requiredPracticeMinutes } from "@/lib/practice-pace";
@@ -44,9 +45,15 @@ export function WeekTracker({
 }: {
   onSessionChange?: (open: boolean) => void;
 }) {
-  const { plan: generated } = usePlan();
+  const { plan: generated, scores: planScores } = usePlan();
   // Stabil tom lista när inget underlag sparats; PlanView visar då ingen WeekTracker.
   const weeklyPlans = generated?.weeklyPlans ?? NO_WEEKS;
+  // Med provdatum vet planen vilken vecka det är nu (0 = planen har inte börjat).
+  const planStart = planScores?.planStart;
+  const nowWeek =
+    planStart && planScores?.examDate
+      ? currentPlanWeek(planStart, planScores.examDate, todayKey())
+      : null;
   // Tidskravet per uppgift beror på hur många frågor banken har — rendera om
   // när Supabase-banken laddats så att raden visar samma krav som passet.
   useQuestions();
@@ -59,7 +66,8 @@ export function WeekTracker({
   const urlStart = searchParams.get("start");
   const [activeWeek, setActiveWeek] = useState(() => {
     const week = Number(urlWeek);
-    return week && weeklyPlans.some((w) => w.week === week) ? week : 1;
+    if (week && weeklyPlans.some((w) => w.week === week)) return week;
+    return nowWeek && weeklyPlans.some((w) => w.week === nowWeek) ? nowWeek : 1;
   });
   const [activeTaskId, setActiveTaskId] = useState<string | null>(urlStart);
   const [sessionNonce, setSessionNonce] = useState(0);
@@ -298,7 +306,15 @@ export function WeekTracker({
                   : "border-[var(--line-strong)] bg-card/60 text-[var(--ink-muted)] hover:border-[var(--ink-soft)]"
               }`}
             >
-              <div className="text-xs ">Vecka {w.week}</div>
+              <div className="flex items-center gap-1.5 text-xs">
+                Vecka {w.week}
+                {w.week === nowWeek ? (
+                  <span className="font-semibold text-[var(--brand)]">· Nu</span>
+                ) : null}
+              </div>
+              {planStart ? (
+                <div className="text-xs">{formatWeekRange(planWeekRange(planStart, w.week))}</div>
+              ) : null}
               <div className="text-sm font-medium">{w.phase}</div>
               <div className="text-xs opacity-80">
                 {wDone}/{w.tasks.length}
