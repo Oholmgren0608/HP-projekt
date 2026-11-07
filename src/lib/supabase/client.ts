@@ -55,6 +55,55 @@ export type DuelReviewItem = {
   opp_chosen: number | null;
 };
 
+/** Alla mot alla (0038): läget som ama_state returnerar för den inloggade spelaren. */
+export type AmaPlayer = {
+  player_id: string;
+  name: string;
+  is_bot: boolean;
+  is_me: boolean;
+  is_host: boolean;
+  score: number;
+  correct: number;
+  left: boolean;
+  rank: number;
+};
+
+export type AmaState = {
+  game: {
+    id: string;
+    mode: "private" | "lobby";
+    status: "waiting" | "active" | "finished" | "cancelled";
+    phase: "starting" | "question" | "reveal" | null;
+    current_idx: number;
+    question_count: number;
+    kinds: string[];
+    extended: boolean;
+    invite_code: string | null;
+    is_host: boolean;
+    remaining_ms: number | null;
+    lobby_starts_in_ms: number | null;
+    bots_in_ms: number | null;
+  };
+  me: { player_id: string; score: number; correct: number };
+  players: AmaPlayer[];
+  question: (PoolQuestion & { index: number; time_limit_ms: number }) | null;
+  my_answer: { chosen: number } | null;
+  answered_count: number;
+  active_count: number;
+  reveal: { correct_index: number; distribution: number[]; my_points: number; my_correct: boolean } | null;
+  final: {
+    review: {
+      index: number;
+      question: PoolQuestion;
+      correct_index: number;
+      explain: string;
+      my_chosen: number | null;
+      my_points: number;
+    }[];
+    weakest_kind: string | null;
+  } | null;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -698,6 +747,38 @@ export type Database = {
           bot_correct: number;
           my_correct: number;
         } | null;
+      };
+      ama_create_private: {
+        Args: { p_kinds: string[]; p_extended: boolean };
+        Returns: { game_id: string; code: string };
+      };
+      ama_join_private: {
+        Args: { p_code: string };
+        Returns: string;
+      };
+      ama_update_settings: {
+        Args: { p_game_id: string; p_kinds: string[]; p_extended: boolean };
+        Returns: null;
+      };
+      ama_start: {
+        Args: { p_game_id: string };
+        Returns: null;
+      };
+      ama_leave: {
+        Args: { p_game_id: string };
+        Returns: null;
+      };
+      ama_find_match: {
+        Args: Record<string, never>;
+        Returns: string;
+      };
+      ama_submit: {
+        Args: { p_game_id: string; p_idx: number; p_chosen: number };
+        Returns: { accepted: boolean; already?: boolean };
+      };
+      ama_state: {
+        Args: { p_game_id: string };
+        Returns: AmaState;
       };
       duel_forfeit: {
         Args: { p_match_id: string };

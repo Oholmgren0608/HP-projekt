@@ -4,7 +4,7 @@
 > Texten beskriver hur appen faktiskt fungerar den 1 november 2026 (migration `0031`). När något ändras måste policyn också uppdateras, till exempel annonser, betalning eller nya tjänster.
 > Punkterna märkta **Kontrollera** är interna anteckningar och visas inte på sidan. Låt gärna en jurist läsa texten.
 
-**Senast uppdaterad:** 6 november 2026
+**Senast uppdaterad:** 7 november 2026
 
 Den här policyn förklarar vilka personuppgifter HP Lift behandlar, varför vi gör det och vilka rättigheter du har.
 
@@ -25,9 +25,9 @@ För att visa sidan måste vår webbhotelltjänst ta emot din IP-adress och tekn
 | Vad | Exempel | Varför | Rättslig grund |
 |---|---|---|---|
 | Kontouppgifter | E-postadress, lösenord (lagras krypterat som hash), namn och eventuell profilbild från Google om du loggar in med Google, när kontot skapades | För att du ska kunna logga in | Avtal: för att tillhandahålla tjänsten du har bett om |
-| Profil | Användarnamn, visningsnamn | Visas i dueller, topplistor och forumet | Avtal |
+| Profil | Användarnamn, visningsnamn | Visas i dueller, Alla mot alla, topplistor och forumet | Avtal |
 | Studiedata | Övningsresultat, provresultat, historik, veckoplan, repetitionskort, vilka frågor du har sett, XP och streak | Så att dina framsteg följer med mellan enheter | Avtal |
-| Dueller och topplista | Matcher, svar, tider, ELO-poäng, vinster och förluster, betyg och anmälningar efter en duell | För att dueller och topplistor ska fungera och för att stoppa fusk | Avtal; berättigat intresse (fusk och missbruk) |
+| Dueller, Alla mot alla och topplista | Matcher och spel, svar, tider, poäng, ELO-poäng, vinster och förluster, vilka tävlingsfrågor du har fått, betyg och anmälningar efter en duell | För att dueller, Alla mot alla och topplistor ska fungera, för att inte ge dig samma frågor igen och för att stoppa fusk | Avtal; berättigat intresse (fusk och missbruk) |
 | Forum | Inlägg, röster, anmälningar, rykte | För att forumet ska fungera och kunna modereras | Avtal; berättigat intresse (moderering) |
 | Rapporter om frågor | Fråga och din motivering | För att rätta fel i frågebanken | Berättigat intresse (rätta frågor) |
 | Önskemål och felrapporter | Kategori, rubrik, beskrivning, och ditt konto om du är inloggad | För att förbättra appen | Berättigat intresse (förbättra tjänsten) |
@@ -67,7 +67,7 @@ Ditt konto-id och din e-postadress visas aldrig.
 
 ## 5. Vad är synligt för andra?
 
-- **Ditt användarnamn eller visningsnamn** syns i dueller, på topplistor och vid dina foruminlägg.
+- **Ditt användarnamn eller visningsnamn** syns i dueller, för de andra spelarna i Alla mot alla, på topplistor och vid dina foruminlägg.
 - **Foruminlägg, röstsummor och rykte** är synliga för alla, även för utloggade besökare.
 - **Expertprofiler** syns bara när experten själv har publicerat dem.
 - **Din e-postadress** visas aldrig för andra användare.
@@ -76,7 +76,7 @@ Ditt konto-id och din e-postadress visas aldrig.
 
 | Uppgifter | Hur länge |
 |---|---|
-| Konto, profil, studiedata, dueller och topplistor | Så länge du har kontot. Raderas när du tar bort kontot. |
+| Konto, profil, studiedata, dueller, Alla mot alla och topplistor | Så länge du har kontot. Raderas när du tar bort kontot. |
 | Foruminlägg | Tills du tar bort inlägget eller kontot. När kontot tas bort raderas texten och inlägget visas som "Raderat konto", så att andras svar i tråden finns kvar. |
 | Underlag i expertansökan | Högst 90 dagar, högst 30 dagar efter beslut, och direkt om du drar tillbaka ansökan |
 | Övriga uppgifter i expertansökan och granskningsbeslut | Avslagna och tillbakadragna ansökningar: 12 månader efter beslutet. Utkast och ansökningar som väntar på komplettering: 6 månader efter senaste ändringen. Godkända och spärrade ansökningar: så länge du har kontot. |

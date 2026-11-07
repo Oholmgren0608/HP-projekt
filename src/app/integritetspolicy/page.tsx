@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const CONTACT = "oholmgren32@gmail.com";
-const UPDATED = "6 november 2026";
+const UPDATED = "7 november 2026";
 
 function Section({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
@@ -113,7 +113,7 @@ export default function IntegritetspolicyPage() {
               title: "Profil",
               fields: [
                 ["Exempel", "Användarnamn, visningsnamn"],
-                ["Varför", "Visas i dueller, topplistor och forumet"],
+                ["Varför", "Visas i dueller, Alla mot alla, topplistor och forumet"],
                 ["Rättslig grund", "Avtal"],
               ],
             },
@@ -126,10 +126,10 @@ export default function IntegritetspolicyPage() {
               ],
             },
             {
-              title: "Dueller och topplista",
+              title: "Dueller, Alla mot alla och topplista",
               fields: [
-                ["Exempel", "Matcher, svar, tider, ELO-poäng, vinster och förluster, betyg och anmälningar efter en duell"],
-                ["Varför", "För att dueller och topplistor ska fungera och för att stoppa fusk"],
+                ["Exempel", "Matcher och spel, svar, tider, poäng, ELO-poäng, vinster och förluster, vilka tävlingsfrågor du har fått, betyg och anmälningar efter en duell"],
+                ["Varför", "För att dueller, Alla mot alla och topplistor ska fungera, för att inte ge dig samma frågor igen och för att stoppa fusk"],
                 ["Rättslig grund", "Avtal; berättigat intresse (fusk och missbruk)"],
               ],
             },
@@ -212,7 +212,7 @@ export default function IntegritetspolicyPage() {
       <Section id="synligt" title="5. Vad är synligt för andra?">
         <List
           items={[
-            "Ditt användarnamn eller visningsnamn syns i dueller, på topplistor och vid dina foruminlägg.",
+            "Ditt användarnamn eller visningsnamn syns i dueller, för de andra spelarna i Alla mot alla, på topplistor och vid dina foruminlägg.",
             "Foruminlägg, röstsummor och rykte är synliga för alla, även för utloggade besökare.",
             "Expertprofiler syns bara när experten själv har publicerat dem.",
             "Din e-postadress visas aldrig för andra användare.",
@@ -224,7 +224,7 @@ export default function IntegritetspolicyPage() {
         <Rows
           rows={[
             {
-              title: "Konto, profil, studiedata, dueller och topplistor",
+              title: "Konto, profil, studiedata, dueller, Alla mot alla och topplistor",
               fields: [["Hur länge", "Så länge du har kontot. Raderas när du tar bort kontot."]],
             },
             {

@@ -31,8 +31,8 @@ Confirmed differentiators against hpguiden, HP-appen and similar:
 - **Free without an account:** practice, nivåtest, results and forecast work for guests; data syncs after login. Only
   the veckoplan requires an account (later a subscription).
 - **Community and experts:** duels with ELO, a question forum, and Studiehjälp with verified experts.
-- **Planned:** "Alla mot alla", a Kahoot-style live quiz on HP questions for 2–30 players, decided 2026-11-07 and
-  not built yet (`docs/alla-mot-alla/spec.md`).
+- **"Alla mot alla":** a Kahoot-style live quiz on HP questions for 2–30 players, in private rooms or a random
+  lobby (`docs/alla-mot-alla/spec.md`, built 2026-11-07).
 
 ## Operating Context
 

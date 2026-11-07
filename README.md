@@ -27,6 +27,9 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
   ELO-ranking, matchmaking-kö, privata matcher via kod, matchhistorik och
   recensioner efter avslutad match. Frågorna (ORD, MEK, XYZ, KVA, NOG) kommer ur
   den stängda spelpoolen och rättas och tidmäts på servern (ADR 0001)
+- **Alla mot alla** — gruppspel där alla får samma fråga samtidigt, i privata rum
+  (2–30 spelare, kod eller länk) eller slumpad lobby (4–8, botar fyller på).
+  Kräver konto; servern styr takten och räknar poängen (`docs/alla-mot-alla/`)
 - **Gamification** — XP, nivåer, streak, dagliga uppdrag och achievements
 
 ## Kända problem

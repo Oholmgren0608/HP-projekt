@@ -101,7 +101,7 @@ Spelarens rankingtal i duell, med startvärde 1200, som endast servern uppdatera
 _Avoid_: Rank, rating
 
 **Alla mot alla**:
-Gruppspel där 2–30 spelare får samma fråga samtidigt och tävlar om poäng per spel, i privat rum eller slumpad lobby. Påverkar inte ELO. Beslutat, inte byggt (`docs/alla-mot-alla/spec.md`).
+Gruppspel där 2–30 spelare får samma fråga samtidigt och tävlar om poäng per spel, i privat rum eller slumpad lobby. Påverkar inte ELO (`docs/alla-mot-alla/spec.md`).
 _Avoid_: Kahoot, gruppduell, quizkamp
 
 **Spelpool**:

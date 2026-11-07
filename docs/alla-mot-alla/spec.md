@@ -1,7 +1,7 @@
 # Alla mot alla – spec
 
-Beslutad med Oscar 2026-11-07 (grill-session i projektchatten). Inget är byggt än. Byggs i tre steg, där
-varje steg mergas och testas för sig (se [Ordning](#ordning)).
+Beslutad med Oscar 2026-11-07 (grill-session i projektchatten). Byggd samma dag i tre steg
+(se [Ordning](#ordning)): migrationerna 0035–0038, `src/components/alla-mot-alla/`, `src/lib/alla-mot-alla/`.
 
 ## Vad det är
 

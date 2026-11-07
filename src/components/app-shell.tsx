@@ -25,8 +25,7 @@ import {
   User,
   Volume2,
   VolumeX,
-  type LucideIcon,
-} from "lucide-react";
+  type LucideIcon, Users} from "lucide-react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { useStudiehjalpAccess } from "@/lib/studiehjalp/access";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
@@ -189,6 +188,7 @@ const NAV: readonly (NavLeaf | NavGroup)[] = [
       { href: "/bibliotek", label: "Läsbibliotek", icon: Library },
       { href: "/prov", label: "Prov", icon: FileText },
       { href: "/duell", label: "Duell", icon: Swords },
+      { href: "/alla-mot-alla", label: "Alla mot alla", icon: Users },
     ],
   },
   { href: "/forum", label: "Forum", icon: MessagesSquare },
