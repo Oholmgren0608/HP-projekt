@@ -25,7 +25,8 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 - Flashcards, läsbibliotek och officiella gamla HP-prov (PDF från UHR)
 - **Duell** — frågedueller mot andra spelare (PvP) eller en bot, med
   ELO-ranking, matchmaking-kö, privata matcher via kod, matchhistorik och
-  recensioner efter avslutad match
+  recensioner efter avslutad match. Frågorna (ORD, MEK, XYZ, KVA, NOG) kommer ur
+  den stängda spelpoolen och rättas och tidmäts på servern (ADR 0001)
 - **Gamification** — XP, nivåer, streak, dagliga uppdrag och achievements
 
 ## Kända problem

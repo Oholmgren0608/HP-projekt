@@ -6,10 +6,12 @@ import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { LoginPanel } from "@/components/auth/login-panel";
 import { ExplainFigure } from "@/lib/content/explain-figures";
 import { SUBTESTS } from "@/lib/subtests";
+import { POOL_KINDS } from "@/lib/pool-time";
 import {
   listAll,
   resolveReports,
   saveQuestion,
+  setPool,
   setStatus,
   type MutateResult,
   type ReviewError,
@@ -38,6 +40,8 @@ const VIEW_OPTIONS: { id: View; label: string }[] = [
   { id: "published", label: "Publicerade (historik)" },
   { id: "all", label: "Alla" },
 ];
+
+const POOL_REVIEW_KINDS: readonly string[] = POOL_KINDS;
 
 /**
  * Får frågan publiceras med "Publicera alla"? Bara övningsfrågor där andra
@@ -251,6 +255,15 @@ export function ReviewScreen() {
     };
   }, [groups, kindFilter]);
 
+  // Spelpoolen: publicerade frågor per delprov mot målet 80 (ADR 0001).
+  const poolCounts = useMemo(() => {
+    const qs = (groups ?? []).flatMap((g) => g.questions);
+    return POOL_REVIEW_KINDS.map((kind) => ({
+      kind,
+      n: qs.filter((q) => q.kind === kind && q.pool === "spel" && q.status === "published").length,
+    }));
+  }, [groups]);
+
   const visibleGroups = useMemo(() => {
     if (!groups) return [];
     const matches = (q: ReviewQuestion): boolean =>
@@ -383,6 +396,15 @@ export function ReviewScreen() {
                       : `${counts.draft} utkast · ${countWithAdjective(counts.rejected, "avvisad", "avvisade")} · ${countWithAdjective(counts.published, "publicerad", "publicerade")}`
                 }`
               : "Inga frågor att visa."}
+          </p>
+          <p className="mt-1 text-sm text-[var(--ink-muted)]">
+            Spelpool (mål 80 per delprov):{" "}
+            {poolCounts.map((c, i) => (
+              <span key={c.kind} className="tabular-nums">
+                {i > 0 ? " · " : ""}
+                {kindLabel(c.kind)} {c.n}
+              </span>
+            ))}
           </p>
         </div>
         <button
@@ -679,6 +701,17 @@ function QuestionCard({
     );
   }
 
+  async function changePool(pool: "ovning" | "spel") {
+    const supabase = getSupabase();
+    if (!supabase) return;
+    const { data } = await supabase.auth.getSession();
+    const token = data.session?.access_token ?? "";
+    await onStatusChange(
+      () => setPool({ accessToken: token, ids: [q.id], pool }),
+      pool === "spel" ? "Frågan ligger nu i spelpoolen." : "Frågan ligger nu i övningen.",
+    );
+  }
+
   async function changeStatus(status: string) {
     const supabase = getSupabase();
     if (!supabase) return;
@@ -718,6 +751,11 @@ function QuestionCard({
         {isProvfraga(q) ? (
           <span className="rounded-md border border-[var(--line)] bg-card/70 px-2 py-0.5 normal-case tracking-normal">
             Förlaga – publiceras aldrig
+          </span>
+        ) : null}
+        {q.pool === "spel" ? (
+          <span className="rounded-md border border-[var(--brand)]/40 bg-[var(--accent-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--brand)]">
+            Spelpool – syns inte i övningen
           </span>
         ) : null}
         {q.verification === "agreed" ? (
@@ -843,6 +881,15 @@ function QuestionCard({
         >
           Redigera
         </button>
+        {!isProvfraga(q) && (q.pool === "spel" || POOL_REVIEW_KINDS.includes(q.kind)) ? (
+          <button
+            type="button"
+            onClick={() => void changePool(q.pool === "spel" ? "ovning" : "spel")}
+            className="rounded-lg border border-[var(--line-strong)] bg-card px-3 py-1.5 text-xs font-medium text-[var(--ink)] transition hover:bg-[var(--accent-soft)]"
+          >
+            {q.pool === "spel" ? "Flytta till övningen" : "Flytta till spelpoolen"}
+          </button>
+        ) : null}
         {q.status !== "published" && !isProvfraga(q) ? (
           <button
             type="button"

@@ -15,6 +15,46 @@ import type {
  * kräver schema-nyckel ("public") och att varje tabell har Relationships.
  * Värden lagras som {"v": "<raw localStorage-sträng>"} i jsonb.
  */
+/** En fråga ur spelpoolen som klienten får se: aldrig facit eller förklaring. */
+export type PoolQuestion = {
+  id: string;
+  kind: string;
+  prompt: string;
+  passage: string | null;
+  options: string[];
+  figure_url: string | null;
+};
+
+export type DuelNextQuestionResult =
+  | { done: true; status: string; total?: number }
+  | {
+      done: false;
+      index: number;
+      total: number;
+      time_limit_ms: number;
+      remaining_ms: number;
+      question: PoolQuestion;
+    };
+
+export type DuelAnswerResult = {
+  index: number;
+  chosen: number;
+  correct: boolean;
+  correct_index: number;
+  explain: string;
+  time_ms: number;
+  bot: { correct: boolean; total_correct: number } | null;
+};
+
+export type DuelReviewItem = {
+  index: number;
+  question: PoolQuestion;
+  correct_index: number;
+  explain: string;
+  my_chosen: number | null;
+  opp_chosen: number | null;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -56,6 +96,8 @@ export type Database = {
           /** Andra kontrollen av en övningsfråga; null för äldre frågor. */
           verification: "agreed" | "disagreed" | null;
           verification_note: string | null;
+          /** 'ovning' (publik) eller 'spel' (stängd spelpool, 0035). */
+          pool: "ovning" | "spel";
         };
         Insert: {
           id: string;
@@ -74,6 +116,7 @@ export type Database = {
           status?: string;
           verification?: "agreed" | "disagreed" | null;
           verification_note?: string | null;
+          pool?: "ovning" | "spel";
         };
         Update: {
           kind?: string;
@@ -91,6 +134,7 @@ export type Database = {
           status?: string;
           verification?: "agreed" | "disagreed" | null;
           verification_note?: string | null;
+          pool?: "ovning" | "spel";
         };
         Relationships: [];
       };
@@ -268,6 +312,8 @@ export type Database = {
           correct: boolean;
           time_ms: number;
           answered_at: string;
+          /** Frågans plats i matchen (0037); null för äldre svar. */
+          idx: number | null;
         };
         Insert: {
           match_id: string;
@@ -625,25 +671,33 @@ export type Database = {
         Args: { p_mode: string };
         Returns: string;
       };
+      /** Nästa fråga i duellen, utan facit (0037). */
+      duel_next_question: {
+        Args: { p_match_id: string };
+        Returns: DuelNextQuestionResult;
+      };
+      /** Svar på fråga nummer p_idx; servern mäter tiden och rättar (0037). */
       duel_submit_answer: {
-        Args: {
-          p_match_id: string;
-          p_question_id: string;
-          p_chosen: number;
-          p_time_ms: number;
-        };
-        Returns: null;
+        Args: { p_match_id: string; p_idx: number; p_chosen: number };
+        Returns: DuelAnswerResult;
+      };
+      /** Alla frågor med facit, när spelaren är klar (0037). */
+      duel_review: {
+        Args: { p_match_id: string };
+        Returns: DuelReviewItem[];
       };
       duel_mark_finished: {
         Args: { p_match_id: string };
         Returns: string | null;
       };
       duel_finish_bot: {
-        Args: {
-          p_match_id: string;
-          p_bot_correct: number;
-        };
-        Returns: { delta: number; winner_is_me: boolean | null } | null;
+        Args: { p_match_id: string };
+        Returns: {
+          delta: number;
+          winner_is_me: boolean;
+          bot_correct: number;
+          my_correct: number;
+        } | null;
       };
       duel_forfeit: {
         Args: { p_match_id: string };

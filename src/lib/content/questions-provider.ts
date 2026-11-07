@@ -21,11 +21,12 @@ export type QuestionBank = {
 };
 
 /**
- * v3 sedan 0017: en äldre cache (v2) kan innehålla frågor som inte längre får
- * visas (utkast eller provfrågor från före migrationen) och tas bort.
+ * v4 sedan 0035/0036: äldre cacher (v2, v3) kan innehålla frågor som inte längre
+ * får visas – utkast och provfrågor (före 0017) eller spelpoolens frågor med
+ * facit (före 0036) – och tas bort.
  */
-const CACHE_KEY = "hp-lift-questions-v3";
-const LEGACY_CACHE_KEYS = ["hp-lift-questions-v2"];
+const CACHE_KEY = "hp-lift-questions-v4";
+const LEGACY_CACHE_KEYS = ["hp-lift-questions-v2", "hp-lift-questions-v3"];
 
 /** Bara det appen visar – granskningsdata som andra kontrollens anteckningar hämtas inte. */
 const QUESTION_COLUMNS = "id, kind, prompt, passage, options, correct_index, explain, figure_url";
@@ -171,6 +172,9 @@ function isReflectPrompt(r: unknown): r is ReflectPrompt {
 function readCache(): QuestionBank | null {
   if (typeof window === "undefined") return null;
   try {
+    // Äldre cacher kan innehålla spelpoolens frågor med facit; ta bort dem
+    // även när databasen inte svarar (writeCache körs då aldrig).
+    for (const key of LEGACY_CACHE_KEYS) window.localStorage.removeItem(key);
     const raw = window.localStorage.getItem(CACHE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as CacheEntry;

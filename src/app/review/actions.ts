@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { createAdminClient, verifyReviewer } from "@/lib/supabase/server";
 import type { Database } from "@/lib/supabase/client";
 import { fetchAllPages } from "@/lib/supabase/paginate";
+import { isPoolKind } from "@/lib/pool-time";
 import {
   isProvfraga,
   PRACTICE_GROUP_ID,
@@ -70,6 +71,7 @@ function toReviewQuestion(r: QuestionRow, reports: FlagRow[]): ReviewQuestion {
     verification: r.verification,
     verificationNote: r.verification_note,
     openReports: reports.map((f) => ({ reason: f.reason, createdAt: f.created_at })),
+    pool: r.pool === "spel" ? "spel" : "ovning",
   };
 }
 
@@ -377,6 +379,43 @@ export async function setStatus(input: {
       .from("questions")
       .update({ status: input.status })
       .in("id", chunk);
+    if (error) return { ok: false, error: "UPSTREAM_ERROR" };
+  }
+  revalidatePath("/review");
+  return { ok: true };
+}
+
+
+/**
+ * Flyttar en eller flera Övningsfrågor mellan övningen och den stängda
+ * spelpoolen (ADR 0001). Provfrågor kan aldrig hamna i någon pool, och
+ * spelpoolen tar bara ORD, MEK, XYZ, KVA och NOG.
+ */
+export async function setPool(input: {
+  accessToken: string;
+  ids: string[];
+  pool: string;
+}): Promise<MutateResult> {
+  const auth = await authorize(input.accessToken);
+  if (!auth.ok) return auth;
+  if (input.pool !== "ovning" && input.pool !== "spel") return { ok: false, error: "INVALID_INPUT" };
+  const ids = (input.ids ?? []).filter((id) => typeof id === "string" && id.length > 0);
+  if (ids.length === 0) return { ok: false, error: "INVALID_INPUT" };
+
+  const locked = await includesProvfraga(auth.admin, ids);
+  if (locked === null) return { ok: false, error: "UPSTREAM_ERROR" };
+  if (locked) return { ok: false, error: "PROVFRAGA_LOCKED" };
+
+  if (input.pool === "spel") {
+    for (const chunk of chunks(ids)) {
+      const { data, error } = await auth.admin.from("questions").select("id, kind").in("id", chunk);
+      if (error) return { ok: false, error: "UPSTREAM_ERROR" };
+      if ((data ?? []).some((r) => !isPoolKind(r.kind))) return { ok: false, error: "INVALID_INPUT" };
+    }
+  }
+
+  for (const chunk of chunks(ids)) {
+    const { error } = await auth.admin.from("questions").update({ pool: input.pool }).in("id", chunk);
     if (error) return { ok: false, error: "UPSTREAM_ERROR" };
   }
   revalidatePath("/review");

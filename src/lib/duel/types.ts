@@ -7,13 +7,12 @@ export type DuelProfile = Database["public"]["Tables"]["player_profiles"]["Row"]
 export type DuelAnswer = Database["public"]["Tables"]["duel_answers"]["Row"];
 export type DuelReview = Database["public"]["Tables"]["duel_reviews"]["Row"];
 
-/** Frågeformatet som dueller använder (samma som övningsbanken). */
+/** Tio frågor ur spelpoolen, två per delprov (ORD, MEK, XYZ, KVA, NOG). Tid per fråga: `poolTimeLimitMs`. */
 export const DUEL_QUESTION_COUNT = 10;
-export const DUEL_SECONDS_PER_QUESTION = 40;
 export const DUEL_MATCHMAKING_TIMEOUT_MS = 20_000;
 export const DUEL_STALL_GRACE_MS = 60_000;
-/** Tidigast så länge efter matchstart godtar servern anspråk på vinst (10 x 40 s + marginal). */
-export const DUEL_STALL_MATCH_WINDOW_MS = 8 * 60_000;
+/** Tidigast så länge efter matchstart godtar servern anspråk på vinst (10 x 90 s + pauser, 0037). */
+export const DUEL_STALL_MATCH_WINDOW_MS = 17 * 60_000;
 
 export function duelModeLabel(mode: DuelMode): string {
   switch (mode) {

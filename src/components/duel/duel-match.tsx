@@ -4,26 +4,23 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { recordEvent } from "@/lib/gamification/engine";
 import { getSupabase } from "@/lib/supabase/client";
-import { loadQuestions } from "@/lib/content/questions-provider";
-import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
+import type { DuelAnswerResult, DuelReviewItem } from "@/lib/supabase/client";
+import { kindBadge } from "@/lib/practice";
 import {
   DUEL_QUESTION_COUNT,
-  DUEL_SECONDS_PER_QUESTION,
   DUEL_STALL_GRACE_MS,
   duelModeLabel,
   type DuelAnswer,
   type DuelMatch,
 } from "@/lib/duel/types";
-import { buildDuelQuiz } from "@/lib/duel/questions";
-import { simulateBotAnswer, type BotDecision } from "@/lib/duel/bot";
-import { getMyProfile, getPublicProfile } from "@/lib/duel/profile";
 import {
-  claimStallWin,
-  finishBot,
-  forfeit,
-  markFinished,
-  submitAnswer,
-} from "@/lib/duel/matchmaking";
+  fetchDuelReview,
+  fetchNextDuelQuestion,
+  submitDuelAnswer,
+  type DuelQuestion,
+} from "@/lib/duel/questions";
+import { getMyProfile, getPublicProfile } from "@/lib/duel/profile";
+import { claimStallWin, finishBot, forfeit, markFinished } from "@/lib/duel/matchmaking";
 import {
   classifyDuelResult,
   displayNameFromUser,
@@ -38,115 +35,21 @@ import { QuestionPassage } from "@/components/question-passage";
 
 type Phase = "loading" | "error" | "playing" | "waiting" | "finished";
 
-type MyAnswer = { chosen: number | null; correct: boolean; timeMs: number };
+type Current = {
+  index: number;
+  total: number;
+  timeLimitMs: number;
+  question: DuelQuestion;
+};
 
-
+/** Hur länge rätt svar visas innan nästa fråga hämtas. Tiden räknas inte. */
+const FEEDBACK_MS = 1400;
 
 /**
- * Lokal lagring av botsvar per match. Botmatcher skickar aldrig svar till
- * servern, så utan den här nyckeln börjar quizet om vid reload. Nyckeln är
- * medvetet inte med i storage-sync:ns SYNCED_KEYS (per-match-data ska inte
- * synkas till molnet).
+ * En duell. Servern väljer frågorna, skickar en i taget utan facit, mäter
+ * svarstiden och rättar (migration 0037). Botens svar räknas också ut på
+ * servern. Klienten visar bara det servern skickar.
  */
-const BOT_ANSWERS_KEY = "hp-lift-duel-bot-answers-v1";
-
-type StoredBotAnswers = Record<string, Record<string, MyAnswer>>;
-
-function readBotAnswers(): StoredBotAnswers {
-  try {
-    const raw = localStorage.getItem(BOT_ANSWERS_KEY);
-    if (!raw) return {};
-    const parsed: unknown = JSON.parse(raw);
-    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
-    const out: StoredBotAnswers = {};
-    for (const [matchKey, value] of Object.entries(parsed as Record<string, unknown>)) {
-      if (!value || typeof value !== "object" || Array.isArray(value)) continue;
-      const answers: Record<string, MyAnswer> = {};
-      for (const [qid, a] of Object.entries(value as Record<string, unknown>)) {
-        if (!a || typeof a !== "object") continue;
-        const entry = a as Partial<MyAnswer>;
-        if (
-          (typeof entry.chosen === "number" || entry.chosen === null) &&
-          typeof entry.correct === "boolean" &&
-          typeof entry.timeMs === "number"
-        ) {
-          answers[qid] = {
-            chosen: entry.chosen,
-            correct: entry.correct,
-            timeMs: entry.timeMs,
-          };
-        }
-      }
-      if (Object.keys(answers).length > 0) out[matchKey] = answers;
-    }
-    return out;
-  } catch {
-    return {};
-  }
-}
-
-/** Botens beslut per match — utan den nollställs botens poäng vid omladdning. */
-const BOT_DECISIONS_KEY = "hp-lift-duel-bot-decisions-v1";
-
-type StoredBotDecisions = Record<string, Record<string, BotDecision>>;
-
-function readBotDecisions(): StoredBotDecisions {
-  try {
-    const raw = localStorage.getItem(BOT_DECISIONS_KEY);
-    if (!raw) return {};
-    const parsed: unknown = JSON.parse(raw);
-    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
-    const out: StoredBotDecisions = {};
-    for (const [matchKey, value] of Object.entries(parsed as Record<string, unknown>)) {
-      if (!value || typeof value !== "object") continue;
-      const decisions: Record<string, BotDecision> = {};
-      for (const [qid, d] of Object.entries(value as Record<string, unknown>)) {
-        const entry = d as Partial<BotDecision>;
-        if (
-          typeof entry.chosen === "number" &&
-          typeof entry.correct === "boolean" &&
-          typeof entry.delayMs === "number"
-        ) {
-          decisions[qid] = { chosen: entry.chosen, correct: entry.correct, delayMs: entry.delayMs };
-        }
-      }
-      if (Object.keys(decisions).length > 0) out[matchKey] = decisions;
-    }
-    return out;
-  } catch {
-    return {};
-  }
-}
-
-function writeBotDecisions(
-  matchId: string,
-  questions: { id: string }[],
-  decisions: (BotDecision | null)[],
-): void {
-  try {
-    const byId: Record<string, BotDecision> = {};
-    questions.forEach((q, i) => {
-      const d = decisions[i];
-      if (d) byId[q.id] = d;
-    });
-    const all = readBotDecisions();
-    all[matchId] = byId;
-    localStorage.setItem(BOT_DECISIONS_KEY, JSON.stringify(all));
-  } catch {
-    /* ignorera — quizet får aldrig krascha p.g.a. lagring */
-  }
-}
-
-function writeBotAnswers(matchId: string, answers: Record<string, MyAnswer>): void {
-  try {
-    const all = readBotAnswers();
-    all[matchId] = answers;
-    localStorage.setItem(BOT_ANSWERS_KEY, JSON.stringify(all));
-  } catch {
-    /* ignorera — quizet får aldrig krascha p.g.a. lagring */
-  }
-}
-
 export function DuelMatchView({ matchId }: { matchId: string }) {
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("loading");
@@ -158,66 +61,63 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const [meElo, setMeElo] = useState(1200);
   const [oppName, setOppName] = useState("Motståndare");
   const [oppElo, setOppElo] = useState<number | null>(null);
-  const [questions, setQuestions] = useState<ChoiceQuestion[]>([]);
   const [isBot, setIsBot] = useState(false);
 
-  const [index, setIndex] = useState(0);
+  const [current, setCurrent] = useState<Current | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
-  const [secondsLeft, setSecondsLeft] = useState(DUEL_SECONDS_PER_QUESTION);
+  const [feedback, setFeedback] = useState<DuelAnswerResult | null>(null);
+  const [secondsLeft, setSecondsLeft] = useState(0);
   const [myCorrect, setMyCorrect] = useState(0);
-  const [oppCorrect] = useState<number | null>(null);
+  const [myAnswered, setMyAnswered] = useState(0);
   const [myTimeMs, setMyTimeMs] = useState(0);
-  const [botCorrect, setBotCorrect] = useState(0);
+  const [botCorrect, setBotCorrect] = useState<number | null>(null);
   const [stallElapsed, setStallElapsed] = useState(false);
   const [claimError, setClaimError] = useState<string | null>(null);
+  const [review, setReview] = useState<DuelReviewItem[] | null>(null);
 
-  // Refs — skrivs aldrig under render (se synk-effekten nedan).
   const matchRef = useRef(match);
   const phaseRef = useRef(phase);
-  const indexRef = useRef(index);
-  const questionsRef = useRef(questions);
+  const currentRef = useRef(current);
   const isBotRef = useRef(isBot);
-  const botEloRef = useRef<number | null>(null);
-  const botDecisionsRef = useRef<(BotDecision | null)[]>([]);
-  const questionDoneRef = useRef(false);
-  const pendingSubmitRef = useRef<Promise<void>>(Promise.resolve());
-  const startRef = useRef(0);
+  const busyRef = useRef(false);
+  const deadlineRef = useRef(0);
   const loadMatchRef = useRef<() => Promise<void>>(async () => {});
-  const finishMatchRef = useRef<() => Promise<void>>(async () => {});
+  const advanceRef = useRef<() => Promise<void>>(async () => {});
   const submitRef = useRef<(chosen: number | null) => void>(() => {});
-  // Egna svar per fråge-id (server/resume + lokala bot-svar). Driver XP-antalet
-  // och hindrar dubbel-inskick av samma fråga efter reload.
-  const myAnswersRef = useRef<Record<string, MyAnswer>>({});
 
-  const oppDisplayCorrect = isBot ? botCorrect : oppCorrect;
-
-  // Gamification: rapportera duellens utfall. Motorn dedupar på matchId
-  // (persisterat), så samma match belönas aldrig två gånger (reload/remount).
+  // Gamification: rapportera duellens utfall. Motorn dedupar på matchId.
   useEffect(() => {
     if (phase !== "finished" || !match || !meId) return;
     if (match.status === "cancelled") return;
-
-    // Klassificeringen delas med resultatvyn (se classifyDuelResult) så att
-    // XP och UI aldrig kan divergera. (G21)
-    const result = classifyDuelResult(match, meId);
-
     recordEvent({
       type: "duel_end",
-      result,
+      result: classifyDuelResult(match, meId),
       matchId,
       forfeit: match.status === "forfeit",
-      answers: Object.keys(myAnswersRef.current).length,
+      answers: myAnswered,
     });
-  }, [phase, match, meId, matchId]);
+  }, [phase, match, meId, matchId, myAnswered]);
+
+  // Genomgången (facit och förklaringar) hämtas när matchen är slut.
+  useEffect(() => {
+    if (phase !== "finished" || !match || match.status === "cancelled") return;
+    let cancelled = false;
+    fetchDuelReview(matchId)
+      .then((items) => {
+        if (!cancelled) setReview(items);
+      })
+      .catch(() => {
+        if (!cancelled) setReview([]);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [phase, match, matchId]);
 
   const loadMatch = useCallback(async () => {
     const supabase = getSupabase();
     if (!supabase) return;
-    const { data } = await supabase
-      .from("duel_matches")
-      .select("*")
-      .eq("id", matchId)
-      .maybeSingle();
+    const { data } = await supabase.from("duel_matches").select("*").eq("id", matchId).maybeSingle();
     if (!data) {
       setPhase("error");
       setError("Matchen hittades inte.");
@@ -225,136 +125,107 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     }
     const m = data as DuelMatch;
     setMatch(m);
-    if (
-      m.status === "finished" ||
-      m.status === "forfeit" ||
-      m.status === "cancelled"
-    ) {
+    if (m.status === "finished" || m.status === "forfeit" || m.status === "cancelled") {
       setPhase("finished");
     }
   }, [matchId]);
 
+  /** Alla frågor besvarade: avgör botmatchen eller markera klar och vänta. */
   const finishMatch = useCallback(async () => {
-    if (phaseRef.current !== "playing") return;
-
     if (isBotRef.current) {
-      const botFinal = botDecisionsRef.current.filter((d) => d?.correct).length;
       try {
-        await finishBot({ matchId, botCorrect: botFinal });
+        const res = await finishBot(matchId);
+        if (res) setBotCorrect(res.bot_correct);
       } catch {
-        // Återställ skyddet så att ett misslyckat avslut kan göras om.
-        questionDoneRef.current = false;
+        /* matchen läses om nedan */
       }
       await loadMatchRef.current();
-    } else {
-      try {
-        const finalized = await markFinished(matchId);
-        if (finalized) {
-          await loadMatchRef.current();
-        } else {
-          setPhase("waiting");
-          const current = matchRef.current;
-          window.setTimeout(
-            () => setStallElapsed(true),
-            current ? stallClaimDelayMs(current, Date.now()) : DUEL_STALL_GRACE_MS,
-          );
-        }
-      } catch {
-        // Återställ skyddet så att avslutet kan göras om.
-        questionDoneRef.current = false;
-        await loadMatchRef.current();
-      }
+      return;
     }
+    try {
+      const finalized = await markFinished(matchId);
+      if (finalized) {
+        await loadMatchRef.current();
+        return;
+      }
+    } catch {
+      /* hamnar i waiting */
+    }
+    setPhase("waiting");
+    const m = matchRef.current;
+    window.setTimeout(
+      () => setStallElapsed(true),
+      m ? stallClaimDelayMs(m, Date.now()) : DUEL_STALL_GRACE_MS,
+    );
   }, [matchId]);
+
+  /** Hämtar nästa fråga från servern, eller avslutar när alla är besvarade. */
+  const advance = useCallback(async () => {
+    try {
+      const next = await fetchNextDuelQuestion(matchId);
+      setFeedback(null);
+      setSelected(null);
+      if (next.done) {
+        setCurrent(null);
+        if (phaseRef.current === "playing" || phaseRef.current === "loading") {
+          await finishMatch();
+        }
+        return;
+      }
+      deadlineRef.current = Date.now() + next.remainingMs;
+      setSecondsLeft(Math.ceil(next.remainingMs / 1000));
+      setCurrent({
+        index: next.index,
+        total: next.total,
+        timeLimitMs: next.timeLimitMs,
+        question: next.question,
+      });
+      busyRef.current = false;
+      setPhase("playing");
+    } catch (e) {
+      setPhase("error");
+      setError(errorMessage(e, "Det gick inte att hämta nästa fråga. Ladda om sidan."));
+    }
+  }, [matchId, finishMatch]);
 
   const submit = useCallback(
     async (chosen: number | null) => {
-      if (phaseRef.current !== "playing" || questionDoneRef.current) return;
-      const i = indexRef.current;
-      const qs = questionsRef.current;
-      if (i >= qs.length) return;
-
-      const q = qs[i];
-      // Redan besvarat (t.ex. efter ett misslyckat avslut) — försök bara
-      // avsluta igen utan att räkna om svaret.
-      if (myAnswersRef.current[q.id] !== undefined) {
-        questionDoneRef.current = true;
-        void finishMatchRef.current();
-        return;
-      }
-
-      questionDoneRef.current = true;
-
-      const elapsed = Math.min(
-        DUEL_SECONDS_PER_QUESTION * 1000,
-        Date.now() - startRef.current,
-      );
-      const correct = chosen !== null && chosen === q.correctIndex;
-      const timeMs =
-        chosen === null ? DUEL_SECONDS_PER_QUESTION * 1000 : Math.max(1, elapsed);
-
-      myAnswersRef.current[q.id] = { chosen, correct, timeMs };
-      if (isBotRef.current) {
-        writeBotAnswers(matchId, myAnswersRef.current);
-      }
-      setMyCorrect((c) => c + (correct ? 1 : 0));
-      setMyTimeMs((t) => t + timeMs);
-
-      // Spara alltid svaret server-side; servern räknar rätt/fel själv.
-      const answerPayload = {
-        matchId,
-        questionId: q.id,
-        chosen: chosen ?? -1,
-        timeMs,
-      };
-      pendingSubmitRef.current = pendingSubmitRef.current
-        .then(() => submitAnswer(answerPayload))
-        .catch(() => {});
-
-      if (isBotRef.current) {
-                const decision = simulateBotAnswer(q, botEloRef.current ?? 1200);
-        botDecisionsRef.current[i] = decision;
-        writeBotDecisions(matchId, qs, botDecisionsRef.current);
-        window.setTimeout(() => {
-          if (decision.correct) setBotCorrect((c) => c + 1);
-        }, decision.delayMs);
-      }
-
-      if (i + 1 >= qs.length) {
-        // Vänta på att alla (inkl. sista) svaren sparats innan vi finaliserar,
-        // annars kan servern härleda fel antal rätt.
-        await pendingSubmitRef.current;
-        void finishMatchRef.current();
-      } else {
-        questionDoneRef.current = false;
-        startRef.current = Date.now();
-        setSecondsLeft(DUEL_SECONDS_PER_QUESTION);
-        setIndex(i + 1);
-        setSelected(null);
+      const cur = currentRef.current;
+      if (phaseRef.current !== "playing" || !cur || busyRef.current) return;
+      busyRef.current = true;
+      try {
+        const res = await submitDuelAnswer(matchId, cur.index, chosen);
+        setFeedback(res);
+        setMyAnswered((n) => n + 1);
+        setMyCorrect((n) => n + (res.correct ? 1 : 0));
+        setMyTimeMs((t) => t + res.time_ms);
+        if (res.bot) setBotCorrect(res.bot.total_correct);
+        window.setTimeout(() => void advanceRef.current(), FEEDBACK_MS);
+      } catch (e) {
+        // Kunde inte skicka: läs om läget från servern (som avgör om tiden gått ut).
+        busyRef.current = false;
+        setError(errorMessage(e, "Svaret kunde inte skickas."));
+        void advanceRef.current();
       }
     },
     [matchId],
   );
 
-  // Synka refs i en effekt (React rekommenderar att refs uppdateras i
-  // effekter, inte under render).
   useEffect(() => {
     matchRef.current = match;
     phaseRef.current = phase;
-    indexRef.current = index;
-    questionsRef.current = questions;
+    currentRef.current = current;
     isBotRef.current = isBot;
     submitRef.current = submit;
-    finishMatchRef.current = finishMatch;
+    advanceRef.current = advance;
     loadMatchRef.current = loadMatch;
   });
 
-  // Initiera: hämta match, frågor, profiler, befintliga svar + prenumerera.
+  // Initiera: match, profiler, egna svar (resume), realtid och första frågan.
   useEffect(() => {
     let cancelled = false;
-    let matchChannel: ReturnType<
-      NonNullable<ReturnType<typeof getSupabase>>["channel"]
-    > | null = null;
+    let matchChannel: ReturnType<NonNullable<ReturnType<typeof getSupabase>>["channel"]> | null =
+      null;
 
     async function init() {
       const supabase = getSupabase();
@@ -387,16 +258,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       }
       const m = mData as DuelMatch;
       setMatch(m);
-
-      if (m.status === "finished" || m.status === "forfeit" || m.status === "cancelled") {
-        setPhase("finished");
-        return;
-      }
-      if (m.status !== "active") {
-        setPhase("error");
-        setError("Matchen är inte aktiv.");
-        return;
-      }
+      matchRef.current = m;
 
       const isBotMatch = m.player_b === null && m.bot_elo != null;
       const iAmA = m.player_a === user.id;
@@ -405,23 +267,12 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         setError("Du är inte deltagare i den här matchen.");
         return;
       }
-      const oppId = isBotMatch ? null : iAmA ? m.player_b : m.player_a;
-
       setIsBot(isBotMatch);
-      await loadQuestions();
-      const qs = await buildDuelQuiz(matchId, m.question_seed, DUEL_QUESTION_COUNT);
-      if (cancelled) return;
-      setQuestions(qs);
+      isBotRef.current = isBotMatch;
 
+      const oppId = isBotMatch ? null : iAmA ? m.player_b : m.player_a;
       const myProfile = await getMyProfile(user.id).catch(() => null);
-      if (myProfile) {
-        setMeElo(myProfile.elo);
-        if (isBotMatch) {
-          // Boten blir svårare/lättare utifrån tidigare svårighetsröster.
-          botEloRef.current =
-            (m.bot_elo ?? 1200) + (myProfile.bot_skill_offset ?? 0);
-        }
-      }
+      if (myProfile) setMeElo(myProfile.elo);
       if (oppId) {
         const oppProfile = await getPublicProfile(oppId).catch(() => null);
         if (oppProfile) {
@@ -433,123 +284,55 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         setOppElo(m.bot_elo ?? null);
       }
 
-      // Befintliga svar (resume).
+      // Egna svar som redan finns på servern (resume).
       const { data: answersData } = await supabase
         .from("duel_answers")
         .select("*")
-        .eq("match_id", matchId);
+        .eq("match_id", matchId)
+        .eq("user_id", user.id);
       if (cancelled) return;
-      let myC = 0;
-      let myT = 0;
-      let myCount = 0;
-      // Egna svar som redan finns på servern (resume) — fråga → svar.
-      const myAnswers: Record<string, MyAnswer> = {};
-      for (const a of (answersData ?? []) as DuelAnswer[]) {
-        // RLS döljer motståndarens svar under aktiv match — processa bara egna.
-        if (a.user_id === user.id) {
-          myCount += 1;
-          if (a.correct) myC += 1;
-          myT += a.time_ms;
-          myAnswers[a.question_id] = {
-            chosen: a.chosen,
-            correct: a.correct,
-            timeMs: a.time_ms,
-          };
-        }
-      }
-      // Bot-matcher sparar sina svar lokalt — återställ dem så att en reload
-      // återupptar quizet i stället för att börja om. Tolerant mot gammal
-      // eller främmande state: bara fråge-id som finns i den aktuella
-      // omgången används.
-      if (isBotMatch) {
-        const qIds = new Set(qs.map((q) => q.id));
-        const stored = readBotAnswers()[matchId];
-        for (const [qid, a] of Object.entries(stored ?? {})) {
-          if (!qIds.has(qid) || qid in myAnswers) continue;
-          myAnswers[qid] = a;
-          myCount += 1;
-          if (a.correct) myC += 1;
-          myT += a.timeMs;
-        }
-      }
-      myAnswersRef.current = myAnswers;
-      setMyCorrect(myC);
-      setMyTimeMs(myT);
+      const mine = (answersData ?? []) as DuelAnswer[];
+      setMyAnswered(mine.length);
+      setMyCorrect(mine.filter((a) => a.correct).length);
+      setMyTimeMs(mine.reduce((t, a) => t + a.time_ms, 0));
 
-      // Realtime: matchstatus.
+      if (m.status === "finished" || m.status === "forfeit" || m.status === "cancelled") {
+        setPhase("finished");
+        return;
+      }
+      if (m.status !== "active") {
+        setPhase("error");
+        setError("Matchen är inte aktiv.");
+        return;
+      }
+
       matchChannel = supabase
         .channel(`duel-match-${matchId}`)
         .on(
           "postgres_changes",
-          {
-            event: "UPDATE",
-            schema: "public",
-            table: "duel_matches",
-            filter: `id=eq.${matchId}`,
-          },
+          { event: "UPDATE", schema: "public", table: "duel_matches", filter: `id=eq.${matchId}` },
           (payload) => {
             const row = payload.new as DuelMatch;
-            if (
-              row.status === "finished" ||
-              row.status === "forfeit" ||
-              row.status === "cancelled"
-            ) {
+            if (row.status === "finished" || row.status === "forfeit" || row.status === "cancelled") {
               void loadMatchRef.current();
             }
           },
         )
         .subscribe();
 
-      // Bestäm var vi ska återuppta.
-            const storedBotDecisions = isBotMatch ? readBotDecisions()[matchId] : undefined;
-
-      if (myCount >= qs.length) {
-        if (isBotMatch) {
-          // Läs tillbaka botens faktiska beslut; simulera bara det som saknas,
-          // annars kan slutsiffrorna skilja sig från vad spelaren såg.
-          botDecisionsRef.current = qs.map(
-            (q) =>
-              storedBotDecisions?.[q.id] ??
-              simulateBotAnswer(q, botEloRef.current ?? 1200),
-          );
-          setBotCorrect(
-            botDecisionsRef.current.filter((d) => d?.correct).length,
-          );
-          void finishMatchRef.current();
-        } else {
-          const myFinishedAt = iAmA ? m.a_finished_at : m.b_finished_at;
-          if (!myFinishedAt) {
-            // Förra avslutet misslyckades — försök markera klar igen.
-            try {
-              const finalized = await markFinished(matchId);
-              if (cancelled) return;
-              if (finalized) {
-                await loadMatchRef.current();
-                return;
-              }
-            } catch {
-              /* ignorera — vi hamnar i waiting nedan */
-            }
-          }
-          setPhase("waiting");
-          const finishedMs = myFinishedAt ? new Date(myFinishedAt).getTime() : Date.now();
-          window.setTimeout(() => setStallElapsed(true), stallClaimDelayMs(m, finishedMs));
-        }
-            } else {
-        questionDoneRef.current = false;
-        startRef.current = Date.now();
-        setSecondsLeft(DUEL_SECONDS_PER_QUESTION);
-        setIndex(myCount);
-        if (isBotMatch && storedBotDecisions) {
-          botDecisionsRef.current = qs.map((q) => storedBotDecisions[q.id] ?? null);
-          setBotCorrect(botDecisionsRef.current.filter((d) => d?.correct).length);
-        }
-        setPhase("playing");
+      const myFinishedAt = iAmA ? m.a_finished_at : m.b_finished_at;
+      if (!isBotMatch && myFinishedAt) {
+        setPhase("waiting");
+        window.setTimeout(
+          () => setStallElapsed(true),
+          stallClaimDelayMs(m, new Date(myFinishedAt).getTime()),
+        );
+        return;
       }
+      await advanceRef.current();
     }
 
     void init();
-
     return () => {
       cancelled = true;
       if (matchChannel) {
@@ -559,21 +342,16 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     };
   }, [matchId]);
 
-  // Per-fråga-timer.
+  // Nedräkning mot serverns tidsgräns; när tiden är ute skickas ett tomt svar.
   useEffect(() => {
-    if (phase !== "playing" || index >= questions.length) return;
-    const id = setInterval(
-      () => setSecondsLeft((s) => Math.max(0, s - 1)),
-      1000,
-    );
+    if (phase !== "playing" || !current || feedback) return;
+    const id = setInterval(() => {
+      const left = Math.max(0, Math.ceil((deadlineRef.current - Date.now()) / 1000));
+      setSecondsLeft(left);
+      if (left === 0) submitRef.current(null);
+    }, 250);
     return () => clearInterval(id);
-  }, [index, phase, questions.length]);
-
-  useEffect(() => {
-    if (phase === "playing" && secondsLeft === 0) {
-      submitRef.current(null);
-    }
-  }, [secondsLeft, phase]);
+  }, [phase, current, feedback]);
 
   async function handleForfeit() {
     if (phase !== "playing" && phase !== "waiting") return;
@@ -590,7 +368,6 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     try {
       await claimStallWin(matchId);
     } catch (e) {
-      // Servern nekar om motståndaren fortfarande har speltid kvar.
       setClaimError(errorMessage(e, "Det gick inte att ta vinsten just nu."));
     }
     await loadMatch();
@@ -608,14 +385,14 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   if (phase === "error") {
     return (
       <div className="mx-auto max-w-lg rounded-[10px] border border-[var(--line)] bg-card/80 p-8 text-center">
-        <p className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
+        <h1 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Något gick fel
-        </p>
+        </h1>
         <p className="mt-2 text-[var(--ink-muted)]">{error}</p>
         <button
           type="button"
           onClick={() => router.push("/duell")}
-          className="mt-6 rounded-lg bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground"
+          className="mt-6 inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
         >
           Tillbaka till Duell
         </button>
@@ -623,8 +400,8 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     );
   }
 
-  const current = questions[index];
-  const total = questions.length;
+  const total = current?.total ?? DUEL_QUESTION_COUNT;
+  const q = current?.question;
 
   return (
     <div className="space-y-8 sm:space-y-10">
@@ -636,93 +413,79 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
         oppElo={oppElo}
         isBot={isBot}
         myCorrect={myCorrect}
-        oppCorrect={oppDisplayCorrect}
+        oppCorrect={isBot ? botCorrect : null}
         total={total}
       />
 
-      {phase === "playing" && current ? (
+      {phase === "playing" && current && q ? (
         <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-5 sm:p-6">
           <div className="flex items-center justify-between gap-3">
-            <span className="text-sm text-[var(--ink-muted)]">
-              Fråga {index + 1} av {total}
-            </span>
+            <h1 className="text-sm font-normal tracking-normal text-[var(--ink-muted)]">
+              Fråga {current.index + 1} av {total}
+            </h1>
             <div className="flex items-center gap-2">
-              <span className="rounded bg-[var(--mist)] px-2 py-0.5 text-xs font-medium text-[var(--ink-soft)]">
-                {kindBadge(current.kind)}
+              <span className="rounded-md bg-[var(--mist)] px-2 py-0.5 text-xs font-medium text-[var(--ink-soft)]">
+                {kindBadge(q.kind as Parameters<typeof kindBadge>[0])}
               </span>
               <span
-                className={`rounded-full px-2.5 py-0.5 text-sm font-medium tabular-nums ${
-                  secondsLeft <= 5
-                    ? "bg-[var(--destructive)]/10 text-[var(--destructive)]"
+                className={`rounded-md px-2.5 py-0.5 text-sm font-medium tabular-nums ${
+                  secondsLeft <= 5 && !feedback
+                    ? "bg-[var(--energy-soft)] text-[var(--energy-ink)]"
                     : "bg-[var(--accent-soft)] text-[var(--brand)]"
                 }`}
+                aria-label={`${secondsLeft} sekunder kvar`}
               >
-                {secondsLeft}s
+                {feedback ? "–" : `${secondsLeft}s`}
               </span>
             </div>
           </div>
 
           <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-[var(--mist)]">
             <div
-              className="h-full rounded-full bg-[var(--brand)] transition-all"
-              style={{ width: `${((index + 1) / total) * 100}%` }}
+              className="h-full rounded-full bg-[var(--brand)] transition-[width] duration-300 ease-out motion-reduce:transition-none"
+              style={{ width: `${((current.index + 1) / total) * 100}%` }}
             />
           </div>
 
           <QuestionPassage
-            passage={current.passage}
+            passage={q.passage}
             className="mt-4"
             textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
           />
+          <QuestionFigure question={q} position={current.index + 1} />
 
-          <QuestionFigure question={current} position={index + 1} />
+          <p className="mt-4 text-lg font-medium text-[var(--ink)]">{q.prompt}</p>
 
-          <p className="mt-4 text-lg font-medium text-[var(--ink)]">
-            {current.prompt}
-          </p>
+          <AnswerOptions
+            question={q}
+            selected={selected}
+            feedback={feedback}
+            onSelect={(i) => !feedback && setSelected(i)}
+          />
 
-          <div className="mt-4 space-y-2.5 sm:space-y-3" role="radiogroup" aria-label="Svarsalternativ">
-            {current.options.map((opt, i) => {
-              const active = selected === i;
-              return (
-                <button
-                  key={`${current.id}-${i}`}
-                  type="button"
-                  role="radio"
-                  aria-checked={active}
-                  onClick={() => setSelected(i)}
-                  className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
-                    active
-                      ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                      : "border-[var(--line-strong)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
-                  }`}
-                >
-                  <span
-                    className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
-                      active
-                        ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
-                        : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
-                    }`}
-                  >
-                    {String.fromCharCode(65 + i)}
-                  </span>
-                  <span className="text-[var(--ink)]">{opt}</span>
-                </button>
-              );
-            })}
-          </div>
+          {feedback ? (
+            <p className="mt-4 text-sm font-medium" role="status">
+              {feedback.correct ? (
+                <span className="text-[var(--success-ink)]">Rätt svar</span>
+              ) : feedback.chosen < 0 ? (
+                <span className="text-[var(--ink-soft)]">Tiden tog slut</span>
+              ) : (
+                <span className="text-[var(--destructive)]">Fel svar</span>
+              )}
+            </p>
+          ) : null}
 
           <div className="mt-5 flex items-center justify-between gap-3">
             <button
               type="button"
               onClick={() => void handleForfeit()}
-              className="rounded-lg border border-[var(--line-strong)] px-4 py-2.5 text-sm text-[var(--ink-muted)] transition hover:border-[var(--destructive)]/40 hover:text-[var(--destructive)]"
+              className="inline-flex min-h-11 items-center rounded-md border border-[var(--line-strong)] px-4 text-sm text-[var(--ink-muted)] transition hover:border-[var(--ink-soft)] hover:text-[var(--ink)]"
             >
               Ge upp
             </button>
             <button
               type="button"
-              disabled={selected === null}
+              disabled={selected === null || feedback !== null}
               onClick={() => submitRef.current(selected)}
               className="inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-6 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)] disabled:cursor-not-allowed disabled:opacity-40"
             >
@@ -734,24 +497,21 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
 
       {phase === "waiting" ? (
         <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6 text-center">
-          <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
+          <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             Väntar på motståndaren…
-          </h2>
+          </h1>
           <p className="mt-2 text-[var(--ink-muted)]">
             Du har {myCorrect} rätt av {total} på {formatMs(myTimeMs)}.
           </p>
           <div className="mt-4 flex items-center justify-center gap-3">
             <div className="size-5 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--brand)]" />
-            <span className="text-sm text-[var(--ink-muted)]">
-              Motståndaren spelar fortfarande
-            </span>
+            <span className="text-sm text-[var(--ink-muted)]">Motståndaren spelar fortfarande</span>
           </div>
-
           {stallElapsed ? (
             <button
               type="button"
               onClick={() => void handleClaim()}
-              className="mt-6 rounded-md bg-[var(--brand)] px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
+              className="mt-6 inline-flex min-h-11 items-center rounded-md bg-[var(--brand)] px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[var(--brand-deep)]"
             >
               Gör anspråk på vinst (motståndaren verkar ha lämnat)
             </button>
@@ -769,16 +529,109 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       ) : null}
 
       {phase === "finished" && match ? (
-        <ResultView
-          match={match}
-          meId={meId}
-          isBot={isBot}
-          oppName={oppName}
-          onBack={() => router.push("/duell")}
-          onAgain={() => router.push("/duell")}
-        />
+        <>
+          <ResultView
+            match={match}
+            meId={meId}
+            isBot={isBot}
+            oppName={oppName}
+            onBack={() => router.push("/duell")}
+            onAgain={() => router.push("/duell")}
+          />
+          {review && review.length > 0 ? <DuelReviewList items={review} oppName={oppName} /> : null}
+        </>
       ) : null}
     </div>
+  );
+}
+
+function AnswerOptions({
+  question,
+  selected,
+  feedback,
+  onSelect,
+}: {
+  question: DuelQuestion;
+  selected: number | null;
+  feedback: DuelAnswerResult | null;
+  onSelect: (i: number) => void;
+}) {
+  return (
+    <div className="mt-4 space-y-2.5 sm:space-y-3" role="radiogroup" aria-label="Svarsalternativ">
+      {question.options.map((opt, i) => {
+        const active = selected === i;
+        const isRight = feedback !== null && feedback.correct_index === i;
+        const isWrongChoice = feedback !== null && feedback.chosen === i && !feedback.correct;
+        return (
+          <button
+            key={`${question.id}-${i}`}
+            type="button"
+            role="radio"
+            aria-checked={active}
+            disabled={feedback !== null}
+            onClick={() => onSelect(i)}
+            className={`flex w-full items-start gap-3 rounded-lg border px-3 py-3 text-left transition sm:px-4 ${
+              isRight
+                ? "border-[var(--success-ink)]/40 bg-card"
+                : isWrongChoice
+                  ? "border-[var(--destructive)]/30 bg-card"
+                  : active
+                    ? "border-[var(--brand)] bg-[var(--accent-soft)]"
+                    : "border-[var(--line-strong)] bg-[var(--paper)] hover:border-[var(--ink-soft)]"
+            }`}
+          >
+            <span
+              className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium ${
+                isRight
+                  ? "border-[var(--success-ink)] bg-[var(--success-ink)] text-primary-foreground"
+                  : isWrongChoice
+                    ? "border-[var(--destructive)] bg-[var(--destructive)] text-primary-foreground"
+                    : active
+                      ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
+                      : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
+              }`}
+            >
+              {String.fromCharCode(65 + i)}
+            </span>
+            <span className="text-[var(--ink)]">{opt}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/** Genomgång efter matchen: rätt svar, båda spelarnas val och förklaringen. */
+function DuelReviewList({ items, oppName }: { items: DuelReviewItem[]; oppName: string }) {
+  const letter = (i: number | null) => (i === null || i < 0 ? "–" : String.fromCharCode(65 + i));
+  return (
+    <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
+      <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">Genomgång</h2>
+      <ol className="mt-4 divide-y divide-[var(--line)]">
+        {items.map((item) => (
+          <li key={item.index} className="py-4 first:pt-0 last:pb-0">
+            <p className="text-xs text-[var(--ink-muted)]">
+              Fråga {item.index + 1} · {kindBadge(item.question.kind as Parameters<typeof kindBadge>[0])}
+            </p>
+            <p className="mt-1 font-medium text-[var(--ink)]">{item.question.prompt}</p>
+            <p className="mt-2 text-sm text-[var(--ink-soft)]">
+              Rätt svar:{" "}
+              <span className="font-medium text-[var(--success-ink)]">
+                {letter(item.correct_index)} {item.question.options[item.correct_index]}
+              </span>
+              {" · "}Du: <span className="font-medium tabular-nums">{letter(item.my_chosen)}</span>
+              {item.opp_chosen !== null ? (
+                <>
+                  {" · "}
+                  {oppName}: <span className="font-medium tabular-nums">{letter(item.opp_chosen)}</span>
+                </>
+              ) : null}
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--ink-muted)]">{item.explain}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
   );
 }
 

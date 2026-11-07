@@ -1,6 +1,6 @@
 # Steg 1 – stängd frågepool och duellfix: genomförandeplan
 
-Status: **förslag, väntar på Oscars godkännande** (AGENTS.md §8). Ingen kod är skriven.
+Status: **byggd 2026-11-07** (Oscar gav klartecken att bygga alla planer).
 Bakgrund: [spec.md](spec.md) och [ADR 0001](../adr/0001-stangd-fragepool.md).
 
 ## Mål

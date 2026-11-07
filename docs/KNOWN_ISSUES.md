@@ -5,10 +5,17 @@ fixed, change its status to fixed and name the commit.
 
 ## Duel answers reach the browser
 
-**Status:** open. Fix decided 2026-11-07: a closed question pool with server-side question choice,
-timing and bots (`docs/adr/0001-stangd-fragepool.md`, plan in `docs/alla-mot-alla/steg-1-plan.md`). The
-review also found that clients report their own answer time and, in bot matches, the bot's score
-(`duel_finish_bot(p_bot_correct)`), so ranked ELO can be faked against a bot too.
+**Status:** fixed 2026-11-07 (migrations 0035–0037, step 1 of `docs/alla-mot-alla/steg-1-plan.md`).
+Duel questions come from the closed question pool, which no client can read and which is not in the
+offline copy. The server picks each match's questions, sends one at a time without `correct_index`,
+measures the answer time and grades it; the answer and explanation arrive only in the reply to the
+answer. Bot answers are simulated on the server (`duel_finish_bot(p_bot_correct)` and the browser bot
+are gone), and starting a new bot match settles abandoned ones. Tests: `test-0035-0037.mjs` (61 checks,
+PGlite harness) and a browser run of a bot duel and a private duel (no `correct_index` in any
+`duel_next_question` response). Remaining, accepted in ADR 0001: answers are shown after each question,
+so the pool leaks slowly and must be refilled.
+
+The original problem:
 
 Duel answers are graded on the server, against `duel_questions`, which clients
 can't read. But the same questions are public with their answers. The

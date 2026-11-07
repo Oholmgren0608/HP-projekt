@@ -26,21 +26,6 @@ export async function startBotMatch(mode: DuelMode): Promise<string> {
   return data as string;
 }
 
-export async function submitAnswer(args: {
-  matchId: string;
-  questionId: string;
-  chosen: number;
-  timeMs: number;
-}): Promise<void> {
-  const { error } = await requireSupabase().rpc("duel_submit_answer", {
-    p_match_id: args.matchId,
-    p_question_id: args.questionId,
-    p_chosen: args.chosen,
-    p_time_ms: args.timeMs,
-  });
-  if (error) throw error;
-}
-
 /** Returnerar match-id om matchen finaliserades, annars null (vänta på motståndare). */
 export async function markFinished(matchId: string): Promise<string | null> {
   const { data, error } = await requireSupabase().rpc("duel_mark_finished", {
@@ -50,13 +35,15 @@ export async function markFinished(matchId: string): Promise<string | null> {
   return data;
 }
 
-export async function finishBot(args: {
-  matchId: string;
-  botCorrect: number;
-}): Promise<{ delta: number; winner_is_me: boolean | null } | null> {
+/** Avgör botmatchen på servern; botens svar räknas ut där (0037). */
+export async function finishBot(matchId: string): Promise<{
+  delta: number;
+  winner_is_me: boolean;
+  bot_correct: number;
+  my_correct: number;
+} | null> {
   const { data, error } = await requireSupabase().rpc("duel_finish_bot", {
-    p_match_id: args.matchId,
-    p_bot_correct: args.botCorrect,
+    p_match_id: matchId,
   });
   if (error) throw error;
   return data;

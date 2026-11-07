@@ -24,6 +24,8 @@ export type ReviewQuestion = {
   openReports: { reason: string; createdAt: string }[];
   /** Sant när frågan har en figur som inte gick att signera. */
   figureUnavailable?: boolean;
+  /** 'ovning' (publik) eller 'spel' (stängd spelpool för duell och Alla mot alla, 0035). */
+  pool: "ovning" | "spel";
 };
 
 /** Grupp-id för övningsfrågorna (frågor utan provtillhörighet). */

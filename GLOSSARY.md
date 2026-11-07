@@ -93,7 +93,7 @@ _Avoid_: Klarad, inlärd, masterad
 ## Duell
 
 **Duell**:
-En match med 10 frågor mot en annan spelare eller en bot, i läget ranked, casual eller privat.
+En match med 10 frågor ur spelpoolen (två var ur ORD, MEK, XYZ, KVA och NOG) mot en annan spelare eller en bot, i läget ranked, casual eller privat. Tiden per fråga följer delprovet.
 _Avoid_: Quiz, match (som huvudterm)
 
 **ELO**:

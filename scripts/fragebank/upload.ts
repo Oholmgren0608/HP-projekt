@@ -4,6 +4,7 @@
  *   npm run fragebank:upload -- --dry-run          # visa vad som skulle hända
  *   npm run fragebank:upload                       # alla delprov
  *   npm run fragebank:upload -- elf las            # bara vissa delprov
+ *   npm run fragebank:upload -- --pool spel kva    # till den stängda spelpoolen (ADR 0001)
  *
  * Kräver SUPABASE_SERVICE_ROLE_KEY och SUPABASE_URL (eller
  * NEXT_PUBLIC_SUPABASE_URL) i .env.local. Nya frågor får status 'draft' och
@@ -50,7 +51,18 @@ function differingFields(q: DraftQuestion, row: ExistingRow): string[] {
 const CHUNK = 200;
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
-const kindArgs = args.filter((a) => !a.startsWith("--"));
+const poolArg = args.find((a) => a.startsWith("--pool"));
+const poolValue = poolArg?.includes("=") ? poolArg.split("=")[1] : poolArg ? args[args.indexOf(poolArg) + 1] : "ovning";
+if (poolValue !== "ovning" && poolValue !== "spel") {
+  console.error(`Okänd pool "${poolValue}". Använd --pool ovning eller --pool spel.`);
+  process.exit(1);
+}
+/** Spelpoolen (duell och Alla mot alla) tar bara ORD, MEK, XYZ, KVA och NOG. */
+const POOL_SPEL_KINDS = new Set(["ord", "mek", "xyz", "kva", "nog"]);
+const pool: "ovning" | "spel" = poolValue;
+const kindArgs = args.filter(
+  (a, i) => !a.startsWith("--") && !(poolArg && !poolArg.includes("=") && args[i - 1] === poolArg),
+);
 
 function toRow(q: DraftQuestion): QuestionInsert {
   return {
@@ -62,6 +74,7 @@ function toRow(q: DraftQuestion): QuestionInsert {
     correct_index: q.correctIndex,
     explain: q.explain,
     status: "draft",
+    pool,
     verification: q.verification ?? null,
     verification_note: q.verificationNote ?? null,
   };
@@ -157,6 +170,15 @@ async function main() {
         .map(([key, n]) => `${key} ${n}`)
         .join(", ")}.`,
     );
+  }
+  if (pool === "spel") {
+    const wrong = fresh.filter((q) => !POOL_SPEL_KINDS.has(q.kind));
+    if (wrong.length > 0) {
+      throw new Error(
+        `Spelpoolen tar bara ORD, MEK, XYZ, KVA och NOG; ${wrong.length} frågor har annat delprov.`,
+      );
+    }
+    console.log("Pool: spel – frågorna syns inte i övningen och kommer inte med i offlinekopian.");
   }
   const disagreed = fresh.filter((q) => q.verification === "disagreed").length;
   console.log(

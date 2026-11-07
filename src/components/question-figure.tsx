@@ -1,7 +1,5 @@
 "use client";
 
-import type { ChoiceQuestion } from "@/lib/practice-types";
-
 /**
  * Renderar `question.figureUrl` som en bild när den finns (DTK-diagram,
  * formler m.m.). Vanlig <img> i stället för next/image: figure_url är en
@@ -13,7 +11,8 @@ export function QuestionFigure({
   question,
   position,
 }: {
-  question: ChoiceQuestion;
+  /** Allt som behövs är bilden; spelpoolens frågor har inget facit på klienten. */
+  question: { figureUrl?: string | null };
   /** 1-baserad position i frågesetet, används i alt-texten om frågenummer saknas. */
   position?: number;
 }) {
