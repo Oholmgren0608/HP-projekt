@@ -62,7 +62,8 @@ Confirmed differentiators against hpguiden, HP-appen and similar:
 
 ## Evidence on Hand
 
-- About 1,600 published original practice questions with explanations, about 200 per delprov.
+- About 1,600 published original questions with explanations: about 1,400 for practice (about 160–200 per
+  delprov) and 200 in the closed game pool for duels and Alla mot alla.
 - Official HP test dates for 2027 (10 April, 24 October), confirmed by Oscar.
 - No testimonials, user numbers, score-improvement data or press exist; future work must not invent them.
 

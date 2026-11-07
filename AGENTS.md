@@ -83,7 +83,8 @@ If a task seems to need one of these, stop and ask.
   `KNOWN_ISSUES.md` (open problems); `GLOSSARY.md` is at the root
 - `future-changes/` — deferred follow-up work (mostly duels); `anteckningar/` — project notes; `.agents/agents/` — agent definitions;
   `.superdesign/` — the Lugn design system and drafts
-- Question bank: lives in the database (about 1,600 questions, 8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK)
+- Question bank: lives in the database (about 1,600 published questions, 8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK);
+  about 1,400 are practice questions and 200 (40 each of ORD, MEK, XYZ, KVA, NOG) are in the closed game pool
 
 ## 6. Domain rules
 - Full test: 40 questions in 55 min (80 min with extended time). Quick test: 24 questions in 20 min.
