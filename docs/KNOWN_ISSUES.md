@@ -5,7 +5,10 @@ fixed, change its status to fixed and name the commit.
 
 ## Duel answers reach the browser
 
-**Status:** open
+**Status:** open. Fix decided 2026-11-07: a closed question pool with server-side question choice,
+timing and bots (`docs/adr/0001-stangd-fragepool.md`, plan in `docs/alla-mot-alla/steg-1-plan.md`). The
+review also found that clients report their own answer time and, in bot matches, the bot's score
+(`duel_finish_bot(p_bot_correct)`), so ranked ELO can be faked against a bot too.
 
 Duel answers are graded on the server, against `duel_questions`, which clients
 can't read. But the same questions are public with their answers. The

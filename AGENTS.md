@@ -16,7 +16,8 @@ Read this before every task. If anything here conflicts with a task request, STO
    require login unless the task explicitly says so. The one exception (Oscar's decision, 2026-11-06): the veckoplan's weeks and
    tasks require an account; guests see week 1 as a preview (`src/lib/plan-access.ts`). Practice, the nivåtest, results and the
    per-delprov priorities stay open. This gate is UI-only, because the plan is built in the browser; a paid gate must be checked
-   on the server (§6).
+   on the server (§6). Second exception (Oscar, 2026-11-07): the planned multiplayer mode "Alla mot alla" requires an
+   account and a connection (`docs/alla-mot-alla/spec.md`).
 6. **Don't change database security silently.** Any change to RLS policies, roles or storage rules goes in a migration,
    gets called out in your summary, and gets a test.
 7. **Every audit-logged action stays audit-logged.** Admin and review actions write to the audit log.
@@ -94,6 +95,8 @@ If a task seems to need one of these, stop and ask.
   rounding and limits are in `clampNorm()` in `src/lib/hp-scores.ts`. Don't change this logic without being asked.
 - Practice answers are public by design (offline/guest). Anything competitive or paid must never depend on secrets that exist in the public bank, bundle or localStorage.
 - Duel answers are graded only on the server. Duel-pool questions never reach the client with correct_index.
+  Not yet true: the closed question pool that makes it true is decided but not built (`docs/adr/0001-stangd-fragepool.md`,
+  `docs/alla-mot-alla/steg-1-plan.md`). Decided for that change: duels drop DTK and use time per delprov.
 
 ## 7. Design system "Lugn"
 Full reference: `DESIGN.md` (tokens, components, rules) with its sidecar `.impeccable/design.json`; product context in `PRODUCT.md`.

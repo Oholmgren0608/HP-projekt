@@ -31,7 +31,8 @@ Confirmed differentiators against hpguiden, HP-appen and similar:
 - **Free without an account:** practice, nivåtest, results and forecast work for guests; data syncs after login. Only
   the veckoplan requires an account (later a subscription).
 - **Community and experts:** duels with ELO, a question forum, and Studiehjälp with verified experts.
-- **Planned:** a Kahoot-style live quiz game built on HP questions (not designed or built yet).
+- **Planned:** "Alla mot alla", a Kahoot-style live quiz on HP questions for 2–30 players, decided 2026-11-07 and
+  not built yet (`docs/alla-mot-alla/spec.md`).
 
 ## Operating Context
 
@@ -49,7 +50,7 @@ Confirmed differentiators against hpguiden, HP-appen and similar:
 - The forecast is a rough estimate, not UHR's normering; it must not be presented as official.
 - Practice answers are public by design; anything competitive or paid must be enforced on the server.
 - Out of scope until decided: payments and payouts, subscription tiers and ads, video/Creator Studio (AGENTS.md §2).
-- Undecided: the Kahoot-style game, the subscription model, and how plans longer than 16 weeks should start.
+- Undecided: the subscription model and how plans longer than 16 weeks should start.
 
 ## Brand Commitments
 
