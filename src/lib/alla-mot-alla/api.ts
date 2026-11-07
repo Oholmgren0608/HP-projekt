@@ -62,3 +62,10 @@ export async function fetchState(gameId: string): Promise<AmaState> {
   if (error) throw error;
   return data;
 }
+
+/** Godkända profilbilder för spelarna i spelet (0039), som player_id → sökväg. */
+export async function fetchAvatars(gameId: string): Promise<Record<string, string>> {
+  const { data, error } = await requireSupabase().rpc("ama_avatars", { p_game_id: gameId });
+  if (error) return {};
+  return Object.fromEntries((data ?? []).map((r) => [r.player_id, r.path]));
+}

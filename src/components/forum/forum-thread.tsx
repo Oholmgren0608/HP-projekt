@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Avatar } from "@/components/avatar";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ArrowBigDown,
@@ -426,6 +427,9 @@ function PostItem({
         )}
       >
         <header className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--ink-muted)]">
+          {node.is_deleted ? null : (
+            <Avatar userId={node.author_id} name={node.author_name} size="xs" reportable />
+          )}
           <span className="font-medium text-[var(--ink)]">{node.author_name}</span>
           {node.is_op ? (
             <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 font-medium text-[var(--accent-foreground)]">

@@ -1,5 +1,6 @@
 "use client";
 
+import { Avatar } from "@/components/avatar";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { recordEvent } from "@/lib/gamification/engine";
@@ -61,6 +62,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
   const [meElo, setMeElo] = useState(1200);
   const [oppName, setOppName] = useState("Motståndare");
   const [oppElo, setOppElo] = useState<number | null>(null);
+  const [oppUserId, setOppUserId] = useState<string | null>(null);
   const [isBot, setIsBot] = useState(false);
 
   const [current, setCurrent] = useState<Current | null>(null);
@@ -271,6 +273,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       isBotRef.current = isBotMatch;
 
       const oppId = isBotMatch ? null : iAmA ? m.player_b : m.player_a;
+      setOppUserId(oppId);
       const myProfile = await getMyProfile(user.id).catch(() => null);
       if (myProfile) setMeElo(myProfile.elo);
       if (oppId) {
@@ -407,6 +410,8 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     <div className="space-y-8 sm:space-y-10">
       <MatchHeader
         mode={match?.mode ?? "ranked"}
+        meId={meId}
+        oppId={oppUserId}
         meName={meName}
         meElo={meElo}
         oppName={oppName}
@@ -637,6 +642,8 @@ function DuelReviewList({ items, oppName }: { items: DuelReviewItem[]; oppName: 
 
 function MatchHeader({
   mode,
+  meId,
+  oppId,
   meName,
   meElo,
   oppName,
@@ -647,6 +654,8 @@ function MatchHeader({
   total,
 }: {
   mode: DuelMatch["mode"];
+  meId: string;
+  oppId: string | null;
   meName: string;
   meElo: number;
   oppName: string;
@@ -676,8 +685,9 @@ function MatchHeader({
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-3">
-        <PlayerCard name={meName} elo={meElo} correct={myCorrect} highlight={meAhead} isYou />
+        <PlayerCard userId={meId} name={meName} elo={meElo} correct={myCorrect} highlight={meAhead} isYou />
         <PlayerCard
+          userId={oppId}
           name={oppName}
           elo={oppElo}
           correct={oppCorrect}
@@ -690,6 +700,7 @@ function MatchHeader({
 }
 
 function PlayerCard({
+  userId,
   name,
   elo,
   correct,
@@ -697,6 +708,7 @@ function PlayerCard({
   isYou,
   isBot,
 }: {
+  userId: string | null;
   name: string;
   elo: number | null;
   correct: number | null;
@@ -713,7 +725,8 @@ function PlayerCard({
       }`}
     >
       <p className="flex items-center gap-2 truncate text-sm font-medium text-[var(--ink)]">
-        {name}
+        <Avatar userId={isBot ? null : userId} name={isBot ? "AI" : name} size="xs" reportable={!isYou && !isBot} />
+        <span className="truncate">{name}</span>
         {isYou ? (
           <span className="rounded bg-[var(--mist)] px-1.5 py-0.5 text-[10px] font-medium text-[var(--ink-muted)]">
             du

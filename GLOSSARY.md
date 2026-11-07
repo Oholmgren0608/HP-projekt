@@ -108,6 +108,10 @@ _Avoid_: Kahoot, gruppduell, quizkamp
 Den stängda delen av frågebanken som tävlingslägena (duell och Alla mot alla) använder. Ingen klient kan läsa den, den finns inte i offlinekopian, och facit skickas först när frågan har stängt. Skiljs från övningsfrågorna, som är publika med facit.
 _Avoid_: Duellpool (som om bara duellen använde den), hemliga frågor
 
+**Profilbild**:
+En bild som en inloggad användare laddar upp. Den syns för andra först när den automatiska kontrollen (Claude) eller teamet har godkänt den, och döljs efter tre rapporter från olika användare tills teamet har granskat den.
+_Avoid_: Avatar (i text för användare)
+
 ## Spelmoment
 
 **XP**:

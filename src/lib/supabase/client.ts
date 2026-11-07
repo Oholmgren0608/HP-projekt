@@ -107,6 +107,43 @@ export type AmaState = {
 export type Database = {
   public: {
     Tables: {
+      /** Profilbilder (0039). Klienten läser bara sin egen rad; servern skriver. */
+      user_avatars: {
+        Row: {
+          user_id: string;
+          path: string;
+          status: "pending" | "approved" | "hidden" | "rejected";
+          checked_by: "claude" | "team";
+          reason: string | null;
+          updated_at: string;
+          reviewed_at: string | null;
+          reviewed_by: string | null;
+        };
+        Insert: {
+          user_id: string;
+          path: string;
+          status: "pending" | "approved" | "hidden" | "rejected";
+          checked_by?: "claude" | "team";
+          reason?: string | null;
+          updated_at?: string;
+        };
+        Update: {
+          path?: string;
+          status?: "pending" | "approved" | "hidden" | "rejected";
+          checked_by?: "claude" | "team";
+          reason?: string | null;
+          updated_at?: string;
+          reviewed_at?: string | null;
+          reviewed_by?: string | null;
+        };
+        Relationships: [];
+      };
+      avatar_upload_attempts: {
+        Row: { user_id: string; created_at: string };
+        Insert: { user_id: string; created_at?: string };
+        Update: { created_at?: string };
+        Relationships: [];
+      };
       user_state: {
         Row: {
           user_id: string;
@@ -664,6 +701,11 @@ export type Database = {
       };
     };
     Views: {
+      /** Godkända profilbilder (0039), läsbar för alla. */
+      public_avatars: {
+        Row: { user_id: string; path: string };
+        Relationships: [];
+      };
       duel_public_profiles: {
         Row: {
           user_id: string;
@@ -779,6 +821,34 @@ export type Database = {
       ama_state: {
         Args: { p_game_id: string };
         Returns: AmaState;
+      };
+      avatar_report: {
+        Args: { p_user_id: string; p_reason: string };
+        Returns: { accepted: boolean; hidden?: boolean };
+      };
+      avatar_can_review: {
+        Args: Record<string, never>;
+        Returns: boolean;
+      };
+      avatar_review_queue: {
+        Args: Record<string, never>;
+        Returns: {
+          user_id: string;
+          display_name: string;
+          path: string;
+          status: "pending" | "hidden";
+          reason: string | null;
+          updated_at: string;
+          reports: { reason: string; created_at: string }[];
+        }[];
+      };
+      avatar_review: {
+        Args: { p_user_id: string; p_decision: "approve" | "reject" };
+        Returns: string;
+      };
+      ama_avatars: {
+        Args: { p_game_id: string };
+        Returns: { player_id: string; path: string }[];
       };
       duel_forfeit: {
         Args: { p_match_id: string };

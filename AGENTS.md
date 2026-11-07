@@ -63,7 +63,9 @@ If a task seems to need one of these, stop and ask.
 - `src/app/` — routes and pages, with Swedish route names (`/plan`, `/ova`, `/prov`, `/nivatest`, `/resultat`, `/duell`, `/forum`, `/profil`, …).
   `/alla-mot-alla` is the multiplayer game (migration 0038, `ama_*` RPCs; the server owns timing and scoring),
   `/review` is where questions are spot-checked and published (and moved between practice and the game pool), `/studiehjalp` is the staff-only pilot, and
-  `api/cron/studiehjalp-purge` is its cleanup job (scheduled in `vercel.json`).
+  `api/cron/studiehjalp-purge` is its cleanup job (scheduled in `vercel.json`). `api/profilbild` uploads profile pictures
+  (re-encoded with `sharp`, checked by Claude Opus 5.5 in `src/lib/avatar/moderation.ts`, needs `ANTHROPIC_API_KEY` on the server)
+  and `/admin/profilbilder` is the staff review queue (admin/moderator roles, migration 0039, `docs/profilbild/plan.md`).
 - `src/components/` — shared UI. `ui/` holds the shadcn primitives; `app-shell.tsx` is the sidebar (desktop) and tab bar (mobile).
   Feature folders: `auth/`, `duel/`, `alla-mot-alla/`, `forum/`, `gamification/`, `quiz/`, `studiehjalp/`, `feedback/`.
 - `src/lib/` — Supabase clients, scoring, plan logic:

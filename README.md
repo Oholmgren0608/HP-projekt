@@ -30,6 +30,8 @@ För lokal utveckling med hot reload: `npm run dev` (samma port).
 - **Alla mot alla** — gruppspel där alla får samma fråga samtidigt, i privata rum
   (2–30 spelare, kod eller länk) eller slumpad lobby (4–8, botar fyller på).
   Kräver konto; servern styr takten och räknar poängen (`docs/alla-mot-alla/`)
+- **Profilbild** — inloggade kan ladda upp en bild som Claude kontrollerar innan den syns; andra kan
+  rapportera, och teamet granskar på `/admin/profilbilder` (`docs/profilbild/plan.md`)
 - **Gamification** — XP, nivåer, streak, dagliga uppdrag och achievements
 
 ## Kända problem

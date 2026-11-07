@@ -1,5 +1,6 @@
 "use client";
 
+import { ProfilePictureEditor } from "@/components/profile-picture-editor";
 import { useEffect, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/supabase/auth-context";
@@ -74,12 +75,6 @@ function todayKey(): string {
 
 function formatNorm(n: number): string {
   return n.toFixed(1).replace(".", ",");
-}
-
-function initialsOf(username: string | null, email: string | null): string {
-  const raw = (username ?? email ?? "").split("@")[0].trim();
-  if (!raw) return "?";
-  return raw.slice(0, 2).toUpperCase();
 }
 
 /** Hämtar synkad statistik från user_state, med localStorage som fallback. */
@@ -202,27 +197,6 @@ async function resolveOpponentNames(
 // ---------------------------------------------------------------------------
 // Delkomponenter
 // ---------------------------------------------------------------------------
-
-function Avatar({
-  username,
-  email,
-  size = "lg",
-}: {
-  username: string | null;
-  email: string | null;
-  size?: "lg" | "sm";
-}) {
-  return (
-    <div
-      className={`flex items-center justify-center rounded-full bg-[var(--brand)] font-medium text-primary-foreground ${
-        size === "lg" ? "size-14 text-xl" : "size-8 text-xs"
-      }`}
-      aria-hidden
-    >
-      {initialsOf(username, email)}
-    </div>
-  );
-}
 
 /** Användarnamn med "Ändra"-knapp samt inline-formulär (även vid saknat namn). */
 function UsernameEditor() {
@@ -442,8 +416,8 @@ export function ProfileScreen() {
 
       {/* 1. Kontouppgifter */}
       <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
-        <div className="flex items-start gap-4">
-          <Avatar username={username} email={user.email ?? null} />
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+          <ProfilePictureEditor userId={user.id} name={username ?? user.email ?? "?"} />
           <div className="min-w-0 space-y-2">
             <UsernameEditor />
             <p className="truncate text-sm text-[var(--ink-muted)]">

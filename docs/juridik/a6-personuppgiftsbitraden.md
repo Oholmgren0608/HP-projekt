@@ -53,6 +53,20 @@ Enligt artikel 28 i GDPR måste det finnas ett skriftligt avtal med varje levera
    - Välj **Dublin (`dub1`)** under *Project → Settings → Functions → Function Region*. Då behandlas uppgifterna i EU, bredvid databasen, och sidorna blir snabbare.
    - Säg till om du hellre vill att utvecklaren ställer in det i `vercel.json` med `"regions": ["dub1"]`, så hamnar det i koden i stället.
 
+## 2b. Anthropic: kontroll av profilbilder (sedan 2026-11-07)
+
+**Läget:** profilbilder skickas (förminskade, utan metadata och utan namn eller e-post) till Anthropics API för en
+automatisk kontroll med Claude Opus 5.5 innan de syns (`docs/profilbild/plan.md`).
+
+**Gör så här:**
+1. Skapa en API-nyckel under ett organisationskonto på console.anthropic.com och lägg den som `ANTHROPIC_API_KEY`
+   i Vercel (*Project → Settings → Environment Variables*). Utan nyckeln hamnar alla nya bilder hos teamet.
+2. Kontrollera att Anthropics kommersiella villkor och personuppgiftsbiträdesavtal (DPA, med standardavtalsklausuler)
+   gäller för kontot, och spara dem som PDF med datum.
+3. Kontrollera att API-data inte används för träning (Anthropics standard för API-kunder) och vilken lagringstid
+   som gäller.
+4. Stäm av formuleringen om Anthropic i integritetspolicyn (avsnitt 7) mot det du har sparat.
+
 ## 3. Google-inloggning
 
 Ingen åtgärd behövs. Vid "Fortsätt med Google" är Google en egen personuppgiftsansvarig för användarens Google-konto och inte ditt biträde. Det står redan i integritetspolicyn.

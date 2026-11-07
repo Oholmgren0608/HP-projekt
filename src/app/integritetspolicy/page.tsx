@@ -134,6 +134,14 @@ export default function IntegritetspolicyPage() {
               ],
             },
             {
+              title: "Profilbild",
+              fields: [
+                ["Exempel", "Bilden du laddar upp (förminskad till 256×256 pixlar, utan metadata som plats), om den godkändes, rapporter från andra och teamets beslut"],
+                ["Varför", "Visas för andra i menyn, forumet, dueller och Alla mot alla; kontrolleras så att olämpliga bilder inte syns"],
+                ["Rättslig grund", "Avtal; berättigat intresse (skydda användare, särskilt minderåriga)"],
+              ],
+            },
+            {
               title: "Forum",
               fields: [
                 ["Exempel", "Inlägg, röster, anmälningar, rykte"],
@@ -213,6 +221,7 @@ export default function IntegritetspolicyPage() {
         <List
           items={[
             "Ditt användarnamn eller visningsnamn syns i dueller, för de andra spelarna i Alla mot alla, på topplistor och vid dina foruminlägg.",
+            "Din profilbild, om du har laddat upp en och den är godkänd, syns vid ditt namn i forumet (även för utloggade), i dueller och för de andra spelarna i Alla mot alla.",
             "Foruminlägg, röstsummor och rykte är synliga för alla, även för utloggade besökare.",
             "Expertprofiler syns bara när experten själv har publicerat dem.",
             "Din e-postadress visas aldrig för andra användare.",
@@ -226,6 +235,12 @@ export default function IntegritetspolicyPage() {
             {
               title: "Konto, profil, studiedata, dueller, Alla mot alla och topplistor",
               fields: [["Hur länge", "Så länge du har kontot. Raderas när du tar bort kontot."]],
+            },
+            {
+              title: "Profilbild",
+              fields: [
+                ["Hur länge", "Tills du byter eller tar bort bilden eller kontot. En bild som teamet underkänner raderas direkt. Rapporter om en bild sparas tills teamet har granskat den."],
+              ],
             },
             {
               title: "Foruminlägg",
@@ -272,6 +287,13 @@ export default function IntegritetspolicyPage() {
               fields: [
                 ["Vad", "Databas, inloggning, lagring av filer, e-post vid inloggning och lösenordsåterställning"],
                 ["Var", "Data lagras inom EU (Irland). Överföring utanför EU skyddas av EU-kommissionens standardavtalsklausuler, som ingår i Supabases personuppgiftsbiträdesavtal."],
+              ],
+            },
+            {
+              title: "Anthropic, PBC",
+              fields: [
+                ["Vad", "Kontrollerar automatiskt profilbilder du laddar upp innan andra ser dem. Bara den förminskade bilden skickas, inte ditt namn eller din e-post. Anthropic använder inte uppgifterna för att träna sina modeller."],
+                ["Var", "USA. Överföringen skyddas av standardavtalsklausuler i Anthropics villkor för personuppgiftsbiträden."],
               ],
             },
             {

@@ -1,5 +1,6 @@
 "use client";
 
+import { Avatar } from "@/components/avatar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
@@ -25,7 +26,7 @@ import {
   User,
   Volume2,
   VolumeX,
-  type LucideIcon, Users} from "lucide-react";
+  type LucideIcon, Users, Image as ImageIcon} from "lucide-react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { useStudiehjalpAccess } from "@/lib/studiehjalp/access";
 import { isSupabaseConfigured } from "@/lib/supabase/client";
@@ -54,7 +55,6 @@ function AuthCluster({ placement }: { placement: "sidebar" | "bar" }) {
 
   if (user) {
     const displayName = username ?? user.email ?? "Inloggad";
-    const initials = displayName.slice(0, 2).toUpperCase();
     return (
       <div className="relative" ref={containerRef}>
         <button
@@ -67,9 +67,7 @@ function AuthCluster({ placement }: { placement: "sidebar" | "bar" }) {
             sidebar && "w-full",
           )}
         >
-          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[var(--accent-soft)] text-xs font-semibold text-[var(--brand)]">
-            {initials}
-          </span>
+          <Avatar userId={user.id} name={displayName} size="sm" />
           <span className={cn("max-w-32 truncate", !sidebar && "hidden sm:inline", sidebar && "flex-1 text-left")}>
             {displayName}
           </span>
@@ -96,6 +94,12 @@ function AuthCluster({ placement }: { placement: "sidebar" | "bar" }) {
               <Link href="/studiehjalp/admin" onClick={() => setOpen(false)} role="menuitem" className={itemClass}>
                 <ShieldCheck size={16} className="text-[var(--ink-muted)]" aria-hidden />
                 Studiehjälp-admin
+              </Link>
+            ) : null}
+            {studiehjalp.isStaff ? (
+              <Link href="/admin/profilbilder" onClick={() => setOpen(false)} role="menuitem" className={itemClass}>
+                <ImageIcon size={16} className="text-[var(--ink-muted)]" aria-hidden />
+                Profilbilder
               </Link>
             ) : null}
             <div className="my-1.5 h-px bg-[var(--line)]" />

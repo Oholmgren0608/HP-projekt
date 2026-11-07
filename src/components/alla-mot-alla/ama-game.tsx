@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Check, Copy } from "lucide-react";
@@ -10,6 +10,7 @@ import { LoginPanel } from "@/components/auth/login-panel";
 import { recordEvent } from "@/lib/gamification/engine";
 import { kindBadge } from "@/lib/practice";
 import {
+  fetchAvatars,
   fetchState,
   findMatch,
   leaveGame,
@@ -23,6 +24,12 @@ import { QuestionFigure } from "@/components/question-figure";
 import { QuestionPassage } from "@/components/question-passage";
 import { cn } from "@/lib/utils";
 import { KindPicker } from "./kind-picker";
+import { Avatar } from "@/components/avatar";
+import { avatarUrl } from "@/lib/avatar/store";
+
+/** player_id → bild-URL för spelarnas godkända profilbilder. */
+type AvatarMap = Record<string, string>;
+const AvatarsContext = createContext<AvatarMap>({});
 
 const badge = (kind: string) => kindBadge(kind as Parameters<typeof kindBadge>[0]);
 const letter = (i: number | null | undefined) =>
@@ -56,6 +63,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
     lobbyBots: null,
   });
   const questionKeyRef = useRef("");
+  const [avatars, setAvatars] = useState<AvatarMap>({});
   const refreshRef = useRef<() => Promise<void>>(async () => {});
   const sendRef = useRef<(chosen: number | null) => Promise<void>>(async () => {});
 
@@ -107,6 +115,19 @@ export function AmaGame({ gameId }: { gameId: string }) {
       }
     };
   }, [user, gameId]);
+
+  // Profilbilder: hämtas igen när spelarlistan ändras (någon går med i lobbyn).
+  const playerKey = state ? state.players.map((p) => p.player_id).join(",") : "";
+  useEffect(() => {
+    if (!playerKey) return;
+    let cancelled = false;
+    fetchAvatars(gameId).then((m) => {
+      if (!cancelled) setAvatars(Object.fromEntries(Object.entries(m).map(([k, v]) => [k, avatarUrl(v)])));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [gameId, playerKey]);
 
   // Klocka för nedräkningar, och en hämtning precis när fasen tar slut.
   useEffect(() => {
@@ -163,6 +184,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
   }
 
   // Tiden ute utan svar: skicka ett tomt svar (servern godtar det bara inom tiden).
+  const wrap = (node: React.ReactNode) => <AvatarsContext.Provider value={avatars}>{node}</AvatarsContext.Provider>;
   const secondsLeft = Math.max(0, Math.ceil((timing.deadline - now) / 1000));
   const timeUp = state?.game.phase === "question" && !state.my_answer && secondsLeft === 0 && selected !== null;
   useEffect(() => {
@@ -170,7 +192,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
   }, [timeUp, selected]);
 
   if (authLoading || (user && !state && !error)) {
-    return (
+    return wrap(
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
         <div className="h-64 animate-pulse rounded-[10px] bg-card/70" />
@@ -178,7 +200,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
     );
   }
   if (!user) {
-    return (
+    return wrap(
       <div className="mx-auto max-w-xl space-y-6 text-center">
         <h1 className={H1}>Alla mot alla</h1>
         <p className="text-[var(--ink-muted)]">Logga in för att spela.</p>
@@ -187,7 +209,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
     );
   }
   if (!state) {
-    return (
+    return wrap(
       <div className={cn(CARD, "mx-auto max-w-lg text-center")}>
         <h1 className={H1}>Spelet hittades inte</h1>
         <p className="mt-2 text-[var(--ink-muted)]">{error}</p>
@@ -206,7 +228,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
   ) : null;
 
   if (g.status === "cancelled") {
-    return (
+    return wrap(
       <div className={cn(CARD, "mx-auto max-w-lg text-center")}>
         <h1 className={H1}>Rummet är stängt</h1>
         <p className="mt-2 text-[var(--ink-muted)]">Den som skapade rummet lämnade innan spelet startade.</p>
@@ -218,7 +240,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
   }
 
   if (g.status === "waiting") {
-    return (
+    return wrap(
       <div className="space-y-8 sm:space-y-10">
         {errorBox}
         {g.mode === "private" ? (
@@ -242,7 +264,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
   }
 
   if (g.status === "finished") {
-    return (
+    return wrap(
       <Finished
         state={state}
         busy={busy}
@@ -257,7 +279,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
 
   // Aktivt spel.
   if (g.phase === "starting" || !state.question) {
-    return (
+    return wrap(
       <div className={cn(CARD, "text-center")}>
         <p className="text-sm text-[var(--ink-muted)]">{state.players.length} spelare · {g.question_count} frågor</p>
         <h1 className={cn(H1, "mt-2")}>Spelet börjar om {secondsLeft} s</h1>
@@ -271,7 +293,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
   const percents = reveal ? distributionPercent(reveal.distribution) : null;
   const answered = state.my_answer !== null;
 
-  return (
+  return wrap(
     <div className="space-y-6 sm:space-y-8">
       {errorBox}
       <div className={CARD}>
@@ -385,10 +407,12 @@ export function AmaGame({ gameId }: { gameId: string }) {
 }
 
 function PlayerList({ players }: { players: AmaPlayer[] }) {
+  const avatars = useContext(AvatarsContext);
   return (
     <ul className="divide-y divide-[var(--line)]">
       {players.map((p) => (
         <li key={p.player_id} className="flex min-h-11 items-center gap-2 py-2 text-sm text-[var(--ink)]">
+          <Avatar src={avatars[p.player_id] ?? null} name={p.is_bot ? "Bot" : p.name} size="xs" />
           <span className="truncate">{p.name}</span>
           {p.is_me ? <Tag>du</Tag> : null}
           {p.is_host ? <Tag>skapare</Tag> : null}
@@ -526,6 +550,7 @@ function RandomLobby({
 }
 
 function Scoreboard({ players, title }: { players: AmaPlayer[]; title: string }) {
+  const avatars = useContext(AvatarsContext);
   const { rows, meOutside } = topWithMe(players);
   const row = (p: AmaPlayer) => (
     <li
@@ -533,6 +558,7 @@ function Scoreboard({ players, title }: { players: AmaPlayer[]; title: string })
       className={cn("flex min-h-10 items-center gap-3 px-3 py-2 text-sm", p.is_me && "bg-[var(--accent-soft)]")}
     >
       <span className="w-8 shrink-0 tabular-nums text-[var(--ink-muted)]">{placement(p.rank)}</span>
+      <Avatar src={avatars[p.player_id] ?? null} name={p.is_bot ? "Bot" : p.name} size="xs" />
       <span className={cn("flex-1 truncate text-[var(--ink)]", p.is_me && "font-medium")}>
         {p.name}
         {p.is_bot ? <span className="ml-2 text-xs text-[var(--ink-muted)]">bot</span> : null}
