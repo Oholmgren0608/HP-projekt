@@ -20,20 +20,7 @@ import { generatePlan, type GeneratedPlan } from "@/lib/plan-generator";
 import { loadQuestions } from "@/lib/content/questions-provider";
 import { bankSizes } from "@/lib/practice";
 import { useHydrated } from "@/lib/use-hydrated";
-import {
-  ADAPT_PLAN_EVENT,
-  ADAPT_PLAN_KEY,
-  loadAdaptPlanEnabled,
-  saveAdaptPlanEnabled,
-} from "@/lib/adapt-plan-setting";
-import { detectPracticeTrends } from "@/lib/practice-trends";
-import {
-  HISTORY_EVENT,
-  HISTORY_STORAGE_KEY,
-  appendScoreSnapshot,
-  ensureScoreBaseline,
-  loadHistory,
-} from "@/lib/progress-history";
+import { appendScoreSnapshot, ensureScoreBaseline } from "@/lib/progress-history";
 import { SCORES_STORAGE_KEY } from "@/lib/hp-scores";
 import {
   LOCKED_WEEKS_KEY,
@@ -41,18 +28,14 @@ import {
   WEEK_PROGRESS_KEY,
   WEEK_SCORES_KEY,
   loadLockedWeeks,
-  loadWeekProgress,
-  startedWeekNumbers,
 } from "@/lib/week-progress";
 
 /** Nycklar planen faktiskt läser — bara de ska räkna om den. */
 const PLAN_STORAGE_KEYS = new Set<string>([
   SCORES_STORAGE_KEY,
-  HISTORY_STORAGE_KEY,
   WEEK_PROGRESS_KEY,
   WEEK_SCORES_KEY,
   LOCKED_WEEKS_KEY,
-  ADAPT_PLAN_KEY,
 ]);
 
 type PlanContextValue = {
@@ -61,8 +44,6 @@ type PlanContextValue = {
   /** Genererad plan. `null` följer av `scores === null`. */
   plan: GeneratedPlan | null;
   ready: boolean;
-  adaptEnabled: boolean;
-  setAdaptEnabled: (enabled: boolean) => void;
   updateScores: (next: ScoreInput) => void;
   clearScores: () => void;
 };
@@ -73,7 +54,6 @@ export function PlanProvider({ children }: { children: ReactNode }) {
   const [scores, setScores] = useState<ScoreInput | null>(loadScores);
   const ready = useHydrated();
   const [bankLoaded, setBankLoaded] = useState(false);
-  const [adaptEnabled, setAdaptEnabledState] = useState(loadAdaptPlanEnabled);
   const [revision, setRevision] = useState(0);
 
   // Baslinjen i historiken skrivs bara när det finns ett sparat underlag —
@@ -99,7 +79,6 @@ export function PlanProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const bump = () => {
-      setAdaptEnabledState(loadAdaptPlanEnabled());
       // Läs om underlaget så att skrivningar från andra flikar slår igenom.
       // Identitetskoll: oförändrade värden ska inte rita om planen (och därmed
       // återställa ett halvfyllt formulär) i onödan.
@@ -115,14 +94,10 @@ export function PlanProvider({ children }: { children: ReactNode }) {
       if (event.key !== null && !PLAN_STORAGE_KEYS.has(event.key)) return;
       bump();
     };
-    window.addEventListener(HISTORY_EVENT, bump);
     window.addEventListener(WEEK_PROGRESS_EVENT, bump);
-    window.addEventListener(ADAPT_PLAN_EVENT, bump);
     window.addEventListener("storage", onStorage);
     return () => {
-      window.removeEventListener(HISTORY_EVENT, bump);
       window.removeEventListener(WEEK_PROGRESS_EVENT, bump);
-      window.removeEventListener(ADAPT_PLAN_EVENT, bump);
       window.removeEventListener("storage", onStorage);
     };
   }, []);
@@ -139,40 +114,29 @@ export function PlanProvider({ children }: { children: ReactNode }) {
     setScores(null);
   }, []);
 
-  const setAdaptEnabled = useCallback((enabled: boolean) => {
-    setAdaptEnabledState(enabled);
-    saveAdaptPlanEnabled(enabled);
-  }, []);
-
   const plan = useMemo(() => {
     if (!scores) return null;
     if (!ready) return generatePlan(scores);
     // `revision` is a change counter bumped by external-store events; reading it
     // here (as a no-op void) keeps it a genuine, lint-clean dependency so the
-    // plan recomputes when persisted history/progress changes.
+    // plan recomputes when persisted progress or locked weeks change.
     void revision;
-    const trends = adaptEnabled ? detectPracticeTrends(scores, loadHistory()) : [];
     return generatePlan(scores, {
       // Innan banken laddats är den tom; utan storlekar räknar planen med fulla pass.
       bankSizes: bankLoaded ? bankSizes() : undefined,
-      adapt: adaptEnabled,
-      trends,
       lockedWeeks: loadLockedWeeks(),
-      startedWeeks: startedWeekNumbers(loadWeekProgress()),
     });
-  }, [scores, adaptEnabled, revision, ready, bankLoaded]);
+  }, [scores, revision, ready, bankLoaded]);
 
   const value = useMemo(
     () => ({
       scores,
       plan,
       ready,
-      adaptEnabled,
-      setAdaptEnabled,
       updateScores,
       clearScores,
     }),
-    [scores, plan, ready, adaptEnabled, setAdaptEnabled, updateScores, clearScores],
+    [scores, plan, ready, updateScores, clearScores],
   );
 
   return <PlanContext.Provider value={value}>{children}</PlanContext.Provider>;

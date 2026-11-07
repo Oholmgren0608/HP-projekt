@@ -11,7 +11,6 @@ import type {
 import { pct } from "@/lib/format";
 import { kindToSection, sectionToKinds } from "@/lib/section-kinds";
 import { SUBTESTS } from "@/lib/subtests";
-import { adjustDeficit, type PracticeTrend } from "@/lib/practice-trends";
 
 export type TimeSplitItem = { label: string; pct: number; note: string };
 export type StrategyItem = { title: string; body: string };
@@ -36,14 +35,10 @@ export type GeneratedPlan = {
   dailyTemplate: { slot: string; item: string }[];
   heroSummary: string;
   focusIds: SectionId[];
-  adaptedFromPractice: boolean;
 };
 
 export type GeneratePlanOptions = {
-  adapt?: boolean;
-  trends?: PracticeTrend[];
   lockedWeeks?: Record<number, WeekPlan>;
-  startedWeeks?: number[];
   /**
    * Antal publicerade frågor per övningstyp. Ett pass får aldrig fler frågor
    * än banken har, annars visar planen tid för frågor som inte finns.
@@ -502,27 +497,6 @@ function selectFocus(ranking: Ranked[]): { focus: SectionId[]; rotation: Section
   return { focus, rotation: ranking.map((r) => r.id).filter((id) => !focus.includes(id)) };
 }
 
-/** Jämför två veckoplaner på de fält som faktiskt ändrar vad användaren ser/övar. */
-function weekPlanDiffers(a: WeekPlan, b: WeekPlan): boolean {
-  if (a.theme !== b.theme || a.focus !== b.focus) return true;
-  if (a.tasks.length !== b.tasks.length) return true;
-  for (let i = 0; i < a.tasks.length; i++) {
-    const ta = a.tasks[i];
-    const tb = b.tasks[i];
-    if (
-      ta.id !== tb.id ||
-      ta.title !== tb.title ||
-      ta.detail !== tb.detail ||
-      ta.section !== tb.section ||
-      ta.questionCount !== tb.questionCount ||
-      ta.minutes !== tb.minutes ||
-      ta.practiceKinds.join("|") !== tb.practiceKinds.join("|")
-    ) {
-      return true;
-    }
-  }
-  return false;
-}
 
 export function generatePlan(
   scores: ScoreInput,
@@ -622,47 +596,22 @@ export function generatePlan(
     weeklyGoal: "1 blandat underhållspass + DTK vid behov",
   });
 
-  const hpSelection = selectFocus(ranked);
-  const hpFocusIds = hpSelection.focus;
-  const hpWeakestQuant = ranked.filter((r) => r.block === "kvant")[0];
-  const hpWeekly = buildWeeklyPlans(
-    hpFocusIds,
-    hpSelection.rotation,
+  const selection = selectFocus(ranked);
+  const focusIds = selection.focus;
+  const weakestQuant = ranked.filter((r) => r.block === "kvant")[0];
+  const built = buildWeeklyPlans(
+    focusIds,
+    selection.rotation,
     weeks,
     scores.hoursPerWeek,
     options.bankSizes,
   );
 
-  const trends =
-    options.adapt && options.trends && options.trends.length > 0
-      ? options.trends
-      : [];
-
-  let focusIds = hpFocusIds;
-  let rotation = hpSelection.rotation;
-  let weakestQuant = hpWeakestQuant;
-
-  let effectiveRanking: Ranked[] = ranked;
-
-  if (trends.length > 0) {
-    const blended = [...ranked].sort((a, b) => {
-      const da = adjustDeficit(a.id, a.deficit, trends);
-      const db = adjustDeficit(b.id, b.deficit, trends);
-      return db - da;
-    });
-    effectiveRanking = blended;
-    const selection = selectFocus(blended);
-    focusIds = selection.focus;
-    rotation = selection.rotation;
-    weakestQuant =
-      blended.filter((r) => r.block === "kvant")[0] ?? hpWeakestQuant;
-  }
-
   // Samma rangordning som fokus och veckoplan använder. Annars kunde
   // strategikorten och tidfördelningen peka på andra delprov än planen
   // faktiskt prioriterar (t.ex. "ORD först" samtidigt som fokus var NOG).
-  const weakestVerbal = effectiveRanking.filter((r) => r.block === "verbal")[0];
-  const strongestVerbal = [...effectiveRanking]
+  const weakestVerbal = ranked.filter((r) => r.block === "verbal")[0];
+  const strongestVerbal = [...ranked]
     .filter((r) => r.block === "verbal")
     .sort((a, b) => b.percent - a.percent)[0];
 
@@ -685,46 +634,15 @@ export function generatePlan(
     },
   ];
 
-  const timeSplit = allocateTime(effectiveRanking);
+  const timeSplit = allocateTime(ranked);
 
   const heroSummary = `Snitt ${formatNorm(overall)} (kvant ${formatNorm(scores.quantNorm)} / verbal ${formatNorm(scores.verbalNorm)}). Planen prioriterar ${focusIds
     .slice(0, 2)
     .map((id) => METHODS[id].short)
     .join(" och ")} utifrån dina delprovspoäng.`;
 
-  const focusChanged =
-    focusIds.length !== hpFocusIds.length ||
-    focusIds.some((id, i) => id !== hpFocusIds[i]);
-
-  // Bygg bara om planen när anpassningen faktiskt ändrade fokus eller kvantdel;
-  // annars återanvänds hpWeekly (samma innehåll, färre allokeringar och stabil
-  // objektidentitet nedströms).
-  const rotationChanged = rotation.join("|") !== hpSelection.rotation.join("|");
-  const built =
-    !focusChanged && !rotationChanged
-      ? hpWeekly
-      : buildWeeklyPlans(focusIds, rotation, weeks, scores.hoursPerWeek, options.bankSizes);
-
-  const started = new Set(options.startedWeeks ?? []);
-  const weeklyPlans = built.map((w) => {
-    const snap = options.lockedWeeks?.[w.week];
-    if (snap) return snap;
-    if (started.has(w.week)) {
-      return hpWeekly.find((h) => h.week === w.week) ?? w;
-    }
-    return w;
-  });
-
-  // Jämför före lås och startade veckor: annars kunde ett gammalt låst snapshot
-  // göra att planen påstod sig vara trendanpassad utan att någon trend ändrat
-  // något i planen.
-  const adaptedApplied =
-    trends.length > 0 &&
-    (focusChanged ||
-      built.some((w) => {
-        const hp = hpWeekly.find((h) => h.week === w.week);
-        return !hp || weekPlanDiffers(hp, w);
-      }));
+  // Påbörjade veckor har ett låst snapshot och ändras inte när planen byggs om.
+  const weeklyPlans = built.map((w) => options.lockedWeeks?.[w.week] ?? w);
 
   return {
     profile: {
@@ -770,6 +688,5 @@ export function generatePlan(
     ],
     heroSummary,
     focusIds,
-    adaptedFromPractice: adaptedApplied,
   };
 }

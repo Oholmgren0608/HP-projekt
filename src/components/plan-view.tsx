@@ -12,7 +12,7 @@ import { WeekTracker } from "@/components/week-tracker";
 import { currentPlanWeek, formatDateLong, formatWeekRange, planWeekRange, todayKey, weeksLeft } from "@/lib/exam-date";
 
 export function PlanView() {
-  const { plan, scores, ready, adaptEnabled, setAdaptEnabled } = usePlan();
+  const { plan, scores, ready } = usePlan();
   const access = usePlanAccess();
   const [studyDays, setStudyDays] = useStudyDays();
   const [sessionOpen, setSessionOpen] = useState(false);
@@ -104,24 +104,6 @@ export function PlanView() {
             </p>
           ) : null}
           {!preview ? (
-            <label className="mt-4 flex max-w-xl cursor-pointer items-start gap-3 rounded-xl border border-[var(--line-strong)] bg-card/70 px-4 py-3">
-              <input
-                type="checkbox"
-                className="mt-1 size-4 accent-[var(--brand)]"
-                checked={adaptEnabled}
-                onChange={(e) => setAdaptEnabled(e.target.checked)}
-              />
-              <span>
-                <span className="block text-sm font-medium text-[var(--ink)]">
-                  Anpassa kommande veckor efter övningstrend
-                </span>
-                <span className="mt-0.5 block text-sm text-[var(--ink-muted)]">
-                  Kräver tre pass på samma delprov som pekar åt samma håll.
-                </span>
-              </span>
-            </label>
-          ) : null}
-          {!preview ? (
             <StudyDaysPicker
               days={studyDays}
               onChange={setStudyDays}
@@ -131,12 +113,6 @@ export function PlanView() {
                   : null
               }
             />
-          ) : null}
-          {!preview && adaptEnabled && plan.adaptedFromPractice ? (
-            <p className="mt-3 max-w-xl text-sm text-[var(--ink)]">
-              Kommande veckor är justerade efter en konsekvent övningstrend.
-              Påbörjade veckor är oförändrade.
-            </p>
           ) : null}
         </div>
       ) : null}

@@ -61,7 +61,6 @@ export const SYNCED_KEYS = [
   "hp-lift-srs-v1",
   "hp-lift-mastery-v2",
   "hp-lift-seen-questions-v1",
-  "hp-lift-adapt-plan-v1",
   "hp-lift-nivatest-counts-v1",
   "hp-lift-nivatest-timer-v1",
   "hp-lift-practice-mode-v1",

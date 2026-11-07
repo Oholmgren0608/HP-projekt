@@ -185,15 +185,6 @@ export function weekProgressSummary(weeklyPlans: WeekPlan[], progress: ProgressM
   };
 }
 
-export function startedWeekNumbers(progress: ProgressMap): number[] {
-  const weeks = new Set<number>();
-  for (const key of Object.keys(progress)) {
-    if (!progress[key]) continue;
-    const match = /^w(\d+):/.exec(key);
-    if (match) weeks.add(Number(match[1]));
-  }
-  return [...weeks];
-}
 
 export function loadLockedWeeks(): Record<number, WeekPlan> {
   return loadNormalized<Record<number, WeekPlan>>(LOCKED_WEEKS_KEY, {}, (parsed) => {

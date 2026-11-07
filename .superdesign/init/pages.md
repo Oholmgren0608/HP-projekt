@@ -25,7 +25,7 @@ Dependencies:
   - src/lib/supabase/auth-context.tsx (already listed)
 - src/components/gamification/celebration-layer.tsx
 ```
-Logic (src/lib): adapt-plan-setting.ts, content/questions-provider.ts, format.ts, gamification/config.ts, gamification/engine.ts, gamification/leaderboard.ts, hp-scores.ts, plan-generator.ts, practice-pace.ts, practice-trends.ts, practice-types.ts, practice.ts, progress-history.ts, question-mastery.ts, quiz.ts, random.ts, section-kinds.ts, sound.ts, storage.ts, study-plan.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, utils.ts, week-progress.ts
+Logic (src/lib): content/questions-provider.ts, format.ts, gamification/config.ts, gamification/engine.ts, gamification/leaderboard.ts, hp-scores.ts, plan-generator.ts, practice-pace.ts, practice-types.ts, practice.ts, progress-history.ts, question-mastery.ts, quiz.ts, random.ts, section-kinds.ts, sound.ts, storage.ts, study-plan.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, utils.ts, week-progress.ts
 
 
 ## /
@@ -50,7 +50,7 @@ Dependencies:
     - src/components/disclosure.tsx (already listed)
     - src/lib/gamification/provider.tsx (already listed)
 ```
-Logic (src/lib): adapt-plan-setting.ts, content/questions-provider.ts, error-srs.ts, format.ts, gamification/config.ts, gamification/engine.ts, gamification/leaderboard.ts, hp-scores.ts, plan-generator.ts, practice-pace.ts, practice-trends.ts, practice-types.ts, practice.ts, progress-history.ts, question-mastery.ts, quiz.ts, random.ts, section-kinds.ts, storage.ts, study-plan.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, utils.ts, week-progress.ts
+Logic (src/lib): content/questions-provider.ts, error-srs.ts, format.ts, gamification/config.ts, gamification/engine.ts, gamification/leaderboard.ts, hp-scores.ts, plan-generator.ts, practice-pace.ts, practice-types.ts, practice.ts, progress-history.ts, question-mastery.ts, quiz.ts, random.ts, section-kinds.ts, storage.ts, study-plan.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, utils.ts, week-progress.ts
 
 
 ## /plan
@@ -80,7 +80,7 @@ Dependencies:
     - src/components/plan-context.tsx (already listed)
     - src/components/ui/progress.tsx
 ```
-Logic (src/lib): adapt-plan-setting.ts, content/questions-provider.ts, content/use-questions.ts, error-srs.ts, format.ts, gamification/config.ts, gamification/engine.ts, hp-scores.ts, plan-generator.ts, practice-pace.ts, practice-timer.ts, practice-trends.ts, practice-types.ts, practice.ts, progress-history.ts, question-flags.ts, question-mastery.ts, quiz-outcome.ts, quiz.ts, random.ts, section-kinds.ts, storage.ts, study-plan.ts, study-time-recommendation.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, use-pausable-practice-timer.ts, use-quiz.ts, utils.ts, week-progress.ts
+Logic (src/lib): content/questions-provider.ts, content/use-questions.ts, error-srs.ts, format.ts, gamification/config.ts, gamification/engine.ts, hp-scores.ts, plan-generator.ts, practice-pace.ts, practice-timer.ts, practice-types.ts, practice.ts, progress-history.ts, question-flags.ts, question-mastery.ts, quiz-outcome.ts, quiz.ts, random.ts, section-kinds.ts, storage.ts, study-plan.ts, study-time-recommendation.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, use-pausable-practice-timer.ts, use-quiz.ts, utils.ts, week-progress.ts
 
 
 ## /ova
@@ -131,7 +131,7 @@ Dependencies:
   - src/components/quiz/quiz-progress.tsx
   - src/components/question-figure.tsx (already listed)
 ```
-Logic (src/lib): adapt-plan-setting.ts, content/questions-provider.ts, content/use-questions.ts, countdown.ts, error-srs.ts, format.ts, gamification/config.ts, gamification/engine.ts, hp-scores.ts, mini-level-test.ts, nivatest-timer.ts, plan-generator.ts, practice-pace.ts, practice-trends.ts, practice-types.ts, practice.ts, progress-history.ts, question-flags.ts, question-mastery.ts, quiz-outcome.ts, quiz.ts, random.ts, section-kinds.ts, storage.ts, study-plan.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, use-quiz-countdown.ts, use-quiz.ts, utils.ts, week-progress.ts
+Logic (src/lib): content/questions-provider.ts, content/use-questions.ts, countdown.ts, error-srs.ts, format.ts, gamification/config.ts, gamification/engine.ts, hp-scores.ts, mini-level-test.ts, nivatest-timer.ts, plan-generator.ts, practice-pace.ts, practice-types.ts, practice.ts, progress-history.ts, question-flags.ts, question-mastery.ts, quiz-outcome.ts, quiz.ts, random.ts, section-kinds.ts, storage.ts, study-plan.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, use-quiz-countdown.ts, use-quiz.ts, utils.ts, week-progress.ts
 
 
 ## /resultat
@@ -152,7 +152,7 @@ Dependencies:
   - src/components/study-time-notice.tsx
     - src/components/plan-context.tsx (already listed)
 ```
-Logic (src/lib): adapt-plan-setting.ts, content/questions-provider.ts, format.ts, hp-scores.ts, plan-generator.ts, practice-pace.ts, practice-trends.ts, practice-types.ts, practice.ts, progress-history.ts, question-mastery.ts, quiz.ts, random.ts, section-kinds.ts, storage.ts, study-plan.ts, study-time-recommendation.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, utils.ts, week-progress.ts
+Logic (src/lib): content/questions-provider.ts, format.ts, hp-scores.ts, plan-generator.ts, practice-pace.ts, practice-types.ts, practice.ts, progress-history.ts, question-mastery.ts, quiz.ts, random.ts, section-kinds.ts, storage.ts, study-plan.ts, study-time-recommendation.ts, subtests.ts, supabase/client.ts, supabase/paginate.ts, sync/storage-sync.ts, use-hydrated.ts, utils.ts, week-progress.ts
 
 
 ## /prov
