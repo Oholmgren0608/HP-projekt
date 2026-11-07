@@ -103,6 +103,25 @@ async function printOpenReports(sb: ReturnType<typeof createClient<Database>>) {
   }
 }
 
+/** Spelpoolen per delprov och status (ADR 0001), för den som fyller på poolen mot målet 80. */
+async function printPoolCounts(sb: ReturnType<typeof createClient<Database>>) {
+  const { data, error } = await sb.from("questions").select("kind, status").eq("pool", "spel");
+  if (error) {
+    console.log(`Spelpoolen: kunde inte läsas (${error.message}).`);
+    return;
+  }
+  const counts = new Map<string, number>();
+  for (const r of data ?? []) {
+    const key = `${r.kind}/${r.status}`;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  console.log(
+    `Spelpoolen (delprov/status, mål 80 publicerade per delprov): ${
+      [...counts.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([k, n]) => `${k} ${n}`).join(", ") || "tom"
+    }.`,
+  );
+}
+
 async function main() {
   const unknown = kindArgs.filter((a) => !isKind(a));
   if (unknown.length > 0) throw new Error(`Okänt delprov: ${unknown.join(", ")}`);
@@ -187,6 +206,7 @@ async function main() {
   );
   if (dryRun) {
     await printOpenReports(sb);
+    await printPoolCounts(sb);
     console.log("--dry-run: inget skrevs.");
     return;
   }
