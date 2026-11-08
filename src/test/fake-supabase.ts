@@ -89,6 +89,29 @@ class SelectQuery implements PromiseLike<QueryResult> {
     return this;
   }
 
+  // Frågebankens hämtning (questions-provider) kedjar dessa; tabellen finns
+  // inte här, så de behöver bara gå att anropa.
+  order(column: string): this {
+    void column;
+    return this;
+  }
+
+  range(from: number, to: number): this {
+    void from;
+    void to;
+    return this;
+  }
+
+  retry(enabled: boolean): this {
+    void enabled;
+    return this;
+  }
+
+  abortSignal(signal: AbortSignal): this {
+    void signal;
+    return this;
+  }
+
   then<TResult1 = QueryResult, TResult2 = never>(
     onfulfilled?: ((value: QueryResult) => TResult1 | PromiseLike<TResult1>) | null,
     onrejected?: ((reason: unknown) => TResult2 | PromiseLike<TResult2>) | null,

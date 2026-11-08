@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { AppShell } from "@/components/app-shell";
 import { PlanProvider } from "@/components/plan-context";
 import { AuthProvider } from "@/lib/supabase/auth-context";
@@ -9,10 +9,15 @@ import { GamificationProvider } from "@/lib/gamification/provider";
 import { CelebrationLayer } from "@/components/gamification/celebration-layer";
 import "./globals.css";
 
-const sans = IBM_Plex_Sans({
+// IBM Plex Sans ligger i repot (OFL, se fonts/OFL.txt) så att bygget inte
+// behöver nå Google Fonts.
+const sans = localFont({
   variable: "--font-sans",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
+  src: [
+    { path: "./fonts/IBMPlexSans-400.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/IBMPlexSans-500.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/IBMPlexSans-600.ttf", weight: "600", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {
