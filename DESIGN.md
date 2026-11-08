@@ -222,7 +222,7 @@ Lugn is flat. Depth comes from tone (Papper behind, Yta in front) and 1px hairli
 
 ## Shapes
 
-Gently rounded, never pill-shaped. Small controls (chips, nav items, icon buttons) use 6–8px; buttons and inputs 8–10px; cards and panels 10px; menus and popovers 10px; dialogs 12px. `rounded-full` is reserved for avatars, status dots, progress bars, switches and the A–E answer letters. The wordmark's mark is a solid 20px Skymningsblå square with a 4px radius.
+Gently rounded, never pill-shaped. Small controls (chips, nav items, icon buttons) use 6–8px; buttons and inputs 8–10px; cards and panels 10px; menus and popovers 10px; dialogs 12px. `rounded-full` is reserved for avatars, status dots, progress bars, switches and the A–E answer letters. The wordmark's mark is a 28px Skymningsblå square with a 6px radius holding a cable-car cabin on its way up above a mountain: cabin, cable and hanger in `primary-foreground`, the mountain in the same colour at 30% opacity (`LogoMark` in `src/components/logo-mark.tsx`). Files, the simplified favicon version and the rules are in `docs/logga/`.
 
 ## Components
 

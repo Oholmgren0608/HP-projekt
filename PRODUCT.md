@@ -55,6 +55,8 @@ Confirmed differentiators against hpguiden, HP-appen and similar:
 ## Brand Commitments
 
 - Name: **HP Lift**. UI language Swedish.
+- Logo (Oscar, 2026-11-08): a cable-car cabin on its way up above a mountain, white on a Skymningsblå square, next to
+  "HP Lift" in IBM Plex Sans SemiBold. Files and rules in `docs/logga/`.
 - Voice: calm and matter-of-fact ("lugn och saklig", confirmed 2026-11-06). Direct, no guilt or hype, e.g. "Veckan har
   krympt så att dagarna inte blir för tunga".
 - The existing visual system is "Lugn" (`.superdesign/design-system.md`, AGENTS.md §7); green and red mean right and

@@ -82,7 +82,7 @@ If a task seems to need one of these, stop and ask.
 - `scripts/` — `db.ts` (Supabase CLI wrapper), `fragebank/` (question-bank pipeline), `import-prov/` (imports UHR exams, used only as models)
 - `content/ovningsfragor/` — new practice questions per delprov (JSON) before upload; `content/aldre-fragor/` — second check of the older questions
 - `docs/` — `studiehjalp/` (v2.0 spec and phase docs), `juridik/` (privacy policy, DPIA), `agents/` (issue tracker, labels, domain docs),
-  `KNOWN_ISSUES.md` (open problems); `GLOSSARY.md` is at the root
+  `logga/` (logo files and rules), `KNOWN_ISSUES.md` (open problems); `GLOSSARY.md` is at the root
 - `future-changes/` — deferred follow-up work (mostly duels); `anteckningar/` — project notes; `.agents/agents/` — agent definitions;
   `.superdesign/` — the Lugn design system and drafts
 - Question bank: lives in the database (about 1,600 published questions, 8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK);
@@ -112,6 +112,9 @@ Full reference: `DESIGN.md` (tokens, components, rules) with its sidecar `.impec
   The shadcn `accent` token is only the pale tint `--accent-soft`, not the accent colour.
 - Green and red are used **only** for right and wrong answers — never for buttons, badges or decoration. One exception (Oscar, 2026-11-06): the veckoplan's priority badges ("Kritiskt" red, "Styrka" green).
 - Font: IBM Plex Sans.
+- Logo: a cable-car cabin on its way up above a mountain, on a Skymningsblå square (Oscar, 2026-11-08). In the app it is
+  `LogoMark` (`src/components/logo-mark.tsx`); favicon and app icons are `src/app/icon.svg`, `favicon.ico` and `apple-icon.png`.
+  Files and rules in `docs/logga/`.
 - Sidebar on desktop, tab bar on mobile.
 - Every screen must work in both light and dark mode.
 

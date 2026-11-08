@@ -1,6 +1,7 @@
 "use client";
 
 import { Avatar } from "@/components/avatar";
+import { LogoMark } from "@/components/logo-mark";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
@@ -245,7 +246,7 @@ function Wordmark() {
       href="/"
       className="flex items-center gap-2.5 rounded-md text-base font-semibold text-[var(--ink)]"
     >
-      <span aria-hidden className="size-5 rounded-[4px] bg-[var(--brand)]" />
+      <LogoMark className="size-7 shrink-0" />
       HP Lift
     </Link>
   );
