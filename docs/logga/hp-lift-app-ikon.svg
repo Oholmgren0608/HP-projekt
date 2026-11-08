@@ -3,7 +3,7 @@
   <defs><clipPath id="hp-lift-ruta"><rect width="64" height="64" rx="0"/></clipPath></defs>
   <g clip-path="url(#hp-lift-ruta)">
     <rect width="64" height="64" fill="#2b4c7e"/>
-    <g opacity=".3"><path d="M-6 70V60l56-33 18 14v29z" fill="#ffffff" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/></g>
+    <g opacity=".3"><path d="M-6 70V50l7-4 6 5 6-8 5 4 25-26 4 6 3-3 16 18V70z" fill="#ffffff"/></g>
     <g stroke="#ffffff" stroke-width="3" stroke-linecap="round"><path d="M-4 34.2 68 6.8"/><path d="M32 20.5v5"/></g>
     <rect x="19" y="25" width="26" height="23" rx="5.5" fill="#ffffff"/>
     <rect x="22.5" y="29" width="19" height="8" rx="2.5" fill="#2b4c7e"/>

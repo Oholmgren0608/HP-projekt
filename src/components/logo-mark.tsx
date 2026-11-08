@@ -19,12 +19,7 @@ export function LogoMark({ className }: { className?: string }) {
       <g clipPath={`url(#${clipId})`}>
         <rect width="64" height="64" className="fill-primary" />
         <g opacity={0.3}>
-          <path
-            d="M-6 70V60l56-33 18 14v29z"
-            className="fill-primary-foreground stroke-primary-foreground"
-            strokeWidth={3}
-            strokeLinejoin="round"
-          />
+          <path d="M-6 70V50l7-4 6 5 6-8 5 4 25-26 4 6 3-3 16 18V70z" className="fill-primary-foreground" />
         </g>
         <g className="stroke-primary-foreground" strokeWidth={3} strokeLinecap="round">
           <path d="M-4 34.2 68 6.8" />
