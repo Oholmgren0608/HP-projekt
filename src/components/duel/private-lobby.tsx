@@ -73,7 +73,7 @@ export function PrivateLobby({ code, matchId, onMatched, onCancel }: Props) {
   }
 
   return (
-    <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card p-6">
       <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
         Väntar på motståndare…
       </h2>

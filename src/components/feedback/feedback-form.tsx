@@ -122,7 +122,7 @@ export function FeedbackForm() {
         <div
           role="status"
           aria-live="polite"
-          className="rounded-[10px] border border-[var(--line)] bg-card/75 p-6 shadow-soft sm:p-8"
+          className="rounded-[10px] border border-[var(--line)] bg-card p-6 shadow-soft sm:p-8"
         >
           <p className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             ✓ {channel.successTitle}
@@ -167,7 +167,7 @@ export function FeedbackForm() {
                 "rounded-[10px] border p-4 text-left transition ",
                 active
                   ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                  : "border-[var(--line-strong)] bg-card/70 hover:border-[var(--brand)] hover:bg-card",
+                  : "border-[var(--line-strong)] bg-card hover:border-[var(--brand)] hover:bg-card",
               )}
             >
               <p className="text-sm font-semibold text-[var(--ink)]">
@@ -181,7 +181,7 @@ export function FeedbackForm() {
 
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6"
+        className="space-y-6 rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6"
       >
         <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           {channel.heading}

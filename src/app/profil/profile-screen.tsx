@@ -415,7 +415,7 @@ export function ProfileScreen() {
       </div>
 
       {/* 1. Kontouppgifter */}
-      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
           <ProfilePictureEditor userId={user.id} name={username ?? user.email ?? "?"} />
           <div className="min-w-0 space-y-2">
@@ -431,7 +431,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 2. Träningsstatistik */}
-      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           Träningsstatistik
         </h2>
@@ -459,7 +459,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 3. Duel-statistik */}
-      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           Duell-statistik
         </h2>
@@ -498,7 +498,7 @@ export function ProfileScreen() {
       </section>
 
       {/* 4. Kontoåtgärder */}
-      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
           Kontoåtgärder
         </h2>
@@ -552,7 +552,7 @@ function LocalDataCard({ signedIn }: { signedIn: boolean }) {
   }
 
   return (
-    <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
+    <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 text-left sm:p-6">
       <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
         Lokal data på den här enheten
       </h2>
@@ -591,7 +591,7 @@ function HelpAndFeedbackCard() {
   ];
 
   return (
-    <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 text-left sm:p-6">
+    <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 text-left sm:p-6">
       <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
         Hjälp & feedback
       </h2>
@@ -615,7 +615,7 @@ function HelpAndFeedbackCard() {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card p-5">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
       <p className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl tabular-nums text-[var(--ink)]">
         {value}

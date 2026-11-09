@@ -46,7 +46,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
 
   if (!mounted) {
     return (
-      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar historik…</p>
       </div>
     );
@@ -115,7 +115,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
   ) : null;
 
   const card = (
-    <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
       <p className="text-xs font-medium text-[var(--ink-muted)]">
         Poängprognos
       </p>
@@ -158,7 +158,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
       bodyClassName="px-3 pb-3 pt-3"
     >
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-        <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <p className="text-xs font-medium text-[var(--ink-muted)]">
             Uppskattad poängprognos
           </p>
@@ -173,7 +173,7 @@ export function ProgressPanel({ compact = false }: { compact?: boolean }) {
           <ProgressChart points={points} />
         </div>
 
-        <aside aria-label="Senaste övningar" className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+        <aside aria-label="Senaste övningar" className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <p className="text-xs font-medium text-[var(--ink-muted)]">
             Senaste övningar
           </p>
@@ -244,7 +244,7 @@ function PrognosisThresholdChips({ prognosis }: { prognosis: ExercisePrognosis |
             className={`rounded-md border px-2 py-1 text-[11px] font-medium tabular-nums ${
               reached
                 ? "border-[var(--lagoon-ink)]/50 bg-[var(--lagoon-ink)]/10 text-[var(--ink)]"
-                : "border-[var(--line)] bg-card/60 text-[var(--ink-muted)]"
+                : "border-[var(--line)] bg-card text-[var(--ink-muted)]"
             }`}
           >
             {kindBadge(kind)} {n}/{PROGNOSIS_MIN_KIND_QUESTIONS}

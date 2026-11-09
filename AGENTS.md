@@ -106,7 +106,9 @@ If a task seems to need one of these, stop and ask.
 
 ## 7. Design system "Lugn"
 Full reference: `DESIGN.md` (tokens, components, rules) with its sidecar `.impeccable/design.json`; product context in `PRODUCT.md`.
-- Flat surfaces, no heavy shadows or gradients.
+- Flat surfaces, no heavy shadows or gradients. One exception (Oscar, 2026-11-09): the muted background scene (hiker on the logo's
+  mountain, cable car above) fixed at the bottom behind the content, `MountainBackdrop` in `src/components/mountain-backdrop.tsx`.
+  Because of it, cards use opaque `bg-card`, never a translucent `bg-card/70`.
 - One accent colour: blue `--brand` (`#2b4c7e` light, `#8da9d6` dark) in `src/app/globals.css`. Tailwind token: `primary`
   (`bg-primary`, `text-primary`; `ring` and `chart-1` also point to `--brand`); components also use `[var(--brand)]` directly.
   The shadcn `accent` token is only the pale tint `--accent-soft`, not the accent colour.

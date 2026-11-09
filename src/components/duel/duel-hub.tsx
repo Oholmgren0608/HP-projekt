@@ -135,7 +135,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
     return (
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-40 animate-pulse rounded-[10px] bg-card/70" />
+        <div className="h-40 animate-pulse rounded-[10px] bg-card" />
       </div>
     );
   }
@@ -241,7 +241,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
           disabled={busy}
           onClick={() => void handleStartBot()}
         />
-        <div className="flex flex-col rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
+        <div className="flex flex-col rounded-[10px] border border-[var(--line)] bg-card p-5">
           <h3 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             Privat duell
           </h3>
@@ -278,7 +278,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
       <section className="grid gap-6 lg:grid-cols-2">
         {/* Topplista */}
-        <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-5">
           <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             Topplista
           </h2>
@@ -314,7 +314,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
         </div>
 
         {/* Historik */}
-        <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-5">
           <h2 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             Matchhistorik
           </h2>
@@ -344,7 +344,7 @@ export function DuelHub({ initialCode }: { initialCode: string }) {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card p-5">
       <p className="text-sm text-[var(--ink-muted)]">{label}</p>
       <p className="mt-1 font-[family-name:var(--font-display)] font-semibold text-2xl tabular-nums text-[var(--ink)]">
         {value}
@@ -367,7 +367,7 @@ function ModeCard({
   disabled?: boolean;
 }) {
   return (
-    <div className="flex flex-col rounded-[10px] border border-[var(--line)] bg-card/75 p-5">
+    <div className="flex flex-col rounded-[10px] border border-[var(--line)] bg-card p-5">
       <h3 className="font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
         {title}
       </h3>

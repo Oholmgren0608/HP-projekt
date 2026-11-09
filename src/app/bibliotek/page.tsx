@@ -22,7 +22,7 @@ export default function ReadingLibraryPage() {
       </div>
 
       <section>
-        <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <ReadingLibrary />
         </div>
       </section>

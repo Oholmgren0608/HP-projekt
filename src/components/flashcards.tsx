@@ -84,7 +84,7 @@ export function Flashcards() {
   // och frågebanken är klara, annars mismatchar SSR- och klient-HTML.
   if (!hydrated) {
     return (
-      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar flashcards…</p>
       </div>
     );

@@ -36,7 +36,7 @@ export function TipsView() {
             className={`rounded-lg border px-3 py-1.5 text-sm font-medium ${
               highlight === tip.id
                 ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--ink)]"
-                : "border-[var(--line-strong)] bg-card/70 text-[var(--ink-muted)] hover:text-[var(--ink)]"
+                : "border-[var(--line-strong)] bg-card text-[var(--ink-muted)] hover:text-[var(--ink)]"
             }`}
           >
             {sectionShort(tip.id)}

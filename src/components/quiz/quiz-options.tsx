@@ -54,7 +54,7 @@ export function QuizOptions({
                   ? "border-[var(--success-ink)]/40 bg-card"
                   : isChosen
                     ? "border-[var(--destructive)]/30 bg-card"
-                    : "border-[var(--line)] bg-card/70"
+                    : "border-[var(--line)] bg-card"
               }`}
             >
               <span

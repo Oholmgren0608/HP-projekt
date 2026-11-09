@@ -37,7 +37,7 @@ function List({ items }: { items: ReactNode[] }) {
 /** Tabell som kort på mobil och rader på större skärmar. */
 function Rows({ rows }: { rows: { title: string; fields: [string, ReactNode][] }[] }) {
   return (
-    <div className="divide-y divide-[var(--line)] rounded-[10px] border border-[var(--line)] bg-card/70">
+    <div className="divide-y divide-[var(--line)] rounded-[10px] border border-[var(--line)] bg-card">
       {rows.map((row) => (
         <div key={row.title} className="space-y-1.5 p-4">
           <p className="text-sm font-semibold text-[var(--ink)]">{row.title}</p>

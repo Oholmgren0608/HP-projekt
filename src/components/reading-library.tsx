@@ -35,7 +35,7 @@ export function ReadingLibrary() {
   // förrän hydrering är klar, annars mismatchar SSR- och klient-HTML.
   if (!ready) {
     return (
-      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <p className="text-sm text-[var(--ink-muted)]">Laddar läsbibliotek…</p>
       </div>
     );
@@ -74,7 +74,7 @@ export function ReadingLibrary() {
                   className={`w-full rounded-lg border px-3 py-3 text-left transition ${
                     selected
                       ? "border-[var(--brand)] bg-[var(--accent-soft)]"
-                      : "border-[var(--line-strong)] bg-card/70 hover:border-[var(--ink-soft)]"
+                      : "border-[var(--line-strong)] bg-card hover:border-[var(--ink-soft)]"
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
@@ -94,7 +94,7 @@ export function ReadingLibrary() {
           </div>
         </Disclosure>
 
-        <article className="rounded-[10px] border border-[var(--line)] bg-card/80 p-5 sm:p-6">
+        <article className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <p className="text-xs font-medium text-[var(--brand)]">
             {text.kind} · ~{text.minutes} min
           </p>

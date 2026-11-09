@@ -44,7 +44,7 @@ export function AmaHub({ initialCode }: { initialCode: string }) {
     return (
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-40 animate-pulse rounded-[10px] bg-card/70" />
+        <div className="h-40 animate-pulse rounded-[10px] bg-card" />
       </div>
     );
   }

@@ -36,7 +36,7 @@ export function PlanPreview({ weeklyPlans }: { weeklyPlans: readonly WeekPlan[] 
 
   return (
     <section className="space-y-6" aria-labelledby="plan-preview-heading">
-      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <p className="text-[13px] font-medium text-[var(--ink-muted)]">
           Förhandsvisning · {firstWeek.phase} · Vecka {firstWeek.week}
         </p>
@@ -66,7 +66,7 @@ export function PlanPreview({ weeklyPlans }: { weeklyPlans: readonly WeekPlan[] 
       </div>
 
       {lockedWeeks.length > 0 ? (
-        <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <h3 className="text-sm font-medium text-[var(--ink)]">
             {lockedWeeks.length} veckor till · {lockedTaskCount} uppgifter
           </h3>

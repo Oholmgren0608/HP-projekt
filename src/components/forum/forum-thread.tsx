@@ -189,7 +189,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
 
   if (loading) {
     return (
-      <div className="flex items-center gap-2 rounded-[10px] border border-[var(--line)] bg-card/70 p-6 text-sm text-[var(--ink-muted)]">
+      <div className="flex items-center gap-2 rounded-[10px] border border-[var(--line)] bg-card p-6 text-sm text-[var(--ink-muted)]">
         <Loader2 size={16} className="animate-spin" aria-hidden />
         Hämtar diskussionen…
       </div>
@@ -291,7 +291,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
         </header>
 
         {posts.length === 0 ? (
-          <p className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 text-sm text-[var(--ink-muted)]">
+          <p className="rounded-[10px] border border-[var(--line)] bg-card p-5 text-sm text-[var(--ink-muted)]">
             Ingen har skrivit här än. Beskriv vad du tycker är svårt med uppgiften – någon annan
             undrar oftast samma sak.
           </p>
@@ -423,7 +423,7 @@ function PostItem({
             ? "border-[var(--brand)]/40 bg-[var(--accent-soft)]/40"
             : node.is_deleted
               ? "border-[var(--line)] bg-[var(--paper)]"
-              : "border-[var(--line)] bg-card/70",
+              : "border-[var(--line)] bg-card",
         )}
       >
         <header className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[var(--ink-muted)]">

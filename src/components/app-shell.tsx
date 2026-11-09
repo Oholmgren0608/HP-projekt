@@ -2,6 +2,7 @@
 
 import { Avatar } from "@/components/avatar";
 import { LogoMark } from "@/components/logo-mark";
+import { MountainBackdrop } from "@/components/mountain-backdrop";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
@@ -379,6 +380,8 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex min-h-full flex-col md:pl-60">
+      <MountainBackdrop />
+
       {/* Sidomeny (dator) */}
       <aside aria-label="Sidomeny" className="fixed inset-y-0 left-0 z-40 hidden w-60 flex-col border-r border-[var(--line)] bg-[var(--sidebar)] md:flex">
         <div className="flex h-14 shrink-0 items-center px-5">

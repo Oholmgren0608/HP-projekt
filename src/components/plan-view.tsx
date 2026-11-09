@@ -21,7 +21,7 @@ export function PlanView() {
     return (
       <div className="space-y-6">
         <div className="h-8 w-56 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-48 animate-pulse rounded-[10px] bg-card/70" />
+        <div className="h-48 animate-pulse rounded-[10px] bg-card" />
       </div>
     );
   }
@@ -132,7 +132,7 @@ export function PlanView() {
               {strategy.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5"
+                  className="rounded-[10px] border border-[var(--line)] bg-card p-5"
                 >
                   <h3 className="text-lg font-medium text-[var(--ink)]">
                     {item.title}

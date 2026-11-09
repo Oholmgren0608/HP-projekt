@@ -53,7 +53,7 @@ export function AvatarReview() {
   }
 
   if (loading || (user && allowed === null)) {
-    return <div className="h-40 animate-pulse rounded-[10px] bg-card/70" />;
+    return <div className="h-40 animate-pulse rounded-[10px] bg-card" />;
   }
   if (!user) {
     return (

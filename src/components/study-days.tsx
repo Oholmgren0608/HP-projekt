@@ -70,7 +70,7 @@ export function StudyDaysPicker({
 }) {
   const selected = new Set(days);
   return (
-    <fieldset className="mt-4 max-w-xl rounded-xl border border-[var(--line-strong)] bg-card/70 px-4 py-3">
+    <fieldset className="mt-4 max-w-xl rounded-xl border border-[var(--line-strong)] bg-card px-4 py-3">
       <legend className="sr-only">Pluggdagar</legend>
       <p className="text-sm font-medium text-[var(--ink)]">Pluggdagar</p>
       <div className="mt-2 flex flex-wrap gap-1.5">

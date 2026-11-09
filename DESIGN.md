@@ -160,7 +160,7 @@ A warm paper-and-ink neutral scale with a single dusky blue; colour carries mean
 - **Bläck** (`--ink`): primary text and headings.
 - **Mjukt bläck** (`--ink-soft`): secondary body text and inactive nav labels.
 - **Dämpat bläck** (`--ink-muted`): meta text, captions, icons at rest.
-- **Papper** (`--paper`): the page background, flat.
+- **Papper** (`--paper`): the page background, flat. The one exception (Oscar, 2026-11-09): a muted scene fixed at the bottom of the window behind the content, a hiker seen from behind on a trail up the logo's mountain with the cable car above (`MountainBackdrop` in `src/components/mountain-backdrop.tsx`). It uses only tints of Skymningsblå and ink at reduced opacity, and cards must be opaque `bg-card` so text never sits on the scene.
 - **Yta** (`--card`): cards, panels, inputs, popovers, sidebar and tab bar.
 - **Dimma** (`--mist`): hover rows, progress tracks, chips, subtle fills.
 - **Linje** (`--line`): 1px hairline borders and dividers.

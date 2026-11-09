@@ -178,7 +178,7 @@ export function ScoreForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {!scores ? (
-        <p className="rounded-lg border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
+        <p className="rounded-lg border border-[var(--line)] bg-card px-4 py-3 text-sm text-[var(--ink-muted)]">
           Inget underlag sparat än. Fyll i dina senaste resultat — eller kör ett
           nivåtest — först då byggs veckoplanen och prognosen.
         </p>

@@ -187,7 +187,7 @@ export function MiniLevelTest() {
     return (
       <div className="space-y-8 sm:space-y-10">
         {heading}
-        <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+        <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             Ny på HP — eller rostig?
           </h2>
@@ -312,7 +312,7 @@ export function MiniLevelTest() {
       return (
         <div className="space-y-6">
           {heading}
-          <div className="flex items-center justify-center gap-2 rounded-[10px] border border-[var(--line)] bg-card/75 py-10 text-sm text-[var(--ink-muted)]">
+          <div className="flex items-center justify-center gap-2 rounded-[10px] border border-[var(--line)] bg-card py-10 text-sm text-[var(--ink-muted)]">
             <span className="size-4 animate-spin rounded-full border-2 border-[var(--line)] border-t-[var(--brand)]" />
             Laddar frågor…
           </div>
@@ -422,7 +422,7 @@ export function MiniLevelTest() {
         </p>
       ) : null}
 
-      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <p className="text-xs font-medium text-[var(--brand)]">
           Din uppskattade nivå
         </p>
@@ -434,7 +434,7 @@ export function MiniLevelTest() {
           ].map((box) => (
             <div
               key={box.label}
-              className="rounded-[10px] border border-[var(--line)] bg-card/70 px-4 py-4 text-center"
+              className="rounded-[10px] border border-[var(--line)] bg-card px-4 py-4 text-center"
             >
               <div className="font-[family-name:var(--font-display)] font-semibold text-3xl text-[var(--ink)]">
                 {box.value}
@@ -464,7 +464,7 @@ export function MiniLevelTest() {
             .map((s) => (
               <li
                 key={s.id}
-                className="rounded-[10px] border border-[var(--line)] bg-card/70 px-4 py-3"
+                className="rounded-[10px] border border-[var(--line)] bg-card px-4 py-3"
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <div className="min-w-0">
@@ -484,7 +484,7 @@ export function MiniLevelTest() {
         </ul>
       </section>
 
-      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Skapa din veckoplan
         </h2>

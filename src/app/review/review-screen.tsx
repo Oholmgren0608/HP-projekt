@@ -142,7 +142,7 @@ function Figure({ q }: { q: ReviewQuestion }) {
 function statusBadgeClass(status: string): string {
   if (status === "published") return "border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)] text-[var(--brand)]";
   if (status === "rejected") return "border-[var(--destructive)]/30 bg-[var(--coral-soft)] text-[var(--destructive)]";
-  return "border-[var(--line)] bg-card/70 text-[var(--ink-muted)]";
+  return "border-[var(--line)] bg-card text-[var(--ink-muted)]";
 }
 
 function kindLabel(kind: string): string {
@@ -426,7 +426,7 @@ export function ReviewScreen() {
             className={`rounded-lg border px-3 py-1.5 text-sm font-medium transition ${
               view === opt.id
                 ? "border-[var(--brand)] bg-[var(--brand)] text-primary-foreground"
-                : "border-[var(--line-strong)] bg-card/70 text-[var(--ink)] hover:bg-[var(--accent-soft)]"
+                : "border-[var(--line-strong)] bg-card text-[var(--ink)] hover:bg-[var(--accent-soft)]"
             }`}
           >
             {opt.label}
@@ -451,7 +451,7 @@ export function ReviewScreen() {
               className={`rounded-md border px-2.5 py-1 text-xs font-medium transition disabled:cursor-not-allowed disabled:opacity-40 ${
                 active
                   ? "border-[var(--brand)] bg-[var(--accent-soft)] text-[var(--brand)]"
-                  : "border-[var(--line-strong)] bg-card/70 text-[var(--ink)] hover:bg-[var(--accent-soft)]"
+                  : "border-[var(--line-strong)] bg-card text-[var(--ink)] hover:bg-[var(--accent-soft)]"
               }`}
             >
               {s.short} <span className="tabular-nums text-[var(--ink-muted)]">{count}</span>
@@ -473,7 +473,7 @@ export function ReviewScreen() {
       ) : null}
 
       {visibleGroups.length === 0 ? (
-        <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-10 text-center text-[var(--ink-muted)]">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-10 text-center text-[var(--ink-muted)]">
           Inga frågor att visa i den här vyn.
         </div>
       ) : (
@@ -562,7 +562,7 @@ function ExamGroup({
   }
 
   return (
-    <section className="overflow-hidden rounded-[10px] border border-[var(--line)] bg-card/70">
+    <section className="overflow-hidden rounded-[10px] border border-[var(--line)] bg-card">
       <div className="flex flex-wrap items-center gap-3 px-4 py-3 sm:px-5">
         <button
           type="button"
@@ -580,7 +580,7 @@ function ExamGroup({
         </button>
 
         <div className="flex flex-wrap items-center gap-1.5">
-          <span className="rounded-md border border-[var(--line)] bg-card/70 px-2 py-0.5 text-xs text-[var(--ink-muted)]">
+          <span className="rounded-md border border-[var(--line)] bg-card px-2 py-0.5 text-xs text-[var(--ink-muted)]">
             {draftCount} utkast
           </span>
           {rejectedCount > 0 ? (
@@ -749,7 +749,7 @@ function QuestionCard({
           {STATUS_LABEL[q.status] ?? q.status}
         </span>
         {isProvfraga(q) ? (
-          <span className="rounded-md border border-[var(--line)] bg-card/70 px-2 py-0.5 normal-case tracking-normal">
+          <span className="rounded-md border border-[var(--line)] bg-card px-2 py-0.5 normal-case tracking-normal">
             Förlaga – publiceras aldrig
           </span>
         ) : null}
@@ -838,7 +838,7 @@ function QuestionCard({
               className={`flex items-start gap-2 rounded-lg border px-3 py-2 text-sm ${
                 isCorrect
                   ? "border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)]"
-                  : "border-[var(--line)] bg-card/70"
+                  : "border-[var(--line)] bg-card"
               }`}
             >
               <span

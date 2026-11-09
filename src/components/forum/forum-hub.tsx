@@ -211,12 +211,12 @@ export function ForumHub() {
 
           {/* Diskussioner */}
           {loading ? (
-            <div className="flex items-center gap-2 rounded-[10px] border border-[var(--line)] bg-card/70 p-6 text-sm text-[var(--ink-muted)]">
+            <div className="flex items-center gap-2 rounded-[10px] border border-[var(--line)] bg-card p-6 text-sm text-[var(--ink-muted)]">
               <Loader2 size={16} className="animate-spin" aria-hidden />
               Hämtar diskussioner…
             </div>
           ) : threads.length === 0 ? (
-            <div className="space-y-2 rounded-[10px] border border-[var(--line)] bg-card/70 p-6">
+            <div className="space-y-2 rounded-[10px] border border-[var(--line)] bg-card p-6">
               <p className="font-medium text-[var(--ink)]">Inga diskussioner här än</p>
               <p className="text-sm text-[var(--ink-muted)]">
                 {query
@@ -301,7 +301,7 @@ export function ForumHub() {
             </section>
           ) : null}
 
-          <section className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5">
+          <section className="rounded-[10px] border border-[var(--line)] bg-card p-5">
             <h2 className="flex items-center gap-2 text-sm font-medium text-[var(--ink)]">
               <BadgeCheck size={16} className="text-[var(--brand)]" aria-hidden />
               Hjälpsamma medlemmar
@@ -355,7 +355,7 @@ function ThreadCard({ thread }: { thread: ForumThreadSummary }) {
     <li>
       <Link
         href={`/forum/fraga/${encodeURIComponent(thread.question_id)}`}
-        className="block rounded-[10px] border border-[var(--line)] bg-card/70 p-4 transition hover:border-[var(--brand)] hover:bg-card sm:p-5"
+        className="block rounded-[10px] border border-[var(--line)] bg-card p-4 transition hover:border-[var(--brand)] hover:bg-card sm:p-5"
       >
         <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
           <span className="rounded-md bg-[var(--accent-soft)] px-2 py-0.5 text-[var(--accent-foreground)]">

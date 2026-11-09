@@ -52,7 +52,7 @@ function QuestionReviewItem({
       <QuestionPassage
         passage={q.passage}
         className="mt-2"
-        textClassName="rounded-md border border-[var(--line)] bg-card/70 px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]"
+        textClassName="rounded-md border border-[var(--line)] bg-card px-3 py-2 text-sm leading-relaxed text-[var(--ink-soft)]"
       />
 
       <QuestionFigure question={q} position={index + 1} />
@@ -70,7 +70,7 @@ function QuestionReviewItem({
                   ? "border-[var(--success-ink)]/40 bg-card"
                   : isChosen
                     ? "border-[var(--destructive)]/30 bg-card"
-                    : "border-[var(--line)] bg-card/70"
+                    : "border-[var(--line)] bg-card"
               }`}
             >
               <span

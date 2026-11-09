@@ -187,7 +187,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
         className={cn(
           "space-y-3 text-left",
           !compact &&
-            "rounded-[10px] border border-[var(--line)] bg-card/80 p-6",
+            "rounded-[10px] border border-[var(--line)] bg-card p-6",
         )}
         aria-live="polite"
       >
@@ -233,7 +233,7 @@ export function AuthForms({ compact = false }: { compact?: boolean }) {
       className={cn(
         "space-y-3 text-left",
         !compact &&
-          "rounded-[10px] border border-[var(--line)] bg-card/80 p-6",
+          "rounded-[10px] border border-[var(--line)] bg-card p-6",
       )}
     >
       {mode === "signin" ? (

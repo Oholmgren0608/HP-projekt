@@ -108,7 +108,7 @@ export function PracticeHub() {
           <Link
             key={subtest.id}
             href={`/ova/${subtest.id}`}
-            className="group rounded-[10px] border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-[var(--accent-soft)] sm:p-6"
+            className="group rounded-[10px] border border-[var(--line-strong)] bg-card p-5 transition hover:border-[var(--brand)] hover:bg-[var(--accent-soft)] sm:p-6"
           >
             <div className="flex items-start justify-between gap-2">
               <div className="flex-1">
@@ -130,7 +130,7 @@ export function PracticeHub() {
         {/* Flashcards */}
         <Link
           href="/ova/flashcards"
-          className="rounded-[10px] border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card sm:p-6"
+          className="rounded-[10px] border border-[var(--line-strong)] bg-card p-5 transition hover:border-[var(--brand)] hover:bg-card sm:p-6"
         >
           <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             ORD-Flashcards
@@ -146,7 +146,7 @@ export function PracticeHub() {
         {/* Reading Library */}
         <Link
           href="/bibliotek"
-          className="rounded-[10px] border border-[var(--line-strong)] bg-card/70 p-5 transition hover:border-[var(--brand)] hover:bg-card sm:p-6"
+          className="rounded-[10px] border border-[var(--line-strong)] bg-card p-5 transition hover:border-[var(--brand)] hover:bg-card sm:p-6"
         >
           <h2 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-xl text-[var(--ink)]">
             Läsbibliotek

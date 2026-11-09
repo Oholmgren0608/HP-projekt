@@ -380,14 +380,14 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
     return (
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-64 animate-pulse rounded-[10px] bg-card/70" />
+        <div className="h-64 animate-pulse rounded-[10px] bg-card" />
       </div>
     );
   }
 
   if (phase === "error") {
     return (
-      <div className="mx-auto max-w-lg rounded-[10px] border border-[var(--line)] bg-card/80 p-8 text-center">
+      <div className="mx-auto max-w-lg rounded-[10px] border border-[var(--line)] bg-card p-8 text-center">
         <h1 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           Något gick fel
         </h1>
@@ -423,7 +423,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       />
 
       {phase === "playing" && current && q ? (
-        <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-5 sm:p-6">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
           <div className="flex items-center justify-between gap-3">
             <h1 className="text-sm font-normal tracking-normal text-[var(--ink-muted)]">
               Fråga {current.index + 1} av {total}
@@ -501,7 +501,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
       ) : null}
 
       {phase === "waiting" ? (
-        <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6 text-center">
+        <div className="rounded-[10px] border border-[var(--line)] bg-card p-6 text-center">
           <h1 className="mt-2 font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
             Väntar på motståndaren…
           </h1>
@@ -671,7 +671,7 @@ function MatchHeader({
   const opponentAhead = known && myCorrect < oppCorrect;
 
   return (
-    <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-5 sm:p-6">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
       <div className="flex items-center justify-between">
         <p className="text-xs font-medium text-[var(--brand)]">
           {duelModeLabel(mode)}
@@ -797,7 +797,7 @@ function ResultView({
         : "text-[var(--destructive)]";
 
   return (
-    <div className="rounded-[10px] border border-[var(--line)] bg-card/80 p-6 text-center">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card p-6 text-center">
       <h2 className={`mt-2 font-[family-name:var(--font-display)] text-3xl ${tone}`}>
         {title}
       </h2>

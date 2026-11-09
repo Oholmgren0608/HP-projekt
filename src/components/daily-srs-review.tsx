@@ -50,7 +50,7 @@ export function DailySrsReview() {
 
   if (cards.length === 0) {
     return (
-      <div className="rounded-[10px] border border-[var(--line)] bg-card/70 p-5 sm:p-6">
+      <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         <p className="text-xs font-medium text-[var(--ink-muted)]">
           Dagens repetition
         </p>
@@ -88,7 +88,7 @@ export function DailySrsReview() {
   }
 
   return (
-    <div className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+    <div className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="text-xs font-medium text-[var(--ink-muted)]">

@@ -34,7 +34,7 @@ function HubCard({
   );
   if (!href) {
     return (
-      <div className="rounded-xl border border-dashed border-[var(--line-strong)] bg-card/60 p-5" aria-disabled>
+      <div className="rounded-xl border border-dashed border-[var(--line-strong)] bg-card p-5" aria-disabled>
         {body}
       </div>
     );

@@ -60,7 +60,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
           </p>
         </div>
 
-        <div className="shrink-0 rounded-xl border border-[var(--line)] bg-card/80 px-4 py-3 text-center">
+        <div className="shrink-0 rounded-xl border border-[var(--line)] bg-card px-4 py-3 text-center">
           <p className="text-xs text-[var(--ink-muted)]">
             Rekommenderad tid
           </p>
@@ -83,7 +83,7 @@ function NoticeBody({ verdict }: { verdict: StudyTimeVerdict }) {
             <Link
               key={b.id}
               href={`/tips?section=${b.id}`}
-              className="rounded-md bg-card/80 px-3 py-1 text-xs font-medium text-[var(--ink)] ring-1 ring-[var(--line)] hover:ring-[var(--ink-soft)]"
+              className="rounded-md bg-card px-3 py-1 text-xs font-medium text-[var(--ink)] ring-1 ring-[var(--line)] hover:ring-[var(--ink-soft)]"
             >
               {sectionShort(b.id)} {b.percent} %
             </Link>

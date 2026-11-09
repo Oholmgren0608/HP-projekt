@@ -17,7 +17,7 @@ export function ResultsView() {
     return (
       <div className="space-y-8 sm:space-y-10">
         <div className="h-8 w-48 animate-pulse rounded-lg bg-[var(--mist)]" />
-        <div className="h-56 animate-pulse rounded-[10px] bg-card/70" />
+        <div className="h-56 animate-pulse rounded-[10px] bg-card" />
       </div>
     );
   }
@@ -31,7 +31,7 @@ export function ResultsView() {
         <p className="mt-3 max-w-2xl text-[var(--ink-muted)]">
           Fyll i norm och råpoäng per delprov. När du sparar byggs planen om.
         </p>
-        <p className="mt-3 rounded-lg border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
+        <p className="mt-3 rounded-lg border border-[var(--line)] bg-card px-4 py-3 text-sm text-[var(--ink-muted)]">
           Osäker på dina poäng?{" "}
           <Link
             href="/nivatest"
@@ -45,7 +45,7 @@ export function ResultsView() {
 
       <StudyTimeNotice />
 
-      <section className="rounded-[10px] border border-[var(--line)] bg-card/75 p-5 sm:p-6">
+      <section className="rounded-[10px] border border-[var(--line)] bg-card p-5 sm:p-6">
         {/* Utan plan säger sidrubriken redan "Mata in dina HP-resultat". */}
         <h2 className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
           {plan ? "Mata in dina HP-resultat" : "Dina poäng per delprov"}
@@ -92,7 +92,7 @@ function PlanBreakdown({ plan }: { plan: GeneratedPlan }) {
                   return (
                     <li
                       key={s.id}
-                      className="rounded-[10px] border border-[var(--line)] bg-card/70 px-4 py-3"
+                      className="rounded-[10px] border border-[var(--line)] bg-card px-4 py-3"
                     >
                       <div className="flex items-baseline justify-between gap-3">
                         <div>
@@ -123,7 +123,7 @@ function PlanBreakdown({ plan }: { plan: GeneratedPlan }) {
       subtitle="Så fördelas veckans tid mellan delproven."
     >
       {timeSplit.length === 0 ? (
-        <p className="rounded-xl border border-[var(--line)] bg-card/70 px-4 py-3 text-sm text-[var(--ink-muted)]">
+        <p className="rounded-xl border border-[var(--line)] bg-card px-4 py-3 text-sm text-[var(--ink-muted)]">
           Alla delprov ligger på samma nivå — ingen enskild del behöver extra
           tid. Fördela tiden jämnt över delarna.
         </p>
@@ -132,7 +132,7 @@ function PlanBreakdown({ plan }: { plan: GeneratedPlan }) {
           {timeSplit.map((t) => (
             <li
               key={t.label}
-              className="rounded-[10px] border border-[var(--line)] bg-card/70 px-3 py-4 text-center"
+              className="rounded-[10px] border border-[var(--line)] bg-card px-3 py-4 text-center"
             >
               <div className="font-[family-name:var(--font-display)] font-semibold text-2xl text-[var(--ink)]">
                 {t.pct}%
