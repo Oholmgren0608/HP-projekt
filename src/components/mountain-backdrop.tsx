@@ -77,7 +77,7 @@ const shade = (percent: number) => `color-mix(in oklab, var(--brand) ${percent}%
 
 /**
  * Vandraren snett bakifrån, på väg uppför stigen: ungefär 7,5 huvuden lång,
- * med jacka, ryggsäck (lock, ficka, höftbälte), byxor, kängor och två stavar.
+ * med jacka, ryggsäck (lock, ficka, höftbälte), byxor, vandringskängor och två stavar.
  * Ritad med fötterna i origo.
  */
 function Hiker() {
@@ -94,8 +94,8 @@ function Hiker() {
         d="M-22 -106 C -24 -88, -22 -70, -21 -60 C -20 -48, -21 -36, -17 -16 L -7 -16 C -7 -32, -6 -46, -5 -60 C -4 -74, -2 -88, 0 -96 C 2 -88, 6 -76, 9 -66 C 10 -54, 11 -44, 11 -34 L 21 -34 C 24 -48, 26 -58, 26 -68 C 26 -84, 24 -96, 22 -106 Z"
         style={ink}
       />
-      <path d="M-21 -18 C -21 -21, -18 -22, -12 -22 C -6 -22, -3 -21, -3 -18 L -2 -4 C -2 -1, -4 0, -7 0 L -17 0 C -20 0, -22 -1, -22 -4 Z" style={ink} />
-      <path d="M7 -37 C 7 -40, 10 -41, 16 -41 C 22 -41, 25 -40, 25 -37 L 26 -26 C 26 -23, 24 -22, 21 -22 L 11 -22 C 8 -22, 6 -23, 6 -26 Z" style={ink} />
+      <Boot transform="translate(-12 0) scale(1.15)" />
+      <Boot transform="translate(16 -22) scale(1.05)" />
       <path
         d="M-27 -191 C -18 -201, -9 -203, 0 -203 C 9 -203, 18 -201, 27 -191 C 27 -168, 25 -148, 21 -122 L 23 -100 L -23 -100 L -21 -122 C -25 -148, -27 -168, -27 -191 Z"
         style={{ fill: jacket }}
@@ -118,6 +118,35 @@ function Hiker() {
       <ellipse cx="3" cy="-220" rx="12.5" ry="14" style={ink} />
       <path d="M-10.5 -221 C -10.5 -234, -4 -239, 3 -239 C 10 -239, 16.5 -234, 16.5 -221 Z" className="fill-primary" />
       <rect x="-11.5" y="-225" width="29" height="6" rx="3" style={{ fill: shade(80) }} />
+    </g>
+  );
+}
+
+/**
+ * En vandringskänga snett bakifrån med tån i gångriktningen: högt skaft med
+ * vadderad krage och dragögla, snörning, gummitå och grov sula med klack.
+ * Ankelns mitt i origo, sulan mot y = 0.
+ */
+function Boot({ transform }: { transform: string }) {
+  const trim = { fill: shade(85) };
+  return (
+    <g transform={transform}>
+      <rect x="-1.5" y="-38" width="3" height="7" rx="1.5" style={trim} />
+      <path
+        d="M-8 -31 C -9.5 -24, -10 -16, -10.5 -11 C -10.8 -8.5, -10.5 -7, -10 -6 L 16 -6 C 17 -9, 15 -12, 12 -15 C 9.5 -18, 8.5 -23, 8.5 -31 Z"
+        style={{ fill: shade(60) }}
+      />
+      <g strokeWidth={1.4} strokeLinecap="round" style={{ stroke: shade(85) }}>
+        <path d="M6.5 -27 L9.8 -26" />
+        <path d="M7.3 -22.5 L10.6 -21.5" />
+        <path d="M8.6 -18 L11.9 -17" />
+      </g>
+      <rect x="-9" y="-34" width="18.5" height="5" rx="2.5" style={trim} />
+      <path d="M8 -6 C 9 -11, 12 -13, 14 -12 C 16 -10, 17 -8, 16 -6 Z" style={{ fill: "var(--ink)" }} />
+      <path
+        d="M-11 -6.5 L 17 -6.5 C 18.5 -6.5, 18.5 -3, 17.5 -1.5 L 16 0 L 13 1.6 L 10 0 L 7 1.6 L 4.5 0 L 3 0 L 2 -1.5 L 0 -1.5 L -1 0 L -3 1.6 L -6 0 L -9 1.6 C -11.5 1, -12 -6.5, -11 -6.5 Z"
+        style={{ fill: "var(--ink)" }}
+      />
     </g>
   );
 }
