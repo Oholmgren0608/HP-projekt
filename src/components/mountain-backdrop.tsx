@@ -1,6 +1,7 @@
 /**
- * Sidans bakgrund (Oscar, 2026-11-09): en vandrare snett bakifrån på en stig
- * uppför loggans berg, med kabinbanan ovanför. Ligger stilla längst ner bakom
+ * Sidans bakgrund (Oscar, 2026-11-09, glaciärer och moln 2026-11-10): en
+ * vandrare snett bakifrån på en stig uppför loggans berg, med glaciärer på
+ * topparna och moln på himlen. Ligger stilla längst ner bakom
  * innehållet, i dämpade toner av temats färger, så den följer ljust och mörkt
  * läge. Dekorativ och utan klick.
  */
@@ -28,21 +29,67 @@ const trailSegments = TRAIL.slice(0, -1).map((p1, i) => {
   return { d: `M${p1} C${c1} ${c2} ${p2}`, width: Math.round(34 * 0.78 ** i * 10) / 10 };
 });
 
+// Snötäcken på topparna i bergskedjan bakom (huvudberget täcker en del av dem).
+const FAR_GLACIERS = [
+  "M-508 546 L-470 520 L-434 546 L-446 542 L-456 552 L-468 540 L-482 552 L-494 542 Z",
+  "M293 550 L330 520 L373 551 L360 546 L350 556 L338 544 L322 556 L308 546 Z",
+  "M1374 476 L1390 450 L1423 476 L1412 472 L1402 482 L1394 470 L1384 480 Z",
+  "M1892 496 L1930 470 L1967 497 L1956 492 L1946 502 L1934 490 L1920 502 L1906 492 Z",
+];
+
+// Åskanten ovanför varje snötäcke i kedjan bakom.
+const FAR_RIDGES = ["M-512 549 L-470 520 L-430 549", "M289 553 L330 520 L377 554", "M1370 482 L1390 450 L1427 479", "M1888 499 L1930 470 L1971 500"];
+
+// Ett platt moln med rak undersida (bredd ca 240), och var molnen ligger på himlen.
+const CLOUD =
+  "M0 0 C-22 0 -30 -32 -6 -40 C-6 -68 30 -82 54 -66 C70 -98 124 -100 140 -64 C160 -80 196 -70 196 -44 C222 -46 236 -20 226 0 Z";
+const CLOUDS: ReadonlyArray<readonly [number, number, number]> = [
+  [-560, 170, 0.9], [300, 190, 1], [720, 96, 0.55], [1300, 140, 1.15], [1900, 210, 0.8],
+];
+
 const tint = (percent: number) => `color-mix(in oklab, var(--brand) ${percent}%, var(--paper))`;
 
 export function MountainBackdrop() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-x-0 bottom-[calc(4rem+env(safe-area-inset-bottom))] -z-10 h-[max(min(60vh,56.25vw),29vw)] opacity-55 md:bottom-0 md:left-60 dark:opacity-45 print:hidden"
+      className="pointer-events-none fixed inset-x-0 [--snow:#ffffff] dark:[--snow:color-mix(in_oklab,var(--brand)_42%,var(--paper))] bottom-[calc(4rem+env(safe-area-inset-bottom))] -z-10 h-[max(min(60vh,56.25vw),29vw)] opacity-55 md:bottom-0 md:left-60 dark:opacity-45 print:hidden"
     >
       {/* Scenen är bredare än den syns, så att den bara beskärs i sidled: bergstoppen ryms alltid. */}
       <svg viewBox="-800 0 3200 900" preserveAspectRatio="xMidYMax slice" focusable="false" className="size-full">
+        <g style={{ fill: tint(14) }}>
+          {CLOUDS.map(([x, y, scale]) => (
+            <path key={`${x} ${y}`} d={CLOUD} transform={`translate(${x} ${y}) scale(${scale})`} />
+          ))}
+        </g>
         <path
           d="M-800 640 L-690 580 L-600 610 L-470 520 L-360 600 L-250 560 L-130 610 L0 650 L120 570 L210 618 L330 520 L430 590 L520 556 L620 620 L1300 600 L1390 450 L1470 512 L1540 466 L1600 520 L1700 480 L1800 560 L1930 470 L2040 548 L2160 500 L2280 580 L2400 540 V900 H-800 Z"
           style={{ fill: tint(10) }}
         />
+        <g style={{ fill: "var(--snow)" }}>
+          {FAR_GLACIERS.map((d) => (
+            <path key={d} d={d} />
+          ))}
+        </g>
+        <g fill="none" strokeWidth={5} style={{ stroke: tint(10) }}>
+          {FAR_RIDGES.map((d) => (
+            <path key={d} d={d} />
+          ))}
+        </g>
         <path d={MOUNTAIN_PATH} style={{ fill: tint(22) }} />
+        {/* Glaciärerna på loggans berg: toppen med en isström nedåt, och den lägre toppen till höger. */}
+        <g style={{ fill: "var(--snow)" }}>
+          <path d="M935 320 L1050 200 L1120 305 L1104 330 L1092 318 L1080 360 L1068 420 L1056 400 L1046 350 L1030 372 L1012 342 L990 358 L972 330 L952 340 Z" />
+          <path d="M1170 300 L1204 266 L1243 305 L1232 312 L1222 300 L1212 322 L1198 306 L1186 316 Z" />
+        </g>
+        {/* Åskanten i bergets ton, så att snötopparna har en kontur även mot ljus himmel. */}
+        <path
+          d="M930 326 L1050 200 L1138 332 L1204 266 L1248 310"
+          fill="none"
+          strokeWidth={6}
+          strokeLinejoin="miter"
+          style={{ stroke: tint(22) }}
+        />
         <path
           d="M-800 800 C -500 780, -200 790, 0 812 C 300 772, 560 780, 760 806 C 1000 838, 1300 826, 1600 786 C 1900 760, 2200 790, 2400 800 V900 H-800 Z"
           style={{ fill: tint(34) }}
@@ -51,21 +98,6 @@ export function MountainBackdrop() {
           {trailSegments.map((s) => (
             <path key={s.d} d={s.d} strokeWidth={s.width} />
           ))}
-        </g>
-        {/* Linan från dalstationen upp till toppstationen strax under toppen, med en mast på vägen. */}
-        <path d="M-600 760 L1003 238" strokeWidth={3} style={{ stroke: tint(70) }} />
-        <rect x="-622" y="752" width="44" height="30" rx="3" style={{ fill: tint(55) }} />
-        <g strokeWidth={4} strokeLinecap="round" style={{ stroke: tint(55) }}>
-          <path d="M820 452 L824 300" />
-          <path d="M804 306 L844 293" />
-          <path d="M810 452 L838 452" />
-        </g>
-        <rect x="986" y="236" width="34" height="24" rx="3" style={{ fill: tint(55) }} />
-        {/* Kabinen, ovanför vandraren. */}
-        <g transform="translate(600 365)">
-          <path d="M12 0 v18" strokeWidth={4} strokeLinecap="round" className="stroke-primary" />
-          <rect x="-22" y="16" width="68" height="60" rx="14" className="fill-primary" />
-          <rect x="-13" y="26" width="50" height="20" rx="6" style={{ fill: "var(--paper)" }} />
         </g>
         <Hiker />
       </svg>

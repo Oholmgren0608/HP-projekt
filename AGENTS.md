@@ -107,14 +107,15 @@ If a task seems to need one of these, stop and ask.
 ## 7. Design system "Lugn"
 Full reference: `DESIGN.md` (tokens, components, rules) with its sidecar `.impeccable/design.json`; product context in `PRODUCT.md`.
 - Flat surfaces, no heavy shadows or gradients. One exception (Oscar, 2026-11-09): the muted background scene (hiker on the logo's
-  mountain, cable car above) fixed at the bottom behind the content, `MountainBackdrop` in `src/components/mountain-backdrop.tsx`.
+  mountain, glaciers and clouds) fixed at the bottom behind the content, `MountainBackdrop` in `src/components/mountain-backdrop.tsx`.
   Because of it, cards use opaque `bg-card`, never a translucent `bg-card/70`.
 - One accent colour: blue `--brand` (`#2b4c7e` light, `#8da9d6` dark) in `src/app/globals.css`. Tailwind token: `primary`
   (`bg-primary`, `text-primary`; `ring` and `chart-1` also point to `--brand`); components also use `[var(--brand)]` directly.
   The shadcn `accent` token is only the pale tint `--accent-soft`, not the accent colour.
 - Green and red are used **only** for right and wrong answers — never for buttons, badges or decoration. One exception (Oscar, 2026-11-06): the veckoplan's priority badges ("Kritiskt" red, "Styrka" green).
 - Font: IBM Plex Sans.
-- Logo: a cable-car cabin on its way up above a mountain, on a Skymningsblå square (Oscar, 2026-11-08). In the app it is
+- Logo: a hiker with backpack and pole walking up a mountain with a glacier, on a Skymningsblå square (Oscar, 2026-11-10;
+  it replaced the cable car from 2026-11-08). In the app it is
   `LogoMark` (`src/components/logo-mark.tsx`); favicon and app icons are `src/app/icon.svg`, `favicon.ico` and `apple-icon.png`.
   Files and rules in `docs/logga/`.
 - Sidebar on desktop, tab bar on mobile.

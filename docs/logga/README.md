@@ -5,8 +5,9 @@
   <img src="hp-lift-logga.svg" alt="HP Lift" height="64">
 </picture>
 
-En kabin på väg uppåt över ett berg, i en Skymningsblå ruta. Kabinen är "lyftet" i HP Lift, och
-linan pekar samma håll som poängen ska gå: uppåt. Bestämd av Oscar 2026-11-08.
+En vandrare med ryggsäck och stav på väg uppför ett berg med glaciär, i en Skymningsblå ruta. Vandraren
+går åt samma håll som poängen ska: uppåt. Bestämd av Oscar 2026-11-10 (ersatte kabinbanan från 2026-11-08).
+Samma berg och samma vandrare finns i sidans bakgrund (`src/components/mountain-backdrop.tsx`).
 
 ## Filer
 
@@ -15,7 +16,7 @@ linan pekar samma håll som poängen ska gå: uppåt. Bestämd av Oscar 2026-11-
 | `hp-lift-logga.svg` | Ordbilden (märke + "HP Lift") på ljus bakgrund |
 | `hp-lift-logga-mork.svg` | Ordbilden på mörk bakgrund |
 | `hp-lift-symbol.svg`, `hp-lift-symbol-mork.svg` | Bara märket, från 20 px och uppåt |
-| `hp-lift-symbol-liten.svg` | Förenklat märke under 20 px (större kabin, tjockare lina). Samma som `src/app/icon.svg` |
+| `hp-lift-symbol-liten.svg` | Förenklat märke under 20 px (större vandrare, ingen glaciär). Samma som `src/app/icon.svg` |
 | `hp-lift-app-ikon.svg`, `hp-lift-app-ikon-1024.png` | App-ikon utan rundade hörn (iOS och appbutiker rundar själva), t.ex. för Capacitor-appen |
 
 I appen ritas märket av `LogoMark` (`src/components/logo-mark.tsx`) i sidomenyn och i mobilens toppfält.
@@ -25,13 +26,13 @@ Det tar färgerna från temat, så det följer ljust och mörkt läge. Webbläsa
 ## Regler
 
 - **Färger:** ljust läge Skymningsblå `#2b4c7e` med vitt, mörkt läge `#8da9d6` med `#10161f`. Berget är
-  samma färg som kabinen med 30 % täckning. Inga andra färger, inga övertoningar och inga skuggor
+  samma färg som vandraren med 30 % täckning och glaciären med 85 %. Inga andra färger, inga övertoningar och inga skuggor
   (Lugn). Grönt och rött används aldrig i loggan.
 - **Text:** "HP Lift" i IBM Plex Sans SemiBold (600). I SVG-filerna är texten konturer, så de ser likadana
   ut utan typsnittet. Proportioner som i appen: märke 28 px, text 16 px, 10 px mellanrum.
 - **Storlek:** huvudmärket från 20 px. Mindre än så används det förenklade märket.
 - **Frizon:** minst en fjärdedel av märkets höjd fritt runt loggan.
-- **Ändra inte:** sträck, rotera, färga om eller lägg loggan på en rörig bild. Kabinen hänger alltid lodrätt.
+- **Ändra inte:** sträck, rotera, färga om eller lägg loggan på en rörig bild. Vandraren går alltid åt höger, uppför.
 
 ## Ändra loggan
 

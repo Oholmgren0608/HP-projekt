@@ -55,10 +55,11 @@ Confirmed differentiators against hpguiden, HP-appen and similar:
 ## Brand Commitments
 
 - Name: **HP Lift**. UI language Swedish.
-- Logo (Oscar, 2026-11-08): a cable-car cabin on its way up above a mountain, white on a Skymningsblå square, next to
+- Logo (Oscar, 2026-11-10, replacing the cable car from 2026-11-08): a hiker walking up a mountain with a glacier, white
+  on a Skymningsblå square, next to
   "HP Lift" in IBM Plex Sans SemiBold. Files and rules in `docs/logga/`.
-- Background scene (Oscar, 2026-11-09): a hiker seen from behind on a trail up the logo's mountain, with the cable car
-  above, muted at the bottom of every page.
+- Background scene (Oscar, 2026-11-09; glaciers and clouds, no cable car, 2026-11-10): a hiker seen from behind on a
+  trail up the logo's mountain, muted at the bottom of every page.
 - Voice: calm and matter-of-fact ("lugn och saklig", confirmed 2026-11-06). Direct, no guilt or hype, e.g. "Veckan har
   krympt så att dagarna inte blir för tunga".
 - The existing visual system is "Lugn" (`.superdesign/design-system.md`, AGENTS.md §7); green and red mean right and

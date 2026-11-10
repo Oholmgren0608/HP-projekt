@@ -160,7 +160,7 @@ A warm paper-and-ink neutral scale with a single dusky blue; colour carries mean
 - **Bläck** (`--ink`): primary text and headings.
 - **Mjukt bläck** (`--ink-soft`): secondary body text and inactive nav labels.
 - **Dämpat bläck** (`--ink-muted`): meta text, captions, icons at rest.
-- **Papper** (`--paper`): the page background, flat. The one exception (Oscar, 2026-11-09): a muted scene fixed at the bottom of the window behind the content, a hiker seen from behind on a trail up the logo's mountain with the cable car above (`MountainBackdrop` in `src/components/mountain-backdrop.tsx`). It uses only tints of Skymningsblå and ink at reduced opacity, and cards must be opaque `bg-card` so text never sits on the scene.
+- **Papper** (`--paper`): the page background, flat. The one exception (Oscar, 2026-11-09): a muted scene fixed at the bottom of the window behind the content, a hiker seen from behind on a trail up the logo's mountain, with glaciers on the peaks and clouds in the sky (`MountainBackdrop` in `src/components/mountain-backdrop.tsx`). It uses only tints of Skymningsblå and ink at reduced opacity (the snow is `--snow`, set on the scene: white in light mode, a pale blue-grey in dark mode), and cards must be opaque `bg-card` so text never sits on the scene.
 - **Yta** (`--card`): cards, panels, inputs, popovers, sidebar and tab bar.
 - **Dimma** (`--mist`): hover rows, progress tracks, chips, subtle fills.
 - **Linje** (`--line`): 1px hairline borders and dividers.
@@ -222,7 +222,7 @@ Lugn is flat. Depth comes from tone (Papper behind, Yta in front) and 1px hairli
 
 ## Shapes
 
-Gently rounded, never pill-shaped. Small controls (chips, nav items, icon buttons) use 6–8px; buttons and inputs 8–10px; cards and panels 10px; menus and popovers 10px; dialogs 12px. `rounded-full` is reserved for avatars, status dots, progress bars, switches and the A–E answer letters. The wordmark's mark is a 28px Skymningsblå square with a 6px radius holding a cable-car cabin on its way up above a mountain: cabin, cable and hanger in `primary-foreground`, the mountain in the same colour at 30% opacity (`LogoMark` in `src/components/logo-mark.tsx`). Files, the simplified favicon version and the rules are in `docs/logga/`.
+Gently rounded, never pill-shaped. Small controls (chips, nav items, icon buttons) use 6–8px; buttons and inputs 8–10px; cards and panels 10px; menus and popovers 10px; dialogs 12px. `rounded-full` is reserved for avatars, status dots, progress bars, switches and the A–E answer letters. The wordmark's mark is a 28px Skymningsblå square with a 6px radius holding a hiker with backpack and pole walking up a mountain: the hiker in `primary-foreground`, the mountain in the same colour at 30% opacity with its glacier at 85% (`LogoMark` in `src/components/logo-mark.tsx`). Files, the simplified favicon version and the rules are in `docs/logga/`.
 
 ## Components
 

@@ -3,9 +3,17 @@
   <defs><clipPath id="hp-lift-ruta"><rect width="64" height="64" rx="14"/></clipPath></defs>
   <g clip-path="url(#hp-lift-ruta)">
     <rect width="64" height="64" fill="#2b4c7e"/>
-    <g opacity=".3"><path d="M-6 70V58l10-6 5 4 9-9 4 4 16-17 5 7 3-3 18 16V70z" fill="#ffffff"/></g>
-    <g stroke="#ffffff" stroke-width="4.5" stroke-linecap="round"><path d="M-4 31 68 3"/><path d="M32 18v6"/></g>
-    <rect x="15" y="23" width="34" height="29" rx="7" fill="#ffffff"/>
-    <rect x="20" y="28" width="24" height="10" rx="3" fill="#2b4c7e"/>
+    <g opacity=".3"><path d="M-6 70V50l7-4 6 5 6-8 5 4 25-26 4 6 3-3 16 18V70z" fill="#ffffff"/></g>
+    <g transform="translate(25 61) scale(1.85)" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M-0.5 -13 L-5 -0.8" stroke-width="3.2"/>
+      <path d="M0.6 -13 L5 -8.2 L5.2 -3.6" stroke-width="3.2"/>
+      <path d="M-6 -0.6 h3.6" stroke-width="2.2"/>
+      <path d="M4.6 -3.4 h3.4" stroke-width="2.2"/>
+      <path d="M0 -13.5 L3 -22.5" stroke-width="5.2"/>
+      <path d="M7.6 -17 L10.8 -3" stroke-width="1.1"/>
+      <path d="M3.4 -21.5 L7.6 -16.6" stroke-width="2.2"/>
+      <rect x="-6.4" y="-25.2" width="6.2" height="11.6" rx="2.2" transform="rotate(18 -3.3 -19.4)" fill="#ffffff" stroke="none"/>
+      <circle cx="4.6" cy="-26.6" r="2.9" fill="#ffffff" stroke="none"/>
+    </g>
   </g>
 </svg>
