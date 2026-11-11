@@ -27,13 +27,16 @@ export function QuestionFigure({
   if (question.figureUrl.startsWith("/uhr/")) {
     return (
       <figure className="my-3">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={question.figureUrl}
-          alt={alt}
-          loading="lazy"
-          className="h-auto w-auto max-w-full rounded-lg border border-[var(--line)] bg-white dark:brightness-[0.92]"
-        />
+        {/* Ett tryck på bilden öppnar den i full storlek, där den går att zooma på mobilen. */}
+        <a href={question.figureUrl} target="_blank" rel="noopener" aria-label={`${alt}, öppna i full storlek`}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={question.figureUrl}
+            alt={alt}
+            loading="lazy"
+            className="h-auto w-auto max-w-full rounded-lg border border-[var(--line)] bg-white dark:brightness-[0.92]"
+          />
+        </a>
         <figcaption className="mt-1 text-xs">
           <a
             href={question.figureUrl}
