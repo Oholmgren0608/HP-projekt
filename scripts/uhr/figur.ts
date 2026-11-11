@@ -66,7 +66,7 @@ function dtkBox(page: PageBox): Box {
   return [0.05, top / page.height, 0.95, bottom / page.height];
 }
 
-async function cropBox(file: string, box: Box): Promise<Buffer> {
+async function cropBox(file: string, box: Box, trim = true): Promise<Buffer> {
   const img = sharp(file);
   const { width = 0, height = 0 } = await img.metadata();
   const [x0, y0, x1, y1] = box.map((v) => Math.min(1, Math.max(0, v))) as Box;
@@ -80,6 +80,7 @@ async function cropBox(file: string, box: Box): Promise<Buffer> {
     height: Math.max(1, Math.round(y1 * height) - top),
   };
   const cut = await sharp(file).extract(region).png().toBuffer();
+  if (!trim) return cut;
   // Bara vita kanter tas bort; en helt vit ruta (fel box) lämnas som den är.
   try {
     return await sharp(cut).trim({ background: "#ffffff", threshold: 20 }).png().toBuffer();
@@ -156,7 +157,8 @@ async function zoom(input: string[]) {
   if (box.length !== 4 || box.some((n) => Number.isNaN(n))) throw new Error("Ange sida och x0 y0 x1 y1.");
   const file = hiResPage(examId, passNumber, Number(pageArg), dpi);
   const out = join(WORK_DIR, key, "zoom.png");
-  await sharp(await rotated(await cropBox(file, box), rotate)).toFile(out);
+  // Ingen kantborttagning: bildens pixlar motsvarar exakt boxen, så att man kan mäta i den.
+  await sharp(await rotated(await cropBox(file, box, false), rotate)).toFile(out);
   console.log(out);
 }
 

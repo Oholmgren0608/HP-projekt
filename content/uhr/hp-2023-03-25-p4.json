@@ -1,0 +1,770 @@
+{
+  "examId": "hp-2023-03-25",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "5(x − 4) = 2(8 + x)",
+      "options": [
+        "4/3",
+        "5",
+        "36/7",
+        "12"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera in parenteserna: 5x − 20 = 16 + 2x. Dra bort 2x och lägg till 20 i båda leden: 3x = 36, alltså x = 12. Kontroll: 5(12 − 4) = 5 · 8 = 40 och 2(8 + 12) = 2 · 20 = 40. Svaret 36/7 får man om man flyttar över 2x med fel tecken och får 7x = 36.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "En av färgerna förekommer på exakt 18 % av kulorna, vilken?",
+      "passage": "Sixten har en påse med enfärgade kulor i fem olika färger: blå, grön, röd, svart och vit. Antalet kulor av varje färg visas i tabellen:",
+      "options": [
+        "grön",
+        "röd",
+        "svart",
+        "vit"
+      ],
+      "blindAnswer": 3,
+      "explain": "Lägg ihop antalen i tabellen: 50 + 63 + 36 + 56 + 45 = 250 kulor. 18 % av 250 är 0,18 · 250 = 45. Det är vit som har 45 kulor. Kontroll: 45/250 = 18/100 = 18 %.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.24,
+          0.548,
+          0.37,
+          0.652
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket x² − 6x + 5?",
+      "options": [
+        "(x − 2)(x − 3)",
+        "(x − 1)(x − 5)",
+        "(x + 3)(x − 2)",
+        "(x + 5)(x − 1)"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sök två tal vars produkt är 5 och vars summa är −6: det är −1 och −5. Alltså är x² − 6x + 5 = (x − 1)(x − 5). Kontroll: (x − 1)(x − 5) = x² − 5x − x + 5 = x² − 6x + 5. De andra ger x² − 5x + 6, x² + x − 6 och x² + 4x − 5 när man multiplicerar ut dem.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln x?",
+      "passage": "ABCDE är en regelbunden femhörning med vinkelsumman 540°.",
+      "options": [
+        "36°",
+        "45°",
+        "54°",
+        "72°"
+      ],
+      "blindAnswer": 0,
+      "explain": "I en regelbunden femhörning är alla vinklar lika stora, 540°/5 = 108°. Vinkeln x ligger i triangeln som bildas av sidan EA och förlängningarna av sidorna DE och BA. Triangelns vinkel vid E är 180° − 108° = 72°, eftersom den och femhörningens vinkel vid E tillsammans bildar en rät linje. På samma sätt är vinkeln vid A 180° − 108° = 72°. Vinkelsumman i triangeln är 180°, så x = 180° − 72° − 72° = 36°.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.22,
+          0.548,
+          0.6,
+          0.715
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är (1/2 + 2/5)(1/2 − 2/5)?",
+      "options": [
+        "1/7",
+        "1/10",
+        "3/100",
+        "9/100"
+      ],
+      "blindAnswer": 3,
+      "explain": "Skriv bråken med nämnaren 10: 1/2 + 2/5 = 5/10 + 4/10 = 9/10 och 1/2 − 2/5 = 5/10 − 4/10 = 1/10. Produkten är 9/10 · 1/10 = 9/100. Kontroll med konjugatregeln: (1/2)² − (2/5)² = 1/4 − 4/25 = 25/100 − 16/100 = 9/100.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är med säkerhet korrekt?",
+      "passage": "xy + k = k\ny ≠ 0",
+      "options": [
+        "x > y",
+        "x = 0",
+        "x − y = 0",
+        "xy = −1"
+      ],
+      "blindAnswer": 1,
+      "explain": "Dra bort k från båda leden i xy + k = k, så får du xy = 0. En produkt är 0 bara om någon av faktorerna är 0, och eftersom y ≠ 0 måste x = 0. De andra alternativen behöver inte gälla: med x = 0 och y = 2 är x > y falskt, x − y = −2 och xy = 0, inte −1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ ligger närmast värdet av x?",
+      "options": [
+        "13",
+        "14",
+        "17",
+        "18"
+      ],
+      "blindAnswer": 0,
+      "explain": "Triangeln är rätvinklig med kateterna 7 cm och 11 cm, och x är hypotenusan. Pythagoras sats ger x² = 7² + 11² = 49 + 121 = 170, så x = √170. Eftersom 13² = 169 och 14² = 196 ligger √170 strax över 13, och närmast är 13. Svaret 18 lockar om man adderar kateterna, 7 + 11, men hypotenusan är alltid kortare än summan av kateterna.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.22,
+          0.138,
+          0.5,
+          0.268
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är en ekvation för en linje som går genom punkten (5, 13)?",
+      "options": [
+        "y = −5x + 12",
+        "y = −3x + 25",
+        "y = 3x − 2",
+        "y = 5x − 13"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sätt in x = 5 i varje ekvation och se vilken som ger y = 13. y = −5x + 12 ger −25 + 12 = −13. y = −3x + 25 ger −15 + 25 = 10. y = 3x − 2 ger 15 − 2 = 13. y = 5x − 13 ger 25 − 13 = 12. Bara y = 3x − 2 går genom (5, 13); den första ger rätt siffror men fel tecken.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "För de tre positiva heltalen x, y och z gäller att x < y < z. Medelvärdet av talen är 7 och medianen är 9. Vilket är det största möjliga värdet på x?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet 7 betyder att x + y + z = 3 · 7 = 21. Medianen är det mittersta talet, alltså y = 9, och då är x + z = 21 − 9 = 12. Eftersom z > 9 och z är ett heltal är z minst 10, så x är högst 12 − 10 = 2. Talen 2, 9 och 10 uppfyller alla villkor: 2 < 9 < 10 och summan är 21.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Eva har en tunna som är fylld till en femtedel med vatten. Eva vattnar sin trädgård och fyller sin vattenkanna från tunnan. Vattenkannan rymmer 5 liter och då Eva vattnar använder hon tre fulla kannor. När Eva har vattnat klart är tunnan fylld till en åttondel. Vilken volym har tunnan?",
+      "options": [
+        "45 liter",
+        "120 liter",
+        "200 liter",
+        "225 liter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla tunnans volym V liter. Eva tar 3 · 5 = 15 liter, och då minskar vattnet från en femtedel till en åttondel av tunnan: V/5 − 15 = V/8. Det ger V/5 − V/8 = 15, alltså 8V/40 − 5V/40 = 3V/40 = 15 och V = 15 · 40/3 = 200 liter. Kontroll: 200/5 = 40 liter, 40 − 15 = 25 liter och 200/8 = 25 liter.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är g(2)?",
+      "passage": "f(x) = x/5 − 1\ng(x) = 5 · f(x) + 4",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "14"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna först f(2) = 2/5 − 1 = −3/5. Då är g(2) = 5 · (−3/5) + 4 = −3 + 4 = 1. Man kan också förenkla g först: g(x) = 5(x/5 − 1) + 4 = x − 5 + 4 = x − 1, så g(2) = 1. Svaret 14 får man om man sätter in 2 i stället för f(2): 5 · 2 + 4 = 14.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 2²(5 + 7)²?",
+      "options": [
+        "24²",
+        "10² + 14²",
+        "24⁴",
+        "10⁴ + 14⁴"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd att a² · b² = (ab)²: 2²(5 + 7)² = 2² · 12² = (2 · 12)² = 24². Kontroll: 4 · 144 = 576 och 24² = 576. Alternativet 10² + 14² lockar om man multiplicerar in 2 i parentesen och sedan kvadrerar varje term för sig, men 10² + 14² = 100 + 196 = 296.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 83 − 9x\nKvantitet I: Värdet av x då f(x) är lika med noll\nKvantitet II: 9,5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "f(x) = 0 ger 83 − 9x = 0, alltså 9x = 83 och x = 83/9. Eftersom 9 · 9 = 81 är 83/9 = 9 + 2/9 ≈ 9,22, vilket är mindre än 9,5. Kontroll: 9 · 9,5 = 85,5, och det är mer än 83. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/2 · 3/4\nKvantitet II: (1/2)/(3/4)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvantitet I: 1/2 · 3/4 = 3/8 = 0,375. Kvantitet II: att dela med 3/4 är detsamma som att multiplicera med 4/3, så (1/2)/(3/4) = 1/2 · 4/3 = 4/6 = 2/3 ≈ 0,67. Kvantitet II är större. Utan räkning: I är 1/2 gånger ett tal mindre än 1 och alltså mindre än 1/2, medan II är 1/2 delat med ett tal mindre än 1 och alltså större än 1/2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Hampus har sju mynt. Vart och ett av mynten är antingen en femkrona eller en tiokrona. Hampus vill köpa en leksak som kostar 105 kronor. För att kunna köpa leksaken lånar han mellanskillnaden av sin mamma.\nKvantitet I: Beloppet som Hampus lånar av sin mamma\nKvantitet II: 60 kronor",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Vi vet inte hur många av de sju mynten som är femkronor. Har Hampus sex femkronor och en tiokrona har han 6 · 5 + 10 = 40 kronor och lånar 105 − 40 = 65 kronor, alltså mer än 60 kronor. Har han en femkrona och sex tiokronor har han 5 + 60 = 65 kronor och lånar 105 − 65 = 40 kronor, alltså mindre än 60 kronor. Båda fallen stämmer med informationen, så den är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (3x − 1)/4\nKvantitet II: 0,75x − 0,25",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dela upp bråket i kvantitet I: (3x − 1)/4 = 3x/4 − 1/4 = 0,75x − 0,25. Det är exakt kvantitet II, så kvantiteterna är lika för alla värden på x. Att x är okänt gör alltså inte informationen otillräcklig. Kontroll med x = 5: (15 − 1)/4 = 3,5 och 3,75 − 0,25 = 3,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En vanlig sexsidig tärning kastas slumpmässigt fem gånger.\nKvantitet I: Medianen av de fem utfallen\nKvantitet II: Det näst största värdet av de fem utfallen",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Ordna utfallen i storleksordning. Medianen är det tredje talet och det näst största värdet är det fjärde, så kvantitet II kan aldrig vara mindre än kvantitet I. Men de kan vara lika: utfallen 2, 3, 4, 4 och 6 ger medianen 4 och det näst största värdet 4. Utfallen 1, 2, 3, 4 och 5 ger i stället medianen 3 och det näst största värdet 4. Kvantiteterna kan alltså vara lika eller II större, och informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 4\nKvantitet I: √x\nKvantitet II: x/2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Pröva några värden: x = 9 ger √9 = 3 och 9/2 = 4,5, och x = 16 ger √16 = 4 och 16/2 = 8. Allmänt gäller x/2 = √x · √x/2. När x > 4 är √x > 2, så √x/2 > 1 och därmed x/2 > √x. Kvantiteterna är lika bara när x = 4 (√4 = 2 = 4/2), och det är uteslutet. Kvantitet II är större för alla x > 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 75 % av arean av en cirkel med radien 4 cm\nKvantitet II: Arean av en cirkel med radien 3 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Cirkeln med radien 4 cm har arean π · 4² = 16π cm², och 75 % av den är 0,75 · 16π = 12π cm². Cirkeln med radien 3 cm har arean π · 3² = 9π cm². Eftersom 12π > 9π är kvantitet I större. Den som jämför radierna i stället för areorna (75 % av 4 cm är 3 cm) tror lätt att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "2ˣ⁻¹ = 32\nKvantitet I: x\nKvantitet II: 5 · x⁰",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "32 = 2⁵, så 2ˣ⁻¹ = 2⁵ ger x − 1 = 5 och x = 6. Ett tal skilt från 0 upphöjt till 0 är 1, så kvantitet II är 5 · 6⁰ = 5 · 1 = 5. Kvantitet I är 6 och alltså större. Den som glömmer −1 i exponenten får x = 5 och tror att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x är 75 procent av 80.\n8 är y procent av 12.\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "x = 0,75 · 80 = 60. Andelen 8 av 12 är 8/12 = 2/3 ≈ 0,667, alltså cirka 66,7 procent, så y ≈ 66,7. Eftersom 66,7 > 60 är kvantitet II större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: y\nKvantitet II: z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Båda trianglarna är rätvinkliga, så Pythagoras sats ger hypotenusorna. y² = (3x)² + (3x)² = 9x² + 9x² = 18x² och z² = (2x)² + (4x)² = 4x² + 16x² = 20x². Eftersom x är en sträcka är x > 0, och då är 20x² > 18x², alltså z > y. Kateterna har summan 6x i båda trianglarna, vilket kan locka till att tro att hypotenusorna är lika.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.205,
+          0.515,
+          0.53,
+          0.612
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en badplats finns det 70 personer: barn och vuxna. Var och en av personerna på badplatsen är antingen i vattnet eller på land. Hur många barn är i vattnet?\n(1) Antalet barn på land är lika med antalet vuxna i vattnet.\n(2) Antalet vuxna på badplatsen är lika med antalet personer på land.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Kalla antalet barn i vattnet a, barn på land b, vuxna i vattnet c och vuxna på land d, där a + b + c + d = 70.\n(1) ger b = c och alltså a + 2b + d = 70. Både a = 10, b = c = 20, d = 20 och a = 30, b = c = 10, d = 20 stämmer. Inte tillräckligt.\n(2) De vuxna är c + d och personerna på land är b + d. Att de är lika betyder c = b, alltså samma sak som (1). Inte tillräckligt.\n(1) och (2) tillsammans säger inte mer än (1) ensamt, och exemplen ovan visar att antalet barn i vattnet kan vara både 10 och 30. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En antilop, en giraff och en zebra står på rad vid ett vattenhål. Vilket av de tre djuren står i mitten?\n(1) Både giraffen och antilopen står till vänster om zebran.\n(2) Både zebran och antilopen står till höger om giraffen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Zebran står längst till höger, men giraffen och antilopen kan stå i vilken ordning som helst till vänster om den. Inte tillräckligt.\n(2) Giraffen står längst till vänster, men zebran och antilopen kan stå i vilken ordning som helst till höger om den. Inte tillräckligt.\n(1) och (2) tillsammans: giraffen står längst till vänster och zebran längst till höger, så antilopen står i mitten. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en klass finns det x elever, där 25 < x < 60. Hur många elever finns det i klassen?\n(1) Om eleverna delas in i grupper om 5 blir det 4 elever över.\n(2) Eleverna kan delas in i grupper om 9.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Antalet är 4 mer än en multipel av 5: 29, 34, 39, 44, 49, 54 eller 59. Inte tillräckligt.\n(2) Antalet är delbart med 9: 27, 36, 45 eller 54. Inte tillräckligt.\n(1) och (2) tillsammans: av talen 27, 36, 45 och 54 är det bara 54 som ger resten 4 vid division med 5 (54 = 10 · 5 + 4). Klassen har 54 elever. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tre skattkistor är märkta A, B respektive C. En av kistorna är tom, en innehåller en liten skatt och en innehåller en stor skatt. I vilken kista finns den stora skatten?\n(1) Kista B är inte tom. Den stora skatten finns inte i kista A.\n(2) Kista C är tom. Den lilla skatten finns inte i kista B.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Den stora skatten finns inte i A, så den finns i B eller C. Båda går: A tom, B liten skatt och C stor skatt, eller A tom, B stor skatt och C liten skatt. Inte tillräckligt.\n(2) Kista C är tom, så skatterna ligger i A och B. Den lilla skatten finns inte i B, så den ligger i A, och den stora skatten finns i B. Tillräckligt.\n(2) räcker alltså ensamt, men inte (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur många syskon har Alice?\n(1) Alice har dubbelt så många systrar som bröder.\n(2) Om Alice hade haft 3 syskon färre så skulle hon ha haft hälften så många syskon som hon verkligen har.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Har Alice b bröder har hon 2b systrar och alltså 3b syskon, till exempel 3, 6 eller 9. Inte tillräckligt.\n(2) Kalla antalet syskon n. Då gäller n − 3 = n/2, vilket ger n/2 = 3 och n = 6. Tillräckligt.\n(2) räcker alltså ensamt, men inte (1). Tillsammans ger de dessutom 2 bröder och 4 systrar, men det behövs inte för frågan.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vad är medelvärdet av a och b?\n(1) Medelvärdet av (a + 5) och (b + 9) är lika med 10,5.\n(2) Medelvärdet av a, (b − 1) och 3 är lika med 3.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) (a + 5 + b + 9)/2 = 10,5 ger a + b + 14 = 21, alltså a + b = 7 och medelvärdet (a + b)/2 = 3,5. Tillräckligt.\n(2) (a + (b − 1) + 3)/3 = 3 ger a + b + 2 = 9, alltså a + b = 7 och medelvärdet 3,5. Tillräckligt.\nVarje påstående räcker för sig. Man behöver inte veta a och b var för sig, bara deras summa.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur såg förhållandet ut 2010 mellan antalet ansökningar om avhysning och antalet verkställda avhysningar?",
+      "options": [
+        "2:1",
+        "3:1",
+        "4:1",
+        "5:1"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av staplarna för 2010. Den svarta stapeln (antal ansökningar om avhysning) når knappt 10 000, och den grå stapeln (antal verkställda avhysningar) når drygt 3 000, ungefär 3 150. Förhållandet är 9 900 : 3 150 ≈ 3,1 : 1, alltså närmast 3:1. Det stämmer med kurvan för verkställighetsgraden, som 2010 ligger på knappt 32 procent, ungefär en tredjedel.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Under vilken av nedanstående perioder gällde för varje år att ansökningarna om avhysning var färre än 15 000 och att verkställighetsgraden låg i intervallet 35–40 procent?",
+      "options": [
+        "1989–1992",
+        "1993–1997",
+        "2000–2005",
+        "2008–2014"
+      ],
+      "blindAnswer": 2,
+      "explain": "Ansökningarna är de svarta staplarna (vänstra axeln) och verkställighetsgraden är kurvan (högra axeln). 1993–1997 faller bort direkt, eftersom ansökningarna var över 17 000 alla de åren. 1989–1992 hade färre än 15 000 ansökningar, men verkställighetsgraden låg över 40 procent 1991 och 1992 (cirka 43–44 procent). 2008–2014 hade en verkställighetsgrad kring 30–32 procent. Åren 2000–2005 hade mellan cirka 10 800 och 14 000 ansökningar och en verkställighetsgrad mellan cirka 35,5 och 38,5 procent, så båda villkoren gäller varje år.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "År 2014 var det 234 av de verkställda avhysningarna som berörde barn. Hur stor andel av det totala antalet verkställda avhysningar 2014 berörde barn?",
+      "options": [
+        "1/5",
+        "1/6",
+        "1/10",
+        "1/20"
+      ],
+      "blindAnswer": 2,
+      "explain": "Den grå stapeln för 2014 visar att det var ungefär 2 250 verkställda avhysningar det året (kontroll: cirka 7 100 ansökningar och en verkställighetsgrad på drygt 31 procent ger 0,31 · 7 100 ≈ 2 200). Andelen som berörde barn är 234/2 250 ≈ 0,10, alltså ungefär 1/10. Med 1/5 eller 1/6 skulle det ha varit 375–450 barn, och med 1/20 drygt 110.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Med hur många procent ökade antalet ansökningar om avhysning från 1992 till 1993?",
+      "options": [
+        "45 procent",
+        "55 procent",
+        "65 procent",
+        "75 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av de svarta staplarna (ansökningar om avhysning): 1992 ungefär 13 800 och 1993 ungefär 21 600. Ökningen är 21 600 − 13 800 = 7 800, och 7 800/13 800 ≈ 0,56, alltså cirka 55 procent. Ökningen ska räknas i förhållande till 1992 års värde; räknar man i stället mot 1993 års värde får man 7 800/21 600 ≈ 36 procent.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilken berggrund finns där Berge ligger?",
+      "options": [
+        "Dala-sandsten",
+        "Magmabergarter",
+        "Revsundsgraniter",
+        "Kambro-Silur-avlagringar"
+      ],
+      "blindAnswer": 3,
+      "explain": "Berge står i kartan till höger, med symbolen K (kalksten), strax nordost om Trångsviken. De två kartorna visar länet i samma skala och form, så samma plats i kartan till vänster ligger i det stora mittområdet med breda svarta och vita horisontella ränder. Enligt teckenförklaringen är det Kambro-Silur-avlagringar. Dala-sandsten har tunna horisontella linjer, och Revsundsgraniter (små kryss) och magmabergarter (lodräta ränder) finns längre österut respektive västerut.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur långt är det fågelvägen mellan den sydligast och den nordligast belägna platsen med talk?",
+      "options": [
+        "150 km",
+        "190 km",
+        "220 km",
+        "250 km"
+      ],
+      "blindAnswer": 1,
+      "explain": "Talk har symbolen ▼ i kartan till höger. Den nordligast belägna platsen med talk är Klumpfjället längst upp i norr, och den sydligast belägna är Handöl i väster, som ligger längre söderut än Nordhallen. Avståndet mellan de två symbolerna är ungefär 3,8 gånger skalstrecket på 50 km, alltså cirka 3,8 · 50 = 190 km. Den som tar Nordhallen som sydligaste plats får bara cirka 160 km.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor area har det sydligast belägna området med urbergets yngsta graniter?",
+      "options": [
+        "2 300 km²",
+        "4 300 km²",
+        "6 300 km²",
+        "8 300 km²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Urbergets yngsta graniter har ett mönster av korsande sneda linjer. Det sydligast belägna området med det mönstret är det stora området i södra delen av kartan till vänster, som når ned till länsgränsen. Med skalstrecket (50 km) blir området ungefär 110 km långt från norr till söder och i genomsnitt ungefär 40 km brett, eftersom det är smalt i norr och bredare i söder. Arean blir då ungefär 110 · 40 ≈ 4 400 km², knappt två rutor på 50 · 50 = 2 500 km². Närmast ligger 4 300 km².",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de regionala kostnaderna för kultur i riket totalt utgjordes av kostnader för teater, dans och musik?",
+      "options": [
+        "1/8",
+        "2/8",
+        "3/8",
+        "4/8"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd raden Riket totalt i tabellen. Delsumman för teater, dans och musik är 1 499 079 tusen kronor och kulturkostnaderna totalt är 3 901 520 tusen kronor. Andelen är 1 499 079/3 901 520 ≈ 0,38. Eftersom 3/8 = 0,375, medan 2/8 = 0,25 och 4/8 = 0,5, är svaret 3/8.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "För vilket kulturområde gällde både att Stockholms utgifter var hälften av Västra Götalands och att Blekinges utgifter var en fjärdedel av Västerbottens?",
+      "options": [
+        "Dans",
+        "Bild och form",
+        "Bibliotek",
+        "Film och medier"
+      ],
+      "blindAnswer": 1,
+      "explain": "Jämför först Stockholm med Västra Götaland. Dans: 7 735 mot 4 834, så Stockholm har mer. Bild och form: 25 082 mot 52 423, ungefär hälften. Bibliotek: 12 070 mot 24 470, ungefär hälften. Film och medier: 12 965 mot 91 887, bara ungefär en sjundedel. Jämför sedan Blekinge med Västerbotten för de två som återstår. Bild och form: 748 mot 3 113, ungefär en fjärdedel (3 113/4 ≈ 778). Bibliotek: 2 246 mot 6 635, ungefär en tredjedel. Bara bild och form uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilken av följande grupper hade ökat sin andel med 10 procentenheter om man jämför år 2000 med 1980?",
+      "options": [
+        "Kvinnor som arbetade heltid",
+        "Kvinnor som ej var i arbetskraften",
+        "Män som arbetade heltid",
+        "Män som ej var i arbetskraften"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av diagrammen vid 1980 och 2000. Kvinnor som arbetade heltid (det ljusgrå fältet) ökade från ungefär 40 procent till ungefär 50 procent, alltså med cirka 10 procentenheter. Kvinnor som ej var i arbetskraften (det vita fältet överst) minskade från cirka 23 till cirka 18 procent. Män som arbetade heltid ändrades också med ungefär 10 procentenheter, men det var en minskning, från cirka 85 till cirka 74 procent. Män som ej var i arbetskraften ökade bara från cirka 9 till cirka 13 procent.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "År 2013 fanns det 2,7 miljoner kvinnor och 2,8 miljoner män i åldern 20–64 år i Sverige. Hur stor andel av samtliga 20–64-åringar var heltidsarbetande?",
+      "options": [
+        "45 procent",
+        "55 procent",
+        "65 procent",
+        "75 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av det ljusgrå fältet (heltid) längst till höger, år 2013: ungefär 53 procent av kvinnorna och ungefär 73 procent av männen. Det ger 0,53 · 2,7 ≈ 1,43 miljoner kvinnor och 0,73 · 2,8 ≈ 2,04 miljoner män, sammanlagt cirka 3,47 miljoner av 2,7 + 2,8 = 5,5 miljoner. Andelen är 3,47/5,5 ≈ 0,63, alltså närmast 65 procent. Eftersom grupperna är nästan lika stora hamnar andelen nära medelvärdet av 53 och 73 procent.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor var andelen arbetslösa män året då den var som störst jämfört med året då den var som minst?",
+      "options": [
+        "Dubbelt så stor",
+        "Tre gånger så stor",
+        "Fem gånger så stor",
+        "Åtta gånger så stor"
+      ],
+      "blindAnswer": 3,
+      "explain": "Arbetslösa män är det mörkgrå bandet i diagrammet för män. Det är som smalast i mitten av 1970-talet, där det bara är drygt 1 procentenhet brett (strax under 91 procent). Det är som bredast i mitten av 1990-talet, där det går från cirka 77 till cirka 88 procent, alltså ungefär 10–11 procentenheter. Andelen var då omkring åtta gånger så stor som när den var som minst. Den som jämför med 1989–1990, då bandet var knappt 2 procentenheter brett, får ungefär fem gånger, men andelen var ännu mindre på 1970-talet.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "Det mörkgrå bandet är bara 1–1,5 procentenheter brett på 1970-talet (minst cirka 1976) och cirka 11 procentenheter 1994; kvoten blir 8–10 beroende på hur kanterna läses.",
+      "verification": "agreed"
+    }
+  ]
+}
