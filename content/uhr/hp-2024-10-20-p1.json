@@ -1,0 +1,775 @@
+{
+  "examId": "hp-2024-10-20",
+  "passNumber": 1,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "12x − 54 = 6x + 18",
+      "options": [
+        "−6",
+        "−2",
+        "4",
+        "12"
+      ],
+      "blindAnswer": 3,
+      "explain": "Samla x-termerna i ena ledet och talen i det andra. Dra bort 6x från båda leden: 6x − 54 = 18. Lägg till 54: 6x = 72, alltså x = 12. Kontroll: 12 · 12 − 54 = 90 och 6 · 12 + 18 = 90. Den som flyttar över 54 utan att byta tecken får 6x = 18 − 54 = −36 och x = −6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "√3 · x = 6",
+      "options": [
+        "√2",
+        "3√2",
+        "2√3",
+        "4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dela båda leden med √3: x = 6/√3. Förläng med √3 för att få bort roten ur nämnaren: x = 6√3/3 = 2√3. Kontroll: √3 · 2√3 = 2 · 3 = 6. Uppskattning ger samma sak: √3 ≈ 1,73, så x ≈ 6/1,73 ≈ 3,46, och 2√3 ≈ 3,46.",
+      "figure": null,
+      "note": "Provet skriver √3 x utan gångertecken (x står utanför rottecknet); · är tillagt för tydlighet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Hur många procent av x är x/15 + x/30?",
+      "passage": "x > 0",
+      "options": [
+        "4,5",
+        "10",
+        "15",
+        "22,5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv bråken med den gemensamma nämnaren 30: x/15 = 2x/30, så x/15 + x/30 = 2x/30 + x/30 = 3x/30 = x/10. En tiondel av x är 10 procent av x. Kontroll med x = 30: 30/15 + 30/30 = 2 + 1 = 3, och 3 är 10 procent av 30.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Tre linjer skär varandra i samma punkt. Vad är x?",
+      "options": [
+        "15°",
+        "20°",
+        "25°",
+        "30°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkeln x + 10° har en lika stor vertikalvinkel på andra sidan skärningspunkten, och den ligger precis mellan vinklarna 3x + 30° och 2x + 20°. Tillsammans fyller de tre vinklarna en rak vinkel längs den nästan lodräta linjen, alltså 180°. Det ger (3x + 30°) + (x + 10°) + (2x + 20°) = 180°, så 6x + 60° = 180° och x = 20°. Kontroll: vinklarna blir 90°, 30° och 60°, och summan är 180°.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.215,
+          0.512,
+          0.452,
+          0.645
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är korrekt?",
+      "options": [
+        "3/4 < 7/8 < 25/32",
+        "3/4 < 13/16 < 25/32",
+        "3/4 < 7/8 < 13/16",
+        "3/4 < 25/32 < 13/16"
+      ],
+      "blindAnswer": 3,
+      "explain": "Skriv alla bråk med nämnaren 32: 3/4 = 24/32, 7/8 = 28/32, 13/16 = 26/32 och 25/32. Storleksordningen är 24/32 < 25/32 < 26/32 < 28/32, det vill säga 3/4 < 25/32 < 13/16 < 7/8. Bara olikheten 3/4 < 25/32 < 13/16 stämmer; i de andra står ett större bråk före ett mindre. Att 25/32 har störst täljare och nämnare gör inte bråket störst.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar grafen till funktionen g?",
+      "passage": "f(x) = 2x − 4\ng(x) = −1/2 · f(x)",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 3,
+      "explain": "Sätt in f(x): g(x) = −1/2 · (2x − 4) = −x + 2. Grafen är en rät linje med lutningen −1 som skär y-axeln i y = 2 och x-axeln i x = 2. Graf A (y = x − 4) och graf C (y = x − 2) lutar uppåt. Graf B lutar nedåt men skär y-axeln i y = −2. Bara graf D går genom (0, 2) och (2, 0). Graf C får den som glömmer minustecknet framför 1/2.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.2,
+          0.453,
+          0.418,
+          0.9
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "En kvadrat har sidan s cm och diagonalen d cm. Om 2s² + d² = 64, vilket värde har då s?",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "16"
+      ],
+      "blindAnswer": 1,
+      "explain": "Diagonalen delar kvadraten i två rätvinkliga trianglar med kateterna s och s, så enligt Pythagoras sats är d² = s² + s² = 2s². Sätt in det i villkoret: 2s² + 2s² = 4s² = 64. Då är s² = 16 och s = 4. Kontroll: s = 4 ger d² = 32, och 2 · 16 + 32 = 64. Svaret 16 är s², inte s.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar (3(x + y) − 5(y − x))/2?",
+      "options": [
+        "x − 2y",
+        "4x − 4y",
+        "4x − y",
+        "8x − 2y"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplicera in i parenteserna: 3(x + y) = 3x + 3y och −5(y − x) = −5y + 5x. Täljaren blir 3x + 3y − 5y + 5x = 8x − 2y. Dela med 2: (8x − 2y)/2 = 4x − y. Kontroll med x = 1 och y = 1: (3 · 2 − 5 · 0)/2 = 3 och 4 − 1 = 3. Alternativet 8x − 2y är täljaren innan man har delat med 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är med säkerhet korrekt?",
+      "passage": "x − y = 7",
+      "options": [
+        "Om x är negativt, så är y negativt.",
+        "Om x är positivt, så är y positivt.",
+        "Om y är negativt, så är x positivt.",
+        "Om y är positivt, så är x negativt."
+      ],
+      "blindAnswer": 0,
+      "explain": "Villkoret ger y = x − 7, så y är alltid 7 mindre än x. Om x är negativt är y = x − 7 ännu mindre, alltså också negativt. Det påståendet gäller därför alltid. De andra går att motbevisa: x = 1 ger y = −6 (x positivt men y negativt), y = −10 ger x = −3 (y negativt men x inte positivt) och y = 1 ger x = 8 (y positivt men x inte negativt).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Punkten (a, 2a) ligger på linjen som ges av ekvationen y = 3x − 60. Vilket värde har a?",
+      "options": [
+        "12",
+        "15",
+        "30",
+        "60"
+      ],
+      "blindAnswer": 3,
+      "explain": "Punkten ligger på linjen, så dess koordinater uppfyller ekvationen. Sätt in x = a och y = 2a: 2a = 3a − 60, vilket ger a = 60. Kontroll: punkten är (60, 120), och 3 · 60 − 60 = 120. Svaret 12 får den som sätter in koordinaterna åt fel håll, a = 3 · 2a − 60, vilket ger 5a = 60.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Ritva har sex bollar som hon fördelar slumpmässigt i tre tomma lådor. Hur stor är sannolikheten att exakt en låda innehåller ett udda antal bollar när Ritva är klar?",
+      "options": [
+        "0",
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "blindAnswer": 0,
+      "explain": "Antalen bollar i de tre lådorna har summan 6, som är ett jämnt tal. Om exakt en låda hade ett udda antal skulle de andra två ha jämna antal, och ett udda tal plus två jämna tal blir udda. Summan kan då inte bli 6. Det kan alltså aldrig hända att exakt en låda har ett udda antal bollar, och sannolikheten är 0. Antingen har ingen låda ett udda antal (till exempel 2, 2, 2) eller två lådor (till exempel 1, 3, 2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilken av följande produkter är lika med 8ˣ, för något heltal x?",
+      "options": [
+        "16 · 16",
+        "16 · 32",
+        "32 · 32",
+        "32 · 64"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv allt som potenser av 2. Eftersom 8 = 2³ är 8ˣ = 2³ˣ, så produkten måste vara 2 upphöjt till ett tal som är delbart med 3. 16 · 16 = 2⁴ · 2⁴ = 2⁸, 16 · 32 = 2⁴ · 2⁵ = 2⁹, 32 · 32 = 2¹⁰ och 32 · 64 = 2¹¹. Bara 9 är delbart med 3, så 16 · 32 = 2⁹ = 8³ = 512.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √5 + 1\nKvantitet II: √6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Båda kvantiteterna är positiva, så jämför deras kvadrater. (√5 + 1)² = 5 + 2√5 + 1 = 6 + 2√5, som är större än (√6)² = 6. Alltså är kvantitet I större. Uppskattning ger samma sak: √5 + 1 ≈ 2,24 + 1 = 3,24, medan √6 ≈ 2,45. Den som tror att √5 + 1 = √6 lägger ihop talen under rottecknet, vilket inte går.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x/4 + 1/2 = 5/8\nKvantitet I: x\nKvantitet II: 2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lös ekvationen. Dra bort 1/2 = 4/8 från båda leden: x/4 = 5/8 − 4/8 = 1/8. Multiplicera med 4: x = 4/8 = 1/2. Kontroll: (1/2)/4 + 1/2 = 1/8 + 4/8 = 5/8. Kvantitet I är alltså 0,5 och kvantitet II är 2, så kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "0 < x < y\nKvantitet I: x + 2y\nKvantitet II: 2x + y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Dra bort x + y från båda kvantiteterna; det ändrar inte vilken som är störst. Då återstår y i kvantitet I och x i kvantitet II. Eftersom x < y är kvantitet I alltid större. Exempel: x = 1 och y = 2 ger 1 + 4 = 5 i kvantitet I och 2 + 2 = 4 i kvantitet II.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (3/5 − 4/7) · 32\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv bråken med den gemensamma nämnaren 35: 3/5 = 21/35 och 4/7 = 20/35. Skillnaden är 1/35, och 1/35 · 32 = 32/35. Eftersom 32 är mindre än 35 är 32/35 mindre än 1, så kvantitet II är större. Att 32 ligger nära 35 kan få det att se ut som om produkten blir 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kalle har x kulor och Pelle har y kulor. Olle har inga kulor.\nKalle ger hälften av sina kulor till Olle. Pelle ger också hälften av sina kulor till Olle.\nKvantitet I: Det sammanlagda antalet kulor som Olle får av Kalle och Pelle\nKvantitet II: Medelvärdet av antalet kulor som Kalle och Pelle hade innan de gav kulor till Olle",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Olle får x/2 kulor av Kalle och y/2 av Pelle, sammanlagt x/2 + y/2 = (x + y)/2. Medelvärdet av Kalles och Pelles kulor från början är också (x + y)/2. Kvantiteterna är alltså lika, oavsett hur många kulor Kalle och Pelle har. Exempel: x = 10 och y = 6 ger 5 + 3 = 8 kulor till Olle och medelvärdet (10 + 6)/2 = 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (AD)² + (AC)²\nKvantitet II: (BD)² + (BC)²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt figuren är vinkeln vid A rät i triangeln DAC och vinkeln vid B rät i triangeln DBC. Båda trianglarna har sträckan DC som hypotenusa. Pythagoras sats ger (AD)² + (AC)² = (DC)² och (BD)² + (BC)² = (DC)². Båda kvantiteterna är alltså lika med (DC)², hur långa sidorna i övrigt än är.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.218,
+          0.515,
+          0.445,
+          0.623
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen L ges av ekvationen y = −x/2 + 4.\nKvantitet I: x-koordinaten för den punkt där L skär x-axeln\nKvantitet II: y-koordinaten för den punkt där L skär y-axeln",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "L skär x-axeln där y = 0: 0 = −x/2 + 4 ger x/2 = 4 och x = 8. L skär y-axeln där x = 0: y = 0 + 4 = 4. Kvantitet I är 8 och kvantitet II är 4, så kvantitet I är större. Talet 4 i ekvationen är skärningen med y-axeln, inte med x-axeln.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En mätserie består av sex positiva heltal. De fyra största mätvärdena är större än 12. De fyra minsta mätvärdena är mindre än 15.\nKvantitet I: Mätseriens median\nKvantitet II: 13,5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Ordna de sex talen från minst till störst. Medianen är medelvärdet av det tredje och det fjärde talet. De fyra största är tal 3–6, så det tredje talet är minst 13. De fyra minsta är tal 1–4, så det fjärde talet är högst 14. Mätserien 1, 2, 13, 13, 20, 20 uppfyller villkoren och har medianen 13, som är mindre än 13,5. Mätserien 1, 2, 14, 14, 20, 20 uppfyller dem också men har medianen 14, som är större. Informationen räcker alltså inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fyrhörningen ABCD är en rektangel där AB är diametern i en halvcirkel och AD = r/2, där r är cirkelns radie.\nKvantitet I: Halvcirkelns area\nKvantitet II: Rektangelns area multiplicerad med 1,5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Halvcirkelns area är πr²/2 ≈ 1,57r². Rektangeln har sidorna AB = 2r (diametern) och AD = r/2, så dess area är 2r · r/2 = r², och multiplicerad med 1,5 blir den 1,5r². Eftersom π/2 ≈ 1,57 är större än 1,5 är kvantitet I större, oavsett hur stor r är. Skillnaden är liten: den som avrundar π till 3 får felaktigt att kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.222,
+          0.155,
+          0.53,
+          0.266
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x/y = −1\nKvantitet I: x − y\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Villkoret betyder att x = −y, där y inte är 0. Då är x − y = −y − y = −2y, och tecknet beror på y. Med x = −1 och y = 1 blir x − y = −2, som är mindre än 0. Med x = 1 och y = −1 blir x − y = 2, som är större än 0. Informationen räcker alltså inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Eskil samlar på kylskåpsmagneter. Hur många kylskåpsmagneter har Eskil?\n(1) Om Eskil fick 25 procent fler kylskåpsmagneter, så skulle han ha 100 kylskåpsmagneter.\n(2) En femtedel av Eskils samling utgör 20 procent av hans kylskåpsmagneter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Kalla antalet x. 25 procent fler är 1,25x, så 1,25x = 100 och x = 80. Tillräckligt. (Svaret är inte 100 − 25 = 75: 25 procent fler än 75 är bara 93,75.)\n(2) En femtedel är alltid 20 procent, hur stor samlingen än är. Påståendet säger alltså ingenting om antalet. Inte tillräckligt.\nDet räcker med (1) men inte med (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Pernilla har bakat sammanlagt 80 bullar: kanelbullar och vaniljbullar. Hon har lagt några bullar i skafferiet och resten av bullarna i frysen. Hur många vaniljbullar har Pernilla lagt i frysen?\n(1) Pernilla har lagt 20 kanelbullar och 10 vaniljbullar i skafferiet.\n(2) Tre fjärdedelar av bullarna som Pernilla har bakat är kanelbullar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Vi vet att 80 − 30 = 50 bullar ligger i frysen, men inte hur många av alla bullar som är vaniljbullar. Inte tillräckligt.\n(2) Det finns 80/4 = 20 vaniljbullar, men vi vet inte hur många av dem som ligger i skafferiet. Inte tillräckligt.\n(1) och (2) tillsammans: Av de 20 vaniljbullarna ligger 10 i skafferiet, så 20 − 10 = 10 ligger i frysen. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "ABC är en triangel. Hur stor är vinkeln u?\n(1) u + v = 93°\n(2) u + w = 123°",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt figuren är u, v och w vinklarna vid A, B och C, så u + v + w = 180°.\n(1) Ger w = 180° − 93° = 87°, men u och v kan dela på 93° hur som helst. Inte tillräckligt.\n(2) Ger v = 180° − 123° = 57°, men u och w kan dela på 123° hur som helst. Inte tillräckligt.\n(1) och (2) tillsammans: (2) ger v = 57°, och då ger (1) u = 93° − 57° = 36°. Tillräckligt.",
+      "figure": {
+        "pages": [
+          14
+        ],
+        "box": [
+          0.222,
+          0.112,
+          0.45,
+          0.203
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En grupp består av fyra flickor och en pojke. Deras medellängd är 172 cm. Hur lång är pojken?\n(1) Flickornas medellängd är 170 cm.\n(2) Pojken är 5 cm längre än den längsta flickan.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "De fem är tillsammans 5 · 172 = 860 cm långa.\n(1) Flickorna är tillsammans 4 · 170 = 680 cm, så pojken är 860 − 680 = 180 cm. Tillräckligt.\n(2) Flickorna kan vara 165, 170, 170 och 175 cm och pojken 180 cm, men alla fyra flickor kan också vara 171 cm och pojken 176 cm. Båda fallen ger summan 860 cm. Inte tillräckligt.\nDet räcker med (1) men inte med (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tre termosar – en vit, en svart och en grå – står på ett bord. En av termosarna innehåller kaffe, en innehåller te och en innehåller varm choklad. Vilken dryck finns i den vita termosen?\n(1) Kaffet finns i den svarta eller den vita termosen. Den varma chokladen finns inte i den vita termosen.\n(2) Kaffet finns inte i den svarta termosen. I den grå termosen finns det te.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Den vita termosen innehåller kaffe eller te. Kaffet kan finnas i den vita termosen, men det kan också finnas i den svarta, och då innehåller den vita te och den grå varm choklad. Inte tillräckligt.\n(2) Den grå termosen innehåller te och kaffet finns inte i den svarta, så kaffet måste finnas i den vita termosen. Tillräckligt.\nDet räcker med (2) men inte med (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket är det positiva heltalet x?\n(1) 50 < x < 75\n(2) x är jämnt delbart med 8, men inte med 3.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Alla heltal från 51 till 74 är möjliga. Inte tillräckligt.\n(2) Till exempel 8, 16 och 40 uppfyller villkoret. Inte tillräckligt.\n(1) och (2) tillsammans: Multiplerna av 8 mellan 50 och 75 är 56, 64 och 72. Talet 72 är delbart med 3 och faller bort, men både 56 och 64 är kvar. Inte tillräckligt.\nInte ens båda påståendena tillsammans räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av havsbottenfaunan utgjorde fåborstmasken 1982?",
+      "options": [
+        "1/3",
+        "1/4",
+        "1/5",
+        "2/5"
+      ],
+      "blindAnswer": 0,
+      "explain": "Fåborstmasken är det ljusgrå fältet. I stapeln för 1982 sträcker det sig från cirka 25 till cirka 58 procent, så fåborstmasken utgjorde ungefär 58 − 25 = 33 procent av havsbottenfaunan. Det är ungefär en tredjedel. Den som läser av var fältet börjar (25 procent) i stället för hur högt det är får 1/4.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilket år var skillnaden som minst, i procentenheter räknat, mellan arten som utgjorde störst andel och arten som utgjorde näst störst andel av havsbottenfaunan?",
+      "options": [
+        "1920",
+        "1982",
+        "1987",
+        "2007"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av hur höga de två största fälten är i varje stapel. 1920: vitmärla cirka 84 procent (7–91) och östersjömussla cirka 9 procent, skillnad cirka 75 procentenheter. 1982: fåborstmask cirka 33 procent (25–58) och östersjömussla cirka 24 procent (76–100), skillnad cirka 9. 1987: östersjömussla cirka 68 procent (32–100) och vitmärla cirka 20 procent (12–32), skillnad cirka 48. 2007: östersjömussla cirka 44 procent (52–97) och sandborstmask cirka 41 procent (7–48), skillnad cirka 3. Skillnaden var alltså minst 2007.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Studera förändringarna mellan de redovisade åren vad gäller förekomsten av sandborstmask. Vilket svarsförslag beskriver bäst hur artens andel av havsbottenfaunan förändrades mellan de olika åren?",
+      "options": [
+        "Mellan 1920 och 1977 ökade andelen med 60 procentenheter.",
+        "Mellan 1977 och 1982 minskade andelen med 45 procentenheter.",
+        "Mellan 1982 och 1987 minskade andelen med 20 procentenheter.",
+        "Mellan 1987 och 2007 ökade andelen med 35 procentenheter."
+      ],
+      "blindAnswer": 3,
+      "explain": "Sandborstmasken är det vita fältet längst ned i staplarna, ovanför övriga. Dess andel är cirka 5 procent 1920 (2–7), cirka 75 procent 1977 (0–76), cirka 20 procent 1982 (5–25), cirka 6 procent 1987 (6–12) och cirka 41 procent 2007 (7–48). Förändringarna blir alltså cirka +70, −55, −14 och +35 procentenheter. Bara ökningen med 35 procentenheter mellan 1987 och 2007 stämmer. Minskningen mellan 1982 och 1987 kan locka eftersom andelen var 20 procent 1982, men den sjönk bara till cirka 6 procent, alltså med cirka 14 procentenheter.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera de olika inriktningarna inom förskoleklasser som drevs i fristående regi läsåret 2014/15. För vilken inriktning gällde att drygt hälften av eleverna var 6 år och knappt hälften av dem var 5 år?",
+      "options": [
+        "Allmän",
+        "Konfessionell",
+        "Waldorf",
+        "Internationell"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd den övre tabellen, raderna under Fristående. Internationell har 192 elever, varav 103 var 6 år (103/192 ≈ 54 procent) och 88 var 5 år (88/192 ≈ 46 procent), alltså drygt respektive knappt hälften. Allmän har 9 421 sexåringar av 9 723 elever (cirka 97 procent). Konfessionell har visserligen drygt hälften sexåringar (889 av 1 585), men bara 101 femåringar (cirka 6 procent). Waldorf har bara 8 femåringar av 304 elever.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av eleverna i de förskoleklasser som drevs i statlig regi var pojkar?",
+      "options": [
+        "42 procent",
+        "52 procent",
+        "72 procent",
+        "82 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "I den nedre tabellen står det under Statlig att det fanns 58 elever totalt, varav 16 flickor och 42 pojkar. Andelen pojkar är 42/58 ≈ 0,72, alltså cirka 72 procent. Alternativet 42 procent lockar eftersom antalet pojkar är 42.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Läsåret 2007/08 var det genomsnittliga antalet elever i förskoleklass 24 per skolenhet. Hur många fler var eleverna per skolenhet läsåret 2013/14?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd den övre tabellen. Läsåret 2013/14 fanns det 109 943 elever och 3 640 skolenheter med förskoleklass, vilket ger 109 943/3 640 ≈ 30,2, alltså cirka 30 elever per skolenhet. Kontroll av 2007/08: 93 390/3 905 ≈ 23,9, som stämmer med 24. Ökningen är 30 − 24 = 6 elever per skolenhet.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "I vilket land förändrades andelen sysselsatta inom lågkvalificerade yrken minst?",
+      "options": [
+        "Schweiz",
+        "Irland",
+        "Japan",
+        "Ungern"
+      ],
+      "blindAnswer": 0,
+      "explain": "Lågkvalificerade yrken är de svarta punkterna. För Schweiz ligger den svarta punkten precis vid 0, alltså nästan ingen förändring. Irlands svarta punkt ligger vid knappt +1, Japans vid cirka +2,5 (delvis bakom den ljusgrå punkten) och Ungerns vid −5. Minst förändring hade alltså Schweiz. Ungern kan locka eftersom dess svarta punkt ligger längst till vänster, men det är den största förändringen av de fyra.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "För hur många av länderna gällde både att andelen sysselsatta inom högkvalificerade yrken hade förändrats mindre än 5 procentenheter och att andelen sysselsatta inom mellankvalificerade yrken hade förändrats mindre än 10 procentenheter?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "blindAnswer": 1,
+      "explain": "Högkvalificerade yrken är de ljusgrå punkterna och mellankvalificerade de mörkgrå. En ljusgrå punkt till vänster om linjen vid 5 har Grekland, Italien, Tyskland, Kanada, Slovakien och Japan. Av dem har Grekland sin mörkgrå punkt vid cirka −13, alltså en förändring på mer än 10 procentenheter. Italien (cirka −9), Tyskland (cirka −8), Kanada (cirka −6), Slovakien (cirka −5,5) och Japan (cirka −5) har alla förändrats mindre än 10 procentenheter. Det gäller alltså 5 länder. USA:s ljusgrå punkt ligger strax till höger om 5 och räknas inte, och OECD-genomsnittet är inget land.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Italiens och Tysklands ljusgrå punkter (cirka 4,7) och USA:s (cirka 5,3) ligger nära gränsen 5 procentenheter.",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger de länder som var mest lika OECD-genomsnittet vad gäller förändringen av andelen sysselsatta inom mellan-, låg- respektive högkvalificerade yrken?",
+      "passage": "Svarsalternativen anger: mellan – låg – hög",
+      "options": [
+        "Finland – Tyskland – Nederländerna",
+        "Finland – Kanada – Ungern",
+        "Italien – Tyskland – Ungern",
+        "Italien – Kanada – Nederländerna"
+      ],
+      "blindAnswer": 1,
+      "explain": "OECD-genomsnittet (den grå raden) ligger vid cirka −9,5 för mellankvalificerade (mörkgrå), cirka +2 för lågkvalificerade (svart) och cirka +7,5 för högkvalificerade yrken (ljusgrå). Mellan: Finland ligger vid cirka −9,7 och Italien vid cirka −9, så Finland är närmast. Låg: Kanada ligger vid cirka +1,8 och Tyskland vid cirka +3,4, så Kanada är närmast. Hög: Ungern ligger vid cirka +7,5 och Nederländerna vid cirka +5,5, så Ungern är närmast. Kombinationen Finland – Kanada – Ungern stämmer.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Studera de nybeviljade vårdbidragen för flickor med avseende på fördelningen på diagnosgrupper. Vilket år uppgick den andel som fått vårdbidrag på grund av psykiska sjukdomar för första gången till 50 procent?",
+      "options": [
+        "2009",
+        "2010",
+        "2011",
+        "2012"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det nedre diagrammet, den vänstra delen (Flickor). Psykiska sjukdomar är det mörkaste fältet längst ned. Dess övre kant ligger vid cirka 45 procent 2009 och cirka 47 procent 2010, och den når 50 procent först 2011. År 2012 ligger andelen strax över 50 procent, men då hade den redan nått dit året innan.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Sammanlagt hur många av vårdbidragen som betalades ut i december 2016 gällde barn i åldrarna 5–10 år?",
+      "options": [
+        "14 000",
+        "20 000",
+        "24 000",
+        "30 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det övre diagrammet och läs av båda linjerna för åldrarna 5–10 år. Pojkar: cirka 1 500, 1 800, 2 100, 2 450, 2 750 och 3 050, sammanlagt cirka 13 650. Flickor: cirka 800, 850, 1 000, 1 050, 1 300 och 1 400, sammanlagt cirka 6 400. Totalt blir det ungefär 13 650 + 6 400 ≈ 20 000. Alternativet 14 000 lockar om man bara räknar med pojkarna.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Vilken diagnosgrupp stod för en tiondel av de nybeviljade vårdbidragen till pojkar 2008?",
+      "options": [
+        "Endokrina systemets sjukdomar m.m.",
+        "Sjukdomar i nervsystemet",
+        "Medfödda missbildningar m.m.",
+        "Övriga sjukdomar"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd det nedre diagrammet, den högra delen (Pojkar), vid 08. Fälten ligger i ordning nedifrån: psykiska sjukdomar upp till cirka 59 procent, endokrina systemets sjukdomar upp till cirka 68, sjukdomar i nervsystemet upp till cirka 72, medfödda missbildningar upp till cirka 77,5 och övriga sjukdomar upp till 100. Endokrina systemets sjukdomar utgör alltså cirka 68 − 59 = 9 procent, ungefär en tiondel. Sjukdomar i nervsystemet är cirka 4 procent, medfödda missbildningar cirka 5 procent och övriga sjukdomar drygt 20 procent.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
