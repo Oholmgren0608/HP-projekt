@@ -16,6 +16,7 @@ import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionSource } from "@/components/question-source";
 import { QuestionPassage } from "@/components/question-passage";
 
 type Props = {
@@ -211,6 +212,7 @@ export function FreePracticeSession({
           <QuestionFigure question={current} position={index + 1} />
 
           <p className="text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
+          <QuestionSource id={current.id} />
 
           {committed !== undefined ? (
             <QuizOptions

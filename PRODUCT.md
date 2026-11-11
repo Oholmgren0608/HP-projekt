@@ -46,7 +46,8 @@ Confirmed differentiators against hpguiden, HP-appen and similar:
 
 - Eight delprov in two block (verbal: ORD, LÄS, MEK, ELF; kvantitativ: KVA, DTK, XYZ, NOG). Full provpass: 40 questions
   in 55 minutes (80 with extended time). See `GLOSSARY.md` for terminology.
-- UHR's official questions are never shown to users; they are only models for writing new ones (AGENTS.md §1).
+- UHR's quantitative questions (XYZ, KVA, NOG, DTK) are shown first, with their source, since UHR gave permission (2026-11-11);
+  our own questions are the backup. UHR's verbal questions are never shown; they are only models for writing new ones (AGENTS.md §1).
 - The forecast is a rough estimate, not UHR's normering; it must not be presented as official.
 - Practice answers are public by design; anything competitive or paid must be enforced on the server.
 - Out of scope until decided: payments and payouts, subscription tiers and ads, video/Creator Studio (AGENTS.md §2).

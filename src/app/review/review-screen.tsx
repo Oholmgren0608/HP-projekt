@@ -7,6 +7,7 @@ import { LoginPanel } from "@/components/auth/login-panel";
 import { ExplainFigure } from "@/lib/content/explain-figures";
 import { SUBTESTS } from "@/lib/subtests";
 import { POOL_KINDS } from "@/lib/pool-time";
+import { UHR_KINDS } from "@/lib/uhr";
 import {
   listAll,
   resolveReports,
@@ -18,12 +19,14 @@ import {
   type ListResult,
 } from "./actions";
 import {
+  canPublish,
   isProvfraga,
   PRACTICE_GROUP_ID,
   type ReviewExamGroup,
   type ReviewQuestion,
 } from "./types";
 import { QuestionPassage } from "@/components/question-passage";
+import { QuestionFigure } from "@/components/question-figure";
 
 const STATUS_LABEL: Record<string, string> = {
   draft: "Utkast",
@@ -44,14 +47,16 @@ const VIEW_OPTIONS: { id: View; label: string }[] = [
 const POOL_REVIEW_KINDS: readonly string[] = POOL_KINDS;
 
 /**
- * Får frågan publiceras med "Publicera alla"? Bara övningsfrågor där andra
+ * Får frågan publiceras med "Publicera alla"? Bara frågor som får publiceras
+ * (övningsfrågor och kvantitativa UHR-frågor med förklaring), där andra
  * kontrollen var ense och som inte har öppna felrapporter – resten granskas en
- * och en.
+ * och en. För UHR-frågor betyder "ense" att AI:n löste uppgiften utan facit och
+ * fick samma svar som UHR:s facit.
  */
 function canBulkPublish(q: ReviewQuestion): boolean {
   return (
     q.status === "draft" &&
-    !isProvfraga(q) &&
+    canPublish(q) &&
     q.verification === "agreed" &&
     q.openReports.length === 0 &&
     parseFlags(q.explain).flags.length === 0
@@ -80,7 +85,7 @@ const PAGE = 25;
 
 function errorText(error: ReviewError): string {
   if (error === "PROVFRAGA_LOCKED") {
-    return "Provfrågor är upphovsrättsskyddade och kan aldrig publiceras.";
+    return "Bara kvantitativa provfrågor (XYZ, KVA, NOG, DTK) med en riktig förklaring kan publiceras. Verbala provfrågor är fortfarande spärrade.";
   }
   return "Åtgärden misslyckades. Försök igen.";
 }
@@ -126,6 +131,10 @@ function Figure({ q }: { q: ReviewQuestion }) {
     );
   }
   if (!q.figureUrl) return null;
+  // UHR-figurerna (public/uhr/) är publika och visas som i appen.
+  if (q.figureUrl.startsWith("/uhr/")) {
+    return <QuestionFigure question={{ figureUrl: q.figureUrl }} position={q.questionNumber ?? undefined} />;
+  }
   const alt = q.questionNumber != null ? `Figur till fråga ${q.questionNumber}` : "Figur till fråga";
   return (
     // eslint-disable-next-line @next/next/no-img-element
@@ -515,9 +524,11 @@ function ExamGroup({
   const flaggedCount = group.questions.filter((q) => parseFlags(q.explain).flags.length > 0).length;
   const reportedCount = group.questions.filter((q) => q.openReports.length > 0).length;
   const isPractice = group.examId === PRACTICE_GROUP_ID;
+  /** Prov med kvantitativa UHR-frågor som kan publiceras (0040). */
+  const hasPublishable = isPractice || group.questions.some((q) => canPublish(q));
   const bulkIds = group.questions.filter(canBulkPublish).map((q) => q.id);
   const manualCount = group.questions.filter(
-    (q) => q.status !== "published" && !canBulkPublish(q),
+    (q) => q.status !== "published" && canPublish(q) && !canBulkPublish(q),
   ).length;
 
   // Övningsfrågor delas upp per delprov (för stickprov per delprov), förlagor per provpass.
@@ -610,13 +621,14 @@ function ExamGroup({
         <div className="border-t border-[var(--line)] px-4 py-4 sm:px-5">
           {!isPractice ? (
             <p className="mb-4 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink-muted)]">
-              Förlagor ur UHR:s prov. De är upphovsrättsskyddade och kan aldrig publiceras – använd
-              dem bara som mönster när ni skriver egna övningsfrågor.
+              Frågor ur UHR:s prov. De kvantitativa (XYZ, KVA, NOG, DTK) får publiceras när de har en
+              förklaring – UHR har gett tillstånd. Läs ett stickprov mot provet först. De verbala är
+              fortfarande förlagor och kan inte publiceras.
             </p>
           ) : null}
           {view !== "published" ? (
             <div className="mb-4 space-y-2">
-              {isPractice ? (
+              {hasPublishable ? (
                 <p className="text-sm text-[var(--ink-muted)]">
                   Läs ett stickprov innan du publicerar. &quot;Publicera&quot; tar bara med frågor där
                   andra kontrollen var ense och som saknar felrapporter och varningar
@@ -624,7 +636,7 @@ function ExamGroup({
                 </p>
               ) : null}
               <div className="flex flex-wrap gap-2">
-                {isPractice ? (
+                {hasPublishable ? (
                   <button
                     type="button"
                     onClick={() => void bulk("published")}
@@ -750,7 +762,7 @@ function QuestionCard({
         </span>
         {isProvfraga(q) ? (
           <span className="rounded-md border border-[var(--line)] bg-card px-2 py-0.5 normal-case tracking-normal">
-            Förlaga – publiceras aldrig
+            {UHR_KINDS.includes(q.kind) ? "UHR-fråga" : "Förlaga – publiceras aldrig"}
           </span>
         ) : null}
         {q.pool === "spel" ? (
@@ -760,11 +772,11 @@ function QuestionCard({
         ) : null}
         {q.verification === "agreed" ? (
           <span className="rounded-md border border-[var(--lagoon-ink)]/50 bg-[var(--accent-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--brand)]">
-            Andra kontrollen: ense
+            {isProvfraga(q) ? "AI:n fick samma svar som facit" : "Andra kontrollen: ense"}
           </span>
         ) : q.verification === "disagreed" ? (
           <span className="rounded-md border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-2 py-0.5 normal-case tracking-normal text-[var(--destructive)]">
-            Andra kontrollen: oense
+            {isProvfraga(q) ? "AI:n fick ett annat svar än facit" : "Andra kontrollen: oense"}
           </span>
         ) : null}
         {flags.length > 0 ? (
@@ -783,6 +795,10 @@ function QuestionCard({
 
       {q.verification === "disagreed" && q.verificationNote ? (
         <p className="mt-2 rounded-lg border border-[var(--destructive)]/30 bg-[var(--coral-soft)] px-3 py-2 text-sm text-[var(--ink)]">
+          {q.verificationNote}
+        </p>
+      ) : q.verificationNote && isProvfraga(q) && q.verificationNote.includes("Att kontrollera:") ? (
+        <p className="mt-2 rounded-lg border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm text-[var(--ink)]">
           {q.verificationNote}
         </p>
       ) : null}
@@ -890,7 +906,7 @@ function QuestionCard({
             {q.pool === "spel" ? "Flytta till övningen" : "Flytta till spelpoolen"}
           </button>
         ) : null}
-        {q.status !== "published" && !isProvfraga(q) ? (
+        {q.status !== "published" && canPublish(q) ? (
           <button
             type="button"
             onClick={() => void changeStatus("published")}

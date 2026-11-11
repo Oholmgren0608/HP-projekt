@@ -63,7 +63,7 @@ Samlingen av alla flervalsfrågor appen använder. Databasen är sanningen; den 
 _Avoid_: Frågedatabas, content
 
 **Provfråga**:
-En fråga ur ett officiellt Prov från UHR, med uppgift om prov, provpass och frågenummer. Upphovsrättsskyddad av UHR och därför inte en del av den publicerade frågebanken.
+En fråga ur ett officiellt Prov från UHR, med uppgift om prov, provpass och frågenummer (id `hp-<datum>-p<n>-q<m>`). De kvantitativa (XYZ, KVA, NOG, DTK) får publiceras sedan 2026-11-11, med UHR:s tillstånd, egen förklaring och källa, och väljs före Övningsfrågorna. De verbala är upphovsrättsskyddade utan tillstånd och används bara som Förlaga.
 _Avoid_: Importerad fråga, riktig fråga
 
 **Övningsfråga**:
@@ -71,7 +71,7 @@ En egenskriven fråga i HP-stil som inte kommer från ett officiellt prov. Huvud
 _Avoid_: Egen fråga, syntetisk fråga
 
 **Förlaga**:
-En Provfråga som används som mall för att skriva en Övningsfråga. Mönstret återanvänds, inte innehållet: den nya frågan har egna siffror, ord och texter, och förlagan visas aldrig för användare.
+En verbal Provfråga som används som mall för att skriva en Övningsfråga. Mönstret återanvänds, inte innehållet: den nya frågan har egna siffror, ord och texter, och förlagan visas aldrig för användare.
 _Avoid_: Mall, original
 
 **Andra kontrollen**:

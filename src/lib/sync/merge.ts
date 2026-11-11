@@ -20,6 +20,8 @@
  * Alla funktioner tar och ger råa localStorage-strängar.
  */
 
+import { isAllowedUhrQuestion, isUhrQuestionId } from "@/lib/uhr";
+
 /** Reserverad markör för en raderad nyckel (samma som i storage-sync). */
 export const TOMBSTONE = "__hp_lift_deleted__";
 
@@ -179,9 +181,13 @@ function mergeSrs(_base: Base, local: string, remote: string): string {
   const r = objectOr(parse(remote));
   const out: JsonObject = {};
   for (const id of new Set([...Object.keys(l), ...Object.keys(r)])) {
-    if (id.startsWith("hp-")) continue; // UHR-frågor visas aldrig
     const a = l[id];
     const c = r[id];
+    // Verbala UHR-frågor visas aldrig; kvantitativa får felkort sedan 0040.
+    if (isUhrQuestionId(id)) {
+      const kind = [a, c].map((x) => (isObject(x) && typeof x.kind === "string" ? x.kind : "")).find(Boolean) ?? "";
+      if (!isAllowedUhrQuestion({ id, kind })) continue;
+    }
     if (!isObject(a)) {
       if (isObject(c)) out[id] = c;
       continue;

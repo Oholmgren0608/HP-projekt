@@ -1,6 +1,6 @@
 # 0001 – Stängd frågepool för tävlingslägen
 
-- Status: beslutad (Oscar, 2026-11-07), inte byggd
+- Status: beslutad (Oscar, 2026-11-07), byggd (migration 0035–0037), ändrad 2026-11-11 (UHR-frågor först, se sist)
 - Gäller: duellerna och Alla mot alla ([spec](../alla-mot-alla/spec.md))
 
 ## Bakgrund
@@ -59,3 +59,18 @@ Poolen fylls på två sätt:
 - **Behålla publika frågor och acceptera fusket.** Förkastat av Oscar: hålet täpps först.
 - **Skriva en helt ny pool innan start.** För långsamt som enda väg; används som löpande påfyllning.
 - **Gömma facit bara i duellvyn.** Hjälper inte, eftersom samma fråga med facit finns i den publika banken.
+
+## Ändring 2026-11-11: UHR:s kvantitativa frågor först i spelen
+
+Oscar har beslutat att UHR:s kvantitativa frågor ska användas i första hand överallt, även i duellerna och Alla mot
+alla (`docs/uhr-fragor/plan.md`, tillstånd i `docs/juridik/uhr-tillstand-kvant.md`).
+
+- `pool_pick_questions` (migration 0040) väljer bland spelpoolen **och** publicerade UHR-frågor i XYZ, KVA och NOG.
+  Inom ett delprov går frågor som ingen av spelarna fått de senaste 30 dagarna först, och bland dem UHR-frågorna före
+  AI-frågorna. Spelpoolen fyller på när UHR-frågorna inte räcker, och ORD och MEK kommer som förut bara ur spelpoolen.
+- UHR-frågorna ligger i övningspoolen och är publika med facit, och UHR publicerar själva facit på studera.nu. En
+  spelare kan alltså slå upp svaret. Det strider mot punkt 2 ovan men är accepterat av Oscar. Servern väljer, tidtar
+  och rättar fortfarande varje svar, och skickar inget facit förrän frågan har stängt.
+- UHR-frågor i spelen blir inte felkort från spelen (samma regel som för poolen), men de blir felkort när de besvaras
+  fel i övningen.
+

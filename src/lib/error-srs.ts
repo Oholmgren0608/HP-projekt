@@ -3,6 +3,7 @@ import { findQuestionById, type ChoiceQuestion } from "@/lib/practice";
 import { isCorrect } from "@/lib/quiz";
 import { storageSet } from "@/lib/sync/storage-sync";
 import { emitEvent, loadJson } from "@/lib/storage";
+import { isAllowedUhrQuestion, isUhrQuestionId } from "@/lib/uhr";
 
 export const SRS_STORAGE_KEY = "hp-lift-srs-v1";
 export const SRS_EVENT = "hp-lift-srs-changed";
@@ -76,8 +77,8 @@ export function loadSrs(): Record<string, SrsCard> {
     let changed = false;
     const hydrated: Record<string, SrsCard> = {};
     for (const [id, card] of Object.entries(parsed)) {
-      // Provfrågor kan aldrig publiceras igen; kortets kopia av UHR:s text tas bort.
-      if (isProvfragaId(id)) {
+      // Verbala UHR-frågor visas aldrig; kortets kopia av UHR:s text tas bort.
+      if (isBlockedUhrCard(id, card)) {
         changed = true;
         continue;
       }
@@ -108,20 +109,25 @@ function saveSrs(map: Record<string, SrsCard>) {
   emitSrsChanged();
 }
 
-/** Provfrågor ur UHR:s prov har id på formen "hp-<datum>-p<n>-q<m>". */
-export function isProvfragaId(id: string): boolean {
-  return id.startsWith("hp-");
+/**
+ * Kort för en UHR-fråga (id "hp-…") som aldrig får visas: de verbala, som inte
+ * har tillstånd (AGENTS.md regel 1). Kvantitativa UHR-frågor får felkort sedan 0040.
+ */
+export function isBlockedUhrCard(id: string, card: { kind?: unknown }): boolean {
+  return isUhrQuestionId(id) && !isAllowedUhrQuestion({ id, kind: typeof card.kind === "string" ? card.kind : "" });
 }
 
 /**
  * Kortet sparar en kopia av frågan, så en fråga som inte längre är publicerad
  * (indragen efter felrapporter, avvisad eller en provfråga från före 0017)
- * skulle annars fortsätta visas. Provfrågor (id "hp-…") visas aldrig; övriga
- * kort göms när banken kommer från databasen men saknar frågan. Kortet ligger
- * kvar och dyker upp igen om frågan publiceras på nytt.
+ * skulle annars fortsätta visas. Kort göms när banken kommer från databasen men
+ * saknar frågan. Ett kort för en UHR-fråga visas bara när frågan finns i den
+ * laddade banken, så att bara publicerade kvantitativa UHR-frågor syns. Kortet
+ * ligger kvar och dyker upp igen om frågan publiceras på nytt.
  */
 function isShowable(card: SrsCard): boolean {
-  if (isProvfragaId(card.id)) return false;
+  if (isBlockedUhrCard(card.id, card)) return false;
+  if (isUhrQuestionId(card.id)) return findQuestionById(card.id) !== undefined;
   return !isBankFromDatabase() || findQuestionById(card.id) !== undefined;
 }
 

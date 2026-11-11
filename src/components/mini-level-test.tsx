@@ -37,6 +37,7 @@ import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionSource } from "@/components/question-source";
 import { QuestionPassage } from "@/components/question-passage";
 
 type Phase = "intro" | "quiz" | "result";
@@ -376,6 +377,7 @@ export function MiniLevelTest() {
           <QuestionFigure question={current} position={quiz.index + 1} />
 
           <p className="mt-5 text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
+          <QuestionSource id={current.id} />
 
           <div className="mt-4">
             <QuizOptions

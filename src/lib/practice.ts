@@ -7,6 +7,7 @@ import { loadMasteredQuestionIds } from "@/lib/question-mastery";
 import { loadJson, saveJson } from "@/lib/storage";
 import { hashSeed, shuffle } from "@/lib/random";
 import { SUBTESTS } from "@/lib/subtests";
+import { preferUhr } from "@/lib/uhr";
 import type {
   ChoiceQuestion,
   PracticeKind,
@@ -147,11 +148,12 @@ export function buildQuiz(
     else masteredRecent.push(q);
   }
 
+  // Inom varje nivå går UHR:s frågor före appens egna (docs/uhr-fragor/plan.md).
   const ordered = [
-    ...shuffle(unmasteredFresh, seed),
-    ...shuffle(unmasteredRecent, `${seed}:recent`),
-    ...shuffle(masteredFresh, `${seed}:mastered`),
-    ...shuffle(masteredRecent, `${seed}:mastered-recent`),
+    ...preferUhr(shuffle(unmasteredFresh, seed)),
+    ...preferUhr(shuffle(unmasteredRecent, `${seed}:recent`)),
+    ...preferUhr(shuffle(masteredFresh, `${seed}:mastered`)),
+    ...preferUhr(shuffle(masteredRecent, `${seed}:mastered-recent`)),
   ];
   return ordered.slice(0, Math.min(count, ordered.length));
 }

@@ -6,6 +6,10 @@
  * godtycklig URL-sträng (Supabase Storage, men i teorin vilken host som
  * helst) och vi vill inte riskera att en host som inte står i remotePatterns
  * kraschar bygget/sidan. Därför stängs next/no-img-element av lokalt.
+ *
+ * Figurerna ur UHR:s prov (`/uhr/…`, utklippta ur provhäftet) visas i full
+ * bredd – en DTK-sida har små tal som inte går att läsa i en liten ruta – och
+ * kan öppnas i full storlek för att zooma på mobilen.
  */
 export function QuestionFigure({
   question,
@@ -19,6 +23,30 @@ export function QuestionFigure({
   if (!question.figureUrl) return null;
 
   const alt = position !== undefined ? `Figur till fråga ${position}` : "Figur till fråga";
+
+  if (question.figureUrl.startsWith("/uhr/")) {
+    return (
+      <figure className="my-3">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={question.figureUrl}
+          alt={alt}
+          loading="lazy"
+          className="h-auto w-auto max-w-full rounded-lg border border-[var(--line)] bg-white dark:brightness-[0.92]"
+        />
+        <figcaption className="mt-1 text-xs">
+          <a
+            href={question.figureUrl}
+            target="_blank"
+            rel="noopener"
+            className="text-[var(--brand)] underline-offset-2 hover:underline"
+          >
+            Öppna figuren i full storlek
+          </a>
+        </figcaption>
+      </figure>
+    );
+  }
 
   return (
     // eslint-disable-next-line @next/next/no-img-element

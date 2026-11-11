@@ -6,6 +6,7 @@ import type { Database } from "@/lib/supabase/client";
 import { fetchAllPages } from "@/lib/supabase/paginate";
 import { isPoolKind } from "@/lib/pool-time";
 import {
+  canPublish,
   isProvfraga,
   PRACTICE_GROUP_ID,
   UNKNOWN_EXAM_GROUP_ID,
@@ -113,8 +114,8 @@ function groupQuestions(
       examDate: exam?.exam_date ?? sorted.find((q) => q.examDate)?.examDate ?? null,
       title:
         examId === UNKNOWN_EXAM_GROUP_ID
-          ? "Förlagor: utan provtillhörighet"
-          : `Förlagor: ${exam?.title ?? `Prov ${examId}`}`,
+          ? "Provfrågor utan provtillhörighet"
+          : `UHR: ${exam?.title ?? `Prov ${examId}`}`,
       questions: sorted,
     });
   }
@@ -242,9 +243,27 @@ function chunks(ids: string[]): string[][] {
 }
 
 /**
- * Provfrågor (exam_id satt eller id "hp-…") får aldrig publiceras – databasen
- * stoppar det också (villkoret i 0017).
+ * Finns en Provfråga bland id:na som inte får publiceras (verbal, utan
+ * förklaring eller i spelpoolen)? Databasen stoppar det också (villkoret i 0040);
+ * här får granskaren ett begripligt fel i stället.
  */
+async function includesUnpublishable(admin: AdminClient, ids: string[]): Promise<boolean | null> {
+  for (const chunk of chunks(ids)) {
+    const { data, error } = await admin
+      .from("questions")
+      .select("id, kind, exam_id, explain, pool")
+      .in("id", chunk)
+      .or("exam_id.not.is.null,id.like.hp-*");
+    if (error) return null;
+    const blocked = (data ?? []).some(
+      (r) => !canPublish({ id: r.id, kind: r.kind, examId: r.exam_id, explain: r.explain, pool: r.pool === "spel" ? "spel" : "ovning" }),
+    );
+    if (blocked) return true;
+  }
+  return false;
+}
+
+/** Provfrågor (exam_id satt eller id "hp-…") kan aldrig flyttas till spelpoolen. */
 async function includesProvfraga(admin: AdminClient, ids: string[]): Promise<boolean | null> {
   for (const chunk of chunks(ids)) {
     const { data, error } = await admin
@@ -336,9 +355,17 @@ export async function saveQuestion(input: SaveQuestionInput): Promise<MutateResu
     update.status = input.status;
   }
   if (update.status === "published") {
-    const locked = await includesProvfraga(auth.admin, [input.id]);
-    if (locked === null) return { ok: false, error: "UPSTREAM_ERROR" };
-    if (locked) return { ok: false, error: "PROVFRAGA_LOCKED" };
+    // Kontrollera frågan som den blir efter sparandet (förklaringen kan ha ändrats).
+    if (isProvfraga({ id: current.id, examId: current.exam_id })) {
+      const ok = canPublish({
+        id: current.id,
+        kind: current.kind,
+        examId: current.exam_id,
+        explain: update.explain,
+        pool: current.pool === "spel" ? "spel" : "ovning",
+      });
+      if (!ok) return { ok: false, error: "PROVFRAGA_LOCKED" };
+    }
   }
 
   const { error } = await auth.admin
@@ -369,7 +396,7 @@ export async function setStatus(input: {
   const ids = (input.ids ?? []).filter((id) => typeof id === "string" && id.length > 0);
   if (ids.length === 0) return { ok: false, error: "INVALID_INPUT" };
   if (input.status === "published") {
-    const locked = await includesProvfraga(auth.admin, ids);
+    const locked = await includesUnpublishable(auth.admin, ids);
     if (locked === null) return { ok: false, error: "UPSTREAM_ERROR" };
     if (locked) return { ok: false, error: "PROVFRAGA_LOCKED" };
   }
@@ -388,7 +415,8 @@ export async function setStatus(input: {
 
 /**
  * Flyttar en eller flera Övningsfrågor mellan övningen och den stängda
- * spelpoolen (ADR 0001). Provfrågor kan aldrig hamna i någon pool, och
+ * spelpoolen (ADR 0001). Provfrågor flyttas aldrig (de publicerade
+ * kvantitativa väljs ändå till spelen, 0040), och
  * spelpoolen tar bara ORD, MEK, XYZ, KVA och NOG.
  */
 export async function setPool(input: {

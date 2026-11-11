@@ -3,9 +3,13 @@
 Read this before every task. If anything here conflicts with a task request, STOP and ask.
 
 ## 1. Non-negotiable rules (never break these)
-1. **UHR questions are never shown to users.** UHR material is used only as a model for writing new questions.
-   Never remove, weaken, or route around the database block. Every new query, API route or view that reads
-   questions must keep the block in place.
+1. **UHR's verbal questions are never shown to users.** Verbal UHR material (ORD, LÄS, MEK, ELF) is used only as a model
+   for writing new questions. Never remove, weaken, or route around the database block (constraint
+   `questions_provfraga_publicering`, migration 0040). Every new query, API route or view that reads questions must keep it.
+   The one exception (Oscar, 2026-11-11): UHR has given permission for the **quantitative** questions (XYZ, KVA, NOG, DTK),
+   recorded in `docs/juridik/uhr-tillstand-kvant.md`. They may be published after the usual checks and a human spot check,
+   always show their source (`QuestionSource`), and are picked before our own questions (`docs/uhr-fragor/plan.md`).
+   Verbal UHR questions stay blocked until permission is saved in `docs/juridik/`.
 2. **Staff-only stays staff-only.** The Studiehjälp pilot (expert applications, reviews, expert profiles, admin, audit log)
    must only be reachable by users with the staff/admin role. Check access on the server and in RLS, not only in the UI.
 3. **Expert documents are private.** Only admins can read uploaded application documents. Never make the storage bucket public
@@ -58,6 +62,9 @@ If a task seems to need one of these, stop and ask.
     `scripts/db.ts`, and `link` also needs `SUPABASE_ACCESS_TOKEN` in `.env.local`.
 - Question bank: `npm run fragebank:validate` → `fragebank:kontroll` → `fragebank:upload` (as drafts) → `fragebank:export`
   (rewrites the offline copy); `fragebank:aldre` and `fragebank:balansera` handle the older questions. Code in `scripts/fragebank/`, steps in `README.md`.
+- UHR's quantitative questions: `scripts/uhr/prepare.ts` (pages + facit) → an AI transcribes, solves without the key and explains
+  (`scripts/uhr/AVSKRIFT.md`) → `scripts/uhr/figur.ts` (figures to `public/uhr/`) → `scripts/uhr/kontroll.ts --write <pass>` →
+  `npm run fragebank:upload -- --uhr` (as drafts). Steps in `scripts/uhr/README.md`.
 
 ## 5. Project map
 - `src/app/` — routes and pages, with Swedish route names (`/plan`, `/ova`, `/prov`, `/nivatest`, `/resultat`, `/duell`, `/forum`, `/profil`, …).
@@ -79,21 +86,26 @@ If a task seems to need one of these, stop and ask.
 - `supabase/migrations/` — schema and RLS
 - `supabase/manual/` — rollback and verification SQL run by hand, not migrations. `supabase/combined_migrations.sql` is an old copy of
   0001–0009 that is already applied; don't run it.
-- `scripts/` — `db.ts` (Supabase CLI wrapper), `fragebank/` (question-bank pipeline), `import-prov/` (imports UHR exams, used only as models)
-- `content/ovningsfragor/` — new practice questions per delprov (JSON) before upload; `content/aldre-fragor/` — second check of the older questions
+- `scripts/` — `db.ts` (Supabase CLI wrapper), `fragebank/` (question-bank pipeline), `import-prov/` (downloads and parses UHR exams),
+  `uhr/` (transcription pipeline for UHR's quantitative questions)
+- `content/ovningsfragor/` — new practice questions per delprov (JSON) before upload; `content/aldre-fragor/` — second check of the older questions;
+  `content/uhr/` — transcribed UHR passes (`<examId>-p<N>.json`) and UHR's facit (`facit.json`); their figures are in `public/uhr/`
 - `docs/` — `studiehjalp/` (v2.0 spec and phase docs), `juridik/` (privacy policy, DPIA), `agents/` (issue tracker, labels, domain docs),
   `logga/` (logo files and rules), `KNOWN_ISSUES.md` (open problems); `GLOSSARY.md` is at the root
 - `future-changes/` — deferred follow-up work (mostly duels); `anteckningar/` — project notes; `.agents/agents/` — agent definitions;
   `.superdesign/` — the Lugn design system and drafts
 - Question bank: lives in the database (about 1,600 published questions, 8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK);
-  about 1,400 are practice questions and 200 (40 each of ORD, MEK, XYZ, KVA, NOG) are in the closed game pool
+  about 1,400 are practice questions and 200 (40 each of ORD, MEK, XYZ, KVA, NOG) are in the closed game pool. About 2,080 quantitative
+  UHR questions (52 passes, 2012–2024) are being added as drafts (`docs/uhr-fragor/plan.md`); `src/lib/uhr.ts` holds the shared rules
 
 ## 6. Domain rules
 - Full test: 40 questions in 55 min (80 min with extended time). Quick test: 24 questions in 20 min.
 - Every question has an explanation. DTK questions have real tables, charts and maps.
 - New questions: automatic checks → solved by a second AI without the key → saved as **draft** → published only after a human spot check.
   Never publish questions directly.
-- Missed questions become error cards in "Dagens repetition".
+- Missed questions become error cards in "Dagens repetition" (also quantitative UHR questions; verbal UHR ids are always dropped).
+- UHR questions first: in practice, prov and nivåtest `buildQuiz` puts UHR questions before our own within each tier (unseen before
+  seen), and the games pick published quantitative UHR questions before the closed pool (`pool_pick_questions`, migration 0040).
 - Score forecast / normerad poäng: the conversion is in `src/lib/progress-history.ts`. `estimateNormFromPercent()` turns % correct into a
   rough 0,0–2,0 (not UHR's official normering table) and `prognosisFromExercises()` builds the forecast (a delprov counts from 10 answers);
   rounding and limits are in `clampNorm()` in `src/lib/hp-scores.ts`. Don't change this logic without being asked.
@@ -103,6 +115,8 @@ If a task seems to need one of these, stop and ask.
   no client can read it, it is not in the offline copy, and the server picks, times and grades every answer
   (`duel_next_question` / `duel_submit_answer`, migration 0037). Duels use ORD, MEK, XYZ, KVA and NOG; time per question
   follows the delprov (`src/lib/pool-time.ts` must match `pool_time_limit_ms`). Pool questions never become error cards.
+  Exception (Oscar, 2026-11-11, ADR 0001 update): the games pick published quantitative UHR questions first. Their answers are public
+  (practice bank and UHR's own facit), which Oscar accepted; the server still picks, times and grades them.
 
 ## 7. Design system "Lugn"
 Full reference: `DESIGN.md` (tokens, components, rules) with its sidecar `.impeccable/design.json`; product context in `PRODUCT.md`.

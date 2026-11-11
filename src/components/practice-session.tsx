@@ -22,6 +22,7 @@ import { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuizProgress } from "@/components/quiz/quiz-progress";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionSource } from "@/components/question-source";
 import type { StudyTask } from "@/lib/study-plan";
 import { QuestionPassage } from "@/components/question-passage";
 
@@ -205,6 +206,7 @@ export function PracticeSession({
           <QuestionFigure question={current} position={quiz.index + 1} />
 
           <p className="text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
+          <QuestionSource id={current.id} />
 
           <QuizOptions
             questionId={current.id}

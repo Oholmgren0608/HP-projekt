@@ -5,6 +5,7 @@ import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import type { useQuiz } from "@/lib/use-quiz";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionSource } from "@/components/question-source";
 import { QuestionPassage } from "@/components/question-passage";
 import { cn } from "@/lib/utils";
 
@@ -156,6 +157,7 @@ export function ExamQuiz({
       <QuestionFigure question={current} position={quiz.index + 1} />
 
       <p className="mt-5 text-lg font-medium text-[var(--ink)]">{current.prompt}</p>
+      <QuestionSource id={current.id} />
 
       <div className="mt-4">
         <QuizOptions

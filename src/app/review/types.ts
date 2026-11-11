@@ -1,5 +1,7 @@
 /** Datamodeller som delas mellan review-server actions och review-klienten. */
 
+import { isPublishableProvfraga } from "@/lib/uhr";
+
 export type QuestionStatus = "draft" | "published" | "rejected";
 
 export type ReviewQuestion = {
@@ -35,11 +37,17 @@ export const PRACTICE_GROUP_ID = "__legacy__";
 export const UNKNOWN_EXAM_GROUP_ID = "__provfragor__";
 
 /**
- * Provfråga = upphovsrättsskyddad fråga ur UHR:s prov: har exam_id eller ett
- * id på formen "hp-…". Samma regel som databasens villkor i 0017.
+ * Provfråga = fråga ur UHR:s prov: har exam_id eller ett id på formen "hp-…".
+ * De kvantitativa får publiceras sedan 0040 (UHR:s tillstånd); de verbala är
+ * förlagor som aldrig publiceras.
  */
 export function isProvfraga(q: { id: string; examId: string | null }): boolean {
   return q.examId != null || q.id.startsWith("hp-");
+}
+
+/** Får frågan publiceras? Övningsfrågor alltid, Provfrågor enligt databasens villkor (0040). */
+export function canPublish(q: Pick<ReviewQuestion, "id" | "kind" | "examId" | "explain" | "pool">): boolean {
+  return !isProvfraga(q) || isPublishableProvfraga(q);
 }
 
 export type ReviewExamGroup = {

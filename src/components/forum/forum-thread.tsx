@@ -19,6 +19,7 @@ import { loadQuestions } from "@/lib/content/questions-provider";
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import { QuizOptions } from "@/components/quiz/quiz-options";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionSource } from "@/components/question-source";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { LoginPanel } from "@/components/auth/login-panel";
 import {
@@ -229,6 +230,7 @@ export function ForumThreadScreen({ questionId }: { questionId: string }) {
 
         {question ? (
           <>
+            <QuestionSource id={question.id} />
             <QuestionFigure question={question} position={1} />
             <div className="mt-4">
               <QuizOptions

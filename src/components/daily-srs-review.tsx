@@ -12,6 +12,7 @@ import {
   type SrsCard,
 } from "@/lib/error-srs";
 import { QuestionPassage } from "@/components/question-passage";
+import { QuestionSource } from "@/components/question-source";
 
 export function DailySrsReview() {
   const [cards, setCards] = useState<SrsCard[]>(dueCards);
@@ -117,6 +118,7 @@ export function DailySrsReview() {
       <p className={`text-lg font-medium text-[var(--ink)] ${card.passage ? "mt-4" : "mt-5"}`}>
         {card.front}
       </p>
+      <QuestionSource id={card.id} />
 
       {hasOptions ? (
         <div className="mt-4 space-y-2.5 sm:space-y-3" role="radiogroup" aria-label="Svarsalternativ">

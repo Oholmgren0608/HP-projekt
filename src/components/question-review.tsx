@@ -3,6 +3,7 @@
 import { kindBadge, type ChoiceQuestion } from "@/lib/practice";
 import { ExplainFigure } from "@/lib/content/explain-figures";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionSource } from "@/components/question-source";
 import { DiscussQuestionButton } from "@/components/forum/discuss-button";
 import { FlagQuestionButton } from "@/components/flag-question-button";
 import { QuestionPassage } from "@/components/question-passage";
@@ -48,6 +49,7 @@ function QuestionReviewItem({
         </span>
       </div>
       <p className="mt-1 font-medium text-[var(--ink)]">{q.prompt}</p>
+      <QuestionSource id={q.id} className="mt-1" />
 
       <QuestionPassage
         passage={q.passage}

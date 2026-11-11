@@ -71,8 +71,14 @@ describe("felkort", () => {
     expect(Object.keys(out).sort()).toEqual(["a", "b", "c"]);
     expect(out.a.lapses).toBe(2);
   });
-  it("släpper aldrig igenom UHR-frågor", () => {
+  it("släpper aldrig igenom verbala UHR-frågor", () => {
     expect(merge("hp-lift-srs-v1", empty, {}, { "hp-2024-04-p1-q1": card("hp-2024-04-p1-q1", 0, 0, "2026-11-02") })).toEqual({});
+    const noKind = { ...card("hp-2024-04-13-p2-q1", 0, 0, "2026-11-02"), kind: undefined };
+    expect(merge("hp-lift-srs-v1", empty, { "hp-2024-04-13-p2-q1": noKind }, {})).toEqual({});
+  });
+  it("behåller felkort för kvantitativa UHR-frågor", () => {
+    const xyz = { ...card("hp-2024-04-13-p2-q3", 1, 0, "2026-11-02"), kind: "xyz" };
+    expect(merge("hp-lift-srs-v1", empty, { "hp-2024-04-13-p2-q3": xyz }, {})).toEqual({ "hp-2024-04-13-p2-q3": xyz });
   });
 });
 

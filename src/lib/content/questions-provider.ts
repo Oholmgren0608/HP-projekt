@@ -1,6 +1,7 @@
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { fetchAllPages } from "@/lib/supabase/paginate";
 import type { ChoiceQuestion, ReflectPrompt } from "@/lib/practice-types";
+import { isAllowedUhrQuestion, isUhrQuestionId } from "@/lib/uhr";
 
 /**
  * Runtime-"source of truth" för övningsfrågorna.
@@ -112,6 +113,7 @@ function questionFromRow(row: Record<string, unknown>): ChoiceQuestion | null {
     correct_index >= 0 &&
     correct_index < options.length &&
     (passage === null || passage === undefined || typeof passage === "string");
+  if (valid && isBlockedUhr(id as string, kind as string)) return null;
   if (!valid) {
     console.warn("[questions] Hoppar över ogiltig frågerad:", row);
     return null;
@@ -159,8 +161,17 @@ function isChoiceQuestion(q: unknown): q is ChoiceQuestion {
     o.correctIndex >= 0 &&
     o.correctIndex < o.options.length &&
     QUESTION_KINDS.includes(o.kind as ChoiceQuestion["kind"]) &&
-    (o.passage === undefined || typeof o.passage === "string")
+    (o.passage === undefined || typeof o.passage === "string") &&
+    !isBlockedUhr(o.id, o.kind)
   );
+}
+
+/**
+ * Verbala UHR-frågor visas aldrig (AGENTS.md regel 1). Databasen släpper inte
+ * igenom dem (0040); det här är ett andra skydd om en sådan rad ändå dyker upp.
+ */
+function isBlockedUhr(id: string, kind: string): boolean {
+  return isUhrQuestionId(id) && !isAllowedUhrQuestion({ id, kind });
 }
 
 function isReflectPrompt(r: unknown): r is ReflectPrompt {

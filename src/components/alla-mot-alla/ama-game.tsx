@@ -21,6 +21,7 @@ import {
 import { distributionPercent, formatPoints, kindsText, placement, topWithMe } from "@/lib/alla-mot-alla/format";
 import { errorMessage } from "@/components/duel/duel-utils";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionSource } from "@/components/question-source";
 import { QuestionPassage } from "@/components/question-passage";
 import { cn } from "@/lib/utils";
 import { KindPicker } from "./kind-picker";
@@ -324,6 +325,7 @@ export function AmaGame({ gameId }: { gameId: string }) {
         />
         <QuestionFigure question={{ figureUrl: q.figure_url }} position={q.index + 1} />
         <p className="mt-4 text-lg font-medium text-[var(--ink)]">{q.prompt}</p>
+        <QuestionSource id={q.id} />
 
         <div className="mt-4 space-y-2.5 sm:space-y-3" role="radiogroup" aria-label="Svarsalternativ">
           {q.options.map((opt, i) => {
@@ -617,6 +619,7 @@ function Finished({ state, busy, onAgain }: { state: AmaState; busy: boolean; on
                   Fråga {item.index + 1} · {badge(item.question.kind)} · {formatPoints(item.my_points)} poäng
                 </p>
                 <p className="mt-1 font-medium text-[var(--ink)]">{item.question.prompt}</p>
+                <QuestionSource id={item.question.id} className="mt-1" />
                 <p className="mt-2 text-sm text-[var(--ink-soft)]">
                   Rätt svar:{" "}
                   <span className="font-medium text-[var(--success-ink)]">

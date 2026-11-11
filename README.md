@@ -98,8 +98,11 @@ andra kontroll. Resultatet ligger i `content/aldre-fragor/andra-kontrollen.json`
 3. `npm run fragebank:export` så att reservbanken följer med.
 
 Provfrågor som importeras ur UHR:s prov (`scripts/import-prov`) är
-upphovsrättsskyddade. De används bara som förlagor och kan aldrig publiceras
-(databasen stoppar det från migration `0017`).
+upphovsrättsskyddade. De kvantitativa (XYZ, KVA, NOG, DTK) får visas sedan UHR
+gav tillstånd (`docs/juridik/uhr-tillstand-kvant.md`); de skrivs av och får
+förklaringar i `scripts/uhr/` (se `scripts/uhr/README.md`). De verbala används
+bara som förlagor och kan aldrig publiceras (databasen stoppar det, migration
+`0040`).
 
 ## Supabase (valfritt — appen funkar anonymt utan)
 

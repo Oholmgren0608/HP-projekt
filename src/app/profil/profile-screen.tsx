@@ -14,7 +14,7 @@ import {
   MASTERY_STORAGE_KEY,
   parseMasteryStreaks,
 } from "@/lib/question-mastery";
-import { isProvfragaId } from "@/lib/error-srs";
+import { isBlockedUhrCard } from "@/lib/error-srs";
 import { REQUEST_CHANNELS } from "@/lib/feedback/feature-request";
 import { deleteAccount } from "./actions";
 
@@ -132,8 +132,8 @@ async function loadTrainingStats(userId: string): Promise<TrainingStats> {
   if (srs && typeof srs === "object" && !Array.isArray(srs)) {
     const today = todayKey();
     for (const [id, card] of Object.entries(srs)) {
-      const c = card as { due?: string };
-      if (c && typeof c === "object" && !isProvfragaId(id)) {
+      const c = card as { due?: string; kind?: unknown };
+      if (c && typeof c === "object" && !isBlockedUhrCard(id, c)) {
         srsCount += 1;
         if (typeof c.due === "string" && toDayKey(c.due) <= today) srsDue += 1;
       }

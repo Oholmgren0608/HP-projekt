@@ -32,6 +32,7 @@ import {
 } from "./duel-utils";
 import { ReviewForm } from "./review-form";
 import { QuestionFigure } from "@/components/question-figure";
+import { QuestionSource } from "@/components/question-source";
 import { QuestionPassage } from "@/components/question-passage";
 
 type Phase = "loading" | "error" | "playing" | "waiting" | "finished";
@@ -460,6 +461,7 @@ export function DuelMatchView({ matchId }: { matchId: string }) {
           <QuestionFigure question={q} position={current.index + 1} />
 
           <p className="mt-4 text-lg font-medium text-[var(--ink)]">{q.prompt}</p>
+          <QuestionSource id={q.id} />
 
           <AnswerOptions
             question={q}
@@ -619,6 +621,7 @@ function DuelReviewList({ items, oppName }: { items: DuelReviewItem[]; oppName: 
               Fråga {item.index + 1} · {kindBadge(item.question.kind as Parameters<typeof kindBadge>[0])}
             </p>
             <p className="mt-1 font-medium text-[var(--ink)]">{item.question.prompt}</p>
+            <QuestionSource id={item.question.id} className="mt-1" />
             <p className="mt-2 text-sm text-[var(--ink-soft)]">
               Rätt svar:{" "}
               <span className="font-medium text-[var(--success-ink)]">
