@@ -5,6 +5,7 @@
  *   npm run fragebank:upload                       # alla delprov
  *   npm run fragebank:upload -- elf las            # bara vissa delprov
  *   npm run fragebank:upload -- --pool spel kva    # till den stängda spelpoolen (ADR 0001)
+ *   npm run fragebank:upload -- --uhr [--dry-run]  # UHR:s kvantitativa frågor (content/uhr/, se upload-uhr.ts)
  *
  * Kräver SUPABASE_SERVICE_ROLE_KEY och SUPABASE_URL (eller
  * NEXT_PUBLIC_SUPABASE_URL) i .env.local. Nya frågor får status 'draft' och
@@ -25,6 +26,7 @@ import {
   validateDrafts,
   type DraftQuestion,
 } from "./lib";
+import { uploadUhr } from "./upload-uhr";
 
 type QuestionInsert = Database["public"]["Tables"]["questions"]["Insert"];
 type ExistingRow = Pick<
@@ -123,6 +125,7 @@ async function printPoolCounts(sb: ReturnType<typeof createClient<Database>>) {
 }
 
 async function main() {
+  if (args.includes("--uhr")) return uploadUhr(args.filter((a) => a !== "--uhr"));
   const unknown = kindArgs.filter((a) => !isKind(a));
   if (unknown.length > 0) throw new Error(`Okänt delprov: ${unknown.join(", ")}`);
   const kinds = kindArgs.length > 0 ? kindArgs.filter(isKind) : contentKinds();

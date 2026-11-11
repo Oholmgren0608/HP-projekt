@@ -1,0 +1,784 @@
+{
+  "examId": "hp-2019-10-20",
+  "passNumber": 1,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen motsvarar 5,3 · 10³ − 4,7 · 10²?",
+      "options": [
+        "4,83 · 10³",
+        "6,0 · 10²",
+        "4,83 · 10²",
+        "6,0 · 10¹"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv talen utan tiopotenser: 5,3 · 10³ = 5 300 och 4,7 · 10² = 470. Skillnaden är 5 300 − 470 = 4 830, och 4 830 = 4,83 · 10³. Svaret 6,0 · 10² lockar om man drar 4,7 från 5,3 utan att ta hänsyn till att exponenterna är olika; det går bara när tiopotenserna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "40 % av x är ett heltal. Vilket av svarsalternativen är ett möjligt värde på x?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 2,
+      "explain": "40 % av x är 0,4x = 2x/5. Det är ett heltal bara om 2x är delbart med 5, alltså om x är delbart med 5. Pröva: 0,4 · 3 = 1,2, 0,4 · 4 = 1,6, 0,4 · 5 = 2 och 0,4 · 6 = 2,4. Bara x = 5 ger ett heltal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "En femhörning är inritad i ett koordinatsystem som figuren visar. Vilken area har femhörningen?",
+      "options": [
+        "5 areaenheter",
+        "6 areaenheter",
+        "8 areaenheter",
+        "10 areaenheter"
+      ],
+      "blindAnswer": 3,
+      "explain": "Femhörningens hörn är (−2, 0), (0, 2), (2, 2), (2, 0) och (0, −2). Dela upp den längs axlarna. Kvadraten i första kvadranten har sidan 2 och arean 2 · 2 = 4. Triangeln i andra kvadranten har kateterna 2 och 2 och arean 2 · 2/2 = 2. Triangeln under x-axeln har basen 4 (från −2 till 2) och höjden 2, så arean är 4 · 2/2 = 4. Totalt 4 + 2 + 4 = 10 areaenheter.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.2,
+          0.125,
+          0.51,
+          0.345
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är jämnt delbart med 5?",
+      "options": [
+        "157 + 158",
+        "3⁵",
+        "185/5",
+        "5⁰ + 5¹ + 5²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna ut varje alternativ. 157 + 158 = 315, som slutar på 5 och alltså är delbart med 5 (315/5 = 63). 3⁵ = 243 slutar på 3. 185/5 = 37, som inte är delbart med 5. 5⁰ + 5¹ + 5² = 1 + 5 + 25 = 31; termen 5⁰ = 1 gör att summan inte blir delbar med 5, vilket är lätt att missa.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x om 5(x − 1) = 2(x + 2)?",
+      "options": [
+        "−1/7",
+        "1/7",
+        "1",
+        "3"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera in i parenteserna: 5x − 5 = 2x + 4. Samla x på ena sidan: 5x − 2x = 4 + 5, alltså 3x = 9 och x = 3. Kontroll: 5(3 − 1) = 10 och 2(3 + 2) = 10.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln v?",
+      "options": [
+        "50°",
+        "63°",
+        "67°",
+        "77°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinklarna 130° och 117° ligger utanför triangeln, på den förlängda baslinjen. Triangelns vinklar vid basen är därför 180° − 130° = 50° och 180° − 117° = 63°. Vinkelsumman i en triangel är 180°, så v = 180° − 50° − 63° = 67°. Alternativen 50° och 63° är basvinklarna, inte v.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.19,
+          0.545,
+          0.575,
+          0.67
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "För de positiva talen A, b och h gäller sambandet A = bh/2. Vad är h?",
+      "options": [
+        "h = 2Ab",
+        "h = 2A/b",
+        "h = Ab/2",
+        "h = b/(2A)"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lös ut h ur A = bh/2. Multiplicera båda leden med 2: 2A = bh. Dela sedan med b: h = 2A/b. Kontroll med tal: b = 4 och h = 3 ger A = 6, och 2A/b = 12/4 = 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Ekvationen för en rät linje kan skrivas y = kx + m. För vilken av nedanstående linjer är produkten k · m störst?",
+      "options": [
+        "Linje A",
+        "Linje B",
+        "Linje C",
+        "Linje D"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av lutningen k och skärningen m med y-axeln för varje linje. Linje A går genom (−2, 0) och (0, 2), så k = 1 och m = 2, och k · m = 2. Linje B går genom origo, så m = 0 och k · m = 0. Linje C är vågrät, så k = 0 och k · m = 0. Linje D skär y-axeln i 2 men lutar nedåt med k = −1, så k · m = −2. Störst produkt har linje A.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.18,
+          0.475,
+          0.42,
+          0.935
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken linje.",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Cirkeln A har radien 3 cm, och dess area är 1/4 av arean av cirkeln B. Hur stor radie har cirkeln B?",
+      "options": [
+        "4 cm",
+        "6 cm",
+        "9 cm",
+        "12 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Cirkeln A har arean π · 3² = 9π cm². Cirkeln B har fyra gånger så stor area, alltså 36π cm². Då är r² = 36 och r = 6 cm. Arean växer med kvadraten på radien, så fyra gånger arean ger bara dubbla radien; 12 cm lockar om man tror att radien ska bli fyra gånger så stor.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.2,
+          0.128,
+          0.55,
+          0.267
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Alma har skrivit 93 olika heltal på ett papper. 60 av dessa heltal är udda. Alma stryker slumpmässigt tal på pappret. Hur många tal måste hon stryka för att vara säker på att ha strukit minst hälften av de jämna talen?",
+      "options": [
+        "17",
+        "47",
+        "63",
+        "77"
+      ],
+      "blindAnswer": 3,
+      "explain": "Det finns 93 − 60 = 33 jämna tal, och minst hälften av dem är 17 tal (16,5 avrundat uppåt). I värsta fall stryker hon alla 60 udda tal först. Därefter måste hon stryka 17 jämna tal. Hon måste alltså stryka 60 + 17 = 77 tal för att vara säker. Med 76 strukna tal kan det fortfarande finnas bara 16 jämna bland dem.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar √(32xy²)?",
+      "passage": "x och y är positiva tal.",
+      "options": [
+        "2y√(8xy)",
+        "4y√(2x)",
+        "6y√x",
+        "8y√x"
+      ],
+      "blindAnswer": 1,
+      "explain": "Dela upp talet under rottecknet i kvadrater: 32xy² = 16 · y² · 2x. Eftersom y är positivt är √(y²) = y, och √16 = 4. Alltså är √(32xy²) = 4y√(2x). Kontroll med x = 2 och y = 1: √64 = 8 och 4 · 1 · √4 = 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "Medelvärdet av x, y och z är 15.\nMedelvärdet av y, z och 14 är 17.",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet 15 för tre tal betyder att x + y + z = 3 · 15 = 45. Medelvärdet 17 ger y + z + 14 = 3 · 17 = 51, alltså y + z = 37. Då är x = 45 − 37 = 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 5,7 · 10⁰\nKvantitet II: 5,7",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Varje tal (utom 0) upphöjt till 0 är 1, så 10⁰ = 1. Då är 5,7 · 10⁰ = 5,7 · 1 = 5,7, precis som kvantitet II. Den som tror att 10⁰ = 0 eller 10⁰ = 10 får fel relation.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/2 + 1/3 + 1/4\nKvantitet II: 1 + 1/13",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv bråken i kvantitet I med minsta gemensamma nämnaren 12: 6/12 + 4/12 + 3/12 = 13/12 = 1 + 1/12. Kvantitet II är 1 + 1/13. Eftersom 1/12 är större än 1/13 är kvantitet I större. Talet 13 i båda kvantiteterna kan locka till att tro att de är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Den största vinkeln i en triangel med sidlängderna 3 cm, 4 cm och 5 cm\nKvantitet II: Den största vinkeln i en triangel med sidlängderna 5 cm, 5 cm och 5 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Triangeln med sidorna 3, 4 och 5 cm är rätvinklig, eftersom 3² + 4² = 9 + 16 = 25 = 5². Dess största vinkel är alltså 90°. Triangeln med tre sidor på 5 cm är liksidig, och alla dess vinklar är 180°/3 = 60°. Kvantitet I är störst.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 4(a + 1) − 4(a − 1)\nKvantitet II: 4(a − 1) + 4(1 − a)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Förenkla båda uttrycken. Kvantitet I: 4a + 4 − 4a + 4 = 8. Kvantitet II: 4a − 4 + 4 − 4a = 0. Värdet på a spelar ingen roll, eftersom a försvinner i båda. 8 är större än 0, så kvantitet I är större för alla a.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Volymen av en cirkulär kon där basytans radie är 3 cm och höjden är 4 cm\nKvantitet II: Volymen av en cirkulär kon där basytans radie är 4 cm och höjden är 3 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En kons volym är πr²h/3. Kvantitet I: π · 3² · 4/3 = 36π/3 = 12π cm³. Kvantitet II: π · 4² · 3/3 = 48π/3 = 16π cm³. Radien räknas i kvadrat men höjden inte, så att byta plats på 3 och 4 ger inte samma volym. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x är ett heltal sådant att 1 ≤ x ≤ 100 000.\nKvantitet I: Sannolikheten att 4ˣ är ett jämnt tal\nKvantitet II: 0,5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "När x är ett positivt heltal är 4ˣ = 4 · 4 · … · 4, en produkt av fyror, och den är alltid jämn (4¹ = 4, 4² = 16, 4³ = 64 …). Sannolikheten att 4ˣ är jämnt är därför 1, vilket är större än 0,5. Det är x som är jämnt i hälften av fallen, inte 4ˣ.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √27 + √23\nKvantitet II: √50",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Båda kvantiteterna är positiva, så jämför deras kvadrater. (√27 + √23)² = 27 + 2√27 · √23 + 23 = 50 + 2√621, som är större än 50 = (√50)². Alltså är kvantitet I större. Uppskattning ger samma sak: √27 ≈ 5,2 och √23 ≈ 4,8, summan ≈ 10, medan √50 ≈ 7,1. Rötter kan inte adderas genom att man adderar talen under rottecknet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen A går genom punkterna (1, 1) och (5, 3). Linjen B är vinkelrät mot linjen A.\nKoordinatsystemet kan användas för att lösa uppgiften.\nKvantitet I: y-koordinaten för den punkt på linjen A där x = 0\nKvantitet II: y-koordinaten för den punkt på linjen B där x = 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Linjen A har lutningen (3 − 1)/(5 − 1) = 1/2. Från (1, 1) ett steg åt vänster minskar y med 1/2, så linjen A skär y-axeln i y = 1/2. Kvantitet I är alltså 0,5. Om linjen B vet vi bara att den är vinkelrät mot A, alltså att lutningen är −2. Den kan ligga var som helst: går den genom origo är kvantitet II 0 (mindre än I), och går den genom (0, 4) är kvantitet II 4 (större än I). Informationen räcker inte.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.2,
+          0.49,
+          0.58,
+          0.757
+        ]
+      },
+      "note": "Figuren är ett tomt rutnät; texten bredvid det (Koordinatsystemet kan användas för att lösa uppgiften.) står i passage.",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x är 75 % av y.\nKvantitet I: y/2\nKvantitet II: 2x/3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "x är 75 % av y, alltså x = 3y/4. Sätt in det i kvantitet II: 2x/3 = 2 · (3y/4)/3 = 6y/12 = y/2. Det är precis kvantitet I, oavsett vilket värde y har. Kontroll: y = 8 ger x = 6, och då är y/2 = 4 och 2x/3 = 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "2 pennor, 1 linjal och 5 sudd kostar lika mycket som 10 sudd.\n4 pennor och 2 linjaler kostar lika mycket som 10 sudd.\nKvantitet I: Kostnaden för 2 pennor\nKvantitet II: Kostnaden för 1 linjal",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla priserna p (penna), l (linjal) och s (sudd). Första villkoret ger 2p + l + 5s = 10s, alltså 2p + l = 5s. Andra villkoret ger 4p + 2l = 10s, alltså också 2p + l = 5s när man delar med 2. De två villkoren säger samma sak, så vi vet bara summan 2p + l. Exempel: p = 1, l = 3 och s = 1 uppfyller villkoren och ger 2p = 2, mindre än l = 3. Men p = 2, l = 1 och s = 1 uppfyller dem också och ger 2p = 4, större än l = 1. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På ett bord ligger det fem enfärgade lappar: en röd, en grön, en blå, en vit och en svart. Lapparna är numrerade 1–5 och ligger på rad i nummerordning. Vilket nummer står det på den röda lappen?\n(1) På den vita lappen står det 3. Den gröna lappen ligger intill den röda lappen. Den blå lappen ligger intill den svarta lappen.\n(2) På den svarta lappen står det 5. Numret på den gröna lappen är lägre än numret på den röda lappen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Den vita lappen har nummer 3, så de andra fyra ligger på 1, 2, 4 och 5. Röd och grön ska ligga intill varandra, liksom blå och svart, så ett par har 1 och 2 och det andra 4 och 5. Röd kan ha 1, 2, 4 eller 5. Inte tillräckligt.\n(2) Svart har 5 och grön har lägre nummer än röd, men röd kan till exempel ha 2, 3 eller 4. Inte tillräckligt.\n(1) och (2) tillsammans: Svart har 5 och vit 3. Blå ska ligga intill svart och får då 4. Röd och grön får 1 och 2, och eftersom grön har lägre nummer har röd 2. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "För de fyra talen a, b, c och d gäller att a < b < c < d.\nVilket av talen är närmast 0?\n(1) b = −3\n(2) d = 3",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) b = −3 ger a < −3, men c och d kan vara vad som helst större än −3. Är c = 0 är c närmast 0, men är c = −2 och d = 1 är d närmast. Inte tillräckligt.\n(2) d = 3 säger inget om hur nära 0 de andra talen ligger. Inte tillräckligt.\n(1) och (2) tillsammans: a < −3, så a ligger längre än 3 från 0. b och d ligger båda exakt 3 från 0. c ligger mellan −3 och 3 och alltså närmare 0 än 3. Talet c är närmast 0. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vad är medelvärdet av de fyra talen x, y, z och w?\n(1) Medelvärdet av y och z är 18. Medelvärdet av x och w är 30.\n(2) x + w − (y + z) = 24",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Medelvärdet är (x + y + z + w)/4, så vi behöver summan av talen.\n(1) y + z = 2 · 18 = 36 och x + w = 2 · 30 = 60. Summan är 96 och medelvärdet 96/4 = 24. Tillräckligt.\n(2) Vi får bara skillnaden mellan x + w och y + z, inte summan. Till exempel ger x + w = 24 och y + z = 0 medelvärdet 6, men x + w = 60 och y + z = 36 ger medelvärdet 24. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Fyrhörningen ABCD är en parallellogram. Hur stor är vinkeln A?\n(1) Vinkeln B är 116°.\n(2) Vinkeln C är 64°.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "I en parallellogram är intilliggande vinklar tillsammans 180° och motstående vinklar lika stora.\n(1) Vinklarna A och B ligger intill varandra, så A = 180° − 116° = 64°. Tillräckligt.\n(2) Vinkeln C står mitt emot vinkeln A, så A = C = 64°. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": {
+        "pages": [
+          14
+        ],
+        "box": [
+          0.21,
+          0.545,
+          0.49,
+          0.67
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x/400 = y/300\nVilket värde har x?\n(1) y = 300\n(2) x + y = 700",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Sambandet x/400 = y/300 ger x = 4y/3.\n(1) y = 300 ger x/400 = 300/300 = 1, alltså x = 400. Tillräckligt.\n(2) Sätt in x = 4y/3 i x + y = 700: 4y/3 + y = 7y/3 = 700, så y = 300 och x = 400. Tillräckligt.\nVarje påstående räcker för sig. Det är lätt att tro att (2) behöver (1), men sambandet i uppgiften ger den andra ekvationen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tecknet ◊ representerar ett av de fyra räknesätten: addition, subtraktion, multiplikation eller division. Vilket räknesätt är det som ◊ representerar?\n(1) x ◊ 0 = x för alla värden på x.\n(2) x ◊ x = 0 för alla värden på x.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) x + 0 = x och x − 0 = x för alla x, men x · 0 = 0 och division med 0 går inte. Både addition och subtraktion uppfyller villkoret. Inte tillräckligt.\n(2) x − x = 0 för alla x. Däremot är x + x = 2x, x · x = x² och x/x = 1, som inte är 0 för alla x. Bara subtraktion uppfyller villkoret. Tillräckligt.",
+      "figure": null,
+      "note": "Tecknet är en romb (◊) på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Till vilket av följande ändamål gick totalt 10 miljoner kronor åren 2012–2014?",
+      "options": [
+        "Majblommepengar till skolan",
+        "Majblommepengar till barn",
+        "Kläder och skor",
+        "Fritidsaktiviteter"
+      ],
+      "blindAnswer": 3,
+      "explain": "10 miljoner kronor är 10 000 tusental kronor. Fritidsaktiviteter står i det högra lilla diagrammet: ungefär 2 750 (2012), 3 300 (2013) och 3 900 (2014) tusen kronor, sammanlagt cirka 10 000 tusen kronor. Kläder och skor (mittdiagrammet) ger ungefär 3 700 + 4 500 + 5 100 ≈ 13 300. I det stora diagrammet är de vita delarna (majblommepengar till skolan) cirka 4 500, 4 900 och 5 200, alltså nästan 15 000, och de randiga delarna (majblommepengar till barn) cirka 5 200, 5 900 och 6 000, alltså ungefär 17 000. Bara fritidsaktiviteter blir 10 miljoner kronor.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag är korrekt vad gäller fördelningen av de utbetalda bidragen från Majblommans lokalavdelningar 2014?",
+      "passage": "Svarsalternativen anger: till enskilda barn – till grupper av barn",
+      "options": [
+        "50 procent – 50 procent",
+        "60 procent – 40 procent",
+        "70 procent – 30 procent",
+        "80 procent – 20 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av stapeln för 2014 i det stora diagrammet. Hela stapeln når ungefär 35 000 tusen kronor, och den grå delen (bidrag till enskilda barn) når ungefär 21 000. Andelen till enskilda barn är 21 000/35 000 = 0,6, alltså 60 procent, och resten, 14 000/35 000 = 40 procent, gick till grupper av barn.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de bidrag som totalt betalades ut till enskilda barn 2014 avsåg ändamålet sommarlov?",
+      "options": [
+        "15 procent",
+        "25 procent",
+        "35 procent",
+        "40 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Bidragen till enskilda barn 2014 är den grå delen av stapeln för 2014 i det stora diagrammet, ungefär 21 000 tusen kronor. Sommarlov 2014 står i det vänstra lilla diagrammet: ungefär 5 300 tusen kronor. Andelen är 5 300/21 000 ≈ 0,25, alltså 25 procent. Den som jämför med hela stapeln (cirka 35 000) får i stället ungefär 15 procent.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "På hur många av de redovisade platserna hade kvicksilverhalten i muskel från sill/strömming minskat 1992 jämfört med året innan?",
+      "options": [
+        "5",
+        "4",
+        "3",
+        "2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det nedre diagrammet (kvicksilver) och jämför punkterna för 1991 och 1992. Väderöarna redovisas först från 1995, så det finns fem platser. Ängskärsklubb minskar från cirka 80 till cirka 68, Landsort från cirka 40 till cirka 32 och Karlskrona från cirka 29 till cirka 21 nanogram per gram. Harufjärden ökar svagt (cirka 46 till 47) och Fladen ökar (cirka 25 till 37). Halten minskade alltså på 3 platser.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vad var den genomsnittliga kadmiumhalten i lever från sill/strömming för de sex platserna 1997, förutsatt att torrvikten lever var lika stor vid samtliga platser?",
+      "options": [
+        "1,2 mikrogram/gram torrvikt",
+        "1,4 mikrogram/gram torrvikt",
+        "1,6 mikrogram/gram torrvikt",
+        "1,8 mikrogram/gram torrvikt"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av det övre diagrammet (kadmium) för 1997: Landsort cirka 2,6, Ängskärsklubb cirka 2,25, Utlängtan cirka 1,7, Harufjärden cirka 1,1, Fladen cirka 0,5 och Väderöarna cirka 0,3 mikrogram per gram torrvikt. Summan är ungefär 2,6 + 2,25 + 1,7 + 1,1 + 0,5 + 0,3 = 8,45. Medelvärdet för sex platser är 8,45/6 ≈ 1,4. Eftersom torrvikten är lika stor överallt kan man ta det vanliga medelvärdet av halterna.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilket av följande år avses?",
+      "passage": "Kadmiumhalten i lever från sill/strömming i Utlängtan var 1,5 mikrogram per gram torrvikt, och kvicksilverhalten i muskel från sill/strömming i Karlskrona var 20 nanogram per gram färskvikt.",
+      "options": [
+        "1992",
+        "1998",
+        "2004",
+        "2005"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva åren i det övre diagrammet först. Utlängtans kadmiumhalt var cirka 2,2 år 1992 och cirka 2,6 år 1998, så de åren faller bort. Både 2004 och 2005 ligger Utlängtan på cirka 1,5. Titta sedan på Karlskrona i det nedre diagrammet (kvicksilver): 2004 var halten cirka 27 nanogram per gram och 2005 cirka 20. Bara 2005 stämmer med båda uppgifterna.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de huvud- och halsoperationer respektive plastiska operationer som utfördes 1900 hade god utgång?",
+      "options": [
+        "85 respektive 80 procent",
+        "85 respektive 90 procent",
+        "90 respektive 80 procent",
+        "90 respektive 90 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd tabellen över operationer. Huvud och hals: 620 av totalt 745 hade god utgång, och 620/745 ≈ 0,83, alltså cirka 85 procent. Plastiska: 582 av 635 hade god utgång, och 582/635 ≈ 0,92, alltså cirka 90 procent. Det närmaste alternativet är 85 respektive 90 procent.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av Sveriges befolkning utgjorde kurgäster vid hälsobrunnar, bad- och kallvattenkuranstalter år 1900?",
+      "options": [
+        "0,5 procent",
+        "5 procent",
+        "10 procent",
+        "15 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "Antalet kurgäster står i den nedersta tabellen: summa 23 903. Befolkningen får man ur raden Totalt i den första tabellen: 1 131 läkare och 4 542 invånare per läkare ger 1 131 · 4 542 ≈ 5,1 miljoner invånare. Andelen är 23 903/5 100 000 ≈ 0,0047, alltså ungefär 0,5 procent. Den som räknar med fel tiopotens hamnar lätt på 5 procent.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilken typ av operation hade följande fördelning vad avser operationens utgång?",
+      "passage": "God 89 procent\nMindre god 3 procent\nDålig 1 procent\nDödlig 4 procent\nOviss 3 procent",
+      "options": [
+        "Operation av ben",
+        "Operation av ledgångar, senor och senskidor",
+        "Operation av kärl- och nervsystem",
+        "Operation av öron"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna andelen god utgång för varje alternativ i tabellen över operationer. Ben: 2 213/2 508 ≈ 88 procent, men mindre god 159/2 508 ≈ 6 procent passar inte. Ledgångar, senor och senskidor: 2 822/3 070 ≈ 92 procent. Kärl- och nervsystem: 744/775 ≈ 96 procent. Öron: 511/573 ≈ 89 procent, mindre god 17/573 ≈ 3 procent, dålig 8/573 ≈ 1 procent, dödlig 22/573 ≈ 4 procent och oviss 15/573 ≈ 3 procent. Det stämmer på alla punkter för operation av öron.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilken grupp bestod av 2 000 hushåll med en genomsnittlig årsinkomst på 410 000 kronor?",
+      "options": [
+        "Hushållen som flyttade från Kommun Norra till ej angränsande kommun under år 1–5.",
+        "Hushållen som flyttade från Kommun Södra till ej angränsande kommun under år 1–5.",
+        "Hushållen som flyttade från Kommun Östra till angränsande kommun under år 1–5.",
+        "Hushållen som flyttade till Kommun Västra från ej angränsande kommun under år 1–5."
+      ],
+      "blindAnswer": 0,
+      "explain": "Enligt teckenförklaringen är 2 000 hushåll en mellanstor kvadrat, och inkomsten läses av vid symbolens mittprick. I Kommun Norra är grupp III (utflyttade till ej angränsande kommun) en svart kvadrat av den storleken med pricken vid 410 tusen kronor. Grupp III i Kommun Södra har också 2 000 hushåll men ligger vid cirka 310, och grupp II i Kommun Östra (2 000 hushåll) ligger vid cirka 370. Grupp V i Kommun Västra ligger visserligen vid 410, men den är en liten cirkel, alltså 1 000 hushåll.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "För hur många av kommunerna gällde att de inflyttade hushållen hade lägre genomsnittlig årsinkomst än hushållen i kommunen hade år 0?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 1,
+      "explain": "Jämför de grå symbolerna IV och V (inflyttade) med den vita symbolen I (hushåll år 0) i varje kommun. Norra: I ligger vid 400, IV vid 380 och V vid 370, alltså lägre. Södra: I vid 300, IV vid 290 och V vid 270, alltså lägre. Östra: I vid 350, IV också vid 350 och V vid 360, så de inflyttade har inte lägre inkomst. Västra: I vid cirka 380, IV vid 370 men V vid 410; båda grupperna har 1 000 hushåll, så de inflyttade har i genomsnitt 390, högre än 380. Det gäller alltså för 2 kommuner.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur många hushåll bodde i kommun Norra år 5?",
+      "options": [
+        "7 000",
+        "10 000",
+        "12 000",
+        "15 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av symbolernas storlek i Kommun Norra med hjälp av teckenförklaringen. År 0 fanns 10 000 hushåll (den stora cirkeln I). Under år 1–5 flyttade 1 000 hushåll ut till angränsande kommun (II, liten cirkel) och 2 000 till ej angränsande kommun (III, kvadrat), sammanlagt 3 000. In flyttade 3 000 från angränsande kommun (IV, mellanstor cirkel) och 2 000 från ej angränsande kommun (V, kvadrat), sammanlagt 5 000. År 5 bodde alltså 10 000 − 3 000 + 5 000 = 12 000 hushåll i kommunen.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "Provet skriver \"kommun Norra\" med litet k.",
+      "verification": "agreed"
+    }
+  ]
+}

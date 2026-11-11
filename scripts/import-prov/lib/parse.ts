@@ -211,7 +211,7 @@ export function parseFacit(facitPath: string): Map<number, string[]> {
 
 // ---- question extraction -------------------------------------------------
 
-interface QuestionMarker {
+export interface QuestionMarker {
   number: number;
   page: number;
   x: number;
@@ -237,7 +237,7 @@ interface QuestionRegion {
   stemWords: WordBox[];
 }
 
-function findMarkers(pages: PageBox[]): QuestionMarker[] {
+export function findMarkers(pages: PageBox[]): QuestionMarker[] {
   const markers: QuestionMarker[] = [];
   for (const page of pages) {
     for (const w of page.words) {

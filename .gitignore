@@ -55,3 +55,6 @@ next-env.d.ts
 
 # Superdesign temporary HTML
 .superdesign/tmp/
+
+# UHR-frågornas arbetsfiler (sidbilder och underlag, genereras av scripts/uhr/prepare.ts)
+/content/uhr/.arbete/
