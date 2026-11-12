@@ -1,0 +1,774 @@
+{
+  "examId": "hp-2018-10-21",
+  "passNumber": 2,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket uttryck betecknar produkten av 14 och summan av 46 och 35?",
+      "options": [
+        "14 · 46 + 35",
+        "14/(46 + 35)",
+        "14 · (46 + 35)",
+        "14^(46 + 35)"
+      ],
+      "blindAnswer": 2,
+      "explain": "Summan av 46 och 35 skrivs 46 + 35. Hela summan ska multipliceras med 14, så den måste stå inom parentes: 14 · (46 + 35). I 14 · 46 + 35 görs multiplikationen före additionen, så där multipliceras bara 46 med 14 och 35 läggs till efteråt. Bråket är en kvot och det sista uttrycket är 14 upphöjt till summan, inte en produkt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är 0,2 % av 50?",
+      "options": [
+        "0,01",
+        "0,1",
+        "1",
+        "10"
+      ],
+      "blindAnswer": 1,
+      "explain": "0,2 % är 0,2 hundradelar, alltså 0,002. Då är 0,2 % av 50 lika med 0,002 · 50 = 0,1. Kontroll: 1 % av 50 är 0,5, och 0,2 % är en femtedel av det, 0,5/5 = 0,1. Svaret 10 lockar om man räknar ut 20 % av 50 i stället för 0,2 %.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Linjen y = kx + m är inritad i ett koordinatsystem. Vilket värde har riktningskoefficienten k?",
+      "options": [
+        "−1/2",
+        "1/2",
+        "−2",
+        "2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Talet 3 står vid den tredje rutan på båda axlarna, så varje ruta är 1 enhet. Linjen skär y-axeln i (0, 2) och x-axeln i (4, 0). Riktningskoefficienten är k = Δy/Δx = (0 − 2)/(4 − 0) = −2/4 = −1/2. Linjen lutar nedåt åt höger, så k är negativt. Svaret −2 lockar om man delar Δx med Δy i stället för tvärtom.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.2,
+          0.158,
+          0.78,
+          0.47
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är korrekt?",
+      "passage": "x · (y + 1) = (x + 1) · y",
+      "options": [
+        "x = y + 1",
+        "x = −y",
+        "x = y",
+        "x = 1/y"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplicera in i parenteserna: xy + x = xy + y. Dra bort xy från båda leden, så återstår x = y. Kontroll med x = y = 2: vänstra ledet är 2 · 3 = 6 och högra ledet 3 · 2 = 6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilken värdemängd har funktionen?",
+      "passage": "För funktionen f gäller att f(x) = x² och 0 ≤ x ≤ 3.",
+      "options": [
+        "−9 ≤ f(x) ≤ 9",
+        "−3 ≤ f(x) ≤ 3",
+        "0 ≤ f(x) ≤ 3",
+        "0 ≤ f(x) ≤ 9"
+      ],
+      "blindAnswer": 3,
+      "explain": "Värdemängden är alla värden som f(x) kan anta när x går från 0 till 3. Eftersom x aldrig är negativt växer x² hela vägen: det minsta värdet är f(0) = 0² = 0 och det största f(3) = 3² = 9. Värdemängden är alltså 0 ≤ f(x) ≤ 9. Alternativet 0 ≤ f(x) ≤ 3 lockar om man blandar ihop värdemängden med definitionsmängden 0 ≤ x ≤ 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Hur många kvadrater finns det i figur 150?",
+      "passage": "Med hjälp av lika stora kvadrater bildas figurer enligt mönstret nedan.\nAntalet kvadrater i figurerna bildar en aritmetisk talföljd.",
+      "options": [
+        "298",
+        "299",
+        "300",
+        "301"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna kvadraterna: figur 1 har 1, figur 2 har 3, figur 3 har 5 och figur 4 har 7. Varje ny figur får 2 kvadrater till, en i den nedre raden och en i tornet. Figur n har därför 1 + 2(n − 1) = 2n − 1 kvadrater, och figur 150 har 2 · 150 − 1 = 299 kvadrater. Svaret 300 lockar om man räknar med 2n kvadrater.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.18,
+          0.598,
+          0.68,
+          0.712
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "(16/9)x − 2/3 = 2/3",
+      "options": [
+        "0",
+        "1/2",
+        "3/4",
+        "4/3"
+      ],
+      "blindAnswer": 2,
+      "explain": "Addera 2/3 till båda leden: (16/9)x = 4/3. Multiplicera båda leden med 9/16: x = (4/3) · (9/16) = 36/48 = 3/4. Kontroll: (16/9) · (3/4) = 48/36 = 4/3, och 4/3 − 2/3 = 2/3. Svaret 4/3 lockar om man stannar vid (16/9)x = 4/3 och glömmer att dela med 16/9.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är sidlängden x?",
+      "options": [
+        "3 cm",
+        "√18 cm",
+        "3,5 cm",
+        "√20 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Höjden delar triangeln i två rätvinkliga trianglar. I den vänstra är hypotenusan 5 cm och den ena kateten 4 cm, så höjden är √(5² − 4²) = √(25 − 16) = √9 = 3 cm. I den högra triangeln är båda kateterna 3 cm (höjden och den högra delen av basen), så x² = 3² + 3² = 18 och x = √18 cm. Svaret 3 cm lockar om man tror att x är lika lång som höjden, men x är hypotenusa och alltså längre än kateterna.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.195,
+          0.565,
+          0.565,
+          0.72
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "a och b är två på varandra följande heltal. Hur stor är sannolikheten att a + b är jämnt delbart med 2?",
+      "options": [
+        "0",
+        "0,25",
+        "0,5",
+        "1"
+      ],
+      "blindAnswer": 0,
+      "explain": "Av två på varandra följande heltal är alltid det ena jämnt och det andra udda, och summan av ett jämnt och ett udda tal är udda. Algebraiskt: om a är det mindre talet är b = a + 1 och a + b = 2a + 1, som alltid är udda. Till exempel är 3 + 4 = 7 och 10 + 11 = 21. Summan är alltså aldrig jämnt delbar med 2, och sannolikheten är 0. Svaret 0,5 lockar om man tror att summan är jämn i hälften av fallen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "En rektangel med längden 2 dm och bredden 5 cm utgör basytan av ett rätblock som har höjden 3 m. Vilken volym har rätblocket?",
+      "options": [
+        "30 cm³",
+        "30 dm³",
+        "300 cm³",
+        "300 dm³"
+      ],
+      "blindAnswer": 1,
+      "explain": "Gör om alla mått till decimeter: längden är 2 dm, bredden 5 cm = 0,5 dm och höjden 3 m = 30 dm. Volymen är 2 · 0,5 · 30 = 30 dm³. Kontroll i centimeter: 20 · 5 · 300 = 30 000 cm³, och eftersom 1 dm³ = 1 000 cm³ är det 30 dm³. Svaret 30 cm³ lockar om man multiplicerar talen 2, 5 och 3 utan att först göra om enheterna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ ger alla lösningar till olikheten 3x − 8 < 2x + 4?",
+      "options": [
+        "x < 12",
+        "x > 12",
+        "x < −4",
+        "x > −4"
+      ],
+      "blindAnswer": 0,
+      "explain": "Dra bort 2x från båda leden: x − 8 < 4. Addera 8 till båda leden: x < 12. Olikhetstecknet behåller sin riktning, eftersom man varken multiplicerar eller dividerar med ett negativt tal. Kontroll: x = 0 ger −8 < 4, som stämmer, medan x = 12 ger 28 < 28, som inte stämmer. Svaret x < −4 lockar om man flyttar över −8 utan att byta tecken och får 4 − 8 = −4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är ett heltal?",
+      "options": [
+        "√72 + √9",
+        "√72 − √8",
+        "√72 · √9",
+        "√72/√8"
+      ],
+      "blindAnswer": 3,
+      "explain": "Förenkla rötterna: √72 = √(36 · 2) = 6√2, √8 = √(4 · 2) = 2√2 och √9 = 3. Då blir summan 6√2 + 3, skillnaden 6√2 − 2√2 = 4√2 och produkten 6√2 · 3 = 18√2, och alla tre innehåller √2, som inte är ett heltal. Kvoten blir √72/√8 = √(72/8) = √9 = 3, som är ett heltal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 1\nKvantitet I: x⁵\nKvantitet II: x⁴",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv x⁵ = x · x⁴. Eftersom x > 1 är x⁴ positivt, och när ett positivt tal multipliceras med något som är större än 1 blir det större. Alltså är x⁵ > x⁴ för alla x > 1. Exempel: x = 2 ger 2⁵ = 32 och 2⁴ = 16. För x mellan 0 och 1 hade relationen varit den omvända, men det utesluts av villkoret x > 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x\nKvantitet II: 80°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "I den vänstra triangeln är vinkeln vid skärningspunkten 30°, och de två andra vinklarna är markerade som lika stora. De är alltså (180° − 30°)/2 = 75° vardera. I den högra triangeln är vinkeln vid skärningspunkten vertikalvinkel till 30°-vinkeln och därför också 30°, och vinkeln uppe till höger har samma markering som de lika vinklarna, alltså 75°. Då är x = 180° − 30° − 75° = 75°, som är mindre än 80°.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.19,
+          0.535,
+          0.61,
+          0.68
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/28 + 1/14 + 1/7 + 1/4 + 1/2\nKvantitet II: 55/56",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv bråken i kvantitet I med nämnaren 28: 1/28 + 2/28 + 4/28 + 7/28 + 14/28 = 28/28 = 1. Kvantitet II är 55/56, som är mindre än 1 eftersom täljaren är mindre än nämnaren. Kvantitet I är alltså större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "3(x − 1) = 18\n6(y − x) = 18\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den första ekvationen ger x − 1 = 18/3 = 6, alltså x = 7. Den andra ger y − x = 18/6 = 3, alltså y = x + 3 = 10. Redan att y − x = 3 är positivt visar att y är större än x. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I rektangeln ABCD finns ett skuggat område.\nKvantitet I: Omkretsen av rektangeln ABCD\nKvantitet II: Omkretsen av det skuggade området",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Det skuggade området är ett kors av ett vågrätt band över hela rektangelns bredd och ett lodrätt band över hela höjden, och alla dess kanter är vågräta eller lodräta. Korsets ovansida består av det lodräta bandets överkant och det vågräta bandets överkant till vänster och till höger om det, och tillsammans är de precis lika långa som rektangelns bredd. Likadant är undersidan lika lång som bredden, och korsets vänstra och högra sida är var för sig lika långa som höjden. Korsets omkrets är alltså 2 · bredden + 2 · höjden, samma som rektangelns. Att korset har mindre area kan locka till att tro att omkretsen också är mindre.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.205,
+          0.104,
+          0.545,
+          0.262
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x, y, z och w är fyra positiva tal sådana att x < y < z < w.\nMedianen av x, y och z är 7.\nMedianen av y, z och w är 13.\nKvantitet I: Medianen av y och z\nKvantitet II: 11",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medianen av tre tal är det mittersta när talen står i storleksordning. Av x < y < z är y det mittersta, så y = 7. Av y < z < w är z det mittersta, så z = 13. Medianen av två tal är deras medelvärde: (7 + 13)/2 = 10. Det är mindre än 11, så kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √(5/9)\nKvantitet II: 2/3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Båda kvantiteterna är positiva, så man kan jämföra deras kvadrater: (√(5/9))² = 5/9 och (2/3)² = 4/9. Eftersom 5/9 > 4/9 är kvantitet I större. Kontroll: √(5/9) = √5/3 ≈ 2,24/3 ≈ 0,75, medan 2/3 ≈ 0,67.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 21 % av 2 482\nKvantitet II: 42 % av 1 241",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lägg märke till att 42 = 2 · 21 och 2 482 = 2 · 1 241. Kvantitet II är 0,42 · 1 241 = 0,21 · 2 · 1 241 = 0,21 · 2 482, alltså precis kvantitet I. Dubbla procentsatsen av halva talet ger samma värde; båda kvantiteterna är 521,22.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "För funktionen f gäller att f(x) = 4x + 15 och a > 0.\nKvantitet I: f(−a) − f(a)\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "f(−a) = 4 · (−a) + 15 = −4a + 15 och f(a) = 4a + 15. Skillnaden är f(−a) − f(a) = (−4a + 15) − (4a + 15) = −8a. Eftersom a > 0 är −8a negativt, så kvantitet II är större. Det stämmer med att funktionen är växande: det mindre x-värdet −a ger ett mindre funktionsvärde än a.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "David är 8 år äldre än Frida. Edvin är 11 år.\nKvantitet I: Summan av Edvins ålder och Fridas ålder\nKvantitet II: Davids ålder",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kalla Fridas ålder F. Då är David F + 8 år, och summan av Edvins och Fridas åldrar är 11 + F. Eftersom 11 + F alltid är 3 större än F + 8 är kvantitet I större, oavsett hur gammal Frida är. Det kan se ut som att informationen är otillräcklig när Fridas ålder är okänd, men den finns med i båda kvantiteterna och tar ut sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På ett bord ligger två blyertspennor, en gul och en brun. Hur många centimeter längre är den gula pennan än den bruna?\n(1) Pennornas sammanlagda längd är 21 cm.\n(2) Den gula pennan är 15 cm lång. Den bruna pennan är 0,4 gånger så lång som den gula pennan.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Den sammanlagda längden 21 cm kan fördelas på många sätt, till exempel 15 cm och 6 cm (skillnad 9 cm) eller 11 cm och 10 cm (skillnad 1 cm). Inte tillräckligt.\n(2) Den bruna pennan är 0,4 · 15 = 6 cm lång, så den gula är 15 − 6 = 9 cm längre. Tillräckligt.\nSvaret går att få fram i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket värde har x?\n(1) x + y = 26\n(2) 3x + 2y = 39\ny = 39",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) En ekvation med två obekanta bestämmer inte x: både x = 1, y = 25 och x = 10, y = 16 ger x + y = 26. Inte tillräckligt.\n(2) Sätt in y = 39 i den första ekvationen: 3x + 2 · 39 = 39, alltså 3x = 39 − 78 = −39 och x = −13. Tillräckligt.\nDet kan se ut som att (1) behövs, men påstående (2) innehåller redan två ekvationer.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En affär säljer strömbrytare styckvis. Om man köper färre än tio så gäller ett visst pris, och om man köper tio eller fler så får man 8 % rabatt på det totala priset.\nHur mycket kostar det att köpa 16 strömbrytare vid ett och samma tillfälle?\n(1) Det kostar 479,20 kr att köpa 8 strömbrytare.\n(2) Om man köper 10 strömbrytare så får man 47,92 kr i rabatt.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Det som behövs är styckpriset utan rabatt; 16 strömbrytare kostar sedan 16 · styckpriset · 0,92.\n(1) 8 strömbrytare är färre än tio och köps utan rabatt, så styckpriset är 479,20/8 = 59,90 kr. Tillräckligt.\n(2) Rabatten är 8 % av priset för 10 strömbrytare: 0,08 · 10 · styckpriset = 47,92, så styckpriset är 47,92/0,8 = 59,90 kr. Tillräckligt.\nVarje påstående räcker för sig, och 16 strömbrytare kostar 16 · 59,90 · 0,92 ≈ 881,73 kr.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett stall finns det tre boxar bredvid varandra med en häst i vardera boxen: en hingst, ett sto och ett föl. Hästarna har varsin färg: brun, svart och vit. I mitten står stoet.\nVilken färg har fölet?\n(1) Hingsten är svart och står bredvid den bruna hästen.\n(2) Stoet, som står till höger om hingsten, är inte vitt.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Stoet står i mitten, så hingsten står i en av ändboxarna och har bara stoet bredvid sig. Den bruna hästen bredvid hingsten måste då vara stoet. Hingsten är svart och stoet brunt, så fölet är vitt. Tillräckligt.\n(2) Stoet är brunt eller svart, men det avgör inte fölets färg: är stoet brunt kan fölet vara svart eller vitt, och är stoet svart kan fölet vara brunt eller vitt. Inte tillräckligt.\nSvaret går att få fram i (1) men inte i (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Eva köper en lott i ett lotteri. Hur stor är sannolikheten att lotten är en vinstlott?\n(1) Andelen nitlotter är 80 procent.\n(2) Det finns 250 lotter i lotteriet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Varje lott är antingen en nitlott eller en vinstlott. Är 80 procent nitlotter är 20 procent vinstlotter, och sannolikheten att Evas lott är en vinstlott är 0,2. Tillräckligt.\n(2) Antalet lotter säger inget om hur många av dem som är vinstlotter. Inte tillräckligt.\nDet kan verka som att man behöver veta antalet lotter, men andelen räcker för att ange sannolikheten.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Utanför en skolbyggnad finns det en cykelparkering med ett antal cyklar. Hur många cyklar finns det på parkeringen?\n(1) 19 av cyklarna har pakethållare och 13 av cyklarna har fotbroms.\n(2) 11 cyklar har varken pakethållare eller fotbroms.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Det framgår varken hur många cyklar som har både pakethållare och fotbroms eller hur många som saknar båda. Inte tillräckligt.\n(2) Ger bara antalet cyklar som saknar båda delarna. Inte tillräckligt.\n(1) och (2) tillsammans: antalet cyklar är 19 + 13 − (antalet med både pakethållare och fotbroms) + 11. Har ingen cykel båda blir det 43 cyklar, men har alla 13 cyklar med fotbroms också pakethållare blir det 19 + 11 = 30 cyklar. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För hur många av de redovisade åren gäller att antalet anställda i utlandsägda företag minskade jämfört med närmast föregående år?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "9"
+      ],
+      "blindAnswer": 0,
+      "explain": "Antalet anställda visas av de svarta staplarna och läses mot den vänstra axeln. Jämför varje stapel med stapeln året innan. Stapeln är lägre än året innan 1984 (cirka 127 000 mot 133 000), 1992 (cirka 224 000 mot 231 000), 1993 (cirka 213 000), 2004 (cirka 546 000 mot 567 000) och 2010 (cirka 591 000 mot 628 000). Alla andra år är stapeln högre än året innan; 2012 är nästan lika hög som 2011 men inte lägre. Det blir 5 år. Den som räknar minskningarna i linjen för andelen av näringslivet i stället för staplarna får fler år.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilket år var antalet anställda i utlandsägda företag 400 000–600 000 och utgjorde 15–20 procent av näringslivets samtliga anställda?",
+      "options": [
+        "1998",
+        "1999",
+        "2000",
+        "2001"
+      ],
+      "blindAnswer": 2,
+      "explain": "Antalet läses mot den vänstra axeln (staplarna) och andelen mot den högra axeln (linjen). 1998 var antalet cirka 335 000 och 1999 cirka 390 000, alltså under 400 000 båda åren. 2000 var antalet cirka 450 000 och andelen cirka 19 procent, så båda villkoren är uppfyllda. 2001 var antalet cirka 520 000, men andelen hade stigit till drygt 21 procent, alltså över 20 procent.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Studera hur många anställda i utlandsägda företag det fanns 1993 samt hur stor andel av näringslivets samtliga anställda de utgjorde. Hur många anställda fanns det totalt inom näringslivet i Sverige detta år?",
+      "options": [
+        "230 000",
+        "1 575 000",
+        "2 050 000",
+        "2 850 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "1993 når stapeln drygt 200 000 (cirka 210 000) på den vänstra axeln, och linjen ligger vid cirka 10 procent på den högra axeln. Om 210 000 anställda är 10 procent av alla anställda i näringslivet är det totalt 210 000/0,10 = 2 100 000 anställda. Närmast ligger 2 050 000. Svaret 230 000 ligger nära antalet anställda i de utlandsägda företagen, inte i hela näringslivet.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Om man delar Öland i höjd med Borgholm i en nordlig och en sydlig del, vilken berggrund är då vanligast i den nordliga respektive sydliga delen?",
+      "options": [
+        "Ortocerkalk (yngre) respektive Ortocerkalk (äldre)",
+        "Ortocerkalk (yngre) respektive Chasmopskalk",
+        "Ortocerkalk (äldre) respektive Ortocerkalk (yngre)",
+        "Chasmopskalk respektive Ortocerkalk (äldre)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd kartan Berggrunden. Enligt teckenförklaringen har ortocerkalk (yngre) glesa vågräta streck och ortocerkalk (äldre) täta streck, medan chasmopskalk är streckad. Norr om Borgholm går ett brett band med glesa streck genom hela den norra delen; de täta strecken är en remsa längs västkusten som är smal längst i norr, och chasmopskalken finns bara i nordost. Den yngre ortocerkalken är alltså vanligast i norr. Söder om Borgholm täcker de täta strecken (området märkt Alvaret) den största delen av ön, medan den yngre ortocerkalken bara är en smalare remsa längs östkusten. Chasmopskalk finns inte alls i den södra delen.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilka två jordarter förekommer närmast Ölands östkust rakt öster om Mörbylånga?",
+      "options": [
+        "Myr samt morän",
+        "Myr samt hällmark",
+        "Sand och grus samt morän",
+        "Sand och grus samt hällmark"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd kartan Jordarterna och gå rakt österut från Mörbylånga på västkusten till östkusten. Närmast östkusten ligger där ett litet område med vågräta streck, alltså hällmark (alvar), och ytterst mot havet en smal kant med prickar, alltså sand och grus. Morän (vitt) och myr (svart) finns först längre in på ön.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "För vilken ort gäller att den ligger i ett område med ölandicusskiffer och att närmaste förekomst av chasmopskalk finns cirka 70 km fågelvägen från orten?",
+      "options": [
+        "Borgholm",
+        "Degerhamn",
+        "Färjestaden",
+        "Mörbylånga"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd kartan Berggrunden och skalstocken (20 km) under kartan Jordarterna. Chasmopskalk finns bara på nordöstra Öland, och dess sydligaste del ligger ungefär mitt emellan Böda och Borgholm. Ölandicusskiffer (täta prickar) är en smal remsa längs västkusten, och där ligger både Färjestaden och Mörbylånga. Fågelvägen till den sydligaste chasmopskalken är det cirka 70 km från Mörbylånga men bara cirka 55 km från Färjestaden. Borgholm ligger knappt 30 km därifrån och Degerhamn drygt 85 km.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "I vilken kategori noterades den största skillnaden i antal mellan män och kvinnor?",
+      "options": [
+        "16–24-åringar som använde internet i skolan",
+        "25–34-åringar som använde internet på arbetsplatsen",
+        "25–34-åringar som använde internet på annan plats",
+        "35–44-åringar som använde internet på annan plats"
+      ],
+      "blindAnswer": 1,
+      "explain": "Jämför kolumnerna Män och Kvinnor under Antal. 16–24 år i skolan: 341 100 − 278 900 = 62 200. 25–34 år på arbetsplats: 432 100 − 333 400 = 98 700. 25–34 år på annan plats: 202 000 − 150 700 = 51 300. 35–44 år på annan plats: 202 400 − 112 400 = 90 000. Den största skillnaden finns alltså bland 25–34-åringar som använde internet på arbetsplatsen.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "I totalgruppen var de som använde internet hemma ungefär tre gånger så många som de som använde internet i någon annans hem. Vilken åldersgrupp var mest lik totalgruppen i detta avseende?",
+      "options": [
+        "16–24-åringar",
+        "25–34-åringar",
+        "35–44-åringar",
+        "45–54-åringar"
+      ],
+      "blindAnswer": 2,
+      "explain": "Bland samtliga använde 6 050 300 internet i hemmet och 2 050 900 i någon annans hem, och kvoten är 6 050 300/2 050 900 ≈ 2,95. Räkna samma kvot med kolumnen Totalt under Antal för åldersgrupperna: 16–24 år 1 087 500/661 000 ≈ 1,6, 25–34 år 1 117 200/526 500 ≈ 2,1, 35–44 år 1 238 400/425 000 ≈ 2,9 och 45–54 år 1 121 700/213 800 ≈ 5,2. Kvoten för 35–44-åringarna ligger närmast totalgruppens.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av alla som använde internet på arbetsplatsen var under 45 år?",
+      "options": [
+        "78 procent",
+        "58 procent",
+        "48 procent",
+        "28 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Under 45 år är grupperna 16–24, 25–34 och 35–44 år. Enligt kolumnen Totalt under Antal använde 314 400 + 765 400 + 1 003 300 = 2 083 100 av dem internet på arbetsplatsen. Bland samtliga var det 3 607 300. Andelen är 2 083 100/3 607 300 ≈ 0,58, alltså 58 procent. Svaret 78 procent lockar om man läser av procentkolumnen för 35–44-åringar på arbetsplatsen.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket av följande år avses?",
+      "passage": "Antalet boklån totalt var mindre än 70 miljoner och antalet utlån av AV-medier ökade med en miljon jämfört med året innan.",
+      "options": [
+        "1991",
+        "1993",
+        "1994",
+        "1996"
+      ],
+      "blindAnswer": 2,
+      "explain": "Boklån totalt (romberna) står i det övre diagrammet i miljontal, och AV-medier i det nedre diagrammet i tusental, så en miljon är 1 000 tusental. 1991 och 1993 var boklånen under 70 miljoner, men AV-medierna ökade bara med 300–400 tusen. 1994 var boklånen cirka 68 miljoner, och AV-medierna ökade från cirka 5 000 till 6 000 tusental, alltså med en miljon. 1996 ökade AV-medierna med cirka 900 tusen, men då var boklånen cirka 73 miljoner.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "I folkbibliotekens bokbestånd fanns 2008 cirka 40 miljoner böcker. Hur många gånger i genomsnitt lånades en bok ut detta år?",
+      "options": [
+        "0,70 gånger",
+        "1,10 gånger",
+        "1,45 gånger",
+        "1,85 gånger"
+      ],
+      "blindAnswer": 2,
+      "explain": "I det övre diagrammet är boklån totalt (romberna) cirka 58 miljoner år 2008. Med 40 miljoner böcker i beståndet lånades varje bok i genomsnitt ut 58/40 ≈ 1,45 gånger. Svaret 0,70 gånger lockar om man räknar 40/58, alltså tvärtom.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur många av boklånen år 2000 var utlån av barnböcker?",
+      "options": [
+        "Fem av tio",
+        "Fyra av tio",
+        "Tre av tio",
+        "Två av tio"
+      ],
+      "blindAnswer": 1,
+      "explain": "I det övre diagrammet är boklån totalt (romberna) cirka 70 miljoner år 2000 och utlånen av barnböcker (kvadraterna) cirka 30 miljoner. Andelen är 30/70 ≈ 0,43, alltså ungefär fyra av tio boklån.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
