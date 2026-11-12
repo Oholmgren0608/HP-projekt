@@ -1,0 +1,767 @@
+{
+  "examId": "hp-2020-10-25",
+  "passNumber": 3,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x om 5x + 66 = y/2 och y = 12x?",
+      "options": [
+        "6",
+        "33",
+        "66",
+        "132/7"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sätt in y = 12x i den första ekvationen: 5x + 66 = 12x/2 = 6x. Då är 6x − 5x = 66, alltså x = 66. Kontroll: y = 12 · 66 = 792 och 792/2 = 396, medan 5 · 66 + 66 = 330 + 66 = 396. Svaren 33 och 132/7 lockar om man multiplicerar ekvationen med 2 för att bli av med nämnaren men bara multiplicerar en av termerna i vänsterledet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "6 likadana maskiner kan sammanlagt producera 150 enheter per minut. Hur många enheter kan 10 sådana maskiner producera på 4 minuter?",
+      "options": [
+        "360",
+        "1 000",
+        "6 000",
+        "36 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "En maskin producerar 150/6 = 25 enheter per minut. Tio maskiner producerar 10 · 25 = 250 enheter per minut, och på 4 minuter blir det 4 · 250 = 1 000 enheter. Svaret 6 000 lockar om man räknar 150 · 10 · 4 och glömmer att 150 enheter är vad alla sex maskiner producerar tillsammans.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "L₁ och L₂ är parallella linjer. Vad är 1,5x + 3y?",
+      "options": [
+        "45°",
+        "90°",
+        "135°",
+        "180°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkeln 3x ligger ovanför L₁ till vänster om den snedställda linjen, och vinkeln 6y ligger ovanför L₂ till höger om den. Eftersom linjerna är parallella är vinkeln ovanför L₂ till vänster om den snedställda linjen också 3x (likbelägna vinklar). Den vinkeln och 6y bildar tillsammans en rak vinkel, så 3x + 6y = 180°. Då är 1,5x + 3y = (3x + 6y)/2 = 180°/2 = 90°. Svaret 180° lockar om man glömmer att halvera.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.17,
+          0.08,
+          0.48,
+          0.235
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar f(1/3)?",
+      "passage": "f(x) = 3x + 1",
+      "options": [
+        "1/3",
+        "2/3",
+        "4/3",
+        "6/3"
+      ],
+      "blindAnswer": 3,
+      "explain": "Sätt in x = 1/3 i funktionen: f(1/3) = 3 · 1/3 + 1 = 1 + 1 = 2. Bland alternativen är det 6/3 som är lika med 2. Svaret 4/3 lockar om man räknar 1/3 + 1 och glömmer att multiplicera med 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar med säkerhet (a − b)/a + b/a?",
+      "passage": "a ≠ 0",
+      "options": [
+        "1/2",
+        "1",
+        "b",
+        "a"
+      ],
+      "blindAnswer": 1,
+      "explain": "Bråken har samma nämnare, så täljarna kan läggas ihop direkt: (a − b)/a + b/a = (a − b + b)/a = a/a = 1. Villkoret a ≠ 0 gör att bråken är definierade, och resultatet blir 1 oavsett vilket värde b har.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "En triangel med basen 4 cm har lika stor area som en kvadrat med sidan 6 cm. Hur stor är triangelns höjd?",
+      "options": [
+        "3 cm",
+        "6 cm",
+        "9 cm",
+        "18 cm"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvadraten har arean 6 · 6 = 36 cm². Triangelns area är bas · höjd/2 = 4h/2 = 2h. Då är 2h = 36, alltså h = 18 cm. Svaret 9 cm lockar om man glömmer att dela med 2 i triangelns areaformel.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar linjen i figuren?",
+      "options": [
+        "y = −3x + 1",
+        "y = 3x + 1",
+        "y = −3x + 3",
+        "y = 3x + 3"
+      ],
+      "blindAnswer": 2,
+      "explain": "Linjen skär y-axeln i punkten (0, 3), så m = 3. Den skär x-axeln i punkten (1, 0). Lutningen är k = (0 − 3)/(1 − 0) = −3; linjen lutar nedåt åt höger, så k ska vara negativ. Linjen är alltså y = −3x + 3. Svaret y = −3x + 1 lockar om man tar skärningen med x-axeln för m.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.18,
+          0.09,
+          0.5,
+          0.31
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av x och 6x är lika med y. Vad är x?",
+      "options": [
+        "7y/2",
+        "2y/7",
+        "xy/7",
+        "6x/(7y)"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet av x och 6x är (x + 6x)/2 = 7x/2. Alltså är 7x/2 = y. Multiplicera båda leden med 2/7: x = 2y/7. Svaret 7y/2 lockar om man vänder på bråket åt fel håll.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Hur många procent av x är 3x/30 + 4x/40?",
+      "passage": "x > 0",
+      "options": [
+        "7",
+        "10",
+        "20",
+        "24"
+      ],
+      "blindAnswer": 2,
+      "explain": "Förkorta bråken: 3x/30 = x/10 och 4x/40 = x/10. Summan är x/10 + x/10 = 2x/10 = 0,2x, alltså 20 procent av x. Svaret 10 lockar om man ser att varje bråk är en tiondel av x men glömmer att lägga ihop dem.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är (2⁴ + 1)(2² + 1)(2² − 1)?",
+      "options": [
+        "2⁸ − 1",
+        "2⁸ + 1",
+        "2¹⁶ − 1",
+        "2¹⁶ + 1"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd konjugatregeln (a + b)(a − b) = a² − b² två gånger. Först är (2² + 1)(2² − 1) = (2²)² − 1 = 2⁴ − 1. Sedan är (2⁴ + 1)(2⁴ − 1) = (2⁴)² − 1 = 2⁸ − 1. Kontroll: 17 · 5 · 3 = 255 = 256 − 1 = 2⁸ − 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x om (x − 7)² = 144?",
+      "passage": "x < 0",
+      "options": [
+        "−19",
+        "−12",
+        "−7",
+        "−5"
+      ],
+      "blindAnswer": 3,
+      "explain": "(x − 7)² = 144 betyder att x − 7 = 12 eller x − 7 = −12, alltså x = 19 eller x = −5. Eftersom x < 0 är x = −5. Kontroll: (−5 − 7)² = (−12)² = 144. Svaret −12 lockar om man tar roten ur 144 men glömmer att lägga till 7.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vad är 1⁻¹ + 1⁰ + 1¹?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "blindAnswer": 3,
+      "explain": "Talet 1 upphöjt till vilken exponent som helst är 1: 1⁻¹ = 1/1 = 1, 1⁰ = 1 och 1¹ = 1. Summan är 1 + 1 + 1 = 3. Den som tror att 1⁻¹ = −1 eller att 1⁰ = 0 får ett för litet svar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 3/7 + 5/8\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Gör bråken liknämniga med nämnaren 56: 3/7 = 24/56 och 5/8 = 35/56. Summan är 59/56, som är större än 56/56 = 1. Kvantitet I är alltså större. Den som lägger ihop täljare för sig och nämnare för sig får 8/15 och tror felaktigt att kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Tre vanliga sexsidiga tärningar kastas slumpmässigt en gång.\nKvantitet I: Sannolikheten att få tre femmor\nKvantitet II: Sannolikheten att summan av det tärningarna visar är 15",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tre tärningar ger 6 · 6 · 6 = 216 lika sannolika utfall. Tre femmor är ett enda utfall, så kvantitet I är 1/216. Summan 15 får man med 5 + 5 + 5, men också med 6 + 6 + 3 (3 ordningar) och 6 + 5 + 4 (6 ordningar), alltså 1 + 3 + 6 = 10 utfall. Kvantitet II är 10/216 och därmed större. Det räcker egentligen att se att tre femmor är ett av flera sätt att få summan 15.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fyrhörningen ABCE är en rektangel.\nD är mittpunkten på sträckan CE.\nKvantitet I: v\nKvantitet II: 90°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sträckan CE är lika lång som AB, alltså 4 cm, och D är mittpunkten, så ED = DC = 2 cm. Sidorna AE och BC är också 2 cm. Trianglarna AED och BCD är därför rätvinkliga och likbenta, så vinklarna ADE och BDC är 45° vardera. Vinklarna vid D längs den raka sträckan EC är tillsammans 180°, så v = 180° − 45° − 45° = 90°. Kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.19,
+          0.125,
+          0.53,
+          0.272
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "−7(x + 3) = 21\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Dela båda leden med −7: x + 3 = −3. Då är x = −3 − 3 = −6. Kontroll: −7 · (−6 + 3) = −7 · (−3) = 21. Kvantitet I är −6, som är mindre än 0, så kvantitet II är större. Den som tappar minustecknet får x + 3 = 3, alltså x = 0, och tror att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "3 teskedar motsvarar 1 matsked.\n5 kryddmått motsvarar 1 tesked.\nKvantitet I: 8 kryddmått och 1 matsked\nKvantitet II: 2 teskedar och 10 kryddmått",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna om allt till kryddmått. 1 tesked = 5 kryddmått, och 1 matsked = 3 teskedar = 3 · 5 = 15 kryddmått. Kvantitet I: 8 + 15 = 23 kryddmått. Kvantitet II: 2 · 5 + 10 = 20 kryddmått. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < y < z\nKvantitet I: (x + z)/2\nKvantitet II: (x + y + z)/3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvantitet I är medelvärdet av x och z, och kvantitet II är medelvärdet av alla tre talen. Vilket som är störst beror på var y ligger mellan x och z. Exempel 1: x = 0, y = 1 och z = 10 ger I = 5 och II = 11/3 ≈ 3,7, så I är större. Exempel 2: x = 0, y = 9 och z = 10 ger I = 5 och II = 19/3 ≈ 6,3, så II är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Omkretsen av en cirkel är 25π cm.\nKvantitet I: Cirkelns radie\nKvantitet II: 10 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "En cirkels omkrets är 2πr. Av 2πr = 25π följer att r = 25/2 = 12,5 cm, som är större än 10 cm. Kvantitet I är större. Den som av misstag använder areaformeln πr² = 25π får r = 5 cm och tror att kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 27^(1/3)\nKvantitet II: 9",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Exponenten 1/3 betyder kubikrot: 27^(1/3) är det tal som multiplicerat med sig självt tre gånger blir 27. Eftersom 3 · 3 · 3 = 27 är 27^(1/3) = 3, som är mindre än 9. Kvantitet II är större. Den som tolkar exponenten som att talet ska delas med 3 får 27/3 = 9 och tror att kvantiteterna är lika.",
+      "figure": null,
+      "note": "Exponenten är ett bråk och skrivs med ^ i texten; på provet står 27 upphöjt till 1/3.",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Punkterna (a, b) och (c, d) är inritade i koordinatsystemet nedan.\nKvantitet I: ab\nKvantitet II: cd",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Punkten (a, b) ligger till vänster om y-axeln och under x-axeln, så a < 0 och b < 0. Produkten av två negativa tal är positiv, så ab > 0. Punkten (c, d) ligger till höger om y-axeln och under x-axeln, så c > 0 och d < 0, och då är cd < 0. Ett positivt tal är alltid större än ett negativt, så kvantitet I är större, trots att axlarna saknar skala.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.2,
+          0.115,
+          0.47,
+          0.3
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: x/2\nKvantitet II: (x/4)²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvantitet II är (x/4)² = x²/16. Den är lika med x/2 när x²/16 = x/2, alltså när x = 8. Pröva: x = 8 ger I = 4 och II = 64/16 = 4 (lika). x = 4 ger I = 2 och II = 16/16 = 1 (I större). x = 16 ger I = 8 och II = 256/16 = 16 (II större). Relationen beror på x, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Alvar, Benjamin, Cecilia, Dessi och Elina är vänner. Vem av dem är äldst?\n(1) Alvar är äldre än Benjamin, men yngre än Cecilia.\n(2) Dessi är äldre än Elina, men yngre än Benjamin.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Cecilia är äldre än Alvar, som är äldre än Benjamin. Om Dessi och Elina vet vi inget, så någon av dem kan vara äldst. Inte tillräckligt.\n(2) Benjamin är äldre än Dessi, som är äldre än Elina. Om Alvar och Cecilia vet vi inget. Inte tillräckligt.\n(1) och (2) tillsammans: Cecilia > Alvar > Benjamin > Dessi > Elina. Cecilia är äldst. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en park finns endast tre sorters träd: almar, ekar och lönnar. Hur stor andel av träden i parken är ekar?\n(1) Ekarna och almarna utgör tillsammans 50 % av träden i parken.\n(2) Ekarna och lönnarna utgör tillsammans 70 % av träden i parken.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Ekar och almar är 50 %, så lönnarna är 50 %. Hur de andra 50 procenten fördelas mellan ekar och almar vet vi inte. Inte tillräckligt.\n(2) Ekar och lönnar är 70 %, så almarna är 30 %. Fördelningen mellan ekar och lönnar är okänd. Inte tillräckligt.\n(1) och (2) tillsammans: Lönnarna är 50 % och almarna 30 %, så ekarna är 100 − 50 − 30 = 20 % av träden. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På ett papper står det skrivet sju negativa tal. Vad är medianen av talen?\n(1) Medelvärdet av de tre minsta talen är −45.\n(2) Medelvärdet av de tre största talen är −15.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Medianen av sju tal är det fjärde talet i storleksordning.\n(1) Medelvärdet av de tre minsta talen säger inget om vilket det fjärde talet är. Inte tillräckligt.\n(2) Medelvärdet av de tre största talen säger inte heller vilket det fjärde talet är. Inte tillräckligt.\n(1) och (2) tillsammans: Talen −50, −45, −40, −30, −20, −15 och −10 uppfyller båda villkoren och har medianen −30. Byter man −30 mot −35 uppfyller talen fortfarande båda villkoren, men medianen blir −35. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Lisa och Thea ska låna en film av Karin. Karin har 40 olika filmer. Hur många av Karins filmer har varken Lisa eller Thea sett tidigare?\n(1) Lisa har sett 25 av filmerna. Thea har sett alla utom 10 av filmerna.\n(2) 25 av filmerna som Thea har sett har även Lisa sett.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Thea har sett 40 − 10 = 30 filmer och Lisa 25. Men vi vet inte om Lisa har sett några av de 10 filmer som Thea inte har sett. Antalet filmer som ingen av dem har sett kan vara allt från 0 till 10. Inte tillräckligt.\n(2) Vi vet att de har sett 25 filmer gemensamt, men inte hur många var och en har sett. Inte tillräckligt.\n(1) och (2) tillsammans: Lisa har sett 25 filmer, och 25 av Theas filmer har Lisa också sett. Alla Lisas filmer finns alltså bland Theas 30, så tillsammans har de sett 30 filmer. 40 − 30 = 10 filmer har ingen av dem sett. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Viktor och Tomas simmar längder i en 25-metersbassäng. De startar samtidigt från samma ände av bassängen, och simmar var och en med sin egen konstanta hastighet. Hur långt har Viktor simmat när han för första gången kommer tillbaka till startpunkten samtidigt som Tomas?\n(1) Viktor simmar en längd på 36 sekunder och Tomas simmar en längd på 45 sekunder.\n(2) Viktor simmar 25 % snabbare än Tomas.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "En simmare är tillbaka vid startpunkten efter ett jämnt antal längder.\n(1) Viktor är vid startpunkten var 2 · 36 = 72:a sekund och Tomas var 2 · 45 = 90:e sekund. Minsta gemensamma multipeln av 72 och 90 är 360, så första gången de är där samtidigt är efter 360 sekunder. Då har Viktor simmat 360/36 = 10 längder, alltså 250 meter. Tillräckligt.\n(2) Viktor simmar 1,25 gånger så långt som Tomas på samma tid. Tomas är vid startpunkten efter 2, 4, 6 och 8 längder; Viktor har då simmat 2,5, 5, 7,5 och 10 längder. Först vid 10 längder (ett jämnt antal) är Viktor också vid startpunkten, och då har han simmat 250 meter. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "m och n är två olika positiva heltal. Är m > n?\n(1) n är jämnt delbart med 30 men inte med 4.\nm är jämnt delbart med 60.\n(2) Både m och n är jämnt delbara med 13.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) n kan till exempel vara 30 eller 90, och m kan vara 60. Med m = 60 och n = 30 är m > n, men med m = 60 och n = 90 är m < n. Inte tillräckligt.\n(2) Att båda talen är delbara med 13 säger inget om vilket som är störst. Inte tillräckligt.\n(1) och (2) tillsammans: m = 780 = 60 · 13 och n = 390 = 30 · 13 (inte delbart med 4) ger m > n, medan m = 780 och n = 1 170 = 90 · 13 (inte heller delbart med 4) ger m < n. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Vilka två år hade antalet medlemmar minskat jämfört med närmast föregående år?",
+      "options": [
+        "1885 och 1886",
+        "1885 och 1896",
+        "1886 och 1896",
+        "1886 och 1897"
+      ],
+      "blindAnswer": 3,
+      "explain": "Leta efter staplar som är lägre än stapeln närmast till vänster. Stapeln för 1886 (cirka 3 050 medlemmar) är lägre än stapeln för 1885 (cirka 3 200), och stapeln för 1897 (cirka 5 600) är lägre än stapeln för 1896 (cirka 5 850). Alla andra år är stapeln minst lika hög som året innan; 1887 är ungefär lika hög som 1886. Räkna staplarna noga från årsmarkeringarna 1885 och 1895, eftersom det är lätt att hamna ett år fel.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Med hur många procent hade medlemsantalet ökat om man jämför 1905 med 1892?",
+      "options": [
+        "100 procent",
+        "150 procent",
+        "200 procent",
+        "250 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Stapeln för 1892 når ungefär 4 000 medlemmar och stapeln för 1905 strax över 10 000. Ökningen är ungefär 10 000 − 4 000 = 6 000, och 6 000/4 000 = 1,5, alltså 150 procent. Svaret 250 procent lockar om man räknar 10 000/4 000 = 2,5: antalet 1905 är 250 procent av antalet 1892, men ökningen är 150 procent.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av njurtransplantationerna 2012 gjordes från en levande donator?",
+      "options": [
+        "1/3",
+        "2/5",
+        "2/3",
+        "3/4"
+      ],
+      "blindAnswer": 1,
+      "explain": "I kolumnen för 2012 står Njure (totalt) 398 och Njure från levande donator 155. Andelen är 155/398 ≈ 0,39, vilket ligger närmast 2/5 = 0,40. 1/3 ≈ 0,33 är för litet, och 2/3 och 3/4 är alldeles för stora.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera hur antalet transplantationer förändrades från 2001 till 2009. För vilket av följande organ var förändringen störst, procentuellt sett?",
+      "options": [
+        "Bukspottskörtel",
+        "Lever (totalt)",
+        "Hjärta",
+        "Lungor"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför kolumnerna för 2001 och 2009. Bukspottskörtel: från 10 till 20, en ökning med 100 procent. Lever (totalt): från 102 till 146, en ökning med 44/102 ≈ 43 procent. Hjärta: från 25 till 55, en ökning med 30/25 = 120 procent. Lungor: från 20 till 50, en ökning med 30/20 = 150 procent. Lungor har störst procentuell förändring. Levertransplantationerna ökade mest i antal, men räknat i procent ökade de minst.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur många transplantationer gjordes i genomsnitt per år under perioden 2005–2010?",
+      "options": [
+        "612",
+        "622",
+        "637",
+        "657"
+      ],
+      "blindAnswer": 2,
+      "explain": "Raden Totalt ger 603 (2005), 594 (2006), 620 (2007), 681 (2008), 671 (2009) och 651 (2010). Summan är 3 820. Perioden 2005–2010 omfattar sex år, så genomsnittet är 3 820/6 ≈ 636,7, alltså cirka 637 transplantationer per år.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "För vilket år gällde att fler än 170 av transplantationerna gjordes från levande donatorer samt att antalet tarmtransplantationer var större än året innan?",
+      "options": [
+        "2014",
+        "2011",
+        "2005",
+        "2004"
+      ],
+      "blindAnswer": 1,
+      "explain": "Transplantationer från levande donatorer står på två rader: Njure från levande donator och Lever från levande donator. 2014: 151 + 6 = 157, för få. 2011: 184 + 4 = 188, fler än 170, och tarmtransplantationerna ökade från 1 (2010) till 2 (2011). 2005: 172 + 3 = 175, fler än 170, men tarmtransplantationerna minskade från 2 (2004) till 1 (2005). 2004: 142 + 9 = 151, för få. Bara 2011 uppfyller båda villkoren. Den som bara tittar på njurraden missar att 2005 faller på tarmvillkoret.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur många av regionerna hade en befolkningstillväxt som var högre än riksgenomsnittet och en inkomsttillväxt som var lägre än riksgenomsnittet?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "10"
+      ],
+      "blindAnswer": 0,
+      "explain": "Riksgenomsnitten är de heldragna räta linjerna: den vågräta för befolkningstillväxten (cirka 0,002) och den lodräta för inkomsttillväxten (cirka 0,033). De sökta regionerna ligger ovanför den vågräta linjen och till vänster om den lodräta. Där finns bara två punkter, vid inkomsttillväxten cirka 0,031–0,032 och befolkningstillväxten cirka 0,005–0,006. Stockholm, Göteborg, Halmstad och Strömstad ligger också ovanför den vågräta linjen, men till höger om den lodräta, och punkterna som ligger tätt intill den vågräta linjen ligger under den.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stor var skillnaden i befolkningstillväxt mellan regionen med den högsta och regionen med den lägsta genomsnittliga årliga befolkningstillväxten?",
+      "options": [
+        "0,0135",
+        "0,0235",
+        "0,0270",
+        "0,0310"
+      ],
+      "blindAnswer": 2,
+      "explain": "Befolkningstillväxten står på den lodräta axeln. Högst ligger Stockholm, vid cirka 0,0087. Lägst ligger en punkt nere till vänster (inkomsttillväxt cirka 0,024), vid cirka −0,0187. Skillnaden är 0,0087 − (−0,0187) = 0,0274, vilket ligger närmast 0,0270. Den som av misstag läser av inkomsttillväxten (Strömstad cirka 0,042 och Filipstad cirka 0,0185) får ungefär 0,0235.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de 72 regionerna fanns i den av de tre grupperna som hade lägst tillväxt, vad gäller både befolkning och inkomst?",
+      "options": [
+        "20 procent",
+        "30 procent",
+        "45 procent",
+        "55 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Gruppen med lägst tillväxt i både befolkning och inkomst är ellipsen nere till vänster, med bland andra Filipstad, Överkalix, Haparanda, Vilhelmina och Dorotea. I den ellipsen finns ungefär 30–33 punkter. 30/72 ≈ 0,42 och 33/72 ≈ 0,46, så andelen är cirka 45 procent. 30 procent skulle motsvara ungefär 22 regioner och 55 procent ungefär 40, vilket är för få respektive för många.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "Några punkter ligger på gränsen mellan den nedre och den mellersta ellipsen och ett par punkter överlappar varandra, så antalet i den nedre gruppen är ungefärligt (cirka 30–33 av 72).",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "I vilket län utgjorde jordbruksarbete mer än hälften av arbetstiden under mer än nio månader av arbetsåret?",
+      "options": [
+        "Norrbottens län",
+        "Västerbottens län",
+        "Gävleborgs län",
+        "Jämtlands län"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt teckenförklaringen är jordbruksarbetet det vita fältet överst i varje diagram, alltså 100 procent minus den översta kurvan. Jordbruksarbetet är mer än hälften när den översta kurvan ligger under 50 procent. I Gävleborgs län ligger kurvan över 50 procent bara från början av januari till en bit in i mars, drygt två månader, så jordbruksarbetet är mer än hälften under nästan tio månader. I Norrbottens, Västerbottens och Jämtlands län ligger kurvan över 50 procent från januari till slutet av mars eller april och igen från slutet av november eller december, så där är jordbruksarbetet mer än hälften under bara omkring åtta månader. Den som tror att det randiga fältet är jordbruksarbete läser diagrammen tvärtom.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Identifiera det landskap/område som hade det längsta tidsintervallet mellan höskördens avslutning och den första snön. Hur långt var detta tidsintervall?",
+      "options": [
+        "2 månader",
+        "3 månader",
+        "4 månader",
+        "5 månader"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt teckenförklaringen är höskörden det finprickiga fältet i banden överst i diagrammen, och första snön är strecket där det vita fältet efter potatisplockningen tar slut. Längst intervall har Gästrikland i Gävleborgs län: höskörden slutar omkring 1 augusti och den första snön kommer i början av november, cirka 3 månader senare. Hälsingland har nästan lika långt intervall. I de nordligare länen är intervallet bara omkring 1,5–2,5 månader.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Identifiera det län där skogsarbete utgjorde fyra procent av arbetstiden vid tidpunkten för vårsådden. Hur stor andel av arbetstiden utgjordes vid samma tidpunkt av jordbruksarbete?",
+      "options": [
+        "25 procent",
+        "40 procent",
+        "60 procent",
+        "75 procent"
+      ],
+      "blindAnswer": 3,
+      "explain": "Skogsarbetet är det lodrätt randiga fältet längst ned, och vårsådden är det lilla märket i banden överst, i slutet av maj. Bara i Jämtlands län är det randiga fältet så lågt som cirka 4 procent vid vårsådden; i Norrbottens och Västerbottens län är det omkring 7–8 procent och i de sydligare länen ännu mer. I Jämtlands län ligger den översta kurvan vid samma tidpunkt på cirka 25 procent. Jordbruksarbetet är det vita fältet ovanför kurvan, alltså 100 − 25 = 75 procent. Svaret 25 procent lockar om man läser av kurvans höjd i stället för det vita fältet.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
