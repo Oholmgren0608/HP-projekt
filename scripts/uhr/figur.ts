@@ -72,7 +72,8 @@ function dtkBox(page: PageBox): Box {
   const sameLine = (a: Word, b: Word) => Math.abs(a.y0 - b.y0) < 3 && Math.abs(a.y1 - b.y1) < 3;
   // Sidhuvudet ligger 2,5–5 % ned (olika år); skärmärkena överst är grafik, inte ord.
   const band = page.words.filter((w) => w.y1 < page.height * 0.1 && w.y0 > page.height * 0.01);
-  const marks = band.filter((w) => w.text === "DTK");
+  // Äldre häften: "DELPROV DTK – DIAGRAM, TABELLER OCH KARTOR" (i PDF:ens text ibland gemener).
+  const marks = band.filter((w) => /^dtk$/i.test(w.text));
   const head = band.filter((w) => marks.includes(w) || (horizontal(w) && marks.some((m) => horizontal(m) && sameLine(w, m))));
   const dashes = page.words.filter((w) => w.text === "–" || w.text === "-");
   const foot = page.words.filter(
