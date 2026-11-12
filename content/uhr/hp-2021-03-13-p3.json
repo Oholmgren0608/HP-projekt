@@ -1,0 +1,774 @@
+{
+  "examId": "hp-2021-03-13",
+  "passNumber": 3,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "2(x − 6) = 4(2 − x)",
+      "options": [
+        "2",
+        "10/3",
+        "14/3",
+        "5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplicera in i parenteserna: 2x − 12 = 8 − 4x. Samla x-termerna på vänster sida och talen på höger sida: 2x + 4x = 8 + 12, alltså 6x = 20. Då är x = 20/6 = 10/3. Kontroll: 2(10/3 − 6) = 2 · (−8/3) = −16/3 och 4(2 − 10/3) = 4 · (−4/3) = −16/3, så båda leden är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ anger ett x-värde för vilket f(x) = 0?",
+      "passage": "f(x) = 3x² − 12",
+      "options": [
+        "0",
+        "2",
+        "4",
+        "12"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt f(x) = 0: 3x² − 12 = 0, alltså 3x² = 12 och x² = 4. Då är x = 2 eller x = −2, och 2 finns bland alternativen. Kontroll: f(2) = 3 · 2² − 12 = 12 − 12 = 0. Alternativet 4 lockar om man stannar vid x² = 4 och glömmer att dra roten ur.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är 20 procent av 1/5?",
+      "options": [
+        "5/20",
+        "1/20",
+        "1/25",
+        "1/100"
+      ],
+      "blindAnswer": 2,
+      "explain": "20 procent är 20/100 = 1/5. 20 procent av 1/5 är därför 1/5 · 1/5 = 1/25. Samma sak med decimaltal: 0,2 · 0,2 = 0,04 = 4/100 = 1/25.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Hur stor är arean av femhörningen nedan?",
+      "options": [
+        "60 cm²",
+        "66 cm²",
+        "68 cm²",
+        "80 cm²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Femhörningen ryms i en rektangel som är 10 cm bred och 8 cm hög, med arean 10 · 8 = 80 cm². Det som fattas är en rätvinklig triangel i det övre vänstra hörnet. Dess vågräta katet är 10 − 4 = 6 cm och dess lodräta katet är 8 − 4 = 4 cm, så triangelns area är 6 · 4/2 = 12 cm². Femhörningens area är 80 − 12 = 68 cm². Alternativet 80 cm² är hela rektangeln, utan att triangeln dragits bort.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.21,
+          0.535,
+          0.61,
+          0.745
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är medianen av alla heltal från och med 1 till och med 10?",
+      "options": [
+        "4,5",
+        "5",
+        "5,5",
+        "6"
+      ],
+      "blindAnswer": 2,
+      "explain": "Talen 1, 2, …, 10 är tio stycken och står redan i storleksordning. När antalet tal är jämnt är medianen medelvärdet av de två mittersta talen, här det femte och det sjätte: (5 + 6)/2 = 5,5. Alternativet 5 lockar om man tar det femte talet som mitten.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är x + 2y?",
+      "passage": "2ˣ · 4ʸ = 16",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv allt som potenser av 2: 4ʸ = (2²)ʸ = 2²ʸ och 16 = 2⁴. Ekvationen blir 2ˣ · 2²ʸ = 2⁴, alltså 2ˣ⁺²ʸ = 2⁴. Två potenser med samma bas är lika bara om exponenterna är lika, så x + 2y = 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är med säkerhet korrekt?",
+      "options": [
+        "Om x + z > 180° så är y > 90° och w < 90°",
+        "Om x + z > 180° så är y + w < 180°",
+        "Om x + z < 180° så är y > 90° och w > 90°",
+        "Om x + z < 180° så är y + w < 180°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkelsumman i en fyrhörning är 360°, så x + y + z + w = 360° och y + w = 360° − (x + z). Om x + z > 180° blir y + w < 180°, så det påståendet gäller alltid. Om x + z < 180° blir i stället y + w > 180°, så påståendet att y + w < 180° då är fel. Påståendena om de enskilda vinklarna gäller inte med säkerhet, eftersom summan y + w inte säger hur den fördelas på y och w. Till exempel kan x + z = 200° med y = w = 80°, och x + z = 160° med y = 150° och w = 50°.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.19,
+          0.088,
+          0.375,
+          0.222
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är (3/4 + 4/3)/(12/5)?",
+      "options": [
+        "5",
+        "5/12",
+        "49/60",
+        "125/144"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna först ut täljaren med gemensam nämnare 12: 3/4 + 4/3 = 9/12 + 16/12 = 25/12. Att dela med 12/5 är detsamma som att multiplicera med 5/12: 25/12 · 5/12 = 125/144. Alternativet 5 lockar om man multiplicerar med 12/5 i stället för att dela: 25/12 · 12/5 = 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket (a + b)(a² − ab + b²)?",
+      "options": [
+        "a² − 2ab + b²",
+        "a³ + 2a²b + 2ab² + b³",
+        "a³ + 2ab² + b³",
+        "a³ + b³"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera var och en av termerna i den första parentesen med hela den andra parentesen. a(a² − ab + b²) = a³ − a²b + ab² och b(a² − ab + b²) = a²b − ab² + b³. När de två delarna läggs ihop tar −a²b och a²b ut varandra, och likaså ab² och −ab². Kvar blir a³ + b³.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar grafen till funktionen g(x) = 2f(x) + 3?",
+      "passage": "f(x) = x/2 − 1",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in f(x): g(x) = 2(x/2 − 1) + 3 = x − 2 + 3 = x + 1. Grafen är en rät linje med lutningen 1 som skär y-axeln i y = 1 och x-axeln i x = −1. Det är graf A. Graf B är y = x + 2, som man får om man glömmer att multiplicera −1 med 2. Graferna C och D har lutningen 2.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.18,
+          0.418,
+          0.47,
+          0.93
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "x och y är positiva tal. Om x var 25 % större och y var 25 % mindre så skulle talen vara lika stora. Hur förhåller sig x till y?",
+      "options": [
+        "x = y/2",
+        "x = 3y/5",
+        "x = 2y/3",
+        "x = 4y/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "25 % större än x är 1,25x och 25 % mindre än y är 0,75y. Villkoret ger 1,25x = 0,75y, alltså x = 0,75y/1,25 = 75y/125 = 3y/5. Kontroll med y = 5 och x = 3: 1,25 · 3 = 3,75 och 0,75 · 5 = 3,75.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "x är ett heltal större än 0. Vilket är det minsta värde som x kan ha för att 75x ska vara kvadraten på ett heltal?",
+      "options": [
+        "3",
+        "5",
+        "25",
+        "75"
+      ],
+      "blindAnswer": 0,
+      "explain": "Primtalsfaktorisera: 75 = 3 · 5². I kvadraten på ett heltal förekommer varje primfaktor ett jämnt antal gånger. Faktorn 5 finns redan två gånger, men faktorn 3 bara en gång, så x måste innehålla minst en faktor 3. Med x = 3 blir 75x = 225 = 15². Även x = 75 ger en kvadrat (75 · 75 = 75²), men det är inte det minsta värdet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = −4x + 2\nKvantitet I: f(−1/2)\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in x = −1/2 i funktionen: f(−1/2) = −4 · (−1/2) + 2 = 2 + 2 = 4. Kvantitet I är alltså 4, som är större än 0. Den som tappar minustecknet räknar −4 · 1/2 + 2 = 0 och tror att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: (√x)^(√9 + 1)\nKvantitet II: (√x)⁴",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Exponenten i kvantitet I är √9 + 1 = 3 + 1 = 4. Kvantitet I är alltså (√x)⁴, precis som kvantitet II. Båda är lika med x², eftersom (√x)⁴ = ((√x)²)² = x². Kvantiteterna är lika för alla x > 0.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.29,
+          0.538,
+          0.38,
+          0.572
+        ]
+      },
+      "note": "Exponenten i kvantitet I är √9 + 1 och skrivs med ^ i texten; figuren visar uttrycket som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 0,97⁹⁷\nKvantitet II: 1,07⁷",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ett positivt tal mindre än 1 blir mindre för varje gång det multipliceras med sig självt, så 0,97⁹⁷ < 1. Ett tal större än 1 blir i stället större, så 1,07⁷ > 1. Kvantitet II är därför större. Potenserna behöver inte räknas ut; det räcker att jämföra båda med 1. Den höga exponenten 97 kan locka till att tro att kvantitet I är störst.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I triangeln T är alla vinklar olika stora.\nKvantitet I: Den minsta vinkeln i triangeln T\nKvantitet II: 75°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkelsumman i en triangel är 180°, så medelvärdet av de tre vinklarna är 180°/3 = 60°. Eftersom vinklarna är olika stora är den minsta vinkeln mindre än medelvärdet, alltså mindre än 60°. Då är den också mindre än 75°, oavsett hur triangeln ser ut. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I en burk finns det 190 kulor som är numrerade med heltalen 1, 2, 3, …, 189, 190.\nEn kula plockas slumpmässigt ur burken.\nKvantitet I: Sannolikheten att numret på kulan är ett tvåsiffrigt heltal\nKvantitet II: 50 %",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "De tvåsiffriga heltalen är 10, 11, …, 99, alltså 99 − 10 + 1 = 90 stycken. Sannolikheten är 90/190 ≈ 0,47, alltså ungefär 47 %. För 50 % skulle det behövas 95 tvåsiffriga nummer. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen A går genom punkterna (1, 2) och (2, 3). Linjen B är vinkelrät mot linjen A.\nKvantitet I: Riktningskoefficienten för linjen A\nKvantitet II: Riktningskoefficienten för linjen B",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Linjen A har riktningskoefficienten (3 − 2)/(2 − 1) = 1. För två vinkelräta linjer är produkten av riktningskoefficienterna −1, så linjen B har riktningskoefficienten −1/1 = −1. Kvantitet I (1) är större än kvantitet II (−1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 159 liter\nKvantitet II: 15 900 cm³",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "1 liter = 1 dm³ = 1 000 cm³. Då är 159 liter = 159 · 1 000 cm³ = 159 000 cm³, vilket är tio gånger så mycket som 15 900 cm³. Kvantitet I är större. Den som tror att 1 liter är 100 cm³ får kvantiteterna lika stora.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Produkten av ett tresiffrigt positivt heltal och ett tvåsiffrigt positivt heltal\nKvantitet II: Ett fyrsiffrigt positivt heltal",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Produkten kan vara allt från 100 · 10 = 1 000 till 999 · 99 = 98 901, och ett fyrsiffrigt tal kan vara allt från 1 000 till 9 999. Exempel 1: produkten 100 · 10 = 1 000 jämförd med det fyrsiffriga talet 9 999 ger att II är större. Exempel 2: produkten 999 · 99 = 98 901 jämförd med det fyrsiffriga talet 1 000 ger att I är större. Informationen räcker alltså inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Arean av en cirkel är π³ cm².\nKvantitet I: Cirkelns radie\nKvantitet II: π cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "En cirkels area är πr². Villkoret ger πr² = π³. Dela med π: r² = π², och eftersom radien är positiv är r = π cm. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\ny > 0\n√(x/y) = x/y\nKvantitet I: 2\nKvantitet II: 2y/x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla kvoten x/y för t, där t > 0. Ekvationen säger att √t = t. Kvadrera båda leden: t = t², alltså t(t − 1) = 0. Eftersom t > 0 är t = 1, och då är x = y. Kvantitet II blir 2y/x = 2y/y = 2, precis som kvantitet I. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Emma kör bil på en väg som har en sträcka där ett vägarbete pågår. Hur lång är sträckan med vägarbete?\n(1) När Emma har kört längs sträckan med vägarbete i 2 minuter har hon kört 1/5 av hela sträckan med vägarbete. Efter ytterligare 3 minuter har hon kört halva sträckan med vägarbete.\n(2) Emma kör med konstant hastighet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Påståendet anger bara tider och andelar av sträckan. Varken hastigheten eller någon sträcka i meter eller kilometer är känd. Inte tillräckligt.\n(2) Att hastigheten är konstant säger inget om hur lång sträckan är. Inte tillräckligt.\n(1) och (2) tillsammans: Emma kör 1/5 = 2/10 av sträckan på 2 minuter och 1/2 − 1/5 = 3/10 på 3 minuter, alltså 1/10 per minut, så hela sträckan tar 10 minuter. Men utan hastigheten går längden inte att räkna ut; sträckan kan lika gärna vara 1 km som 5 km. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hugo har en låda med knappar. Hur många knappar har Hugo i lådan?\n(1) 28 knappar utgör 1/9 av alla knappar i lådan.\n(2) Om 28 knappar plockas upp ur lådan, så utgör 56 knappar 25 % av antalet knappar som är kvar i lådan.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Om 28 knappar är 1/9 av alla knappar finns det 9 · 28 = 252 knappar i lådan. Tillräckligt.\n(2) 56 knappar är 25 % av dem som är kvar, så det finns 4 · 56 = 224 knappar kvar. Före upplockningen fanns det 224 + 28 = 252 knappar. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En burk som är fylld till 70 % med socker väger 1 250 g. Hur mycket väger burken när den är tom?\n(1) 1 dl socker väger 90 g.\n(2) Burken rymmer 1,5 liter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Sockrets vikt per deciliter är känd, men inte hur mycket socker som finns i burken. Inte tillräckligt.\n(2) Burkens volym är känd, men inte vad sockret väger. Inte tillräckligt.\n(1) och (2) tillsammans: Burken innehåller 0,7 · 1,5 liter = 1,05 liter = 10,5 dl socker, som väger 10,5 · 90 = 945 g. Den tomma burken väger 1 250 − 945 = 305 g. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Lea har en stensamling som består av 60 stenar. Varje sten är antingen slät eller inte slät. Varje sten är dessutom antingen ljus eller mörk. Lea har 24 mörka stenar. Hur många släta stenar har Lea i sin samling?\n(1) 12 av de mörka stenarna är inte släta.\n(2) Lea har lika många ljusa släta stenar som mörka släta stenar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lea har 24 mörka och 60 − 24 = 36 ljusa stenar.\n(1) Av de mörka stenarna är 24 − 12 = 12 släta, men det framgår inte hur många av de 36 ljusa stenarna som är släta. Inte tillräckligt.\n(2) Antalet ljusa släta stenar är lika med antalet mörka släta, men inget av antalen är känt. Inte tillräckligt.\n(1) och (2) tillsammans: Det finns 12 mörka släta stenar och därmed också 12 ljusa släta stenar, alltså 12 + 12 = 24 släta stenar. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Sidlängderna i en triangel är a, b och c. Är triangeln liksidig?\n(1) a = b\n(2) c ≠ a",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "En triangel är liksidig om alla tre sidorna är lika långa, alltså om a = b = c.\n(1) a = b säger inget om c. Är c lika med a är triangeln liksidig, annars inte. Inte tillräckligt.\n(2) Om c ≠ a är två av sidorna olika långa, och då kan triangeln inte vara liksidig. Frågan kan besvaras med ett säkert nej. Tillräckligt.\nAtt svaret blir nej spelar ingen roll; det räcker att frågan går att besvara.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x + y = 36\nVilket värde har xy?\n(1) x och y är två på varandra följande udda heltal.\n(2) x och y är två positiva heltal.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Två på varandra följande udda heltal kan skrivas n och n + 2. Då är n + (n + 2) = 36, så n = 17 och talen är 17 och 19. Alltså är xy = 17 · 19 = 323. Tillräckligt.\n(2) Det finns många par av positiva heltal med summan 36, till exempel 1 och 35 (xy = 35) eller 18 och 18 (xy = 324). Inte tillräckligt.\nPåstående (1) räcker alltså, men inte (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Kurvan nedan illustrerar hur antalet fall av indragen studiehjälp förändrades i ett specifikt län under de tre redovisade läsåren. Vilket är länet?",
+      "options": [
+        "Gotlands län",
+        "Hallands län",
+        "Örebro län",
+        "Västernorrlands län"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kurvan saknar värden på axeln, så det är formen som avgör: antalet stiger tydligt från 2009/10 till 2010/11 och sjunker sedan något till 2011/12, men inte ända ned till nivån 2009/10. Jämför kolumnerna Totalt i tabellen över länen. Gotlands län (115, 116, 143) och Västernorrlands län (393, 427, 475) ökar båda åren. Hallands län ökar från 335 till 424 och ligger sedan nästan still på 420, så den sista delen av kurvan skulle bli nästan vågrät. Örebro län ökar från 486 till 599 och minskar sedan till 564, precis som kurvan visar.",
+      "figure": {
+        "pages": [
+          16,
+          17
+        ],
+        "boxes": [
+          null,
+          [
+            0.21,
+            0.183,
+            0.47,
+            0.35
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur många fler män än kvinnor fick sitt extra tillägg indraget under den redovisade treårsperioden?",
+      "options": [
+        "205",
+        "310",
+        "735",
+        "1 501"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd den övre tabellen, kolumnerna under Extra tillägg. Kvinnor: 196 + 251 + 319 = 766. Män: 416 + 456 + 629 = 1 501. Skillnaden är 1 501 − 766 = 735. Alternativet 1 501 är antalet män, och 205 och 310 är skillnaderna för enskilda läsår (2010/11 respektive 2011/12).",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Vilket län avses?",
+      "passage": "Läsåret 2010/11 fick fler än 250 kvinnor sin studiehjälp indragen. Läsåret 2009/10 fick mer än dubbelt så många män som kvinnor sin studiehjälp indragen.",
+      "options": [
+        "Östergötlands län",
+        "Skåne län",
+        "Västra Götalands län",
+        "Västmanlands län"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd den nedre tabellen. Västmanlands län faller bort direkt, eftersom bara 176 kvinnor fick studiehjälpen indragen där 2010/11. De andra tre länen hade fler än 250 kvinnor det läsåret (290, 910 och 764). Läsåret 2009/10: Östergötlands län hade 201 kvinnor och 408 män, och 408 är mer än 2 · 201 = 402. Skåne län hade 906 kvinnor och 1 435 män, mindre än 2 · 906 = 1 812. Västra Götalands län hade 760 kvinnor och 1 500 män, något mindre än 2 · 760 = 1 520. Bara Östergötlands län uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Jämför den löphastighet som ger en fotbollsspelare maximal puls före en träningsperiod med den löphastighet som ger en otränad person maximal puls. Hur stor är skillnaden?",
+      "options": [
+        "2 km per timme",
+        "5 km per timme",
+        "7 km per timme",
+        "10 km per timme"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd diagrammet Pulsfrekvens, där den streckade linjen visar maximal puls. Den otränade personens linje (fyllda romber) når maximal puls vid 15 km per timme. Fotbollsspelarens linje före träningsperioden (ofyllda ringar) når maximal puls vid 20 km per timme. Skillnaden är 20 − 15 = 5 km per timme. Fotbollsspelaren efter träningsperioden (fyllda ringar) når maximal puls först vid cirka 22 km per timme; den linjen ger det lockande alternativet 7 km per timme.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur mycket energi från fett omsätts under en timmes medelhårt arbete?",
+      "options": [
+        "1 200 kJ",
+        "1 600 kJ",
+        "2 000 kJ",
+        "2 400 kJ"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd diagrammet Energiförbrukning. Vid medelhårt arbete når den grå stapeln för fett 20 kJ per minut (33 procent av totalt 60 kJ per minut). En timme är 60 minuter, så energin från fett blir 20 · 60 = 1 200 kJ. Alternativet 2 400 kJ är energin från socker, 40 · 60.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur mycket större är den totala energiförbrukningen vid hårt arbete än vid lätt arbete?",
+      "options": [
+        "45 kJ per minut",
+        "60 kJ per minut",
+        "75 kJ per minut",
+        "90 kJ per minut"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den totala energiförbrukningen är summan av stapeln för socker och stapeln för fett. Lätt arbete: båda staplarna når drygt 17 kJ per minut, totalt knappt 35 kJ per minut. Hårt arbete: sockerstapeln når cirka 92 och fettstapeln cirka 3 kJ per minut, totalt cirka 95 kJ per minut. Skillnaden är cirka 95 − 35 = 60 kJ per minut. Den som bara jämför sockerstaplarna får 92 − 17 = 75 kJ per minut.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilket land hade den största fiskeflottan vad avser antal fartyg, tonnage respektive maskinkraft?",
+      "options": [
+        "Grekland, Spanien respektive Italien",
+        "Grekland, Frankrike respektive Spanien",
+        "Spanien, Spanien respektive Frankrike",
+        "Spanien, Frankrike respektive Italien"
+      ],
+      "blindAnswer": 0,
+      "explain": "Jämför sektorernas storlek i de tre cirkeldiagrammen. Antal fartyg: Greklands sektor (EL) är störst, ungefär en femtedel av cirkeln, före Italien (IT) och Spanien (ES) med ungefär 15–16 procent vardera. Tonnage: Spaniens sektor (ES) är störst, nästan en fjärdedel av cirkeln, medan Frankrikes (FR) bara är cirka 10 procent. Maskinkraft: Italiens sektor (IT) är störst, cirka 17 procent, före Spanien och Frankrike med cirka 15 procent vardera. Svaret är alltså Grekland, Spanien respektive Italien.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "Maskinkraft: Italiens sektor (ca 61°) är bara något större än Spaniens (ca 55°) och Frankrikes (ca 53°); uppmätt i förstorad bild.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Sammanlagt hur stor andel av fartygen inom EU:s fiskeflotta kom från något av länderna Portugal, Finland eller Storbritannien?",
+      "options": [
+        "1/10",
+        "1/6",
+        "1/5",
+        "1/3"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd diagrammet Antal fartyg. Portugals sektor (PT) är ungefär 40° av cirkelns 360°, alltså cirka 11 procent. Storbritanniens sektor (UK) är ungefär 27°, cirka 7,5 procent, och Finlands sektor (FI) är liten, ungefär 5° eller cirka 1,5 procent. Sammanlagt blir det ungefär 72° av 360°, alltså cirka 20 procent, vilket är 1/5.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "Sektorerna är uppmätta i förstorad bild: PT ca 40°, UK ca 27° och FI ca 5° (sektorerna mellan PT och UK är märkta SI, FI och SE i den ordningen).",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Jämför Frankrike och Portugal vad avser den maskinkraft som respektive lands fiskeflotta hade. Hur mycket mer maskinkraft hade Frankrike?",
+      "options": [
+        "106 000 kW",
+        "325 000 kW",
+        "685 000 kW",
+        "1 032 000 kW"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd diagrammet Maskinkraft i kW, där totalen är 7 287 224 kW. Frankrikes sektor (FR) är ungefär 53° av 360°, alltså cirka 14,7 procent, och Portugals sektor (PT) är ungefär 19°, cirka 5,3 procent. Skillnaden är cirka 9,4 procent av totalen: 0,094 · 7 287 224 ≈ 685 000 kW. Alternativet 1 032 000 kW är ungefär så mycket maskinkraft som Frankrike har totalt, alltså utan att Portugals del dragits bort.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur många fler barn dog bland 1–2-åringar än bland 5–9-åringar under perioden 1751–60?",
+      "options": [
+        "28 per tusen barn",
+        "37 per tusen barn",
+        "44 per tusen barn",
+        "51 per tusen barn"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd diagrammet över dödligheten i åldrarna 1–14 år. För perioden 1751–60 ligger kurvan för 1–2 år (heldragen linje) på cirka 50 per tusen och kurvan för 5–9 år (långa streck) på cirka 13 per tusen. Skillnaden är cirka 50 − 13 = 37 per tusen barn. Den som läser av kurvan för 10–14 år (cirka 6 per tusen) i stället får 44.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Studera tioårsperioden 1931–40. Vilka betingelser gav störst chanser att överleva spädbarnsåldern?",
+      "options": [
+        "Att vara pojke, att vara född i staden och att vara född inom äktenskapet.",
+        "Att vara flicka, att vara född på landsbygden och att vara född inom äktenskapet.",
+        "Att vara pojke, att vara född på landsbygden och att vara född utom äktenskapet.",
+        "Att vara flicka, att vara född i staden och att vara född inom äktenskapet."
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför tre diagram vid perioden 1931–40; lägst spädbarnsdödlighet ger störst chans att överleva. Pojkar och flickor: kurvan för flickor ligger lägre. Landsbygd och stad: kurvorna korsar varandra omkring 1921–30, och 1931–40 ligger kurvan för stad under kurvan för landsbygd. Inom och utom äktenskapet: kurvan för barn födda inom äktenskapet ligger lägre. Störst chans hade alltså en flicka född i staden inom äktenskapet. Landsbygden lockar eftersom den hade lägre dödlighet än städerna under större delen av perioden, men inte 1931–40.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Vilken av de redovisade tioårsperioderna var spädbarnsdödligheten som störst?",
+      "options": [
+        "1761–70",
+        "1771–80",
+        "1801–10",
+        "1811–20"
+      ],
+      "blindAnswer": 0,
+      "explain": "Alla fyra perioderna finns bara i diagrammet över spädbarnsdödligheten för pojkar respektive flickor, som börjar 1751–60. Där når båda kurvorna sin högsta punkt 1761–70: cirka 225 per tusen för pojkar och cirka 207 för flickor. 1771–80 och 1801–10 ligger båda kurvorna lägre (cirka 210 för pojkar och 185–190 för flickor), och 1811–20 ännu lägre. Diagrammen över landsbygd och stad och över barn födda inom och utom äktenskapet börjar först 1811–20 respektive 1801–10, så deras höga startvärden säger inget om de tidigare perioderna.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
