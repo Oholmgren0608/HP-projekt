@@ -1,0 +1,770 @@
+{
+  "examId": "hp-2013-04-06",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln v?",
+      "options": [
+        "92°",
+        "97°",
+        "103°",
+        "105°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinklarna i den stora triangeln är 59°, 33° och x + x, så 2x = 180° − 59° − 33° = 88° och x = 44°. Vinkeln v är en yttervinkel till den vänstra deltriangeln och är därför lika med summan av de två motstående vinklarna i den: v = 59° + 44° = 103°. Kontroll i den högra deltriangeln: 44° + 33° + 103° = 180°. Den som räknar ut vinkeln till vänster om sträckan får 180° − 59° − 44° = 77°, men v ligger till höger.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.18,
+          0.15,
+          0.57,
+          0.29
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av tre på varandra följande heltal är 947. Vad är summan av det minsta och det största talet?",
+      "options": [
+        "1 884",
+        "1 886",
+        "1 894",
+        "1 896"
+      ],
+      "blindAnswer": 2,
+      "explain": "Medelvärdet av tre på varandra följande heltal är det mittersta talet, så talen är 946, 947 och 948. Summan av det minsta och det största är 946 + 948 = 1 894. Snabbare: det minsta och det största talet ligger lika långt under respektive över 947, så deras summa är 2 · 947 = 1 894.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Om x > y > w > z, vilket av svarsförslagen kan då vara korrekt?",
+      "passage": "På fyra dagar sålde en affär varor för x, y, w respektive z kronor.",
+      "options": [
+        "y = x + z",
+        "x = y + w",
+        "w = y + z",
+        "z = x + y"
+      ],
+      "blindAnswer": 1,
+      "explain": "Beloppen är positiva. Om y = x + z vore y större än x, men x > y. Om w = y + z vore w större än y, men y > w. Om z = x + y vore z större än både x och y, men z är minst. Däremot kan x = y + w gälla, till exempel med x = 5, y = 3, w = 2 och z = 1, där 5 = 3 + 2 och 5 > 3 > 2 > 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är b då x/y = 5a/(3b)?",
+      "options": [
+        "5ax/y",
+        "5ax/(3y)",
+        "5ay/x",
+        "5ay/(3x)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera korsvis: x · 3b = 5a · y, alltså 3bx = 5ay. Dela båda leden med 3x: b = 5ay/(3x). Kontroll med tal: a = 3, x = 5 och y = 1 ger b = 15/15 = 1, och då är x/y = 5 och 5a/(3b) = 15/3 = 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Bestäm koordinaterna för mittpunkten på sträckan som har (−3, −2) och (7, 4) som ändpunkter.",
+      "options": [
+        "(2, 1)",
+        "(2, 3)",
+        "(5, 1)",
+        "(5, 3)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Mittpunktens koordinater är medelvärdena av ändpunkternas koordinater. x-koordinaten är (−3 + 7)/2 = 4/2 = 2 och y-koordinaten är (−2 + 4)/2 = 2/2 = 1. Mittpunkten är (2, 1). Alternativet (5, 3) får man om man tar halva skillnaden, (7 − (−3))/2 = 5 och (4 − (−2))/2 = 3, i stället för medelvärdet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket av följande tal ligger närmast 1?",
+      "options": [
+        "4/5",
+        "5/4",
+        "7/9",
+        "9/7"
+      ],
+      "blindAnswer": 0,
+      "explain": "Jämför avstånden till 1. 4/5 ligger 1/5 = 0,2 under 1, och 5/4 ligger 1/4 = 0,25 över 1. 7/9 ligger 2/9 ≈ 0,22 under 1, och 9/7 ligger 2/7 ≈ 0,29 över 1. Minst avstånd har 4/5. Observera att 4/5 och 5/4 inte ligger lika långt från 1, eftersom 1/5 är mindre än 1/4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är t, om (t − 1)ᵗ = 81?",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "9"
+      ],
+      "blindAnswer": 1,
+      "explain": "Pröva alternativen. t = 4 ger (4 − 1)⁴ = 3⁴ = 81. De andra ger 2³ = 8, 5⁶ = 15 625 och 8⁹, som alla skiljer sig från 81. Alltså är t = 4. Alternativet 3 lockar eftersom 81 = 3⁴, men det är t − 1 som är 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Ett tal i följden 55, 150, 435, 1 290, … bildas genom att föregående tal multipliceras med heltalet x och den erhållna produkten subtraheras med heltalet y. Vad är summan av x och y?",
+      "options": [
+        "12",
+        "15",
+        "18",
+        "21"
+      ],
+      "blindAnswer": 2,
+      "explain": "Varje tal är x gånger det föregående minus y, så 150 = 55x − y och 435 = 150x − y. Subtrahera den första ekvationen från den andra: 285 = 95x, alltså x = 3. Då är y = 3 · 55 − 150 = 15. Kontroll med nästa tal: 3 · 435 − 15 = 1 305 − 15 = 1 290. Summan är x + y = 3 + 15 = 18.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad gäller för x om x > x²?",
+      "options": [
+        "x < −1",
+        "−1 < x < 0",
+        "0 < x < 1",
+        "x > 1"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv olikheten som x − x² > 0, alltså x(1 − x) > 0. Produkten är positiv när faktorerna har samma tecken. x > 0 och 1 − x > 0 ger 0 < x < 1. Att båda är negativa skulle kräva x < 0 och x > 1 samtidigt, vilket är omöjligt. Kontroll: x = 0,5 ger 0,5 > 0,25. För negativa x är x² positivt och alltså större än x, och för x > 1 är x² > x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad blir (4/8 · 1/2 · 3/4)/(8/2 · 1/2)?",
+      "options": [
+        "3/32",
+        "3/16",
+        "3/8",
+        "3/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna ut täljaren och nämnaren var för sig. Täljaren: 4/8 · 1/2 · 3/4 = (4 · 1 · 3)/(8 · 2 · 4) = 12/64 = 3/16. Nämnaren: 8/2 · 1/2 = 4 · 1/2 = 2. Kvoten blir (3/16)/2 = 3/32. Alternativet 3/16 får den som glömmer att dela täljaren med nämnaren.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.268,
+          0.54,
+          0.352,
+          0.605
+        ]
+      },
+      "note": "Uttrycket är ett bråk i två nivåer; figuren visar det som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är x om x² = 0,5?",
+      "passage": "x > 0",
+      "options": [
+        "0,25",
+        "0,75",
+        "√2",
+        "1/√2"
+      ],
+      "blindAnswer": 3,
+      "explain": "x² = 0,5 = 1/2. Eftersom x > 0 är x = √(1/2) = 1/√2 ≈ 0,71. Kontroll: (1/√2)² = 1/2 = 0,5. Alternativet 0,25 är hälften av 0,5, men 0,25² = 0,0625, och (√2)² = 2, inte 0,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "En mindre kvadrat med sidan x cm är inritad i en större kvadrat. Sidan i den större kvadraten är y cm längre än sidan i den mindre. Hur stor är skillnaden mellan kvadraternas areor?",
+      "options": [
+        "(2xy + x²) cm²",
+        "(2xy + y²) cm²",
+        "(y² − 2xy) cm²",
+        "(y² − x²) cm²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den större kvadraten har sidan (x + y) cm och arean (x + y)² = x² + 2xy + y² cm². Den mindre har arean x² cm². Skillnaden är x² + 2xy + y² − x² = (2xy + y²) cm². Alternativet (y² − x²) cm² lockar om man tror att den större kvadraten har sidan y, men y är hur mycket längre sidan är.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.195,
+          0.597,
+          0.415,
+          0.755
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x = −2\nKvantitet I: x · x\nKvantitet II: x + x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in x = −2. Kvantitet I: x · x = (−2) · (−2) = 4. Kvantitet II: x + x = (−2) + (−2) = −4. Kvantitet I är större. Produkten av två negativa tal är positiv, medan summan av två negativa tal är negativ.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Anna är idag 4 år äldre än Bea var för 2 år sedan.\nKvantitet I: Annas ålder för 2 år sedan\nKvantitet II: Beas ålder idag",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla Beas ålder idag för b. För 2 år sedan var Bea b − 2 år, så Anna är idag (b − 2) + 4 = b + 2 år. För 2 år sedan var Anna alltså (b + 2) − 2 = b år, precis lika gammal som Bea är idag. Exempel: är Bea 10 år idag var hon 8 för 2 år sedan, Anna är då 12 och var 10 för 2 år sedan.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a < b\nKvantitet I: a² − b²\nKvantitet II: (a + b)(a − b)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplicera ut kvantitet II (konjugatregeln): (a + b)(a − b) = a² − ab + ab − b² = a² − b². Kvantiteterna är alltså lika för alla a och b, och villkoret a < b spelar ingen roll för jämförelsen. Exempel: a = 1 och b = 3 ger 1 − 9 = −8 och 4 · (−2) = −8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I triangeln ABC har sidorna AB och BC båda längden 7 cm. Höjden från basen AC är 4 cm.\nKvantitet I: Längden av sidan AC\nKvantitet II: 12 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Triangeln är likbent, så höjden från B delar basen AC mitt itu i två rätvinkliga trianglar med hypotenusan 7 cm och ena kateten 4 cm. Halva basen är enligt Pythagoras sats √(7² − 4²) = √(49 − 16) = √33 cm. Eftersom √33 < √36 = 6 är halva basen mindre än 6 cm, och AC = 2√33 ≈ 11,5 cm är mindre än 12 cm. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "1/y < 0\nKvantitet I: 0\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvoten 1/y är negativ bara om nämnaren y är negativ (y kan inte vara 0, eftersom man inte kan dela med 0). Alltså är y < 0, och kvantitet I, som är 0, är större än kvantitet II.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Funktionen f ges av f(x) = 3x + 1\nKvantitet I: f(a) − f(a + 1)\nKvantitet II: 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "f(a) = 3a + 1 och f(a + 1) = 3(a + 1) + 1 = 3a + 4. Kvantitet I är f(a) − f(a + 1) = (3a + 1) − (3a + 4) = −3 för alla a. Kvantitet II, 3, är större. Den som räknar f(a + 1) − f(a) i stället får 3 och tror att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Medelvärdet av (3x + 4y + z + 38) och (x + y + z + 94)\nKvantitet II: Medelvärdet av (4x + 2z + 94) och (5y + 51)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet av två uttryck är deras summa delad med 2, så det räcker att jämföra summorna. Kvantitet I: (3x + 4y + z + 38) + (x + y + z + 94) = 4x + 5y + 2z + 132. Kvantitet II: (4x + 2z + 94) + (5y + 51) = 4x + 5y + 2z + 145. Variablerna ger samma bidrag i båda, och 145 > 132. Kvantitet II är alltså 13/2 = 6,5 större, oavsett vad x, y och z är.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I triangeln ABC gäller att x > y > z\nKvantitet I: x + z\nKvantitet II: 120°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Vinkelsumman i en triangel är 180°, så x + z = 180° − y. Kvantitet I är större än 120° om y < 60° och mindre om y > 60°. Villkoret x > y > z tillåter båda fallen: x = 100°, y = 50° och z = 30° ger x + z = 130°, medan x = 80°, y = 70° och z = 30° ger x + z = 110°. Informationen är otillräcklig.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.185,
+          0.558,
+          0.47,
+          0.732
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a > 0, b > 0 och c < 0\na = b + c\nKvantitet I: a\nKvantitet II: b",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Eftersom c är negativt blir b + c mindre än b. Alltså är a = b + c < b, och kvantitet II är större. Exempel: b = 5 och c = −2 ger a = 3, som är positivt och mindre än b.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "n ≥ 0\nm ≥ 0\nn och m är heltal.\nKvantitet I: (n + 1)ᵐ\nKvantitet II: m⁽ⁿ⁺¹⁾",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva några tillåtna värden. n = 0 och m = 0 ger kvantitet I = 1⁰ = 1 och kvantitet II = 0¹ = 0, så I är större. n = 1 och m = 3 ger kvantitet I = 2³ = 8 och kvantitet II = 3² = 9, så II är större. Relationen beror på n och m, och informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vattendjupet i en brunn är 480 cm. Hur djup är hela brunnen?\n(1) En niondel av brunnens hela djup är ovanför vattenytan.\n(2) Förhållandet mellan vattendjupet och den del av brunnen som är ovanför vattenytan är 8:1.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Om en niondel av djupet är ovanför vattenytan utgör vattnet åtta niondelar, så hela djupet är 480 · 9/8 = 540 cm. Tillräckligt.\n(2) Delen ovanför vattenytan är 480/8 = 60 cm, och hela brunnen är 480 + 60 = 540 cm djup. Tillräckligt.\nVarje påstående räcker alltså för sig. De säger egentligen samma sak: 8:1 betyder att vattnet är 8 av 9 lika delar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En skola köper in en kartong äpplen och en kartong päron, sammanlagt tvåhundra frukter, som skolbarnen ska äta till mellanmål. Tyvärr visar det sig att en del av frukterna är ruttna. Hur många frukter är ruttna?\n(1) 1/6 av päronen och 1/8 av äpplena är ruttna.\n(2) Femton procent av frukterna är ruttna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Med p päron och 200 − p äpplen är p/6 + (200 − p)/8 frukter ruttna, och det beror på p. Till exempel ger 24 päron och 176 äpplen 4 + 22 = 26 ruttna frukter, medan 120 päron och 80 äpplen ger 20 + 10 = 30. Inte tillräckligt.\n(2) 15 procent av 200 frukter är 0,15 · 200 = 30 frukter. Tillräckligt.\nSvaret får man alltså i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Arne, Karin, Muhammed och Elisabeth spelar kort. De sitter vid varsin sida av ett kvadratiskt bord. Vem av dem vinner?\n(1) Karin sitter till höger om vinnaren och mittemot Elisabeth. Muhammed sitter mellan Karin och Elisabeth.\n(2) Arne sitter mittemot Muhammed. Vinnaren sitter till höger om Elisabeth.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Karin sitter mittemot Elisabeth, så Arne och Muhammed sitter på de två andra sidorna, mittemot varandra. Båda de platserna ligger mellan Karin och Elisabeth, så upplysningen om Muhammed avgör inte vem som sitter var. Vinnaren sitter bredvid Karin och är alltså Arne eller Muhammed, beroende på hur de sitter. Inte tillräckligt.\n(2) När Arne sitter mittemot Muhammed sitter Karin mittemot Elisabeth. Vinnaren sitter bredvid Elisabeth och är Arne eller Muhammed. Inte tillräckligt.\n(1) och (2) tillsammans: Båda påståendena pekar ut samma plats för vinnaren, men ingenting avgör om Arne eller Muhammed sitter där. De två kan byta plats utan att något av påståendena blir fel. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Från hemmet till skolan kan Olov ta antingen gångvägen eller en hälften så lång genväg. Hur lång är genvägen?\n(1) Genvägen är 410 meter kortare än gångvägen.\n(2) Om Olov tar genvägen till skolan och gångvägen hem från skolan har han gått sammanlagt 1 230 meter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla genvägens längd g meter. Gångvägen är då 2g meter.\n(1) 2g − g = 410 ger g = 410 meter. Tillräckligt.\n(2) g + 2g = 1 230 ger 3g = 1 230 och g = 410 meter. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Några vänner ska köpa en present tillsammans. Hur mycket kostar presenten?\n(1) Om var och en bidrar med 140 kr så fattas det 40 kr.\n(2) Om var och en bidrar med 160 kr så blir det 60 kr över.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet vänner n och presentens pris P kronor.\n(1) P = 140n + 40, men n är okänt. Inte tillräckligt.\n(2) P = 160n − 60, men n är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: 140n + 40 = 160n − 60 ger 20n = 100, alltså n = 5. Presenten kostar 140 · 5 + 40 = 740 kr. Kontroll: 160 · 5 − 60 = 740. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Leila odlar enbart morötter, rädisor och palsternackor i sitt trädgårdsland.\nHur många rädisor har Leila i sitt trädgårdsland?\n(1) Antalet rädisor är lika med summan av antalet morötter och palsternackor.\n(2) Det finns dubbelt så många palsternackor som morötter i trädgårdslandet. Om man avlägsnar 100 rädisor så finns det lika många rädisor som morötter i trädgårdslandet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet morötter m, rädisor r och palsternackor p.\n(1) r = m + p, men m och p är okända. Inte tillräckligt.\n(2) p = 2m och r − 100 = m, alltså r = m + 100. Antalet morötter är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: r = m + 2m = 3m och r = m + 100. Då är 3m = m + 100, så m = 50 och r = 150. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur många hushåll hade en bostad med tre rum och kök 1975?",
+      "options": [
+        "212 000",
+        "562 000",
+        "693 000",
+        "880 000"
+      ],
+      "blindAnswer": 3,
+      "explain": "Bostäder med tre rum och kök står i tabellen i kolumnen 3 rk. Antalen i tusental är 144, 340, 212, 141, 34, 7 och 2 för hushåll med 1 till 7+ personer. Summan är 144 + 340 + 212 + 141 + 34 + 7 + 2 = 880 tusen, alltså 880 000 hushåll. Alternativet 562 000 är summan av raden för trepersonshushåll (tre personer i stället för tre rum), och 212 000 är bara trepersonshushållen med tre rum och kök.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur förändrades andelen tvåpersons- respektive trepersonshushåll från 1960 till 1975?",
+      "options": [
+        "Den minskade med 5 procentenheter respektive minskade med 14 procentenheter.",
+        "Den minskade med 4 procentenheter respektive minskade med 5 procentenheter.",
+        "Den ökade med 4 procentenheter respektive minskade med 5 procentenheter.",
+        "Den ökade med 5 procentenheter respektive ökade med 14 procentenheter."
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd stapeldiagrammet till höger, som visar hur stor andel av hushållen som hade olika storlek. Tvåpersonshushållen (två figurer) var 27 procent 1960 och 31 procent 1975, en ökning med 31 − 27 = 4 procentenheter. Trepersonshushållen (tre figurer) var 22 procent 1960 och 17 procent 1975, en minskning med 22 − 17 = 5 procentenheter.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stort var antalet hushåll 1960?",
+      "options": [
+        "2,2 miljoner",
+        "2,6 miljoner",
+        "3,2 miljoner",
+        "3,6 miljoner"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av den streckade linjen (1960) i diagrammet till vänster: cirka 530 000 enpersonshushåll, 710 000 tvåpersonshushåll, 570 000 trepersonshushåll, 460 000 fyrpersonshushåll och 340 000 hushåll med fem eller fler personer. Summan blir 530 000 + 710 000 + 570 000 + 460 000 + 340 000 ≈ 2,6 miljoner. Kontroll med stapeldiagrammet: tvåpersonshushållen var 27 procent av alla hushåll 1960, och 710 000/0,27 ≈ 2,6 miljoner.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av fempersonshushållen klassades som trångbodda 1975?",
+      "options": [
+        "22 procent",
+        "28 procent",
+        "34 procent",
+        "39 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "Fempersonshushållen står i tabellen på raden 5 personer: 1 + 4 + 34 + 59 + 47 + 20 + 11 = 176 tusen hushåll. De trångbodda står i det markerade fältet till vänster, som på den raden omfattar 1 rk, 2 rk och 3 rk: 1 + 4 + 34 = 39 tusen hushåll. Andelen är 39/176 ≈ 0,22, alltså 22 procent. Alternativet 39 procent lockar om man läser antalet i tusental som en procentsats.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur många flickor respektive pojkar hade inte gjort delprovet Engelska, skriftlig förmåga?",
+      "options": [
+        "3 139 respektive 3 817",
+        "3 139 respektive 4 910",
+        "4 142 respektive 3 817",
+        "4 142 respektive 4 910"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd tabellen för engelska, raden Skriftlig förmåga (delprov C). Flickor: 58 539 elever, varav 54 397 hade gjort provet, så 58 539 − 54 397 = 4 142 hade inte gjort det. Pojkar: 61 355 elever, varav 56 445 hade gjort provet, så 61 355 − 56 445 = 4 910. Talen 3 139 och 3 817 får man om man i stället använder raden Skriftlig förmåga i tabellen för svenska.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Studera hur antalet elever som gjort de enskilda delproven i svenska respektive engelska fördelade sig procentuellt på de olika resultaten. Vilket av delproven illustreras i cirkeldiagrammet nedan?",
+      "options": [
+        "Svenska, läsförståelse",
+        "Svenska, skriftlig förmåga",
+        "Engelska, muntlig förmåga",
+        "Engelska, receptiv förmåga"
+      ],
+      "blindAnswer": 3,
+      "explain": "I cirkeldiagrammet är VG den största sektorn, större än G, och MVG är mer än dubbelt så stor som Ej nått målen. Jämför med andelarna under Totalt i tabellerna. VG är större än G bara för Svenska, läsförståelse (34,0 procent G och 42,0 procent VG) och Engelska, receptiv förmåga (31,7 och 42,6). För läsförståelse är MVG (11,4) mindre än Ej nått målen (12,5), men för receptiv förmåga är MVG 18,3 och Ej nått målen 7,5. Det stämmer med diagrammet, där sektorerna är ungefär 32, 43, 18 och 7,5 procent av cirkeln.",
+      "figure": {
+        "pages": [
+          18,
+          19
+        ],
+        "boxes": [
+          null,
+          [
+            0.19,
+            0.362,
+            0.37,
+            0.5
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Studera skillnaden i procentenheter mellan andelen pojkar och andelen flickor som ej nått målen på de olika proven/delproven. För vilket prov/delprov var skillnaden mellan pojkar och flickor störst respektive minst?",
+      "options": [
+        "Svenska, läsförståelse respektive Engelska, receptiv förmåga",
+        "Svenska, läsförståelse respektive Matematik",
+        "Svenska, skriftlig förmåga respektive Engelska, receptiv förmåga",
+        "Svenska, skriftlig förmåga respektive Matematik"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ta skillnaden mellan pojkar och flickor i kolumnerna Ej nått målen. Svenska: läsförståelse 16,6 − 8,4 = 8,2, muntlig förmåga 3,7 − 2,0 = 1,7 och skriftlig förmåga 12,5 − 4,8 = 7,7 procentenheter. Engelska: muntlig förmåga 4,3 − 3,6 = 0,7, receptiv förmåga 7,7 − 7,2 = 0,5 och skriftlig förmåga 6,8 − 4,0 = 2,8. Matematik: 12,4 − 12,2 = 0,2. Skillnaden är alltså störst för Svenska, läsförståelse och minst för Matematik. Svenska, skriftlig förmåga (7,7) och Engelska, receptiv förmåga (0,5) kommer nära men inte ända fram.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "För vilken besättningsstorlek gällde att skillnaden mellan förekomsten av kalvningsförlamning och acetonemi var 2 procentenheter och att skillnaden mellan förekomsten av acetonemi och förlossningshjälp var 1 procentenhet?",
+      "options": [
+        "25,0–49,9",
+        "50,0–74,9",
+        "75,0–99,9",
+        "100,0–149,9"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av det mellersta diagrammet. För 25,0–49,9 är kalvningsförlamning cirka 3,55 procent, acetonemi cirka 1,6 och förlossningshjälp cirka 0,6. Skillnaderna är 3,55 − 1,6 ≈ 2 och 1,6 − 0,6 = 1 procentenhet. För 50,0–74,9 är den första skillnaden också cirka 2 (3,15 − 1,2), men acetonemi och förlossningshjälp skiljer bara cirka 0,65 (1,2 − 0,55). För 75,0–99,9 och 100,0–149,9 ligger acetonemi under 0,8, och skillnaden mot förlossningshjälp är bara 0,2–0,3 procentenheter.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Studera behandlingarna av kolik bland hästar i Svealand 2006. Hur stor andel av dessa behandlingar utfördes under de tre månader då antalet utförda behandlingar var som störst?",
+      "options": [
+        "En tiondel",
+        "En femtedel",
+        "En fjärdedel",
+        "En tredjedel"
+      ],
+      "blindAnswer": 3,
+      "explain": "Svealand är linjen med prickar i det nedersta diagrammet. De tre största värdena är januari (cirka 12,5 procent), mars (cirka 11,5) och februari (cirka 10,4). Tillsammans blir det 12,5 + 11,5 + 10,4 ≈ 34 procent av årets behandlingar, alltså ungefär en tredjedel. November ligger på cirka 10 procent, strax under februari, och ändrar inte svaret.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Studera förekomsten av nedanstående sjukdomar bland mjölkkor i besättningsstorleken 300 eller fler. Hur många fall av respektive sjukdom drabbade enligt statistiken en besättning på 350 mjölkkor den redovisade mätperioden?",
+      "passage": "Svarsalternativen anger: mastit – övriga sjukdomar – kvarbliven efterbörd",
+      "options": [
+        "23 – 15 – 2",
+        "23 – 53 – 8",
+        "81 – 15 – 2",
+        "81 – 53 – 8"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av det översta diagrammet vid besättningsstorleken 300,0–: mastit cirka 23,2 procent, övriga sjukdomar cirka 15,2 procent och kvarbliven efterbörd cirka 2,2 procent. För 350 kor blir det 0,232 · 350 ≈ 81, 0,152 · 350 ≈ 53 och 0,022 · 350 ≈ 8 fall. Talen 23, 15 och 2 i de andra alternativen är procentsatserna, inte antalet fall.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Med hur mycket minskade antalet omkomna i badolyckor från 2002 till 2005?",
+      "options": [
+        "En fjärdedel",
+        "En tredjedel",
+        "Tre femtedelar",
+        "Tre fjärdedelar"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt tabellen omkom 51 personer i badolyckor 2002 och 20 personer 2005. Minskningen är 51 − 20 = 31 personer, och 31/51 ≈ 0,61, alltså ungefär tre femtedelar (0,6). En fjärdedel eller en tredjedel av 51 är bara cirka 13 respektive 17 personer, och tre fjärdedelar är cirka 38 personer.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Anta att den procentuella fördelningen på olyckstyper var densamma 1995 och 1996 som den var 2002. Hur många av dem som omkom respektive år omkom i så fall i badolyckor?",
+      "passage": "Svarsalternativen anger: 1995 – 1996",
+      "options": [
+        "60 – 40",
+        "75 – 45",
+        "90 – 60",
+        "115 – 75"
+      ],
+      "blindAnswer": 0,
+      "explain": "År 2002 omkom enligt tabellen 51 + 33 + 20 + 1 + 44 = 149 personer, varav 51 i badolyckor, alltså 51/149 ≈ 34 procent, ungefär en tredjedel. Stapeldiagrammet visar cirka 175 omkomna 1995 och cirka 112 omkomna 1996 (axeln är bruten mellan 0 och 110). Med samma fördelning blir det 0,34 · 175 ≈ 60 respektive 0,34 · 112 ≈ 38 omkomna i badolyckor, vilket ligger närmast 60 och 40.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
