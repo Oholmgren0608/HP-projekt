@@ -1,0 +1,759 @@
+{
+  "examId": "hp-2016-10-29",
+  "passNumber": 3,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket 3xy² + 2x²y?",
+      "options": [
+        "xy(3y + 2x)",
+        "5x³y³",
+        "x(3y² + 2x²)",
+        "5xy(y + x)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Båda termerna innehåller faktorerna x och y, så bryt ut xy: 3xy² = xy · 3y och 2x²y = xy · 2x. Alltså är 3xy² + 2x²y = xy(3y + 2x). Kontroll: multiplicera in igen, xy · 3y + xy · 2x = 3xy² + 2x²y. Alternativet 5x³y³ lockar om man slår ihop koefficienter och exponenter, men termerna är olika och kan inte läggas ihop. x(3y² + 2x²) blir 3xy² + 2x³, som har fel andra term.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilket av följande alternativ är med säkerhet korrekt?",
+      "passage": "För fyrhörningen ABCD gäller att summan av vinkeln A och vinkeln C är 210°.",
+      "options": [
+        "Vinkeln A är större än 90°.",
+        "Vinkeln B och vinkeln D är lika stora.",
+        "Summan av vinkeln B och vinkeln D är 150°.",
+        "Fyrhörningen ABCD är en rektangel."
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinkelsumman i en fyrhörning är 360°. Om A + C = 210° måste B + D = 360° − 210° = 150°, hur fyrhörningen än ser ut. De andra alternativen behöver inte stämma: A kan vara 80° och C 130°, så A behöver inte vara större än 90°. B och D kan till exempel vara 70° och 80°. En rektangel har fyra räta vinklar, och då vore A + C = 180°, inte 210°.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsförslagen är en punkt som ligger mellan de båda linjerna y = x + 3 och y = x − 3?",
+      "options": [
+        "(0, 0)",
+        "(4, 0)",
+        "(0, −4)",
+        "(4, −4)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Linjerna är parallella (båda har lutningen 1). En punkt (x, y) ligger mellan dem om x − 3 < y < x + 3. Pröva alternativen: (0, 0) ger −3 < 0 < 3, som stämmer. (4, 0) skulle kräva 1 < 0, så den punkten ligger under den nedre linjen. (0, −4) skulle kräva −3 < −4 och (4, −4) skulle kräva 1 < −4, så de ligger också under. Bara (0, 0) ligger mellan linjerna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är x − y då 11x − 11y = 42?",
+      "options": [
+        "−42/11",
+        "−11/42",
+        "11/42",
+        "42/11"
+      ],
+      "blindAnswer": 3,
+      "explain": "Bryt ut 11 i vänsterledet: 11x − 11y = 11(x − y). Då är 11(x − y) = 42, och division med 11 ger x − y = 42/11. Alternativet 11/42 lockar om man dividerar åt fel håll.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Målarna A och B ska måla ett plank. A och B målar var och en med sin egen konstanta hastighet. Om A målar planket ensam tar det sex timmar, och om B målar planket ensam tar det fyra timmar. A börjar måla och arbetar i två timmar. Om B tar över där A slutat, hur länge måste då B arbeta innan hela planket är målat?",
+      "options": [
+        "80 minuter",
+        "120 minuter",
+        "160 minuter",
+        "200 minuter"
+      ],
+      "blindAnswer": 2,
+      "explain": "A målar 1/6 av planket per timme och hinner alltså 2/6 = 1/3 av planket på två timmar. Kvar är 2/3 av planket. B målar hela planket på 4 timmar, alltså 240 minuter, och behöver därför 2/3 · 240 = 160 minuter för resten.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 3/5?",
+      "options": [
+        "1/2 + 1/6",
+        "1/2 + 1/10",
+        "1/3 + 1/15",
+        "1/4 + 1/6"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna ut varje summa med gemensam nämnare. 1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3. 1/2 + 1/10 = 5/10 + 1/10 = 6/10 = 3/5. 1/3 + 1/15 = 5/15 + 1/15 = 6/15 = 2/5. 1/4 + 1/6 = 3/12 + 2/12 = 5/12. Bara 1/2 + 1/10 blir 3/5; se upp med 1/3 + 1/15, som blir 2/5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "4 = 3/12 − 5x",
+      "options": [
+        "−3/4",
+        "−3/5",
+        "−4/5",
+        "−7/20"
+      ],
+      "blindAnswer": 0,
+      "explain": "Förenkla först bråket: 3/12 = 1/4. Ekvationen blir 4 = 1/4 − 5x. Då är 5x = 1/4 − 4 = 1/4 − 16/4 = −15/4, och division med 5 ger x = −15/20 = −3/4. Kontroll: 1/4 − 5 · (−3/4) = 1/4 + 15/4 = 16/4 = 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "I en grupp på 10 personer är medelåldern 18 år. Två personer lämnar gruppen, vilket gör att medelåldern sjunker till 10 år. En av personerna som lämnar gruppen är 80 år. Hur gammal är den andra personen som lämnar gruppen?",
+      "options": [
+        "14 år",
+        "16 år",
+        "18 år",
+        "20 år"
+      ],
+      "blindAnswer": 3,
+      "explain": "Från början är den sammanlagda åldern 10 · 18 = 180 år. När två personer har gått är 8 personer kvar med medelåldern 10 år, alltså sammanlagt 8 · 10 = 80 år. De två som lämnade är tillsammans 180 − 80 = 100 år. Den ena är 80 år, så den andra är 100 − 80 = 20 år.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är 6 − 5 · (8 − 3) − (12/4 − 2)?",
+      "options": [
+        "−24",
+        "−20",
+        "0",
+        "4"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna parenteserna först: 8 − 3 = 5 och 12/4 − 2 = 3 − 2 = 1. Uttrycket blir 6 − 5 · 5 − 1. Multiplikation går före subtraktion: 5 · 5 = 25, så 6 − 25 − 1 = −20. Den som räknar från vänster utan att ta multiplikationen först får (6 − 5) · 5 − 1 = 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "ABCD är en rektangel. FE är parallell med AB. Arean av FECD är 1/9 av arean av ABCD. Vad är x?",
+      "options": [
+        "6 cm",
+        "9 cm",
+        "12 cm",
+        "24 cm"
+      ],
+      "blindAnswer": 3,
+      "explain": "FECD och ABCD är rektanglar med samma bredd (DC), så deras areor förhåller sig som höjderna. FECD har höjden 3 cm och ABCD har höjden 3 + x cm. Villkoret ger 3/(3 + x) = 1/9, alltså 3 + x = 27 och x = 24 cm. Observera att x bara är den nedre delen av sidan; hela höjden 27 cm är nio gånger 3 cm.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.2,
+          0.535,
+          0.49,
+          0.785
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är (2√2)²?",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "16"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadrera varje faktor för sig: (2√2)² = 2² · (√2)² = 4 · 2 = 8. Svaret 4 lockar om man glömmer att kvadrera tvåan framför roten, och 16 om man räknar √2 som 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vad är konstanten a?",
+      "passage": "y(x) = ax² − 3/2",
+      "options": [
+        "1/3",
+        "3/8",
+        "1/2",
+        "3/2"
+      ],
+      "blindAnswer": 1,
+      "explain": "Grafen skär x-axeln i x = −2 och x = 2 (två skalsteg på var sida om origo), och där är y(x) = 0. Sätt in x = 2: a · 2² − 3/2 = 0, alltså 4a = 3/2 och a = 3/8. Kontroll: grafen skär y-axeln mitt mellan −1 och −2, vilket stämmer med y(0) = −3/2.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.195,
+          0.505,
+          0.435,
+          0.632
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "−7(x + 1) = −8x\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Lös ekvationen: −7(x + 1) = −8x ger −7x − 7 = −8x. Addera 8x till båda leden: x − 7 = 0, så x = 7. Kontroll: −7 · (7 + 1) = −56 och −8 · 7 = −56. Kvantitet I är 7 och alltså större än 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 12²\nKvantitet II: 9²/3² · 4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet I: 12² = 144. Kvantitet II: 9²/3² = 81/9 = 9, och 9 · 4 = 36. Det syns också utan uträkning: 9²/3² · 4 = (9/3)² · 2² = (3 · 2)² = 6², medan kvantitet I är 12². Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x\nKvantitet II: 83°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkelsumman i en triangel är 180°. Vinkeln 97° och vinkeln x är två av triangelns vinklar, så x = 180° − 97° − (den tredje vinkeln) = 83° − (den tredje vinkeln). Den tredje vinkeln, längst till vänster, är större än 0°, så x är mindre än 83°. Kvantitet II är större. Den som glömmer den tredje vinkeln och räknar 180° − 97° = 83° tror att de är lika.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.2,
+          0.125,
+          0.545,
+          0.225
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Medelvärdet av x, y och z är w/3.\nMedelvärdet av y, z och w är x/3.\nKvantitet I: y\nKvantitet II: z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Det första villkoret är (x + y + z)/3 = w/3, alltså x + y + z = w. Det andra ger på samma sätt y + z + w = x. Adderar man ekvationerna får man x + 2y + 2z + w = w + x, alltså y + z = 0 och y = −z. Mer än så säger villkoren inte om y och z. Med x = w = 5, y = 1 och z = −1 stämmer båda villkoren, och y är större. Med y = −1 och z = 1 är z större, och med y = z = 0 är de lika. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 9 · 8 − 7 · 4\nKvantitet II: (9 · 2 − 7) · 4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: 9 · 8 − 7 · 4 = 72 − 28 = 44. Kvantitet II: parentesen först, 9 · 2 − 7 = 18 − 7 = 11, och 11 · 4 = 44. Det går också att se direkt: 9 · 8 = 9 · 2 · 4, så kvantitet I är 9 · 2 · 4 − 7 · 4 = (9 · 2 − 7) · 4, alltså samma uttryck som kvantitet II. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 2 · (1 + 1/2 + 1/4 + 1/8 + 1/16 + 1/32 + 1/64)\nKvantitet II: 2²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv summan i parentesen med nämnaren 64: (64 + 32 + 16 + 8 + 4 + 2 + 1)/64 = 127/64, alltså 1/64 mindre än 2. Kvantitet I är då 2 · 127/64 = 127/32 ≈ 3,97. Kvantitet II är 2² = 4 = 128/32. Kvantitet II är större. Summan närmar sig 2 ju fler termer man tar med, men når aldrig ända fram; den som avrundar den till 2 svarar att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x ≠ 0\nx − y = y − x\nKvantitet I: (2x + y)/(3x)\nKvantitet II: (2y + x)/(3y)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Villkoret x − y = y − x ger 2x = 2y, alltså x = y. Eftersom x ≠ 0 är också y ≠ 0, så båda kvoterna går att beräkna. Sätt in y = x: kvantitet I blir (2x + x)/(3x) = 3x/(3x) = 1, och kvantitet II blir (2x + x)/(3x) = 1. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Längsta sidan på en rektangel med arean 40 cm²\nKvantitet II: Längsta sidan på en triangel med arean 20 cm²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Arean bestämmer inte sidornas längder. En rektangel med sidorna 40 cm och 1 cm har arean 40 cm² och längsta sidan 40 cm, och en rätvinklig triangel med kateterna 2 cm och 20 cm har arean 2 · 20/2 = 20 cm² och längsta sidan √(2² + 20²) ≈ 20,1 cm. Då är kvantitet I större. En kvadrat med sidan √40 ≈ 6,3 cm har också arean 40 cm², och en triangel med basen 40 cm och höjden 1 cm har arean 20 cm² och minst en sida som är 40 cm. Då är kvantitet II större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjerna y = 2x − 10 och y = −x/3 + 11 skär varandra i punkten P = (a, b).\nKvantitet I: a\nKvantitet II: b",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "I skärningspunkten har linjerna samma y-värde: 2x − 10 = −x/3 + 11. Multiplicera med 3: 6x − 30 = −x + 33, så 7x = 63 och x = 9. Då är y = 2 · 9 − 10 = 8. Kontroll i den andra linjen: −9/3 + 11 = 8. Alltså är a = 9 och b = 8, och kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Talet 53₁₀ kan skrivas som 203₅ med basen fem och 110101₂ med basen två.\nKvantitet I: 210₅\nKvantitet II: 110111₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Med basen fem har siffrorna från höger värdena 1, 5 och 25, vilket exemplet visar: 203₅ = 2 · 25 + 0 · 5 + 3 = 53. Kvantitet I: 210₅ = 2 · 25 + 1 · 5 + 0 = 55. Med basen två har siffrorna från höger värdena 1, 2, 4, 8, 16 och 32. Kvantitet II: 110111₂ = 32 + 16 + 0 + 4 + 2 + 1 = 55. Båda är 55, så kvantiteterna är lika.",
+      "figure": null,
+      "note": "Provet skriver talbasen som ett nedsänkt ord efter talet (”tio” efter 53, ”fem” efter 203 och 210, ”två” efter 110101 och 110111); här skrivet med nedsänkta siffror (₁₀, ₅, ₂).",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett rakt cykelställ står fyra enfärgade cyklar. Cyklarna har olika färg och tillhör olika personer. Ellas cykel står längst till höger. Vilken färg har Ellas cykel?\n(1) Den röda cykeln står bredvid den gröna cykeln. Den vita cykeln står bredvid den röda cykeln.\n(2) Den blå cykeln står närmast till vänster om den vita cykeln.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Den röda cykeln står bredvid både den gröna och den vita, så de tre står i ordningen grön–röd–vit eller vit–röd–grön. Den fjärde cykeln kan stå längst till vänster eller längst till höger, så Ellas cykel kan vara vit, grön eller ha den fjärde färgen. Inte tillräckligt.\n(2) Den blå cykeln står direkt till vänster om den vita, men paret kan stå på plats 1–2, 2–3 eller 3–4 räknat från vänster. Står det på 3–4 är Ellas cykel vit, annars har den en annan färg. Inte tillräckligt.\n(1) och (2) tillsammans: Direkt till vänster om den vita ska den blå stå. I ordningen grön–röd–vit står den röda där, så ordningen måste vara vit–röd–grön med den blå framför: blå, vit, röd, grön. Ellas cykel längst till höger är grön. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en låg- och mellanstadieskola finns det flickor och pojkar. Flickorna är 39 fler än pojkarna. Hur många elever finns det på skolan?\n(1) Det finns 53 fler elever på lågstadiet än på mellanstadiet.\n(2) På lågstadiet finns det lika många pojkar som på mellanstadiet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Om det finns p pojkar finns det p + 39 flickor och 2p + 39 elever, så man behöver veta p.\n(1) Säger hur eleverna fördelas på stadierna, men inget om p. Inte tillräckligt.\n(2) Säger att pojkarna är lika många på båda stadierna, men inte hur många. Inte tillräckligt.\n(1) och (2) tillsammans: Eftersom pojkarna är lika många på båda stadierna är de 53 extra eleverna på lågstadiet flickor, men p går fortfarande inte att bestämma. Med 10 pojkar och 3 flickor på mellanstadiet och 10 pojkar och 56 flickor på lågstadiet stämmer allt, och skolan har 79 elever. Med 20 pojkar och 13 flickor på mellanstadiet och 20 pojkar och 66 flickor på lågstadiet stämmer också allt, och skolan har 119 elever. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är xy < 25?\n(1) y² = 400\n(2) 0,5 < x < 1",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) y = 20 eller y = −20, men x är okänt. Med y = 20 och x = 2 är xy = 40, och med x = 1 är xy = 20. Inte tillräckligt.\n(2) x ligger mellan 0,5 och 1, men y är okänt. Med y = 100 är xy större än 50, och med y = 1 är xy mindre än 1. Inte tillräckligt.\n(1) och (2) tillsammans: Är y = 20 ligger xy mellan 10 och 20, och är y = −20 ligger xy mellan −20 och −10. I båda fallen är xy < 25. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilken area har rektangeln ABCD?\n(1) Diagonalen AC är 10 cm.\n(2) Längden av sidan BC är tre fjärdedelar av längden av sidan AB.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Många rektanglar har diagonalen 10 cm, till exempel en med sidorna 8 cm och 6 cm (arean 48 cm²) och en med sidorna √99 cm och 1 cm (arean ungefär 9,9 cm²). Inte tillräckligt.\n(2) Ger bara rektangelns form, inte dess storlek. Inte tillräckligt.\n(1) och (2) tillsammans: Sätt AB = 4k och BC = 3k. Pythagoras sats i triangeln ABC ger AC = √(16k² + 9k²) = 5k = 10 cm, så k = 2. Sidorna är 8 cm och 6 cm, och arean är 48 cm². Tillräckligt.",
+      "figure": {
+        "pages": [
+          14
+        ],
+        "box": [
+          0.235,
+          0.565,
+          0.475,
+          0.7
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x > 0\nVilket värde har x?\n(1) 3x − 7 = 5\n(2) x² + x = 5x",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) 3x = 12, så x = 4. Tillräckligt.\n(2) x² + x = 5x ger x² − 4x = 0, alltså x(x − 4) = 0 med lösningarna x = 0 och x = 4. Eftersom x > 0 är x = 4. Tillräckligt.\nVarje påstående räcker alltså för sig. Den som glömmer villkoret x > 0 tror att (2) ger två möjliga värden.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Signe har en sexsidig bilderbok med bilder på sex olika djur. Boken har en framsida, en baksida och två uppslag. Det är en bild på ett djur på varje sida i boken. På bokens framsida är det en hund. På vilken sida är katten?\n(1) Katten är på samma uppslag som räven. Fåret är närmare framsidan än vad katten är.\n(2) Fåret är på samma uppslag som geten. Katten är närmare baksidan än vad geten är. Både räven och älgen är längre bak i boken än vad katten är.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Numrera sidorna 1–6: sida 1 är framsidan med hunden, sidorna 2–3 det första uppslaget, sidorna 4–5 det andra uppslaget och sida 6 baksidan.\n(1) Katten och räven delar ett uppslag. Vore det sidorna 2–3 skulle det inte finnas någon ledig sida närmare framsidan för fåret, så katten och räven är på sidorna 4–5. Katten kan vara på sida 4 eller sida 5. Inte tillräckligt.\n(2) Räven och älgen är längre bak än katten, så katten är som längst bak på sida 4. Geten är längre fram än katten. Vore fåret och geten på sidorna 4–5 skulle katten behöva vara på sida 5 eller 6, vilket inte går. Alltså är fåret och geten på sidorna 2–3, och den enda lediga sidan för katten är sida 4. Räven och älgen är på sidorna 5 och 6. Tillräckligt.\nBara (2) räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av personbilarna 2004 ägdes av kvinnor?",
+      "options": [
+        "1/5",
+        "1/4",
+        "1/3",
+        "1/2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Antalen står i de två stapeldiagrammen: 1 113 527 bilar ägdes av kvinnor och 2 201 019 av män år 2004. Totalt var det 1 113 527 + 2 201 019 = 3 314 546 bilar. Kvinnornas andel är 1 113 527/3 314 546 ≈ 0,34, alltså ungefär 1/3. Svaret 1/2 lockar eftersom kvinnorna ägde ungefär hälften så många bilar som männen, men andelen ska räknas av alla bilar.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilka bilmärken hörde 2004 till de tio vanligaste bland bilar ägda av kvinnor men inte bland bilar ägda av män?",
+      "options": [
+        "Opel och Renault",
+        "Opel och Nissan",
+        "Renault och Peugeot",
+        "Nissan och Peugeot"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför märkena under staplarna i de två stapeldiagrammen. Kvinnornas tio vanligaste är Volvo, VW, Ford, Toyota, Saab, Opel, Renault, Nissan, Audi och Peugeot. Männens tio vanligaste är Volvo, Saab, VW, Ford, Audi, Toyota, Opel, Mercedes-Benz, BMW och Renault. Opel och Renault finns alltså i båda diagrammen, medan Nissan och Peugeot bara finns bland kvinnornas.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur många personbilar ägdes av kvinnor 1972?",
+      "options": [
+        "450 000",
+        "650 000",
+        "1 000 000",
+        "2 200 000"
+      ],
+      "blindAnswer": 0,
+      "explain": "Enligt stapeldiagrammet för kvinnor ägde de 1 113 527 bilar 2004. I indexdiagrammet slutar kvinnornas kurva 2004 vid ungefär index 245, där index 100 motsvarar antalet 1972. Antalet 2004 var alltså ungefär 2,45 gånger så stort som 1972, och 1972 ägde kvinnor ungefär 1 113 527/2,45 ≈ 455 000 bilar. Närmast är 450 000.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera andelarna slutenvårdade kvinnor. Hur vanligt var det med slutenvård för den aktivitet där andelen var som störst jämfört med aktiviteten där andelen var som minst?",
+      "options": [
+        "6 gånger så vanligt",
+        "9 gånger så vanligt",
+        "12 gånger så vanligt",
+        "15 gånger så vanligt"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av kolumnen Andel slutenvårdade i procent för kvinnor. Störst andel har ridsport med 18 procent och minst har löpning med 2 procent. Slutenvård var alltså 18/2 = 9 gånger så vanligt vid ridsport som vid löpning. Den som av misstag använder männens kolumn får 25/2 ≈ 12.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stort var antalet vårddygn per skadad vid aktiviteten gå och promenera?",
+      "options": [
+        "0,9",
+        "1,1",
+        "2,7",
+        "7,5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Raden Gå och promenera: antalet vårddygn för män och kvinnor är 48 000, och antalet skadade är 17 200 män + 26 800 kvinnor = 44 000. Vårddygn per skadad blir 48 000/44 000 ≈ 1,1. Den som delar åt andra hållet får 0,9. Svaret 7,5 är vårddygn per slutenvårdad (48 000 delat med 0,14 · 17 200 + 0,15 · 26 800 ≈ 6 400), men frågan gäller alla skadade.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Studera antalet skadade och andelen slutenvårdade på grund av gör det själv-aktiviteter. Hur många slutenvårdades per år för dessa skador?",
+      "options": [
+        "1 100",
+        "1 800",
+        "2 200",
+        "4 800"
+      ],
+      "blindAnswer": 2,
+      "explain": "Raden Gör det själv: 23 000 skadade män, varav 8 procent slutenvårdades, och 4 000 skadade kvinnor, varav 10 procent slutenvårdades. Det blir 0,08 · 23 000 = 1 840 män och 0,10 · 4 000 = 400 kvinnor, sammanlagt 2 240, alltså ungefär 2 200 per år. Den som bara räknar med männen får ungefär 1 800.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "Bindestrecket i ”gör det själv-aktiviteter” står vid ett radslut i provet; det är behållet eftersom förleden är en fras.",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av männen som skadades vid sport och idrott skadades i samband med fotboll?",
+      "options": [
+        "1/7",
+        "1/5",
+        "1/4",
+        "1/3"
+      ],
+      "blindAnswer": 3,
+      "explain": "Enligt tabellen skadades 73 000 män vid sport och idrott, och av dem 24 000 vid fotboll (raden Fotboll under Därav). Andelen är 24 000/73 000 ≈ 0,33, alltså ungefär 1/3.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket land hade en elproduktion som översteg 100 TWh och uteslutande kom från andra energikällor än kärnkraft?",
+      "options": [
+        "Grekland",
+        "Italien",
+        "Nederländerna",
+        "Österrike"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ett land vars el helt kom från andra energikällor än kärnkraft har en helt mörk cirkel utan procentsats. Bland alternativen gäller det Grekland, Italien och Österrike; Nederländerna har 4,3 procent kärnkraft och faller bort. Jämför cirklarna med skalan uppe till vänster: Greklands cirkel är ungefär lika stor som skalans 50-cirkel och Österrikes bara lite större, så båda ligger klart under 100 TWh. Italiens cirkel är ungefär lika stor som 300-cirkeln. Bara Italien uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur mycket större var elproduktionen i Storbritannien än i Sverige?",
+      "options": [
+        "50 TWh",
+        "100 TWh",
+        "200 TWh",
+        "350 TWh"
+      ],
+      "blindAnswer": 2,
+      "explain": "Jämför cirklarna med skalan. Storbritanniens cirkel är nästan lika stor som 400-cirkeln, ungefär 380 TWh. Sveriges cirkel ligger mellan 100- och 200-cirkeln, närmare 200, ungefär 160 TWh. Skillnaden är ungefär 380 − 160 = 220 TWh, och närmast av alternativen är 200 TWh. Det är cirkelns area och inte diametern som motsvarar elproduktionen: Storbritanniens cirkel har ungefär 1,5 gånger så stor diameter som Sveriges, men elproduktionen är ungefär 2,4 gånger så stor.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur många av de redovisade länderna hade en elproduktion som endast kom från övriga energikällor?",
+      "options": [
+        "4",
+        "5",
+        "7",
+        "8"
+      ],
+      "blindAnswer": 2,
+      "explain": "Ett land vars el endast kom från övriga energikällor har en helt mörk cirkel utan procentsats för kärnkraft. Det gäller Luxemburg, Irland, Danmark, Österrike, Grekland, Italien och Portugal, alltså 7 länder. Nederländernas cirkel ser nästan helt mörk ut, men landet har 4,3 procent kärnkraft och räknas inte. De övriga sju länderna har kärnkraft.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Vilken typ av fast telefonitjänst var den enda där antalet trafikminuter inte hade minskat 2012 jämfört med 2001?",
+      "options": [
+        "Nationell trafik",
+        "Internet",
+        "Till mobiltelefon",
+        "Övrigt"
+      ],
+      "blindAnswer": 2,
+      "explain": "Jämför tjockleken på skikten i det övre diagrammet 2001 och 2012. Till mobiltelefon (det glest prickiga skiktet ovanför det svarta) går 2001 från ungefär 3 200 till 6 200, alltså cirka 3 000 miljoner minuter, och 2012 från ungefär 1 400 till 4 700, alltså cirka 3 300 miljoner minuter. Det har alltså inte minskat. Nationell trafik har minskat från cirka 32 500 till cirka 10 700 miljoner minuter, internet från cirka 18 000 till 0 och övrigt (det randiga skiktet längst ned) från cirka 2 000 till under 1 000.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av trafikminuterna från mobiltelefoner 2011 utgjordes av samtal till fast telefon?",
+      "options": [
+        "En femtedel",
+        "En fjärdedel",
+        "En tredjedel",
+        "Två femtedelar"
+      ],
+      "blindAnswer": 1,
+      "explain": "I det nedre diagrammet når kurvan 2011 ungefär 23 200, alltså var det totalt cirka 23 200 miljoner minuter från mobiltelefoner. Det svarta skiktet, till fast telefon, går 2011 från ungefär 800 till ungefär 6 500, alltså cirka 5 700 miljoner minuter. Andelen är 5 700/23 200 ≈ 0,25, alltså en fjärdedel.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
