@@ -1,6 +1,6 @@
 # 0001 – Stängd frågepool för tävlingslägen
 
-- Status: beslutad (Oscar, 2026-11-07), byggd (migration 0035–0037), ändrad 2026-11-11 (UHR-frågor först, se sist)
+- Status: beslutad (Oscar, 2026-11-07), byggd (migration 0035–0037), ändrad 2026-11-11 och 2026-11-12 (UHR-frågor i spelen, se sist)
 - Gäller: duellerna och Alla mot alla ([spec](../alla-mot-alla/spec.md))
 
 ## Bakgrund
@@ -73,4 +73,16 @@ alla (`docs/uhr-fragor/plan.md`, tillstånd i `docs/juridik/uhr-tillstand-kvant.
   och rättar fortfarande varje svar, och skickar inget facit förrän frågan har stängt.
 - UHR-frågor i spelen blir inte felkort från spelen (samma regel som för poolen), men de blir felkort när de besvaras
   fel i övningen.
+
+## Ändring 2026-11-12: spelens kvantfrågor är bara UHR-frågor
+
+Oscar: "alla kvant frågor i spelpoolen är UHR-frågor ... utöka till så mycket som möjligt". Samma dag publicerades
+1 948 UHR-frågor (de 132 med anteckning granskas på /review).
+
+- `pool_pick_questions` (migration 0041) väljer XYZ, KVA och NOG bara bland de publicerade UHR-frågorna, alla som
+  finns (1 398 efter publiceringen, 1 456 när alla är publicerade). Appens egna frågor i de delproven väljs bara så
+  länge ett delprov saknar publicerade UHR-frågor.
+- Den stängda spelpoolen tar bara ORD och MEK (`CLOSED_POOL_KINDS` i `src/lib/pool-time.ts`; /review och
+  `fragebank:upload -- --pool spel` följer). De 120 egna XYZ-, KVA- och NOG-frågorna som låg i poolen flyttas tillbaka
+  till övningen. ORD och MEK utökas inte (Oscar, samma dag).
 

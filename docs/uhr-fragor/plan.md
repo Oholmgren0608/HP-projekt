@@ -1,9 +1,11 @@
 # UHR:s kvantitativa frågor i appen – plan
 
-Status: **byggt, väntar på stickprov** (2026-11-12). Alla 52 kvantitativa provpass (2 080 frågor) är avskrivna,
-lösta utan facit, förklarade och inlagda som utkast i databasen. Tillståndet gäller den kvantitativa delen och är
-noterat i `docs/juridik/uhr-tillstand-kvant.md`. Svar om den verbala delen väntas; verbala Provfrågor är
-fortfarande spärrade.
+Status: **1 948 av 2 080 publicerade** (2026-11-12). Alla 52 kvantitativa provpass är avskrivna, lösta utan facit,
+förklarade och inlagda i databasen. Oscar beslutade att de 1 948 där AI:n fick samma svar som facit och avskriften
+saknar anteckning publiceras direkt (`npm run fragebank:upload -- --uhr --publicera`); de 132 med "Att kontrollera"
+granskas på /review. Spelens XYZ, KVA och NOG är bara UHR-frågor (migration 0041). Tillståndet gäller den
+kvantitativa delen och är noterat i `docs/juridik/uhr-tillstand-kvant.md`. Svar om den verbala delen väntas;
+verbala Provfrågor är fortfarande spärrade.
 
 ## Bakgrund
 
@@ -65,9 +67,11 @@ och 132 har en anteckning till granskaren om något i avskriften eller avläsnin
 
 ## Kvar
 
-- Applicera migration 0040 på databasen när ändringen har nått main. Utan den går UHR-frågorna inte att publicera
-  och spelen väljer bara ur spelpoolen; inget annat påverkas.
-- Stickprov och publicering på /review: grupperna "UHR: Högskoleprovet …", "Publicera N ense" per prov. Titta
-  särskilt på frågor med "Att kontrollera". Kör sedan `fragebank:export` så att offlinekopian får frågorna.
+- Applicera migration 0041 på databasen när ändringen har nått main (0040 är applicerad). Därefter är spelens
+  kvantfrågor bara UHR-frågor, och de 120 egna XYZ-, KVA- och NOG-frågorna i spelpoolen flyttas till övningen; kör
+  `fragebank:export` igen så att de kommer med i offlinekopian.
+- Granska de 132 frågorna med "Att kontrollera" på /review (grupperna "UHR: Högskoleprovet …") och publicera dem en
+  och en, sedan `fragebank:export`. Stickprova gärna även bland de 1 948 publicerade; en felaktig fråga dras tillbaka
+  med "Markera som fel".
 - Oscar: lägg in UHR:s skriftliga svar i `docs/juridik/uhr-tillstand-kvant.md` och stäm av källraden mot villkoren.
 - När UHR svarar om de verbala frågorna: ny migration och ändring av AGENTS.md regel 1.

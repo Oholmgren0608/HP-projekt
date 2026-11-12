@@ -94,18 +94,21 @@ If a task seems to need one of these, stop and ask.
   `logga/` (logo files and rules), `KNOWN_ISSUES.md` (open problems); `GLOSSARY.md` is at the root
 - `future-changes/` — deferred follow-up work (mostly duels); `anteckningar/` — project notes; `.agents/agents/` — agent definitions;
   `.superdesign/` — the Lugn design system and drafts
-- Question bank: lives in the database (about 1,600 published questions, 8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK);
-  about 1,400 are practice questions and 200 (40 each of ORD, MEK, XYZ, KVA, NOG) are in the closed game pool. About 2,080 quantitative
-  UHR questions (52 passes, 2012–2024) are being added as drafts (`docs/uhr-fragor/plan.md`); `src/lib/uhr.ts` holds the shared rules
+- Question bank: lives in the database (8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK). Since 2026-11-12 about 3,360 published
+  practice questions, of which 1,948 are quantitative UHR questions (52 passes, 2012–2024; 132 more wait for review on /review,
+  `docs/uhr-fragor/plan.md`), plus the closed game pool: 40 each of ORD and MEK (the 120 own XYZ/KVA/NOG pool questions move back
+  to practice with migration 0041). `src/lib/uhr.ts` holds the shared UHR rules
 
 ## 6. Domain rules
 - Full test: 40 questions in 55 min (80 min with extended time). Quick test: 24 questions in 20 min.
 - Every question has an explanation. DTK questions have real tables, charts and maps.
 - New questions: automatic checks → solved by a second AI without the key → saved as **draft** → published only after a human spot check.
-  Never publish questions directly.
+  Never publish questions directly. One exception (Oscar, 2026-11-12): the 1,948 UHR questions where the AI matched UHR's facit
+  and the transcription had no note were published in one go (`fragebank:upload -- --uhr --publicera`); the rest go through /review.
 - Missed questions become error cards in "Dagens repetition" (also quantitative UHR questions; verbal UHR ids are always dropped).
 - UHR questions first: in practice, prov and nivåtest `buildQuiz` puts UHR questions before our own within each tier (unseen before
-  seen), and the games pick published quantitative UHR questions before the closed pool (`pool_pick_questions`, migration 0040).
+  seen). In the games, XYZ, KVA and NOG come only from the published UHR questions (`pool_pick_questions`, migration 0041; our own
+  questions only as long as a delprov has no published UHR question), and ORD and MEK from the closed pool.
 - Score forecast / normerad poäng: the conversion is in `src/lib/progress-history.ts`. `estimateNormFromPercent()` turns % correct into a
   rough 0,0–2,0 (not UHR's official normering table) and `prognosisFromExercises()` builds the forecast (a delprov counts from 10 answers);
   rounding and limits are in `clampNorm()` in `src/lib/hp-scores.ts`. Don't change this logic without being asked.
@@ -115,8 +118,9 @@ If a task seems to need one of these, stop and ask.
   no client can read it, it is not in the offline copy, and the server picks, times and grades every answer
   (`duel_next_question` / `duel_submit_answer`, migration 0037). Duels use ORD, MEK, XYZ, KVA and NOG; time per question
   follows the delprov (`src/lib/pool-time.ts` must match `pool_time_limit_ms`). Pool questions never become error cards.
-  Exception (Oscar, 2026-11-11, ADR 0001 update): the games pick published quantitative UHR questions first. Their answers are public
-  (practice bank and UHR's own facit), which Oscar accepted; the server still picks, times and grades them.
+  Exception (Oscar, 2026-11-11/12, ADR 0001 updates): the games' XYZ, KVA and NOG are the published UHR questions, and the closed pool
+  only holds ORD and MEK (`CLOSED_POOL_KINDS`). UHR answers are public (practice bank and UHR's own facit), which Oscar accepted;
+  the server still picks, times and grades them.
 
 ## 7. Design system "Lugn"
 Full reference: `DESIGN.md` (tokens, components, rules) with its sidecar `.impeccable/design.json`; product context in `PRODUCT.md`.

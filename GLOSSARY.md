@@ -105,7 +105,7 @@ Gruppspel där 2–30 spelare får samma fråga samtidigt och tävlar om poäng 
 _Avoid_: Kahoot, gruppduell, quizkamp
 
 **Spelpool**:
-Den stängda delen av frågebanken som tävlingslägena (duell och Alla mot alla) använder. Ingen klient kan läsa den, den finns inte i offlinekopian, och facit skickas först när frågan har stängt. Skiljs från övningsfrågorna, som är publika med facit.
+Den stängda delen av frågebanken som tävlingslägena (duell och Alla mot alla) använder för ORD och MEK. Ingen klient kan läsa den, den finns inte i offlinekopian, och facit skickas först när frågan har stängt. Spelens XYZ, KVA och NOG är i stället de publicerade UHR-frågorna (sedan 2026-11-12). Skiljs från övningsfrågorna, som är publika med facit.
 _Avoid_: Duellpool (som om bara duellen använde den), hemliga frågor
 
 **Profilbild**:
