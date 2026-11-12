@@ -1,0 +1,776 @@
+{
+  "examId": "hp-2022-03-12",
+  "passNumber": 3,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är 4(6(7 − 2) + 5)?",
+      "options": [
+        "125",
+        "140",
+        "165",
+        "171"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna inifrån och ut. Den innersta parentesen är 7 − 2 = 5. Sedan är 6 · 5 + 5 = 30 + 5 = 35. Till sist är 4 · 35 = 140. Svaret 125 lockar om man glömmer att också 5 ska multipliceras med 4: 4 · 30 + 5 = 125.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilket värde har konstanten c om f(2) = 1?",
+      "passage": "f(x) = (2x + 7)/(3x + c)",
+      "options": [
+        "3/2",
+        "5",
+        "6",
+        "21"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt in x = 2: f(2) = (2 · 2 + 7)/(3 · 2 + c) = 11/(6 + c). Att f(2) = 1 betyder att täljaren och nämnaren är lika stora, alltså 6 + c = 11 och c = 5. Kontroll: 11/(6 + 5) = 11/11 = 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 1/4 + 2/16 + 3/32?",
+      "options": [
+        "6/32",
+        "11/32",
+        "15/32",
+        "6/52"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv alla bråk med nämnaren 32: 1/4 = 8/32 och 2/16 = 4/32. Summan blir 8/32 + 4/32 + 3/32 = 15/32. Alternativet 6/52 lockar om man adderar täljarna (1 + 2 + 3 = 6) och nämnarna (4 + 16 + 32 = 52) var för sig, men så adderar man inte bråk.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen motsvarar (3x − 3y)(y − x)?",
+      "options": [
+        "2x − 2y",
+        "2x − 3y²",
+        "3(x² − y²)",
+        "6xy − 3x² − 3y²"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera varje term i den första parentesen med varje term i den andra: 3x · y − 3x · x − 3y · y + 3y · x = 3xy − 3x² − 3y² + 3xy = 6xy − 3x² − 3y². Kontroll med x = 1 och y = 0: (3 − 0)(0 − 1) = −3, och 6 · 0 − 3 · 1 − 3 · 0 = −3. Alternativet 3(x² − y²) ger 3 för samma värden och stämmer alltså inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "options": [
+        "7",
+        "10",
+        "√20",
+        "√52"
+      ],
+      "blindAnswer": 3,
+      "explain": "Dra en vågrät linje från den vänstra sidans övre ände till den högra sidan. Då bildas en rätvinklig triangel med x som hypotenusa. Den vågräta kateten är 10 − 4 = 6 cm (bottensidan minus den övre sidan) och den lodräta kateten är 8 − 4 = 4 cm (den högra sidan minus den vänstra). Pythagoras sats ger x² = 6² + 4² = 36 + 16 = 52, så x = √52 cm. √20 lockar om man subtraherar i stället för att addera: 36 − 16 = 20.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.19,
+          0.106,
+          0.585,
+          0.312
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Talet 2²⁵ är jämnt delbart med ett av svarsalternativen. Vilket?",
+      "options": [
+        "16",
+        "24",
+        "25",
+        "50"
+      ],
+      "blindAnswer": 0,
+      "explain": "2²⁵ är en produkt av 25 tvåor och har inga andra primfaktorer. Det delas därför bara jämnt av tal som också är tvåpotenser. 16 = 2⁴ är en tvåpotens, och 2²⁵/16 = 2²¹. Däremot innehåller 24 = 2³ · 3 faktorn 3, och både 25 = 5² och 50 = 2 · 5² innehåller faktorn 5, så de delar inte 2²⁵. Talet 25 kan locka eftersom exponenten är 25.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ anger f(x)?",
+      "passage": "Grafen till funktionen f är en rät linje. Dessutom gäller att f(2) = 4 och f(3) = 1.\nKoordinatsystemet kan användas för att lösa uppgiften.",
+      "options": [
+        "f(x) = 3x + 7",
+        "f(x) = 3x + 10",
+        "f(x) = −3x + 7",
+        "f(x) = −3x + 10"
+      ],
+      "blindAnswer": 3,
+      "explain": "En rät linje kan skrivas f(x) = kx + m. När x ökar från 2 till 3 minskar f(x) från 4 till 1, så lutningen är k = (1 − 4)/(3 − 2) = −3. Sätt in punkten (2, 4): 4 = −3 · 2 + m, så m = 10. Alltså är f(x) = −3x + 10. Kontroll: f(3) = −9 + 10 = 1. Alternativen med 3x har fel tecken på lutningen, eftersom linjen lutar nedåt.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.195,
+          0.125,
+          0.659,
+          0.47
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "x/3 + x/4 = x − 2",
+      "options": [
+        "14/5",
+        "24/10",
+        "19/4",
+        "24/5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera båda leden med 12 för att bli av med nämnarna: 4x + 3x = 12x − 24. Då är 7x = 12x − 24, alltså 5x = 24 och x = 24/5 = 4,8. Kontroll: 4,8/3 + 4,8/4 = 1,6 + 1,2 = 2,8 och 4,8 − 2 = 2,8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Stina har två olika rabattkuponger som gäller i en viss butik. Den första kupongen ger 10 % rabatt. Den andra kupongen ger 8 % rabatt och sedan ett ytterligare avdrag på 40 kr. Vid vilket ordinarie pris ger de två olika kupongerna samma rabatterade pris?",
+      "options": [
+        "400 kr",
+        "500 kr",
+        "2 000 kr",
+        "4 000 kr"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla det ordinarie priset x kr. Med den första kupongen betalar man 0,90x och med den andra 0,92x − 40. Priserna är lika när 0,90x = 0,92x − 40, alltså 0,02x = 40 och x = 2 000 kr. Kontroll: 10 % rabatt på 2 000 kr ger 1 800 kr, och 8 % rabatt ger 1 840 kr, som minus 40 kr också blir 1 800 kr. Man kan också tänka att de 2 procentenheter som skiljer mellan rabatterna ska vara värda 40 kr.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är 10⁻²ˣ?",
+      "passage": "10²ˣ = 36",
+      "options": [
+        "−1/36",
+        "1/36",
+        "1/6",
+        "100/36"
+      ],
+      "blindAnswer": 1,
+      "explain": "En negativ exponent ger det inverterade värdet: 10⁻²ˣ = 1/10²ˣ. Eftersom 10²ˣ = 36 är 10⁻²ˣ = 1/36. Minustecknet i exponenten gör inte talet negativt, så −1/36 är fel. 1/6 vore värdet av 10⁻ˣ, eftersom 10ˣ = 6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "I en låda finns det endast enfärgade röda och svarta kulor. Kalle plockar slumpmässigt kulor ur lådan, en i taget, och lägger tillbaka dem efter varje plockad kula. Sannolikheten att få två svarta kulor efter varandra är då 16/49. Vad är sannolikheten att Kalle plockar en röd kula?",
+      "options": [
+        "3/7",
+        "25/49",
+        "5/7",
+        "40/49"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kulorna läggs tillbaka, så sannolikheten p att få en svart kula är densamma vid varje dragning. Två svarta i rad har sannolikheten p · p = p² = 16/49, alltså är p = √(16/49) = 4/7. Varje kula är antingen röd eller svart, så sannolikheten att plocka en röd kula är 1 − 4/7 = 3/7.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "En cirkelskiva med radien 24 cm delas först i fyra lika stora bitar. Varje bit delas därefter i tre lika stora bitar, vilka i sin tur slutligen delas i två lika stora bitar. Vad är arean av en av bitarna efter den sista delningen?",
+      "options": [
+        "12π cm²",
+        "24π cm²",
+        "48π cm²",
+        "64π cm²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Hela cirkelskivan har arean π · 24² = 576π cm². Efter delningarna finns det 4 · 3 · 2 = 24 lika stora bitar. Varje bit har då arean 576π/24 = 24π cm².",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Rektangelns omkrets\nKvantitet II: Triangelns omkrets",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Rektangeln har sidorna x och 3x, så dess omkrets är 2 · x + 2 · 3x = 8x. Triangeln har sidorna 4x, 2x och 3x, så dess omkrets är 4x + 2x + 3x = 9x. Eftersom x är en längd är x > 0, och då är 9x alltid större än 8x. Kvantitet II är större.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.2,
+          0.085,
+          0.66,
+          0.163
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Riktningskoefficienten för linjen L₁\nKvantitet II: Riktningskoefficienten för linjen L₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Linjen L₁ lutar nedåt åt höger, så dess riktningskoefficient är negativ: den går till exempel genom (0, 3) och (1, 1), vilket ger (1 − 3)/(1 − 0) = −2. Linjen L₂ lutar svagt uppåt åt höger, så dess riktningskoefficient är positiv: den går genom (0, −2) och (5, −1), vilket ger 1/5. Ett positivt tal är alltid större än ett negativt, så kvantitet II är större. Att L₁ är brantare spelar ingen roll; det är tecknet som avgör.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.195,
+          0.52,
+          0.5,
+          0.735
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 24/6\nKvantitet II: 3/12 · 16",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: 24/6 = 4. Kvantitet II: 3/12 = 1/4, och 1/4 · 16 = 4. Båda kvantiteterna är 4, så de är lika stora.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Medelvärdet av mätserien 1, 1, 5, 5\nKvantitet II: Hälften av medelvärdet av mätserien 2, 4, 8, 10",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: (1 + 1 + 5 + 5)/4 = 12/4 = 3. Medelvärdet av den andra mätserien är (2 + 4 + 8 + 10)/4 = 24/4 = 6, och hälften av det är 3. Kvantiteterna är lika stora.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (2/√3)²\nKvantitet II: √(16/π²)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet I: (2/√3)² = 2²/(√3)² = 4/3. Kvantitet II: √(16/π²) = √16/√(π²) = 4/π. Båda är 4 delat med ett tal, och eftersom π ≈ 3,14 är större än 3 är 4/π mindre än 4/3. Kvantitet I är större (4/3 ≈ 1,33 och 4/π ≈ 1,27).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fyrhörningen ABCD är en kvadrat.\nKvantitet I: y\nKvantitet II: 8",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "I en kvadrat är alla sidor lika långa, så AB = BC, det vill säga 3x/y = x/8. Sidorna är längder, så x > 0 och man kan dela båda leden med x: 3/y = 1/8, alltså y = 24. Eftersom 24 > 8 är kvantitet I större.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.225,
+          0.535,
+          0.43,
+          0.69
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Anna, Beda och Clara har tillsammans 66 karameller. Beda har 19 karameller och Clara har mer än en tredjedel av karamellerna.\nKvantitet I: Antalet karameller som Anna har\nKvantitet II: 24",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "En tredjedel av 66 är 22, så Clara har minst 23 karameller. Anna och Clara har tillsammans 66 − 19 = 47 karameller. Om Clara har 23 har Anna 47 − 23 = 24, och då är kvantiteterna lika. Om Clara har 24 har Anna 23, och då är kvantitet II större. Informationen räcker alltså inte. Det är lätt att tro att II alltid är större, men Clara kan ha precis 23 karameller.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x ≠ 0\nKvantitet I: x²/(2x) − 2x/4\nKvantitet II: 2x/x − x/(2x)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Förenkla bråken; eftersom x ≠ 0 får man förkorta med x. Kvantitet I: x²/(2x) = x/2 och 2x/4 = x/2, så skillnaden är x/2 − x/2 = 0. Kvantitet II: 2x/x = 2 och x/(2x) = 1/2, så skillnaden är 2 − 1/2 = 3/2. Kvantitet I är alltid 0 och kvantitet II alltid 3/2, så kvantitet II är större oavsett värdet på x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x ≥ 0\nKvantitet I: √x\nKvantitet II: x/2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva några värden. x = 1 ger √1 = 1 och 1/2, så kvantitet I är större. x = 16 ger √16 = 4 och 16/2 = 8, så kvantitet II är större. (För x = 0 och x = 4 är kvantiteterna lika.) Relationen beror alltså på x, och informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Peter reser i 2 timmar med hastigheten 5 m/s.\nMattias reser i 3 timmar med hastigheten 12 km/h.\nKvantitet I: Sträckan som Peter reser\nKvantitet II: Sträckan som Mattias reser",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Gör om Peters hastighet till km/h: 5 m/s = 5 · 3 600 m/h = 18 000 m/h = 18 km/h. Peter reser 18 · 2 = 36 km och Mattias 12 · 3 = 36 km. Sträckorna är lika långa. Den som jämför 5 och 12 utan att byta enhet tror lätt att Mattias reser längst.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Ett badhus har tre trampoliner på olika höjd: 1 meter, 3 meter och 5 meter. Daniel, Gabriel och Mikael hoppar från var sin trampolin. Vem hoppar från 5 meter?\n(1) Daniel hoppar inte från 5 meter.\n(2) Gabriel hoppar från en lägre höjd än Mikael.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Daniel hoppar inte från 5 meter, men det kan vara antingen Gabriel eller Mikael som gör det. Inte tillräckligt.\n(2) Gabriel hoppar lägre än Mikael, så Gabriel hoppar inte från 5 meter. Men både Daniel och Mikael kan göra det. Inte tillräckligt.\n(1) och (2) tillsammans: Varken Daniel eller Gabriel hoppar från 5 meter, så det måste vara Mikael. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett garage parkeras endast två slags fordon: bilar och motorcyklar. Det finns 176 fordon i garaget. Hur många av fordonen är motorcyklar?\n(1) Om ytterligare 16 motorcyklar parkeras i garaget så kommer det att vara dubbelt så många motorcyklar som bilar i garaget.\n(2) Om ytterligare x bilar och 10 motorcyklar parkeras i garaget så kommer det att vara lika många bilar som motorcyklar i garaget.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kalla antalet motorcyklar m. Då är antalet bilar 176 − m.\n(1) m + 16 = 2(176 − m) = 352 − 2m, så 3m = 336 och m = 112. Kontroll: 112 + 16 = 128 = 2 · 64. Tillräckligt.\n(2) (176 − m) + x = m + 10. Eftersom x är okänt finns det många lösningar, till exempel m = 100 och x = 34 eller m = 90 och x = 14. Inte tillräckligt.\nSvaret får man alltså i (1) men inte i (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Kent ska måla ett staket. Han arbetar utan rast och med konstant hastighet. Hur lång tid tar det för honom att måla staketet?\n(1) Det tar Kent 2 timmar att måla 1/3 av staketet.\n(2) Om Kent arbetade dubbelt så fort så skulle det ta honom 2 timmar att måla 2/3 av staketet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) 1/3 av staketet tar 2 timmar, och med konstant hastighet tar hela staketet 3 · 2 = 6 timmar. Tillräckligt.\n(2) Med dubbel hastighet skulle 2/3 av staketet ta 2 timmar, alltså hela staketet 3 timmar. Med den verkliga hastigheten tar det dubbelt så lång tid, 6 timmar. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Priset på en vara sänktes med 20 procent. Vid ett senare tillfälle gjordes en prishöjning. Hur stor var den totala prisändringen i procent?\n(1) Varans ursprungspris var 755 kr.\n(2) Prishöjningen var 25 procent.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Ursprungspriset säger ingenting om hur stor prishöjningen var. Inte tillräckligt.\n(2) Efter sänkningen är priset 0,80 av ursprungspriset, och efter höjningen 0,80 · 1,25 = 1,00 av ursprungspriset. Den totala prisändringen är alltså 0 procent, vad varan än kostade från början. Tillräckligt.\nUrsprungspriset behövs inte, eftersom frågan gäller en ändring i procent. Svaret får man i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Arvid har 12 anteckningsblock för sitt skolarbete. Vart och ett av blocken har antingen rutade eller linjerade blad. Dessutom är vart och ett av blocken i antingen A4-format eller A5-format. Hur många av Arvids anteckningsblock har rutade blad?\n(1) 1/4 av anteckningsblocken i A4-format har rutade blad.\n(2) 1/2 av anteckningsblocken i A5-format har rutade blad.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Vi vet inte hur många block som är i A4-format, och ingenting om A5-blocken. Inte tillräckligt.\n(2) Vi vet ingenting om A4-blocken. Inte tillräckligt.\n(1) och (2) tillsammans: Antalet A4-block är fortfarande okänt. Om 4 block är i A4-format har 1 av dem och 4 av de 8 A5-blocken rutade blad, sammanlagt 5. Om 8 block är i A4-format har 2 av dem och 2 av de 4 A5-blocken rutade blad, sammanlagt 4. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är x > y?\n(1) x − y > x + y\n(2) x > 0",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Subtrahera x från båda leden: −y > y, alltså 2y < 0 och y < 0. Om x vet vi däremot ingenting: x = 1 och y = −1 ger x > y, men x = −5 och y = −1 ger x < y. Inte tillräckligt.\n(2) x > 0 säger ingenting om y. Inte tillräckligt.\n(1) och (2) tillsammans: x > 0 och y < 0, så x > 0 > y. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur många gråsälar fälldes och undersöktes 2008?",
+      "options": [
+        "71",
+        "101",
+        "108",
+        "118"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lägg ihop de fem staplarna för 2008: 0–3 år 24, 4–10 år 39, 11–15 år 28, 16–20 år 10 och över 20 år 7. Summan är 24 + 39 + 28 + 10 + 7 = 108 gråsälar. Alternativet 71 är summan för 2002 (21 + 30 + 15 + 3 + 2).",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "För hur många av åren gällde att antalet fällda och undersökta gråsälar i åldersgruppen 11–15 år var större än tio, samtidigt som motsvarande antal i åldersgruppen 16–20 år var mindre än fem?",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 0,
+      "explain": "Leta efter år där den vita stapeln (11–15 år) är högre än 10 och den prickiga stapeln (16–20 år) samtidigt är lägre än 5. Det gäller 2002 (15 och 3) och 2009 (15 och 3). Åren 2005 (13 och 8), 2006 (14 och 9), 2008 (28 och 10) och 2010 (12 och 8) har för många i åldersgruppen 16–20 år. År 2003 är den vita stapeln precis 10, vilket inte är större än tio, och 2004, 2007 och 2011 är den ännu lägre. Villkoren gäller alltså för 2 år.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av gråsälarna som fälldes och undersöktes 2011 var 11 år eller äldre?",
+      "options": [
+        "1/2",
+        "1/3",
+        "1/4",
+        "1/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av staplarna för 2011: 0–3 år 17, 4–10 år 23, 11–15 år 8, 16–20 år 8 och över 20 år 4. Totalt fälldes och undersöktes 17 + 23 + 8 + 8 + 4 = 60 gråsälar, och 8 + 8 + 4 = 20 av dem var 11 år eller äldre. Andelen är 20/60 = 1/3.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera antalet nystartade företag inom branschen Förlag, radio, TV, film och telekommunikation samt branschen Programmering och informationstjänster de olika kvartalen 2014. Vilket kvartal var det sammanlagda antalet nystartade företag inom dessa två branscher som minst?",
+      "options": [
+        "Första kvartalet",
+        "Andra kvartalet",
+        "Tredje kvartalet",
+        "Fjärde kvartalet"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd de två raderna i kolumnerna för 2014. Summorna blir kvartal 1: 462 + 887 = 1 349, kvartal 2: 427 + 890 = 1 317, kvartal 3: 419 + 866 = 1 285 och kvartal 4: 417 + 915 = 1 332. Det sammanlagda antalet var minst det tredje kvartalet. Det fjärde kvartalet lockar eftersom förlagsbranschen ensam hade sitt lägsta värde då, men programmeringsbranschen hade då sitt högsta.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Identifiera det kvartal då flest företag startades. Hur stor andel av de redovisade branschkategorierna hade fler än 1 000 nystartade företag detta kvartal?",
+      "options": [
+        "1/3",
+        "2/3",
+        "3/4",
+        "2/5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Raden Samtliga visar att flest företag startades det första kvartalet 2012 (20 117). I den kolumnen hade 8 av de 19 redovisade branschkategorierna fler än 1 000 nystartade företag (2 058, 2 979, 1 011, 1 022, 1 985, 1 155, 1 411 och 1 406). Andelen är 8/19 ≈ 0,42, vilket ligger närmast 2/5 = 0,4. Räknar man inte med Bransch ospecificerad blir det 8/18 ≈ 0,44, som också ligger närmast 2/5.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Jämför antalet nystartade företag inom branschen Tillverkning och dylikt fjärde kvartalet 2012 och fjärde kvartalet 2014. Med hur många procent hade antalet nystartade företag ökat?",
+      "options": [
+        "35 procent",
+        "45 procent",
+        "55 procent",
+        "65 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tillverkning och dylikt hade 680 nystartade företag det fjärde kvartalet 2012 och 1 002 det fjärde kvartalet 2014. Ökningen är 1 002 − 680 = 322, och 322/680 ≈ 0,47, alltså cirka 47 procent. Det närmaste alternativet är 45 procent: 680 · 1,45 ≈ 986 ligger närmare 1 002 än 680 · 1,55 ≈ 1 054.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur många av de redovisade filmerna hade både ett publiktal om minst 100 000 och ett recensionsindex över 3,50?",
+      "options": [
+        "3",
+        "8",
+        "14",
+        "17"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd punktdiagrammet längst ned. Recensionsindex över 3,50 betyder punkter till höger om 3,50 på den vågräta axeln, och publiktal om minst 100 000 betyder punkter på eller över nivån 100 000 på den logaritmiska skalan. Till höger om 3,50 ligger de flesta punkter under 100 000. Bara tre punkter når upp: en vid recensionsindex ungefär 3,75 som ligger precis på 100 000, en vid ungefär 3,95 (cirka 120 000) och en vid ungefär 4,15 (cirka 150 000). Det är alltså 3 filmer.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "En punkt (recensionsindex ca 3,75) ligger precis på 100 000 och är medräknad; utan den blir det 2, som inte är ett alternativ.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Anta att samtliga besök på svenska filmer gällde premiärsatta långfilmer. Hur många besök hade en svensk långfilm i genomsnitt 2007?",
+      "options": [
+        "70 000",
+        "90 000",
+        "110 000",
+        "140 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt det översta diagrammet hade 29 svenska långfilmer premiär 2007, och enligt det mellersta var antalet besök på svenska filmer 3,22 miljoner det året. I genomsnitt blir det 3 220 000/29 ≈ 111 000 besök per film, alltså cirka 110 000. Alternativet 140 000 får man om man bara delar med de 23 spelfilmerna: 3 220 000/23 = 140 000.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "För vilket år gällde att både antalet premiärsatta svenska långfilmer och antalet besök på svenska filmer nådde en av sina tre högsta noteringar under den redovisade perioden?",
+      "options": [
+        "2000",
+        "2001",
+        "2004",
+        "2005"
+      ],
+      "blindAnswer": 0,
+      "explain": "De tre högsta antalen långfilmspremiärer i det översta diagrammet är 46 (2005), 42 (2006) och 37 (2000). De tre högsta besökssiffrorna i det mellersta diagrammet är 4,37 miljoner (2000), 4,25 miljoner (2001) och 3,87 miljoner (2004). Bara år 2000 finns med bland de tre högsta i båda diagrammen. År 2004 lockar, men 36 premiärer är bara den fjärde högsta noteringen (lika med 2008).",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur stor var andelen spelfilmer av det totala antalet premiärsatta långfilmer det år då denna andel var som minst?",
+      "options": [
+        "50 procent",
+        "60 procent",
+        "70 procent",
+        "80 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Andelen spelfilmer är antalet spelfilmer delat med antalet långfilmspremiärer i det översta diagrammet. De lägsta andelarna är 2008 med 21/36 ≈ 58 procent och 1998 med 12/20 = 60 procent. Alla andra år är andelen över 70 procent, till exempel 2005 med 33/46 ≈ 72 procent. Den minsta andelen är alltså cirka 60 procent.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Identifiera den av de fyra yrkesgrupperna där andelen 35–44-åringar var som minst. Hur många individer motsvarade denna andel?",
+      "options": [
+        "3 000",
+        "5 000",
+        "6 000",
+        "8 000"
+      ],
+      "blindAnswer": 3,
+      "explain": "Den vita sektorn visar 35–44 år. Den är minst i diagrammet över specialistsjuksköterskor, cirka 65 grader av 360, vilket är ungefär 18 procent. I de andra diagrammen är den vita sektorn ungefär 21 procent (specialistläkare), 24 procent (läkare) och 25 procent (sjuksköterskor). 18 procent av 48 862 är ungefär 8 800 individer, och det närmaste alternativet är 8 000. Alternativet 5 000 lockar: det är ungefär antalet specialistläkare i åldern 35–44 år (21 procent av 24 929), alltså det minsta antalet men inte den minsta andelen.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "Sektorerna är uppmätta i bilden: 35–44 år är ca 18 % av specialistsjuksköterskorna (≈ 8 800 personer), vilket ligger närmast 8 000.",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stort var antalet specialistsjuksköterskor i åldersgruppen 45–54 år jämfört med antalet specialistläkare i samma åldersgrupp?",
+      "options": [
+        "Hälften så stort",
+        "Lika stort",
+        "Dubbelt så stort",
+        "Tre gånger så stort"
+      ],
+      "blindAnswer": 2,
+      "explain": "Den grå sektorn visar 45–54 år. I diagrammen över specialistsjuksköterskor och specialistläkare är de grå sektorerna ungefär lika stora, cirka 31 procent av cirkeln. Specialistsjuksköterskorna är 48 862 och specialistläkarna 24 929, alltså nästan exakt hälften så många. Antalet specialistsjuksköterskor i åldersgruppen blir därför ungefär dubbelt så stort: cirka 0,31 · 48 862 ≈ 15 000 mot 0,31 · 24 929 ≈ 7 700.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
