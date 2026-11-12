@@ -1,0 +1,766 @@
+{
+  "examId": "hp-2021-05-08",
+  "passNumber": 2,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x om x/3 + 1/4 = 11/12?",
+      "options": [
+        "2",
+        "5/2",
+        "9/4",
+        "11"
+      ],
+      "blindAnswer": 0,
+      "explain": "Dra 1/4 från båda leden. Med nämnaren 12 är 1/4 = 3/12, så x/3 = 11/12 − 3/12 = 8/12 = 2/3. Multiplicera båda leden med 3: x = 2. Kontroll: 2/3 + 1/4 = 8/12 + 3/12 = 11/12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilken av graferna nedan representerar funktionen f?",
+      "passage": "f(x) = (3/2)x − 2",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 3,
+      "explain": "Funktionen har lutningen 3/2 och skär y-axeln i −2. Grafen ska alltså gå genom (0, −2) och stiga 3 steg för varje 2 steg åt höger. Graf D går genom (0, −2) och (2, 1), vilket ger lutningen 3/2. Graf A går också genom (0, −2) men lutar nedåt. Graf B går genom (0, −2) och (3, 0) och har lutningen 2/3; den lockar om man blandar ihop stegen i x- och y-led. Graf C skär y-axeln i −1 och är för brant.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.21,
+          0.495,
+          0.425,
+          0.905
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket heltal är närmast √65 + √35?",
+      "options": [
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "blindAnswer": 2,
+      "explain": "√65 ligger strax över √64 = 8, och √35 ligger strax under √36 = 6. Summan är därför nära 8 + 6 = 14. Mer noggrant är √65 ≈ 8,06 och √35 ≈ 5,92, så summan är ungefär 13,98 och närmaste heltal är 14. Svaret 10 lockar om man lägger ihop talen under rottecknen, men √65 + √35 är inte lika med √100.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar (3/5)/(2 − 11/10)?",
+      "options": [
+        "−2/3",
+        "−3/50",
+        "27/50",
+        "2/3"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna först ut nämnaren: 2 − 11/10 = 20/10 − 11/10 = 9/10. Att dela med 9/10 är detsamma som att multiplicera med 10/9: (3/5) · (10/9) = 30/45 = 2/3. Nämnaren är positiv, så kvoten kan inte vara negativ. 27/50 får man om man multiplicerar med 9/10 i stället för att dela.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln x?",
+      "options": [
+        "80°",
+        "90°",
+        "100°",
+        "110°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Den vänstra triangeln har vinklarna 20° och 130°, så dess vinkel vid baslinjen är 180° − 20° − 130° = 30°. Den högra triangeln har vinklarna 70° och 60°, så dess vinkel vid baslinjen är 180° − 70° − 60° = 50°. De tre vinklarna i punkten på baslinjen bildar tillsammans en rak vinkel, alltså är x = 180° − 30° − 50° = 100°.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.215,
+          0.135,
+          0.71,
+          0.255
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar x² + x − 12?",
+      "options": [
+        "(x − 3)(x − 4)",
+        "(x − 3)(x + 4)",
+        "(x + 3)(x − 4)",
+        "(x + 3)(x + 4)"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sök två tal vars produkt är −12 och vars summa är 1 (koefficienten framför x). Talen −3 och 4 fungerar: (−3) · 4 = −12 och −3 + 4 = 1. Alltså är x² + x − 12 = (x − 3)(x + 4). Kontroll: (x − 3)(x + 4) = x² + 4x − 3x − 12 = x² + x − 12. (x + 3)(x − 4) ger x² − x − 12, med fel tecken på x-termen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är (x²)^(5/7)?",
+      "passage": "x > 0",
+      "options": [
+        "x^(5/14)",
+        "x^(10/7)",
+        "x^(10/14)",
+        "x^(25/49)"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt potenslagen (aᵐ)ⁿ = aᵐⁿ multipliceras exponenterna: (x²)^(5/7) = x^(2 · 5/7) = x^(10/7). x^(10/14) lockar om man multiplicerar både täljaren och nämnaren med 2, men 10/14 = 5/7, så det är bara x^(5/7). x^(5/14) får man om man delar med 2 i stället för att multiplicera.",
+      "figure": null,
+      "note": "Exponenterna är bråk och skrivs med ^ i texten; på provet står 5/7, 5/14, 10/7, 10/14 och 25/49 upphöjda.",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket är det största primtalet som är mindre än 100?",
+      "options": [
+        "91",
+        "93",
+        "97",
+        "99"
+      ],
+      "blindAnswer": 2,
+      "explain": "Pröva uppifrån. 99 = 9 · 11 och 98 är jämnt. 97 är inte delbart med 2, 3, 5 eller 7, och fler delare behöver inte prövas eftersom 11² = 121 är större än 97. Alltså är 97 ett primtal och det största under 100. De andra alternativen är inte primtal: 93 = 3 · 31 och 91 = 7 · 13.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Linjerna som ges av y = −2x + 2 och y = 2x + 4 skär varandra i en punkt. Vilken x-koordinat har punkten?",
+      "options": [
+        "−2",
+        "−1",
+        "−1/2",
+        "0"
+      ],
+      "blindAnswer": 2,
+      "explain": "I skärningspunkten har linjerna samma y-värde: −2x + 2 = 2x + 4. Samla x-termerna på ena sidan: −4x = 2, alltså x = −1/2. Kontroll: båda linjerna ger y = 3 när x = −1/2, eftersom −2 · (−1/2) + 2 = 3 och 2 · (−1/2) + 4 = 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Det finns två kvadrater, en gul och en röd. Sidan i den gula kvadraten är 6 cm längre än sidan i den röda kvadraten. Den gula kvadratens area är 48 cm² större än den röda kvadratens area. Hur stor area har den röda kvadraten?",
+      "options": [
+        "1 cm²",
+        "16 cm²",
+        "25 cm²",
+        "36 cm²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Låt den röda kvadratens sida vara s cm. Den gula har då sidan s + 6 cm, och skillnaden i area är (s + 6)² − s² = s² + 12s + 36 − s² = 12s + 36. Skillnaden ska vara 48, så 12s = 12 och s = 1. Den röda kvadraten har arean 1² = 1 cm². Kontroll: den gula kvadraten har sidan 7 cm och arean 49 cm², som är 48 cm² mer.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Medelvikten av fyra lådor är 5,5 kg och medianvikten är 5 kg. Vad är den lägsta möjliga vikten för den tyngsta lådan?",
+      "options": [
+        "5,5 kg",
+        "6 kg",
+        "6,5 kg",
+        "7 kg"
+      ],
+      "blindAnswer": 3,
+      "explain": "Lådorna väger sammanlagt 4 · 5,5 = 22 kg. Ordna vikterna så att a ≤ b ≤ c ≤ d. Medianen är (b + c)/2 = 5, så b + c = 10 och då är a + d = 22 − 10 = 12. Den tyngsta lådan d blir så lätt som möjligt när a är så stor som möjligt. Men a ≤ b, och b kan högst vara 5 eftersom b ≤ c och b + c = 10. Med a = b = c = 5 kg blir d = 12 − 5 = 7 kg. En tyngsta låda på 5,5 kg ger högst 5 + 5 + 5 + 5,5 = 20,5 kg, vilket är för lite.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "En bil kör med hastigheten x m/s. Vilket svarsalternativ motsvarar denna hastighet uttryckt i km/h?",
+      "options": [
+        "x/6",
+        "9x",
+        "18x/5",
+        "36x"
+      ],
+      "blindAnswer": 2,
+      "explain": "På en timme, alltså 3 600 sekunder, hinner bilen 3 600x meter, vilket är 3,6x km. Hastigheten är därför 3,6x km/h, och 3,6 = 36/10 = 18/5. Svaret är 18x/5. 36x är tio gånger för stort och lockar om man glömmer att en kilometer är 1 000 meter.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > −7\ny > 7\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Villkoren säger bara att x är större än −7 och att y är större än 7. Med x = 0 och y = 8 är kvantitet II större, men med x = 20 och y = 8 är kvantitet I större. Informationen räcker inte. Det lockar att tro att y är större eftersom 7 är större än −7, men x har ingen övre gräns.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1 m³\nKvantitet II: 999 dm³",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "1 m = 10 dm, så 1 m³ = 10 dm · 10 dm · 10 dm = 1 000 dm³. Det är 1 dm³ mer än 999 dm³, alltså är kvantitet I större. Den som tror att 1 m³ är 10 dm³ eller 100 dm³ får fel relation.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "På en arbetsplats finns det 80 anställda, varav 60 arbetar i verkstaden och 20 arbetar på kontoret. 30 av de anställda cyklar till arbetet.\nKvantitet I: Antalet anställda som både arbetar i verkstaden och cyklar till arbetet\nKvantitet II: 20",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Eftersom 60 + 20 = 80 arbetar varje anställd antingen i verkstaden eller på kontoret. Av de 30 som cyklar kan högst 20 arbeta på kontoret, så minst 10 av cyklisterna arbetar i verkstaden. Om alla 20 på kontoret cyklar är kvantitet I 10, alltså mindre än 20. Om ingen på kontoret cyklar är kvantitet I 30, alltså större än 20. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Rektangeln och triangeln i figuren har lika stor omkrets.\nKvantitet I: x\nKvantitet II: 15",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Rektangeln har sidorna x, 10, x och 10, så dess omkrets är 2x + 20 cm. Triangeln har tre sidor som alla är x, så dess omkrets är 3x cm. Lika stor omkrets ger 3x = 2x + 20, alltså x = 20. Kvantitet I är 20, som är större än 15. Kontroll: båda figurerna har då omkretsen 60 cm.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.215,
+          0.538,
+          0.68,
+          0.66
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: En fjärdedel av en femtedel av x\nKvantitet II: En femtedel av en fjärdedel av x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "En fjärdedel av en femtedel av x är (1/4) · (1/5) · x = x/20. En femtedel av en fjärdedel av x är (1/5) · (1/4) · x = x/20. Faktorerna i en produkt kan byta plats, så kvantiteterna är alltid lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 3 · 2ˣ\nKvantitet I: 4 · f(2)\nKvantitet II: f(4)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "f(2) = 3 · 2² = 3 · 4 = 12, så kvantitet I är 4 · 12 = 48. Kvantitet II är f(4) = 3 · 2⁴ = 3 · 16 = 48. Kvantiteterna är lika. Det beror på att 2⁴ = 2² · 2² = 4 · 2², så f(4) är precis 4 gånger f(2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: 1/(x + 1) − 1/x\nKvantitet II: 1/x − 1/(x + 1)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "När x > 0 är x + 1 större än x, och då är 1/(x + 1) mindre än 1/x. Kvantitet I är därför negativ och kvantitet II positiv; de är samma tal med olika tecken. Till exempel ger x = 1 att kvantitet I är 1/2 − 1 = −1/2 och kvantitet II är 1 − 1/2 = 1/2. Kvantitet II är alltid större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Sannolikheten att slumpmässigt plocka upp en blå kula ur en påse som endast innehåller enfärgade kulor: 5 blå och 15 vita\nKvantitet II: Sannolikheten att slumpmässigt plocka upp en röd kula ur en påse som endast innehåller enfärgade kulor: 4 röda och 14 vita",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den första påsen har 5 + 15 = 20 kulor, så sannolikheten för en blå kula är 5/20 = 1/4 = 0,25. Den andra påsen har 4 + 14 = 18 kulor, så sannolikheten för en röd kula är 4/18 = 2/9 ≈ 0,22. Kvantitet I är större. Båda påsarna har 10 fler vita än färgade kulor, vilket kan få dem att se lika ut, men det är andelen som avgör.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Arean av den skuggade ytan\nKvantitet II: 38 cm²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den vita triangeln är rätvinklig med kateterna 8 cm och 6 cm, och dess hypotenusa är den skuggade ytans nedre sida 2x. Pythagoras sats ger (2x)² = 8² + 6² = 100, så 2x = 10 cm och x = 5 cm. Den skuggade ytan är en parallelltrapets med de parallella sidorna 5 cm och 10 cm och höjden 5 cm. Arean är (5 + 10)/2 · 5 = 37,5 cm², som är mindre än 38 cm².",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.22,
+          0.11,
+          0.435,
+          0.26
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x²y³ > 0\nxy < 0\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "x² är positivt för alla x ≠ 0, så x²y³ > 0 betyder att y³ är positivt, alltså att y är positivt. Eftersom xy < 0 har x och y olika tecken, och då är x negativt. Ett negativt tal är alltid mindre än ett positivt, så kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "De tre vännerna Albert, Felix och Oskar är alla olika långa. Hur lång är Albert?\n(1) Oskar är 5 cm längre än Felix. Felix är 13 cm kortare än Albert.\n(2) Medelvärdet av vännernas längder är 181 cm. Både Oskar och Felix är kortare än 181 cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Påståendet ger bara skillnaderna mellan längderna: Felix är 13 cm kortare än Albert och Oskar 8 cm kortare. Ingen längd går att räkna ut. Inte tillräckligt.\n(2) Längderna är sammanlagt 3 · 181 = 543 cm. Eftersom Oskar och Felix är kortare än 181 cm måste Albert vara längre än 181 cm, men hur mycket längre går inte att avgöra. Inte tillräckligt.\n(1) och (2) tillsammans: Kalla Alberts längd A. Då är Felix A − 13 och Oskar A − 8, och A + (A − 13) + (A − 8) = 543. Det ger 3A = 564 och A = 188 cm. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket värde har x?\n(1) 4 % av x är 15 % av 400.\n(2) 3x + 5y = 4 000\ny = −100",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) 15 % av 400 är 60, så 0,04x = 60 och x = 60/0,04 = 1 500. Tillräckligt.\n(2) Sätt in y = −100 i ekvationen: 3x − 500 = 4 000, så 3x = 4 500 och x = 1 500. Tillräckligt.\nVarje påstående räcker för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På ett bord ligger fem läroböcker på rad: en biologibok, en engelskabok, en fysikbok, en kemibok och en matematikbok. Böckerna är numrerade 1–5 från vänster till höger. Vilket nummer har matematikboken?\n(1) Kemiboken ligger intill både matematikboken och fysikboken. Kemiboken har nummer 2. Matematikboken har inte nummer 3.\n(2) Engelskaboken ligger intill biologiboken. Biologiboken ligger intill fysikboken.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Kemiboken har nummer 2, och de enda platserna intill den är nummer 1 och 3. Både matematikboken och fysikboken ligger intill kemiboken, så de har nummer 1 och 3. Matematikboken har inte nummer 3, alltså har den nummer 1. Tillräckligt.\n(2) Biologiboken ligger mellan engelskaboken och fysikboken, så de tre böckerna ligger i följd. De kan till exempel ha nummer 1–3, och då kan matematikboken ha nummer 4 eller 5. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket värde har xyz?\n(1) xy = 1\n(2) yz = 1",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) xy = 1 ger xyz = z, men z är okänt. Inte tillräckligt.\n(2) yz = 1 ger xyz = x, men x är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: Båda villkoren uppfylls av x = y = z = 1, som ger xyz = 1, men också av x = 1/2, y = 2 och z = 1/2, som ger xyz = 1/2. Värdet går inte att bestämma. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Ella, Sophie och Ylva bor på varsin våning i ett trevåningshus. Vem bor på vilken våning?\n(1) Ylva bor minst en våning under Sophie. Sophie bor minst en våning över Ella.\n(2) Ellas och Ylvas våningar angränsar till varandra. Sophie bor på översta våningen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Sophie bor över både Ylva och Ella, så Sophie bor på översta våningen. Vem av Ella och Ylva som bor på den nedersta våningen går inte att avgöra. Inte tillräckligt.\n(2) Sophie bor på översta våningen, så Ella och Ylva bor på de två nedre våningarna, som alltid angränsar till varandra. Vem som bor längst ned framgår inte. Inte tillräckligt.\n(1) och (2) tillsammans säger bara att Sophie bor högst upp. Inget av påståendena skiljer Ella från Ylva, så det går inte att avgöra vem av dem som bor på vilken av de två nedre våningarna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anton och Bert startar samtidigt och springer mot varandra längs med samma raka väg, var och en med sin egen konstanta hastighet. När de startar är de 3 km från varandra. Hur långt har Bert sprungit när de möts?\n(1) Bert springer 50 % snabbare än Anton.\n(2) Antons hastighet är 8 km/h och de möts efter 9 minuter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) De springer lika länge, och Bert springer 1,5 gånger så fort som Anton, så han hinner 1,5 gånger så långt. Sträckorna förhåller sig som 3:2 och är tillsammans 3 km, så Bert springer 3/5 · 3 = 1,8 km. Tillräckligt.\n(2) På 9 minuter, alltså 9/60 = 0,15 timmar, springer Anton 8 · 0,15 = 1,2 km. Bert springer resten av sträckan: 3 − 1,2 = 1,8 km. Tillräckligt.\nVarje påstående räcker för sig. Det är lätt att tro att (1) behöver en hastighet, men förhållandet mellan hastigheterna räcker när den sammanlagda sträckan är känd.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de redovisade EU-länderna låg under den kritiska nivån vad avser födelsetal?",
+      "options": [
+        "35 procent",
+        "45 procent",
+        "55 procent",
+        "65 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Båda diagrammen visar samma 17 länder. Under den streckade linjen för den kritiska nivån (födelsetalet 1,5) ligger Portugal, Österrike, Italien, Spanien, Tyskland, Tjeckien, Slovakien och Polen, alltså 8 länder. Andelen är 8/17 ≈ 0,47, vilket är närmast 45 procent. De övriga 9 länderna ligger över nivån; 9/17 ≈ 53 procent, så 55 procent lockar om man räknar fel grupp.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor var skillnaden i andel barn under tre år i barnomsorg mellan landet med den största andelen och landet med den näst största andelen?",
+      "options": [
+        "20 procentenheter",
+        "40 procentenheter",
+        "60 procentenheter",
+        "80 procentenheter"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd det högra diagrammet, där andelen barn under tre år i barnomsorg står på den vågräta axeln. Danmark ligger längst till höger, vid cirka 60 procent. Näst störst andel har Sverige, vid cirka 40 procent, strax före Nederländerna och Belgien. Skillnaden är 60 − 40 = 20 procentenheter.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "För hur många av de redovisade EU-länderna gällde att födelsetalet var lägre än 1,4 och att kvinnor i åldern 25–34 år hade minst 12 års utbildning?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det vänstra diagrammet, där antal år i utbildning står på den vågräta axeln. Under linjen för födelsetalet 1,4 ligger Italien, Spanien, Tyskland, Tjeckien, Slovakien och Polen; Portugal ligger precis på 1,4 och Österrike strax över. Av de sex länderna har Italien mindre än 12 års utbildning (cirka 11,7). Kvar blir Spanien (cirka 12,5), Tjeckien, Polen och Slovakien (cirka 13) och Tyskland (cirka 13,5), alltså 5 länder.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur många personer sammanlagt hade något av de fem vanligaste efternamnen?",
+      "options": [
+        "726 267",
+        "904 367",
+        "1 045 141",
+        "1 205 341"
+      ],
+      "blindAnswer": 2,
+      "explain": "De fem vanligaste efternamnen står överst i tabellens första kolumn: Andersson 251 621, Johansson 251 495, Karlsson 223 151, Nilsson 171 360 och Eriksson 147 514. Summan är 251 621 + 251 495 + 223 151 + 171 360 + 147 514 = 1 045 141. 726 267 är summan av bara de tre första namnen.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Föreställ dig att alla som hade namnen Sandström, Nordin, Lund och Ström bytte namn till Bengtsson. På vilken plats bland vanliga efternamn skulle då Bengtsson ha hamnat?",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bengtsson har 34 302 personer (plats 15). Sandström, Nordin, Lund och Ström står på plats 69–72 med sammanlagt 10 828 + 10 777 + 10 759 + 10 669 = 43 033 personer. Tillsammans blir det 34 302 + 43 033 = 77 335. Det är fler än Jonsson på plats 12 (73 869) men färre än Pettersson på plats 11 (96 011), så Bengtsson skulle ha hamnat på plats 12.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilket namnpar avses?",
+      "passage": "Förhållandet mellan antalet personer med de två efternamnen var 1:2 och de som hade efternamnen var sammanlagt färre än de som hade efternamnet Jansson.",
+      "options": [
+        "Viklund och Axelsson",
+        "Berg och Hansson",
+        "Hansen och Jakobsson",
+        "Martinsson och Pettersson"
+      ],
+      "blindAnswer": 0,
+      "explain": "Jansson hade 50 170 personer. Viklund har 11 377 och Axelsson 22 770; eftersom 2 · 11 377 = 22 754 är förhållandet nästan exakt 1:2, och summan 34 147 är mindre än 50 170. Berg (21 563) och Hansson (43 926) har också ungefär förhållandet 1:2, men summan 65 489 är större än Janssons antal. Hansen (8 878) och Jakobsson (26 793) har förhållandet ungefär 1:3, och Martinsson (9 640) och Pettersson (96 011) ungefär 1:10. Bara Viklund och Axelsson uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Inom hur många av de redovisade driftsinriktningarna hade antalet företag ökat under någon av de tre perioderna?",
+      "options": [
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 1,
+      "explain": "En ökning syns som en stapel till höger om 0. Sådana staplar finns bara för Vall utöver eget behov (alla tre perioderna), Får och getter (2005–2007 och 2007–2010) och Småbruk (2003–2005). Alla andra driftsinriktningar har bara staplar till vänster om 0, alltså minskningar, eller ingen stapel alls. Raden Totalt gäller samtliga driftsinriktningar och räknas inte. Svaret är 3.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Studera hur antalet företag med driftsinriktningen Spannmål förändrades procentuellt under de tre perioderna. Hur stor var skillnaden mellan den största procentuella förändringen och den minsta procentuella förändringen?",
+      "options": [
+        "2 procentenheter",
+        "4 procentenheter",
+        "6 procentenheter",
+        "8 procentenheter"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av de tre staplarna för Spannmål mot rutnätet; rutorna till vänster om 0 är bredare än till höger, så använd linjerna vid −5 och −10. Den grå stapeln (2003–2005) når cirka −7 procent, den vita (2005–2007) cirka −9 procent och den svarta (2007–2010) cirka −1 procent. Den största förändringen var alltså en minskning med 9 procent och den minsta en minskning med 1 procent. Skillnaden är 9 − 1 = 8 procentenheter.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag beskriver bäst förändringen av det totala antalet jordbruksföretag i Sverige?",
+      "options": [
+        "Från 2003 till 2005 ökade antalet med 2 procent.",
+        "Från 2003 till 2005 minskade antalet med 6 procent.",
+        "Från 2005 till 2007 ökade antalet med 6 procent.",
+        "Från 2005 till 2007 minskade antalet med 2 procent."
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd raden Totalt längst ned i diagrammet. Den grå stapeln (2003–2005) går till höger till cirka 6 procent, alltså en ökning med 6 procent. Den vita stapeln (2005–2007) och den svarta (2007–2010) går båda till vänster till cirka −2 procent. Från 2005 till 2007 minskade alltså antalet med 2 procent. De andra alternativen blandar ihop perioderna eller riktningen: ökningen var 6 procent och skedde 2003–2005.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket år skilde sig materialförbrukningen respektive materialintensiteten som mest från den år 2000?",
+      "passage": "Svarsalternativen anger: materialförbrukning – materialintensitet",
+      "options": [
+        "2007 – 2005",
+        "2007 – 2009",
+        "2012 – 2005",
+        "2012 – 2009"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd det nedre diagrammet, där år 2000 har index 100. Materialförbrukningen (den tjocka linjen) ligger längst från 100 år 2012, vid cirka 119, medan 2007 ligger vid cirka 114. Materialintensiteten (den långstreckade linjen) ligger längst från 100 år 2009, vid cirka 86, medan 2005 ligger nära 100 (cirka 98). Svaret är 2012 för materialförbrukningen och 2009 för materialintensiteten.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor var förbrukningen av biomassa jämfört med förbrukningen av fossila bränslen 2007?",
+      "options": [
+        "Sex gånger så stor",
+        "Fyra gånger så stor",
+        "Tre gånger så stor",
+        "Dubbelt så stor"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det övre diagrammet, där kategorierna ligger staplade på varandra. År 2007 når det svarta fältet (biomassa) upp till cirka 6 ton per capita. Det prickiga fältet (fossila bränslen) ligger mellan cirka 20 och 22 ton per capita och motsvarar alltså cirka 2 ton per capita. Biomassan var 6/2 = 3 gånger så stor. Det är fältets tjocklek, inte dess övre kant, som anger förbrukningen.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "År 2000 uppgick den totala svenska materialförbrukningen till cirka 180 miljoner ton. Hur stor var materialförbrukningen 2008?",
+      "options": [
+        "170 miljoner ton",
+        "190 miljoner ton",
+        "205 miljoner ton",
+        "215 miljoner ton"
+      ],
+      "blindAnswer": 2,
+      "explain": "I det nedre diagrammet har materialförbrukningen index 100 år 2000 och cirka 115 år 2008. Förbrukningen 2008 var alltså cirka 1,15 · 180 ≈ 207 miljoner ton, vilket är närmast 205 miljoner ton. Kontroll med det övre diagrammet: förbrukningen per capita ökade från cirka 20 till 22 ton (cirka 10 procent) och befolkningen med cirka 4 procent, och 1,10 · 1,04 ≈ 1,15.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
