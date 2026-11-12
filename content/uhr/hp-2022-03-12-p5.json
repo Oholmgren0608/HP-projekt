@@ -1,0 +1,761 @@
+{
+  "examId": "hp-2022-03-12",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "x − 7 = 3(x + 1)",
+      "options": [
+        "−5",
+        "−4",
+        "2",
+        "5/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in 3 i parentesen: x − 7 = 3x + 3. Subtrahera x och 3 från båda leden: −10 = 2x, så x = −5. Kontroll: vänsterledet blir −5 − 7 = −12 och högerledet 3 · (−5 + 1) = 3 · (−4) = −12. Svaret −4 lockar om man glömmer att multiplicera 1 med 3, eftersom x − 7 = 3x + 1 ger x = −4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är x + y?",
+      "options": [
+        "110°",
+        "120°",
+        "130°",
+        "140°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Den stora triangeln har en rät vinkel nere till vänster och vinkeln 20° + 10° = 30° nere till höger. Vinkelsumman 180° ger x = 180° − 90° − 30° = 60°. Vinkeln y ligger i den mindre triangeln längst ned, som har den räta vinkeln och vinkeln 20°, så y = 180° − 90° − 20° = 70°. Alltså är x + y = 60° + 70° = 130°.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.19,
+          0.52,
+          0.59,
+          0.695
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är medelvärdet av 8² och 4²?",
+      "options": [
+        "2 · 4²",
+        "6²",
+        "2³ · 5",
+        "2² · 12"
+      ],
+      "blindAnswer": 2,
+      "explain": "8² = 64 och 4² = 16, så medelvärdet är (64 + 16)/2 = 80/2 = 40. Räkna ut alternativen: 2 · 4² = 2 · 16 = 32, 6² = 36, 2³ · 5 = 8 · 5 = 40 och 2² · 12 = 4 · 12 = 48. Bara 2³ · 5 är 40. Svaret 6² lockar om man tar medelvärdet av baserna 8 och 4 innan man kvadrerar, men det ger inte samma sak.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med g(1)?",
+      "passage": "f(x) = 3x − 1\ng(x) = −2f(x) + 4",
+      "options": [
+        "0",
+        "2",
+        "4",
+        "6"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna först ut f(1) = 3 · 1 − 1 = 2. Sätt in det i g: g(1) = −2 · f(1) + 4 = −2 · 2 + 4 = −4 + 4 = 0. Den som sätter in x = 1 direkt i stället för f(1), alltså räknar −2 · 1 + 4, får 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är (2/5 − 1/4)/(1/3 + 1/6)?",
+      "options": [
+        "2/9",
+        "3/10",
+        "9/2",
+        "10/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Täljaren: 2/5 − 1/4 = 8/20 − 5/20 = 3/20. Nämnaren: 1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2. Att dividera med 1/2 är detsamma som att multiplicera med 2, så kvoten blir 3/20 · 2 = 6/20 = 3/10. Svaret 10/3 får man om man vänder på bråket och delar nämnaren med täljaren.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med ett heltal?",
+      "options": [
+        "51√51",
+        "√51(√51 + 51)",
+        "√51 + √51",
+        "(√51 + √51)²"
+      ],
+      "blindAnswer": 3,
+      "explain": "51 är inget kvadrattal (7² = 49 och 8² = 64), så √51 är inte ett heltal. 51√51 och √51 + √51 = 2√51 innehåller fortfarande √51. √51(√51 + 51) = √51 · √51 + 51√51 = 51 + 51√51, som också innehåller √51. Men (√51 + √51)² = (2√51)² = 4 · 51 = 204, som är ett heltal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Om a väljs så att f(1) = 3, vilket värde har då f(0)?",
+      "passage": "f(x) = a · 3ˣ",
+      "options": [
+        "0",
+        "1/3",
+        "1",
+        "3"
+      ],
+      "blindAnswer": 2,
+      "explain": "f(1) = a · 3¹ = 3a. Villkoret f(1) = 3 ger 3a = 3, alltså a = 1. Då är f(0) = 1 · 3⁰ = 1 · 1 = 1, eftersom varje tal skilt från 0 upphöjt till 0 är 1. Svaret 0 lockar om man tror att 3⁰ = 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar x⁴y²z³/(x²yz²)²?",
+      "passage": "xyz ≠ 0",
+      "options": [
+        "1/(yz)",
+        "1",
+        "1/y",
+        "1/z"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvadrera nämnaren genom att dubbla varje exponent: (x²yz²)² = x⁴y²z⁴. Uttrycket blir då x⁴y²z³/(x⁴y²z⁴). Faktorerna x⁴ och y² finns både i täljaren och i nämnaren och kan förkortas bort. Kvar blir z³/z⁴ = 1/z. Villkoret xyz ≠ 0 betyder bara att ingen av variablerna är 0, så att uttrycket är definierat.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "60 % av x är lika med 40 % av y. Hur många procent av x är y?",
+      "options": [
+        "20 %",
+        "66 %",
+        "100 %",
+        "150 %"
+      ],
+      "blindAnswer": 3,
+      "explain": "Villkoret är 0,6x = 0,4y. Dela båda leden med 0,4: y = 0,6x/0,4 = 1,5x. Då är y 150 % av x. Det är rimligt: en mindre andel av y är lika mycket som en större andel av x, så y måste vara större än x. Svaret 66 % lockar om man räknar 0,4/0,6 ≈ 0,67, men det är x som är ungefär 67 % av y.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Arean av en kvadrat är 100 cm². Vilket svarsalternativ är närmast längden av kvadratens diagonal?",
+      "options": [
+        "10 cm",
+        "12 cm",
+        "14 cm",
+        "16 cm"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadratens sida är √100 = 10 cm. Diagonalen delar kvadraten i två rätvinkliga trianglar, så enligt Pythagoras sats är diagonalen √(10² + 10²) = √200 = 10√2 ≈ 10 · 1,41 ≈ 14,1 cm. Närmast är 14 cm. Svaret 10 cm är sidans längd, och diagonalen är alltid längre än sidan.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är √(xz + yz)?",
+      "passage": "z = x + y = 5",
+      "options": [
+        "√5",
+        "5",
+        "5√5",
+        "25"
+      ],
+      "blindAnswer": 1,
+      "explain": "Bryt ut z under rottecknet: xz + yz = z(x + y). Både z och x + y är 5, så xz + yz = 5 · 5 = 25. Då är √(xz + yz) = √25 = 5. Svaret 25 lockar om man glömmer att dra roten ur.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Summan av de 30 första udda positiva heltalen är u. Summan av de 30 första jämna positiva heltalen är j. Vad är u − j?",
+      "options": [
+        "−30",
+        "−1",
+        "0",
+        "30"
+      ],
+      "blindAnswer": 0,
+      "explain": "Para ihop talen: 1 och 2, 3 och 4, 5 och 6 och så vidare upp till 59 och 60. I varje par är det udda talet 1 mindre än det jämna, och det finns 30 par. Alltså är u − j = 30 · (−1) = −30. Kontroll: u = 1 + 3 + … + 59 = 30² = 900 och j = 2 + 4 + … + 60 = 30 · 31 = 930, och 900 − 930 = −30.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 707/70\nKvantitet II: 808/80",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dela upp täljarna: 707 = 700 + 7, så 707/70 = 700/70 + 7/70 = 10 + 0,1 = 10,1. På samma sätt är 808/80 = 800/80 + 8/80 = 10 + 0,1 = 10,1. Båda kvantiteterna är 10,1. Man kan också förkorta: 707/70 = (7 · 101)/(7 · 10) = 101/10 och 808/80 = (8 · 101)/(8 · 10) = 101/10.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "De fyra punkterna A, B, C och D är placerade i samma koordinatsystem.\nA = (0, 0)\nB = (4, 3)\nC = (8, 0)\nD = (8, 1)\nKoordinatsystemet kan användas för att lösa uppgiften.\nKvantitet I: Den sammanlagda längden av sträckorna AB och BC\nKvantitet II: Längden av sträckan AD",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd Pythagoras sats. Från A till B ändras x med 4 och y med 3, så AB = √(4² + 3²) = √25 = 5. Från B till C ändras x med 4 och y med 3 igen, så BC = 5. Kvantitet I är 5 + 5 = 10. Från A till D ändras x med 8 och y med 1, så AD = √(8² + 1²) = √65. Eftersom 8² = 64 och 9² = 81 ligger √65 mellan 8 och 9, alltså under 10. Kvantitet I är större.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.187,
+          0.445,
+          0.655,
+          0.772
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Volymen av en cylinder med höjden 5 cm och radien 2 cm\nKvantitet II: Volymen av en cylinder med höjden 2 cm och radien 5 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En cylinders volym är πr²h. Kvantitet I: π · 2² · 5 = 20π cm³. Kvantitet II: π · 5² · 2 = 50π cm³. Radien räknas i kvadrat men höjden inte, så det spelar roll vilket av talen som är radien. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x/3 − 1/5 = 1/3 + 1/5\nKvantitet I: x\nKvantitet II: 2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Addera 1/5 till båda leden: x/3 = 1/3 + 2/5 = 5/15 + 6/15 = 11/15. Multiplicera med 3: x = 33/15 = 11/5 = 2,2. Kvantitet I är alltså större än 2. Kontroll: med x = 2 blir vänsterledet 2/3 − 1/5 = 10/15 − 3/15 = 7/15, medan högerledet är 1/3 + 1/5 = 8/15. Vänsterledet blir för litet, så x måste vara större än 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "3 < p < 5\nKvantitet I: p³\nKvantitet II: 42p",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "p är positivt, så båda kvantiteterna kan delas med p utan att relationen ändras. Då jämförs p² med 42. Eftersom 3 < p < 5 är 9 < p² < 25, och p² är alltså alltid mindre än 42. Kvantitet II är större. Exempel: p = 4 ger p³ = 64 och 42p = 168, och även nära den övre gränsen, p = 4,9, är p³ ≈ 117,6 mindre än 42p = 205,8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En påse innehåller endast 9 enfärgade kulor: 5 röda och 4 blå. Albin plockar slumpmässigt två kulor ur påsen. Han plockar dem en och en utan att lägga tillbaka dem.\nKvantitet I: Sannolikheten att Albin först plockar en röd kula och sedan en blå kula\nKvantitet II: Sannolikheten att Albin först plockar en röd kula och sedan ytterligare en röd kula",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sannolikheten att den första kulan är röd är 5/9 i båda fallen. Efter en röd kula finns 8 kulor kvar: 4 röda och 4 blå. Sannolikheten att den andra kulan är blå är då 4/8, och sannolikheten att den är röd är också 4/8. Kvantitet I är 5/9 · 4/8 = 5/18 och kvantitet II är 5/9 · 4/8 = 5/18, alltså lika stora. Det lockar att tro att två röda är mer sannolikt eftersom det finns fler röda kulor, men den första röda kulan är borta när den andra plockas.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "36^(1/3) = 6^(2x)\nKvantitet I: x\nKvantitet II: 2/5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv 36 som en potens av 6: 36 = 6², så 36^(1/3) = (6²)^(1/3) = 6^(2/3). Ekvationen blir 6^(2/3) = 6^(2x). Samma bas ger samma exponent: 2x = 2/3, alltså x = 1/3. Jämför med gemensam nämnare: 1/3 = 5/15 och 2/5 = 6/15. Kvantitet II är större.",
+      "figure": null,
+      "note": "Exponenterna är skrivna med ^: på provet står 36 upphöjt till 1/3 och 6 upphöjt till 2x.",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Summan av fem på varandra följande heltal är 15.\nKvantitet I: Skillnaden mellan det största och det minsta talet\nKvantitet II: 5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Fem på varandra följande heltal kan skrivas n, n + 1, n + 2, n + 3 och n + 4. Skillnaden mellan det största och det minsta är (n + 4) − n = 4, vilken summan än är. Här är 5n + 10 = 15, så n = 1 och talen är 1, 2, 3, 4 och 5, med skillnaden 5 − 1 = 4. Kvantitet II är större. Det lockar att svara att de är lika eftersom det är fem tal, men mellan fem tal finns bara fyra steg.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "n är ett heltal sådant att −10 ≤ n ≤ 10.\nKvantitet I: 10ⁿ\nKvantitet II: n¹⁰",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva några tillåtna värden. n = 0 ger 10⁰ = 1 och 0¹⁰ = 0, så I är större. n = 2 ger 10² = 100 och 2¹⁰ = 1 024, så II är större. n = 10 ger 10¹⁰ i båda kvantiteterna, så de är lika. Relationen beror på n, och informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "R är en rektangel.\nx > a\nKvantitet I: Arean av R om a = 0\nKvantitet II: Arean av R om a > 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Rektangelns sidor är x + a och x − a, så arean är (x + a)(x − a) = x² − a² (konjugatregeln). Om a = 0 är arean x². Om a > 0 är a² positivt, så arean x² − a² är mindre än x². Kvantitet I är större. Man kan också tänka så här: omkretsen är 4x i båda fallen, och av alla rektanglar med samma omkrets har kvadraten (a = 0) störst area.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.198,
+          0.552,
+          0.445,
+          0.662
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Malin har en påse med äpplen. Hur många äpplen finns det i påsen?\n(1) Om Malin lägger ner ytterligare två äpplen i påsen så utgör dessa två äpplen 1/12 av antalet äpplen i påsen.\n(2) Om Malin plockar bort två äpplen ur påsen så minskar antalet äpplen i påsen med 1/11.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla antalet äpplen i påsen för n.\n(1) Efter att två äpplen lagts till finns n + 2 äpplen, och de två nya är 1/12 av dem: (n + 2)/12 = 2. Då är n + 2 = 24 och n = 22. Tillräckligt.\n(2) De två äpplen som plockas bort är 1/11 av antalet från början: n/11 = 2, så n = 22. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett val ställde två kandidater upp. Alla valsedlar var giltiga, och varje röst lades på någon av de två kandidaterna. Hur många röster lades i valet?\n(1) Den kandidat som vann valet fick 56 % av rösterna.\n(2) Den kandidat som vann valet fick 1 200 röster fler än den som förlorade.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Vinnaren fick 56 % och förloraren 44 %, men andelarna säger inget om hur många röster det var. Inte tillräckligt.\n(2) Skillnaden 1 200 röster passar med olika totalantal, till exempel 2 000 mot 800 eller 5 000 mot 3 800. Inte tillräckligt.\n(1) och (2) tillsammans: Skillnaden mellan kandidaterna är 56 % − 44 % = 12 % av rösterna, och det är 1 200 röster. Då motsvarar 1 % 100 röster, och totalt lades 100 · 100 = 10 000 röster. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Alexandra, Benjamin, Julia och Sebastian är syskon. Vilket av syskonen är yngst?\n(1) Benjamin är äldre än Alexandra. Julia är dubbelt så gammal som Sebastian.\n(2) Sebastian är 5 år och Benjamin är 12 år.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Benjamin är äldre än Alexandra och Julia är äldre än Sebastian, så den yngsta är Alexandra eller Sebastian. Inte tillräckligt.\n(2) Vi vet ingenting om Alexandras och Julias åldrar. Inte tillräckligt.\n(1) och (2) tillsammans: Sebastian är 5 år, Julia 10 år och Benjamin 12 år. Om Alexandra vet vi bara att hon är yngre än 12 år. Är hon till exempel 3 år är hon yngst, men är hon 8 år är Sebastian yngst. Inte tillräckligt.\nTillräcklig information erhålls alltså inte genom de båda påståendena.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Fyra nycklar är numrerade 1, 2, 3, 4. Var och en av nycklarna passar i ett av fyra lås som också är numrerade 1, 2, 3, 4. Vilken nyckel passar i vilket lås?\n(1) Ingen nyckel har samma nummer som det lås den passar i.\n(2) Summan av låsets och nyckelns nummer är densamma för varje par av lås och passande nyckel.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Det finns flera sätt där ingen nyckel passar i låset med samma nummer, till exempel nyckel 1 i lås 2, 2 i 1, 3 i 4 och 4 i 3, eller nyckel 1 i lås 4, 2 i 3, 3 i 2 och 4 i 1. Inte tillräckligt.\n(2) De fyra paren har tillsammans summan (1 + 2 + 3 + 4) + (1 + 2 + 3 + 4) = 20. Eftersom summan är lika stor för varje par är den 20/4 = 5. Då passar nyckel 1 i lås 4, nyckel 2 i lås 3, nyckel 3 i lås 2 och nyckel 4 i lås 1. Tillräckligt.\nTillräcklig information erhålls i (2) men ej i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En cirkelformad pizza delas i sex likadana bitar i form av cirkelsektorer. Hur stor är pizzans omkrets?\n(1) Arean av varje bit är 96π cm².\n(2) Cirkelbågen på varje bit är 8π cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Hela pizzans area är 6 · 96π = 576π cm². Då är πr² = 576π, så r² = 576 och r = 24 cm. Omkretsen är 2π · 24 = 48π cm. Tillräckligt.\n(2) De sex cirkelbågarna bildar tillsammans hela omkretsen: 6 · 8π = 48π cm. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Bo ställer sig sist i en kö för att åka berg- och dalbana. Efter 10 minuter står det 100 personer i kön. Hur många personer står före Bo i kön vid denna tidpunkt?\n(1) Sedan Bo ställde sig i kön har antalet personer före honom i kön minskat med 55.\n(2) Sedan Bo ställde sig i kön har antalet personer efter honom i kön ökat med 36.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Vi vet inte hur många som stod före Bo från början, så vi vet inte hur många som står före honom nu. Inte tillräckligt.\n(2) Bo ställde sig sist, så då stod ingen efter honom. Nu står alltså 36 personer efter honom. Av de 100 personerna i kön är en Bo och 36 står efter honom, så 100 − 1 − 36 = 63 står före honom. Tillräckligt.\nTillräcklig information erhålls i (2) men ej i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur många av länen hade en större andel kvinnliga chefer än riket som helhet?",
+      "options": [
+        "4",
+        "6",
+        "12",
+        "14"
+      ],
+      "blindAnswer": 1,
+      "explain": "Andelen kvinnliga chefer står under Chefer i kolumnen Könsfördelning %, Kvinnor. För hela riket är den 29 procent. Högre andel har Gotlands län (35), Uppsala län (35), Stockholms län (34), Kronobergs län (32), Hallands län (30) och Västerbottens län (30), alltså 6 län. Östergötlands län har 29 procent, lika mycket som riket, och alla övriga län ligger under. Tabellen är sorterad efter just den här kolumnen, så det räcker att räkna uppifrån tills värdet når 29.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "Räknat med antalen har även Östergötland något större andel än riket (1 730/5 970 ≈ 29,0 % mot 48 270/168 590 ≈ 28,6 %), men 7 finns inte bland alternativen; förklaringen följer procentkolumnen.",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Studera Gävleborgs län. Hur stor var skillnaden mellan andelen män bland samtliga anställda och andelen män bland chefer?",
+      "options": [
+        "8 procentenheter",
+        "10 procentenheter",
+        "13 procentenheter",
+        "16 procentenheter"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av raden för Gävleborgs län i de två kolumnerna Könsfördelning %, Män. Bland cheferna var 80 procent män och bland samtliga anställda 64 procent. Skillnaden är 80 − 64 = 16 procentenheter. Svaren 10 och 13 procentenheter får man om man av misstag läser raden ovanför (Västernorrlands län, 79 − 69) eller raden nedanför (Kalmar län, 82 − 69).",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Identifiera länet som hade den jämnaste könsfördelningen bland samtliga anställda. Vilket var förhållandet kvinnor : män bland cheferna i detta län?",
+      "options": [
+        "1:1",
+        "1:2",
+        "1:3",
+        "1:4"
+      ],
+      "blindAnswer": 1,
+      "explain": "Under Samtliga anställda, i kolumnerna Könsfördelning %, har Stockholms län 44 procent kvinnor och 56 procent män. Det ligger närmast hälften var av alla län; nästa är 41 och 59 procent. Bland cheferna i Stockholms län var 19 340 kvinnor och 37 410 män, och 37 410/19 340 ≈ 1,9. Förhållandet är alltså ungefär 1:2. Samma sak syns i procenten för cheferna: 34 procent kvinnor och 66 procent män, och 66/34 ≈ 1,9.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera hur andelen hushåll med 3 personer har förändrats. Mellan vilka av nedanstående år skedde den största förändringen, i procentenheter räknat?",
+      "options": [
+        "1920 och 1930",
+        "1930 och 1945",
+        "1945 och 1950",
+        "1970 och 1980"
+      ],
+      "blindAnswer": 1,
+      "explain": "Andelen hushåll med 3 personer är höjden på den svarta delen av stapeln. Läs av dess undre och övre kant: 1920 cirka 14,5 till 28,5 (14 procent), 1930 cirka 15,5 till 32 (17 procent), 1945 cirka 25 till 50 (25 procent), 1950 cirka 45,5 till 69 (24 procent), 1970 cirka 55 till 74,5 (20 procent) och 1980 cirka 64 till 79 (15 procent). Förändringarna blir ungefär 3 procentenheter mellan 1920 och 1930, 8 mellan 1930 och 1945, 1 mellan 1945 och 1950 och 4–5 mellan 1970 och 1980. Störst är förändringen mellan 1930 och 1945.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "År 1980 fanns det cirka 3 498 000 hushåll i Sverige. Hur många hade hushållsstorleken 2 personer?",
+      "options": [
+        "1 100 000",
+        "1 400 000",
+        "1 700 000",
+        "2 300 000"
+      ],
+      "blindAnswer": 0,
+      "explain": "I stapeln för 1980 går den randiga delen (2 personer) från cirka 33 till cirka 64 procent, så den är ungefär 31 procent av hushållen. 0,31 · 3 498 000 ≈ 1 084 000, vilket ligger närmast 1 100 000. Svaret 2 300 000 lockar om man läser av den randiga delens övre kant, 64 procent, i stället för dess höjd.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Jämför 1910 och 1990. För vilken hushållsstorlek gällde att dess andel hade förändrats med 33 procentenheter?",
+      "options": [
+        "5+ personer",
+        "4 personer",
+        "2 personer",
+        "1 person"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av höjden på varje del av staplarna för 1910 och 1990. 1 person (den vita delen längst ned) ökade från cirka 6 till cirka 39,5 procent, alltså med ungefär 33 procentenheter. 2 personer (randig) ökade från cirka 8 till cirka 31 procent, ungefär 23 procentenheter. 4 personer (prickig) minskade från cirka 14 till cirka 12 procent, och 5+ personer (grå) minskade från cirka 59 till cirka 5 procent, ungefär 54 procentenheter. Bara 1 person stämmer.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Utgå från fågeltornet som ligger vid Gungflyet. I vilken riktning ligger det andra fågeltornet?",
+      "options": [
+        "Sydsydostlig riktning",
+        "Sydsydvästlig riktning",
+        "Nordnordvästlig riktning",
+        "Nordnordostlig riktning"
+      ],
+      "blindAnswer": 3,
+      "explain": "Enligt teckenförklaringen är ett fågeltorn en ring med en prick i mitten, och norrpilen till höger på kartan pekar rakt uppåt. Fågeltornet vid Gungflyet står vid ordet fågeltorn. Det andra fågeltornet står vid den västra spetsen av Kävsjön, en bit ovanför och lite till höger om det första. Riktningen är alltså mest norrut och något österut, det vill säga nordnordostlig.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stort är området som har tillträdesförbud perioden mars–september?",
+      "options": [
+        "3 km²",
+        "7 km²",
+        "11 km²",
+        "15 km²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tillträdesförbud 1/3–30/9, alltså mars–september, är den grova streckade linjen i teckenförklaringen. Den går runt Kävsjön och Gungflyet. Mätt med skalstocken är området cirka 2,7 km brett i öst–västlig riktning och cirka 3,4 km i nord–sydlig riktning, så en rektangel runt det är ungefär 2,7 · 3,4 ≈ 9 km². Området fyller ungefär två tredjedelar av rektangeln, eftersom hörnen faller bort, vilket ger cirka 6–7 km². Närmast är 7 km²; 11 km² är mer än hela rektangeln runt området.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Utgå från den sydligast belägna parkeringen i området. Följ vandringsleden norrut fram till järnvägen. Hur lång är sträckan?",
+      "options": [
+        "6 km",
+        "8 km",
+        "11 km",
+        "13 km"
+      ],
+      "blindAnswer": 2,
+      "explain": "Den sydligaste parkeringen (P) ligger vid norra änden av Herrestadsjön. Vandringsleden (prickad linje) går därifrån snett mot nordväst över mossen till Lövö, cirka 6,5 km, och vänder sedan mot nordost fram till järnvägen vid parkeringen sydväst om Gungflyet, ytterligare cirka 4,5 km. Skalstocken visar 5 km, och hela sträckan blir ungefär 11 km.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket cirkeldiagram illustrerar förhållandet mellan antalet förskrivningar per tusen kvinnor av nitrofurantoin och fluorokinoloner år 2013?",
+      "options": [
+        "Cirkeldiagram A",
+        "Cirkeldiagram B",
+        "Cirkeldiagram C",
+        "Cirkeldiagram D"
+      ],
+      "blindAnswer": 0,
+      "explain": "År 2013 ligger nitrofurantoin (svart heldragen linje) på cirka 46,5 och fluorokinoloner (grå heldragen linje) på cirka 19,5 förskrivningar per 1 000 kvinnor. Tillsammans är det cirka 66, och nitrofurantoin utgör 46,5/66 ≈ 0,70, alltså ungefär 70 procent. I cirkeldiagram A är den svarta delen (nitrofurantoin) ungefär 70 procent av cirkeln. B har ungefär 60 procent svart, C ungefär 40 procent och D ungefär 30 procent; D lockar om man blandar ihop färgerna.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.18,
+            0.163,
+            0.905,
+            0.247
+          ]
+        ]
+      },
+      "note": "Bildalternativ: cirkeldiagrammen A–D (från uppgiftssidan) står under linjediagrammet i figuren.",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de redovisade antibiotikaförskrivningarna per tusen kvinnor år 2003 avsåg pivmecillinam?",
+      "options": [
+        "25 procent",
+        "35 procent",
+        "50 procent",
+        "75 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av de fyra linjerna år 2003: pivmecillinam (grå streckad) cirka 36, nitrofurantoin (svart heldragen) cirka 13,5, fluorokinoloner (grå heldragen) cirka 47 och trimetoprim (svart streckad) cirka 47 förskrivningar per 1 000 kvinnor. Summan är ungefär 36 + 13,5 + 47 + 47 = 143,5. Andelen pivmecillinam är 36/143,5 ≈ 0,25, alltså 25 procent. Svaret 35 procent lockar om man tar avläsningen 36 förskrivningar per 1 000 kvinnor för en andel i procent.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "År 2011 var antalet kvinnor i åldrarna 18–79 år cirka 3,5 miljoner. Hur många förskrivningar gjordes totalt av de fyra redovisade antibiotikasorterna under detta år?",
+      "options": [
+        "145 000",
+        "350 000",
+        "510 000",
+        "675 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av linjerna år 2011: pivmecillinam cirka 67, nitrofurantoin cirka 43,5, fluorokinoloner cirka 21 och trimetoprim cirka 14,5 förskrivningar per 1 000 kvinnor. Tillsammans är det ungefär 146 förskrivningar per 1 000 kvinnor. 3,5 miljoner kvinnor är 3 500 tusental, så antalet förskrivningar är cirka 146 · 3 500 ≈ 511 000. Närmast är 510 000. Svaret 145 000 får man om man multiplicerar med 1 000 i stället för med 3 500.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
