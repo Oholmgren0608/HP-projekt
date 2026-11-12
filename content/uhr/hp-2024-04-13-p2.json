@@ -1,0 +1,777 @@
+{
+  "examId": "hp-2024-04-13",
+  "passNumber": 2,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "En rätvinklig triangel och en kvadrat är placerade enligt figuren. Hur lång är sträckan x?",
+      "options": [
+        "6 cm",
+        "7 cm",
+        "8 cm",
+        "9 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvadratens area är 16 cm², så dess sida är √16 = 4 cm. Triangelns vågräta katet är kvadratens översida och är alltså också 4 cm. Med triangelns area 6 cm² blir den lodräta kateten h: 4 · h/2 = 6, alltså h = 3 cm. Sträckan x består av kvadratens sida och triangelns lodräta katet: x = 4 + 3 = 7 cm.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.22,
+          0.135,
+          0.44,
+          0.33
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "x och y uppfyller sambandet 2x + 3xy − 4y = 10. Vilket värde har x om y = −2?",
+      "options": [
+        "−18",
+        "−9/2",
+        "−2",
+        "−1/2"
+      ],
+      "blindAnswer": 3,
+      "explain": "Sätt in y = −2: 2x + 3x · (−2) − 4 · (−2) = 10, alltså 2x − 6x + 8 = 10. Det ger −4x = 2 och x = −1/2. Kontroll: 2 · (−1/2) + 3 · (−1/2) · (−2) − 4 · (−2) = −1 + 3 + 8 = 10. Det är lätt att missa att −4 · (−2) blir +8; med −8 får man −4x = 18 och x = −9/2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar grafen till funktionen f?",
+      "passage": "f(x) = x/2 − 1",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 3,
+      "explain": "f(x) = x/2 − 1 är en rät linje med lutningen 1/2 som skär y-axeln i y = −1. Graf A och graf B lutar nedåt och skär y-axeln i 1, så de faller bort. Graf C skär y-axeln i −1 men är för brant: den stiger 2 steg för varje steg åt höger (lutningen 2). Graf D skär y-axeln i −1 och går genom (2, 0), så dess lutning är 1/2. Kontroll: f(2) = 2/2 − 1 = 0.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.19,
+          0.16,
+          0.45,
+          0.63
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "60 % av x är 39. Vad är x?",
+      "options": [
+        "60",
+        "65",
+        "72",
+        "78"
+      ],
+      "blindAnswer": 1,
+      "explain": "60 % av x är 0,6x, så 0,6x = 39 och x = 39/0,6 = 65. Kontroll: 10 % av 65 är 6,5, och 60 % är då 6 · 6,5 = 39.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar a(b + c) − b(a + c) + c(b − a)?",
+      "options": [
+        "0",
+        "ab − bc − ac",
+        "2(ab + ac + bc)",
+        "2c + bc − a"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in i parenteserna: a(b + c) = ab + ac, −b(a + c) = −ab − bc och c(b − a) = bc − ac. Summan blir ab + ac − ab − bc + bc − ac. Termerna tar ut varandra parvis (ab − ab, ac − ac och −bc + bc), så uttrycket är 0 för alla värden på a, b och c. Kontroll med a = 1, b = 2 och c = 3: 1 · 5 − 2 · 4 + 3 · 1 = 5 − 8 + 3 = 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln x?",
+      "options": [
+        "25°",
+        "32°",
+        "57°",
+        "58°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Triangeln ABC har en rät vinkel vid B och vinkeln 65° vid C, så vinkeln A är 180° − 90° − 65° = 25°. Kalla punkten där sträckan från B möter AC för D. Vinkeln 123° är vinkeln ADB, och den ligger i triangeln ABD tillsammans med vinkeln A och vinkeln x. Alltså är x = 180° − 25° − 123° = 32°. Kontroll: i triangeln BCD är vinkeln vid D 180° − 123° = 57° och vinkeln vid B 180° − 57° − 65° = 58°, och 32° + 58° = 90°. 57° och 58° är alltså vinklarna i den andra triangeln.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.22,
+          0.54,
+          0.55,
+          0.71
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilken av punkterna i koordinatsystemet nedan kan ha koordinaterna (a²b, ab³)?",
+      "passage": "a > 0\nb < 0",
+      "options": [
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "blindAnswer": 2,
+      "explain": "Bestäm tecknet på varje koordinat. x-koordinaten a²b: a² är positivt och b negativt, så a²b är negativt. y-koordinaten ab³: b³ är negativt eftersom b är negativt och exponenten udda, och a är positivt, så ab³ är negativt. Båda koordinaterna är negativa, och punkten ligger alltså nere till vänster om origo (tredje kvadranten). Det är punkten R.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.21,
+          0.175,
+          0.46,
+          0.34
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "En stängd låda med innermåtten 50 cm × 54 cm × 72 cm innehåller klossar med måtten 5 cm × 6 cm × 9 cm. Hur många klossar kan det som mest finnas i lådan?",
+      "options": [
+        "270",
+        "500",
+        "650",
+        "720"
+      ],
+      "blindAnswer": 3,
+      "explain": "Lådans volym är 50 · 54 · 72 = 194 400 cm³ och en kloss volym är 5 · 6 · 9 = 270 cm³, så det får plats högst 194 400/270 = 720 klossar. Lådan går också att fylla helt: lägg klossarna med 5 cm-sidan längs 50 cm, 6 cm-sidan längs 54 cm och 9 cm-sidan längs 72 cm. Då blir det 10 · 9 · 8 = 720 klossar utan tomrum.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar 2xy(3xy + 15y)/(6xy²)?",
+      "passage": "xy ≠ 0",
+      "options": [
+        "x + 5",
+        "3x + 15",
+        "x + 15y",
+        "(2x²y + 5)/(2xy)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bryt ut 3y ur parentesen: 3xy + 15y = 3y(x + 5). Täljaren blir 2xy · 3y(x + 5) = 6xy²(x + 5). Dela med nämnaren 6xy², som inte är 0 eftersom xy ≠ 0, så återstår x + 5. Kontroll med x = 1 och y = 1: 2 · (3 + 15)/6 = 36/6 = 6, och 1 + 5 = 6. 3x + 15 får man om man glömmer faktorn 3 i nämnaren.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket är det största möjliga värdet på z − x?",
+      "passage": "För heltalen x, y och z gäller att xyz = 12 och att 0 < x < y < z.",
+      "options": [
+        "1",
+        "3",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 2,
+      "explain": "x, y och z är tre olika positiva heltal med produkten 12. Eftersom x < y < z måste x³ < 12, så x är 1 eller 2. Med x = 1 ska yz = 12 med 1 < y < z, vilket ger 2 · 6 eller 3 · 4. Med x = 2 ska yz = 6 med y > 2, och det går inte. De möjliga tripplarna är alltså 1, 2, 6 och 1, 3, 4, som ger z − x = 5 respektive 3. Det största möjliga värdet är 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Hur stor är då sannolikheten att alla tre lådorna innehåller en röd och en vit kula?",
+      "passage": "Laila har sex enfärgade kulor och tre lådor: A, B och C. I låda A finns det två röda och en vit kula. I låda B finns det en röd och två vita kulor. Låda C är tom. Laila plockar slumpmässigt en kula ur låda A och en kula ur låda B och lägger dem i låda C.",
+      "options": [
+        "1/3",
+        "2/3",
+        "1/9",
+        "4/9"
+      ],
+      "blindAnswer": 3,
+      "explain": "Låda A har en röd och en vit kula kvar bara om Laila tar en röd kula ur A, och sannolikheten för det är 2/3. Låda B har en röd och en vit kvar bara om hon tar en vit kula ur B, också med sannolikheten 2/3. Då hamnar en röd och en vit kula i låda C, så alla tre lådorna stämmer. De två dragningarna är oberoende, så sannolikheten är 2/3 · 2/3 = 4/9. Svaret 2/3 lockar om man bara tänker på en av lådorna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 2(2⁵ + 2⁵)?",
+      "options": [
+        "2⁶",
+        "2⁷",
+        "2¹¹",
+        "2¹²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Parentesen innehåller två lika termer: 2⁵ + 2⁵ = 2 · 2⁵ = 2⁶. Multiplicera sedan med 2 en gång till: 2 · 2⁶ = 2⁷. Kontroll: 2⁵ = 32, så 2(32 + 32) = 2 · 64 = 128 = 2⁷. Den som lägger ihop exponenterna (2⁵ + 2⁵ = 2¹⁰) hamnar på 2¹¹, men exponenterna adderas bara vid multiplikation, inte vid addition.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x − 5 = y + 5\ny = 0\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in y = 0 i den första ekvationen: x − 5 = 0 + 5 = 5. Då är x = 5 + 5 = 10. Kvantitet I är alltså 10, och det är större än 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "J är det nionde jämna talet efter 15 och U är det sjunde udda talet efter 18.\nKvantitet I: J − U\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "De jämna talen efter 15 är 16, 18, 20, 22, 24, 26, 28, 30, 32 …, så det nionde är J = 32. De udda talen efter 18 är 19, 21, 23, 25, 27, 29, 31 …, så det sjunde är U = 31. J − U = 32 − 31 = 1, som är större än 0. Snabbare: det n:te jämna talet efter 15 är 14 + 2n och det n:te udda talet efter 18 är 17 + 2n, så J = 14 + 18 = 32 och U = 17 + 14 = 31.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Medelvärdet av 1/10 och 1/5\nKvantitet II: 1/7",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "1/10 = 0,1 och 1/5 = 0,2, så medelvärdet är (0,1 + 0,2)/2 = 0,15. 1/7 är ungefär 0,143. Kvantitet I är större. Med bråk: 0,15 = 3/20 = 21/140 och 1/7 = 20/140.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a ≤ −1\nb < 0\nKvantitet I: a/b\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Både a och b är negativa, så a/b är positivt, men hur stort det är beror på talen. Med a = −1 och b = −2 är a/b = 1/2, alltså mindre än 1. Med a = −2 och b = −1 är a/b = 2, alltså större än 1. Relationen kan gå åt båda hållen, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Omkretsen av den regelbundna femhörningen ABCDE är 75 cm.\nKvantitet I: Den sammanlagda längden av de tre sträckorna AB, BE och ED\nKvantitet II: 45 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Femhörningen är regelbunden, så varje sida är 75/5 = 15 cm, och AB = ED = 15 cm. BE är en diagonal. I triangeln ABE är AB = AE = 15 cm och vinkeln vid A är 108° (vinkeln i en regelbunden femhörning). Den största vinkeln i en triangel står mot den längsta sidan, så BE är längre än 15 cm. Alltså är AB + BE + ED större än 15 + 15 + 15 = 45 cm. (Diagonalen är cirka 24,3 cm, så summan är cirka 54 cm.)",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.21,
+          0.135,
+          0.42,
+          0.268
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 50 procent av ett tal större än 1 000\nKvantitet II: 75 procent av ett tal mindre än 800",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvantitet I är större än 0,5 · 1 000 = 500 och kvantitet II är mindre än 0,75 · 800 = 600, så båda kan ligga mellan 500 och 600. Med talen 1 100 och 780 blir kvantitet I 550 och kvantitet II 585, och då är II störst. Med talen 2 000 och 780 blir kvantitet I 1 000, och då är I störst. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "3/2 + x/3 = 1\nKvantitet I: x\nKvantitet II: −1/6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lös ekvationen: x/3 = 1 − 3/2 = −1/2, så x = 3 · (−1/2) = −3/2 = −1,5. Kvantitet II är −1/6, ungefär −0,17. −1,5 ligger längre till vänster på tallinjen, så kvantitet II är större. Den som delar −1/2 med 3 i stället för att multiplicera får x = −1/6 och tror att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen L₁ går genom punkterna (−1, 3) och (1, 2). Linjen L₂ är vinkelrät mot L₁ och går genom origo.\nKvantitet I: Riktningskoefficienten för L₁\nKvantitet II: Riktningskoefficienten för L₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "L₁ har riktningskoefficienten (2 − 3)/(1 − (−1)) = −1/2. För två vinkelräta linjer är produkten av riktningskoefficienterna −1, så L₂ har riktningskoefficienten −1/(−1/2) = 2. Att L₂ går genom origo påverkar inte lutningen. Kvantitet II (2) är större än kvantitet I (−1/2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Den rätvinkliga triangeln T har sidlängderna 3 cm, 4 cm och 5 cm.\nT har samma omkrets som kvadraten K.\nKvantitet I: Arean av T\nKvantitet II: Arean av K",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "I T är 5 cm hypotenusan och 3 cm och 4 cm kateterna, så arean är 3 · 4/2 = 6 cm². Omkretsen är 3 + 4 + 5 = 12 cm. Kvadraten K har också omkretsen 12 cm, så dess sida är 12/4 = 3 cm och arean 3 · 3 = 9 cm². Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (x⁴ + 1)(x³ − x)\nKvantitet II: (x⁵ + x)(x² − 1)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Bryt ut x ur den andra parentesen i kvantitet I: x³ − x = x(x² − 1), så I = x(x⁴ + 1)(x² − 1). Bryt ut x ur den första parentesen i kvantitet II: x⁵ + x = x(x⁴ + 1), så II = x(x⁴ + 1)(x² − 1). Uttrycken är identiska och alltså lika stora för alla x. Kontroll med x = 2: I = 17 · 6 = 102 och II = 34 · 3 = 102.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x är ett heltal. Vilket värde har x?\n(1) x ≥ 3\n(2) x ≤ 4",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) x kan vara 3, 4, 5 och så vidare. Inte tillräckligt.\n(2) x kan vara 4, 3, 2 och så vidare. Inte tillräckligt.\n(1) och (2) tillsammans: 3 ≤ x ≤ 4, så x är 3 eller 4. Två värden är fortfarande möjliga, så inte ens båda påståendena tillsammans räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tre böcker ligger på ett bord. Hur många sidor har boken med minst antal sidor?\n(1) De tre böckerna har sammanlagt 792 sidor. Boken med flest sidor har 348 sidor.\n(2) Medelvärdet av antalet sidor i de tre böckerna är lika med antalet sidor i den bok som varken har störst eller minst antal sidor.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) De två andra böckerna har tillsammans 792 − 348 = 444 sidor, men fördelningen är okänd (till exempel 200 och 244 eller 150 och 294). Inte tillräckligt.\n(2) Mellanboken har lika många sidor som medelvärdet, men utan några antal går det inte att räkna ut den minsta boken. Inte tillräckligt.\n(1) och (2) tillsammans: Medelvärdet är 792/3 = 264, så mellanboken har 264 sidor. Den minsta boken har då 792 − 348 − 264 = 180 sidor. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Eva har fyra askar: en röd, en blå, en svart och en grå. En av askarna innehåller pärlor, en knappar, en paljetter och en limstift. Ingen ask är tom. I vilken ask har Eva limstift?\n(1) I den blå eller den grå asken finns det pärlor. Limstift finns inte i den röda asken.\n(2) I den svarta asken finns det paljetter. Limstift finns i den blå eller den grå asken.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Limstiftet kan ligga i den svarta asken eller i den av den blå och den grå asken som inte har pärlor. Inte tillräckligt.\n(2) Limstiftet ligger i den blå eller den grå asken, men vilken av dem framgår inte. Inte tillräckligt.\n(1) och (2) tillsammans: Den svarta asken har paljetter. Pärlorna och limstiftet ligger i den blå och den grå asken, och den röda asken har knappar. Men det går inte att avgöra om limstiftet ligger i den blå eller i den grå asken. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Johan cyklar samma runda vid fem tillfällen. Hans medelhastighet varierar från gång till gång. Hur lång är Johans cykelrunda?\n(1) Johans medelhastighet för en cykelrunda är som lägst 15 km/h och som högst 25 km/h. Cykelrundan tar som minst 12 minuter och som mest 20 minuter.\n(2) Om man lägger ihop de fem cykelrundorna blir den sammanlagda tiden 75 minuter och medelhastigheten blir 20 km/h.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Rundan är lika lång varje gång, så den långsammaste rundan är den som tar längst tid. 15 km/h i 20 minuter (1/3 timme) ger 15 · 1/3 = 5 km. Det stämmer med den snabbaste rundan: 25 km/h i 12 minuter (1/5 timme) ger 25 · 1/5 = 5 km. Tillräckligt.\n(2) Fem rundor på sammanlagt 75 minuter (1,25 timmar) med medelhastigheten 20 km/h är 20 · 1,25 = 25 km, så en runda är 25/5 = 5 km. Tillräckligt.\nVarje påstående räcker alltså för sig. (1) ser ut att bara ge gränser, men eftersom sträckan är densamma hör den lägsta hastigheten ihop med den längsta tiden.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Nils spelar ett tv-spel där det finns stora och små monster. Vart och ett av monstren är antingen rött eller grönt. Nils besegrar sammanlagt 48 monster. Hur många röda monster besegrar han?\n(1) Nils besegrar 13 små gröna monster och 9 stora röda monster.\n(2) Av de 12 stora monster som Nils besegrar är tre fjärdedelar röda.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Monstren är av fyra slag: stora röda, stora gröna, små röda och små gröna.\n(1) Stora gröna och små röda är tillsammans 48 − 13 − 9 = 26, men fördelningen mellan dem är okänd. Inte tillräckligt.\n(2) Av de 12 stora monstren är 9 röda och 3 gröna. De 36 små monstren kan vara röda eller gröna i vilken fördelning som helst. Inte tillräckligt.\n(1) och (2) tillsammans: 3 stora gröna enligt (2) ger 26 − 3 = 23 små röda. De röda monstren är 9 + 23 = 32. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Fyra enfärgade brevlådor sitter på rad på en vägg. En är grön, en är röd, en är svart och en är vit. Vilken färg har brevlådan längst till höger?\n(1) Den gröna brevlådan sitter mitt emellan den svarta och den vita. Den svarta brevlådan sitter varken längst till höger eller längst till vänster.\n(2) Den röda brevlådan sitter längst till vänster. Om den svarta och den vita brevlådan skulle byta plats, så skulle den vita brevlådan hamna mitt emellan den röda och den gröna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Numrera platserna 1–4 från vänster.\n(1) Den gröna sitter mitt emellan den svarta och den vita, så de tre sitter i rad med den gröna i mitten. Den svarta sitter på plats 2 eller 3. Plats 2 ger röd, svart, grön, vit och plats 3 ger vit, grön, svart, röd. Längst till höger sitter alltså den vita eller den röda. Inte tillräckligt.\n(2) Den röda sitter på plats 1. Efter bytet sitter den vita på den svartas plats, och den platsen ska ligga mitt emellan plats 1 och den gröna. Det går bara om den gröna sitter på plats 3 och den svarta på plats 2 (grön på plats 2 eller 4 ger ingen plats mitt emellan). Den vita får plats 4, så ordningen är röd, svart, grön, vit. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Vilket av svarsförslagen anger de två kommungrupper som var mest lika varandra vad gäller antal tågankomster och genomsnittlig försening?",
+      "options": [
+        "Storstäder och Kommuner i tätbefolkad region",
+        "Förortskommuner till storstäder och Pendlingskommuner",
+        "Pendlingskommuner och Varuproducerande kommuner",
+        "Varuproducerande kommuner och Kommuner i tätbefolkad region"
+      ],
+      "blindAnswer": 0,
+      "explain": "Jämför båda staplarna för varje kommungrupp: den grå (antal ankomster, vänster axel) och den svarta (genomsnittlig försening, höger axel). Storstäder har cirka 495 tusen ankomster och cirka 1,4 minuters försening, och Kommuner i tätbefolkad region har cirka 480 tusen ankomster och cirka 1,5 minuter. De är nästan lika i båda avseendena. Pendlingskommuner (cirka 480 tusen, 1,7 minuter) och Varuproducerande kommuner (cirka 390 tusen, 1,7 minuter) har samma försening men skiljer sig med omkring 90 tusen ankomster, och Varuproducerande kommuner skiljer sig lika mycket från Kommuner i tätbefolkad region. Förortskommuner till storstäder (cirka 610 tusen, 1,0 minut) skiljer sig tydligt från Pendlingskommuner på båda punkterna.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur många tågankomster finns redovisade för Förortskommuner till storstäder jämfört med Förortskommuner till större städer?",
+      "options": [
+        "Hälften så många",
+        "Lika många",
+        "Dubbelt så många",
+        "Tre gånger så många"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av de grå staplarna mot den vänstra axeln. Förortskommuner till storstäder (den andra stapeln från vänster) når cirka 610 tusen ankomster och Förortskommuner till större städer (den fjärde stapeln) cirka 325 tusen. 610/325 ≈ 1,9, alltså ungefär dubbelt så många. Se upp så att du inte tar stapeln för Större städer (cirka 1 150 tusen), som står mellan de två.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur många minuter sammanlagt var de ankommande tågen försenade i Kommuner i glesbefolkad region?",
+      "options": [
+        "220 000 minuter",
+        "330 000 minuter",
+        "440 000 minuter",
+        "550 000 minuter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kommuner i glesbefolkad region är stapelparet längst till höger. Den grå stapeln visar cirka 80 tusen ankomster (vänster axel) och den svarta en genomsnittlig försening på cirka 4,1 minuter per ankomst (höger axel). Den sammanlagda förseningen är antalet ankomster gånger den genomsnittliga förseningen: 80 000 · 4,1 ≈ 330 000 minuter.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag beskriver bäst förhållandet mellan opererande, invärtesmedicinska och barnmedicinska specialiteter vad gäller det totala antalet specialistbevis 2012?",
+      "options": [
+        "5:3:1",
+        "5:4:1",
+        "6:4:1",
+        "6:5:1"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd raderna Summa i kolumnen för 2012 (det totala antalet, inte Därav <65 år). Opererande specialiteter: 15 016, invärtesmedicinska: 11 483 och barnmedicinska: 3 008. Dela med det minsta talet: 15 016/3 008 ≈ 5,0 och 11 483/3 008 ≈ 3,8. Förhållandet är alltså ungefär 5 : 3,8 : 1, vilket ligger närmast 5:4:1.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Identifiera de tre specialiteterna inom invärtesmedicin med flest utfärdade specialistbevis 2011. Hur stor andel utgjorde dessa av det totala antalet specialistbevis inom invärtesmedicin samma år?",
+      "options": [
+        "55 procent",
+        "65 procent",
+        "75 procent",
+        "85 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "I kolumnen för 2011 har Internmedicin (5 603), Kardiologi (1 388) och Geriatrik (1 143) flest specialistbevis bland de invärtesmedicinska specialiteterna; därefter kommer Lungsjukdomar med 532. Tillsammans har de tre 5 603 + 1 388 + 1 143 = 8 134. Summan för de invärtesmedicinska specialiteterna 2011 är 11 099. Andelen är 8 134/11 099 ≈ 0,73, alltså ungefär 75 procent.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilken opererande specialitet hade 2010 flest specialistbevis som hörde till personer som var 65 år eller äldre?",
+      "options": [
+        "Kirurgi",
+        "Ortopedi",
+        "Anestesi och intensivvård",
+        "Obstetrik och gynekologi"
+      ],
+      "blindAnswer": 0,
+      "explain": "Tabellen anger det totala antalet och därav antalet som hörde till personer yngre än 65 år, så antalet för 65 år eller äldre är skillnaden. För 2010: Kirurgi 3 046 − 2 029 = 1 017, Ortopedi 2 008 − 1 587 = 421, Anestesi och intensivvård 2 683 − 2 209 = 474 och Obstetrik och gynekologi 2 305 − 1 602 = 703. Flest har Kirurgi. Anestesi och intensivvård lockar eftersom den har det största talet i kolumnen <65 år, men det gäller de yngre.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stort var antalet personer som flyttade inom Västerort jämfört med antalet som flyttade från Söderort till Västerort?",
+      "options": [
+        "Fyra gånger så stort",
+        "Fem gånger så stort",
+        "Sex gånger så stort",
+        "Sju gånger så stort"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd den nedre figuren. Dubbelpilen i Västerort visar att 19 173 personer flyttade inom Västerort. Pilen från Söderort till Västerort (den som pekar åt vänster, in i Västerort) visar 3 167 personer. 19 173/3 167 ≈ 6,1, alltså ungefär sex gånger så stort.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur många fler flyttade inom Stockholms kommun än till Stockholms kommun?",
+      "options": [
+        "34 927",
+        "35 619",
+        "37 247",
+        "42 074"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd den övre figuren. Inom Stockholms kommun flyttade 104 665 personer (dubbelpilen). Till kommunen flyttade 16 483 från andra länder, 20 587 från övriga Sverige och 32 668 från resten av Stockholms län, sammanlagt 16 483 + 20 587 + 32 668 = 69 738. Skillnaden är 104 665 − 69 738 = 34 927. Räknar man i stället med dem som flyttade från kommunen (9 553 + 16 660 + 36 378 = 62 591) får man 42 074.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vad blir flyttnettot om man räknar antalet personer som flyttade till Söderort och tar bort antalet som flyttade från Söderort?",
+      "options": [
+        "−2 168",
+        "−967",
+        "+1 561",
+        "+2 528"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd den nedre figuren och räkna alla pilar in i och ut ur Söderort. Till Söderort: 24 799 utifrån, 3 148 från Västerort och 7 986 från Inre staden, sammanlagt 35 933. Från Söderort: 23 832 ut ur kommunen, 3 167 till Västerort och 6 406 till Inre staden, sammanlagt 33 405. Flyttnettot är 35 933 − 33 405 = +2 528. Flyttningarna inom Söderort (25 654) påverkar inte nettot. Den som bara räknar flyttningarna till och från de två andra delarna får +1 561.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Studera de olika djurslagen med avseende på hur stor andel av den totala slakten som utgjordes av ekologiskt uppfödda djur. Hur stor var den största noterade ökningen av denna andel om man jämför 2009 och 2015?",
+      "options": [
+        "5 procentenheter",
+        "8 procentenheter",
+        "55 procentenheter",
+        "75 procentenheter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det nedersta diagrammet (andelar). Får och lamm ökade från cirka 14 procent 2009 till cirka 22 procent 2015, alltså med cirka 8 procentenheter. Nötkreatur ökade från cirka 9 till cirka 14 procent, alltså med cirka 5 procentenheter, och för svin och kyckling ändrades andelen bara med några tiondels procentenheter. Den största ökningen är 8 procentenheter. 55 lockar eftersom andelen för får och lamm ökade med ungefär 55 procent (8/14 ≈ 0,55), men frågan gäller procentenheter.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av slakten av de redovisade ekologiskt uppfödda djurslagen 2014 utgjorde slakten av svin?",
+      "options": [
+        "1/6",
+        "1/4",
+        "1/3",
+        "2/5"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av 2014 i de två översta diagrammen: svin cirka 4 000 ton, får och lamm cirka 1 150 ton, kyckling cirka 350 ton och nötkreatur cirka 19 100 ton (det mellersta diagrammet). Sammanlagt är det cirka 24 600 ton. Svinens andel är 4 000/24 600 ≈ 0,16, vilket ligger närmast 1/6 ≈ 0,17. Glöm inte nötkreaturen, som står i ett eget diagram och är den största delen av slakten.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Slakten av ekologiskt uppfödda får och lamm utgör en mindre andel av den totala slakten av får och lamm. Hur stor var den totala slakten av får och lamm 2012?",
+      "options": [
+        "1 000 ton",
+        "2 000 ton",
+        "4 000 ton",
+        "5 000 ton"
+      ],
+      "blindAnswer": 3,
+      "explain": "Enligt det översta diagrammet var slakten av ekologiskt uppfödda får och lamm cirka 1 000 ton 2012. Enligt det nedersta diagrammet utgjorde den cirka 20 procent av den totala slakten av får och lamm det året. Den totala slakten var alltså cirka 1 000/0,20 = 5 000 ton. 1 000 ton är bara den ekologiska delen.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}

@@ -58,11 +58,27 @@ async function rotated(buf: Buffer, rotate: number | undefined): Promise<Buffer>
   return sharp(buf).rotate(rotate).png().toBuffer();
 }
 
-/** DTK-sidans innehåll: under sidhuvudet, ovanför sidnumret, innanför skärmärkena. */
+/**
+ * DTK-sidans innehåll: under sidhuvudet, ovanför sidnumret, innanför
+ * skärmärkena. På en liggande sida går texten lodrätt, och ord ur tabeller
+ * och rubriker hamnar nära sidans överkant; där används bara vågräta ord för
+ * att hitta sidhuvud och sidnummer.
+ */
 function dtkBox(page: PageBox): Box {
-  const head = page.words.filter((w) => w.y1 < page.height * 0.1 && w.y0 > page.height * 0.03);
-  const foot = page.words.filter((w) => w.y0 > page.height * 0.9 && w.y1 < page.height * 0.96);
-  const top = head.length > 0 ? Math.max(...head.map((w) => w.y1)) + 4 : page.height * 0.08;
+  const horizontal = (w: PageBox["words"][number]) => w.x1 - w.x0 >= w.y1 - w.y0;
+  const longWords = page.words.filter((w) => w.text.length >= 4);
+  const landscape =
+    longWords.length >= 10 && longWords.filter((w) => !horizontal(w)).length / longWords.length > 0.5;
+  const head = landscape
+    ? []
+    : page.words.filter((w) => w.y1 < page.height * 0.1 && w.y0 > page.height * 0.03 && horizontal(w));
+  const foot = page.words.filter(
+    (w) =>
+      w.y0 > page.height * 0.9 &&
+      w.y1 < page.height * 0.96 &&
+      (!landscape || (w.text.length <= 3 && w.x0 > page.width * 0.35 && w.x1 < page.width * 0.65)),
+  );
+  const top = head.length > 0 ? Math.max(...head.map((w) => w.y1)) + 4 : page.height * (landscape ? 0.045 : 0.08);
   const bottom = foot.length > 0 ? Math.min(...foot.map((w) => w.y0)) - 4 : page.height * 0.92;
   return [0.05, top / page.height, 0.95, bottom / page.height];
 }
