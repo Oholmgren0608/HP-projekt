@@ -2,6 +2,7 @@ import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { fetchAllPages } from "@/lib/supabase/paginate";
 import type { ChoiceQuestion, ReflectPrompt } from "@/lib/practice-types";
 import { isAllowedUhrQuestion, isUhrQuestionId } from "@/lib/uhr";
+import { readCacheValue, writeCacheValue } from "@/lib/content/bank-cache";
 
 /**
  * Runtime-"source of truth" för övningsfrågorna.
@@ -9,7 +10,7 @@ import { isAllowedUhrQuestion, isUhrQuestionId } from "@/lib/uhr";
  * Databasen (`questions` / `reflect_prompts`) är sanningen: frågor skapas som
  * utkast, granskas på /review och publiceras där. När Supabase är konfigurerat
  * hämtas de publicerade frågorna en gång per sidladdning och cachelagras i
- * localStorage. Vid fel, tomt resultat eller utan Supabase används den bundlade
+ * IndexedDB (bank-cache.ts). Vid fel, tomt resultat eller utan Supabase används den bundlade
  * banken (`fallback-bank.json`) så att appen fungerar offline. Den filen
  * genereras från databasen med `npm run fragebank:export` och redigeras inte
  * för hand. Den är 2,6 MB och laddas därför som en egen chunk först när den
@@ -22,12 +23,14 @@ export type QuestionBank = {
 };
 
 /**
- * v4 sedan 0035/0036: äldre cacher (v2, v3) kan innehålla frågor som inte längre
- * får visas – utkast och provfrågor (före 0017) eller spelpoolens frågor med
- * facit (före 0036) – och tas bort.
+ * v5 i IndexedDB sedan UHR-frågorna: banken blev för stor för localStorage och
+ * skulle tränga undan användarens egna data. De äldre cacherna i localStorage
+ * tas bort – v4 för att frigöra utrymmet, v2 och v3 för att de kan innehålla
+ * frågor som inte längre får visas (utkast och provfrågor före 0017,
+ * spelpoolens frågor med facit före 0036).
  */
-const CACHE_KEY = "hp-lift-questions-v4";
-const LEGACY_CACHE_KEYS = ["hp-lift-questions-v2", "hp-lift-questions-v3"];
+const CACHE_KEY = "hp-lift-questions-v5";
+const LEGACY_CACHE_KEYS = ["hp-lift-questions-v2", "hp-lift-questions-v3", "hp-lift-questions-v4"];
 
 /** Bara det appen visar – granskningsdata som andra kontrollens anteckningar hämtas inte. */
 const QUESTION_COLUMNS = "id, kind, prompt, passage, options, correct_index, explain, figure_url";
@@ -180,15 +183,22 @@ function isReflectPrompt(r: unknown): r is ReflectPrompt {
   return isString(o.id) && isString(o.title) && isStringArray(o.prompts);
 }
 
-function readCache(): QuestionBank | null {
-  if (typeof window === "undefined") return null;
+/** Tar bort de äldre cacherna i localStorage (se CACHE_KEY). */
+function removeLegacyCaches(): void {
+  if (typeof window === "undefined") return;
   try {
-    // Äldre cacher kan innehålla spelpoolens frågor med facit; ta bort dem
-    // även när databasen inte svarar (writeCache körs då aldrig).
     for (const key of LEGACY_CACHE_KEYS) window.localStorage.removeItem(key);
-    const raw = window.localStorage.getItem(CACHE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as CacheEntry;
+  } catch {
+    // localStorage kan vara avstängt; då finns inget att ta bort.
+  }
+}
+
+async function readCache(): Promise<QuestionBank | null> {
+  if (typeof window === "undefined") return null;
+  // Även när databasen inte svarar (writeCache körs då aldrig).
+  removeLegacyCaches();
+  try {
+    const parsed = await readCacheValue<CacheEntry>(CACHE_KEY);
     if (!parsed || typeof parsed !== "object") return null;
     if (!Array.isArray(parsed.questions) || !Array.isArray(parsed.reflect)) {
       return null;
@@ -208,17 +218,14 @@ function readCache(): QuestionBank | null {
 
 function writeCache(value: QuestionBank): void {
   if (typeof window === "undefined") return;
-  try {
-    for (const key of LEGACY_CACHE_KEYS) window.localStorage.removeItem(key);
-    const entry: CacheEntry & { fetchedAt: number } = {
-      fetchedAt: Date.now(),
-      questions: value.questions,
-      reflect: value.reflect,
-    };
-    window.localStorage.setItem(CACHE_KEY, JSON.stringify(entry));
-  } catch {
-    // ignore — cache är bara en optimering.
-  }
+  removeLegacyCaches();
+  const entry: CacheEntry & { fetchedAt: number } = {
+    fetchedAt: Date.now(),
+    questions: value.questions,
+    reflect: value.reflect,
+  };
+  // Cachen är bara en optimering; går den inte att skriva används den bundlade banken offline.
+  void writeCacheValue(CACHE_KEY, entry);
 }
 
 // ---- Laddning --------------------------------------------------------------
@@ -370,7 +377,7 @@ export function loadQuestions(): Promise<QuestionBank> {
       }
     }
 
-    const cached = readCache();
+    const cached = await readCache();
     if (cached) {
       if (cached.reflect.length === 0) await loadFallback();
       bank = cached;
