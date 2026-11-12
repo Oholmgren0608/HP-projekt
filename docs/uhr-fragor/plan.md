@@ -1,8 +1,9 @@
 # UHR:s kvantitativa frågor i appen – plan
 
-Status: **byggs** (Oscar, 2026-11-11: "Vi kan därför börja bygga med de kvantitativa frågorna"). Tillståndet gäller
-den kvantitativa delen och är noterat i `docs/juridik/uhr-tillstand-kvant.md`. Svar om den verbala delen väntas;
-verbala Provfrågor är fortfarande spärrade.
+Status: **byggt, väntar på stickprov** (2026-11-12). Alla 52 kvantitativa provpass (2 080 frågor) är avskrivna,
+lösta utan facit, förklarade och inlagda som utkast i databasen. Tillståndet gäller den kvantitativa delen och är
+noterat i `docs/juridik/uhr-tillstand-kvant.md`. Svar om den verbala delen väntas; verbala Provfrågor är
+fortfarande spärrade.
 
 ## Bakgrund
 
@@ -43,7 +44,10 @@ Per provpass, med verktygen i `scripts/uhr/` (steg för steg i `scripts/uhr/READ
    facit och som saknar varningar.
 7. `npm run fragebank:export` skriver om offlinekopian när frågorna är publicerade.
 
-Pilotpasset (hösten 2019, provpass 1) gav 40 av 40 lika med facit innan genomgången.
+Resultat: i alla 52 provpass fick AI:n samma svar som UHR:s facit på alla 2 080 uppgifter innan den såg facit
+(ingen uppgift behövde gås igenom i efterhand). 850 uppgifter har figur (450 bildfiler, 33 MB i `public/uhr/`),
+och 132 har en anteckning till granskaren om något i avskriften eller avläsningen ("Att kontrollera: …" på
+/review), t.ex. diagramvärden som ligger nära varandra, bildalternativ och tryckfel i provet.
 
 ## Appen och databasen (byggt)
 
@@ -61,8 +65,9 @@ Pilotpasset (hösten 2019, provpass 1) gav 40 av 40 lika med facit innan genomg�
 
 ## Kvar
 
-- Skriva av de återstående provpassen (pågår) och ladda upp dem som utkast.
-- Applicera migration 0040 på databasen (efter att ändringen har nått main).
-- Stickprov och publicering på /review, sedan `fragebank:export`.
+- Applicera migration 0040 på databasen när ändringen har nått main. Utan den går UHR-frågorna inte att publicera
+  och spelen väljer bara ur spelpoolen; inget annat påverkas.
+- Stickprov och publicering på /review: grupperna "UHR: Högskoleprovet …", "Publicera N ense" per prov. Titta
+  särskilt på frågor med "Att kontrollera". Kör sedan `fragebank:export` så att offlinekopian får frågorna.
 - Oscar: lägg in UHR:s skriftliga svar i `docs/juridik/uhr-tillstand-kvant.md` och stäm av källraden mot villkoren.
 - När UHR svarar om de verbala frågorna: ny migration och ändring av AGENTS.md regel 1.
