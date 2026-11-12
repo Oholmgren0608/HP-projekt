@@ -1,0 +1,788 @@
+{
+  "examId": "hp-2015-03-28",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "x/3 + x/4 = 35/12",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "7"
+      ],
+      "blindAnswer": 2,
+      "explain": "Gör liknämnigt med nämnaren 12: x/3 = 4x/12 och x/4 = 3x/12. Vänsterledet blir 7x/12, så 7x/12 = 35/12. Då är 7x = 35 och x = 5. Kontroll: 5/3 + 5/4 = 20/12 + 15/12 = 35/12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Summan av två udda heltal är 16. Vad är den största möjliga produkten av talen?",
+      "options": [
+        "45",
+        "55",
+        "63",
+        "65"
+      ],
+      "blindAnswer": 2,
+      "explain": "Två udda heltal med summan 16 kan vara 1 och 15, 3 och 13, 5 och 11 eller 7 och 9 (är ett av talen negativt blir produkten negativ). Produkterna blir 15, 39, 55 och 63. Produkten blir störst när talen ligger så nära varandra som möjligt, alltså 7 · 9 = 63. Talen 8 och 8 hade gett 64, men 8 är inte udda, och 65 = 5 · 13 kräver summan 18.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket av alternativen är störst?",
+      "options": [
+        "4/7",
+        "1/2 + 1/3",
+        "1/3 + 1/4",
+        "2/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna ut summorna: 1/2 + 1/3 = 3/6 + 2/6 = 5/6 och 1/3 + 1/4 = 4/12 + 3/12 = 7/12. Som decimaltal är 4/7 ≈ 0,57, 5/6 ≈ 0,83, 7/12 ≈ 0,58 och 2/3 ≈ 0,67. Störst är alltså 1/2 + 1/3. Man ser det också utan decimaltal: 2/3 = 4/6 är mindre än 5/6, och 4/7 och 7/12 är bara lite större än 1/2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "AB är parallell med CD.",
+      "options": [
+        "70°",
+        "90°",
+        "110°",
+        "130°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Linjen AC skär de parallella linjerna AB och CD. Därför är vinkeln vid C mellan CA och CD lika stor som vinkeln vid A mellan AC och AB (alternatvinklar), alltså 30°. Den lodräta linjen bildar tillsammans med CD och AC en triangel till höger med vinklarna 40° och 30°. Den tredje vinkeln, vid AC, är 180° − 40° − 30° = 110°. Vinkeln x ligger mitt emot den (vertikalvinklar), så x = 110°.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.19,
+          0.578,
+          0.49,
+          0.765
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är x om (2²)ˣ = 4⁴?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "blindAnswer": 1,
+      "explain": "Eftersom 2² = 4 står det 4ˣ = 4⁴ i ekvationen, så x = 4. Kontroll med basen 2: (2²)⁴ = 2⁸ = 256 och 4⁴ = 256. Svaret 8 lockar om man skriver 4⁴ som 2⁸ och jämför x med 8 utan att tänka på att (2²)ˣ = 2²ˣ; då blir 2x = 8 och x = 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är 6 · 4/5 − 2 · 8/3?",
+      "options": [
+        "−1/2",
+        "−8/3",
+        "−4/5",
+        "−8/15"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera först: 6 · 4/5 = 24/5 och 2 · 8/3 = 16/3. Gör liknämnigt med nämnaren 15: 24/5 = 72/15 och 16/3 = 80/15. Skillnaden är 72/15 − 80/15 = −8/15.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Den regelbundna sexhörningen ABCDEF har omkretsen 84 cm. Hur lång är AD?",
+      "options": [
+        "6π cm",
+        "14√2 cm",
+        "84/π cm",
+        "28 cm"
+      ],
+      "blindAnswer": 3,
+      "explain": "En regelbunden sexhörning har sex lika långa sidor, så varje sida är 84/6 = 14 cm. Sexhörningen kan delas i sex liksidiga trianglar med en gemensam spets i mittpunkten, och varje triangel har sidan 14 cm. Diagonalen AD går genom mittpunkten och består av två sådana triangelsidor: AD = 2 · 14 = 28 cm.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.2,
+          0.11,
+          0.43,
+          0.29
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är √(8 · 20 − 4³/4)?",
+      "options": [
+        "2√41",
+        "8",
+        "√156",
+        "12"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna under rottecknet först: 8 · 20 = 160 och 4³/4 = 64/4 = 16. Det ger √(160 − 16) = √144 = 12. Den som tror att 4³ är 16 får 16/4 = 4 och √156.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av tre tal är x. Två av talen är y och z. Vad är det tredje talet lika med?",
+      "options": [
+        "3x − y − z",
+        "(x + y + z)/3",
+        "3(x − y − z)",
+        "x − (y + z)/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Om medelvärdet av tre tal är x är summan av talen 3x. Kalla det tredje talet t. Då gäller y + z + t = 3x, så t = 3x − y − z. Alternativet 3(x − y − z) ser likt ut men betyder 3x − 3y − 3z.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "x, y, z och w är olika tal så att x − w = −y och xyz = 0. Vilket tal måste vara noll?",
+      "options": [
+        "x",
+        "y",
+        "z",
+        "w"
+      ],
+      "blindAnswer": 2,
+      "explain": "Eftersom xyz = 0 måste minst ett av talen x, y och z vara 0. Ekvationen x − w = −y kan skrivas w = x + y. Om x vore 0 skulle w = y, och om y vore 0 skulle w = x. Talen är olika, så varken x eller y kan vara 0. Alltså måste z vara 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Punkten (3, 3) ligger på linjen y = kx − 3. Vad är y då x = −3?",
+      "options": [
+        "−9",
+        "−3",
+        "0",
+        "6"
+      ],
+      "blindAnswer": 0,
+      "explain": "Punkten (3, 3) ligger på linjen, så 3 = k · 3 − 3. Det ger 3k = 6 och k = 2. Linjen är alltså y = 2x − 3, och för x = −3 blir y = 2 · (−3) − 3 = −6 − 3 = −9.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vad är x om 1/(√(x⁵) · √x) = 8?",
+      "options": [
+        "1/2",
+        "1/√2",
+        "√2",
+        "2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Slå ihop rötterna i nämnaren: √(x⁵) · √x = √(x⁶) = x³ (x måste vara positivt för att uttrycket ska vara definierat). Ekvationen blir 1/x³ = 8, alltså x³ = 1/8 och x = 1/2. Kontroll: (1/2)³ = 1/8 och 1/(1/8) = 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Ett mynt kastas två gånger.\nKvantitet I: Sannolikheten att samma sida hamnar uppåt i de två kasten\nKvantitet II: Sannolikheten att olika sidor hamnar uppåt i de två kasten",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Två kast ger fyra lika sannolika utfall: krona–krona, krona–klave, klave–krona och klave–klave. Samma sida uppåt gäller i två av dem, så sannolikheten är 2/4 = 1/2. Olika sidor gäller i de två andra, också 1/2. Kvantiteterna är lika. Den som bara räknar med tre utfall (två krona, två klave, en av varje) missar att en av varje kan komma på två sätt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En grupp består av 90 personer, varav 60 är pojkar. 40 av personerna är vänsterhänta.\nKvantitet I: Antal vänsterhänta pojkar i gruppen\nKvantitet II: 20",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Av de 90 personerna är 90 − 60 = 30 inte pojkar. Är alla de 30 vänsterhänta är 40 − 30 = 10 av pojkarna vänsterhänta, och då är kvantitet I mindre än 20. Är alla 40 vänsterhänta pojkar är kvantitet I 40, större än 20. Antalet kan alltså vara allt från 10 till 40, och informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 3² + 4 · 6² − 5²\nKvantitet II: 3² − 4 · 6² + 5²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna potenserna först: 3² = 9, 6² = 36 och 5² = 25, så 4 · 6² = 144. Kvantitet I: 9 + 144 − 25 = 128. Kvantitet II: 9 − 144 + 25 = −110. Kvantitet I är större. Det syns också utan uträkning: I lägger till 144 och drar bort 25, medan II drar bort 144 och lägger till 25.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x − y = y − x\nKvantitet I: 0\nKvantitet II: x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Ekvationen x − y = y − x ger 2x = 2y, alltså x = y. Den säger att talen är lika men inte vilket värde de har. Med x = y = 1 är kvantitet II större än 0, och med x = y = −1 är den mindre. Informationen räcker inte. Det är lätt att tro att x måste vara 0, men det är skillnaden x − y som är 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "h(z) = 3(z + 2)\ng(z) = 2(1 − z)\nKvantitet I: h(3) − g(3)\nKvantitet II: h(3) + g(3)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in z = 3: h(3) = 3 · (3 + 2) = 15 och g(3) = 2 · (1 − 3) = −4. Kvantitet I: 15 − (−4) = 19. Kvantitet II: 15 + (−4) = 11. Kvantitet I är större. Eftersom g(3) är negativt blir resultatet större när man drar bort det än när man lägger till det.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Triangeln ABC är liksidig.\nKvantitet I: x\nKvantitet II: 60°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Alla vinklar i en liksidig triangel är 60°. Kalla punkten där linjen från C möter AB för D. I triangeln DBC är vinkeln vid D 100° och vinkeln vid B 60°, så vinkeln vid C är 180° − 100° − 60° = 20°. Vinkeln x ligger i den lilla triangeln som linjen från C, linjen från A och sidan BC bildar. Den har en rät vinkel där linjen från A möter BC och vinkeln 20° vid C, så x = 180° − 90° − 20° = 70°. Kvantitet I är större.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.19,
+          0.562,
+          0.49,
+          0.748
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < y < 0 < z\nKvantitet I: x − (y + z)\nKvantitet II: x − y + z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ta bort parentesen: kvantitet I är x − (y + z) = x − y − z. Båda kvantiteterna börjar med x − y; I drar sedan bort z och II lägger till z. Eftersom z > 0 är kvantitet II större, och skillnaden är 2z. Att x och y är negativa påverkar inte jämförelsen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x, y, z och w är positiva tal.\nKvantitet I: √(xy/(zw))\nKvantitet II: √((x/z)/(w/y))",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Att dela med ett bråk är detsamma som att multiplicera med det inverterade bråket: (x/z)/(w/y) = (x/z) · (y/w) = xy/(zw). Uttrycken under rottecknen är alltså lika, och eftersom alla tal är positiva är båda rötterna definierade. Kvantiteterna är lika för alla positiva x, y, z och w.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.19,
+          0.558,
+          0.37,
+          0.662
+        ]
+      },
+      "note": "Kvantiteterna står under rottecken och kvantitet II är ett bråk i två nivåer; figuren visar dem som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Omkretsen av en likbent triangel är 40 cm. Minst en av sidorna i triangeln är 12 cm.\nKvantitet I: Triangelns största sidlängd\nKvantitet II: 15 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "En likbent triangel har två lika långa sidor. Om de två lika långa sidorna är 12 cm blir den tredje 40 − 24 = 16 cm. Triangeln 12, 12, 16 går att bilda (12 + 12 > 16), och största sidan är 16 cm, mer än 15 cm. Om i stället den tredje sidan är 12 cm är de lika långa sidorna (40 − 12)/2 = 14 cm, och största sidan är 14 cm, mindre än 15 cm. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "P och Q är två olika ensiffriga positiva heltal.\nR är ett tvåsiffrigt tal med tiotalssiffran Q och entalssiffran P.\nP · P = R\nKvantitet I: P\nKvantitet II: Q",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "R har tiotalssiffran Q och entalssiffran P, så R = 10Q + P. Villkoret P · P = R ger P² − P = 10Q, alltså P(P − 1) = 10Q. För P = 1, 2, …, 9 blir P(P − 1) = 0, 2, 6, 12, 20, 30, 42, 56 och 72. Q är positivt och ensiffrigt, så produkten måste vara 10, 20, …, 90, och det ger bara P = 5, Q = 2 (5 · 5 = 25) och P = 6, Q = 3 (6 · 6 = 36). I båda fallen är P större än Q.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vad är medelvärdet av Annas, Bosses, Claras, Dans och Erikas längd?\n(1) Medelvärdet av Bosses, Dans och Erikas längd är 183 cm.\n(2) Medelvärdet av Annas och Claras längd är 165 cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Medelvärdet för alla fem är summan av längderna delat med 5.\n(1) Ger summan av Bosses, Dans och Erikas längd, 3 · 183 = 549 cm, men inget om Anna och Clara. Inte tillräckligt.\n(2) Ger summan av Annas och Claras längd, 2 · 165 = 330 cm, men inget om de tre andra. Inte tillräckligt.\n(1) och (2) tillsammans: Summan av alla fem längder är 549 + 330 = 879 cm, och medelvärdet är 879/5 = 175,8 cm. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Robin har ett antal likadana kvadratiska plattor. Om Robin lägger plattorna kant mot kant så täcker de en yta av 0,99 m². Hur många plattor har Robin?\n(1) Plattorna väger sammanlagt 19,25 kg.\n(2) Plattornas kanter är 30 cm långa och varje platta väger 1,75 kg.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Den sammanlagda vikten hjälper inte när vi varken vet vad en platta väger eller hur stor den är. Inte tillräckligt.\n(2) En platta har arean 0,3 · 0,3 = 0,09 m², så antalet plattor är 0,99/0,09 = 11. Tillräckligt; vikten behövs inte ens.\nSvaret får man alltså i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En grupp personer har vunnit en summa pengar. Pengarna ska fördelas lika mellan personerna i gruppen. Hur stor är vinstsumman?\n(1) Om åtta personer avstår från sin del av vinstsumman så får de övriga 20 kr mer per person.\n(2) Gruppen består av 20 personer.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet personer n och vinstsumman S.\n(1) De åtta delarna, 8 · S/n, fördelas på de n − 8 övriga, som får 20 kr var: 8S/n = 20(n − 8). Det är en ekvation med två okända, och flera par passar, till exempel n = 10 och S = 50 kr eller n = 20 och S = 600 kr. Inte tillräckligt.\n(2) Antalet personer säger inget om summan. Inte tillräckligt.\n(1) och (2) tillsammans: Med n = 20 blir 8S/20 = 20 · 12 = 240, så S = 600 kr. Kontroll: 600/20 = 30 kr och 600/12 = 50 kr, alltså 20 kr mer. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På grund av ett vägarbete tog det Aron 1,5 gånger så lång tid som det normalt tar att köra till affären. Hur lång tid tar det normalt att köra till affären?\n(1) Det tog Aron 5 min längre att köra till affären än vad det normalt tar.\n(2) Aron har 10 km till affären.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kalla den normala tiden t. Med vägarbetet tog det 1,5t.\n(1) Skillnaden är 1,5t − t = 0,5t = 5 min, så t = 10 min. Tillräckligt.\n(2) Sträckan ger inte tiden när vi inte vet hastigheten. Inte tillräckligt.\nSvaret får man alltså i (1) men inte i (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Betong består av sand, vatten och cement. Hur många kilogram cement finns det i 40 kilogram färdigblandad betong?\n(1) Det finns sammanlagt 36,8 kilogram cement och sand i blandningen.\n(2) Det finns sammanlagt 31,2 kilogram vatten och sand i blandningen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sand, vatten och cement väger tillsammans 40 kg.\n(1) Cement och sand väger 36,8 kg, så vattnet väger 40 − 36,8 = 3,2 kg. Hur de 36,8 kg fördelas mellan cement och sand vet vi inte. Inte tillräckligt.\n(2) Vatten och sand väger 31,2 kg, så resten är cement: 40 − 31,2 = 8,8 kg. Tillräckligt.\nSvaret får man alltså i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Linn har 125 kr i tjugokronorssedlar och femkronor. Hur många femkronor har Linn?\n(1) Linn har färre än 5 femkronor.\n(2) Linn har fler än 5 tjugokronorssedlar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Med a tjugokronorssedlar och b femkronor gäller 20a + 5b = 125, alltså b = 25 − 4a. Möjligheterna är a = 0, 1, …, 6 med b = 25, 21, 17, 13, 9, 5 respektive 1.\n(1) Färre än 5 femkronor: bara b = 1 (med a = 6) passar. Tillräckligt.\n(2) Fler än 5 tjugokronorssedlar: bara a = 6 är möjligt, eftersom 7 sedlar är 140 kr. Då är b = 1. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Jämför antalet häktade 1835 och 1901 i de olika länen. Vilket län hade den största minskningen, i antal räknat?",
+      "options": [
+        "Blekinge län",
+        "Kronobergs län",
+        "Stockholms län",
+        "Östergötlands län"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av raderna för de fyra länen i kolumnerna 1835 och 1901. Blekinge: 228 − 45 = 183. Kronoberg: 136 − 8 = 128. Stockholms län: 200 − 39 = 161. Östergötland: 285 − 90 = 195. Den största minskningen i antal hade alltså Östergötlands län. Kronoberg minskade mest i procent (från 136 till 8), men frågan gäller antal.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala antalet häktade 1835 utgjordes av häktade i Stockholms stad och Stockholms län tillsammans?",
+      "options": [
+        "15 procent",
+        "20 procent",
+        "30 procent",
+        "45 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "I kolumnen 1835 står Stockholms stad med 433 och Stockholms län med 200 häktade, tillsammans 633. Raden Summa ger 2,879 för 1835, alltså 2 879 (tabellen skriver tusental med komma). Andelen är 633/2 879 ≈ 0,22, alltså cirka 20 procent.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Studera för respektive år hur stor andel av de häktade som var kvinnor. Vilket av de redovisade åren var denna andel som störst?",
+      "options": [
+        "1845",
+        "1865",
+        "1885",
+        "1900"
+      ],
+      "blindAnswer": 3,
+      "explain": "Längst ned i tabellen står antalet häktade män och kvinnor (qvinnor) varje år, och raden Summa ger totalen. Tabellen skriver tusental med komma, så 6,526 betyder 6 526. 1845: 1 737/6 526 ≈ 27 procent. 1865: 533/3 184 ≈ 17 procent. 1885: 645/4 219 ≈ 15 procent. 1900: 759/2 330 ≈ 33 procent. Andelen kvinnor var alltså störst 1900.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "På vilken uppgift svarade 25 barn helt rätt, 14 barn delvis rätt och 44 barn helt fel?",
+      "options": [
+        "Likformiga trianglar",
+        "Likformiga rektanglar",
+        "Koordinater",
+        "Mönster 3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Det nedre diagrammet visar procent av de 83 barnen. 25 barn är 25/83 ≈ 30 procent, 14 barn är 14/83 ≈ 17 procent och 44 barn är 44/83 ≈ 53 procent. Leta efter en stapel där den vita delen (helt rätt) når 30 procent, den grå delen (delvis rätt) slutar vid cirka 47 procent och resten är svart (helt fel). Det stämmer med Likformiga rektanglar. Likformiga trianglar har cirka 23 procent helt rätt, Koordinater cirka 60 procent och Mönster 3 cirka 34 procent helt rätt men cirka 42 procent delvis rätt.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av barnen uppnådde minst 11 och högst 20 poäng?",
+      "options": [
+        "52 procent",
+        "63 procent",
+        "74 procent",
+        "85 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av staplarna i det övre diagrammet för 11–20 poäng: 3 (11), 3 (12), 6 (13), 2 (14), 11 (15), 5 (16), 4 (17), 8 (18), 4 (19) och 6 (20) barn, sammanlagt 52 barn. Andelen av de 83 barnen är 52/83 ≈ 0,63, alltså 63 procent. Svaret 52 procent lockar om man tar antalet barn för procent.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur många barn svarade helt rätt på den uppgift där andelen delvis rätta svar och andelen helt felaktiga svar var lika stora?",
+      "options": [
+        "20",
+        "50",
+        "60",
+        "80"
+      ],
+      "blindAnswer": 1,
+      "explain": "I det nedre diagrammet ska den grå delen (delvis rätt) och den svarta delen (helt fel) vara lika höga. Det gäller Koordinater: den vita delen når 60 procent, den grå går från 60 till cirka 80 procent och den svarta från cirka 80 till 100 procent, alltså cirka 20 procent var. Helt rätt svarade 60 procent av de 83 barnen, alltså 0,6 · 83 ≈ 50 barn. Svaret 60 lockar om man läser av procenten utan att räkna om till antal barn.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vad fanns 500 meter i rak sydostlig riktning från kyrkan i Vallsjö?",
+      "options": [
+        "Vallsjö Storegårds åker",
+        "Väg",
+        "Åker",
+        "Äng"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kyrkan är korset som ordet Kyrka pekar på i kartan över Vallsjö. Sydost ligger mitt emellan söder och öster, alltså snett nedåt åt höger (norr är uppåt). Skalstocken är 500 meter lång; lägg av den sträckan från kyrkan i den riktningen. Man hamnar i ett stort område utan prickar med pilsymbolen för äng strax intill, alltså äng. Närmare kyrkan passerar linjen Vallsjö Storegårds åker och åkrar, så det gäller att mäta hela 500 meter.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.13,
+            0.065,
+            0.9,
+            0.48
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur långt var det mellan Edstorp och Lindholmen i Borshult om man följde vägen?",
+      "options": [
+        "560 meter",
+        "630 meter",
+        "730 meter",
+        "960 meter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lindholmen (G) och Edstorp (H) finns på kartan över Borshult, och vägen är den streckade linjen mellan dem. Jämför med skalstocken (500 meter). Från Lindholmen går vägen först snett nedåt åt höger cirka 200 meter, sedan nästan rakt söderut cirka 300 meter och till sist snett nedåt åt höger cirka 200 meter till Edstorp. Sammanlagt blir det drygt 700 meter, alltså 730 meter. Fågelvägen mellan gårdarna är ungefär 680 meter, så 560 och 630 meter är för kort.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.13,
+            0.065,
+            0.9,
+            0.48
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilka två gårdar i Borshult låg cirka 300 meter från varandra i nordnordvästlig–sydsydostlig riktning?",
+      "options": [
+        "Västergården och Skattegården",
+        "Västergården och Norre Sjöholm",
+        "Östre Sjöholm och Berg",
+        "Östre Sjöholm och Skattegården"
+      ],
+      "blindAnswer": 0,
+      "explain": "Mät avstånd och riktning mellan gårdstomterna på kartan över Borshult med skalstocken (500 meter). Nordnordväst–sydsydost är nästan nord–syd men lutar lite: söderut och en bit österut. Från Västergården (C på kartan) till Skattegården (F) är det cirka 280 meter söderut och 70 meter österut, alltså cirka 290 meter i sydsydostlig riktning. Västergården och Norre Sjöholm ligger också ungefär 290 meter från varandra, men nästan i öst–västlig riktning. Östre Sjöholm ligger nordost om både Berg och Skattegården, drygt 300 meter bort.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.13,
+            0.065,
+            0.9,
+            0.48
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Studera förekomsten av hjärtinfarkt bland kvinnor 2001. Hur stort var antalet fall per 100 000 i åldern 65–69 år jämfört med i åldern 45–49 år?",
+      "options": [
+        "5 gånger så stort",
+        "10 gånger så stort",
+        "50 gånger så stort",
+        "100 gånger så stort"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av diagrammet för kvinnor vid 2001. Den översta linjen (65–69 år) ligger vid cirka 560 fall per 100 000 och den nedersta linjen med ringar (45–49 år) vid cirka 55. Kvoten är 560/55 ≈ 10, alltså 10 gånger så stort.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor var skillnaden mellan män och kvinnor 1997 vad gäller antalet fall av hjärtinfarkt i åldersgruppen 50–54 år?",
+      "options": [
+        "150 per 100 000",
+        "250 per 100 000",
+        "400 per 100 000",
+        "500 per 100 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av linjen för 50–54 år vid 1997 i båda diagrammen. Män (linjen med stjärnor i det övre diagrammet): cirka 370 fall per 100 000. Kvinnor (den streckade linjen med fyllda stjärnor i det nedre diagrammet): cirka 90. Skillnaden är ungefär 370 − 90 = 280 per 100 000, och närmast av alternativen är 250 per 100 000. Observera att diagrammen har olika skala på den lodräta axeln.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "Avläst cirka 370 för män och cirka 90 för kvinnor, alltså en skillnad på cirka 280; 250 är närmast av alternativen.",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Anta att det finns lika många män som kvinnor i åldern 60–64 år. Med hur många procent hade det totala antalet fall av hjärtinfarkt per 100 000 i denna åldersgrupp minskat 2006 jämfört med 1987?",
+      "options": [
+        "30 procent",
+        "40 procent",
+        "50 procent",
+        "60 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "När det finns lika många män som kvinnor kan man lägga ihop fallen per 100 000 för män och för kvinnor; det motsvarar 100 000 män plus 100 000 kvinnor. Linjen för 60–64 år (trianglar) ger för män cirka 1 340 år 1987 och cirka 770 år 2006, och för kvinnor cirka 375 år 1987 och cirka 245 år 2006. Totalt blir det cirka 1 715 år 1987 och cirka 1 015 år 2006. Minskningen är cirka 700/1 715 ≈ 0,41, alltså cirka 40 procent.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
