@@ -1,0 +1,771 @@
+{
+  "examId": "hp-2021-05-08",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "4(x − 2) = −2(x + 4)",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "8"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in i parenteserna: 4x − 8 = −2x − 8. Lägg till 2x och 8 i båda leden: 6x = 0, alltså x = 0. Kontroll: vänsterledet blir 4(0 − 2) = −8 och högerledet −2(0 + 4) = −8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Talen 13, 14, 26 och x har medelvärdet 16. Vilket värde har x?",
+      "options": [
+        "11",
+        "13",
+        "16",
+        "17"
+      ],
+      "blindAnswer": 0,
+      "explain": "Fyra tal med medelvärdet 16 har summan 4 · 16 = 64. De tre kända talen har summan 13 + 14 + 26 = 53. Då är x = 64 − 53 = 11. Kontroll: (13 + 14 + 26 + 11)/4 = 64/4 = 16.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är (1/3)(1/2 + 1/6)?",
+      "options": [
+        "1/6",
+        "2/6",
+        "1/9",
+        "2/9"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna först parentesen med gemensam nämnare 6: 1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3. Multiplicera sedan med 1/3: (1/3) · (2/3) = 2/9. Kontroll genom att multiplicera in: 1/6 + 1/18 = 3/18 + 1/18 = 4/18 = 2/9. Svaret 1/9 får den som adderar bråken utan gemensam nämnare, som om 1/2 + 1/6 vore 2/6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket värde har g(2)?",
+      "passage": "f(x) = 4x − 4\ng(x) = −3f(x) − 12",
+      "options": [
+        "−24",
+        "−18",
+        "−12",
+        "0"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna först ut f(2) = 4 · 2 − 4 = 4. Sätt in det i g: g(2) = −3 · f(2) − 12 = −3 · 4 − 12 = −12 − 12 = −24. Svaret −12 lockar om man glömmer att dra bort 12 på slutet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "40 % av x är 54. Vilket värde har x?",
+      "options": [
+        "90",
+        "125",
+        "135",
+        "216"
+      ],
+      "blindAnswer": 2,
+      "explain": "40 % av x är 0,4x, så 0,4x = 54 och x = 54/0,4 = 135. Samma sak i steg: om 40 % är 54 är 10 % en fjärdedel av det, 54/4 = 13,5, och 100 % är 10 · 13,5 = 135. Kontroll: 0,4 · 135 = 54.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är (z + w) − (x + y)?",
+      "passage": "x, y, z och w är fyra på varandra följande heltal sådana att x < y < z < w.",
+      "options": [
+        "−4",
+        "−2",
+        "2",
+        "4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla det minsta talet n. Då är x = n, y = n + 1, z = n + 2 och w = n + 3. Det ger z + w = 2n + 5 och x + y = 2n + 1, och skillnaden är (2n + 5) − (2n + 1) = 4. Kontroll med talen 1, 2, 3 och 4: (3 + 4) − (1 + 2) = 7 − 3 = 4. Skillnaden är positiv eftersom z och w är de två största talen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket (a⁵ · a⁻³)/(a⁻⁸ · a²)?",
+      "passage": "a ≠ 0",
+      "options": [
+        "a⁻⁴",
+        "a⁻²",
+        "a⁴",
+        "a⁸"
+      ],
+      "blindAnswer": 3,
+      "explain": "Vid multiplikation adderas exponenterna. Täljaren är a⁵ · a⁻³ = a², eftersom 5 + (−3) = 2, och nämnaren är a⁻⁸ · a² = a⁻⁶, eftersom −8 + 2 = −6. Vid division subtraheras nämnarens exponent från täljarens: 2 − (−6) = 8, så uttrycket är a⁸. Svaret a⁻⁴ lockar om man adderar exponenterna 2 och −6 i stället för att subtrahera.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "4/x = 5/6",
+      "options": [
+        "(4 · 6)/5",
+        "(4 · 5)/6",
+        "6/(4 · 5)",
+        "5/(4 · 6)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera båda leden med 6x: 4 · 6 = 5x. Dela med 5: x = (4 · 6)/5 = 24/5 = 4,8. Kontroll: 4/4,8 ≈ 0,83 och 5/6 ≈ 0,83. Alternativet 5/(4 · 6) är vad man får om man löser ut 1/x i stället för x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Innermåtten för en cylinderformad marmeladburk är sådana att höjden är 5 cm och radien är 2 cm. Vilket är det minsta antalet sådana burkar som behövs för att rymma 0,6 liter marmelad?",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "blindAnswer": 1,
+      "explain": "En burk rymmer πr²h = π · 2² · 5 = 20π ≈ 62,8 cm³. 0,6 liter är 0,6 dm³ = 600 cm³. 600/62,8 ≈ 9,6, så 9 burkar räcker inte (9 · 62,8 ≈ 565 cm³), men 10 burkar (cirka 628 cm³) gör det. Svaret 20 lockar om man glömmer att kvadrera radien: π · 2 · 5 ≈ 31,4 cm³ per burk ger 20 burkar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Två kvadrater och en triangel är placerade så att en sida i vardera kvadrat utgör en sida i triangeln, enligt figuren. Vilken area har triangeln?",
+      "options": [
+        "6 cm²",
+        "7,5 cm²",
+        "12 cm²",
+        "15 cm²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den lilla kvadraten har arean 9 cm², så dess sida är 3 cm. Den stora kvadraten har arean 25 cm² och sidan 5 cm. Triangeln är rätvinklig: den lodräta kateten är den lilla kvadratens sida (3 cm) och hypotenusan är den stora kvadratens sida (5 cm). Enligt Pythagoras sats är den vågräta kateten √(5² − 3²) = √16 = 4 cm. Arean är 3 · 4/2 = 6 cm². Svaret 12 cm² lockar om man glömmer att dela med 2.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.215,
+          0.55,
+          0.505,
+          0.7
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är √(36 · 10³⁶)?",
+      "options": [
+        "18 · 10¹⁸",
+        "6 · 10¹⁸",
+        "18 · 10⁶",
+        "6 · 10⁶"
+      ],
+      "blindAnswer": 1,
+      "explain": "Roten ur en produkt är produkten av rötterna: √(36 · 10³⁶) = √36 · √(10³⁶). √36 = 6, och √(10³⁶) = 10¹⁸ eftersom 10¹⁸ · 10¹⁸ = 10³⁶. Alltså är uttrycket 6 · 10¹⁸. Roten ur en tiopotens halverar exponenten; att dra roten ur exponenten ger 10⁶, och att halvera 36 i stället för att dra roten ur ger 18.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ anger en punkt som ligger i den undre halvan?",
+      "passage": "L: y = (1/2)x\nLinjen L delar koordinatsystemet i en övre och en undre halva.",
+      "options": [
+        "(−23, 23)",
+        "(23, 0)",
+        "(−23, 0)",
+        "(0, 23)"
+      ],
+      "blindAnswer": 1,
+      "explain": "En punkt ligger under linjen om dess y-koordinat är mindre än linjens y-värde för samma x, alltså om y < x/2. För (23, 0) är linjens y-värde 23/2 = 11,5, och 0 < 11,5, så punkten ligger i den undre halvan. För (−23, 0) är linjens y-värde −11,5, och 0 är större, så den punkten ligger ovanför. (−23, 23) och (0, 23) har y-koordinaten 23, som är större än linjens värden −11,5 och 0, så även de ligger ovanför.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.235,
+          0.52,
+          0.535,
+          0.732
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 25 promille av 40 000\nKvantitet II: 1 600",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En promille är en tusendel, så 25 promille är 25/1 000 = 0,025. Kvantitet I är 0,025 · 40 000 = 1 000, vilket är mindre än 1 600. Kvantitet II är större. Den som räknar med 25 procent i stället för 25 promille får 10 000 och väljer fel relation.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En påse innehåller endast enfärgade kulor: röda och blå. Fyra kulor ska slumpmässigt plockas ur påsen, utan återläggning. Oavsett vilka fyra kulor som plockas ur påsen, så är minst en av de plockade kulorna röd.\nKvantitet I: Antalet kulor i påsen\nKvantitet II: 5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Att minst en av fyra plockade kulor alltid är röd betyder att det finns högst tre blå kulor; med fyra blå skulle man kunna plocka bara blå. Antalet röda kulor begränsas inte, och påsen måste bara innehålla minst fyra kulor. Med 1 röd och 3 blå finns 4 kulor, färre än 5. Med 10 röda och 3 blå finns 13 kulor, fler än 5. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Två gånger arean av en kvadrat med sidan x\nKvantitet II: Tre fjärdedelar av arean av en cirkel med radien x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvadratens area är x², så kvantitet I är 2x². Cirkelns area är πx², så kvantitet II är (3/4)πx² ≈ 0,75 · 3,14 · x² ≈ 2,36x². Eftersom x är en längd är x² positivt, och 2,36x² är då alltid större än 2x². Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "2y − 4x = 3\nKvantitet I: y\nKvantitet II: 1,5 + 2x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lös ut y ur ekvationen. Lägg till 4x i båda leden: 2y = 3 + 4x. Dela med 2: y = 1,5 + 2x. Kvantitet I är alltså alltid lika med kvantitet II, oavsett vilka värden x och y har.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Medelvärdet av två tal är 35. Ett av talen är x.\nKvantitet I: x\nKvantitet II: 70 − x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Summan av de två talen är 2 · 35 = 70, så det andra talet är 70 − x. Jämförelsen gäller alltså vilket av de två talen som är störst, och det framgår inte. Är x = 40 är det andra talet 30 och kvantitet I störst. Är x = 30 är det andra talet 40 och kvantitet II störst. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 3/8 · 6/11\nKvantitet II: (3/8)/(11/6)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Att dividera med ett bråk är detsamma som att multiplicera med det inverterade bråket. Att dividera med 11/6 är alltså att multiplicera med 6/11, så kvantitet II är 3/8 · 6/11, precis som kvantitet I. Båda är 18/88 = 9/44.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x är ett jämnt positivt heltal.\nKvantitet I: (−7)ˣ\nKvantitet II: (−7)ˣ⁺¹",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Ett negativt tal upphöjt till ett jämnt tal är positivt, och upphöjt till ett udda tal är det negativt. Eftersom x är jämnt är (−7)ˣ positivt, och eftersom x + 1 är udda är (−7)ˣ⁺¹ negativt. Till exempel ger x = 2 att kvantitet I är 49 och kvantitet II är −343. Kvantitet I är alltid större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen L går genom origo.\nKvantitet I: x₁ + y₁\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Linjen L går genom origo och punkten (−3, 3), så lutningen är (3 − 0)/(−3 − 0) = −1 och linjens ekvation är y = −x. Punkten (x₁, y₁) ligger på linjen, så y₁ = −x₁ och x₁ + y₁ = 0. Kvantitet I är alltså lika med kvantitet II, var på linjen punkten än ligger.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.225,
+          0.538,
+          0.505,
+          0.74
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Vinklarna i en triangel förhåller sig som 1:5:9.\nKvantitet I: Triangelns minsta vinkel\nKvantitet II: 15°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkelsumman i en triangel är 180°. Förhållandet 1:5:9 delar den i 1 + 5 + 9 = 15 lika delar, och en del är 180°/15 = 12°. Vinklarna är 12°, 60° och 108°, och den minsta är 12°, vilket är mindre än 15°. Talet 15 kan locka eftersom det är antalet delar, men det är inte en vinkel.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Den positiva lösningen till ekvationen (x − 3)(x + 2) = 0\nKvantitet II: Den positiva lösningen till ekvationen (x + 3)(x − 2) = 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "En produkt är 0 när någon av faktorerna är 0. (x − 3)(x + 2) = 0 har lösningarna x = 3 och x = −2, så den positiva lösningen är 3. (x + 3)(x − 2) = 0 har lösningarna x = −3 och x = 2, så den positiva lösningen är 2. Kvantitet I är större. Det är lätt att ta fel på tecknet: x − 3 = 0 ger x = 3, inte −3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Allan, Billy, Cilla och Dolly är bjudna på halloweenfest. De är alla utklädda till olika saker. En av dem är utklädd till fladdermus, en till spöke, en till varulv och en till zombie. Vad är Dolly utklädd till?\n(1) Cilla är utklädd till fladdermus. Det är Allan eller Billy som är utklädd till varulv.\n(2) Det är Billy eller Dolly som är utklädd till zombie. Allan är utklädd till spöke.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Cilla är fladdermus och varulven är Allan eller Billy. Kvar för Dolly är spöke och zombie, och båda är möjliga. Inte tillräckligt.\n(2) Allan är spöke och zombien är Billy eller Dolly. Är Billy zombie kan Dolly vara fladdermus eller varulv. Inte tillräckligt.\n(1) och (2) tillsammans: Allan är spöke, så varulven måste vara Billy. Då kan Billy inte vara zombie, så zombien är Dolly. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Eva har en låda med knappar. Var och en av knapparna har två eller fyra hål. Varje knapp är dessutom antingen vit eller svart. Hur många knappar har Eva i lådan?\n(1) 15 av de vita knapparna har fyra hål. Det finns dubbelt så många vita som svarta knappar.\n(2) Det finns hälften så många svarta knappar som vita knappar. Ingen av de svarta knapparna har två hål.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Minst 15 knappar är vita och de vita är dubbelt så många som de svarta, men vi vet inte hur många vita knappar som har två hål. Inte tillräckligt.\n(2) Förhållandet mellan svarta och vita knappar är detsamma som i (1), och alla svarta har fyra hål, men inget antal ges. Inte tillräckligt.\n(1) och (2) tillsammans: Påståendet om förhållandet säger samma sak i båda, och antalet vita knappar med två hål är fortfarande okänt. Med 20 vita (5 med två hål) och 10 svarta blir det 30 knappar, och med 30 vita och 15 svarta blir det 45. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en damm finns det endast enfärgade näckrosor: vita och gula. Hur många gula näckrosor finns det i dammen?\n(1) Det finns sammanlagt 50 näckrosor i dammen.\n(2) Om hälften av de vita näckrosorna istället var gula, så skulle 86 procent av näckrosorna i dammen vara gula.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Vi vet det totala antalet men inte hur många som är gula. Inte tillräckligt.\n(2) Kalla antalet vita v och antalet gula g. Om hälften av de vita byter färg är 14 procent av näckrosorna vita, alltså v/2 = 0,14(v + g). Det ger förhållandet mellan vita och gula (g = 18v/7) men inget antal: 7 vita och 18 gula passar lika bra som 14 vita och 36 gula. Inte tillräckligt.\n(1) och (2) tillsammans: v + g = 50 ger v/2 = 0,14 · 50 = 7, alltså v = 14 och g = 50 − 14 = 36. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En kvadrat är indelad i fyra mindre kvadrater som figuren visar. Var och en av de mindre kvadraterna är färglagd i någon av färgerna blå, grön, gul eller röd. Ingen av kvadraterna har samma färg som någon av de andra kvadraterna. Vilken kvadrat har vilken färg?\n(1) Kvadraten längst upp till vänster är röd. Den gula kvadratens vänstra sida ligger intill den blå kvadratens högra sida.\n(2) Den röda kvadraten är rakt ovanför den blå kvadraten. Den gröna kvadraten är rakt ovanför den gula kvadraten.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Den övre vänstra kvadraten är röd. Den blå och den gula ligger bredvid varandra i samma rad, med den blå till vänster. I den övre raden står den röda till vänster, så paret måste ligga i den nedre raden: blå nere till vänster och gul nere till höger. Den gröna blir då uppe till höger. Tillräckligt.\n(2) Röd ligger ovanför blå och grön ovanför gul, men röd och blå kan stå i den vänstra kolumnen och grön och gul i den högra, eller tvärtom. Inte tillräckligt.",
+      "figure": {
+        "pages": [
+          14
+        ],
+        "box": [
+          0.26,
+          0.558,
+          0.42,
+          0.672
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x är ett positivt tal. Är x > 5?\n(1) x > √26\n(2) √x > 5/2",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) √26 är större än √25 = 5, så x > √26 > 5. Svaret är ja. Tillräckligt.\n(2) Båda leden är positiva, så olikheten gäller även efter kvadrering: x > (5/2)² = 25/4 = 6,25. Då är x > 5, och svaret är ja. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett sjusiffrigt tal gäller att siffran 1 förekommer fyra gånger och siffran 2 förekommer tre gånger. Vilket är det sjusiffriga talet?\n(1) I talet förekommer aldrig siffran 1 två gånger i följd.\n(2) I talet efterföljs alltid siffran 2 direkt av siffran 1.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Fyra ettor på sju platser utan att två ettor står bredvid varandra går bara om ettorna står på plats 1, 3, 5 och 7. Talet är 1212121. Tillräckligt.\n(2) Varje tvåa följs av en etta, så talet består av tre par 21 och en extra etta. Den extra ettan kan stå först, mellan paren eller sist, till exempel 1212121, 2112121 eller 2121211. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Studera de statliga medel som Stockholms län fick till kulturverksamhet 2006 respektive 2012. Hur stort var beloppet per invånare 2012 jämfört med 2006?",
+      "options": [
+        "Tre gånger så stort",
+        "Fyra gånger så stort",
+        "Fem gånger så stort",
+        "Sex gånger så stort"
+      ],
+      "blindAnswer": 1,
+      "explain": "Beloppet per invånare står i kolumnerna Kr/inv. För Stockholms län var det 188 kronor 2006 och 776 kronor 2012. 776/188 ≈ 4,1, så beloppet var ungefär fyra gånger så stort. Jämför man i stället de totala beloppen i kolumnerna Tkr, 1 649 692 mot 361 428, blir kvoten cirka 4,6, men frågan gäller beloppet per invånare.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Jämför det län som 2007 fick mest statliga medel till kulturverksamhet med det län som fick minst. Hur stor var skillnaden?",
+      "options": [
+        "319 537 000 kronor",
+        "390 010 000 kronor",
+        "396 535 000 kronor",
+        "397 335 000 kronor"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd kolumnen Tkr för 2007. Mest fick Västra Götalands län, 437 710 tusen kronor, och minst fick Kronobergs län, 40 375 tusen kronor. Skillnaden är 437 710 − 40 375 = 397 335 tusen kronor, alltså 397 335 000 kronor. Stockholms län (359 912) fick inte mest 2007; räknar man med det länet blir skillnaden 319 537 000 kronor. 396 535 000 kronor är skillnaden mellan störst och minst år 2006.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de statliga medlen till kulturverksamhet 2009 gick till de tre storstadslänen Stockholms län, Skåne län och Västra Götalands län?",
+      "options": [
+        "40 procent",
+        "50 procent",
+        "60 procent",
+        "70 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd kolumnen Tkr för 2009. Stockholms län fick 1 434 185, Skåne län 313 000 och Västra Götalands län 486 030 tusen kronor, sammanlagt 2 233 215 tusen kronor. Summan för hela landet var 3 688 491 tusen kronor. Andelen är 2 233 215/3 688 491 ≈ 0,61, alltså ungefär 60 procent.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilket av följande datum var månens fas närmast halvmåne?",
+      "options": [
+        "23 augusti",
+        "29 augusti",
+        "3 september",
+        "7 september"
+      ],
+      "blindAnswer": 0,
+      "explain": "Halvmåne är 50 procent på den vänstra axeln, och fasen visas av den tjocka kurvan. Strecket ovanför ett datum markerar dygnets början, så 23 augusti är sträckan från mitten mellan strecken för 22 och 24 augusti fram till strecket för 24 augusti. Där ligger den tjocka kurvan på ungefär 50–60 procent. Den 29 augusti är det nästan fullmåne (cirka 100 procent), den 3 september är fasen cirka 67–77 procent och den 7 september cirka 25–35 procent. Närmast halvmåne är 23 augusti.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stor var skillnaden i grader mellan månens högsta och lägsta läge under ett dygn?",
+      "options": [
+        "10 grader",
+        "35 grader",
+        "50 grader",
+        "65 grader"
+      ],
+      "blindAnswer": 3,
+      "explain": "Höjdläget visas av den tunna kurvan och avläses på den högra axeln. Varje dygn går kurvan upp till en topp och ned till en dal, och avståndet mellan topp och dal är ungefär lika stort under hela perioden. Den 25 augusti når kurvan cirka 13 grader över horisonten och cirka 51 grader under, och den 5 september cirka 48 grader över och cirka 15 grader under. Skillnaden är i båda fallen ungefär 64 grader, alltså närmast 65 grader.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "För vilket datum gällde att månens fas någon gång under dygnet var 65–70 procent och att månen som lägst stod cirka 20 grader under horisonten?",
+      "options": [
+        "25 augusti",
+        "4 september",
+        "10 september",
+        "16 september"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den tjocka kurvan (fasen, vänstra axeln) passerar 65–70 procent två gånger: kring övergången mellan 24 och 25 augusti när fasen ökar och kring övergången mellan 3 och 4 september när den minskar. Den 10 och 16 september är fasen bara cirka 5–10 procent, så de datumen faller bort. Den 25 augusti är fasen 71–80 procent, och den tunna kurvan (höjdläget, högra axeln) går ned till cirka 50 grader under horisonten. Den 4 september börjar dygnet med fasen cirka 67 procent, och den tunna kurvans lägsta punkt det dygnet ligger knappt 20 grader under horisonten. Svaret är 4 september.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "Avläsningen är snäv: fasen är cirka 67 procent i början av 4 september och månen står som lägst cirka 17 grader under horisonten det dygnet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "I vilken åldersgrupp bland män respektive kvinnor var skillnaden i arbetsinkomst mellan tillsvidareanställda och tidsbegränsat anställda störst 2007, i kronor räknat?",
+      "passage": "Svarsalternativen anger: män – kvinnor",
+      "options": [
+        "20–29 år – 20–29 år",
+        "20–29 år – 40–49 år",
+        "50–64 år – 20–29 år",
+        "50–64 år – 40–49 år"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det nedersta diagrammet (2007) och jämför den grå stapeln (tillsvidareanställda) med den svarta (tidsbegränsat anställda) i varje grupp. Män: 20–29 år cirka 263 000 − 153 000 = 110 000 kronor, 30–39 år cirka 317 000 − 267 000 = 50 000, 40–49 år cirka 333 000 − 224 000 = 109 000 och 50–64 år cirka 331 000 − 191 000 = 140 000. Störst för män är alltså 50–64 år. Kvinnor: 20–29 år cirka 224 000 − 154 000 = 70 000, 30–39 år cirka 242 000 − 178 000 = 64 000, 40–49 år cirka 254 000 − 196 000 = 58 000 och 50–64 år cirka 252 000 − 190 000 = 62 000. Störst för kvinnor är 20–29 år.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "I vilken grupp och vilket år noterades den största skillnaden i arbetsinkomst mellan tillsvidareanställda män och tidsbegränsat anställda män, i kronor räknat?",
+      "options": [
+        "Arbetare, 2007",
+        "Tjänstemän, 2002",
+        "Tjänstemän, 2005",
+        "Tjänstemän, 2007"
+      ],
+      "blindAnswer": 1,
+      "explain": "Jämför de två första staplarna för varje år, den grå (män, tillsvidareanställda) och den svarta (män, tidsbegränsat anställda). Bland tjänstemännen (mittdiagrammet) är skillnaden 2002 cirka 348 000 − 205 000 = 143 000 kronor, 2005 cirka 361 000 − 258 000 = 103 000 och 2007 cirka 382 000 − 270 000 = 112 000. Bland arbetarna (översta diagrammet) är skillnaden 2007 bara cirka 286 000 − 191 000 = 95 000 kronor. Störst är skillnaden för tjänstemän 2002.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "År 2007 var skillnaden i arbetsinkomst mellan tillsvidareanställda och tidsbegränsat anställda betydligt större bland män än bland kvinnor i alla åldersgrupper utom en. Vilken?",
+      "options": [
+        "20–29-åringar",
+        "30–39-åringar",
+        "40–49-åringar",
+        "50–64-åringar"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det nedersta diagrammet och räkna skillnaden mellan den grå och den svarta stapeln i varje grupp. 20–29 år: män cirka 110 000 kronor, kvinnor cirka 70 000. 30–39 år: män cirka 50 000 (317 000 − 267 000), kvinnor cirka 64 000 (242 000 − 178 000). 40–49 år: män cirka 109 000, kvinnor cirka 58 000. 50–64 år: män cirka 140 000, kvinnor cirka 62 000. Bara bland 30–39-åringarna är skillnaden inte större bland männen.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "I vilken grupp ökade arbetsinkomsten mest från 2002 till 2007, i kronor räknat?",
+      "options": [
+        "Arbetare män, tillsvidareanställda",
+        "Arbetare män, tidsbegränsat anställda",
+        "Tjänstemän män, tillsvidareanställda",
+        "Tjänstemän män, tidsbegränsat anställda"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför staplarna för 2002 och 2007 i de två översta diagrammen. Arbetare män, tillsvidareanställda: från cirka 258 000 till 286 000 kronor, en ökning med cirka 28 000. Arbetare män, tidsbegränsat anställda: från cirka 168 000 till 191 000, cirka 23 000. Tjänstemän män, tillsvidareanställda: från cirka 348 000 till 382 000, cirka 34 000. Tjänstemän män, tidsbegränsat anställda: från cirka 205 000 till 270 000, cirka 65 000. Mest ökade alltså inkomsten för tidsbegränsat anställda manliga tjänstemän.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Jämför antalet hästskjutsar som utgick från Rödå med antalet som utgick från den ort varifrån det utgick flest hästskjutsar under året. Hur stor var skillnaden?",
+      "options": [
+        "300",
+        "500",
+        "800",
+        "1 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Antalet hästskjutsar visas av cirkelns storlek; jämför med teckenförklaringen. Den största cirkeln på kartan står vid Levar, sydväst om Umeå nära kusten, och den är lika stor som symbolen för 1 300 hästskjutsar. Cirkeln vid Rödå, nordväst om Umeå på vägen mot Vindeln, är lika stor som symbolen för 500. Skillnaden är 1 300 − 500 = 800 hästskjutsar.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "På vilket avstånd (fågelvägen) och i vilken riktning från Norsjö ligger Dorotea?",
+      "options": [
+        "110 km i ostnordostlig riktning",
+        "110 km i västsydvästlig riktning",
+        "165 km i ostnordostlig riktning",
+        "165 km i västsydvästlig riktning"
+      ],
+      "blindAnswer": 3,
+      "explain": "Norsjö ligger i kartans norra del och Dorotea längst i sydväst, så från Norsjö ligger Dorotea i västsydvästlig riktning (ostnordostlig är det motsatta hållet). Mät sträckan mellan orterna och jämför med skalstocken: den är drygt tre gånger så lång som skalstockens 50 km, ungefär 160–165 km. Svaret är 165 km i västsydvästlig riktning.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
