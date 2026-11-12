@@ -1,0 +1,744 @@
+{
+  "examId": "hp-2022-10-23",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 1/3 + 3/4 + 5/12?",
+      "options": [
+        "9/4",
+        "9/6",
+        "9/12",
+        "9/19"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv bråken med minsta gemensamma nämnaren 12: 1/3 = 4/12 och 3/4 = 9/12. Summan är 4/12 + 9/12 + 5/12 = 18/12 = 3/2. Bland alternativen är det 9/6 som är lika med 3/2. Alternativet 9/19 lockar om man adderar täljarna (1 + 3 + 5 = 9) och nämnarna (3 + 4 + 12 = 19) var för sig, men så adderar man inte bråk.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Linjerna L₁ och L₂ skär varandra i punkten P. Vilka koordinater har punkten P?",
+      "passage": "L₁: y = 2x − 4\nL₂: y = x − 1",
+      "options": [
+        "(−4, −1)",
+        "(1, 0)",
+        "(2, −4)",
+        "(3, 2)"
+      ],
+      "blindAnswer": 3,
+      "explain": "I skärningspunkten har linjerna samma y-värde, så sätt 2x − 4 = x − 1. Det ger x = 3, och då är y = 3 − 1 = 2. Kontroll i den första linjen: 2 · 3 − 4 = 2. Punkten P är (3, 2). Punkten (1, 0) ligger på L₂ men inte på L₁ (2 · 1 − 4 = −2), och (2, −4) och (−4, −1) är bara tal ur ekvationerna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "45x/7 = 5x + 10",
+      "options": [
+        "7/8",
+        "7/4",
+        "5",
+        "7"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera båda leden med 7: 45x = 35x + 70. Dra bort 35x från båda leden: 10x = 70, så x = 7. Kontroll: vänsterledet blir 45 · 7/7 = 45 och högerledet 5 · 7 + 10 = 45.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är 7 procent av 15?",
+      "options": [
+        "1",
+        "1,05",
+        "1,1",
+        "1,15"
+      ],
+      "blindAnswer": 1,
+      "explain": "7 procent av 15 är 0,07 · 15 = 1,05. Ett annat sätt: 1 procent av 15 är 0,15, och 7 · 0,15 = 1,05.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är differensen mellan medianen och medelvärdet av de sex talen −1, 1, 2, 4, 5 och 7?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "blindAnswer": 0,
+      "explain": "Talen står redan i storleksordning. Med sex tal är medianen medelvärdet av de två mittersta talen, 2 och 4: (2 + 4)/2 = 3. Medelvärdet är (−1 + 1 + 2 + 4 + 5 + 7)/6 = 18/6 = 3. Differensen är 3 − 3 = 0. Alternativet 3 lockar om man svarar med medianen eller medelvärdet i stället för skillnaden mellan dem.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är 5x?",
+      "options": [
+        "80°",
+        "100°",
+        "120°",
+        "140°"
+      ],
+      "blindAnswer": 1,
+      "explain": "De tre linjerna till höger bildar en liten triangel. Vid den övre skärningspunkten är triangelns vinkel 60°, eftersom den är vertikalvinkel till den markerade vinkeln 60°. Vid den nedre skärningspunkten ligger den markerade vinkeln 140° bredvid triangelns vinkel på samma linje, så triangelns vinkel är 180° − 140° = 40°. Triangelns tredje vinkel, där de två långa linjerna korsar varandra, är då 180° − 60° − 40° = 80°. Den är vertikalvinkel till den vänstra triangelns vinkel i samma punkt, så i den vänstra triangeln gäller 3x + 2x + 80° = 180°. Alltså är 5x = 100°.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.215,
+          0.508,
+          0.53,
+          0.69
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är en funktion som uppfyller att f(1) > f(0)?",
+      "options": [
+        "f(x) = 2",
+        "f(x) = x − 2",
+        "f(x) = x² − 2x + 1",
+        "f(x) = −2x + 2"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna ut f(1) och f(0) för varje funktion. f(x) = 2 ger 2 och 2, alltså lika. f(x) = x − 2 ger f(1) = −1 och f(0) = −2, och −1 > −2. f(x) = x² − 2x + 1 ger f(1) = 1 − 2 + 1 = 0 och f(0) = 1. f(x) = −2x + 2 ger f(1) = 0 och f(0) = 2. Bara f(x) = x − 2 uppfyller villkoret; den är en växande rät linje.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket (a + b)(c + d)(e + f)?",
+      "options": [
+        "ac + ad + bc + bd + e + f",
+        "ac + ad + bc + bd + ae + af + be + bf",
+        "ace + bdf",
+        "ace + acf + ade + adf + bce + bcf + bde + bdf"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera först de två första parenteserna: (a + b)(c + d) = ac + ad + bc + bd. Multiplicera sedan varje term med (e + f): ace + acf + ade + adf + bce + bcf + bde + bdf. Varje term innehåller en bokstav från varje parentes, och det blir 2 · 2 · 2 = 8 termer. De andra alternativen har för få termer eller termer som saknar en faktor från någon av parenteserna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Arean av en cirkel är 27 cm². Vilket av svarsalternativen är det bästa närmevärdet för cirkelns diameter?",
+      "options": [
+        "1,5 cm",
+        "4,5 cm",
+        "6 cm",
+        "9 cm"
+      ],
+      "blindAnswer": 2,
+      "explain": "Arean är πr² = 27 cm², så r² = 27/π. Med π ≈ 3 blir r² ≈ 9 och r ≈ 3 cm, och diametern är 2r ≈ 6 cm. Räknar man med π ≈ 3,14 blir r² ≈ 8,6, r ≈ 2,9 cm och diametern ungefär 5,9 cm, som ligger närmast 6 cm. Alternativet 9 cm lockar om man stannar vid r² ≈ 9 och glömmer att dra roten ur.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x om 1/3 − x = 1/2 − 1/3?",
+      "options": [
+        "−1/2",
+        "−1/6",
+        "1/6",
+        "1/2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Högerledet är 1/2 − 1/3 = 3/6 − 2/6 = 1/6. Ekvationen blir 1/3 − x = 1/6, så x = 1/3 − 1/6 = 2/6 − 1/6 = 1/6. Kontroll: 1/3 − 1/6 = 1/6, som är lika med högerledet. Alternativet −1/6 lockar om man tappar minustecknet framför x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "För en viss sorts garn gäller att ett nystan med 130 meter garn väger 50 gram. Emma använder 430 gram av garnet för att sticka en tröja. Vilket svarsalternativ är ett uttryck för att beräkna hur många meter garn Emma använder till tröjan?",
+      "options": [
+        "50/130 · 430",
+        "50/430 · 130",
+        "130/50 · 430",
+        "430/130 · 50"
+      ],
+      "blindAnswer": 2,
+      "explain": "Eftersom 50 gram garn är 130 meter långt motsvarar varje gram 130/50 meter. 430 gram är då 130/50 · 430 meter (= 1 118 meter). Kontrollera med enheterna: (meter/gram) · gram = meter. Uttrycket 50/130 · 430 räknar i stället med gram per meter och ger fel enhet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar 4 · 2ˣ?",
+      "options": [
+        "2ˣ⁺²",
+        "2²ˣ",
+        "4ˣ⁻¹",
+        "8ˣ"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv 4 som en tvåpotens: 4 = 2². Då är 4 · 2ˣ = 2² · 2ˣ = 2ˣ⁺², eftersom exponenterna adderas när man multiplicerar potenser med samma bas. Kontroll med x = 1: 4 · 2¹ = 8 och 2¹⁺² = 2³ = 8. Alternativet 8ˣ lockar om man multiplicerar baserna, men 4 · 2ˣ är inte (4 · 2)ˣ; med x = 2 ger 8ˣ talet 64 i stället för 16.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "2(x + 3) = 3(x + 4)\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lös ekvationen. Multiplicera ut parenteserna: 2x + 6 = 3x + 12. Dra bort 2x och 12 från båda leden: x = 6 − 12 = −6. Kontroll: 2(−6 + 3) = −6 och 3(−6 + 4) = −6. Kvantitet I är alltså −6, som är mindre än 0. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Två vanliga sexsidiga tärningar kastas slumpmässigt en gång.\nKvantitet I: Sannolikheten att summan av det tärningarna visar är 10\nKvantitet II: Sannolikheten att summan av det tärningarna visar är 4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Två tärningar ger 6 · 6 = 36 lika sannolika utfall. Summan 10 får man med (4, 6), (5, 5) och (6, 4), alltså 3 utfall. Summan 4 får man med (1, 3), (2, 2) och (3, 1), också 3 utfall. Båda sannolikheterna är 3/36 = 1/12. Det beror på att summorna ligger lika långt från den vanligaste summan 7 (10 = 7 + 3 och 4 = 7 − 3), och fördelningen är symmetrisk kring 7.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 5/6 + 5/6\nKvantitet II: 5/6 · 5/6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet I: 5/6 + 5/6 = 10/6 = 5/3, som är större än 1. Kvantitet II: 5/6 · 5/6 = 25/36, som är mindre än 1. Att multiplicera ett positivt tal med ett tal mindre än 1 gör det mindre, så produkten är mindre än 5/6, medan summan är större. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Arean av en triangel med basen b och höjden h₁\nKvantitet II: Arean av en triangel med basen b − 1 och höjden h₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "En triangels area är basen gånger höjden delat med 2. Kvantitet I är b · h₁/2 och kvantitet II är (b − 1) · h₂/2, och ingenting sägs om hur höjderna h₁ och h₂ förhåller sig till varandra. Med b = 3, h₁ = 2 och h₂ = 2 blir kvantitet I 3 och kvantitet II 2, så I är större. Med b = 3, h₁ = 2 och h₂ = 6 blir kvantitet II 6, så II är större. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "De två linjerna L₁ och L₂ skär varandra i en rät vinkel.\nKvantitet I: Riktningskoefficienten för L₁ multiplicerad med riktningskoefficienten för L₂\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "För två linjer som skär varandra i rät vinkel (och ingen av dem är lodrät) är produkten av riktningskoefficienterna alltid −1. Det syns också i figuren: L₁ går genom (0, 3) och (1, 1), så k₁ = (1 − 3)/(1 − 0) = −2. L₂ går genom (0, −2) och (4, 0), så k₂ = 2/4 = 1/2. Produkten är −2 · 1/2 = −1, som är mindre än 1. Kvantitet II är större.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.24,
+          0.132,
+          0.52,
+          0.335
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: En fjärdedel av arean av en cirkel med radien 1 cm\nKvantitet II: Tre fjärdedelar av arean av en kvadrat med sidan 1 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Cirkeln har arean π · 1² = π cm², så kvantitet I är π/4 cm². Kvadraten har arean 1 · 1 = 1 cm², så kvantitet II är 3/4 cm². Eftersom π > 3 är π/4 > 3/4. Med siffror: π/4 ≈ 3,14/4 ≈ 0,785 och 3/4 = 0,75. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √7 + √3\nKvantitet II: √10",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Båda kvantiteterna är positiva, så man kan jämföra deras kvadrater. (√7 + √3)² = 7 + 2√21 + 3 = 10 + 2√21, som är större än (√10)² = 10. Alltså är √7 + √3 > √10. Med närmevärden: √7 ≈ 2,65 och √3 ≈ 1,73 ger summan 4,38, medan √10 ≈ 3,16. Man kan inte slå ihop √7 + √3 till √10; summan av två rötter är större än roten ur summan.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x och y är positiva heltal sådana att xy = 36.\nKvantitet I: x + y\nKvantitet II: 18",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva några par av positiva heltal med produkten 36. x = 2 och y = 18 ger x + y = 20, som är större än 18. x = 6 och y = 6 ger x + y = 12, som är mindre än 18. Kvantitet I kan alltså vara både större och mindre än kvantitet II. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Antalet minuter som det tar att färdas 40 km med hastigheten 100 km/h\nKvantitet II: Antalet minuter som det tar att färdas 40 km med hastigheten 40 m/s",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet I: tiden är 40/100 h = 0,4 h = 0,4 · 60 min = 24 minuter. Kvantitet II: 40 km = 40 000 m, och med 40 m/s tar det 40 000/40 = 1 000 sekunder, alltså 1 000/60 ≈ 16,7 minuter. Ett annat sätt: 40 m/s = 40 · 3,6 km/h = 144 km/h, som är snabbare än 100 km/h, och den lägre hastigheten ger längre tid. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 2\n125/√(x − 2) = 25\nKvantitet I: x − 2\nKvantitet II: 25",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Ur ekvationen får man √(x − 2) = 125/25 = 5. Kvadrera båda leden: x − 2 = 5² = 25. Kvantitet I är alltså 25, lika med kvantitet II. Den som stannar vid √(x − 2) = 5 och jämför 5 med 25 svarar felaktigt att II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilken area har rektangeln R?\n(1) En sida i R är 7 cm.\n(2) R har omkretsen 20 cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) En sida är 7 cm, men den andra sidan kan vara hur lång som helst. Inte tillräckligt.\n(2) Omkretsen 20 cm betyder att två intilliggande sidor tillsammans är 10 cm, till exempel 5 och 5 cm (arean 25 cm²) eller 7 och 3 cm (arean 21 cm²). Inte tillräckligt.\n(1) och (2) tillsammans: Den ena sidan är 7 cm och den andra 10 − 7 = 3 cm, så arean är 7 · 3 = 21 cm². Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är x < 0?\n(1) 4x = −8\n(2) x⁵ < 0",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) 4x = −8 ger x = −2, som är mindre än 0. Tillräckligt.\n(2) En udda potens har samma tecken som basen: x⁵ är negativt om och bara om x är negativt. Alltså är x < 0. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en skola finns de fyra klasserna 1A, 1B, 2A och 2B. Hur många barn går i klass 1A?\n(1) I klasserna 1A och 1B går det sammanlagt 51 barn.\nI klasserna 1A och 2A går det sammanlagt 53 barn.\n(2) I klass 2B går det 24 barn. Det går 103 barn i de fyra klasserna tillsammans.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Två samband, 1A + 1B = 51 och 1A + 2A = 53, men tre okända. Klass 1A kan till exempel ha 25 barn (1B 26 och 2A 28) eller 30 barn (1B 21 och 2A 23). Inte tillräckligt.\n(2) Klasserna 1A, 1B och 2A har tillsammans 103 − 24 = 79 barn, men det säger inte hur de fördelas. Inte tillräckligt.\n(1) och (2) tillsammans: Adderar man de två summorna i (1) räknas 1A två gånger: 2 · 1A + 1B + 2A = 51 + 53 = 104. Enligt (2) är 1A + 1B + 2A = 79. Skillnaden är 1A = 104 − 79 = 25 barn. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Glas A rymmer 80 % av det som ryms i glas B. Hur mycket rymmer glas B?\n(1) När glas A är helt fyllt innehåller det 4/5 av det som ryms i glas B.\n(2) Glas A innehåller 6 cl och är halvfullt. Glas B är fyllt till 75 %.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) 4/5 är samma sak som 80 %, så påståendet upprepar bara det som redan står i frågan, och ingen volym anges. Inte tillräckligt.\n(2) Glas A är halvfullt med 6 cl, så glas A rymmer 12 cl. Glas A rymmer 80 % av glas B, så glas B rymmer 12/0,8 = 15 cl. Att glas B är fyllt till 75 % behövs inte. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En dag handlar Åke i en bokhandel, en klädaffär och en skoaffär. Han handlar för sammanlagt 1 600 kronor. Hur mycket handlar Åke för i skoaffären?\n(1) I bokhandeln handlar Åke för en femtedel av det han handlar för i skoaffären.\nI klädaffären handlar han för dubbelt så mycket som i bokhandeln.\n(2) Det sammanlagda beloppet som Åke handlar för i bokhandeln och klädaffären är mer än hälften av vad han handlar för i skoaffären.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kalla beloppet i skoaffären s kronor.\n(1) I bokhandeln handlar han för s/5 och i klädaffären för 2 · s/5 = 2s/5. Totalt är s + s/5 + 2s/5 = 8s/5 = 1 600, så s = 1 000 kronor. Tillräckligt.\n(2) Bokhandeln och klädaffären är tillsammans 1 600 − s kronor, och 1 600 − s > s/2 ger bara att s är mindre än cirka 1 067 kronor. Beloppet i skoaffären kan till exempel vara 500 eller 1 000 kronor. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Emma, Marie och Petra är alla olika långa. Deras medianlängd är 173 cm.\nVem av dem är längst?\n(1) Emma är 173 cm lång. Det skiljer mindre än 10 cm i längd mellan Emma och den som är längst.\n(2) Om Marie hade varit 5 cm kortare så skulle gruppens medianlängd ändå ha varit 173 cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Medianen av tre olika längder är den mittersta, så den mellersta av dem är 173 cm.\n(1) Emma är den mellersta, och den längsta är kortare än 183 cm. Det kan vara Marie eller Petra. Inte tillräckligt.\n(2) Om Marie vore den mellersta skulle medianen sjunka när hon blev 5 cm kortare, så Marie är antingen kortast eller längst (och i så fall minst 178 cm). Inte tillräckligt.\n(1) och (2) tillsammans: Marie kan vara kortast, till exempel Marie 165, Emma 173 och Petra 178 cm, och då är Petra längst. Marie kan också vara längst, till exempel Petra 165, Emma 173 och Marie 180 cm; skillnaden mot Emma är 7 cm, och med Marie 175 cm vore medianen fortfarande 173 cm. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Studera hur andelen som hade tillgång till internet i hemmet förändrades under den redovisade perioden. Hur stor var den största förändringen mellan två på varandra följande år?",
+      "options": [
+        "10 procentenheter",
+        "15 procentenheter",
+        "20 procentenheter",
+        "25 procentenheter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Internet är den tunna streckade linjen i det övre diagrammet, och den största förändringen syns där linjen är brantast. Mellan 1999 och 2000 stiger den från cirka 30 procent till cirka 51 procent, alltså ungefär 20 procentenheter. Året före steg den från cirka 15 till cirka 30 procent (15 procentenheter), och mellan 2002 och 2003 från cirka 56 till cirka 65 procent (9 procentenheter). Övriga årsförändringar är ännu mindre. Den största förändringen var alltså ungefär 20 procentenheter.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Anta att det i en skola 2016 fanns 250 elever som var i åldern 8–9 år. Hur många av dessa skulle enligt statistiken ha använt internet dagligen?",
+      "options": [
+        "125",
+        "150",
+        "165",
+        "195"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det nedre diagrammet. I gruppen 8–9 år är stapeln för 2016 (den prickiga) cirka 66 procent. 66 procent av 250 elever är 0,66 · 250 = 165 elever. Alternativet 195 motsvarar 78 procent och lockar om man läser av stapeln för 2017, som är cirka 77 procent.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Vilket av svarsförslagen står för den minsta ökningen, i procentenheter räknat, om man jämför det första och det sista år då respektive kategori redovisas?",
+      "options": [
+        "Dator",
+        "Bredband",
+        "Smart mobil",
+        "Surfplatta"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av det övre diagrammet vid varje kategoris första och sista år. Dator: från cirka 25 procent 1995 till cirka 93 procent 2017, en ökning med ungefär 68 procentenheter. Bredband: från cirka 3 procent 2000 till cirka 90 procent 2017, ungefär 87 procentenheter. Smart mobil: från cirka 26 procent 2011 till cirka 85 procent 2017, ungefär 59 procentenheter. Surfplatta: från cirka 5 procent 2011 till cirka 70 procent 2017, ungefär 65 procentenheter. Minst ökade smart mobil, eftersom den redan från början låg ganska högt.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilket var förhållandet mellan antalet får i Gotlands län och antalet får i Kronobergs län?",
+      "options": [
+        "2:1",
+        "3:1",
+        "3:2",
+        "4:1"
+      ],
+      "blindAnswer": 3,
+      "explain": "Antalet får står i kolumnen Summa får: 71 485 i Gotlands län och 18 305 i Kronobergs län. 71 485/18 305 ≈ 3,9, alltså ungefär 4:1. Kontroll: 4 · 18 305 = 73 220, som ligger nära 71 485, medan 3 · 18 305 = 54 915 är alldeles för lite.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Anta att de vuxna fåren i juni 2014 utgjordes av en tredjedel baggar och två tredjedelar tackor. Hur många tackor fanns det i så fall vid denna tidpunkt?",
+      "options": [
+        "96 000",
+        "192 000",
+        "201 000",
+        "393 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "De vuxna fåren står i kolumnen Baggar och tackor, födda 2013 eller tidigare. För hela riket är de 287 303. Två tredjedelar av dem är tackor: 2/3 · 287 303 ≈ 191 500, alltså ungefär 192 000. Alternativet 96 000 är en tredjedel, alltså baggarna, och 393 000 är två tredjedelar av alla får inklusive lammen (588 757).",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "I juni 2014 fanns det i Sverige 8 951 jordbruksföretag som hade får. Vilket var det genomsnittliga antalet får per jordbruksföretag vid denna tidpunkt?",
+      "options": [
+        "24",
+        "32",
+        "52",
+        "66"
+      ],
+      "blindAnswer": 3,
+      "explain": "Antalet får i hela Sverige står på raden Hela riket i kolumnen Summa får: 588 757. Per jordbruksföretag blir det 588 757/8 951 ≈ 65,8, alltså cirka 66 får. Räknar man bara med de vuxna fåren (287 303) får man 287 303/8 951 ≈ 32, men frågan gäller alla får, även lammen.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Identifiera det år då Västerbotten betalade både kostgärd och skjutsfärdspengar men inte månadspengar. Vilken var den största extra ordinarie krigsskatten det året?",
+      "options": [
+        "Hjonelagspengar",
+        "Hjälppengar (Hjälppgr.)",
+        "Jämtlandspengar",
+        "Kostgärd"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kostgärd finns 1600–1603, 1606, 1609 och 1611. Skjutsfärdspengar ligger närmast ovanför de ordinarie skatterna från 1604 och fortsätter som ett smalt band under Kolagärd 1610 och under Hjälppgr. 1611. Månadspengar finns 1604–1609. Året är alltså 1611. Det året går fältet Hjonelagspengar (det fortsätter från 1609–1610 in under Jämtlandspengar) från cirka 9 300 till cirka 12 300 daler, alltså ungefär 3 000 daler. Kostgärd är ungefär 15 800 − 14 000 = 1 800 daler, hjälppengarna cirka 1 000 och jämtlandspengarna cirka 900 daler. Störst är alltså hjonelagspengarna, trots att namnet inte står i 1611 års stapel.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Studera de extra ordinarie krigsskatterna under perioden 1600–1612. Hur mycket större var dessa skatter det år då de var som störst jämfört med det år då de var som minst?",
+      "options": [
+        "5 100 daler",
+        "6 200 daler",
+        "8 700 daler",
+        "11 200 daler"
+      ],
+      "blindAnswer": 1,
+      "explain": "De extra ordinarie skatterna är allt som ligger ovanför de ordinarie skatterna, så räkna stapelns topp minus de ordinarie skatternas nivå. De ordinarie skatterna når cirka 6 100 daler 1600–1606 och cirka 7 200 daler från 1607. Störst är de extra skatterna 1606: toppen ligger vid cirka 14 850 daler, så de är 14 850 − 6 100 ≈ 8 750 daler (1611 är det nästan lika mycket, cirka 15 700 − 7 200 = 8 500). Minst är de 1607, när bara skjutsfärdspengar och månadspengar finns: cirka 9 750 − 7 200 = 2 550 daler. Skillnaden är 8 750 − 2 550 ≈ 6 200 daler. Den som missar att de ordinarie skatterna ökar 1607 räknar med för höga extra skatter det året och får en för liten skillnad.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "För hur många av de redovisade åren gällde att de extra ordinarie krigsskatterna tillsammans utgjorde ett större belopp än de ordinarie skatterna?",
+      "options": [
+        "9",
+        "11",
+        "13",
+        "15"
+      ],
+      "blindAnswer": 1,
+      "explain": "De extra skatterna är större än de ordinarie när stapelns topp ligger mer än dubbelt så högt som de ordinarie skatternas nivå: över cirka 2 · 6 100 = 12 200 daler 1600–1606 och över cirka 2 · 7 200 = 14 400 daler 1607–1619. Det gäller 1606 (toppen cirka 14 850), 1609 (cirka 14 700), 1610 (cirka 15 600), 1611 (cirka 15 700) och alla sju åren 1613–1619, där den lägsta toppen är cirka 14 850 daler år 1619. Övriga år ligger toppen under gränsen, till exempel 1601 (cirka 11 200), 1608 (cirka 12 300) och 1612 (cirka 11 400). Det blir 4 + 7 = 11 år.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "1609 och 1619 ligger nära gränsen: toppen cirka 14 700 respektive 14 850 daler mot dubbla ordinarie skatterna, cirka 14 400 daler.",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilka var de tre största delkategorierna i kronor räknat?",
+      "options": [
+        "Utemåltider – Boende – Övrig handel",
+        "Utemåltider – Boende – Kultur/rekreation/sport",
+        "Utemåltider – Övrig handel – Kultur/rekreation/sport",
+        "Boende – Övrig handel – Kultur/rekreation/sport"
+      ],
+      "blindAnswer": 0,
+      "explain": "Beloppet under varje cirkel gäller hela cirkeln, och cirklarna är lika stora oavsett belopp. Boende och restaurang (57 032 miljoner kronor) är delad mitt itu, så utemåltider och boende är cirka 28 500 vardera. I varuhandeln (74 587) tar övrig handel upp drygt fyra tiondelar av cirkeln, cirka 0,43 · 74 587 ≈ 32 000. Drivmedel (cirka 22 800) och livsmedel (cirka 19 800) är mindre, och den största delen av transporterna, luftfart, är knappt hälften av 44 583, alltså cirka 21 000. Kultur/rekreation/sport fyller en hel cirkel men är bara 14 776. De tre största är alltså utemåltider, boende och övrig handel.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stort var det belopp som svenska resenärer spenderade på turismrelaterad konsumtion jämfört med det som utländska besökare spenderade?",
+      "options": [
+        "Hälften så stort",
+        "En tredjedel så stort",
+        "Tre gånger så stort",
+        "Dubbelt så stort"
+      ],
+      "blindAnswer": 3,
+      "explain": "Svenska resenärer är både affärsresenärer och fritidsresenärer: 41 075 + 87 610 = 128 685 miljoner kronor. Utländska besökare spenderade 62 293 miljoner kronor. 128 685/62 293 ≈ 2,07, så de svenska resenärernas belopp var ungefär dubbelt så stort. Hälften så stort blir det om man jämför åt fel håll.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Utländska besökare spenderade 15 710 miljoner kronor på utemåltider 2005. Hur stor andel av de utländska besökarnas turismrelaterade konsumtion avsåg utemåltider?",
+      "options": [
+        "1/4",
+        "1/3",
+        "2/5",
+        "1/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "De utländska besökarnas turismrelaterade konsumtion står i rutan Utländska besökare: 62 293 miljoner kronor. Andelen för utemåltider är 15 710/62 293 ≈ 0,25, alltså ungefär 1/4. Kontroll: 62 293/4 ≈ 15 600, nära 15 710. Alternativet 1/2 lockar om man i stället delar med alla resenärers utgifter för utemåltider (hälften av 57 032, cirka 28 500), men frågan gäller de utländska besökarnas hela konsumtion.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
