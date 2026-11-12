@@ -3,6 +3,7 @@
  * databasen, som är sanningen. Appen använder filen när Supabase inte nås.
  *
  *   npm run fragebank:export
+ *   npm run fragebank:export -- --dry-run   # bara antalet per delprov, skriver inget
  *
  * Läser NEXT_PUBLIC_SUPABASE_URL och NEXT_PUBLIC_SUPABASE_ANON_KEY ur
  * .env.local och hämtar med den publika nyckeln – alltså exakt det RLS släpper
@@ -87,6 +88,19 @@ async function main() {
     .map((r) => ({ id: r.id, title: r.title, prompts: r.prompts }));
 
   if (questions.length === 0) throw new Error("Databasen gav inga publicerade frågor – skriver inte över reservbanken.");
+
+  if (process.argv.includes("--dry-run")) {
+    const byKind = KINDS.map((kind) => {
+      const ofKind = questions.filter((q) => q.kind === kind);
+      const uhr = ofKind.filter((q) => q.id.startsWith("hp-")).length;
+      return `${kind} ${ofKind.length}${uhr > 0 ? ` (varav UHR ${uhr})` : ""}`;
+    });
+    const uhr = questions.filter((q) => q.id.startsWith("hp-")).length;
+    console.log(`Publicerade frågor som användarna ser: ${questions.length} (varav UHR ${uhr}), ${reflect.length} reflektioner.`);
+    console.log(`Per delprov: ${byKind.join(", ")}.`);
+    console.log("--dry-run: reservbanken skrevs inte.");
+    return;
+  }
 
   writeFileSync(FALLBACK_PATH, JSON.stringify({ questions, reflect }, null, 2) + "\n");
   console.log(`Skrev ${questions.length} frågor och ${reflect.length} reflektioner till ${FALLBACK_PATH}`);
