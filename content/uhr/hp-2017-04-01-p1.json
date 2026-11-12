@@ -1,0 +1,777 @@
+{
+  "examId": "hp-2017-04-01",
+  "passNumber": 1,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är (5,1 · 10⁸)/(1,7 · 10⁴)?",
+      "options": [
+        "3 · 10²",
+        "3 · 10³",
+        "3 · 10⁴",
+        "3 · 10¹²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dela talen och tiopotenserna var för sig: 5,1/1,7 = 3 och 10⁸/10⁴ = 10⁸⁻⁴ = 10⁴. Kvoten är alltså 3 · 10⁴. Vid division subtraheras exponenterna. Den som i stället adderar dem får 10¹², och den som dividerar exponenterna (8/4 = 2) får 10².",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Hur många procent av energin kommer från fett?",
+      "passage": "Tobias äter yoghurt till frukost.\nFördelningen av energin i Tobias yoghurt är:\nFett 13,5 kcal\nProtein 46,5 kcal\nKolhydrat 120 kcal",
+      "options": [
+        "7,5 %",
+        "10 %",
+        "13,5 %",
+        "67 %"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den totala energin är 13,5 + 46,5 + 120 = 180 kcal. Andelen från fett är 13,5/180 = 0,075, alltså 7,5 %. Kontroll: 10 % av 180 kcal är 18 kcal, och 13,5 är tre fjärdedelar av 18, alltså 7,5 %. Alternativet 13,5 % lockar om man tar fettets kcal-tal som procent utan att dela med den totala energin.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Linjerna L₁ och L₂ är parallella. Sträckan AB och sträckan CD är parallella. Hur lång är den sammanlagda sträcka man rört sig om man startar vid A och går raka vägen till B, sedan till C, vidare till D och slutligen till E?",
+      "options": [
+        "24 m",
+        "32 m",
+        "36 m",
+        "40 m"
+      ],
+      "blindAnswer": 2,
+      "explain": "BC och DE är vinkelräta mot linjerna och går mellan dem, så båda är 8 m. BCED är en rektangel, så CE = BD = 6 m. CD är hypotenusan i den rätvinkliga triangeln CED med kateterna 6 m och 8 m: CD = √(6² + 8²) = √100 = 10 m. Eftersom AB är parallell med CD och L₁ med L₂ är ABDC en parallellogram, så AB = CD = 10 m. Hela vägen blir AB + BC + CD + DE = 10 + 8 + 10 + 8 = 36 m.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.2,
+          0.205,
+          0.66,
+          0.37
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "3x − 15 = 21 − 5x",
+      "options": [
+        "−18",
+        "0,75",
+        "4",
+        "4,5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Samla x-termerna i vänsterledet och talen i högerledet: 3x + 5x = 21 + 15, alltså 8x = 36 och x = 36/8 = 4,5. Kontroll: 3 · 4,5 − 15 = −1,5 och 21 − 5 · 4,5 = −1,5. Alternativet 0,75 får man om man räknar 21 − 15 = 6 i stället för 21 + 15 = 36.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket uttryck gäller för arean av rektangeln R?",
+      "options": [
+        "a²",
+        "a² − 1",
+        "a² + 2a − 1",
+        "0"
+      ],
+      "blindAnswer": 1,
+      "explain": "Arean av en rektangel är bas gånger höjd: (1 + a)(a − 1). Multiplicera ut: (1 + a)(a − 1) = 1 · a − 1 · 1 + a · a − a · 1 = a − 1 + a² − a = a² − 1, eftersom a och −a tar ut varandra. Det är konjugatregeln (a + 1)(a − 1) = a² − 1.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.24,
+          0.1,
+          0.5,
+          0.218
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilken av graferna går genom de tre punkterna: (−8; 0), (−1; 3,5) och (4; 0)?",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 3,
+      "explain": "Punkterna (−8; 0) och (4; 0) ligger på x-axeln och (−1; 3,5) ligger ovanför den. En rät linje som går genom två punkter på x-axeln är x-axeln själv, så graf A och graf C faller bort. Graf C går visserligen genom (−8; 0) och (−1; 3,5), men den skär inte x-axeln i x = 4. Graf B skär x-axeln i −8 och 4 men ligger under x-axeln mellan dem. Graf D skär x-axeln i −8 och 4 och ligger på höjden 3,5 när x = −1, så den går genom alla tre punkterna.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.2,
+          0.462,
+          0.5,
+          0.89
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag är lika med uttrycket 2(x − 2y) − x(x + 3y) + 3y(x − y)?",
+      "options": [
+        "−x² + 3xy + 2x",
+        "−x² − 3y² + 2x − 4y",
+        "−x² − 3y² + 6xy + 2x − 4y",
+        "−x² − 3y² + 6xy + 2x + 4y"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplicera in i varje parentes: 2(x − 2y) = 2x − 4y, −x(x + 3y) = −x² − 3xy och 3y(x − y) = 3xy − 3y². Summan blir 2x − 4y − x² − 3xy + 3xy − 3y². Termerna −3xy och +3xy tar ut varandra, så kvar är −x² − 3y² + 2x − 4y. Alternativen med 6xy får man om man glömmer att minustecknet framför x(x + 3y) också ändrar tecknet på 3xy.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är √0,25?",
+      "options": [
+        "0,05",
+        "0,125",
+        "0,5",
+        "2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sök det positiva tal som multiplicerat med sig självt blir 0,25. Eftersom 0,5 · 0,5 = 0,25 är √0,25 = 0,5. Man kan också skriva 0,25 = 25/100, och då är √0,25 = 5/10 = 0,5. Alternativet 0,05 lockar om man tar roten ur 25 och flyttar decimaltecknet fel, men 0,05 · 0,05 = 0,0025.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Hur förändras grafen till den linjära funktionen f(x) = kx + m om högerledet multipliceras med talet a?",
+      "passage": "k ≠ 0\nm ≠ 0\n0 < a < 1",
+      "options": [
+        "Grafens skärningspunkt med y-axeln hamnar närmare origo. Linjens lutning blir mindre brant.",
+        "Grafens skärningspunkt med y-axeln hamnar närmare origo. Linjens lutning blir brantare.",
+        "Grafens skärningspunkt med y-axeln hamnar längre från origo. Linjens lutning blir mindre brant.",
+        "Grafens skärningspunkt med y-axeln hamnar längre från origo. Linjens lutning blir brantare."
+      ],
+      "blindAnswer": 0,
+      "explain": "Den nya funktionen är a(kx + m) = akx + am. Lutningen blir ak och linjen skär y-axeln i y = am. Eftersom 0 < a < 1 är ak närmare 0 än k, så linjen blir mindre brant, och am är närmare 0 än m, så skärningspunkten hamnar närmare origo. Exempel: f(x) = 4x + 2 och a = 1/2 ger 2x + 1, med lutningen 2 i stället för 4 och skärningen i y = 1 i stället för y = 2.",
+      "figure": null,
+      "note": "Varje alternativ står på två rader i provet (här på en rad), och orden närmare, längre från, mindre brant och brantare är understrukna.",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är medelvärdet av alla primtal p sådana att 27 < p < 36?",
+      "options": [
+        "29",
+        "30",
+        "31",
+        "32"
+      ],
+      "blindAnswer": 1,
+      "explain": "Gå igenom talen mellan 27 och 36: 28, 30, 32 och 34 är jämna, 33 = 3 · 11 och 35 = 5 · 7. Kvar är primtalen 29 och 31. Medelvärdet är (29 + 31)/2 = 60/2 = 30.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är sannolikheten att man vid två på varandra följande kast med en vanlig sexsidig tärning inte slår någon sexa?",
+      "options": [
+        "1/36",
+        "25/36",
+        "31/36",
+        "35/36"
+      ],
+      "blindAnswer": 1,
+      "explain": "I ett kast är sannolikheten att inte slå en sexa 5/6. Kasten är oberoende av varandra, så sannolikheten att ingen av de två blir en sexa är 5/6 · 5/6 = 25/36. Alternativet 35/36 är sannolikheten att inte slå två sexor, vilket är något annat, och 1/36 är sannolikheten att båda kasten blir sexor.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket alternativ anger värden på m och n så att xᵐ · xⁿ = (xᵐ)ⁿ gäller?",
+      "passage": "x > 1",
+      "options": [
+        "m = 1/2, n = 2",
+        "m = 1, n = 1",
+        "m = 1/2, n = −1/2",
+        "m = 2, n = 2"
+      ],
+      "blindAnswer": 3,
+      "explain": "Enligt potenslagarna är xᵐ · xⁿ = xᵐ⁺ⁿ och (xᵐ)ⁿ = xᵐⁿ. Eftersom x > 1 är potenserna lika bara om exponenterna är lika, alltså m + n = mn. Pröva alternativen: 1/2 + 2 = 2,5 men 1/2 · 2 = 1. 1 + 1 = 2 men 1 · 1 = 1. 1/2 + (−1/2) = 0 men 1/2 · (−1/2) = −1/4. 2 + 2 = 4 och 2 · 2 = 4. Bara m = 2 och n = 2 uppfyller villkoret.",
+      "figure": null,
+      "note": "Alternativen står i två kolumner (m och n) i provet; här skilda med kommatecken.",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Mia går x kilometer på y/2 timmar.\nPia går 2x kilometer på y timmar.\nKvantitet I: Mias medelhastighet\nKvantitet II: Pias medelhastighet",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Medelhastighet är sträcka delad med tid. Mia: x/(y/2) = 2x/y kilometer per timme. Pia: 2x/y kilometer per timme. Mia går halva Pias sträcka på halva Pias tid, så medelhastigheterna är lika vilka värden x och y än har.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 2x² + 4\nKvantitet II: (x + 1)² + (x − 1)²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Utveckla kvadraterna i kvantitet II: (x + 1)² = x² + 2x + 1 och (x − 1)² = x² − 2x + 1. Summan är 2x² + 2, eftersom 2x och −2x tar ut varandra. Kvantitet I är 2x² + 4 och alltså alltid 2 större än kvantitet II, vilket värde x än har.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 10 m²\nKvantitet II: Arean av triangeln ABC",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Triangeln är rätvinklig vid B, så kateterna AB = 4x och BC = 3x är bas och höjd. Arean är (4x · 3x)/2 = 6x² m². Den beror på x, som inte är känt. Är x = 1 blir arean 6 m², mindre än 10 m², men är x = 2 blir den 24 m², större än 10 m². Informationen räcker alltså inte.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.214,
+          0.135,
+          0.545,
+          0.293
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 7 · √35\nKvantitet II: 6 · √50",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Båda kvantiteterna är positiva, så det räcker att jämföra deras kvadrater. (7 · √35)² = 49 · 35 = 1 715 och (6 · √50)² = 36 · 50 = 1 800. Eftersom 1 800 är större än 1 715 är kvantitet II större. Man kan också flytta in faktorerna under rottecknet: 7 · √35 = √1 715 och 6 · √50 = √1 800.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Produkten av två positiva heltal är 10.\nKvantitet I: Medelvärdet av de två talen\nKvantitet II: 10/3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Två positiva heltal med produkten 10 är antingen 1 och 10 eller 2 och 5. Medelvärdet blir (1 + 10)/2 = 5,5 eller (2 + 5)/2 = 3,5. Kvantitet II är 10/3 ≈ 3,33. Båda möjliga medelvärdena är större än 10/3, så kvantitet I är större. Det kan se ut som att informationen är otillräcklig eftersom talen inte är givna, men båda möjligheterna ger samma relation.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "2x − y − 3 = y\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Lägg till y i båda leden: 2x − 3 = 2y. Dela med 2: x − 1,5 = y, alltså x = y + 1,5. Vilka värden x och y än har är x alltid 1,5 större än y. Exempel: y = 0 ger x = 1,5, och y = −5 ger x = −3,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 2 208\nKvantitet II: 47²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna ut 47² med kvadreringsregeln: (50 − 3)² = 2 500 − 2 · 50 · 3 + 3² = 2 500 − 300 + 9 = 2 209. Kvantitet II är alltså 2 209, ett mer än kvantitet I. Kontroll: 47 · 47 = 47 · 40 + 47 · 7 = 1 880 + 329 = 2 209.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 10x² − 100x\nKvantitet I: f(10)\nKvantitet II: f(0)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sätt in värdena: f(10) = 10 · 10² − 100 · 10 = 1 000 − 1 000 = 0 och f(0) = 10 · 0² − 100 · 0 = 0. Båda kvantiteterna är 0. Det syns också av faktoriseringen f(x) = 10x(x − 10), som är 0 både när x = 0 och när x = 10.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Tre cirklar ryms precis i en rektangel enligt figuren. Cirklarnas diameter d är lika stor som rektangelns bredd b.\nKvantitet I: Rektangelns höjd h\nKvantitet II: Omkretsen för en av cirklarna",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "De tre cirklarna ligger på rad och fyller rektangelns höjd, så h = 3d. Omkretsen av en cirkel är πd ≈ 3,14d. Eftersom π är större än 3 är πd större än 3d, vilken diameter cirklarna än har. Kvantitet II är alltså större.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.255,
+          0.186,
+          0.395,
+          0.433
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Värdet av x då (1 + x)/0,1 = −1\nKvantitet II: Värdet av y då (0,1 − 0,2)/(y + 1) = 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: Multiplicera båda leden med 0,1: 1 + x = −0,1, så x = −1,1. Kvantitet II: Täljaren är 0,1 − 0,2 = −0,1. Bråket är 1 när nämnaren är lika med täljaren: y + 1 = −0,1, så y = −1,1. Båda kvantiteterna är −1,1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Lisa har en spelning på en musikfestival. Hur lång tid är avsatt för Lisas spelning?\n(1) Om Lisa skulle överskrida den avsatta tiden med tre minuter så skulle tiden för Lisas spelning öka med 1/4 av den avsatta tiden.\n(2) Om Lisa avslutar sin spelning tre minuter tidigare än den avsatta tiden så förkortas tiden för spelningen med 25 procent.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Tre minuter extra ökar tiden med 1/4 av den avsatta tiden, så 3 minuter är 1/4 av den avsatta tiden. Den avsatta tiden är 4 · 3 = 12 minuter. Tillräckligt.\n(2) Tre minuter kortare förkortar tiden med 25 procent, så 3 minuter är 25 procent av den avsatta tiden: 3/0,25 = 12 minuter. Tillräckligt.\nVart och ett av påståendena räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en restaurangmeny finns fem olika maträtter. Alla rätter kostar olika mycket. Den billigaste kostar 110 kr och den dyraste kostar 180 kr. Vad kostar de två dyraste rätterna tillsammans?\n(1) Medianpriset för alla fem rätterna är 135 kr.\n(2) De tre dyraste rätterna kostar tillsammans 490 kr.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Ordna priserna: 110 < b < c < d < 180 kr. Det som söks är d + 180, så man behöver priset d på den näst dyraste rätten.\n(1) Medianpriset är det mittersta priset, så c = 135 kr. Men d kan vara vilket pris som helst mellan 135 och 180 kr. Inte tillräckligt.\n(2) c + d + 180 = 490, så c + d = 310. Det kan till exempel vara c = 140 och d = 170 eller c = 135 och d = 175. Inte tillräckligt.\n(1) och (2) tillsammans: c = 135 ger d = 310 − 135 = 175. De två dyraste rätterna kostar 175 + 180 = 355 kr. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En svampkorg är fylld med enbart kantareller och champinjoner. Det finns sammanlagt 30 svampar i korgen. Hur många kantareller finns det i korgen?\n(1) Om man slumpmässigt tar upp svampar ur korgen måste man ta upp minst 12 svampar för att säkert få minst en kantarell.\n(2) Om man slumpmässigt tar upp svampar ur korgen måste man ta upp minst 20 svampar för att säkert få minst en champinjon.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) I värsta fall tar man upp alla champinjoner innan man får en kantarell. Att det krävs 12 svampar för att säkert få en kantarell betyder att det finns 11 champinjoner, alltså 30 − 11 = 19 kantareller. Tillräckligt.\n(2) På samma sätt betyder 20 svampar för att säkert få en champinjon att det finns 20 − 1 = 19 kantareller. Tillräckligt.\nVart och ett av påståendena räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En triangel är inskriven i en cirkel. Hur stora är triangelns vinklar?\n(1) Triangeln är likbent och rätvinklig.\n(2) Minst en av triangelns vinklar är 45°.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Varje triangel kan skrivas in i en cirkel, så det säger inget om vinklarna.\n(1) En rätvinklig triangel har en vinkel på 90°. Är den också likbent är de två andra vinklarna lika stora: (180° − 90°)/2 = 45° vardera. Vinklarna är 90°, 45° och 45°. Tillräckligt.\n(2) En vinkel på 45° bestämmer inte de två andra. De kan till exempel vara 45° och 90° eller 60° och 75°. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Markus har tvättat endast tröjor och skjortor. Hälften av dessa plagg tillhör Markus och hälften tillhör Jonas. Hur många skjortor har Markus tvättat?\n(1) Totalt har Markus tvättat 36 plagg. Av dessa plagg är 16 tröjor, varav 10 tillhör Jonas.\n(2) 12 skjortor och 6 tröjor tillhör Markus.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Frågan gäller alla skjortor som Markus har tvättat, både hans egna och Jonas.\n(1) Markus har tvättat 36 plagg, och 16 av dem är tröjor. Resten, 36 − 16 = 20, är skjortor. Tillräckligt.\n(2) Markus egna plagg är 12 + 6 = 18. Eftersom hälften av plaggen är hans har han tvättat 36 plagg, men det framgår inte hur många av Jonas 18 plagg som är skjortor. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "De tre siffrorna 3, 4 och 9 står skrivna i en viss ordning på en rad. Vilket tresiffrigt tal bildar siffrorna?\n(1) 3 eller 9 står i mitten. 3 står någonstans till vänster om 4.\n(2) 4 står inte först. 4 eller 9 står sist.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Siffrorna kan bilda sex tal: 349, 394, 439, 493, 934 och 943.\n(1) Med 3 eller 9 i mitten återstår 394, 439, 493 och 934. Att 3 står till vänster om 4 stryker 439 och 493. Kvar är 394 och 934. Inte tillräckligt.\n(2) Att 4 inte står först ger 349, 394, 934 och 943. Att 4 eller 9 står sist stryker 943. Kvar är 349, 394 och 934. Inte tillräckligt.\n(1) och (2) tillsammans: Både 394 och 934 uppfyller alla villkoren. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Vilken ö avses?",
+      "passage": "År 1973 var de bofasta kvinnorna på ön fler än de bofasta männen. Antalet bofasta personer hade minskat med mer än 50 procent 2004 jämfört med 50 år tidigare.",
+      "options": [
+        "Nötö",
+        "Vänö",
+        "Lökholm",
+        "Aspö"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd tabellen. År 1973 (kolumnerna Män 1973 och Kv. 1973) hade Nötö 8 män och 10 kvinnor, Vänö 10 och 5, Lökholm 6 och 4 och Aspö 3 och 4. Bara Nötö och Aspö hade fler kvinnor än män. Jämför sedan Totalt 1954 med Totalt 2004: Nötö minskade från 82 till 9 personer, alltså med nästan 90 procent. Aspö minskade från 18 till 9, vilket är exakt 50 procent och alltså inte mer än 50 procent. Ön som avses är Nötö.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur mycket större var det statligt ägda markområdet 2004 jämfört med 1974?",
+      "options": [
+        "600 ha",
+        "1 200 ha",
+        "1 800 ha",
+        "2 600 ha"
+      ],
+      "blindAnswer": 2,
+      "explain": "Cirkeldiagrammen visar hur de 9 200 hektaren fördelades mellan ägarna. År 1974 är den svarta sektorn (Staten) en smal kil på ungefär 8° av 360°, drygt 2 procent: 0,022 · 9 200 ≈ 200 ha. År 2004 är den svarta sektorn ungefär 80°, cirka 22 procent: 0,22 · 9 200 ≈ 2 000 ha. Det statligt ägda markområdet var alltså ungefär 2 000 − 200 = 1 800 ha större 2004.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "Sektorerna är uppmätta i förstorad bild: Staten cirka 8° år 1974 och cirka 80° år 2004.",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "För hur många av öarna gällde att de bofasta familjerna 2004 var lika många som eller fler än 1954?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför kolumnerna 1954 och 2004 under Antal familjer i tabellen. Alla öar från Nötö till Kopparholm hade färre familjer 2004 än 1954. Stenskär ökade från 2 till 3 familjer. Bland enfamiljsöarna hade Rockelholm, Byskär, Brännskär och Helsingholm 1 familj både 1954 och 2004, och Tunnhamn ökade från 1 till 2. Det blir 6 öar.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera hur antalet män var fördelat på verksamhetsområden i april 2012. Hur många fler arbetade inom transport än inom hotell och restaurang?",
+      "options": [
+        "1 400",
+        "1 700",
+        "2 700",
+        "3 100"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd det nedre diagrammet, där männen är den vita delen av varje stapel. Transport: den svarta delen slutar vid cirka 1 300 och hela stapeln vid cirka 4 500, alltså cirka 3 200 män. Hotell och restaurang: den svarta delen slutar vid cirka 4 400 och stapeln vid cirka 6 200, alltså cirka 1 800 män. Skillnaden är 3 200 − 1 800 = 1 400. Jämför man hela staplarna blir skillnaden cirka 1 700, men då räknas kvinnorna med.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av avgångseleverna på samhällsvetenskapsprogrammet var män?",
+      "options": [
+        "En femtedel",
+        "Två femtedelar",
+        "Hälften",
+        "Tre femtedelar"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av staplarna för Samhällsvetenskapsprogrammet i det övre diagrammet: kvinnorna (svart stapel) cirka 16 200 och männen (vit stapel) cirka 10 000. Totalt var det cirka 26 200 avgångselever, och andelen män är 10 000/26 200 ≈ 0,38, alltså ungefär två femtedelar (0,4).",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "För hur många av gymnasieutbildningarna gällde att antalet avgångselever var mindre än 3 000?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "9"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lägg ihop kvinnor (svart stapel) och män (vit stapel) för varje utbildning i det övre diagrammet. Under 3 000 hamnar Energiprogrammet (cirka 900), Hantverksprogrammet (cirka 2 200 + 300 = 2 500), Industriprogrammet (cirka 300 + 2 000 = 2 300), International Baccalaureate (cirka 600), Livsmedelsprogrammet (cirka 500), Naturbruksprogrammet (cirka 1 800 + 800 = 2 600) och Specialutformat program (cirka 1 100 + 1 000 = 2 100). Det är 7 utbildningar. Närmast gränsen bland de övriga ligger Omvårdnadsprogrammet med cirka 2 700 + 600 = 3 300.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger två stugor mellan vilka höjdskillnaden är 350 meter?",
+      "options": [
+        "Stuga 1 och stuga 7",
+        "Stuga 3 och stuga 8",
+        "Stuga 5 och stuga 11",
+        "Stuga 6 och stuga 10"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av höjderna på den lodräta axeln (meter över havet). Stuga 1 ligger på 200 m och stuga 7 på 550 m, en skillnad på 350 m. De andra paren: stuga 3 (350 m) och stuga 8 (650 m) skiljer 300 m, stuga 5 (350 m) och stuga 11 (800 m) skiljer 450 m, och stuga 6 (500 m) och stuga 10 (800 m) skiljer 300 m.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Jämför stugorna som ligger mer än 600 meter över havet. Hur många fler var övernattningarna i stugan med den största beläggningen än i stugan med den minsta beläggningen?",
+      "options": [
+        "150",
+        "200",
+        "250",
+        "300"
+      ],
+      "blindAnswer": 2,
+      "explain": "Mer än 600 meter över havet ligger stuga 8 (650 m), stuga 9 (700 m), stuga 10 (800 m) och stuga 11 (800 m). Läs av antalet övernattningar per år på den vågräta axeln: stuga 8 har 300, stuga 9 har 200, stuga 11 har 100 och stuga 10 har 50. Skillnaden mellan största och minsta beläggning är 300 − 50 = 250 övernattningar.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag beskriver den längsta sträckan?",
+      "options": [
+        "Från stuga 1 till 3 till 7 till 6",
+        "Från stuga 1 till 5 till 4 till 6",
+        "Från stuga 2 till 4 till 5 till 1",
+        "Från stuga 2 till 4 till 6 till 7"
+      ],
+      "blindAnswer": 3,
+      "explain": "Linjetypen visar vandringssträckan: streckad linje 5 km, tunn linje 10 km och tjock linje 20 km. Från 1 till 3 till 7 till 6 är alla tre linjerna streckade: 5 + 5 + 5 = 15 km. Från 1 till 5 till 4 till 6: 5 + 5 + 10 = 20 km. Från 2 till 4 till 5 till 1: 10 + 5 + 5 = 20 km. Från 2 till 4 till 6 till 7: 10 + 10 + 5 = 25 km, vilket är längst. Observera att den tjocka linjen från stuga 4 går till stuga 8; linjen till stuga 6 är tunn.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "För vilket år gällde att utsläppen av växthusgaser utomlands var mindre än 50 miljoner ton och utsläppen av kväveoxider utomlands var större än 100 tusen ton?",
+      "options": [
+        "2004",
+        "2005",
+        "2006",
+        "2007"
+      ],
+      "blindAnswer": 1,
+      "explain": "Utsläppen utomlands är den mörka ytan i båda diagrammen. Växthusgaser (övre diagrammet): cirka 46 miljoner ton 2004, 48 år 2005 och 55 både 2006 och 2007, så bara 2004 och 2005 ligger under 50. Kväveoxider (nedre diagrammet): cirka 97 tusen ton 2004, 112 år 2005, 119 år 2006 och 126 år 2007, så 2004 ligger under 100. Bara 2005 uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "2004 ligger nära gränsen i det nedre diagrammet: den mörka ytan når cirka 97 tusen ton, strax under 100.",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stort var det sammanlagda utsläppet av kväveoxider orsakat av svensk konsumtion under perioden 2004–2008?",
+      "options": [
+        "0,5 miljoner ton",
+        "1,1 miljoner ton",
+        "2,5 miljoner ton",
+        "4,7 miljoner ton"
+      ],
+      "blindAnswer": 1,
+      "explain": "Det totala utsläppet varje år är den övre kanten av den ljusa ytan i det nedre diagrammet, i tusen ton: cirka 224 (2004), 222 (2005), 224 (2006), 228 (2007) och 213 (2008). Summan är ungefär 1 110 tusen ton, alltså cirka 1,1 miljoner ton. Alternativet 0,5 miljoner ton får man om man bara räknar med en av de två delarna, till exempel utsläppen utomlands.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala utsläppet av växthusgaser orsakat av svensk konsumtion 2008 skedde i Sverige?",
+      "options": [
+        "2/5",
+        "1/2",
+        "3/5",
+        "3/4"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av det övre diagrammet för 2008. Den övre kanten (totalt) ligger på cirka 98 miljoner ton och gränsen mellan ytorna på cirka 59 miljoner ton, så utsläppen utomlands var cirka 59 miljoner ton. Utsläppen i Sverige är den ljusa ytan: 98 − 59 = 39 miljoner ton. Andelen är 39/98 ≈ 0,4, alltså 2/5. Alternativet 3/5 är andelen utomlands.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
