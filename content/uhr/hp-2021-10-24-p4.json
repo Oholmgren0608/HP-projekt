@@ -1,0 +1,771 @@
+{
+  "examId": "hp-2021-10-24",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "2x + 9 = x − 7",
+      "options": [
+        "−16",
+        "−2/3",
+        "2/3",
+        "16"
+      ],
+      "blindAnswer": 0,
+      "explain": "Samla x-termerna i vänster led och talen i höger led: 2x − x = −7 − 9, alltså x = −16. Kontroll: 2 · (−16) + 9 = −23 och −16 − 7 = −23. Svaret 16 får den som tappar ett minustecken när talen flyttas över.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är 1/8 + 3/4 + 1/2?",
+      "options": [
+        "13/12",
+        "9/8",
+        "11/8",
+        "5/14"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv bråken med den gemensamma nämnaren 8: 3/4 = 6/8 och 1/2 = 4/8. Summan blir 1/8 + 6/8 + 4/8 = 11/8. Alternativet 5/14 får den som adderar täljarna för sig (1 + 3 + 1 = 5) och nämnarna för sig (8 + 4 + 2 = 14), vilket inte är tillåtet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "options": [
+        "7/3",
+        "3",
+        "3,5",
+        "√13"
+      ],
+      "blindAnswer": 1,
+      "explain": "Diagonalen delar fyrhörningen i två rätvinkliga trianglar. I den nedre triangeln är kateterna 2 cm och 6 cm, så enligt Pythagoras sats är diagonalen i kvadrat 2² + 6² = 4 + 36 = 40. I den övre triangeln är vinkeln mellan diagonalen och x rät, så sidan 7 cm är hypotenusa: x² + 40 = 7² = 49. Då är x² = 9 och x = 3. Det räcker att räkna med diagonalens kvadrat; själva längden √40 behövs inte.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.24,
+          0.135,
+          0.545,
+          0.236
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Grafen till funktionen f är en rät linje som går genom origo, och f(8) = −6. Vilket svarsalternativ anger f(x)?",
+      "options": [
+        "f(x) = 8x − 6",
+        "f(x) = −6x + 8",
+        "f(x) = −(4/3)x",
+        "f(x) = −(3/4)x"
+      ],
+      "blindAnswer": 3,
+      "explain": "En rät linje genom origo har ekvationen f(x) = kx, eftersom f(0) = 0. Villkoret f(8) = −6 ger 8k = −6, alltså k = −6/8 = −3/4. Då är f(x) = −(3/4)x. Linjerna f(x) = 8x − 6 och f(x) = −6x + 8 går inte genom origo, och f(x) = −(4/3)x ger f(8) = −32/3 i stället för −6; där har man delat 8 med 6 i stället för tvärtom.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket är det ursprungliga priset på en vara om en rabatt på 8 procent gör varan 640 kronor billigare?",
+      "options": [
+        "5 120 kronor",
+        "7 360 kronor",
+        "7 680 kronor",
+        "8 000 kronor"
+      ],
+      "blindAnswer": 3,
+      "explain": "Rabatten på 640 kronor är 8 procent av det ursprungliga priset. 1 procent motsvarar då 640/8 = 80 kronor, och hela priset (100 procent) är 80 · 100 = 8 000 kronor. Kontroll: 0,08 · 8 000 = 640. Alternativet 7 360 kronor är priset efter rabatten (8 000 − 640), inte det ursprungliga priset.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Ida målar ett plank med konstant hastighet. Efter 4,5 timmar har hon målat 3/7 av planket. Hur lång tid tar det för Ida att måla resten av planket?",
+      "options": [
+        "5 timmar",
+        "5,5 timmar",
+        "6 timmar",
+        "6,5 timmar"
+      ],
+      "blindAnswer": 2,
+      "explain": "3/7 av planket tar 4,5 timmar, så 1/7 tar 4,5/3 = 1,5 timmar. Kvar är 1 − 3/7 = 4/7 av planket, och det tar 4 · 1,5 = 6 timmar. Kontroll: hela planket tar 7 · 1,5 = 10,5 timmar, och 10,5 − 4,5 = 6 timmar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar grafen till funktionen h, där y = h(x)?",
+      "passage": "h(x) = f(x) + g(x)",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av f och g i den översta grafen. Linjen y = f(x) är vågrät på höjden 2, så f(x) = 2. Linjen y = g(x) går genom (−2, 0) och (0, 2) och har lutningen 1, så g(x) = x + 2. Då är h(x) = 2 + x + 2 = x + 4, en rät linje med lutningen 1 som skär y-axeln i y = 4. Graf D går genom (0, 4) och stiger ett steg för varje steg åt höger. Graf A är vågrät (y = 4), graf B är samma linje som g (y = x + 2) och graf C har lutningen 1/2.",
+      "figure": {
+        "pages": [
+          5,
+          5
+        ],
+        "boxes": [
+          [
+            0.235,
+            0.098,
+            0.415,
+            0.206
+          ],
+          [
+            0.205,
+            0.259,
+            0.4,
+            0.695
+          ]
+        ]
+      },
+      "note": "Bildalternativ: överst står grafen med f och g, under den de fyra graferna märkta A–D; alternativen skrivs Graf A–D.",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ har det minsta värdet?",
+      "passage": "x = −3\ny = −2\nz = −1",
+      "options": [
+        "x²yz²",
+        "x²y²z",
+        "xy²z²",
+        "xy³z"
+      ],
+      "blindAnswer": 1,
+      "explain": "Jämna potenser blir positiva: x² = 9, y² = 4 och z² = 1, medan y³ = −8. Sätt in: x²yz² = 9 · (−2) · 1 = −18, x²y²z = 9 · 4 · (−1) = −36, xy²z² = (−3) · 4 · 1 = −12 och xy³z = (−3) · (−8) · (−1) = −24. Alla fyra är negativa, och det minsta värdet är −36, alltså x²y²z.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är med säkerhet lika med medelvärdet av de fem talen 14, 11, 13, x och 22?",
+      "options": [
+        "(15 + x)/2",
+        "60/5 + x",
+        "60 + x",
+        "12 + x/5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Medelvärdet är summan av talen delad med antalet tal. Summan är 14 + 11 + 13 + x + 22 = 60 + x, och medelvärdet blir (60 + x)/5 = 60/5 + x/5 = 12 + x/5. Alternativet 60/5 + x lockar, men där har bara 60 delats med 5 och inte x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "För vilket värde på x gäller att två tredjedelar av x är lika med 4/7?",
+      "options": [
+        "x = 2/3 · 4/7",
+        "x = 2/3 · 7/4",
+        "x = 3/2 · 4/7",
+        "x = 3/2 · 7/4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Två tredjedelar av x är 2/3 · x, så ekvationen är 2/3 · x = 4/7. För att få x ensamt delar man båda leden med 2/3, vilket är detsamma som att multiplicera med 3/2: x = 3/2 · 4/7. Kontroll: 2/3 · 3/2 · 4/7 = 1 · 4/7 = 4/7. Alternativet x = 2/3 · 4/7 multiplicerar med 2/3 i stället för att dela.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "En cylinder har volymen 63 liter och diametern 4 dm. Vilket svarsalternativ är närmast cylinderns höjd?",
+      "options": [
+        "4 dm",
+        "5 dm",
+        "10 dm",
+        "16 dm"
+      ],
+      "blindAnswer": 1,
+      "explain": "1 liter är 1 dm³, så volymen är 63 dm³. Radien är halva diametern, 2 dm, och bottenytan är π · 2² = 4π ≈ 12,6 dm². Höjden är volymen delad med bottenytan: 63/(4π) ≈ 63/12,6 = 5 dm. Den som glömmer π får 63/4 ≈ 16 dm.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vad är m?",
+      "passage": "8 · 2ᵐ = 4⁰",
+      "options": [
+        "−3",
+        "−2",
+        "−1",
+        "0"
+      ],
+      "blindAnswer": 0,
+      "explain": "Ett tal (skilt från 0) upphöjt till 0 är 1, så 4⁰ = 1 och ekvationen blir 8 · 2ᵐ = 1. Eftersom 8 = 2³ är 8 · 2ᵐ = 2³⁺ᵐ, och 2³⁺ᵐ = 1 = 2⁰ ger 3 + m = 0, alltså m = −3. Kontroll: 8 · 2⁻³ = 8/8 = 1. Den som tror att 4⁰ = 4 får m = −1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "3(2/x − 1/6) = 3/2\nKvantitet I: x\nKvantitet II: 1/3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Dela båda leden med 3: 2/x − 1/6 = 1/2. Då är 2/x = 1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3, alltså 1/x = 1/3 och x = 3. Kontroll: 3(2/3 − 1/6) = 3 · 3/6 = 3/2. Kvantitet I är 3 och kvantitet II är 1/3, så I är större. Den som blandar ihop 1/x = 1/3 med x = 1/3 tror att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "M är cirkelns medelpunkt.\nKvantitet I: v\nKvantitet II: 30°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Vinkeln 250° är den yttre vinkeln vid M, så triangelns vinkel vid M är 360° − 250° = 110°. Sidorna från M till cirkeln är båda radier, så triangeln är likbent och vinklarna vid basen är lika stora: v = (180° − 110°)/2 = 35°. Eftersom 35° är större än 30° är I större än II.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.23,
+          0.533,
+          0.46,
+          0.708
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En grupp med enbart kvinnor och män består av totalt 100 personer. Var och en av personerna är antingen högerhänt eller vänsterhänt. 75 % av kvinnorna är högerhänta. 12 kvinnor är vänsterhänta.\nKvantitet I: Antalet kvinnor i gruppen\nKvantitet II: Antalet män i gruppen",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Om 75 % av kvinnorna är högerhänta är resten, 25 %, vänsterhänta. 25 % av kvinnorna är alltså 12 personer, och antalet kvinnor är 4 · 12 = 48. Då är antalet män 100 − 48 = 52. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √23\nKvantitet II: √9 + √5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "√9 = 3 och √5 är större än 2 (eftersom 2² = 4 är mindre än 5), så kvantitet II är större än 3 + 2 = 5. Kvantitet I är √23, som är mindre än √25 = 5. Alltså är II större än I. Att 9 + 5 = 14 är mindre än 23 kan locka till att tro att I är störst, men √9 + √5 är inte lika med √14.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "y > 0\nx/y = 5\nKvantitet I: y\nKvantitet II: 20 procent av x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Av x/y = 5 följer att x = 5y. 20 procent av x är då 0,2 · 5y = y. Kvantitet II är alltså alltid lika med y, vilket positivt värde y än har, och kvantiteterna är lika stora.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen L₁ har ekvationen y = 3x − 1\nLinjen L₂ har ekvationen y = 5x + 3\nKvantitet I: x-koordinaten för skärningspunkten mellan L₁ och L₂\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "I skärningspunkten har linjerna samma y-värde: 3x − 1 = 5x + 3. Det ger −4 = 2x, alltså x = −2. Kontroll: båda linjerna ger y = −7 när x = −2. Kvantitet I är −2, vilket är mindre än 0, så II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjerna L₁ och L₂ är parallella.\nKvantitet I: Arean av triangeln ACE\nKvantitet II: Arean av triangeln ABD",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Båda trianglarna har sin bas på L₂. Triangeln ACE har basen AC, och eftersom E ligger på L₁ är dess höjd h, avståndet mellan linjerna. Triangeln ABD har den kortare basen AB, men D ligger ovanför L₁, så dess höjd är större än h. Hur mycket kortare AB är och hur högt D ligger framgår inte. Är till exempel AB = AC/2 och höjden till D 1,5h blir arean av ABD 0,75 gånger arean av ACE, men är höjden 3h blir den 1,5 gånger så stor. Informationen räcker inte.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.225,
+          0.138,
+          0.585,
+          0.295
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x och y är två på varandra följande positiva heltal sådana att y² − x² = 9.\nKvantitet I: y\nKvantitet II: 6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv om: y² − x² = (y − x)(y + x) = 9. Talen följer på varandra, och eftersom y² − x² är positivt är y det större talet, så y − x = 1. Då är y + x = 9, vilket ger x = 4 och y = 5. Kontroll: 5² − 4² = 25 − 16 = 9. Kvantitet I är 5, så II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I Minnas smyckeskrin finns det halsband, armband och ringar. Armbanden är dubbelt så många som ringarna. Halsbanden är 3 fler än ringarna och 2 färre än armbanden.\nKvantitet I: Antalet halsband i Minnas smyckeskrin\nKvantitet II: 8",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet ringar r. Då finns det 2r armband och r + 3 halsband. Halsbanden är också 2 färre än armbanden, så r + 3 = 2r − 2, vilket ger r = 5. Det finns alltså 5 ringar, 10 armband och 8 halsband. Kontroll: 8 är 3 fler än 5 och 2 färre än 10. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En mätserie består av tio mätvärden. Vart och ett av mätvärdena är ett heltal mellan 1 och 50. Mätseriens median är 25.\nKvantitet I: Mätseriens median om det största mätvärdet tas bort\nKvantitet II: 25",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Ordna mätvärdena i storleksordning. Med tio värden är medianen medelvärdet av det femte och det sjätte värdet, och det är 25. Tas det största värdet bort återstår nio värden, och medianen blir det femte värdet. Är det femte och det sjätte värdet båda 25 blir den nya medianen 25, men är de 24 och 26 blir den nya medianen 24. Kvantitet I kan alltså vara lika med eller mindre än 25, och informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vad är medelvärdet av x, y, z och w?\n(1) Medelvärdet av x och z är 83.\n(2) Medelvärdet av y och w är 91.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) ger x + z = 2 · 83 = 166, men säger inget om y och w. Inte tillräckligt.\n(2) ger y + w = 2 · 91 = 182, men säger inget om x och z. Inte tillräckligt.\n(1) och (2) tillsammans: summan av de fyra talen är 166 + 182 = 348, och medelvärdet är 348/4 = 87. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tre koppar, en vit, en svart och en röd, är staplade på varandra. Vilken färg har den översta koppen?\n(1) Den röda koppen är längre ner än den svarta koppen. Den vita koppen är längre ner än den röda koppen.\n(2) Den vita och den svarta koppen är längst ifrån varandra.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Den vita koppen är under den röda, och den röda är under den svarta. Ordningen nerifrån är alltså vit, röd, svart, och den översta koppen är svart. Tillräckligt.\n(2) Den vita och den svarta koppen är längst ifrån varandra, så de ligger överst och underst med den röda i mitten. Men det framgår inte vilken av dem som ligger överst. Inte tillräckligt.\nSvaret erhålls alltså i (1) men inte i (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En eftermiddag samlar Robin och Anton grankottar och tallkottar. De hittar sammanlagt 83 kottar. Hur många tallkottar hittar Robin?\n(1) Robin och Anton hittar sammanlagt 59 tallkottar.\n(2) Robin hittar totalt 33 kottar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Tallkottarna är 59 och grankottarna 83 − 59 = 24, men hur de fördelas mellan Robin och Anton framgår inte. Inte tillräckligt.\n(2) Robin hittar 33 kottar och Anton 50, men det framgår inte hur många av Robins kottar som är tallkottar. Inte tillräckligt.\n(1) och (2) tillsammans: Robin kan ha 33 tallkottar och ingen grankotte (Anton 26 tallkottar och 24 grankottar), eller 9 tallkottar och alla 24 grankottar (Anton 50 tallkottar). Båda fallen stämmer med uppgifterna. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Aron har fyra bollar: en vit, en gul, en röd och en svart. Vilken av bollarna studsar bäst?\n(1) Den gula bollen studsar bättre än både den svarta och den vita. Den röda bollen studsar bättre än den vita.\n(2) Den vita bollen studsar sämre än den svarta. Den svarta bollen studsar sämre än den gula. Den röda bollen studsar bättre än den gula.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Den gula studsar bättre än den svarta och den vita, och den röda bättre än den vita. Men den röda och den gula jämförs inte, så det kan vara vilken som helst av dem som studsar bäst. Inte tillräckligt.\n(2) Ordningen blir: den vita sämre än den svarta, den svarta sämre än den gula och den gula sämre än den röda. Den röda bollen studsar alltså bäst. Tillräckligt.\nSvaret erhålls i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "n är ett heltal. Är n ett jämnt tal?\n(1) 3n + 2 är ett jämnt tal.\n(2) n² + 3 är ett udda tal.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Om 3n + 2 är jämnt är också 3n = (3n + 2) − 2 jämnt. Eftersom 3 är udda är 3n jämnt bara om n är jämnt. Svaret blir ja. Tillräckligt.\n(2) Om n² + 3 är udda är n² = (n² + 3) − 3 jämnt, och kvadraten på ett heltal är jämn bara om talet självt är jämnt. Svaret blir ja. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en burk ligger 10 enfärgade kulor: 3 röda och 7 gröna. Fler kulor, endast röda och gröna, läggs i burken så att förhållandet mellan röda och gröna kulor blir 1:2. Hur många röda kulor läggs i burken?\n(1) 5 kulor läggs i burken.\n(2) Antalet röda kulor som läggs i burken är 2/3 av antalet gröna kulor som läggs i burken.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla antalet röda kulor som läggs i burken r och antalet gröna g. Förhållandet 1:2 betyder att det blir dubbelt så många gröna som röda: 7 + g = 2(3 + r), alltså g = 2r − 1.\n(1) r + g = 5 ger r + 2r − 1 = 5, så r = 2 och g = 3. Kontroll: 5 röda och 10 gröna. Tillräckligt.\n(2) r = 2g/3 ger 3r = 2g = 2(2r − 1) = 4r − 2, så r = 2. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För hur många elever gällde att de fick betyget F i matematik eller att det saknades betygsunderlag i detta ämne?",
+      "options": [
+        "7 000",
+        "8 000",
+        "9 000",
+        "10 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av raden Matematik i tabellen. Totalt avslutade 96 430 elever ämnet. Andelen med betyget F var 8,1 procent och andelen där underlag saknades 1,3 procent, sammanlagt 9,4 procent. 0,094 · 96 430 ≈ 9 060 elever, alltså ungefär 9 000. Räknar man bara betyget F får man 0,081 · 96 430 ≈ 7 800, vilket lockar till 8 000.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "För vilket av de redovisade språken inom moderna språk (elevens val) var skillnaden mellan antalet flickor och antalet pojkar som minst?",
+      "options": [
+        "Tyska",
+        "Franska",
+        "Spanska",
+        "Övriga"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd kolumnerna Flickor och Pojkar för språken under Moderna språk (elevens val). Tyska: 377 − 346 = 31. Franska: 240 − 154 = 86. Spanska: 324 − 223 = 101. Övriga: 184 − 138 = 46. Skillnaden var minst för tyska.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor var arealen skyddat fjäll 2009 jämfört med 100 år tidigare?",
+      "options": [
+        "Dubbelt så stor",
+        "Fyra gånger så stor",
+        "Åtta gånger så stor",
+        "Tolv gånger så stor"
+      ],
+      "blindAnswer": 2,
+      "explain": "Fjäll är det nedersta, ljusgrå fältet i det övre diagrammet. År 1909 når fältet ungefär en tredjedel av vägen upp till 1 000 000, alltså cirka 330 000 hektar. År 2009 når det strax över 2 500 000, ungefär 2 600 000 hektar. 2 600 000/330 000 ≈ 8, så arealen var ungefär åtta gånger så stor.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera de nytillkomna arealerna skyddad natur under den redovisade perioden. Vilket år var de fyra största naturtyperna rangordnade enligt nedan, där naturtypen med störst nytillkommen areal redovisas först?",
+      "passage": "Fjäll – Sötvatten – Skog – Myr",
+      "options": [
+        "1998",
+        "2000",
+        "2001",
+        "2002"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd det nedre diagrammet och läs av hur stor del av stapeln varje naturtyp har. 1998: fjäll cirka 160 000 hektar, sötvatten cirka 140 000 (från cirka 230 000 till 370 000), skog cirka 50 000 och myr cirka 30 000, medan fjällbarrskog, hav och jordbruksmark har mindre. Det ger ordningen fjäll – sötvatten – skog – myr. År 2000 och 2002 är sötvatten störst, och 2001 är skog större än sötvatten.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stor areal skyddad natur 2004 utgjordes av sötvatten och hav?",
+      "options": [
+        "900 000 hektar",
+        "1 600 000 hektar",
+        "2 400 000 hektar",
+        "5 900 000 hektar"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av det övre diagrammet vid 2004. Sötvattenfältet går från cirka 4 250 000 till cirka 5 200 000 hektar, alltså ungefär 950 000 hektar. Havsfältet ovanför går från cirka 5 200 000 till cirka 5 900 000, ungefär 700 000 hektar. Tillsammans blir det cirka 1 650 000, närmast 1 600 000 hektar. 5 900 000 är havsfältets övre kant, alltså summan av alla fält upp till och med hav.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur långt skulle det vara att gå längs strandkanten ett varv runt Munkholmen, om man börjar och slutar där ön övergår i en smal sträng ut i Mälaren?",
+      "options": [
+        "1,3 km",
+        "1,6 km",
+        "1,9 km",
+        "2,3 km"
+      ],
+      "blindAnswer": 2,
+      "explain": "Mät strandkanten bit för bit med skalstrecket (0–500 m) nere till höger. Från stället där ön smalnar av till en sträng mot Mälaren är det cirka 450 m norrut längs Svartån till Helgeandshuset vid Lillån, cirka 750 m längs Lillån österut och runt kröken ned till Mälaren och cirka 600 m längs Mälarens strand tillbaka till strängen. Sammanlagt blir det ungefär 1,8–1,9 km, och närmast ligger 1,9 km.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vart leder vägbeskrivningen?",
+      "passage": "Utgå från Helgeandshuset och följ vägen mellan västra och södra kvarteren 250 meter. Välj därefter den av vägarna i nordostlig riktning som ligger längst söderut och fortsätt efter denna väg 450 meter. Ta sedan vägen i nordnordostlig riktning och följ den 500 meter.",
+      "options": [
+        "Backarna",
+        "Typpilskvarnen",
+        "S:a Ursulas kapell",
+        "S:t Olofs kapell"
+      ],
+      "blindAnswer": 3,
+      "explain": "Helgeandshuset är E vid Lillån. Vägen mellan västra och södra kvarteren är väg 9, som går norrut från E och är ungefär 250 m lång; den slutar vid Torget (7). Därifrån går Tjuvagatan (5) och Smedjegatan (6) åt nordost, och Smedjegatan ligger längst söderut. Den leder österut och svänger sedan norrut upp till korsningen vid Gropens östra ände, sammanlagt cirka 450 m. Därifrån går vägen vidare åt nordnordost mot Kopparbergsvägen, och efter 500 m är man vid Kopparbergsvägens norra del, alldeles intill S:t Olofs kapell (I). Typpilskvarnen ligger längre västerut vid bäcken, och Backarna och S:a Ursulas kapell ligger ännu längre västerut.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stort är det triangelformade område som avgränsas av Långgatan (östra), Tjuvagatan och vägen längs Gropen?",
+      "options": [
+        "40 000 m²",
+        "55 000 m²",
+        "65 000 m²",
+        "80 000 m²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Området ligger mellan Långgatan (4) i väster, vägen längs Gropen i nordost och Tjuvagatan (5) i söder. Mät med skalstrecket: sidan längs Långgatan är cirka 290 m, och triangelns östra hörn, där Tjuvagatan möter vägen längs Gropen, ligger cirka 245 m öster om Långgatan. En triangel med raka sidor får arean 290 · 245/2 ≈ 35 500 m². Tjuvagatan buktar något utåt, så området är lite större, ungefär 40 000 m².",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Studera kommunernas kostnader för hemtjänst och hemsjukvård per beviljad person. Vilken var den största skillnad som noterades mellan kommuner inom ett och samma län?",
+      "options": [
+        "150 000 kronor",
+        "240 000 kronor",
+        "315 000 kronor",
+        "390 000 kronor"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det nedersta diagrammet. Skillnaden mellan kommunerna i ett län är stapelns längd, från lägsta till högsta värde. Västerbottens stapel är längst: från cirka 85 000 till cirka 390 000 kronor, en skillnad på ungefär 305 000 kronor, vilket ligger närmast 315 000 kronor. 390 000 kronor är det högsta enskilda värdet, inte skillnaden, och Uppsala, som har den näst längsta stapeln, har en skillnad på drygt 220 000 kronor.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket län skilde sig mest från riket som helhet vad avser hemtjänstens och hemsjukvårdens genomsnittliga andel av kostnaden för vård och omsorg för äldre?",
+      "options": [
+        "Gotland",
+        "Jämtland",
+        "Västerbotten",
+        "Västra Götaland"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det mellersta diagrammet. Riksgenomsnittet är den vågräta linjen vid knappt 30 procent, och punkterna visar länens genomsnitt. Gotland ligger vid cirka 34,5 procent, Jämtland vid cirka 38,5, Västerbotten vid cirka 25 och Västra Götaland vid cirka 31 procent. Jämtland ligger nästan 9 procentenheter från riksgenomsnittet, medan Gotland och Västerbotten ligger cirka 5 procentenheter ifrån det.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Avläs den största andel av kostnaden för vård och omsorg för äldre som en enskild kommun använde till hemtjänst och hemsjukvård. Hur långt från riksgenomsnittet låg denna andel?",
+      "options": [
+        "10 procentenheter",
+        "15 procentenheter",
+        "20 procentenheter",
+        "50 procentenheter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det mellersta diagrammet. Den högsta stapeln, för Västra Götaland, når upp till drygt 50 procent, och det är den största andel som en enskild kommun använde. Riksgenomsnittet är linjen vid knappt 30 procent. Skillnaden är ungefär 51 − 30 = 21 procentenheter, närmast 20 procentenheter. 50 procentenheter är själva andelen, inte avståndet till riksgenomsnittet.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "På vilket av följande sätt utmärker sig Blekinge och Halland bland länen i det redovisade materialet?",
+      "options": [
+        "Mindre kostnadsandel till vård och omsorg för äldre.",
+        "Mindre kostnad för hemtjänst och hemsjukvård per beviljad person.",
+        "Större överensstämmelse mellan genomsnittet för länet och genomsnittet för riket.",
+        "Liten variation mellan länets kommuner."
+      ],
+      "blindAnswer": 3,
+      "explain": "Blekinges och Hallands staplar hör till de kortaste i alla tre diagrammen, det vill säga det högsta och det lägsta värdet bland länens kommuner ligger nära varandra (till exempel cirka 21–26 respektive 18–23 procent i det översta diagrammet). Bara Gotland, som är en enda kommun och saknar stapel, har mindre spridning. Länen utmärker sig alltså genom liten variation mellan kommunerna. De andra alternativen stämmer inte: inget av länen har mindre kostnadsandel eller lägre kostnad per person än riket, och Hallands genomsnitt för hemtjänst (cirka 34 procent) ligger långt från riksgenomsnittet.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
