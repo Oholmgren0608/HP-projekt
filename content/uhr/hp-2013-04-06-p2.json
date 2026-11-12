@@ -1,0 +1,800 @@
+{
+  "examId": "hp-2013-04-06",
+  "passNumber": 2,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är 5 + 4 · 3 − 20/10?",
+      "options": [
+        "−0,3",
+        "0,7",
+        "15",
+        "25"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplikation och division görs före addition och subtraktion. 4 · 3 = 12 och 20/10 = 2, så uttrycket blir 5 + 12 − 2 = 15. Svaret 25 lockar om man räknar från vänster till höger: (5 + 4) · 3 = 27 och 27 − 2 = 25. Svaren −0,3 och 0,7 får man om man delar hela uttrycket med 10 i stället för bara 20.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Hur lång är sträckan BG?",
+      "passage": "AB = BC = CD = 4 längdenheter\nAE = EF = FG = GD = 3 längdenheter",
+      "options": [
+        "4 längdenheter",
+        "4,5 längdenheter",
+        "5 längdenheter",
+        "5,5 längdenheter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Hela sträckan AD är 3 · 4 = 12 längdenheter (och lika mycket som 4 · 3). Räkna avstånden från A: B ligger 4 längdenheter från A, och G ligger 3 + 3 + 3 = 9 längdenheter från A. Då är BG = 9 − 4 = 5 längdenheter. Kontroll från andra hållet: BD = 4 + 4 = 8 och GD = 3, så BG = 8 − 3 = 5.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.18,
+          0.6,
+          0.6,
+          0.665
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln D i parallelltrapetsen ABCD?",
+      "options": [
+        "105°",
+        "120°",
+        "135°",
+        "150°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt figuren är AB = 2x cm och de tre andra sidorna x cm. Markera mittpunkten M på AB, så att AM = MB = x cm. AM och DC är parallella och lika långa, så AMCD är ett parallellogram och MC = AD = x cm. På samma sätt är MBCD ett parallellogram med DM = BC = x cm. Trapetsen delas alltså i tre liksidiga trianglar, AMD, DMC och MBC, med sidan x cm, och alla deras vinklar är 60°. Vinkeln D består av vinklarna vid D i trianglarna AMD och DMC: 60° + 60° = 120°.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.16,
+          0.152,
+          0.6,
+          0.303
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Kurvan y = x² + x − 6 skär x-axeln i två punkter. Vilka x-värden har dessa punkter?",
+      "options": [
+        "x = 3 och x = 2",
+        "x = 3 och x = −2",
+        "x = −3 och x = 2",
+        "x = −3 och x = −2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kurvan skär x-axeln där y = 0, alltså där x² + x − 6 = 0. Två tal med produkten −6 och summan 1 är 3 och −2, så x² + x − 6 = (x + 3)(x − 2). Produkten är 0 när x = −3 eller x = 2. Kontroll: (−3)² − 3 − 6 = 9 − 9 = 0 och 2² + 2 − 6 = 0. Med pq-formeln blir det samma: x = −1/2 ± √(1/4 + 6) = −1/2 ± 5/2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vid beräkning av (4/5 − 3/4) + (2/3 + 1/2) erhålls ett bråk av positiva heltal. Vilken är den minsta nämnare som bråket kan ha?",
+      "options": [
+        "6",
+        "20",
+        "60",
+        "72"
+      ],
+      "blindAnswer": 2,
+      "explain": "Räkna parenteserna var för sig: 4/5 − 3/4 = 16/20 − 15/20 = 1/20 och 2/3 + 1/2 = 4/6 + 3/6 = 7/6. Summan är 1/20 + 7/6 = 3/60 + 70/60 = 73/60. Täljaren 73 är ett primtal som inte delar 60, så bråket kan inte förkortas. Den minsta nämnaren är 60.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Om x = 4 och y = 3, vad är då z?",
+      "passage": "x(y − z)/(y(x + y + z)) = 1/3",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in x = 4 och y = 3: 4(3 − z)/(3(4 + 3 + z)) = 1/3. Multiplicera båda leden med 3(7 + z): 4(3 − z) = 7 + z. Det ger 12 − 4z = 7 + z, alltså 5 = 5z och z = 1. Kontroll: 4 · (3 − 1)/(3 · (4 + 3 + 1)) = 8/24 = 1/3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Om Lotta var 28 år för x år sedan, hur gammal var hon för 12 år sedan?",
+      "options": [
+        "(16 + x) år",
+        "(16 − x) år",
+        "(40 + x) år",
+        "(40 − x) år"
+      ],
+      "blindAnswer": 0,
+      "explain": "För x år sedan var Lotta 28 år, så i dag är hon (28 + x) år. För 12 år sedan var hon 12 år yngre än i dag: 28 + x − 12 = (16 + x) år. Pröva med ett tal: om x = 2 är Lotta 30 år i dag och var 18 år för 12 år sedan, och 16 + 2 = 18.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är (3x − 1)2x − x(3x − 2)?",
+      "options": [
+        "3x²",
+        "3x² − 4x",
+        "9x²",
+        "9x² − 4x"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in: (3x − 1) · 2x = 6x² − 2x och x(3x − 2) = 3x² − 2x. Skillnaden är 6x² − 2x − (3x² − 2x) = 6x² − 2x − 3x² + 2x = 3x². Svaret 3x² − 4x får man om man glömmer att minustecknet framför parentesen gör −2x till +2x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är (a − b)/(b − c) · (a − c)?",
+      "passage": "a, b och c är tre på varandra följande heltal så att a < b < c.",
+      "options": [
+        "−2",
+        "−1",
+        "1",
+        "2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Talen följer på varandra, så b = a + 1 och c = a + 2. Då är a − b = −1, b − c = −1 och a − c = −2. Uttrycket blir (−1)/(−1) · (−2) = 1 · (−2) = −2. Pröva gärna med talen 1, 2 och 3: (1 − 2)/(2 − 3) · (1 − 3) = 1 · (−2) = −2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är xⁿ/yⁿ om x − y = 0 och n är jämnt delbart med 2?",
+      "passage": "x ≠ 0",
+      "options": [
+        "−1",
+        "0",
+        "1",
+        "2"
+      ],
+      "blindAnswer": 2,
+      "explain": "x − y = 0 betyder att y = x, och eftersom x ≠ 0 är även y ≠ 0. Då är xⁿ/yⁿ = xⁿ/xⁿ = 1, eftersom ett tal skilt från 0 delat med sig självt är 1. Villkoret att n är jämnt behövs egentligen inte: kvoten blir 1 för alla n.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är medianpoängen?",
+      "passage": "40 personer deltar i ett prov med 6 frågor.",
+      "options": [
+        "2",
+        "2,5",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 1,
+      "explain": "Med 40 personer är medianen medelvärdet av den 20:e och den 21:a poängen när alla poäng står i storleksordning. Räkna personerna i tabellen från 0 poäng: 5 har 0 poäng, 5 + 12 = 17 har högst 1 poäng och 17 + 3 = 20 har högst 2 poäng. Den 20:e personen har alltså 2 poäng, och den 21:a har 3 poäng (personerna 21–30 har 3 poäng). Medianen är (2 + 3)/2 = 2,5. Svaret 3 lockar eftersom 3 står mitt i tabellen, men medianen beror på hur många som har varje poäng.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.195,
+          0.108,
+          0.71,
+          0.162
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Arean av en cirkel är 16 cm² större än arean av en kvadrat med sidan 3 cm. Vad är cirkelns radie?",
+      "options": [
+        "5/π cm",
+        "5/√π cm",
+        "√5/π cm",
+        "√(5/π) cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvadraten har arean 3² = 9 cm², så cirkeln har arean 9 + 16 = 25 cm². Med radien r gäller πr² = 25, alltså r² = 25/π och r = √(25/π) = 5/√π cm. Svaret 5/π cm lockar om man glömmer att dra roten ur π, och √(5/π) cm om man drar roten ur 5 i stället för ur 25.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 15 · 36 + 15 · 64\nKvantitet II: 1 501",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Bryt ut 15 i kvantitet I: 15 · 36 + 15 · 64 = 15 · (36 + 64) = 15 · 100 = 1 500. Kvantitet II är 1 501, alltså 1 mer. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Diagonalen i rektangeln ABCD\nKvantitet II: Halva omkretsen i rektangeln ABCD",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kalla rektangelns sidor a och b. Halva omkretsen är a + b. Diagonalen är hypotenusa i en rätvinklig triangel med kateterna a och b, så den är √(a² + b²). Eftersom (a + b)² = a² + 2ab + b² är större än a² + b² när a och b är positiva, är a + b större än diagonalen. Det syns också direkt: vägen längs två sidor till det motsatta hörnet är längre än den raka vägen dit. Kvantitet II är större, oavsett rektangelns mått.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I en låda finns endast blå, röda och gula bollar. 1/3 av bollarna är blå och 1/6 av bollarna är röda. En boll dras slumpmässigt.\nKvantitet I: Sannolikheten att den dragna bollen är gul\nKvantitet II: Sannolikheten att den dragna bollen är blå eller röd",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Andelen blå eller röda bollar är 1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2, så sannolikheten i kvantitet II är 1/2. Resten av bollarna är gula, alltså 1 − 1/2 = 1/2, så sannolikheten i kvantitet I är också 1/2. Kvantiteterna är lika, oavsett hur många bollar det finns i lådan.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "8x + 4 = 10\nKvantitet I: 4x + 2\nKvantitet II: 8 − 10/4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "4x + 2 är hälften av 8x + 4, så kvantitet I är 10/2 = 5. Man kan också lösa ut x: 8x = 6 ger x = 3/4 och 4x + 2 = 3 + 2 = 5. Kvantitet II är 8 − 10/4 = 8 − 2,5 = 5,5. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a < b\nKvantitet I: Avståndet mellan origo (0, 0) och (a, b)\nKvantitet II: Avståndet mellan origo (0, 0) och (b, a)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt Pythagoras sats är avståndet från origo till punkten (x, y) lika med √(x² + y²). Kvantitet I är √(a² + b²) och kvantitet II är √(b² + a²), vilket är samma tal eftersom ordningen i en summa inte spelar någon roll. Punkterna är varandras spegelbilder i linjen y = x och ligger därför lika långt från origo. Villkoret a < b påverkar inte svaret. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: x⁻²/2\nKvantitet II: (x/2)⁻²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En negativ exponent betyder det inverterade värdet: x⁻² = 1/x². Kvantitet I är alltså 1/(2x²). Kvantitet II är (x/2)⁻² = (2/x)² = 4/x². För varje x > 0 är 4/x² åtta gånger så stort som 1/(2x²). Pröva med x = 1: kvantitet I är 1/2 och kvantitet II är 4. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "L₁ och L₂ är parallella linjer. A, B, C och D är punkter på dessa linjer. AD är längre än AC.\nKvantitet I: Arean av triangeln ABC\nKvantitet II: Arean av triangeln ABD",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Båda trianglarna har sidan AB på linjen L₂ som bas. Spetsarna C och D ligger på L₁, som är parallell med L₂, så höjden mot AB är i båda trianglarna lika med avståndet mellan linjerna. Samma bas och samma höjd ger samma area, AB · h/2. Att AD är längre än AC ändrar inte höjden. Kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.198,
+          0.098,
+          0.51,
+          0.2
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "k, m och n är heltal. 0 < k < m < n.\nKvantitet I: m/n\nKvantitet II: k/m",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva med olika tal. Med k = 1, m = 2 och n = 3 är kvantitet I 2/3 och kvantitet II 1/2, så kvantitet I är större. Med k = 2, m = 3 och n = 10 är kvantitet I 3/10 och kvantitet II 2/3, så kvantitet II är större. Relationen beror på vilka talen är, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: x^(1/4)\nKvantitet II: √(√x)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadratroten är detsamma som exponenten 1/2: √x = x^(1/2). Då är √(√x) = (x^(1/2))^(1/2) = x^(1/2 · 1/2) = x^(1/4), alltså samma som kvantitet I. Pröva med x = 16: 16^(1/4) = 2 eftersom 2⁴ = 16, och √(√16) = √4 = 2. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "Exponenten 1/4 skrivs med ^ i texten; på provet står x upphöjt till 1/4.",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x och y är positiva heltal.\n5x + 10y = 270 580\nKvantitet I: Största möjliga värdet på x\nKvantitet II: Största möjliga värdet på y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Dela ekvationen med 5: x + 2y = 54 116. x blir störst när y är så litet som möjligt, alltså y = 1, och då är x = 54 116 − 2 = 54 114. y blir störst när x är så litet som möjligt. x = 54 116 − 2y är alltid jämnt, så det minsta x är 2, och då är y = (54 116 − 2)/2 = 27 057. Kvantitet I är större; x har den mindre koefficienten och kan därför bli ungefär dubbelt så stort som y.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vid en förskoleavdelning för barn i åldrarna 1-3 år finns 12 barn. Vilken är medelåldern bland flickorna på avdelningen?\n(1) Medelåldern på barnen som går på avdelningen är två år.\n(2) Två tredjedelar av barnen på avdelningen är flickor.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Medelåldern för alla 12 barn är två år, men det säger inget om hur många flickor det finns eller hur gamla de är. Inte tillräckligt.\n(2) Det finns 8 flickor och 4 pojkar, men inget om åldrarna. Inte tillräckligt.\n(1) och (2) tillsammans: Barnen är sammanlagt 12 · 2 = 24 år. Är alla barn två år är flickornas medelålder två år. Är de fyra pojkarna i stället tre år (sammanlagt 12 år) är de åtta flickorna sammanlagt 12 år, till exempel fyra som är ett år och fyra som är två år, och medelåldern är 1,5 år. Pojkarnas åldrar är okända, så flickornas medelålder går inte att bestämma. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Arvid, Benjamin och Clara startar samtidigt från startplatsen. De går med konstanta hastigheter runt en bana som är 400 meter lång. Efter hur lång tid passerar de samtidigt startplatsen första gången?\n(1) Clara går dubbelt så fort som Arvid, och medelvärdet av Arvids och Claras hastigheter är lika med Benjamins hastighet.\n(2) Arvids hastighet är 2 km/h, Benjamins är 3 km/h och Claras är 4 km/h.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Clara går dubbelt så fort som Arvid och Benjamin 1,5 gånger så fort, så hastigheterna förhåller sig som 2 : 3 : 4. Men utan någon verklig hastighet går tiden inte att räkna ut: går alla dubbelt så fort tar det hälften så lång tid. Inte tillräckligt.\n(2) Ett varv är 400 m = 0,4 km. Arvid går ett varv på 0,4/2 h = 12 min, Benjamin på 0,4/3 h = 8 min och Clara på 0,4/4 h = 6 min. De passerar startplatsen samtidigt första gången efter den minsta gemensamma multipeln av 12, 8 och 6 minuter, alltså efter 24 minuter. Tillräckligt.\nBara (2) räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en cykelparkering finns enbart herrcyklar, damcyklar och barncyklar. Hur många barncyklar finns det på parkeringen?\n(1) Det finns totalt 210 cyklar på parkeringen och av dem är 4/7 herrcyklar och 48 är damcyklar.\n(2) Det finns 48 damcyklar och 120 herrcyklar. 20 procent av det totala antalet cyklar på parkeringen är barncyklar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Herrcyklarna är 4/7 · 210 = 120 och damcyklarna 48, så barncyklarna är 210 − 120 − 48 = 42. Tillräckligt.\n(2) Herr- och damcyklarna är 120 + 48 = 168 och utgör de övriga 80 procenten. Totalt finns alltså 168/0,8 = 210 cyklar, och barncyklarna är 0,2 · 210 = 42. Tillräckligt.\nVarje påstående räcker för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Isabella, Anna, Katja, Olga och Fatima bor i samma tvåvåningshus. Olga bor inte på samma våning som Katja och Fatima. Isabella bor på den övre våningen. På vilken våning bor respektive kvinna?\n(1) Det bor minst två kvinnor på varje våning.\n(2) Anna bor på en annan våning än Isabella och Katja.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Huset har två våningar och Olga bor inte där Katja och Fatima bor, så Katja och Fatima bor på samma våning och Olga på den andra. Isabella bor på den övre.\n(1) Bor Katja och Fatima på övre våningen måste både Olga och Anna bo på nedre. Men Katja och Fatima kan också bo på nedre våningen, med Isabella och Olga på övre, och då kan Anna bo på vilken våning som helst. Inte tillräckligt.\n(2) Anna bor inte på Isabellas våning, alltså på nedre. Katja bor inte på Annas våning, alltså på övre, och då bor Fatima också där. Olga bor inte på Katjas våning och bor alltså på nedre. Övre: Isabella, Katja och Fatima; nedre: Anna och Olga. Tillräckligt.\nBara (2) räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En spelkula kastas slumpmässigt och landar på ett cirkulärt plant bord. På bordet finns en triangelformad duk vars hörn tangerar bordets kanter. Vad är sannolikheten att spelkulan landar utanför duken?\n(1) Bordets radie är 20 cm och dukens area är 400 cm².\n(2) Dukens hypotenusa har samma längd som bordets diameter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Bordet har arean π · 20² = 400π cm² och duken 400 cm². Sannolikheten att kulan landar utanför duken är (400π − 400)/(400π) = 1 − 1/π ≈ 0,68. Tillräckligt.\n(2) Duken är en rätvinklig triangel med hörnen på bordskanten, och i en sådan triangel är hypotenusan alltid en diameter. Påståendet säger alltså inget om dukens storlek: en smal rätvinklig triangel har mycket mindre area än en likbent. Inte tillräckligt.\nBara (1) räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En vinterlördag åker Gunilla skridskor på en frusen sjö. Hur tjock är isen på sjön den lördagen?\n(1) Isen är 25 procent tjockare den lördagen än den var en vecka tidigare.\n(2) Under vintern blir isen 1 cm tjockare varje vecka.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Isen är 1,25 gånger så tjock som en vecka tidigare, men den tidigare tjockleken är okänd. Inte tillräckligt.\n(2) Isen är 1 cm tjockare än en vecka tidigare, men det säger inget om hur tjock den är. Inte tillräckligt.\n(1) och (2) tillsammans: Kalla tjockleken en vecka tidigare t. Då är 1,25t = t + 1, så 0,25t = 1 och t = 4 cm. Den lördagen är isen 4 + 1 = 5 cm tjock. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor var den årliga exporten av sulfatmassa den femårsperiod då den var som minst?",
+      "options": [
+        "50 000 ton",
+        "100 000 ton",
+        "450 000 ton",
+        "500 000 ton"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sulfatmassa är den streckprickade linjen i det högra diagrammet. Den börjar 1911/15 vid 100 tusen ton, ligger under 200 tusen ton fram till 1921/25 och stiger sedan. Linjens dipp 1941/45 stannar mellan 200 och 300 tusen ton. Lägst var alltså exporten 1911/15: 100 tusen ton, det vill säga 100 000 ton. Tänk på att skalan är logaritmisk och anger tusental ton; 50 000 ton är den mekaniska massans botten 1941/45, och 450 000–500 000 ton är sulfitmassans lägsta värden.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilken femårsperiod avses?",
+      "passage": "Den årliga exporten av papper och papp var större än exporten av sulfatmassa. Den årliga exporten av mekanisk massa minskade jämfört med närmast föregående femårsperiod.",
+      "options": [
+        "1916/20",
+        "1926/30",
+        "1936/40",
+        "1941/45"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd det högra diagrammet. Mekanisk massa (den kortstreckade linjen) minskar 1916/20 (från cirka 155 till cirka 150 tusen ton), 1936/40 (från cirka 285 till cirka 265) och 1941/45 (ned till cirka 50), men ökar 1926/30 (från cirka 160 till cirka 265). Jämför sedan papper och papp (den nedre heldragna linjen) med sulfatmassa (den streckprickade linjen). 1916/20 är papper och papp cirka 215 och sulfatmassa cirka 120 tusen ton. 1936/40 är sulfatmassa större (cirka 720 mot 515), och 1941/45 ligger sulfatmassans botten något högre än pappret och pappens (cirka 240 mot 215). Bara 1916/20 uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "1941/45 ligger linjerna för papper och papp och för sulfatmassa nära varandra (avläst cirka 215 respektive 240 tusen ton).",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor var den årliga exporten av tackjärn 1906/10 jämfört med 1876/80?",
+      "options": [
+        "0,5 gånger så stor",
+        "1,5 gånger så stor",
+        "2,5 gånger så stor",
+        "3,0 gånger så stor"
+      ],
+      "blindAnswer": 3,
+      "explain": "Tackjärn är den nedre streckade linjen i det vänstra diagrammet. 1876/80 har linjen en botten vid cirka 35 tusen ton, mitt emellan 30 och 40 på den logaritmiska skalan. 1906/10 slutar linjen strax ovanför 100, vid cirka 110 tusen ton. 110/35 ≈ 3,1, så exporten var ungefär 3,0 gånger så stor. På en logaritmisk skala är avståndet mellan 35 och 110 ungefär lika långt som mellan 10 och 30, vilket också visar att kvoten är ungefär 3.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilket fiskevatten avses?",
+      "passage": "Här finns endast öring. Det är 3,5 kilometer till det fiskevatten som har endast abborre och öring.",
+      "options": [
+        "Mellansnägden",
+        "Lillsnägden",
+        "Prästtjärnen",
+        "Burtjärnen"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt tabellen är Öppoms-Fäbodtjärnen (2) det enda fiskevattnet med endast abborre och öring. Endast öring finns i Storsnägden, Mellansnägden, Lillsnägden och Prästtjärnen; Burtjärnen har abborre, gädda och regnbåge och faller bort direkt. Mät på kartan från Öppoms-Fäbodtjärnen med skalstocken: Prästtjärnen ligger drygt 2 km bort, Lillsnägden cirka 3,5 km och Mellansnägden cirka 4,5 km. Det är alltså Lillsnägden.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.8,
+          0.95
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilka arter finns i det fiskevatten som ligger 11,5 kilometer i västnordvästlig riktning från Stavretjärnen?",
+      "options": [
+        "Abborre, gädda och mört",
+        "Abborre, gädda och regnbåge",
+        "Öring",
+        "Öring och röding"
+      ],
+      "blindAnswer": 0,
+      "explain": "Stavretjärnen (1) ligger i kartans sydöstra del. Västnordväst är riktningen mitt emellan väster och nordväst, alltså snett uppåt åt vänster på kartan (norrpilen pekar uppåt). 11,5 km är två hela skalstockar på 5 km och ytterligare 1,5 km. I den riktningen och på det avståndet ligger Röjesjön (7). Prästtjärnen (8) ligger i nästan samma riktning men bara drygt 10 km bort. Enligt tabellen finns abborre, gädda och mört i Röjesjön.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.8,
+          0.95
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur många fiskevatten med gädda finns det inom en radie av 4,5 kilometer från Ljustorp?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt tabellen finns gädda i Stavretjärnen (1), Röjesjön (7), Burtjärnen (9), Ljustorpsån (11) och Mjällån med biflöden (12). Mät från Ljustorp med skalstocken: Ljustorpsån rinner genom Ljustorp, Burtjärnen ligger cirka 1,5 km bort och Mjällån cirka 3 km österut. Röjesjön ligger cirka 5 km bort (närmaste stranden knappt 5 km) och Stavretjärnen drygt 6 km bort, så de ligger utanför radien. Det blir 3 fiskevatten. Svaret 1 lockar om man bara räknar sjöarna, men åarna är också fiskevatten i tabellen.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.8,
+          0.95
+        ]
+      },
+      "note": "Röjesjöns närmaste strand ligger cirka 4,9 km från Ljustorp, alltså inte långt utanför radien 4,5 km.",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilket år var kyrkans inkomster fördelade enligt följande?",
+      "passage": "Tionde: 50 %\nAvrad: 39 %\nStockapenningar: 2 %\nTestamente: 9 %",
+      "options": [
+        "1470",
+        "1477",
+        "1478",
+        "1483"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd inkomstdiagrammet till höger. Stapeln för 1470 är totalt cirka 37 mark. Tionde (nederst) når cirka 18,5 mark, vilket är 18,5/37 = 50 %. Avrad går upp till cirka 33 mark, alltså 14,5 mark eller cirka 39 %. Stockapenningar är en smal bit på knappt 1 mark (cirka 2 %), och testamente överst är cirka 3 mark (cirka 9 %). De andra åren stämmer inte: 1477 är testamente bara cirka 1 mark av 36 (cirka 3 %), 1478 är avrad bara cirka 34 % och 1483 är testamente cirka 1 % av totalt cirka 41 mark.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.92,
+          0.95
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av kyrkans totala utgifter år 1478 respektive 1483 utgjordes av inventarier?",
+      "options": [
+        "25 respektive 10 procent",
+        "25 respektive 70 procent",
+        "60 respektive 10 procent",
+        "60 respektive 35 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd utgiftsdiagrammet till vänster. Lägg märke till att den lodräta axeln är bruten mellan 40 och 58, mellan 62 och 68 och mellan 72 och 98. 1478 är stapeln totalt cirka 37 mark, och inventarier (prickat) går från cirka 13 till cirka 36 mark, alltså cirka 23 mark: 23/37 ≈ 0,62, ungefär 60 procent. 1483 når stapeln cirka 69 mark, och inventarier går från cirka 7,5 till cirka 15,5 mark, alltså cirka 8 mark: 8/69 ≈ 0,12, ungefär 10 procent. Den stora vita delen överst i 1483 års stapel är arbete.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.92,
+          0.95
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av kyrkans sammanlagda utgifter under perioden 1470–72 gick till inköp av vax?",
+      "options": [
+        "20 procent",
+        "30 procent",
+        "35 procent",
+        "45 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av de tre staplarna i utgiftsdiagrammet. 1470 når stapeln 98 mark (axeln är bruten, och stapelns översta bit står vid 98), och vax (nederst) är cirka 12 mark. 1471 är stapeln cirka 29 mark med cirka 17 mark vax, och 1472 är den cirka 21,5 mark med cirka 14 mark vax. Sammanlagt är utgifterna cirka 98 + 29 + 21,5 ≈ 149 mark och vaxet cirka 12 + 17 + 14 = 43 mark. 43/149 ≈ 0,29, alltså cirka 30 procent. Medelvärdet av de tre årens andelar (cirka 12, 57 och 66 procent) blir i stället cirka 45 procent, men då väger det dyra året 1470 för lite.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.92,
+          0.95
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Studera åldersgruppen 15–24 år. Vilket år noterades det största sammanlagda antalet vårdtillfällen i sluten vård för missbruk orsakat av opiater och amfetamin med mera?",
+      "options": [
+        "1999",
+        "2000",
+        "2001",
+        "2002"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lägg ihop män och kvinnor i åldern 15–24 i båda tabellerna (opiater + amfetamin med mera). 1999: 222 + 129 + 68 + 37 = 456. 2000: 266 + 145 + 33 + 37 = 481. 2001: 324 + 129 + 43 + 28 = 524. 2002: 248 + 119 + 30 + 41 = 438. Summan är störst 2001.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala antalet narkotikarelaterade vårdtillfällen i sluten vård 2003 gällde missbruk orsakat av opiater?",
+      "options": [
+        "10 procent",
+        "15 procent",
+        "20 procent",
+        "25 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Det totala antalet vårdtillfällen 2003 står ovanför cirkeldiagrammen: 9 409 för män och 5 213 för kvinnor, sammanlagt 14 622. I opiattabellen är totalen för 2003 1 622 för män och 706 för kvinnor, sammanlagt 2 328. Andelen är 2 328/14 622 ≈ 0,16, alltså ungefär 15 procent.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala antalet vårdtillfällen i sluten vård för missbruk orsakat av opiater 1999 gällde kvinnor?",
+      "options": [
+        "1/3",
+        "2/5",
+        "1/2",
+        "2/3"
+      ],
+      "blindAnswer": 0,
+      "explain": "I opiattabellen är totalen 1999 1 508 för män och 778 för kvinnor, sammanlagt 2 286. Kvinnornas andel är 778/2 286 ≈ 0,34, alltså ungefär 1/3. Svaret 1/2 lockar om man jämför kvinnorna med männen (778/1 508 ≈ 0,52) i stället för med alla vårdtillfällen.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
