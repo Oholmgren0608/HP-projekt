@@ -1,0 +1,806 @@
+{
+  "examId": "hp-2016-04-09",
+  "passNumber": 3,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen motsvarar uttrycket ax + by + bx + ay?",
+      "options": [
+        "(a + b)(x + y)",
+        "a²xy + b²xy",
+        "2(ab + xy)",
+        "2axy + 2bxy"
+      ],
+      "blindAnswer": 0,
+      "explain": "Ordna termerna så att de med a och de med b står ihop: ax + ay + bx + by. Bryt ut a ur de två första och b ur de två sista: a(x + y) + b(x + y). Nu är (x + y) en gemensam faktor, så uttrycket blir (a + b)(x + y). Kontroll: (a + b)(x + y) = ax + ay + bx + by, samma fyra termer som i uppgiften. 2(ab + xy) = 2ab + 2xy innehåller produkterna ab och xy, som inte finns i uttrycket, och de två andra alternativen har termer med tre eller fyra faktorer.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "I en klass finns det pojkar och flickor. Antalet pojkar är dubbelt så stort som antalet flickor. Vilket svarsalternativ kan inte motsvara antalet elever i klassen?",
+      "options": [
+        "18",
+        "21",
+        "25",
+        "33"
+      ],
+      "blindAnswer": 2,
+      "explain": "Om det finns f flickor finns det 2f pojkar, och klassen har f + 2f = 3f elever. Antalet elever måste alltså vara delbart med 3. 18 = 3 · 6 (6 flickor och 12 pojkar), 21 = 3 · 7 och 33 = 3 · 11 fungerar. 25 är inte delbart med 3 (3 · 8 = 24 och 3 · 9 = 27), så klassen kan inte ha 25 elever.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Tre identiska rektanglar är sammansatta till en större rektangel, enligt figuren. Den sammansatta rektangelns långsida är 30 cm. Hur stor area har den sammansatta rektangeln?",
+      "options": [
+        "300 cm²",
+        "450 cm²",
+        "600 cm²",
+        "750 cm²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla de små rektanglarnas långsida L och kortsida k. Den liggande rektangeln överst är lika bred som de två stående rektanglarna under den, så L = 2k. Den sammansatta rektangelns långsida är den lodräta sidan, och den består av en kortsida och en långsida: k + L = k + 2k = 3k = 30 cm. Alltså är k = 10 cm och L = 20 cm. Den sammansatta rektangeln är 20 cm bred och 30 cm hög, så arean är 20 · 30 = 600 cm². Kontroll: tre rektanglar på 10 · 20 = 200 cm² ger också 600 cm².",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.2,
+          0.188,
+          0.39,
+          0.305
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är 1002³?",
+      "options": [
+        "1 005 008 004",
+        "1 006 012 008",
+        "1 007 016 012",
+        "3 000 000 006"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv 1002 som 1000 + 2. Först kvadraten: 1002² = 1000² + 2 · 1000 · 2 + 2² = 1 000 000 + 4 000 + 4 = 1 004 004. Multiplicera sedan med 1002: 1 004 004 · 1000 + 1 004 004 · 2 = 1 004 004 000 + 2 008 008 = 1 006 012 008. Slutsiffrorna ger en kontroll: talet måste sluta på 008 eftersom 2³ = 8, och bara 1 006 012 008 gör det. 3 000 000 006 lockar om man multiplicerar 1002 med 3 i stället för att upphöja till 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är x om f(x) = g(x)?",
+      "passage": "f(x) = x² + 2x − 5\ng(x) = x² − x + 1",
+      "options": [
+        "−1",
+        "−2/5",
+        "2",
+        "6"
+      ],
+      "blindAnswer": 2,
+      "explain": "f(x) = g(x) ger x² + 2x − 5 = x² − x + 1. Termen x² finns i båda leden och tar ut varandra, så kvar blir 2x − 5 = −x + 1. Addera x och 5 till båda leden: 3x = 6, alltså x = 2. Kontroll: f(2) = 4 + 4 − 5 = 3 och g(2) = 4 − 2 + 1 = 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar (x⁶)⁴?",
+      "options": [
+        "x¹⁰",
+        "x²⁴",
+        "x⁶⁴",
+        "x¹²⁹⁶"
+      ],
+      "blindAnswer": 1,
+      "explain": "(x⁶)⁴ betyder x⁶ · x⁶ · x⁶ · x⁶. Vid multiplikation adderas exponenterna: 6 + 6 + 6 + 6 = 24, så (x⁶)⁴ = x²⁴. Det är potenslagen (aᵐ)ⁿ = aᵐⁿ: exponenterna multipliceras, 6 · 4 = 24. x¹⁰ lockar om man adderar 6 och 4, och x¹²⁹⁶ om man räknar ut 6⁴ = 1 296.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är x om 0 = −2(x − 5) + 3(−x + 10)?",
+      "options": [
+        "−20",
+        "−4",
+        "4",
+        "8"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera in i parenteserna: −2(x − 5) = −2x + 10 och 3(−x + 10) = −3x + 30. Ekvationen blir 0 = −2x + 10 − 3x + 30 = −5x + 40. Då är 5x = 40 och x = 8. Kontroll: −2(8 − 5) + 3(−8 + 10) = −2 · 3 + 3 · 2 = −6 + 6 = 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är medianen för svaren som Erik fick?",
+      "passage": "Erik frågade sina 29 klasskamrater hur många timmar de hade pluggat under föregående helg. Svaren redovisas i ett stolpdiagram.",
+      "options": [
+        "3 timmar",
+        "3,5 timmar",
+        "4 timmar",
+        "7,5 timmar"
+      ],
+      "blindAnswer": 2,
+      "explain": "Med 29 svar i storleksordning är medianen det 15:e svaret, eftersom 14 svar ligger före och 14 efter. Läs av staplarna från 0 timmar och uppåt: 1, 2, 3, 8, 7, 2, 5 och 1 personer (summa 29). Svaren 0–2 timmar är 1 + 2 + 3 = 6 stycken, och med de 8 svaren på 3 timmar har vi 14 svar. Det 15:e svaret är alltså 4 timmar. 3 timmar är typvärdet (den högsta stapeln) och 3,5 timmar är mitten av skalan 0–7, men ingen av dem är medianen.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.19,
+          0.525,
+          0.66,
+          0.75
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är 1/(1/3 − 3/4)?",
+      "options": [
+        "1/4",
+        "4/3",
+        "−7/2",
+        "−12/5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna först ut nämnaren med minsta gemensamma nämnare 12: 1/3 − 3/4 = 4/12 − 9/12 = −5/12. Att dividera 1 med ett bråk är detsamma som att multiplicera med det inverterade bråket: 1/(−5/12) = −12/5. Svaret måste vara negativt eftersom 3/4 är större än 1/3, vilket utesluter 1/4 och 4/3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är med säkerhet korrekt?",
+      "passage": "0 < x < 1 < y",
+      "options": [
+        "0 < xy < x",
+        "0 < xy < 1",
+        "x < xy < 1",
+        "x < xy < y"
+      ],
+      "blindAnswer": 3,
+      "explain": "Både x och y är positiva, så xy > 0. Eftersom y > 1 blir x större när det multipliceras med y: xy > x. Eftersom x < 1 blir y mindre när det multipliceras med x: xy < y. Alltså gäller alltid x < xy < y. De andra alternativen håller inte alltid: med x = 0,5 och y = 4 är xy = 2, som är större än både x och 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Triangeln ABC är inskriven i en cirkel. Cirkelns medelpunkt M ligger på sidan AB. Arean för triangeln ACM är 5 cm². Vilken area har triangeln ABC?",
+      "options": [
+        "5 cm²",
+        "10 cm²",
+        "12 cm²",
+        "14 cm²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Eftersom medelpunkten M ligger på AB är AB en diameter, och AM = MB eftersom båda är radier. Sträckan CM delar triangeln ABC i trianglarna ACM och MCB. De har lika långa baser, AM och MB, på samma linje och samma höjd, nämligen avståndet från C till AB. Därför har de lika stor area, 5 cm² vardera, och triangeln ABC har arean 5 + 5 = 10 cm².",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.21,
+          0.124,
+          0.5,
+          0.31
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vad är x − y?",
+      "passage": "x + y = a\nx + 3y = b",
+      "options": [
+        "2a − b",
+        "3b + a",
+        "3a − b",
+        "2b + a"
+      ],
+      "blindAnswer": 0,
+      "explain": "Subtrahera den första ekvationen från den andra: (x + 3y) − (x + y) = b − a, alltså 2y = b − a och y = (b − a)/2. Insatt i x + y = a ger det x = a − (b − a)/2 = (3a − b)/2. Då är x − y = (3a − b)/2 − (b − a)/2 = (4a − 2b)/2 = 2a − b. Kontroll med tal: x = 3 och y = 1 ger a = 4 och b = 6, och 2a − b = 8 − 6 = 2, vilket är x − y.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Punkten E ligger någonstans på sidan BC i kvadraten ABCD.\nKvantitet I: Den sammanlagda arean av triangeln ABE och triangeln CDE\nKvantitet II: Arean av triangeln ADE",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Låt kvadratens sida vara s. Triangeln ADE har basen AD = s, och dess höjd är avståndet från E till AD. Eftersom E ligger på BC, som är parallell med AD, är höjden alltid s. Arean av triangeln ADE är därför s · s/2 = s²/2, alltså halva kvadraten, var på BC punkten E än ligger. Trianglarna ABE och CDE fyller resten av kvadraten och har tillsammans arean s² − s²/2 = s²/2. Kvantiteterna är lika stora.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.26,
+          0.158,
+          0.46,
+          0.3
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/3 + 5/6\nKvantitet II: 4/5 + 4/10",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvantitet I: 1/3 + 5/6 = 2/6 + 5/6 = 7/6. Kvantitet II: 4/5 + 4/10 = 8/10 + 4/10 = 12/10 = 6/5. Jämför med gemensam nämnare 30: 7/6 = 35/30 och 6/5 = 36/30. Kvantitet II är större. I decimalform är 7/6 ≈ 1,17 och 6/5 = 1,2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (a + b + 2)(a + b − 2)\nKvantitet II: (a + b)² + 4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt t = a + b. Kvantitet I är då (t + 2)(t − 2), som enligt konjugatregeln är t² − 4 = (a + b)² − 4. Kvantitet II är (a + b)² + 4. Vilka a och b än är skiljer sig kvantiteterna med 8, och kvantitet II är alltid störst.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 6,3 timmar\nKvantitet II: 120π minuter",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Gör om till samma enhet. Kvantitet I: 6,3 timmar = 6,3 · 60 = 378 minuter. Kvantitet II: π ≈ 3,1416, så 120π ≈ 376,99 minuter. Eftersom π < 3,15 är 120π mindre än 120 · 3,15 = 378. Kvantitet I är alltså något större. Den som avrundar π till 3,15 får att kvantiteterna är lika, men π är mindre än 3,15.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Medelvärdet av tre tal är 9. Ett av talen är 2.\nKvantitet I: Det största av de tre talen\nKvantitet II: 16",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Summan av de tre talen är 3 · 9 = 27, så de två andra talen har summan 27 − 2 = 25. Om de är 12 och 13 är det största talet 13, alltså mindre än 16. Om de är 20 och 5 är det största talet 20, alltså större än 16. Relationen beror på talen, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 2√3\nKvantitet II: √9/√3 + 2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Förenkla kvantitet II: √9 = 3, och 3/√3 = √3 eftersom 3 = √3 · √3. Kvantitet II är alltså √3 + 2. Kvantitet I är 2√3 = √3 + √3. Båda innehåller en term √3, så jämför resten: √3 i kvantitet I och 2 i kvantitet II. Eftersom √3 ≈ 1,73 är mindre än 2 är kvantitet II större (2√3 ≈ 3,46 och √3 + 2 ≈ 3,73).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Grafen till y = 2x + 1 är en rät linje.\nKvantitet I: x-värdet för den punkt där linjen skär x-axeln\nKvantitet II: y-värdet för den punkt där linjen skär y-axeln",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Linjen skär x-axeln där y = 0: 2x + 1 = 0 ger x = −1/2. Den skär y-axeln där x = 0: y = 2 · 0 + 1 = 1. Kvantitet I är −1/2 och kvantitet II är 1, så kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x · y = 312\ny < 24\nKvantitet I: 24\nKvantitet II: x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "x = 312/y, så x beror på vilket y som gäller. Med y = 13 blir x = 312/13 = 24, alltså lika med kvantitet I. Med y = 12 blir x = 26, som är större än 24, och med y = 20 blir x = 15,6, som är mindre än 24. Dessutom kan y vara negativt, och då är x också negativt. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Arean av en halvcirkel med radien 4 cm\nKvantitet II: Arean av en rektangel med sidlängderna 8 cm och 3 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "En hel cirkel med radien 4 cm har arean π · 4² = 16π cm², så halvcirkeln har arean 8π cm². Rektangeln har arean 8 · 3 = 24 cm². Eftersom π > 3 är 8π > 8 · 3 = 24; mer exakt är 8π ≈ 25,1 cm². Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\ny ≠ 0\nKvantitet I: x\nKvantitet II: (xʸ)^(1/y)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "När en potens upphöjs till en ny exponent multipliceras exponenterna: (xʸ)^(1/y) = x^(y · 1/y) = x¹ = x. Villkoren gör att uttrycket är definierat: y ≠ 0 behövs för att 1/y ska finnas, och x > 0 gör att potenserna går att räkna ut för alla y. Kvantiteterna är alltså lika.",
+      "figure": null,
+      "note": "Exponenten 1/y skrivs med ^ i texten; på provet står (xʸ) upphöjt till 1/y.",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Stina skulle köpa en mikrovågsugn och hon hade två modeller att välja bland. Hur stor var skillnaden mellan ugnarnas ordinarie pris?\n(1) På den ena ugnen lämnades 35 % rabatt och man sparade då 595 kr jämfört med ordinarie pris. På den andra ugnen lämnades 45 % rabatt och man sparade då 945 kr jämfört med ordinarie pris.\n(2) Efter att man lämnat 35 % respektive 45 % rabatt på ugnarna var prisskillnaden mellan dem 50 kr.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) 35 % av den första ugnens ordinarie pris är 595 kr, så priset är 595/0,35 = 1 700 kr. 45 % av den andra ugnens pris är 945 kr, så priset är 945/0,45 = 2 100 kr. Skillnaden är 2 100 − 1 700 = 400 kr. Tillräckligt.\n(2) Vi vet bara att de rabatterade priserna skiljer sig med 50 kr, och det passar många prispar. Ordinarie priser på 1 700 kr och 2 100 kr ger rabatterade priser på 1 105 kr och 1 155 kr, och 600 kr och 800 kr ger 390 kr och 440 kr. Båda paren skiljer sig med 50 kr efter rabatten, men skillnaden i ordinarie pris är 400 kr respektive 200 kr. Inte tillräckligt.\nSvaret fås alltså ur (1) men inte ur (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Sex vikter med massorna 1, 2, 3, 4, 5 respektive 6 gram ligger i tre askar med två vikter i varje ask. Vilka vikter finns i den tredje asken?\n(1) Den totala massan i den första asken är 9 gram.\n(2) Den totala massan i den andra asken är 8 gram.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Den första asken innehåller 3 och 6 gram eller 4 och 5 gram, och de övriga vikterna kan fördelas på flera sätt mellan den andra och den tredje asken. Inte tillräckligt.\n(2) Den andra asken innehåller 2 och 6 gram eller 3 och 5 gram. Inte tillräckligt.\n(1) och (2) tillsammans: Om den första asken har 3 och 6 kan den andra varken ha 2 och 6 eller 3 och 5. Alltså har den första asken 4 och 5, och då måste den andra ha 2 och 6 eftersom 5 redan är använd. Den tredje asken innehåller vikterna 1 och 3 gram. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur många personer står i kön?\n(1) Om ytterligare 5 personer ställer sig i kön kommer den att bestå av fler än 20 personer.\n(2) Om 4 personer lämnar kön kommer den att bestå av färre än 13 personer.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet personer i kön n.\n(1) n + 5 > 20, alltså n > 15. Kön kan ha 16, 17 eller fler personer. Inte tillräckligt.\n(2) n − 4 < 13, alltså n < 17. Kön kan ha 16 personer eller färre. Inte tillräckligt.\n(1) och (2) tillsammans: 15 < n < 17, och eftersom antalet personer är ett heltal är n = 16. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En bil och en motorcykel körde längs en raksträcka. Hur lång var raksträckan?\n(1) Skillnaden i körtid mellan fordonen var 90 sekunder för hela raksträckan.\n(2) Motorcykelns medelhastighet för hela raksträckan var 10 m/s lägre än bilens.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Tidsskillnaden säger ingenting om hastigheterna, så sträckan kan vara hur lång som helst. Inte tillräckligt.\n(2) Hastighetsskillnaden säger ingenting om tiden. Inte tillräckligt.\n(1) och (2) tillsammans: Om bilen kör 20 m/s och motorcykeln 10 m/s blir tidsskillnaden s/10 − s/20 = s/20, och s/20 = 90 ger s = 1 800 m. Om bilen kör 30 m/s och motorcykeln 20 m/s blir skillnaden s/20 − s/30 = s/60, och s/60 = 90 ger s = 5 400 m. Båda fallen stämmer med (1) och (2), men sträckorna är olika. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x och y är två positiva tal. Hur många procent av y är x?\n(1) x = 3/8 och x > y\n(2) x/y = 12,5",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) x = 3/8, och y kan vara vilket positivt tal som helst under 3/8. Med y = 1/4 är x 150 % av y, och med y = 1/8 är x 300 % av y. Inte tillräckligt.\n(2) x/y = 12,5 betyder att x är 12,5 gånger så stort som y, alltså 1 250 % av y. Tillräckligt.\nSvaret fås alltså ur (2) men inte ur (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Kalle är 24 år äldre än Lisa. Hur gammal är Lisa?\n(1) För två år sedan var Kalle fyra gånger så gammal som Lisa.\n(2) Om 14 år är Kalle dubbelt så gammal som Lisa.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Om Lisa är L år är Kalle L + 24 år.\n(1) För två år sedan var de L − 2 och L + 22 år: L + 22 = 4(L − 2) = 4L − 8, så 3L = 30 och L = 10. Tillräckligt.\n(2) Om 14 år är de L + 14 och L + 38 år: L + 38 = 2(L + 14) = 2L + 28, så L = 10. Tillräckligt.\nVarje påstående räcker alltså för sig (Lisa är 10 år och Kalle 34).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "I vilken typ av hushåll var skillnaden mellan antalet katter 2012 och antalet hundar samma år som störst?",
+      "options": [
+        "Hushåll med barn",
+        "Hushåll utan barn",
+        "Hushåll med en vuxen",
+        "Hushåll med mer än en vuxen"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av de svarta staplarna (2012) i hund- och kattdiagrammen. Hushåll med barn: cirka 355 000 katter och 250 000 hundar, skillnad cirka 105 000. Hushåll utan barn: cirka 815 000 katter och 535 000 hundar, skillnad cirka 280 000. En vuxen: cirka 200 000 katter och 125 000 hundar, skillnad cirka 75 000. Mer än en vuxen: cirka 620 000 katter och 410 000 hundar, skillnad cirka 210 000. Skillnaden är störst i hushåll utan barn.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Anta att av hushållen med fågel som sällskapsdjur hade vartannat två fåglar och vartannat en fågel. Hur många fåglar fanns det då i hushållen 2006?",
+      "options": [
+        "65 000",
+        "125 000",
+        "145 000",
+        "165 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av den ljusa stapeln (2006) för fågel i det nedersta diagrammet: cirka 82 000 hushåll. Hälften av hushållen, cirka 41 000, hade två fåglar och hälften hade en fågel. Antalet fåglar blir 41 000 · 2 + 41 000 · 1 = 123 000, alltså ungefär 1,5 · 82 000 ≈ 125 000. 65 000 får man om man läser av den svarta stapeln för 2012 (cirka 43 000 hushåll) i stället för 2006.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur många katter gick det på varje hund 2012?",
+      "options": [
+        "0,9",
+        "1,1",
+        "1,5",
+        "1,8"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd de svarta staplarna Totalt (2012) i hund- och kattdiagrammen. Det fanns cirka 1 175 000 katter och cirka 790 000 hundar. Antalet katter per hund är 1 175 000/790 000 ≈ 1,49, alltså ungefär 1,5.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera bruttobiljettintäkterna för de visade svenska filmerna och bruttobiljettintäkterna för de visade utländska filmerna 1984/85. Hur stor var skillnaden?",
+      "options": [
+        "178 500 000 kr",
+        "203 300 000 kr",
+        "276 700 000 kr",
+        "283 500 000 kr"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av raden 1984/85. De visade utländska filmernas bruttobiljettintäkter var 381 715 163 kr och de visade svenska filmernas 105 015 302 kr. Skillnaden är 381 715 163 − 105 015 302 = 276 699 861 kr, alltså ungefär 276 700 000 kr. 283 500 000 kr får man om man av misstag tar intäkterna för de premiärvisade svenska filmerna (98 245 982 kr).",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur många besök i genomsnitt hade en svensk film som visades 1966/67?",
+      "options": [
+        "17 900",
+        "20 100",
+        "25 300",
+        "31 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Under Samtliga filmer, Antal visade filmer, står att 248 svenska filmer visades 1966/67. Under Svenska filmer, Visade, står att de hade 6 281 470 besök. Genomsnittet blir 6 281 470/248 ≈ 25 300 besök per film. 17 900 får man om man i stället delar besöken för de premiärvisade svenska filmerna (4 448 894) med 248.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilket filmår avses?",
+      "passage": "För det totala antalet visade filmer registrerades färre än 15 miljoner besök, och för de premiärvisade svenska filmerna färre än 2 miljoner. De premiärvisade utländska filmerna var fler än 200.",
+      "options": [
+        "1978/79",
+        "1983/84",
+        "1987/88",
+        "1992/93"
+      ],
+      "blindAnswer": 1,
+      "explain": "Det totala antalet besök är summan av besöken på visade utländska och visade svenska filmer. 1978/79: 17 779 852 + 3 507 099 ≈ 21,3 miljoner, för många. 1987/88: 11 697 816 + 3 243 193 ≈ 14,9 miljoner, men de premiärvisade svenska filmerna hade 2 432 304 besök, mer än 2 miljoner. 1992/93: 12 349 575 + 2 526 599 ≈ 14,9 miljoner och 1 834 319 besök på premiärvisade svenska filmer, men bara 185 premiärvisade utländska filmer. 1983/84: 12 112 248 + 2 227 234 ≈ 14,3 miljoner besök, 1 672 290 besök på de premiärvisade svenska filmerna och 231 premiärvisade utländska filmer. Alla tre villkoren stämmer bara för 1983/84.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilken tjänstekategori hade förändrats mest, i antal helårspersoner räknat, om man jämför 2010 med 1995?",
+      "options": [
+        "Lektorer",
+        "Adjunkter",
+        "Annan forskande och undervisande personal",
+        "Professorer"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av linjerna i det vänstra diagrammet 1995 och 2010. Lektorer (tjock heldragen linje): från cirka 4 900 till 7 150, en ökning med ungefär 2 250. Adjunkter (tjock streckad linje): från cirka 4 600 till 5 800, ungefär 1 200. Annan forskande och undervisande personal (tunn heldragen linje): från cirka 2 550 till 5 550, ungefär 3 000. Professorer (tunn streckad linje): från cirka 2 000 till 4 550, ungefär 2 550. Störst förändring har annan forskande och undervisande personal. Lektorerna lockar eftersom de är flest 2010, men det är förändringen som efterfrågas.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.93,
+          0.9
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket år var antalet adjunkter större än antalet lektorer samtidigt som antalet adjunkter understeg 6 000?",
+      "options": [
+        "1998",
+        "1999",
+        "2003",
+        "2005"
+      ],
+      "blindAnswer": 1,
+      "explain": "Adjunkterna är den tjocka streckade linjen och lektorerna den tjocka heldragna linjen i det vänstra diagrammet. 1998 ligger adjunkterna (cirka 5 400) under lektorerna (cirka 5 650). 1999 har adjunkterna gått förbi, cirka 5 900 mot 5 650, och 5 900 är under 6 000. 2003 (cirka 6 800) och 2005 (cirka 6 350) är adjunkterna visserligen fler än lektorerna, men de är över 6 000. Bara 1999 uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.93,
+          0.9
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur var antalet forskande och undervisande helårspersoner fördelat på vetenskapsområden 2008?",
+      "options": [
+        "Cirkeldiagram A",
+        "Cirkeldiagram B",
+        "Cirkeldiagram C",
+        "Cirkeldiagram D"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av det högra diagrammet för 2008: humanistisk-samhällsvetenskapligt cirka 9 500, medicinskt cirka 5 300, tekniskt cirka 4 750, naturvetenskapligt cirka 3 100 och SLU cirka 1 250, totalt cirka 23 900. Andelarna blir ungefär 40 %, 22 %, 20 %, 13 % och 5 %. I Cirkeldiagram A och B är den grå sektorn (humanistisk-samhällsvetenskapligt) bara ungefär 30 %, så de faller bort. Cirkeldiagram C och D har båda en grå sektor på ungefär 40 %, men i C är den sicksackmönstrade sektorn (medicinskt) ungefär 30 % och den svarta (tekniskt) bara ungefär 15 %. I Cirkeldiagram D är de ungefär 22 % och 20 %, som det ska vara.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          [
+            0.08,
+            0.06,
+            0.93,
+            0.9
+          ],
+          [
+            0.57,
+            0.245,
+            0.92,
+            0.56
+          ]
+        ]
+      },
+      "note": "Bildalternativ: cirkeldiagrammen A–D med teckenförklaring (från uppgiftssidan) står under linjediagrammen i figuren, och alternativen skrivs Cirkeldiagram A–D.",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur lång är den vattenledning som finns utmärkt på ritningen?",
+      "options": [
+        "45 m",
+        "65 m",
+        "90 m",
+        "170 m"
+      ],
+      "blindAnswer": 0,
+      "explain": "Mät ledningen med skalstrecket (0–10 m) nere till höger. Vattenledningen går från västra muren snett genom korsgången och klostergården, viker av mot norr vid refektoriet och fortsätter österut genom parlatoriet till östra muren. Sammanlagt motsvarar den knappt fem skalstreck, alltså ungefär 45 meter. Hela anläggningen mellan västra och östra muren är drygt 40 meter bred, så 65 meter eller mer är alldeles för långt.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Vad ligger 26 meter väster om kapitelsalens mittpunkt?",
+      "options": [
+        "Brunn",
+        "Klostergård",
+        "Klostrets medeltida entré",
+        "Korsgång"
+      ],
+      "blindAnswer": 0,
+      "explain": "Norr är uppåt i ritningen, så väster är åt vänster. Kapitelsalen är rummet med två pelare i den östra längan. Enligt skalstrecket är 26 meter ungefär två och ett halvt skalstreck (0–10 m). Går man den sträckan rakt åt vänster från kapitelsalens mittpunkt passerar man korsgången (cirka 7 meter), klostergården (cirka 16 meter) och den västra korsgången (cirka 21 meter) och hamnar vid den lilla rutan Brunn, cirka 26 meter bort. Klostrets medeltida entré ligger längre söderut, alltså åt sydväst.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Förutsätt att den äldsta kyrkans östra vägg en gång varit sammanhängande. Hur stor yta upptog den äldsta kyrkan och dess samtida tillbyggnader, om mätningen inkluderar ytterväggarna?",
+      "options": [
+        "50 m²",
+        "100 m²",
+        "140 m²",
+        "330 m²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt teckenförklaringen är den äldsta kyrkan svart och dess samtida tillbyggnader korsstreckade (rutmönster). Mät med skalstrecket och räkna med ytterväggarna. Den svarta kyrkan består av en västra del på cirka 5,5 · 6,8 ≈ 37 m² och en bredare östra del på cirka 3,2 · 9,4 ≈ 30 m², där östra väggen tänks sammanhängande. De korsstreckade tillbyggnaderna är byggnaden väster om kyrkan, cirka 2,9 · 7,6 ≈ 22 m² plus ett utsprång på cirka 2 m², och det runda kapellet på södra sidan, cirka 3 · 2,7 ≈ 8 m². Sammanlagt blir det ungefär 37 + 30 + 24 + 8 ≈ 100 m².",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
