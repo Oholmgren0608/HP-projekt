@@ -1,0 +1,781 @@
+{
+  "examId": "hp-2014-10-25",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är y?",
+      "passage": "För heltalet y gäller att y > 0 och 12 < y² + y < 30",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "blindAnswer": 2,
+      "explain": "Pröva alternativen i uttrycket y² + y. y = 2 ger 4 + 2 = 6, y = 3 ger 9 + 3 = 12, y = 4 ger 16 + 4 = 20 och y = 5 ger 25 + 5 = 30. Olikheterna är stränga, så värdena 12 och 30 uppfyller dem inte. Bara y = 4 ger ett värde som ligger mellan 12 och 30. Alternativen 3 och 5 lockar eftersom de ger exakt gränsvärdena.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är (−5/2)³?",
+      "options": [
+        "125/8",
+        "15/6",
+        "−125/8",
+        "−15/6"
+      ],
+      "blindAnswer": 2,
+      "explain": "Upphöj både täljaren och nämnaren till 3: 5³ = 125 och 2³ = 8. Ett negativt tal upphöjt till en udda exponent blir negativt, eftersom (−5/2) · (−5/2) · (−5/2) har tre negativa faktorer. Alltså är (−5/2)³ = −125/8. Alternativen med 15/6 får man om man multiplicerar talen med 3 i stället för att upphöja dem till 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är k om f(−3) = 1?",
+      "passage": "f(x) = (6x + 5)/(2x + k)",
+      "options": [
+        "−8",
+        "−7",
+        "−6",
+        "−5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt in x = −3: f(−3) = (6 · (−3) + 5)/(2 · (−3) + k) = −13/(k − 6). Kvoten är 1 bara om täljaren och nämnaren är lika, så k − 6 = −13 och k = −7. Kontroll: nämnaren blir −6 + (−7) = −13, och −13/(−13) = 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "En cirkels omkrets är 2π cm. Hur många grader är den cirkelsektor vars cirkelbåge har längden 2π/3 cm?",
+      "options": [
+        "90°",
+        "100°",
+        "120°",
+        "240°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Cirkelbågen är (2π/3)/(2π) = 1/3 av hela omkretsen. Sektorns vinkel är då också 1/3 av ett helt varv: 360°/3 = 120°. Alternativet 240° är vinkeln för den återstående delen av cirkeln.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsförslagen är det bästa närmevärdet till √13?",
+      "options": [
+        "3,2",
+        "3,4",
+        "3,6",
+        "3,8"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadrera alternativen och jämför med 13: 3,2² = 10,24, 3,4² = 11,56, 3,6² = 12,96 och 3,8² = 14,44. Kvadraten 12,96 ligger närmast 13, så √13 ≈ 3,6 (mer exakt ungefär 3,61).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är x om 16/(3x − 4) = 22/(2x + 3)?",
+      "options": [
+        "−2",
+        "0",
+        "2",
+        "4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera korsvis: 16(2x + 3) = 22(3x − 4), alltså 32x + 48 = 66x − 88. Samla termerna: 48 + 88 = 66x − 32x, så 136 = 34x och x = 4. Kontroll: 16/(3 · 4 − 4) = 16/8 = 2 och 22/(2 · 4 + 3) = 22/11 = 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag är alltid mindre än 1?",
+      "passage": "0 < x < 1 < y",
+      "options": [
+        "x/y",
+        "xy",
+        "y − x",
+        "y/x²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Villkoret ger att x och y är positiva och att x < y. Då är x/y alltid mindre än 1, eftersom täljaren är mindre än nämnaren. De andra kan bli 1 eller större: med x = 0,5 och y = 4 är xy = 2 och y − x = 3,5. Uttrycket y/x² är till och med alltid större än 1, eftersom y > 1 och x² < 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "I en låda finns r röda och b blå bollar. Om man lägger till 5 röda och 7 blå bollar i lådan, vad blir då sannolikheten att få en röd boll vid ett slumpmässigt val av en boll ur lådan?",
+      "options": [
+        "r/(r + b + 5)",
+        "(r + 5)/(r + b + 5)",
+        "r/(r + b + 12)",
+        "(r + 5)/(r + b + 12)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Efter tillägget finns det r + 5 röda och b + 7 blå bollar, alltså sammanlagt r + b + 12 bollar. Sannolikheten att få en röd boll är antalet röda bollar delat med det totala antalet: (r + 5)/(r + b + 12). Det är lätt att glömma att även de 7 blå bollarna ökar nämnaren, och då får man (r + 5)/(r + b + 5).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "ABC är en triangel. Vad är x + z?",
+      "options": [
+        "130°",
+        "140°",
+        "180°",
+        "190°"
+      ],
+      "blindAnswer": 3,
+      "explain": "Den lodräta sträckan står vinkelrätt mot AB och bildar en liten rätvinklig triangel med hörnet A. Vinkeln 130° ligger på andra sidan om sträckan, så den lilla triangelns vinkel vid samma hörn är 180° − 130° = 50°. Vinkeln A är då 180° − 90° − 50° = 40°. z är vinkeln mellan AC och linjens förlängning åt vänster, alltså z = 180° − 40° = 140°. I triangeln ABC är vinkeln B rät, så x = 180° − 90° − 40° = 50°. Därmed är x + z = 50° + 140° = 190°.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.2,
+          0.105,
+          0.51,
+          0.26
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Om x = −1 vad är då (x⁴ − x³ + x² − x)/(x − 1)?",
+      "options": [
+        "−2",
+        "−3/2",
+        "−1",
+        "0"
+      ],
+      "blindAnswer": 0,
+      "explain": "Med x = −1 är x⁴ = 1, x³ = −1 och x² = 1. Täljaren blir 1 − (−1) + 1 − (−1) = 1 + 1 + 1 + 1 = 4 och nämnaren blir −1 − 1 = −2. Kvoten är 4/(−2) = −2. Den som tappar minustecknen i täljaren och räknar 1 − 1 + 1 − 1 = 0 får svaret 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Av 75 bilar på en parkeringsplats är 45 av kombimodell, 35 har dragkula och 25 är både av kombimodell och har dragkula. Hur många bilar saknar dragkula och är dessutom inte av kombimodell?",
+      "options": [
+        "10",
+        "20",
+        "25",
+        "30"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna först de bilar som är av kombimodell eller har dragkula: 45 + 35 − 25 = 55. De 25 bilarna som är både och dras bort en gång, eftersom de annars räknas två gånger. Bilar som varken är av kombimodell eller har dragkula: 75 − 55 = 20. Svaret 30 är antalet bilar som inte är av kombimodell, men av dem har 35 − 25 = 10 dragkula.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag motsvarar bäst ”produkten av tre x och fem y är lika mycket som kvoten mellan trettio z och två w”?",
+      "options": [
+        "xyz = w",
+        "xyw = z",
+        "xy = zw",
+        "xy = w/z"
+      ],
+      "blindAnswer": 1,
+      "explain": "Produkten av tre x och fem y är 3x · 5y = 15xy. Kvoten mellan trettio z och två w är 30z/(2w) = 15z/w. Ekvationen 15xy = 15z/w förenklas genom division med 15 till xy = z/w, och multiplikation med w på båda sidor ger xyw = z.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "y < z och x < m < y och z < n < w\nKvantitet I: m\nKvantitet II: n",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt ihop olikheterna till en kedja: x < m < y, y < z och z < n < w ger x < m < y < z < n < w. Alltså är m < y < z < n, och n är alltid större än m. Talen x och w spelar ingen roll för jämförelsen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 355/113\nKvantitet II: 3,1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Jämför 355/113 med 3,1 genom att räkna 3,1 · 113 = 350,3. Eftersom 355 är större än 350,3 är 355/113 större än 3,1. Divisionen ger 355/113 ≈ 3,1416, ett känt närmevärde till π. Kvantitet I är alltså större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABCD är en rektangel.\nKvantitet I: Omkretsen av rektangeln ABCD\nKvantitet II: 18 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Diagonalen AC är 9 cm. I triangeln ABC är AB + BC större än AC, eftersom den raka vägen mellan två punkter är den kortaste. Alltså är AB + BC > 9 cm, och omkretsen 2(AB + BC) är större än 18 cm. Det gäller hur rektangeln än ser ut, så kvantitet I är större. Att sidornas längder är okända kan locka till svaret att informationen är otillräcklig.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.2,
+          0.15,
+          0.5,
+          0.3
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x + 5 > 2 och y − 3 < 7\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Olikheterna ger x > −3 och y < 10. Med x = 0 och y = 5 är y större, men med x = 20 och y = 5 är x större. Relationen mellan x och y kan alltså bli olika, och informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "A jobbar x timmar per dag och tjänar y kronor per timme. B jobbar 20 % längre tid per dag än A och tjänar 90 % av vad A tjänar per timme.\nKvantitet I: A:s förtjänst under 10 arbetsdagar\nKvantitet II: B:s förtjänst under 10 arbetsdagar",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "A tjänar xy kronor per dag. B jobbar 1,2x timmar per dag och tjänar 0,9y kronor per timme, alltså 1,2x · 0,9y = 1,08xy kronor per dag. Under 10 arbetsdagar tjänar A 10xy kronor och B 10,8xy kronor, så B tjänar 8 % mer. Förändringarna ska multipliceras (1,2 · 0,9 = 1,08), inte adderas till +10 %, men B tjänar mer i båda fallen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "7² + x − 2 = 1\nKvantitet I: x² + x − 2\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Det är bara 2:an som är upphöjd, så ekvationen säger att 49 + x − 2 = 1, alltså x + 47 = 1 och x = −46. Då är x² + x − 2 = 2 116 − 46 − 2 = 2 068, som är större än 0. Kvantitet I är större. Ekvationens vänsterled liknar kvantitet I, men där är det 7 som är kvadrerat, inte x.",
+      "figure": null,
+      "note": "Provet visar 7² + x − 2 = 1 med bara 2:an upphöjd (inte 7 upphöjt till x² + x − 2); avskriften följer provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjerna L₁ och L₂ ges av nedanstående ekvationer, där y är en funktion av x.\nL₁: −(1/6)y + (1/3)x = 1/2\nL₂: −y + 3x = −18\nKvantitet I: Lutningen för linjen L₁\nKvantitet II: Lutningen för linjen L₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv båda ekvationerna på formen y = kx + m. Multiplicera L₁ med 6: −y + 2x = 3, alltså y = 2x − 3 och lutningen är 2. L₂ ger y = 3x + 18, med lutningen 3. Lutningen för L₂ är störst. Den som läser av koefficienten framför x direkt i L₁ (1/3) utan att först lösa ut y får fel lutning.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Rektanglarna R₁ och R₂ har lika stor area.\nKvantitet I: a\nKvantitet II: b",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt figuren har R₁ sidorna a + 2 och b, och R₂ har sidorna a och b + 3. Lika stora areor ger (a + 2)b = a(b + 3), alltså ab + 2b = ab + 3a och 2b = 3a. Då är b = 1,5a, och eftersom a är en sidlängd och alltså positiv är b större än a.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.19,
+          0.56,
+          0.55,
+          0.68
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √(10 − (0,4/√0,16))\nKvantitet II: 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Räkna inifrån: √0,16 = 0,4 eftersom 0,4 · 0,4 = 0,16. Bråket blir 0,4/0,4 = 1, och under det yttre rottecknet står 10 − 1 = 9. Eftersom √9 = 3 är kvantiteterna lika. Den som tror att √0,16 = 0,04 får bråket 10 och ett helt annat resultat.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "4 ≤ x ≤ 10\n1 ≤ y ≤ 6\n3 ≤ z ≤ 8\nKvantitet I: Medelvärdet av x, −y och −z\nKvantitet II: Medelvärdet av −x, y och z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvantitet I är (x − y − z)/3 och kvantitet II är (−x + y + z)/3, alltså motsatta tal. I är större om x > y + z och mindre om x < y + z. Med x = 10, y = 1 och z = 3 är x − y − z = 6, så I är större. Med x = 4, y = 6 och z = 8 är x − y − z = −10, så II är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En burk innehåller endast 15 blå, 9 röda och 6 gröna kulor. Åtta kulor plockas bort från burken. Hur många gröna kulor finns det kvar i burken?\n(1) Av de kulor som plockades bort var ingen röd.\n(2) Hälften av kulorna som plockades bort var blå.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) De åtta kulorna var blå eller gröna, men fördelningen är okänd. Det kan till exempel ha varit 8 blå och 0 gröna eller 2 blå och 6 gröna. Inte tillräckligt.\n(2) Fyra av kulorna var blå, men de andra fyra kan vara röda eller gröna i vilken blandning som helst. Inte tillräckligt.\n(1) och (2) tillsammans: Fyra kulor var blå och ingen var röd, så de övriga fyra var gröna. Kvar finns 6 − 4 = 2 gröna kulor. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "ABC och DEF är två trianglar. Är trianglarna likformiga?\n(1) AB = DE\nBC = EF\nAC = DF\n(2) vinkeln A = vinkeln D\nvinkeln B = vinkeln E\nvinkeln C = vinkeln F",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Alla tre sidorna är lika långa i de båda trianglarna. Då är trianglarna kongruenta, och kongruenta trianglar är också likformiga. Tillräckligt.\n(2) Alla motsvarande vinklar är lika stora, och det är just villkoret för att två trianglar ska vara likformiga (det räcker till och med med två par lika stora vinklar). Tillräckligt.\nVarje påstående räcker för sig. Det kan locka att tro att (2) inte räcker eftersom sidornas längder saknas, men likformighet kräver bara samma form, inte samma storlek.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en cykelaffär står 70 cyklar. Hur många av dessa cyklar är både svarta och har cykelkorg?\n(1) 38 av 70 cyklar har cykelkorg.\n(2) 36 av 70 cyklar är svarta.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Påståendet säger inget om cyklarnas färg. Inte tillräckligt.\n(2) Påståendet säger inget om cykelkorgarna. Inte tillräckligt.\n(1) och (2) tillsammans: 38 + 36 = 74, som är 4 fler än 70, så minst 4 cyklar är både svarta och har cykelkorg. Men det kan också vara fler, ända upp till 36 om alla svarta cyklar har korg. Antalet är inte bestämt. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Summan av de positiva heltalen x och y är 55. Vad är xy?\n(1) x = y + 3\n(2) x och y har samma tiotalssiffra.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Sätt in x = y + 3 i x + y = 55: 2y + 3 = 55, så y = 26 och x = 29. Då är xy = 29 · 26 = 754. Tillräckligt.\n(2) Summan 55 går bara att få om båda talen har tiotalssiffran 2, och då är entalssiffrornas summa 55 − 40 = 15. Talen kan vara 26 och 29, med produkten 754, eller 27 och 28, med produkten 756. Inte tillräckligt.\nAlltså räcker (1) men inte (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Kent, Bengt och Albin bor efter samma raka gata. Hur långt är det mellan Kents och Albins hus?\n(1) Mellan Bengts och Albins hus är det 200 meter.\n(2) Mellan Kents och Bengts hus är det 600 meter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Kents hus nämns inte. Inte tillräckligt.\n(2) Albins hus nämns inte. Inte tillräckligt.\n(1) och (2) tillsammans: Om Albin bor mellan Kent och Bengt är avståndet 600 − 200 = 400 meter. Om Albin bor på andra sidan om Bengt är avståndet 600 + 200 = 800 meter. Ordningen längs gatan är okänd. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur lång tid tog resan?\n(1) Under resan var medelhastigheten 55 km/h.\n(2) Om man hade kört dubbelt så fort skulle resan ha tagit 55 minuter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Utan resans längd går tiden inte att räkna ut. Inte tillräckligt.\n(2) Med dubbelt så hög hastighet tar samma sträcka halva tiden. Resan tog alltså 2 · 55 = 110 minuter. Tillräckligt.\nAlltså räcker (2) men inte (1). Talet 55 i båda påståendena kan locka till att kombinera dem, men det behövs inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "År 1998 fanns det cirka 6,3 miljoner människor i Sverige som var i åldern 16–74 år. Hur många av dessa hade Internet i hushållet?",
+      "options": [
+        "2 100 000",
+        "2 500 000",
+        "2 800 000",
+        "3 200 000"
+      ],
+      "blindAnswer": 0,
+      "explain": "Linjen Internet börjar år 1998 med en vit ring strax under mitten mellan 30 och 40 procent, alltså vid ungefär 34 procent. Av 6,3 miljoner människor är det 0,34 · 6 300 000 ≈ 2 140 000, vilket ligger närmast 2 100 000. Alternativet 3 200 000 motsvarar ungefär 51 procent, som är andelen med Internet år 1999.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.86,
+          0.8
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Studera andelen som hade dator i hushållet 1994–2005. Hur stor var den största förändringen mellan två på varandra följande år, i procentenheter räknat?",
+      "options": [
+        "10 procentenheter",
+        "13 procentenheter",
+        "16 procentenheter",
+        "25 procentenheter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Följ den streckade linjen Dator. Den går från ungefär 26 procent 1994 till 30 (1995), 37 (1996), 44 (1997), 57 (1998) och 67 procent (1999), och stiger sedan långsammare till ungefär 84 procent 2005. Den brantaste delen ligger mellan 1997 och 1998: 57 − 44 = 13 procentenheter. Ökningen mellan 1998 och 1999 är ungefär 10 procentenheter, och de övriga förändringarna är mindre.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.86,
+          0.8
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Studera de utskrivna kvinnorna 2005. Hur många fler per 100 000 var de i åldersgruppen 15–24 år jämfört med i åldersgruppen 25–44 år?",
+      "options": [
+        "100 fler",
+        "140 fler",
+        "190 fler",
+        "250 fler"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det nedre diagrammet (kvinnor), där stapeln för 2005 är den sjunde i varje åldersgrupp. I gruppen 15–24 år når den ungefär 260 per 100 000, strax över linjen för 250. I gruppen 25–44 år når den ungefär 120 per 100 000. Skillnaden är 260 − 120 = 140 per 100 000.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilket av följande år avses?",
+      "passage": "De utskrivna männen i åldersgruppen 5–14 år var fler än 200 per 100 000 och de utskrivna kvinnorna i åldersgruppen 45–64 år var fler än 100 per 100 000.",
+      "options": [
+        "2001",
+        "2003",
+        "2004",
+        "2006"
+      ],
+      "blindAnswer": 1,
+      "explain": "Män 5–14 år (övre diagrammet): stapeln för 2001 når bara ungefär 190 per 100 000, medan staplarna för 2003 (ungefär 220), 2004 (ungefär 210) och 2006 (ungefär 210) går över linjen för 200. Kvinnor 45–64 år (nedre diagrammet): stapeln för 2003 når ungefär 105 per 100 000, alltså över linjen för 100, medan 2004 (ungefär 97) och 2006 (ungefär 94) stannar under den. Bara 2003 uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "Kvinnor 45–64 år: staplarna för 2003 (cirka 105) och 2004 (cirka 97) ligger nära linjen för 100; avlästa med förstoring.",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "För hur många av åldersgrupperna gäller att antalet utskrivna män per 100 000 nådde sin topp år 2002?",
+      "options": [
+        "3",
+        "5",
+        "6",
+        "7"
+      ],
+      "blindAnswer": 1,
+      "explain": "Stapeln för 2002 är den fjärde i varje åldersgrupp i det övre diagrammet (män). Den är högst i grupperna 25–44 år (ungefär 215), 45–64 år (ungefär 160), 65–74 år (ungefär 155), 75–84 år (ungefär 225) och 85+ år (ungefär 285). I gruppen 0–4 år är stapeln för 2001 högst, i 5–14 år den för 2007 och i 15–24 år de för 2003 och 2004. Alltså nådde 5 åldersgrupper sin topp år 2002.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "I grupperna 45–64 och 65–74 år är stapeln för 2002 bara cirka 5–7 per 100 000 högre än den näst högsta; avläst med förstoring.",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Studera utskrivna män i de olika åldersgrupperna år 1999 och 2008. I vilken åldersgrupp var skillnaden mellan dessa två år som störst, räknat i antal per 100 000?",
+      "options": [
+        "0–4 år",
+        "25–44 år",
+        "75–84 år",
+        "85+ år"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför den första stapeln (1999) med den sista (2008) i varje åldersgrupp i det övre diagrammet. 0–4 år: ungefär 70 och 40, skillnad ungefär 30. 25–44 år: ungefär 190 och 165, skillnad ungefär 25. 75–84 år: ungefär 200 och 160, skillnad ungefär 40. 85+ år: ungefär 190 och 140, skillnad ungefär 50. Skillnaden är störst i gruppen 85+ år.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur lång var resvägen från Luleå till Nederkalix under sommaren jämfört med under vintern?",
+      "options": [
+        "3 mil längre",
+        "6 mil längre",
+        "3 mil kortare",
+        "6 mil kortare"
+      ],
+      "blindAnswer": 0,
+      "explain": "Avståndet från Luleå läses av mot cirklarna för 5, 10, 15 och 20 mil, räknat från cirkeln L i mitten. Sommarresorna till Nederkalix (NK i början av juli och i slutet av augusti) slutar knappt 9 mil från Luleå, strax innanför 10-milscirkeln. På vinterresan i januari ligger NK på vägen mot Överkalix (ÖK), knappt 6 mil från Luleå, strax utanför 5-milscirkeln. Resvägen var alltså ungefär 9 − 6 = 3 mil längre på sommaren.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur länge varade marknadsbesöket i Jokkmokk?",
+      "options": [
+        "4 dagar",
+        "7 dagar",
+        "14 dagar",
+        "17 dagar"
+      ],
+      "blindAnswer": 0,
+      "explain": "Varje månad är en tolftedel av varvet, alltså 30 grader, så en dag motsvarar ungefär en grad. Den svarta rektangeln vid J i början av februari är ungefär 4 grader bred längs cirkelbågen, ungefär en sjundedel av februarisektorns bredd på samma avstånd från mitten. Marknadsbesöket i Jokkmokk varade alltså ungefär 4 dagar. Rektangelns utsträckning utåt visar inte tiden, eftersom avståndet från mitten anger antal mil från Luleå (Jokkmokk ligger drygt 16 mil bort).",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Marknadstiden är läst som rektangelns bredd längs cirkelbågen (cirka 4 grader, alltså cirka 4 dagar).",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur lång tid gick det från marknadsbesöket i Gällivare till det sista redovisade marknadsbesöket under sjöfartssäsongen?",
+      "options": [
+        "4 månader",
+        "5,5 månader",
+        "7 månader",
+        "8,5 månader"
+      ],
+      "blindAnswer": 2,
+      "explain": "Varje månad är en tolftedel av cirkeln. Marknadsbesöket i Gällivare (G) ligger drygt en tredjedel in i februari, omkring den 10 februari. Sjöfartssäsongen, som pilarna längs cirkelns nedre och vänstra del markerar, varar från maj till slutet av oktober. Det sista marknadsbesöket under den är resan till Nederkalix och Råneå vid månadsskiftet augusti–september; därefter är inga marknadsbesök utritade. Från omkring den 10 februari till månadsskiftet augusti–september är det knappt 7 månader. 8,5 månader räcker ungefär till sjöfartssäsongens slut, men så sent finns inget marknadsbesök.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Det sista marknadsbesöket under sjöfartssäsongen är tolkat som resan till NK och R vid månadsskiftet augusti–september (knappt 7 månader efter G).",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Studera hur antalet kulturartiklar på kultursidorna fördelade sig procentuellt på genrer och ämnesområden 1969. Vilket svarsförslag är korrekt?",
+      "options": [
+        "I genren recensioner av skönlitteratur och estetiska evenemang utgjorde artiklarna inom ämnesområdet konst den största andelen.",
+        "I genren recensioner av tidskrifter och facklitteratur utgjorde artiklarna inom ämnesområdet samhällsstoff den största andelen.",
+        "I genren övrigt material utgjorde artiklarna inom ämnesområdet samhällsstoff den största andelen.",
+        "Av det totala antalet artiklar på kultursidorna utgjorde artiklarna inom ämnesområdet litteratur den största andelen."
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd tabellen för 1969 längst ned till höger. I raden rec-1 (recensioner av skönlitteratur och estetiska evenemang) är litteratur störst med 14,6 procent, inte konst (3,2). I raden rec-2 (recensioner av tidskrifter och facklitteratur) är humanistiskt störst med 9,7 procent, före samhällsstoff med 7,6. I raden övr (övrigt material) är samhällsstoff störst med 23,1 procent. I raden Totalt är samhällsstoff störst med 30,7 procent, före litteratur med 20,0. Bara påståendet om övrigt material och samhällsstoff stämmer.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.945,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur många kulturartiklar på kultursidorna 1969 var recensioner av skönlitteratur och estetiska evenemang inom något av ämnesområdena litteratur, konst eller musik?",
+      "options": [
+        "214",
+        "242",
+        "373",
+        "562"
+      ],
+      "blindAnswer": 1,
+      "explain": "Recensioner av skönlitteratur och estetiska evenemang står i raden rec-1 i tabellen för 1969: litteratur 14,6 procent, konst 3,2 procent och musik 2,5 procent, sammanlagt 20,3 procent. Kultursidorna hade totalt n = 1 194 artiklar 1969. 0,203 · 1 194 ≈ 242 artiklar.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.945,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Vilken tidning avses?",
+      "passage": "Kulturartiklarna i tidningen var fler 1969 än 1965. År 1960 publicerades en majoritet av kulturartiklarna på tidningens kultursida. Vidare var tidningen en av de tidningar som 1969 publicerade kulturartiklar på ledarsidan.",
+      "options": [
+        "Göteborgs-Posten",
+        "Sydsvenska Dagbladet",
+        "Aftonbladet",
+        "Göteborgs-Tidningen"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd den vänstra tabellen. Antalet artiklar (n i kolumnen Tot) är större 1969 än 1965 för Göteborgs-Posten (238 och 324), Sydsvenska Dagbladet (306 och 344) och Aftonbladet (227 och 281), men inte för Göteborgs-Tidningen (164 och 159). År 1960 ska mer än hälften ha stått på kultursidan (K): Sydsvenska Dagbladet hade bara 29,7 procent där, Göteborgs-Posten 62,2 och Aftonbladet 54,2. År 1969 ska tidningen ha haft kulturartiklar på ledarsidan (L): Göteborgs-Posten har ett streck där, medan Aftonbladet har 7,8 procent. Tidningen är Aftonbladet.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.945,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
