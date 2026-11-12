@@ -1,0 +1,814 @@
+{
+  "examId": "hp-2016-04-09",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "6/(6 + 2) = x/(6 − 2)",
+      "options": [
+        "3/4",
+        "4/3",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vänsterledet är 6/(6 + 2) = 6/8 = 3/4, och nämnaren i högerledet är 6 − 2 = 4. Ekvationen blir alltså 3/4 = x/4. Multiplicera båda leden med 4: x = 4 · 3/4 = 3. Kontroll: 3/4 = 6/8. Svaret 3/4 lockar om man stannar när vänsterledet är uträknat.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Inträdet till en simhall kostar 50 kr för barn och 90 kr för vuxna. En dag kom det totalt 150 betalande besökare. Barnens inträde gav 2 750 kr i intäkter. Hur många vuxna betalade inträde till simhallen denna dag?",
+      "options": [
+        "95",
+        "100",
+        "105",
+        "130"
+      ],
+      "blindAnswer": 0,
+      "explain": "Barnens intäkter visar hur många barn som kom: 2 750/50 = 55 barn. Resten av de 150 betalande besökarna var vuxna: 150 − 55 = 95. Vuxenpriset 90 kr behövs inte för att lösa uppgiften.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar grafen till funktionen y = −x + C, där C är ett negativt tal?",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 2,
+      "explain": "Koefficienten framför x är −1, så linjen lutar nedåt åt höger. Det utesluter graf B och graf D, som lutar uppåt. Konstanten C är linjens skärningspunkt med y-axeln (x = 0 ger y = C). Eftersom C är negativt ska linjen skära y-axeln under origo. Graf A skär y-axeln ovanför origo, graf C under origo. Graf C stämmer.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.18,
+          0.13,
+          0.43,
+          0.62
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är hälften av summan av de fyra ovanstående uttrycken?",
+      "passage": "4a + 3b + 2c + d\n−5b + 4c + 3d + 2a\n−6c + 5d + 4a + 3b\n−7d − 6a + 5b + 4c",
+      "options": [
+        "−14a + 6b + 14c + 10d",
+        "8a + 3b + 2c + d",
+        "10a + 6b + 4c + 2d",
+        "2a + 3b + 2c + d"
+      ],
+      "blindAnswer": 3,
+      "explain": "Summera en variabel i taget, med tecknet framför varje term. a: 4 + 2 + 4 − 6 = 4. b: 3 − 5 + 3 + 5 = 6. c: 2 + 4 − 6 + 4 = 4. d: 1 + 3 + 5 − 7 = 2. Summan är 4a + 6b + 4c + 2d, och hälften av den är 2a + 3b + 2c + d. Termerna står i olika ordning på raderna, så det gäller att plocka ut samma variabel ur varje rad. Svaret 8a + 3b + 2c + d lockar om man läser −6a som +6a.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Hur stor andel av arean av fyrhörningen ABCD är skuggad?",
+      "options": [
+        "5/11",
+        "1/2",
+        "√21/(6 + √21)",
+        "6/(6 + √21)"
+      ],
+      "blindAnswer": 2,
+      "explain": "Diagonalen AC delar fyrhörningen i två rätvinkliga trianglar. Triangeln ABC har kateterna 4 och 3 cm, så dess area är 4 · 3/2 = 6 cm². Den skuggade triangeln ACD har rät vinkel vid D och kateterna 2 och √21 cm, så dess area är 2 · √21/2 = √21 cm². Hela fyrhörningen har arean 6 + √21 cm², och den skuggade andelen är √21/(6 + √21). Måtten stämmer: AC = 5 cm i båda trianglarna, eftersom 4² + 3² = 2² + (√21)² = 25. Svaret 6/(6 + √21) är den andel som inte är skuggad.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.225,
+          0.104,
+          0.6,
+          0.305
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "n är ett jämnt heltal. Vilket svarsalternativ är ett udda heltal?",
+      "options": [
+        "3n − 2",
+        "3(n − 1)",
+        "n²",
+        "n/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Är n jämnt är även 3n jämnt, och 3n − 2 är jämnt minus jämnt, alltså jämnt. n − 1 är udda, och 3(n − 1) är udda gånger udda, alltså udda. n² = n · n är jämnt. n/3 behöver inte ens vara ett heltal. Exempel med n = 4: 3n − 2 = 10, 3(n − 1) = 9, n² = 16 och n/3 = 4/3. Bara 3(n − 1) är alltid udda.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "En rektangulär kaka tas ut ur ugnen och delas i rektangulära bitar. Man skär tvärs över hela kakan åtta gånger på längden och fem gånger på bredden. Hur många kakbitar blir det?",
+      "options": [
+        "13",
+        "40",
+        "45",
+        "54"
+      ],
+      "blindAnswer": 3,
+      "explain": "Åtta snitt på längden delar kakan i 8 + 1 = 9 remsor, och fem snitt på bredden delar den i 5 + 1 = 6 remsor åt andra hållet. Eftersom varje snitt går tvärs över hela kakan blir antalet bitar 9 · 6 = 54. Svaret 40 lockar om man multiplicerar antalet snitt, 8 · 5, men n snitt ger n + 1 delar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är 1 − 1/2 − 1/4 − 1/8 − 1/16?",
+      "options": [
+        "1/32",
+        "1/30",
+        "1/16",
+        "1/8"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv bråken med nämnaren 16: 1/2 = 8/16, 1/4 = 4/16 och 1/8 = 2/16. Det som dras bort är (8 + 4 + 2 + 1)/16 = 15/16, och 1 − 15/16 = 1/16. Stegvis blir det samma sak: 1 − 1/2 = 1/2, 1/2 − 1/4 = 1/4, 1/4 − 1/8 = 1/8 och 1/8 − 1/16 = 1/16.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "En blå knapp och två gröna knappar läggs slumpmässigt ut på en rad. Vad är sannolikheten att den första och den sista knappen är grön?",
+      "options": [
+        "1/6",
+        "2/6",
+        "3/6",
+        "4/6"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den första och den sista knappen är gröna precis när den blå knappen ligger i mitten. Den blå knappen hamnar med samma sannolikhet på var och en av de tre platserna, så sannolikheten är 1/3 = 2/6. Med de gröna knapparna åtskilda (G₁ och G₂) finns 3 · 2 · 1 = 6 ordningar, och 2 av dem, G₁BG₂ och G₂BG₁, har den blå i mitten: 2/6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är 100x/y?",
+      "passage": "80 % av 160 är x.\n80 % av y är 160.",
+      "options": [
+        "64",
+        "125",
+        "625/4",
+        "256"
+      ],
+      "blindAnswer": 0,
+      "explain": "x = 0,8 · 160 = 128. Ur 0,8y = 160 får man y = 160/0,8 = 200. Då är 100x/y = 100 · 128/200 = 12 800/200 = 64. Svaret 625/4 får man om man byter plats på x och y: 100 · 200/128 = 625/4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är 3⁵⁰ + 3⁵²/9 + 27 · 3⁴⁷?",
+      "options": [
+        "3⁴⁹",
+        "3⁵⁰",
+        "3⁵¹",
+        "3⁵²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv alla termer som potenser av 3. Eftersom 9 = 3² är 3⁵²/9 = 3⁵²/3² = 3⁵⁰. Eftersom 27 = 3³ är 27 · 3⁴⁷ = 3³ · 3⁴⁷ = 3⁵⁰. Summan är 3⁵⁰ + 3⁵⁰ + 3⁵⁰ = 3 · 3⁵⁰ = 3⁵¹. Svaret 3⁵⁰ lockar om man glömmer att tre likadana termer ska läggas ihop.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vad är d uttryckt i a?",
+      "passage": "För en kvadrat gäller att längden av sidan är a och längden av diagonalen är d.",
+      "options": [
+        "a/√2",
+        "√(2a)",
+        "2√a",
+        "a√2"
+      ],
+      "blindAnswer": 3,
+      "explain": "Diagonalen delar kvadraten i två rätvinkliga trianglar med kateterna a och a och hypotenusan d. Pythagoras sats ger d² = a² + a² = 2a², så d = √(2a²) = a√2. Svaret √(2a) lockar om man glömmer att sidan ska kvadreras.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √(108/12)\nKvantitet II: 4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Förenkla bråket under rottecknet först: 108/12 = 9. Kvantitet I är alltså √9 = 3, och 3 är mindre än 4. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Den största vinkeln i en triangel\nKvantitet II: 50°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Vinkelsumman i en triangel är 180°. Om alla tre vinklarna vore högst 50° skulle summan bli högst 3 · 50° = 150°, vilket är omöjligt. Den största vinkeln är därför minst 180°/3 = 60° (lika med 60° bara när triangeln är liksidig), och den är alltid större än 50°. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "3 < x < 5\nKvantitet I: x²\nKvantitet II: 8x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv kvantiteterna som x · x och 8 · x. Eftersom x är positivt räcker det att jämföra den andra faktorn: x är mindre än 5 och alltså mindre än 8, så x · x < 8 · x för alla tillåtna x. Exempel: x = 4 ger x² = 16 och 8x = 32. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Eva hade en påse med 12 svarta, 10 röda och 8 blå kulor. Eva drog slumpmässigt tre kulor utan att lägga tillbaka dem i påsen. De två första kulorna var svarta.\nKvantitet I: Sannolikheten att den tredje kulan var svart\nKvantitet II: Sannolikheten att den tredje kulan var röd",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "När den tredje kulan dras finns 12 − 2 = 10 svarta, 10 röda och 8 blå kulor kvar, alltså 28 kulor. Sannolikheten att den tredje kulan är svart är 10/28, och sannolikheten att den är röd är också 10/28. Kvantiteterna är lika. Den som glömmer att de två svarta kulorna inte läggs tillbaka räknar med 12 svarta mot 10 röda och tror att kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "49^(1/2) = 7²ˣ\nKvantitet I: x\nKvantitet II: 2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Att upphöja till 1/2 är detsamma som att dra kvadratroten, så 49^(1/2) = √49 = 7 = 7¹. Ekvationen blir 7¹ = 7²ˣ, och exponenterna måste vara lika: 2x = 1, alltså x = 1/2. Kvantitet II, 2, är större.",
+      "figure": null,
+      "note": "Exponenten 1/2 skrivs med ^ i texten; på provet står 49 upphöjt till 1/2.",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = x − x³\nf(a) = 0\nKvantitet I: a\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "f(a) = a − a³ = a(1 − a²) = a(1 − a)(1 + a), som är 0 när a = 0, a = 1 eller a = −1. Med a = 1 är kvantitet I större, med a = −1 är kvantitet II större och med a = 0 är de lika. Informationen är otillräcklig. Den som bara ser lösningen a = 0 svarar att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "−9(x + 1) = −11(x − 1)\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in i parenteserna: −9x − 9 = −11x + 11. Addera 11x och 9 till båda leden: 2x = 20, alltså x = 10. Kontroll: −9 · 11 = −99 och −11 · 9 = −99. Kvantitet I är 10, som är större än 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Erik och David är syskon. Om 20 år är Eriks ålder fyra gånger Davids nuvarande ålder.\nKvantitet I: Davids nuvarande ålder\nKvantitet II: 4 år",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kalla Eriks nuvarande ålder E och Davids D. Om 20 år är Erik E + 20 år, så E + 20 = 4D och D = (E + 20)/4. Eriks ålder kan inte vara negativ, så E + 20 är minst 20 och D minst 20/4 = 5 år. Även om Erik är nyfödd är David alltså 5 år, och är Erik äldre är David ännu äldre. Kvantitet I är alltid större än 4 år.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 200² − 2 · 200 · 300 + 300²\nKvantitet II: 101²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvantitet I har formen a² − 2ab + b² = (a − b)² med a = 200 och b = 300, så den är (200 − 300)² = (−100)² = 100² = 10 000. Direkt uträkning ger detsamma: 40 000 − 120 000 + 90 000 = 10 000. Kvantitet II är 101² = 10 201, som är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "För fyrhörningen nedan gäller att 0° < a < 90° och 90° < b < 180°\nKvantitet I: x² + y²\nKvantitet II: z² + w²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dra diagonalen mellan hörnet med vinkeln a och hörnet med vinkeln b. Den delar fyrhörningen i två trianglar som var och en har en av de räta vinklarna: den ena har kateterna x och y, den andra kateterna z och w. Diagonalen är hypotenusa i båda trianglarna, så enligt Pythagoras sats är både x² + y² och z² + w² lika med diagonalens längd i kvadrat. Kvantiteterna är lika, hur stora vinklarna a och b än är.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.19,
+          0.562,
+          0.515,
+          0.66
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I Viktors hundgård finns det endast en tik och hennes valpar. Varje valp är antingen svart eller gul. Hur många valpar finns det i Viktors hundgård?\n(1) I hundgården finns det två svarta valpar, vilka tillsammans med tiken utgör 1/3 av hundarna i hundgården.\n(2) 75 procent av valparna är gula.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) De två svarta valparna och tiken är 3 hundar, och de utgör 1/3 av hundarna. Det finns alltså 3 · 3 = 9 hundar, och eftersom en av dem är tiken är 9 − 1 = 8 av dem valpar. Tillräckligt.\n(2) Att 75 procent av valparna är gula säger bara hur valparna fördelar sig på färgerna, inte hur många de är. Det kan till exempel vara 4 eller 8 valpar. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Cirkelbågen BC utgör en fjärdedel av en cirkel med medelpunkten i A. Rektangeln ADEF är inritad så att F ligger på radien AC, D ligger på radien AB och E ligger på cirkelbågen BC. Vilken längd har cirkelbågen BC?\n(1) DE är 5 cm.\n(2) CF är 8 cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Bågen är en fjärdedel av cirkelns omkrets, 2πr/4, så det som behövs är radien r = AC.\n(1) ADEF är en rektangel, så AF = DE = 5 cm. Men FC är okänd, och därmed också radien. Inte tillräckligt.\n(2) CF = 8 cm, men AF är okänd. Inte tillräckligt.\n(1) och (2) tillsammans: AC = AF + FC = 5 + 8 = 13 cm, och bågen är 2π · 13/4 = 13π/2 cm. Tillräckligt.",
+      "figure": {
+        "pages": [
+          13
+        ],
+        "box": [
+          0.215,
+          0.59,
+          0.41,
+          0.725
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "För att visa förändring över tid används index. År 2008 hade ett land 27 650 000 invånare (index = 100). Hur många invånare hade detta land år 2000?\n(1) Indextalet för år 2000 var 65.\n(2) Indextalet för år 2000 var 35 procent lägre än för år 2008.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Indextalet 65 betyder att invånarantalet år 2000 var 65 procent av antalet år 2008: 0,65 · 27 650 000 = 17 972 500 invånare. Tillräckligt.\n(2) 35 procent lägre än indextalet 100 är 100 − 35 = 65, alltså samma uppgift som i (1). Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På ett kafé finns 17 personer (kvinnor och män) som dricker antingen kaffe, te eller choklad. Hur många personer dricker te?\n(1) På kaféet finns 10 kvinnor. Av dem är det fler än hälften som dricker choklad och 1/5 som dricker kaffe.\n(2) Av männen dricker 2/7 te, vilket motsvarar 1/3 av det antal kvinnor som dricker choklad.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) 1/5 av de 10 kvinnorna, alltså 2, dricker kaffe, och fler än 5 dricker choklad. Då dricker 0, 1 eller 2 kvinnor te, och om de 7 männen vet man ingenting. Inte tillräckligt.\n(2) För att 2/7 av männen ska vara ett heltal måste antalet män vara 7 eller 14. Med 14 män skulle 4 män dricka te och 3 · 4 = 12 kvinnor dricka choklad, men då finns bara 3 kvinnor. Alltså finns 7 män, varav 2 dricker te, och 3 · 2 = 6 av de 10 kvinnorna dricker choklad. Hur de övriga 4 kvinnorna fördelar sig på kaffe och te framgår inte. Inte tillräckligt.\n(1) och (2) tillsammans: Av de 10 kvinnorna dricker 6 choklad och 2 kaffe, så 10 − 6 − 2 = 2 dricker te. Med de 2 männen blir det 2 + 2 = 4 personer som dricker te. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Medelvärdet av de fyra talen a, b, c och d är 69. Hur många av talen är lika med 69?\n(1) Medelvärdet av de tre talen a, b och c är 69.\n(2) Minst två av talen är 69.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Summan av de fyra talen är 4 · 69 = 276.\n(1) a + b + c = 3 · 69 = 207, så d = 276 − 207 = 69. Men a, b och c kan alla vara 69 eller till exempel 69, 68 och 70, så antalet kan vara 4 eller 2. Inte tillräckligt.\n(2) Är minst två av talen 69 har de två övriga summan 276 − 138 = 138. De kan båda vara 69 eller till exempel 68 och 70, så antalet kan vara 4 eller 2. Inte tillräckligt.\n(1) och (2) tillsammans: a = 69, b = 68, c = 70 och d = 69 uppfyller båda påståendena och ger två tal som är 69, medan fyra tal som alla är 69 också uppfyller dem. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Johanna har tre lappar. En lapp är röd, en är grön och en är blå. På varje lapp skriver hon ett tal. En lapp har talet 1, en lapp har talet 2 och en lapp har talet 4.\nVilken färg är det på lappen som har talet 2?\n(1) Den gröna lappen har ett tal som är större än summan av talen på de andra lapparna.\n(2) En av de lappar som har ett jämnt tal är varken röd eller grön. Den blå lappen har ett tal som är mindre än talet på den gröna lappen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Den gröna lappen måste ha talet 4, eftersom 4 > 1 + 2 men varken 1 eller 2 är större än summan av de andra två talen. Den röda och den blå lappen kan dock ha 1 och 2 i vilken ordning som helst. Inte tillräckligt.\n(2) De jämna talen är 2 och 4, och en av de lapparna är varken röd eller grön, alltså blå. Den blå lappen har därför 2 eller 4. Den har också ett mindre tal än den gröna lappen, vilket är omöjligt med 4. Den blå lappen har talet 2. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur många områden berördes mer än 5 000 gånger?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "blindAnswer": 2,
+      "explain": "Titta i kolumnen Summa i tabellen. Mer än 5 000 har Kamrater (9 040), Skolan (7 517), Rädsla/oro (6 265) och Mobbning/kränkande behandling (5 093), alltså 4 områden. Därefter kommer Familjekonflikter (4 659), Kärlek (4 588) och Ensamhet (4 128), som alla ligger under 5 000. Svaret 3 lockar om man tittar i kolumnen för flickor, där bara Kamrater, Skolan och Rädsla/oro har mer än 5 000, eller missar Mobbning/kränkande behandling, som ligger nära gränsen.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Studera antalet gånger som området ensamhet berördes. Vilket svarsförslag redovisar hur detta antal var fördelat på kön?",
+      "options": [
+        "Cirkeldiagram A",
+        "Cirkeldiagram B",
+        "Cirkeldiagram C",
+        "Cirkeldiagram D"
+      ],
+      "blindAnswer": 0,
+      "explain": "Ensamhet berördes 4 128 gånger: 3 237 gånger av flickor, 862 av pojkar och 29 där könet inte framkommit. Andelarna är 3 237/4 128 ≈ 78 procent flickor, 862/4 128 ≈ 21 procent pojkar och 29/4 128 ≈ 0,7 procent ej framkommit. Den prickiga delen (pojkar) ska alltså vara ungefär en femtedel av cirkeln och den svarta delen bara en tunn strimma. Det stämmer med cirkeldiagram A. I cirkeldiagram B är den prickiga delen bara cirka 15 procent, i C nästan 30 procent och i D över en tredjedel, och i D är den svarta delen dessutom för stor.",
+      "figure": {
+        "pages": [
+          16,
+          17
+        ],
+        "boxes": [
+          null,
+          [
+            0.185,
+            0.338,
+            0.71,
+            0.47
+          ]
+        ]
+      },
+      "note": "Bildalternativ: cirkeldiagrammen A–D med teckenförklaring (från uppgiftssidan) står under tabellen i figuren.",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Vilket år avses?",
+      "passage": "Detta år var antalet outhyrda lägenheter mindre än 70 000. Av dessa var andelen lägenheter som var utrymda på grund av förestående rivning eller annan orsak ungefär lika stor som andelen lägenheter under reparation eller ombyggnad.",
+      "options": [
+        "1995",
+        "1996",
+        "1998",
+        "1999"
+      ],
+      "blindAnswer": 3,
+      "explain": "Enligt tabellen var antalet outhyrda lägenheter 59 389 år 1995, 60 599 år 1996, 72 977 år 1998 och 66 374 år 1999, så 1998 faller bort. I stapeldiagrammet ska den vita delen (utrymd p.g.a. förestående rivning eller annan orsak) vara ungefär lika stor som den ljusgrå (under reparation eller ombyggnad). 1995 är den vita delen bara cirka 3–4 procent mot cirka 11 procent ljusgrått, och 1996 cirka 6–7 procent mot cirka 12 procent. 1999 går den svarta delen upp till cirka 86 procent och den ljusgrå till cirka 93 procent, så både den ljusgrå och den vita delen är cirka 7 procent. Det stämmer för 1999. Även 1998 har ungefär lika stora delar, men det året var antalet över 70 000.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.9535,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Identifiera det år då andelen lägenheter under reparation eller ombyggnad var som störst. Hur många lägenheter rörde det sig om?",
+      "options": [
+        "4 300",
+        "7 000",
+        "8 500",
+        "11 200"
+      ],
+      "blindAnswer": 3,
+      "explain": "Den ljusgrå delen av staplarna (under reparation eller ombyggnad) är störst 1990. Där börjar den vid cirka 22 procent, där den svarta delen slutar, och når upp till cirka 92 procent, så andelen är cirka 70 procent. Åren intill har mindre andel, till exempel 1989 cirka 65 procent (från 25 till 90) och 1988 cirka 62 procent. Enligt tabellen fanns 16 022 outhyrda lägenheter 1990, och 0,70 · 16 022 ≈ 11 200 lägenheter.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.9535,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilken kategori omfattade vid den angivna tidpunkten cirka 12 000 outhyrda lägenheter?",
+      "options": [
+        "Utrymd p.g.a. förestående rivning eller annan orsak, 1983",
+        "Under reparation eller ombyggnad, 1983",
+        "Utrymd p.g.a. förestående rivning eller annan orsak, 2003",
+        "Under reparation eller ombyggnad, 2003"
+      ],
+      "blindAnswer": 1,
+      "explain": "1983 fanns 54 315 outhyrda lägenheter enligt tabellen. Stapeln för 1983 är svart upp till cirka 73 procent, ljusgrå upp till cirka 95 procent och vit överst. Under reparation eller ombyggnad var alltså cirka 22 procent: 0,22 · 54 315 ≈ 12 000. Utrymda var bara cirka 5 procent, ungefär 2 700. 2003 fanns 35 977 outhyrda lägenheter; den ljusgrå delen är cirka 17 procent (från 73 till 90), ungefär 6 100, och den vita cirka 10 procent, ungefär 3 600. Bara kategorin under reparation eller ombyggnad 1983 ger cirka 12 000.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.9535,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilka år under 1980-talet översteg den årliga fångsten av havskräfta 100 ton?",
+      "options": [
+        "1980–1988",
+        "1980–1989",
+        "1981–1988",
+        "1981–1989"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av punkterna i det övre diagrammet. 1980 var fångsten cirka 75 ton, alltså under 100 ton. 1981 steg den till cirka 130 ton, och den låg sedan över 100 ton varje år till och med 1988 (cirka 130 ton). 1989 hade den sjunkit till cirka 85 ton. Fångsten översteg alltså 100 ton åren 1981–1988.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor var fångsten av havskräfta jämfört med fångsten av hummer 1974?",
+      "options": [
+        "Hälften så stor",
+        "Dubbelt så stor",
+        "Sex gånger så stor",
+        "Åtta gånger så stor"
+      ],
+      "blindAnswer": 3,
+      "explain": "Havskräfta 1974 är den första punkten i det övre diagrammet: knappt 40 ton. Hummer 1974 läses av i det nedre diagrammet, fyra år efter 1970. Där ligger kurvan mitt emellan 0 och linjen för 10 ton, alltså vid cirka 5 ton. 40/5 = 8, så fångsten av havskräfta var ungefär åtta gånger så stor. Lägg märke till att diagrammen har olika skalor på den lodräta axeln.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Hummerkurvan är taggig kring 1974: cirka 7 ton 1972, 4 ton 1973, 5 ton 1974 och 4 ton 1975.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Med hur mycket ökade fångsten av havskräfta som mest från ett år till nästa under den redovisade tiden?",
+      "options": [
+        "25 ton",
+        "65 ton",
+        "120 ton",
+        "190 ton"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den brantaste stigningen i det övre diagrammet är mellan 1981 och 1982, från cirka 130 ton till cirka 195 ton. Det är en ökning med drygt 60 ton, närmast 65 ton. Ökningen 1980–1981 är något mindre, från cirka 75 till cirka 130 ton, och 1983–1984 bara cirka 35 ton. 120 ton är ökningen under två år, 1980–1982, och 190 ton är ungefär hela fångsten 1982.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Identifiera den högsta respektive den lägsta medeltemperaturen vid vindar från de angivna väderstrecken. Hur stor var temperaturskillnaden?",
+      "options": [
+        "4 °C",
+        "6 °C",
+        "9 °C",
+        "12 °C"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av vindrosen Temperatur (°C). Längst ut ligger punkten för västsydväst, cirka 13 °C (västnordväst är nästan lika hög). Närmast mitten ligger punkten för nordnordost, drygt 4 °C. Skillnaden är ungefär 13 − 4 = 9 °C.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur stor var den redovisade solinstrålningen vid den vanligast förekommande vindriktningen?",
+      "options": [
+        "75 W/m²",
+        "125 W/m²",
+        "150 W/m²",
+        "250 W/m²"
+      ],
+      "blindAnswer": 1,
+      "explain": "I vindrosen Vindriktning (%) ligger punkten för sydsydväst längst ut, cirka 12 procent av tiden, så det var den vanligaste vindriktningen. I vindrosen Solinstrålning (W/m²) ligger punkten för sydsydväst ungefär mitt emellan ringarna för 100 och 150, alltså vid cirka 125 W/m². Den högsta solinstrålningen, nästan 250 W/m², hör till vind från västnordväst, som inte var den vanligaste vindriktningen.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag är korrekt avseende medelvärdena för de olika väderparametrarna?",
+      "options": [
+        "Vindhastigheten var högre när vinden kom från nordost än när den kom från sydväst.",
+        "Temperaturen var högre när vinden kom från sydsydväst än när den kom från västsydväst.",
+        "Solinstrålningen var mindre när vinden kom från norr än när den kom från ost.",
+        "Lufttrycket var lägre när vinden kom från västsydväst än när den kom från nordnordost."
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva varje påstående i sin vindros. Vindhastighet: nordost cirka 3,1 m/s och sydväst cirka 4,4 m/s, så vinden var svagare från nordost. Temperatur: sydsydväst cirka 11 °C och västsydväst cirka 13 °C, så det var varmare vid vind från västsydväst. Solinstrålning: norr cirka 130 W/m² och ost cirka 85 W/m², så solinstrålningen var större vid vind från norr. Lufttryck: västsydväst cirka 1 011 hPa och nordnordost cirka 1 014 hPa. Lufttrycket var alltså lägre när vinden kom från västsydväst än när den kom från nordnordost, och det påståendet är korrekt.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Vilket väderstreck avses?",
+      "passage": "Från detta håll blåste det mellan 6 och 10 procent av den totala tiden. Vindhastigheten var högre än 3,0 meter per sekund, och nederbörden var mindre än 100 millimeter.",
+      "options": [
+        "Nordnordost",
+        "Nordost",
+        "Sydsydost",
+        "Väst"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vindriktning: nordnordost och nordost cirka 8 procent vardera, sydsydost cirka 7 procent och väst knappt 5 procent. Väst faller alltså bort. Vindhastighet: nordnordost under 3,0 m/s (cirka 2,8), nordost strax över 3,0 m/s och sydsydost cirka 4 m/s. Nordnordost faller bort. Nederbörd: nordost cirka 80 mm men sydsydost cirka 150 mm, alltså mer än 100 mm. Bara nordost uppfyller alla tre villkoren.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "Vindhastigheten från nordost ligger strax över 3,0 m/s (cirka 3,1), och nederbörden från nordnordost ligger nära 100 mm.",
+      "verification": "agreed"
+    }
+  ]
+}
