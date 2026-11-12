@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { POOL_KINDS, isPoolKind, poolTimeLimitMs } from "./pool-time";
+import { CLOSED_POOL_KINDS, POOL_KINDS, isClosedPoolKind, isPoolKind, poolTimeLimitMs } from "./pool-time";
 
 describe("tid per fråga i tävlingslägena", () => {
   it("följer delprovet (samma värden som pool_time_limit_ms i 0037)", () => {
@@ -16,5 +16,11 @@ describe("tid per fråga i tävlingslägena", () => {
     expect(isPoolKind("las")).toBe(false);
     expect(isPoolKind("elf")).toBe(false);
     expect(poolTimeLimitMs("dtk")).toBe(60_000);
+  });
+
+  it("den stängda spelpoolen tar bara ORD och MEK (kvantfrågorna i spelen är UHR-frågor, 0041)", () => {
+    expect([...CLOSED_POOL_KINDS]).toEqual(["ord", "mek"]);
+    for (const kind of ["xyz", "kva", "nog", "dtk", "las", "elf"]) expect(isClosedPoolKind(kind)).toBe(false);
+    expect(CLOSED_POOL_KINDS.every((k) => isPoolKind(k))).toBe(true);
   });
 });

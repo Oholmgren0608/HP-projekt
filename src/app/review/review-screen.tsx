@@ -6,7 +6,7 @@ import { getSupabase, isSupabaseConfigured } from "@/lib/supabase/client";
 import { LoginPanel } from "@/components/auth/login-panel";
 import { ExplainFigure } from "@/lib/content/explain-figures";
 import { SUBTESTS } from "@/lib/subtests";
-import { POOL_KINDS } from "@/lib/pool-time";
+import { CLOSED_POOL_KINDS } from "@/lib/pool-time";
 import { UHR_KINDS } from "@/lib/uhr";
 import {
   listAll,
@@ -44,7 +44,8 @@ const VIEW_OPTIONS: { id: View; label: string }[] = [
   { id: "all", label: "Alla" },
 ];
 
-const POOL_REVIEW_KINDS: readonly string[] = POOL_KINDS;
+/** "Flytta till spelpoolen" bara för ORD och MEK; spelens kvantfrågor är UHR-frågor (0041). */
+const POOL_REVIEW_KINDS: readonly string[] = CLOSED_POOL_KINDS;
 
 /**
  * Får frågan publiceras med "Publicera alla"? Bara frågor som får publiceras

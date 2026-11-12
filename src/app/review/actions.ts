@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { createAdminClient, verifyReviewer } from "@/lib/supabase/server";
 import type { Database } from "@/lib/supabase/client";
 import { fetchAllPages } from "@/lib/supabase/paginate";
-import { isPoolKind } from "@/lib/pool-time";
+import { isClosedPoolKind } from "@/lib/pool-time";
 import {
   canPublish,
   isProvfraga,
@@ -416,8 +416,8 @@ export async function setStatus(input: {
 /**
  * Flyttar en eller flera Övningsfrågor mellan övningen och den stängda
  * spelpoolen (ADR 0001). Provfrågor flyttas aldrig (de publicerade
- * kvantitativa väljs ändå till spelen, 0040), och
- * spelpoolen tar bara ORD, MEK, XYZ, KVA och NOG.
+ * kvantitativa väljs ändå till spelen, 0040/0041), och
+ * spelpoolen tar bara ORD och MEK.
  */
 export async function setPool(input: {
   accessToken: string;
@@ -438,7 +438,7 @@ export async function setPool(input: {
     for (const chunk of chunks(ids)) {
       const { data, error } = await auth.admin.from("questions").select("id, kind").in("id", chunk);
       if (error) return { ok: false, error: "UPSTREAM_ERROR" };
-      if ((data ?? []).some((r) => !isPoolKind(r.kind))) return { ok: false, error: "INVALID_INPUT" };
+      if ((data ?? []).some((r) => !isClosedPoolKind(r.kind))) return { ok: false, error: "INVALID_INPUT" };
     }
   }
 

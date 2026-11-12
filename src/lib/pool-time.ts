@@ -6,6 +6,17 @@
 export const POOL_KINDS = ["ord", "mek", "xyz", "kva", "nog"] as const;
 export type PoolKind = (typeof POOL_KINDS)[number];
 
+/**
+ * Delprov vars frågor kommer ur den stängda spelpoolen (questions.pool = 'spel').
+ * XYZ, KVA och NOG väljs bland de publicerade UHR-frågorna (migration 0041), så
+ * egna frågor i de delproven hör hemma i övningen.
+ */
+export const CLOSED_POOL_KINDS: readonly PoolKind[] = ["ord", "mek"];
+
+export function isClosedPoolKind(kind: string): boolean {
+  return (CLOSED_POOL_KINDS as readonly string[]).includes(kind);
+}
+
 const LIMITS_MS: Record<PoolKind, number> = {
   ord: 20_000,
   mek: 45_000,
