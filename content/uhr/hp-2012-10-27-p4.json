@@ -1,0 +1,830 @@
+{
+  "examId": "hp-2012-10-27",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "n är ett udda tal. Vilket svarsalternativ är ett jämnt tal?",
+      "options": [
+        "n(n + 3)",
+        "2n + 3",
+        "3n + 2",
+        "n² + 2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Udda plus udda är jämnt, och udda gånger udda är udda. Eftersom n är udda är n + 3 jämnt, och ett udda tal gånger ett jämnt tal är alltid jämnt, så n(n + 3) är jämnt. De andra alternativen är udda: 2n är jämnt, så 2n + 3 är udda; 3n är udda, så 3n + 2 är udda; n² är udda, så n² + 2 är udda. Pröva med n = 1: alternativen blir 4, 5, 5 och 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är 1/2 · 2/3 · 3/4 · 4/5 · 5/6 · 6/7 · 7/8 · 8/9 · 9/10 · 10/1?",
+      "options": [
+        "1",
+        "2",
+        "5",
+        "10"
+      ],
+      "blindAnswer": 0,
+      "explain": "Varje täljare tar ut nämnaren i bråket före: 2:an i 2/3 tar ut 2:an i 1/2, 3:an i 3/4 tar ut 3:an i 2/3 och så vidare. Av de nio första bråken blir bara 1/10 kvar, eftersom ettan i den första täljaren och tian i den nionde nämnaren inte tas ut. Till sist multipliceras med 10/1: 1/10 · 10 = 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket påstående är korrekt?",
+      "passage": "Tio mätvärden har följande lägesmått:\nMedianen är 100\nTypvärdet är 100",
+      "options": [
+        "Exakt fem mätvärden är under 100.",
+        "Exakt fem mätvärden är över 100.",
+        "Mer än hälften av mätvärdena är 100 eller högre.",
+        "Mindre än hälften av mätvärdena är 100 eller lägre."
+      ],
+      "blindAnswer": 2,
+      "explain": "Ordna de tio värdena i storleksordning. Medianen är medelvärdet av det femte och det sjätte värdet, och typvärdet 100 betyder att värdet 100 förekommer, och oftast. Om det femte värdet vore under 100 måste det sjätte vara över 100, och då skulle inget värde kunna vara 100. Alltså är både det femte och det sjätte värdet 100. Då är minst sex värden (det femte till det tionde) 100 eller högre, alltså mer än hälften. Av samma skäl ligger högst fyra värden under 100 och högst fyra över 100, och minst sex värden är 100 eller lägre, så de andra påståendena stämmer inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag motsvarar 3x² + (3x)²?",
+      "options": [
+        "6x²",
+        "9x⁴",
+        "12x²",
+        "27x⁴"
+      ],
+      "blindAnswer": 2,
+      "explain": "I (3x)² kvadreras både 3 och x, så (3x)² = 9x². Båda termerna innehåller x² och kan läggas ihop: 3x² + 9x² = 12x². Vid addition ändras inte exponenten; x⁴ får man bara om man felaktigt multiplicerar termerna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Linjerna y = 2x + 2 och y = −4x − 5 är inritade i ett koordinatsystem. Hur långt är avståndet mellan linjernas skärningspunkter med y-axeln?",
+      "options": [
+        "2 längdenheter",
+        "3 längdenheter",
+        "6 längdenheter",
+        "7 längdenheter"
+      ],
+      "blindAnswer": 3,
+      "explain": "En linje skär y-axeln där x = 0, och där är y lika med konstanttermen. Linjen y = 2x + 2 skär y-axeln i (0, 2) och linjen y = −4x − 5 i (0, −5). Båda punkterna ligger på y-axeln, så avståndet är 2 − (−5) = 7 längdenheter. Den som räknar 5 − 2 = 3 har missat att −5 ligger på andra sidan om origo.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "För vilka y gäller olikheten y > 1/y > −1/y?",
+      "options": [
+        "y < −1",
+        "−1 < y < 0",
+        "0 < y < 1",
+        "y > 1"
+      ],
+      "blindAnswer": 3,
+      "explain": "Börja med den högra delen: 1/y > −1/y betyder att 2/y > 0, alltså att y är positivt. Då kan den vänstra delen, y > 1/y, multipliceras med y utan att olikhetstecknet vänds: y² > 1. För positiva y gäller det när y > 1. Kontroll med y = 2: 2 > 1/2 > −1/2 stämmer. Med y = 1/2 är y mindre än 1/y = 2, så intervallet 0 < y < 1 fungerar inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är summan av de fem största talen?",
+      "passage": "Av tio på varandra följande heltal är summan av de fem minsta talen 420.",
+      "options": [
+        "425",
+        "430",
+        "440",
+        "445"
+      ],
+      "blindAnswer": 3,
+      "explain": "Para ihop det minsta talet med det sjätte, det näst minsta med det sjunde och så vidare. I varje par är det större talet 5 mer än det mindre, så de fem största talen är tillsammans 5 · 5 = 25 mer än de fem minsta: 420 + 25 = 445. Kontroll: om det minsta talet är n är summan av de fem minsta 5n + 10 = 420, så n = 82. Talen är 82–91, och 87 + 88 + 89 + 90 + 91 = 445.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln z?",
+      "options": [
+        "105°",
+        "115°",
+        "120°",
+        "150°"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den stora triangelns vinklar är 30°, 2x och 2y, så 30° + 2x + 2y = 180°. Det ger 2x + 2y = 150° och x + y = 75°. Den lilla triangeln med vinkeln z har vinklarna x och y vid basen, så z = 180° − (x + y) = 180° − 75° = 105°. Alternativet 150° är 2x + 2y, inte z.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.18,
+          0.565,
+          0.44,
+          0.762
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "(1, 1), (6, 3) och (6, 7) är punkter i ett koordinatsystem. Om punkterna förbinds med räta linjer, hur stor blir arean som begränsas av dessa linjer?",
+      "options": [
+        "10 areaenheter",
+        "12 areaenheter",
+        "15 areaenheter",
+        "18 areaenheter"
+      ],
+      "blindAnswer": 0,
+      "explain": "Linjerna bildar en triangel. Punkterna (6, 3) och (6, 7) ligger på den lodräta linjen x = 6, så den sidan kan tas som bas: 7 − 3 = 4 längdenheter. Höjden mot den basen är det vågräta avståndet från (1, 1) till linjen x = 6, alltså 6 − 1 = 5. Arean blir 4 · 5/2 = 10 areaenheter.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "x ≠ 0 och x = x⁻². Vilket värde har x?",
+      "options": [
+        "−1",
+        "1",
+        "−√2",
+        "√2"
+      ],
+      "blindAnswer": 1,
+      "explain": "x⁻² betyder 1/x², så ekvationen är x = 1/x². Multiplicera båda leden med x² (som inte är 0): x³ = 1, och det gäller bara för x = 1. Kontroll: 1⁻² = 1/1 = 1. För x = −1 blir högerledet (−1)⁻² = 1, inte −1, och för x = √2 blir det 1/2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag är närmast värdet av √(8/20)?",
+      "options": [
+        "(8/20)²",
+        "40/100",
+        "6/10",
+        "√(√(16/40))"
+      ],
+      "blindAnswer": 2,
+      "explain": "8/20 = 0,4, så uttrycket är √0,4. Eftersom 0,6² = 0,36 och 0,7² = 0,49 ligger √0,4 strax över 0,6 (ungefär 0,63). Jämför alternativen: (8/20)² = 0,16 och 40/100 = 0,4 är för små. 16/40 är också 0,4, så √(√(16/40)) är roten ur 0,63, ungefär 0,80. Närmast är 6/10 = 0,6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "En bil färdas x km på y min. Hur lång tid tar det att färdas z km med samma konstanta hastighet?",
+      "options": [
+        "xy/z min",
+        "xz/y min",
+        "yz/x min",
+        "y/(xz) min"
+      ],
+      "blindAnswer": 2,
+      "explain": "Om x km tar y minuter tar varje kilometer y/x minuter. Då tar z km z · y/x = yz/x minuter. Kontroll med tal: 2 km på 4 min ger 2 min per km, så 6 km tar 12 min, och yz/x = 4 · 6/2 = 12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x och y är positiva heltal.\nxy = 42 och x² + y² = 85\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "(x + y)² = x² + y² + 2xy = 85 + 2 · 42 = 169, så x + y = 13. Två positiva heltal med summan 13 och produkten 42 är 6 och 7, och mycket riktigt är 6² + 7² = 36 + 49 = 85. Men villkoren är symmetriska och säger inte vilket av talen som är x. Med x = 7 och y = 6 är kvantitet I störst, och med x = 6 och y = 7 är kvantitet II störst. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABC är en triangel där vinkeln BAC är 60° och AB = AC = 9 cm.\nKvantitet I: Omkretsen av triangeln ABC\nKvantitet II: 30 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Triangeln är likbent eftersom AB = AC, så vinklarna vid B och C är lika stora: (180° − 60°)/2 = 60° vardera. Alla tre vinklarna är 60°, så triangeln är liksidig och även BC = 9 cm. Omkretsen är 3 · 9 = 27 cm, vilket är mindre än 30 cm.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x ≠ 0\nx/13 = x/(y + 2)\nKvantitet I: y\nKvantitet II: 13",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Två bråk med samma täljare x ≠ 0 är lika bara om nämnarna är lika, så y + 2 = 13 och y = 11. Kvantitet I är alltså 11, som är mindre än 13. Den som ser 13 i den ena nämnaren och tror att y = 13 har glömt tvåan i den andra nämnaren.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "y > 0\nx = 2y\nKvantitet I: x − y\nKvantitet II: 2x − 4y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in x = 2y i båda kvantiteterna. Kvantitet I: x − y = 2y − y = y, som är positivt eftersom y > 0. Kvantitet II: 2x − 4y = 4y − 4y = 0. Ett positivt tal är alltid större än 0, så kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Figuren nedan visar en cirkel som är indelad i sju cirkelsektorer.\nKvantitet I: Medelvärdet av cirkelsektorernas medelpunktsvinklar\nKvantitet II: 50°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Medelpunktsvinklarna i en hel cirkel är tillsammans 360°, hur sektorerna än är fördelade. Medelvärdet för sju sektorer är därför 360°/7 ≈ 51,4°. Det är större än 50°, eftersom 7 · 50° = 350° är mindre än 360°. Att sektorerna är olika stora spelar ingen roll för medelvärdet.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.185,
+          0.108,
+          0.405,
+          0.27
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen L₁ går genom punkten A = (−3, −3) och punkten B = (5, 3). Linjen L₂ skär linjen L₁ någonstans mellan A och B. Linjen L₁ skär y-axeln i punkten (0, y₁). Linjen L₂ skär y-axeln i punkten (0, y₂).\nKvantitet I: y₁\nKvantitet II: y₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "L₁ har lutningen (3 − (−3))/(5 − (−3)) = 6/8 = 3/4. Från A till y-axeln ökar x med 3, så y₁ = −3 + 3 · 3/4 = −3/4. Om L₂ vet vi bara att den skär L₁ mellan A och B. Om L₂ är den vågräta linjen y = 0 (den skär L₁ i x = 1) blir y₂ = 0, som är större än y₁. Om L₂ är linjen y = −2 (den skär L₁ i x = −5/3) blir y₂ = −2, som är mindre än y₁. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "k > 0\nKvantitet I: ((k · 1/2)/3) · 6\nKvantitet II: 2(3k)/6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: k · 1/2 = k/2, och k/2 delat med 3 är k/6. Gånger 6 blir det k. Kvantitet II: 2(3k) = 6k, och 6k/6 = k. Båda kvantiteterna är lika med k, så de är lika stora för alla k > 0.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.185,
+          0.0915,
+          0.36,
+          0.18
+        ]
+      },
+      "note": "Kvantitet I är ett bråk i två nivåer; figuren visar kvantiteterna som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABC är en triangel.\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bågen 180° visar att linjen genom A är rak, och x är vinkeln mellan sidan AC och linjens förlängning åt vänster. Alltså är x en yttervinkel: x = 180° − vinkeln A. Eftersom vinkelsumman i triangeln är 180° är 180° − vinkeln A = vinkeln B + vinkeln C = vinkeln B + y. Vinkeln B är större än 0°, så x är större än y.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.19,
+          0.554,
+          0.745,
+          0.735
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 3ˣ/3ˣ⁻¹\nKvantitet II: 3ˣ⁻¹/3ˣ⁻²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vid division av potenser med samma bas subtraheras exponenterna. Kvantitet I: x − (x − 1) = 1, så 3ˣ/3ˣ⁻¹ = 3¹ = 3. Kvantitet II: (x − 1) − (x − 2) = 1, så även den kvoten är 3¹ = 3. Kvantiteterna är lika oavsett vad x är.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Det är sju personer på en fest. Alla personer skakar hand med varandra exakt en gång.\nKvantitet I: Totala antalet handskakningar\nKvantitet II: 21",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Varje person skakar hand med de sex andra, vilket ger 7 · 6 = 42, men då är varje handskakning räknad två gånger, en gång för var och en av de två personerna. Antalet handskakningar är 42/2 = 21. Man kan också räkna 6 + 5 + 4 + 3 + 2 + 1 = 21. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Erik har ett fotoalbum som rymmer 126 bilder. Hur många bilder har Erik i sitt fotoalbum?\n(1) Om Erik tar bort fyra bilder så är 1/7 av fotoalbumet tomt.\n(2) Om Erik sätter in ytterligare fem bilder så är 1/14 av fotoalbumet tomt.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) 1/7 av 126 platser är 18 platser. Efter att fyra bilder tagits bort finns 126 − 18 = 108 bilder, så från början har Erik 108 + 4 = 112 bilder. Tillräckligt.\n(2) 1/14 av 126 platser är 9 platser. Med fem bilder till finns 126 − 9 = 117 bilder, så från början har Erik 117 − 5 = 112 bilder. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "De tre syskonen Gustav, Viktor och Frida ska dela på en summa pengar.\nHur mycket pengar får Viktor?\n(1) Viktor får 25 kronor mer än Frida.\n(2) Gustav får en tredjedel så mycket som Viktor men hälften så mycket som Frida.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Vi får bara veta skillnaden mellan Viktors och Fridas belopp, inte hur stor summan är. Inte tillräckligt.\n(2) Om Gustav får G kronor får Viktor 3G och Frida 2G. Det ger bara förhållandet mellan beloppen, inte hur stora de är. Inte tillräckligt.\n(1) och (2) tillsammans: Viktor får 3G − 2G = G kronor mer än Frida, och enligt (1) är skillnaden 25 kronor. Alltså är G = 25, och Viktor får 3 · 25 = 75 kronor. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Ett halsband som består av en silverkedja och en ädelsten väger 275 gram.\nHur mycket väger ädelstenen?\n(1) Om man tar bort två länkar ur silverkedjan så utgör ädelstenen 30 procent av halsbandets nya vikt.\n(2) Om man tar bort 50 gram av ädelstenen så utgör silverkedjan 8/9 av vikten av det nya halsbandet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Vi vet inte hur mycket två länkar väger, så halsbandets nya vikt är okänd. Om länkarna väger 25 gram blir den nya vikten 250 gram och ädelstenen 30 procent av det, 75 gram. Om de väger 75 gram blir den nya vikten 200 gram och ädelstenen 60 gram. Inte tillräckligt.\n(2) Det nya halsbandet väger 275 − 50 = 225 gram, och silverkedjan är 8/9 av det, alltså 200 gram. Ädelstenen väger då 275 − 200 = 75 gram. Tillräckligt.\nSvaret får man alltså i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "A, B och C är tre tal. A och C förhåller sig som 25:2. Hur förhåller sig A till B?\n(1) Förhållandet mellan B och C är 5:1.\n(2) Talet A är 50.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) B:C = 5:1 = 10:2. Om C är 2 delar är A 25 delar och B 10 delar, så A:B = 25:10 = 5:2. Tillräckligt.\n(2) A = 50 ger C = 4, men om B vet vi ingenting. Inte tillräckligt.\nSvaret får man alltså i (1) men inte i (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Jenny går 1,5 km. Med vilken medelhastighet går hon?\n(1) Om Jenny ökar sin medelhastighet med 20 procent hinner hon gå 300 m längre på samma tid.\n(2) Det tar dubbelt så lång tid för Jenny att gå de sista 1000 metrarna som de första 500 metrarna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) 20 procent av 1 500 m är 300 m, så påståendet stämmer vilken hastighet Jenny än har. Det säger ingenting om hur lång tid hon går. Inte tillräckligt.\n(2) Den sista sträckan är dubbelt så lång som den första och tar dubbelt så lång tid, så medelhastigheten är densamma på båda delarna. Men ingen tid anges. Inte tillräckligt.\n(1) och (2) tillsammans: Inget av påståendena anger någon tid eller hastighet, så medelhastigheten kan fortfarande vara vad som helst. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Fredrik går upp till toppen av ett utkikstorn. Hur många trappsteg finns det i tornet?\n(1) När Fredrik gått 114 trappsteg och kommit till den tredje avsatsen så återstår två trappor och en avsats innan han når toppen.\n(2) Det återstår 38 trappsteg när han nått den sista avsatsen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Upp till den tredje avsatsen går tre trappor, och sedan återstår trappa, avsats och trappa, alltså fem trappor totalt. De tre första har tillsammans 114 trappsteg, men om de två sista vet vi ingenting. Inte tillräckligt.\n(2) Den sista trappan har 38 trappsteg, men resten är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: Antalet trappsteg är 114 + t + 38, där t är antalet steg i den fjärde trappan, och t är fortfarande okänt. Det står ingenstans att trapporna är lika långa, så man kan inte anta 38 steg i varje trappa (vilket skulle ge 190). Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För hur många av fågelarterna gällde att antalet häckande par minskade fem på varandra följande år?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 1,
+      "explain": "Leta i varje diagram efter fem staplar i rad som var och en är lägre än stapeln året före. Ejder: från cirka 2 030 par 1994 sjunker antalet varje år till cirka 1 980, 1 790, 1 520, 1 190 och 1 050 par 1999, alltså fem minskningar i rad. Svärta: från cirka 205 par 1992 sjunker antalet till cirka 202, 192, 174, 163 och 157 par 1997, också fem minskningar i rad. Gravand minskar bara 1997–1999 (från 28 till 11, 10 och 9 par; 2000 är stapeln inte lägre) och gräsand bara 1997–1999 (från 24 till 10, 8 och 5 par). Småskrake och tobisgrissla minskar som mest två år i rad. Det gäller alltså för två arter.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.925,
+          0.935
+        ]
+      },
+      "note": "Svärtans staplar 1992 och 1993 (cirka 205 och 202 par) och gravandens staplar 1999 och 2000 (båda cirka 9 par, 2000 något högre) ligger nära varandra.",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur många fler häckande par av småskrake noterades under periodens första fem år jämfört med periodens sista fem år?",
+      "options": [
+        "75 par",
+        "140 par",
+        "155 par",
+        "240 par"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av diagrammet för småskrake. Periodens första fem år (1990–1994): cirka 39 + 64 + 70 + 61 + 58 = 292 par. Periodens sista fem år (2001–2005): cirka 23 + 24 + 21 + 30 + 41 = 139 par. Skillnaden är ungefär 292 − 139 = 153 par, vilket ligger närmast 155 par. Alternativet 140 par är ungefär antalet under de sista fem åren, inte skillnaden.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.925,
+          0.935
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Vilken av fågelarterna minskade mest 1997 jämfört med året innan, räknat i antal häckande par?",
+      "options": [
+        "Ejder",
+        "Gravand",
+        "Småskrake",
+        "Svärta"
+      ],
+      "blindAnswer": 0,
+      "explain": "Jämför staplarna för 1996 och 1997 i varje diagram och lägg märke till att skalorna är olika. Ejder minskade från cirka 1 790 till cirka 1 520 par, alltså med ungefär 270 par. Gravand minskade från 28 till 11 par (17 par), småskrake från 58 till 38 par (20 par) och svärta från cirka 163 till 157 par (6 par). Räknat i antal par minskade ejdern mest, även om gravanden minskade mest i procent.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.925,
+          0.935
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Med hur många procent ökade antalet häckande par av gräsand från 1995 till 1996?",
+      "options": [
+        "150 procent",
+        "200 procent",
+        "300 procent",
+        "450 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "I diagrammet för gräsand är stapeln för 1995 cirka 6 par och stapeln för 1996 cirka 24 par. Ökningen är 24 − 6 = 18 par, och 18/6 = 3, alltså 300 procent. Antalet blev fyra gånger så stort, men ökningen räknas från utgångsvärdet och är därför 300 procent, inte 400.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.925,
+          0.935
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Studera svaren beträffande bokläsning 2003. I vilken grupp fanns den största andelen svarande som uppgav att deras bokläsning varken ökat eller minskat?",
+      "options": [
+        "Män",
+        "50–59-åringar",
+        "80–85-åringar",
+        "Medellåg utbildning"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs i tabellens vänstra del (Bokläsning), kolumnen Varken ökat eller minskat. Värdena för 2003 står utanför parentesen. Man: 73 procent, 50-59: 72 procent, 80-85: 47 procent och Medellåg utbildning: 69 procent. Störst andel har männen. Den som läser värdena inom parentes (2002) får i stället 80–85-åringarna med 72 procent.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.94,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Studera svaren beträffande bokköp 2003. Hur mycket större andel kvinnor än män svarade att deras bokköp hade ökat?",
+      "options": [
+        "2 procentenheter",
+        "7 procentenheter",
+        "9 procentenheter",
+        "11 procentenheter"
+      ],
+      "blindAnswer": 2,
+      "explain": "I tabellens högra del (Bokköp) är ökat uppdelat på två kolumner, Ökat mycket och Ökat något, och båda ska räknas med. För 2003 (värdena utanför parentes) blir det för kvinnor 4 + 18 = 22 procent och för män 2 + 11 = 13 procent. Skillnaden är 22 − 13 = 9 procentenheter. Räknar man bara med Ökat något blir skillnaden 7 procentenheter, och med värdena för 2002 blir den 11.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.94,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Studera svaren beträffande bokläsning 2002 och anta att resultatet var representativt för Sveriges befolkning. År 2002 fanns 1 200 000 svenskar i åldern 40–49 år. Hur många av dem skulle ha angett att deras bokläsning ökat?",
+      "options": [
+        "204 000",
+        "228 000",
+        "240 000",
+        "264 000"
+      ],
+      "blindAnswer": 3,
+      "explain": "Värdena för 2002 står inom parentes. På raden 40-49 i tabellens vänstra del (Bokläsning) är Ökat mycket 3 procent och Ökat något 19 procent, tillsammans 22 procent. 22 procent av 1 200 000 är 0,22 · 1 200 000 = 264 000. Med värdena för 2003 (4 + 13 = 17 procent) skulle man i stället få 204 000.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.94,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av tornen som låg innanför stadens strandlinje år 1624 låg väster om en tänkt nord-sydlig linje genom Bykyrkan?",
+      "options": [
+        "35 procent",
+        "45 procent",
+        "55 procent",
+        "65 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Strandlinjen 1624 är den streckade linjen runt stadsholmen, och tornen är markerade med fyrkanter, ringar och en fylld ring. Innanför den streckade linjen finns 15 torn. Norr är uppåt, så den nord-sydliga linjen genom Bykyrkan är lodrät. Väster om den ligger 7 torn: Inre Norretorn, Lejontornet, Draktornet, Gråmunketornet, tornet mellan Gråmunketornet och Pulvertornet, Pulvertornet och Bocktornet. Öster om den ligger Tornet Tre kronor, Nya runda tornet och sex torn längs den östra muren, bland dem Skultatornet. Andelen är 7/15 ≈ 47 procent, närmast 45 procent. Birger Jarls torn och Försvarstornet på Riddarholmen, Yttre Norretorn och Södreport ligger utanför den streckade linjen och räknas inte.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.69,
+          0.94
+        ]
+      },
+      "note": "Nya runda tornet och tornet vid Köpmanporten ligger mycket nära den streckade linjen (avlästa som innanför), och Bocktornet ligger strax väster om Bykyrkans västra kant.",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Innan metersystemet blev officiellt svenskt måttsystem 1878 var alnar det längdmått som användes, där 1 aln motsvarade 0,6 meter. Hur många alnar var det fågelvägen mellan Vågen vid Järntorget och Draktornet?",
+      "options": [
+        "310 alnar",
+        "500 alnar",
+        "830 alnar",
+        "1 020 alnar"
+      ],
+      "blindAnswer": 2,
+      "explain": "Mät avståndet på kartan och jämför med skalstocken längst ned till vänster. Sträckan mellan Vågen (den svarta fyrkanten vid Järntorget) och Draktornet är ungefär 2,5 gånger så lång som skalstockens 200 m, alltså cirka 500 meter. Eftersom 1 aln är 0,6 meter blir det 500/0,6 ≈ 830 alnar. Alternativet 500 alnar är avståndet i meter, och 310 alnar får den som multiplicerar med 0,6 i stället för att dividera.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.69,
+          0.94
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger två punkter på kartan som ligger 440 meter fågelvägen från Yttre Norretorn?",
+      "options": [
+        "Slottet och Draktornet",
+        "Gråbrödraklostret och Nya runda tornet",
+        "Själagården och Birger Jarls torn",
+        "S:ta Gertruds gillestuga och Pulvertornet"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt skalstocken motsvarar 440 meter 2,2 gånger sträckan för 200 m. Mät från Yttre Norretorn, längst upp vid Norrebro. Själagården öster om Bykyrkan och Birger Jarls torn på Riddarholmen ligger båda ungefär 440–450 meter bort. I de andra alternativen ligger minst en av punkterna för nära: Slottet ungefär 200 meter, Draktornet ungefär 250 meter, Nya runda tornet ungefär 370 meter och Pulvertornet ungefär 380 meter.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.69,
+          0.94
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Jämför 2003 med 1996 vad avser antalet personer för vilka det beslutats om LSS-insats. I hur många av de sex största kommunerna hade detta antal ökat med mer än 10 procent?",
+      "options": [
+        "En",
+        "Två",
+        "Tre",
+        "Fyra"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd det vänstra diagrammet (de sex största kommunerna) och jämför punkterna för 1996 och 2003. Kalmar ökade från cirka 308 till 403, ungefär 30 procent. Nybro ökade från cirka 129 till 164, ungefär 27 procent. Oskarshamn ökade från cirka 97 till 127, ungefär 30 procent. Vimmerby ökade från cirka 55 till 88, ungefär 60 procent. Västervik ökade bara från cirka 254 till 256, under 1 procent, och Hultsfred minskade från cirka 154 till 136. Fyra kommuner ökade alltså med mer än 10 procent.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.965,
+          0.935
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Studera de sex minsta kommunerna 2003 avseende antalet personer för vilka det beslutats om LSS-insats. Hur stor andel av dessa personer fanns totalt i kommunerna Borgholm, Emmaboda och Mörbylånga?",
+      "options": [
+        "Tre av fem",
+        "Två av tre",
+        "Tre av fyra",
+        "Fem av sex"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av punkterna för 2003 i mittdiagrammet (de sex minsta kommunerna): Borgholm cirka 86, Emmaboda cirka 81, Mörbylånga cirka 74, Mönsterås cirka 63, Torsås cirka 32 och Högsby cirka 29. Totalt blir det cirka 365 personer, varav Borgholm, Emmaboda och Mörbylånga har 86 + 81 + 74 = 241. Andelen är 241/365 ≈ 0,66, alltså ungefär två av tre.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.965,
+          0.935
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
