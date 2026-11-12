@@ -1,0 +1,770 @@
+{
+  "examId": "hp-2020-10-25",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket 3(2x + 5) + 2(7 − 3x)?",
+      "options": [
+        "29",
+        "17 − x",
+        "3x + 19",
+        "12x + 29"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in i parenteserna: 3(2x + 5) = 6x + 15 och 2(7 − 3x) = 14 − 6x. Summan är 6x + 15 + 14 − 6x. x-termerna tar ut varandra (6x − 6x = 0), och kvar blir 15 + 14 = 29. Uttrycket är alltså 29 oavsett vad x är. 12x + 29 lockar om man missar minustecknet framför 3x och adderar x-termerna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "I koordinatsystemet är grafen till funktionen f(x) inritad. För vilka värden på x är f(x) positiv?",
+      "options": [
+        "x > 0",
+        "0 < x < 4",
+        "x > 1",
+        "1 < x < 5"
+      ],
+      "blindAnswer": 3,
+      "explain": "f(x) är positiv där grafen ligger ovanför x-axeln. En ruta är 0,5 i x-led, och grafen skär x-axeln i x = 1 (två rutor före 2) och i x = 5 (två rutor efter 4). Mellan de punkterna ligger grafen ovanför axeln, med högsta punkten (3, 4). Alltså är f(x) > 0 när 1 < x < 5. Alternativen x > 0 och x > 1 stämmer inte, eftersom grafen går under x-axeln igen när x > 5.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.19,
+          0.552,
+          0.55,
+          0.785
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Arean av en cirkel är 27 cm². Vilket av svarsalternativen är det bästa närmevärdet för längden av cirkelns radie?",
+      "options": [
+        "1,5 cm",
+        "3 cm",
+        "6 cm",
+        "9 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Cirkelns area är πr², så πr² = 27 och r² = 27/π. Med π ≈ 3 blir r² ≈ 9 och r ≈ 3 cm. Mer exakt är 27/3,14 ≈ 8,6 och r ≈ 2,9 cm, så 3 cm är det bästa närmevärdet. 9 cm lockar om man glömmer att dra roten ur r² ≈ 9.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Om a % av x är y, hur mycket är 2a % av 0,5x?",
+      "options": [
+        "0,5y",
+        "y",
+        "2y",
+        "4y"
+      ],
+      "blindAnswer": 1,
+      "explain": "Att a % av x är y betyder att (a/100) · x = y. Då är 2a % av 0,5x lika med (2a/100) · 0,5x = 2 · 0,5 · (a/100) · x = (a/100) · x = y. Procentsatsen fördubblas men talet halveras, så resultatet blir detsamma. Exempel: 10 % av 200 är 20, och 20 % av 100 är också 20.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "En mätserie består av 5 mätvärden. Vilket av svarsalternativen är med säkerhet korrekt?",
+      "options": [
+        "Om mätseriens medelvärde är ett heltal, så är alla mätvärdena heltal.",
+        "Om mätseriens median är ett heltal, så är alla mätvärdena heltal.",
+        "Om alla mätvärdena är heltal, så är mätseriens medelvärde ett heltal.",
+        "Om alla mätvärdena är heltal, så är mätseriens median ett heltal."
+      ],
+      "blindAnswer": 3,
+      "explain": "Med 5 mätvärden, ett udda antal, är medianen det mittersta värdet när värdena står i storleksordning. Är alla mätvärden heltal är medianen alltså ett av dem och därmed ett heltal. De andra påståendena gäller inte alltid. Mätvärdena 1, 1, 1, 1 och 2 är heltal, men medelvärdet är 6/5 = 1,2. Mätvärdena 0,5; 1; 1; 1 och 1,5 har både medelvärdet 1 och medianen 1, fast två av dem inte är heltal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lösningen till ekvationen ax + bx = 1?",
+      "passage": "a och b är positiva tal.",
+      "options": [
+        "x = 1 − (a + b)",
+        "x = 1/(ab)",
+        "x = a + b",
+        "x = 1/(a + b)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Bryt ut x i vänsterledet: ax + bx = (a + b)x = 1. Eftersom a och b är positiva är a + b inte 0, och man kan dela båda leden med a + b: x = 1/(a + b). Kontroll: a/(a + b) + b/(a + b) = (a + b)/(a + b) = 1. 1/(ab) lockar om man tror att ax + bx är abx.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Jaana gör ett halsband med enfärgade pärlor i sju olika färger. Hon använder lika många pärlor av varje färg. Vilket svarsalternativ är ett möjligt antal pärlor i det färdiga halsbandet?",
+      "options": [
+        "241",
+        "245",
+        "247",
+        "249"
+      ],
+      "blindAnswer": 1,
+      "explain": "Det finns lika många pärlor av var och en av de sju färgerna, så det totala antalet måste vara delbart med 7. 7 · 35 = 245, alltså går det med 35 pärlor av varje färg. De andra talen ger rest vid division med 7: 241 = 238 + 3, 247 = 245 + 2 och 249 = 245 + 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är störst?",
+      "options": [
+        "(10² · 10⁻⁵)/10⁻³",
+        "(10⁻³ · 10⁻⁵)/10²",
+        "(10² · 10⁻³)/10⁻⁵",
+        "10⁻⁵/(10² · 10⁻³)"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv varje alternativ som en tiopotens: vid multiplikation adderas exponenterna och vid division subtraheras de. (10² · 10⁻⁵)/10⁻³ ger exponenten 2 − 5 + 3 = 0, alltså 10⁰ = 1. (10⁻³ · 10⁻⁵)/10² ger −3 − 5 − 2 = −10, alltså 10⁻¹⁰. (10² · 10⁻³)/10⁻⁵ ger 2 − 3 + 5 = 4, alltså 10⁴. 10⁻⁵/(10² · 10⁻³) ger −5 − 2 + 3 = −4, alltså 10⁻⁴. Störst är 10⁴ = (10² · 10⁻³)/10⁻⁵. Att dela med en negativ tiopotens gör talet större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Arean av en kvadrat med sidlängden 10 cm är dubbelt så stor som arean av en kvadrat med sidlängden x cm. Vilket värde har x?",
+      "options": [
+        "√10",
+        "√20",
+        "√25",
+        "√50"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvadraten med sidlängden 10 cm har arean 10² = 100 cm². Den andra kvadraten har hälften så stor area, 50 cm². Då är x² = 50 och x = √50 (ungefär 7,1). √25 = 5 lockar om man halverar sidlängden i stället för arean, men en kvadrat med sidan 5 cm har arean 25 cm², en fjärdedel av 100 cm².",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är 7/20 − 3/2 · 1/5?",
+      "options": [
+        "−23/100",
+        "1/20",
+        "3/10",
+        "4/10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplikation går före subtraktion: 3/2 · 1/5 = 3/10. Skriv sedan bråken med nämnaren 20: 7/20 − 3/10 = 7/20 − 6/20 = 1/20. Räknar man i stället från vänster, (7/20 − 3/2) · 1/5 = (7/20 − 30/20) · 1/5 = −23/100, får man det negativa alternativet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilka koordinater har den punkt där grafen till f(x) skär x-axeln?",
+      "passage": "f(x) = x/4 − 3/2",
+      "options": [
+        "(0, −3/2)",
+        "(0, 6)",
+        "(−3/2, 0)",
+        "(6, 0)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Grafen skär x-axeln där f(x) = 0. x/4 − 3/2 = 0 ger x/4 = 3/2 och x = 4 · 3/2 = 6. Punkten är alltså (6, 0). Punkten (0, −3/2) är där grafen skär y-axeln. En punkt på x-axeln har alltid y-koordinaten 0, så bara (−3/2, 0) och (6, 0) är tänkbara, och x = −3/2 ger f(x) = −3/8 − 3/2, som inte är 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är ett möjligt värde på a om a⁻² = 16?",
+      "options": [
+        "−4",
+        "1/256",
+        "1/4",
+        "256"
+      ],
+      "blindAnswer": 2,
+      "explain": "a⁻² = 1/a², så 1/a² = 16 och a² = 1/16. Det ger a = 1/4 eller a = −1/4, och av dem finns 1/4 bland alternativen. Kontroll: (1/4)⁻² = 4² = 16. −4 lockar, men (−4)⁻² = 1/(−4)² = 1/16, inte 16.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x, y och z är positiva tal.\nx procent av y är lika med 73.\nx procent av z är lika med 37.\nKvantitet I: y\nKvantitet II: z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "x procent av y är (x/100) · y = 73 och x procent av z är (x/100) · z = 37. Eftersom x är positivt går det att dela den första ekvationen med den andra: y/z = 73/37, som är större än 1. Alltså är y större än z. Samma procentsats ger ett större resultat av det större talet; med x = 1 är till exempel y = 7 300 och z = 3 700.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "T är en triangel.\nKvantitet I: Omkretsen av T dividerad med 3\nKvantitet II: Medelvärdet av sidlängderna för T",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla sidlängderna a, b och c. Omkretsen är a + b + c, så kvantitet I är (a + b + c)/3. Medelvärdet av de tre sidlängderna är summan delad med antalet, alltså också (a + b + c)/3. Kvantiteterna är lika för varje triangel, hur den än ser ut.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (1/6)/(6/1)\nKvantitet II: (6/1)/(1/6)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Att dividera med ett bråk är detsamma som att multiplicera med det inverterade bråket. Kvantitet I: (1/6)/(6/1) = 1/6 · 1/6 = 1/36. Kvantitet II: (6/1)/(1/6) = 6 · 6 = 36. Talet 36 är mycket större än 1/36, så II är större. Kvantiteterna är varandras inverterade tal, och de är bara lika om båda är 1.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.183,
+          0.068,
+          0.345,
+          0.187
+        ]
+      },
+      "note": "Kvantiteterna är bråk i två nivåer; figuren visar dem som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Albin är dubbelt så gammal som Edvin och Levi är tillsammans.\nKvantitet I: Albins ålder\nKvantitet II: Tre gånger Edvins ålder",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla åldrarna A, E och L. Då är A = 2(E + L) = 2E + 2L, och kvantitet II är 3E. Jämförelsen beror på om 2L är större eller mindre än E, och det vet vi inte. Edvin 10 år och Levi 10 år ger Albin 40 år, mer än 3 · 10 = 30. Edvin 10 år och Levi 2 år ger Albin 24 år, mindre än 30. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 1\nxʸ⁺¹ = 1\nKvantitet I: y\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En potens av ett tal större än 1 blir 1 bara när exponenten är 0, eftersom x⁰ = 1. Alltså är y + 1 = 0 och y = −1. Kvantitet I är −1 och kvantitet II är 0, så II är större. Den som svarar att de är lika har satt y i stället för y + 1 lika med 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvadraterna K₁ och K₂ överlappar varandra så att 25 procent av arean av K₁ täcks av K₂ medan 20 procent av arean av K₂ täcks av K₁.\nKvantitet I: Arean av K₁\nKvantitet II: Arean av K₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den överlappande ytan är densamma för båda kvadraterna. Den är 25 procent av arean av K₁ och 20 procent av arean av K₂, så 0,25 · (arean av K₁) = 0,20 · (arean av K₂). Då är arean av K₂ = 0,25/0,20 = 1,25 gånger arean av K₁, alltså större. Exempel: en överlappning på 5 cm² ger K₁ arean 20 cm² och K₂ arean 25 cm². Den kvadrat som täcks till en större andel är den mindre.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 3,13(π + 3,15)\nKvantitet II: 3,15(3,13 + π)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplicera in i parenteserna. Kvantitet I = 3,13π + 3,13 · 3,15 och kvantitet II = 3,15 · 3,13 + 3,15π. Produkten 3,13 · 3,15 finns i båda, så skillnaden ligger i π-termerna. 3,15π är större än 3,13π, så II är större, med 0,02π.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x ≠ 0\ny ≠ 0\nx + y = 0\nKvantitet I: x² + y²\nKvantitet II: x² + y² + 2xy",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet II är kvadreringsregeln baklänges: x² + y² + 2xy = (x + y)² = 0² = 0. Kvantitet I är x² + y², och eftersom x och y inte är 0 är både x² och y² positiva. I är alltså större än 0 och därmed större än II. Man kan också se det så här: y = −x ger 2xy = −2x², som är negativt, så II är mindre än I.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Grafen till funktionen f är en rät linje genom origo.\na > 0\nKvantitet I: f(a)\nKvantitet II: f(−a)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "En rät linje genom origo kan skrivas f(x) = kx, så f(a) = ka och f(−a) = −ka. Med f(x) = 2x och a = 1 är f(a) = 2 och f(−a) = −2, så I är större. Med f(x) = −2x är f(a) = −2 och f(−a) = 2, så II är större. Eftersom vi inte vet om linjen lutar uppåt eller nedåt är informationen otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En mätserie består av värdena −5, x, y, 3. Seriens medelvärde är −1.\nKvantitet I: x + y\nKvantitet II: −1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Serien har fyra värden, och medelvärdet −1 betyder att summan är 4 · (−1) = −4. Alltså är −5 + x + y + 3 = −4, vilket ger x + y − 2 = −4 och x + y = −2. Kvantitet I är −2, som är mindre än −1. II är större, även om x och y var för sig kan vara vilka tal som helst med summan −2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Kalle har gjort en snögubbe som endast består av tre snöbollar, vilka representerar huvud, mage och ben. Mage-snöbollen väger 20 kg. Hur mycket väger hela Kalles snögubbe?\n(1) Ben-snöbollen väger 7 gånger så mycket som huvud-snöbollen.\n(2) Huvud-snöbollen väger 1/4 av vad mage-snöbollen väger.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Ben-snöbollen väger 7 gånger så mycket som huvud-snöbollen, men vi vet inte vad huvudet väger. Inte tillräckligt.\n(2) Huvud-snöbollen väger 1/4 · 20 = 5 kg, men ben-snöbollens vikt är okänd. Inte tillräckligt.\n(1) och (2) tillsammans: Huvudet väger 5 kg och benen 7 · 5 = 35 kg. Hela snögubben väger 5 + 20 + 35 = 60 kg. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Ett kalkylblad består av två kolumner och två rader. Det står ett tal i var och en av de fyra cellerna. Vad är summan av de fyra talen?\n(1) Summan av talen i cellerna på rad 1 är 30. Talet i cell B2 är 23.\n(2) Summan av talen i cellerna A2 och B1 är 36. Talet i cell A1 är 13.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Rad 1 består av cellerna A1 och B1, rad 2 av A2 och B2.\n(1) A1 + B1 = 30 och B2 = 23 ger summan 53 + A2, men A2 är okänt. Inte tillräckligt.\n(2) A2 + B1 = 36 och A1 = 13 ger summan 49 + B2, men B2 är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: A1 = 13 ger B1 = 30 − 13 = 17 och då A2 = 36 − 17 = 19. Summan är 13 + 17 + 19 + 23 = 72. Tillräckligt.",
+      "figure": {
+        "pages": [
+          13
+        ],
+        "box": [
+          0.265,
+          0.558,
+          0.445,
+          0.62
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket av talen x, y, z och w är störst?\n(1) x + z > y + w\n(2) x > z\ny > w",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Olikheten säger inget om vilket enskilt tal som är störst. Med x = 10, z = 0 och y = w = 1 är x störst, och med z = 10, x = 0 och y = w = 1 är z störst. Inte tillräckligt.\n(2) Det största talet är x eller y, men vi vet inte vilket. Inte tillräckligt.\n(1) och (2) tillsammans: x = 5, z = 4, y = 6 och w = 0 uppfyller alla villkor (5 > 4, 6 > 0 och 9 > 6), och då är y störst. x = 10, z = 0, y = 1 och w = 0 uppfyller också villkoren, och då är x störst. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En röd, en blå, en vit och en grå kloss är staplade ovanpå varandra. Det finns ingen kloss mellan den röda och den vita klossen. Vilken färg har klossen som ligger överst?\n(1) Varken den röda eller den vita klossen ligger överst. Den blå klossen ligger längre ner än den grå klossen.\n(2) Varken den röda eller den vita klossen ligger längst ner. Den blå klossen angränsar till den röda klossen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den röda och den vita klossen ligger direkt intill varandra i stapeln.\n(1) Den översta klossen är varken röd eller vit. Den blå ligger längre ner än den grå och kan därför inte heller ligga överst. Alltså ligger den grå klossen överst. Tillräckligt.\n(2) Uppifrån räknat kan ordningen vara vit, röd, blå, grå eller blå, röd, vit, grå eller grå, vit, röd, blå. Alla tre uppfyller villkoren, och överst ligger vit, blå respektive grå. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilka koordinater har punkten A?\n(1) Triangelns area är 30 areaenheter.\n(2) Sträckan AC är 13 längdenheter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "B och C har båda x-koordinaten 4, så BC är lodrät och 3 − (−2) = 5 längdenheter lång. Vinkeln vid B är rät, så AB är vågrät och A har y-koordinaten 3. A ligger till vänster om B, så A = (4 − AB, 3), och det räcker att veta längden AB.\n(1) Arean är AB · BC/2 = AB · 5/2 = 30, så AB = 12 och A = (−8, 3). Tillräckligt.\n(2) Pythagoras sats ger AB² + 5² = 13², alltså AB² = 169 − 25 = 144 och AB = 12. Även här är A = (−8, 3). Tillräckligt.",
+      "figure": {
+        "pages": [
+          15
+        ],
+        "box": [
+          0.185,
+          0.112,
+          0.545,
+          0.258
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x är ett positivt heltal. Vad är x?\n(1) x⁴ = √x\n(2) k/x = k, k ≠ 0",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) x = 1 ger 1⁴ = 1 = √1, så likheten gäller. För heltal x ≥ 2 är x⁴ större än x, som i sin tur är större än √x, så där gäller den inte. Alltså är x = 1. Tillräckligt.\n(2) Eftersom k ≠ 0 kan båda leden delas med k: 1/x = 1, så x = 1. Tillräckligt.\nVarje påstående räcker för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Vilket födelseland avses?",
+      "passage": "För minst ett av de redovisade födelseåren var detta det vanligaste födelselandet bland de adopterade barnen. Av de adopterade barnen från detta land föddes fler 1979 än 1977.",
+      "options": [
+        "Indien",
+        "Sri Lanka",
+        "Sydkorea",
+        "Thailand"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av det nedre diagrammet. Sydkorea var det vanligaste födelselandet 1970–1974, Indien 1975 (cirka 240 barn) och Thailand 1976 (cirka 400 barn), och 1978 och 1979 ligger Indiens kurva högst (cirka 305 och 315 barn). Sri Lanka var aldrig vanligast och faller bort. Från Indien föddes cirka 315 barn 1979 och cirka 250 barn 1977, alltså fler 1979. Från Sydkorea (cirka 170 mot 245) och Thailand (cirka 30 mot 120) föddes färre 1979 än 1977. Sri Lanka ökade visserligen från cirka 130 till 180, men uppfyller inte det första villkoret.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur många av de adopterade barnen föddes under perioden 1975–1979?",
+      "options": [
+        "1 300",
+        "3 300",
+        "5 500",
+        "6 500"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av kurvan Totalt i det övre diagrammet för födelseåren 1975–1979: cirka 1 220 (1975), 1 530 (1976), 1 340 (1977), 1 210 (1978) och 1 240 (1979). Summan är ungefär 1 220 + 1 530 + 1 340 + 1 210 + 1 240 = 6 540, alltså cirka 6 500 barn. 1 300 är ungefär antalet för ett enda år.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av industrins totala utgifter för miljöskydd 2011 utgjordes av löpande kostnader?",
+      "options": [
+        "45 procent",
+        "50 procent",
+        "60 procent",
+        "65 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av stapeln för 2011 i det övre diagrammet. Hela stapeln (de totala utgifterna) når cirka 11 700 miljoner kronor och den svarta delen (investeringar) cirka 4 800 miljoner kronor. De löpande kostnaderna är skillnaden, cirka 11 700 − 4 800 = 6 900 miljoner kronor, vilket stämmer med det nedre diagrammet, där stapeln för 2011 når knappt 7 000. Andelen är 6 900/11 700 ≈ 0,59, alltså cirka 60 procent.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Inom vilket miljöområde gjordes miljöskyddsinvesteringar för i genomsnitt 1 900 miljoner kronor per år under den redovisade perioden?",
+      "options": [
+        "Övrigt",
+        "Avfall",
+        "Vatten",
+        "Luft"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd det mellersta diagrammet, investeringar per miljöområde 2002–2012 (elva år). Luft är den svarta nedersta delen: cirka 1 450, 1 850, 1 700, 2 000, 1 450, 1 400, 1 800, 1 400, 2 000, 2 300 och 3 250 miljoner kronor. Summan är cirka 20 600 miljoner kronor, och 20 600/11 ≈ 1 900 miljoner kronor per år. Vatten, den vita delen, ligger på i genomsnitt drygt 1 100 miljoner kronor per år, och Avfall och Övrigt på bara några hundra miljoner kronor per år.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket av följande år såg storleksordningen för de olika miljöområdenas löpande kostnader ut enligt följande: Luft < Vatten < Avfall < Övrigt?",
+      "options": [
+        "2003",
+        "2005",
+        "2007",
+        "2009"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av det nedre diagrammet, där varje stapel består av Luft (vit, nederst), Vatten, Avfall och Övrigt (prickig, överst). 2007 når delarna cirka 750, 2 250, 4 250 och 6 500 miljoner kronor, så Luft är cirka 750, Vatten 2 250 − 750 = 1 500, Avfall 4 250 − 2 250 = 2 000 och Övrigt 6 500 − 4 250 = 2 250. Det ger Luft < Vatten < Avfall < Övrigt. 2003 och 2005 är Avfall (cirka 1 800 och 1 850) större än Övrigt (cirka 1 400 och 1 550), och 2009 är Vatten (cirka 2 000) större än Avfall (cirka 1 850).",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "För hur många av de redovisade åren gäller att industrins miljöskyddsinvesteringar var mindre än 4 000 miljoner kronor samtidigt som de löpande kostnaderna för miljöskydd var större än 6 000 miljoner kronor?",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "7"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd det övre diagrammet. Investeringarna (den svarta delen) är mindre än 4 000 miljoner kronor alla år till och med 2009 (2003 ligger ungefär vid 4 000) men större 2010–2012. De löpande kostnaderna (den grå delen, som också är hela stapeln i det nedre diagrammet) är större än 6 000 miljoner kronor först från 2007: cirka 6 500 (2007), 6 250 (2008), 6 400 (2009), 6 400 (2010), 6 950 (2011) och 7 100 (2012), medan 2006 bara har cirka 5 800. Båda villkoren gäller alltså 2007, 2008 och 2009, tre år.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilket fartygsfynd avses?",
+      "passage": "Båten var bredare än 3 meter och längre än 17 meter. Båten hittades cirka 55 meter från strandlinjen vid Gråmunkebrons östra fäste.",
+      "options": [
+        "Båt 19",
+        "Båt 17",
+        "Båt 7",
+        "Båt 2"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt tabellen är bara båt 17 (21 meter lång, 5,5–6 meter bred) och båt 19 (20 meter lång, 5,5 meter bred) både längre än 17 meter och bredare än 3 meter. Båt 2 är precis 17 meter lång, inte längre, och båt 7 är bara 10 meter lång och 3 meter bred. Gråmunkebrons östra fäste ligger vid Gråmunketornet, där den prickade strandlinjen från ca 1300 möter bron. Mätt med skalstocken ligger båt 17 cirka 55 meter därifrån, medan båt 19 ligger drygt 90 meter bort.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Området mellan de markerade strandlinjerna kallades år 1300 Gråmunkesund. Hur brett var sundet där det var som smalast?",
+      "options": [
+        "50 meter",
+        "70 meter",
+        "80 meter",
+        "90 meter"
+      ],
+      "blindAnswer": 2,
+      "explain": "De markerade strandlinjerna är de två prickade linjerna (strandlinje ca 1300): Riddarholmens strand i väster och stadssidans strand i öster. De kommer närmast varandra vid Gråmunkebron, mellan brons västra ände och den östra strandlinjen strax norr om Gråmunketornet. Mätt med skalstocken är avståndet där ungefär 80 meter, alltså fyra femtedelar av sträckan 0–100 meter. Längre norrut är sundet över 100 meter brett, och söder om bron viker den östra strandlinjen av österut.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur många fartygsfynd gjordes inom en radie av 50 meter från den nordligaste punkten på Tottska husets grund?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "14"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tottska husets grund är den streckade figuren väster om Gråmunkebron, och norr är uppåt på kartan, så den nordligaste punkten är figurens översta spets. 50 meter är halva skalstocken. Inom det avståndet ligger båtarna 6, 7, 8, 9, 10, 11, 12, 13, 14 och 15, alltså 10 fynd. Båt 6 ligger knappt 50 meter norrut, medan båt 5 (cirka 60 meter), båtarna 16 och 17 (cirka 55 meter) och båt 18 (cirka 80 meter) ligger utanför.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Avstånden är uppmätta med skalstocken: båt 6 ligger strax innanför 50 meter (cirka 48 meter) och båtarna 16 och 17 strax utanför (cirka 53–55 meter).",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket år såg samtliga fem typer av institutioner och grupper sina intäkter öka jämfört med föregående år?",
+      "options": [
+        "1998",
+        "2000",
+        "2002",
+        "2004"
+      ],
+      "blindAnswer": 0,
+      "explain": "Jämför varje kolumn i tabellen Intäkter med kolumnen för året före. 1998 ökade alla fem: nationella institutioner (866 694 → 931 987), regionala/lokala (1 573 780 → 1 574 438), övriga (30 451 → 32 575), fria teatergrupper (158 780 → 176 216) och fria dansgrupper (13 568 → 23 434). År 2000 och 2004 minskade de fria teatergruppernas intäkter (186 550 → 160 033 respektive 185 073 → 175 275), och 2002 minskade de nationella institutionernas (927 212 → 919 023).",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur många besökare per föreställning hade de fria teatergrupperna det år då de gav som flest föreställningar?",
+      "options": [
+        "83",
+        "90",
+        "122",
+        "150"
+      ],
+      "blindAnswer": 0,
+      "explain": "Enligt tabellen Antalet föreställningar gav de fria teatergrupperna flest föreställningar 1999, 8 151 stycken. Samma år hade de 676 019 besök enligt tabellen Antalet besök. Det ger 676 019/8 151 ≈ 83 besökare per föreställning. 150 får man om man i stället räknar på de fria dansgrupperna det år de gav flest föreställningar (153 220/1 017 ≈ 151).",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Cirkeldiagrammet nedan illustrerar hur en totalsumma för år 2003 var fördelad procentuellt på de fem typerna av institutioner och grupper. Vilken totalsumma avses?",
+      "options": [
+        "Antalet institutioner och grupper",
+        "Antalet besök",
+        "Antalet årsverken",
+        "Intäkter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Cirkeldiagrammet har en sektor på ungefär en fjärdedel (cirka 25 procent), en stor sektor på drygt 60 procent, en på cirka 10 procent och två mycket små på 1–2 procent var. Antalet årsverken 2003 passar: nationella institutioner 1 081/4 208 ≈ 26 procent, regionala/lokala 2 582/4 208 ≈ 61 procent, fria teatergrupper 422/4 208 ≈ 10 procent och övriga institutioner (62) och fria dansgrupper (61) cirka 1,5 procent var. Intäkterna fördelar sig ungefär 30, 60, 6, 2 och 1 procent och besöken ungefär 25, 49, 18, 5 och 3 procent, så de stämmer inte. Antalet institutioner och grupper domineras av de fria teatergrupperna (69 av 141).",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.185,
+            0.505,
+            0.375,
+            0.645
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
