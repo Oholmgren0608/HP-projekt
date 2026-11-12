@@ -1,0 +1,817 @@
+{
+  "examId": "hp-2012-10-27",
+  "passNumber": 1,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Då det positiva heltalet x divideras med 8 erhålls resten 2. Vad blir resten då (x + 9) divideras med 8?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Att x ger resten 2 vid division med 8 betyder att x = 8k + 2 för något heltal k. Då är x + 9 = 8k + 11 = 8(k + 1) + 3, alltså blir resten 3. Exempel: x = 10 ger x + 9 = 19 = 2 · 8 + 3. Man kan också se det som att 9 = 8 + 1, så resten ökar med 1, från 2 till 3. Svaret 2 lockar om man tror att resten inte ändras.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "I en grupp på 30 personer är förhållandet mellan antalet män och antalet kvinnor 3:2. Hur många i gruppen är kvinnor?",
+      "options": [
+        "6",
+        "10",
+        "12",
+        "15"
+      ],
+      "blindAnswer": 2,
+      "explain": "Förhållandet 3:2 betyder att gruppen kan delas i 3 + 2 = 5 lika stora delar, där männen är 3 delar och kvinnorna 2 delar. En del är 30/5 = 6 personer, så kvinnorna är 2 · 6 = 12 och männen 3 · 6 = 18. Kontroll: 18 + 12 = 30 och 18:12 = 3:2. Svaret 6 är storleken på en del, inte antalet kvinnor.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Om x = 3, vad är då x³(x³ − x²)?",
+      "options": [
+        "27",
+        "81",
+        "486",
+        "18 954"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sätt in x = 3: x³ = 27 och x² = 9. Parentesen blir 27 − 9 = 18, och hela uttrycket blir 27 · 18 = 486. Kontroll genom att först multiplicera in: x³ · x³ − x³ · x² = x⁶ − x⁵ = 729 − 243 = 486.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Lös ut b ur formeln a(b − 1) = c",
+      "options": [
+        "b = c/a + 1",
+        "b = c/a − 1",
+        "b = (c + 1)/a",
+        "b = (c − 1)/a"
+      ],
+      "blindAnswer": 0,
+      "explain": "Dela båda leden med a: b − 1 = c/a. Addera sedan 1 till båda leden: b = c/a + 1. Kontroll: a(c/a + 1 − 1) = a · c/a = c. Alternativet b = (c + 1)/a får man om man multiplicerar in a bara i b och skriver ab − 1 = c; rätt är ab − a = c, vilket ger b = (c + a)/a = c/a + 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilken funktion visar volymen L vid tiden t?",
+      "passage": "t (timmar) – L (liter)\n0 – 19\n1 – 13\n2 – 7\n3 – 1",
+      "options": [
+        "L = 6t + 19",
+        "L = 6t − 19",
+        "L = −6t + 19",
+        "L = −6t − 19"
+      ],
+      "blindAnswer": 2,
+      "explain": "När t = 0 är L = 19, så konstanttermen är 19. För varje timme minskar volymen med 6 liter (19, 13, 7, 1), så koefficienten framför t är −6. Funktionen är L = −6t + 19. Kontroll: t = 3 ger L = −18 + 19 = 1, som i tabellen. L = 6t + 19 har rätt startvärde men ger en volym som ökar.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.18,
+          0.108,
+          0.42,
+          0.208
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad blir 1/2 + (2/3)/(3/4) − (4/5 · 5/6)?",
+      "options": [
+        "1/3",
+        "13/18",
+        "3/4",
+        "23/24"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna delarna var för sig. Dubbelbråket är (2/3)/(3/4) = 2/3 · 4/3 = 8/9, och produkten i parentesen är 4/5 · 5/6 = 4/6 = 2/3. Uttrycket blir 1/2 + 8/9 − 2/3, och med gemensam nämnare 18 blir det 9/18 + 16/18 − 12/18 = 13/18. Den som räknar dubbelbråket som 2/3 · 3/4 = 1/2 får i stället 1/2 + 1/2 − 2/3 = 1/3.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.261,
+          0.535,
+          0.4058,
+          0.597
+        ]
+      },
+      "note": "Uttrycket innehåller ett bråk i två nivåer, (2/3)/(3/4); figuren visar det som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Kuben K₁ har volymen x cm³. Sidan i kuben K₂ är tre gånger så lång som sidan i kuben K₁. Hur många kuber K₁ motsvarar volymen av kuben K₂?",
+      "options": [
+        "9",
+        "12",
+        "24",
+        "27"
+      ],
+      "blindAnswer": 3,
+      "explain": "Om sidan i K₁ är s cm är sidan i K₂ 3s cm. Volymen av K₂ är då (3s)³ = 27s³, alltså 27 gånger volymen av K₁ (27x cm³). Volymen av K₂ motsvarar därför 27 kuber K₁. Svaret 9 lockar om man räknar med 3² som för en area, men volymen växer med kuben av förstoringen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är medelvärdet av 3/8 och 0,065?",
+      "options": [
+        "0,18",
+        "0,22",
+        "0,36",
+        "0,44"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv 3/8 som decimaltal: 3/8 = 0,375. Medelvärdet är (0,375 + 0,065)/2 = 0,44/2 = 0,22. Svaret 0,44 är summan av talen; den ska också delas med 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är x om 1/x = 1/2 + 1/3?",
+      "options": [
+        "5/6",
+        "6/5",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna ut högerledet med gemensam nämnare: 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Alltså är 1/x = 5/6, och då är x det inverterade talet 6/5. Kontroll: 1/(6/5) = 5/6. Svaret 5/6 lockar om man glömmer att det är 1/x och inte x som är 5/6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "I triangeln ABC är vinkeln A rät. AB är x cm och BC är y cm. Vilket uttryck beskriver triangelns area?",
+      "options": [
+        "x(y² − x²)/2 cm²",
+        "x(y − x)²/2 cm²",
+        "x√(y² − x²)/2 cm²",
+        "x√((y − x)²)/2 cm²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinkeln A är rät, så BC är hypotenusa och AB och AC är kateter. Pythagoras sats ger AC² = y² − x², alltså AC = √(y² − x²) cm. Arean är kateterna multiplicerade med varandra och delat med 2: x√(y² − x²)/2 cm². Utan rottecken räknar man med AC² i stället för AC, och uttrycken med (y − x) är fel eftersom √(y² − x²) inte är lika med y − x.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.17,
+          0.5,
+          0.56,
+          0.685
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag är minst?",
+      "options": [
+        "1/12 − 1/11",
+        "1/11 − 1/12",
+        "(1/12)/(1/11)",
+        "1/12 · 1/11"
+      ],
+      "blindAnswer": 0,
+      "explain": "Eftersom 1/12 är mindre än 1/11 är 1/12 − 1/11 negativt: 1/12 − 1/11 = (11 − 12)/132 = −1/132. De andra alternativen är positiva: 1/11 − 1/12 = 1/132, (1/12)/(1/11) = 11/12 och 1/12 · 1/11 = 1/132. Det minsta är alltså det negativa talet 1/12 − 1/11.",
+      "figure": null,
+      "note": "Alternativet (1/12)/(1/11) står som ett bråk i två nivåer på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Om a = 2/b och b = 3/c, hur många a motsvarar då 6c?",
+      "options": [
+        "6",
+        "9",
+        "12",
+        "18"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt in b = 3/c i uttrycket för a: a = 2/(3/c) = 2c/3. Då är c = 3a/2, och 6c = 6 · 3a/2 = 9a. Kontroll med c = 2: b = 3/2 och a = 2/(3/2) = 4/3, och 6c = 12 = 9 · 4/3. 6c motsvarar alltså 9 a.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < y\nKvantitet I: 4 − x\nKvantitet II: 4 − y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Eftersom x < y drar man bort ett mindre tal från 4 i kvantitet I än i kvantitet II. Formellt ger x < y att −x > −y, och då är 4 − x > 4 − y. Exempel: x = 1 och y = 2 ger 3 och 2, och x = −5 och y = −1 ger 9 och 5. Kvantitet I är alltid större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x, y och z är tre på varandra följande heltal och xyz = 0\nKvantitet I: 0\nKvantitet II: z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Eftersom produkten xyz är 0 måste ett av talen vara 0. Talen kan vara −2, −1 och 0; då är z = 0 och kvantiteterna lika. Men de kan också vara 0, 1 och 2; då är z = 2 och kvantitet II större. Olika möjliga tal ger olika svar, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Två lika stora cirklar tangerar en större cirkel. De tangerar dessutom varandra i den större cirkelns medelpunkt.\nKvantitet I: Den sammanlagda arean av de två mindre cirklarna\nKvantitet II: Arean av det skuggade området",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla den stora cirkelns radie R. De små cirklarna möts i den stora cirkelns medelpunkt och når ut till dess rand, så var och en har diametern R och radien R/2. Tillsammans har de arean 2 · π(R/2)² = 2 · πR²/4 = πR²/2. Det skuggade området är resten av den stora cirkeln: πR² − πR²/2 = πR²/2. Kvantiteterna är lika, oavsett hur stor cirkeln är.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.19,
+          0.17,
+          0.45,
+          0.36
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Ett 10 meter långt snöre delas i fyra bitar; tre lika långa och en kortare bit.\nKvantitet I: Längden på en av de tre bitar som är lika långa\nKvantitet II: 3 meter",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla de lika långa bitarna a meter och den kortare b meter. Då är 3a + b = 10 med 0 < b < a. Med a = 3 blir b = 1, och kvantiteterna är lika. Med a = 3,2 blir b = 0,4, och då är kvantitet I större. Med a = 2,8 blir b = 1,6, som fortfarande är kortare, och då är kvantitet II större. Villkoren ger bara att a ligger mellan 2,5 och 10/3, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a = 2b\nb = 3c\nKvantitet I: a + b + c\nKvantitet II: 10c",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Uttryck allt i c: b = 3c och a = 2b = 2 · 3c = 6c. Då är a + b + c = 6c + 3c + c = 10c, alltså precis kvantitet II. Likheten gäller för alla värden på c, även negativa och 0, så kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x är 80 % av 60\n35 är 70 % av y\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "x = 0,8 · 60 = 48. Ur 35 = 0,7y får man y = 35/0,7 = 50. Kvantitet II är alltså större. Kontroll: 70 % av 50 är 0,7 · 50 = 35.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Funktionen g ges av g(x) = 4 − x²\nKvantitet I: g(4)\nKvantitet II: g(−4)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "g(4) = 4 − 4² = 4 − 16 = −12 och g(−4) = 4 − (−4)² = 4 − 16 = −12. Eftersom (−4)² = 4² = 16 ger funktionen samma värde för 4 och −4, och kvantiteterna är lika. Den som räknar (−4)² som −16 får g(−4) = 20 och fel relation.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABCD är en kvadrat och CDE är en liksidig triangel. Arean av ABCD är 36 cm².\nKvantitet I: Omkretsen av femhörningen ABCED\nKvantitet II: 30 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadratens area är 36 cm², så sidan är √36 = 6 cm. Den liksidiga triangeln CDE har sidan CD gemensam med kvadraten, så alla dess sidor är också 6 cm. Femhörningen ABCED har sidorna AB, BC, CE, ED och DA, som alla är 6 cm, så omkretsen är 5 · 6 = 30 cm. Sidan CD ligger inuti femhörningen och räknas inte. Kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.18,
+          0.549,
+          0.4,
+          0.78
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "m = 3x/4\nn = 4x/3\nKvantitet I: x²\nKvantitet II: mn",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "mn = (3x/4) · (4x/3) = 12x²/12 = x². Kvantitet II är alltså x², precis som kvantitet I, oavsett vilket värde x har. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fem olika positiva heltal har medelvärdet 12 och medianen 15.\nKvantitet I: Största möjliga värdet på det största av talen\nKvantitet II: 27",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet 12 betyder att summan av de fem talen är 5 · 12 = 60. Ordna talen a < b < 15 < d < e; medianen 15 är det mittersta. Det största talet e blir så stort som möjligt när de andra är så små som möjligt: a = 1, b = 2 och d = 16. Då blir e = 60 − 1 − 2 − 15 − 16 = 26. Det största talet kan alltså som mest vara 26, och kvantitet II är större. Talet 27 får man om man låter det fjärde talet vara 15, men talen ska vara olika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en ö bor fyra familjer i varsin stuga där varje stuga ligger i varsitt av de fyra väderstrecken: norr, söder, öster eller väster. Varje stuga har en unik färg: gul, blå, röd eller grön. I vilket väderstreck ligger den gula stugan?\n(1) Den blå stugan ligger längre söderut än den röda stugan, men längre norrut än den gröna stugan.\n(2) Den röda stugan, som inte ligger i söder, ligger längre norrut än den gröna stugan. Den blå stugan ligger i öster.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt figuren ligger stugorna i väster och öster lika långt norrut, mellan stugan i norr och stugan i söder.\n(1) Den blå stugan ligger söder om den röda och norr om den gröna. Det kräver tre olika lägen i nord–sydlig riktning, så den röda ligger i norr, den gröna i söder och den blå i väster eller öster. Den gula kan ligga i väster eller i öster. Inte tillräckligt.\n(2) Den blå ligger i öster, och den röda ligger i norr eller väster och norr om den gröna. Den gula kan då ligga i söder (röd i norr, grön i väster), i väster (röd i norr, grön i söder) eller i norr (röd i väster, grön i söder). Inte tillräckligt.\n(1) och (2) tillsammans: Den röda ligger i norr, den gröna i söder och den blå i öster, så den gula stugan ligger i väster. Tillräckligt.",
+      "figure": {
+        "pages": [
+          13
+        ],
+        "box": [
+          0.19,
+          0.172,
+          0.44,
+          0.3
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Per har en konstant månadsutgift för godis. Han har som mål att minska den till hälften. Hur många månader tar det innan han har lyckats?\n(1) Pers utgift för godis minskar med 10 procent per månad.\n(2) När Per har halverat månadsutgiften för godis har den minskat med 200 kr.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Om utgiften minskar med 10 procent per månad är den efter n månader 0,9ⁿ av den ursprungliga, oavsett hur stor den var från början. Eftersom 0,9⁶ ≈ 0,53 och 0,9⁷ ≈ 0,48 tar det 7 månader. Tillräckligt.\n(2) Att utgiften har minskat med 200 kr när den har halverats betyder bara att den från början var 400 kr. Det säger inget om hur snabbt den minskar. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en hiss som startar från bottenvåningen är medelåldern på personerna i hissen 30 år. Vid nästa stopp, på första våningen, kliver en person ur hissen och en person kliver på. Vad är medelåldern på personerna i hissen när den lämnar första våningen?\n(1) Den som kliver på hissen vid första våningen är 10 år äldre än den som kliver ur.\n(2) Det är fem personer i hissen när den startar från bottenvåningen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Summan av åldrarna ökar med 10 år, men utan antalet personer går det inte att räkna ut hur mycket medelåldern ökar. Inte tillräckligt.\n(2) Med fem personer är summan av åldrarna 5 · 30 = 150 år, men vi vet inte hur gamla de som kliver ur och på är. Inte tillräckligt.\n(1) och (2) tillsammans: Det är fortfarande fem personer i hissen, och summan av åldrarna blir 150 + 10 = 160 år. Medelåldern blir 160/5 = 32 år. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Kusinerna Arvid, Elin och Moa har en sammanlagd ålder på 30 år.\nHur gammal är Elin?\n(1) Moa, som är yngst av de tre, är 6 år gammal.\n(2) Arvid är dubbelt så gammal som en av sina kusiner.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Moa är 6 år, så Arvid och Elin är tillsammans 24 år. De kan till exempel vara 12 och 12 eller 16 och 8. Inte tillräckligt.\n(2) Arvid är dubbelt så gammal som Elin eller Moa, men det räcker inte för att bestämma Elins ålder. Inte tillräckligt.\n(1) och (2) tillsammans: Om Arvid är dubbelt så gammal som Moa är han 12 år, och Elin är 24 − 12 = 12 år. Om han i stället är dubbelt så gammal som Elin är 2E + E = 24, så Elin är 8 år och Arvid 16. Båda fallen stämmer med att Moa är yngst. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "ABC är en triangel. Vinkeln ABC delas i tre lika stora vinklar x. Hur stor är vinkeln y?\n(1) Triangeln ABC är liksidig.\n(2) Alla sidor i triangeln ABC är 6 cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "I figuren ligger y vid den punkt där den högra delningslinjen från B möter AC, på sidan mot A.\n(1) I en liksidig triangel är alla vinklar 60°, så x = 60°/3 = 20°. Triangeln som bildas av A, B och linjens fotpunkt har vinkeln 2x = 40° vid B och 60° vid A, så y = 180° − 40° − 60° = 80°. Tillräckligt.\n(2) Om alla sidor är 6 cm är triangeln liksidig, och samma uträkning ger y = 80°. Tillräckligt.\nVart och ett av påståendena räcker alltså.",
+      "figure": {
+        "pages": [
+          15
+        ],
+        "box": [
+          0.18,
+          0.115,
+          0.49,
+          0.287
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en fågeldamm finns det änder och svanar. Vad är kvoten mellan antalet änder och antalet svanar?\n(1) Svanarna är 50 färre än hälften av antalet änder.\n(2) Antalet svanar är 3/11 av antalet änder.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Antalet svanar är hälften av antalet änder minus 50. Med 200 änder blir det 50 svanar och kvoten 4, men med 300 änder blir det 100 svanar och kvoten 3. Inte tillräckligt.\n(2) Om svanarna är 3/11 av änderna är kvoten mellan antalet änder och antalet svanar 11/3, oavsett hur många fåglarna är. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur mycket skog avverkades i Götaland säsongen 2000/01?",
+      "options": [
+        "20 miljoner m³sk",
+        "30 miljoner m³sk",
+        "35 miljoner m³sk",
+        "60 miljoner m³sk"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd cirkeldiagrammet för 2000/01, där den totala avverkningen är 60,2 miljoner m³sk. Götaland är den vita sektorn, som går från ungefär klockan åtta till klockan tolv. Den är drygt en tredjedel av cirkeln, cirka 35 procent. 0,35 · 60,2 ≈ 21 miljoner m³sk, så det närmaste alternativet är 20 miljoner m³sk. 35 miljoner lockar om man tar andelen i procent som mängden, och 30 miljoner skulle vara halva cirkeln.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur mycket skog slutavverkades och gallrades sammanlagt 1995?",
+      "options": [
+        "37 miljoner m³sk",
+        "48 miljoner m³sk",
+        "55 miljoner m³sk",
+        "66 miljoner m³sk"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd linjediagrammet och läs av vid 1995. Kurvan för slutavverkning ligger på ungefär 37 miljoner m³sk och kurvan för gallring på ungefär 18 miljoner m³sk. Sammanlagt blir det cirka 37 + 18 = 55 miljoner m³sk. 37 miljoner är bara slutavverkningen, och 66 miljoner är den totala avverkningen, som också innehåller övrig avverkning.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Studera respektive säsong utifrån hur den totala avverkningen var fördelad på landsdelar. Under vilken säsong var Norrlands andel som minst?",
+      "options": [
+        "1980/81",
+        "1985/86",
+        "1990/91",
+        "2000/01"
+      ],
+      "blindAnswer": 3,
+      "explain": "Norrlands andel är Norra Norrland (snedstreckat) plus Södra Norrland (vågrätt randigt), alltså sektorerna från klockan tolv medurs fram till Svealands prickiga sektor. 1980/81 och 1985/86 når Norrlands sektorer ungefär till klockan fem, cirka 41 procent av cirkeln, och 1990/91 till mellan klockan fem och sex, cirka 47 procent. 2000/01 når de bara till ungefär halv fem, cirka 38 procent. Norrlands andel var alltså minst 2000/01.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "Andelarna är avlästa som vinklar i cirkeldiagrammen: Norrland ungefär 41 procent 1980/81, 41 procent 1985/86, 47 procent 1990/91 och 38 procent 2000/01.",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur många fler var de som hade gymnasial utbildning som högsta utbildningsnivå än de som hade eftergymnasial utbildning (ej forskarutbildning) som högsta utbildningsnivå?",
+      "options": [
+        "252 792",
+        "1 062 588",
+        "1 356 832",
+        "1 874 808"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd raden Totalt för män+kvinnor. Gymnasial utbildning: 1 655 490 (högst 2 år) + 1 281 905 (3 år) = 2 937 395. Eftergymnasial utbildning: 845 694 (kortare än 3 år) + 1 029 113 (minst 3 år) = 1 874 807; forskarutbildningen står i en egen kolumn och räknas inte med. Skillnaden är 2 937 395 − 1 874 807 = 1 062 588. Talet 1 874 808 är ungefär antalet med eftergymnasial utbildning, inte skillnaden.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.07,
+          0.06,
+          0.8,
+          0.86
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Identifiera den åldersgrupp som var störst till antalet individer. Hur stor andel av individerna i denna grupp hade en utbildningsnivå som var högre än gymnasial utbildning?",
+      "options": [
+        "15 procent",
+        "20 procent",
+        "35 procent",
+        "50 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Bland raderna för män+kvinnor är 35–44 år störst, med 1 274 179 personer i kolumnen Befolkning. Högre än gymnasial utbildning är eftergymnasial utbildning och forskarutbildning: 207 719 + 231 166 + 15 251 = 454 136. Andelen är 454 136/1 274 179 ≈ 0,36, alltså ungefär 35 procent.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.07,
+          0.06,
+          0.8,
+          0.86
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur stor var den största förändringen av antalet fackföreningsmedlemmar i Sverige från ett år till närmast efterföljande år?",
+      "options": [
+        "35 000",
+        "55 000",
+        "75 000",
+        "115 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av de grå staplarna (antal fackföreningsmedlemmar) i det övre diagrammet. 1905 är stapeln ungefär 105 000 och 1906 ungefär 180 000, en ökning med cirka 75 000. De näst största förändringarna är minskningen 1908–1909, från cirka 215 000 till 150 000, och ökningen 1918–1919, från cirka 307 000 till 372 000, båda ungefär 65 000. Den största förändringen är alltså cirka 75 000.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Jämför antalet fackföreningsmedlemmar i Ådalen det år då antalet var som störst och det år då antalet var som minst. Hur stor var skillnaden?",
+      "options": [
+        "900",
+        "1 300",
+        "1 900",
+        "2 600"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd den heldragna linjen i det nedre diagrammet och den vänstra axeln (antal medlemmar). Flest medlemmar fanns 1918, drygt 1 900 (nästan lika många 1908), och minst 1910, ungefär 600. Skillnaden är ungefär 1 920 − 600 ≈ 1 300. Svaret 1 900 är det största antalet, inte skillnaden.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket år var antalet fackföreningsmedlemmar, LO-anslutna respektive SAP-medlemmar som minst i Sverige?",
+      "options": [
+        "1905, 1910 respektive 1905",
+        "1905, 1911 respektive 1910",
+        "1910, 1910 respektive 1910",
+        "1910, 1911 respektive 1905"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det övre diagrammet. De grå staplarna (fackföreningsmedlemmar) är lägst 1905, ungefär 105 000, medan 1910 och 1911 ligger på cirka 115 000–120 000. De svarta staplarna (LO-anslutna) är lägst 1911, cirka 80 000, något lägre än 1910 (cirka 85 000). De vita staplarna (SAP) är lägst 1910, cirka 56 000, något lägre än 1911 (cirka 58 000). Svaret blir 1905, 1911 respektive 1910.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Staplarna för 1910 och 1911 är nästan lika höga (LO cirka 85 000 och 80 000, SAP cirka 56 000 och 58 000); avlästa med förstoring.",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur många registrerade sammanträden hölls i genomsnitt per år i Ådalen under den redovisade perioden?",
+      "options": [
+        "100",
+        "200",
+        "300",
+        "900"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd den streckade linjen (registrerade sammanträden) i det nedre diagrammet och den högra axeln (antal sammanträden). Värdena för 1908–1918 är ungefär 385, 535, 115, 80, 125, 185, 125, 65, 105, 210 och 235. Summan blir cirka 2 165 under 11 år, och 2 165/11 ≈ 197, alltså ungefär 200 sammanträden per år. Den vänstra axeln gäller antalet medlemmar och ska inte användas här.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "För hur stor andel av paren där kvinnan var 30–34 år gällde att mannen var yngre än kvinnan?",
+      "options": [
+        "16 procent",
+        "25 procent",
+        "47 procent",
+        "75 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd raden 30–34 och alla kolumner under Mannen yngre (1–9 och ≥10 år): 62 + 38 + 24 + 15 + 9 + 6 + 4 + 2 + 1 + 1 = 162. Varje åldersgrupp avser 1 000 par, så andelen är 162/1 000 ≈ 16 procent. Kolumnerna under Mannen äldre ger 753 par, cirka 75 procent, vilket är andelen där mannen var äldre.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.07,
+          0.05,
+          0.72,
+          0.91
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "I vilken av följande åldersgrupper var det mer än tio gånger så vanligt att kvinnan var minst tio år yngre än att hon var minst tio år äldre än mannen?",
+      "options": [
+        "50–54 år",
+        "45–49 år",
+        "40–44 år",
+        "35–39 år"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvinnan är minst tio år yngre när mannen är minst tio år äldre (kolumnen ≥10 längst till vänster), och minst tio år äldre när mannen är minst tio år yngre (kolumnen ≥10 längst till höger). 50–54: 88 mot 12, drygt 7 gånger. 45–49: 82 mot 11, drygt 7 gånger. 40–44: 63 mot 7, 9 gånger. 35–39: 49 mot 4, drygt 12 gånger. Bara i åldersgruppen 35–39 år är det mer än tio gånger så vanligt.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.07,
+          0.05,
+          0.72,
+          0.91
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av kvinnorna i åldersgruppen 65–69 år bodde tillsammans med en man som var antingen lika gammal, ett år yngre eller ett år äldre?",
+      "options": [
+        "1/5",
+        "1/4",
+        "1/3",
+        "2/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd raden 65–69. Lika gammal är kolumnen 0 (78 par), mannen ett år äldre är kolumnen 1 under Mannen äldre (93 par) och mannen ett år yngre är kolumnen 1 under Mannen yngre (73 par). Summan är 78 + 93 + 73 = 244 av 1 000 par, alltså ungefär 1/4.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.07,
+          0.05,
+          0.72,
+          0.91
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
