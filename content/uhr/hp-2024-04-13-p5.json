@@ -1,0 +1,821 @@
+{
+  "examId": "hp-2024-04-13",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "4x + 13 = 8x − 31",
+      "options": [
+        "−4,5",
+        "1,5",
+        "4,5",
+        "11"
+      ],
+      "blindAnswer": 3,
+      "explain": "Samla x-termerna i ena ledet och talen i det andra. Subtrahera 4x från båda leden: 13 = 4x − 31. Addera 31: 44 = 4x, så x = 11. Kontroll: 4 · 11 + 13 = 57 och 8 · 11 − 31 = 57. Den som flyttar över −31 utan att byta tecken får 4x = 13 − 31 = −18 och svaret −4,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilken av punkterna ligger på linjen L?",
+      "options": [
+        "(−5, 1)",
+        "(−3, −2)",
+        "(1, −5)",
+        "(3, −3)"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av två punkter på linjen: den skär y-axeln i (0, −3) och går genom (−2, 1). Lutningen är (1 − (−3))/(−2 − 0) = −2, så linjen har ekvationen y = −2x − 3. Sätt in punkterna: x = 1 ger y = −2 − 3 = −5, så (1, −5) ligger på linjen. För x = −5 ger ekvationen y = 7, för x = −3 ger den y = 3 och för x = 3 ger den y = −9, så de andra punkterna ligger inte på linjen. I figuren syns samma sak: från (0, −3) går linjen ett steg åt höger och två steg nedåt till (1, −5).",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.2,
+          0.535,
+          0.49,
+          0.75
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är 1/3 − (1/2 + 1/6)?",
+      "options": [
+        "−2/3",
+        "−1/3",
+        "0",
+        "1/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna parentesen först med gemensam nämnare 6: 1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3. Sedan är 1/3 − 2/3 = −1/3. Svaret 0 lockar om man tar bort parentesen utan att byta tecken på 1/6: 2/6 − 3/6 + 1/6 = 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av 17, 21 och 44 är lika med medelvärdet av 63, 73 och x. Vilket värde har x?",
+      "options": [
+        "−54",
+        "−27",
+        "0",
+        "71"
+      ],
+      "blindAnswer": 0,
+      "explain": "Båda medelvärdena är tagna av tre tal, så de är lika precis när summorna är lika. 17 + 21 + 44 = 82, alltså ska 63 + 73 + x = 82. Det ger 136 + x = 82 och x = 82 − 136 = −54. Kontroll: (63 + 73 − 54)/3 = 82/3, samma som (17 + 21 + 44)/3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vägen mellan Julias hem och Annas hem är 12 km lång. De startar hemifrån samtidigt för att mötas längs vägen. Julia springer med konstant hastighet och det tar henne 12 minuter att springa 2 km. Anna går med konstant hastighet och det tar henne 24 minuter att gå 2 km. Hur lång tid tar det innan de möts?",
+      "options": [
+        "36 minuter",
+        "42 minuter",
+        "48 minuter",
+        "72 minuter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Julia springer 1 km på 6 minuter och Anna går 1 km på 12 minuter. Tillsammans minskar de avståndet mellan sig med 1/6 + 1/12 = 3/12 = 1/4 km per minut. De 12 kilometerna tar då 12/(1/4) = 48 minuter. Kontroll: på 48 minuter springer Julia 8 km och Anna går 4 km, sammanlagt 12 km. 72 minuter är den tid det skulle ta Julia att springa hela vägen ensam.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är lika med 7?",
+      "options": [
+        "√29 + √20",
+        "7¹ − 7⁰",
+        "14/7 + 49/14",
+        "(7/√7)²"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva alternativen. (7/√7)² = 7²/(√7)² = 49/7 = 7. De andra blir inte 7: 7¹ − 7⁰ = 7 − 1 = 6, 14/7 + 49/14 = 2 + 3,5 = 5,5, och √29 + √20 är större än √25 + √16 = 5 + 4 = 9. Rötterna lockar eftersom 29 + 20 = 49 = 7², men √29 + √20 är inte lika med √49.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 18 procent av 2/5?",
+      "options": [
+        "1/45",
+        "4/45",
+        "9/125",
+        "9/250"
+      ],
+      "blindAnswer": 2,
+      "explain": "18 procent är 18/100 = 9/50. Då är 18 procent av 2/5 lika med 9/50 · 2/5 = 18/250 = 9/125. Kontroll med decimaltal: 0,18 · 0,4 = 0,072 och 9/125 = 72/1 000 = 0,072. Svaret 9/250 får man om man glömmer att multiplicera täljaren med 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "A, B och C är tre av hörnen i en kvadrat med sidlängden 4 cm. Kvadratens fjärde hörn, M, är medelpunkten för en cirkel med radien 2 cm. Hur stor är arean av det skuggade området i figuren?",
+      "options": [
+        "(12 + π/2) cm²",
+        "(12 + π/4) cm²",
+        "(16 − π/2) cm²",
+        "(16 − π) cm²"
+      ],
+      "blindAnswer": 3,
+      "explain": "Det skuggade området är kvadraten utom den del av cirkeln som ligger inne i kvadraten. Kvadratens area är 4 · 4 = 16 cm². Vinkeln i kvadratens hörn M är 90°, så det är en fjärdedel av cirkeln som ligger inne i kvadraten. Den har arean π · 2²/4 = π cm². Det skuggade området har alltså arean (16 − π) cm².",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.2,
+          0.562,
+          0.48,
+          0.712
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är en ekvation för en linje som går genom punkten (3, 1)?",
+      "options": [
+        "y = −x + 4",
+        "y = x + 2",
+        "y = 2x + 1",
+        "y = 3x + 1"
+      ],
+      "blindAnswer": 0,
+      "explain": "En linje går genom punkten (3, 1) om ekvationen stämmer när man sätter in x = 3 och y = 1. För y = −x + 4 blir y = −3 + 4 = 1, så den linjen går genom punkten. De andra ekvationerna ger y = 5, y = 7 och y = 10 när x = 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "a, b och c är positiva tal sådana att a/b = b/c och c = 2a. Vad är b uttryckt i a?",
+      "options": [
+        "b = a√2",
+        "b = a/√2",
+        "b = 2√a",
+        "b = √a/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera korsvis i a/b = b/c: b² = ac. Sätt in c = 2a: b² = a · 2a = 2a². Eftersom a och b är positiva är b = √(2a²) = a√2. Kontroll med a = 1: då är c = 2 och b = √2, och a/b = 1/√2 är lika med b/c = √2/2. Alternativet 2√a lockar om man tar roten ur 2a² som 2√a, men roten ur a² är a och roten ur 2 är √2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "x · 10⁴ − 2x · 10³ = 3,2 · 10⁴",
+      "options": [
+        "4",
+        "4,8",
+        "5,6",
+        "6,4"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv tiopotenserna som tal: 10⁴ = 10 000 och 10³ = 1 000. Vänstra ledet blir 10 000x − 2 000x = 8 000x och högra ledet 3,2 · 10 000 = 32 000. Då är x = 32 000/8 000 = 4. Kontroll: 4 · 10⁴ − 8 · 10³ = 40 000 − 8 000 = 32 000.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Kvadraterna K₁ och K₂ överlappar varandra så att 25 procent av arean av K₁ täcks av 20 procent av arean av K₂. Kvadraten K₁ har sidlängden 2 cm. Vilken sidlängd har K₂?",
+      "options": [
+        "1,6 cm",
+        "√3 cm",
+        "√5 cm",
+        "2,5 cm"
+      ],
+      "blindAnswer": 2,
+      "explain": "K₁ har arean 2 · 2 = 4 cm², och det överlappande området är 25 procent av den, alltså 1 cm². Samma område är 20 procent av arean av K₂, så K₂ har arean 1/0,2 = 5 cm². Sidlängden är då √5 cm. Svaret 2,5 cm lockar om man räknar med sidlängder i stället för areor: 25 procent av 2 cm är 0,5 cm, och 0,5/0,2 = 2,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "3x > y\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Villkoret 3x > y bestämmer inte hur x och y förhåller sig till varandra. Med x = 1 och y = 0 gäller 3 > 0, och då är kvantitet I störst. Med x = 1 och y = 2 gäller också 3 > 2, men då är kvantitet II störst. Informationen räcker inte. Delar man med 3 får man bara x > y/3, inte x > y.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "H är en regelbunden sexhörning.\nKvantitet I: Andelen av H som är skuggad\nKvantitet II: Andelen av H som inte är skuggad",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dra sträckor från sexhörningens medelpunkt till den vita triangelns tre hörn. Sexhörningen delas då i tre lika stora romber, och varje sida i den vita triangeln är en diagonal i en av romberna. En diagonal delar en romb i två lika stora trianglar: den yttre är skuggad och den inre är vit. Därför är lika mycket av sexhörningen skuggat som oskuggat, och båda andelarna är 1/2.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.22,
+          0.535,
+          0.45,
+          0.69
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "2(x − 4) = 1/2\nKvantitet I: x\nKvantitet II: 5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Dela båda leden med 2: x − 4 = 1/4. Då är x = 4 + 1/4 = 4,25, som är mindre än 5. Den som multiplicerar med 2 i stället för att dividera får x − 4 = 1 och x = 5 och tror då att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 4x + 8\ng(x) = 2x + 4\na > 0\nKvantitet I: f(a)\nKvantitet II: g(2a)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in: f(a) = 4a + 8 och g(2a) = 2 · 2a + 4 = 4a + 4. Skillnaden är (4a + 8) − (4a + 4) = 4, så kvantitet I är alltid 4 större, vilket värde a än har. Eftersom f(x) = 2 · g(x) kan man tro att kvantiteterna är lika, men 2 · g(a) = 4a + 8 är inte samma sak som g(2a) = 4a + 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En mätserie består av tio heltal mellan 1 och 50. Mätseriens median är 25.\nKvantitet I: Mätseriens median om det största och det minsta mätvärdet tas bort\nKvantitet II: 25",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Ordna de tio värdena i storleksordning. Medianen är medelvärdet av det femte och det sjätte värdet, och det är 25. Tar man bort det minsta och det största värdet återstår åtta värden, de som stod på plats 2–9. Deras median är medelvärdet av det fjärde och det femte av de åtta, alltså samma två värden som förut. Medianen är därför fortfarande 25, vilka talen än är.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 4 · 10⁻²\nKvantitet II: 1/400",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "10⁻² = 1/100, så kvantitet I är 4/100 = 0,04. Kvantitet II är 1/400 = 0,0025. Kvantitet I är alltså större, hela 16 gånger så stor (4/100 = 16/400). Den som tror att 4 · 10⁻² = 1/(4 · 100) = 1/400 får att kvantiteterna är lika, men det är bara tiopotensen som hamnar i nämnaren.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "−1 < x < 0\n0 < y < 1\nKvantitet I: y/x\nKvantitet II: x/y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Båda kvantiteterna är negativa, och vilken som är störst beror på om x eller y ligger längst från 0. Med x = −0,5 och y = 0,25 är kvantitet I −0,5 och kvantitet II −2, så I är större. Med x = −0,25 och y = 0,5 är kvantitet I −2 och kvantitet II −0,5, så II är större. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fyrhörningen ABCD är en kvadrat. De två parallella linjerna L₁ och L₂ går genom punkten C respektive punkten A.\nKvantitet I: 20°\nKvantitet II: x − 50°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sidan DC bildar vinkeln 20° med L₁. Sidan AB är parallell med DC, och L₂ är parallell med L₁, så AB bildar också vinkeln 20° med L₂ (till höger om A). Vid A ligger vinklarna x, 90° (kvadratens hörn) och 20° längs den raka linjen L₂, så x + 90° + 20° = 180° och x = 70°. Kvantitet II är då 70° − 50° = 20°, lika med kvantitet I.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.2,
+          0.553,
+          0.56,
+          0.685
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < 0\nKvantitet I: (x + 4)(x − 2)\nKvantitet II: (x − 4)(x + 2)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplicera ut: kvantitet I är x² − 2x + 4x − 8 = x² + 2x − 8 och kvantitet II är x² + 2x − 4x − 8 = x² − 2x − 8. Skillnaden I − II är 2x − (−2x) = 4x, som är negativ eftersom x < 0. Kvantitet II är alltså större för alla negativa x. Kontroll med x = −1: kvantitet I är 3 · (−3) = −9 och kvantitet II är (−5) · 1 = −5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Priset på en vara stiger med 20 % per år.\nKvantitet I: Den tid det tar tills priset har fördubblats\nKvantitet II: 5 år",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Varje år multipliceras priset med 1,2. Efter tre år har priset multiplicerats med 1,2³ = 1,728 och efter fyra år med 1,2⁴ ≈ 2,07. Priset har alltså fördubblats inom fyra år, mindre än 5 år. Den som räknar 5 · 20 % = 100 % får att det tar precis 5 år, men glömmer att varje ökning räknas på det nya, högre priset.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En förmiddag besöker Roy ett apotek, ett bibliotek och en cykelhandlare. I vilken ordning gör Roy sina besök?\n(1) När Roy går till apoteket har han inte varit på biblioteket ännu.\n(2) Besöket hos cykelhandlaren är varken först eller sist.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Apoteket kommer före biblioteket. Möjliga ordningar är apotek–bibliotek–cykelhandlare, apotek–cykelhandlare–bibliotek och cykelhandlare–apotek–bibliotek. Inte tillräckligt.\n(2) Cykelhandlaren är det andra besöket, men både apoteket och biblioteket kan komma först. Inte tillräckligt.\n(1) och (2) tillsammans: Cykelhandlaren är det andra besöket och apoteket kommer före biblioteket, så ordningen är apotek–cykelhandlare–bibliotek. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur stor är vinkeln u?\n(1) w = 65°\n(2) v = 50°",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Vinkeln 130° är en yttervinkel till triangeln. En yttervinkel är lika stor som summan av de två inre vinklarna som inte ligger intill den, så u + w = 130°. Dessutom är v = 180° − 130° = 50°.\n(1) w = 65° ger u = 130° − 65° = 65°. Tillräckligt.\n(2) v = 50° vet man redan från figuren, och det ger bara u + w = 130°. Inte tillräckligt.",
+      "figure": {
+        "pages": [
+          13
+        ],
+        "box": [
+          0.21,
+          0.515,
+          0.46,
+          0.597
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En tank innehåller endast olja. Tanken är fylld till 4/7 av sin volym. Hur stor volym har tanken?\n(1) För att tanken ska bli helt full måste man fylla på ytterligare 1 200 liter olja.\n(2) Om man tömmer ut 200 liter olja ur tanken så kommer den att vara fylld till hälften.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla tankens volym V liter. Tanken innehåller 4V/7 liter olja.\n(1) Det som fattas är 3/7 av volymen, så 3V/7 = 1 200 och V = 2 800. Tillräckligt.\n(2) 4V/7 − 200 = V/2. Det ger 4V/7 − V/2 = 8V/14 − 7V/14 = V/14 = 200 och V = 2 800. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en stadsdel ligger husen längs gator som går antingen i nord-sydlig eller i öst-västlig riktning. Varje hus ligger längs endast en gata. Vart och ett av husen har antingen ett jämnt eller ett udda nummer. Hur många hus med udda nummer finns det i stadsdelen?\n(1) Det finns sammanlagt 150 hus med jämna nummer i stadsdelen. 40 procent av dem ligger längs gator som går i öst-västlig riktning.\n(2) Två tredjedelar av husen med udda nummer ligger längs gator som går i nord-sydlig riktning. Längs gator som går i öst-västlig riktning finns det lika många hus med jämna nummer som med udda nummer.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Av de 150 husen med jämna nummer ligger 0,4 · 150 = 60 längs öst-västliga gator, men inget sägs om husen med udda nummer. Inte tillräckligt.\n(2) En tredjedel av husen med udda nummer ligger längs öst-västliga gator, och där finns lika många hus med jämna nummer. Men inget antal är givet. Inte tillräckligt.\n(1) och (2) tillsammans: Längs öst-västliga gator finns 60 hus med jämna nummer och alltså också 60 hus med udda nummer. De 60 husen är en tredjedel av husen med udda nummer, så det finns 3 · 60 = 180 hus med udda nummer. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anna och Berit leker med kulor. Hur många kulor har Anna?\n(1) Om Anna hade ytterligare 100 kulor, så skulle hon ha tre gånger så många kulor som hon faktiskt har.\n(2) Om Anna hade 25 kulor färre, så skulle Berit ha fyra gånger så många kulor som Anna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kalla antalet kulor som Anna har för a.\n(1) a + 100 = 3a ger 2a = 100 och a = 50. Tillräckligt.\n(2) Berit har 4(a − 25) kulor, men eftersom vi inte vet hur många kulor Berit har går det inte att bestämma a. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket av talen x, y, z och w är störst?\n(1) x + y = w\n(2) (x + y)/2 = z",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) w = x + y säger inget om talens tecken. Med x = 1 och y = 2 är w = 3 störst, men med x = −1 och y = −2 är w = −3 minst. Inte tillräckligt.\n(2) z är medelvärdet av x och y, men w kan vara vad som helst. Inte tillräckligt.\n(1) och (2) tillsammans: w = x + y och z = w/2. Med x = 1 och y = 2 blir w = 3 och z = 1,5, så w är störst. Med x = −1 och y = −2 blir w = −3 och z = −1,5, så x är störst. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Studera kategorin Fritidsresor utrikes. Vilket år var dess andel av det totala antalet resor som störst?",
+      "options": [
+        "2011",
+        "2012",
+        "2014",
+        "2016"
+      ],
+      "blindAnswer": 3,
+      "explain": "Fritidsresor utrikes är det ljusgrå bandet. Antalet sådana resor är bandets tjocklek, och det totala antalet resor är höjden till diagrammets överkant. 2011 är bandet ungefär 15 − 3 = 12 miljoner av totalt cirka 60 miljoner (20 procent), 2012 ungefär 16 − 3 = 13 miljoner av cirka 60 miljoner (22 procent) och 2014 ungefär 11 − 1,5 = 9,5 miljoner av cirka 45 miljoner (21 procent). 2016 är bandet ungefär 20 − 4,5 = 15,5 miljoner av cirka 53 miljoner, nästan 30 procent. Andelen var alltså störst 2016.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.06,
+          0.15,
+          0.72,
+          0.925
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Från 2012 till 2013 minskade det totala antalet resor. Vilken var den enda kategori där antalet ökade mellan dessa år?",
+      "options": [
+        "Affärsresor utrikes",
+        "Fritidsresor utrikes",
+        "Affärsresor inrikes",
+        "Fritidsresor inrikes"
+      ],
+      "blindAnswer": 2,
+      "explain": "Jämför bandens tjocklek 2012 och 2013. Affärsresor utrikes (svart) minskar från drygt 3 miljoner till knappt 2 miljoner. Fritidsresor utrikes (ljusgrått) minskar från cirka 16 − 3 = 13 miljoner till cirka 12 − 2 = 10 miljoner, och fritidsresor inrikes (mörkgrått) minskar från cirka 60 − 22 = 38 miljoner till cirka 52 − 19,5 = 32,5 miljoner. Affärsresor inrikes (vitt) ökar däremot från cirka 22 − 16 = 6 miljoner till cirka 19,5 − 12 = 7,5 miljoner. Det vita bandets överkant sjunker visserligen, men underkanten sjunker ännu mer, så bandet blir tjockare.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.06,
+          0.15,
+          0.72,
+          0.925
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur fördelade sig antalet resor procentuellt på utrikesresor respektive inrikesresor 2016?",
+      "passage": "Svarsalternativen anger: utrikes – inrikes",
+      "options": [
+        "25 % – 75 %",
+        "30 % – 70 %",
+        "35 % – 65 %",
+        "45 % – 55 %"
+      ],
+      "blindAnswer": 2,
+      "explain": "Utrikesresorna är de två nedersta banden, affärsresor utrikes (svart) och fritidsresor utrikes (ljusgrått). År 2016 når det ljusgrå bandets överkant ungefär 20 miljoner, så det gjordes cirka 20 miljoner utrikesresor. Hela diagrammet når cirka 53 miljoner. Andelen utrikesresor är 20/53 ≈ 0,38 och andelen inrikesresor 33/53 ≈ 0,62. Närmast är 35 % – 65 %; för 45 % – 55 % skulle det ha behövts nästan 24 miljoner utrikesresor.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.06,
+          0.15,
+          0.72,
+          0.925
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilka två dödsorsaker angavs för sammanlagt en femtedel av de kungsörnar som inkom till Naturhistoriska riksmuseet 1993–2011?",
+      "options": [
+        "Illegal jakt och El",
+        "Illegal jakt och Vindkraftverk",
+        "El och Vindkraftverk",
+        "Vindkraftverk och Annan olycka"
+      ],
+      "blindAnswer": 0,
+      "explain": "Cirkeldiagrammet visar totalt 503 kungsörnar, och en femtedel av dem är 503/5 ≈ 100. Antalen för dödsorsakerna i alternativen står vid sektorerna: illegal jakt 20, el 84, vindkraftverk 4 och annan olycka 16. Illegal jakt och el ger 20 + 84 = 104, ungefär en femtedel. El och vindkraftverk ger 88, alltså ungefär 17 procent, och de andra paren ger bara 24 respektive 20 örnar.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket var förhållandet mellan antalet kungsörnar med okänd dödsorsak och antalet kungsörnar med känd dödsorsak bland örnarna som påträffades i månaden juni?",
+      "options": [
+        "1:2",
+        "2:1",
+        "5:8",
+        "8:5"
+      ],
+      "blindAnswer": 3,
+      "explain": "I stapeldiagrammet når junistapeln totalt 39 örnar, och den svarta delen (okänd dödsorsak) når 24. Då hade 39 − 24 = 15 örnar känd dödsorsak. Förhållandet mellan okänd och känd dödsorsak är 24 : 15 = 8 : 5. Läser man förhållandet åt andra hållet, känd mot okänd, får man 5 : 8.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "För hur stor andel av de kungsörnar som inkom till Naturhistoriska riksmuseet 1993–2011 angavs fyndmånad?",
+      "options": [
+        "72 procent",
+        "75 procent",
+        "78 procent",
+        "82 procent"
+      ],
+      "blindAnswer": 3,
+      "explain": "Cirkeldiagrammet omfattar alla kungsörnar som inkom till Naturhistoriska riksmuseet 1993–2011, totalt 503. Stapeldiagrammet visar bara de örnar som fyndmånad angavs för, och där står totalt 414. Andelen är 414/503 ≈ 0,82, alltså 82 procent.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de som arbetade inom jordbruk, skogsbruk, jakt och fiske i Gävleborgs län 2015 fanns inom jordbruket?",
+      "options": [
+        "30 procent",
+        "35 procent",
+        "40 procent",
+        "45 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av raden för Gävleborgs län i den vänstra delen av tabellen. Summan av förvärvsarbetande inom jordbruk, skogsbruk, jakt och fiske är 4 434, och av dem fanns 1 774 inom jordbruket (kolumnen Därav jordbruk). Andelen är 1 774/4 434 ≈ 0,40, alltså 40 procent. Procentkolumnerna till höger ger samma sak: 1,40/3,51 ≈ 0,40.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Identifiera det län som hade störst andel förvärvsarbetande inom jordbruk, skogsbruk, jakt och fiske av det totala antalet förvärvsarbetande i länet. Hur många förvärvsarbetande fanns det totalt i detta län 2015?",
+      "options": [
+        "11 000",
+        "27 000",
+        "43 000",
+        "62 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "Andelen av alla förvärvsarbetande i länet står i kolumnen Samtliga till höger i tabellen. Störst är den för Gotlands län, 6,44 procent; näst störst är Jämtlands län med 5,85 procent. På Gotland arbetade 1 744 personer inom jordbruk, skogsbruk, jakt och fiske. Om 1 744 är 6,44 procent av alla förvärvsarbetande är totalen 1 744/0,0644 ≈ 27 000. Svaret 62 000 får man om man räknar på Jämtlands län i stället: 3 626/0,0585 ≈ 62 000.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "För vilket av följande län gällde år 2015 att var femte person som arbetade inom jordbruk, skogsbruk, jakt och fiske var kvinna?",
+      "options": [
+        "Stockholms län",
+        "Södermanlands län",
+        "Kalmar län",
+        "Skåne län"
+      ],
+      "blindAnswer": 2,
+      "explain": "Var femte person är 20 procent. Dela antalet kvinnor med summan i den vänstra delen av tabellen: Stockholms län 1 630/4 353 ≈ 37 procent, Södermanlands län 665/2 682 ≈ 25 procent, Kalmar län 1 055/4 965 ≈ 21 procent och Skåne län 3 343/12 458 ≈ 27 procent. Bara i Kalmar län var ungefär var femte person kvinna. Procentkolumnerna till höger anger andelar av alla förvärvsarbetande i länet och kan inte användas här.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilken av följande gårdar stämmer med beskrivningen?",
+      "passage": "Byggningen eller stugan låg norr om gårdsplanen. Söder om gårdsplanen fanns stall och stallslider.",
+      "options": [
+        "Kockgård",
+        "Stamgården, nordöstra",
+        "Ryssgård",
+        "Östra Flintgård"
+      ],
+      "blindAnswer": 0,
+      "explain": "Enligt förteckningen under kartan har byggning nummer 1, stuga 2, stall 17 och stallslider 19. Gårdsplanen är det streckade området vid gårdens bokstav. Kockgård (E på kartan) har en stuga (2) norr om gårdsplanen och stall (17) och stallslider (19) söder om den, så den stämmer. Ryssgård (D på kartan) har stall och stallslider söder om gårdsplanen, men byggningen (1) och stugan (2) ligger öster om den. Den nordöstra Stamgården har två stugor norr om gårdsplanen, men söder om den ligger bland annat fähus (10) och fähuslider (12). Östra Flintgård har byggningen (1) norr om gårdsplanen, men stall och stallslider ligger väster om den.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.08,
+            0.72,
+            0.372
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Identifiera det torvhus, torkställning för torv som låg mellan den nordöstra Stamgården och Ryssgård, intill en stuga. Vad fanns 40 meter rakt söder om detta torvhus?",
+      "options": [
+        "Hemlighus och dyngskåle",
+        "Loft",
+        "Köksväxter",
+        "Vedlider och slipskåle"
+      ],
+      "blindAnswer": 1,
+      "explain": "Torvhus har nummer 20 i förteckningen under kartan. Mellan Ryssgård (D på kartan) och den nordöstra Stamgården (F) finns två torvhus: ett intill Ryssgårds bod (8) och ett direkt väster om en av Stamgårdens stugor (2). Det är det senare som ligger intill en stuga. Mät 40 meter med skalstocken, alltså fyra gånger sträckan 0–10 m, och gå så långt rakt nedåt (söderut) från det torvhuset. Vägen dit går förbi husen 17 och 16 + 11 och över åkern med ny vall (a), och efter 40 meter kommer man till husraden där loftet (4) står. Hemlighus och dyngskåle (16 + 11) ligger bara 10–20 meter söder om torvhuset, och vedlider och slipskåle (25 och 28) ligger 40 meter söder om det andra torvhuset, det vid Ryssgårds bod.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.08,
+            0.72,
+            0.372
+          ]
+        ]
+      },
+      "note": "40 m söderut från torvhuset vid stugan hamnar strax norr om loftet (4), alldeles intill stallet (17).",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Fähuset i Måsgård, fähuset i Ammagård samt det sydligast belägna fähuset i Jerkgård utgör hörnen i ett triangelformat område. Hur stort är detta område?",
+      "options": [
+        "4 500 m²",
+        "6 500 m²",
+        "10 500 m²",
+        "13 000 m²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Fähus har nummer 10 i förteckningen under kartan. Fähuset i Måsgård ligger vid Ba, fähuset i Ammagård i husraden under Ia och Jerkgårds sydligaste fähus längst ned i husraden väster om X. Mät avstånden med skalstocken. Räknat från fähuset i Måsgård ligger fähuset i Ammagård ungefär 155 meter österut och 35 meter norrut, och Jerkgårds sydligaste fähus ungefär 25 meter österut och 80 meter söderut. Triangeln ryms i en rektangel som är 155 meter bred och 35 + 80 = 115 meter hög, alltså 17 825 m². Dra bort de tre rätvinkliga trianglarna runt den: 155 · 35/2 ≈ 2 700 m², 130 · 115/2 ≈ 7 500 m² och 25 · 80/2 = 1 000 m². Kvar blir ungefär 17 800 − 11 200 = 6 600 m², närmast 6 500 m². Med Jerkgårds norra fähus blir arean bara cirka 4 500 m², och 13 000 m² är det dubbla svaret, som man får om man glömmer att halvera.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.08,
+            0.72,
+            0.372
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
