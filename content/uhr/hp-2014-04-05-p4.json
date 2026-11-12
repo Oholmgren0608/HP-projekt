@@ -1,0 +1,854 @@
+{
+  "examId": "hp-2014-04-05",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Rektangeln ABCD, där AB > BC, delas i fyra lika stora kvadrater. Hur stor är rektangelns omkrets om varje kvadrats omkrets är 12 längdenheter?",
+      "options": [
+        "24 längdenheter",
+        "30 längdenheter",
+        "36 längdenheter",
+        "48 längdenheter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Varje kvadrat har omkretsen 12 längdenheter, så kvadratens sida är 12/4 = 3 längdenheter. Rektangeln består av fyra sådana kvadrater i rad, så AB = 4 · 3 = 12 och BC = 3. Rektangelns omkrets är 2 · 12 + 2 · 3 = 30 längdenheter. Svaret 48 längdenheter lockar om man lägger ihop de fyra kvadraternas omkretsar, men då räknas även de inre sidorna med, och de ingår inte i rektangelns omkrets.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.18,
+          0.175,
+          0.53,
+          0.275
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad blir (x²)⁴/x⁵?",
+      "options": [
+        "x⁻¹²",
+        "x",
+        "x³",
+        "x¹¹"
+      ],
+      "blindAnswer": 2,
+      "explain": "När en potens upphöjs till en ny exponent multipliceras exponenterna: (x²)⁴ = x² · x² · x² · x² = x⁸. Vid division subtraheras exponenterna: x⁸/x⁵ = x⁸⁻⁵ = x³. Svaret x lockar om man adderar exponenterna 2 och 4 i stället för att multiplicera dem, eftersom x⁶/x⁵ = x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av 5 och x är 8. Medelvärdet av 3 och y är 4. Vad är medelvärdet av x och y?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "blindAnswer": 3,
+      "explain": "Medelvärdet av 5 och x är 8, så 5 + x = 2 · 8 = 16 och x = 11. Medelvärdet av 3 och y är 4, så 3 + y = 2 · 4 = 8 och y = 5. Medelvärdet av x och y är (11 + 5)/2 = 16/2 = 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är differensen av uttrycken 3a²b + 2a²b² och a²b² − ab²?",
+      "options": [
+        "2a²b + 3a²b²",
+        "2a²b − ab² + a²b²",
+        "3a²b − ab² + 3a²b²",
+        "3a²b + a²b² + ab²"
+      ],
+      "blindAnswer": 3,
+      "explain": "Differensen är det första uttrycket minus det andra: (3a²b + 2a²b²) − (a²b² − ab²). När parentesen efter minustecknet tas bort byter båda termerna i den tecken: 3a²b + 2a²b² − a²b² + ab² = 3a²b + a²b² + ab². Termen −ab² blir alltså +ab². Alternativet 3a²b − ab² + 3a²b² är summan av uttrycken, inte differensen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag är korrekt?",
+      "passage": "x, y och z är heltal sådana att\nx < 0\ny > 0\nz > 0",
+      "options": [
+        "xz > x²",
+        "x − y = 0",
+        "xz > yz",
+        "z > x/y"
+      ],
+      "blindAnswer": 3,
+      "explain": "x är negativt medan y och z är positiva. xz är negativt (negativt gånger positivt) och x² är positivt, så xz > x² stämmer aldrig. x − y = 0 skulle betyda att x = y, men ett negativt tal kan inte vara lika med ett positivt. Delar man båda leden i xz > yz med det positiva talet z får man x > y, vilket inte heller stämmer. x/y är negativt eftersom x är negativt och y positivt, och z är positivt, så z > x/y gäller alltid. Exempel: x = −2, y = 1 och z = 3 ger 3 > −2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "80 % av x är 140. Vad är x?",
+      "options": [
+        "112",
+        "168",
+        "175",
+        "220"
+      ],
+      "blindAnswer": 2,
+      "explain": "80 % av x är 0,8x, så 0,8x = 140 och x = 140/0,8 = 175. Kontroll: 0,8 · 175 = 140. Svaret 112 lockar om man räknar ut 80 % av 140, men 140 är 80 % av det sökta talet, så x måste vara större än 140.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är x då y/x − 1 = 1/x?",
+      "passage": "x ≠ 0",
+      "options": [
+        "y − 1",
+        "1 − y",
+        "(y − 1)/2",
+        "(1 − y)/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera båda leden med x, vilket går eftersom x ≠ 0: y − x = 1. Lös ut x: x = y − 1. Kontroll med y = 3: då är x = 2, och 3/2 − 1 = 1/2 = 1/x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "y = kx + m där konstanten k > 0 och konstanten m < 0. Hur förändras linjen om m multipliceras med −1?",
+      "options": [
+        "Linjen speglas i x-axeln.",
+        "Linjens lutning blir negativ.",
+        "Linjen speglas i y-axeln.",
+        "Linjen parallellförflyttas."
+      ],
+      "blindAnswer": 3,
+      "explain": "Om m multipliceras med −1 blir ekvationen y = kx − m. Lutningen k är densamma, så den nya linjen är parallell med den gamla. Det enda som ändras är var linjen skär y-axeln: i −m i stället för i m. Eftersom m < 0 flyttas skärningspunkten från under origo till lika långt ovanför, och linjen har alltså parallellförflyttats. En spegling i x-axeln skulle ge y = −kx − m och en spegling i y-axeln y = −kx + m; i båda fallen byter lutningen tecken, vilket inte händer här.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är 100(1/10 − 1/1000)?",
+      "options": [
+        "0,9",
+        "9",
+        "9,9",
+        "9,99"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplicera in 100 i parentesen: 100 · 1/10 = 10 och 100 · 1/1000 = 0,1. Skillnaden är 10 − 0,1 = 9,9. Kontroll: 1/10 − 1/1000 = 100/1000 − 1/1000 = 99/1000, och 100 · 99/1000 = 9,9.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket alternativ avbildar grafen till funktionen y = (x − 3)(x + 2)?",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 1,
+      "explain": "Funktionen y = (x − 3)(x + 2) är 0 när x = 3 och när x = −2, så grafen skär x-axeln i −2 och 3. Utvecklat blir y = x² − x − 6. Koefficienten framför x² är positiv, så parabeln är öppen uppåt, och den skär y-axeln i −6. Minimipunkten ligger mitt emellan nollställena, vid x = (−2 + 3)/2 = 0,5, alltså strax till höger om y-axeln. Graf A och graf C är öppna nedåt. Av graf B och graf D är det bara graf B som har det högra nollstället längre från y-axeln än det vänstra och minimipunkten till höger om y-axeln; graf D passar i stället till nollställena −3 och 2.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.18,
+          0.345,
+          0.4,
+          0.905
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket av alternativen är den bästa approximationen till uttrycket?",
+      "passage": "(40,1 · 397 · 88,1)/(39,8 · 8809 · 1,99)",
+      "options": [
+        "2",
+        "4",
+        "10",
+        "20"
+      ],
+      "blindAnswer": 0,
+      "explain": "Avrunda talen: 40,1 ≈ 40, 397 ≈ 400, 88,1 ≈ 88, 39,8 ≈ 40, 8809 ≈ 8800 och 1,99 ≈ 2. Uttrycket blir ungefär (40 · 400 · 88)/(40 · 8800 · 2). Förkorta bort 40: (400 · 88)/(8800 · 2). Eftersom 88/8800 = 1/100 och 400/2 = 200 blir det 200/100 = 2. Med de exakta talen blir kvoten ungefär 2,01.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Cirkelbågen DB är en halvcirkel med medelpunkten M och radien 1 cm. Den rätvinkliga triangeln ABC är inritad så att punkterna B och C ligger på cirkelbågen och AB = AM. Hur lång är sträckan AC?",
+      "options": [
+        "6/7 cm",
+        "√3/2 cm",
+        "1 cm",
+        "√5/2 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Radien är 1 cm, så MB = 1 cm. Eftersom AB = AM ligger A mitt på MB, och AM = 0,5 cm. Punkten C ligger på cirkelbågen, så även MC är en radie: MC = 1 cm. Triangeln AMC är rätvinklig vid A, så Pythagoras sats ger AC² = MC² − AM² = 1² − 0,5² = 0,75. Alltså är AC = √0,75 = √(3/4) = √3/2 cm, ungefär 0,87 cm. 6/7 cm ≈ 0,86 cm ligger nära men är inte samma tal.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.22,
+          0.595,
+          0.51,
+          0.72
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "4 < 2x − 2 < 8\nKvantitet I: x\nKvantitet II: 6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lös olikheten. Lägg till 2 i alla led: 6 < 2x < 10. Dela med 2: 3 < x < 5. x är alltså alltid mindre än 5 och därmed mindre än 6, så kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √11\nKvantitet II: 3 + √2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "√11 ligger mellan √9 = 3 och √16 = 4, så kvantitet I är mindre än 4 (ungefär 3,3). √2 ≈ 1,41, så kvantitet II är ungefär 4,41 och alltså större än 4. Kvantitet II är större. Man kan också kvadrera de positiva talen: (3 + √2)² = 9 + 6√2 + 2 = 11 + 6√2, vilket är större än (√11)² = 11.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En cirkel har arean 9π cm². En kvadrat har arean 3 cm².\nKvantitet I: Cirkelns radie\nKvantitet II: Kvadratens sida",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Cirkelns area är πr² = 9π cm², så r² = 9 och radien är 3 cm. Kvadratens area är s² = 3 cm², så sidan är √3 ≈ 1,7 cm. Kvantitet I är större. Lägg märke till att 3 cm² är kvadratens area, inte dess sida.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > y > 0\nKvantitet I: (y − x)/x\nKvantitet II: (x − y)/y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Eftersom x > y är y − x negativt och x − y positivt. Både x och y är positiva, så kvantitet I är ett negativt tal delat med ett positivt och alltså negativ, medan kvantitet II är positiv. Ett positivt tal är alltid större än ett negativt, så kvantitet II är större. Exempel: x = 2 och y = 1 ger I = −1/2 och II = 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "y = x²\nKvantitet I: y\nKvantitet II: −1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "y = x² är kvadraten på ett tal, och en kvadrat är aldrig negativ: y ≥ 0. Kvantitet I är därför minst 0, och 0 är större än −1. Kvantitet I är alltså alltid större, även när x = 0 och y = 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En vanlig tärning kastas två gånger. Varje kast är ett slumpmässigt försök som har sex möjliga utfall: 1, 2, 3, 4, 5 eller 6.\nKvantitet I: Sannolikheten för att summan av de båda kasten blir 10 eller mer\nKvantitet II: Sannolikheten för att summan av de båda kasten blir 4 eller mindre",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Två kast ger 6 · 6 = 36 lika sannolika utfall. Summan 10 eller mer får man med 4 + 6, 5 + 5 och 6 + 4 (summan 10), 5 + 6 och 6 + 5 (summan 11) samt 6 + 6 (summan 12), alltså 6 utfall. Summan 4 eller mindre får man med 1 + 1 (summan 2), 1 + 2 och 2 + 1 (summan 3) samt 1 + 3, 2 + 2 och 3 + 1 (summan 4), också 6 utfall. Båda sannolikheterna är 6/36 = 1/6, så kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I kvadraten ABCD ligger punkten E mitt på CD och punkten F mitt på BC. AF och BE skär varandra i punkten G.\nKvantitet I: Arean av triangeln ABG\nKvantitet II: Arean av fyrhörningen CEGF",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Triangeln ABF har basen AB och höjden BF, som är halva sidan, så dess area är en fjärdedel av kvadratens. Triangeln BCE har basen BC och höjden CE, också halva sidan, så den har lika stor area. Båda trianglarna innehåller den lilla triangeln BGF. Tar man bort den blir triangeln ABG kvar av ABF och fyrhörningen CEGF kvar av BCE. Lika stora areor minus samma area ger lika stora areor, så kvantiteterna är lika. Kontroll med sidan 2: G ligger 0,8 ovanför AB, så ABG har arean 2 · 0,8/2 = 0,8, och BGF har arean 1 · 0,4/2 = 0,2, så CEGF har arean 1 − 0,2 = 0,8.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.18,
+          0.121,
+          0.43,
+          0.29
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "y ≠ −3\ny ≠ 0\nKvantitet I: x/(y + 3)\nKvantitet II: x/3 + x/y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva med några värden. x = 0 ger 0 i båda kvantiteterna, alltså lika. x = 1 och y = 3 ger I = 1/6 och II = 1/3 + 1/3 = 2/3, så II är större. x = −1 och y = 3 ger I = −1/6 och II = −2/3, så I är större. Relationen beror på x och y, och informationen räcker inte. Det kan locka att tro att x/3 + x/y = x/(y + 3), men bråk med samma täljare adderas inte genom att nämnarna adderas.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "A kör 48 km på 1 timme och 20 minuter och B kör 60 km på 50 minuter. Båda kör med konstanta hastigheter.\nKvantitet I: Den sträcka A kör på x timmar\nKvantitet II: Den sträcka B kör på 0,5x timmar",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "1 timme och 20 minuter är 4/3 timme, så A:s hastighet är 48/(4/3) = 36 km/h. 50 minuter är 5/6 timme, så B:s hastighet är 60/(5/6) = 72 km/h. På x timmar kör A 36x km, och på 0,5x timmar kör B 72 · 0,5x = 36x km. B kör dubbelt så fort under halva tiden, så sträckorna är lika för alla x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "y − x = z − y = 1\nKvantitet I: x + y + z\nKvantitet II: 3y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Av y − x = 1 följer x = y − 1, och av z − y = 1 följer z = y + 1. Då är x + y + z = (y − 1) + y + (y + 1) = 3y. Kvantiteterna är alltså lika oavsett vilket värde y har.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en burk med 50 karameller är hälften röda och hälften gröna. Karamellerna är antingen söta eller sura. Hur många gröna karameller som är sura finns det i burken?\n(1) Av de gröna karamellerna är 10 söta och resten sura.\n(2) Totalt finns det 20 söta och 30 sura karameller i burken.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Burken har 25 röda och 25 gröna karameller.\n(1) Av de 25 gröna är 10 söta, så 25 − 10 = 15 gröna är sura. Tillräckligt.\n(2) Att det totalt finns 30 sura karameller säger inte hur de fördelar sig på röda och gröna. Är alla 25 röda sura finns det 5 sura gröna, och är alla 25 gröna sura finns det 25. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I triangeln ABC är AD en bisektris till vinkeln BAC. Hur stor är vinkeln x?\n(1) Vinkeln z är 88°\n(2) Vinkeln y är 26°",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinkeln x ligger vid D mellan DA och DB. Den är alltså yttervinkel till triangeln ADC och lika stor som summan av de två inre vinklarna vid A och C i den triangeln: x = y + z.\n(1) z = 88° ger x = y + 88°, men y är okänd. Inte tillräckligt.\n(2) y = 26° ger x = 26° + z, men z är okänd. Inte tillräckligt.\n(1) och (2) tillsammans: x = 26° + 88° = 114°. Det stämmer också med att vinkeln ADC är 180° − 26° − 88° = 66° och x = 180° − 66° = 114°. Tillräckligt.",
+      "figure": {
+        "pages": [
+          13
+        ],
+        "box": [
+          0.19,
+          0.565,
+          0.49,
+          0.692
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Två personer ska springa ikapp. Båda startar samtidigt och springer med konstanta hastigheter. Hur mycket längre tid tar det för den långsammare personen än för den snabbare personen att springa 400 meter?\n(1) Den långsammare personens konstanta hastighet är 14,4 km/h.\n(2) När den snabbare personen efter 80 sekunder har sprungit 400 meter är den långsammare personen 80 meter efter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) 14,4 km/h = 14 400 meter på 3 600 sekunder = 4 m/s, så den långsammare springer 400 meter på 400/4 = 100 sekunder. Den snabbares hastighet är okänd. Inte tillräckligt.\n(2) Den snabbare springer 400 meter på 80 sekunder. Den långsammare har då sprungit 400 − 80 = 320 meter på 80 sekunder, alltså 4 m/s, och behöver 400/4 = 100 sekunder för 400 meter. Skillnaden är 100 − 80 = 20 sekunder. Tillräckligt.\nPåstående (2) räcker alltså ensamt, men inte (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en urna finns ett antal enfärgade kulor: svarta, vita och röda. Om man slumpmässigt tar en kula ur urnan, hur stor är sannolikheten att den är vit?\n(1) Om man tar bort alla vita kulor ur urnan, är sannolikheten 1/4 att man får en röd kula.\n(2) Om man tar bort alla röda kulor ur urnan, är sannolikheten 6/10 att man får en svart kula.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet svarta, vita och röda kulor s, v och r.\n(1) Utan de vita kulorna är sannolikheten för röd r/(r + s) = 1/4, så s = 3r. Antalet vita är okänt. Inte tillräckligt.\n(2) Utan de röda kulorna är sannolikheten för svart s/(s + v) = 6/10, så v = 2s/3. Antalet röda är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: s = 3r och v = 2s/3 = 2r. Totalt finns r + 3r + 2r = 6r kulor, och sannolikheten för en vit kula är 2r/6r = 1/3. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I kön till en bankkassa står fyra personer: männen Anton och Martin samt kvinnorna Hanna och Sara. De har alla olika bankärenden. Är den första personen i kön en kvinna?\n(1) Martin ska ta ut pengar från sitt lönekonto. Den som ska öppna ett sparkonto står som nummer två i kön. Anton ska inte öppna ett sparkonto.\n(2) Den person som står först i kön ska lösa in en bankväxel och står framför en kvinna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Den som ska öppna ett sparkonto står som nummer två. Det är inte Martin, som ska ta ut pengar, och inte Anton, så nummer två är en kvinna. Vem som står först framgår inte. Inte tillräckligt.\n(2) Nummer ett ska lösa in en bankväxel och står framför en kvinna, men det säger inget om huruvida nummer ett själv är man eller kvinna. Inte tillräckligt.\n(1) och (2) tillsammans: Nummer två är en kvinna som ska öppna ett sparkonto, och nummer ett ska lösa in en bankväxel. Martin kan inte stå först, eftersom han ska ta ut pengar. Men både Anton och den andra kvinnan kan vara den som löser in bankväxeln, så den första personen kan vara en man eller en kvinna. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är x − y > x + y om x − y > 20?\n(1) x = 16\n(2) y = −40",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Dra bort x från båda leden: x − y > x + y gäller precis när −y > y, alltså när y < 0. Frågan är därför om y är negativt.\n(1) x = 16 och x − y > 20 ger 16 − y > 20, alltså y < −4. y är negativt. Tillräckligt.\n(2) y = −40 är negativt. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "I vilken av fjärdarna noterades i mitten av juli den största temperaturskillnaden mellan provtagningsdjupen 0,5 m och 8, 10 eller 15 m?",
+      "options": [
+        "Västeråsfjärden",
+        "Svinnegarnsviken",
+        "Ekoln",
+        "Skarven"
+      ],
+      "blindAnswer": 1,
+      "explain": "Mitten av juli är provtagningstillfälle 4. Jämför i varje diagram den runda punkten (0,5 m) med romben (8, 10 eller 15 m) vid tillfälle 4. Västeråsfjärden: båda ligger på ungefär 23 grader, så skillnaden är nästan 0. Svinnegarnsviken: cirka 22,5 och 10 grader, skillnad cirka 12,5 grader. Ekoln: cirka 21,5 och 11 grader, skillnad cirka 10,5 grader. Skarven: cirka 21,5 och 10,5 grader, skillnad cirka 11 grader. Störst skillnad var det alltså i Svinnegarnsviken.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.935,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilka två fjärdar hade högst vattentemperatur respektive lägst vattentemperatur på provtagningsdjupet 25, 30 eller 40 m i slutet av september?",
+      "options": [
+        "Blacken och Granfjärden respektive Ekoln och Görväln",
+        "Blacken och Granfjärden respektive Skarven och Görväln",
+        "Prästfjärden och S. Björkfjärden respektive Ekoln och Skarven",
+        "Prästfjärden och S. Björkfjärden respektive Ekoln och Görväln"
+      ],
+      "blindAnswer": 0,
+      "explain": "Provtagningsdjupet 25, 30 eller 40 m visas med streck och finns bara i sju av fjärdarna. Slutet av september är provtagningstillfälle 6. Där ligger strecket på ungefär 14,5 grader i Blacken och 14 grader i Granfjärden, 10,5 grader i Prästfjärden, 9 grader i S. Björkfjärden och i Skarven samt 7 grader i Ekoln och i Görväln. Högst temperatur hade alltså Blacken och Granfjärden och lägst Ekoln och Görväln.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.935,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "När var temperaturskillnaden som störst mellan det minsta och det näst minsta provtagningsdjupet i Prästfjärden?",
+      "options": [
+        "Senare delen av april",
+        "Senare delen av maj",
+        "Mitten av juli",
+        "Mitten av augusti"
+      ],
+      "blindAnswer": 3,
+      "explain": "I Prästfjärden är det minsta provtagningsdjupet 0,5 m (runda punkter) och det näst minsta 8, 10 eller 15 m (romber). Senare delen av april (tillfälle 2): båda ligger på cirka 2,5 grader, ingen skillnad. Senare delen av maj (tillfälle 3): cirka 10 och 7 grader, skillnad cirka 3 grader. Mitten av juli (tillfälle 4): cirka 19 och 18,5 grader, skillnad under 1 grad. Mitten av augusti (tillfälle 5): cirka 18 och 14,5 grader, skillnad cirka 3,5 grader. Störst var skillnaden alltså i mitten av augusti.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.935,
+          0.93
+        ]
+      },
+      "note": "Skillnaderna i slutet av maj (cirka 3 grader) och i mitten av augusti (cirka 3,5 grader) ligger nära varandra; avlästa med förstoring.",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Jämför 1965 års genomsnittliga markvärde 0,5 kilometer sydväst om centrum med 1965 års genomsnittliga markvärde 0,5 kilometer sydost om centrum. Hur stor var skillnaden?",
+      "options": [
+        "2 kr/m²",
+        "9 kr/m²",
+        "12 kr/m²",
+        "15 kr/m²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sydväst står i det övre diagrammet (vänstra halvan) och sydost i det nedre (högra halvan). Läs av den översta kurvan, den för 1965, vid 0,5 km. I sydväst ligger kurvan där i dalen mellan centrum och den höga toppen, på ungefär 5,5 kr/m². I sydost ligger den strax före det branta fallet efter toppen, på ungefär 14,5 kr/m². Skillnaden är ungefär 14,5 − 5,5 = 9 kr/m².",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "1965 års kurva i sydost faller brant strax efter 0,5 km; vid 0,5 km avläst till cirka 14,5 kr/m² med förstoring.",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilken typ av bebyggelse fanns i den av de fyra sektorerna där det högsta genomsnittliga markvärdet noterades 1965?",
+      "options": [
+        "Endast flerfamiljshus",
+        "Endast villor",
+        "Flerfamiljshus och villor",
+        "Industri och villor"
+      ],
+      "blindAnswer": 2,
+      "explain": "Det högsta värdet 1965 står i det övre diagrammet: toppen i sektorn sydväst, ungefär 0,8 km från centrum, når drygt 22 kr/m². Toppen i nordost når knappt 20 kr/m², och i det nedre diagrammet (nordväst och sydost) är 1965 års värden som högst cirka 15 kr/m². På kartan är den sydvästra sektorn området under linjen V–Ö och till vänster om linjen N–S. Där ligger det nedre området med flerfamiljshus, och villaområdet sträcker sig också ned under linjen V–Ö. Sektorn hade alltså både flerfamiljshus och villor.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilket var det genomsnittliga markvärdet 1965 i den sektor och på det avstånd från centrum där järnvägsstationen låg?",
+      "options": [
+        "3 kr/m²",
+        "8 kr/m²",
+        "13 kr/m²",
+        "17 kr/m²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Stationsbyggnaden (den lilla rektangeln vid den feta streckade järnvägslinjen) ligger strax under linjen V–Ö öster om centrum, alltså i sektorn sydost. Cirklarna ligger med 200 meters mellanrum (200 m, 400 m, 600 m, 800 m …), och stationen ligger på den tredje cirkeln, 600 meter från centrum. Sydost står på högra halvan av det nedre diagrammet. Där når 1965 års kurva sin topp på cirka 15 kr/m² strax före 0,5 km och faller sedan brant; vid 0,6 km ligger den på ungefär 8 kr/m².",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.93
+        ]
+      },
+      "note": "1965 års kurva i sydost faller brant mellan 0,5 och 0,7 km; vid 0,6 km (stationens avstånd) avläst till cirka 8 kr/m² med förstoring.",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilken kategori avses?",
+      "passage": "I kategorin utgavs 2005 totalt sett fler än 160 titlar. Året därpå hade det totala antalet utgivna titlar i kategorin ökat.",
+      "options": [
+        "Bilderböcker",
+        "Mellanåldersböcker",
+        "Ungdomsböcker",
+        "Tecknade serier"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av staplarna i diagrammet (svart = 2005, grå = 2006). Bilderböcker: cirka 435 titlar 2005 och 410 titlar 2006, en minskning. Mellanåldersböcker: cirka 290 titlar 2005 och 295 titlar 2006, en ökning. Ungdomsböcker: cirka 255 titlar 2005 och 240 titlar 2006, en minskning. Tecknade serier ökade från cirka 150 till 240 titlar, men 2005 var de färre än 160. Bara mellanåldersböckerna uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.32,
+            0.08,
+            0.69,
+            0.325
+          ]
+        ]
+      },
+      "note": "Mellanåldersböckernas staplar ligger nära varandra (cirka 290 år 2005 och 295 år 2006); avlästa med förstoring.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur många förstaupplagor av barn- och ungdomsböckerna utgivna i Sverige 2006 var översatta från japanska?",
+      "options": [
+        "70",
+        "105",
+        "130",
+        "165"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt tabellen var antalet översatta förstaupplagor 2006 sammanlagt 735 (raden Summa i kolumnen Förstaupplagor). Enligt cirkeldiagrammet var 17,5 procent av dem översatta från japanska. 0,175 · 735 ≈ 129, alltså ungefär 130. Med 2005 års siffror (11 procent av 625) får man i stället ungefär 70.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.32,
+            0.08,
+            0.69,
+            0.325
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur många av det totala antalet titlar som 2006 utgavs i kategorin ungdomsböcker hade svenska som originalspråk?",
+      "options": [
+        "90",
+        "110",
+        "130",
+        "150"
+      ],
+      "blindAnswer": 0,
+      "explain": "Enligt stapeldiagrammet utgavs 2006 ungefär 240 titlar i kategorin ungdomsböcker (grå stapel). Enligt tabellen var 108 av dem översatta förstaupplagor och 43 översatta återutgivningar, alltså 151 översatta titlar. Resten, ungefär 240 − 151 ≈ 90 titlar, hade svenska som originalspråk. Svaret 130 får man om man bara drar bort förstaupplagorna.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.32,
+            0.08,
+            0.69,
+            0.325
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilken åldersgrupp hade flest vårdtillfällen respektive flest vårdtillfällen per patient i den slutna vården 2004?",
+      "options": [
+        "45–64 år respektive 0–14 år",
+        "45–64 år respektive 75–84 år",
+        "75–84 år respektive 0–14 år",
+        "75–84 år respektive 45–64 år"
+      ],
+      "blindAnswer": 1,
+      "explain": "Antalet vårdtillfällen per åldersgrupp står på den sista raden i tabellen längst ned till höger (Antal vårdtillfällen): flest har 45–64 år med 334 893, före 75–84 år med 284 816. Vårdtillfällen per patient står på den sista raden i tabellen längst ned till vänster: högst är 1,88 för 75–84 år, före 1,83 för 65–74 år och 1,82 för 85 år och äldre. Svaret är alltså 45–64 år respektive 75–84 år.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.96
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur många var vårdtillfällena 2004 inom somatisk vård jämfört med inom psykiatrisk vård?",
+      "options": [
+        "8 gånger så många",
+        "12 gånger så många",
+        "16 gånger så många",
+        "18 gånger så många"
+      ],
+      "blindAnswer": 2,
+      "explain": "I tabellen överst till höger står vårdtillfällena 2004: 1 368 937 inom somatisk vård och 85 433 inom psykiatrisk vård. Kvoten är 1 368 937/85 433 ≈ 16. Samma svar får man med vårdtillfällen per 1 000 invånare: 151,9/9,5 ≈ 16.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.96
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av antalet vårdtillfällen i sluten vård 2004 avsåg patienter som var 65 år eller äldre?",
+      "options": [
+        "20 procent",
+        "30 procent",
+        "45 procent",
+        "55 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd raden Antal vårdtillfällen i tabellen längst ned till höger. Patienter som var 65 år eller äldre finns i grupperna 65–74 år, 75–84 år och 85 år och äldre: 223 298 + 284 816 + 140 407 = 648 521 vårdtillfällen. Totalt var det 1 426 595 vårdtillfällen. Andelen är 648 521/1 426 595 ≈ 0,45, alltså 45 procent.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.93,
+          0.96
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
