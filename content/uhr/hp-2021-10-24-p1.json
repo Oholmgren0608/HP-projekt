@@ -1,0 +1,796 @@
+{
+  "examId": "hp-2021-10-24",
+  "passNumber": 1,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x om 1/2 + 1/3 + x = 1?",
+      "options": [
+        "1/6",
+        "1/5",
+        "1/4",
+        "1/3"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv bråken med den gemensamma nämnaren 6: 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Ekvationen blir 5/6 + x = 1, alltså x = 1 − 5/6 = 1/6. Kontroll: 3/6 + 2/6 + 1/6 = 6/6 = 1. Bråken måste skrivas med samma nämnare innan de adderas.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "En blombukett består av endast vita och röda rosor. Antalet röda rosor är tre gånger så stort som antalet vita rosor. Vilket svarsalternativ kan motsvara antalet rosor i blombuketten?",
+      "options": [
+        "25",
+        "26",
+        "27",
+        "28"
+      ],
+      "blindAnswer": 3,
+      "explain": "Om det finns v vita rosor finns det 3v röda rosor, och sammanlagt v + 3v = 4v rosor. Antalet rosor måste alltså vara delbart med 4. Av alternativen är bara 28 delbart med 4: 28 = 4 · 7, med 7 vita och 21 röda rosor. 27 lockar eftersom det är delbart med 3, men då har man glömt att räkna med de vita rosorna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är 5 + 3 · 5 − 4 + 8 · 2?",
+      "options": [
+        "0",
+        "16",
+        "32",
+        "88"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplikation görs före addition och subtraktion: 3 · 5 = 15 och 8 · 2 = 16. Uttrycket blir 5 + 15 − 4 + 16 = 32. Räknar man i stället rakt från vänster till höger får man 5 + 3 = 8, 8 · 5 = 40, 40 − 4 = 36, 36 + 8 = 44 och 44 · 2 = 88, vilket är fel eftersom räknereglerna inte följs.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar ekvationen y = 4x − 5?",
+      "options": [
+        "x = y + 5/4",
+        "x = y/4 + 5",
+        "x = (5 − y)/4",
+        "x = (y + 5)/4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Lös ut x. Addera 5 till båda leden: y + 5 = 4x. Dela båda leden med 4: x = (y + 5)/4. Hela vänsterledet y + 5 ska delas med 4; x = y/4 + 5 lockar om man bara delar y med 4. Kontroll: x = 2 ger y = 4 · 2 − 5 = 3, och (3 + 5)/4 = 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Fyra linjer skär varandra i samma punkt. Vad är x?",
+      "options": [
+        "15°",
+        "20°",
+        "22,5°",
+        "25°"
+      ],
+      "blindAnswer": 2,
+      "explain": "De fyra linjerna bildar åtta vinklar runt skärningspunkten, och motstående vinklar (vertikalvinklar) är lika stora. Ingen av de fyra markerade vinklarna 2x, x, 2x och 3x ligger mittemot någon annan av dem, så de fyra vinklarna och deras vertikalvinklar fyller tillsammans ett helt varv: 2 · (2x + x + 2x + 3x) = 360°. Det ger 16x = 360° och x = 22,5°. Kontroll: vinklarna blir 45°, 22,5°, 45° och 67,5°, och de är tillsammans 180°, ett halvt varv.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.21,
+          0.136,
+          0.55,
+          0.368
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 3x(2 − 5y)?",
+      "options": [
+        "6x − 5y",
+        "(6x − 15)y",
+        "−5x(2 + 3y)",
+        "−(15y − 6)x"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera in 3x i parentesen: 3x(2 − 5y) = 6x − 15xy. Skriv om alternativen på samma sätt: −(15y − 6)x = (−15y + 6)x = 6x − 15xy, alltså samma uttryck. (6x − 15)y = 6xy − 15y och −5x(2 + 3y) = −10x − 15xy är något annat. 6x − 5y lockar om man bara multiplicerar 3x med den första termen i parentesen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är ett intervall där g(x) > f(x) för alla x i intervallet?",
+      "options": [
+        "x > a",
+        "b < x < e",
+        "c < x < e",
+        "a < x < d"
+      ],
+      "blindAnswer": 3,
+      "explain": "g(x) > f(x) betyder att grafen y = g(x), parabeln, ligger ovanför grafen y = f(x), den räta linjen. Graferna skär varandra där x = a och där x = d, och mellan skärningspunkterna ligger parabeln ovanför linjen. Därför gäller g(x) > f(x) för alla x i intervallet a < x < d. Intervallen b < x < e och c < x < e lockar eftersom b, c och e är nollställen, men för x > d ligger linjen ovanför parabeln.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.21,
+          0.138,
+          0.585,
+          0.366
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "I en påse finns det 28 enfärgade kulor: 10 röda, 7 vita och 11 svarta. Om man drar en kula slumpmässigt, hur stor är då sannolikheten att den inte är vit?",
+      "options": [
+        "1/3",
+        "1/4",
+        "2/3",
+        "3/4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kulorna som inte är vita är de röda och de svarta: 10 + 11 = 21 stycken. Sannolikheten är 21/28 = 3/4. Man kan också räkna med komplementet: sannolikheten att kulan är vit är 7/28 = 1/4, så sannolikheten att den inte är vit är 1 − 1/4 = 3/4. 1/4 lockar, men det är sannolikheten att kulan är vit.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 0,36/(3 · 0,024)?",
+      "options": [
+        "0,05",
+        "0,5",
+        "5",
+        "50"
+      ],
+      "blindAnswer": 2,
+      "explain": "Nämnaren är 3 · 0,024 = 0,072, så kvoten är 0,36/0,072. Förläng med 1 000 så att decimalerna försvinner: 360/72 = 5. Kontroll: 5 · 0,072 = 0,36. Det är lätt att hamna på 0,5 eller 50 om man flyttar decimalkommat ett steg för mycket eller för lite.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Rektangeln ABCD är sammansatt av 12 lika stora kvadrater, enligt figuren. Rektangelns area är 300 cm². Hur lång är sidan AB?",
+      "options": [
+        "√300 cm",
+        "20 cm",
+        "(4/3)√300 cm",
+        "25 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Varje kvadrat har arean 300/12 = 25 cm², så kvadratens sida är √25 = 5 cm. Sidan AB består av fyra kvadratsidor och är 4 · 5 = 20 cm. Kontroll: rektangeln är 20 cm lång och 3 · 5 = 15 cm hög, och 20 · 15 = 300 cm². √300 cm lockar, men det vore sidan i en kvadrat med arean 300 cm².",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.235,
+          0.546,
+          0.46,
+          0.665
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är ett möjligt värde på x?",
+      "passage": "5x² + 3x = 0",
+      "options": [
+        "−3/5",
+        "√(3/5)",
+        "−5/3",
+        "√(5/3)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bryt ut x: 5x² + 3x = x(5x + 3) = 0. En produkt är noll när någon av faktorerna är noll, så x = 0 eller 5x + 3 = 0, det vill säga x = −3/5. Kontroll: 5 · (−3/5)² + 3 · (−3/5) = 5 · 9/25 − 9/5 = 9/5 − 9/5 = 0. Alternativen med rottecken lockar om man behandlar ekvationen som 5x² = 3 i stället för 5x² = −3x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "En rektangel är inritad i ett koordinatsystem som figuren visar. Vilket svarsalternativ är en linje som delar rektangeln i två lika stora delar?",
+      "options": [
+        "y = −x + 6",
+        "y = −x + 4",
+        "y = x − 1",
+        "y = x − 2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Rektangeln har hörnen (0, 0), (6, 0), (6, 4) och (0, 4), och dess mittpunkt är (3, 2). Varje rät linje genom mittpunkten delar rektangeln i två lika stora delar, eftersom rektangeln är symmetrisk kring mittpunkten. Sätt in x = 3: y = −3 + 6 = 3, y = −3 + 4 = 1, y = 3 − 1 = 2 och y = 3 − 2 = 1. Bara y = x − 1 går genom (3, 2). Kontroll: linjen skär rektangeln i (1, 0) och (5, 4), och delen till vänster om linjen har arean (1 + 5) · 4/2 = 12, hälften av 6 · 4 = 24.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.225,
+          0.549,
+          0.53,
+          0.768
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Medelvärdet av de tre talen x, y och z är 12. Summan av y och z är 30.\nKvantitet I: x\nKvantitet II: 9",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Att medelvärdet av tre tal är 12 betyder att summan är 3 · 12 = 36, alltså x + y + z = 36. Eftersom y + z = 30 är x = 36 − 30 = 6. Kvantitet I är 6, som är mindre än 9, så kvantitet II är större. Kontroll: med x = 6 och y + z = 30 blir medelvärdet (6 + 30)/3 = 12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1 + 1/4\nKvantitet II: 10/8",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I är 1 + 1/4 = 4/4 + 1/4 = 5/4. Kvantitet II är 10/8, som förkortat med 2 blir 5/4. Båda kvantiteterna är alltså 5/4 = 1,25, och I är lika med II.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\ny < 0\nz > 0\nw < 0\nKvantitet I: x² + y²\nKvantitet II: z² + w²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvadraten av ett tal skilt från 0 är alltid positiv, så tecknen spelar ingen roll; det är talens storlek som avgör. Exempel 1: x = 3, y = −3, z = 1 och w = −1 ger I = 9 + 9 = 18 och II = 1 + 1 = 2, alltså är I större. Exempel 2: x = 1, y = −1, z = 3 och w = −3 ger I = 2 och II = 18, alltså är II större. Relationen kan bli olika, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Arean av en rektangel med sidorna 12 cm och 25 cm\nKvantitet II: Arean av en rätvinklig triangel med kateterna 8 cm och 64 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Rektangelns area är 12 · 25 = 300 cm². I en rätvinklig triangel är kateterna bas och höjd, så triangelns area är 8 · 64/2 = 512/2 = 256 cm². Eftersom 300 > 256 är kvantitet I större. Glömmer man att dela med 2 får triangeln arean 512 cm², och då ser II ut att vara större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "2(2x + 4) = 2x + 4\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplicera in 2 i parentesen: 4x + 8 = 2x + 4. Subtrahera 2x och 8 från båda leden: 2x = −4, alltså x = −2. Kontroll: 2(2 · (−2) + 4) = 2 · 0 = 0 och 2 · (−2) + 4 = 0. Kvantitet I är −2, som är mindre än 0, så kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = x² − 2x − 3\nKvantitet I: f(3)\nKvantitet II: f(−1)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "f(3) = 3² − 2 · 3 − 3 = 9 − 6 − 3 = 0. f(−1) = (−1)² − 2 · (−1) − 3 = 1 + 2 − 3 = 0. Båda kvantiteterna är 0, så de är lika. Det stämmer med att f(x) = (x − 3)(x + 1) har nollställena 3 och −1. Ett vanligt fel är att räkna (−1)² som −1, vilket ger f(−1) = −2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 70 procent av 105\nKvantitet II: 73",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "70 procent av 105 är 0,7 · 105 = 73,5. Man kan också räkna 10 procent av 105, som är 10,5, och multiplicera med 7: 7 · 10,5 = 73,5. Eftersom 73,5 > 73 är kvantitet I större, om än bara med 0,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "F(n) definieras som summan av alla positiva heltal mindre än n.\nG(n) definieras som summan av alla jämna positiva heltal mindre än n.\nKvantitet I: F(5)\nKvantitet II: G(11)/2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "F(5) är summan av de positiva heltalen mindre än 5: 1 + 2 + 3 + 4 = 10. G(11) är summan av de jämna positiva heltalen mindre än 11: 2 + 4 + 6 + 8 + 10 = 30, så G(11)/2 = 15. Kvantitet II är större. Räknar man med 5 i F(5) blir summan 15 och kvantiteterna ser lika ut, men 5 är inte mindre än 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Kvoten mellan en cirkels omkrets och dess diameter\nKvantitet II: Kvoten mellan en kvadrats omkrets och dess sidlängd",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En cirkel med diametern d har omkretsen πd, så kvoten är πd/d = π ≈ 3,14, oavsett hur stor cirkeln är. En kvadrat med sidan s har omkretsen 4s, så kvoten är 4s/s = 4, oavsett hur stor kvadraten är. Eftersom 4 > π är kvantitet II större. Att inga mått anges gör inget, eftersom båda kvoterna är konstanta.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 1\nKvantitet I: x^(7 + 2/3)\nKvantitet II: (x²³)^(1/3)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv exponenten i kvantitet I som ett bråk: 7 + 2/3 = 21/3 + 2/3 = 23/3, så kvantitet I är x^(23/3). Enligt potenslagen (aᵐ)ⁿ = aᵐⁿ är kvantitet II (x²³)^(1/3) = x^(23 · 1/3) = x^(23/3). Kvantiteterna är alltså lika för alla x > 1. Den som läser exponenten i kvantitet I som 7 · 2/3 = 14/3 får felaktigt att kvantitet II är större.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.21,
+          0.531,
+          0.37,
+          0.603
+        ]
+      },
+      "note": "Exponenterna med bråk skrivs med ^ i texten (x upphöjt till 7 + 2/3 och x²³ upphöjt till 1/3); figuren visar kvantiteterna som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett pennskrin finns det endast blyertspennor och tuschpennor. Hur många tuschpennor finns det i pennskrinet?\n(1) Hälften av antalet tuschpennor är lika med en tredjedel av antalet blyertspennor.\n(2) Det finns sammanlagt 15 pennor i pennskrinet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Med t tuschpennor och b blyertspennor ger t/2 = b/3 att 3t = 2b, så förhållandet mellan tuschpennor och blyertspennor är 2 : 3. Det kan vara 2 och 3 pennor eller 4 och 6 pennor och så vidare. Inte tillräckligt.\n(2) 15 pennor sammanlagt säger inget om hur de fördelar sig. Inte tillräckligt.\n(1) och (2) tillsammans: tuschpennorna är 2 av 5 lika delar, alltså 2/5 · 15 = 6 tuschpennor och 9 blyertspennor (6/2 = 3 = 9/3). Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x, y, z och w är positiva tal. Vilket av talen är störst?\n(1) x + y = w\n(2) (x + y)/2 = z",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Eftersom x och y är positiva är w = x + y större än både x och y. Men z kan vara större eller mindre än w. Inte tillräckligt.\n(2) z är medelvärdet av x och y, men w kan vara vilket positivt tal som helst. Inte tillräckligt.\n(1) och (2) tillsammans: w = x + y = 2z, och eftersom z är positivt är w > z. Enligt (1) är w också större än x och y. Talet w är alltså störst. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anna och Berit springer den kortaste vägen från sina respektive hem till mötesplatsen C. De startar samtidigt, och var och en springer med sin egen konstanta hastighet. Vem springer fortast?\n(1) Berit anländer till C före Anna.\n(2) C ligger närmare Annas hem än Berits.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Berit kommer fram först, men om hon har mycket kortare väg kan hon ändå springa långsammare än Anna. Inte tillräckligt.\n(2) Berit har längre väg än Anna, men vi vet inget om hur lång tid de behöver. Inte tillräckligt.\n(1) och (2) tillsammans: de startar samtidigt och Berit kommer fram först, så Berit springer en längre sträcka än Anna på kortare tid. Då måste Berit ha högre hastighet. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en låda finns det enfärgade kulor: vita, svarta och gula. Hur många svarta kulor finns det i lådan?\n(1) I lådan finns det 100 vita kulor, vilket är en tredjedel av det sammanlagda antalet svarta och gula kulor.\n(2) I lådan finns det 100 gula kulor, vilket är hälften så många som antalet svarta kulor.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) De svarta och gula kulorna är sammanlagt 3 · 100 = 300, men hur de fördelar sig är okänt. Inte tillräckligt.\n(2) De 100 gula kulorna är hälften så många som de svarta, så det finns 2 · 100 = 200 svarta kulor. Tillräckligt.\nAlltså räcker (2) men inte (1). Det kan locka att kombinera påståendena (300 − 100 = 200 svarta kulor), men (2) ger svaret direkt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "M är cirkelns medelpunkt. Vilken radie har cirkeln?\n(1) Längden av den markerade cirkelbågen AB är π cm.\n(2) Längden av sträckan AB är 2√2 cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Vinkeln AMB är rät enligt figuren, så bågen AB är en fjärdedel av cirkeln, och triangeln AMB är rätvinklig med kateterna r och r.\n(1) Bågen är en fjärdedel av omkretsen: 2πr/4 = πr/2. πr/2 = π ger r = 2 cm. Tillräckligt.\n(2) Pythagoras sats ger AB² = r² + r² = 2r², alltså AB = r√2. r√2 = 2√2 ger r = 2 cm. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": {
+        "pages": [
+          15
+        ],
+        "box": [
+          0.25,
+          0.135,
+          0.46,
+          0.285
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x och y är heltal. Är x mindre än 25?\n(1) y är mindre än 25.\n(2) x + y är mindre än 25.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) säger ingenting om x. Inte tillräckligt.\n(2) x = 10 och y = 0 ger x + y = 10 < 25 och x < 25, men x = 30 och y = −10 ger x + y = 20 < 25 och x > 25. Inte tillräckligt.\n(1) och (2) tillsammans: båda exemplen ovan uppfyller också (1), eftersom 0 och −10 är mindre än 25, men de ger olika svar. Heltal kan vara negativa, så ett stort x kan vägas upp av ett negativt y. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För vilket år gällde att antalet betalningsförelägganden var större än 40 000 och att andelen män bland gäldenärerna var större än 55 procent?",
+      "options": [
+        "2007",
+        "2009",
+        "2012",
+        "2014"
+      ],
+      "blindAnswer": 3,
+      "explain": "Antalet betalningsförelägganden står i tabellen under diagrammet Antal BF och andelen män i tabellen under diagrammet över gäldenärens kön. Fler än 40 000 förelägganden fanns 2009 (46 531), 2012 (53 709), 2013 (49 192) och 2014 (56 641). Andelen män var de åren 53, 53, 55 och 58 procent. Bara 2014 uppfyller båda villkoren; 2013 har exakt 55 procent, vilket inte är större än 55 procent. År 2007 var andelen män 56 procent, men då fanns bara 25 418 förelägganden.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor var den procentuella ökningen av antalet betalningsförelägganden 2014 jämfört med 2007?",
+      "options": [
+        "45 procent",
+        "125 procent",
+        "155 procent",
+        "215 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt tabellen under diagrammet Antal BF var antalet betalningsförelägganden 25 418 år 2007 och 56 641 år 2014. Ökningen är 56 641 − 25 418 = 31 223, och 31 223/25 418 ≈ 1,23, alltså en ökning med ungefär 123 procent. Närmast ligger 125 procent. 215 procent lockar om man utgår från kvoten 56 641/25 418 ≈ 2,2, men den säger att antalet 2014 var ungefär 220 procent av antalet 2007, inte hur mycket det ökade.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur många av betalningsföreläggandena 2013 avsåg kvinnor?",
+      "options": [
+        "19 676",
+        "22 136",
+        "24 596",
+        "27 056"
+      ],
+      "blindAnswer": 1,
+      "explain": "År 2013 var antalet betalningsförelägganden 49 192 enligt tabellen under diagrammet Antal BF, och kvinnornas andel var 45 procent enligt tabellen under diagrammet över gäldenärens kön. 0,45 · 49 192 = 22 136,4, alltså ungefär 22 136 förelägganden. 27 056 är 55 procent av 49 192, alltså männens antal.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Identifiera den behandlingstyp som den största respektive näst största mängden avfall gick till. Hur stor var skillnaden mellan dessa två behandlingstyper?",
+      "options": [
+        "1 130 000 ton",
+        "1 222 000 ton",
+        "1 352 000 ton",
+        "1 444 000 ton"
+      ],
+      "blindAnswer": 1,
+      "explain": "Mängden per behandlingstyp står i rutorna till höger: materialåtervinning 1 352 000 ton, biologisk behandling 782 000 ton, energiåtervinning 2 574 000 ton, deponering 59 000 ton och omhändertagande av hushållens farliga avfall 409 000 ton. Störst är energiåtervinning och näst störst materialåtervinning. Skillnaden är 2 574 000 − 1 352 000 = 1 222 000 ton. 1 352 000 ton lockar, men det är mängden till materialåtervinning, inte skillnaden.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilken av cirklarna visar hur hushållssektorns avfallstyp Övrigt från återvinningscentral fördelades på behandlingstyp?",
+      "options": [
+        "Cirkel A",
+        "Cirkel B",
+        "Cirkel C",
+        "Cirkel D"
+      ],
+      "blindAnswer": 3,
+      "explain": "Övrigt från återvinningscentral, 171 000 ton, är det svarta flödet. Det delas i 145 000 ton till materialåtervinning och 26 000 ton till omhändertagande av hushållens farliga avfall (145 000 + 26 000 = 171 000). Andelen till materialåtervinning är 145 000/171 000 ≈ 0,85, alltså cirka 85 procent, och resten, cirka 15 procent, går till farligt avfall. I Cirkel D är den mörka sektorn (materialåtervinning) ungefär 85 procent och den ljusa ungefär 15 procent. Cirkel A har nästan den omvända fördelningen, med en liten mörk och en stor ljus sektor.",
+      "figure": {
+        "pages": [
+          18,
+          19
+        ],
+        "boxes": [
+          null,
+          [
+            0.2,
+            0.34,
+            0.86,
+            0.41
+          ]
+        ]
+      },
+      "note": "Bildalternativ: cirklarna A–D (från uppgiftssidan) står under flödesschemat i figuren, och alternativen skrivs Cirkel A–D.",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur stor del av den totala mängden avfall gick till behandlingstypen Energiåtervinning?",
+      "options": [
+        "1/2",
+        "3/5",
+        "3/4",
+        "4/5"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den totala mängden avfall är det som kommer från hushållssektorn och verksamheterna: 4 173 000 + 1 003 000 = 5 176 000 ton. Samma summa får man om man adderar de fem behandlingstyperna: 1 352 000 + 782 000 + 2 574 000 + 59 000 + 409 000 = 5 176 000 ton. Till energiåtervinning gick 2 574 000 ton, och 2 574 000/5 176 000 ≈ 0,50, alltså ungefär 1/2. Räknar man bara med hushållssektorns 4 173 000 ton får man 2 574 000/4 173 000 ≈ 0,62, vilket kan locka till 3/5.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de omhändertagna eleverna 1967 var 15–16 år?",
+      "options": [
+        "1/6",
+        "1/5",
+        "1/4",
+        "1/3"
+      ],
+      "blindAnswer": 2,
+      "explain": "Under Fördelning efter ålder står för 1967 att 308 pojkar och 103 flickor var 15–16 år, sammanlagt 411 elever. På raden Elever står att det 1967 fanns 1 257 pojkar och 449 flickor, sammanlagt 1 706 elever. Andelen är 411/1 706 ≈ 0,24, alltså ungefär 1/4. Kontroll: 1/4 av 1 706 är cirka 427, nära 411, medan 1/5 av 1 706 är cirka 341.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Studera orsaker till omhändertaganden av flickor. För vilken orsak hade andelen förändrats mest från 1965 till 1968, i procentenheter räknat?",
+      "options": [
+        "Biltillgrepp",
+        "Andra egendomsbrott",
+        "Sexuell vanart",
+        "Alkoholmissbruk"
+      ],
+      "blindAnswer": 2,
+      "explain": "Jämför kolumnerna Flickor för 1965 och 1968 under Orsak till omhändertagande. Biltillgrepp: från 4,1 till 2,9 procent, en förändring med 1,2 procentenheter. Andra egendomsbrott: från 44,7 till 35,7, alltså 9,0 procentenheter. Sexuell vanart: från 51,0 till 34,1, alltså 16,9 procentenheter. Alkoholmissbruk: från 39,9 till 50,0, alltså 10,1 procentenheter. Störst förändring har sexuell vanart. Alkoholmissbruk lockar eftersom det är den enda av orsakerna som ökade, men minskningen för sexuell vanart är större.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur länge hade en flicka som skrevs ut från yrkesskola 1966 varit omhändertagen i genomsnitt?",
+      "options": [
+        "1 år och 10 månader",
+        "2 år och 5 månader",
+        "2 år och 7 månader",
+        "2 år och 9 månader"
+      ],
+      "blindAnswer": 3,
+      "explain": "Under Vårdtidens längd i medeltal dagar för utskrivna elever står för yrkesskolor 1966, flickor, 1 001 dagar. Två år är 2 · 365 = 730 dagar, så det återstår 1 001 − 730 = 271 dagar. En månad är ungefär 30 dagar, och 271/30 ≈ 9 månader. Vårdtiden var alltså ungefär 2 år och 9 månader. 1 år och 10 månader motsvarar ungefär 667 dagar, vilket är pojkarnas vårdtid samma år.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Andelen pojkar som omhändertogs på grund av misshandel minskade med 8,8 procentenheter från 1966 till 1968. Hur många pojkar motsvarade denna minskning?",
+      "options": [
+        "30",
+        "100",
+        "180",
+        "250"
+      ],
+      "blindAnswer": 1,
+      "explain": "Misshandel står för pojkarna på 30,8 procent 1966 och 22,0 procent 1968, och antalet pojkar var 1 219 respektive 1 245 (raden Elever). 1966 gällde det 0,308 · 1 219 ≈ 375 pojkar och 1968 0,220 · 1 245 ≈ 274 pojkar. Minskningen är 375 − 274 ≈ 101, alltså ungefär 100 pojkar. Eftersom antalet pojkar var nästan lika stort båda åren ger 8,8 procent av cirka 1 230 pojkar ungefär samma svar: cirka 108, närmast 100.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala beståndet av medier fanns i storstadslänen Stockholm, Skåne och Västra Götaland?",
+      "options": [
+        "50 procent",
+        "55 procent",
+        "60 procent",
+        "65 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Antalet medier per län står ovanför staplarna. Stockholm har 37 808 527, Skåne 13 049 644 och Västra Götaland 10 926 821 medier, sammanlagt 61 784 992. Totalt finns 100 406 069 medier. Andelen är 61 784 992/100 406 069 ≈ 0,615, alltså drygt 60 procent, och 60 procent är det alternativ som ligger närmast. Staplarnas höjder visar bara fördelningen på bibliotekstyp inom varje län och behövs inte här.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Jämför antalet medier på folkbibliotek i Jämtland och i Västerbotten. Hur stor var skillnaden?",
+      "options": [
+        "545 000",
+        "763 000",
+        "925 000",
+        "1 202 000"
+      ],
+      "blindAnswer": 0,
+      "explain": "Folkbibliotek är den svarta delen av staplarna. I Jämtland når den svarta delen cirka 96 procent, och länet har 854 024 medier: 0,96 · 854 024 ≈ 820 000 medier på folkbibliotek. I Västerbotten når den svarta delen cirka 41 procent av 3 329 349 medier: 0,41 · 3 329 349 ≈ 1 365 000. Skillnaden är 1 365 000 − 820 000 ≈ 545 000 medier. Jämtland har den största andelen folkbibliotek, men Västerbotten har så många fler medier totalt att antalet där ändå är större.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
