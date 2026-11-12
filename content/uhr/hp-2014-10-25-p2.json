@@ -1,0 +1,766 @@
+{
+  "examId": "hp-2014-10-25",
+  "passNumber": 2,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x om 1/3 + 1/4 + x = 1?",
+      "options": [
+        "3/7",
+        "5/12",
+        "4/7",
+        "7/12"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lägg ihop de kända bråken med minsta gemensamma nämnaren 12: 1/3 + 1/4 = 4/12 + 3/12 = 7/12. Då är x = 1 − 7/12 = 12/12 − 7/12 = 5/12. Kontroll: 4/12 + 3/12 + 5/12 = 12/12 = 1. Alternativet 7/12 är summan av de två bråken, inte x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Heltalet x är jämnt delbart med både 6 och 9. Vilket av nedanstående tal måste x vara jämnt delbart med?",
+      "options": [
+        "15",
+        "18",
+        "27",
+        "72"
+      ],
+      "blindAnswer": 1,
+      "explain": "Primtalsfaktorisera: 6 = 2 · 3 och 9 = 3 · 3. Ett tal som är delbart med både 6 och 9 måste innehålla faktorerna 2, 3 och 3, alltså vara delbart med 2 · 3 · 3 = 18, som är den minsta gemensamma multipeln. Det minsta möjliga x är 18 självt, och 18 är inte delbart med 15, 27 eller 72. Därför är 18 det enda av talen som x alltid måste vara delbart med.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är ett möjligt värde på x?",
+      "passage": "4/(x + 1) − (x + 1)/4 = 4/17 − 17/4",
+      "options": [
+        "1",
+        "4",
+        "16",
+        "17"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vänsterledet har formen 4/t − t/4 med t = x + 1, och högerledet har precis samma form med t = 17. Ekvationen är alltså uppfylld om x + 1 = 17, det vill säga x = 16. Kontroll: 4/(16 + 1) − (16 + 1)/4 = 4/17 − 17/4. Alternativet 17 lockar eftersom talet står i högerledet, men då blir x + 1 = 18 och vänsterledet 4/18 − 18/4, som är ett annat tal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Linjerna L₁ och L₂ är parallella och linjen L skär L₁ och L₂. Vad är x?",
+      "options": [
+        "20",
+        "25",
+        "30",
+        "35"
+      ],
+      "blindAnswer": 2,
+      "explain": "Båda de markerade vinklarna ligger mellan de parallella linjerna, på var sin sida om linjen L: vinkeln vid L₁ till höger om L och vinkeln vid L₂ till vänster om L. De är alltså alternatvinklar och lika stora. Det ger 3x − 45 = 5x − 105, alltså 2x = 60 och x = 30. Kontroll: 3 · 30 − 45 = 45 och 5 · 30 − 105 = 45, så båda vinklarna är 45°.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.185,
+          0.554,
+          0.51,
+          0.698
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Det tar 7 dagar för fyra identiska maskiner att tillsammans utföra en viss uppgift. Hur många fler sådana maskiner behövs för att samma uppgift ska utföras på 4 dagar?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Uppgiften kräver 4 · 7 = 28 maskindagar, det vill säga 28 dagars arbete för en enda maskin. Ska den vara klar på 4 dagar behövs 28/4 = 7 maskiner. Det är 7 − 4 = 3 fler maskiner än de fyra som redan finns. Observera att frågan gäller hur många fler maskiner som behövs, inte hur många det blir totalt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Ett antal mätpunkter är markerade i koordinatsystemet nedan. Vilken rät linje är den bästa anpassningen till mätpunkterna?",
+      "options": [
+        "y = −x − 4",
+        "y = x − 4",
+        "y = x + 4",
+        "y = −x + 4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Punkterna ligger längs en linje som lutar nedåt åt höger, så lutningen är negativ. Det utesluter y = x − 4 och y = x + 4, som båda lutar uppåt. Vid x = 0 ligger punkterna klart ovanför x-axeln, och punktsvärmen korsar x-axeln vid ett positivt x-värde. Linjen y = −x + 4 skär y-axeln i 4 och x-axeln i x = 4 och passar därför. Linjen y = −x − 4 skär y-axeln i −4 och ligger under x-axeln för alla positiva x, så den passar inte.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.155,
+          0.585,
+          0.53,
+          0.843
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är (2,1 · 10³) · (3,9 · 10³)?",
+      "options": [
+        "7,19 · 10⁶",
+        "8,19 · 10⁶",
+        "7,19 · 10⁹",
+        "8,19 · 10⁹"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplicera talen för sig och tiopotenserna för sig. 2,1 · 3,9 = 7,8 + 0,39 = 8,19. 10³ · 10³ = 10³⁺³ = 10⁶, eftersom exponenterna adderas när man multiplicerar potenser med samma bas. Produkten är 8,19 · 10⁶. Alternativen med 10⁹ lockar om man multiplicerar exponenterna (3 · 3 = 9) i stället för att addera dem.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Sidan i kvadraten K₁ är x + y och sidan i kvadraten K₂ är x. Vad är differensen mellan areorna av K₁ och K₂?",
+      "options": [
+        "x² − y²",
+        "(y − x)²",
+        "y²",
+        "2xy + y²"
+      ],
+      "blindAnswer": 3,
+      "explain": "Arean av K₁ är (x + y)² = x² + 2xy + y² enligt kvadreringsregeln, och arean av K₂ är x². Differensen är x² + 2xy + y² − x² = 2xy + y². Alternativet y² lockar om man tror att (x + y)² = x² + y², men då glömmer man dubbla produkten 2xy.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är medelvärdet av x, y och z?",
+      "passage": "x + y = 7,5\ny + z = 12,5\nx + z = 10",
+      "options": [
+        "2,5",
+        "5",
+        "7,5",
+        "10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Addera de tre ekvationerna: (x + y) + (y + z) + (x + z) = 7,5 + 12,5 + 10 = 30. Vänsterledet innehåller varje tal två gånger och är 2(x + y + z), så x + y + z = 15. Medelvärdet är 15/3 = 5. Man behöver inte lösa ut talen var för sig, men de är x = 2,5, y = 5 och z = 7,5, och deras medelvärde är mycket riktigt 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag är en fullständig primtalsfaktorisering av 156?",
+      "options": [
+        "12 · 13",
+        "3 · 52",
+        "2 · 2 · 3 · 13",
+        "2 · 2 · 39"
+      ],
+      "blindAnswer": 2,
+      "explain": "I en fullständig primtalsfaktorisering är alla faktorer primtal. Dela upp steg för steg: 156 = 2 · 78 = 2 · 2 · 39 = 2 · 2 · 3 · 13, och 2, 3 och 13 är primtal. Alla alternativ har produkten 156, men de andra innehåller faktorer som inte är primtal: 12 = 2 · 2 · 3, 52 = 2 · 2 · 13 och 39 = 3 · 13.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är 1/3 av x, om 5/11 av x är 45/77?",
+      "options": [
+        "3/7",
+        "15/77",
+        "5/33",
+        "1/3"
+      ],
+      "blindAnswer": 0,
+      "explain": "Om 5/11 av x är 45/77 är 1/11 av x en femtedel av det, alltså 9/77. Hela x är då 11 · 9/77 = 99/77 = 9/7. En tredjedel av x är (9/7)/3 = 3/7. Kontroll: 5/11 · 9/7 = 45/77.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vad är √32 − √18?",
+      "options": [
+        "√2",
+        "√14",
+        "2√2",
+        "2√7"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bryt ut kvadrater ur rötterna: √32 = √(16 · 2) = 4√2 och √18 = √(9 · 2) = 3√2. Skillnaden är 4√2 − 3√2 = √2. Alternativet √14 lockar om man drar talen under rottecknen från varandra, men √32 − √18 är inte lika med √(32 − 18).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Sannolikheten att ta upp en grön boll från en korg som endast innehåller 5 gröna och 4 blå bollar\nKvantitet II: Sannolikheten att ta upp en blå boll från en korg som endast innehåller 6 gröna och 5 blå bollar",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Korgen i kvantitet I har 5 + 4 = 9 bollar, varav 5 gröna, så sannolikheten är 5/9. Korgen i kvantitet II har 6 + 5 = 11 bollar, varav 5 blå, så sannolikheten är 5/11. Bråken har samma täljare, och då är bråket med den minsta nämnaren störst: 5/9 ≈ 0,56 och 5/11 ≈ 0,45. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 1\nKvantitet I: (xᵃ)ᵇ\nKvantitet II: (xᵇ)ᵃ",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "När en potens upphöjs till en ny exponent multipliceras exponenterna: (xᵃ)ᵇ = xᵃᵇ och (xᵇ)ᵃ = xᵇᵃ. Eftersom ab = ba är kvantiteterna lika, vilka värden a och b än har. Exempel: x = 2, a = 1 och b = 3 ger (2¹)³ = 2³ = 8 och (2³)¹ = 8. Att a och b är okända gör alltså inte informationen otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Staden A har 94 000 invånare och minskar med 1 000 invånare per år.\nStaden B har 79 000 invånare och ökar med 1 500 invånare per år.\nKvantitet I: Antalet år det tar tills staden A har lika många invånare som staden B\nKvantitet II: 5 år",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Från början är skillnaden 94 000 − 79 000 = 15 000 invånare. Varje år minskar A med 1 000 och B ökar med 1 500, så skillnaden krymper med 1 000 + 1 500 = 2 500 invånare per år. Det tar 15 000/2 500 = 6 år innan städerna är lika stora. Kontroll: efter 6 år har A 94 000 − 6 000 = 88 000 och B 79 000 + 9 000 = 88 000 invånare. 6 år är mer än 5 år, så kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABCD är en parallellogram.\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Vinkeln 150° ligger utanför parallellogrammen, mellan förlängningen av sidan AB och sidan AD. Vinkeln A i parallellogrammen är därför 180° − 150° = 30°. Motstående vinklar i en parallellogram är lika stora, så x = vinkeln C = 30°. Intilliggande vinklar är tillsammans 180°, så vinkeln B = 180° − 30° = 150°. Det ger 6y = 150° och y = 25°. Kvantitet I (30°) är större än kvantitet II (25°). Observera att kvantitet II är y och inte vinkeln 6y.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.19,
+          0.561,
+          0.56,
+          0.692
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 36^(3/2)\nKvantitet II: 648",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Exponenten 3/2 betyder kvadratroten upphöjd till 3: 36^(3/2) = (√36)³ = 6³ = 216. Man kan också räkna 36^(3/2) = 36 · 36^(1/2) = 36 · 6 = 216. Kvantitet II är 648 = 3 · 216, så kvantitet II är större.",
+      "figure": null,
+      "note": "Exponenten är ett bråk och skrivs med ^ i texten; på provet står 36 upphöjt till 3/2.",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "L₁ och L₂ är linjer där\nL₁: y = k₁x + m₁\nL₂: y = k₂x + m₂\nk₁ > k₂\nKvantitet I: m₁\nKvantitet II: m₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "k är linjens lutning och m är y-värdet där linjen skär y-axeln. Att L₁ lutar mer än L₂ säger ingenting om var linjerna skär y-axeln. Exempel: L₁: y = 2x + 1 och L₂: y = x + 3 uppfyller k₁ > k₂ och ger m₁ = 1, mindre än m₂ = 3. L₁: y = 2x + 3 och L₂: y = x + 1 uppfyller också villkoret men ger m₁ = 3, större än m₂ = 1. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\ny = x² − 15\nKvantitet I: Värdet av x då y = 0\nKvantitet II: 3,5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "y = 0 ger x² − 15 = 0, alltså x² = 15. Eftersom x > 0 är x = √15. Jämför kvadraterna: 3,5² = 12,25, som är mindre än 15. Alltså är √15 större än 3,5 (√15 ≈ 3,87), och kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x, y och z är vinklar i en triangel.\nx = y + z\nKvantitet I: z\nKvantitet II: 90°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkelsumman i en triangel är 180°, så x + y + z = 180°. Eftersom y + z = x blir det x + x = 180°, alltså x = 90° och y + z = 90°. Vinkeln y är större än 0°, så z måste vara mindre än 90°. Kvantitet II är större. Det är x som är 90°, inte z.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "−4 ≤ x ≤ −3\n−5 ≤ y ≤ −2\nKvantitet I: Minsta möjliga värdet av xy\nKvantitet II: 6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Både x och y är negativa, så produkten xy är positiv. Den blir minst när båda talen ligger så nära 0 som möjligt, alltså när x = −3 och y = −2. Då är xy = (−3) · (−2) = 6. Den största produkten är (−4) · (−5) = 20. Minsta möjliga värdet av xy är alltså 6, lika med kvantitet II. Den som väljer de minsta talen −4 och −5 får i stället den största produkten.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 0,05 + 0,05\nKvantitet II: (35/3,5)⁻¹",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I är 0,05 + 0,05 = 0,1. I kvantitet II är 35/3,5 = 10, och exponenten −1 ger det inverterade värdet: 10⁻¹ = 1/10 = 0,1. Kvantiteterna är lika. Den som läser exponenten −1 som ett minustecken får −10 och tror att I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Emma samlar på stenar. På en utflykt hittar hon 9 stenar som hon tar med sig hem till sin samling. Hur många stenar fanns det i Emmas stensamling före utflykten?\n(1) De nya stenarna kommer att utöka Emmas stensamling med 1/9.\n(2) De nya stenarna kommer att utgöra 1/10 av Emmas stensamling.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Att samlingen utökas med 1/9 betyder att de 9 nya stenarna är 1/9 av den gamla samlingen. Den gamla samlingen hade då 9 · 9 = 81 stenar. Tillräckligt.\n(2) De 9 nya stenarna utgör 1/10 av samlingen efter utflykten, som alltså har 9 · 10 = 90 stenar. Före utflykten fanns det 90 − 9 = 81 stenar. Tillräckligt.\nVarje påstående räcker för sig, och båda ger 81 stenar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en gymnasieklass är det 15 elever som har både miniräknare och linjal. Hur många elever är det i klassen?\n(1) 17 elever har miniräknare och 21 elever har linjal.\n(2) 5 elever har varken miniräknare eller linjal.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Antalet elever som har miniräknare, linjal eller båda är 17 + 21 − 15 = 23, eftersom de 15 som har båda annars räknas två gånger. Men det kan finnas elever som har varken eller. Inte tillräckligt.\n(2) Vi vet att 5 elever har varken miniräknare eller linjal, men inte hur många som har minst en av dem. Inte tillräckligt.\n(1) och (2) tillsammans: 23 elever har minst en av sakerna och 5 har ingen, så klassen har 23 + 5 = 28 elever. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En tom hink placerades under en läckande vattenkran. Hinken fylldes i en jämn takt. Vid vilken tidpunkt blev hinken full?\n(1) Hinken var fylld till halva volymen kl 09.00 och den var fylld till 3/4 av volymen kl 10.30.\n(2) Hinken placerades under kranen kl 06.00.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Mellan kl 09.00 och kl 10.30 fylldes 3/4 − 1/2 = 1/4 av hinken, så en fjärdedel tar 1,5 timme. Takten är jämn, så den sista fjärdedelen tar också 1,5 timme, och hinken blev full kl 10.30 + 1,5 timme = kl 12.00. Tillräckligt.\n(2) Vi vet när hinken placerades under kranen, men inte hur snabbt den fylldes. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur många ljushåriga flickor finns det i en grupp bestående av 100 barn?\n(1) 40 % av barnen är ljushåriga.\n(2) I gruppen finns det 60 pojkar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) 40 % av 100 barn är 40 ljushåriga barn, men vi vet inte hur många av dem som är flickor. Inte tillräckligt.\n(2) 60 pojkar betyder 40 flickor, men vi vet inget om deras hårfärg. Inte tillräckligt.\n(1) och (2) tillsammans: Det finns 40 ljushåriga barn och 40 flickor, men det framgår inte hur grupperna överlappar. Alla 40 ljushåriga kan vara flickor, alla kan vara pojkar, eller något däremellan. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En låda innehåller endast enfärgade svarta och vita bollar. Om man slumpmässigt tar en boll från lådan, vad är då sannolikheten att bollen är vit?\n(1) Om två bollar tas så är sannolikheten 0 att båda är svarta.\n(2) Det finns dubbelt så många vita som svarta bollar i lådan.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Att sannolikheten är 0 att båda bollarna är svarta betyder att det finns högst en svart boll i lådan. Antalet vita bollar är däremot okänt: med 1 svart och 1 vit boll är sannolikheten för vit 1/2, med 1 svart och 3 vita är den 3/4. Inte tillräckligt.\n(2) Om det finns s svarta bollar finns det 2s vita, totalt 3s bollar. Sannolikheten att få en vit boll är 2s/3s = 2/3, oavsett hur många bollar det är. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Bengt är 14 år yngre än Alice. Hur gammal är Bengt?\n(1) Om 10 år är Alice dubbelt så gammal som Bengt.\n(2) Om 10 år är Alice 14 år äldre än Bengt.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kalla Bengts ålder x. Då är Alice x + 14 år.\n(1) Om 10 år är Alice x + 24 och Bengt x + 10 år. x + 24 = 2(x + 10) ger x + 24 = 2x + 20, alltså x = 4. Bengt är 4 år. Kontroll: om 10 år är Bengt 14 och Alice 28. Tillräckligt.\n(2) Åldersskillnaden är alltid 14 år, så påståendet säger inget nytt utöver det som redan står i frågan. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "När skedde den största procentuella förändringen av totalskörden i hela riket?",
+      "options": [
+        "Från 2003 till 2004",
+        "Från 2004 till 2005",
+        "Från 2005 till 2006",
+        "Från 2006 till 2007"
+      ],
+      "blindAnswer": 2,
+      "explain": "Totalskörden för hela riket står i kolumnen Total skörd längst ned i tabellen: 48 600 ton (2003), 54 800 (2004), 45 200 (2005), 31 500 (2006) och 37 400 (2007). Förändringarna är +6 200/48 600 ≈ +13 % från 2003 till 2004, −9 600/54 800 ≈ −18 % från 2004 till 2005, −13 700/45 200 ≈ −30 % från 2005 till 2006 och +5 900/31 500 ≈ +19 % från 2006 till 2007. Störst procentuell förändring var alltså minskningen från 2005 till 2006.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av länen hade en odlingsareal som omfattade 1 000 hektar eller mer?",
+      "options": [
+        "15 procent",
+        "25 procent",
+        "30 procent",
+        "40 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tabellen listar 21 län. I kolumnen Odlingsareal har fem av dem 1 000 hektar eller mer: Uppsala (1 000), Skåne (1 360), Västra Götalands (1 630), Dalarnas (1 150) och Gävleborgs (1 520). Andelen är 5/21 ≈ 0,24, alltså ungefär 25 procent. Uppsala har exakt 1 000 hektar och ska räknas med, eftersom frågan gäller 1 000 hektar eller mer. Produktionsområdena är inte län och räknas inte.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor var den genomsnittliga odlingsarealen per undersökt företag i Sverige 2008?",
+      "options": [
+        "25 hektar/företag",
+        "70 hektar/företag",
+        "260 hektar/företag",
+        "740 hektar/företag"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd raden 2008 under Hela riket: odlingsarealen var 15 510 hektar och antalet undersökta företag 593. Genomsnittet är 15 510/593 ≈ 26 hektar per företag, vilket ligger närmast 25 hektar/företag. Alternativet 70 får man om man i stället delar totalskörden 41 300 ton med antalet företag.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "I vilket av de avbildade områdena finns sandsten från både silur och prekambrium?",
+      "options": [
+        "Mora/Rättvik",
+        "Örebro",
+        "Skövde/Falköping",
+        "Motala"
+      ],
+      "blindAnswer": 0,
+      "explain": "Enligt teckenförklaringen är sandsten från silur ett ljust prickat fält med en liten ring, och prekambrisk sandsten (Visingsö- och Dalasandsten) ett mörkgrått fält med svarta prickar. På kartan över Mora/Rättvik finns fält med ringar runt hela Siljansringen, och längst upp finns svarta prickar på mörkgrå botten. Där finns alltså båda sorterna. Kartan över Motala har prekambrisk sandsten längst upp till vänster men ingen sandsten från silur, och på kartorna över Örebro och Skövde/Falköping finns bara sandsten från kambrium (svarta prickar på ljus botten).",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur långt sträcker sig fältet med sandsten från kambrium i området där Kalmar ligger?",
+      "options": [
+        "55 km",
+        "85 km",
+        "110 km",
+        "150 km"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sandsten från kambrium är enligt teckenförklaringen ett ljust prickat fält med svarta prickar. På kartan där Kalmar ligger går ett smalt sådant fält längs fastlandskusten, från en bit norr om Kalmar ned till kartans nedre kant. Mätt längs fältet är det drygt fem och en halv gånger så långt som skalstrecket för 20 km, alltså ungefär 5,5 · 20 = 110 km. Fälten på Öland är kalksten och lerskiffer, inte sandsten.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilken bergart finns 18 km rakt sydväst om Örebro?",
+      "options": [
+        "Kalksten, slamsten från ordovicium",
+        "Alunskiffer från kambrium",
+        "Sandsten från kambrium",
+        "Prekambriskt urberg"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skalstrecket på kartan över Örebro är 10 km, så 18 km är knappt två skalstreckslängder. Norr är uppåt, så rakt sydväst är snett nedåt åt vänster, mitt emellan söder och väster. Från Örebro passerar man först det mörkgrå urberget söder om staden och kommer sedan ut i det ljust prickade fältet med svarta prickar. Där ligger punkten 18 km bort, och enligt teckenförklaringen är det sandsten från kambrium.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av Sveriges export av hyvlade trävaror 1994 respektive 2003 gick till Tyskland?",
+      "options": [
+        "1/3 respektive 1/5",
+        "1/3 respektive 1/10",
+        "1/4 respektive 1/5",
+        "1/4 respektive 1/10"
+      ],
+      "blindAnswer": 3,
+      "explain": "Tyskland är det snedstreckade fältet direkt ovanför Frankrikes svarta fält. År 1994 går det från ungefär 1 360 till 1 920 tusen m³, alltså cirka 560 av stapelns totalt cirka 2 140 tusen m³: 560/2 140 ≈ 0,26, ungefär 1/4. År 2003 går fältet från ungefär 2 320 till 2 720, alltså cirka 400 av totalt cirka 3 910: 400/3 910 ≈ 0,10, ungefär 1/10.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.085,
+          0.07,
+          0.82,
+          0.83
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stor var den sammanlagda exporten av hyvlade trävaror 2003 till de fyra namngivna länder som då importerade minst från Sverige?",
+      "options": [
+        "1 200 m³",
+        "50 000 m³",
+        "500 000 m³",
+        "1 200 000 m³"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av fälten i stapeln för 2003 (alla utom Övriga länder är namngivna): Storbritannien cirka 1 010, Danmark 510, Norge 380, Holland 370, Frankrike 50, Tyskland 400 och Japan 460 tusen m³. De fyra minsta är Frankrike, Holland, Norge och Tyskland, sammanlagt ungefär 50 + 370 + 380 + 400 = 1 200 tusen m³, alltså 1 200 000 m³. Axeln anger tusental m³; den som glömmer det väljer 1 200 m³.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.085,
+          0.07,
+          0.82,
+          0.83
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "År 2002 uppgick Sveriges totala produktion av trävaror till 16 000 000 kubikmeter. Av detta gick 11 500 000 kubikmeter på export. Hur stor andel av denna totala produktion respektive denna export utgjordes detta år av hyvlade trävaror som exporterades?",
+      "options": [
+        "25 respektive 25 procent",
+        "25 respektive 35 procent",
+        "35 respektive 25 procent",
+        "35 respektive 35 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Stapeln för 2002 är ungefär 3 950 tusen m³ hög, så exporten av hyvlade trävaror var cirka 3 950 000 m³. Andelen av den totala produktionen är 3 950 000/16 000 000 ≈ 0,25, alltså 25 procent. Andelen av exporten är 3 950 000/11 500 000 ≈ 0,34, alltså ungefär 35 procent. Andelen av exporten måste bli större än andelen av produktionen, eftersom exporten är den mindre helheten.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.085,
+          0.07,
+          0.82,
+          0.83
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala antalet lärare och forskare 1997 utgjordes av professorer?",
+      "options": [
+        "10 procent",
+        "15 procent",
+        "20 procent",
+        "25 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av alla sex linjerna vid 1997: lektorer cirka 5 100, adjunkter cirka 4 650, annan forskande och undervisande personal cirka 2 800, professorer cirka 2 300, forskarassistenter cirka 1 100 och gäst- och timlärare cirka 200. Totalt blir det ungefär 16 150. Professorerna utgör 2 300/16 150 ≈ 0,14, alltså ungefär 15 procent. Professorer är linjen med små punkter; linjen med små fyrkanter strax ovanför är annan forskande och undervisande personal.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur många var adjunkterna jämfört med forskarassistenterna 2007?",
+      "options": [
+        "En sjättedel så många",
+        "Två tredjedelar så många",
+        "Fem gånger så många",
+        "Sju gånger så många"
+      ],
+      "blindAnswer": 3,
+      "explain": "Vid 2007 ligger adjunkterna (stora fyrkanter) på ungefär 6 100 och forskarassistenterna (stjärnor) strax under 1 000, ungefär 930. Kvoten är 6 100/930 ≈ 6,6, alltså närmast sju gånger så många. En sjättedel så många vore jämförelsen åt andra hållet, och fem gånger så många skulle kräva över 1 200 forskarassistenter.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Vilken tjänstekategori uppvisade den största procentuella förändringen av antalet personer från 2000 till 2001?",
+      "options": [
+        "Lektorer",
+        "Adjunkter",
+        "Professorer",
+        "Gäst- och timlärare"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av linjerna vid 2000 och 2001. Lektorer: från cirka 5 400 till 5 700, ungefär +6 %. Adjunkter: från cirka 6 100 till 6 450, ungefär +6 %. Professorer: från cirka 2 950 till 3 250, ungefär +10 %. Gäst- och timlärare (trianglar): från cirka 200 till 400, nästan en fördubbling. Ökningen i antal är minst för gäst- och timlärarna, men räknat i procent är den överlägset störst.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
