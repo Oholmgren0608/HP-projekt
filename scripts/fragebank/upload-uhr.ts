@@ -6,6 +6,7 @@
  *   npm run fragebank:upload -- --uhr                              # alla avskrivna provpass
  *   npm run fragebank:upload -- --uhr hp-2019-10-20 hp-2024-10-20-p1   # vissa prov/provpass
  *   npm run fragebank:upload -- --uhr --skriv-over-utkast ...      # ersätt även redigerade utkast
+ *   npm run fragebank:upload -- --uhr --publicera [--dry-run]      # publicera utkasten utan anteckning
  *
  * Importen (scripts/import-prov/insert.ts) lade in frågorna som utkast med
  * trasig text och en platshållare som förklaring. Här ersätts de utkasten med
@@ -14,6 +15,11 @@
  * ett utkast som redan har en riktig förklaring (t.ex. redigerat på /review)
  * ersätts bara med --skriv-over-utkast. Frågorna publiceras efter stickprov på
  * /review; databasen släpper bara igenom kvantitativa Provfrågor (0040).
+ *
+ * --publicera (Oscars beslut 2026-11-12) publicerar de utkast där AI:n fick
+ * samma svar som facit och avskriften saknar anteckning ("Att kontrollera"),
+ * och bara om utkastet i databasen är oförändrat sedan uppladdningen. Frågor med
+ * anteckning, redigerade utkast och refuserade frågor lämnas till /review.
  */
 
 import { createClient } from "@supabase/supabase-js";
@@ -136,6 +142,11 @@ export async function uploadUhr(args: string[]) {
     for (const r of data ?? []) existing.set(r.id, r);
   }
 
+  if (args.includes("--publicera")) {
+    await publish(sb, rows, existing, dryRun);
+    return;
+  }
+
   const inserts: QuestionInsert[] = [];
   const updates: QuestionInsert[] = [];
   const kept: string[] = [];
@@ -209,3 +220,53 @@ export async function uploadUhr(args: string[]) {
   }
   console.log(`Klart: ${inserts.length} nya och ${replaced} ersatta utkast. Gör stickprov och publicera på /review.`);
 }
+
+/** Publicerar utkasten som AI:n löste lika med facit och som saknar anteckning (se --publicera ovan). */
+async function publish(
+  sb: ReturnType<typeof createClient<Database>>,
+  rows: QuestionInsert[],
+  existing: Map<string, ExistingRow>,
+  dryRun: boolean,
+) {
+  const ready: string[] = [];
+  const withNote: string[] = [];
+  const notAgreed: string[] = [];
+  const missing: string[] = [];
+  const changed: string[] = [];
+  let published = 0;
+  let other = 0;
+  for (const row of rows) {
+    const old = existing.get(row.id);
+    if (!old) missing.push(row.id);
+    else if (old.status === "published") published++;
+    else if (old.status !== "draft") other++;
+    else if (row.verification !== "agreed") notAgreed.push(row.id);
+    else if (row.verification_note?.includes("Att kontrollera:")) withNote.push(row.id);
+    else if (differs(row, old).length > 0) changed.push(row.id);
+    else ready.push(row.id);
+  }
+  console.log(
+    `Publiceras: ${ready.length}. Redan publicerade: ${published}. Väntar på granskning på /review: ` +
+      `${withNote.length} med anteckning, ${notAgreed.length} där AI:n var oense med facit, ` +
+      `${changed.length} som ändrats sedan uppladdningen. Refuserade: ${other}. Saknas i databasen: ${missing.length}.`,
+  );
+  if (changed.length > 0) console.log(`  Ändrade sedan uppladdningen: ${changed.join(", ")}`);
+  if (missing.length > 0) console.log(`  Saknas (kör uppladdningen först): ${missing.join(", ")}`);
+  if (dryRun) {
+    console.log("--dry-run: inget publicerades.");
+    return;
+  }
+  let done = 0;
+  for (let i = 0; i < ready.length; i += CHUNK) {
+    const { data, error } = await sb
+      .from("questions")
+      .update({ status: "published" })
+      .in("id", ready.slice(i, i + CHUNK))
+      .eq("status", "draft")
+      .select("id");
+    if (error) throw new Error(`Publiceringen avbröts efter ${done} frågor: ${error.message}`);
+    done += data?.length ?? 0;
+  }
+  console.log(`Klart: ${done} UHR-frågor publicerade. Kör npm run fragebank:export så att offlinekopian får dem.`);
+}
+
