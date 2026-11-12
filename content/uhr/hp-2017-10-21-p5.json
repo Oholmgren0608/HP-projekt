@@ -1,0 +1,768 @@
+{
+  "examId": "hp-2017-10-21",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "75 % av x är 48. Vad är x?",
+      "options": [
+        "64",
+        "68",
+        "72",
+        "80"
+      ],
+      "blindAnswer": 0,
+      "explain": "75 % betyder 75/100 = 3/4. Om 3/4 av x är 48 är 1/4 av x lika med 48/3 = 16, och då är x = 4 · 16 = 64. Kontroll: 0,75 · 64 = 48.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Linjerna L₁ och L₂ skär linjen L. Vilken av ekvationerna nedan är ett tillräckligt villkor för att L₁ och L₂ ska vara parallella?",
+      "options": [
+        "105 − x = y",
+        "x + 105 = 180",
+        "x + y = 180",
+        "y + 105 = 180"
+      ],
+      "blindAnswer": 3,
+      "explain": "Vinkeln 105° ligger under L och till vänster om L₂. Motsvarande vinkel vid L₁, den som också ligger under L och till vänster om linjen, är x. L₁ och L₂ är parallella precis när motsvarande vinklar är lika stora, alltså när x = 105. Vinklarna x och y bildar tillsammans en rak vinkel, så x + y = 180 gäller alltid och säger ingenting om linjerna är parallella. Om y + 105 = 180 är y = 75, och då är x = 180 − 75 = 105. Det villkoret räcker alltså. x + 105 = 180 ger i stället x = 75, och 105 − x = y kan aldrig gälla eftersom x + y alltid är 180.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.22,
+          0.575,
+          0.49,
+          0.76
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Om a ◊ b definieras som ab − a + b, vad är då 3 ◊ 4?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sätt in a = 3 och b = 4 i definitionen: 3 ◊ 4 = 3 · 4 − 3 + 4 = 12 − 3 + 4 = 13. Ordningen spelar roll: 4 ◊ 3 blir 12 − 4 + 3 = 11, som också finns bland alternativen.",
+      "figure": null,
+      "note": "Tecknet är en romb (◊) på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är 3/4 + 1/2 + 6/5?",
+      "options": [
+        "18/40",
+        "49/20",
+        "10/11",
+        "23/10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Minsta gemensamma nämnaren för 4, 2 och 5 är 20. 3/4 = 15/20, 1/2 = 10/20 och 6/5 = 24/20. Summan blir (15 + 10 + 24)/20 = 49/20. Alternativet 10/11 lockar om man adderar täljarna och nämnarna var för sig, (3 + 1 + 6)/(4 + 2 + 5), men så adderar man inte bråk. Redan 3/4 + 1/2 är större än 1, och 6/5 är också större än 1, så summan måste vara större än 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "ABC är en triangel. Vilket svarsförslag är korrekt?",
+      "options": [
+        "c > a − b och c < a + b",
+        "c > a − b och c > a + b",
+        "c < a − b och c < a + b",
+        "c < a − b och c > a + b"
+      ],
+      "blindAnswer": 0,
+      "explain": "I en triangel är varje sida kortare än summan av de två andra (triangelolikheten). Den raka vägen från A till B är kortare än omvägen via C, så c < a + b. Av samma skäl är a < b + c, och det betyder att a − b < c. Båda delarna i påståendet c > a − b och c < a + b stämmer alltså. De andra alternativen innehåller c > a + b eller c < a − b, och då skulle sidorna inte kunna bilda en triangel.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.215,
+          0.13,
+          0.4,
+          0.25
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "x är summan av tre på varandra följande heltal. Vad är ett möjligt värde på x?",
+      "options": [
+        "45",
+        "53",
+        "62",
+        "79"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kalla det mittersta talet n. Summan blir (n − 1) + n + (n + 1) = 3n, så den är alltid delbar med 3. Bland alternativen är bara 45 delbart med 3: 45 = 3 · 15 = 14 + 15 + 16. Siffersummorna för 53, 62 och 79 är 8, 8 och 16, och inget av dem är delbart med 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Första dagen på en festival såldes 350 biljetter. Varje dag därefter såldes dubbelt så många biljetter som dagen innan. Hur många biljetter såldes sammanlagt under festivalens fyra dagar?",
+      "options": [
+        "2 800",
+        "4 900",
+        "5 250",
+        "5 600"
+      ],
+      "blindAnswer": 2,
+      "explain": "Antalet fördubblas varje dag: 350 första dagen, 700 andra, 1 400 tredje och 2 800 fjärde. Sammanlagt såldes 350 + 700 + 1 400 + 2 800 = 5 250 biljetter. Alternativet 2 800 är bara den fjärde dagens försäljning, och 5 600 får man om man fördubblar en gång för mycket.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad blir (x₁/y₁)/(x₂/y₂) om x₁ = 2x₂ och y₁ = 2y₂?",
+      "options": [
+        "x₁/y₁",
+        "x₂²/y₂²",
+        "1",
+        "2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sätt in x₁ = 2x₂ och y₁ = 2y₂ i täljaren: x₁/y₁ = 2x₂/(2y₂) = x₂/y₂. Täljaren och nämnaren i det stora bråket är alltså samma tal, x₂/y₂, och kvoten blir 1. Alternativet 2 lockar om man bara ser att x₁ är dubbelt så stort som x₂ och glömmer att y₁ också är dubbelt så stort som y₂.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.283,
+          0.518,
+          0.329,
+          0.578
+        ]
+      },
+      "note": "Uttrycket är ett bråk i två nivåer; figuren visar det som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vårt vanliga talsystem har basen tio. I ett talsystem med basen åtta använder man siffrorna 0 till 7, men i stället för 8 skriver man 10 och istället för 9 skriver man 11 och så vidare. Om ett tal i basen åtta skrivs som 50, vilket tal motsvarar det då i vårt vanliga talsystem?",
+      "options": [
+        "32",
+        "40",
+        "50",
+        "62"
+      ],
+      "blindAnswer": 1,
+      "explain": "I basen åtta står den vänstra siffran i ett tvåsiffrigt tal för antalet åttor, på samma sätt som den står för antalet tior i vårt vanliga talsystem. 10 betyder en åtta och noll ental, alltså 8, och 11 betyder 8 + 1 = 9. Talet 50 betyder fem åttor och noll ental: 5 · 8 + 0 = 40.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är x om 3⁻³ˣ⁺⁴ = 1/9?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv 1/9 som en potens av 3: 1/9 = 1/3² = 3⁻². Exponenterna måste då vara lika: −3x + 4 = −2. Det ger −3x = −6 och x = 2. Kontroll: −3 · 2 + 4 = −2, och 3⁻² = 1/9.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad blir g(2) − h(2) då g(z) = 2(z − 1) och h(z) = 3(1 − z)?",
+      "options": [
+        "−1",
+        "1",
+        "3",
+        "5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Sätt in z = 2 i båda funktionerna: g(2) = 2(2 − 1) = 2 och h(2) = 3(1 − 2) = −3. Då är g(2) − h(2) = 2 − (−3) = 2 + 3 = 5. Alternativet −1 lockar om man räknar 2 − 3 och missar att h(2) är negativt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Anders skriver fem olika positiva heltal på en lapp. Han har valt talen så att medelvärdet är 13 och medianen är 15. Vilket är det största tal som kan stå på hans lapp?",
+      "options": [
+        "17",
+        "28",
+        "31",
+        "33"
+      ],
+      "blindAnswer": 2,
+      "explain": "Medelvärdet 13 för fem tal betyder att summan är 5 · 13 = 65. Medianen 15 är det mittersta talet, så två tal är mindre än 15 och två är större. För att det största talet ska bli så stort som möjligt ska de andra vara så små som möjligt: de två minsta blir 1 och 2, och det näst största måste vara större än 15, alltså minst 16. Det största talet blir då 65 − 1 − 2 − 15 − 16 = 31. Alternativet 33 får man om man glömmer att talen ska vara olika (1, 1, 15, 15, 33).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x − y = y − x\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Samla x på ena sidan och y på den andra: x − y = y − x ger x + x = y + y, alltså 2x = 2y och x = y. Man kan också se det så här: y − x är det motsatta talet till x − y, och ett tal är lika med sitt motsatta tal bara om det är 0. Alltså är x − y = 0, och kvantiteterna är alltid lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En tärning kastades tio gånger och visade följande värden:\n1, 1, 2, 3, 4, 4, 5, 6, 6, 6\nKvantitet I: Medelvärdet\nKvantitet II: Medianen",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Summan av värdena är 1 + 1 + 2 + 3 + 4 + 4 + 5 + 6 + 6 + 6 = 38, så medelvärdet är 38/10 = 3,8. Värdena står redan i storleksordning. Med tio värden är medianen medelvärdet av det femte och det sjätte värdet, som båda är 4, så medianen är 4. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "r = R/3\nR är radien i en stor cirkel och r är radien i tre mindre cirklar.\nKvantitet I: Omkretsen av den stora cirkeln\nKvantitet II: Summan av omkretsarna av de tre mindre cirklarna",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "En cirkels omkrets är 2π gånger radien. Den stora cirkeln har omkretsen 2πR. Varje liten cirkel har omkretsen 2πr = 2π · R/3, och de tre tillsammans 3 · 2πR/3 = 2πR. Kvantiteterna är lika. Omkretsen växer i samma takt som radien, så tre cirklar med en tredjedel av radien har tillsammans samma omkrets. Med areorna hade det inte stämt: de tre små cirklarna har tillsammans bara en tredjedel av den stora cirkelns area.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.215,
+          0.176,
+          0.44,
+          0.338
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = kx + m\nKvantitet I: f(0)\nKvantitet II: f(1)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "f(0) = k · 0 + m = m och f(1) = k + m. Skillnaden f(1) − f(0) är alltså k, linjens lutning, och den vet vi inget om. Med k = 2 och m = 0 är f(0) = 0 och f(1) = 2, så kvantitet II är större. Med k = −2 och m = 0 är f(1) = −2, så kvantitet I är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/2 + 1/4 + 1/8 + 1/16\nKvantitet II: 14/15",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Med nämnaren 16 blir kvantitet I 8/16 + 4/16 + 2/16 + 1/16 = 15/16. Skriv båda som 1 minus ett bråk: 15/16 = 1 − 1/16 och 14/15 = 1 − 1/15. Eftersom 1/16 är mindre än 1/15 ligger 15/16 närmare 1 och är alltså större. Kontroll med korsmultiplikation: 15 · 15 = 225 är större än 14 · 16 = 224. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\ny > 0\nKvantitet I: x/y\nKvantitet II: x · y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Att dela med y ger ett större tal än att multiplicera med y när y < 1, och ett mindre när y > 1. Exempel: x = 1 och y = 1/2 ger x/y = 2 och x · y = 1/2, så kvantitet I är större. x = 1 och y = 2 ger x/y = 1/2 och x · y = 2, så kvantitet II är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I en låda finns det 60 enfärgade lappar i färgerna röd, blå och grön. Mer än 1/3 av lapparna är röda och 17 är gröna.\nKvantitet I: Antalet blå lappar\nKvantitet II: 23",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "1/3 av 60 är 20, så det finns minst 21 röda lappar. Röda och gröna är då tillsammans minst 21 + 17 = 38, och de blå är högst 60 − 38 = 22. Antalet blå lappar är alltså alltid mindre än 23. Exakt 23 blå lappar skulle kräva att exakt 20 är röda, men 20 är inte mer än 1/3 av lapparna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x/y = −1\nKvantitet I: x³ + y³\nKvantitet II: x² + y²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "x/y = −1 betyder att x = −y, och y kan inte vara 0. Då är x³ = (−y)³ = −y³, så x³ + y³ = −y³ + y³ = 0. Men x² = (−y)² = y², så x² + y² = 2y², som är positivt eftersom y ≠ 0. Kvantitet II är alltid större. Exempel: x = 2 och y = −2 ger 8 + (−8) = 0 och 4 + 4 = 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 17/4\nKvantitet II: √17",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "17/4 = 4,25. Båda talen är positiva, så det större talet har den större kvadraten: (17/4)² = 289/16 = 18 1/16, medan (√17)² = 17. Kvantitet I är större. Det stämmer med att √17 bara är lite större än √16 = 4, ungefär 4,12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABCD är en fyrhörning.\n0° < x < 90°\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinkeln 270° vid A är markerad utanför fyrhörningen, så vinkeln DAB inuti är 360° − 270° = 90°. Vinkeln B är också rät. Både AD och BC är alltså vinkelräta mot AB, och därför är AD och BC parallella. Diagonalen AC skär de två parallella sidorna, och x och y är alternatvinklar, så x = y. Samma sak med vinkelsumman i triangeln ABC: vinkeln CAB är 90° − x, och då är y = 180° − 90° − (90° − x) = x.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.215,
+          0.515,
+          0.445,
+          0.735
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Fyra punkter, A–D, ligger längs en linje i ordningen A-B-C-D. Avståndet mellan B och C är 7 längdenheter. Hur långt är avståndet mellan A och D?\n(1) Avståndet mellan A och C är 24 längdenheter.\n(2) Avståndet mellan B och D är 20 längdenheter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Avståndet AD är AB + BC + CD, där BC = 7.\n(1) AC = 24 ger AB = 24 − 7 = 17, men CD är okänt. Inte tillräckligt.\n(2) BD = 20 ger CD = 20 − 7 = 13, men AB är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: AD = 17 + 7 + 13 = 37 längdenheter. Tillräckligt. Man kan också räkna AC + BD − BC = 24 + 20 − 7 = 37, eftersom sträckan BC ingår i både AC och BD.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Adam, Erik och Hans plockade hallon i en gemensam hink för att baka en paj. Hur många gram hallon användes till pajen?\n(1) Adam plockade 1/3 av hallonen i hinken och Hans plockade 3/7 av hallonen i hinken.\n(2) Då pajen var klar fanns det 850 gram hallon över i hinken.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Det som användes är mängden i hinken minus det som blev över, så man behöver veta hur mycket hallon hinken innehöll.\n(1) Andelarna ger att Erik plockade 1 − 1/3 − 3/7 = 5/21 av hallonen, men inte hur många gram det var. Inte tillräckligt.\n(2) Vi vet hur mycket som blev över, men inte hur mycket som fanns från början. Inte tillräckligt.\n(1) och (2) tillsammans: Andelarna säger inget om hinkens totala innehåll eller om hur mycket som gick åt. Fanns det 2 100 gram användes 1 250 gram, och fanns det 4 200 gram användes 3 350 gram; båda fallen stämmer med påståendena. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett kontorsförråd finns det en vit och en grå kartong med 800 respektive 1 200 gem. Gemen finns i två olika storlekar. Hur många små gem finns det i den vita kartongen?\n(1) Andelen stora gem i vardera kartongen är 43 procent.\n(2) I de två kartongerna finns det totalt 1 140 små gem.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) 43 procent av gemen i den vita kartongen är stora, så 57 procent är små: 0,57 · 800 = 456 små gem. Tillräckligt.\n(2) Vi vet att det finns 1 140 små gem sammanlagt, men inte hur de fördelar sig mellan kartongerna. Det kan vara 456 i den vita och 684 i den grå, men lika gärna 500 i den vita och 640 i den grå. Inte tillräckligt.\nSvaret får man alltså i (1) men inte i (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anna och Bea startade samtidigt och båda cyklade 30 km med konstant hastighet. Vilken medelhastighet hade Anna?\n(1) Anna kom fram 30 minuter före Bea.\n(2) När Anna kom fram hade Bea 7,5 km kvar att cykla.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Vi vet bara skillnaden i tid. Anna kan ha cyklat i 30 km/h (1 timme) och Bea i 20 km/h (1,5 timmar), men det passar också med Anna 20 km/h och Bea 15 km/h. Inte tillräckligt.\n(2) När Anna hade cyklat 30 km hade Bea cyklat 22,5 km, så Beas hastighet är 3/4 av Annas. Det ger bara förhållandet mellan hastigheterna. Inte tillräckligt.\n(1) och (2) tillsammans: Bea cyklade de sista 7,5 km under de 30 minuter hon kom efter Anna, så hon höll 15 km/h. Medan Anna cyklade hela sträckan cyklade Bea 22,5 km, vilket tog 22,5/15 = 1,5 timmar. Annas medelhastighet var 30/1,5 = 20 km/h. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x, y och z är positiva heltal. Är x + y + z ett jämnt tal?\n(1) x − y − z är ett udda tal.\n(2) xyz är ett udda tal.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Skillnaden mellan x + y + z och x − y − z är 2y + 2z, som är jämn. Två tal som skiljer sig med ett jämnt tal är antingen båda jämna eller båda udda. Eftersom x − y − z är udda är också x + y + z udda, och svaret är nej. Tillräckligt.\n(2) En produkt av heltal är udda bara om alla faktorerna är udda, så x, y och z är alla udda. Summan av tre udda tal är udda, och svaret är nej. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "a, b, c och d är olika heltal större än 0 sådana att b + c = a + d. Vilket värde har talet d?\n(1) b + d = 13\n(2) a + c = 9",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Både a = 4, b = 8, c = 1, d = 5 och a = 3, b = 7, c = 2, d = 6 uppfyller b + c = a + d och b + d = 13. Inte tillräckligt.\n(2) Både a = 8, b = 9, c = 1, d = 2 och a = 8, b = 10, c = 1, d = 3 uppfyller b + c = a + d och a + c = 9. Inte tillräckligt.\n(1) och (2) tillsammans: Summan av alla fyra talen är 13 + 9 = 22, och eftersom b + c = a + d är båda de summorna 11. Då är b = 13 − d, c = 11 − b = d − 2 och a = 11 − d. Både d = 3 (a = 8, b = 10, c = 1) och d = 4 (a = 7, b = 9, c = 2) uppfyller alla villkor. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Vad minskade ju större djupet blev i Trännöfjärden men ökade ju större djupet blev i Sandsänkan?",
+      "options": [
+        "Salthalten",
+        "Halten fosfat-fosfor",
+        "Den totala fosforhalten",
+        "Halten nitrat-kväve"
+      ],
+      "blindAnswer": 3,
+      "explain": "Följ varje kurva uppifrån och ned, alltså från ytan mot större djup. Nitrat-kvävet (vita ringar i de högra diagrammen, nedre skalan) minskar i Trännöfjärden från nästan 100 µg/l nära ytan till cirka 55 på 10 meters djup och cirka 35 på 20 meter. I Sandsänkan ökar det från några få µg/l nära ytan till cirka 12 på 20 meter och cirka 34 på 40 meter. Salthalten (plustecken) och fosfat-fosforn (vita trianglar) ökar med djupet på båda platserna. Den totala fosforhalten (svarta trianglar) ökar i Trännöfjärden från cirka 23 till cirka 28 µg/l ned till 10 meter och är sedan nästan oförändrad, så den minskar inte med djupet.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Studera temperaturskillnaden i Trännöfjärden mellan värdet som uppmättes närmast ytan och värdet som uppmättes vid den djupaste mätpunkten. Hur stor var temperaturskillnaden?",
+      "options": [
+        "2 °C",
+        "5 °C",
+        "8 °C",
+        "13 °C"
+      ],
+      "blindAnswer": 1,
+      "explain": "Temperaturen visas med de nedåtvända trianglarna i det vänstra diagrammet för Trännöfjärden. Värdet närmast ytan, på cirka 5 meters djup, är ungefär 14 °C. Vid den djupaste mätpunkten, på knappt 20 meters djup, är temperaturen ungefär 9 °C. Skillnaden är ungefär 14 − 9 = 5 °C. Plustecknen i samma diagram är salthalten och ska inte räknas med.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger salt- och närsalthalter uppmätta på 20 meters djup i Sandsänkan?",
+      "passage": "Svarsalternativen anger: salthalt – total-fosfor – total-kväve",
+      "options": [
+        "5 ‰ – 18 µg/l – 50 µg/l",
+        "5 ‰ – 23 µg/l – 250 µg/l",
+        "7 ‰ – 18 µg/l – 50 µg/l",
+        "7 ‰ – 23 µg/l – 250 µg/l"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av vid 20 meters djup i diagrammen för Sandsänkan. Salthalten (plustecknen i det vänstra diagrammet) är cirka 7 ‰. Total-fosforn (svarta trianglar i mittdiagrammet) är cirka 23 µg/l; de vita trianglarna vid cirka 18 är fosfat-fosfor. Total-kvävet (svarta ringar i det högra diagrammet) ska läsas mot den övre skalan och är cirka 250 µg/l. Läser man mot den nedre skalan får man 50, men den skalan gäller nitrat-kvävet.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag är korrekt vad gäller de redovisade delarna av Barentsområdet?",
+      "options": [
+        "Det fanns sju massa- och pappersindustrier söder om polcirkeln.",
+        "Det fanns sex gruvor söder om polcirkeln.",
+        "Det fanns fem natur- eller nationalparker norr om polcirkeln.",
+        "Det fanns tre lager för kärnavfall norr om polcirkeln."
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd den övre kartan och polcirkeln, den heldragna linjen tvärs över kartan. Natur- eller nationalparker (träd inom en kontur) finns på fem ställen, och alla fem ligger norr om polcirkeln. Söder om polcirkeln finns fem massa- och pappersindustrier (vita fabriker), alla i gruppen längst ned på kartan; sju blir det bara om man också räknar de två svarta fabrikerna där, som är metallindustrier. Söder om polcirkeln finns bara tre gruvor (ytterligare en ligger på själva linjen), och på hela kartan finns bara ett lager för kärnavfall.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag stämmer bäst överens med den varumängd som hanterades i Bodø hamn?",
+      "options": [
+        "Varumängden var mindre än 1 000 ton och importen var större än exporten.",
+        "Varumängden var mindre än 1 000 ton och exporten var större än importen.",
+        "Varumängden var 1 000–2 000 ton och importen var större än exporten.",
+        "Varumängden var 1 000–2 000 ton och exporten var större än importen."
+      ],
+      "blindAnswer": 0,
+      "explain": "Bodø finns på den nedre kartan, vid kusten strax norr om polcirkeln. Hamnsymbolen där är ett litet svart ankare, lika stort som ankarna vid Tromsø och Harstad och tydligt mindre än det vita ankaret vid Mo. Enligt teckenförklaringen betyder den minsta storleken mindre än 1 000 ton, och ett svart ankare betyder att importen var större än exporten.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av männen hade inte varit på bio under perioden?",
+      "options": [
+        "1/3",
+        "2/5",
+        "1/2",
+        "3/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Männens stapel för bio består av en svart del (mer än fem gånger) och en prickig del (en till fem gånger). Hela stapeln når ungefär 60 procent, så ungefär 60 procent av männen var på bio minst en gång. Resten, 100 − 60 = 40 procent, var inte på bio, och 40 procent är 2/5. Alternativet 3/5 är andelen som faktiskt var på bio.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilken aktivitet ägnade sig störst andel män respektive kvinnor åt en gång eller mer?",
+      "options": [
+        "Bokläsning respektive Bokläsning",
+        "Bokläsning respektive Skönlitteratur",
+        "Tidskrift respektive Bokläsning",
+        "Tidskrift respektive Skönlitteratur"
+      ],
+      "blindAnswer": 2,
+      "explain": "En gång eller mer betyder hela stapeln, alltså båda delarna tillsammans. För männen är den längsta stapeln tidskrift, cirka 70 procent, något längre än bokläsning med cirka 69 procent. För kvinnorna är den längsta stapeln bokläsning, cirka 86 procent, före skönlitteratur med cirka 82 procent. Svaret är alltså tidskrift för männen och bokläsning för kvinnorna.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Männens staplar för tidskrift (cirka 70 procent) och bokläsning (cirka 69 procent) är nästan lika långa.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Under den aktuella perioden var antalet män i åldrarna 16–84 år cirka 3,6 miljoner i Sverige. Hur många män deltog i studiecirkel mer än fem gånger, om man antar att resultaten är representativa för befolkningen?",
+      "options": [
+        "200 000",
+        "300 000",
+        "400 000",
+        "500 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "Mer än fem gånger är den svarta delen av männens stapel för studiecirkel. Den slutar vid drygt 8 procent, och 0,083 · 3 600 000 ≈ 300 000. Räknar man i stället med hela stapeln, cirka 13 procent, blir det nästan 500 000, men då ingår även de som deltog en till fem gånger.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Jämför andelen kvinnor som ägnade sig åt musik en till fem gånger med andelen kvinnor som var på konsert en till fem gånger. Vilket var förhållandet mellan andelarna?",
+      "options": [
+        "1:5",
+        "1:4",
+        "1:3",
+        "1:2"
+      ],
+      "blindAnswer": 0,
+      "explain": "En till fem gånger är den randiga delen av kvinnornas stapel. För musik går den från cirka 4 till cirka 12 procent, alltså cirka 8 procent. För konsert går den från cirka 7 till cirka 51 procent, alltså cirka 44 procent. Förhållandet är 8:44, ungefär 1:5. Jämför man hela staplarna (cirka 12 och 51 procent) får man ungefär 1:4, men då räknar man med dem som gjorde det mer än fem gånger.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur många av männen med lärarexamen i musik eller i idrott och hälsa arbetade som lärare i praktiskt/estetiskt ämne?",
+      "options": [
+        "887",
+        "1 367",
+        "1 437",
+        "2 804"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd kolumnen Lärare praktiskt/estetiskt ämne. Med lärarexamen i musik var det 1 087 personer, varav 607 kvinnor, alltså 1 087 − 607 = 480 män. Med lärarexamen i idrott och hälsa var det 1 717, varav 830 kvinnor, alltså 887 män. Sammanlagt 480 + 887 = 1 367 män. 887 är bara männen med idrott och hälsa, 1 437 är kvinnorna (607 + 830) och 2 804 är alla (1 087 + 1 717).",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Vilken pedagogisk högskoleexamen avses?",
+      "passage": "Fler än 500 skolledare hade denna högskoleexamen. Av samtliga med denna examen arbetade den största andelen inom personalkategorin grundskollärare 4–9.",
+      "options": [
+        "Låg-/mellanstadielärarexamen",
+        "Grundskollärarexamen 1–7",
+        "Grundskollärarexamen 4–9",
+        "Ämneslärarexamen"
+      ],
+      "blindAnswer": 3,
+      "explain": "Börja med kolumnen Skolledare. Bland alternativen har bara låg-/mellanstadielärarexamen (1 350) och ämneslärarexamen (687) fler än 500 skolledare; grundskollärarexamen 1–7 har 342 och grundskollärarexamen 4–9 har 218. Av dem med låg-/mellanstadielärarexamen arbetade flest som låg-/mellanstadielärare (14 604 av 20 663). Av dem med ämneslärarexamen arbetade flest som grundskollärare 4–9 (6 430 av 8 221). Det är alltså ämneslärarexamen som avses.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Studera varje personalkategori vad gäller andelen som saknade pedagogisk högskoleexamen. Inom vilken personalkategori var denna andel som störst?",
+      "options": [
+        "Grundskollärare 4–9",
+        "Modersmålslärare",
+        "Övrig pedagogisk personal",
+        "Studie- och yrkesvägledare"
+      ],
+      "blindAnswer": 3,
+      "explain": "Dela antalet i raden Pedagogisk högskoleexamen saknas med antalet i raden Samtliga för varje kategori. Grundskollärare 4–9: 5 679/24 018 ≈ 24 procent. Modersmålslärare: 1 141/2 149 ≈ 53 procent. Övrig pedagogisk personal: 4 398/9 381 ≈ 47 procent. Studie- och yrkesvägledare: 482/776 ≈ 62 procent. Andelen är störst bland studie- och yrkesvägledarna. Grundskollärare 4–9 har flest utan examen räknat i antal, men inte störst andel.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
