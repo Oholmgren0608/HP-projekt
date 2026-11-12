@@ -1,0 +1,773 @@
+{
+  "examId": "hp-2019-10-20",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar 8 500 000 mm?",
+      "options": [
+        "8,5 · 10³ cm",
+        "8,5 · 10⁵ dm",
+        "8,5 km",
+        "8,5 mil"
+      ],
+      "blindAnswer": 2,
+      "explain": "Räkna om till meter först: 1 000 mm = 1 m, så 8 500 000 mm = 8 500 m. Eftersom 1 km = 1 000 m är 8 500 m = 8,5 km. De andra stämmer inte: 8 500 000 mm = 850 000 cm = 8,5 · 10⁵ cm (inte 10³), 8 500 000 mm = 85 000 dm = 8,5 · 10⁴ dm (inte 10⁵), och 8,5 km är 0,85 mil eftersom en mil är 10 km.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar ekvationen för linjen L?",
+      "options": [
+        "y = −1,5x − 3",
+        "y = −1,5x + 3",
+        "y = 1,5x − 3",
+        "y = 1,5x + 3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Linjen skär y-axeln i (0, 3), så m = 3. Den skär x-axeln i (2, 0): när x ökar med 2 minskar y med 3. Lutningen är alltså k = −3/2 = −1,5, och ekvationen blir y = −1,5x + 3. Linjen lutar nedåt åt höger, så de två alternativen med positiv lutning faller bort, och y = −1,5x − 3 skulle skära y-axeln under origo.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.215,
+          0.532,
+          0.466,
+          0.712
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket av följande svarsalternativ är med säkerhet korrekt?",
+      "passage": "x och y är positiva tal sådana att x/y = z.",
+      "options": [
+        "Om x är mindre än y så är z mindre än 0.",
+        "Om x är lika med y så är z lika med x.",
+        "Om x inte är lika med y så är z mindre än 1.",
+        "Om x är större än y så är z större än 1."
+      ],
+      "blindAnswer": 3,
+      "explain": "Eftersom x och y är positiva är z = x/y alltid positivt. Om x är större än y är täljaren större än nämnaren, och då är x/y större än 1. Det gäller alltid. De andra påståendena håller inte: z kan aldrig vara negativt; om x = y är z = 1, vilket bara är lika med x när x = 1; och om x inte är lika med y kan z vara större än 1, till exempel ger x = 4 och y = 2 att z = 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Emils och Stures sammanlagda ålder är 31 år. Sture är 3 år äldre än Emil. Om Emil är x år gammal, vilket svarsalternativ motsvarar då en ekvation för att räkna ut hans ålder?",
+      "options": [
+        "(31 − x)/2 = 3",
+        "2x = 31",
+        "x + x + 3 = 31",
+        "x + 3 = 31"
+      ],
+      "blindAnswer": 2,
+      "explain": "Emil är x år, och Sture är 3 år äldre, alltså x + 3 år. Tillsammans är de 31 år, så x + (x + 3) = 31, det vill säga x + x + 3 = 31. Det ger 2x = 28 och x = 14, så Emil är 14 år och Sture 17 år. Ekvationen 2x = 31 glömmer att Sture är 3 år äldre, och x + 3 = 31 sätter Stures ålder lika med den sammanlagda åldern.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x om 7^(7 + x/3) = 49?",
+      "options": [
+        "−15",
+        "−7",
+        "7",
+        "15"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv 49 som en potens av 7: 49 = 7². Två potenser med samma bas är lika när exponenterna är lika, så 7 + x/3 = 2. Då är x/3 = 2 − 7 = −5 och x = −15. Kontroll: 7 + (−15)/3 = 7 − 5 = 2, och 7² = 49.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.369,
+          0.1,
+          0.4496,
+          0.134
+        ]
+      },
+      "note": "Exponenten är 7 + x/3 och skrivs med ^ i texten; figuren visar ekvationen som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "I en klass är 65 % av eleverna längre än Ida, och 32 % av eleverna är längre än Albert. Ungefär hur stor andel av eleverna är längre än Ida men kortare än Albert?",
+      "options": [
+        "1/4",
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Fler elever är längre än Ida (65 %) än längre än Albert (32 %), så Albert är längre än Ida. Alla som är längre än Albert är då också längre än Ida. De som är längre än Ida men inte längre än Albert är därför 65 % − 32 % = 33 % av eleverna, vilket är ungefär 1/3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "På en parkeringsplats finns det fyra bilar med fyra hjul vardera och två motorcyklar med två hjul vardera. Hur stor är sannolikheten att ett slumpmässigt valt hjul på parkeringsplatsen tillhör en motorcykel?",
+      "options": [
+        "1/5",
+        "1/4",
+        "1/3",
+        "1/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bilarna har 4 · 4 = 16 hjul och motorcyklarna 2 · 2 = 4 hjul, totalt 20 hjul. Sannolikheten att ett slumpmässigt valt hjul tillhör en motorcykel är 4/20 = 1/5. Svaret 1/3 lockar om man räknar fordon (2 motorcyklar av 6 fordon) i stället för hjul.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar en punkt på linjen y = 3x − 5?",
+      "options": [
+        "(−2, −10)",
+        "(0, 3)",
+        "(3, 5)",
+        "(5, 10)"
+      ],
+      "blindAnswer": 3,
+      "explain": "En punkt ligger på linjen om y-koordinaten blir 3x − 5 när man sätter in x-koordinaten. För (5, 10) är 3 · 5 − 5 = 10, så punkten ligger på linjen. De andra stämmer inte: x = −2 ger 3 · (−2) − 5 = −11, x = 0 ger −5 och x = 3 ger 9 − 5 = 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Förhållandet mellan den långa och den korta sidan på ett A4-papper är √2:1. Vilket är förhållandet mellan den långa sidan och diagonalen på ett A4-papper?",
+      "options": [
+        "1:√3",
+        "2:3",
+        "√2:2",
+        "√2:√3"
+      ],
+      "blindAnswer": 3,
+      "explain": "Låt den korta sidan vara 1, så att den långa sidan är √2. Diagonalen är hypotenusan i en rätvinklig triangel med kateterna 1 och √2. Enligt Pythagoras sats är diagonalen √(1² + (√2)²) = √(1 + 2) = √3. Förhållandet mellan den långa sidan och diagonalen är alltså √2:√3. Förhållandet 1:√3 gäller den korta sidan och diagonalen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är det största värde som z kan få om rutorna i ekvationerna var för sig ersätts med antingen multiplikation eller division?",
+      "passage": "10³ □ 100 = x\nx □ 10⁻¹ = y\ny □ 0,0001 = z",
+      "options": [
+        "10⁰",
+        "10⁵",
+        "10¹⁰",
+        "10¹⁵"
+      ],
+      "blindAnswer": 2,
+      "explain": "Alla tal är positiva, så z blir störst om varje led blir så stort som möjligt. Första ekvationen: 10³ · 100 = 10⁵ är större än 10³/100 = 10, så x = 10⁵. Andra: att dividera med 10⁻¹ är detsamma som att multiplicera med 10, så x/10⁻¹ = 10⁶, medan x · 10⁻¹ bara är 10⁴. Alltså y = 10⁶. Tredje: 0,0001 = 10⁻⁴, så y/0,0001 = 10⁶ · 10⁴ = 10¹⁰. Den som multiplicerar i alla tre ekvationerna får 10⁵ · 10⁻¹ · 10⁻⁴ = 10⁰.",
+      "figure": null,
+      "note": "Rutorna är tomma kvadrater (□) på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är (1/2 + 3)/(4 + 1/5)?",
+      "options": [
+        "3/5",
+        "2/3",
+        "4/5",
+        "5/6"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna ut täljaren och nämnaren var för sig. Täljaren: 1/2 + 3 = 1/2 + 6/2 = 7/2. Nämnaren: 4 + 1/5 = 20/5 + 1/5 = 21/5. Att dividera med ett bråk är att multiplicera med det inverterade bråket: (7/2) · (5/21) = 35/42 = 5/6.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.2655,
+          0.095,
+          0.3133,
+          0.156
+        ]
+      },
+      "note": "Uttrycket är ett bråk i två nivåer; figuren visar det som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Hur stor är arean av rektangeln?",
+      "passage": "Omkretsen av en rektangel är 360 m, och längden av en av sidorna är x m.",
+      "options": [
+        "x² m²",
+        "90x m²",
+        "(90x + x²) m²",
+        "(180x − x²) m²"
+      ],
+      "blindAnswer": 3,
+      "explain": "Två sidor som möts i ett hörn är tillsammans hälften av omkretsen: 360/2 = 180 m. Om den ena sidan är x m är den andra alltså (180 − x) m. Arean är x(180 − x) = (180x − x²) m². Alternativet x² m² gäller bara om rektangeln är en kvadrat med sidan 90 m.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "4/x − 1/2 = 2\nKvantitet I: x\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Lös ekvationen. 4/x − 1/2 = 2 ger 4/x = 2 + 1/2 = 5/2. Då är 5x = 8 och x = 8/5 = 1,6. Kontroll: 4/1,6 = 2,5 och 2,5 − 0,5 = 2. Kvantitet I är 1,6, som är större än 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En varas ordinarie pris är 500 kr.\nKupong A ger 100 kr rabatt.\nKupong B ger 20 % rabatt.\nKvantitet I: Den totala rabatten om kupong A används först och därefter, på det rabatterade priset, kupong B\nKvantitet II: Den totala rabatten om kupong B används först och därefter, på det rabatterade priset, kupong A",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvantitet I: Kupong A sänker priset till 500 − 100 = 400 kr. Kupong B ger sedan 20 % av 400 kr = 80 kr i rabatt. Den totala rabatten är 100 + 80 = 180 kr.\nKvantitet II: Kupong B ger 20 % av 500 kr = 100 kr i rabatt, så priset blir 400 kr. Kupong A drar sedan av 100 kr till. Den totala rabatten är 100 + 100 = 200 kr.\nProcentrabatten blir störst när den räknas på det högre priset, alltså när kupong B används först. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "M är mittpunkten på sträckan AB.\nKvantitet I: Arean av triangeln AMC\nKvantitet II: Arean av triangeln MBC",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "En triangels area är bas · höjd/2. Låt AM vara basen i triangeln AMC och MB basen i triangeln MBC. Båda trianglarna har då samma höjd, nämligen avståndet från C till sträckan AB. Eftersom M är mittpunkten är AM och MB lika långa. Samma bas och samma höjd ger samma area, hur triangeln ABC än ser ut. Att trianglarna har olika form i figuren spelar ingen roll.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.22,
+          0.138,
+          0.572,
+          0.282
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < −1\nKvantitet I: 1 − x\nKvantitet II: x − 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skillnaden mellan kvantiteterna är (1 − x) − (x − 1) = 2 − 2x. När x < −1 är −2x > 2, så skillnaden är större än 4 och alltid positiv. Kvantitet I är alltså större. Exempel: x = −3 ger 1 − x = 4 och x − 1 = −4. Kvantitet I är positiv och kvantitet II negativ för alla x < −1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\n√x = x\nKvantitet I: x\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadrera båda leden i √x = x: x = x². Då är x² − x = x(x − 1) = 0, så x = 0 eller x = 1. Eftersom x > 0 återstår bara x = 1. Kontroll: √1 = 1. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = −3x + 5\nKvantitet I: f(1)/f(−1)\nKvantitet II: f(−1)/f(1)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna ut funktionsvärdena: f(1) = −3 · 1 + 5 = 2 och f(−1) = −3 · (−1) + 5 = 3 + 5 = 8. Kvantitet I är 2/8 = 1/4 och kvantitet II är 8/2 = 4. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 3³ + 3³ + 3³\nKvantitet II: 3⁴",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I är tre likadana termer: 3³ + 3³ + 3³ = 3 · 3³ = 3¹ · 3³ = 3⁴, alltså precis kvantitet II. Med siffror: 27 + 27 + 27 = 81 och 3⁴ = 81. Kvantiteterna är lika. Den som lägger ihop exponenterna och får 3⁹ tror felaktigt att kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kalle cyklar med hastigheten 22 km/h.\nBosse cyklar med hastigheten 18 km/h.\nKvantitet I: Den tid det tar för Kalle att cykla 60 km\nKvantitet II: Den tid det tar för Bosse att cykla 54 km",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tid = sträcka/hastighet. Bosse behöver 54/18 = 3 timmar. Kalle behöver 60/22 ≈ 2,7 timmar; på 3 timmar skulle han hinna 3 · 22 = 66 km, alltså längre än 60 km. Kalle cyklar längre men är så mycket snabbare att han ändå behöver kortare tid. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Omkretsen av en regelbunden åttahörning med sidlängden x cm\nKvantitet II: Omkretsen av en rätvinklig triangel där den längsta sidan är 5x cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvantitet I: En regelbunden åttahörning har åtta lika långa sidor, så omkretsen är 8x cm.\nKvantitet II: I en triangel är två sidor tillsammans alltid längre än den tredje, så de två kortare sidorna är tillsammans längre än 5x cm. Omkretsen är därför större än 5x + 5x = 10x cm, till exempel 12x cm om sidorna är 3x, 4x och 5x cm.\nEftersom 10x är större än 8x är kvantitet II större, hur triangeln än ser ut.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x, y och z är tre tal sådana att x < y < z.\nMedianen av x och y är 2.\nMedianen av y och z är 9.\nKvantitet I: y\nKvantitet II: 6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Medianen av två tal är deras medelvärde, så x + y = 4 och y + z = 18. Eftersom x < y är y större än 2, och eftersom y < z är y mindre än 9. Mer än 2 < y < 9 går inte att säga. Exempel: y = 3 ger x = 1 och z = 15, och då är kvantitet II större. y = 7 ger x = −3 och z = 11, och då är kvantitet I större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Magnus ska vattna sin trädgård med vatten från en tunna. Hur mycket vatten finns det i tunnan innan Magnus tar något vatten ur den?\n(1) När Magnus har vattnat färdigt finns det 42 liter vatten kvar i tunnan.\n(2) Magnus tar först 20 procent av vattnet i tunnan. Sedan tar han 1/4 av den återstående vattenmängden och därefter har han vattnat färdigt.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Det finns 42 liter kvar, men utan att veta hur mycket Magnus tog går det inte att räkna ut hur mycket som fanns från början. Inte tillräckligt.\n(2) Här står bara andelar. Efter första gången finns 80 % kvar och efter andra gången 3/4 av det, alltså 0,8 · 0,75 = 0,6 av vattnet. Mängden är okänd. Inte tillräckligt.\n(1) och (2) tillsammans: 60 % av vattnet är 42 liter, så tunnan innehöll 42/0,6 = 70 liter från början. Kontroll: 70 − 14 = 56 och 56 − 14 = 42. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hillevi har en ask med enfärgade pärlor: rosa och vita. Varje pärla är dessutom antingen stor eller liten. Hillevi plockar slumpmässigt en pärla ur asken. Hur stor är sannolikheten att pärlan är rosa?\n(1) Hälften av de stora pärlorna är vita. Hälften av de vita pärlorna är stora.\n(2) I asken finns det 100 pärlor, varav 20 pärlor är stora.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) De stora vita pärlorna är både hälften av de stora och hälften av de vita. Alltså finns det lika många vita pärlor som stora pärlor, men hur stor andel av alla pärlor det är framgår inte. Inte tillräckligt.\n(2) Antalet pärlor och antalet stora pärlor är kända, men inget sägs om färgerna. Inte tillräckligt.\n(1) och (2) tillsammans: Det finns 20 stora pärlor och därmed också 20 vita pärlor. Resten, 100 − 20 = 80 pärlor, är rosa, så sannolikheten är 80/100 = 0,8. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Medelvärdet av fem tal är 30. Vad är talens median?\n(1) Ett av talen är 3.\n(2) Ett av talen är 30.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Summan av de fem talen är 5 · 30 = 150.\n(1) Att ett av talen är 3 säger inget om talet i mitten. Inte tillräckligt.\n(2) Talen kan vara 30, 30, 30, 30, 30 med medianen 30, men också 10, 20, 25, 30, 65 med medianen 25. Inte tillräckligt.\n(1) och (2) tillsammans: De tre övriga talen har summan 150 − 3 − 30 = 117. Talen 3, 30, 39, 39, 39 har medianen 39, medan talen 1, 1, 3, 30, 115 har medianen 3. Medianen kan alltså fortfarande vara olika. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anna, David, Harald och Marie springer ikapp. I vilken ordning kommer de i mål?\n(1) Harald kommer före Anna, men efter Marie. Marie kommer inte först.\n(2) David kommer före Anna och Marie. Harald kommer inte sist.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Marie kommer före Harald, som kommer före Anna. Eftersom Marie inte kommer först måste David komma före henne. Ordningen blir David, Marie, Harald, Anna. Tillräckligt.\n(2) David kommer före Anna och Marie, och Harald är inte sist. Både ordningen David, Harald, Marie, Anna och ordningen David, Marie, Harald, Anna uppfyller villkoren. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På ett djurhem finns det enbart katter och hundar. Hur stor andel av djuren på djurhemmet är katter?\n(1) Det finns 4 gånger så många katter som hundar på djurhemmet.\n(2) 20 % av djuren på djurhemmet är hundar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Om det finns h hundar finns det 4h katter och totalt 5h djur. Andelen katter är 4h/5h = 4/5 = 80 %. Tillräckligt.\n(2) Det finns bara katter och hundar, så om 20 % är hundar är resten, 80 %, katter. Tillräckligt.\nVart och ett av påståendena räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "n är ett positivt heltal sådant att 1 ≤ n ≤ 9.\nVilket värde har n?\n(1) 29 + n är jämnt delbart med 9.\n(2) 29 + n är jämnt delbart med 3.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Eftersom 1 ≤ n ≤ 9 ligger 29 + n mellan 30 och 38.\n(1) Det enda talet mellan 30 och 38 som är jämnt delbart med 9 är 36, så n = 36 − 29 = 7. Tillräckligt.\n(2) Av talen mellan 30 och 38 är 30, 33 och 36 jämnt delbara med 3, så n kan vara 1, 4 eller 7. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor är den totala mängden mat och dryck som hamnar i avloppet per person och år?",
+      "options": [
+        "20 kg",
+        "25 kg",
+        "30 kg",
+        "35 kg"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det nedre diagrammet, som anger kilogram per person och år. Staplarna når ungefär 10 (kaffe och te), 6,4 (mejeriprodukter), 2,8 (övriga drycker), 2,6 (fast matavfall), 2,5 (sås och soppa), 1,0 (övrigt flytande matavfall) och 0,6 (sötsaker). Summan är 10 + 6,4 + 2,8 + 2,6 + 2,5 + 1,0 + 0,6 ≈ 26 kg, vilket ligger närmast 25 kg.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor är mängden mejeriprodukter som hamnar i avloppet jämfört med mängden övrigt flytande matavfall?",
+      "options": [
+        "3 gånger så stor",
+        "6 gånger så stor",
+        "9 gånger så stor",
+        "12 gånger så stor"
+      ],
+      "blindAnswer": 1,
+      "explain": "Jämför de två staplarna i samma diagram. I det nedre diagrammet är mejeriprodukter ungefär 6,4 kg och övrigt flytande matavfall ungefär 1,0 kg per person och år, och 6,4/1,0 ≈ 6. Det övre diagrammet ger samma resultat: cirka 55 500 ton mot cirka 8 700 ton per år, och 55 500/8 700 ≈ 6,4. Mängden mejeriprodukter är alltså ungefär 6 gånger så stor.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur mycket mat och dryck hamnar i avloppet under en vecka?",
+      "options": [
+        "2 200 ton",
+        "3 400 ton",
+        "4 300 ton",
+        "5 500 ton"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det övre diagrammet, som anger ton per år. Staplarna når ungefär 86 000 (kaffe och te), 55 500 (mejeriprodukter), 24 000 (övriga drycker), 22 500 (fast matavfall), 21 000 (sås och soppa), 8 700 (övrigt flytande matavfall) och 5 500 (sötsaker) ton. Summan är ungefär 223 000 ton per år. Ett år har 52 veckor, så under en vecka hamnar 223 000/52 ≈ 4 300 ton i avloppet.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera hur det totala antalet rapporterade skadefall i kategorin skola, offentlig lokal, institutionsområde var fördelat på skadeplatser. Vilken av cirklarna visar den korrekta fördelningen?",
+      "options": [
+        "Cirkel A",
+        "Cirkel B",
+        "Cirkel C",
+        "Cirkel D"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd den vänstra tabellen (Skadeplats), kolumnen Totalt under Antal rapporterade. Kategori 4 har 211 skadefall: daghem m.m. 130 (cirka 62 procent), lekplats på institution 53 (cirka 25 procent), offentlig lokal 11 (cirka 5 procent), skolgård 10 (cirka 5 procent), sjukhus m.m. 5 (cirka 2 procent) och annat specificerat offentligt område 2 (cirka 1 procent). Den vita sektorn ska alltså vara knappt två tredjedelar av cirkeln, den prickiga en fjärdedel, och den grå och den rutiga sektorn ska vara ungefär lika små. Det stämmer med Cirkel A. I Cirkel B är den grå sektorn (skolgård) dubbelt så stor som den rutiga, och i Cirkel C och D är den vita sektorn bara drygt hälften av cirkeln medan den rutiga är för stor.",
+      "figure": {
+        "pages": [
+          18,
+          19
+        ],
+        "boxes": [
+          null,
+          [
+            0.29,
+            0.51,
+            0.53,
+            0.875
+          ]
+        ],
+        "rotate": 90
+      },
+      "note": "Bildalternativ: cirklarna A–D med teckenförklaring (från uppgiftssidan) står under tabellerna i figuren, och alternativen skrivs Cirkel A–D.",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilken skademekanism stod för en femtedel av de rapporterade skadefallen?",
+      "options": [
+        "Annat fall i samma plan",
+        "Fall på eller från trappa",
+        "Fall/hopp från låg höjd",
+        "Kontakt med person, t.ex. spark/drag/knuff"
+      ],
+      "blindAnswer": 2,
+      "explain": "Det finns totalt 1 815 rapporterade skadefall, och en femtedel av dem är 1 815/5 = 363. I den högra tabellen (Skademekanism) har 04. Fall/hopp från låg höjd (<1 meter) 372 rapporterade fall, och 372/1 815 ≈ 0,20. Annat fall i samma plan har 205 fall (cirka 11 procent), fall på eller från trappa 118 (cirka 7 procent) och kontakt med person 98 (cirka 5 procent).",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Notera hur antalet rapporterade skadefall av typen hugg/skärning/sågning mot skarp yta/kant var fördelat på flickor och pojkar. Anta att könsfördelningen var densamma för det skattade antalet skadefall av denna typ i Sverige. Hur många flickor i åldern 0–3 år skadades i så fall på detta sätt?",
+      "options": [
+        "110",
+        "180",
+        "250",
+        "300"
+      ],
+      "blindAnswer": 1,
+      "explain": "I den högra tabellen har 22. Hugg/skärning/sågning mot skarp yta/kant 21 pojkar och 9 flickor, totalt 30 rapporterade fall. Flickorna står alltså för 9/30 = 30 procent. Det skattade antalet i Sverige är 600, och 30 procent av 600 är 0,3 · 600 = 180 flickor.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilket av följande länder avses?",
+      "passage": "Antalet telefoner per 1 000 invånare ökade samtliga redovisade år jämfört med närmast föregående år och ökningen var som störst mellan 1928 och 1929.",
+      "options": [
+        "Storbritannien",
+        "Nederländerna",
+        "Belgien",
+        "Frankrike"
+      ],
+      "blindAnswer": 3,
+      "explain": "Landets kurva ska stiga varje år och vara brantast mellan 1928 och 1929. Frankrikes kurva (den nedersta) stiger varje år, och mellan 1928 och 1929 ökar den från cirka 22 till cirka 26 telefoner per 1 000 invånare. Ingen annan ökning för Frankrike är så stor; de andra åren ökar antalet med 0,5–2,5. Belgiens kurva sjunker mellan 1931 och 1932. Storbritannien ökar mest efter 1934 (cirka 5 per år), och Nederländerna ökar mest mellan 1929 och 1930.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Under perioden 1925–1939 uppgick Sveriges folkmängd till omkring 6 miljoner invånare. Hur många telefoner fanns det i Sverige 1928?",
+      "options": [
+        "48 000",
+        "80 000",
+        "480 000",
+        "800 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sveriges kurva (den tjocka linjen) ligger 1928 vid 80 telefoner per 1 000 invånare (‰ betyder promille, per tusen). 6 miljoner invånare är 6 000 tusental, så antalet telefoner var 80 · 6 000 = 480 000.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilket av följande år var skillnaden mellan Tyskland och Belgien störst respektive minst vad avser antalet telefoner per 1 000 invånare?",
+      "options": [
+        "1926 respektive 1932",
+        "1926 respektive 1933",
+        "1930 respektive 1932",
+        "1930 respektive 1933"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tyskland är den streckade kurvan som börjar vid cirka 41, och Belgien den prickade kurvan som börjar vid cirka 20. Jämför först de två åren för störst skillnad: 1926 är skillnaden cirka 42 − 21,5 ≈ 20 och 1930 cirka 51 − 35 = 16, så den var störst 1926. Jämför sedan åren för minst skillnad: 1932 är skillnaden cirka 46 − 36 = 10 och 1933 cirka 45 − 38,5 ≈ 6,5, så den var minst 1933.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "På vilket avstånd och i vilken riktning från provtagningslokalen Gullhögen ligger provtagningslokalen Hällekis?",
+      "options": [
+        "30 km, nordostlig riktning",
+        "30 km, nordvästlig riktning",
+        "35 km, nordostlig riktning",
+        "35 km, nordvästlig riktning"
+      ],
+      "blindAnswer": 3,
+      "explain": "Gullhögen ligger vid Skövde och Hällekis i kartans nordvästra del, alltså åt nordväst från Gullhögen (norr är uppåt enligt pilen). Mät med skalstocken: Hällekis ligger cirka 23,5 km väster om och cirka 26 km norr om Gullhögen. Avståndet blir √(23,5² + 26²) ≈ 35 km. Lägger man skalstocken på 20 km längs sträckan räcker den ungefär 1,75 gånger, vilket också ger cirka 35 km.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Följ väg 193 från Falköping till Tidaholm. I vilken ordning passeras bergarterna om man startar i Falköping?",
+      "options": [
+        "Diabaser → Ordoviciska kalkstenar → Kambriska sandstenar – skiffrar → Urberg → Kambriska sandstenar – skiffrar → Ordoviciska kalkstenar → Kambriska sandstenar – skiffrar → Urberg",
+        "Diabaser → Kambriska sandstenar – skiffrar → Ordoviciska kalkstenar → Kambriska sandstenar – skiffrar → Urberg → Ordoviciska kalkstenar",
+        "Ordoviciska kalkstenar → Kambriska sandstenar – skiffrar → Urberg → Ordoviciska kalkstenar → Kambriska sandstenar – skiffrar → Urberg",
+        "Ordoviciska kalkstenar → Kambriska sandstenar – skiffrar → Urberg → Kambriska sandstenar – skiffrar → Ordoviciska kalkstenar → Kambriska sandstenar – skiffrar → Urberg"
+      ],
+      "blindAnswer": 3,
+      "explain": "Väg 193 går från Falköping åt sydost och sedan österut mot Tidaholm; vägskylten 193 står strax sydväst om Tidaholm. Falköping ligger i området med tegelmönster, alltså ordoviciska kalkstenar. Strax öster om staden korsar vägen en smal prickig zon (kambriska sandstenar – skiffrar) med en smal remsa urberg i mitten, så att den passerar kambriska sandstenar – skiffrar, urberg och kambriska sandstenar – skiffrar igen. Sedan går vägen genom ett större område med ordoviciska kalkstenar, därefter genom det prickiga området vid vägskylten och till sist in i urberget runt Tidaholm. Diabaserna ligger vid sidan av vägen och passeras inte. Alternativet som hoppar över de kambriska sandstenarna mellan urbergsremsan och kalkstenarna stämmer inte.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "Alternativen är tabellrader på provet med en bergart per ruta; här skrivs bergarterna i ordning med → mellan, och de tomma rutorna (------) är utelämnade.",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Provtagningslokalerna Karlsfors, Stora/Lilla Backor och Varv utgör hörnen i ett triangelformat område. Hur stort är detta område?",
+      "options": [
+        "380 km²",
+        "540 km²",
+        "760 km²",
+        "1 400 km²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Mät med skalstocken. Stora/Lilla Backor och Varv ligger nästan på samma höjd i kartans södra del, cirka 22,5 km från varandra. Låt den sträckan vara triangelns bas. Karlsfors ligger långt norrut, och höjden från Karlsfors ned till basen är cirka 33 km. Arean är bas · höjd/2 ≈ 22,5 · 33/2 ≈ 370 km², och närmast är 380 km². Den som glömmer att dela med 2 får ungefär 740 km² och väljer 760 km².",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
