@@ -44,7 +44,9 @@ figurerna. Frågorna visas sedan i appen för studenter, så avskriften måste s
 - `figure`: `null` om uppgiften inte har någon figur. `box` = x0, y0, x1, y1 som andel av sidans bredd och höjd,
   tätt runt figuren med dess etiketter men **utan** frågetext och svarsalternativ (vita kanter tas bort
   automatiskt). DTK: `{ "pages": [16] }` utan box ger hela figursidan; ange flera sidor om uppgiftens underlag står
-  på flera sidor. Ange bara box för DTK om sidan innehåller annat än underlaget. Liggande sida
+  på flera sidor. Ange bara box för DTK om sidan innehåller annat än underlaget. Behövs bara en del av någon av
+  sidorna (t.ex. tabellen på figursidan och diagrammen bland uppgifterna på nästa sida), ange en box per sida i
+  `boxes` i stället för `box`, med `null` för en hel DTK-sida: `{ "pages": [18, 19], "boxes": [null, [0.1, 0.5, 0.9, 0.8]] }`. Liggande sida
   (`landscape` i underlaget, texten går lodrätt): lägg till `"rotate": 90` (medurs; 270 om texten går uppifrån
   och ned) så att figuren blir rättvänd.
 - `note`: tom sträng, eller en kort mening till granskaren om något i avskriften eller avläsningen är osäkert

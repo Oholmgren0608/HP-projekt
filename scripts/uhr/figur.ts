@@ -8,9 +8,10 @@
  *        # förstoring av en del av sida 3 (andelar av sidan) till .arbete/<pass>/zoom.png
  *
  * Läser `figure` per fråga i content/uhr/<examId>-p<N>.json och skriver WebP
- * till public/uhr/<examId>/ (se figurePath i lib.ts). Med `box` klipps den
- * delen av sidan ut; en DTK-figur utan box blir hela sidan mellan sidhuvudet
- * och sidnumret. Vita kanter tas bort. Kräver poppler-utils (pdftoppm).
+ * till public/uhr/<examId>/ (se figurePath i lib.ts). Med `box` (eller en box
+ * per sida i `boxes`) klipps den delen av sidan ut; en DTK-figur utan box blir
+ * hela sidan mellan sidhuvudet och sidnumret. Vita kanter tas bort. Kräver
+ * poppler-utils (pdftoppm).
  */
 
 import { existsSync, mkdirSync } from "node:fs";
@@ -122,9 +123,9 @@ async function figureFor(pass: UhrPass, q: UhrQuestion, pages: () => PageBox[]):
   if (!rel || !q.figure) return null;
   const out = join(PROJECT_ROOT, "public", rel);
   const parts: Buffer[] = [];
-  for (const page of q.figure.pages) {
+  for (const [i, page] of q.figure.pages.entries()) {
     const file = hiResPage(pass.examId, pass.passNumber, page);
-    let box = q.figure.box;
+    let box = q.figure.boxes ? q.figure.boxes[i] ?? undefined : q.figure.box;
     if (!box) {
       if (q.kind !== "dtk") throw new Error(`Uppgift ${q.number}: figur utan box (bara DTK får sakna box).`);
       const pb = pages().find((p) => p.page === page);

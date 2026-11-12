@@ -86,8 +86,14 @@ export function checkPass(pass: UhrPass, facit: Facit): PassReport {
       if (q.figure.rotate !== undefined && ![90, 180, 270].includes(q.figure.rotate)) {
         errors.push(`${at}: rotate måste vara 90, 180 eller 270`);
       }
-      if (q.figure.box && (q.figure.box.length !== 4 || q.figure.box.some((v) => typeof v !== "number" || v < 0 || v > 1))) {
-        errors.push(`${at}: box ska vara fyra andelar mellan 0 och 1`);
+      const badBox = (b: unknown) =>
+        !Array.isArray(b) || b.length !== 4 || b.some((v) => typeof v !== "number" || v < 0 || v > 1);
+      if (q.figure.box && badBox(q.figure.box)) errors.push(`${at}: box ska vara fyra andelar mellan 0 och 1`);
+      if (q.figure.boxes) {
+        if (q.figure.box) errors.push(`${at}: ange box eller boxes, inte båda`);
+        if (q.figure.boxes.length !== q.figure.pages.length) errors.push(`${at}: boxes ska ha en box per sida`);
+        if (q.figure.boxes.some((b) => b !== null && badBox(b))) errors.push(`${at}: varje box i boxes ska vara null eller fyra andelar`);
+        if (q.kind !== "dtk" && q.figure.boxes.some((b) => b === null)) errors.push(`${at}: bara DTK får ha null i boxes`);
       }
       const rel = figurePath(pass.examId, pass.passNumber, q);
       if (rel && !existsSync(join(PROJECT_ROOT, "public", rel))) {

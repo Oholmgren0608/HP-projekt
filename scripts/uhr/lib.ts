@@ -83,11 +83,14 @@ export function facitIndex(facit: Facit, examId: string, passNumber: number, num
  * Figur till en fråga. `box` är x0, y0, x1, y1 som andel (0–1) av sidans
  * bredd och höjd. En DTK-figur utan box klipps automatiskt ur sidan (allt
  * mellan sidhuvudet och sidnumret); flera sidor läggs under varandra.
+ * `boxes` ger en egen box per sida (null = hela DTK-sidan), när underlaget
+ * står på flera sidor och bara en del av någon av dem behövs.
  * `rotate` vrider varje utklipp medurs (liggande sidor i provhäftet).
  */
 export type UhrFigure = {
   pages: number[];
   box?: [number, number, number, number];
+  boxes?: ([number, number, number, number] | null)[];
   rotate?: 90 | 180 | 270;
 };
 
@@ -137,7 +140,7 @@ export function readAllPasses(): UhrPass[] {
 export function figurePath(examId: string, passNumber: number, q: Pick<UhrQuestion, "number" | "kind" | "figure">): string | null {
   if (!q.figure) return null;
   const name =
-    q.kind === "dtk" && !q.figure.box
+    q.kind === "dtk" && !q.figure.box && !q.figure.boxes
       ? `p${passNumber}-s${q.figure.pages.join("-")}.webp`
       : `p${passNumber}-q${q.number}.webp`;
   return `uhr/${examId}/${name}`;
