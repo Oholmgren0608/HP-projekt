@@ -1,0 +1,796 @@
+{
+  "examId": "hp-2023-10-22",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket 2(x + 4)/2 + 8?",
+      "options": [
+        "x + 10",
+        "x + 12",
+        "x + 16",
+        "2x + 10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Förkorta bråket först: i 2(x + 4)/2 tar tvåan i täljaren och tvåan i nämnaren ut varandra, så bråket är x + 4. Sedan läggs 8 till: x + 4 + 8 = x + 12. Kontroll med x = 2: 2 · 6/2 + 8 = 6 + 8 = 14, och x + 12 = 14. Svaret x + 16 lockar om man multiplicerar in tvåan (2x + 8) och sedan bara delar 2x med 2; då blir det x + 8 + 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "L₁ och L₂ är parallella linjer. Hur stor är vinkeln v?",
+      "options": [
+        "49°",
+        "61°",
+        "64°",
+        "67°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinkeln v är en vinkel i triangeln som de två snedställda linjerna bildar tillsammans med L₂. Linjen som lutar uppåt åt höger bildar vinkeln 131° med L₁, så den spetsiga vinkeln mellan linjen och L₁ är 180° − 131° = 49°. Eftersom L₁ och L₂ är parallella bildar linjen samma vinkel, 49°, med L₂. Den andra linjen bildar vinkeln 113° med L₂, så triangelns vinkel där är 180° − 113° = 67°. Vinkelsumman i en triangel är 180°, så v = 180° − 49° − 67° = 64°.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.22,
+          0.513,
+          0.54,
+          0.682
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "3(x − 4) = 2(x + 2)",
+      "options": [
+        "−8",
+        "−2",
+        "6",
+        "16"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera in i parenteserna: 3x − 12 = 2x + 4. Subtrahera 2x från båda leden: x − 12 = 4. Addera 12: x = 16. Kontroll: 3(16 − 4) = 3 · 12 = 36 och 2(16 + 2) = 2 · 18 = 36. Den som glömmer att multiplicera 4 och 2 med talen framför parenteserna får 3x − 4 = 2x + 2 och svaret 6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av fyra på varandra följande heltal är 4,5. Vad är medianen?",
+      "options": [
+        "4",
+        "4,5",
+        "5",
+        "5,5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Fyra på varandra följande heltal kan skrivas n, n + 1, n + 2 och n + 3. Medelvärdet 4,5 betyder att summan är 4 · 4,5 = 18, så 4n + 6 = 18 och n = 3. Talen är 3, 4, 5 och 6. Med ett jämnt antal tal är medianen medelvärdet av de två mittersta: (4 + 5)/2 = 4,5. För tal med lika stora steg emellan är medianen alltid lika med medelvärdet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Linjerna y = kx + 3 och y = 2x − 1 skär varandra när x = 1. Vilket värde har k?",
+      "options": [
+        "−2",
+        "−1",
+        "1",
+        "2"
+      ],
+      "blindAnswer": 0,
+      "explain": "I skärningspunkten har båda linjerna samma y-värde. Sätt in x = 1 i y = 2x − 1: y = 2 · 1 − 1 = 1. Punkten (1, 1) ska också ligga på y = kx + 3, alltså 1 = k · 1 + 3, vilket ger k = 1 − 3 = −2. Kontroll: linjen y = −2x + 3 ger y = −2 + 3 = 1 när x = 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "En bil körde 1 000 meter på 50 sekunder. Vilken medelhastighet hade bilen?",
+      "options": [
+        "70 km/h",
+        "72 km/h",
+        "74 km/h",
+        "76 km/h"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelhastigheten är 1 000 m/50 s = 20 m/s. För att få km/h multiplicerar man med 3,6, eftersom en timme har 3 600 sekunder och en kilometer är 1 000 meter: 20 · 3,6 = 72 km/h. Kontroll: på en timme, 3 600 sekunder, hinner bilen 3 600/50 = 72 sträckor om 1 000 meter, alltså 72 km.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 1/(2/5 − 5/6)?",
+      "options": [
+        "−30/13",
+        "−11/3",
+        "1/3",
+        "13/10"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna först ut nämnaren med den gemensamma nämnaren 30: 2/5 − 5/6 = 12/30 − 25/30 = −13/30. Att dividera 1 med ett bråk är detsamma som att multiplicera med bråket upp och ned: 1/(−13/30) = −30/13. Eftersom 5/6 är större än 2/5 är nämnaren negativ, så hela uttrycket måste vara negativt. Det utesluter 1/3 och 13/10 direkt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Hur lång är sträckan BC?",
+      "options": [
+        "13 cm",
+        "14 cm",
+        "15 cm",
+        "16 cm"
+      ],
+      "blindAnswer": 0,
+      "explain": "Triangeln ABD är rätvinklig vid A med kateterna AD = 3 cm och AB = 4 cm. Enligt Pythagoras sats är BD = √(3² + 4²) = √25 = 5 cm. Triangeln BCD är rätvinklig vid D med kateterna BD = 5 cm och DC = 12 cm. Då är BC = √(5² + 12²) = √(25 + 144) = √169 = 13 cm.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.22,
+          0.512,
+          0.4,
+          0.689
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är med säkerhet lika med xy?",
+      "passage": "x − y = 0",
+      "options": [
+        "0",
+        "1",
+        "x",
+        "y²"
+      ],
+      "blindAnswer": 3,
+      "explain": "x − y = 0 betyder att x = y. Då är xy = y · y = y² för alla värden på y. De andra alternativen gäller bara i specialfall: xy = 0 bara om x = y = 0, xy = 1 bara om x = y = 1 eller x = y = −1, och xy = x bara om x = 0 eller x = 1. Till exempel ger x = y = 3 att xy = 9 = y².",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är med säkerhet korrekt?",
+      "passage": "n är ett heltal sådant att xⁿ < 0 då x är ett negativt tal.",
+      "options": [
+        "n är ett negativt tal.",
+        "n är ett positivt tal.",
+        "n är ett udda tal.",
+        "n är ett jämnt tal."
+      ],
+      "blindAnswer": 2,
+      "explain": "Ett negativt tal upphöjt till ett heltal blir negativt när exponenten är udda och positivt när den är jämn: (−2)² = 4 men (−2)³ = −8. Det gäller också negativa exponenter: (−2)⁻¹ = −1/2 är negativt, men (−2)⁻² = 1/4 är positivt, och (−2)⁰ = 1. För att xⁿ ska vara negativt måste n alltså vara udda. n kan vara både positivt (n = 3) och negativt (n = −1), så inget av de alternativen gäller med säkerhet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Hur långt från origo ligger myrans slutpunkt?",
+      "passage": "En myra förflyttar sig i ett koordinatsystem. Myran startar i origo. Den rör sig först 5 längdenheter i x-axelns positiva riktning och därefter 6 längdenheter i y-axelns positiva riktning. Slutligen rör sig myran 3 längdenheter i x-axelns positiva riktning.\nKoordinatsystemet kan användas för att lösa uppgiften.",
+      "options": [
+        "8 längdenheter",
+        "10 längdenheter",
+        "12 längdenheter",
+        "14 längdenheter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Myran går först 5 och sedan 3 längdenheter åt höger, totalt 8, och däremellan 6 längdenheter uppåt. Slutpunkten är alltså (8, 6). Avståndet till origo är hypotenusan i en rätvinklig triangel med kateterna 8 och 6: √(8² + 6²) = √(64 + 36) = √100 = 10 längdenheter. 14 längdenheter är hela sträckan som myran gick (5 + 6 + 3), inte avståndet från origo.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.225,
+          0.188,
+          0.615,
+          0.465
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med √12 + √48?",
+      "options": [
+        "10",
+        "11",
+        "6√3",
+        "√60"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv rötterna så att de innehåller √3: √12 = √(4 · 3) = 2√3 och √48 = √(16 · 3) = 4√3. Summan är 2√3 + 4√3 = 6√3. Man kan inte lägga ihop talen under rottecknen, så √60 stämmer inte: √12 + √48 ≈ 3,46 + 6,93 ≈ 10,4, medan √60 ≈ 7,7. Inte heller 10 eller 11 är exakt lika med summan, eftersom 6√3 inte är ett heltal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: √x · √x\nKvantitet II: x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "För x > 0 är √x det positiva tal som multiplicerat med sig självt blir x. Därför är √x · √x = (√x)² = x för alla positiva x. Exempel: x = 9 ger √9 · √9 = 3 · 3 = 9, och x = 2 ger √2 · √2 = 2. Kvantiteterna är alltid lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Två vanliga sexsidiga tärningar kastas slumpmässigt en gång.\nKvantitet I: Sannolikheten att få en fyra och en femma\nKvantitet II: Sannolikheten att få summan 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Två tärningar ger 6 · 6 = 36 lika sannolika utfall om man skiljer på första och andra tärningen. En fyra och en femma kan komma på två sätt, (4, 5) och (5, 4), så sannolikheten är 2/36. Summan 3 kan också komma på två sätt, (1, 2) och (2, 1), så även den sannolikheten är 2/36. Kvantiteterna är lika. Det är lätt att räkna en fyra och en femma som ett enda utfall men summan 3 som två, eller tvärtom; båda händelserna består av två utfall.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 5/13 − 4/15\nKvantitet II: 4/15 − 5/13",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet II är samma subtraktion med termerna i omvänd ordning, alltså II = −I. Eftersom 5/13 ≈ 0,38 är större än 4/15 ≈ 0,27 är kvantitet I positiv och kvantitet II negativ. Exakt: 5/13 − 4/15 = 75/195 − 52/195 = 23/195, så kvantitet I är 23/195 och kvantitet II är −23/195. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "L är en rät linje.\nKvantitet I: x + y\nKvantitet II: 90°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "De fyra vinklarna x, x, y och y ligger bredvid varandra på samma sida om den räta linjen L och fyller tillsammans ett halvt varv. Alltså är x + x + y + y = 180°, det vill säga 2x + 2y = 180°. Delar man båda leden med 2 blir x + y = 90°. Det gäller oavsett hur stora x och y är var för sig.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.22,
+          0.54,
+          0.62,
+          0.66
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\ny > 0\nz > 0\nx² + y² = z²\nKvantitet I: y\nKvantitet II: z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Eftersom x > 0 är x² > 0. Då ger x² + y² = z² att z² = y² + x² > y². Både y och z är positiva, och för positiva tal betyder z² > y² att z > y. Exempel: x = 3 och y = 4 ger z = 5, och x = 4 och y = 3 ger också z = 5. Talen motsvarar sidorna i en rätvinklig triangel där z är hypotenusan, som alltid är längst. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Det ordinarie priset på en vara är 20 % lägre i butik A än i butik B.\nKvantitet I: Priset på varan i butik A om de sänker priset med 5 %\nKvantitet II: Priset på varan i butik B om de sänker priset med 25 %",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Anta att varan kostar 100 kr i butik B. Då kostar den 20 % mindre i butik A, alltså 80 kr. Kvantitet I: 80 kr sänkt med 5 % är 80 · 0,95 = 76 kr. Kvantitet II: 100 kr sänkt med 25 % är 100 · 0,75 = 75 kr. Det gäller för alla priser: med priset P i butik B är I = 0,8 · 0,95 · P = 0,76P och II = 0,75P. Att 20 % + 5 % = 25 % lockar till svaret att de är lika, men de 5 procenten räknas på ett lägre belopp. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Arean av en cirkel med radien 5 cm\nKvantitet II: 75 cm²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Arean av en cirkel är πr². Med r = 5 cm blir arean π · 5² = 25π ≈ 25 · 3,14 ≈ 78,5 cm². Det är mer än 75 cm², så kvantitet I är större. Räknar man med π ≈ 3 får man precis 75 cm², men π är större än 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "z > 1\nxy = z\nKvantitet I: x\nKvantitet II: z/y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Eftersom z > 1 är xy = z inte 0, och då kan varken x eller y vara 0. Därför går det att dela båda leden i xy = z med y, vilket ger x = z/y. Kvantiteterna är lika för alla tillåtna värden. Exempel: x = 2 och y = 3 ger z = 6, och z/y = 6/3 = 2 = x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen L₁ går genom punkterna (2, 1) och (−3, 7).\nLinjen L₂ är vinkelrät mot L₁.\nKvantitet I: Riktningskoefficienten för linjen L₁\nKvantitet II: Riktningskoefficienten för linjen L₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Riktningskoefficienten för L₁ är k₁ = (7 − 1)/(−3 − 2) = 6/(−5) = −1,2. För två vinkelräta linjer är produkten av riktningskoefficienterna −1, så k₂ = −1/k₁ = −1/(−6/5) = 5/6 ≈ 0,83. L₁ lutar nedåt och har negativ riktningskoefficient, medan L₂ lutar uppåt och har positiv. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 2 · 10ˣ\nKvantitet II: (2 · 10)ˣ",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "I kvantitet I gäller exponenten bara 10, medan hela produkten 2 · 10 = 20 upphöjs i kvantitet II, så II = 20ˣ. Vilken som är störst beror på x. Med x = 1 är I = 2 · 10 = 20 och II = 20, alltså lika. Med x = 2 är I = 2 · 100 = 200 och II = 400, så II är större. Med x = 0 är I = 2 · 1 = 2 och II = 1, så I är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en klass går det 30 elever. Hur många av eleverna spelar både fotboll och innebandy?\n(1) 20 av eleverna spelar fotboll.\n(2) 10 av eleverna spelar innebandy.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Att 20 elever spelar fotboll säger inget om innebandyn. Inte tillräckligt.\n(2) Att 10 elever spelar innebandy säger inget om fotbollen. Inte tillräckligt.\n(1) och (2) tillsammans: Om ingen spelar båda sporterna spelar 20 + 10 = 30 elever en sport var, vilket går i en klass med 30 elever. Om alla tio innebandyspelare också spelar fotboll spelar 10 elever båda sporterna. Antalet kan vara allt från 0 till 10, eftersom det inte står att alla elever spelar någon av sporterna. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Går linjen L genom punkten (5, 5)?\n(1) Linjen L går genom punkten (4, 6).\n(2) Linjen L går genom punkten (6, 4).",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Genom punkten (4, 6) går oändligt många linjer, och bara en av dem går också genom (5, 5). Inte tillräckligt.\n(2) Samma sak gäller punkten (6, 4). Inte tillräckligt.\n(1) och (2) tillsammans: Två punkter bestämmer en linje. Riktningskoefficienten är (4 − 6)/(6 − 4) = −1, och linjen är y = −x + 10. När x = 5 är y = 5, så linjen går genom (5, 5). Punkten (5, 5) är mittpunkten mellan (4, 6) och (6, 4). Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Maria tänker på ett heltal. Är talet jämnt delbart med 5?\n(1) Talet är jämnt delbart med 100.\n(2) Talet är jämnt delbart med 15.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Eftersom 100 = 5 · 20 är varje tal som är delbart med 100 också delbart med 5. Svaret är ja. Tillräckligt.\n(2) Eftersom 15 = 5 · 3 är varje tal som är delbart med 15 också delbart med 5. Svaret är ja. Tillräckligt.\nVarje påstående ger alltså för sig svaret på frågan.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En al, en björk och en rönn växer intill varandra. Vilket av träden är högst?\n(1) Alen är högre än björken. Rönnen är inte högst.\n(2) Både alen och björken är högre än rönnen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Björken är lägre än alen och kan därför inte vara högst. Rönnen är inte heller högst. Då måste alen vara högst. Tillräckligt.\n(2) Rönnen är lägst, men påståendet säger inget om vilket av alen och björken som är högre. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En affär har 100 tröjor. Varje tröja är antingen långärmad eller kortärmad. Varje tröja är dessutom antingen i barnstorlek eller i vuxenstorlek. Affären har 10 långärmade tröjor i barnstorlek. Hur många kortärmade tröjor i vuxenstorlek har affären?\n(1) 25 procent av tröjorna i barnstorlek är långärmade.\n(2) 20 procent av de långärmade tröjorna är i barnstorlek.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Tröjorna delas in i fyra grupper: långärmade och kortärmade i barnstorlek och i vuxenstorlek. 10 är långärmade i barnstorlek.\n(1) De 10 långärmade barntröjorna är 25 procent av barntröjorna, så det finns 10/0,25 = 40 barntröjor, varav 30 kortärmade. De 60 vuxentröjorna kan vara fördelade hur som helst på långärmat och kortärmat. Inte tillräckligt.\n(2) De 10 tröjorna är 20 procent av de långärmade, så det finns 10/0,2 = 50 långärmade tröjor, varav 40 i vuxenstorlek. De 50 kortärmade kan vara fördelade hur som helst på barn- och vuxenstorlek. Inte tillräckligt.\n(1) och (2) tillsammans: 10 långärmade barntröjor, 30 kortärmade barntröjor och 40 långärmade vuxentröjor. De kortärmade vuxentröjorna är 100 − 10 − 30 − 40 = 20. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "För de två talen x och y gäller att x = 2y. Vad är y?\n(1) Ett av talen är 7.\n(2) x + y = 21",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Om x = 7 är y = 7/2 = 3,5, men om y = 7 är x = 14. y kan alltså vara 3,5 eller 7. Inte tillräckligt.\n(2) Sätt in x = 2y i x + y = 21: 2y + y = 3y = 21, så y = 7. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För vilken typ av sameby i Norrbottens län gällde 2016 att antalet renar per renägare var mindre än 30 och att mer än var tredje renägare var kvinna?",
+      "options": [
+        "N:a fjällsamebyar",
+        "S:a fjällsamebyar",
+        "Skogssamebyar",
+        "Koncessionssamebyar"
+      ],
+      "blindAnswer": 2,
+      "explain": "Titta på raderna för Norrbottens län. I kolumnen Renar per renägare står 50 för N:a fjällsamebyar och 52 för S:a fjällsamebyar, så de faller bort. Skogssamebyar har 26 och koncessionssamebyar 13 renar per renägare, båda under 30. Andelen kvinnor bland renägarna är för skogssamebyarna 304/830 ≈ 0,37 och för koncessionssamebyarna 187/795 ≈ 0,24. Mer än var tredje renägare (en andel över 1/3 ≈ 0,33) var kvinna bara i skogssamebyarna.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Med hur mycket hade antalet kvinnor som var renägare ökat 2016 jämfört med 1995?",
+      "options": [
+        "10 procent",
+        "15 procent",
+        "20 procent",
+        "25 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av kolumnen Kvinnor under Renägare i den nedre delen av tabellen (hela riket): 1 843 år 2016 och 1 603 år 1995. Ökningen är 1 843 − 1 603 = 240 kvinnor. I procent av 1995 års antal är det 240/1 603 ≈ 0,15, alltså cirka 15 procent. Räknar man i stället i procent av 2016 års antal blir det 240/1 843 ≈ 13 procent, men en ökning jämförs med utgångsåret.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Jämför samebyar i Västerbottens län med fjällsamebyar i Jämtlands län med avseende på antalet renar och antalet samebyar 2016. Hur stor var skillnaden i antalet renar per sameby?",
+      "options": [
+        "300",
+        "1 200",
+        "2 900",
+        "4 100"
+      ],
+      "blindAnswer": 2,
+      "explain": "Västerbottens län hade 7 samebyar med sammanlagt 48 945 renar, alltså 48 945/7 ≈ 6 990 renar per sameby. Fjällsamebyarna i Jämtlands län var 12 med 49 241 renar, alltså 49 241/12 ≈ 4 100 renar per sameby. Skillnaden är ungefär 6 990 − 4 100 ≈ 2 900 renar per sameby. 4 100 är Jämtlands antal renar per sameby, inte skillnaden, och 300 är ungefär skillnaden i det totala antalet renar (49 241 − 48 945 = 296).",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "För vilken av följande kategorier gällde att det skilde mindre än 1 000 kr/m² mellan årsavgiften i bostadsrätt och årshyran i hyresrätt samt att den genomsnittliga insatsen var högre än 1,5 miljoner kr?",
+      "options": [
+        "Stor-Stockholm",
+        "Stor-Göteborg",
+        "Kommuner med >75 000 invånare",
+        "Kommuner med <75 000 invånare"
+      ],
+      "blindAnswer": 2,
+      "explain": "Jämför den svarta stapeln (årsavgift) med den grå (årshyra) och läs av den vita (insats, i tusental kronor). Stor-Stockholm: cirka 1 730 − 660 ≈ 1 070 kr/m² i skillnad. Stor-Göteborg: cirka 1 690 − 615 ≈ 1 075 kr/m². Båda skiljer mer än 1 000 kr/m². Kommuner med >75 000 invånare: cirka 1 520 − 640 ≈ 880 kr/m², och insatsen är cirka 1 870 tkr, alltså mer än 1,5 miljoner kr. Kommuner med <75 000 invånare: skillnaden är cirka 1 355 − 690 ≈ 665 kr/m², men insatsen är bara cirka 1 380 tkr, under 1,5 miljoner kr. Båda villkoren gäller alltså bara för kommuner med >75 000 invånare.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Jämför kommuner som hade fler än 75 000 invånare med kommuner som hade färre än 75 000 invånare. Vilket svarsförslag är korrekt?",
+      "options": [
+        "Större kommuner hade högre årsavgift för bostadsrätt än mindre kommuner.",
+        "Mindre kommuner hade lägre årshyra för hyresrätt än större kommuner.",
+        "Mindre kommuner hade högre insats per bostadsrättslägenhet än större kommuner.",
+        "Större kommuner låg högre än mindre kommuner vad gäller såväl årsavgift som årshyra och insats."
+      ],
+      "blindAnswer": 1,
+      "explain": "Jämför de två staplargrupperna längst till höger. Årshyran (grå stapel) är cirka 1 520 kr/m² i kommunerna med fler än 75 000 invånare och cirka 1 355 kr/m² i de mindre kommunerna, så de mindre kommunerna hade lägre årshyra. Årsavgiften (svart stapel) är cirka 640 kr/m² i de större och 690 kr/m² i de mindre kommunerna, så de större hade inte högre årsavgift, och därför stämmer inte heller påståendet att de större låg högre i alla tre avseendena. Insatsen (vit stapel) är cirka 1 870 tkr i de större och 1 380 tkr i de mindre kommunerna, så de mindre hade inte högre insats.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "I hela landet var insatsen för en bostadsrättslägenhet i genomsnitt 2 616 000 kr. Hur hög var den genomsnittliga insatsen i kommuner med färre än 75 000 invånare jämfört med landets genomsnitt?",
+      "options": [
+        "Dubbelt så hög",
+        "Tre fjärdedelar så hög",
+        "En tredjedel så hög",
+        "Hälften så hög"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kommuner med färre än 75 000 invånare är staplarna längst till höger. Den vita stapeln (insats) når ungefär 1 380 tkr, alltså cirka 1 380 000 kr. Jämfört med landets genomsnitt är det 1 380 000/2 616 000 ≈ 0,53, ungefär hälften. Tre fjärdedelar av 2 616 000 kr skulle vara cirka 1 960 000 kr och en tredjedel cirka 870 000 kr, så hälften stämmer bäst.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilken av följande orter låg mer än en halvtimmes tågresa från Uppsala?",
+      "options": [
+        "Brunna (station 11)",
+        "Marielund (station 30)",
+        "Vattholma (station 18)",
+        "Örsundsbro (station 8)"
+      ],
+      "blindAnswer": 3,
+      "explain": "De prickiga banden längs järnvägarna visar hur långt man kom med tåg på en halvtimme från orter med minst 2 000 invånare, och pilarna visar från vilken ort. Från Uppsala går banden norrut förbi Vattholma (18) till Skyttorp (19), österut förbi Marielund (30) och västerut förbi Brunna (11) till station 12. På banan mot Enköping slutar Uppsalas band mellan station 6 och 7. Det prickiga bandet vid Örsundsbro (8) hör till Enköping; pilen där pekar bort från Enköping. Örsundsbro låg alltså mer än en halvtimmes tågresa från Uppsala.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.2,
+            0.095,
+            0.7,
+            0.35
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger två stationer som passerades på en tågresa mellan Uppsala och Hallstavik?",
+      "options": [
+        "Faringe och Rimbo",
+        "Faringe och Gimo",
+        "Hargshamn och Rimbo",
+        "Hargshamn och Gimo"
+      ],
+      "blindAnswer": 0,
+      "explain": "Stationsförteckningen ger numren: Faringe 33, Rimbo 48, Gimo 59 och Hargshamn 62. Från Uppsala går banan österut till Faringe (33), där den delar sig. Mot Hallstavik fortsätter man sydost via Knutby (56) och Rånäs (55) till Rimbo (48) och därifrån norrut via Sättraby (53) och Edsbro (52) till Hallstavik. Gimo (59) och Hargshamn (62) ligger på grenen norrut från Faringe, som inte har någon förbindelse med Hallstavik. Tåget passerade alltså Faringe och Rimbo.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.2,
+            0.095,
+            0.7,
+            0.35
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger medelhastigheten för en tågresa från Tierp till Knypplan (station 20)?",
+      "options": [
+        "20 km/h",
+        "40 km/h",
+        "60 km/h",
+        "80 km/h"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tierp har minst 2 000 invånare, och det prickiga bandet från Tierp söderut (pilen pekar bort från Tierp) slutar vid Knypplan (station 20). Resan från Tierp till Knypplan tog alltså ungefär en halvtimme. Med skalan nere till vänster på kartan är sträckan cirka 20 km. Medelhastigheten blir 20 km/0,5 h = 40 km/h.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.2,
+            0.095,
+            0.7,
+            0.35
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Med hur mycket ökade den totala energianvändningen om man jämför den redovisade periodens första och sista år?",
+      "options": [
+        "30 procent",
+        "40 procent",
+        "50 procent",
+        "60 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den totala energianvändningen är den översta kurvan i det nedre diagrammet, och perioden är 1970–2017. År 1970 ligger kurvan på ungefär 440 TWh och år 2017 på ungefär 580 TWh. Ökningen är 580 − 440 = 140 TWh, och 140/440 ≈ 0,32, alltså cirka 30 procent. En ökning med 40 procent hade krävt ungefär 615 TWh år 2017.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Vilket användningsområde stod för 15 procent av den totala energianvändningen 1984?",
+      "options": [
+        "Bostäder och service m.m.",
+        "Förluster i kärnkraften",
+        "Industri",
+        "Inrikes transporter"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av det nedre diagrammet vid 1984. Den totala energianvändningen (översta kurvan) är ungefär 510 TWh, och 15 procent av det är cirka 75 TWh. Inrikes transporter, det vita fältet ovanför industrin, går från ungefär 135 till 210 TWh, alltså cirka 75 TWh. Industrin är cirka 135 TWh (26 procent), bostäder och service m.m. cirka 145 TWh (28 procent) och förluster i kärnkraften, det översta fältet, cirka 100 TWh (20 procent).",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Jämför energitillförseln från kärnbränsle 2010 med energiförlusterna i kärnkraften samma år. Hur stor var skillnaden?",
+      "options": [
+        "60 TWh",
+        "90 TWh",
+        "110 TWh",
+        "140 TWh"
+      ],
+      "blindAnswer": 0,
+      "explain": "I det övre diagrammet är kärnbränsle det vita fältet mellan övriga bränslen och primär värme. År 2010 sträcker det sig från ungefär 340 till 505 TWh, alltså cirka 165 TWh. Förluster i kärnkraften är det översta fältet i det nedre diagrammet; år 2010 sträcker det sig från ungefär 470 till 580 TWh, alltså cirka 110 TWh. Skillnaden är ungefär 165 − 110 = 55 TWh, närmast 60 TWh. 110 TWh lockar, men det är förlusterna själva och inte skillnaden.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
