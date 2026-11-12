@@ -1,0 +1,833 @@
+{
+  "examId": "hp-2022-05-07",
+  "passNumber": 1,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "5(3 − x) = (4 + x)2",
+      "options": [
+        "0",
+        "1",
+        "7/2",
+        "11/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Provet skriver (4 + x)2, alltså (4 + x) · 2. Multiplicera in i parenteserna: 15 − 5x = 8 + 2x. Samla x på ena sidan och talen på den andra: 15 − 8 = 2x + 5x, alltså 7 = 7x och x = 1. Kontroll: 5(3 − 1) = 10 och (4 + 1) · 2 = 10.",
+      "figure": null,
+      "note": "Provet skriver (4 + x)2 med 2:an som faktor efter parentesen, inte som exponent.",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Linjen y = kx + m är inritad i koordinatsystemet nedan. Vad är riktningskoefficienten k för linjen?",
+      "options": [
+        "−1/3",
+        "1/3",
+        "3",
+        "1"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av två punkter där linjen går genom rutnätets hörn: den skär y-axeln i (0, −1) och x-axeln i (3, 0). Riktningskoefficienten är ändringen i y delad med ändringen i x: k = (0 − (−1))/(3 − 0) = 1/3. Linjen stiger åt höger, så k är positiv, och den stiger en ruta för varje tre rutor åt höger. Svaret 3 lockar om man delar ändringen i x med ändringen i y.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.22,
+          0.545,
+          0.62,
+          0.755
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är 4/9 · 1/3 − 1/3 + 4/9?",
+      "options": [
+        "4/9",
+        "7/27",
+        "7/33",
+        "16/81"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplikationen görs först: 4/9 · 1/3 = 4/27. Skriv sedan alla termer med nämnaren 27: 1/3 = 9/27 och 4/9 = 12/27. Uttrycket blir 4/27 − 9/27 + 12/27 = 7/27. Kontroll med decimaltal: 0,148 − 0,333 + 0,444 ≈ 0,259, och 7/27 ≈ 0,259.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Cirkeln i figuren har radien 1 cm. Punkten M är cirkelns medelpunkt. Vad är x?",
+      "options": [
+        "3 cm",
+        "4 cm",
+        "√7 cm",
+        "3√2 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Triangeln har ett hörn i M. Den vågräta kateten består av radien 1 cm och sträckan 3 cm, alltså 4 cm, och den lodräta kateten är 3 cm. Pythagoras sats ger hypotenusan √(4² + 3²) = √25 = 5 cm. Sträckan x börjar där hypotenusan skär cirkeln, alltså en radie från M, så x = 5 − 1 = 4 cm. Svaret 3√2 cm lockar om man glömmer radien och räknar med två kateter på 3 cm.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.2,
+          0.535,
+          0.57,
+          0.745
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "I vilket av följande intervall ligger x om x = √(√4)?",
+      "options": [
+        "1,2 < x ≤ 1,6",
+        "1,6 < x ≤ 2,0",
+        "2,0 < x ≤ 4,0",
+        "4,0 < x ≤ 6,0"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna inifrån: √4 = 2, så x = √2. Eftersom 1,4² = 1,96 och 1,5² = 2,25 ligger √2 mellan 1,4 och 1,5 (√2 ≈ 1,41). Det talet ligger i intervallet 1,2 < x ≤ 1,6. Intervallet 1,6 < x ≤ 2,0 lockar om man bara drar roten ur en gång och får 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är medelvärdet av 1/3 och 1/5?",
+      "options": [
+        "1/8",
+        "10/75",
+        "1/4",
+        "4/15"
+      ],
+      "blindAnswer": 3,
+      "explain": "Medelvärdet är summan delad med antalet tal. Summan är 1/3 + 1/5 = 5/15 + 3/15 = 8/15. Delat med 2 blir det 8/15 · 1/2 = 4/15. Svaret 1/4 lockar om man adderar täljarna och nämnarna var för sig: (1 + 1)/(3 + 5) = 2/8 = 1/4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "En kvadrat har lika stor area som en rektangel med basen x cm och höjden 3x/4 cm. Vilket svarsalternativ motsvarar kvadratens sidlängd?",
+      "options": [
+        "√(3/2) · x cm",
+        "3x/2 cm",
+        "(√3 · x)/2 cm",
+        "9x/16 cm"
+      ],
+      "blindAnswer": 2,
+      "explain": "Rektangelns area är x · 3x/4 = 3x²/4 cm². Kvadratens sidlängd är roten ur arean: √(3x²/4) = √3 · √(x²)/√4 = (√3 · x)/2 cm, eftersom x är positivt. Kontroll med x = 2: rektangeln har arean 2 · 1,5 = 3 cm², och en kvadrat med sidan √3 cm har också arean 3 cm². Svaret 3x/2 cm ger arean 9x²/4 cm², alltså tre gånger för mycket.",
+      "figure": null,
+      "note": "Gångertecknet i √(3/2) · x och (√3 · x)/2 är tillagt för att visa att x står utanför roten; provet skriver det utan tecken.",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "xy² = 18\nxy = 3",
+      "options": [
+        "1/2",
+        "3/2",
+        "2",
+        "√6"
+      ],
+      "blindAnswer": 0,
+      "explain": "Dela den första ekvationen med den andra: xy²/(xy) = 18/3, alltså y = 6. Sätt in y = 6 i xy = 3: 6x = 3, så x = 1/2. Kontroll: (1/2) · 6² = 18 och (1/2) · 6 = 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 5 · 5⁰ · 5⁻² + 5?",
+      "options": [
+        "5",
+        "5,2",
+        "6",
+        "10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ett tal upphöjt till 0 är 1, så 5⁰ = 1, och 5⁻² = 1/5² = 1/25. Produkten blir 5 · 1 · 1/25 = 1/5 = 0,2. Sedan adderas 5: 0,2 + 5 = 5,2. Svaret 5 lockar om man tror att 5⁰ = 0, så att hela produkten försvinner.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket ((x − 3)/x)/(1/x) + 3?",
+      "passage": "x ≠ 0",
+      "options": [
+        "0",
+        "1",
+        "x",
+        "x/x²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Att dela med ett bråk är detsamma som att multiplicera med det inverterade bråket: ((x − 3)/x)/(1/x) = (x − 3)/x · x/1 = x − 3, eftersom x ≠ 0 och x kan förkortas bort. Lägg sedan till 3: x − 3 + 3 = x. Kontroll med x = 2: (−1/2)/(1/2) + 3 = −1 + 3 = 2.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.514,
+          0.53,
+          0.6012,
+          0.59
+        ]
+      },
+      "note": "Dubbelbråket visas i figuren; i texten står det som ((x − 3)/x)/(1/x) + 3.",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Ekvationen för linjen L kan skrivas y = (2/3)x + 4/3. Linjen L går genom punkten (1, 2). Vilket svarsalternativ anger en punkt på L?",
+      "options": [
+        "(−2, 0)",
+        "(0, 1)",
+        "(2, 3)",
+        "(3, 3)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Pröva punkterna i ekvationen, som också kan skrivas y = (2x + 4)/3. För x = −2 blir y = (−4 + 4)/3 = 0, så (−2, 0) ligger på L. För x = 0 blir y = 4/3 och inte 1, för x = 2 blir y = 8/3 och inte 3, och för x = 3 blir y = 10/3 och inte 3. Kontroll med den givna punkten: x = 1 ger y = 6/3 = 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Det tar 11 sekunder för Oscar att springa y meter. Hur många sekunder tar det för honom att springa x meter med samma medelhastighet?",
+      "options": [
+        "x/(11y)",
+        "y/(11x)",
+        "11x/y",
+        "11y/x"
+      ],
+      "blindAnswer": 2,
+      "explain": "Oscars medelhastighet är y/11 meter per sekund. Tiden för x meter är sträckan delad med hastigheten: x/(y/11) = 11x/y sekunder. Kontroll: dubbelt så lång sträcka (x = 2y) ska ta 22 sekunder, och 11 · 2y/y = 22, medan 11y/x bara ger 5,5 sekunder.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 4 % av 200\nKvantitet II: En fjärdedel av 20",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet I: 4 % av 200 är 0,04 · 200 = 8. Kvantitet II: en fjärdedel av 20 är 20/4 = 5. Eftersom 8 är större än 5 är kvantitet I större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x + y + z + w\nKvantitet II: 360°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "De fyra linjerna bildar en fyrhörning. Vid varje hörn korsar två linjer varandra, och den markerade vinkeln ligger mitt emot fyrhörningens inre vinkel i samma hörn. Sådana vertikalvinklar är lika stora, så x, y, z och w är lika stora som fyrhörningens fyra inre vinklar. Vinkelsumman i en fyrhörning är 360°, alltså är x + y + z + w = 360° och kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.19,
+          0.515,
+          0.47,
+          0.68
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 10 − 3x\nKvantitet I: f(2) − f(5)\nKvantitet II: f(0) − f(4)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna ut funktionsvärdena: f(2) = 10 − 6 = 4, f(5) = 10 − 15 = −5, f(0) = 10 och f(4) = 10 − 12 = −2. Kvantitet I är 4 − (−5) = 9 och kvantitet II är 10 − (−2) = 12, så kvantitet II är större. Snabbare: f(a) − f(b) = 3(b − a), så I = 3 · 3 = 9 och II = 3 · 4 = 12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/5 + 1/10 + 1/15\nKvantitet II: 1/3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv bråken med den gemensamma nämnaren 30: 1/5 = 6/30, 1/10 = 3/30 och 1/15 = 2/30. Summan är 11/30. Kvantitet II är 1/3 = 10/30. Eftersom 11/30 är större än 10/30 är kvantitet I större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x/16 = 3/(12x)\nKvantitet I: x\nKvantitet II: 4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Korsmultiplicera: x · 12x = 3 · 16, alltså 12x² = 48 och x² = 4. Då är x = 2 eller x = −2. Båda värdena är mindre än 4, så kvantitet II är större. Svaret att kvantiteterna är lika lockar om man glömmer att det är x² och inte x som blir 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Omkretsen av sexhörningen ABCDEF\nKvantitet II: 24 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Hörnen A, B, C, E och F är räta, så sexhörningens sidor är omväxlande vågräta och lodräta. De vågräta sidorna FE och DC är tillsammans lika långa som AB, alltså 7 cm. De lodräta sidorna BC och DE är tillsammans lika långa som AF, alltså 5 cm. Omkretsen blir 7 + 5 + 7 + 5 = 24 cm, oavsett var hörnet D ligger, så kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.2,
+          0.515,
+          0.43,
+          0.635
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < 0\ny < 1\nKvantitet I: x²\nKvantitet II: x²y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Eftersom x < 0 är x² ett positivt tal. Kvantitet II är x² · y, och när ett positivt tal multipliceras med något som är mindre än 1 blir produkten mindre: x² · y < x² · 1 = x². Det gäller också om y är 0 eller negativt, för då är x²y ≤ 0. Exempel: x = −2 och y = 0,5 ger I = 4 och II = 2. Kvantitet I är alltid större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En burk innehåller endast enfärgade röda och svarta kulor. Antalet svarta kulor är fem gånger så stort som antalet röda kulor.\nKvantitet I: Sannolikheten att en slumpmässigt vald kula ur burken är röd\nKvantitet II: 1/5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Om det finns r röda kulor finns det 5r svarta, alltså 6r kulor sammanlagt. Sannolikheten att få en röd kula är r/(6r) = 1/6. Eftersom 1/6 är mindre än 1/5 är kvantitet II större. Svaret att kvantiteterna är lika lockar om man jämför de röda med de svarta (r/5r = 1/5) i stället för med alla kulor.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x och y är heltal sådana att\n16 < x < 25\n16 < y < 25\nx är inte jämnt delbart med vare sig 3 eller 5.\ny är jämnt delbart med 2.\nKvantitet I: Antalet olika tal som x kan vara\nKvantitet II: Antalet olika tal som y kan vara",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Heltalen mellan 16 och 25 är 17, 18, 19, 20, 21, 22, 23 och 24. x får inte vara delbart med 3 (18, 21 och 24 faller bort) eller med 5 (20 faller bort), så x kan vara 17, 19, 22 eller 23, alltså fyra tal. y ska vara jämnt: 18, 20, 22 eller 24, också fyra tal. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "√5 · √9 = 45ˣ\nKvantitet I: x\nKvantitet II: 0,5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Rötter kan multipliceras under samma rottecken: √5 · √9 = √(5 · 9) = √45. En kvadratrot är detsamma som att upphöja till 1/2, så √45 är 45 upphöjt till 0,5. Alltså är 45ˣ = 45 upphöjt till 0,5 och x = 0,5. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På väg till skolan mötte Anton ett antal bilar. Var och en av bilarna var antingen vit eller röd. Hur många fler vita bilar än röda bilar mötte Anton?\n(1) Anton mötte 10 vita bilar. Antalet röda bilar var hälften av antalet vita bilar.\n(2) Anton mötte 5 röda bilar. Antalet vita bilar var dubbelt så stort som antalet röda bilar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Anton mötte 10 vita bilar och 10/2 = 5 röda, alltså 10 − 5 = 5 fler vita. Tillräckligt.\n(2) Anton mötte 5 röda bilar och 2 · 5 = 10 vita, alltså också 5 fler vita. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "De tre burfåglarna Betty, Fanny och Polly lyckas rymma från sin bur. Vilken fågel rymmer först?\n(1) Fanny rymmer inte först. Betty rymmer efter Polly.\n(2) Polly rymmer före Fanny. Betty rymmer före Fanny. Polly rymmer före Betty.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Fanny rymmer inte först, och Betty rymmer efter Polly, så Betty är inte heller först. Då måste Polly rymma först. Tillräckligt.\n(2) Polly rymmer före både Fanny och Betty, så Polly är först (ordningen blir Polly, Betty, Fanny). Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Patrik stryker sina skjortor. Han arbetar utan avbrott och varje skjorta tar sju minuter. Hur mycket är klockan när Patrik har strukit alla sina skjortor?\n(1) När Patrik börjar stryka är klockan 17.00.\n(2) När klockan är 18.10 har Patrik strukit två tredjedelar av sina skjortor.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Starttiden räcker inte, eftersom vi inte vet hur många skjortor det är. Inte tillräckligt.\n(2) Vi vet att två tredjedelar är klara 18.10, men inte när han började, så vi vet inte hur många skjortor som är kvar. Inte tillräckligt.\n(1) och (2) tillsammans: Från 17.00 till 18.10 går det 70 minuter, och på den tiden hinner han 70/7 = 10 skjortor. 10 skjortor är två tredjedelar, så det finns 15 skjortor. De återstående 5 tar 35 minuter, och han blir klar 18.45. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är medelvärdet av x och y mindre än 50?\n(1) Medelvärdet av 3x och 3y är 147.\n(2) x + y > 50",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Medelvärdet av 3x och 3y är (3x + 3y)/2 = 3 · (x + y)/2 = 147, så medelvärdet av x och y är 147/3 = 49. Det är mindre än 50. Tillräckligt.\n(2) x + y > 50 betyder bara att medelvärdet är större än 25. Det kan till exempel vara 30 eller 60. Inte tillräckligt.\nAlltså räcker (1) men inte (2).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En låda innehåller endast enfärgade röda och gröna bollar. Var och en av bollarna är också märkt med antingen ett kryss eller en stjärna. Karin tar upp en slumpmässigt vald boll ur lådan. Vad är sannolikheten att bollen är röd och märkt med ett kryss?\n(1) Sannolikheten att bollen är grön och märkt med ett kryss är 20 %.\n(2) Sannolikheten att bollen är märkt med en stjärna är 40 %.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Sannolikheten för grön med kryss säger inget om hur stor andel av bollarna som har kryss totalt. Inte tillräckligt.\n(2) Sannolikheten för stjärna är 40 %, så sannolikheten för kryss är 60 %. Men vi vet inte hur kryssen fördelar sig på röda och gröna bollar. Inte tillräckligt.\n(1) och (2) tillsammans: Bollarna med kryss är antingen röda eller gröna, så sannolikheten för röd med kryss är 60 % − 20 % = 40 %. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anna och Bertil har båda en månadslön på mer än 25 000 kr. Vem av dem har högst månadslön?\n(1) Annas månadslön är närmare 30 000 kr än vad Bertils är.\n(2) Annas månadslön är närmare 25 000 kr än vad Bertils är.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Lönerna kan ligga på olika sidor om 30 000 kr. Anna 29 000 kr och Bertil 26 000 kr uppfyller påståendet och då har Anna högst lön, men Anna 29 000 kr och Bertil 32 000 kr uppfyller det också och då har Bertil högst. Inte tillräckligt.\n(2) Båda tjänar mer än 25 000 kr, så avståndet till 25 000 kr är lönen minus 25 000 kr. Att Annas lön ligger närmare 25 000 kr betyder att den är lägre än Bertils, så Bertil har högst lön. Tillräckligt.\nAlltså räcker (2) men inte (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur många färre dopingprov togs 2012 jämfört med 2004?",
+      "options": [
+        "400",
+        "600",
+        "3 500",
+        "3 700"
+      ],
+      "blindAnswer": 0,
+      "explain": "Antalet dopingprov är staplarna i det översta diagrammet och läses av mot den vänstra axeln, som börjar på 3 100 och inte på 0. Stapeln för 2004 når ungefär 4 050 och stapeln för 2012 ungefär 3 670. Skillnaden är 4 050 − 3 670 ≈ 380, alltså ungefär 400 färre prov. Svaret 3 700 är ungefär antalet prov 2012, inte skillnaden.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av samtliga dopingprov 2013 togs inom förbunden för fotboll och ishockey?",
+      "options": [
+        "5 procent",
+        "10 procent",
+        "20 procent",
+        "25 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Samtliga dopingprov 2013 läses av i det översta diagrammet: stapeln för 2013 når ungefär 3 430. I det nedersta diagrammet har fotboll ungefär 130 prov på kvinnor och 250 på män, och ishockey ungefär 10 på kvinnor och 250 på män. Det blir cirka 130 + 250 + 10 + 250 = 640 prov. Andelen är 640/3 430 ≈ 0,19, alltså ungefär 20 procent.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "Männens staplar för fotboll och ishockey slutar båda vid 250, där axeln slutar; de är avlästa som 250.",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Anta att de bestraffade dopingfallen hade samma procentuella fördelning på de olika dopingförseelserna varje år som under hela perioden 2003–2012. Hur många av de bestraffade dopingfallen 2011 gällde i så fall AAS och andra anabola substanser?",
+      "options": [
+        "10",
+        "15",
+        "100",
+        "1 500"
+      ],
+      "blindAnswer": 1,
+      "explain": "Antalet bestraffade dopingfall är kurvan i det översta diagrammet och läses av mot den högra axeln: 2011 var det ungefär 36 fall. I cirkeldiagrammet tar AAS och andra anabola substanser (sektor 1) upp lite mindre än halva cirkeln, ungefär 44 procent. Med samma fördelning blir det 0,44 · 36 ≈ 16 fall, och närmast av alternativen är 15. Svaret 1 500 lockar om man räknar med antalet dopingprov (staplarna) i stället för antalet bestraffade fall.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur många fler ton torsk fångades i Sverige 1945 än 1935?",
+      "options": [
+        "1 300 ton",
+        "6 600 ton",
+        "9 700 ton",
+        "45 800 ton"
+      ],
+      "blindAnswer": 2,
+      "explain": "Torsk står på tre rader i tabellen, en under varje kust. 1935: Ostkusten 344, Sydkusten och Öresund 4 627 och Västkusten 6 620 ton, sammanlagt 11 591 ton. 1945: 1 673 + 11 235 + 8 388 = 21 296 ton. Skillnaden är 21 296 − 11 591 = 9 705, alltså ungefär 9 700 ton. Den som bara räknar med en kust får 1 300 ton (Ostkusten) eller 6 600 ton (Sydkusten), och 45 800 ton är ökningen för all saltsjöfisk (Hela riket).",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.05,
+          0.055,
+          0.95,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Kurvan nedan visar mängden infångad saltsjöfisk i ett av länen 1920–1950. Vilket län?",
+      "options": [
+        "Blekinge län",
+        "Göteborgs och Bohus län",
+        "Hallands län",
+        "Kristianstads län"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kurvan sjunker från 1920 till 1930, stiger 1935, sjunker lite 1940 och stiger sedan kraftigt 1945 och 1950, till ungefär fyra gånger värdet för 1920. Kristianstads län har 1 909, 1 753, 1 568, 2 129, 1 962, 5 069 och 7 987 ton dessa år, vilket följer kurvan (7 987/1 909 ≈ 4,2). Blekinge, Hallands samt Göteborgs och Bohus län ökar alla mellan 1925 och 1930, där kurvan sjunker, så de passar inte.",
+      "figure": {
+        "pages": [
+          18,
+          19
+        ],
+        "boxes": [
+          [
+            0.05,
+            0.055,
+            0.95,
+            0.93
+          ],
+          [
+            0.18,
+            0.305,
+            0.46,
+            0.515
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur stor var Västkustens sammanlagda fångst av skarpsill, kolja och makrill 1955?",
+      "options": [
+        "26 840 ton",
+        "27 030 ton",
+        "28 143 ton",
+        "29 433 ton"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av raderna under Västkusten i kolumnen för 1955: skarpsill 8 273 ton, kolja 7 173 ton och makrill 11 584 ton. Summan är 8 273 + 7 173 + 11 584 = 27 030 ton. Makrill finns också under Sydkusten och Öresund, men frågan gäller bara Västkusten.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.05,
+          0.055,
+          0.95,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilken individ hade flest dagar i arbete hos privat arbetsgivare under året?",
+      "options": [
+        "Individ 3",
+        "Individ 4",
+        "Individ 6",
+        "Individ 10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt principskissen följer man varje individ nerifrån och uppåt: lodräta linjer visar hur många dagar individen är i en kategori och vågräta linjer visar byten. Individ 4 börjar under privat arbetsgivare och stannar där nästan hela året, ungefär 360 dagar, innan linjen går över till Arbetslös allra överst. Individ 6 är arbetslös de första cirka 50 dagarna och har sedan privat arbetsgivare resten av året, ungefär 315 dagar. Individ 3 har privat arbetsgivare de första cirka 280 dagarna och individ 10 de sista cirka 220 dagarna. Flest dagar har alltså individ 4.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.05,
+          0.055,
+          0.95,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur många av de tio individerna var i arbete hos privat eller offentlig arbetsgivare vid årets slut?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 2,
+      "explain": "Var individerna befinner sig vid årets slut visar siffrorna överst i diagrammet. Under privat arbetsgivare står 6 och 10, under kommunal 7 och 3 och under landsting/stat 9, alltså fem individer. Individ 1 och 5 är i AMS-åtgärder, 2 och 4 är arbetslösa och 8 är utanför arbetsmarknaden. Svaret 6 lockar om man räknar med individ 4, som hade privat arbetsgivare nästan hela året men vars linje går över till Arbetslös precis före årets slut.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.05,
+          0.055,
+          0.95,
+          0.93
+        ]
+      },
+      "note": "Individ 4:s linje går över till Arbetslös strax före årets slut (siffran 4 står överst under Arbetslös); räknas individ 4 med blir svaret 6.",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur stor del av året var individ 1 i arbete?",
+      "options": [
+        "1/2",
+        "2/5",
+        "3/4",
+        "3/5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Individ 1 börjar under privat arbetsgivare (siffran 1 längst ner till vänster). Den lodräta linjen går upp till ungefär 220 dagar, och där går linjen över till övrigt under AMS-åtgärder, där individen stannar resten av året. Individ 1 var alltså i arbete cirka 220 av årets 365 dagar, och 220/365 ≈ 0,6 = 3/5.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.05,
+          0.055,
+          0.95,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilken månad avses?",
+      "passage": "Antalet anmälda försök till bilstöld utgjorde 35–45 procent av det totala antalet anmälningar om bilstöld den månaden, och det anmäldes fler än tio fullbordade bilstölder.",
+      "options": [
+        "Mars",
+        "April",
+        "Juni",
+        "September"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna ut försökens andel av totalen och kontrollera antalet fullbordade stölder för varje alternativ. Mars: 5 försök av 12 (cirka 42 procent) men bara 7 fullbordade. April: 7 av 18 (cirka 39 procent) och 11 fullbordade, alltså fler än tio. Juni: 3 av 7 (cirka 43 procent) men bara 4 fullbordade. September: 3 av 15, bara 20 procent. Endast april uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.05,
+          0.055,
+          0.95,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur många fullbordade bilstölder anmäldes sammanlagt under juni, juli och augusti?",
+      "options": [
+        "11",
+        "23",
+        "32",
+        "43"
+      ],
+      "blindAnswer": 2,
+      "explain": "Fullbordade stölder är den streckade kurvan: juni 4, juli 14 och augusti 14. Summan är 4 + 14 + 14 = 32. Svaret 43 är det totala antalet anmälningar för de tre månaderna (7 + 16 + 20) och 11 är antalet försök (3 + 2 + 6).",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.05,
+          0.055,
+          0.95,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "För vilken tvåmånadersperiod gällde att antalet fullbordade bilstölder var mindre än två tredjedelar av det totala antalet anmälningar om bilstölder?",
+      "options": [
+        "Februari–mars",
+        "Mars–april",
+        "April–maj",
+        "Maj–juni"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lägg ihop de två månaderna och jämför de fullbordade stölderna med två tredjedelar av totalen. Februari–mars: 8 + 7 = 15 fullbordade av 10 + 12 = 22, och två tredjedelar av 22 är cirka 14,7, så 15 är inte mindre. Mars–april: 7 + 11 = 18 av 12 + 18 = 30, och två tredjedelar av 30 är 20, så 18 är mindre. April–maj ger 24 av 34 (gränsen cirka 22,7) och maj–juni 17 av 23 (gränsen cirka 15,3), alltså för många fullbordade. Svaret är mars–april.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.05,
+          0.055,
+          0.95,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
