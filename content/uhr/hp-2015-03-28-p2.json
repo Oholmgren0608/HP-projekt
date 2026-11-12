@@ -1,0 +1,771 @@
+{
+  "examId": "hp-2015-03-28",
+  "passNumber": 2,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är jämnt delbart med 3?",
+      "options": [
+        "13",
+        "91",
+        "455",
+        "819"
+      ],
+      "blindAnswer": 3,
+      "explain": "Ett heltal är delbart med 3 om dess siffersumma är delbar med 3. Siffersummorna är 1 + 3 = 4, 9 + 1 = 10, 4 + 5 + 5 = 14 och 8 + 1 + 9 = 18. Bara 18 är delbart med 3, så 819 är delbart med 3: 819/3 = 273. Talet 91 kan se ut att vara delbart med 3, men 91 = 7 · 13, och 455 = 5 · 7 · 13.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilket alternativ motsvarar ”Arean är mindre än 10 areaenheter för en rektangel vars längd är tre gånger så stor som dess bredd, och där bredden är x längdenheter”?",
+      "options": [
+        "3x² < 10",
+        "4x < 10",
+        "3x² > 10",
+        "6x² < 10"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bredden är x längdenheter och längden tre gånger så stor, alltså 3x. Rektangelns area är längd · bredd = 3x · x = 3x². Att arean är mindre än 10 areaenheter skrivs då 3x² < 10. Alternativet 3x² > 10 har olikheten åt fel håll, och 4x = x + 3x är halva omkretsen, inte arean.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsförslagen ligger närmast √84 − √10?",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Uppskatta rötterna med hjälp av närliggande kvadrater. 9² = 81 och 10² = 100, så √84 är drygt 9 (ungefär 9,2). 3² = 9 och 4² = 16, så √10 är drygt 3 (ungefär 3,2). Skillnaden blir ungefär 9,2 − 3,2 = 6. Observera att √84 − √10 inte är lika med √(84 − 10) = √74 ≈ 8,6; den felräkningen leder till 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "En låda innehåller 50 enfärgade kulor: vita och svarta. Förhållandet mellan antalet vita och svarta kulor är 4:1. Hur många svarta kulor måste läggas i lådan för att förhållandet ska ändras till 1:4?",
+      "options": [
+        "110",
+        "150",
+        "190",
+        "230"
+      ],
+      "blindAnswer": 1,
+      "explain": "Förhållandet 4:1 betyder att 4 av 5 kulor är vita: 4/5 · 50 = 40 vita och 10 svarta. Antalet vita ändras inte. För att förhållandet ska bli 1:4 måste de svarta vara fyra gånger så många som de vita, alltså 4 · 40 = 160. Det finns redan 10 svarta kulor, så 160 − 10 = 150 svarta kulor måste läggas i. Kontroll: 40 vita och 160 svarta ger 40:160 = 1:4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Om x² = 121, vad är då (x + 1)(x − 1)?",
+      "options": [
+        "110",
+        "111",
+        "120",
+        "121"
+      ],
+      "blindAnswer": 2,
+      "explain": "Konjugatregeln ger (x + 1)(x − 1) = x² − 1. Med x² = 121 blir det 121 − 1 = 120. Man behöver alltså inte veta om x är 11 eller −11; båda ger samma svar, till exempel 12 · 10 = 120.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "4ˣ − 4⁻ˣ = 0",
+      "options": [
+        "1",
+        "−1/4",
+        "1/4",
+        "0"
+      ],
+      "blindAnswer": 3,
+      "explain": "Ekvationen kan skrivas 4ˣ = 4⁻ˣ. Två potenser med samma bas 4 är lika bara när exponenterna är lika, så x = −x, vilket ger x = 0. Kontroll: 4⁰ − 4⁰ = 1 − 1 = 0. Med x = 1 blir vänsterledet 4 − 1/4 = 3,75, inte 0, och med x = −1/4 eller 1/4 är exponenterna x och −x olika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "För vilket värde på konstanten a har ekvationen x² = 4a − 8 exakt en lösning?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ekvationen x² = k har två lösningar (x = ±√k) när k > 0, ingen reell lösning när k < 0 och exakt en lösning, x = 0, när k = 0. Exakt en lösning kräver alltså att 4a − 8 = 0, det vill säga a = 2. Med till exempel a = 3 blir ekvationen x² = 4, som har de två lösningarna 2 och −2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Linjerna L₁ och L₂ skär varandra så att vinkeln a ≠ 90°. Vilket svarsalternativ är med säkerhet korrekt?",
+      "options": [
+        "2a + b − c = 180°",
+        "b − a = 90°",
+        "2d + c − a = 180°",
+        "a + c = 90°"
+      ],
+      "blindAnswer": 0,
+      "explain": "Vinklarna a och c är vertikalvinklar och därför lika stora, liksom b och d. Vinklarna a och b ligger bredvid varandra längs en rät linje, så a + b = 180°. I 2a + b − c kan c ersättas med a: 2a + b − a = a + b = 180°, vilket alltid stämmer. 2d + c − a = 2d skulle kräva att d = 90°, men då vore också a = 90°, vilket är uteslutet. b − a = 90° och a + c = 90° stämmer bara när a = 45°, alltså inte med säkerhet.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.19,
+          0.58,
+          0.69,
+          0.725
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av tre tal är 8. Talens variationsbredd är 10. Talens median är lika med talens medelvärde. Vilket värde har det största talet?",
+      "options": [
+        "10",
+        "13",
+        "15",
+        "18"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tre tal med medelvärdet 8 har summan 3 · 8 = 24. Medianen är det mittersta talet och är lika med medelvärdet, alltså 8. Det minsta och det största talet har då summan 24 − 8 = 16, och variationsbredden (största minus minsta) är 10. Det ger största talet (16 + 10)/2 = 13 och minsta talet 3. Kontroll: talen 3, 8 och 13 har summan 24, medianen 8 och variationsbredden 10.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Cirkelns radie är 2 cm och M är cirkelns medelpunkt. Hur stor är arean av det skuggade cirkelsegmentet?",
+      "options": [
+        "(4π − 2) cm²",
+        "(4π − 4) cm²",
+        "π cm²",
+        "(π − 2) cm²"
+      ],
+      "blindAnswer": 3,
+      "explain": "De två radierna bildar en rät vinkel vid medelpunkten M, så sektorn mellan dem är en fjärdedel av cirkeln: π · 2²/4 = π cm². Triangeln som bildas av radierna och kordan har kateterna 2 cm och 2 cm och arean 2 · 2/2 = 2 cm². Det skuggade cirkelsegmentet är sektorn minus triangeln: (π − 2) cm². Alternativet (4π − 2) cm² fås om man drar triangeln från hela cirkelns area 4π cm² i stället för från kvartscirkeln.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.2,
+          0.572,
+          0.41,
+          0.725
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är 0,25 % av 16?",
+      "options": [
+        "4",
+        "4/10",
+        "4/100",
+        "4/1000"
+      ],
+      "blindAnswer": 2,
+      "explain": "0,25 % är 0,25/100 = 0,0025. Då är 0,25 % av 16 lika med 0,0025 · 16 = 0,04 = 4/100. Ett annat sätt: 1 % av 16 är 0,16, och 0,25 % är en fjärdedel av det, 0,16/4 = 0,04. Svaret 4 lockar om man räknar ut 25 % av 16 i stället för 0,25 %.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vad är a om f(0) = 4 och f(3) = 500?",
+      "passage": "f(x) = Caˣ där C och a är konstanter.",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 2,
+      "explain": "Eftersom a⁰ = 1 är f(0) = C · 1 = C, så C = 4. Då är f(3) = 4a³ = 500, vilket ger a³ = 125 och a = 5, eftersom 5 · 5 · 5 = 125. Kontroll: f(3) = 4 · 5³ = 4 · 125 = 500.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 0,99⁹⁹\nKvantitet II: 1,1¹¹",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ett positivt tal som är mindre än 1 blir mindre ju fler gånger det multipliceras med sig självt, så 0,99⁹⁹ < 1. Ett tal som är större än 1 blir större, så 1,1¹¹ > 1. Kvantitet II är alltså större, utan att man behöver räkna ut potenserna (0,99⁹⁹ ≈ 0,37 och 1,1¹¹ ≈ 2,85). Den höga exponenten 99 kan locka till att tro att kvantitet I är störst.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x = y + z + w\nw = z + y + x\nKvantitet I: y\nKvantitet II: z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Sätt in uttrycket för x i den andra ekvationen: w = z + y + (y + z + w) = 2y + 2z + w. Det ger 2y + 2z = 0, alltså y = −z. Ekvationerna säger bara att y och z är motsatta tal (och att x = w). Med y = 1, z = −1 och x = w = 0 stämmer båda ekvationerna och kvantitet I är störst. Med y = −1, z = 1 och x = w = 0 stämmer de också, men då är kvantitet II störst. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABCD är en rektangel och E ligger på AB.\nKvantitet I: Arean av triangeln AED + arean av triangeln EBC\nKvantitet II: Arean av triangeln ECD",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla rektangelns höjd h = AD = BC. Triangeln ECD har basen DC = AB och höjden h, eftersom E ligger på den motstående sidan AB. Dess area är AB · h/2, alltså halva rektangeln. Trianglarna AED och EBC har arean AE · h/2 + EB · h/2 = (AE + EB) · h/2 = AB · h/2, alltså också halva rektangeln. Kvantiteterna är lika stora, var E än ligger på AB.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.23,
+          0.148,
+          0.49,
+          0.272
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 1\nKvantitet I: (x³)²\nKvantitet II: x⁵",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Potenslagen (aᵐ)ⁿ = aᵐⁿ ger (x³)² = x⁶. Eftersom x > 1 är x⁶ = x · x⁵ > x⁵. Exempel: x = 2 ger 2⁶ = 64 mot 2⁵ = 32. Den som adderar exponenterna (3 + 2 = 5) i stället för att multiplicera dem tror felaktigt att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En låda innehåller bollar. 30 bollar är röda, 30 bollar är stora och 15 bollar är både röda och stora.\nKvantitet I: Antalet stora bollar som inte är röda\nKvantitet II: Antalet röda bollar som inte är stora",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Av de 30 stora bollarna är 15 även röda, så 30 − 15 = 15 stora bollar är inte röda. Av de 30 röda bollarna är 15 även stora, så 30 − 15 = 15 röda bollar är inte stora. Båda kvantiteterna är 15. Att lådan kan innehålla bollar som varken är röda eller stora påverkar inte jämförelsen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 13 % av 55\nKvantitet II: 14 % av 50",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet I: 0,13 · 55 = 7,15. Kvantitet II: 0,14 · 50 = 7. Kvantitet I är alltså större. Man kan också jämföra 13 · 55 = 715 med 14 · 50 = 700, eftersom båda ska delas med 100.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Arean av triangeln ABC är 4 cm².\nKvantitet I: x\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Triangeln är trubbvinklig vid B, så höjden mot basen AB hamnar utanför triangeln: det är den streckade sträckan x cm från C ned till förlängningen av AB. Arean är bas · höjd/2 = 4 · x/2 = 2x. Villkoret 2x = 4 ger x = 2. Kvantitet I är större.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.2,
+          0.115,
+          0.55,
+          0.24
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\ny = 3x\nz = x/3\nKvantitet I: x\nKvantitet II: Medelvärdet av x, y och z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet är (x + 3x + x/3)/3 = (13x/3)/3 = 13x/9. Eftersom x > 0 är 13x/9 > x. Exempel: x = 3 ger y = 9 och z = 1, med medelvärdet 13/3 ≈ 4,3, som är större än 3. Kvantitet II är större. Det kan locka att tro att 3x och x/3 tar ut varandra, men 3x ligger 2x över x medan x/3 bara ligger 2x/3 under.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (1/7)⁻²\nKvantitet II: 49",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "En negativ exponent betyder att man inverterar basen: (1/7)⁻² = 7² = 49. Kvantiteterna är alltså lika. Den som tror att (1/7)⁻² är −1/49 eller 1/49 får felaktigt att kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen y = (3/4)x + m, där m ≠ 0, skär x-axeln i punkten P och y-axeln i punkten Q.\nKvantitet I: Avståndet från P till origo (0, 0)\nKvantitet II: Avståndet från Q till origo (0, 0)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Q ligger på y-axeln: x = 0 ger y = m, så avståndet från Q till origo är |m|. P ligger på x-axeln: y = 0 ger (3/4)x = −m, alltså x = −4m/3, och avståndet från P till origo är 4|m|/3. Eftersom m ≠ 0 är 4|m|/3 större än |m|. Exempel: m = 3 ger P = (−4, 0) och Q = (0, 3), med avstånden 4 och 3. Kvantitet I är större, oavsett om m är positivt eller negativt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En grönsaksodlare odlar ärtor, sallad, rädisor, morötter och lök. Varje grönsak odlas i en egen fåra. Fårorna numreras 1–5 från vänster till höger. I vilken fåra odlas lök?\n(1) Morötterna har lika många fåror till höger om sig som till vänster. Salladen odlas intill löken.\n(2) Ärtorna odlas intill rädisorna. Salladen odlas i fåra 1.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Morötterna har lika många fåror på båda sidor och odlas alltså i fåra 3. Sallad och lök ligger intill varandra, antingen i fårorna 1 och 2 eller i fårorna 4 och 5, så löken kan stå i fåra 1, 2, 4 eller 5. Inte tillräckligt.\n(2) Salladen står i fåra 1, och ärtor och rädisor ligger intill varandra någonstans i fårorna 2–5. Löken kan till exempel stå i fåra 2 (ärtor och rädisor i 3 och 4, morötter i 5) eller i fåra 5 (ärtor och rädisor i 2 och 3, morötter i 4). Inte tillräckligt.\n(1) och (2) tillsammans: Salladen står i fåra 1 och morötterna i fåra 3. Löken ska ligga intill salladen och står därför i fåra 2, medan ärtor och rädisor får fårorna 4 och 5. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur många jordgubbar hade Stina?\n(1) När Stina ätit hälften av jordgubbarna plus en halv jordgubbe hade hon sju jordgubbar kvar.\n(2) Stina åt jordgubbar i en jämn takt, och på 30 sekunder åt hon sex jordgubbar. Det tog 1 minut och 15 sekunder för Stina att äta upp alla jordgubbar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Om Stina hade n jordgubbar åt hon n/2 + 1/2, och kvar blev n − n/2 − 1/2 = n/2 − 1/2 = 7. Det ger n/2 = 7,5 och n = 15. Kontroll: hälften av 15 plus en halv är 8, och 15 − 8 = 7. Tillräckligt.\n(2) Sex jordgubbar på 30 sekunder är en jordgubbe var femte sekund. 1 minut och 15 sekunder är 75 sekunder, och 75/5 = 15 jordgubbar. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En kväll åkte Carola rullskridskor längs en strandpromenad. Vilken medelhastighet hade Carola?\n(1) Åkturen längs strandpromenaden skulle ta 14 minuter för en cyklist med medelhastigheten 30 km/h.\n(2) Klockan 18:12 började Carola åka, och klockan 18:47 hade hon åkt längs hela strandpromenaden.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Strandpromenaden är 30 km/h · 14/60 h = 7 km lång, men vi vet inte hur lång tid Carola behövde. Inte tillräckligt.\n(2) Carola åkte i 35 minuter, men sträckans längd är okänd. Inte tillräckligt.\n(1) och (2) tillsammans: Carola åkte 7 km på 35 minuter, alltså 7 km på 35/60 h. Medelhastigheten blir 7 · 60/35 = 12 km/h. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tre dörrar är 70, 80 respektive 90 cm breda. En dörr är vit, en är blå och en är grön. Den minsta dörren är inte vit. Vilken färg har respektive dörr?\n(1) Den största dörren är inte blå.\n(2) Den mellanstora dörren är inte grön.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Eftersom den minsta dörren inte är vit finns fyra möjligheter (minsta–mellanstora–största): blå–vit–grön, blå–grön–vit, grön–vit–blå och grön–blå–vit.\n(1) Den största dörren är inte blå, vilket stryker grön–vit–blå. Tre möjligheter återstår. Inte tillräckligt.\n(2) Den mellanstora dörren är inte grön, vilket stryker blå–grön–vit. Tre möjligheter återstår. Inte tillräckligt.\n(1) och (2) tillsammans: Både blå–vit–grön och grön–blå–vit uppfyller alla villkor, så färgerna kan inte bestämmas ens med båda påståendena.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x är ett heltal. Är x jämnt delbart med 15?\n(1) x/10 är ett heltal.\n(2) x² är jämnt delbart med 30.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) x är en multipel av 10. x = 30 är delbart med 15, men x = 10 är det inte. Inte tillräckligt.\n(2) 30 = 2 · 3 · 5. Om x² är delbart med primtalet 3 måste x självt vara delbart med 3, eftersom x² bara innehåller samma primfaktorer som x. På samma sätt är x delbart med 5. Då är x delbart med 3 · 5 = 15, så svaret är ja. Tillräckligt.\nBara (2) räcker alltså.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en klass med 24 elever har hälften av pojkarna moped. Hur många flickor i klassen har moped?\n(1) Det är lika många flickor som pojkar i klassen. 14 elever har inte moped.\n(2) Av dem som inte har moped är flickorna 2 fler än pojkarna. Av flickorna är de som inte har moped 4 fler än de som har moped.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Klassen har 12 pojkar och 12 flickor. Hälften av pojkarna, 6, saknar moped, så av de 14 eleverna utan moped är 14 − 6 = 8 flickor. Då har 12 − 8 = 4 flickor moped. Tillräckligt.\n(2) Kalla antalet flickor med moped för f. Då saknar f + 4 flickor moped, och pojkarna utan moped är 2 färre: f + 2. Hälften av pojkarna saknar moped, så pojkarna är 2(f + 2) = 2f + 4. Flickorna är f + (f + 4) = 2f + 4. Totalt 4f + 8 = 24 ger f = 4. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur mycket wellpappretur användes vid tillverkning av liner och fluting för wellpapp?",
+      "options": [
+        "300 000 ton",
+        "500 000 ton",
+        "600 000 ton",
+        "1 200 000 ton"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd stapeldiagrammet Returpapper som råvara, där skalan anger tusental ton. Pilen från wellpappretur leder till den grå delen Liner och fluting för wellpapp i den högra stapeln, och ingen annan pil går dit. Den delen sträcker sig från knappt 1 200 till knappt 1 700, alltså ungefär 1 670 − 1 190 ≈ 480 tusen ton, det vill säga cirka 500 000 ton. Hela wellpappreturen (cirka 1 110–1 680, ungefär 570 tusen ton) går inte dit, eftersom cirka 80 tusen ton blir kartong; därför lockar 600 000 ton.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av sågtimret blev flis?",
+      "options": [
+        "10 procent",
+        "20 procent",
+        "30 procent",
+        "40 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "I flödesschemat Virkesförsörjning är sågtimret 38,2 miljoner m³fub. Av det går 27,0 till sågverk och plywoodindustri, och pilen mellan dem leder ned till flis, 11,2 miljoner m³fub (38,2 − 27,0 = 11,2). Andelen är 11,2/38,2 ≈ 0,29, alltså cirka 30 procent.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Till vilken typ av tillverkning användes sammanlagt 250 000 ton av returpapperssortimentet?",
+      "options": [
+        "Mjukpapper",
+        "Wellpapp",
+        "Liner och fluting för wellpapp",
+        "Tidningspapper"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av den högra stapeln i diagrammet Returpapper som råvara (tusental ton). Mjukpapper finns på tre ställen: cirka 930–1 045 (ungefär 115), cirka 1 670–1 805 (ungefär 135) och en smal remsa högst upp (ungefär 20). Sammanlagt blir det ungefär 115 + 135 + 20 ≈ 270 tusen ton, i närheten av 250 000 ton. Wellpapp är bara den översta delen, ungefär 50 tusen ton, liner och fluting för wellpapp är cirka 480 tusen ton och tidningspapper drygt 900 tusen ton, så mjukpapper är det enda alternativet som passar.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "Avläsningen ger mjukpapper ungefär 270 tusen ton; inget annat alternativ ligger i närheten av 250 000 ton.",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur många av dem som hade traktorkort var 25 år eller äldre?",
+      "options": [
+        "1 795",
+        "3 127",
+        "4 041",
+        "8 809"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av raden Traktorkort längst ned i tabellen. Åldersgrupperna från 25 år och uppåt är 25–47 (1 795), 48–66 (726), 67–79 (606) och 80– (914). Summan är 1 795 + 726 + 606 + 914 = 4 041. Kontroll: samtliga 12 850 minus de yngre grupperna 5 709 + 1 446 + 539 + 1 115 = 8 809 ger också 4 041. Alternativet 8 809 är alltså antalet under 25 år, och 1 795 är bara gruppen 25–47 år.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "I hur många av åldersgrupperna var körkortsbehörigheten B den vanligaste?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "blindAnswer": 2,
+      "explain": "Jämför raden B med de andra raderna i varje ålderskolumn. I gruppen ≤17 är A1 vanligast (1 311 mot 1 för B). I grupperna 18, 19, 20–24 och 25–47 är B vanligast (31 450, 53 275, 321 265 och 1 807 803 av summorna 33 237, 56 013, 349 216 och 2 338 076). I grupperna 48–66, 67–79 och 80– är A B vanligare än B (1 228 758 mot 388 610, 594 352 mot 38 277 och 243 080 mot 6 946). B är alltså den vanligaste behörigheten i 4 åldersgrupper.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av samtliga körkortsinnehavare hade körkortsbehörigheten A B?",
+      "options": [
+        "35 procent",
+        "40 procent",
+        "45 procent",
+        "50 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kolumnen Samtliga ger 2 319 403 personer med behörigheten A B och totalt 5 781 911 körkortsinnehavare (raden Summa). Andelen är 2 319 403/5 781 911 ≈ 0,40, alltså 40 procent. Överslag: 2,3 miljoner av 5,8 miljoner är ungefär 2/5.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur många fler var de freemover-studenter som gick ekonomutbildning än de som gick bild- och formkonstnärligt program det år då skillnaden i antal var som störst?",
+      "options": [
+        "2 200",
+        "2 500",
+        "2 700",
+        "3 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Ekonomutbildning är linjen med romber och bild- och formkonstnärligt program linjen med runda punkter. Ekonomutbildningen ökar varje år från 2004 till 2010, medan bild och form minskar eller ligger kvar på cirka 500, så skillnaden är störst 2010. Då gick cirka 3 200 ekonomutbildning och cirka 500 bild- och formkonstnärligt program, en skillnad på ungefär 3 200 − 500 = 2 700. Året innan var skillnaden cirka 3 100 − 520 ≈ 2 600, och 2002 bara cirka 3 330 − 1 380 ≈ 1 950.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket år var det totala antalet freemover-studenter som störst?",
+      "options": [
+        "2002",
+        "2003",
+        "2009",
+        "2010"
+      ],
+      "blindAnswer": 3,
+      "explain": "Summera de åtta linjerna för alternativens år. 2010: ekonomi cirka 3 200, läkarprogram 3 150, ospecificerat 2 000, psykologi 630, mode 520, bild 500, veterinär 440 och musik 440, totalt ungefär 10 900. 2009 är ekonomi och läkarprogram tydligt lägre (cirka 3 100 och 2 900) medan de övriga är ungefär som 2010, totalt ungefär 10 400. 2002 blir summan ungefär 3 330 + 2 700 + 1 380 + 760 + 520 + 480 + 360 + 140 ≈ 9 700 och 2003 ungefär 8 600. Störst är alltså 2010.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilket diagram visar freemover-studenternas procentuella fördelning på utbildningstyper 2007?",
+      "options": [
+        "Diagram A",
+        "Diagram B",
+        "Diagram C",
+        "Diagram D"
+      ],
+      "blindAnswer": 0,
+      "explain": "Läs av linjediagrammet för 2007: ekonomi cirka 2 870, läkarprogram 2 300, ospecificerat 1 950, psykologi, mode och bild cirka 600 vardera samt veterinär och musik cirka 370 vardera, totalt ungefär 9 700. Andelarna blir ekonomi cirka 30 procent, läkarprogram 24 procent, ospecificerat 20 procent, psykologi, mode och bild drygt 6 procent vardera och veterinär och musik knappt 4 procent vardera. Diagram A stämmer: den vita sektorn (ekonomi) är knappt en tredjedel och de tre sektorerna för psykologi, mode och bild är lika stora. I Diagram B är ospecificerat för litet (cirka 15 procent) och psykologi för stort, i Diagram C är ekonomi bara en fjärdedel och mode cirka 10 procent, och i Diagram D är ekonomi cirka 35 procent och ospecificerat en fjärdedel.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.25,
+            0.06,
+            0.64,
+            0.43
+          ]
+        ],
+        "rotate": 90
+      },
+      "note": "Bildalternativ: cirkeldiagrammen A–D med teckenförklaring (från uppgiftssidan) står under linjediagrammet i figuren, och alternativen skrivs Diagram A–D.",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur många rovdjur dödades sammanlagt under det år då flest dödades?",
+      "options": [
+        "600",
+        "900",
+        "1 100",
+        "1 300"
+      ],
+      "blindAnswer": 2,
+      "explain": "Flest rovdjur dödades 1835, det år då vargstapeln är högst. Då dödades ungefär 255 lodjur, 145 björnar, 595 vargar och 55 järvar, sammanlagt cirka 1 050, vilket ligger närmast 1 100. Åren runt omkring ger mindre: 1830 ungefär 230 + 125 + 485 + 40 ≈ 880 och 1840 ungefär 265 + 120 + 445 + 60 ≈ 890. Senare år är vargstaplarna mycket lägre.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "För vilket år gällde att det dödades fler vargar än lodjur och fler järvar än björnar?",
+      "options": [
+        "1855",
+        "1870",
+        "1880",
+        "1895"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför staplarna för alternativens år. 1855: cirka 160 vargar mot 140 lodjur, men bara cirka 100 järvar mot 115 björnar. 1870: cirka 50 vargar mot 105 lodjur. 1880: cirka 35 vargar mot 100 lodjur. 1895: cirka 85 vargar mot 30 lodjur och cirka 110 järvar mot 20 björnar. Bara 1895 uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur många vargar dödades i genomsnitt per redovisat år under perioden 1830–1850?",
+      "options": [
+        "300",
+        "350",
+        "400",
+        "450"
+      ],
+      "blindAnswer": 2,
+      "explain": "Perioden 1830–1850 har fem redovisade år: 1830, 1835, 1840, 1845 och 1850. Vargstaplarna visar ungefär 485, 595, 445, 295 och 215. Summan är cirka 2 035, och medelvärdet blir 2 035/5 ≈ 407, alltså cirka 400. Den som bara räknar med fyra år (1830–1845) får ungefär 455 och lockas av 450.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
