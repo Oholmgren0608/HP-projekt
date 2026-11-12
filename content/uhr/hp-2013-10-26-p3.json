@@ -1,0 +1,794 @@
+{
+  "examId": "hp-2013-10-26",
+  "passNumber": 3,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är 1 + 1/2 · 1/3?",
+      "options": [
+        "3/6",
+        "7/6",
+        "6/5",
+        "7/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplikation går före addition, så räkna först ut produkten: 1/2 · 1/3 = 1/6. Sedan är 1 + 1/6 = 6/6 + 1/6 = 7/6. Svaret 3/6 lockar om man räknar från vänster, (1 + 1/2) · 1/3 = 3/2 · 1/3 = 1/2 = 3/6, men då har additionen gjorts före multiplikationen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Maria kan köra 350 km på 19 liter bensin. Vilket samband visar hur många liter bensin (L) Marias bil förbrukar på 1 710 km?",
+      "options": [
+        "19/350 = L/1710",
+        "19/L = 1710/350",
+        "L/350 = 1710/19",
+        "19/350 = 1710/L"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bilen drar lika mycket bensin per kilometer på båda sträckorna. På 350 km går det åt 19 liter, alltså 19/350 liter per kilometer, och på 1 710 km går det åt L liter, alltså L/1710 liter per kilometer. Därför gäller 19/350 = L/1710, vilket ger L = 19 · 1710/350 ≈ 93 liter. Pröva de andra sambanden genom att lösa ut L: 19/L = 1710/350 ger L ≈ 3,9 liter, mindre än för den kortare sträckan, och de två sista ger båda L = 31 500 liter, vilket är orimligt mycket.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är ett möjligt värde för a + b + c?",
+      "passage": "a, b och c är tre positiva heltal så att a · b = 22 och b · c = 26.",
+      "options": [
+        "22",
+        "24",
+        "26",
+        "48"
+      ],
+      "blindAnswer": 2,
+      "explain": "Talet b delar både 22 och 26. Eftersom 22 = 2 · 11 och 26 = 2 · 13 kan b bara vara 1 eller 2. Med b = 1 blir a = 22 och c = 26, och summan blir 22 + 1 + 26 = 49, som inte finns bland alternativen. Med b = 2 blir a = 11 och c = 13, och summan blir 11 + 2 + 13 = 26. Alternativet 48 lockar om man adderar 22 och 26, men a + b + c är inte detsamma som a · b + b · c.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad gäller för x och y om 6 procent av x är lika med 5 procent av y, där både x och y är större än noll?",
+      "options": [
+        "x > y",
+        "x < y",
+        "x = y",
+        "5x = 6y"
+      ],
+      "blindAnswer": 1,
+      "explain": "6 procent av x är 0,06x och 5 procent av y är 0,05y. Villkoret 0,06x = 0,05y ger 6x = 5y, alltså y = 6x/5 = 1,2x. Eftersom x är större än noll är y större än x, så x < y. Det kan verka som att x ska vara störst eftersom 6 är större än 5, men det är tvärtom: det behövs ett större tal för att en mindre andel av det ska bli lika mycket. Sambandet 5x = 6y har talen omkastade; det rätta är 6x = 5y.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är x om (x · 3 · 9)/(100 · 12) = 81?",
+      "options": [
+        "1 200",
+        "2 700",
+        "3 600",
+        "97 200"
+      ],
+      "blindAnswer": 2,
+      "explain": "Täljaren är x · 3 · 9 = 27x och nämnaren 100 · 12 = 1 200. Ekvationen blir 27x/1 200 = 81, alltså 27x = 81 · 1 200. Dela med 27: x = 3 · 1 200 = 3 600. Kontroll: 3 600 · 27 = 97 200 och 97 200/1 200 = 81. Alternativet 97 200 är täljarens värde, inte x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "ABCD är en kvadrat med sidan 10 cm. Cirkelbågen AC utgör en fjärdedel av en cirkel med medelpunkten i D. Vad är arean av det skuggade området som begränsas av diagonalen AC och cirkelbågen AC?",
+      "options": [
+        "(25π − 25) cm²",
+        "(25π − 50) cm²",
+        "(50π − 50) cm²",
+        "(50π − 100) cm²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvartscirkeln har medelpunkten D och radien DA = DC = 10 cm, så dess area är π · 10²/4 = 25π cm². Kvartscirkeln består av triangeln ACD och det skuggade området. Triangeln ACD är halva kvadraten och har arean 10 · 10/2 = 50 cm². Det skuggade området har alltså arean (25π − 50) cm². Alternativet (25π − 25) cm² lockar om man drar bort en fjärdedel av kvadraten i stället för hälften.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.2,
+          0.595,
+          0.45,
+          0.765
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Hur många primtal finns det mellan 40 och 50?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Talen mellan 40 och 50 är 41–49. De jämna talen 42, 44, 46 och 48 är delbara med 2, 45 är delbart med 5 och 49 = 7 · 7. Kvar blir 41, 43 och 47. Ingen av dem är delbar med 2, 3, 5 eller 7, och det räcker att pröva de primtalen eftersom 11 · 11 = 121 är större än 50. Det finns alltså 3 primtal. Alternativet 4 lockar om man missar att 49 inte är ett primtal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "En låda i form av ett rätblock har volymen 12 dm³. Vilken volym får lådan om längden av alla kanter halveras?",
+      "options": [
+        "1,5 dm³",
+        "2 dm³",
+        "3 dm³",
+        "6 dm³"
+      ],
+      "blindAnswer": 0,
+      "explain": "Volymen av ett rätblock är längd · bredd · höjd. När alla tre måtten halveras blir volymen 1/2 · 1/2 · 1/2 = 1/8 av den ursprungliga, alltså 12/8 = 1,5 dm³. Exempel: en låda med måtten 3 · 2 · 2 dm har volymen 12 dm³, och de halverade måtten 1,5 · 1 · 1 dm ger 1,5 dm³. Svaret 6 dm³ lockar om man tror att volymen halveras som kanterna, och 3 dm³ om man räknar som för en area.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är medelvärdet av 7/8 och −3/4?",
+      "options": [
+        "1/16",
+        "1/8",
+        "1/4",
+        "1/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv bråken med samma nämnare: −3/4 = −6/8. Summan är 7/8 − 6/8 = 1/8. Medelvärdet av två tal är summan delad med 2: (1/8)/2 = 1/16. Svaret 1/8 lockar om man glömmer att dela summan med 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är (1 − x)/(xy) om xy ≠ 0?",
+      "options": [
+        "1/x − 1/(xy)",
+        "1/y − 1/(xy)",
+        "1/(xy) − 1/x",
+        "1/(xy) − 1/y"
+      ],
+      "blindAnswer": 3,
+      "explain": "Dela upp bråket i två bråk med samma nämnare: (1 − x)/(xy) = 1/(xy) − x/(xy). I det andra bråket kan x förkortas bort, x/(xy) = 1/y. Uttrycket är alltså 1/(xy) − 1/y. Kontroll med x = 2 och y = 1: (1 − 2)/2 = −1/2 och 1/2 − 1/1 = −1/2. Alternativet 1/(xy) − 1/x lockar om man förkortar bort fel variabel.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "I en låda finns det 3 gånger så många äpplen som päron och 9 gånger så många päron som bananer. Om x är antalet äpplen, vilket uttryck motsvarar då det totala antalet frukter i lådan?",
+      "options": [
+        "13x",
+        "31x",
+        "(13/3)x",
+        "(37/27)x"
+      ],
+      "blindAnswer": 3,
+      "explain": "Antalet äpplen är x. Det finns 3 gånger så många äpplen som päron, så antalet päron är x/3. Det finns 9 gånger så många päron som bananer, så antalet bananer är (x/3)/9 = x/27. Totalt blir det x + x/3 + x/27 = 27x/27 + 9x/27 + x/27 = (37/27)x. Kontroll: 1 banan, 9 päron och 27 äpplen är 37 frukter, och x = 27 ger (37/27) · 27 = 37. Alternativet 13x lockar om man multiplicerar i stället för att dividera: x + 3x + 9x = 13x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "En undersökning på en arbetsplats visade att 47 % av de anställda kunde tyska och 43 % kunde franska, medan 40 % varken kunde tyska eller franska. Hur stor andel av de anställda kunde både tyska och franska?",
+      "options": [
+        "10 %",
+        "20 %",
+        "30 %",
+        "50 %"
+      ],
+      "blindAnswer": 2,
+      "explain": "Eftersom 40 % varken kunde tyska eller franska kunde 100 − 40 = 60 % minst ett av språken. Lägger man ihop andelarna för tyska och franska får man 47 + 43 = 90 %, men då räknas de som kan båda språken två gånger. Den dubbelräknade delen är 90 − 60 = 30 %, så 30 % kunde både tyska och franska. Kontroll: 17 % bara tyska, 13 % bara franska, 30 % båda och 40 % inget av språken blir tillsammans 100 %.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 69 · 116\nKvantitet II: 68 · 117",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv om båda produkterna så att de innehåller 68 · 116. Kvantitet I: 69 · 116 = 68 · 116 + 116. Kvantitet II: 68 · 117 = 68 · 116 + 68. Kvantitet I har 116 där kvantitet II har 68, så kvantitet I är 116 − 68 = 48 större. Kontroll: 69 · 116 = 8 004 och 68 · 117 = 7 956.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x procent av y är lika med z procent av w.\nKvantitet I: x · w\nKvantitet II: y · z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Villkoret ger (x/100) · y = (z/100) · w, alltså xy = zw. Det säger något om produkterna xy och zw, men kvantiteterna är xw och yz. Exempel: x = y = z = w = 1 uppfyller villkoret och ger xw = 1 och yz = 1, alltså lika. Men x = 2, y = 1, z = 1 och w = 2 uppfyller också villkoret, eftersom 2 · 1 = 1 · 2, och ger xw = 4 och yz = 1, så att kvantitet I är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvadraten ABCD är inritad i en cirkel. Punkten D är cirkelns medelpunkt. Punkterna B och P ligger på cirkeln.\nKvantitet I: DP\nKvantitet II: AC",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "D är cirkelns medelpunkt, och B och P ligger på cirkeln. Därför är både DB och DP radier, och DP = DB. DB och AC är kvadratens två diagonaler, och i en kvadrat är diagonalerna lika långa. Alltså är DP = DB = AC. Att P ligger utanför kvadraten kan få DP att se längre ut, men det är samma avstånd som från D till hörnet B.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.18,
+          0.163,
+          0.46,
+          0.35
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x = −y\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Villkoret säger att x och y är varandras motsatta tal, men inte vilket av dem som är positivt. x = 2 och y = −2 uppfyller villkoret och ger kvantitet I störst. x = −2 och y = 2 uppfyller det också och ger kvantitet II störst. Med x = y = 0 är de dessutom lika. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: k₁\nKvantitet II: k₂",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Linjerna ser lika branta ut, men x-axlarna har olika skala. L₁ går genom origo och genom punkten (10, 100), så k₁ = 100/10 = 10. L₂ går genom origo och genom punkten (5, 100), så k₂ = 100/5 = 20. Kvantitet II är alltså större. Den som bara jämför hur linjerna ser ut tror lätt att k₁ och k₂ är lika.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.194,
+          0.088,
+          0.752,
+          0.275
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (−10)¹¹\nKvantitet II: (−11)¹⁰",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ett negativt tal upphöjt till en udda exponent blir negativt, och upphöjt till en jämn exponent blir det positivt. Exponenten 11 är udda, så (−10)¹¹ = −10¹¹ är negativt. Exponenten 10 är jämn, så (−11)¹⁰ = 11¹⁰ är positivt. Ett positivt tal är större än ett negativt, så kvantitet II är större. Den som bara jämför talens storlek (10¹¹ är större än 11¹⁰ ≈ 2,6 · 10¹⁰) kan lockas att välja kvantitet I.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Längsta sidan i en rektangel med omkretsen 36 cm\nKvantitet II: Omkretsen av en kvadrat med sidan 3 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvantitet II är 4 · 3 = 12 cm. I rektangeln är en lång och en kort sida tillsammans 36/2 = 18 cm, men sidornas längder är inte bestämda. Med sidorna 15 cm och 3 cm är längsta sidan 15 cm, större än 12 cm. Med sidorna 10 cm och 8 cm är längsta sidan 10 cm, mindre än 12 cm. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Summan av n positiva tal är lika med summan av m positiva tal.\nKvantitet I: n\nKvantitet II: m",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Talen kan vara olika stora, så antalet tal säger inget om summan. Exempel: 1 + 1 + 1 + 1 = 4 och 2 + 2 = 4 ger n = 4 och m = 2, alltså kvantitet I större. Byter man plats på grupperna blir kvantitet II större, och 1 + 3 = 2 + 2 ger n = m = 2. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a, b, c, d och e är fem på varandra följande heltal sådana att a < b < c < d < e och a = −2d.\nKvantitet I: b\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Talen följer på varandra, så b = a + 1, c = a + 2, d = a + 3 och e = a + 4. Villkoret a = −2d ger a = −2(a + 3) = −2a − 6, alltså 3a = −6 och a = −2. Talen är −2, −1, 0, 1 och 2, så b = −1, som är mindre än 0. Kontroll: d = 1 och −2d = −2 = a. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x(1 − x) > 0\nKvantitet I: x\nKvantitet II: x²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in: x(1 − x) = x − x². Villkoret säger alltså att x − x² > 0, det vill säga att x > x². Kvantitet I är därför alltid större. Man kan också se vilka x som är möjliga: produkten är positiv bara när båda faktorerna är positiva (båda negativa skulle kräva x < 0 och x > 1 samtidigt), alltså 0 < x < 1. För sådana x är x² mindre än x, till exempel 0,5² = 0,25.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en buss finns det 8 män och 14 kvinnor. Hur många av personerna på bussen har hatt?\n(1) En fjärdedel av männen har hatt.\n(2) Om en man med hatt kliver av bussen så innebär det att fyra gånger så många kvinnor som män på bussen har hatt.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet män med hatt m och antalet kvinnor med hatt k.\n(1) En fjärdedel av 8 män ger m = 2, men vi vet inget om kvinnorna. Inte tillräckligt.\n(2) När en man med hatt har klivit av har m − 1 män hatt, så påståendet ger k = 4(m − 1). Det uppfylls till exempel av m = 2 och k = 4 men också av m = 3 och k = 8. Inte tillräckligt.\n(1) och (2) tillsammans: m = 2 ger k = 4 · (2 − 1) = 4. Totalt har 2 + 4 = 6 personer hatt. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en ladugård finns enbart grisar, höns och får. Hur många djur finns i ladugården?\n(1) Det finns fem får i ladugården och 1/8 av djuren i ladugården är grisar.\n(2) 25 procent av djuren i ladugården är höns.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet djur n.\n(1) Det finns 5 får och n/8 grisar, men antalet höns är okänt. Både n = 8 (1 gris, 2 höns och 5 får) och n = 16 (2 grisar, 9 höns och 5 får) stämmer. Inte tillräckligt.\n(2) En fjärdedel av djuren är höns, men det säger inget om hur många djuren är. Inte tillräckligt.\n(1) och (2) tillsammans: Grisar och höns utgör 1/8 + 1/4 = 3/8 av djuren, så de 5 fåren utgör 5/8 av djuren. 5n/8 = 5 ger n = 8. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vinkeln d är yttervinkel till vinkeln c i triangeln ABC. Hur stor är yttervinkeln d?\n(1) Vinkeln c är 1/4 av vinkeln b.\n(2) Vinkeln d är summan av vinklarna a och b.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Yttervinkeln är d = 180° − c, så det gäller att bestämma c.\n(1) c = b/4 är ett samband mellan två vinklar, men triangeln kan se ut på många sätt. Med b = 80° blir c = 20°, a = 80° och d = 160°. Med b = 100° blir c = 25°, a = 55° och d = 155°. Inte tillräckligt.\n(2) En yttervinkel är alltid lika med summan av de två motstående inre vinklarna, eftersom a + b = 180° − c = d. Påståendet gäller alltså för varje triangel och ger ingen ny information. Inte tillräckligt.\n(1) och (2) tillsammans: (2) tillför inget, och båda exemplen ovan uppfyller också (2). Inte tillräckligt.",
+      "figure": {
+        "pages": [
+          14
+        ],
+        "box": [
+          0.19,
+          0.103,
+          0.61,
+          0.218
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anna och Karin fyller båda år den 4 juli. Hur gammal var Karin den 4 juli 2001?\n(1) Den 4 juli 2007 var Karin 24 år yngre än Anna.\n(2) Den 4 juli 2014 kommer Anna att vara dubbelt så gammal som Karin.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Eftersom de fyller år samma dag är åldersskillnaden densamma varje år.\n(1) Anna är 24 år äldre än Karin, men det säger inte hur gammal Karin är. Inte tillräckligt.\n(2) År 2014 är Anna dubbelt så gammal som Karin, men utan åldersskillnaden kan Karin till exempel vara 10 år (Anna 20) eller 30 år (Anna 60). Inte tillräckligt.\n(1) och (2) tillsammans: Om Karin är k år den 4 juli 2014 är Anna k + 24 = 2k år, så k = 24. Den 4 juli 2001, 13 år tidigare, var Karin 24 − 13 = 11 år. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En röd och en grön bil startade från samma punkt och körde i motsatta riktningar under 2 timmar. De hade då tillsammans kört 234 km. Vilken var respektive bils medelhastighet?\n(1) Medelhastigheten för den röda bilen var 27 km/h högre än för den gröna bilen.\n(2) Den röda bilens medelhastighet var 60 procent högre än den gröna bilens.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Bilarna körde tillsammans 234 km på 2 timmar, så summan av medelhastigheterna är 234/2 = 117 km/h. Kalla den röda bilens medelhastighet r och den gröna bilens g, så att r + g = 117.\n(1) r = g + 27 ger 2g + 27 = 117, alltså g = 45 km/h och r = 72 km/h. Tillräckligt.\n(2) r = 1,6g ger 2,6g = 117, alltså g = 45 km/h och r = 72 km/h. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en marknad står tre marknadsstånd på rad som säljer var sin produkt. Produkterna är tröjor, strumpor och byxor. En av dessa produkter är enbart svart, en är enbart vit och en är enbart blå. Det mittersta marknadsståndet säljer tröjor. Vilken färg har strumporna som säljs?\n(1) Tröjorna är inte vita.\n(2) Byxorna är blå och finns bredvid de svarta produkterna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tröjorna säljs i mitten, så strumporna och byxorna säljs i stånden längst ut, ett på var sida.\n(1) Tröjorna är svarta eller blå, och strumporna kan ha någon av de två andra färgerna. Inte tillräckligt.\n(2) Byxorna står längst ut, och det enda stånd som ligger bredvid dem är det mittersta med tröjorna. De svarta produkterna är alltså tröjorna. Byxorna är blå, så strumporna är vita. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För vilken överträdelse gällde att den stod för 5 procent av de fattade besluten om miljösanktionsavgifter 2003 och 10 procent av det totala beloppet för miljösanktionsavgifter samma år?",
+      "options": [
+        "Tillstånd/anmälan",
+        "Miljörapport",
+        "Kompletterande uppgift",
+        "Övrigt"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av staplarna för 2003 i de två vänstra diagrammen. I det övre diagrammet (antalet beslut) går den vita delen, kompletterande uppgift, från cirka 22 till 27 procent, alltså ungefär 5 procent av besluten. I det nedre diagrammet (totalbeloppet) går samma vita del från cirka 44 till 53 procent, alltså ungefär 9–10 procent av beloppet. De andra stämmer inte: tillstånd/anmälan är cirka 15 procent av besluten och 40 procent av beloppet, miljörapport cirka 7 procent av besluten och 4 procent av beloppet, och övrigt cirka 11 procent av både besluten och beloppet.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.07,
+          0.07,
+          0.942,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stort var det genomsnittliga beloppet per beslutad miljösanktionsavgift år 2004?",
+      "options": [
+        "7 400 kronor",
+        "8 600 kronor",
+        "10 600 kronor",
+        "160 000 kronor"
+      ],
+      "blindAnswer": 0,
+      "explain": "Totalbeloppet 2004 står vid stapeln i det nedre vänstra diagrammet: 8,0 miljoner kronor. Antalet beslut 2004 står vid stapeln i det övre vänstra diagrammet: 1 078. Genomsnittet per beslut är 8 000 000/1 078 ≈ 7 421 kronor, alltså ungefär 7 400 kronor.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.07,
+          0.07,
+          0.942,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Anta att antalet beslut om miljösanktionsavgifter hade samma procentuella fördelning på tillsynsmyndigheter år 2002 som 2004. Hur många beslut fattades i så fall av kommuner 2002?",
+      "options": [
+        "862",
+        "1 014",
+        "1 085",
+        "1 276"
+      ],
+      "blindAnswer": 2,
+      "explain": "Cirkeldiagrammet visar att kommunerna fattade 85 procent av besluten 2004. Antalet beslut 2002 står i det övre vänstra diagrammet: 1 276. Med samma fördelning fattade kommunerna 0,85 · 1 276 ≈ 1 085 beslut. Alternativet 1 276 är alla beslut 2002, och 1 014 är antalet beslut 2003.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.07,
+          0.07,
+          0.942,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de tjänstgörande gymnasielärarna i ämnet media hade pedagogisk högskoleexamen?",
+      "options": [
+        "30 procent",
+        "40 procent",
+        "55 procent",
+        "65 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "I tabellen för gymnasieskolan står raden media under Lärare i ämne/ämnen. Där är det totala antalet tjänstgörande lärare 913, och 356 av dem hade pedagogisk högskoleexamen. Andelen är 356/913 ≈ 0,39, alltså ungefär 40 procent. Den som läser av kolumnen för tillsvidareanställning (600) får i stället 600/913 ≈ 65 procent.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Studera de tjänstgörande lärarna i grundskolan. I vilken lärarkategori var skillnaden mellan andelen män och andelen kvinnor minst respektive störst?",
+      "options": [
+        "Matematik/NO-ämnen, år 4–9 respektive Textilslöjd",
+        "Idrott och hälsa respektive Lågstadielärare",
+        "Idrott och hälsa respektive Hem- och konsumentkunskap",
+        "Musik respektive Svenska som andraspråk"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd kolumnerna Kvinnor och Män under Tjänstgörande lärare i tabellen för grundskolan. Lärare matematik/NO-ämnen, år 4–9: 3 738 kvinnor och 3 871 män av 7 609, alltså cirka 49 och 51 procent, en skillnad på knappt 2 procentenheter. Ingen annan kategori är så jämn; musik (1 301 och 1 219 av 2 520) ger cirka 52 och 48 procent och idrott och hälsa (1 846 och 2 394 av 4 240) cirka 44 och 56 procent. Lärare textilslöjd: 3 219 kvinnor och 26 män av 3 245, cirka 99 och 1 procent, en skillnad på ungefär 98 procentenheter. Det är mer än för lågstadielärare (cirka 97 och 3 procent), hem- och konsumentkunskap (cirka 96 och 4 procent) och svenska som andraspråk (cirka 92 och 8 procent).",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag är korrekt avseende det totala antalet tjänstgörande lärare (inklusive helt tjänstlediga) inom olika lärarkategorier i gymnasieskolan?",
+      "options": [
+        "Det fanns 213 fler lärare inom el-/teletekniska ämnen än inom bygg-/anläggningstekniska ämnen.",
+        "Det fanns 188 fler lärare inom naturbruksämnen än inom handels-/kontorsämnen.",
+        "Det fanns 47 färre lärare inom drift-/underhållstekniska ämnen än inom processtekniska ämnen.",
+        "Det fanns 218 färre lärare inom verkstads-/industritekniska ämnen än inom hantverksämnen."
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd kolumnen längst till höger i tabellen för gymnasieskolan, Totalt antal (inkl. helt tjänstlediga). Naturbruksämnen har 884 och handels-/kontorsämnen 696 lärare, och 884 − 696 = 188, så det påståendet stämmer. De andra stämmer inte: el-/teletekniska har 992 och bygg-/anläggningstekniska 760, en skillnad på 232 (213 får man om man bara räknar de tjänstgörande, 945 − 732). Drift-/underhållstekniska ämnen (74) har 47 fler lärare än processtekniska (27), inte färre, och verkstads-/industritekniska (593) har 218 fler än hantverksämnen (375), inte färre.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "För hur många av lokalerna gällde att asklager VI låg djupare än 1 meter under markytan?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "blindAnswer": 1,
+      "explain": "Följ markeringen VI i varje markprofil och jämför med djupskalan längst till vänster. Asklager VI ligger djupare än 1 meter i profil 3 Áslákstunga (cirka 2,1 meter), 5 Stöng (cirka 1,2 meter), 8 Sölmundarholt (cirka 1,9 meter), 9 Skarfanestorfa (cirka 1,3 meter) och 11 Gamla Næfurholt (cirka 1,6 meter). I de övriga sex profilerna ligger det ovanför 1 meter; närmast 1 meter är profil 2 Karlsstaðir (cirka 0,95 meter) och 7 Hagi (cirka 0,9 meter). Det gäller alltså för 5 lokaler.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.07,
+          0.07,
+          0.945,
+          0.92
+        ]
+      },
+      "note": "Asklager VI i Karlsstaðir (cirka 0,95 m) och Hagi (cirka 0,9 m) ligger nära 1 meter; avläst med förstoring.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket asklager avses?",
+      "passage": "I markprofilen från Hagi återfanns asklagret ytligare än 50 cm under markytan och i markprofilen från Skarfanestorfa djupare än 80 cm under markytan.",
+      "options": [
+        "IV",
+        "V",
+        "VI",
+        "VII"
+      ],
+      "blindAnswer": 1,
+      "explain": "I Hagi (profil 7) ligger asklagren I–V ovanför 50 cm, medan VI ligger på cirka 0,9 meter och VII ännu djupare. Det utesluter VI och VII. I Skarfanestorfa (profil 9) ligger IV på cirka 0,7 meter, alltså inte djupare än 80 cm, medan V ligger på drygt 0,8 meter. Bara asklager V uppfyller båda villkoren: cirka 0,4 meter under markytan i Hagi och drygt 0,8 meter i Skarfanestorfa.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.07,
+          0.07,
+          0.945,
+          0.92
+        ]
+      },
+      "note": "Asklager V i Skarfanestorfa ligger bara strax under 80 cm (cirka 83 cm) enligt avläsningen.",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Identifiera den markprofil där asklager VII låg som djupast respektive som ytligast under markytan. Hur stor var skillnaden mellan de båda djupen?",
+      "options": [
+        "0,9 meter",
+        "1,5 meter",
+        "1,9 meter",
+        "2,5 meter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Följ markeringen VII (med delskikten a–d) i alla profiler och läs av djupet på skalan längst till vänster. Djupast ligger asklager VII i profil 3 Áslákstunga, cirka 2,5 meter under markytan. Ytligast ligger det i profil 1 Skallakot, cirka 0,6 meter under markytan (i Skeljastaðir ligger det något djupare, cirka 0,65 meter). Skillnaden är ungefär 2,5 − 0,6 = 1,9 meter. Alternativet 2,5 meter är bara det största djupet.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.07,
+          0.07,
+          0.945,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Identifiera det år då det sammanlagda antalet snatterier, stölder och beräknade ransoneringsbrott var som störst i Sverige. Hur många brott rörde det sig om?",
+      "options": [
+        "13 800",
+        "15 200",
+        "17 400",
+        "19 200"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd det nedre diagrammet, där antalen anges i tusental. Ransoneringsbrotten är flest 1943, cirka 11,1 tusen, och samma år är också stölderna (cirka 5,5 tusen) och snatterierna (cirka 2,8 tusen) som flest. Summan 1943 är ungefär 11,1 + 5,5 + 2,8 ≈ 19,4 tusen, och närmast bland alternativen är 19 200. Året efter, 1944, blir summan bara ungefär 9,6 + 5,2 + 2,5 ≈ 17,3 tusen.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor var den största procentuella ökningen av det beräknade antalet ransoneringsbrott mellan två på varandra följande år?",
+      "options": [
+        "70 procent",
+        "110 procent",
+        "210 procent",
+        "320 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Ransoneringsbrotten finns för 1940–1950 i det nedre diagrammet. Den största ökningen i procent sker mellan 1941 och 1942, från cirka 2,2 tusen till cirka 6,6 tusen. Ökningen är 6,6 − 2,2 = 4,4 tusen, och 4,4/2,2 = 2, alltså ungefär 200 procent, vilket ligger närmast 210 procent. Mellan 1942 och 1943 är ökningen större i antal (från 6,6 till 11,1 tusen), men i procent bara (11,1 − 6,6)/6,6 ≈ 70 procent. Övriga år ökar antalet bara lite eller minskar.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur mycket mer kött/fläsk fick en person köpa per vecka tredje kvartalet 1947 jämfört med andra kvartalet 1942?",
+      "options": [
+        "70 gram/vecka och person",
+        "180 gram/vecka och person",
+        "260 gram/vecka och person",
+        "320 gram/vecka och person"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd kurvan för kött/fläsk i det övre diagrammet. Varje markering är ett kvartal, och ransonen anges i gram per dag och person. Kött/fläsk redovisas från första kvartalet 1941, så andra kvartalet 1942 är den sjätte markeringen, kurvans lägsta punkt med cirka 25 gram per dag. Tredje kvartalet 1947 är den näst sista markeringen, cirka 72 gram per dag. Skillnaden är cirka 47 gram per dag, alltså 47 · 7 ≈ 330 gram per vecka, och närmast bland alternativen är 320 gram/vecka och person.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
