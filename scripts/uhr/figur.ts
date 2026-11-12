@@ -14,7 +14,7 @@
  * poppler-utils (pdftoppm).
  */
 
-import { existsSync, mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, unlinkSync } from "node:fs";
 import { dirname, join } from "node:path";
 import sharp from "sharp";
 import { pdfWordBoxes, renderPage } from "../import-prov/lib/pdf";
@@ -200,6 +200,17 @@ async function main() {
       if (out) {
         written++;
         console.log(out);
+      }
+    }
+    // Hela provpasset: ta bort figurer som ingen uppgift längre använder (t.ex. efter ändrad box).
+    if (only.length === 0) {
+      const dir = join(FIGURE_DIR, pass.examId);
+      const prefix = `p${pass.passNumber}-`;
+      for (const file of existsSync(dir) ? readdirSync(dir) : []) {
+        if (!file.startsWith(prefix) || !file.endsWith(".webp")) continue;
+        if (done.has(`uhr/${pass.examId}/${file}`)) continue;
+        unlinkSync(join(dir, file));
+        console.log(`Tog bort oanvänd figur ${join(dir, file)}`);
       }
     }
   }

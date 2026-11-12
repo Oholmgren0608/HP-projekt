@@ -11,6 +11,7 @@
  * Frågorna publiceras först efter stickprov på /review.
  */
 
+import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { ChoiceQuestion } from "@/lib/practice-types";
@@ -136,13 +137,24 @@ export function readAllPasses(): UhrPass[] {
     .map((f) => JSON.parse(readFileSync(join(UHR_DIR, f), "utf8")) as UhrPass);
 }
 
-/** Filnamn (relativt public/) för figuren till en fråga. DTK-figurer delas per sida. */
+/**
+ * Filnamn (relativt public/) för figuren till en fråga. DTK-figurer delas av
+ * uppgifterna med samma underlag: namnet bygger på sidorna, och har figuren
+ * egna boxar på en kort kontrollsumma av dem, så att samma utklipp blir en fil.
+ */
 export function figurePath(examId: string, passNumber: number, q: Pick<UhrQuestion, "number" | "kind" | "figure">): string | null {
   if (!q.figure) return null;
-  const name =
-    q.kind === "dtk" && !q.figure.box && !q.figure.boxes
-      ? `p${passNumber}-s${q.figure.pages.join("-")}.webp`
-      : `p${passNumber}-q${q.number}.webp`;
+  let name = `p${passNumber}-q${q.number}.webp`;
+  if (q.kind === "dtk") {
+    const custom = q.figure.box || q.figure.boxes;
+    const tag = custom
+      ? `-${createHash("sha1")
+          .update(JSON.stringify([q.figure.box ?? null, q.figure.boxes ?? null, q.figure.rotate ?? null]))
+          .digest("hex")
+          .slice(0, 6)}`
+      : "";
+    name = `p${passNumber}-s${q.figure.pages.join("-")}${tag}.webp`;
+  }
   return `uhr/${examId}/${name}`;
 }
 
