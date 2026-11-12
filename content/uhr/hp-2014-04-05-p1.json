@@ -1,0 +1,847 @@
+{
+  "examId": "hp-2014-04-05",
+  "passNumber": 1,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är (9 · 1/10)/(1 − 1/10)?",
+      "options": [
+        "1/10",
+        "1/9",
+        "1",
+        "10/9"
+      ],
+      "blindAnswer": 2,
+      "explain": "Räkna ut täljaren och nämnaren var för sig. Täljaren är 9 · 1/10 = 9/10. Nämnaren är 1 − 1/10 = 10/10 − 1/10 = 9/10. Täljaren och nämnaren är alltså lika stora, och kvoten blir (9/10)/(9/10) = 1.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.256,
+          0.109,
+          0.318,
+          0.162
+        ]
+      },
+      "note": "Uttrycket är ett bråk i två nivåer; figuren visar det som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "I figuren har x, y och z värden så att summan av varje rad är lika stor som summan av varje kolumn respektive varje diagonal. Vad är summan av x, y och z?",
+      "options": [
+        "13",
+        "26",
+        "39",
+        "52"
+      ],
+      "blindAnswer": 2,
+      "explain": "Raderna har summorna x + 13 och y + z, kolumnerna x + y och 13 + z, och diagonalerna x + z och 13 + y. Den övre raden och den vänstra kolumnen ger x + 13 = x + y, alltså y = 13. Den övre raden och diagonalen x + z ger x + 13 = x + z, alltså z = 13. Den övre raden och den högra kolumnen ger x + 13 = 13 + z, alltså x = z = 13. Alla tre talen är 13, och summan är 13 + 13 + 13 = 39.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.19,
+          0.58,
+          0.34,
+          0.695
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket av följande tal ingår inte i värdemängden för y?",
+      "passage": "1 < x ≤ 5\ny = 3x − 7",
+      "options": [
+        "−4",
+        "2",
+        "6",
+        "8"
+      ],
+      "blindAnswer": 0,
+      "explain": "y = 3x − 7 växer när x växer, så värdemängden bestäms av intervallets ändpunkter. x = 1 skulle ge y = 3 · 1 − 7 = −4, men x måste vara större än 1, så y blir aldrig −4. x = 5 är tillåtet och ger y = 3 · 5 − 7 = 8. Värdemängden är alltså −4 < y ≤ 8. Talen 2, 6 och 8 ingår (x = 3, x = 13/3 respektive x = 5), men inte −4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "En cirkel med radien y är inskriven i en likbent triangel. Vad är arean av det skuggade området i figuren?",
+      "options": [
+        "0,5x² − πy²",
+        "0,5x² + πy²",
+        "5x² − πy²",
+        "5x² + πy²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Triangeln är rätvinklig och likbent, så båda kateterna är x. Triangelns area är då x · x/2 = 0,5x². Cirkeln har radien y och arean πy². Det skuggade området är triangeln utom cirkeln, alltså 0,5x² − πy². Alternativen med plustecken lägger till cirkelns area i stället för att dra bort den.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.205,
+          0.574,
+          0.42,
+          0.745
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är (10√5)²?",
+      "options": [
+        "50",
+        "250",
+        "500",
+        "2 500"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadrera varje faktor för sig: (10√5)² = 10² · (√5)². Eftersom (√5)² = 5 blir det 100 · 5 = 500. Den som glömmer att kvadrera tian får 10 · 5 = 50, och den som tror att (√5)² = 25 får 2 500.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket uttryck har samma värde som (4x⁵ + 8x)/(2x) för alla x > 0?",
+      "options": [
+        "2x³ + 4x",
+        "2x⁴ + 4x",
+        "2x³ + 4",
+        "2x⁴ + 4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Dela varje term i täljaren med 2x: 4x⁵/(2x) = 2x⁴ och 8x/(2x) = 4. Uttrycket är alltså 2x⁴ + 4. Kontroll med x = 2: (4 · 32 + 16)/4 = 144/4 = 36 och 2 · 16 + 4 = 36. Det är lätt att glömma att även den andra termen ska delas med x, och då får man 2x⁴ + 4x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är x om −(−10 + 2x) = 2x + 4?",
+      "options": [
+        "−3/2",
+        "−7/2",
+        "7/2",
+        "3/2"
+      ],
+      "blindAnswer": 3,
+      "explain": "Minustecknet framför parentesen byter tecken på båda termerna: −(−10 + 2x) = 10 − 2x. Ekvationen blir 10 − 2x = 2x + 4. Lägg till 2x och dra bort 4 på båda sidor: 6 = 4x, så x = 6/4 = 3/2. Kontroll: vänster led är 10 − 3 = 7 och höger led 3 + 4 = 7.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad blir resten då man dividerar 897 med 7?",
+      "options": [
+        "0",
+        "1",
+        "3",
+        "6"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sök den största multipeln av 7 som inte är större än 897. 7 · 100 = 700 och 7 · 28 = 196, så 7 · 128 = 896. Då är 897 = 7 · 128 + 1, och resten blir 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är mn?",
+      "passage": "81^(1/m) = 9ⁿ",
+      "options": [
+        "1/2",
+        "2",
+        "3",
+        "6"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv 81 som en potens av 9: 81 = 9². Då är 81^(1/m) = (9²)^(1/m) = 9^(2/m). Ekvationen blir 9^(2/m) = 9ⁿ, och eftersom baserna är lika måste exponenterna vara lika: n = 2/m. Multiplicera båda leden med m: mn = 2.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.192,
+          0.072,
+          0.275,
+          0.104
+        ]
+      },
+      "note": "Exponenten 1/m skrivs med ^ i texten; figuren visar ekvationen som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "I kvadraten ABCD är den liksidiga triangeln ABE inritad. Vad är vinkeln CED?",
+      "options": [
+        "120°",
+        "135°",
+        "150°",
+        "165°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Triangeln ABE är liksidig, så AE = AB och vinkeln BAE är 60°. Vinkeln DAE är då 90° − 60° = 30°. Eftersom AD = AB = AE är triangeln ADE likbent, och vinklarna ADE och AED är (180° − 30°)/2 = 75° vardera. På samma sätt är vinkeln BEC 75°. Vinklarna runt punkten E är tillsammans 360°, så vinkeln CED = 360° − 75° − 60° − 75° = 150°.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.195,
+          0.575,
+          0.445,
+          0.748
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Om medianen av åtta på varandra följande heltal är −1,5 vad är då det minsta av talen?",
+      "options": [
+        "−6",
+        "−5",
+        "−4",
+        "−3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kalla det minsta talet a. De åtta talen är a, a + 1, …, a + 7. Med ett jämnt antal tal är medianen medelvärdet av de två mittersta, alltså det fjärde och det femte: (a + 3 + a + 4)/2 = a + 3,5. Ekvationen a + 3,5 = −1,5 ger a = −5. Kontroll: talen −5, −4, −3, −2, −1, 0, 1, 2 har medianen (−2 + (−1))/2 = −1,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "I vilket intervall ligger x om x/(2x/3) = 8 + 4x?",
+      "passage": "x ≠ 0",
+      "options": [
+        "−2 ≤ x < −1",
+        "−1 ≤ x < 0",
+        "0 < x < 1",
+        "1 ≤ x < 2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Förenkla vänster led först. Att dela med 2x/3 är att multiplicera med 3/(2x): x · 3/(2x) = 3/2, eftersom x ≠ 0 kan förkortas bort. Ekvationen blir 3/2 = 8 + 4x, alltså 4x = 3/2 − 8 = −13/2 och x = −13/8 = −1,625. Kontroll: 8 + 4 · (−1,625) = 8 − 6,5 = 1,5. Talet −1,625 ligger i intervallet −2 ≤ x < −1.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.44,
+          0.552,
+          0.477,
+          0.591
+        ]
+      },
+      "note": "Uttrycket är ett bråk i två nivåer; figuren visar det som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "På ett bord finns två bollar, en röd och en vit. Det finns även sex lådor som är placerade i rad.\nKvantitet I: Antalet sätt att placera de två bollarna i lådorna så att det alltid finns minst en tom låda mellan bollarna. Den röda bollen ska placeras till vänster om den vita bollen.\nKvantitet II: 12",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Numrera lådorna 1–6 från vänster. Den röda bollen ska ligga till vänster om den vita med minst en tom låda emellan. Röd i låda 1 ger vit i låda 3, 4, 5 eller 6 (4 sätt), röd i låda 2 ger 3 sätt, röd i låda 3 ger 2 sätt och röd i låda 4 ger 1 sätt (vit i låda 6). Det blir 4 + 3 + 2 + 1 = 10 sätt. Kontroll: man kan välja två av sex lådor på 15 sätt, och 5 av dem är lådor som ligger intill varandra, så 15 − 5 = 10. Kvantitet I är 10, vilket är mindre än 12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Avståndet mellan punkten (−4, y) och punkten (22, y)\nKvantitet II: Avståndet mellan punkten (3, y) och punkten (−21, y)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Punkterna i varje par har samma y-koordinat, så avståndet mellan dem är skillnaden mellan x-koordinaterna. Kvantitet I: 22 − (−4) = 26. Kvantitet II: 3 − (−21) = 24. Värdet på y spelar ingen roll, så kvantitet I är alltid större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Två cirklar med olika stora radier skär varandra i två punkter.\nKvantitet I: Radien av den större cirkeln\nKvantitet II: Avståndet mellan cirklarnas medelpunkter",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla radierna R (den större) och r. Cirklarna skär varandra i två punkter när avståndet d mellan medelpunkterna är större än R − r och mindre än R + r. Exempel med R = 5 cm och r = 4 cm: d = 8 cm ger två skärningspunkter (8 ligger mellan 1 och 9), och då är avståndet större än radien. d = 3 cm ger också två skärningspunkter, men nu är avståndet mindre än radien. Informationen räcker alltså inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: En åttondel av 2⁶\nKvantitet II: 8",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "2⁶ = 64, och en åttondel av 64 är 64/8 = 8. Med potenslagarna: 8 = 2³, så 2⁶/2³ = 2³ = 8. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En mätserie är: 5, 1, 6, 5, 8\nKvantitet I: Mätseriens median\nKvantitet II: Mätseriens medelvärde",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sortera värdena: 1, 5, 5, 6, 8. Medianen är det mittersta värdet, 5. Medelvärdet är (5 + 1 + 6 + 5 + 8)/5 = 25/5 = 5. Kvantiteterna är lika. Den som tar det mittersta talet i den osorterade serien får 6 som median.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0 och y > 0\nKvantitet I: x² + y²\nKvantitet II: (x + y)²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Utveckla kvantitet II med kvadreringsregeln: (x + y)² = x² + 2xy + y². Den är alltså 2xy större än kvantitet I, och 2xy är positivt eftersom både x och y är positiva. Exempel: x = y = 1 ger 1 + 1 = 2 respektive (1 + 1)² = 4. Kvantitet II är alltid större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x = 3y − 3\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Skillnaden är x − y = (3y − 3) − y = 2y − 3, och den beror på vilket värde y har. Exempel: y = 0 ger x = −3, och då är y störst. y = 3 ger x = 6, och då är x störst. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 1\nKvantitet I: En tredjedel av variabeln x dividerat med fyra\nKvantitet II: En fjärdedel av variablen x dividerat med tre",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: en tredjedel av x är x/3, och dividerat med fyra blir det x/12. Kvantitet II: en fjärdedel av x är x/4, och dividerat med tre blir det också x/12. Båda kvantiteterna är x delat med 3 · 4 = 12, så de är lika för alla x. Villkoret x > 1 påverkar inte jämförelsen.",
+      "figure": null,
+      "note": "Provet skriver \"variabeln\" i kvantitet I men \"variablen\" i kvantitet II; avskriften följer provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x och y är negativa tal så att x = 2y.\nKvantitet I: 5x − y\nKvantitet II: 2x + 4y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt in x = 2y. Kvantitet I: 5 · 2y − y = 9y. Kvantitet II: 2 · 2y + 4y = 8y. Eftersom y är negativt är 9y mindre än 8y. Exempel: y = −1 och x = −2 ger kvantitet I = −10 + 1 = −9 och kvantitet II = −4 − 4 = −8. Kvantitet II är alltid större. Den som glömmer att y är negativt tror lätt att 9y är störst.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Hörnen till tre kvadrater av olika storlek sammanfaller så att kvadraterna avgränsar ett område i form av en rätvinklig triangel. Arean av den största kvadraten är 3 721 m² och arean av den minsta kvadraten är 121 m².\nKvantitet I: Längden av sidan på den mellanstora kvadraten\nKvantitet II: 59 meter",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvadraternas sidor är triangelns sidor, och den största kvadraten står på hypotenusan. Enligt Pythagoras sats är arean av den största kvadraten summan av de två andra kvadraternas areor. Den mellanstora kvadraten har alltså arean 3 721 − 121 = 3 600 m², och dess sida är √3 600 = 60 meter. Kontroll: 61² = 3 721, 11² = 121 och 11² + 60² = 121 + 3 600 = 3 721. 60 meter är större än 59 meter.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.2,
+          0.5055,
+          0.49,
+          0.774
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Norden består av länderna Danmark, Finland, Island, Norge och Sverige. Vilket nordiskt land konsumerade minst respektive mest elektricitet år 2008?\n(1) Norge konsumerade mer än Finland, Danmark och Island tillsammans, men mindre än Sverige.\n(2) Sverige konsumerade mer än Finland, som i sin tur konsumerade mer än Danmark.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Sverige konsumerade mer än Norge, och Norge mer än Finland, Danmark och Island tillsammans. Sverige konsumerade alltså mest, men det framgår inte vilket av Finland, Danmark och Island som konsumerade minst. Inte tillräckligt.\n(2) Sverige konsumerade mer än Finland och Finland mer än Danmark, men Norge och Island nämns inte. Varken minst eller mest kan avgöras. Inte tillräckligt.\n(1) och (2) tillsammans: Sverige konsumerade mest, och Danmark konsumerade mindre än Finland. Men inget av påståendena jämför Island med Danmark, så minst kan vara antingen Danmark eller Island. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Olle stickar tre identiska tröjor med likadana garnnystan. Tröjorna väger tillsammans 1 350 gram. Vad väger ett garnnystan?\n(1) Varje tröja väger 450 gram.\n(2) Efter att Olle förbrukat två garnnystan så är en tredjedel av den första tröjan ostickad.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Att varje tröja väger 450 gram följer redan av att tre identiska tröjor väger 1 350 gram. Det säger inget om hur många nystan en tröja kräver. Inte tillräckligt.\n(2) Två nystan räcker till två tredjedelar av en tröja, så en tröja kräver tre nystan. En tröja väger 1 350/3 = 450 gram, och ett nystan väger då 450/3 = 150 gram. Tillräckligt.\nDet är lätt att tro att (2) behöver (1), men tröjans vikt får man redan ur uppgiften.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en biografsalong är sittplatserna placerade i parallella rader och det är lika många sittplatser i varje rad. Hur många sittplatser finns det i varje rad?\n(1) Om man adderar antalet sittplatser i en rad med antalet rader får man summan 42.\n(2) Antalet sittplatser i en rad är tio färre än antalet rader.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet sittplatser i en rad s och antalet rader r.\n(1) s + r = 42 har många lösningar, till exempel s = 20 och r = 22 eller s = 16 och r = 26. Inte tillräckligt.\n(2) s = r − 10 säger inget om hur stora talen är. Inte tillräckligt.\n(1) och (2) tillsammans: (r − 10) + r = 42 ger 2r = 52, alltså r = 26 och s = 16. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Bland talen 21, 24, 27, 30, 36, 45 väljs ett ut, vilket?\n(1) Talet är en heltalsmultipel av 9.\n(2) Talet är udda.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Multiplerna av 9 bland talen är 27, 36 och 45. Inte tillräckligt.\n(2) De udda talen är 21, 27 och 45. Inte tillräckligt.\n(1) och (2) tillsammans: både 27 och 45 är udda och multipler av 9, så det går inte att avgöra vilket tal som valts. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett cykelställ står både damcyklar och herrcyklar med och utan sadelskydd. Lika många herrcyklar som damcyklar har sadelskydd. Hur många damcyklar är utan sadelskydd?\n(1) Antalet herrcyklar utan sadelskydd är dubbelt så stort som antalet damcyklar utan sadelskydd.\n(2) Det finns sex herrcyklar och fyra damcyklar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet cyklar med sadelskydd av varje sort s, antalet damcyklar utan sadelskydd d och antalet herrcyklar utan sadelskydd h.\n(1) h = 2d, men utan något antal kan d vara vad som helst. Inte tillräckligt.\n(2) s + h = 6 och s + d = 4, alltså h = d + 2. Både s = 1, d = 3 och s = 2, d = 2 är möjliga. Inte tillräckligt.\n(1) och (2) tillsammans: 2d = d + 2 ger d = 2 (och h = 4, s = 2). Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "a, b, c, d och e är olika heltal större än 0.\na + b + c + d = 20\na + c + e = 23\nVad är e?\n(1) b + d = 10\n(2) a + b = 4\nc + e = 20",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Av a + b + c + d = 20 och b + d = 10 följer att a + c = 10. Då ger a + c + e = 23 att e = 23 − 10 = 13. Tillräckligt.\n(2) Sätt in c + e = 20 i a + c + e = 23: a = 3, och då är b = 4 − 3 = 1. Men c + d = 20 − 4 = 16 och e = 20 − c, så e beror på c. Till exempel ger c = 2 att d = 14 och e = 18, medan c = 4 ger d = 12 och e = 16. Båda uppfyller alla villkor. Inte tillräckligt.\nBara (1) räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur många olovliga strejker genomfördes i genomsnitt per år under 1990-talet?",
+      "options": [
+        "9",
+        "11",
+        "15",
+        "18"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd kolumnen Antal under Olovliga strejker för åren 1990–1999: 112, 11, 9, 7, 3, 19, 5, 6, 7 och 2. Summan är 181 strejker på tio år, och 181/10 ≈ 18 strejker per år. Det höga värdet 1990 drar upp medelvärdet; den som glömmer det året får ett betydligt lägre genomsnitt.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala antalet strejker 1968 var olovliga?",
+      "options": [
+        "40 procent",
+        "50 procent",
+        "60 procent",
+        "70 procent"
+      ],
+      "blindAnswer": 3,
+      "explain": "Strejkerna är antingen lovliga eller olovliga. År 1968 var det 2 lovliga strejker (Antal under Lovliga strejker) och 5 olovliga (Antal under Olovliga strejker), alltså 7 strejker totalt. Andelen olovliga är 5/7 ≈ 0,71, alltså ungefär 70 procent.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur många var de inställda arbetsdagarna per anställd till följd av lockout det år då antalet lockouter var som störst?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kolumnen Antal under Lockouter har sitt största värde år 1993, med 8 lockouter. Det året berördes 17 369 anställda och 84 503 arbetsdagar ställdes in. Per anställd blir det 84 503/17 369 ≈ 4,9, alltså ungefär 5 dagar. Alternativet 8 lockar eftersom det är antalet lockouter, inte antalet dagar per anställd.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Studera det totala antalet arbetsinställelser. Vilket av följande år noterades den största förändringen, i antal räknat, jämfört med närmast föregående år?",
+      "options": [
+        "1973",
+        "1979",
+        "1980",
+        "1985"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd kolumnen Antal under Summa arbetsinställelser. 1973: 48 mot 44 året innan, en ökning med 4. 1979: 207 mot 166, en ökning med 41. 1980: 204 mot 207, en minskning med 3. 1985: 160 mot 206, en minskning med 46. Den största förändringen i antal är alltså minskningen 1985. År 1979 lockar eftersom det har den största ökningen.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av den totala kostnaden per elev i den kommunala grundskolan 2008 gick till undervisning?",
+      "options": [
+        "1/3",
+        "2/5",
+        "1/2",
+        "3/5"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det nedersta diagrammet. År 2008 är den totala kostnaden (den tjocka svarta linjen) ungefär 82 000 kronor per elev och kostnaden för undervisning (den ljusgrå linjen) ungefär 42 500 kronor. Andelen är 42 500/82 000 ≈ 0,52, alltså ungefär 1/2.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur stor var skillnaden i genomsnittligt meritvärde mellan pojkar och flickor då denna skillnad var som störst?",
+      "options": [
+        "8",
+        "11",
+        "18",
+        "23"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd det mellersta diagrammet och jämför flickornas linje (svart) med pojkarnas (ljusgrå). Skillnaden är som störst omkring läsåren 1999/00 och 2000/01: flickorna ligger på knappt 215 och pojkarna på knappt 192, en skillnad på ungefär 23. De övriga åren är skillnaden mellan 21 och 23. Alternativet 11 motsvarar ungefär avståndet från en av linjerna till den streckade linjen för alla elever.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala antalet grundskoleelever gick i friskolor när denna andel var som störst?",
+      "options": [
+        "1 procent",
+        "5 procent",
+        "10 procent",
+        "15 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det översta diagrammet. Antalet elever i friskolor (den streckade linjen) ökar hela tiden, medan det totala antalet elever minskar under 2000-talet, så andelen är störst det sista läsåret, 2008/09. Då gick ungefär 90 000 elever i friskolor av totalt drygt 900 000. Andelen är 90 000/910 000 ≈ 0,10, alltså cirka 10 procent.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de pengar som invånarna i Kalmar län satsade på tur- och sportspel 2004 satsades på de fyra redovisade sportspelen?",
+      "options": [
+        "1/7",
+        "1/6",
+        "1/5",
+        "1/4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av Kalmars fyra staplar i diagrammet: Greyhound cirka 54, Oddset cirka 206, Stryktipset cirka 117 och Måltipset cirka 35 kronor per invånare, sammanlagt ungefär 412 kronor. Enligt tabellen satsade invånarna i Kalmar 2 070 kronor per person på tur- och sportspel 2004. Andelen är 412/2 070 ≈ 0,20, alltså ungefär 1/5.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.075,
+          0.07,
+          0.948,
+          0.82
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "År 2004 hade Dalarna 270 771 invånare. Hur stor var den sammanlagda försäljningen av stryktips och måltips i Dalarna det året?",
+      "options": [
+        "31 miljoner kronor",
+        "43 miljoner kronor",
+        "57 miljoner kronor",
+        "108 miljoner kronor"
+      ],
+      "blindAnswer": 1,
+      "explain": "I diagrammet når Dalarnas stapel för Stryktipset cirka 113 och stapeln för Måltipset cirka 45 kronor per invånare, sammanlagt ungefär 158 kronor per invånare. Med 270 771 invånare blir försäljningen 158 · 270 771 ≈ 42,8 miljoner kronor, alltså ungefär 43 miljoner kronor. Räknar man bara med Stryktipset får man cirka 31 miljoner kronor.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "box": [
+          0.075,
+          0.07,
+          0.948,
+          0.82
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket jordbruksområde låg 40 kilometer nordost om Höör, enligt de två indelningarna?",
+      "passage": "Svarsalternativen anger: indelning A – indelning B",
+      "options": [
+        "Kristianstads läns mellanbygd – Kristianstadsslättens norra övergångsbygd",
+        "Kristianstads läns mellanbygd – Sydsvenska höglandets skogsbygd",
+        "Kristianstads läns skogsbygd – Kristianstadsslättens norra övergångsbygd",
+        "Kristianstads läns skogsbygd – Linderödsåsens skogsbygd"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd den vänstra kartan och dess skala: 40 km är fyra femtedelar av skalstrecket 0–50 km. Gå 40 km från Höör snett uppåt åt höger, mot nordost. Då hamnar man strax väster om siffran XII, i ett område med vågräta streckade linjer. Enligt teckenförklaringen är det rastret Kristianstads läns mellanbygd (indelning A), och XII är enligt listan Kristianstadsslättens norra övergångsbygd (indelning B). Det snedstreckade rastret för Kristianstads läns skogsbygd inom XII ligger längre österut.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          [
+            0.075,
+            0.07,
+            0.9535,
+            0.885
+          ],
+          [
+            0.085,
+            0.12,
+            0.49,
+            0.325
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Identifiera de två enskilda födelseplatserna med flest inregistrerade ardennerhingstar. Hur många ardennerhingstar föddes sammanlagt på dessa två platser?",
+      "options": [
+        "50",
+        "70",
+        "90",
+        "110"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ardennerhingstarna är de svarta prickarna på den högra kartan, och prickens storlek jämförs med skalan för prickarna under kartan: prickens diameter är lika med skalans bredd vid antalet hingstar. De två största svarta prickarna ligger vid Nöbbelöv och vid Assmåsa. Pricken vid Nöbbelöv motsvarar cirka 35 och pricken vid Assmåsa drygt 30, sammanlagt ungefär 65–70 hingstar, vilket ligger närmast 70. Den största pricken av alla, vid Flyinge, är randig och visar full- och halvblod, så den ska inte räknas.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          [
+            0.075,
+            0.07,
+            0.9535,
+            0.885
+          ],
+          [
+            0.085,
+            0.12,
+            0.49,
+            0.325
+          ]
+        ]
+      },
+      "note": "Prickstorlekarna är avlästa med skalan och därför ungefärliga (Nöbbelöv cirka 35, Assmåsa cirka 33).",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor var arean av jordbruksområdet Sydsvenska höglandets skogsbygd enligt indelning B?",
+      "options": [
+        "1 500 km²",
+        "2 000 km²",
+        "2 700 km²",
+        "3 500 km²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sydsvenska höglandets skogsbygd är område XIV på den vänstra kartan: norra Skåne mellan länsgränsen och områdena I, XV, XIII och XII. Mät med skalan 0–50 km. Den västra delen, från länsgränsen i nordväst fram till område XII, är ungefär 40 km bred och i genomsnitt knappt 40 km från norr till söder, cirka 1 500 km². Den östra delen kring Osby, norr om XII, är ungefär 50 km bred men bara knappt 20 km hög, cirka 1 000 km². Sammanlagt blir det omkring 2 500 km², vilket ligger närmast 2 700 km².",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          [
+            0.075,
+            0.07,
+            0.9535,
+            0.885
+          ],
+          [
+            0.085,
+            0.12,
+            0.49,
+            0.325
+          ]
+        ]
+      },
+      "note": "Arean är uppskattad genom att områdets gränser följts med skalan (cirka 2 500 km²).",
+      "verification": "agreed"
+    }
+  ]
+}
