@@ -1,0 +1,755 @@
+{
+  "examId": "hp-2023-03-25",
+  "passNumber": 2,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket (3x − 2x)(y − z)?",
+      "options": [
+        "x + y − z",
+        "3x − 2xy − z",
+        "xy − xz",
+        "3xy + 2xz"
+      ],
+      "blindAnswer": 2,
+      "explain": "Förenkla först den första parentesen: 3x − 2x = x. Uttrycket blir då x(y − z), och när x multipliceras in i parentesen får man xy − xz. Samma svar fås om man multiplicerar ihop parenteserna direkt: 3xy − 3xz − 2xy + 2xz = xy − xz. Alternativet 3xy + 2xz får man om man bara multiplicerar 3x med y och −2x med −z och glömmer de två andra produkterna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln v?",
+      "options": [
+        "39°",
+        "49°",
+        "51°",
+        "61°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkeln 119° ligger utanför triangeln, på den förlängda baslinjen. Triangelns vinkel vid samma hörn är därför 180° − 119° = 61°. Vinkelsumman i en triangel är 180°, så v = 180° − 70° − 61° = 49°. Snabbare: en yttervinkel är lika stor som summan av de två motstående inre vinklarna, så 70° + v = 119° och v = 49°. Alternativet 61° är triangelns vinkel vid basen, inte v.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.225,
+          0.535,
+          0.495,
+          0.665
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "4x/7 = 1/14",
+      "options": [
+        "1/8",
+        "1/7",
+        "1/4",
+        "1/2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera båda leden med 7: 4x = 7/14 = 1/2. Dela sedan med 4: x = (1/2)/4 = 1/8. Kontroll: 4 · 1/8 = 1/2, och (1/2)/7 = 1/14. Alternativet 1/2 är värdet på 4x, inte på x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "För f(x) = kx + m gäller att f(4) − f(2) = 6. Vilket värde har k?",
+      "options": [
+        "3/2",
+        "2",
+        "3",
+        "4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sätt in x = 4 och x = 2: f(4) = 4k + m och f(2) = 2k + m. Skillnaden är (4k + m) − (2k + m) = 2k, eftersom m tar ut sig. Alltså är 2k = 6 och k = 3. Alternativet 3/2 lockar om man delar 6 med 4 i stället för med skillnaden 4 − 2 = 2 i x-led.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Albert har tio tomma lådor som är numrerade med heltalen 1–10. Först lägger Albert en kula i varje låda vars nummer är jämnt delbart med 1. Sedan lägger han två kulor i varje låda vars nummer är jämnt delbart med 2, och så vidare ända upp till 10. Albert lägger alltså k stycken kulor i varje låda vars nummer är jämnt delbart med k för varje heltal k från 1 till 10. Hur många kulor ligger det i lådan som har nummer 8 när Albert är klar?",
+      "options": [
+        "7",
+        "9",
+        "11",
+        "15"
+      ],
+      "blindAnswer": 3,
+      "explain": "Låda 8 får k kulor för varje k som 8 är jämnt delbart med. Bland talen 1–10 går 1, 2, 4 och 8 jämnt upp i 8. Lådan får alltså 1 + 2 + 4 + 8 = 15 kulor. Alternativet 7 får man om man glömmer att 8 självt också är en delare, så att de 8 kulorna för k = 8 saknas.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av y och 0 är lika med 5. Vilket värde har x?",
+      "passage": "x + y = 10",
+      "options": [
+        "−5",
+        "0",
+        "5",
+        "10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet av y och 0 är (y + 0)/2 = y/2. Att det är 5 betyder att y = 10. Då ger x + y = 10 att x = 10 − 10 = 0. Alternativet 5 lockar om man tror att y = 5, men talet 0 räknas med i medelvärdet, så y måste vara dubbelt så stort som medelvärdet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Ett lekland har ett bollhav med 21 000 enfärgade bollar i två olika färger: gul och röd. På tre gula bollar går det sju röda bollar. Hur många gula bollar finns det i bollhavet?",
+      "options": [
+        "6 300",
+        "7 000",
+        "7 300",
+        "9 000"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bollarna kan delas in i grupper med 3 gula och 7 röda, alltså 10 bollar per grupp. 21 000 bollar ger 21 000/10 = 2 100 grupper, och antalet gula bollar är 3 · 2 100 = 6 300. Kontroll: 7 · 2 100 = 14 700 röda, och 6 300 + 14 700 = 21 000. Alternativet 9 000 får man om man räknar 3/7 av 21 000, men 3/7 är förhållandet mellan gula och röda, inte de gulas andel av alla bollar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är närmast 2√22?",
+      "options": [
+        "7",
+        "9",
+        "11",
+        "22"
+      ],
+      "blindAnswer": 1,
+      "explain": "Flytta in 2:an under rottecknet: 2√22 = √(4 · 22) = √88. Eftersom 9² = 81 och 10² = 100 ligger √88 mellan 9 och 10, och eftersom 9,5² = 90,25 är större än 88 ligger det närmare 9. Uppskattning ger samma sak: √22 ≈ 4,7, så 2√22 ≈ 9,4. Alternativet 7 lockar om man flyttar in 2:an utan att kvadrera den och får √(2 · 22) = √44 ≈ 6,6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är differensen mellan (x + 2)² och x²?",
+      "options": [
+        "2",
+        "4",
+        "2x + 4",
+        "4x + 4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Utveckla kvadraten med kvadreringsregeln: (x + 2)² = x² + 2 · 2 · x + 2² = x² + 4x + 4. Differensen blir (x² + 4x + 4) − x² = 4x + 4. Alternativet 4 lockar om man tror att (x + 2)² = x² + 4 och glömmer den dubbla produkten 4x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Areorna av kvadraterna K₁ och K₂ förhåller sig som 1:4. Arean av K₁ är 9 cm². Vilken sidlängd har K₂?",
+      "options": [
+        "3 cm",
+        "6 cm",
+        "9 cm",
+        "12 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Arean av K₂ är 4 · 9 = 36 cm², och en kvadrat med arean 36 cm² har sidan √36 = 6 cm. Man kan också resonera så här: K₁ har sidan √9 = 3 cm, och när arean blir fyra gånger så stor blir sidan √4 = 2 gånger så lång. Alternativet 12 cm lockar om man tror att sidan också blir fyra gånger så lång.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar en linje som är parallell med linjen 2y + x = −1?",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 3,
+      "explain": "Lös ut y: 2y = −x − 1, alltså y = −x/2 − 1/2. Linjen har lutningen −1/2, och en parallell linje har samma lutning. Linjerna i graf A och graf B lutar uppåt (positiv lutning) och faller bort. I graf C går linjen 2 rutor nedåt för varje ruta åt höger, så lutningen är −2. I graf D går linjen 1 ruta nedåt för varje 2 rutor åt höger, så lutningen är −1/2. Graf D visar alltså en parallell linje.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.205,
+          0.137,
+          0.405,
+          0.6
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket 1/x + 1/y + 1/z?",
+      "options": [
+        "3/(x + y + z)",
+        "(xy + xz + yz)/(x + y + z)",
+        "(x + y + z)/(xyz)",
+        "(xy + xz + yz)/(xyz)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Skriv bråken med den gemensamma nämnaren xyz. Förläng 1/x med yz, 1/y med xz och 1/z med xy: yz/(xyz) + xz/(xyz) + xy/(xyz) = (xy + xz + yz)/(xyz). Kontroll med x = 1, y = 1 och z = 2: uttrycket blir 1 + 1 + 1/2 = 5/2, och (1 + 2 + 2)/2 = 5/2. Alternativet 3/(x + y + z) lockar om man adderar nämnarna, men så kan bråk inte adderas.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < 0\nKvantitet I: x³ + y²\nKvantitet II: x² + z³",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Villkoret säger bara något om x, inte om y och z. Med x < 0 är x³ negativt och x² positivt, men y² och z³ kan vara hur stora som helst. Exempel: x = −1 och y = z = 0 ger I = −1 och II = 1, så II är större. Men x = −1, y = 3 och z = 0 ger I = −1 + 9 = 8 och II = 1, så I är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "De två bilarna A och B kör 50 km vardera. För bil A räcker en liter bensin till att köra 20 km, och för bil B räcker en liter bensin till att köra 25 km.\nKvantitet I: Mängden bensin som bil A förbrukar\nKvantitet II: Mängden bensin som bil B förbrukar",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Bil A behöver 50/20 = 2,5 liter för 50 km, och bil B behöver 50/25 = 2 liter. Bil A förbrukar alltså mer bensin, och kvantitet I är större. Det är lätt att vända på det eftersom bil B har det större talet, men fler kilometer per liter betyder lägre förbrukning.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Hörnen i fyrhörningen ABCD har koordinaterna:\nA = (1, 1)\nB = (1, 5)\nC = (−2, 1)\nD = (−2, −3)\nKoordinatsystemet kan användas för att lösa uppgiften.\nKvantitet I: Arean av fyrhörningen ABCD\nKvantitet II: 20 areaenheter",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sidan AB går lodrätt från (1, 1) till (1, 5) och har längden 4. Sidan CD går lodrätt från (−2, 1) till (−2, −3) och har också längden 4. Två parallella och lika långa sidor betyder att ABCD är en parallellogram. Höjden mot dessa sidor är avståndet mellan linjerna x = 1 och x = −2, alltså 3. Arean blir bas · höjd = 4 · 3 = 12 areaenheter, vilket är mindre än 20. Kvantitet II är större.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.21,
+          0.2,
+          0.565,
+          0.46
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/3 + 1/12\nKvantitet II: 1/4 + 1/6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv alla bråk med nämnaren 12. Kvantitet I: 1/3 + 1/12 = 4/12 + 1/12 = 5/12. Kvantitet II: 1/4 + 1/6 = 3/12 + 2/12 = 5/12. Kvantiteterna är lika stora.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "1/x + 1/x + 1/x = 15\nKvantitet I: x\nKvantitet II: 1/5",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vänsterledet består av tre likadana bråk, så det är 3/x. Ekvationen blir 3/x = 15, alltså 15x = 3 och x = 3/15 = 1/5. Kvantitet I är därmed 1/5, precis som kvantitet II. Den som i stället skriver vänsterledet som 1/(3x) får x = 1/45 och tror felaktigt att II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I en parallellogram gäller att en av vinklarna är 11x och en annan av vinklarna är 4x.\nKvantitet I: x\nKvantitet II: 15°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "I en parallellogram är motstående vinklar lika stora, och två intilliggande vinklar har summan 180°. Vinklarna 11x och 4x är olika stora (x kan inte vara 0), så de kan inte vara motstående. De ligger alltså intill varandra: 11x + 4x = 180°, 15x = 180° och x = 12°. Det är mindre än 15°, så kvantitet II är större. Talet 15 i 15x kan locka till att tro att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 10³/10²\nKvantitet II: 10⁻²/10⁻³",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vid division av potenser med samma bas subtraheras exponenterna. Kvantitet I: 10³/10² = 10¹ = 10, eftersom 3 − 2 = 1. Kvantitet II: exponenten blir −2 − (−3) = 1, så 10⁻²/10⁻³ = 10¹ = 10. Med decimaltal: 0,01/0,001 = 10. Kvantiteterna är lika stora, trots att II har negativa exponenter.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Medelvärdet av de tre talen x, y och z är lika med x.\nKvantitet I: 2x\nKvantitet II: y + z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Medelvärdet är (x + y + z)/3 = x, alltså x + y + z = 3x. Dra bort x från båda leden: y + z = 2x. Kvantiteterna är därför alltid lika stora, vilka talen än är. Kontroll: x = 4, y = 3 och z = 5 ger medelvärdet 12/3 = 4 = x, och 2x = 8 = y + z.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I triangeln ABC är sidan AB dubbelt så lång som sidan BC.\nKvantitet I: Längden av sidan AC\nKvantitet II: Längden av sidan AB",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Låt BC = 1 och AB = 2. Enligt triangelolikheten måste AC vara längre än 2 − 1 = 1 och kortare än 2 + 1 = 3, men inom det intervallet kan AC ha vilken längd som helst. AC = 1,5 ger en triangel där AB är längre än AC, så II är större. AC = 2,5 ger en triangel där AC är längre än AB, så I är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "0 < a < 1\nKvantitet I: a⁻¹\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "a⁻¹ betyder 1/a. När a ligger mellan 0 och 1 blir 1/a större än 1; till exempel ger a = 0,5 att a⁻¹ = 2, och a = 0,1 ger a⁻¹ = 10. Kvantitet I är alltså alltid större. Den som tror att a⁻¹ betyder −a får ett negativt tal och väljer fel.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På ett bord ligger fem läroböcker på rad: en biologibok, en engelskabok, en fysikbok, en kemibok och en matematikbok. Böckerna är numrerade 1–5 från vänster till höger. Vilket nummer har matematikboken?\n(1) Matematikboken ligger intill kemiboken, kemiboken ligger intill fysikboken, och fysikboken ligger intill engelskaboken.\n(2) Engelskaboken ligger mellan fysikboken och biologiboken. Biologiboken har nummer 5.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Matematik, kemi, fysik och engelska ligger i en obruten följd i den ordningen, räknat från vänster eller från höger. Följden tar upp nummer 1–4 eller 2–5, så matematikboken kan ha nummer 1, 2, 4 eller 5. Inte tillräckligt.\n(2) Biologiboken har nummer 5 och engelskaboken ligger mellan fysikboken och biologiboken, men om matematikboken säger påståendet ingenting. Inte tillräckligt.\n(1) och (2) tillsammans: Biologiboken har nummer 5, så följden ligger på nummer 1–4. Engelskaboken ska ligga mellan fysikboken och biologiboken, alltså till höger om fysikboken. Ordningen är då matematik, kemi, fysik, engelska, och matematikboken har nummer 1. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "För talen x, y och z gäller att (x + y)(x + z) = 17. Vilket värde har z?\n(1) x + y = 1\n(2) y = −4",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Med x + y = 1 blir 1 · (x + z) = 17, alltså x + z = 17. Men x är okänt, så z kan inte bestämmas. Inte tillräckligt.\n(2) Med y = −4 blir (x − 4)(x + z) = 17, och både x och z är okända. Inte tillräckligt.\n(1) och (2) tillsammans: x + y = 1 och y = −4 ger x = 5. Eftersom x + z = 17 blir z = 17 − 5 = 12. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en konsthall finns det tre olika slags konstverk: oljemålningar, akvareller och litografier. Hur många akvareller finns det i konsthallen?\n(1) I konsthallen finns det 15 oljemålningar, vilket är hälften av antalet litografier. Det totala antalet konstverk är jämnt delbart med 5.\n(2) I konsthallen finns det fler litografier än akvareller, och fler akvareller än oljemålningar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Det finns 15 oljemålningar och 2 · 15 = 30 litografier. Med a akvareller är det totala antalet 45 + a, och det är delbart med 5 precis när a är delbart med 5. Antalet akvareller kan alltså vara 5, 10, 15, 20 och så vidare. Inte tillräckligt.\n(2) Påståendet ger bara en ordning (litografier > akvareller > oljemålningar), inga antal. Inte tillräckligt.\n(1) och (2) tillsammans: a ska vara större än 15, mindre än 30 och delbart med 5. Både 20 och 25 uppfyller villkoren. Inte tillräckligt, så informationen räcker inte ens med båda påståendena.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En kakburk innehåller endast pepparkakor i form av stjärnor och hjärtan. Var och en av pepparkakorna är antingen stor eller liten. Hur många små hjärtan finns det i burken?\n(1) Det finns lika många stjärnor som hjärtan i burken. Det finns lika många stora som små pepparkakor i burken.\n(2) Det finns 24 stjärnor i burken. 10 av stjärnorna är stora.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Påståendet ger två samband men inga antal, så antalet små hjärtan kan vara vad som helst. Inte tillräckligt.\n(2) Det finns 10 stora och 24 − 10 = 14 små stjärnor, men om hjärtana vet vi ingenting. Inte tillräckligt.\n(1) och (2) tillsammans: Det finns lika många hjärtan som stjärnor, alltså 24 hjärtan och 48 pepparkakor totalt. Hälften av dem, 24 stycken, är små. Av de små är 14 stjärnor, så 24 − 14 = 10 är små hjärtan. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Maria, Nils, Ove och Petra sitter vid varsin sida kring ett kvadratiskt bord. Endast en av personerna har glasögon, vem?\n(1) Maria sitter mitt emot Ove. Det är personen som sitter till höger om Nils som har glasögon. Ove har inte glasögon.\n(2) Petra sitter till höger om Maria och till vänster om Ove. Varken Petra eller Nils har glasögon.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Maria och Ove sitter mitt emot varandra, så Nils har Maria på ena sidan och Ove på den andra. Personen till höger om Nils är alltså antingen Maria eller Ove. Den personen har glasögon, och Ove har inte glasögon, så det måste vara Maria. Tillräckligt.\n(2) Varken Petra eller Nils har glasögon, så det är Maria eller Ove som har det. Placeringen säger inget om vem av dem. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "50 liter vatten fördes över från tank A till tank B. Volymen vatten i tank B ökade då med 20 %. Hur mycket vatten fanns det från början i tank A?\n(1) Den sammanlagda volymen vatten i tankarna var 450 liter.\n(2) Efter överföringen var det hälften så mycket vatten i tank A som i tank B.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Redan frågan ger att 50 liter är 20 % av det vatten som fanns i tank B från början. B hade alltså 50/0,2 = 250 liter och har 300 liter efter överföringen.\n(1) Sammanlagt finns 450 liter, så A hade från början 450 − 250 = 200 liter. Tillräckligt.\n(2) Efter överföringen har A hälften av 300 liter, alltså 150 liter. Från början hade A 150 + 50 = 200 liter. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Studera kemikalieproduktionen 2007. Hur stor var mängden kemikalier som inte klassades som hälsofarliga?",
+      "options": [
+        "145 miljoner ton",
+        "165 miljoner ton",
+        "215 miljoner ton",
+        "360 miljoner ton"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kurvan visar den totala kemikalieproduktionen och staplarna de hälsofarliga kemikalierna. År 2007 ligger kurvan på cirka 360 miljoner ton och stapeln når upp till cirka 215 miljoner ton. Det som inte klassades som hälsofarligt är skillnaden: 360 − 215 = 145 miljoner ton. Alternativen 215 och 360 miljoner ton är de avlästa värdena själva, och 165 miljoner ton är ungefär toppen av den grå delen (giftig).",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Studera produktionen av hälsofarliga kemikalier. För vilken farlighetsklass var den sammanlagda produktionen under den redovisade perioden 450 miljoner ton?",
+      "options": [
+        "Hälsoskadlig",
+        "Giftig",
+        "Mycket giftig",
+        "Kroniskt giftig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Perioden 2002–2010 omfattar 9 år, så 450 miljoner ton motsvarar i genomsnitt 450/9 = 50 miljoner ton per år. Den prickiga delen överst i staplarna (hälsoskadlig) är varje år ungefär 50 miljoner ton hög, till exempel från cirka 155 till cirka 205 år 2002, och summan över de nio åren blir ungefär 450 miljoner ton. Den grå delen (giftig) är cirka 60–78 per år, totalt ungefär 650, den randiga (mycket giftig) cirka 40 per år, totalt ungefär 350, och den vita (kroniskt giftig) bara cirka 5–8 per år.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av den totala kemikalieproduktionen 2010 utgjordes av de tre farlighetsklasserna giftig, mycket giftig och kroniskt giftig?",
+      "options": [
+        "1/5",
+        "1/3",
+        "1/2",
+        "3/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "I stapeln för 2010 ligger de tre farlighetsklasserna ovanpå varandra, från toppen av den svarta delen (CMR-kemikalier, cirka 40 miljoner ton) till toppen av den grå delen (giftig, cirka 155 miljoner ton). Tillsammans är de alltså cirka 155 − 40 = 115 miljoner ton. Den totala produktionen 2010 är enligt kurvan cirka 340 miljoner ton. Andelen blir 115/340 ≈ 0,34, alltså ungefär 1/3. Den som jämför med stapelns topp (cirka 205) i stället för med kurvan får över hälften.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur många län hade år 2014 fler fall av kikhosta per 100 000 invånare än Sverige totalt?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "blindAnswer": 2,
+      "explain": "I kolumnen 2014 står antalet fall per 100 000 invånare efter snedstrecket. För Sverige totalt (raden Totalt) är det 7,21. Län med högre värde är Dalarna 17,92, Gotland 17,46, Gävleborg 14,64, Halland 10,94, Jämtland 8,67, Jönköping 12,49, Skåne 8,92, Västerbotten 10,67, Västernorrland 9,87 och Östergötland 10,17. Det är 10 län. Stockholm har flest fall (150) men bara 6,82 fall per 100 000 invånare och ska inte räknas.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "År 2009 stod åldersgruppen 0–19 år för 70 procent av det totala antalet rapporterade fall av kikhosta. Hur många fall av kikhosta rapporterades i åldersgruppen 0–19 år?",
+      "options": [
+        "66",
+        "86",
+        "196",
+        "216"
+      ],
+      "blindAnswer": 2,
+      "explain": "Det totala antalet rapporterade fall 2009 står i raden Totalt i kolumnen 2009, med fet stil: 280. 70 procent av 280 är 0,7 · 280 = 196 fall. Talet efter snedstrecket (3,00) är antalet fall per 100 000 invånare och ska inte användas här.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Svealand består av Dalarnas, Stockholms, Södermanlands, Uppsala, Värmlands, Västmanlands och Örebro län. Hur stor andel av det totala antalet rapporterade fall av kikhosta 2011 fanns i Svealand?",
+      "options": [
+        "35 procent",
+        "40 procent",
+        "45 procent",
+        "50 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd antalet fall (fet stil) i kolumnen 2011. Dalarna 6, Stockholm 45, Södermanland 5, Uppsala 2, Värmland 0, Västmanland 0 och Örebro 4 ger sammanlagt 62 fall. Totalt i Sverige rapporterades 177 fall 2011. Andelen är 62/177 ≈ 0,35, alltså 35 procent.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag beskriver de förändringar som skett i Chile?",
+      "options": [
+        "Kunskaperna i naturvetenskap hade försämrats samtidigt som socioekonomisk bakgrund hade fått minskad betydelse.",
+        "Kunskaperna i naturvetenskap hade försämrats samtidigt som socioekonomisk bakgrund hade fått ökad betydelse.",
+        "Kunskaperna i naturvetenskap hade förbättrats samtidigt som socioekonomisk bakgrund hade fått ökad betydelse.",
+        "Kunskaperna i naturvetenskap hade förbättrats samtidigt som socioekonomisk bakgrund hade fått minskad betydelse."
+      ],
+      "blindAnswer": 3,
+      "explain": "Chile ligger ovanför den vågräta axeln, vid cirka +9 på den lodräta axeln, så resultaten i naturvetenskap hade förbättrats. På den vågräta axeln ligger Chile vid cirka −6, till höger om nollan. Enligt fotnoten är den vågräta axeln omvänd, så en placering till höger betyder att socioekonomisk bakgrund hade fått minskad betydelse. Chile ligger alltså i rutan uppe till höger, där resultaten förbättrats och betydelsen av bakgrunden minskat. Den som missar att axeln är omvänd väljer ökad betydelse.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Identifiera det land där resultaten i naturvetenskap hade försämrats mest. Hur hade betydelsen av socioekonomisk bakgrund förändrats i detta land?",
+      "options": [
+        "Den hade ökat med 9,5 skalsteg.",
+        "Den hade ökat med 13 skalsteg.",
+        "Den hade minskat med 4,5 skalsteg.",
+        "Den hade minskat med 13 skalsteg."
+      ],
+      "blindAnswer": 0,
+      "explain": "Landet längst ned i diagrammet är Finland, vid cirka −32 på den lodräta axeln; resultaten hade alltså försämrats mest där. På den vågräta axeln ligger Finland vid cirka 9,5, till vänster om nollan. Eftersom axeln är omvänd betyder det att betydelsen av socioekonomisk bakgrund hade ökat med 9,5 skalsteg. Sydkorea (ökat med cirka 13) och USA (minskat med cirka 13) har betydligt mindre försämring eller till och med förbättring, och Slovakien (minskat med cirka 4,5) ligger vid cirka −27, alltså högre än Finland.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilket land avses?",
+      "passage": "Resultaten i naturvetenskap hade försämrats med 1–10 skalsteg samtidigt som betydelsen av socioekonomisk bakgrund hade minskat med mer än 5 skalsteg.",
+      "options": [
+        "Turkiet",
+        "Sverige",
+        "Tyskland",
+        "Storbritannien"
+      ],
+      "blindAnswer": 3,
+      "explain": "Landet ska ligga mellan −1 och −10 på den lodräta axeln och till höger om −5 på den vågräta axeln (axeln är omvänd, så minskad betydelse ligger till höger om nollan). Storbritannien ligger vid cirka −5 lodrätt och cirka −8 vågrätt och uppfyller båda villkoren. Turkiet ligger ovanför den vågräta axeln, så där hade resultaten förbättrats. Sverige ligger till vänster om nollan, så där hade betydelsen ökat. Tyskland ligger vid cirka −4,7 vågrätt, strax till vänster om −5, så där hade betydelsen minskat med mindre än 5 skalsteg.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "Tyskland och Slovenien ligger nära −5 på den vågräta axeln; vid förstoring ligger båda strax till vänster om −5-strecket (cirka −4,6 och −4,7).",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur stort var antalet kvinnor som invandrade till Sverige det år då antalet var som störst jämfört med det år då antalet var som minst?",
+      "options": [
+        "Tre gånger så stort",
+        "Fem gånger så stort",
+        "Sju gånger så stort",
+        "Nio gånger så stort"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det nedre diagrammet (invandring) och den svarta kurvan, som är märkt Kvinnor. Kurvan är som högst 2015, vid cirka 60 000, och som lägst 1962, vid cirka 12 000. 60 000/12 000 = 5, så antalet var fem gånger så stort. Den grå kurvan visar männen och ska inte användas här.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur många fler var de som invandrade till Sverige än de som utvandrade från Sverige 2010?",
+      "options": [
+        "25 000",
+        "35 000",
+        "50 000",
+        "60 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av båda diagrammen vid 2010 och lägg ihop män och kvinnor. Invandring: män cirka 53 000 och kvinnor cirka 46 500, totalt cirka 99 500. Utvandring: män cirka 27 000 och kvinnor cirka 22 500, totalt cirka 49 500. Skillnaden är 99 500 − 49 500 = 50 000. Alternativet 25 000 är ungefär skillnaden för bara männen eller bara kvinnorna.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur många invandrade till Sverige i genomsnitt per år under perioden 1995–2005?",
+      "options": [
+        "35 000",
+        "45 000",
+        "55 000",
+        "65 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det nedre diagrammet och lägg ihop män och kvinnor; kurvorna ligger nästan på varandra under perioden. Åren 1995–1999 ligger varje kurva på cirka 20 000–26 000, så summan är cirka 41 000–51 000 per år. Åren 2000–2005 ligger kurvorna på cirka 29 000–33 000, så summan är cirka 58 000–66 000 per år. För de 11 åren blir det sammanlagt ungefär 610 000, och 610 000/11 ≈ 55 000 per år.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
