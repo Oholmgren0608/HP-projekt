@@ -1,0 +1,814 @@
+{
+  "examId": "hp-2015-10-24",
+  "passNumber": 3,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är 3/7 − 2/3?",
+      "options": [
+        "−2/7",
+        "−5/21",
+        "1/4",
+        "9/14"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv bråken med den gemensamma nämnaren 21: 3/7 = 9/21 och 2/3 = 14/21. Skillnaden är 9/21 − 14/21 = −5/21. Eftersom 2/3 är större än 3/7 måste svaret vara negativt, så 1/4 och 9/14 kan uteslutas direkt. Svaret 1/4 får den som drar täljare från täljare och nämnare från nämnare: (3 − 2)/(7 − 3) = 1/4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Femhörningens omkrets är 19 cm. Vad är x?",
+      "options": [
+        "2",
+        "2,5",
+        "3",
+        "3,5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Omkretsen är summan av de fem sidorna: x + (x + 1) + (x − 1) + 2x + (x − 2) = 6x − 2. Sätt 6x − 2 = 19, vilket ger 6x = 21 och x = 3,5. Kontroll: sidorna blir 3,5, 4,5, 2,5, 7 och 1,5 cm, och summan är 19 cm.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.195,
+          0.565,
+          0.59,
+          0.69
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Hur många procent är 7,50 kr av 25 kr?",
+      "options": [
+        "25 procent",
+        "30 procent",
+        "35 procent",
+        "40 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Andelen är 7,50/25 = 0,30, alltså 30 procent. Man kan också tänka att 10 procent av 25 kr är 2,50 kr, och 7,50 kr är tre gånger så mycket, alltså 30 procent.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vad är koordinaterna för mittpunkten på sträckan som har (−3, 1) och (7, −3) som ändpunkter?",
+      "options": [
+        "(−1, −1)",
+        "(−1, 2)",
+        "(2, −1)",
+        "(2, 2)"
+      ],
+      "blindAnswer": 2,
+      "explain": "Mittpunktens koordinater är medelvärdena av ändpunkternas koordinater. x-koordinaten är (−3 + 7)/2 = 4/2 = 2 och y-koordinaten är (1 + (−3))/2 = −2/2 = −1. Mittpunkten är alltså (2, −1). Alternativet (−1, 2) har samma tal men i omvänd ordning.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Om x⁻¹ = 2/7 vad är då x⁻²?",
+      "options": [
+        "−4/49",
+        "4/49",
+        "−7/2",
+        "7/2"
+      ],
+      "blindAnswer": 1,
+      "explain": "x⁻² = (x⁻¹)², så x⁻² = (2/7)² = 4/49. Det går också att räkna ut x först: x⁻¹ = 1/x = 2/7 ger x = 7/2, och då är x⁻² = 1/x² = 1/(49/4) = 4/49. En kvadrat kan inte vara negativ, så −4/49 kan uteslutas. Svaret 7/2 är värdet på x, inte på x⁻².",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Adam, Bertil, Cesar och David sätter sig slumpmässigt ner på var sin sida av ett litet kvadratiskt bord. Hur stor är sannolikheten att Cesar sitter mitt emot David?",
+      "options": [
+        "1/2",
+        "1/3",
+        "1/4",
+        "1/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Var Cesar än sätter sig finns det tre platser kvar för David: till vänster om Cesar, till höger om Cesar och mitt emot. De tre platserna är lika sannolika, och bara en av dem är mitt emot Cesar. Sannolikheten är därför 1/3. Svaret 1/4 lockar om man räknar med alla fyra platserna, men Cesar sitter redan på en av dem.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Både x och y är jämna tal. Vilket av följande svarsförslag kan vara ett udda tal?",
+      "options": [
+        "x + y − 2",
+        "x(y + 1)",
+        "(x + 1)/(y + 1)",
+        "(x − y)²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Summor, differenser och produkter av jämna tal är jämna. x + y − 2 är därför alltid jämnt. x(y + 1) är jämnt eftersom faktorn x är jämn. x − y är jämnt, och då är också (x − y)² jämnt. Kvar är (x + 1)/(y + 1), en kvot av två udda tal. Med x = 8 och y = 2 blir den 9/3 = 3, som är udda. Bara (x + 1)/(y + 1) kan alltså vara ett udda tal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Linjerna L₁ och L₂ är parallella. Två cirklar tangerar varandra och båda linjerna. Cirklarnas radier är 3 cm. Punkten D och punkten B är medelpunkter i respektive cirkel. Vad är arean av fyrhörningen ABCD?",
+      "options": [
+        "6 cm²",
+        "18 cm²",
+        "24 cm²",
+        "27 cm²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Cirklarna tangerar varandra, så avståndet mellan medelpunkterna D och B är 3 + 3 = 6 cm. Båda medelpunkterna ligger 3 cm från var och en av linjerna, så diagonalen DB är parallell med linjerna och ligger mitt emellan dem. Diagonalen DB delar fyrhörningen i trianglarna ABD och CBD. Hörnet A ligger på L₂ och hörnet C på L₁, så båda trianglarna har basen DB = 6 cm och höjden 3 cm. Arean är 2 · (6 · 3)/2 = 18 cm².",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.195,
+          0.597,
+          0.6,
+          0.74
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är f(3/2) − g(3/2)?",
+      "passage": "f(x) = 2x\ng(x) = x²",
+      "options": [
+        "−3/2",
+        "0",
+        "3/4",
+        "3/2"
+      ],
+      "blindAnswer": 2,
+      "explain": "f(3/2) = 2 · 3/2 = 3 och g(3/2) = (3/2)² = 9/4. Skillnaden är 3 − 9/4 = 12/4 − 9/4 = 3/4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag ger alla lösningar till olikheten 3 − 2x < 1?",
+      "options": [
+        "x < 1",
+        "x > 1",
+        "x < 2",
+        "x > 2"
+      ],
+      "blindAnswer": 1,
+      "explain": "Subtrahera 3 från båda leden: −2x < −2. Dela sedan med −2. När man delar med ett negativt tal vänds olikhetstecknet, så x > 1. Kontroll: x = 2 ger 3 − 4 = −1, som är mindre än 1, medan x = 0 ger 3, som inte är mindre än 1. Den som glömmer att vända tecknet får x < 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag motsvarar 6/√2?",
+      "options": [
+        "√3",
+        "√6",
+        "2√3",
+        "3√2"
+      ],
+      "blindAnswer": 3,
+      "explain": "Förläng bråket med √2 så att nämnaren blir ett heltal: 6/√2 = 6√2/(√2 · √2) = 6√2/2 = 3√2. Man kan också skriva 6 = 3 · √2 · √2 och förkorta bort ett √2. Kontroll: 6/√2 ≈ 6/1,414 ≈ 4,24 och 3√2 ≈ 3 · 1,414 ≈ 4,24.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket värde ska konstanten p ha för att lösningen till ekvationen ska vara x = −1/2?",
+      "passage": "2px + p = (12 − p)x + 1",
+      "options": [
+        "−1/21",
+        "10",
+        "14/5",
+        "12"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt in x = −1/2 i ekvationen. Vänsterledet blir 2p · (−1/2) + p = −p + p = 0. Högerledet blir (12 − p) · (−1/2) + 1 = −6 + p/2 + 1 = p/2 − 5. Då ska 0 = p/2 − 5, alltså p = 10. Kontroll: med p = 10 blir ekvationen 20x + 10 = 2x + 1, så 18x = −9 och x = −1/2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < 0\nKvantitet I: x²\nKvantitet II: x³",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "När x är negativt är x² = x · x positivt, eftersom produkten av två negativa tal är positiv. x³ = x² · x är ett positivt tal gånger ett negativt tal och alltså negativt. Till exempel ger x = −2 att x² = 4 och x³ = −8. Kvantitet I är positiv och kvantitet II negativ för alla x < 0, så I är alltid större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En klass består av 30 elever. Medellängden för eleverna ändras inte om Anna och Bosse lämnar klassen och Christina och Daniel tillkommer.\nKvantitet I: Annas längd\nKvantitet II: Christinas längd",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Klassen har 30 elever både före och efter bytet. Eftersom medellängden inte ändras är också summan av längderna oförändrad, så Anna och Bosse är tillsammans lika långa som Christina och Daniel tillsammans. Det säger inget om Anna jämfört med Christina. Är Anna 160 cm, Bosse 170 cm, Christina 150 cm och Daniel 180 cm är I större. Är Anna 150 cm, Bosse 180 cm, Christina 160 cm och Daniel 170 cm är II större. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABC är en triangel där B och C ligger på en cirkel och A ligger i cirkelns medelpunkt. DB är cirkelns diameter.\nKvantitet I: x\nKvantitet II: 2y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "AB och AC är båda radier i cirkeln, så triangeln ABC är likbent och vinklarna vid B och C är lika stora. Båda är alltså y. Vinkeln x ligger mellan AD och AC och är en yttervinkel till triangeln vid A. En yttervinkel är lika stor som summan av de två inre vinklarna vid de andra hörnen, så x = y + y = 2y. Samma sak med vinkelsumman: vinkeln BAC är 180° − 2y, och x = 180° − (180° − 2y) = 2y.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.2,
+          0.16,
+          0.48,
+          0.34
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "På planeten Zeta går det 400 dagar på ett år, och invånarna där har delat upp året så att varje månad har 40 dagar och varje vecka har 5 dagar.\nKvantitet I: Sannolikheten att en slumpmässigt vald dag ligger i årets första månad\nKvantitet II: Sannolikheten att en slumpmässigt vald dag är den första dagen i någon av årets veckor",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Årets första månad har 40 av årets 400 dagar, så kvantitet I är 40/400 = 1/10. Året har 400/5 = 80 veckor och alltså 80 dagar som är den första dagen i en vecka. Kvantitet II är 80/400 = 1/5; var femte dag är en veckas första dag. Eftersom 1/5 är större än 1/10 är II större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 37/(−13) · (−3)/7\nKvantitet II: 1 + 4/9",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Två negativa faktorer ger en positiv produkt, så kvantitet I = (37 · 3)/(13 · 7) = 111/91 ≈ 1,22. Kvantitet II = 1 + 4/9 = 13/9 ≈ 1,44. Utan avrundning: 111 · 9 = 999 och 13 · 91 = 1 183, och eftersom 999 < 1 183 är 111/91 mindre än 13/9. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 3x³ + 2x² − 5x + 1\nKvantitet I: f(−1)\nKvantitet II: f(0)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "f(−1) = 3 · (−1)³ + 2 · (−1)² − 5 · (−1) + 1 = −3 + 2 + 5 + 1 = 5. f(0) = 0 + 0 − 0 + 1 = 1. Kvantitet I är 5 och kvantitet II är 1, så I är större. Var noga med tecknen: (−1)³ = −1 men (−1)² = 1, och −5 · (−1) = 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Den sammanlagda arean av sidoytorna på en kub med volymen 125 cm³\nKvantitet II: 125 cm²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kubens kantlängd är ∛125 = 5 cm, eftersom 5 · 5 · 5 = 125. Varje sidoyta är en kvadrat med arean 5 · 5 = 25 cm², och en kub har sex sidoytor. Den sammanlagda arean är 6 · 25 = 150 cm², vilket är större än 125 cm². Att talet 125 står i båda kvantiteterna kan få dem att se lika ut, men det ena är en volym och det andra en area.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 7³\nKvantitet II: 111π",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "7³ = 7 · 7 · 7 = 343. Eftersom π > 3,1 är 111π större än 111 · 3,1 = 344,1, och med π ≈ 3,14 blir 111π ≈ 348,5. Kvantitet II är alltså större än 343. Den som avrundar π till 3 får 333 och drar fel slutsats.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "2x − (3 − y) = y\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Lös upp parentesen: 2x − 3 + y = y. Termen y finns i båda leden och tar ut sig, så 2x = 3 och x = 1,5. Ekvationen säger däremot ingenting om y, som kan vara vilket tal som helst. Med y = 0 är I större, och med y = 2 är II större. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "35 % av x är lika med 55 % av (x + 10)\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv sambandet som en ekvation: 0,35x = 0,55(x + 10) = 0,55x + 5,5. Det ger −0,2x = 5,5 och x = −27,5. Kvantitet I är negativ, så II är större. Kontroll: 0,35 · (−27,5) = −9,625 och 0,55 · (−17,5) = −9,625. Man kan också resonera: för x ≥ 0 är 55 % av det större talet x + 10 alltid större än 35 % av x, så likheten kan bara gälla för ett negativt x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Kalle ska posta två paket, ett brunt och ett vitt. Det vita paketet väger 5 kg.\nHur många kilogram mer väger det bruna paketet än det vita?\n(1) Om det vita paketet hade vägt 3 gånger så mycket, så hade det ändå varit lättare än det bruna paketet.\n(2) Det bruna paketet väger 3,8 gånger så mycket som det vita paketet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Tre gånger det vita paketets vikt är 3 · 5 = 15 kg, så det bruna paketet väger mer än 15 kg. Det ger bara en undre gräns, inte vikten. Inte tillräckligt.\n(2) Det bruna paketet väger 3,8 · 5 = 19 kg, alltså 19 − 5 = 14 kg mer än det vita. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Fyrhörningarna ABCD och EFGH är likformiga. Vilket värde har x?\n(1) Omkretsen av fyrhörningen ABCD är 21 cm.\n(2) Sidan FG är 10 cm.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinkelmarkeringarna visar att A motsvarar E, B motsvarar F, C motsvarar G och D motsvarar H. Sidan x = HG motsvarar alltså DC = 6 cm, och FG motsvarar BC, vars längd inte står i figuren.\n(1) Omkretsen ger BC = 21 − 6 − 3 − 7 = 5 cm, men inget om hur stor EFGH är. Inte tillräckligt.\n(2) FG = 10 cm, men utan BC går förstoringen mellan figurerna inte att bestämma. Inte tillräckligt.\n(1) och (2) tillsammans: BC = 5 cm och FG = 10 cm, så EFGH är ABCD förstorad två gånger, och x = 2 · 6 = 12 cm. Tillräckligt.",
+      "figure": {
+        "pages": [
+          13
+        ],
+        "box": [
+          0.19,
+          0.558,
+          0.8,
+          0.712
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En bil kör från A till B med medelhastigheten 60 km/h för att sedan återvända till A. Vad är medelhastigheten för hela resan?\n(1) Resan från A till B tog 50 % längre tid än resan från B till A.\n(2) Avståndet mellan A och B är 100 km.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Medelhastigheten för hela resan är hela sträckan delad med hela tiden. Kalla avståndet mellan A och B för s km; resan dit tog s/60 timmar.\n(1) Resan dit tog 1,5 gånger så lång tid som resan tillbaka, så resan tillbaka tog (s/60)/1,5 = s/90 timmar. Hela resan är 2s km på s/60 + s/90 = 5s/180 = s/36 timmar, och medelhastigheten blir 2s/(s/36) = 72 km/h. Sträckan s tar ut sig och behövs inte. Tillräckligt.\n(2) Avståndet 100 km ger tiden för resan dit men inget om resan tillbaka. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är z < 0?\n(1) xz > yz\n(2) xy > yz",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) xz > yz betyder att z(x − y) > 0. Det gäller både om z > 0 och x > y och om z < 0 och x < y. Inte tillräckligt.\n(2) xy > yz betyder att y(x − z) > 0, vilket inte säger något bestämt om z. Inte tillräckligt.\n(1) och (2) tillsammans: x = 3, y = 2 och z = 1 uppfyller båda villkoren (3 > 2 och 6 > 2), och då är z positivt. x = 1, y = 2 och z = −1 uppfyller också båda (−1 > −2 och 2 > −2), och då är z negativt. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur stor andel av sitt liv har Frida varit vän med Alice?\n(1) Frida och Alice blev vänner för fyra år sedan.\n(2) Om 6 år har Frida varit vän med Alice under halva sitt liv.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla Fridas ålder a år och hur länge de har varit vänner v år.\n(1) v = 4, men Fridas ålder är okänd. Inte tillräckligt.\n(2) Om 6 år gäller v + 6 = (a + 6)/2. En ekvation med två obekanta räcker inte; både v = 4, a = 14 och v = 5, a = 16 uppfyller den. Inte tillräckligt.\n(1) och (2) tillsammans: 4 + 6 = (a + 6)/2 ger a + 6 = 20 och a = 14. Frida har varit vän med Alice 4/14 = 2/7 av sitt liv. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Till en middag bakades ett antal lika stora pajer. Hur många pajer bakades?\n(1) Det blir fyra pajer över om varje middagsgäst får två pajer.\n(2) Det fattas en paj för att varje middagsgäst ska få tre pajer.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet gäster g och antalet pajer p.\n(1) p = 2g + 4. En ekvation med två obekanta. Inte tillräckligt.\n(2) p = 3g − 1. Inte heller tillräckligt.\n(1) och (2) tillsammans: 2g + 4 = 3g − 1 ger g = 5 och p = 2 · 5 + 4 = 14. Kontroll: tre pajer var till fem gäster kräver 15 pajer, så det fattas en. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Vad angav cirka en fjärdedel av 12–16-åringarna att de ägnade sig åt 1–2 timmar en vanlig dag?",
+      "options": [
+        "Titta på TV",
+        "Använda internet",
+        "Spela datorspel",
+        "Spela TV-spel"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det vänstra diagrammet, som visar barnens egna svar, och läs av den mellangrå delen (1–2 timmar) i staplarna för 12–16 år. Titta på TV: 52 procent. Använda internet: 35 procent. Spela datorspel: 23 procent. Spela TV-spel: 15 procent. En fjärdedel är 25 procent, och närmast ligger spela datorspel med 23 procent.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.9,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur mycket större var andelen 12–16-åringar som angav att de en vanlig dag tittade på video/DVD minst 1 timme jämfört med andelen föräldrar till 12–16-åringar som angav att barnet en vanlig dag tittade på video/DVD minst 1 timme?",
+      "options": [
+        "10 procentenheter",
+        "14 procentenheter",
+        "24 procentenheter",
+        "34 procentenheter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Minst 1 timme är summan av delarna 5 timmar eller mer, 3–4 timmar och 1–2 timmar. I det vänstra diagrammet (barnens svar) har stapeln för Titta på video/DVD, 12–16 år, ingen svart del, 3 procent för 3–4 timmar och 35 procent för 1–2 timmar, sammanlagt 38 procent. I det högra diagrammet (föräldrarnas svar) har samma stapel 2 procent för 3–4 timmar och 22 procent för 1–2 timmar, sammanlagt 24 procent. Skillnaden är 38 − 24 = 14 procentenheter. 24 procentenheter är föräldrarnas andel, inte skillnaden.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.9,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Sammanlagt hur många barn i studien angav att de tittade på TV 3–4 timmar en vanlig dag?",
+      "options": [
+        "40",
+        "150",
+        "240",
+        "350"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det vänstra diagrammet, som visar barnens svar, och den prickiga delen (3–4 timmar) för Titta på TV. Bland 9–11-åringarna var det 13 procent av 702, alltså 0,13 · 702 ≈ 91 barn. Bland 12–16-åringarna var det 22 procent av 677, alltså 0,22 · 677 ≈ 149 barn. Sammanlagt blir det ungefär 91 + 149 = 240 barn. 150 är bara 12–16-åringarna.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.9,
+          0.92
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur stor var skillnaden mellan Solna och Värmdö med avseende på hur sysselsättningen respektive branschkoncentrationen inom de kreativa näringarna hade förändrats?",
+      "options": [
+        "20 procentenheter respektive 550 indexenheter",
+        "25 procentenheter respektive 50 indexenheter",
+        "35 procentenheter respektive 0 indexenheter",
+        "45 procentenheter respektive 900 indexenheter"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den lodräta axeln visar den procentuella förändringen av sysselsättningen och den vågräta axeln förändringen av branschkoncentrationsindex. Solna ligger vid cirka 55 procent och cirka 350 indexenheter. Värmdö ligger vid knappt 40 procent och cirka 900 indexenheter. Skillnaden är alltså knappt 20 procentenheter respektive 900 − 350 = 550 indexenheter. Inget annat alternativ kommer i närheten av båda skillnaderna.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.9,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag är korrekt avseende de kreativa näringarna i de olika kommunerna?",
+      "options": [
+        "I Lidingö hade sysselsättningen minskat med 55 procent medan branschkoncentrationsindex hade minskat med 2 600.",
+        "I Huddinge hade sysselsättningen minskat med 40 procent medan branschkoncentrationsindex var oförändrat.",
+        "I Vaxholm hade sysselsättningen ökat med 45 procent medan branschkoncentrationsindex hade minskat med 950.",
+        "I Nykvarn hade sysselsättningen minskat med 95 procent medan branschkoncentrationsindex hade ökat med 700."
+      ],
+      "blindAnswer": 3,
+      "explain": "Nykvarn ligger längst ned i diagrammet, vid cirka −95 på den lodräta axeln och cirka 700 på den vågräta. Sysselsättningen hade alltså minskat med 95 procent och indexet ökat med 700, precis som påståendet säger. Lidingö ligger visserligen vid cirka −2 600, men ovanför den vågräta axeln (cirka +55), så där hade sysselsättningen ökat. Huddinge ligger nära origo, vid cirka −400 och 0 procent, så sysselsättningen var nästan oförändrad. Vaxholm ligger vid cirka +45 procent men till höger om den lodräta axeln (cirka +950), så där hade indexet ökat.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.9,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilken kommun avses?",
+      "passage": "Sysselsättningen inom de kreativa näringarna hade ökat, men ökningen var mindre än 25 procent. Branschkoncentrationsindex hade minskat med mer än 1 000 enheter.",
+      "options": [
+        "Ekerö",
+        "Norrtälje",
+        "Nynäshamn",
+        "Österåker"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kommunen ska ligga ovanför den vågräta axeln men lägre än 25 (halvvägs till 50) på den lodräta, och till vänster om −1 000 på den vågräta. Norrtälje ligger vid cirka +12 procent och cirka −1 100, så båda villkoren stämmer. Ekerö ligger visserligen vid cirka −1 400, men där ökade sysselsättningen med över 30 procent. Nynäshamn (punkten som pilen pekar på) ligger strax till höger om −1 000 och vid nästan 30 procent, och Österåker (pilen) ligger vid cirka −850, så där hade indexet minskat med mindre än 1 000.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.08,
+          0.06,
+          0.9,
+          0.93
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor var den totala försäljningen inom läkemedelsgrupp C jämfört med inom läkemedelsgrupp J år 2004, i DDD räknat?",
+      "options": [
+        "18 gånger så stor",
+        "20 gånger så stor",
+        "23 gånger så stor",
+        "28 gånger så stor"
+      ],
+      "blindAnswer": 2,
+      "explain": "Den totala försäljningen är summan för kvinnor och män i kolumnen Miljoner DDD 2004. Grupp C: 594 + 614 = 1 208 miljoner DDD. Grupp J: 30 + 22 = 52 miljoner DDD. Kvoten är 1 208/52 ≈ 23,2, alltså cirka 23 gånger så stor. Räknar man bara på kvinnorna (594/30 ≈ 20) eller bara på männen (614/22 ≈ 28) får man något av de andra alternativen.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Med hur mycket ökade det totala värdet av läkemedelsförsäljningen från 2004 till 2005?",
+      "options": [
+        "41 miljoner kronor",
+        "60 miljoner kronor",
+        "79 miljoner kronor",
+        "101 miljoner kronor"
+      ],
+      "blindAnswer": 0,
+      "explain": "Värdet står i kolumnerna Miljoner kronor (AUP), och raderna Totalt ger summan för alla läkemedelsgrupper. Kvinnor: 12 275 år 2004 och 12 215 år 2005, en minskning med 60 miljoner kronor. Män: 10 224 år 2004 och 10 325 år 2005, en ökning med 101 miljoner kronor. Det totala värdet ökade alltså med 101 − 60 = 41 miljoner kronor, från 22 499 till 22 540 miljoner kronor. 60 och 101 miljoner kronor är förändringarna för bara kvinnor respektive bara män.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur stor var den totala försäljningen år 2004 för de fyra läkemedelsgrupper som då hade störst försäljning, i DDD räknat?",
+      "options": [
+        "1 462 miljoner DDD",
+        "1 866 miljoner DDD",
+        "3 328 miljoner DDD",
+        "3 459 miljoner DDD"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lägg ihop kvinnor och män i kolumnen Miljoner DDD 2004 för varje läkemedelsgrupp. Störst är C (594 + 614 = 1 208), B (526 + 371 = 897), N (403 + 240 = 643) och D (343 + 237 = 580); därefter kommer A med 318 + 222 = 540. De fyra största är tillsammans 1 208 + 897 + 643 + 580 = 3 328 miljoner DDD. 1 866 och 1 462 är summorna för samma grupper för bara kvinnor respektive bara män, och 3 459 är summan år 2005.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Med hur mycket, räknat i riksdaler, hade importvärdet av livsmedel respektive textilråvaror förändrats 1790 jämfört med året innan?",
+      "passage": "Svarsalternativen anger: livsmedel – textilråvaror",
+      "options": [
+        "0 – 40 000",
+        "50 000 – 70 000",
+        "50 000 – 190 000",
+        "190 000 – 40 000"
+      ],
+      "blindAnswer": 3,
+      "explain": "Diagrammet anger tusental riksdaler. Livsmedel är den grova streckade linjen. Den har en topp märkt 1789 på cirka 730 och ligger året efter, 1790, på cirka 540. Förändringen är ungefär 190 tusen riksdaler, alltså 190 000 riksdaler. Textilråvaror är den tunna linjen med små ringar: cirka 150 år 1789 och knappt 120 år 1790, en förändring med ungefär 35 tusen riksdaler. Närmast ligger 190 000 för livsmedel och 40 000 för textilråvaror, och det är också det enda alternativet där livsmedel har förändrats mest.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.9,
+          0.94
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "För vilket av följande år gällde att importvärdet av livsmedel utgjorde mindre än hälften av Sveriges totala importvärde samtidigt som det totala importvärdet var större än 1,2 miljoner riksdaler?",
+      "options": [
+        "1756",
+        "1769",
+        "1778",
+        "1788"
+      ],
+      "blindAnswer": 3,
+      "explain": "Axeln anger tusental riksdaler, så 1,2 miljoner riksdaler är 1 200. Total är den tjocka heldragna linjen och livsmedel den grova streckade. 1756: totalt cirka 1 340 och livsmedel cirka 820, mer än hälften (670). 1769: totalt cirka 1 500 och livsmedel cirka 860, mer än hälften (750). 1778: totalt cirka 1 170, alltså inte större än 1 200. 1788: totalt cirka 1 250 och livsmedel cirka 580, mindre än hälften (625). Bara 1788 uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.9,
+          0.94
+        ]
+      },
+      "note": "Totalen 1778 läses av till cirka 1 170, alltså strax under 1 200.",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Med hur många procent hade det totala importvärdet förändrats 1795 jämfört med 1755?",
+      "options": [
+        "15 procent",
+        "30 procent",
+        "45 procent",
+        "55 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "Följ den tjocka heldragna linjen (total). År 1755 ligger den på cirka 1 030 tusen riksdaler, året efter dalen märkt 1754 och året före toppen märkt 1756. År 1795 ligger den på cirka 870, i dalen två år efter 1793 och två år före toppen märkt 1797. Förändringen är 870 − 1 030 = −160, och 160/1 030 ≈ 0,16. Importvärdet hade alltså minskat med cirka 15 procent. Den som läser av toppen 1756 (cirka 1 340) i stället för 1755 får en minskning med ungefär 35 procent.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "box": [
+          0.075,
+          0.06,
+          0.9,
+          0.94
+        ]
+      },
+      "note": "1755 och 1795 står inte utskrivna i diagrammet; åren är räknade från de märkta topparna och dalarna (1754, 1756, 1793 och 1797).",
+      "verification": "agreed"
+    }
+  ]
+}
