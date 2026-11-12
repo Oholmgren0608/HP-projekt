@@ -1,0 +1,784 @@
+{
+  "examId": "hp-2021-03-13",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med uttrycket a(a + a)?",
+      "options": [
+        "3a",
+        "a² + a",
+        "2a²",
+        "a³"
+      ],
+      "blindAnswer": 2,
+      "explain": "Förenkla först parentesen: a + a = 2a. Uttrycket blir då a · 2a = 2a². Svaret a² + a får man om man multiplicerar in a i bara den första termen, och a³ om man behandlar a + a som a · a.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln v?",
+      "options": [
+        "14°",
+        "32°",
+        "38°",
+        "46°"
+      ],
+      "blindAnswer": 2,
+      "explain": "Linjen från toppen delar triangeln i två mindre trianglar. Vinkeln 102° ligger till höger om linjen vid basen, så vinkeln till vänster om linjen är 180° − 102° = 78°, eftersom vinklarna längs en rät linje är 180° tillsammans. I den vänstra triangeln är vinkelsumman 180°: v = 180° − 64° − 78° = 38°. Kortare: 102° är en yttervinkel till den vänstra triangeln och är lika med summan av de två motstående vinklarna, alltså v + 64° = 102°. Vinkeln 46° behövs inte. Svaret 14° får man om man tror att 102° ligger inne i den vänstra triangeln.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.22,
+          0.538,
+          0.492,
+          0.64
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Två butiker säljer äpplen. I butik A kostar äpplena 5 kr/st. I butik B är styckepriset 20 procent lägre än i butik A. Hur många fler äpplen kan man köpa för 100 kr i butik B jämfört med i butik A?",
+      "options": [
+        "4",
+        "5",
+        "10",
+        "20"
+      ],
+      "blindAnswer": 1,
+      "explain": "I butik A får man 100/5 = 20 äpplen för 100 kr. I butik B är styckepriset 20 procent lägre: 5 · 0,8 = 4 kr, så där får man 100/4 = 25 äpplen. Man kan alltså köpa 25 − 20 = 5 fler äpplen i butik B. Svaret 4 lockar om man tror att 20 procent lägre pris ger 20 procent fler äpplen (20 · 0,2 = 4), men när priset sjunker med en femtedel ökar antalet med en fjärdedel.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Antag att 2(p + 150) = 400. Vilket värde har uttrycket 4p − 200?",
+      "options": [
+        "0",
+        "300",
+        "900",
+        "1 200"
+      ],
+      "blindAnswer": 0,
+      "explain": "Dela båda leden med 2: p + 150 = 200, så p = 50. Då är 4p − 200 = 4 · 50 − 200 = 200 − 200 = 0. Kontroll: 2(50 + 150) = 2 · 200 = 400.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "M är mittpunkten på sträckan PQ. Vilka koordinater har punkten Q?",
+      "passage": "P = (−1; 0)\nM = (3; 3)",
+      "options": [
+        "(−5; −3)",
+        "(1; 1,5)",
+        "(5; 6)",
+        "(7; 6)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Mittpunkten ligger lika långt från P som från Q. Från P = (−1; 0) till M = (3; 3) ökar x med 4 och y med 3. Gå lika långt till från M: Q = (3 + 4; 3 + 3) = (7; 6). Kontroll: mittpunkten mellan (−1; 0) och (7; 6) är ((−1 + 7)/2; (0 + 6)/2) = (3; 3). Svaret (1; 1,5) är mittpunkten mellan P och M, inte punkten Q.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är störst?",
+      "options": [
+        "√50",
+        "2√25",
+        "5√10",
+        "10√5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Flytta in faktorn framför roten så att alla alternativ blir en enda rot (a√b = √(a² · b)): 2√25 = √100, 5√10 = √250 och 10√5 = √500. Störst är √500, alltså 10√5. Kontroll med närmevärden: √50 ≈ 7,1, 2√25 = 10, 5√10 ≈ 15,8 och 10√5 ≈ 22,4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x om 1/(x + 1) + 1/(x + 1) = 3?",
+      "options": [
+        "−2/3",
+        "−1/3",
+        "1/3",
+        "2/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Bråken är lika, så vänsterledet är 2/(x + 1). Ekvationen 2/(x + 1) = 3 ger x + 1 = 2/3, alltså x = 2/3 − 1 = −1/3. Kontroll: x + 1 = 2/3, och 1/(2/3) = 3/2, så vänsterledet blir 3/2 + 3/2 = 3. Svaret 2/3 får man om man glömmer att dra bort 1 i sista steget.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är 3 · 10⁵ + 3 · 10⁵?",
+      "options": [
+        "6 · 10⁵",
+        "3 · 10⁶",
+        "3 · 10¹⁰",
+        "6 · 10¹⁰"
+      ],
+      "blindAnswer": 0,
+      "explain": "Det är två likadana termer, så summan är 2 · 3 · 10⁵ = 6 · 10⁵. När tiopotenserna är lika adderar man bara faktorerna framför: 3 + 3 = 6, och tiopotensen är kvar. Med siffror: 300 000 + 300 000 = 600 000. Svaren med 10¹⁰ får man om man adderar exponenterna, men det gör man bara vid multiplikation.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är medelvärdet av de tre talen 1/2, 1/4 och 1/8?",
+      "options": [
+        "1/4",
+        "3/8",
+        "1/14",
+        "7/24"
+      ],
+      "blindAnswer": 3,
+      "explain": "Skriv talen med gemensam nämnare: 1/2 = 4/8, 1/4 = 2/8 och 1/8. Summan är 7/8. Medelvärdet är summan delad med antalet tal: (7/8)/3 = 7/24. Svaret 1/14 får man om man adderar täljarna och nämnarna var för sig (3/14) och sedan delar med 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är ett möjligt värde på f(x) om x är ett heltal?",
+      "passage": "f(x) = 8x + 1",
+      "options": [
+        "−31",
+        "−17",
+        "15",
+        "32"
+      ],
+      "blindAnswer": 0,
+      "explain": "När x är ett heltal är 8x delbart med 8, så f(x) − 1 måste vara delbart med 8. Pröva alternativen: −31 − 1 = −32 = 8 · (−4), så x = −4 ger f(x) = −31. För de andra blir f(x) − 1 lika med −18, 14 och 31, och inget av dem är delbart med 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ ligger närmast 254/13?",
+      "options": [
+        "18",
+        "19",
+        "20",
+        "21"
+      ],
+      "blindAnswer": 2,
+      "explain": "13 · 19 = 247 och 13 · 20 = 260. 254 ligger 7 över 247 men bara 6 under 260, så 254/13 ligger närmare 20 än 19. Mer exakt är 254/13 = 19 + 7/13 ≈ 19,54. Svaret 19 lockar om man bara tar heltalsdelen av kvoten.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Hur lång är sträckan AE?",
+      "options": [
+        "√43 cm",
+        "√45 cm",
+        "7 cm",
+        "8 cm"
+      ],
+      "blindAnswer": 0,
+      "explain": "Trianglarna ABC, ACD och ADE har räta vinklar vid B, C och D, så Pythagoras sats kan användas tre gånger. Triangeln ABC: AC² = 4² + 3² = 25, så AC = 5. Triangeln ACD: AD² = AC² + CD² = 25 + 3² = 34. Triangeln ADE: AE² = AD² + DE² = 34 + 3² = 43, så AE = √43 cm, ungefär 6,6 cm. Man behöver inte räkna ut AD, det räcker med AD² = 34.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.217,
+          0.54,
+          0.418,
+          0.732
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a + 8 = b + 4\nKvantitet I: a\nKvantitet II: b",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lös ut b: b = a + 8 − 4 = a + 4. Alltså är b alltid 4 större än a, vilka talen än är. Exempel: a = 0 ger b = 4. Det är lätt att tro att a är störst eftersom a står med det större talet, men det är tvärtom: a måste vara mindre för att a + 8 ska bli lika mycket som b + 4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Charlie har 8 eller 9 lådor med kritor. Varje låda innehåller 5, 6 eller 7 kritor.\nKvantitet I: Antalet kritor som Charlie har\nKvantitet II: 58",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Det minsta möjliga antalet är 8 · 5 = 40 kritor och det största 9 · 7 = 63 kritor. Har Charlie 8 lådor med 5 kritor i varje har han 40 kritor, färre än 58. Har han 9 lådor med 7 kritor i varje har han 63 kritor, fler än 58. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: (4 − 3,14)/3\nKvantitet II: 1/4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet I: 4 − 3,14 = 0,86 och 0,86/3 ≈ 0,29. Kvantitet II: 1/4 = 0,25. Utan närmevärden: 1/4 = 0,75/3, och eftersom 0,86 > 0,75 är 0,86/3 större än 1/4. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Ekvationen för den räta linjen i figuren kan skrivas på formen y = kx + m.\nKvantitet I: k\nKvantitet II: 2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Talet 1 står vid den andra rutlinjen på båda axlarna, så varje ruta är 0,5 enheter. Linjen skär y-axeln i y = 2 och går genom punkten (1; 2,5). Lutningen är k = (2,5 − 2)/(1 − 0) = 0,5. Kvantitet II, 2, är större. Det som lockar är att m = 2, men det är lutningen k som ska jämföras.",
+      "figure": {
+        "pages": [
+          9
+        ],
+        "box": [
+          0.233,
+          0.538,
+          0.483,
+          0.745
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Oscar går x km på y/3 timmar.\nPeter går 6x km på 2y timmar.\nKvantitet I: Oscars medelhastighet\nKvantitet II: Peters medelhastighet",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Medelhastighet är sträcka delad med tid. Oscar: x/(y/3) = 3x/y km/h. Peter: 6x/(2y) = 3x/y km/h. Hastigheterna är lika, vilka värden x och y än har. Peter går sex gånger så långt, men tiden 2y är också sex gånger så lång som y/3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Trianglarna ABC och DEF är rätvinkliga.\nx > y\nKvantitet I: Arean av triangeln ABC\nKvantitet II: Arean av triangeln DEF",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Båda trianglarna har den räta vinkeln vid B respektive E, samma katet z och hypotenusan x respektive y. Den andra kateten är √(x² − z²) i ABC och √(y² − z²) i DEF. Eftersom x > y är √(x² − z²) > √(y² − z²). Arean är kateterna gånger varandra delat med 2, och den ena kateten är z i båda, så ABC har störst area.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.211,
+          0.551,
+          0.589,
+          0.668
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Medelvärdet av de fyra talen 10, 15, 25 och x är 12.\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet 12 för fyra tal betyder att summan är 4 · 12 = 48. Då är 10 + 15 + 25 + x = 48, alltså 50 + x = 48 och x = −2. Kvantitet II är större. Redan 10 + 15 + 25 = 50 är mer än 48, så x måste vara negativt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 2x + 1/5\ng(x) = (1/2)x + 5\nKvantitet I: x-värdet för den punkt där grafen till f skär x-axeln\nKvantitet II: x-värdet för den punkt där grafen till g skär x-axeln",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "En graf skär x-axeln där funktionsvärdet är 0. För f: 2x + 1/5 = 0 ger x = −1/10 = −0,1. För g: (1/2)x + 5 = 0 ger x = −10. Båda är negativa, och −0,1 är större än −10. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Den inre sträckan delar triangeln i en övre och en undre triangel. Vinkeln 95° ligger i den undre triangeln, så i den övre triangeln är vinkeln vid samma punkt 180° − 95° = 85°. Då är x = 180° − 40° − 85° = 55°. I den undre triangeln är y = 180° − 95° − w = 85° − w, där w är vinkeln mellan den inre sträckan och basen, och den vinkeln är inte given. Med w = 20° blir y = 65°, större än x, och med w = 40° blir y = 45°, mindre än x. Informationen räcker inte.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.203,
+          0.085,
+          0.46,
+          0.267
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x och y är positiva tal.\n1/x − 1/y = 1\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv om sambandet: 1/x = 1 + 1/y, så 1/x är större än 1/y. För positiva tal gäller att ju större 1 delat med talet är, desto mindre är talet, så x < y. Exempel: y = 1 ger 1/x = 2 och x = 1/2. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "De fyra personerna Alf, Bea, Carl och Dinah bildar en kö. Var och en av dem har en enfärgad mössa och alla fyra mössorna har olika färg. Vilken färg har mössan på personen som står sist i kön?\n(1) Alf har en gul mössa. Bea har en röd mössa. Carl står näst sist i kön.\n(2) Carl har en svart mössa. Dinah har en vit mössa och står mellan Bea och Carl.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Carl står trea, men sist kan Alf (gul), Bea (röd) eller Dinah (okänd färg) stå. Inte tillräckligt.\n(2) Dinah står mellan Bea och Carl, men Alf kan stå var som helst. I kön Alf, Bea, Dinah, Carl står Carl sist med svart mössa, och i kön Bea, Dinah, Carl, Alf står Alf sist med okänd färg. Inte tillräckligt.\n(1) och (2) tillsammans: Carl står trea. Om Bea stod sist skulle Dinah behöva stå mellan plats 3 och 4, vilket inte går. Alltså står Bea först, Dinah tvåa, Carl trea och Alf sist, och Alf har gul mössa. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur många års åldersskillnad är det mellan Frida och Martin?\n(1) Idag är Fridas ålder 3 gånger Martins ålder.\n(2) Om 9 år är Frida dubbelt så gammal som Martin.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla åldrarna idag F och M.\n(1) F = 3M, så skillnaden är 2M. Åldrarna kan vara 3 och 1 år (skillnad 2 år) eller 30 och 10 år (skillnad 20 år). Inte tillräckligt.\n(2) F + 9 = 2(M + 9), alltså F = 2M + 9 och skillnaden M + 9, som beror på Martins ålder. Inte tillräckligt.\n(1) och (2) tillsammans: 3M = 2M + 9 ger M = 9 och F = 27. Skillnaden är 18 år. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "För talen x, y och z gäller att x = y − z.\nVilket värde har talet x?\n(1) Om talet 1 subtraheras från 2/5 av talet x får man talet 5.\n(2) Talet y är dubbelt så stort som talet z.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) (2/5)x − 1 = 5 ger (2/5)x = 6 och x = 6 · 5/2 = 15. Tillräckligt.\n(2) y = 2z ger x = 2z − z = z, men z kan vara vilket tal som helst. Till exempel ger z = 1 att x = 1, och z = 4 att x = 4. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anton, Bengt, Carolina och Daniella tävlar i friidrott i de olika grenarna höjdhopp, längdhopp, stavhopp och tresteg. Var och en tävlar endast i en gren och ingen av dem tävlar i samma gren som någon av de andra tre. I vilken gren tävlar var och en?\n(1) När det är tävling i höjdhopp, längdhopp och tresteg är det Anton, Bengt och Daniella som deltar.\n(2) När det är tävling i stavhopp och tresteg är det Daniella och Carolina som deltar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Anton, Bengt och Daniella tävlar i höjdhopp, längdhopp och tresteg, så Carolina tävlar i stavhopp. Vem av de tre andra som har vilken gren är okänt. Inte tillräckligt.\n(2) Daniella och Carolina har stavhopp och tresteg, alltså har Anton och Bengt höjdhopp och längdhopp, men vi vet inte vem som har vad. Inte tillräckligt.\n(1) och (2) tillsammans: Carolina tävlar i stavhopp, så Daniella tävlar i tresteg. Anton och Bengt tävlar i höjdhopp och längdhopp, men inget av påståendena säger vem som tävlar i vilken av dem. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en låda finns det endast tre sorters bestick: knivar, gafflar och skedar. Sammanlagt finns det 23 bestick i lådan. Hur många knivar finns det i lådan?\n(1) Det finns hälften så många skedar som knivar. Det finns två gafflar färre än vad det finns knivar.\n(2) Sammanlagt finns det 13 gafflar och skedar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kalla antalet knivar k.\n(1) Det finns k/2 skedar och k − 2 gafflar. Summan k + k/2 + k − 2 = 23 ger 2,5k = 25, alltså k = 10 (och 5 skedar, 8 gafflar). Tillräckligt.\n(2) Gafflar och skedar är 13 tillsammans, så knivarna är 23 − 13 = 10. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En mätserie består av fem heltal. Vad är mätseriens median?\n(1) Det största talet i mätserien är 43 och det minsta är 16.\n(2) I mätserien förekommer talet 20 tre gånger.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medianen är det mittersta talet, alltså det tredje när de fem talen står i storleksordning.\n(1) Vi vet bara det minsta och det största talet. Serien 16, 17, 18, 19, 43 har medianen 18, och serien 16, 30, 30, 30, 43 har medianen 30. Inte tillräckligt.\n(2) I storleksordning står de tre 20-orna bredvid varandra, på plats 1–3, 2–4 eller 3–5. I alla fallen står en 20 på plats 3, så medianen är 20. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För hur stor andel av födslarna 2001 blev faderskapet inte fastställt genom bekräftelse?",
+      "options": [
+        "44 procent",
+        "46 procent",
+        "54 procent",
+        "56 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "I kolumnen I procent av det totala antalet födslar står 54 för år 2001. För 54 procent av födslarna fastställdes alltså faderskapet genom bekräftelse, och för resten, 100 − 54 = 46 procent, gjorde det inte det. Svaret 54 procent lockar om man läser av kolumnen utan att tänka på ordet inte.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur många faderskapsutredningar lades ner i genomsnitt per år från och med 2005 till och med 2010?",
+      "options": [
+        "679",
+        "789",
+        "867",
+        "947"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av kolumnen Utredning nedlagd för åren 2005–2010: 446, 597, 738, 851, 982 och 1 120. Summan är 4 734. Från och med 2005 till och med 2010 är sex år, så genomsnittet är 4 734/6 = 789. Den som delar med 5 eller tar med fel år får ett annat svar.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur många födslar skedde under 2013?",
+      "options": [
+        "94 000",
+        "113 000",
+        "174 000",
+        "211 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "År 2013 fastställdes faderskapet genom bekräftelse i 60 955 fall, och enligt kolumnen bredvid var det 54 procent av alla födslar. Antalet födslar är då 60 955/0,54 ≈ 112 900, alltså ungefär 113 000. Svaret 94 000 får man om man i stället lägger till 54 procent (60 955 · 1,54 ≈ 94 000).",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "I vilken riktning löpte diket över Byängen?",
+      "options": [
+        "Nordväst–sydostlig riktning",
+        "Nordväst–sydvästlig riktning",
+        "Nordost–sydostlig riktning",
+        "Nordost–sydvästlig riktning"
+      ],
+      "blindAnswer": 0,
+      "explain": "Nordpilen pekar uppåt, så norr är upp och öster till höger på kartan. Byängen ligger i kartans nordöstra del, och diket är linjen som går tvärs över ängen. Den börjar vid ängens västra kant uppe till vänster och går snett nedåt åt höger till ängens östra kant, alltså från nordväst mot sydost.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger gårdar som hade egen åkermark i både rak nordlig och rak ostlig riktning från respektive gård räknat?",
+      "options": [
+        "Backegården och Klockargården",
+        "Backegården och Prästgården",
+        "Kungsgårdarna och Klockargården",
+        "Kungsgårdarna och Prästgården"
+      ],
+      "blindAnswer": 3,
+      "explain": "Gårdarna ligger vid bokstäverna mitt på kartan, och norr är uppåt. Gå rakt uppåt och rakt åt höger från varje gård och se vilket mönster åkrarna har. Kungsgårdarna (B, rutmönster) har åker både rakt norrut i Norra gärdet och rakt österut strax intill gården. Prästgården (D, vågräta linjer) har åker rakt norrut i den norra delen av Norra gärdet, mellan Lötegårdens åkrar, och rakt österut i remsan i Byängen. Rakt norr om Backegården (C) och Klockargården (F) ligger bara åkrar som tillhör Kungsgårdarna, Prästgården och Lötegården, så de två faller bort.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "Avläst från husen vid bokstäverna B, C, D och F. Rakt öster om Prästgården ligger även remsan öster om Kyrkbyn, nästan exakt på gårdens höjd.",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur stor area hade den av Prästgårdens åkermarker som låg längst söderut?",
+      "options": [
+        "2 000 m²",
+        "3 000 m²",
+        "20 000 m²",
+        "30 000 m²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Prästgårdens åkrar har vågräta linjer, och den som ligger längst söderut är den avlånga åkern längst ned i Stora gärdet, vid bygränsen. Jämför med skalstocken, där hela stocken är 400 m: åkern är ungefär 210 m lång och mellan cirka 75 m (upptill) och 100 m (nedtill) bred, i genomsnitt omkring 90 m. Arean blir ungefär 210 · 90 ≈ 19 000 m², så 20 000 m² stämmer bäst. Svaren 2 000 och 3 000 m² är ungefär tio gånger för små.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Studera andelen som såg det som mycket troligt eller ganska troligt att en terroristattack skulle inträffa i Sverige under de närmaste fem åren. Hur förändrades denna andel från 2009 till 2016?",
+      "options": [
+        "Andelen ökade med 100 procent.",
+        "Andelen ökade med 150 procent.",
+        "Andelen ökade med 230 procent.",
+        "Andelen ökade med 350 procent."
+      ],
+      "blindAnswer": 1,
+      "explain": "Mycket troligt och ganska troligt är den grå och den svarta delen av stapeln tillsammans, så andelen läses av där den svarta delen slutar. År 2009 är det cirka 23 procent och år 2016 cirka 58 procent. Ökningen är 58 − 23 = 35 procentenheter, och 35/23 ≈ 1,5, alltså en ökning med ungefär 150 procent. Andelen blev ungefär 2,5 gånger så stor, men det är en ökning med 150 procent, inte 250 procent.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket år motsvarar cirkeldiagrammet?",
+      "options": [
+        "2011",
+        "2012",
+        "2013",
+        "2014"
+      ],
+      "blindAnswer": 3,
+      "explain": "Uppskatta sektorerna och jämför med staplarna. Den grå sektorn (Mycket troligt) är cirka 7 procent, den svarta (Ganska troligt) knappt en tredjedel, cirka 29 procent, den prickiga (Inte speciellt troligt) knappt hälften, cirka 46 procent, den vita (Inte alls troligt) cirka 17 procent och Ingen åsikt cirka 1 procent. Stapeln för 2014 har gränserna vid cirka 7, 36, 82 och 99 procent, alltså samma fördelning. År 2011 har över 40 procent Ganska troligt och bara 9 procent Inte alls troligt, 2012 bara 2 procent Mycket troligt och 2013 bara cirka 20 procent Ganska troligt.",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.497,
+            0.568,
+            0.703,
+            0.867
+          ]
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilken av de redovisade andelarna minskade fyra år i rad jämfört med närmast föregående år?",
+      "options": [
+        "Andelen som svarat Mycket troligt.",
+        "Andelen som svarat Ganska troligt.",
+        "Andelen som svarat Inte speciellt troligt.",
+        "Andelen som svarat Inte alls troligt."
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av delarnas längd för 2011–2016. Inte speciellt troligt (den prickiga delen) var cirka 40, 59, 54, 46, 35 och 31 procent, så den minskade jämfört med året innan 2013, 2014, 2015 och 2016, fyra år i rad. Mycket troligt och Ganska troligt minskade bara 2012 och ökade sedan varje år. Inte alls troligt (den vita delen) var cirka 18 procent både 2012 och 2013, minskade 2014 och 2015 men ökade igen 2016.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket av följande år översteg mängden zink 150 000 ton?",
+      "options": [
+        "1965",
+        "1970",
+        "1975",
+        "1980"
+      ],
+      "blindAnswer": 3,
+      "explain": "Fälten ligger staplade på varandra: zink är det ljusgrå fältet överst, så mängden zink är avståndet mellan diagrammets övre kant och gränsen mot det vita fältet (bly). År 1980 går det ljusgrå fältet från cirka 118 000 till cirka 296 000 ton, alltså cirka 178 000 ton zink. År 1975 är det cirka 224 000 − 111 000 ≈ 113 000 ton, 1970 cirka 198 000 − 106 000 ≈ 92 000 ton och 1965 cirka 165 000 − 86 000 ≈ 79 000 ton. Bara 1980 översteg 150 000 ton. Den som läser av den övre kanten direkt räknar med alla tre metallerna tillsammans.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av den sammanlagda mängden utvunnen koppar, bly och zink 1995 utgjordes av koppar?",
+      "options": [
+        "1/6",
+        "1/5",
+        "1/4",
+        "1/3"
+      ],
+      "blindAnswer": 2,
+      "explain": "Koppar är det mörka fältet längst ned och når år 1995 upp till cirka 93 000 ton. Den sammanlagda mängden av de tre metallerna är diagrammets övre kant, cirka 350 000 ton. Andelen är 93 000/350 000 ≈ 0,27, vilket ligger närmast 1/4. Gränsen vid cirka 184 000 ton är koppar och bly tillsammans och ska inte användas som kopparns mängd.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Utgå från de utskrivna årtalen i diagrammet. För hur många av dem gällde att metallernas mängder hade förhållandet zink > koppar > bly?",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "blindAnswer": 0,
+      "explain": "Fälten ligger staplade, så koppar är det mörka fältets höjd, bly det vita fältets tjocklek och zink det ljusgrå fältets tjocklek. De utskrivna årtalen är 1950, 1955 och så vidare till 2010. Zink är störst alla de åren. Koppar är mer än bly bara 1985 (cirka 94 000 mot 79 000 ton), 1995 (cirka 93 000 mot 91 000 ton), 2005 (cirka 88 000 mot 61 000 ton) och 2010 (cirka 77 000 mot 66 000 ton). Åren 1950–1980, 1990 och 2000 är det vita fältet tjockare än det mörka. Förhållandet gällde alltså 4 av årtalen.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "År 1995 ligger koppar (cirka 93 000 ton) och bly (cirka 91 000 ton) mycket nära varandra; avläst med förstoring.",
+      "verification": "agreed"
+    }
+  ]
+}
