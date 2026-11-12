@@ -1,0 +1,788 @@
+{
+  "examId": "hp-2017-04-01",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "4x/12 + 5x/3 = 8",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "40/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Förenkla det första bråket: 4x/12 = x/3. Ekvationen blir x/3 + 5x/3 = 8, alltså 6x/3 = 2x = 8, och x = 4. Kontroll: 4 · 4/12 + 5 · 4/3 = 4/3 + 20/3 = 24/3 = 8. Svaret 40/3 får den som felaktigt adderar täljarna och nämnarna var för sig: 9x/15 = 8 ger x = 120/9 = 40/3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är 3x + 2y?",
+      "passage": "Linjerna L₁ och L₂ är parallella.",
+      "options": [
+        "60°",
+        "90°",
+        "120°",
+        "150°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkeln 4y ligger ovanför L₁ till höger om den sneda linjen, och vinkeln 6x ligger ovanför L₂ till vänster om den. Eftersom L₁ och L₂ är parallella är vinkeln ovanför L₂ till höger om den sneda linjen också 4y (likbelägna vinklar). Den vinkeln och 6x ligger längs samma räta linje L₂ och bildar tillsammans 180°, så 6x + 4y = 180°. Dela med 2: 3x + 2y = 90°. Man behöver alltså inte veta x och y var för sig.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.235,
+          0.555,
+          0.565,
+          0.705
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Talen 7, 13, 18, 20 och x har medelvärdet 15. Vad är x?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "19"
+      ],
+      "blindAnswer": 2,
+      "explain": "Fem tal med medelvärdet 15 har summan 5 · 15 = 75. De fyra kända talen har summan 7 + 13 + 18 + 20 = 58. Då är x = 75 − 58 = 17. Kontroll: (58 + 17)/5 = 75/5 = 15.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket är det största möjliga primtal som 2x + y kan vara?",
+      "passage": "x och y är positiva heltal sådana att x ≤ 6 och y ≤ 3.",
+      "options": [
+        "11",
+        "13",
+        "17",
+        "19"
+      ],
+      "blindAnswer": 1,
+      "explain": "Det största värde 2x + y kan få är 2 · 6 + 3 = 15. Primtalen 17 och 19 går alltså inte att få. Det största primtalet som är högst 15 är 13, och det går att få, till exempel med x = 5 och y = 3 (2 · 5 + 3 = 13) eller med x = 6 och y = 1 (12 + 1 = 13).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är arean av triangeln ABC?",
+      "passage": "De tre punkterna A, B och C bildar triangeln ABC i ett koordinatsystem.\nA = (1, −4)\nB = (4, 2)\nC = (−1, 2)\nDet tomma koordinatsystemet kan användas för att lösa uppgiften.",
+      "options": [
+        "8 areaenheter",
+        "10 areaenheter",
+        "15 areaenheter",
+        "30 areaenheter"
+      ],
+      "blindAnswer": 2,
+      "explain": "B och C har båda y-koordinaten 2, så sidan BC är vågrät och har längden 4 − (−1) = 5. Använd BC som bas. Höjden är det lodräta avståndet från A till linjen y = 2, alltså 2 − (−4) = 6. Arean är bas · höjd/2 = 5 · 6/2 = 15 areaenheter. Svaret 30 areaenheter får den som glömmer att dela med 2.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.21,
+          0.228,
+          0.555,
+          0.478
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Om a² = 7 vad är då (3a)²?",
+      "options": [
+        "21",
+        "42",
+        "63",
+        "147"
+      ],
+      "blindAnswer": 2,
+      "explain": "Både 3 och a ska kvadreras: (3a)² = 3² · a² = 9a². Med a² = 7 blir det 9 · 7 = 63. Svaret 21 lockar om man bara multiplicerar a² med 3 och glömmer att även trean ska kvadreras.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är differensen mellan P och Q?",
+      "passage": "A och B är två positiva heltal som är mindre än tio.\nP = 7 · 1000 + A · 100 + 4 · 10 + B · 1\nQ = 4 · 1000 + A · 100 + 8 · 10 + B · 1",
+      "options": [
+        "2 060",
+        "2 960",
+        "3 040",
+        "3 940"
+      ],
+      "blindAnswer": 1,
+      "explain": "Termerna A · 100 och B · 1 finns i både P och Q och tar ut varandra i differensen. Kvar blir P − Q = (7 − 4) · 1 000 + (4 − 8) · 10 = 3 000 − 40 = 2 960. Talen A och B behöver man alltså inte känna till. Svaret 3 040 får den som räknar 3 000 + 40 i stället för 3 000 − 40.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad är √3/3?",
+      "options": [
+        "1/√3",
+        "1",
+        "√3",
+        "3"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv 3 i nämnaren som √3 · √3. Då är √3/3 = √3/(√3 · √3) = 1/√3. Kontroll med närmevärden: √3 ≈ 1,73, så √3/3 ≈ 0,58, och 1/√3 ≈ 1/1,73 ≈ 0,58.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "x, y, z och w är negativa tal. Vilket alternativ är med säkerhet korrekt om zw > xy?",
+      "options": [
+        "w > x",
+        "−z > −y",
+        "xz > yw",
+        "−xy > −zw"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera båda leden i zw > xy med −1. Då vänds olikhetstecknet: −zw < −xy, vilket är samma sak som −xy > −zw. Det gäller alltså alltid. De andra alternativen kan vara fel: med x = y = z = −1 och w = −10 är zw = 10 och xy = 1, så villkoret är uppfyllt, men w > x stämmer inte (−10 < −1), −z > −y stämmer inte (1 = 1) och xz > yw stämmer inte (1 < 10).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är f(1) − f(0)?",
+      "passage": "f(x) = 2 · 5ˣ",
+      "options": [
+        "5",
+        "8",
+        "9",
+        "10"
+      ],
+      "blindAnswer": 1,
+      "explain": "f(1) = 2 · 5¹ = 10 och f(0) = 2 · 5⁰ = 2 · 1 = 2. Differensen är 10 − 2 = 8. Svaret 10 lockar om man tror att 5⁰ = 0, så att f(0) blir 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket av uttrycken motsvarar 1/(2x + 2) − 2/(6x + 6)?",
+      "passage": "x ≠ −1",
+      "options": [
+        "−1/(4x + 4)",
+        "−1/(2x + 2)",
+        "1/(4x + 4)",
+        "1/(6x + 6)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Bryt ut i nämnarna: 2x + 2 = 2(x + 1) och 6x + 6 = 6(x + 1). Med den gemensamma nämnaren 6(x + 1) blir det första bråket 3/(6(x + 1)). Differensen är 3/(6(x + 1)) − 2/(6(x + 1)) = 1/(6(x + 1)) = 1/(6x + 6). Kontroll med x = 0: 1/2 − 2/6 = 3/6 − 2/6 = 1/6, och 1/(6 · 0 + 6) = 1/6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Kvadraten ABCD har hörnen på en cirkel med radien 5 cm. Hur stor andel av cirkelns yta täcks av kvadratens yta?",
+      "options": [
+        "2/3",
+        "2/π",
+        "3/π",
+        "π/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvadratens diagonal är en diameter i cirkeln, alltså 2 · 5 = 10 cm. En kvadrat med diagonalen d har arean d²/2, så kvadratens area är 100/2 = 50 cm². Cirkelns area är π · 5² = 25π cm². Andelen är 50/(25π) = 2/π, ungefär 0,64. Svaret blir detsamma för alla radier, eftersom båda areorna är proportionella mot r².",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.262,
+          0.572,
+          0.485,
+          0.729
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 10/3\nKvantitet II: (3 · 5 · 26)/(13 · 15)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Förkorta kvantitet II: 3 · 5 = 15 tar ut 15 i nämnaren, och 26/13 = 2. Kvantitet II är alltså 2. Kvantitet I är 10/3 ≈ 3,33, som är större än 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sträckan från toppen delar triangeln i två mindre trianglar. I den högra triangeln är vinklarna 70°, 75° och y, så y = 180° − 70° − 75° = 35°. Vid basen är vinkeln till vänster om sträckan 180° − 75° = 105°, eftersom de två vinklarna där tillsammans är 180°. I den vänstra triangeln är då x = 180° − 45° − 105° = 30°. Kvantitet II är alltså större.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.22,
+          0.535,
+          0.66,
+          0.668
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x är ett slumpmässigt valt tal från mängden {3, 5, 7, 11, 13}.\nKvantitet I: Sannolikheten att 6 är jämnt delbart med x\nKvantitet II: Sannolikheten att 39 är jämnt delbart med x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vart och ett av de fem talen väljs med sannolikheten 1/5. 6 = 2 · 3 är jämnt delbart med bara ett av talen i mängden, nämligen 3, så kvantitet I är 1/5. 39 = 3 · 13 är jämnt delbart med två av talen, 3 och 13, så kvantitet II är 2/5. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x² = 4\nKvantitet I: x⁴\nKvantitet II: (x + x)(x + x)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: x⁴ = (x²)² = 4² = 16. Kvantitet II: (x + x)(x + x) = 2x · 2x = 4x² = 4 · 4 = 16. Det spelar ingen roll om x = 2 eller x = −2, eftersom båda kvantiteterna bara beror på x². De är lika stora.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/5 + 1/5\nKvantitet II: 1/3 + 1/15",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv båda summorna med nämnaren 15. Kvantitet I: 1/5 + 1/5 = 2/5 = 6/15. Kvantitet II: 1/3 + 1/15 = 5/15 + 1/15 = 6/15. Kvantiteterna är lika stora.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x₁ > x₂\nf(x) = 5 − 10x\nKvantitet I: f(x₁)\nKvantitet II: f(x₂)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "f(x₁) − f(x₂) = (5 − 10x₁) − (5 − 10x₂) = −10(x₁ − x₂). Eftersom x₁ − x₂ är positivt är differensen negativ, alltså är f(x₁) < f(x₂). Funktionen är avtagande: ju större x, desto mindre f(x). Exempel: x₁ = 1 och x₂ = 0 ger f(1) = −5 och f(0) = 5. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fyrhörningen ABDE är en kvadrat.\nKvantitet I: Den sammanlagda arean av triangeln ABF och triangeln CDE\nKvantitet II: Arean av fyrhörningen BCEF",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadratens sida är x + y. Triangeln ABF är rätvinklig med kateterna AB = x + y och AF = y, så arean är (x + y)y/2. Triangeln CDE är rätvinklig med kateterna DE = x + y och DC = x, så arean är (x + y)x/2. Tillsammans blir det (x + y)(x + y)/2, alltså halva kvadratens area. Fyrhörningen BCEF är resten av kvadraten och har därför också halva kvadratens area. Kvantiteterna är lika stora, oavsett x och y.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.23,
+          0.135,
+          0.61,
+          0.312
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Av 39 pennor i en låda är 2/3 bläckpennor. 19 av pennorna i lådan är trasiga.\nKvantitet I: Antalet trasiga bläckpennor\nKvantitet II: 6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Bläckpennorna är 2/3 · 39 = 26, så 13 pennor är inte bläckpennor. Av de 19 trasiga pennorna kan högst 13 vara andra pennor, så minst 19 − 13 = 6 av de trasiga är bläckpennor. Om alla 13 andra pennor är trasiga är antalet trasiga bläckpennor precis 6, och då är kvantiteterna lika. Om i stället alla 19 trasiga pennor är bläckpennor är kvantitet I större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x, y och z är tre på varandra följande heltal sådana att:\nx < y < z\nx · y · z = 0\nKvantitet I: z\nKvantitet II: 1",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Produkten är 0 bara om något av talen är 0. Talen kan därför vara 0, 1 och 2 (då är z = 2), −1, 0 och 1 (z = 1) eller −2, −1 och 0 (z = 0). Kvantitet I kan alltså vara större än, lika med eller mindre än 1. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > y\nxz > yz\nKvantitet I: z\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Flytta över yz: xz − yz > 0, alltså (x − y)z > 0. Eftersom x > y är x − y positivt, och då måste även z vara positivt för att produkten ska bli positiv. Om z vore negativt skulle olikheten vändas (xz < yz), och z = 0 ger xz = yz. Kvantitet I är alltså större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en bondgård finns 63 djur: hästar, kor och grisar. Hur många kor finns det på bondgården?\n(1) Det finns dubbelt så många grisar som hästar och kor tillsammans.\n(2) Antalet hästar på bondgården är hälften av antalet kor.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla antalet hästar h, kor k och grisar g, så att h + k + g = 63.\n(1) g = 2(h + k) ger 3(h + k) = 63, alltså h + k = 21 och g = 42. Hur de 21 djuren fördelar sig på hästar och kor framgår inte. Inte tillräckligt.\n(2) h = k/2, men antalet grisar är okänt: till exempel k = 2, h = 1, g = 60 eller k = 4, h = 2, g = 57. Inte tillräckligt.\n(1) och (2) tillsammans: h + k = 21 och h = k/2 ger k/2 + k = 21, alltså 3k/2 = 21 och k = 14. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Albert och Ida ska tillsammans klippa gräset på en fotbollsplan. De arbetar samtidigt och utan rast med varsin gräsklippare. De arbetar alltid med sina egna konstanta hastigheter. Hur lång tid tar det för dem att klippa gräset på fotbollsplanen?\n(1) Ensam skulle Albert klippa hela fotbollsplanen 0,5 timmar långsammare än Ida.\n(2) Ensam skulle Ida klippa hela fotbollsplanen 0,5 timmar snabbare än Albert.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "För att räkna ut den gemensamma tiden behöver man veta hur lång tid var och en tar ensam.\n(1) Albert tar 0,5 timmar längre än Ida, men Idas tid är okänd. Inte tillräckligt.\n(2) säger samma sak med andra ord: Ida tar 0,5 timmar kortare tid än Albert. Inte tillräckligt.\n(1) och (2) tillsammans ger ingen ny information. Om Ida tar 1 timme och Albert 1,5 timmar klipper de tillsammans 1 + 2/3 = 5/3 planer per timme och behöver 0,6 timmar. Om Ida tar 2 timmar och Albert 2,5 timmar klipper de 1/2 + 2/5 = 9/10 planer per timme och behöver ungefär 1,1 timmar. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vad är summan av x, y och z?\n(1) x, y och z förhåller sig som 3:5:7.\n(2) z − x = 28",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Talen kan skrivas x = 3k, y = 5k och z = 7k, men k är okänt, så summan 15k kan vara vad som helst. Inte tillräckligt.\n(2) Bara skillnaden mellan z och x är känd, och ingenting om y. Inte tillräckligt.\n(1) och (2) tillsammans: z − x = 7k − 3k = 4k = 28, så k = 7. Summan är 15 · 7 = 105 (x = 21, y = 35 och z = 49). Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En bofink, en domherre, en gråsparv och en talgoxe sitter på rad på en telefonledning. Bofinken sitter inte längst till höger. Vilken fågel sitter längst till vänster?\n(1) Talgoxen sitter närmast till vänster om bofinken. Gråsparven sitter inte bredvid domherren.\n(2) Talgoxen sitter inte bredvid gråsparven. Domherren sitter inte bredvid bofinken.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Numrera platserna 1–4 från vänster. Bofinken sitter inte på plats 4.\n(1) Talgoxen sitter direkt till vänster om bofinken, alltså på plats 1 och 2 eller 2 och 3. På plats 1 och 2 skulle gråsparven och domherren hamna på plats 3 och 4, bredvid varandra, och det är inte tillåtet. Alltså sitter talgoxen på plats 2, bofinken på plats 3 och gråsparven och domherren på plats 1 och 4 i någon ordning. Längst till vänster kan både gråsparven och domherren sitta. Inte tillräckligt.\n(2) Flera ordningar är möjliga, till exempel bofink, gråsparv, domherre, talgoxe och domherre, gråsparv, bofink, talgoxe, med olika fåglar längst till vänster. Inte tillräckligt.\n(1) och (2) tillsammans: Ordningen gråsparv, talgoxe, bofink, domherre bryter mot (2), eftersom talgoxen då sitter bredvid gråsparven. Kvar blir domherre, talgoxe, bofink, gråsparv, som uppfyller alla villkor. Domherren sitter längst till vänster. Tillräckligt.",
+      "figure": null,
+      "note": "Ordet inte är understruket i provet (i frågan och i båda påståendena); här står det som ren text.",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en klass med flickor och pojkar gavs på ett prov endast betygen godkänt eller underkänt.\nx = Det totala antalet flickor, både godkända och underkända\ny = Det totala antalet godkända elever, både flickor och pojkar\nVad är x/y?\n(1) Det fanns lika många pojkar som flickor i klassen.\n(2) Av klassens 24 elever fick hälften godkänt och av klassens 12 flickor fick hälften underkänt.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Om pojkarna och flickorna är lika många är x hälften av klassen, men antalet godkända y är okänt. Med 10 flickor och 10 pojkar ger 20 godkända x/y = 10/20 = 1/2, medan 10 godkända ger x/y = 1. Inte tillräckligt.\n(2) Klassen har 12 flickor, så x = 12. Hälften av de 24 eleverna fick godkänt, så y = 12. Då är x/y = 12/12 = 1. Att hälften av flickorna fick underkänt behövs inte. Tillräckligt.\nPåstående (2) räcker alltså ensamt, men inte (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anders skriver n stycken tal på en lapp. Är produkten av de n talen negativ?\n(1) Alla talen är negativa och n är ett udda tal.\n(2) Om två tal vars produkt är positiv stryks, så är produkten av de övriga talen negativ.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Två negativa faktorer ger en positiv produkt. Med ett udda antal negativa tal kan talen paras ihop så att ett negativt tal blir över, och då är hela produkten negativ. Tillräckligt.\n(2) Hela produkten är produkten av de två strukna talen gånger produkten av de övriga talen, alltså positivt gånger negativt. Den är negativ. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur många läkarbesök inom specialiserad somatisk vård gjordes sammanlagt hos de tre huvudmän som hade flest läkarbesök?",
+      "options": [
+        "3,3 miljoner",
+        "6,9 miljoner",
+        "8,2 miljoner",
+        "15,8 miljoner"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tabellen anger tusental. Flest läkarbesök (kolumnen Summa besök under Läkarbesök) hade Stockholm (7 636,8), V:a Götaland (4 415,6) och Skåne (3 762,5). Deras läkarbesök inom specialiserad somatisk vård var 3 281,7, 1 781,5 och 1 803,0 tusen. Summan är 3 281,7 + 1 781,5 + 1 803,0 = 6 866,2 tusen, alltså ungefär 6,9 miljoner. Svaret 15,8 miljoner får den som i stället lägger ihop alla läkarbesök hos de tre, och 8,2 miljoner den som tar läkarbesöken inom primärvård.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilket cirkeldiagram visar hur det totala antalet hälso- och sjukvårdsbesök var fördelat på läkarbesök och besök hos andra personalkategorier?",
+      "options": [
+        "Cirkeldiagram A",
+        "Cirkeldiagram B",
+        "Cirkeldiagram C",
+        "Cirkeldiagram D"
+      ],
+      "blindAnswer": 2,
+      "explain": "Raden TOTALT ger 27 442,1 tusen läkarbesök och 36 440,3 tusen besök hos andra personalkategorier, av totalt 63 882,4 tusen besök. Läkarbesöken är alltså 27 442,1/63 882,4 ≈ 0,43, eller 43 procent, och besöken hos andra personalkategorier 57 procent. Den svarta delen (läkarbesök) ska därför vara något mindre än hälften av cirkeln, och så är det bara i cirkeldiagram C. Cirkeldiagram B har andelarna omvända: där är den svarta delen drygt hälften. Cirkeldiagram A och D visar ungefär två tredjedelar respektive en tredjedel läkarbesök.",
+      "figure": {
+        "pages": [
+          16,
+          17
+        ],
+        "boxes": [
+          null,
+          [
+            0.545,
+            0.56,
+            0.79,
+            0.885
+          ]
+        ],
+        "rotate": 90
+      },
+      "note": "Bildalternativ: cirkeldiagrammen A–D med teckenförklaring (från uppgiftssidan) står under tabellen i figuren.",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Vilken huvudman avses?",
+      "passage": "Antalet besök hos andra personalkategorier var inom specialiserad somatisk vård mindre än 100 000 och inom specialiserad psykiatrisk vård fem gånger så stort som inom handikapp-/hjälpmedelsverksamhet.",
+      "options": [
+        "Kronoberg",
+        "Dalarna",
+        "Jämtland",
+        "Gotland"
+      ],
+      "blindAnswer": 3,
+      "explain": "Tabellen anger tusental, så 100 000 besök motsvarar 100,0. Under Besök hos andra personalkategorier har bland alternativen bara Jämtland (93,8) och Gotland (62,7) färre än 100,0 inom specialiserad somatisk vård; Kronoberg har 152,9 och Dalarna 237,5. Jämför sedan specialiserad psykiatrisk vård med handikapp-/hjälpmedelsverksamhet. Gotland har 24,1 och 4,6, och 5 · 4,6 = 23,0, alltså ungefär fem gånger så mycket. Jämtland har 29,9 och 8,9, bara drygt tre gånger så mycket. Gotland avses.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det totala antalet besök som gjordes i Halland var läkarbesök inom primärvården?",
+      "options": [
+        "20 procent",
+        "25 procent",
+        "30 procent",
+        "35 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Halland hade 523,2 tusen läkarbesök inom primärvård (första sifferkolumnen) och totalt 2 028,1 tusen besök (sista kolumnen, Totalt antal besök). Andelen är 523,2/2 028,1 ≈ 0,26, alltså ungefär 25 procent. Kontroll: en fjärdedel av 2 028,1 är cirka 507, vilket ligger nära 523,2, medan 30 procent skulle vara cirka 608.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket land låg längst från EU 15-genomsnittet vad gäller den genomsnittliga andelen sysselsatta inom tillverkningsindustri respektive inom kunskapsintensiv tjänstesektor?",
+      "options": [
+        "Luxemburg respektive Portugal",
+        "Luxemburg respektive Sverige",
+        "Tyskland respektive Portugal",
+        "Tyskland respektive Sverige"
+      ],
+      "blindAnswer": 0,
+      "explain": "Ländernas genomsnitt står i ringarna. I det övre diagrammet (tillverkningsindustri) är EU 15-genomsnittet 7,6 procent. Tyskland ligger högst med 11,2, alltså 3,6 procentenheter över, men Luxemburg ligger lägst med 1,2, alltså 6,4 procentenheter under. Luxemburg ligger längst bort. I det nedre diagrammet (kunskapsintensiv tjänstesektor) är genomsnittet 32,9 procent. Sverige har 45,7, som är 12,8 över, och Portugal 19,1, som är 13,8 under. Portugal ligger längst bort. Det lockar att välja länderna med de högsta värdena, men det är avståndet till genomsnittet som avgör.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "År 2001 var det totala antalet sysselsatta i Sverige cirka 4 223 000. Hur många av dem arbetade inom kunskapsintensiv tjänstesektor?",
+      "options": [
+        "330 000",
+        "1 680 000",
+        "1 930 000",
+        "2 250 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "I det nedre diagrammet står Sveriges genomsnittliga andel sysselsatta inom kunskapsintensiv tjänstesektor i ringen vid SVERIGE: 45,7 procent. 0,457 · 4 223 000 ≈ 1 930 000. De andra alternativen motsvarar andra värden för Sverige: 53,2 procent (Stockholm) ger cirka 2 250 000, 39,8 procent (Småland, Öland & Gotland) cirka 1 680 000 och 7,9 procent (tillverkningsindustri i det övre diagrammet) cirka 330 000.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "I hur många av EU 15-länderna var andelen sysselsatta inom kunskapsintensiv tjänstesektor mindre än genomsnittet för EU 15?",
+      "options": [
+        "2",
+        "7",
+        "8",
+        "13"
+      ],
+      "blindAnswer": 1,
+      "explain": "I det nedre diagrammet är genomsnittet för EU 15 32,9 procent, och ländernas genomsnitt står i ringarna. Under 32,9 ligger Irland (31,9), Tyskland (31,0), Österrike (29,3), Italien (26,9), Spanien (24,9), Grekland (22,8) och Portugal (19,1), alltså 7 länder. De övriga 8 länderna, bland dem Frankrike (35,0) och Luxemburg (35,8), ligger över genomsnittet.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur lång är den längsta plogfåran i Norra hagen och i vilken riktning går den?",
+      "options": [
+        "70 meter, nordnordost–sydsydväst",
+        "70 meter, ostnordost–västsydväst",
+        "90 meter, nordnordost–sydsydväst",
+        "90 meter, ostnordost–västsydväst"
+      ],
+      "blindAnswer": 0,
+      "explain": "Plogfårorna är de streckade linjerna enligt teckenförklaringen. I Norra hagen lutar de svagt åt höger uppåt, ungefär 20 grader från rakt norrut, och norrpilen pekar rakt uppåt. Riktningen är alltså nordnordost–sydsydväst; ostnordost–västsydväst skulle vara en linje som ligger nästan vågrätt. Den längsta plogfåran börjar strax under texten Norra hagen och går ned mot körvägen. Den är knappt en och en halv gång så lång som skalstrecket för 50 m, alltså ungefär 70 meter. Ingen plogfåra är nära 90 meter, nästan två skalstreck.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Markera en punkt 90 meter rakt väster om den resta stenen i grävningsytan. Vad ligger 290 meter i rak sydlig riktning från denna punkt?",
+      "options": [
+        "Terrasskant",
+        "Stensatt terrasskant",
+        "Jordvall",
+        "Grav"
+      ],
+      "blindAnswer": 3,
+      "explain": "Den resta stenen är den lilla ringen överst i den skuggade grävningsytan. Skalstrecket är 50 m, så 90 meter är knappt två skalstreck. Punkten 90 meter rakt väster om stenen hamnar ovanför texten Norra hagen. 290 meter är knappt sex skalstreck. Går man så långt rakt söderut (nedåt, eftersom norrpilen pekar uppåt) passerar man Norra hagen, körvägen och den moderna åkermarken och hamnar precis innanför den västra kanten av Södra hagen, i den inringade graven (R). Terrasskanterna och jordvallen ligger en bit därifrån, inte rakt söder om punkten.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur stor är omkretsen av den sydligast belägna inhägnad som utgörs av stenmur och staket?",
+      "options": [
+        "60 meter",
+        "150 meter",
+        "220 meter",
+        "1 350 meter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den sydligaste inhägnaden ligger längst ned i Södra hagen. Den har stenmur (pärlbandslinjen) mot sydväst och öster och staket mot nordost och väster. Jämför sidorna med skalstrecket för 50 m: den sydvästra sidan är ungefär 42 m, den östra cirka 25 m, den nordöstra cirka 46 m och den västra cirka 36 m. Omkretsen blir ungefär 42 + 25 + 46 + 36 ≈ 150 meter. 1 350 meter är orimligt mycket, eftersom hela det kartlagda området bara är några hundra meter brett.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "I vilket område ökade medelfångsten såväl från 2003 till 2004 som från 2004 till 2005?",
+      "options": [
+        "Inre Gullmarsfjorden",
+        "Havstensfjorden",
+        "Brofjordenområdet",
+        "Hakefjorden"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd de två nedre diagrammen. Havstensfjorden (streckad linje med ringar, vänster diagram) har ungefär 2 kg per tråltimme 2003, 7 kg 2004 och 125 kg 2005, alltså en ökning båda åren. Inre Gullmarsfjorden (heldragen linje med fyrkanter, vänster diagram) ökar från cirka 22 till 104 men minskar sedan till cirka 75. Brofjordenområdet (streckad linje med ringar, höger diagram) ökar från cirka 24 till 40 men faller sedan till cirka 3. Hakefjorden (trianglar, höger diagram) minskar från cirka 20 till cirka 6,5 redan första året.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor var medelfångsten i Yttre Gullmarsfjorden 2004 jämfört med medelfångsten i Norra Bohuslän samma år?",
+      "options": [
+        "Dubbelt så stor",
+        "Tre gånger så stor",
+        "Sex gånger så stor",
+        "Nio gånger så stor"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd det nedre högra diagrammet. År 2004 ligger Yttre Gullmarsfjorden (fyrkanter) på 20 kg per tråltimme och Norra Bohuslän (stjärnor) på ungefär 3,4 kg per tråltimme. 20/3,4 ≈ 5,9, alltså ungefär sex gånger så stor. Tre gånger så stor skulle kräva att Norra Bohuslän låg nära 7, och nio gånger nära 2.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
