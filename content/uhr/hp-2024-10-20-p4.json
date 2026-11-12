@@ -1,0 +1,785 @@
+{
+  "examId": "hp-2024-10-20",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av de fem talen 1, 2, 5, 7 och x är 7. Vad är x?",
+      "options": [
+        "13",
+        "14",
+        "18",
+        "20"
+      ],
+      "blindAnswer": 3,
+      "explain": "Medelvärdet 7 för fem tal betyder att summan av talen är 5 · 7 = 35. De fyra kända talen har summan 1 + 2 + 5 + 7 = 15. Alltså är x = 35 − 15 = 20. Kontroll: (1 + 2 + 5 + 7 + 20)/5 = 35/5 = 7. Den som delar med 4 i stället för 5, alltså räknar med summan 4 · 7 = 28, får fel svar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Elsa samlar på klistermärken. Hon börjar med 10 klistermärken och utökar sin samling med tre klistermärken varje dag. K är antalet klistermärken som Elsa har, och t är antalet dagar som gått sedan hon började samla. Vilket svarsalternativ anger K som en funktion av t?",
+      "options": [
+        "K(t) = 3t + 10",
+        "K(t) = 3(t + 10)",
+        "K(t) = 10t + 3",
+        "K(t) = 10(t + 3)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Från början har Elsa 10 klistermärken, och varje dag kommer 3 till. Efter t dagar har hon fått 3t nya, så K(t) = 10 + 3t = 3t + 10. Kontroll: t = 0 ger 10 och t = 1 ger 13. K(t) = 10t + 3 byter plats på startvärdet och ökningen; det skulle betyda att hon börjar med 3 och får 10 nya varje dag.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket värde har uttrycket (2/x)/(1/x + x/(x − 1)) om x = 2?",
+      "options": [
+        "−2",
+        "2/5",
+        "1",
+        "5/2"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sätt in x = 2. Täljaren är 2/x = 2/2 = 1. I nämnaren är 1/x = 1/2 och x/(x − 1) = 2/1 = 2, så nämnaren blir 1/2 + 2 = 5/2. Hela uttrycket är 1/(5/2) = 2/5. Svaret 5/2 får den som bara räknar ut nämnaren och glömmer att dela täljaren med den.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.396,
+          0.086,
+          0.489,
+          0.145
+        ]
+      },
+      "note": "Uttrycket är ett bråk i två nivåer; figuren visar det som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar a − b?",
+      "passage": "a + 2b = b",
+      "options": [
+        "0",
+        "−b",
+        "−2b",
+        "−3b"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dra b från båda leden i a + 2b = b: a + b = 0, alltså a = −b. Då är a − b = −b − b = −2b. Kontroll med b = 1: a = −1 ger a + 2b = −1 + 2 = 1 = b, och a − b = −1 − 1 = −2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Ett tåg startar från någon av stationerna P, Q, R eller S. När tåget stannar vid station T har det färdats i 6 timmar med medelhastigheten 90 km/h. Från vilken station startade tåget?",
+      "options": [
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "blindAnswer": 0,
+      "explain": "På 6 timmar med medelhastigheten 90 km/h färdas tåget 6 · 90 = 540 km. Räkna sträckan till T från varje station i figuren: från P 245 + 295 = 540 km, från Q 155 + 295 = 450 km, från R 270 + 260 = 530 km och från S 300 + 260 = 560 km. Bara sträckan från P är 540 km, så tåget startade i P.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.215,
+          0.155,
+          0.72,
+          0.27
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är en punkt som ligger mellan de båda linjerna y = x + 2 och y = x − 2?",
+      "passage": "Koordinatsystemet kan användas för att lösa uppgiften.",
+      "options": [
+        "(3, −3)",
+        "(3, 0)",
+        "(0, −3)",
+        "(3, 3)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Linjerna är parallella (båda har lutningen 1) och skär y-axeln i 2 respektive −2. En punkt (x, y) ligger mellan dem när x − 2 < y < x + 2. För (3, 3) gäller 1 < 3 < 5, så den punkten ligger mellan linjerna. (3, −3) och (3, 0) har y-värden under 3 − 2 = 1, och (0, −3) har y-värdet −3, som är under 0 − 2 = −2. De tre ligger alltså under den nedre linjen.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.24,
+          0.56,
+          0.535,
+          0.785
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "En kvadrat har lika stor area som en cirkel med radien 2 cm. Vilken sidlängd har kvadraten?",
+      "options": [
+        "√(2π) cm",
+        "2√π cm",
+        "π√2 cm",
+        "2π cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Cirkelns area är πr² = π · 2² = 4π cm². Kvadratens sida s uppfyller s² = 4π, så s = √(4π) = √4 · √π = 2√π cm. Svaret √(2π) cm får den som glömmer att kvadrera radien och räknar med arean 2π.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är lika med uttrycket xy + x(b − y) + y(a − x) + (a − x)(b − y)?",
+      "options": [
+        "ab",
+        "xy + ay + bx",
+        "ab + xy",
+        "ab + bx + ay − 2xy"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera ut: x(b − y) = bx − xy, y(a − x) = ay − xy och (a − x)(b − y) = ab − ay − bx + xy. Hela uttrycket blir xy + bx − xy + ay − xy + ab − ay − bx + xy. Termerna med xy, bx och ay tar ut varandra, och kvar blir ab. Geometriskt är det en rektangel med sidorna a och b som delats i fyra mindre rektanglar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med uttrycket 10 · (3 − x)/15 + 5x/3?",
+      "options": [
+        "(10 + 8x)/5",
+        "2 − x",
+        "2 + x",
+        "2 + 8x"
+      ],
+      "blindAnswer": 2,
+      "explain": "Förkorta först: 10 · (3 − x)/15 = 2(3 − x)/3 = (6 − 2x)/3. Lägg till 5x/3: (6 − 2x + 5x)/3 = (6 + 3x)/3 = 2 + x. Kontroll med x = 3: 10 · 0/15 + 15/3 = 5 och 2 + 3 = 5. Svaret (10 + 8x)/5 får den som bara multiplicerar 3:an med 10, alltså räknar med (30 − x)/15.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med (2√3 + 3√3)(4√3 − √3)?",
+      "options": [
+        "15",
+        "15√3",
+        "45",
+        "135"
+      ],
+      "blindAnswer": 2,
+      "explain": "Förenkla parenteserna först, eftersom alla termer innehåller √3: 2√3 + 3√3 = 5√3 och 4√3 − √3 = 3√3. Produkten är 5√3 · 3√3 = 15 · (√3)² = 15 · 3 = 45. Svaret 15√3 lockar om man glömmer att √3 · √3 = 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "options": [
+        "1",
+        "2/√3",
+        "√(3/2)",
+        "√2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den övre triangeln är rätvinklig med två kateter på x cm, så dess hypotenusa, den vågräta sidan, är √(x² + x²) = x√2 cm. Den sidan är också en katet i den undre rätvinkliga triangeln, där den andra kateten är x och hypotenusan √3. Pythagoras sats ger x² + (x√2)² = (√3)², alltså x² + 2x² = 3, 3x² = 3 och x = 1.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.215,
+          0.105,
+          0.405,
+          0.236
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med 20 procent av 10¹⁰?",
+      "options": [
+        "2¹⁰",
+        "2 · 10⁹",
+        "10²",
+        "20⁹"
+      ],
+      "blindAnswer": 1,
+      "explain": "20 procent är 0,2 = 2 · 10⁻¹, så 20 procent av 10¹⁰ är 2 · 10⁻¹ · 10¹⁰ = 2 · 10⁹. Samma sak: en femtedel av 10¹⁰ är 10¹⁰/5 = 2 · 10¹⁰/10 = 2 · 10⁹. 2¹⁰ = 1 024 och 10² = 100 är alldeles för små, och 20⁹ = 2⁹ · 10⁹ = 512 · 10⁹ är 256 gånger för stort.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/2 − 1/3\nKvantitet II: 2/3 − 1/2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv bråken med nämnaren 6. Kvantitet I: 1/2 − 1/3 = 3/6 − 2/6 = 1/6. Kvantitet II: 2/3 − 1/2 = 4/6 − 3/6 = 1/6. Kvantiteterna är lika, trots att talen i dem är olika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Höjden i en triangel med basen 5 cm och arean 20 cm²\nKvantitet II: Höjden i en rektangel med basen 2 cm och arean 17 cm²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En triangels area är basen · höjden/2, så triangelns höjd är 2 · 20/5 = 8 cm. En rektangels area är basen · höjden, så rektangelns höjd är 17/2 = 8,5 cm. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x + 2,8 = 5x − 6\nKvantitet I: x\nKvantitet II: 2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Samla x på ena sidan: 2,8 + 6 = 5x − x, alltså 8,8 = 4x och x = 2,2. Kontroll: 2,2 + 2,8 = 5 och 5 · 2,2 − 6 = 11 − 6 = 5. Eftersom 2,2 är större än 2 är kvantitet I större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 125 % av 4\nKvantitet II: 80 % av 6",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet I: 125 % av 4 = 1,25 · 4 = 5. Kvantitet II: 80 % av 6 = 0,8 · 6 = 4,8. Kvantitet I är större, även om procentsatsen tas av det mindre talet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = x² + 2x − 2\nKvantitet I: f(−2)\nKvantitet II: f(0)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "f(−2) = (−2)² + 2 · (−2) − 2 = 4 − 4 − 2 = −2. f(0) = 0² + 2 · 0 − 2 = −2. Kvantiteterna är lika. Den som räknar (−2)² som −4 får f(−2) = −10 och tror felaktigt att kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "(47^(x/2))^(2/3) = 47^(y/3)\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Enligt potenslagen (aᵐ)ⁿ = aᵐⁿ är vänsterledet (47^(x/2))^(2/3) = 47^(x/2 · 2/3) = 47^(x/3). Ekvationen blir alltså 47^(x/3) = 47^(y/3). Två potenser med samma bas (47) är lika bara när exponenterna är lika, så x/3 = y/3 och x = y. Kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.2,
+          0.495,
+          0.315,
+          0.532
+        ]
+      },
+      "note": "Exponenterna är bråk (x/2, 2/3 och y/3) och skrivs med ^ i texten; figuren visar ekvationen som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Den lilla triangeln upptill har vinklarna x, x och 120°, så 2x = 180° − 120° = 60° och x = 30°. I den stora triangeln är vinklarna vid de övre hörnen x + y och vinkeln nedtill 100°, så 2(x + y) = 180° − 100° = 80° och x + y = 40°. Då är y = 40° − 30° = 10°. Kvantitet I är större.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.215,
+          0.108,
+          0.46,
+          0.195
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a ≠ b\nKvantitet I: (a − b)²/(a − b)\nKvantitet II: (b − a)²/(−(a − b))",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Eftersom a ≠ b är a − b ≠ 0, så man får förkorta. Kvantitet I: (a − b)²/(a − b) = a − b. Eftersom (b − a)² = (a − b)² är kvantitet II (a − b)²/(−(a − b)) = −(a − b) = b − a. Vilken som är störst beror på talen: med a = 2 och b = 1 är I = 1 och II = −1, men med a = 1 och b = 2 är I = −1 och II = 1. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Karin kör bil med en hastighet som ligger mellan 80 km/h och 100 km/h.\nKvantitet I: Den tid det tar för Karin att köra 120 km\nKvantitet II: 85 minuter",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Med 100 km/h tar 120 km 120/100 = 1,2 timmar = 72 minuter, och med 80 km/h tar det 120/80 = 1,5 timmar = 90 minuter. Tiden ligger alltså mellan 72 och 90 minuter, och 85 minuter ligger i det intervallet. Med 90 km/h tar det 80 minuter (mindre än 85), men med 82 km/h tar det cirka 88 minuter (mer än 85). Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Medelvärdet av x och y är lika med 1.\nMedelvärdet av x och 4 är lika med y.\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Det första villkoret ger x + y = 2, alltså y = 2 − x. Det andra ger (x + 4)/2 = y, alltså x + 4 = 2y. Sätt in y = 2 − x: x + 4 = 4 − 2x, så 3x = 0 och x = 0 (och y = 2). Kontroll: (0 + 2)/2 = 1 och (0 + 4)/2 = 2 = y. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Edvin har tre enfärgade kulor – en röd, en svart och en vit – som alla är olika stora. Vilken färg har den största kulan?\n(1) Den vita kulan är mindre än den röda. Den svarta kulan är varken störst eller minst.\n(2) Den svarta kulan är mindre än den röda. Den vita kulan är minst.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Den svarta kulan är mellanstor, så den röda och den vita är den största och den minsta. Eftersom den vita är mindre än den röda är den röda störst. Tillräckligt.\n(2) Den vita kulan är minst, så den största är röd eller svart. Den svarta är mindre än den röda, alltså är den röda störst. Tillräckligt.\nVarje påstående räcker för sig: den största kulan är röd.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Mario köper en halsduk, en jacka och en mössa. Hur mycket kostar Marios jacka?\n(1) Halsduken kostar en tiondel av vad jackan kostar. Mössan kostar 120 kronor, vilket är 150 procent av vad halsduken kostar.\n(2) Halsduken och mössan kostar tillsammans en fjärdedel av vad jackan kostar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Mössan kostar 120 kronor, som är 150 procent av halsduken, så halsduken kostar 120/1,5 = 80 kronor. Halsduken kostar en tiondel av jackan, så jackan kostar 10 · 80 = 800 kronor. Tillräckligt.\n(2) Påståendet ger bara ett förhållande mellan priserna och inget enda pris i kronor. Inte tillräckligt.\nBara (1) räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tina har 2 285 böcker: romaner och faktaböcker. Var och en av böckerna står antingen i en bokhylla eller ligger i en låda i förrådet. Hur många av Tinas romaner står i en bokhylla?\n(1) Tina har 1 121 romaner. 2 253 böcker står i en bokhylla.\n(2) Tina har 1 164 faktaböcker. 32 böcker ligger i en låda i förrådet.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Tina har 1 121 romaner, och 2 285 − 2 253 = 32 böcker ligger i lådor. Men vi vet inte hur många av de 32 böckerna som är romaner. Inte tillräckligt.\n(2) 1 164 faktaböcker betyder 2 285 − 1 164 = 1 121 romaner, och 32 böcker ligger i lådor. Det är precis samma information som i (1). Inte tillräckligt.\n(1) och (2) tillsammans ger alltså inget nytt. Antalet romaner i bokhyllorna kan vara allt från 1 121 − 32 = 1 089 till 1 121. Påståendena räcker inte ens tillsammans.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Agnes cyklar 2 km längre än Eva. Hur långt cyklar Agnes?\n(1) Agnes och Eva cyklar med samma medelhastighet.\n(2) Agnes cyklar i 20 minuter. Eva cyklar 3/5 av tiden som Agnes cyklar.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Att hastigheterna är lika säger inget om hur långt de cyklar. Inte tillräckligt.\n(2) Agnes cyklar i 20 minuter och Eva i 3/5 · 20 = 12 minuter, men utan hastigheterna vet vi inte sträckorna. Inte tillräckligt.\n(1) och (2) tillsammans: Med samma hastighet cyklar Agnes 20 − 12 = 8 minuter längre än Eva, och på de 8 minuterna hinner hon 2 km. På 20 minuter cyklar hon då 20/8 · 2 = 5 km. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x, y och z är tre udda heltal. Talen är olika och skillnaden mellan det största och det minsta talet är 4. Vad är summan av de tre talen?\n(1) x = 19\n(2) z = 21",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Tre olika udda tal där det största minus det minsta är 4 måste vara tre udda tal i följd: n, n + 2 och n + 4.\n(1) x = 19 kan vara det minsta, mittersta eller största talet, så talen kan vara 19, 21 och 23 (summa 63), 17, 19 och 21 (summa 57) eller 15, 17 och 19 (summa 51). Inte tillräckligt.\n(2) z = 21 ger på samma sätt tre möjligheter. Inte tillräckligt.\n(1) och (2) tillsammans: 19 och 21 ingår, men det tredje talet kan vara 17 eller 23, så summan är 57 eller 63. Påståendena räcker inte ens tillsammans.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Lars har tre enfärgade askar: en grön, en rosa och en vit. I en av askarna ligger det en guldring. De andra askarna är tomma. I vilken ask ligger guldringen?\n(1) Ringen ligger antingen i den gröna eller i den rosa asken. Av den rosa och den vita asken är det bara en som är tom.\n(2) Av den gröna och den vita asken är det minst en som är tom. Av den gröna och den rosa asken är det högst en som är tom.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Ringen ligger i den gröna eller den rosa asken, så den vita asken är tom. Av den rosa och den vita är bara en tom, alltså är den rosa inte tom. Ringen ligger i den rosa asken. Tillräckligt.\n(2) Att minst en av den gröna och den vita är tom gäller alltid, eftersom bara en ask innehåller ringen. Att högst en av den gröna och den rosa är tom betyder bara att ringen ligger i någon av dem. Inte tillräckligt.\nBara (1) räcker.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur mycket fick Riksförbundet Hälsofrämjandet i bidrag sammanlagt under den redovisade perioden?",
+      "options": [
+        "3 016 tkr",
+        "3 120 tkr",
+        "3 280 tkr",
+        "3 386 tkr"
+      ],
+      "blindAnswer": 2,
+      "explain": "Raden Riksförbundet Hälsofrämjandet har ett värde för varje år 2005–2015: 225, 300, 300, 350, 350, 350, 350, 335, 300, 220 och 200 tkr. Summan är 225 + 2 · 300 + 4 · 350 + 335 + 300 + 220 + 200 = 225 + 600 + 1 400 + 335 + 300 + 220 + 200 = 3 280 tkr.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av de beviljade bidragen 2015 gick till Friluftsfrämjandet?",
+      "options": [
+        "35 procent",
+        "40 procent",
+        "45 procent",
+        "50 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "I kolumnen 2015 fick Friluftsfrämjandet 8 600 tkr, och raden Summa beviljat är 18 660 tkr. Andelen är 8 600/18 660 ≈ 0,46, alltså ungefär 45 procent. Den som delar med Summa ansökt (23 770 tkr) får cirka 36 procent, men frågan gäller de beviljade bidragen.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "För hur många av de redovisade åren gällde att summan av de beviljade bidragen hade ökat jämfört med närmast föregående år?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs raden Summa beviljat: 11 525 (2005), 15 360, 16 260, 16 590, 16 420, 16 970, 19 355, 19 438, 18 877, 18 777 och 18 660 (2015). Summan ökade jämfört med året innan 2006, 2007, 2008, 2010, 2011 och 2012, och minskade 2009, 2013, 2014 och 2015. Det blir 6 år. 2005 räknas inte, eftersom tabellen inte har något år före det.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Utgå från Flenberget i närheten av Flenarna. Hur många fäbodar fanns inom en radie av 5 km, mätt från mittpunkten av Flenberget?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "12"
+      ],
+      "blindAnswer": 0,
+      "explain": "Fäbodarna är de svarta kvadraterna, och 5 km är en tredjedel av skalstocken 0–15 km. Inom 5 km från mitten av Flenberget ligger N. och S. Flenarna (cirka 1 km bort), fäboden vid den lilla sjön sydväst om berget och den södra fäboden i Lövberg (cirka 1,5 km), den norra fäboden i Lövberg (cirka 2 km), Gottland (cirka 3,7 km), Sollerö-Åsen (cirka 3,9 km) och Råberg (cirka 4,2 km). Det blir 8 fäbodar. De närmaste utanför cirkeln, Borberg, Vadsjön, Björka och Mångberg, ligger alla mer än 5,5 km bort.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Mora, Nusnäs och N. Vika utgör hörnen i ett triangelformat område. Hur stort är detta område?",
+      "options": [
+        "23 km²",
+        "45 km²",
+        "67 km²",
+        "90 km²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Mät med skalstocken mellan byarnas prickar. Sträckan N. Vika–Nusnäs går nästan rakt i öst–västlig riktning och är cirka 9,4 km. Den blir triangelns bas. Mora ligger cirka 4,8 km norr om den sträckan, och det är höjden. Arean är basen · höjden/2 ≈ 9,4 · 4,8/2 ≈ 22,6 km², alltså närmast 23 km². Svaret 45 km² får den som glömmer att dela med 2.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur lång var den kortaste vägen från fäboden i Oratjärn/Berg till fäboden i Björka om man höll sig till ridstigar och buförsvägar?",
+      "options": [
+        "10 km",
+        "13 km",
+        "15 km",
+        "18 km"
+      ],
+      "blindAnswer": 3,
+      "explain": "Ridstigar och buförsvägar är de prickade linjerna. Från Oratjärn/Berg går stigen nordost och sedan österut till Råbergs berg och fäboden Råberg. Därifrån går den nordost till fäboden vid den lilla sjön sydväst om Flenberget, österut söder om Flenberget till S. och N. Flenarna och sedan norrut väster om Åsberget till Björka. Mätt med skalstocken blir det ungefär 18 km. Redan fågelvägen mellan fäbodarna är nästan 16 km, så en väg längs stigarna kan inte vara 10, 13 eller 15 km.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "Ridstigen förbi Råbergs berg är svår att följa på kartan; sträckan längs stigarna mättes till 18–19 km, och fågelvägen är cirka 15,7 km.",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor var konsumtionen av läskedrycker och mineralvatten 2010 jämfört med 1965?",
+      "options": [
+        "Dubbelt så stor",
+        "Tre gånger så stor",
+        "Fyra gånger så stor",
+        "Fem gånger så stor"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läskedrycker och mineralvatten är den heldragna linjen i det mellersta diagrammet. Den ligger på cirka 33 liter per person 1965 och cirka 100 liter 2010. 100/33 ≈ 3, så konsumtionen var ungefär tre gånger så stor.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket år konsumerades ungefär lika mycket starköl som vin medan konsumtionen av spritdrycker var hälften så stor som vinkonsumtionen?",
+      "options": [
+        "1968",
+        "1972",
+        "1978",
+        "1985"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd det nedersta diagrammet. 1985 ligger starköl (streckad linje) på cirka 12,5 liter och vin (prickad linje) på cirka 12 liter, alltså ungefär lika mycket, och spritdrycker (heldragen linje) på cirka 5,5 liter, ungefär hälften av vinet. 1978 är starköl och vin också ungefär lika (cirka 9 liter), men spriten ligger då på cirka 7,5 liter. 1968 är spriten större än vinet, och 1972 är starkölet (cirka 3 liter) långt under vinet (cirka 7,5 liter).",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "För vilken av mjölkdryckerna förändrades konsumtionen med 80 procent om man jämför det sista registrerade året med det första?",
+      "options": [
+        "Gårdsförsäljning av mjölk",
+        "Lättmjölk samt minimjölk",
+        "Mellanmjölk",
+        "Standardmjölk"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför första och sista året för varje linje i det översta diagrammet. Standardmjölk (tjock heldragen linje) minskade från cirka 116 liter 1960 till cirka 22 liter 2016, alltså med (116 − 22)/116 ≈ 0,81, ungefär 80 procent. Gårdsförsäljningen minskade från cirka 35 liter till nästan 0 (nästan 100 procent), lättmjölken ökade från cirka 5 till cirka 15 liter (cirka 200 procent) och mellanmjölken ökade från cirka 4 liter 1983 till cirka 40 liter 2016.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Studera Kalmar län med avseende på samtliga nyregistrerade bilars genomsnittliga koldioxidutsläpp. Hur mycket större var utsläppet i den kommun där det var som störst jämfört med den kommun där det var som minst?",
+      "options": [
+        "12 g/km",
+        "15 g/km",
+        "22 g/km",
+        "41 g/km"
+      ],
+      "blindAnswer": 2,
+      "explain": "Samtliga nyregistrerade bilar visas med de mörka staplarna, och ändarna på den svarta linjen anger kommunen med störst och minst utsläpp. På Kalmar läns mörka stapel går linjen från cirka 136 g/km till cirka 158 g/km. Skillnaden är 158 − 136 = 22 g/km. Linjen på den ljusa stapeln (bensin- och dieselbilar) går från cirka 165 till 177 g/km och ger 12 g/km, men den gäller inte samtliga bilar.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Vilket av nedanstående län uppfyller följande kriterier?",
+      "passage": "Skillnaden mellan det genomsnittliga koldioxidutsläppet från samtliga nyregistrerade bilar och det genomsnittliga koldioxidutsläppet från nyregistrerade bensin- och dieselbilar var mindre än 20 g/km. I den kommun i länet som hade det högsta genomsnittliga utsläppsvärdet per nyregistrerad bensin- och dieselbil låg värdet över 175 g/km.",
+      "options": [
+        "Uppsala län",
+        "Östergötlands län",
+        "Södermanlands län",
+        "Hallands län"
+      ],
+      "blindAnswer": 3,
+      "explain": "Det första kriteriet jämför den ljusa stapeln (bensin- och dieselbilar) med den mörka (samtliga bilar). Det andra gäller den övre änden av den svarta linjen på den ljusa stapeln. Hallands län har cirka 168 respektive 151 g/km, en skillnad på cirka 17 g/km, och linjen når cirka 178 g/km, så båda kriterierna gäller. Uppsala län (cirka 171 och 153 g/km) och Södermanlands län (cirka 170 och 151 g/km) har också en skillnad under 20 g/km, men deras högsta kommun ligger på cirka 173 g/km. Östergötlands län har en skillnad på cirka 23 g/km (171 och 148 g/km).",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Anta att samtliga nyregistrerade bilar kör en kilometer. Hur stort blir det totala koldioxidutsläppet?",
+      "options": [
+        "31 ton",
+        "38 ton",
+        "43 ton",
+        "81 ton"
+      ],
+      "blindAnswer": 1,
+      "explain": "Antalet nyregistrerade bilar är 250 620 (ovanför cirkeldiagrammet). Den mörka stapeln för riket visar att samtliga nyregistrerade bilar släppte ut i genomsnitt cirka 150 g koldioxid per kilometer. Totalt blir det 250 620 · 150 g ≈ 37 600 000 g ≈ 37,6 ton, alltså cirka 38 ton. Med den ljusa stapeln (cirka 173 g/km), som bara gäller bensin- och dieselbilar, skulle man få cirka 43 ton.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
