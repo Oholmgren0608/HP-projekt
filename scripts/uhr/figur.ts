@@ -60,31 +60,40 @@ async function rotated(buf: Buffer, rotate: number | undefined): Promise<Buffer>
 
 /**
  * DTK-sidans innehåll: under sidhuvudet ("DTK – Diagram, tabeller och kartor"
- * eller "DTK"), ovanför sidnumret, innanför skärmärkena. Sidhuvudet är ordet
- * "DTK" och sidhuvudsorden på samma höjd (även lodrätt på liggande sidor), så
- * att en rubrik som "Bilar och bussar" nära överkanten inte tas för
- * sidhuvudet. Sidnumret är streck och siffror mitt på sidan, så att fotnoter
- * (med sin upphöjda siffra i marginalen) blir kvar.
+ * eller "DTK"), ovanför sidnumret ("– 16 –"), innanför skärmärkena.
+ * Sidhuvudet är ordet "DTK" och de vågräta orden på samma rad, och sidnumret
+ * är ett tal mellan två streck mitt på sidan. Ord ur rubriker, tabeller och
+ * fotnoter nära kanterna (även lodräta på liggande sidor) tas alltså inte för
+ * sidhuvud eller sidnummer.
  */
 function dtkBox(page: PageBox): Box {
-  const HEADER = /^(DTK|–|Diagram,?|tabeller|och|kartor)$/;
+  type Word = PageBox["words"][number];
+  const horizontal = (w: Word) => w.x1 - w.x0 >= w.y1 - w.y0;
+  const sameLine = (a: Word, b: Word) => Math.abs(a.y0 - b.y0) < 3 && Math.abs(a.y1 - b.y1) < 3;
   // Sidhuvudet ligger 2,5–5 % ned (olika år); skärmärkena överst är grafik, inte ord.
   const band = page.words.filter((w) => w.y1 < page.height * 0.1 && w.y0 > page.height * 0.01);
   const marks = band.filter((w) => w.text === "DTK");
-  const head = band.filter(
-    (w) => HEADER.test(w.text) && marks.some((m) => w.y0 < m.y1 + 2 && w.y1 > m.y0 - 2),
-  );
+  const head = band.filter((w) => marks.includes(w) || (horizontal(w) && marks.some((m) => horizontal(m) && sameLine(w, m))));
+  const dashes = page.words.filter((w) => w.text === "–" || w.text === "-");
   const foot = page.words.filter(
     (w) =>
       w.y0 > page.height * 0.9 &&
       w.y1 < page.height * 0.985 &&
       w.x0 > page.width * 0.35 &&
       w.x1 < page.width * 0.65 &&
-      /^[–-]?\d{0,3}[–-]?$/.test(w.text),
+      (/^[–-]\d{1,2}[–-]$/.test(w.text) ||
+        (/^\d{1,2}$/.test(w.text) &&
+          dashes.some((d) => sameLine(d, w) && d.x1 <= w.x0 + 1 && w.x0 - d.x1 < 15) &&
+          dashes.some((d) => sameLine(d, w) && d.x0 >= w.x1 - 1 && d.x0 - w.x1 < 15))),
   );
   const top = head.length > 0 ? Math.max(...head.map((w) => w.y1)) + 1 : page.height * 0.04;
   const bottom = foot.length > 0 ? Math.min(...foot.map((w) => w.y0)) - 4 : page.height * 0.95;
-  return [0.05, top / page.height, 0.95, bottom / page.height];
+  // Sidled: 5–95 % av bredden, men vidare om text står närmare kanten (rader på
+  // liggande sidor, axeltitlar).
+  const inside = page.words.filter((w) => w.y0 >= top && w.y1 <= bottom);
+  const left = Math.min(0.05, (Math.min(...inside.map((w) => w.x0)) - 6) / page.width);
+  const right = Math.max(0.95, (Math.max(...inside.map((w) => w.x1)) + 6) / page.width);
+  return [Math.max(0.01, left), top / page.height, Math.min(0.99, right), bottom / page.height];
 }
 
 async function cropBox(file: string, box: Box, trim = true): Promise<Buffer> {
