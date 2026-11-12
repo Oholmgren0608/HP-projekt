@@ -1,0 +1,760 @@
+{
+  "examId": "hp-2022-10-23",
+  "passNumber": 1,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket (4 − 3)(x + 2y)?",
+      "options": [
+        "1 + x + 2y",
+        "4 − 3x + 2y",
+        "x + 2y",
+        "4x − 6y"
+      ],
+      "blindAnswer": 2,
+      "explain": "Räkna först ut den första parentesen: 4 − 3 = 1. Uttrycket blir då 1 · (x + 2y) = x + 2y. Alternativet 1 + x + 2y lockar om man adderar ettan i stället för att multiplicera den med parentesen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är 3³ − 2³?",
+      "options": [
+        "1",
+        "3",
+        "6",
+        "19"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna ut potenserna först: 3³ = 3 · 3 · 3 = 27 och 2³ = 2 · 2 · 2 = 8. Skillnaden är 27 − 8 = 19. Alternativet 1 får man om man först räknar 3 − 2 = 1 och sedan upphöjer till 3, men det är inte samma sak som att subtrahera potenserna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket värde har x?",
+      "passage": "0,4x + 0,2 = 0,6x + 1,8",
+      "options": [
+        "−10",
+        "−8",
+        "1,6",
+        "2"
+      ],
+      "blindAnswer": 1,
+      "explain": "Samla x-termerna på ena sidan och talen på den andra: 0,2 − 1,8 = 0,6x − 0,4x, alltså −1,6 = 0,2x. Dela med 0,2: x = −1,6/0,2 = −8. Kontroll: 0,4 · (−8) + 0,2 = −3 och 0,6 · (−8) + 1,8 = −3, så båda leden är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar linjen y = 3x − 2?",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 2,
+      "explain": "Linjen y = 3x − 2 skär y-axeln i y = −2 och har lutningen 3, alltså stiger den 3 steg för varje steg åt höger. Den går därför genom (0, −2) och (1, 1). Graf C skär y-axeln i −2 och går genom (1, 1). Graf A skär också y-axeln i −2 men stiger bara 1 steg på 3 steg åt höger, så dess lutning är 1/3. Graf B och graf D lutar nedåt och skär y-axeln i 3.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.205,
+          0.399,
+          0.47,
+          0.91
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "I burk A finns det 50 enfärgade kulor: 10 svarta och 40 vita. I burk B finns det 90 kulor. Sannolikheten är 2/3 att en slumpmässigt plockad kula ur burk B är svart. Kulorna i burk A och burk B hälls över i en tom påse. Vad är sannolikheten att en slumpmässigt plockad kula ur påsen är svart?",
+      "options": [
+        "2/7",
+        "1/2",
+        "7/10",
+        "5/7"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna med antal kulor i stället för sannolikheter. I burk B är 2/3 av de 90 kulorna svarta, alltså 60 kulor. I påsen finns då 10 + 60 = 70 svarta kulor av totalt 50 + 90 = 140 kulor. Sannolikheten blir 70/140 = 1/2. Man kan inte ta medelvärdet av sannolikheterna 1/5 och 2/3, eftersom burkarna innehåller olika många kulor.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är lika med f(2)?",
+      "passage": "f(x) = 5(x³ + x) − 10(x² + 1)",
+      "options": [
+        "0",
+        "3",
+        "20",
+        "100"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in x = 2: f(2) = 5(2³ + 2) − 10(2² + 1) = 5(8 + 2) − 10(4 + 1) = 5 · 10 − 10 · 5 = 50 − 50 = 0. Det syns också om man bryter ut: 5(x³ + x) = 5x(x² + 1), så f(x) = (5x − 10)(x² + 1), och den första faktorn är 0 när x = 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Triangeln ABE är likformig med triangeln CDE. Hur lång är AE?",
+      "options": [
+        "56 cm",
+        "60 cm",
+        "64 cm",
+        "68 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkelmarkeringarna visar att vinkeln A motsvarar vinkeln C och att vinkeln B motsvarar vinkeln D. Sidan AB (50 cm) i den stora triangeln motsvarar då DC (30 cm) i den lilla, och AE motsvarar CE (36 cm). Längdskalan är 50/30 = 5/3, så AE = 36 · 5/3 = 60 cm.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.215,
+          0.132,
+          0.645,
+          0.315
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Albert står i en kö. Antalet personer som står före honom i kön är tre gånger så stort som antalet personer som står efter honom i kön. Vilket svarsalternativ kan vara det totala antalet personer i kön?",
+      "options": [
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "blindAnswer": 3,
+      "explain": "Om n personer står efter Albert står 3n personer före honom. Med Albert själv blir det totala antalet 3n + n + 1 = 4n + 1, alltså ett tal som ger resten 1 vid division med 4. Av alternativen gäller det bara 29 = 4 · 7 + 1: 21 personer före, Albert och 7 personer efter. 28 lockar om man glömmer att räkna med Albert själv.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket (x + 7)² − (x − 7)²?",
+      "options": [
+        "28x",
+        "49x",
+        "x²",
+        "x² − 7x + 49"
+      ],
+      "blindAnswer": 0,
+      "explain": "Utveckla kvadraterna: (x + 7)² = x² + 14x + 49 och (x − 7)² = x² − 14x + 49. Skillnaden blir x² + 14x + 49 − x² + 14x − 49 = 28x. Konjugatregeln ger samma sak: med a = x + 7 och b = x − 7 är a² − b² = (a + b)(a − b) = 2x · 14 = 28x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Två cirklar är placerade i en rektangel så att cirklarna tangerar varandra. Var och en av cirklarna tangerar dessutom tre av rektangelns sidor, enligt figuren. Cirklarnas sammanlagda area är 18π cm². Hur stor area har rektangeln?",
+      "options": [
+        "72 cm²",
+        "108 cm²",
+        "144 cm²",
+        "162 cm²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Varje cirkel har arean 18π/2 = 9π cm², så πr² = 9π och radien är r = 3 cm. Rektangelns höjd är en diameter, 2r = 6 cm, och bredden är två diametrar, 4r = 12 cm. Arean är 6 · 12 = 72 cm².",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.24,
+          0.566,
+          0.434,
+          0.648
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är x³?",
+      "passage": "1/x = −2/3",
+      "options": [
+        "−27/8",
+        "−8/27",
+        "8/27",
+        "27/8"
+      ],
+      "blindAnswer": 0,
+      "explain": "Om 1/x = −2/3 är x det inverterade talet, x = −3/2. Då är x³ = (−3/2)³ = −27/8; resultatet är negativt eftersom exponenten är udda. Alternativet −8/27 får man om man upphöjer −2/3 i stället för x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "I vilket intervall ligger x?",
+      "passage": "x = π/√2",
+      "options": [
+        "x < 1",
+        "1 ≤ x < 1,5",
+        "1,5 ≤ x < 2",
+        "x ≥ 2"
+      ],
+      "blindAnswer": 3,
+      "explain": "π ≈ 3,14 och √2 ≈ 1,41, så x ≈ 3,14/1,41 ≈ 2,2. Kontroll utan närmevärden: x ≥ 2 är samma sak som π ≥ 2√2 = √8, och √8 är mindre än 3, medan π är större än 3. Alltså gäller x ≥ 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "8/10 = x/16\nKvantitet I: x\nKvantitet II: 10",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera båda leden med 16: x = 16 · 8/10 = 128/10 = 12,8. Eftersom 12,8 är större än 10 är kvantitet I större. Utan uträkning: 8/10 är mer än hälften, så x är mer än hälften av 16, och redan 10/16 är bara 0,625, mindre än 0,8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Almas ålder är hälften av Ellas och Lenas sammanlagda ålder.\nKvantitet I: Almas ålder\nKvantitet II: Ellas ålder",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Almas ålder är medelvärdet av Ellas och Lenas åldrar. Om Ella är 12 år och Lena 8 år är Alma (12 + 8)/2 = 10 år, yngre än Ella. Om Ella är 8 år och Lena 12 år är Alma också 10 år, men nu äldre än Ella. Är Ella och Lena lika gamla är Alma lika gammal som de. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 30 procent av 40\nKvantitet II: 40 procent av 30",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: 0,30 · 40 = 12. Kvantitet II: 0,40 · 30 = 12. Kvantiteterna är lika. Det gäller alltid när procentsatsen och talet byter plats, eftersom a procent av b = a · b/100 = b procent av a.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Medelvärdet av mätserien 1, 3, 7\nKvantitet II: Medelvärdet av mätserien 1, 1, 3, 7, 7",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvantitet I: (1 + 3 + 7)/3 = 11/3 ≈ 3,67. Kvantitet II: (1 + 1 + 3 + 7 + 7)/5 = 19/5 = 3,8. Kvantitet II är större. Man kan också se det utan att räkna ut allt: mätserie II är mätserie I med talen 1 och 7 tillagda, och de har medelvärdet 4, som är större än 11/3. Därför drar de upp medelvärdet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjerna L₁ och L₂ är parallella.\nKvantitet I: x + y + z\nKvantitet II: 180°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "De två sneda linjerna skär varandra mellan L₁ och L₂ och bildar tillsammans med L₂ en triangel. Vinkeln z är triangelns vinkel i skärningspunkten. Vinkeln y är vertikalvinkel till triangelns vinkel där den andra linjen skär L₂. Vinkeln x, mellan L₁ och den linje som lutar nedåt åt höger, är lika stor som triangelns vinkel där samma linje skär L₂, eftersom L₁ och L₂ är parallella (likbelägna vinklar). x, y och z är alltså lika stora som triangelns tre vinklar, och x + y + z = 180°.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.215,
+          0.135,
+          0.655,
+          0.315
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x ≠ 0\nx² = −5x\nKvantitet I: x\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv ekvationen som x² + 5x = 0, alltså x(x + 5) = 0. Den har lösningarna x = 0 och x = −5, men x ≠ 0, så x = −5. Kvantitet I är alltså −5, som är mindre än 0. Kvantitet II är större. Kontroll: (−5)² = 25 och −5 · (−5) = 25.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Arean av en rektangel är 50 cm². Rektangelns bredd är 5 cm.\nKvantitet I: Längden av rektangelns diagonal\nKvantitet II: 11 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Rektangelns längd är 50/5 = 10 cm. Diagonalen är hypotenusa i en rätvinklig triangel med kateterna 5 cm och 10 cm, så enligt Pythagoras sats är den √(5² + 10²) = √125 cm. Eftersom 11² = 121 och 125 är större än 121 är diagonalen längre än 11 cm (ungefär 11,2 cm). Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 3²/7²\nKvantitet II: 7⁻²/3⁻²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I: 3²/7² = 9/49. En negativ exponent ger det inverterade värdet: 7⁻² = 1/49 och 3⁻² = 1/9. Kvantitet II blir då (1/49)/(1/9) = 9/49. Kvantiteterna är lika; att byta tecken på exponenterna är samma sak som att byta plats på täljare och nämnare.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Linjen L går genom punkten (−10, −1) och har positiv lutning.\nKvantitet I: y-koordinaten för den punkt där L skär y-axeln\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Från x = −10 till x = 0 är det 10 steg åt höger, så om lutningen är k skär L y-axeln i y = −1 + 10k. Med k = 0,05 blir skärningen −0,5, mindre än 0. Med k = 1 blir den 9, större än 0. Med k = 0,1 blir den precis 0. Informationen räcker inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "y ≠ 0\n2x/(3y) = 7\nKvantitet I: y\nKvantitet II: (2/21)x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplicera båda leden med 3y, vilket går eftersom y ≠ 0: 2x = 21y. Dela med 21: y = 2x/21 = (2/21)x. Kvantiteterna är alltså lika för alla x och y som uppfyller villkoren. Kontroll: x = 21 ger y = 2, och (2/21) · 21 = 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Julia och August har plockat varsin bukett blommor. Buketterna innehåller endast prästkragar och blåklockor. Hur många blåklockor har August i sin bukett?\n(1) I Julias bukett finns det 10 prästkragar och 14 blåklockor. August har plockat en blomma mer än Julia.\n(2) 3/5 av blommorna i Augusts bukett är blåklockor.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Julia har 10 + 14 = 24 blommor, så August har 25. Men vi vet inte hur många av dem som är blåklockor. Inte tillräckligt.\n(2) Vi vet hur stor andel som är blåklockor men inte hur många blommor August har. Inte tillräckligt.\n(1) och (2) tillsammans: August har 25 blommor, och 3/5 av dem är blåklockor: 25 · 3/5 = 15 blåklockor. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en ask finns det endast enfärgade kulor: svarta och röda. Hur många fler svarta än röda kulor finns det i asken?\n(1) Sammanlagt finns det 30 kulor i asken.\n(2) Det finns 18 svarta kulor i asken. Antalet röda kulor är 2/3 av antalet svarta kulor.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Vi vet bara att det finns 30 kulor, inte hur de fördelar sig på de två färgerna. Inte tillräckligt.\n(2) Det finns 18 svarta och 18 · 2/3 = 12 röda kulor, alltså 18 − 12 = 6 fler svarta än röda. Tillräckligt.\nPåstående (1) behövs inte; det stämmer med (2), eftersom 18 + 12 = 30, men tillför inget.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Familjerna Andersson, Berg, Cedergren och Dahlman bor i varsin lägenhet i ett trevåningshus. En av familjerna bor på första våningen, två på andra våningen och en på tredje våningen. Vilken familj bor på tredje våningen?\n(1) Familjen Cedergren bor nedanför familjen Andersson.\n(2) Familjen Berg bor nedanför familjen Dahlman.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Cedergren kan inte bo högst upp, men på tredje våningen kan Andersson, Berg eller Dahlman bo. Inte tillräckligt.\n(2) Berg kan inte bo högst upp, men flera familjer är fortfarande möjliga. Inte tillräckligt.\n(1) och (2) tillsammans: Varken Cedergren eller Berg bor på tredje våningen, så där bor Andersson eller Dahlman. Båda går: Berg på första, Cedergren och Dahlman på andra och Andersson på tredje våningen uppfyller villkoren, men det gör också Cedergren på första, Andersson och Berg på andra och Dahlman på tredje våningen. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Frida och Jan ska gifta sig. Till festmiddagen ska alla 100 gäster ha varsin vikt servett. Frida och Jan viker själva alla servetter. De arbetar utan avbrott, var och en med sin egen konstanta hastighet. De viker lika många servetter var och blir färdiga samtidigt. Vilken tid börjar Frida vika servetter?\n(1) Klockan 10.25 börjar Jan vika servetter. Det tar honom 40 minuter att vika alla sina 50 servetter.\n(2) När Jan börjar vika servetter har Frida precis vikt färdigt 10 servetter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Var och en viker 100/2 = 50 servetter.\n(1) Jan är klar klockan 10.25 + 40 minuter = 11.05, och då är också Frida klar. Men vi vet inte hur snabbt Frida viker, så vi vet inte när hon började. Inte tillräckligt.\n(2) Frida har 10 servetter försprång, men vi vet inga tider. Inte tillräckligt.\n(1) och (2) tillsammans: Mellan 10.25 och 11.05 viker Frida sina återstående 40 servetter på 40 minuter, alltså 1 servett per minut. De första 10 servetterna tog då 10 minuter, så hon började klockan 10.15. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är x ett heltal?\n(1) y = 2x\n(2) y är ett heltal.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Sambandet y = 2x säger inget om vilket tal x är. Inte tillräckligt.\n(2) Påståendet handlar bara om y. Inte tillräckligt.\n(1) och (2) tillsammans: x = y/2 där y är ett heltal. Med y = 4 är x = 2, ett heltal, men med y = 3 är x = 1,5, som inte är ett heltal. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "De fem bokstäverna A, B, C, D och E är skrivna på rad på ett papper. I vilken ordning från vänster till höger är bokstäverna skrivna?\n(1) D står längst till vänster. B står intill både C och E. A står längst till höger.\n(2) Varken D eller E står längst till höger. C står intill både A och B. B står intill både C och E.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) D står först och A sist. B ska stå intill både C och E och måste därför stå i mitten, med C och E på var sin sida. Både DCBEA och DEBCA är möjliga. Inte tillräckligt.\n(2) C står mellan A och B, och B står mellan C och E. Då står A, C, B och E i följd, som ACBE eller EBCA, och D står först eller sist. Av de fyra möjligheterna DACBE, ACBED, DEBCA och EBCAD är det bara DEBCA som varken har D eller E längst till höger. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av försäljningsvärdet av livsmedel och drycker 2007 utgjordes av Vin inklusive cider?",
+      "options": [
+        "4 procent",
+        "7 procent",
+        "10 procent",
+        "14 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd tabellen. År 2007 var försäljningsvärdet för Vin inklusive cider 1 512 kronor per capita och för Livsmedel och drycker totalt 21 221 kronor per capita. Andelen är 1 512/21 221 ≈ 0,071, alltså cirka 7 procent. Cirkeldiagrammet visar bara alkoholhaltiga drycker som helhet (15 %), och den andelen omfattar även spritdrycker och öl.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilket år var skillnaden i försäljningsvärde mellan varugrupperna Alkoholfria drycker och Alkoholhaltiga drycker som störst respektive som minst, räknat i kronor per capita?",
+      "options": [
+        "2000 respektive 2005",
+        "2000 respektive 2006",
+        "2003 respektive 2005",
+        "2003 respektive 2006"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna ut skillnaden mellan raderna Alkoholhaltiga drycker och Alkoholfria drycker i tabellen för varje år: 2000: 2 782 − 1 429 = 1 353, 2003: 3 095 − 1 593 = 1 502, 2004: 2 844 − 1 539 = 1 305, 2005: 2 873 − 1 598 = 1 275, 2006: 2 953 − 1 711 = 1 242 och 2007: 3 082 − 1 803 = 1 279 kronor per capita. Skillnaden var störst 2003 och minst 2006.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger varugrupper som tillsammans utgjorde närmare hälften av försäljningsvärdet av livsmedel och drycker 2007?",
+      "options": [
+        "Bröd och spannmål – kött – mjölk, ost och ägg",
+        "Bröd och spannmål – mjölk, ost och ägg – frukt – grönsaker",
+        "Kött – fisk – oljor och fetter – frukt – grönsaker",
+        "Kött – frukt – grönsaker – sötsaker – läsk, juice etc."
+      ],
+      "blindAnswer": 3,
+      "explain": "Summera procentsatserna i cirkeldiagrammet för 2007. Bröd och spannmål, kött samt mjölk, ost och ägg: 13 + 15 + 13 = 41 %. Bröd och spannmål, mjölk, ost och ägg, frukt och grönsaker: 13 + 13 + 6 + 9 = 41 %. Kött, fisk, oljor och fetter, frukt och grönsaker: 15 + 5 + 2 + 6 + 9 = 37 %. Kött, frukt, grönsaker, sötsaker och läsk, juice etc.: 15 + 6 + 9 + 9 + 6 = 45 %. Den sista kombinationen ligger närmast hälften.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur stort var försäljningsvärdet per capita och månad 2004 för varugruppen Bröd och övriga spannmålsprodukter?",
+      "options": [
+        "180 kronor",
+        "203 kronor",
+        "224 kronor",
+        "243 kronor"
+      ],
+      "blindAnswer": 1,
+      "explain": "Tabellen anger försäljningsvärdet per capita för ett helt år. För Bröd och övriga spannmålsprodukter 2004 står det 2 439 kronor. Per månad blir det 2 439/12 ≈ 203 kronor. Alternativet 243 kronor lockar om man delar med 10 i stället för med 12.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stor var den totala mängden partiklar i 20 m³ luft i en svensk medeltätort 2007?",
+      "options": [
+        "30 µg",
+        "150 µg",
+        "300 µg",
+        "400 µg"
+      ],
+      "blindAnswer": 2,
+      "explain": "I diagrammet Partiklar når stapeln för 2007 nästan upp till linjen för 15, alltså cirka 15 µg/m³. I 20 m³ luft finns då ungefär 20 · 15 = 300 µg partiklar. Svaret 400 µg får man om man räknar med 20 µg/m³ i stället för 15.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur mycket högre än miljömålet var bensenhalten i luft det år då halten var som högst?",
+      "options": [
+        "120 procent högre",
+        "240 procent högre",
+        "330 procent högre",
+        "410 procent högre"
+      ],
+      "blindAnswer": 2,
+      "explain": "I diagrammet Bensen var halten högst 1993, cirka 4,3 µg/m³. Miljömålet är den grå linjen vid 1 µg/m³. Halten var alltså 4,3 − 1 = 3,3 µg/m³ högre än miljömålet, och 3,3/1 = 3,3, det vill säga 330 procent högre. Halten var 430 procent av miljömålet, men frågan gäller hur mycket högre den var.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur långt var det mellan det ostligast belägna stångjärnshammarbruket och det västligast belägna pappersbruket?",
+      "options": [
+        "110 km",
+        "135 km",
+        "200 km",
+        "215 km"
+      ],
+      "blindAnswer": 2,
+      "explain": "Stångjärnshammarbruk är ringar och pappersbruk romber. Den ostligaste ringen ligger vid kusten strax söder om Västervik, och den västligaste romben är Skeen i kartans sydvästra del. Mät avståndet mellan dem och jämför med skalstrecket för 50 km: avståndet är knappt fyra skalstreck, cirka 200 km. Ed norr om Västervik ligger inte lika långt österut; mäter man därifrån blir avståndet ungefär 215 km.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Lokalisera den punkt som ligger mitt emellan Jönköping och Vimmerby. Vilken typ av bruk låg 90 km söder om denna punkt?",
+      "options": [
+        "Masugnsbruk",
+        "Stångjärnshammarbruk",
+        "Glasbruk",
+        "Pappersbruk"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jönköping och Vimmerby ligger nästan på samma höjd på kartan, och punkten mitt emellan dem hamnar strax nordost om Eksjö. Skalstrecket visar 50 km, så 90 km är knappt två skalstreck. Går man så långt rakt söderut (nedåt på kartan) kommer man till Kårestad nordost om Växjö, som är markerat med en romb, alltså ett pappersbruk. Masugnsbruket och stångjärnshammarbruket vid Åryd ligger några kilometer längre söderut.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilken av följande orter hade det längsta avståndet till närmaste glasbruk?",
+      "options": [
+        "Jönköping",
+        "Eksjö",
+        "Vimmerby",
+        "Västervik"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kartan har tre glasbruk (halvcirklar), alla i söder: Trestenshult, Midingsbråte och Germundslycke (Bökenberg). Mätt med skalstrecket är Trestenshult närmast både Jönköping (cirka 145 km) och Eksjö (cirka 130 km). För Vimmerby och Västervik är Germundslycke närmast, cirka 125 respektive 140 km. Jönköping hade alltså längst till närmaste glasbruk.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Avstånden ligger nära varandra: uppmätt ca 145 km för Jönköping och ca 138 km för Västervik till närmaste glasbruk.",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur stor var skillnaden 2002 mellan yrkesgruppen med störst respektive minst antal ersatta sjukskrivningsdagar per anställd man?",
+      "options": [
+        "13 dagar",
+        "15 dagar",
+        "17 dagar",
+        "19 dagar"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av det nedre diagrammet (män) vid 2002. Högst ligger Arbete utan krav på särskild yrkesutbildning (den tjocka mörkgrå linjen) med cirka 19 dagar, och lägst ligger Militärt arbete (den grå streckade linjen längst ned) med knappt 4 dagar, cirka 3,6. Skillnaden är 19 − 3,6 ≈ 15 dagar. Svaret 19 dagar lockar om man bara läser av den högsta linjen.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Studera antalet ersatta sjukskrivningsdagar per anställd kvinna respektive man i yrkesgruppen Service-, omsorgs- och försäljningsarbete 2007. Hur många var sjukskrivningsdagarna per anställd kvinna jämfört med per anställd man?",
+      "options": [
+        "Dubbelt så många",
+        "Tre gånger så många",
+        "Hälften så många",
+        "En tredjedel så många"
+      ],
+      "blindAnswer": 0,
+      "explain": "Service-, omsorgs- och försäljningsarbete är den prickade linjen. År 2007 ligger den i det övre diagrammet (kvinnor) på cirka 15 dagar och i det nedre diagrammet (män) på cirka 7 dagar. 15/7 ≈ 2,1, så kvinnorna hade ungefär dubbelt så många sjukskrivningsdagar per anställd som männen.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Identifiera det år då de ersatta sjukskrivningsdagarna per anställd kvinna i yrkesgruppen Hantverksarbete inom byggverksamhet och tillverkning förändrades som mest i antal jämfört med året innan. Hur stor var denna förändring procentuellt sett?",
+      "options": [
+        "15 procent",
+        "20 procent",
+        "25 procent",
+        "30 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Hantverksarbete inom byggverksamhet och tillverkning är den svarta streckprickade linjen i det övre diagrammet (kvinnor). Den största förändringen jämfört med året innan kom 2005: linjen sjunker från cirka 21 dagar 2004 till cirka 16 dagar 2005, alltså med ungefär 5 dagar. Övriga år ändras värdet med högst cirka 2,5 dagar. Procentuellt är minskningen 5/21 ≈ 0,24, ungefär 25 procent. Räknar man förändringen i förhållande till 2005 års värde (5/16 ≈ 31 procent) får man fel jämförelsebas.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
