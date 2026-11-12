@@ -1,0 +1,851 @@
+{
+  "examId": "hp-2013-10-26",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är 2/3 av 3/4?",
+      "options": [
+        "1/2",
+        "3/7",
+        "5/7",
+        "5/12"
+      ],
+      "blindAnswer": 0,
+      "explain": "2/3 av ett tal är talet multiplicerat med 2/3. Alltså 2/3 · 3/4 = (2 · 3)/(3 · 4) = 6/12 = 1/2. Man kan också förkorta bort trean direkt: 2/4 = 1/2. Alternativet 5/7 får man om man i stället adderar täljarna och nämnarna, (2 + 3)/(3 + 4).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är x om b/(a + x) = b/(2x)?",
+      "passage": "a ≠ 0\nb ≠ 0",
+      "options": [
+        "ab/2",
+        "ab",
+        "a/3",
+        "a"
+      ],
+      "blindAnswer": 3,
+      "explain": "Båda bråken har samma täljare b, och b ≠ 0. Multiplicera korsvis: b · 2x = b(a + x). Dela med b: 2x = a + x, alltså x = a. Kontroll: b/(a + a) = b/(2a), vilket stämmer. Två bråk med samma täljare (skild från 0) är lika bara om nämnarna är lika, så b påverkar inte svaret; alternativen med b i är fel.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är korrekt?",
+      "options": [
+        "En positiv täljare och en negativ nämnare ger en negativ kvot.",
+        "En negativ täljare och en positiv nämnare ger en positiv kvot.",
+        "Produkten av ett negativt och ett positivt tal är positiv.",
+        "Produkten av två negativa tal är negativ."
+      ],
+      "blindAnswer": 0,
+      "explain": "Vid både multiplikation och division ger lika tecken ett positivt resultat och olika tecken ett negativt. En positiv täljare och en negativ nämnare har olika tecken, så kvoten är negativ, till exempel 6/(−3) = −2. De andra påståendena stämmer inte: (−6)/3 = −2 är negativ, (−2) · 3 = −6 är negativ och (−2) · (−3) = 6 är positiv.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln y i triangeln ABC?",
+      "options": [
+        "(30 − x)°",
+        "(60 − x)°",
+        "(x − 30)°",
+        "(x − 60)°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinkeln A är rät, alltså 90°, och vinkeln B är (x + 30)°. Vinkelsumman i en triangel är 180°, så y = 180° − 90° − (x + 30)° = (60 − x)°. Kontroll: om x = 0 är vinkeln B 30°, och då ska y vara 180° − 90° − 30° = 60°. Det stämmer med (60 − x)° men inte med något av de andra alternativen.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.19,
+          0.56,
+          0.52,
+          0.735
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "En partikel färdas 1 · 10¹⁰ cm per sekund under 4 · 10⁻⁸ sekunder. Hur många cm har partikeln färdats?",
+      "options": [
+        "4 · 10¹⁸ cm",
+        "4 · 10² cm",
+        "4 · 10⁻¹⁸ cm",
+        "4 · 10⁻⁸⁰ cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sträckan är hastigheten gånger tiden: 1 · 10¹⁰ · 4 · 10⁻⁸ = 4 · 10¹⁰ · 10⁻⁸. När potenser med samma bas multipliceras adderas exponenterna: 10 + (−8) = 2. Partikeln har alltså färdats 4 · 10² cm, det vill säga 400 cm. 4 · 10¹⁸ cm får man om man räknar med exponenten 8 i stället för −8, och 4 · 10⁻⁸⁰ cm om man multiplicerar exponenterna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "AB = AD = 1 cm. Triangeln BCD är liksidig. Vad är omkretsen av fyrhörningen ABCD?",
+      "options": [
+        "5 cm",
+        "6 cm",
+        "(2 + 2√2) cm",
+        "(2 + 3√2) cm"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinkeln A är rät, så BD är hypotenusan i en rätvinklig triangel med kateterna 1 cm: BD = √(1² + 1²) = √2 cm. Triangeln BCD är liksidig, så BC = CD = BD = √2 cm. Omkretsen av fyrhörningen är AB + BC + CD + DA = 1 + √2 + √2 + 1 = (2 + 2√2) cm. Diagonalen BD ingår inte i omkretsen; räknar man med den också får man (2 + 3√2) cm.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.19,
+          0.575,
+          0.46,
+          0.76
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad måste gälla för b om a + b > a − 2b?",
+      "options": [
+        "b > 0",
+        "b < 0",
+        "b > a",
+        "b < a"
+      ],
+      "blindAnswer": 0,
+      "explain": "Subtrahera a från båda leden: b > −2b. Addera 2b till båda leden: 3b > 0, alltså b > 0. Talet a finns i båda leden och tar ut sig självt, så olikheten säger ingenting om hur b förhåller sig till a. Kontroll: b = 1 ger a + 1 > a − 2, som gäller för alla a, medan b = −1 ger a − 1 > a + 2, som aldrig gäller.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vad blir (3x³y²z)⁴?",
+      "options": [
+        "12x⁷y⁶z⁵",
+        "12x¹²y⁸z⁴",
+        "81x⁷y⁶z⁵",
+        "81x¹²y⁸z⁴"
+      ],
+      "blindAnswer": 3,
+      "explain": "Varje faktor i parentesen upphöjs till 4: 3⁴ = 81, (x³)⁴ = x¹², (y²)⁴ = y⁸ och z⁴. Resultatet är 81x¹²y⁸z⁴. När en potens upphöjs till en ny exponent multipliceras exponenterna (3 · 4 = 12 och 2 · 4 = 8). Alternativen med x⁷y⁶z⁵ har i stället adderat 4 till exponenterna, och 12 får man om man räknar 3 · 4 i stället för 3 · 3 · 3 · 3.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad gäller för koordinaterna i punkten P?",
+      "passage": "Linjerna y = −x + 7 och y = (2/3)x − 4/3 skär varandra i punkten P = (x₁, y₁).",
+      "options": [
+        "x₁ > 0; y₁ > 0",
+        "x₁ > 0; y₁ < 0",
+        "x₁ < 0; y₁ > 0",
+        "x₁ < 0; y₁ < 0"
+      ],
+      "blindAnswer": 0,
+      "explain": "I skärningspunkten har linjerna samma y-värde: −x + 7 = (2/3)x − 4/3. Multiplicera med 3: −3x + 21 = 2x − 4, alltså 5x = 25 och x = 5. Då är y = −5 + 7 = 2. Kontroll i den andra linjen: (2/3) · 5 − 4/3 = 10/3 − 4/3 = 6/3 = 2. P = (5, 2), så både x₁ och y₁ är positiva.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Kalle läser en sida på m minuter. Hur många sidor läser han på 7 minuter?",
+      "options": [
+        "7m",
+        "7 + m",
+        "7/m",
+        "m/7"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalle läser 1/m sida per minut. På 7 minuter läser han 7 · 1/m = 7/m sidor. Kontroll: tar en sida 1 minut (m = 1) hinner han 7 sidor, och tar en sida 7 minuter (m = 7) hinner han 1 sida; båda stämmer med 7/m. Uttrycket 7m är i stället den tid det tar att läsa 7 sidor.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är x om x/5 − x/10 + x/15 − x/20 = 1 − 1/2 + 1/3 − 1/4?",
+      "options": [
+        "−5",
+        "−1/5",
+        "1/5",
+        "5"
+      ],
+      "blindAnswer": 3,
+      "explain": "Bryt ut x/5 i vänsterledet: x/5 − x/10 + x/15 − x/20 = (x/5)(1 − 1/2 + 1/3 − 1/4). Parentesen är precis högerledet, och den är inte 0. Då måste x/5 = 1, alltså x = 5. Kontroll med gemensam nämnare: vänsterledet är (12x − 6x + 4x − 3x)/60 = 7x/60 och högerledet (12 − 6 + 4 − 3)/12 = 7/12 = 35/60, så 7x = 35 och x = 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "En elev ska väljas slumpmässigt ur klassen. Sannolikheten att en pojke väljs är 2/3 av sannolikheten att en flicka väljs. Vad är kvoten mellan antalet pojkar och det totala antalet elever i klassen?",
+      "options": [
+        "1/3",
+        "2/5",
+        "2/3",
+        "3/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Sannolikheterna är proportionella mot antalen, så antalet pojkar är 2/3 av antalet flickor. Det går alltså 2 pojkar på 3 flickor, och av varje 5 elever är 2 pojkar. Kvoten mellan antalet pojkar och det totala antalet elever är 2/5. Exempel: 10 pojkar och 15 flickor ger 10/25 = 2/5. Alternativet 2/3 är kvoten mellan pojkar och flickor, inte mellan pojkar och alla elever.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: −(7/4)x\nKvantitet II: −(3/2)x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv båda med nämnaren 4: kvantitet I är −(7/4)x och kvantitet II är −(6/4)x. Eftersom x > 0 är (7/4)x större än (6/4)x, och med minustecken framför blir kvantitet I därför den mindre. Exempel: x = 4 ger −7 respektive −6, och −6 är större än −7. Kvantitet II är större för alla positiva x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x\nKvantitet II: 20°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Vinklarna 5x och 4x ligger bredvid varandra på samma räta linje, så tillsammans bildar de en rak vinkel: 5x + 4x = 180°. Det ger 9x = 180° och x = 20°. Vinklarna är alltså 100° och 80°, och kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.2,
+          0.56,
+          0.48,
+          0.72
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: 1/x + x\nKvantitet II: 2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva några värden. x = 1 ger 1/1 + 1 = 2, alltså lika med kvantitet II. x = 2 ger 1/2 + 2 = 2,5, alltså större än 2. Kvantitet I blir aldrig mindre än 2, eftersom 1/x + x − 2 = (x − 1)²/x ≥ 0, men den kan vara både lika med och större än 2. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "b = a + 1\nKvantitet I: ab − 2a²\nKvantitet II: a(b − 2a)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplicera in a i kvantitet II: a(b − 2a) = ab − 2a², vilket är exakt kvantitet I. Kvantiteterna är alltså lika för alla a och b, och villkoret b = a + 1 behövs inte. Exempel: a = 2 och b = 3 ger 2 · 3 − 2 · 4 = −2 respektive 2 · (3 − 4) = −2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Cirkelbågen AB, cirkelbågen BC och cirkelbågen AC är halvcirklar.\nKvantitet I: Summan av längden för cirkelbågen AB och längden för cirkelbågen BC\nKvantitet II: Längden av cirkelbågen AC",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "En halvcirkelbåge med diametern d har längden π · d/2. De små bågarna har diametrarna AB och BC, och den stora bågen har diametern AC = AB + BC. Kvantitet I är π · AB/2 + π · BC/2 = π · (AB + BC)/2 = π · AC/2, vilket är kvantitet II. Kvantiteterna är lika, var B än ligger mellan A och C. (Halvcirklarnas areor är däremot inte lika, eftersom arean beror på diameterns kvadrat.)",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.19,
+          0.11,
+          0.52,
+          0.245
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "b > 1\nx > 0\nKvantitet I: xᵇ/b\nKvantitet II: (x/b)ᵇ",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvantitet II kan skrivas (x/b)ᵇ = xᵇ/bᵇ. Båda kvantiteterna har alltså täljaren xᵇ, som är positiv eftersom x > 0. Nämnaren är b i kvantitet I och bᵇ i kvantitet II. Eftersom b > 1 är bᵇ = b · bᵇ⁻¹ större än b, för bᵇ⁻¹ > 1. Samma positiva täljare delad med en större nämnare ger ett mindre tal, så kvantitet I är större. Exempel: b = 2 och x = 3 ger 3²/2 = 4,5 respektive (3/2)² = 2,25.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x, y, z, w är fyra på varandra följande heltal så att w > z > y > x.\nKvantitet I: Medelvärdet av x och w\nKvantitet II: Medelvärdet av y och z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Talen är x, y = x + 1, z = x + 2 och w = x + 3. Medelvärdet av x och w är (x + x + 3)/2 = x + 1,5. Medelvärdet av y och z är (x + 1 + x + 2)/2 = x + 1,5. Kvantiteterna är lika, vilket heltal x än är. Exempel: 1, 2, 3, 4 ger (1 + 4)/2 = 2,5 och (2 + 3)/2 = 2,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Ett cykelhjul rullar längs en rät linje utan att glida och på 3 varv rullar hjulet sträckan 18 meter.\nKvantitet I: Hjulets diameter\nKvantitet II: 2 meter",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "På ett varv rullar hjulet en sträcka lika med sin omkrets, så omkretsen är 18/3 = 6 meter. Omkretsen är π · d, så diametern är d = 6/π meter. Eftersom π > 3 är 6/π < 6/3 = 2; diametern är ungefär 1,9 meter. Kvantitet II är större. Den som avrundar π till 3 får precis 2 meter och tror felaktigt att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x(y + z) + x² + yz\nKvantitet II: (x + z)(y + x)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplicera ut båda. Kvantitet I: x(y + z) + x² + yz = xy + xz + x² + yz. Kvantitet II: (x + z)(y + x) = xy + x² + zy + zx. Båda består av termerna x², xy, xz och yz, så de är lika för alla värden på x, y och z. Exempel: x = 1, y = 2 och z = 3 ger 1 · 5 + 1 + 6 = 12 respektive 4 · 3 = 12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "I ett koordinatsystem utgör punkterna (−1, a), (2, 2) och (2, 4) hörnen i en rätvinklig triangel.\nKvantitet I: a\nKvantitet II: 2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Punkterna (2, 2) och (2, 4) ligger på den lodräta linjen x = 2. Ligger den räta vinkeln i (2, 2) måste sidan till (−1, a) vara vågrät, alltså a = 2. Ligger den räta vinkeln i (2, 4) blir på samma sätt a = 4. En rät vinkel i (−1, a) är omöjlig: då skulle punkten ligga på cirkeln med diametern mellan (2, 2) och (2, 4), men den cirkeln har mittpunkten (2, 3) och radien 1 och når inte ut till x = −1. a kan alltså vara 2 eller 4, det vill säga lika med eller större än 2. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En cykelhandlare har fem enfärgade cyklar till salu. Det finns både herr- och damcyklar. Färgen på cyklarna är svart, blå, röd eller grön, och två av cyklarna har samma färg. Vilken färg har dessa två cyklar?\n(1) Herrcyklarna finns i tre färger.\n(2) Den ena av de båda damcyklarna är röd medan den andra har en annan färg. Det finns ingen svart eller grön damcykel.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Fem cyklar i fyra färger där två har samma färg betyder att alla fyra färgerna finns med och att en av dem förekommer två gånger.\n(1) Vi vet varken hur många herrcyklar det finns eller vilka tre färger de har. Inte tillräckligt.\n(2) Det finns två damcyklar: en röd och en blå (den andra är varken röd, svart eller grön). De tre herrcyklarna måste då vara svart, grön och en tredje som kan ha vilken färg som helst. Inte tillräckligt.\n(1) och (2) tillsammans: De tre herrcyklarna har tre olika färger, och två av dem är svart och grön. Den tredje kan vara röd eller blå, så de två cyklarna med samma färg kan vara antingen röda eller blå. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Ett museum köpte ett antal nya skulpturer vid ett visst tillfälle. Köpet resulterade i att det totala värdet av museets samtliga skulpturer ökade med 25 procent. Hur många nya skulpturer köptes in?\n(1) Före köpet var museets 40 skulpturer värda 12 miljoner kronor.\n(2) Efter köpet var det genomsnittliga värdet 300 000 kronor per skulptur.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Efter köpet var det totala värdet 1,25 · 12 = 15 miljoner kronor, så de nya skulpturerna var värda 3 miljoner kronor tillsammans. Men vi vet inte vad varje ny skulptur var värd. Inte tillräckligt.\n(2) Genomsnittet efter köpet säger ingenting om antalet när vi varken känner det totala värdet eller antalet före köpet. Inte tillräckligt.\n(1) och (2) tillsammans: Efter köpet var det totala värdet 15 miljoner kronor och genomsnittet 300 000 kronor, så museet hade 15 000 000/300 000 = 50 skulpturer. Det köptes alltså in 50 − 40 = 10 nya skulpturer. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "24-karats guld innehåller 99,6 viktprocent rent guld. Antag att resterande 0,4 procent är koppar, zink och nickel. Hur många gram koppar innehåller en 24-karats guldtacka som väger 1 kg?\n(1) Vikthalten nickel i 24-karats guld är 500 ppm (parts per million).\n(2) Guldtackan innehåller 1 gram zink.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Tackan väger 1 000 g, och 0,4 procent av det, alltså 4 g, är koppar, zink och nickel tillsammans.\n(1) 500 ppm av 1 000 g är 1 000 · 500/1 000 000 = 0,5 g nickel. Koppar och zink väger då 3,5 g tillsammans, men vi vet inte hur det fördelar sig. Inte tillräckligt.\n(2) Med 1 g zink väger koppar och nickel 3 g tillsammans. Inte tillräckligt.\n(1) och (2) tillsammans: Koppar väger 4 − 0,5 − 1 = 2,5 g. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Karolina kastar en diskus tre gånger. Hennes första och tredje kast är lika långa. Hur långt är hennes tredje kast?\n(1) Hennes andra kast är en tredjedel av de två övriga kastens sammanlagda längd.\n(2) Hennes första kast är 33 meter plus en tredjedel av det tredje kastets längd.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kalla det första och det tredje kastet x meter (de är lika långa) och det andra kastet y meter.\n(1) y = (x + x)/3 = 2x/3. Det ger bara förhållandet mellan kasten, inte hur långa de är. Inte tillräckligt.\n(2) Det första kastet är lika långt som det tredje, så x = 33 + x/3. Det ger (2/3)x = 33 och x = 49,5 meter. Tillräckligt.\nSvaret erhålls alltså i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en ask finns enbart röda, gröna och blå pärlor. Maria tar upp en pärla slumpmässigt. Hur stor är sannolikheten att denna pärla är röd?\n(1) Sannolikheten att ta upp en blå eller en röd pärla är 0,7.\n(2) Sannolikheten att ta upp en grön eller röd pärla är 0,9.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sannolikheterna för röd, grön och blå är tillsammans 1.\n(1) P(blå) + P(röd) = 0,7 ger P(grön) = 0,3, men inte hur 0,7 fördelar sig på blå och röd. Inte tillräckligt.\n(2) P(grön) + P(röd) = 0,9 ger P(blå) = 0,1, men inte P(röd). Inte tillräckligt.\n(1) och (2) tillsammans: P(röd) = 0,7 − P(blå) = 0,7 − 0,1 = 0,6. Kontroll: 0,6 + 0,3 + 0,1 = 1. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "A och B planterar sammanlagt 120 träd. Om A och B arbetar samtidigt utan rast tar planteringen 6 timmar. A och B planterar alltid med sina egna konstanta hastigheter. Hur lång tid skulle det ta för B att ensam plantera de 120 träden?\n(1) A planterar 3 träd på samma tid som B planterar 2 träd.\n(2) Det skulle ta 10 timmar för A att ensam plantera de 120 träden.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Tillsammans planterar A och B 120/6 = 20 träd per timme.\n(1) A planterar 3 träd när B planterar 2, så B står för 2/5 av de 20 träden per timme, alltså 8 träd per timme. Ensam behöver B 120/8 = 15 timmar. Tillräckligt.\n(2) A planterar 120/10 = 12 träd per timme, så B planterar 20 − 12 = 8 träd per timme och behöver 120/8 = 15 timmar. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Vilket år var exportens andel av godshanteringen i svenska hamnar som störst?",
+      "options": [
+        "1920",
+        "1930",
+        "1970",
+        "1980"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd stapeldiagrammet där godshanteringen är fördelad på export, import och inrikes hantering. Exporten är den översta, glest prickiga delen av varje stapel. År 1920 är stapeln cirka 20 miljoner ton och exporten går från cirka 12 till 20, alltså ungefär 8–9 miljoner ton eller drygt 40 procent. År 1930 är exporten cirka 10 av 30 miljoner ton (ungefär 33 procent), 1970 cirka 24 av 98 (ungefär 25 procent) och 1980 cirka 27 av 111 (ungefär 24 procent). Andelen var alltså störst 1920, även om exporten i ton var mycket större 1970 och 1980.",
+      "figure": {
+        "pages": [
+          16,
+          17
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.07,
+            0.87,
+            0.385
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilken godsgrupp avses?",
+      "passage": "Under perioden 1920–1960 var antalet ton som hanterades i svenska hamnar i stort sett oförändrat. Hanteringen var som störst 1980.",
+      "options": [
+        "Malm",
+        "Olja",
+        "Sten",
+        "Skog"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd ytdiagrammet där godshanteringen är fördelad på godsgrupper; varje grupp är avståndet mellan två linjer. Skog är det grå bandet ovanför Övrigt. Det är ungefär 8–10 miljoner ton tjockt varje år 1920–1960 och som tjockast 1980, cirka 18 miljoner ton (1995 cirka 15). Olja var också störst 1980, men den ökade redan före 1960. Malm och Sten ökade båda mellan 1920 och 1960, och ingen av dem var störst 1980.",
+      "figure": {
+        "pages": [
+          16,
+          17
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.07,
+            0.87,
+            0.385
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur många miljoner ton gods per hamn hanterades i Sverige år 1920 respektive 1995?",
+      "options": [
+        "0,1 respektive 1,3 miljoner ton",
+        "0,5 respektive 12 miljoner ton",
+        "20 respektive 120 miljoner ton",
+        "20 respektive 250 miljoner ton"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd det översta diagrammet: staplarna visar gods i miljoner ton (vänster skala) och linjen antal hamnar (höger skala). År 1920 hanterades cirka 20 miljoner ton i cirka 240 hamnar: 20/240 ≈ 0,08, alltså ungefär 0,1 miljoner ton per hamn. År 1995 var det cirka 117 miljoner ton i cirka 87 hamnar: 117/87 ≈ 1,3 miljoner ton per hamn. Alternativet 20 respektive 120 miljoner ton är den totala mängden gods, inte mängden per hamn.",
+      "figure": {
+        "pages": [
+          16,
+          17
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.07,
+            0.87,
+            0.385
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av kvinnorna i åldersgruppen 20–24 år var gifta år 1900?",
+      "options": [
+        "1/10",
+        "1/5",
+        "1/4",
+        "1/3"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd tabellen för 1900 och raden 20–24. Där finns sammanlagt 210 048 kvinnor (Summa, Kvinnor), och av dem var 40 838 gifta (Gifta, Kvinnor). Andelen är 40 838/210 048 ≈ 0,19, alltså ungefär 1/5.",
+      "figure": {
+        "pages": [
+          18,
+          19
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.08,
+            0.92,
+            0.39
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Hur stor var den procentuella befolkningsökningen i Sverige under nedanstående tidsperioder?",
+      "passage": "Svarsalternativen anger: 1900–1950 – 1950–1998 – 1900–1998",
+      "options": [
+        "27 % – 20 % – 52 %",
+        "37 % – 25 % – 62 %",
+        "37 % – 25 % – 72 %",
+        "73 % – 80 % – 153 %"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd hela befolkningen (Summa, Total) i de tre tabellerna: 5 136 441 år 1900, 7 041 829 år 1950 och 8 854 322 år 1998. 1900–1950: 7 041 829/5 136 441 ≈ 1,37, en ökning med 37 %. 1950–1998: 8 854 322/7 041 829 ≈ 1,26, en ökning med drygt 25 %. 1900–1998: 8 854 322/5 136 441 ≈ 1,72, en ökning med 72 %. Ökningen för hela perioden är alltså inte summan 37 % + 25 % = 62 %, eftersom den andra ökningen räknas på en större befolkning: 1,37 · 1,26 ≈ 1,72.",
+      "figure": {
+        "pages": [
+          18,
+          19
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.08,
+            0.92,
+            0.39
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Beräkna hur stor andel av 45–49-åringarna som var frånskilda 1950 respektive 1998. Hur mycket större var andelen 1998 jämfört med 1950?",
+      "options": [
+        "14 procentenheter",
+        "24 procentenheter",
+        "32 procentenheter",
+        "40 procentenheter"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd raden 45–49 i tabellerna för 1950 och 1998. År 1950 var 4 795 män och 6 981 kvinnor frånskilda, sammanlagt 11 776 av totalt 488 506, alltså 11 776/488 506 ≈ 2,4 procent. År 1998 var 45 873 män och 55 386 kvinnor frånskilda, sammanlagt 101 259 av totalt 600 919, alltså 101 259/600 919 ≈ 16,9 procent. Andelen var 16,9 − 2,4 ≈ 14 procentenheter större 1998.",
+      "figure": {
+        "pages": [
+          18,
+          19
+        ],
+        "boxes": [
+          null,
+          [
+            0.15,
+            0.08,
+            0.92,
+            0.39
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilken av följande byggnader hade en area på cirka 40 m² och var byggd av timmer?",
+      "options": [
+        "Drängstugan",
+        "Ladugården",
+        "Vedboden",
+        "Visthusboden"
+      ],
+      "blindAnswer": 0,
+      "explain": "Visthusboden är byggd av stolpvirke, så den faller bort. Drängstugan (1845), ladugården (1884) och vedboden är byggda av timmer. Mät med skalstapeln till vänster (0–40 meter): drängstugan är ungefär 7,5 × 6 meter, alltså cirka 45 m². Vedboden är bara ungefär 4,5 × 4,5 meter (cirka 20 m²) och ladugårdens timrade del ungefär 9 × 11 meter (cirka 100 m²). Drängstugan är alltså den timrade byggnaden med en area på cirka 40 m².",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag är korrekt avseende Tunsäter?",
+      "options": [
+        "Köksväxterna odlades på gårdens norra del.",
+        "Ladan var byggd 1884.",
+        "Alla byggnader av timmer var från 1800-talet.",
+        "Den senast daterade byggnaden var byggd av bräder."
+      ],
+      "blindAnswer": 3,
+      "explain": "Pröva påståendena mot kartan. Väderstrecksrosen visar söder snett uppåt till höger och norr snett nedåt till vänster, så köksväxterna ovanför bostadshuset låg på gårdens södra del, inte den norra. Ladan är märkt 1845; det är ladugården som är från 1884. Svinhuset är av timmer men byggt 1913, så alla timmerbyggnader var inte från 1800-talet. Den senast daterade byggnaden är motorhuset från 1922, och det är byggt av bräder. Det påståendet stämmer.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur lång är den beskrivna sträckan?",
+      "passage": "Utgå från bostadshusets förstu. Runda husets sydvästra gavel. Följ vägen mellan fruktträd och ärter/kål fram till vinbären och vidare rakt mot bostadshusets sal. Runda därefter husets nordostliga gavel och gå tillbaka till förstun.",
+      "options": [
+        "100 meter",
+        "140 meter",
+        "180 meter",
+        "220 meter"
+      ],
+      "blindAnswer": 0,
+      "explain": "Väderstrecksrosen visar söder snett uppåt till höger och norr snett nedåt till vänster. Bostadshusets sydvästra gavel är därför köksgaveln (till höger) och den nordostliga gaveln salens gavel (till vänster). Mät med skalstapeln (0–40 meter): från förstun längs husets framsida till köksgaveln är det cirka 9 meter, runt gaveln cirka 5 meter, vägen uppför mellan fruktträden och ärter/kål och vidare till vinbären cirka 40 meter, rakt ned mot salen cirka 25 meter och runt salens gavel tillbaka till förstun cirka 15 meter. Sammanlagt blir det ungefär 95 meter, alltså närmast 100 meter.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Sträckan är uppmätt med skalstapeln till cirka 95–100 meter; om vägen från vinbären mot salen tolkas som den vänstra eller den mittersta gången ändrar summan bara några meter.",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket år förekom störst respektive minst antal dödsfall inom kategorin Övriga?",
+      "options": [
+        "2000 respektive 2001",
+        "2000 respektive 2002",
+        "2002 respektive 2000",
+        "2002 respektive 2001"
+      ],
+      "blindAnswer": 2,
+      "explain": "Antalet dödsfall i Övriga är andelen gånger det totala antalet dödsfall, för män och kvinnor var för sig. År 2000: cirka 7,7 % av 45 710 män och 8,5 % av 47 806 kvinnor, ungefär 3 500 + 4 100 = 7 600. År 2001: cirka 8,9 % av 45 467 och 9,8 % av 48 342, ungefär 4 050 + 4 750 = 8 800. År 2002: cirka 9,4 % av 45 812 och 10,2 % av 49 258, ungefär 4 300 + 5 000 = 9 300. Flest dödsfall var det alltså 2002 och minst 2000.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.155,
+            0.06,
+            0.86,
+            0.385
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur många människor sammanlagt dog av sjukdomar i andningsorganen under de redovisade åren?",
+      "options": [
+        "6 500",
+        "9 500",
+        "13 500",
+        "19 500"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna ut antalet dödsfall i andningsorganen för män och kvinnor varje år och lägg ihop. År 2000: cirka 7,4 % av 45 710 + 7,1 % av 47 806 ≈ 3 400 + 3 400 = 6 800. År 2001: cirka 6,7 % av 45 467 + 6,2 % av 48 342 ≈ 3 050 + 3 000 = 6 050. År 2002: cirka 7,2 % av 45 812 + 6,8 % av 49 258 ≈ 3 300 + 3 350 = 6 650. Sammanlagt blir det ungefär 19 500. Alternativet 6 500 motsvarar bara ett av åren.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.155,
+            0.06,
+            0.86,
+            0.385
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur många var de kvinnor som dog av sjukdomar i cirkulationsorganen jämfört med de kvinnor som dog av sjukdomar i matsmältningsorganen 2002?",
+      "options": [
+        "6 gånger så många",
+        "10 gånger så många",
+        "13 gånger så många",
+        "19 gånger så många"
+      ],
+      "blindAnswer": 2,
+      "explain": "Båda grupperna är andelar av samma tal, det totala antalet kvinnor som dog 2002, så det räcker att jämföra kvinnornas staplar i diagrammet för 2002. Stapeln för cirkulationsorganen når cirka 45 procent och stapeln för matsmältningsorganen cirka 3,4 procent. 45/3,4 ≈ 13, alltså dog cirka 13 gånger så många kvinnor av sjukdomar i cirkulationsorganen.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.155,
+            0.06,
+            0.86,
+            0.385
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
