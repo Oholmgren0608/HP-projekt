@@ -1,0 +1,774 @@
+{
+  "examId": "hp-2016-10-29",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "13 − x = −24",
+      "options": [
+        "−37",
+        "−11",
+        "11",
+        "37"
+      ],
+      "blindAnswer": 3,
+      "explain": "Lös ut x. 13 − x = −24 ger −x = −24 − 13 = −37, och då är x = 37. Kontroll: 13 − 37 = −24. Svaret −37 lockar om man glömmer att byta tecken i sista steget, och −11 får man om man räknar −24 + 13.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vilken av punkterna ligger på linjen L?",
+      "options": [
+        "(−6, −2)",
+        "(−2, 6)",
+        "(3, 2)",
+        "(2, 3)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Linjen L skär y-axeln i (0, 1) och x-axeln i (−2, 0). Den stiger alltså 1 steg i y-led för varje 2 steg i x-led, så lutningen är 1/2 och linjens ekvation är y = x/2 + 1. För x = −6 blir y = −3 + 1 = −2, så (−6, −2) ligger på linjen. De andra punkterna passar inte: x = −2 ger y = 0, x = 3 ger y = 2,5 och x = 2 ger y = 2.",
+      "figure": {
+        "pages": [
+          2
+        ],
+        "box": [
+          0.22,
+          0.49,
+          0.72,
+          0.785
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Kalle har 18 burkar med 35 kulor i varje burk. Hur många fler burkar behövs om det istället ska vara 30 kulor i varje burk?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "blindAnswer": 1,
+      "explain": "Det finns 18 · 35 = 630 kulor. Med 30 kulor i varje burk behövs 630/30 = 21 burkar, alltså 21 − 18 = 3 fler. Kontroll: om varje burk får 5 kulor färre blir 18 · 5 = 90 kulor över, och de ryms i 90/30 = 3 nya burkar.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket (7x² + 91x)/(7x)?",
+      "options": [
+        "x − 13",
+        "7x² − 13",
+        "x + 13",
+        "7x² + 13"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dela varje term i täljaren med 7x: 7x²/(7x) = x och 91x/(7x) = 13. Uttrycket blir x + 13. Samma sak fås om man bryter ut 7x i täljaren: 7x(x + 13)/(7x) = x + 13. Svaret 7x² + 13 lockar om man bara delar 91x med 7x och glömmer att även 7x² ska delas.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är 4 000 000 · 0,0000025?",
+      "options": [
+        "10¹",
+        "10²",
+        "10³",
+        "10⁴"
+      ],
+      "blindAnswer": 0,
+      "explain": "Skriv talen med tiopotenser: 4 000 000 = 4 · 10⁶ och 0,0000025 = 2,5 · 10⁻⁶. Produkten blir 4 · 2,5 · 10⁶ · 10⁻⁶ = 10 · 10⁰ = 10, alltså 10¹. Räknar man fel på antalet nollor eller decimaler hamnar man lätt på 10² eller 10³.",
+      "figure": null,
+      "note": "Provet skriver 4000000 utan mellanrum mellan tusentalen.",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Linjerna L₁ och L₂ är parallella. Vad är vinkeln v uttryckt i x?",
+      "passage": "0° < x < 180°",
+      "options": [
+        "x/6",
+        "x/4",
+        "x/3",
+        "x"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dra en hjälplinje genom vinkelns spets, parallell med L₁ och L₂. Den delar vinkeln x i en övre och en nedre del. Den övre delen och vinkeln 2x/3 vid L₁ är alternatvinklar och därför lika stora. Den nedre delen blir då x − 2x/3 = x/3. Den nedre delen och v är likbelägna vinklar vid de parallella linjerna (hjälplinjen och L₂), så v = x/3.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.2,
+          0.512,
+          0.72,
+          0.725
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Om x och y är heltal sådana att x < 0 < y, vad är då med säkerhet korrekt?",
+      "options": [
+        "x/y < 0",
+        "x⁶ < y⁶",
+        "x + y = 0",
+        "0 < y/x"
+      ],
+      "blindAnswer": 0,
+      "explain": "x är negativt och y positivt. En kvot mellan ett negativt och ett positivt tal är alltid negativ, så x/y < 0 gäller alltid. Av samma skäl är y/x negativ, så 0 < y/x stämmer aldrig. x⁶ < y⁶ behöver inte gälla: x = −3 och y = 1 ger x⁶ = 729 och y⁶ = 1. x + y = 0 gäller bara när y = −x, och det stämmer inte heller för x = −3 och y = 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar uttrycket (x − y)(1/x + 1/y)?",
+      "options": [
+        "(x − y)/(xy)",
+        "(x − y)/(x + y)",
+        "(x² − y²)/(xy)",
+        "x/y − y/x + 2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Skriv parentesen som ett bråk: 1/x + 1/y = y/(xy) + x/(xy) = (x + y)/(xy). Uttrycket blir (x − y)(x + y)/(xy), och enligt konjugatregeln är (x − y)(x + y) = x² − y². Alltså är uttrycket (x² − y²)/(xy). Kontroll genom att multiplicera in direkt: x/x + x/y − y/x − y/y = 1 + x/y − y/x − 1 = x/y − y/x, alltså utan + 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "En figur är sammansatt av en kvadrat med sidan 4 cm och en cirkelsektor med medelpunkten M och radien 4 cm. Vad är arean av figuren?",
+      "options": [
+        "(6π + 8) cm²",
+        "(6π + 16) cm²",
+        "(12π + 8) cm²",
+        "(12π + 16) cm²"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kvadraten har arean 4 · 4 = 16 cm². Cirkelsektorn har sin medelpunkt M i kvadratens hörn och går runt hela cirkeln utom den fjärdedel där kvadraten ligger, så den är tre fjärdedelar av en cirkel. En hel cirkel med radien 4 cm har arean π · 4² = 16π cm², och tre fjärdedelar av den är 12π cm². Figurens area är (12π + 16) cm². Alternativen med 6π lockar om man räknar sektorn som en halv cirkel.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.2,
+          0.122,
+          0.5,
+          0.338
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vad är (−4)⁻¹ + (−2)⁻² + (−1)⁰ − 3²?",
+      "options": [
+        "−9,5",
+        "−8",
+        "2",
+        "10"
+      ],
+      "blindAnswer": 1,
+      "explain": "Räkna term för term. (−4)⁻¹ = 1/(−4) = −0,25. (−2)⁻² = 1/(−2)² = 1/4 = 0,25. (−1)⁰ = 1, eftersom varje tal skilt från 0 upphöjt till 0 är 1. 3² = 9. Summan blir −0,25 + 0,25 + 1 − 9 = −8. Den som räknar − 3² som + 9 får 10.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av de fyra talen 1, 2x, 5 och 2 är y/2. Vad är x?",
+      "passage": "y ≠ 0",
+      "options": [
+        "y/4 − 4",
+        "y/2 − 4",
+        "y − 4",
+        "2y − 4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Medelvärdet är summan delad med 4: (1 + 2x + 5 + 2)/4 = (8 + 2x)/4. Sätt det lika med y/2 och multiplicera båda leden med 4: 8 + 2x = 2y. Då är 2x = 2y − 8 och x = y − 4. Kontroll med y = 6: x = 2 ger talen 1, 4, 5 och 2, med summan 12 och medelvärdet 3 = 6/2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag är störst?",
+      "passage": "f(x) = (x + 4)/(x − 4)",
+      "options": [
+        "f(−5)",
+        "f(−2)",
+        "f(0)",
+        "f(3)"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in värdena. f(−5) = (−5 + 4)/(−5 − 4) = (−1)/(−9) = 1/9. f(−2) = 2/(−6) = −1/3. f(0) = 4/(−4) = −1. f(3) = 7/(−1) = −7. Bara f(−5) är positivt och därmed störst: när x < −4 är både täljaren och nämnaren negativa, så kvoten blir positiv.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x² = 16\ny = √(500/20)\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "x² = 16 ger x = 4 eller x = −4. y = √(500/20) = √25 = 5. Båda möjliga värden på x är mindre än 5, så kvantitet II är större. Att x kan ha två värden gör inte informationen otillräcklig, eftersom båda värdena ger samma relation.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fyra identiska rektanglar fogas samman till en kvadrat med ett hål i mitten enligt figuren.\nx > y\nKvantitet I: x − y\nKvantitet II: z",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Varje rektangel har långsidan x och kortsidan y. Kvadratens sida består av en långsida och en kortsida, alltså x + y. Hålets höjd z är kvadratens sida minus kortsidorna på den övre och den nedre rektangeln: z = (x + y) − y − y = x − y. Kvantiteterna är alltså lika, vilka värden x och y än har.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.235,
+          0.589,
+          0.48,
+          0.762
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 7,56/7\nKvantitet II: 98,1/90",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "7,56/7 = 1,08 och 98,1/90 = 1,09. Det syns också om man delar upp täljarna: 7,56/7 = 7/7 + 0,56/7 = 1 + 0,08, medan 98,1/90 = 90/90 + 8,1/90 = 1 + 0,09. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 3 · 4ˣ\nKvantitet I: f(0) − f(−1)\nKvantitet II: f(1) − f(0)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "f(0) = 3 · 4⁰ = 3, f(−1) = 3 · 4⁻¹ = 3/4 och f(1) = 3 · 4¹ = 12. Kvantitet I är 3 − 3/4 = 2,25 och kvantitet II är 12 − 3 = 9. Kvantitet II är större. En exponentialfunktion med basen 4 ökar allt snabbare, så ökningen från x = 0 till x = 1 är större än ökningen från x = −1 till x = 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Vₖ = 4³\nVₛ = (4 · π · 3³)/3\nKvantitet I: Vₖ\nKvantitet II: Vₛ/2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Vₖ = 4³ = 64. Vₛ = 4 · π · 27/3 = 36π, så Vₛ/2 = 18π. Eftersom π < 3,2 är 18π < 18 · 3,2 = 57,6, och det är mindre än 64. Kvantitet I är större (18π ≈ 56,5).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: x + 1/(x + 1)\nKvantitet II: x + 1/x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Båda kvantiteterna börjar med x, så det räcker att jämföra 1/(x + 1) med 1/x. Eftersom x > 0 är x + 1 > x > 0, och ett bråk med täljaren 1 blir mindre ju större nämnaren är. Alltså är 1/(x + 1) < 1/x för alla x > 0, och kvantitet II är större. Exempel: x = 1 ger 1,5 respektive 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "P, Q och R är tre positiva heltal sådana att P < Q < R.\nKvantitet I: Medelvärdet av P, Q och R\nKvantitet II: Medianen av P, Q och R",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Medianen av tre olika tal är det mittersta talet, alltså Q. Medelvärdet kan hamna på båda sidor om Q. P = 1, Q = 2 och R = 3 ger medelvärdet 2, lika med medianen. P = 1, Q = 2 och R = 9 ger medelvärdet 4, större än medianen. P = 1, Q = 8 och R = 9 ger medelvärdet 6, mindre än medianen. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "y > 0\nx² − y = 7y − x²\nKvantitet I: x\nKvantitet II: 2y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Samla termerna: x² − y = 7y − x² ger 2x² = 8y, alltså x² = 4y. Med y = 1 är x = 2 eller x = −2, och 2y = 2. Då kan kvantiteterna vara lika (x = 2) eller kvantitet II större (x = −2). Med y = 1/4 kan x = 1, som är större än 2y = 1/2. Relationen beror på värdena, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "För n cirklar med radien r och en cirkel med radien R gäller att R = nr.\nKvantitet I: Summan av omkretsarna av de n cirklarna med radien r\nKvantitet II: Omkretsen för cirkeln med radien R",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "En cirkel med radien r har omkretsen 2πr, så de n cirklarna har tillsammans omkretsen n · 2πr = 2πnr. Cirkeln med radien R = nr har omkretsen 2πR = 2πnr. Kvantiteterna är lika. Omkretsen växer i proportion mot radien; för areorna hade det inte gällt, eftersom arean växer med radiens kvadrat.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En syskonskara består av ett antal pojkar och flickor. Varje pojke har lika många bröder som systrar. Varje flicka har dubbelt så många bröder som systrar.\nKvantitet I: 2 gånger antalet pojkar i syskonskaran\nKvantitet II: 3 gånger antalet flickor i syskonskaran",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kalla antalet pojkar p och antalet flickor f. En pojke har p − 1 bröder och f systrar, så p − 1 = f. En flicka har p bröder och f − 1 systrar, så p = 2(f − 1). Sätt in p = f + 1: f + 1 = 2f − 2, alltså f = 3 och p = 4. Kontroll: en pojke har 3 bröder och 3 systrar, en flicka har 4 bröder och 2 systrar. Kvantitet I är 2 · 4 = 8 och kvantitet II är 3 · 3 = 9, så kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Anna har tre enfärgade kaffekoppar i olika storlekar och färger. En kopp är röd, en är grön och en är blå. Vilken färg har den minsta koppen?\n(1) Den näst minsta koppen är varken grön eller blå.\n(2) Den största koppen är varken röd eller blå.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Den näst minsta koppen är röd. Den minsta kan vara grön eller blå. Inte tillräckligt.\n(2) Den största koppen är grön. Den minsta kan vara röd eller blå. Inte tillräckligt.\n(1) och (2) tillsammans: Den näst minsta är röd och den största är grön, så den minsta koppen är blå. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Eva och Torsten har varit ute och plockat svamp. Hur många olika sorters svamp har de plockat tillsammans?\n(1) Eva har plockat sex olika sorters svamp och Torsten har plockat fyra olika sorters svamp.\n(2) Två tredjedelar av de svampsorter som Eva har plockat har Torsten inte plockat. Hälften av de svampsorter som Torsten har plockat har Eva inte plockat.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Eva har 6 sorter och Torsten 4, men vi vet inte hur många sorter som finns hos båda. Tillsammans kan det vara allt från 6 till 10 sorter. Inte tillräckligt.\n(2) En tredjedel av Evas sorter och hälften av Torstens sorter är gemensamma. Med g gemensamma sorter har Eva 3g och Torsten 2g, och tillsammans blir det 3g + 2g − g = 4g sorter. Men g är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: En tredjedel av Evas 6 sorter ger 2 gemensamma sorter (hälften av Torstens 4 är också 2). Tillsammans har de 6 + 4 − 2 = 8 olika sorter. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Kristian samlar på idolbilder. När Kristian fyllde år fick han 9 nya idolbilder i gåva. Hur många idolbilder hade Kristian efter gåvan?\n(1) Innan Kristian fick gåvan hade han 1/11 färre idolbilder än vad han hade efter gåvan.\n(2) Idolbilderna Kristian fick i gåva motsvarar 1/10 av Kristians idolbilder före gåvan.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Före gåvan hade han 1/11 färre bilder än efter, så skillnaden, de 9 nya bilderna, är 1/11 av antalet efter gåvan. Efter gåvan hade han 9 · 11 = 99 bilder. Tillräckligt.\n(2) De 9 bilderna är 1/10 av antalet före gåvan, som alltså var 90. Efter gåvan hade han 90 + 9 = 99 bilder. Tillräckligt.\nVarje påstående räcker för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Stämmer det att (x + y) är lika med 2x?\n(1) x = y\n(2) x = 6",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Om x = y är x + y = x + x = 2x. Svaret är alltså ja. Tillräckligt.\n(2) x = 6 gör frågan till om 6 + y = 12, och det beror på y. Med y = 6 stämmer det, med y = 1 inte. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "ABCD är en rektangel. E är en punkt på sidan BC. Om BC är 4 cm, vad är då arean av triangeln AED?\n(1) CD är 19/8 av AD.\n(2) BE = EC",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "Triangeln AED har basen AD, som är lika lång som BC, alltså 4 cm. Höjden mot AD är avståndet från E till AD, och eftersom E ligger på BC är det rektangelns andra sida CD. Arean är 4 · CD/2, så det som behövs är CD.\n(1) CD = 19/8 · AD = 19/8 · 4 = 9,5 cm. Arean är 4 · 9,5/2 = 19 cm². Tillräckligt.\n(2) BE = EC anger var på BC punkten E ligger, men inget om CD (och var E ligger påverkar inte arean). Inte tillräckligt.",
+      "figure": {
+        "pages": [
+          15
+        ],
+        "box": [
+          0.19,
+          0.125,
+          0.49,
+          0.268
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I två lådor finns det 67 bollar, 11 gröna och resten röda. I låda A finns det 7 gröna bollar. Hur många röda bollar finns det i låda B?\n(1) I låda A finns det tre gånger så många röda bollar som gröna bollar.\n(2) I låda B finns det 11 bollar fler än i låda A.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Det finns 67 − 11 = 56 röda bollar. Låda A har 7 gröna, så låda B har 11 − 7 = 4 gröna.\n(1) Låda A har 3 · 7 = 21 röda bollar, så låda B har 56 − 21 = 35 röda. Tillräckligt.\n(2) Om låda A har a bollar har låda B a + 11, och a + (a + 11) = 67 ger a = 28. Låda B har 39 bollar, varav 4 gröna, alltså 35 röda. Tillräckligt.\nVarje påstående räcker för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor var andelen män med sömnbesvär jämfört med andelen män som var ständigt trötta i kategorin sammanboende utan barn?",
+      "options": [
+        "En femtedel så stor",
+        "En fjärdedel så stor",
+        "Fyra gånger så stor",
+        "Fem gånger så stor"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sammanboende utan barn är de grå staplarna. I mittdiagrammet för män är den grå stapeln för sömnbesvär 24 procent och den grå stapeln för ständig trötthet 6 procent. Andelen med sömnbesvär var alltså 24/6 = 4 gånger så stor. En fjärdedel så stor får man om man jämför åt fel håll.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilken grupp kvinnor respektive män var mest drabbad av de hälsorelaterade tillstånd som diagrammen redovisar?",
+      "options": [
+        "Sammanboende med barn respektive ensamstående med barn.",
+        "Sammanboende med barn respektive ensamstående med barn utanför hushållet.",
+        "Ensamstående med barn respektive ensamstående utan barn.",
+        "Ensamstående med barn respektive ensamstående med barn utanför hushållet."
+      ],
+      "blindAnswer": 3,
+      "explain": "Bland kvinnorna har ensamstående med barn (randiga staplar) högst andel för värk i skuldror, nacke, axlar (19 procent), värk i ländrygg (18), ängslan, oro, ångest (34) och ständig trötthet (19), och delar förstaplatsen för sömnbesvär (34). Sammanboende med barn (svarta staplar) ligger tvärtom lägst eller nästan lägst överallt. Bland männen har ensamstående med barn utanför hushållet (prickiga staplar) högst eller delat högst andel för alla tillstånd utom fetma, till exempel 30 procent för ängslan, oro, ångest, 29 för sömnbesvär och 34 för daglig rökning. Ensamstående män utan barn ligger klart lägre (24, 25 och 25 procent). Mest drabbade var alltså ensamstående kvinnor med barn och ensamstående män med barn utanför hushållet.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Under den redovisade perioden bestod gruppen kvinnor 35–50 år av i genomsnitt 1 miljon individer. Anta att hälften av dem var sammanboende med barn. Hur många av dessa kvinnor rökte dagligen?",
+      "options": [
+        "85 000",
+        "115 000",
+        "140 000",
+        "170 000"
+      ],
+      "blindAnswer": 0,
+      "explain": "Hälften av 1 miljon är 500 000 kvinnor som var sammanboende med barn. I det nedre diagrammet för kvinnor är den svarta stapeln (sammanboende med barn) för röker dagligen 17 procent. 0,17 · 500 000 = 85 000. Svaret 170 000 får man om man räknar 17 procent av hela miljonen.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Identifiera det program som hade flest sökande 2003. Hur stor andel av det totala antalet sökande 2003 hade sökt till det programmet?",
+      "options": [
+        "1/8",
+        "1/5",
+        "1/4",
+        "2/5"
+      ],
+      "blindAnswer": 1,
+      "explain": "I kolumnen Sökande för 2003 har Samhällsvetenskapsprogrammet (SP) flest, 22 955; näst flest har Naturvetenskapsprogrammet med 13 713. Det totala antalet sökande 2003 står på raden Totalt: 119 286. Andelen är 22 955/119 286 ≈ 0,19, alltså ungefär 1/5 (= 0,20).",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket år var skillnaden som störst mellan det totala antalet sökande och det totala antalet intagna?",
+      "options": [
+        "2002",
+        "2003",
+        "2005",
+        "2006"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd raden Totalt. Varje år var antalet intagna större än antalet behöriga förstahandssökande. 2002: 129 742 − 114 131 = 15 611. 2003: 131 949 − 119 286 = 12 663. 2005: 142 984 − 128 069 = 14 915. 2006: 150 845 − 136 347 = 14 498. Skillnaden var störst 2002.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Identifiera det år då antalet intagna till utbildningar vid fristående skolor var som störst. Hur många fler var de intagna männen än de intagna kvinnorna?",
+      "options": [
+        "1 410",
+        "1 660",
+        "1 850",
+        "1 920"
+      ],
+      "blindAnswer": 2,
+      "explain": "Raden Utbildningar vid fristående skolor (FR) har uppgifter om intagna från 2003: 14 832, 16 813, 19 187 och 23 128 (2006). Flest intagna var det alltså 2006. Det året var 46 procent av de intagna kvinnor och 54 procent män, en skillnad på 8 procentenheter. 0,08 · 23 128 ≈ 1 850. Svaret 1 920 får man om man i stället räknar på 2005: 10 procent av 19 187.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur stor mängd kemiska bekämpningsmedel såldes sammanlagt till de tre användarkategorierna det år då mängden var som störst?",
+      "options": [
+        "7 500 ton",
+        "9 700 ton",
+        "16 000 ton",
+        "18 000 ton"
+      ],
+      "blindAnswer": 2,
+      "explain": "I det övre diagrammet ligger kurvorna högst 1986: industri cirka 9 700 ton, jordbruk, skogsbruk samt frukt- och trädgårdsbruk cirka 5 700 ton och hushåll cirka 400 ton. Summan blir ungefär 9 700 + 5 700 + 400 = 15 800, alltså cirka 16 000 ton. Inget annat år kommer i närheten; 2007 blir det till exempel bara cirka 8 500 + 1 700 + 600 ≈ 10 800 ton. Alternativet 9 700 ton är bara industrins del.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Mellan vilka år skedde den största ökningen i antal ton sålda kemiska bekämpningsmedel?",
+      "options": [
+        "1987 och 1988",
+        "1991 och 1992",
+        "1993 och 1994",
+        "2001 och 2002"
+      ],
+      "blindAnswer": 0,
+      "explain": "Lägg ihop förändringarna för de tre kurvorna i det övre diagrammet (hushållens kurva ändras nästan inte). 1987–1988: industri från cirka 5 700 till 7 400 ton (+1 700) och jordbruk m.m. från cirka 2 500 till 3 000 ton (+500), totalt drygt 2 000 ton. 1991–1992: industri cirka +1 000 men jordbruk m.m. cirka −300, totalt cirka +700 ton. 1993–1994: industri cirka +850 och jordbruk m.m. cirka +500, totalt cirka +1 400 ton. 2001–2002: industri cirka +1 400 och jordbruk m.m. nästan oförändrat, totalt cirka +1 500 ton. Störst var ökningen mellan 1987 och 1988.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vilket år avses?",
+      "passage": "Till industrin såldes mindre än 6 000 ton kemiska bekämpningsmedel. De sålda hektardoserna till jordbruket var fler än 4 miljoner.",
+      "options": [
+        "1987",
+        "1991",
+        "1999",
+        "2008"
+      ],
+      "blindAnswer": 2,
+      "explain": "I det övre diagrammet ligger industrins kurva under 6 000 ton 1987, 1991 och 1999 (cirka 5 700–5 850 ton), medan den 2008 ligger på cirka 8 000 ton. I det nedre diagrammet (heldragen linje, Doser, vänstra axeln) var antalet hektardoser cirka 3,3 miljoner 1987 och cirka 3,0 miljoner 1991, men cirka 4,6 miljoner 1999. Bara 1999 uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Jämför mängden verksamt ämne per hektar 1982 och 2009. Med hur mycket hade denna mängd minskat?",
+      "options": [
+        "5 procent",
+        "30 procent",
+        "45 procent",
+        "70 procent"
+      ],
+      "blindAnswer": 3,
+      "explain": "Mängden verksamt ämne per hektar är den streckade linjen (Kg/ha) i det nedre diagrammet och läses av mot den högra axeln. 1982 är den cirka 1,1 kg/ha och 2009 cirka 0,33 kg/ha. Minskningen är 1,1 − 0,33 ≈ 0,77 kg/ha, och 0,77/1,1 ≈ 0,70, alltså cirka 70 procent. Alternativet 30 procent är den andel som var kvar 2009.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor omkrets har området där den västligast belägna kolningsgropen finns och som avgränsas av en stenmur?",
+      "options": [
+        "120 meter",
+        "380 meter",
+        "730 meter",
+        "860 meter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kolningsgropar är ringar på kartan. Den västligaste ligger längst till vänster, i ett område i kartans övre vänstra del som är inhägnat av murar. Mät områdets sidor med skalstocken (100 meter): den västra sidan är cirka 50 meter, den norra (övre) cirka 100 meter, den östra cirka 150 meter och den södra cirka 80 meter. Omkretsen blir ungefär 50 + 100 + 150 + 80 = 380 meter.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Förbind den nordligast belägna gränsstenen med den västligast respektive ostligast belägna gränsstenen, så att stenarna bildar hörn i ett triangelformat område. Hur stor area har detta område?",
+      "options": [
+        "45 000 m²",
+        "60 000 m²",
+        "75 000 m²",
+        "90 000 m²"
+      ],
+      "blindAnswer": 0,
+      "explain": "Gränsstenar är svarta prickar. Den nordligaste står för sig själv ovanför muren i kartans övre del, den västligaste vid områdets vänstra kant och den ostligaste längst till höger, vid vägen. (Prickparen vid muröppningar är grindstolpar.) Mätt med skalstocken (100 meter) är avståndet mellan den västligaste och den ostligaste stenen cirka 550 meter, och den nordligaste stenen ligger cirka 155–160 meter från den linjen. Triangelns area blir ungefär 550 · 157/2 ≈ 43 000 m², närmast 45 000 m².",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
