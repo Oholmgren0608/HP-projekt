@@ -1,0 +1,776 @@
+{
+  "examId": "hp-2019-04-06",
+  "passNumber": 2,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "x och y är udda tal. Vilket svarsalternativ är ett udda tal?",
+      "options": [
+        "xy",
+        "2x + y + 1",
+        "x + y",
+        "2xy + 2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Udda gånger udda är alltid udda, så xy är udda, till exempel 3 · 5 = 15. De andra alternativen är jämna. 2x är jämnt, och jämnt + udda + 1 blir jämnt, så 2x + y + 1 är jämnt. Summan av två udda tal är jämn, så x + y är jämnt. 2xy + 2 = 2(xy + 1) är delbart med 2. Kontroll med x = 1 och y = 3: xy = 3, 2x + y + 1 = 6, x + y = 4 och 2xy + 2 = 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "I vilket steg uppstod felet?",
+      "passage": "Johanna löste ekvationen 5(x − 12) = 3(x + 5) + 5 felaktigt. Hon genomförde uträkningen i följande steg:\n5(x − 12) = 3(x + 5) + 5\nSteg 1: 5(x − 12) = 3x + 20\nSteg 2: 5x − 60 = 3x + 20\nSteg 3: 2x = 40\nSteg 4: x = 20",
+      "options": [
+        "Steg 1",
+        "Steg 2",
+        "Steg 3",
+        "Steg 4"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kontrollera ett steg i taget. Steg 1: 3(x + 5) + 5 = 3x + 15 + 5 = 3x + 20, vilket stämmer. Steg 2: 5(x − 12) = 5x − 60, vilket också stämmer. Steg 3: drar man 3x från båda leden och adderar 60 får man 2x = 20 + 60 = 80, inte 2x = 40. Där uppstod felet. Steg 4 är i sig rätt räknat, eftersom 2x = 40 ger x = 20. Den riktiga lösningen är x = 40: 5(40 − 12) = 140 och 3(40 + 5) + 5 = 140.",
+      "figure": null,
+      "note": "På provet visas stegen med pilar mellan raderna; här står varje steg framför raden som det leder till.",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar 15 procent av 70?",
+      "options": [
+        "70/(15 · 100)",
+        "(70 · 100)/15",
+        "(15 · 100)/70",
+        "(15 · 70)/100"
+      ],
+      "blindAnswer": 3,
+      "explain": "15 procent är 15/100, så 15 procent av 70 är (15/100) · 70 = (15 · 70)/100 = 10,5. De andra uttrycken ger andra värden: 70/(15 · 100) ≈ 0,05, (70 · 100)/15 ≈ 467 och (15 · 100)/70 ≈ 21,4. Det sista anger hur många procent 15 är av 70, vilket är lätt att blanda ihop med det som efterfrågas.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "ABCD är en rektangel och AFD är en triangel. Hur lång är DE?",
+      "options": [
+        "5 cm",
+        "6 cm",
+        "7 cm",
+        "8 cm"
+      ],
+      "blindAnswer": 1,
+      "explain": "Triangeln AFD har en rät vinkel i A, och kateterna är AD = 6 cm och AF = 8 cm. Pythagoras sats ger hypotenusan DF = √(6² + 8²) = √100 = 10 cm. Punkten E ligger på DF, och EF = 4 cm. Alltså är DE = DF − EF = 10 − 4 = 6 cm.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.235,
+          0.54,
+          0.69,
+          0.72
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är 3 − 2/x om x = 1/4?",
+      "options": [
+        "−5",
+        "2,5",
+        "3,5",
+        "11"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in x = 1/4. Att dividera med 1/4 är detsamma som att multiplicera med 4, så 2/x = 2 · 4 = 8. Då är 3 − 2/x = 3 − 8 = −5. Alternativet 2,5 lockar om man multiplicerar 2 med 1/4 i stället för att dividera: 3 − 2 · 1/4 = 2,5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är m?",
+      "passage": "f(x) = (3/2)x + m\nf(2/3) = 0",
+      "options": [
+        "−1",
+        "0",
+        "1",
+        "2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Villkoret f(2/3) = 0 betyder att funktionsvärdet är 0 när x = 2/3. Insättning ger f(2/3) = (3/2) · (2/3) + m = 1 + m. Ekvationen 1 + m = 0 ger m = −1. Kontroll: med f(x) = (3/2)x − 1 blir f(2/3) = 1 − 1 = 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Claras och Alicias sammanlagda längd är 3,20 m. Alicias och Bedas sammanlagda längd är 3,30 m. Den sammanlagda längden för alla tre är 4,80 m. Hur lång är Alicia?",
+      "options": [
+        "1,60 m",
+        "1,65 m",
+        "1,70 m",
+        "1,75 m"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla längderna C, A och B (i meter). Då är C + A = 3,20 och A + B = 3,30, och lägger man ihop dem får man C + 2A + B = 6,50. Alla tre tillsammans är C + A + B = 4,80. Skillnaden mellan summorna är A: 6,50 − 4,80 = 1,70. Kontroll: Clara är 3,20 − 1,70 = 1,50 m och Beda 3,30 − 1,70 = 1,60 m, och 1,50 + 1,70 + 1,60 = 4,80.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln x?",
+      "options": [
+        "28°",
+        "32°",
+        "38°",
+        "42°"
+      ],
+      "blindAnswer": 3,
+      "explain": "Vinkeln x ligger i den lilla triangeln längst ned till vänster, under den vågräta linjen. Vid skärningspunkten är den lilla triangelns vinkel 180° − 152° = 28°, eftersom den och 152°-vinkeln ligger längs samma räta linje. Den övre triangeln, med vinklarna 82° och 28°, har sin tredje vinkel där den vågräta linjen möter den vänstra sidan: 180° − 82° − 28° = 70°. Den lilla triangelns vinkel i samma punkt är då 180° − 70° = 110°. Alltså är x = 180° − 28° − 110° = 42°.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.225,
+          0.533,
+          0.59,
+          0.7
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "För x, y och z gäller sambandet 3x − 4y + 2z = 14. Vilket av svarsalternativen motsvarar detta samband?",
+      "options": [
+        "x = 14/3 + 4y − 2z",
+        "x = −14/3 − 4y + 2z",
+        "x = (1/3)(14 + 4y − 2z)",
+        "x = −(1/3)(14 − 4y + 2z)"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lös ut x. Flytta över y- och z-termerna: 3x = 14 + 4y − 2z. Dela sedan hela högerledet med 3: x = (1/3)(14 + 4y − 2z). Alternativet x = 14/3 + 4y − 2z lockar om man bara delar 14 med 3 och glömmer att 4y och 2z också ska delas. I de två alternativen med minustecken framför har tecknen blivit fel.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "x och y är heltal sådana att 1/2 + 1/3 = x/y. Vad är ett möjligt värde för xy?",
+      "options": [
+        "10",
+        "12",
+        "18",
+        "30"
+      ],
+      "blindAnswer": 3,
+      "explain": "Räkna ut vänsterledet: 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Alltså är x/y = 5/6. Eftersom 5/6 inte går att förkorta är x = 5k och y = 6k för något heltal k som inte är 0, och då är xy = 30k². Med k = 1 blir xy = 5 · 6 = 30. Talen 10, 12 och 18 kan inte skrivas som 30k².",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar grafen till funktionen h, där y = h(x)?",
+      "passage": "f(x) = 3x + 1\ng(x) = 2x − 3\nh(x) = f(x) − g(x)",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 0,
+      "explain": "h(x) = f(x) − g(x) = (3x + 1) − (2x − 3) = 3x + 1 − 2x + 3 = x + 4. Grafen är en rät linje med lutningen 1 som skär y-axeln i 4 och x-axeln i −4. Det är Graf A. Graf C har också lutningen 1 men skär y-axeln i −2; den får man om man glömmer att minustecknet gäller hela g(x) och räknar 3x + 1 − 2x − 3 = x − 2. Graf B är vågrät och Graf D lutar nedåt.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.175,
+          0.176,
+          0.43,
+          0.745
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är lika med 2⁴ · 3⁴?",
+      "options": [
+        "6⁴",
+        "6⁸",
+        "6¹²",
+        "6¹⁶"
+      ],
+      "blindAnswer": 0,
+      "explain": "Potenser med samma exponent kan multipliceras genom att man multiplicerar baserna: 2⁴ · 3⁴ = (2 · 3)⁴ = 6⁴. Kontroll: 2⁴ · 3⁴ = 16 · 81 = 1 296 och 6⁴ = 36 · 36 = 1 296. Alternativet 6⁸ lockar om man adderar exponenterna, men det får man bara göra när baserna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Peter använder 50 % av sin månadspeng till att köpa godis. Stefan använder 30 % av sin månadspeng till att köpa godis. Den ena av dem köper godis för 35 kr mer än den andra.\nKvantitet I: Summan som Peter köper godis för\nKvantitet II: Summan som Stefan köper godis för",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Månadspengarna är okända, så det går inte att avgöra vem som köper godis för mest. Exempel 1: Peter har 100 kr och köper godis för 50 kr, Stefan har 50 kr och köper för 15 kr. Då köper Peter för 35 kr mer. Exempel 2: Peter har 20 kr och köper för 10 kr, Stefan har 150 kr och köper för 45 kr. Då köper Stefan för 35 kr mer. Att Peter använder en större andel betyder inte att han använder fler kronor.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a är ett positivt heltal.\nb är ett heltal.\nKvantitet I: a\nKvantitet II: ab",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämförelsen beror på b. Om b = 1 är ab = a, och kvantiteterna är lika. Om b = 2 är ab = 2a, som är större än a eftersom a är positivt. Om b = 0 är ab = 0, som är mindre än a. Informationen räcker alltså inte.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = x² − 2x − 3\nKvantitet I: f(0)\nKvantitet II: f(2)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "f(0) = 0² − 2 · 0 − 3 = −3 och f(2) = 2² − 2 · 2 − 3 = 4 − 4 − 3 = −3. Kvantiteterna är lika. Det stämmer med att grafen är en parabel som är symmetrisk kring x = 1, och x = 0 och x = 2 ligger lika långt från 1.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "För en viss parallellogram gäller att vinkeln i ett av hörnen är 57°.\nKvantitet I: Vinkeln i ett av de andra hörnen i parallellogrammen\nKvantitet II: 124°",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "I en parallellogram är motstående vinklar lika stora och intilliggande vinklar tillsammans 180°. Vinklarna är alltså 57°, 123°, 57° och 123°. Ett av de andra hörnen har vinkeln 57° eller 123°, och båda är mindre än 124°. Kvantitet II är därför större oavsett vilket hörn man väljer.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 99 · 101\nKvantitet II: 98 · 102",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd konjugatregeln (a − b)(a + b) = a² − b². 99 · 101 = (100 − 1)(100 + 1) = 100² − 1² = 9 999. 98 · 102 = (100 − 2)(100 + 2) = 100² − 2² = 9 996. Kvantitet I är 3 större. Allmänt gäller att av två tal med en given summa blir produkten större ju närmare varandra talen ligger.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Arean av den skuggade ytan\nKvantitet II: 6 cm²",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Lägg ett koordinatsystem med origo i det räta hörnet nere till vänster. Den stora triangeln har kateterna 2 + 6 = 8 cm och 6 + 2 = 8 cm, så hypotenusan går från (0, 8) till (8, 0), alltså längs linjen x + y = 8. Kvadraten har sidan 6 cm. Hypotenusan skär kvadratens översida (y = 6) där x = 2 och dess högra sida (x = 6) där y = 2. Den skuggade ytan är därför en rätvinklig triangel med kateterna 6 − 2 = 4 cm och 6 − 2 = 4 cm, och arean är 4 · 4/2 = 8 cm². Det är mer än 6 cm².",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.215,
+          0.515,
+          0.515,
+          0.71
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Medelvärdet av åtta på varandra följande heltal är 16,5.\nKvantitet I: Hälften av det största av de åtta heltalen\nKvantitet II: Det minsta av de åtta heltalen",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Åtta på varandra följande heltal kan skrivas n, n + 1, …, n + 7, och medelvärdet är n + 3,5. Då är n + 3,5 = 16,5, så n = 13, och talen är 13, 14, …, 20. Hälften av det största är 20/2 = 10, medan det minsta är 13. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "a > 0\nb > 0\nKvantitet I: (a + b)(a² + b²)\nKvantitet II: a³ + ab(a + b) + b³",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Multiplicera ut kvantitet I: (a + b)(a² + b²) = a³ + ab² + a²b + b³. Kvantitet II: a³ + ab(a + b) + b³ = a³ + a²b + ab² + b³. Uttrycken har samma termer, så kvantiteterna är lika för alla a och b. Kontroll med a = 1 och b = 2: kvantitet I blir 3 · 5 = 15 och kvantitet II blir 1 + 2 · 3 + 8 = 15.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nx² = 1/4\nKvantitet I: (1/4)²\nKvantitet II: x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Eftersom x > 0 och x² = 1/4 är x = 1/2. Kvantitet I är (1/4)² = 1/16. Kvantitet II, 1/2, är alltså större. Det är lätt att tro att kvantiteterna är lika, men (1/4)² är (x²)² = x⁴, inte x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "s är summan av alla heltal x sådana att 0 < x < 6.\np är produkten av alla primtal y sådana att 2 < y < 7.\nKvantitet I: s\nKvantitet II: p",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Heltalen x med 0 < x < 6 är 1, 2, 3, 4 och 5, så s = 1 + 2 + 3 + 4 + 5 = 15. Primtalen y med 2 < y < 7 är 3 och 5 (2 och 7 räknas inte eftersom olikheterna är stränga, och 4 och 6 är inte primtal), så p = 3 · 5 = 15. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En låda innehåller enfärgade klossar: röda, gröna och blå. Hur många klossar finns det i lådan?\n(1) Lådan innehåller 55 röda klossar, vilket är 10 procent mer än antalet gröna klossar.\n(2) De blå och de gröna klossarna är sammanlagt lika många som de röda klossarna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Det finns 55 röda klossar, och eftersom 55 är 10 procent mer än antalet gröna finns det 55/1,1 = 50 gröna. Antalet blå är okänt. Inte tillräckligt.\n(2) De blå och gröna är lika många som de röda, så det finns dubbelt så många klossar som röda klossar. Men antalet röda är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: Det finns 55 röda och sammanlagt 55 blå och gröna, alltså 55 + 55 = 110 klossar. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Christian, Harry och Sam är tre bröder vars sammanlagda ålder är 16 år. Hur gammal är Sam?\n(1) Christian och Harry är lika gamla.\n(2) Sam är två år yngre än Harry.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalla åldrarna C, H och S, där C + H + S = 16.\n(1) C = H ger 2H + S = 16. Både H = 6, S = 4 och H = 5, S = 6 fungerar. Inte tillräckligt.\n(2) S = H − 2 ger C + 2H = 18, men C är okänd. Till exempel fungerar både C = 6, H = 6, S = 4 och C = 4, H = 7, S = 5. Inte tillräckligt.\n(1) och (2) tillsammans: H + H + (H − 2) = 16 ger 3H = 18, så H = 6 och Sam är 6 − 2 = 4 år. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Då ett kafé öppnade fanns det en korg med röda äpplen och gröna äpplen. Sammanlagt fanns det 48 äpplen i korgen. Hur stor andel röda äpplen fanns det i korgen då kaféet öppnade?\n(1) Då kaféet stängde fanns det tre röda och nio gröna äpplen kvar i korgen.\n(2) Då kaféet öppnade fanns det tre gånger så många röda som gröna äpplen i korgen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Vi vet vad som fanns kvar vid stängningen, men inte hur många äpplen av varje färg som togs under dagen. Fördelningen vid öppningen går inte att räkna ut. Inte tillräckligt.\n(2) Tre gånger så många röda som gröna betyder att 3 av 4 äpplen var röda, alltså andelen 3/4 = 75 procent (36 röda och 12 gröna). Tillräckligt.\nSvaret erhålls alltså i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Alma och Karin går i samma skola. En morgon går Alma hemifrån klockan 8.02 och Karin går hemifrån klockan 8.05. Vem av dem kommer fram till skolan först?\n(1) Alma och Karin har samma medelhastighet.\n(2) Alma har 500 meter att gå till skolan och är framme klockan 8.10.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Samma hastighet hjälper inte så länge vi inte vet hur långt de har till skolan. Inte tillräckligt.\n(2) Vi vet när Alma är framme, men ingenting om Karins väg eller hastighet. Inte tillräckligt.\n(1) och (2) tillsammans: Alma går 500 m på 8 minuter, alltså 62,5 m per minut, och Karin går lika fort. Har Karin kortare än 5 · 62,5 = 312,5 m kommer hon fram före 8.10, och har hon längre kommer hon fram efter Alma. Hennes sträcka är okänd, så det räcker inte heller tillsammans.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket värde har det positiva heltalet x?\n(1) Om talen 63, 64 respektive 65 delas med x blir resten 15, 0 respektive 1.\n(2) x är ett jämnt tal som är jämnt delbart med 4.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Resten 0 när 64 delas med x betyder att x är en delare till 64. Resten 15 när 63 delas med x betyder att x är större än 15 och delar 63 − 15 = 48. Delarna till 64 som är större än 15 är 16, 32 och 64, och av dem delar bara 16 talet 48. Kontroll: 63 = 3 · 16 + 15, 64 = 4 · 16 och 65 = 4 · 16 + 1. Alltså är x = 16. Tillräckligt.\n(2) x kan vara 4, 8, 12, 16 och så vidare. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På en uteservering är det 10 gäster som har både solglasögon och keps, och 20 gäster som varken har solglasögon eller keps. Hur många gäster är det på uteserveringen?\n(1) 15 gäster har solglasögon och 15 gäster har keps.\n(2) 5 gäster har solglasögon men inte keps, och 5 gäster har keps men inte solglasögon.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "Gästerna delas in i fyra grupper: både och (10), ingetdera (20), bara solglasögon och bara keps.\n(1) Av de 15 med solglasögon har 10 också keps, så 5 har bara solglasögon. På samma sätt har 5 bara keps. Totalt 10 + 20 + 5 + 5 = 40 gäster. Tillräckligt.\n(2) Här står direkt att 5 har bara solglasögon och 5 bara keps, så det är också 10 + 20 + 5 + 5 = 40 gäster. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor var den procentuella minskningen av antalet gymnastikföreningar 2012 om man jämför med antalet 1985?",
+      "options": [
+        "40 procent",
+        "50 procent",
+        "60 procent",
+        "70 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "I det översta diagrammet är gymnastik den mittersta linjen. Den börjar 1985 vid ungefär 1 900 föreningar och slutar 2012 vid ungefär 1 100. Minskningen är cirka 1 900 − 1 100 = 800 föreningar, och 800/1 900 ≈ 0,42, alltså ungefär 40 procent. En minskning med 50 procent skulle kräva att antalet sjönk till cirka 950.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur många ridsportföreningar fanns det i genomsnitt per år under perioden 1990–2000?",
+      "options": [
+        "750",
+        "850",
+        "950",
+        "1 050"
+      ],
+      "blindAnswer": 1,
+      "explain": "Ridsport är den heldragna linjen i det mellersta diagrammet som stiger brant kring 1990. Avläsning år för år 1990–2000 ger ungefär 580, 590, 800, 900, 935, 950, 945, 1 000, 970, 990 och 1 010. Summan av de elva värdena är cirka 9 670, och medelvärdet blir 9 670/11 ≈ 880. Närmast bland alternativen är 850. Den som bara ser till värdena kring 1 000 i slutet av perioden får ett för stort svar.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "Medelvärdet blir cirka 880, alltså mellan 850 och 950 men närmast 850.",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Studera hur antalet fotbollsföreningar och antalet friidrottsföreningar förhöll sig till varandra år 2000. Vilket svarsförslag anger storleksförhållandet mellan fotboll och friidrott?",
+      "options": [
+        "2:1",
+        "3:1",
+        "3:2",
+        "5:2"
+      ],
+      "blindAnswer": 1,
+      "explain": "I det översta diagrammet ligger fotboll år 2000 vid ungefär 3 400 föreningar och friidrott (den nedersta linjen) vid ungefär 1 150. Kvoten är 3 400/1 150 ≈ 3,0, alltså förhållandet 3:1. Den som läser av gymnastik (cirka 1 500) i stället för friidrott får en kvot på ungefär 2,3.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilket trädslag var vanligast på Råshult utmark vid tiden för Kristi födelse, år 1300 respektive år 1800?",
+      "options": [
+        "Björk, björk respektive tall",
+        "Ek, björk respektive gran",
+        "Ek, ek respektive gran",
+        "Lind, björk respektive gran"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd de högra cirklarna (trädslagen) i raden Råshult utmark. Vid tiden för Kristi födelse är lind (vit) störst med cirka 31 procent, tätt följd av al (prickig) med cirka 30 procent, medan ek (mörkgrå) bara är cirka 22 procent. År 1300 täcker björk (ljusgrå) halva cirkeln. År 1800 täcker gran (streckad) cirka 60 procent, mot cirka 30 procent för björk och 10 procent för tall. Alltså lind, björk respektive gran.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "Vid tiden för Kristi födelse är lind (cirka 31 %) och al (cirka 30 %) nästan lika stora; al finns inte bland alternativen.",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "På vilken av följande platser och vid vilken tidpunkt utgjorde örter och gräs 8 procent av vegetationen medan asp och al saknades?",
+      "options": [
+        "Råshult inäga, år 1300",
+        "Djäknabygd utmark, år 1300",
+        "Råshult inäga, år 1800",
+        "Djäknabygd utmark, år 1800"
+      ],
+      "blindAnswer": 2,
+      "explain": "Uteslut först de tidpunkter där asp eller al finns bland trädslagen (den högra cirkeln). Råshult inäga år 1300 har al och Djäknabygd utmark år 1800 har asp. Kvar är Djäknabygd utmark år 1300 och Råshult inäga år 1800. I den vänstra cirkeln för Djäknabygd utmark år 1300 är örter och gräs (svart) bara en smal kil, cirka 2 procent. I Råshult inäga år 1800 är den svarta kilen knappt en tolftedel av cirkeln, alltså omkring 8 procent. Svaret är Råshult inäga, år 1800.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "Kilen för örter och gräs i Råshult inäga år 1800 mättes till cirka 26° (drygt 7 procent); de andra alternativen faller på asp, al eller en för liten andel.",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur förändrades andelen al av träden på Råshult inäga om man jämför år 1300 med tiden för Kristi födelse?",
+      "options": [
+        "Den ökade med 10 procentenheter.",
+        "Den ökade med 25 procentenheter.",
+        "Den minskade med 15 procentenheter.",
+        "Den minskade med 45 procentenheter."
+      ],
+      "blindAnswer": 0,
+      "explain": "Al är den prickiga sektorn i de högra cirklarna (trädslagen) för Råshult inäga. Vid tiden för Kristi födelse upptar den cirka 80° av cirkelns 360°, alltså cirka 22 procent. År 1300 upptar den cirka 107°, alltså cirka 30 procent. Från tiden för Kristi födelse till år 1300 ökade andelen alltså med ungefär 8 procentenheter, vilket ligger närmast en ökning med 10 procentenheter.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "rotate": 90
+      },
+      "note": "Al-sektorerna mättes till cirka 22 procent (Kristi födelse) och cirka 30 procent (år 1300).",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vilken veckodag var antalet vägtrafikolyckor i ej tättbebyggt område som störst respektive som minst?",
+      "options": [
+        "Onsdag respektive måndag",
+        "Onsdag respektive söndag",
+        "Fredag respektive måndag",
+        "Fredag respektive söndag"
+      ],
+      "blindAnswer": 2,
+      "explain": "Använd tabellen över veckodagar (i mitten), blocket Ej tättbebyggt område: måndag 1 128, tisdag 1 145, onsdag 1 275, torsdag 1 256, fredag 1 461, lördag 1 222 och söndag 1 190. Flest olyckor skedde på fredagar (1 461) och minst på måndagar (1 128). Fredag respektive söndag gäller i stället tättbebyggt område (1 574 respektive 1 008).",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av vägtrafikolyckorna i tättbebyggt område skedde mellan 12.00 och 17.59?",
+      "options": [
+        "25 procent",
+        "40 procent",
+        "45 procent",
+        "55 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "I tabellen över klockslag (till höger), blocket Tättbebyggt område, står 1 172 för 12:00–13:59, 1 473 för 14:00–15:59 och 1 850 för 16:00–17:59. Summan är 1 172 + 1 473 + 1 850 = 4 495 av totalt 9 536 olyckor. 4 495/9 536 ≈ 0,47, alltså cirka 47 procent, och närmast bland alternativen är 45 procent.",
+      "figure": {
+        "pages": [
+          20
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Nedanstående kurva visar hur antalet skadade personer i en viss kategori var fördelat på årets månader. Vilken kategori avses?",
+      "options": [
+        "Det totala antalet skadade i tättbebyggt område",
+        "Antalet lindrigt skadade i tättbebyggt område",
+        "Det totala antalet skadade i ej tättbebyggt område",
+        "Antalet lindrigt skadade i ej tättbebyggt område"
+      ],
+      "blindAnswer": 3,
+      "explain": "Kurvan börjar vid cirka 800 i januari, är lägst i april (cirka 640) och högst i juli (cirka 1 220). I den vänstra tabellen stämmer kolumnen lindrigt skadade för ej tättbebyggt område: 804, 742, 819, 643, 762, 1 106, 1 221, 1 019, 918, 1 013, 975 och 1 013. Det totala antalet skadade i ej tättbebyggt område är för stort (till exempel 1 563 i juli). I tättbebyggt område är april inte den lägsta månaden, varken för lindrigt skadade (718 mot 710 i februari) eller för alla skadade (824 mot 809 i februari).",
+      "figure": {
+        "pages": [
+          20,
+          21
+        ],
+        "boxes": [
+          null,
+          [
+            0.262,
+            0.25,
+            0.485,
+            0.432
+          ]
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Jämför himlakroppen med den högsta redovisade temperaturen och himlakroppen med den lägsta redovisade temperaturen. Hur stor är skillnaden?",
+      "options": [
+        "150 °C",
+        "250 °C",
+        "600 °C",
+        "700 °C"
+      ],
+      "blindAnswer": 3,
+      "explain": "Temperaturen läses av på den vågräta axeln, som inte är jämnt graderad och där temperaturen sjunker åt höger. Venus har den högsta temperaturen: staplen står strax till höger om 500, alltså knappt 500 °C (cirka 480 °C). Pluto har den lägsta: staplen står mellan −220 och −240, cirka −225 °C. Skillnaden är ungefär 480 − (−225) ≈ 705 °C, alltså cirka 700 °C.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Vilken temperatur redovisas för jorden och vilken medelhastighet har syrgas respektive koldioxid vid denna temperatur, enligt diagrammet?",
+      "passage": "Svarsalternativen anger: temperatur – hastighet (km/s) för syrgas – hastighet (km/s) för koldioxid",
+      "options": [
+        "Knappt 100 °C – 0,55 – 0,48",
+        "Knappt 100 °C – 1,50 – 0,78",
+        "Drygt 100 °C – 0,55 – 0,78",
+        "Drygt 100 °C – 1,50 – 0,48"
+      ],
+      "blindAnswer": 0,
+      "explain": "Jordens stapel står strax till höger om 100 på temperaturaxeln, och eftersom temperaturen sjunker åt höger är det knappt 100 °C. Följ sedan de sneda linjerna till jordens stapel. Linjen för O₂ (syrgas) når staplen strax ovanför 0,5 på hastighetsaxeln, cirka 0,55 km/s. Linjen för CO₂ (koldioxid) ligger under den och når staplen strax under 0,5, cirka 0,48 km/s. Värdet 1,50 är ungefär där linjen för He (helium) når staplen.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Vilken flykthastighet har månen?",
+      "options": [
+        "0,6 km/s",
+        "0,8 km/s",
+        "1,2 km/s",
+        "2,4 km/s"
+      ],
+      "blindAnswer": 3,
+      "explain": "Enligt texten under diagrammet motsvarar staplarnas höjd en sjättedel av himlakroppens flykthastighet. Månens stapel slutar vid 0,4 km/s på hastighetsaxeln. Flykthastigheten är därför 6 · 0,4 = 2,4 km/s.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
