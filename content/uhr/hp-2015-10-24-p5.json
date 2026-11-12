@@ -1,0 +1,787 @@
+{
+  "examId": "hp-2015-10-24",
+  "passNumber": 5,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "5(x + 6) = 6(x + 5)",
+      "options": [
+        "0",
+        "5",
+        "6",
+        "30"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in i parenteserna: 5x + 30 = 6x + 30. Dra bort 30 från båda leden: 5x = 6x, och det gäller bara om x = 0. Kontroll: med x = 0 blir vänsterledet 5 · 6 = 30 och högerledet 6 · 5 = 30.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "5³³ är ett heltal. Vilken entalssiffra har heltalet?",
+      "options": [
+        "0",
+        "1",
+        "5",
+        "9"
+      ],
+      "blindAnswer": 2,
+      "explain": "Titta på de första potenserna av 5: 5¹ = 5, 5² = 25, 5³ = 125, 5⁴ = 625. Alla slutar på 5. Det beror på att entalssiffran i en produkt bara bestäms av faktorernas entalssiffror, och 5 · 5 = 25 slutar på 5. Varje gång man multiplicerar med 5 blir entalssiffran alltså 5 igen, så även 5³³ har entalssiffran 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vad är 0,4 − 1/4?",
+      "options": [
+        "0",
+        "0,3",
+        "1/8",
+        "3/20"
+      ],
+      "blindAnswer": 3,
+      "explain": "Skriv 1/4 som decimaltal: 1/4 = 0,25. Då är 0,4 − 0,25 = 0,15. Som bråk är 0,15 = 15/100 = 3/20. Alternativet 1/8 är 0,125, och 0 får man om man tror att 0,4 och 1/4 är lika stora.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "f(x) är en linjär funktion vars graf går genom punkten (0, 4) och skär grafen till g(x) = −x − 2 i en rät vinkel. Vad är f(x)?",
+      "options": [
+        "f(x) = x + 4",
+        "f(x) = x − 4",
+        "f(x) = −x",
+        "f(x) = −x + 2"
+      ],
+      "blindAnswer": 0,
+      "explain": "Grafen till g(x) = −x − 2 har riktningskoefficienten −1. Två linjer skär varandra i rät vinkel när produkten av riktningskoefficienterna är −1, så f har riktningskoefficienten k där k · (−1) = −1, alltså k = 1. Grafen går genom (0, 4), så den skär y-axeln i 4 och f(x) = x + 4. Alternativet f(x) = x − 4 har rätt lutning men skär y-axeln i −4, och de två med −x är parallella med g.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vad är xᵏ⁺¹ · xᵏ?",
+      "passage": "x > 0",
+      "options": [
+        "xᵏ⁽ᵏ⁺¹⁾",
+        "x²ᵏ⁺¹",
+        "x",
+        "x²ᵏ⁻¹"
+      ],
+      "blindAnswer": 1,
+      "explain": "När potenser med samma bas multipliceras adderas exponenterna: xᵏ⁺¹ · xᵏ = x⁽ᵏ⁺¹⁾⁺ᵏ = x²ᵏ⁺¹. Kontroll med k = 2: x³ · x² = x⁵, och 2 · 2 + 1 = 5. Alternativet xᵏ⁽ᵏ⁺¹⁾ lockar om man multiplicerar exponenterna, men det gör man bara när en potens upphöjs till en ny exponent.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är med säkerhet korrekt angående x och y?",
+      "options": [
+        "x + y = 12",
+        "x/y = 1",
+        "36/x = y",
+        "(x + y)² = 36"
+      ],
+      "blindAnswer": 2,
+      "explain": "Figuren är en rektangel med sidorna x cm och y cm och arean 36 cm², så xy = 36. Dividera båda leden med x: y = 36/x, och det gäller alltid. Figuren ser ut som en kvadrat, men ingenting säger att x = y. Både x + y = 12 och x/y = 1 gäller bara om x = y = 6; med till exempel x = 4 och y = 9 är arean också 36 men x + y = 13. (x + y)² = 36 skulle kräva x + y = 6, men två positiva tal med produkten 36 har alltid summan minst 12.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.22,
+          0.565,
+          0.42,
+          0.675
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar en förenkling av uttrycket 8 − 3 · (5x − 3) − 4x − (2 − 9x)?",
+      "options": [
+        "−10x + 15",
+        "−28x + 15",
+        "30x − 17",
+        "12x − 17"
+      ],
+      "blindAnswer": 0,
+      "explain": "Multiplicera in och ta bort parenteserna: −3 · (5x − 3) = −15x + 9 och −(2 − 9x) = −2 + 9x. Uttrycket blir 8 − 15x + 9 − 4x − 2 + 9x. Samla x-termerna: −15x − 4x + 9x = −10x. Samla konstanterna: 8 + 9 − 2 = 15. Förenklingen är −10x + 15. Felalternativen får man om man glömmer att ett minustecken framför en parentes byter tecken på alla termer i den.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "En liten pump fyller en tank på 1 timme. En stor pump fyller samma tank på 15 minuter. Om båda pumparna startas samtidigt, hur lång tid tar det då att fylla tanken?",
+      "options": [
+        "8 minuter",
+        "10 minuter",
+        "12 minuter",
+        "14 minuter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Den lilla pumpen fyller 1/60 av tanken per minut och den stora 1/15 = 4/60 av tanken per minut. Tillsammans fyller de 1/60 + 4/60 = 5/60 = 1/12 av tanken per minut, så det tar 12 minuter. Kontroll: på 12 minuter fyller den lilla pumpen 12/60 = 1/5 och den stora 12/15 = 4/5 av tanken, tillsammans en hel tank.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Avståndet från jorden till månen är 384 miljoner meter. Vilket svarsalternativ motsvarar denna sträcka?",
+      "options": [
+        "384 000 Mm",
+        "384 km",
+        "384 Tm",
+        "0,384 Gm"
+      ],
+      "blindAnswer": 3,
+      "explain": "Prefixet G (giga) betyder 10⁹, alltså en miljard. 384 miljoner meter = 384 · 10⁶ m = 0,384 · 10⁹ m = 0,384 Gm. De andra stämmer inte: 384 km är bara 384 000 m, 384 Tm (tera, 10¹²) är 384 000 miljarder meter och 384 000 Mm (mega, 10⁶) är 384 miljarder meter. Avståndet är 384 Mm, inte 384 000 Mm.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Medellängden för 10 pojkar är 180 cm. Medellängden för x flickor är 165 cm. Medellängden för pojkarna och flickorna tillsammans är 175 cm. Hur många är flickorna?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "blindAnswer": 1,
+      "explain": "Pojkarnas sammanlagda längd är 10 · 180 = 1 800 cm och flickornas 165x cm. Tillsammans är de 10 + x personer med medellängden 175 cm, så 1 800 + 165x = 175(10 + x) = 1 750 + 175x. Det ger 50 = 10x och x = 5. Kontroll: (1 800 + 5 · 165)/15 = 2 625/15 = 175.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vinklarna i en triangel förhåller sig som 3:4:5. Hur stor är den största vinkeln?",
+      "options": [
+        "60°",
+        "75°",
+        "90°",
+        "105°"
+      ],
+      "blindAnswer": 1,
+      "explain": "Förhållandet 3:4:5 betyder att vinkelsumman delas i 3 + 4 + 5 = 12 lika stora delar. Vinkelsumman i en triangel är 180°, så en del är 180°/12 = 15°. Den största vinkeln är 5 · 15° = 75°, och vinklarna är 45°, 60° och 75°. 90° lockar om man tänker på triangeln med sidorna 3, 4 och 5, men här är det vinklarna som har förhållandet 3:4:5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Om b = 1/4 vad är då a?",
+      "passage": "a > 0\na² + b² = 1",
+      "options": [
+        "√(15/16)",
+        "3/4",
+        "√(3/4)",
+        "15/16"
+      ],
+      "blindAnswer": 0,
+      "explain": "Sätt in b = 1/4: a² + (1/4)² = 1, alltså a² + 1/16 = 1 och a² = 15/16. Eftersom a > 0 är a = √(15/16). Alternativet 15/16 är a², inte a, och √(3/4) får man om man glömmer att kvadrera b och räknar 1 − 1/4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 4 · 6 − 3 · 5\nKvantitet II: 3 · (3 · 2 − 5)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna multiplikationerna före subtraktionen. Kvantitet I: 4 · 6 − 3 · 5 = 24 − 15 = 9. Kvantitet II: 3 · (3 · 2 − 5) = 3 · (6 − 5) = 3 · 1 = 3. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Den lodräta sidan är vinkelrät mot den vågräta linjen, så triangeln är rätvinklig i det nedre vänstra hörnet. Sträckan från det hörnet till den lutande sidan står vinkelrätt mot den. Titta på den lilla triangeln till höger om sträckan: den har vinkeln y, en rät vinkel och därför vinkeln 180° − 90° − y = 90° − y vid det nedre vänstra hörnet. Hela vinkeln där är 90°, så x = 90° − (90° − y) = y. Kvantiteterna är lika.",
+      "figure": {
+        "pages": [
+          8
+        ],
+        "box": [
+          0.201,
+          0.535,
+          0.495,
+          0.652
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 7⁻⁸\nKvantitet II: 7⁻¹⁶",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "En negativ exponent betyder ett bråk: 7⁻⁸ = 1/7⁸ och 7⁻¹⁶ = 1/7¹⁶. Eftersom 7¹⁶ är mycket större än 7⁸ är 1/7¹⁶ mycket mindre än 1/7⁸. Kvantitet I är större. Det är lätt att tro att II är större för att 16 är större än 8, men ju mer negativ exponenten är, desto mindre blir talet.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "k ≤ 0\nKvantitet I: x\nKvantitet II: x · k",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Det står ingenting om x. Om x = 1 och k = −1 är kvantitet I 1 och kvantitet II 1 · (−1) = −1, så I är större. Om x = −1 och k = −1 är kvantitet I −1 och kvantitet II (−1) · (−1) = 1, så II är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Volymen av en cirkulär cylinder där basytans radie är 3 cm och höjden är 4 cm\nKvantitet II: Volymen av en cirkulär cylinder där basytans radie är 4 cm och höjden är 3 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En cylinders volym är πr²h. Kvantitet I: π · 3² · 4 = 36π cm³. Kvantitet II: π · 4² · 3 = 48π cm³. Radien räknas i kvadrat men höjden inte, så det spelar roll vilket av måtten som är radie. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x = 3y\nKvantitet I: 3x − y\nKvantitet II: 2x + 2y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Sätt in x = 3y i båda kvantiteterna. Kvantitet I: 3x − y = 3 · 3y − y = 9y − y = 8y. Kvantitet II: 2x + 2y = 2 · 3y + 2y = 6y + 2y = 8y. Båda är 8y, vad y än är. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Antag att ♦ betyder en räkneoperation som definieras av x ♦ y = x² + y²\nKvantitet I: 2 ♦ 2\nKvantitet II: 0 ♦ 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd definitionen x ♦ y = x² + y². Kvantitet I: 2 ♦ 2 = 2² + 2² = 4 + 4 = 8. Kvantitet II: 0 ♦ 3 = 0² + 3² = 0 + 9 = 9. Kvantitet II är större.",
+      "figure": null,
+      "note": "Tecknet är en fylld romb (♦) på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "A och B är två mätserier. Medianen av A är lika med medianen av B. Talen i de båda mätserierna är sorterade i storleksordning.\nA: −2, x, 7, 10\nB: 0, y, 8, 12\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Båda mätserierna har fyra tal, så medianen är medelvärdet av de två mittersta talen. Medianen av A är (x + 7)/2 och medianen av B är (y + 8)/2. De är lika, så x + 7 = y + 8, alltså x = y + 1. Till exempel kan x vara 4 och y 3, men x är alltid 1 större än y. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "5 − x < 2\ny − 3 > 1\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Lös olikheterna: 5 − x < 2 ger x > 3, och y − 3 > 1 ger y > 4. Mer än så vet man inte om x och y. Med x = 10 och y = 5 är kvantitet I större, men med x = 4 och y = 5 är kvantitet II större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Två linjer skär varandra i högst en punkt och tre linjer skär varandra i högst tre punkter.\nKvantitet I: Största antalet skärningspunkter för 8 linjer\nKvantitet II: 24",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Antalet skärningspunkter blir störst när inga linjer är parallella och inga tre går genom samma punkt. Då kan varje ny linje skära alla de tidigare linjerna i var sin ny punkt: den andra linjen ger 1 punkt, den tredje 2 nya, och så vidare. För 8 linjer blir det 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28 punkter, vilket är samma sak som antalet par av linjer, 8 · 7/2 = 28. Kvantitet I (28) är större än 24.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Lena har en skål med endast svarta och vita enfärgade karameller. Lena plockar slumpmässigt upp en karamell ur skålen. Vad är sannolikheten att karamellen är vit?\n(1) Innan Lena plockar upp karamellen är andelen svarta karameller i skålen 75 %.\n(2) Innan Lena plockar upp karamellen finns det tre gånger så många svarta som vita karameller i skålen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Det finns bara svarta och vita karameller, så om 75 % är svarta är resten, 25 %, vita. Sannolikheten att få en vit karamell är 0,25. Tillräckligt.\n(2) Tre gånger så många svarta som vita betyder 3 svarta på varje vit, alltså är 1 av 4 karameller vit. Sannolikheten är 1/4. Tillräckligt.\nVarje påstående räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett café finns det vid ett tillfälle 29 studenter som läser till fysiker, jurist eller lärare. Ingen av studenterna läser mer än en utbildning. Hur stor andel av studenterna i caféet studerar till fysiker?\n(1) I caféet är det fem fler studenter som läser till grundskollärare än som läser till gymnasielärare.\n(2) Antalet studenter i caféet som läser till fysiker respektive till jurist är lika stort.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Kalla antalet blivande fysiker F, jurister J och lärare L. Då är F + J + L = 29.\n(1) Uppgiften säger bara hur lärarstudenterna fördelar sig, inte hur många som läser till fysiker. Inte tillräckligt.\n(2) F = J ger 2F + L = 29, men L är okänt. F kan vara till exempel 10 (med L = 9) eller 12 (med L = 5). Inte tillräckligt.\n(1) och (2) tillsammans: Med y gymnasielärare och y + 5 grundskollärare är L = 2y + 5, och 2F + 2y + 5 = 29 ger F + y = 12. Både F = 10, y = 2 och F = 8, y = 4 fungerar, så andelen fysiker går fortfarande inte att bestämma. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "För talen x, y och z gäller att 2x + y − 17 = x + 2z\nVilket värde har talet x?\n(1) z = 4 + y\n(2) y = 5",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lös ut x ur ekvationen: 2x + y − 17 = x + 2z ger x = 2z − y + 17.\n(1) Med z = 4 + y blir x = 2(4 + y) − y + 17 = y + 25. x beror då på y, som är okänt. Inte tillräckligt.\n(2) Med y = 5 blir x = 2z + 12, men z är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: y = 5 ger z = 4 + 5 = 9 och x = 2 · 9 − 5 + 17 = 30. Kontroll: 2 · 30 + 5 − 17 = 48 och 30 + 2 · 9 = 48. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Hur lång tid tog det för Göran att cykla 120 km?\n(1) Göran trodde att hans medelhastighet var 32 km/h, vilket var en avvikelse med 2 km/h från den verkliga medelhastigheten.\n(2) De första 60 km cyklade Göran med medelhastigheten 40 km/h. De sista 60 km cyklade han med medelhastigheten 24 km/h.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Den verkliga medelhastigheten avvek 2 km/h från 32 km/h, så den kan ha varit 30 km/h eller 34 km/h. Det ger 120/30 = 4 timmar eller 120/34 ≈ 3,5 timmar. Inte tillräckligt.\n(2) De första 60 km tog 60/40 = 1,5 timmar och de sista 60 km tog 60/24 = 2,5 timmar, sammanlagt 4 timmar. Tillräckligt.\nSvaret får man alltså i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "På ett hunddagis finns endast hundar av raserna pudel, schäfer och tax. Hur många schäfrar finns det på hunddagiset?\n(1) Om 15 pudlar och 2 schäfrar lämnar dagiset så finns det färre pudlar än schäfrar men fler pudlar än taxar kvar.\n(2) Det finns 7 taxar på dagiset och pudlarna är 17 fler än taxarna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Kalla antalet pudlar P, schäfrar S och taxar T.\n(1) Efteråt finns P − 15 pudlar och S − 2 schäfrar, och P − 15 < S − 2 och P − 15 > T. Det är bara olikheter utan kända tal, så S går inte att bestämma. Inte tillräckligt.\n(2) T = 7 och P = 7 + 17 = 24, men det står ingenting om schäfrarna. Inte tillräckligt.\n(1) och (2) tillsammans: När 15 pudlar har gått finns 24 − 15 = 9 pudlar kvar, vilket är fler än de 7 taxarna. Villkoret 9 < S − 2 ger bara att S är större än 11, så det kan finnas till exempel 12 eller 20 schäfrar. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vid en kaj ligger en röd, en blå, en vit och en grön båt. I vilken ordning längs kajen ligger båtarna?\n(1) Den första båten är röd och den sista båten är varken vit eller grön.\n(2) Den första båten är varken grön eller blå. Den vita båten ligger intill en röd och en grön båt.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Den första båten är röd och den sista är varken vit eller grön, alltså blå. Den vita och den gröna båten ligger på plats 2 och 3, men i okänd ordning. Inte tillräckligt.\n(2) Den vita båten ligger intill både den röda och den gröna, så den har grannar på båda sidor och kan inte ligga först eller sist. Den första båten är varken grön, blå eller vit och är alltså röd. Den vita ligger då på plats 2, den gröna på plats 3 och den blå sist: röd, vit, grön, blå. Tillräckligt.\nSvaret får man alltså i (2) men inte i (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av ammoniakavgången 2003 kom från stallgödsel, lagring?",
+      "options": [
+        "Hälften",
+        "En tredjedel",
+        "En fjärdedel",
+        "En femtedel"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av stapeln för 2003 i det övre diagrammet (tusental ton). Hela stapeln når cirka 46,5. Den storprickiga delen (stallgödsel, lagring) börjar där den svarta delen slutar, vid cirka 9,5, och slutar vid cirka 24,5, så den är ungefär 15 tusental ton. Andelen är 15/46,5 ≈ 0,32, alltså ungefär en tredjedel. En fjärdedel skulle bara vara cirka 11,5 och hälften cirka 23.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Vilket år noterades den lägsta halten kadmium per kilogram fosfor i slam respektive i fosforgödsel?",
+      "options": [
+        "1998 respektive 1995",
+        "2004 respektive 2005",
+        "2005 respektive 1998",
+        "2005 respektive 2004"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av det nedre diagrammet. De grå staplarna (slam) är lägst 2004, cirka 30 mg Cd/kg P; stapeln för 2005 är något högre, cirka 31,5. De svarta staplarna (fosforgödsel) är lägst 2005, cirka 5,5, medan 2004 och 2006 ligger på ungefär 6,5 och 6. Den lägsta halten noterades alltså 2004 i slam och 2005 i fosforgödsel.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Vilken källa hade en ammoniakavgång på sammanlagt 38 000 ton under de fyra redovisade åren?",
+      "options": [
+        "Betesdrift",
+        "Stallgödsel, spridning",
+        "Stallgödsel, lagring",
+        "Stallgödsel, stallventilation"
+      ],
+      "blindAnswer": 3,
+      "explain": "38 000 ton på fyra år är i genomsnitt 9 500 ton, alltså 9,5 tusental ton per år. Den svarta delen längst ned i staplarna (stallgödsel, stallventilation) är cirka 9,5, 9,5, 10 och 9,5 tusental ton, sammanlagt ungefär 38 000 ton. Betesdrift (grå) är bara cirka 4 tusental ton per år, totalt ungefär 16 000 ton. Spridning (vit) och lagring (storprickig) är 13–17 tusental ton per år, totalt ungefär 64 000 respektive 59 000 ton.",
+      "figure": {
+        "pages": [
+          16
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Hur många fler observationer av fladdermöss gjordes på land i Kalmarsund 2006 jämfört med 2005?",
+      "options": [
+        "433",
+        "2 139",
+        "5 368",
+        "8 040"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av raden På land, Kalmarsund under 2005 och under 2006. Kolumnen Summa ger 1 578 observationer 2005 och 6 946 observationer 2006. Skillnaden är 6 946 − 1 578 = 5 368. Alternativet 433 är skillnaden för observationerna över havet i Kalmarsund (587 − 154).",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.085,
+          0.07,
+          0.815,
+          0.875
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Studera antalet observationer över havet i Kalmarsund. Av vilken fladdermusart gjordes nio gånger så många observationer 2006 jämfört med 2005?",
+      "options": [
+        "Dammfladdermus",
+        "Trollfladdermus",
+        "Stor fladdermus",
+        "Gråskimlig fladdermus"
+      ],
+      "blindAnswer": 0,
+      "explain": "Använd raderna Över havet, Kalmarsund för 2005 och 2006 och slå upp förkortningarna i listan under tabellen. Dammfladdermus (Mdas): 5 observationer 2005 och 44 observationer 2006, och 44/5 = 8,8, alltså ungefär nio gånger så många. Trollfladdermus (Pnat): 3 och 81, alltså 27 gånger så många. Stor fladdermus (Nnoc): 47 och 214, cirka 4,6 gånger. Gråskimlig fladdermus (Vmur): 6 och 25, cirka 4,2 gånger.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.085,
+          0.07,
+          0.815,
+          0.875
+        ]
+      },
+      "note": "Kvoten för dammfladdermus är 44/5 = 8,8, inte exakt nio; inget alternativ ger exakt nio.",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av det sammanlagda antalet observationer av stor fladdermus 2005 och 2006 var radarobservationer?",
+      "options": [
+        "55 procent",
+        "65 procent",
+        "75 procent",
+        "85 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "Stor fladdermus har förkortningen Nnoc enligt listan under tabellen. Raden Totalantal 2005 och 2006 ger 4 607 observationer. Radarobservationerna var 425 år 2005 och 2 564 år 2006, sammanlagt 2 989. Andelen är 2 989/4 607 ≈ 0,65, alltså cirka 65 procent.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.085,
+          0.07,
+          0.815,
+          0.875
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Hur många pojkar födda 1970 hade något av de redovisade tilltalsnamnen?",
+      "options": [
+        "2 500",
+        "4 000",
+        "6 500",
+        "8 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av det nedre diagrammet (pojkar) vid 1970. Mikael har cirka 2 350, Johan cirka 1 750, Lars cirka 1 350, Karl cirka 650, Marcus cirka 400 och Oskar cirka 100. Summan är ungefär 2 350 + 1 750 + 1 350 + 650 + 400 + 100 = 6 600, vilket ligger närmast 6 500. 2 500 är ungefär bara Mikael.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "År 1960 föddes cirka 49 000 flickor. Hur många av dem fick det tilltalsnamn som var vanligast detta år?",
+      "options": [
+        "En av sexton",
+        "En av åtta",
+        "En av sex",
+        "En av fem"
+      ],
+      "blindAnswer": 0,
+      "explain": "I det övre diagrammet (flickor) är Eva (svart streckad linje) det vanligaste namnet 1960, med cirka 3 100 flickor; Maria har cirka 1 200 och Kerstin cirka 950. 49 000/3 100 ≈ 16, så ungefär en av sexton flickor fick namnet Eva. En av åtta skulle kräva cirka 6 100 flickor, vilket inget namn i diagrammet når upp till något år.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Hur vanligt var Johan jämfört med Lars som tilltalsnamn bland pojkar födda 1980?",
+      "options": [
+        "2,5 gånger så vanligt",
+        "3,5 gånger så vanligt",
+        "4,5 gånger så vanligt",
+        "5,5 gånger så vanligt"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av det nedre diagrammet (pojkar) vid 1980. Johan (grå streckad linje) ligger på cirka 2 300 och Lars (svart streckad linje) på cirka 700. Kvoten är 2 300/700 ≈ 3,3, och av alternativen ligger 3,5 gånger så vanligt närmast. 2,5 gånger skulle kräva att Lars låg på drygt 900, och 4,5 gånger att han låg på cirka 500.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Avläsningen ger Johan cirka 2 270 och Lars cirka 700, kvoten 3,2–3,3; inte exakt 3,5, men 3,5 är närmast.",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur långt är det sammanhängande lager med förmultnande grästorvor som börjar cirka 11 meter öster om nollpunkten?",
+      "options": [
+        "2 meter",
+        "10 meter",
+        "15 meter",
+        "20 meter"
+      ],
+      "blindAnswer": 3,
+      "explain": "Öster om nollpunkten betyder den övre profilen, som går från väst (V) till öst (O). Lagret med förmultnande grästorvor är markerat med små v-liknande tecken. Dess östra spets ligger vid cirka +11. Därifrån fortsätter lagret obrutet västerut, under den mullblandade sanden och förbi nollpunkten, och det tar slut vid cirka −9. Längden är ungefär 11 + 9 = 20 meter. Den lilla linsen med samma tecken längre västerut, vid −12 till −9, är skild från lagret.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.155,
+            0.08,
+            0.78,
+            0.29
+          ]
+        ]
+      },
+      "note": "Lagrets västra ände är avläst till cirka −9 i den övre profilen; linjerna inne i lagret vid −7 till −3 är tolkade som strimmor, inte som avbrott.",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Vad påträffades 7 meter rakt norr om nollpunkten på höjdnivån −100 cm?",
+      "options": [
+        "Grästorv",
+        "Mullblandad sand",
+        "Förmultnande grästorvor",
+        "Järnutfällning"
+      ],
+      "blindAnswer": 1,
+      "explain": "Norr om nollpunkten betyder den nedre profilen, som går från norr (N) till söder (S) och har en djupskala i centimeter. Gå till +7 (mellan +10 och +5 på norrsidan) och ned till nivån −100 cm. Där ligger mullblandad sand (korta snedstreck). Grästorven ligger ovanför, ned till cirka −85 cm, och lagret med förmultnande grästorvor börjar först på cirka −130 cm.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.155,
+            0.08,
+            0.78,
+            0.29
+          ]
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stor area hade området som avgränsades av Klyftehögs ytterkonturer före undersökningen?",
+      "options": [
+        "220 m²",
+        "330 m²",
+        "450 m²",
+        "640 m²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Ytterkonturen är den streckade linjen i planritningen, och axlarna är graderade i meter (skalstrecket 0–4 meter stämmer med det). Konturen når cirka 12 meter åt norr, 12 åt öster, 13 åt väster och 14 åt söder från nollpunkten, men bara cirka 10 meter snett åt nordost. Den är alltså ungefär rund med en radie på i genomsnitt cirka 12 meter, och arean blir ungefär π · 12² ≈ 450 m². Alternativet 640 m² motsvarar hela kvadraten runt konturen (cirka 25 · 25,5 meter), men konturens rundade form fyller inte kvadratens hörn.",
+      "figure": {
+        "pages": [
+          22,
+          23
+        ],
+        "boxes": [
+          null,
+          [
+            0.155,
+            0.08,
+            0.78,
+            0.29
+          ]
+        ]
+      },
+      "note": "Arean är uppskattad genom att mäta konturens avstånd till nollpunkten runt om; den blir cirka 455 m².",
+      "verification": "agreed"
+    }
+  ]
+}
