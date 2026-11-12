@@ -1,0 +1,779 @@
+{
+  "examId": "hp-2017-10-21",
+  "passNumber": 3,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Hur många olika värden kan x anta?",
+      "passage": "x och y är positiva heltal sådana att 0 < x < y < 10.",
+      "options": [
+        "1",
+        "2",
+        "8",
+        "9"
+      ],
+      "blindAnswer": 2,
+      "explain": "Eftersom y är ett heltal mindre än 10 är y högst 9, och eftersom x < y är x högst 8. x är ett positivt heltal, så x kan vara 1, 2, 3, 4, 5, 6, 7 eller 8, alltså 8 olika värden. För vart och ett av dem finns ett större heltal y under 10, till exempel y = 9. Svaret 9 lockar om man glömmer att y måste vara större än x, så att x inte kan vara 9.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är medelvärdet av 1/2 och 1/6?",
+      "options": [
+        "1/3",
+        "1/4",
+        "1/5",
+        "1/8"
+      ],
+      "blindAnswer": 0,
+      "explain": "Medelvärdet är summan delad med antalet tal. Med den gemensamma nämnaren 6 blir summan 1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3. Medelvärdet är (2/3)/2 = 1/3. Svaret 1/4 lockar om man tar medelvärdet av nämnarna, (2 + 6)/2 = 4, men så får man inte medelvärdet av två bråk.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Kalle blandar 25 drinkar på 9 minuter. Jakob blandar 25 drinkar på 18 minuter. Hur lång tid tar det för Kalle och Jakob att tillsammans blanda 75 drinkar om de börjar samtidigt?",
+      "options": [
+        "12 minuter",
+        "15 minuter",
+        "18 minuter",
+        "21 minuter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kalle blandar 25 drinkar på 9 minuter, alltså 50 drinkar på 18 minuter. Jakob blandar 25 drinkar på 18 minuter. På 18 minuter blandar de tillsammans 50 + 25 = 75 drinkar. Kontroll med takten: Kalle blandar 25/9 = 50/18 och Jakob 25/18 drinkar per minut, tillsammans 75/18 drinkar per minut, så 75 drinkar tar 18 minuter.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "K₁ och K₂ är två kvadrater med areorna 25 cm² respektive 64 cm². En sida i K₁ och en sida i K₂ utgör kateterna i en rätvinklig triangel. Hur stor är triangelns area?",
+      "options": [
+        "15 cm²",
+        "20 cm²",
+        "35 cm²",
+        "40 cm²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kvadraten K₁ har arean 25 cm², så dess sida är √25 = 5 cm. Kvadraten K₂ har arean 64 cm², så dess sida är √64 = 8 cm. Triangelns kateter är alltså 5 cm och 8 cm, och arean är (5 · 8)/2 = 20 cm². Svaret 40 cm² lockar om man glömmer att dela med 2.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.222,
+          0.578,
+          0.45,
+          0.745
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket svarsförslag motsvarar (x³)²?",
+      "options": [
+        "x⁵",
+        "x⁶",
+        "x⁸",
+        "x⁹"
+      ],
+      "blindAnswer": 1,
+      "explain": "(x³)² betyder x³ · x³. Vid multiplikation av potenser med samma bas adderas exponenterna: x³ · x³ = x³⁺³ = x⁶. Det är samma sak som att multiplicera exponenterna, 3 · 2 = 6. Svaret x⁵ lockar om man adderar 3 och 2, men det gäller x³ · x², inte (x³)².",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "35x + 60 = 47x − 24",
+      "options": [
+        "−7",
+        "−3",
+        "3",
+        "7"
+      ],
+      "blindAnswer": 3,
+      "explain": "Samla x på ena sidan och talen på den andra: 60 + 24 = 47x − 35x, alltså 84 = 12x och x = 84/12 = 7. Kontroll: 35 · 7 + 60 = 245 + 60 = 305 och 47 · 7 − 24 = 329 − 24 = 305.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Hur många liter är 4,7 · 10² m³?",
+      "options": [
+        "4,7 · 10⁵ liter",
+        "4,7 · 10⁶ liter",
+        "4,7 · 10⁸ liter",
+        "4,7 · 10¹² liter"
+      ],
+      "blindAnswer": 0,
+      "explain": "En kubikmeter är 1 000 liter, alltså 1 m³ = 10³ liter. Då är 4,7 · 10² m³ = 4,7 · 10² · 10³ liter = 4,7 · 10²⁺³ liter = 4,7 · 10⁵ liter. Svaret 4,7 · 10⁸ liter lockar om man tror att 1 m³ är 10⁶ liter, men 10⁶ är antalet kubikcentimeter i en kubikmeter, och en liter är 1 000 cm³.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "För vilket värde på k skär inte linjerna y = kx + 6 och y = 2x + 3 varandra?",
+      "options": [
+        "−2",
+        "0",
+        "1",
+        "2"
+      ],
+      "blindAnswer": 3,
+      "explain": "Två räta linjer skär inte varandra om de är parallella, alltså har samma lutning men skär y-axeln i olika punkter. Linjen y = 2x + 3 har lutningen 2. Med k = 2 blir den andra linjen y = 2x + 6, som har samma lutning men skär y-axeln i 6 i stället för i 3. Linjerna är då parallella och möts aldrig. För alla andra värden på k har linjerna olika lutning och skär varandra i exakt en punkt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Vad är (2 · 1/3)/(4 · 5/6)?",
+      "options": [
+        "1/5",
+        "2/5",
+        "5/18",
+        "5/36"
+      ],
+      "blindAnswer": 0,
+      "explain": "Räkna ut täljaren och nämnaren var för sig. Täljaren är 2 · 1/3 = 2/3 och nämnaren är 4 · 5/6 = 20/6 = 10/3. Kvoten blir (2/3)/(10/3) = 2/3 · 3/10 = 2/10 = 1/5.",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.272,
+          0.088,
+          0.318,
+          0.139
+        ]
+      },
+      "note": "Uttrycket är ett bråk i två nivåer; figuren visar det som på provet.",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Vilket värde har ab?",
+      "passage": "(a + b)² = 25\n(a − b)² = 121",
+      "options": [
+        "−55",
+        "−24",
+        "24",
+        "55"
+      ],
+      "blindAnswer": 1,
+      "explain": "Utveckla kvadraterna: (a + b)² = a² + 2ab + b² = 25 och (a − b)² = a² − 2ab + b² = 121. Subtrahera den andra likheten från den första: 4ab = 25 − 121 = −96, så ab = −24. Kontroll: a = −3 och b = 8 ger (a + b)² = 5² = 25, (a − b)² = (−11)² = 121 och ab = −24.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är (x/4 + 1/2)(x/4 − 1/2)?",
+      "options": [
+        "(1/4)(x²/4 + 1)",
+        "(1/4)(x² − 4)",
+        "(1/4)(x²/4 − x + 1)",
+        "(1/4)(x²/4 − 1)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Konjugatregeln (a + b)(a − b) = a² − b² med a = x/4 och b = 1/2 ger (x/4)² − (1/2)² = x²/16 − 1/4. Bryt ut 1/4: x²/16 − 1/4 = (1/4)(x²/4 − 1). Kontroll med x = 4: (1 + 1/2)(1 − 1/2) = 3/2 · 1/2 = 3/4 och (1/4)(16/4 − 1) = (1/4) · 3 = 3/4. Alternativet (1/4)(x² − 4) är x²/4 − 1, alltså fyra gånger så stort.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "ABC är en triangel. DE är parallell med AC, och DE = BD. Vad är x?",
+      "options": [
+        "90° − 2y",
+        "180° − y",
+        "90° − y/2",
+        "(180° − 2y)/2"
+      ],
+      "blindAnswer": 2,
+      "explain": "Triangeln DBE är likbent eftersom DE = BD, så vinklarna mitt emot de lika långa sidorna är lika stora: vinkeln vid B (mitt emot DE) och vinkeln DEB (mitt emot BD). Vinkelsumman i triangeln DBE ger 2 · vinkel B = 180° − y, alltså är vinkel B = 90° − y/2. Eftersom DE är parallell med AC är vinkeln vid A lika med y (likbelägna vinklar). Vinkelsumman i triangeln ABC ger x = 180° − y − (90° − y/2) = 90° − y/2. Det syns också direkt: x och vinkeln DEB är likbelägna vinklar vid de parallella linjerna AC och DE, så x = 90° − y/2.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.245,
+          0.572,
+          0.5,
+          0.692
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 4 · 6 − 5 · 3\nKvantitet II: 4 · (6 − 5) · 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplikation går före subtraktion, så kvantitet I är 4 · 6 − 5 · 3 = 24 − 15 = 9. I kvantitet II räknas parentesen först: 6 − 5 = 1, och 4 · 1 · 3 = 12. Kvantitet II är större. Samma siffror och räknesätt kan locka till att tro att kvantiteterna är lika, men parentesen ändrar ordningen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Eva satsar på fyra fält på ett lyckohjul med 20 fält. Lyckohjulet snurras en gång. Endast ett fält ger vinst och alla fält har lika stor chans att ge vinst.\nKvantitet I: Sannolikheten att Eva får vinst\nKvantitet II: 1/4",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Vinstfältet är ett av 20 lika sannolika fält, och Eva har satsat på 4 av dem. Sannolikheten att hon vinner är 4/20 = 1/5 = 0,20. Kvantitet II är 1/4 = 0,25, som är större. Talet fyra kan locka till svaret 1/4, men då skulle hjulet bara ha 16 fält.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Volymen av en cylinder där basytans radie är 3 cm och höjden är 3 cm\nKvantitet II: 30π cm³",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "En cylinders volym är basytans area gånger höjden. Basytan är en cirkel med radien 3 cm och har arean π · 3² = 9π cm². Volymen är 9π · 3 = 27π cm³. Det är mindre än 30π cm³, så kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x ≥ 0\nKvantitet I: √((x + 3)²)\nKvantitet II: x + 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvadratroten ur ett kvadrerat tal är talets belopp: √(a²) = |a|. Eftersom x ≥ 0 är x + 3 ≥ 3, alltså positivt, och då är √((x + 3)²) = x + 3. Till exempel ger x = 1 att √(4²) = √16 = 4 = 1 + 3. Kvantiteterna är alltid lika. Bara om x + 3 hade kunnat vara negativt skulle kvantitet I bli större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: √8 + √27\nKvantitet II: 5√2",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Förenkla rötterna: √8 = √(4 · 2) = 2√2 och √27 = √(9 · 3) = 3√3. Kvantitet I är alltså 2√2 + 3√3, och kvantitet II kan skrivas 5√2 = 2√2 + 3√2. Eftersom √3 är större än √2 är kvantitet I större. Med närmevärden: I ≈ 2,83 + 5,20 = 8,03 och II ≈ 5 · 1,41 = 7,07.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x/3 − y/3 < 372/12\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera olikheten med 3: x − y < 372/4 = 93. Det säger bara att skillnaden x − y är mindre än 93, och den kan vara både positiv och negativ. Med x = 10 och y = 0 är x − y = 10 < 93, och då är I större. Med x = 0 och y = 10 är x − y = −10 < 93, och då är II större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "ABCD är en fyrhörning. E är mittpunkt på CD.\nKvantitet I: Arean av fyrhörningen ABCE\nKvantitet II: 3/4 av arean av fyrhörningen ABCD",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Dra diagonalen AC. Eftersom E är mittpunkt på CD har trianglarna AED och AEC lika långa baser och samma höjd från A, så var och en har halva arean av triangeln ACD. Arean av ABCE är då ABC + ACD/2, medan arean av ABCD är ABC + ACD. Är fyrhörningen en kvadrat är trianglarna ABC och ACD lika stora, och då är ABCE 1/2 + 1/4 = 3/4 av kvadraten, alltså lika med kvantitet II. Är triangeln ABC större än ACD blir ABCE mer än 3/4 av ABCD, och är den mindre blir ABCE mindre än 3/4. Fyrhörningen kan se ut på många sätt, så informationen är otillräcklig.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.215,
+          0.146,
+          0.475,
+          0.272
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Julia är 5 år äldre än Rut. För 3 år sedan var Julia dubbelt så gammal som Rut.\nKvantitet I: Ruts nuvarande ålder\nKvantitet II: 8 år",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Låt Rut vara R år. Då är Julia R + 5 år. För 3 år sedan var Rut R − 3 och Julia R + 2 år, och Julia var dubbelt så gammal: R + 2 = 2(R − 3) = 2R − 6, alltså R = 8. Rut är 8 år och Julia 13 år; för 3 år sedan var de 5 och 10 år. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x² = y²\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "x² = y² betyder att x = y eller x = −y. Med x = y = 2 är kvantiteterna lika. Med x = 2 och y = −2 gäller också x² = y² = 4, och då är I större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "f(x) = 3x + 2 och g(z) = 2z + 3\nKvantitet I: x, då f(x) = 0\nKvantitet II: z, då g(z) = 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "f(x) = 0 ger 3x + 2 = 0, alltså x = −2/3 ≈ −0,67. g(z) = 0 ger 2z + 3 = 0, alltså z = −3/2 = −1,5. Eftersom −2/3 ligger närmare 0 än −3/2 är kvantitet I större. Den som jämför 2/3 och 3/2 utan minustecken tror lätt att II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En affär säljer hushållsost och prästost. En bit hushållsost som väger 488 gram kostar 19 kronor och 52 öre. Hur mycket kostar en bit prästost som väger lika mycket?\n(1) Prästosten kostar 49 kr mer per kg än hushållsosten.\n(2) Prästosten kostar 89 kr/kg.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Hushållsosten kostar 19,52/0,488 = 40 kr/kg, så prästosten kostar 40 + 49 = 89 kr/kg. En bit på 488 gram kostar då 0,488 · 89 ≈ 43,43 kr. Tillräckligt.\n(2) Kilopriset ges direkt, och en bit på 488 gram kostar 0,488 · 89 ≈ 43,43 kr. Tillräckligt.\nVart och ett av påståendena räcker för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tre alarm ringer med olika tidsintervall. Ett av dem ringer var tredje timme. Klockan 18.00 ringer de tre alarmen samtidigt. Vid vilken tidpunkt ringer de tre alarmen samtidigt nästa gång?\n(1) Ett av alarmen ringer varje halvtimme.\n(2) Ett av alarmen har 2,5 timmar mellan ringningarna.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Vi vet intervallen 3 timmar och en halvtimme, men inte det tredje alarmets intervall. Inte tillräckligt.\n(2) Vi vet intervallen 3 timmar och 2,5 timmar, men inte det tredje alarmets. Inte tillräckligt.\n(1) och (2) tillsammans: Ett alarm som ringer varje halvtimme kan inte ha 2,5 timmar mellan ringningarna, så intervallen är 3, 0,5 och 2,5 timmar. Räknat i halvtimmar är de 6, 1 och 5, och den minsta gemensamma multipeln är 30 halvtimmar, alltså 15 timmar. Alarmen ringer samtidigt nästa gång klockan 9.00 dagen därpå. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "ABCD är en rektangel. Om rektangelns bas och höjd ökar med 5 cm vardera, vad blir då kvoten mellan höjden och basen?\n(1) Efter ökningen skulle omkretsen av rektangeln vara 20 cm längre.\n(2) Före ökningen är höjden 6 cm och kvoten mellan höjden och basen är 3/4.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) När både basen och höjden ökar med 5 cm ökar omkretsen alltid med 2 · 5 + 2 · 5 = 20 cm, hur stor rektangeln än är. Påståendet säger alltså ingenting om måtten. Inte tillräckligt.\n(2) Höjden är 6 cm och 6/basen = 3/4, så basen är 8 cm. Efter ökningen är höjden 11 cm och basen 13 cm, och kvoten är 11/13. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vilket är det positiva tvåsiffriga talet?\n(1) Summan av talets siffror är 6.\n(2) Talet är jämnt delbart med 7.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) De tvåsiffriga talen med siffersumman 6 är 15, 24, 33, 42, 51 och 60. Inte tillräckligt.\n(2) Många tvåsiffriga tal är delbara med 7, till exempel 14, 21 och 42. Inte tillräckligt.\n(1) och (2) tillsammans: Av 15, 24, 33, 42, 51 och 60 är bara 42 = 6 · 7 delbart med 7. Talet är 42. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Stina har sex stenar som är märkta A, B, C, D, E respektive F.\nVilka två stenar väger mest?\n(1) F väger mer än A, som i sin tur väger mer än D.\n(2) Den sammanlagda vikten av A, D och F är större än vikten av C, men mindre än både vikten av B och vikten av E.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) F väger mer än A, som väger mer än D, men det säger ingenting om B, C och E. Inte tillräckligt.\n(2) B och E väger var för sig mer än A, D och F tillsammans, och alltså mer än var och en av A, D och F. A, D och F väger tillsammans mer än C, så B och E väger också mer än C. De två tyngsta stenarna är B och E. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "x, y, z, 5 och 7 är positiva heltal där x < y < z < 5. Vad är medelvärdet av de fem talen?\n(1) Produkten xyz är jämnt delbar med 6.\n(2) Två av talen x, y och z är primtal.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "x, y och z är tre olika tal bland 1, 2, 3 och 4, alltså 1, 2, 3 eller 1, 2, 4 eller 1, 3, 4 eller 2, 3, 4.\n(1) Produkterna är 6, 8, 12 och 24, och 6, 12 och 24 är delbara med 6. Tre möjligheter med olika summor återstår. Inte tillräckligt.\n(2) Bland 1–4 är bara 2 och 3 primtal, så talen är 1, 2, 3 eller 2, 3, 4. Inte tillräckligt.\n(1) och (2) tillsammans: Både 1, 2, 3 (produkten 6) och 2, 3, 4 (produkten 24) uppfyller båda påståendena. Medelvärdet blir (1 + 2 + 3 + 5 + 7)/5 = 3,6 eller (2 + 3 + 4 + 5 + 7)/5 = 4,2. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För vilken drivmedelskategori gällde att nästan hälften av bilarna i Sverige fanns i Stockholms län?",
+      "options": [
+        "Diesel",
+        "El",
+        "Etanolhybrid/E85",
+        "Övriga hybrider"
+      ],
+      "blindAnswer": 3,
+      "explain": "Jämför raden Stockholms län med raden Riket totalt i tabellen. Övriga hybrider: 2 976 av 6 277, och 2 976/6 277 ≈ 0,47, alltså nästan hälften. Diesel: 43 451/260 756 ≈ 0,17. El: 36/118 ≈ 0,31. Etanolhybrid/E85: 18 612/46 544 ≈ 0,40. Bara övriga hybrider kommer nära hälften.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.05,
+          0.085,
+          0.95,
+          0.66
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur stor andel av bilarna i Nacka kommun kategoriserades inte som bensinbilar?",
+      "options": [
+        "En av tio",
+        "Två av tio",
+        "Tre av tio",
+        "Åtta av tio"
+      ],
+      "blindAnswer": 0,
+      "explain": "Nacka har totalt 37 569 personbilar, varav 33 907 bensinbilar. Bilarna som inte är bensinbilar är 37 569 − 33 907 = 3 662, vilket också blir summan av de andra kolumnerna: 2 084 + 1 + 1 150 + 297 + 130 + 0 = 3 662. Andelen är 3 662/37 569 ≈ 0,097, alltså ungefär en av tio.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.05,
+          0.085,
+          0.95,
+          0.66
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur många bensinbilar fanns det sammanlagt i de fem kommuner som hade flest bilar?",
+      "options": [
+        "379 684",
+        "385 284",
+        "419 426",
+        "435 824"
+      ],
+      "blindAnswer": 1,
+      "explain": "Enligt kolumnen Totalt har Stockholm (285 807), Solna (45 718), Nacka (37 569), Södertälje (33 999) och Huddinge (32 731) flest bilar; därefter kommer Norrtälje med 27 959. Bensinbilarna i de fem kommunerna är 250 536 + 38 158 + 33 907 + 31 454 + 31 229 = 385 284. Svaret 435 824 är summan av kolumnen Totalt för samma fem kommuner, alltså alla bilar och inte bara bensinbilarna.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.05,
+          0.085,
+          0.95,
+          0.66
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Jämför Södra och mellersta Sveriges slättbygder med Norra Sverige avseende åkerarealens användning 1932. Hur mycket större åkerareal användes i Södra och mellersta Sveriges slättbygder?",
+      "options": [
+        "975 000 hektar",
+        "1 650 000 hektar",
+        "1 850 000 hektar",
+        "2 100 000 hektar"
+      ],
+      "blindAnswer": 1,
+      "explain": "Använd det nedre diagrammet och staplarna för 1932. Hela stapeln för Södra och mellersta Sveriges slättbygder slutar strax över 2 100 tusen hektar, och stapeln för Norra Sverige slutar vid ungefär 465 tusen hektar. Skillnaden är ungefär 2 110 − 465 ≈ 1 650 tusen hektar, alltså 1 650 000 hektar. Svaret 2 100 000 hektar är slättbygdernas hela åkerareal, inte skillnaden.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket av följande år avses?",
+      "passage": "Av åkerarealen användes över 1 500 000 hektar till foderväxter och över 1 000 000 hektar till övrig spannmål. Åkerarealen för vete var mer än 100 000 hektar större än den för råg.",
+      "options": [
+        "1920",
+        "1930",
+        "1940",
+        "1950"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av det övre diagrammet (tusental hektar) vid varje årtal. 1920 var vete (cirka 150) mindre än råg (cirka 370). 1930 var foderväxter cirka 1 590 och övrig spannmål cirka 1 090, men vete (cirka 270) var bara cirka 40 större än råg (cirka 230). 1950 låg övrig spannmål under 1 000 (cirka 930). 1940 var foderväxter cirka 1 720, övrig spannmål cirka 1 050, vete cirka 310 och råg cirka 170, en skillnad på cirka 140 tusen hektar. Bara 1940 uppfyller alla tre villkoren.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag beskriver bäst hur åkerarealens användning hade förändrats i Södra och mellersta Sveriges skogs- och dalbygder 1951 jämfört med 1919?",
+      "options": [
+        "Vete upptog 50 000 hektar mindre åkerjord.",
+        "Råg upptog 100 000 hektar mindre åkerjord.",
+        "Övrig spannmål upptog 100 000 hektar mer åkerjord.",
+        "Foderväxter upptog 125 000 hektar mindre åkerjord."
+      ],
+      "blindAnswer": 1,
+      "explain": "Jämför staplarna för 1919 och 1951 för skogs- och dalbygderna i det nedre diagrammet. Råg (vågräta ränder) gick 1919 från cirka 35 till cirka 170 tusen hektar, alltså cirka 135 tusen hektar, men 1951 bara cirka 30 tusen hektar. Råg upptog alltså ungefär 100 000 hektar mindre. Vete ökade från cirka 35 till cirka 75 tusen hektar, och övrig spannmål minskade från cirka 405 till cirka 320 tusen hektar. Foderväxter ökade från cirka 420 till cirka 545 tusen hektar; skillnaden är ungefär 125 000 hektar, men det är en ökning och inte en minskning.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "För hur stor andel av yrkesgrupperna gällde att de till minst 60 procent bestod av kvinnor samt att mer än 40 procent upplevde sitt arbete som fysiskt slitsamt?",
+      "options": [
+        "35 procent",
+        "40 procent",
+        "45 procent",
+        "50 procent"
+      ],
+      "blindAnswer": 0,
+      "explain": "Diagrammet har 23 cirklar, alltså 23 yrkesgrupper. Minst 60 procent kvinnor betyder att cirkelns mitt ligger vid eller under strecket 40/60 på den högra axeln, och mer än 40 procent som anser arbetet fysiskt slitsamt betyder att mitten ligger till vänster om 40 på den nedre axeln. Båda villkoren gäller för bank/ekonomitjänstemän, sekreterare, sjuksköterskor, affärsbiträden, daghem/hemvårdare, städare, köksbiträden och sjukvårdsbiträden, alltså 8 grupper. Lärare har många kvinnor men ligger till höger om 40, och post/tele har sin mitt något ovanför 40/60 (cirka 58 procent kvinnor). Andelen är 8/23 ≈ 0,35, alltså 35 procent.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Post/tele ligger nära strecket 40/60 (avläst cirka 42/58) och räknas inte med; diagrammet har 23 cirklar.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger två yrkesgrupper som bestod av lika många arbetande?",
+      "options": [
+        "Administratörer, företagsledare respektive bank/ekonomitjänstemän",
+        "Byggarbetare respektive förrådsarbetare",
+        "Handlare, inköpare respektive lärare",
+        "Köksbiträden respektive städare"
+      ],
+      "blindAnswer": 2,
+      "explain": "Cirkelns area är proportionell mot antalet arbetande, så två grupper med lika många arbetande har lika stora cirklar. Cirkeln för handlare, inköpare har samma diameter som cirkeln för lärare. Administratörer, företagsledare har en tydligt mindre cirkel än bank/ekonomitjänstemän, byggarbetare en tydligt större cirkel än förrådsarbetare, och köksbiträden en mindre cirkel än städare.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Identifiera de två yrkesgrupper som hade den jämnaste könsfördelningen. Hur stor var skillnaden mellan dessa två yrkesgrupper vad gäller andelen som ansåg arbetet vara fysiskt slitsamt?",
+      "options": [
+        "20 procentenheter",
+        "40 procentenheter",
+        "55 procentenheter",
+        "75 procentenheter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Jämnast könsfördelning har de grupper vars cirkelmitt ligger närmast linjen 50/50: personliga tjänster och samhällsvetare, humanister. Mitten på cirkeln för personliga tjänster ligger vid cirka 73 procent på den nedre axeln, och mitten för samhällsvetare, humanister vid cirka 21 procent. Skillnaden är cirka 73 − 21 ≈ 52 procentenheter, och närmast av alternativen är 55 procentenheter.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Avläst cirka 73 och 21 procent (skillnad cirka 52 procentenheter); 55 är närmaste alternativ.",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket år avses?",
+      "passage": "Fler än 8 000 personer vårdades för sår på magsäck/tolvfingertarm och fler än 15 000 för smärtor i luftstrupe och bröstkorg. Antalet personer som vårdades för gallstenssjukdom hade förändrats med mer än 500 jämfört med året innan.",
+      "options": [
+        "1991",
+        "1992",
+        "1993",
+        "1994"
+      ],
+      "blindAnswer": 1,
+      "explain": "1991 vårdades bara cirka 13 300 för smärtor i luftstrupe och bröstkorg (nedre diagrammet), alltså färre än 15 000. 1993 var gallstenssjukdom nästan oförändrad jämfört med 1992 (strax under 14 000 båda åren). 1994 låg sår på magsäck/tolvfingertarm strax under 8 000. 1992 vårdades cirka 8 700 för sår på magsäck/tolvfingertarm och cirka 15 700 för smärtor i luftstrupe och bröstkorg, och gallstenssjukdom hade ökat från cirka 11 800 till cirka 13 900, alltså med ungefär 2 000. Bara 1992 uppfyller alla villkoren.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur många vårdades för yrsel under 1990-talet?",
+      "options": [
+        "75 000",
+        "85 000",
+        "95 000",
+        "150 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av de svarta staplarna (yrsel) i det nedre diagrammet för åren 1990–1999: ungefär 6 900, 7 300, 7 900, 8 200, 9 000, 9 500, 9 700, 8 500, 9 900 och 10 000. Summan är ungefär 87 000, och närmast av alternativen är 85 000.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Studera hur antalet personer som vårdades för respektive sjukdomstillstånd hade förändrats om man jämför periodens sista år med periodens första. För vilket sjukdomstillstånd var förändringen störst, i antal räknat?",
+      "options": [
+        "Sår på magsäck/tolvfingertarm",
+        "Ljumskbråck",
+        "Smärtor i luftstrupe och bröstkorg",
+        "Smärtor i buk och bäcken"
+      ],
+      "blindAnswer": 2,
+      "explain": "Jämför 2003 med 1987 i båda diagrammen. Sår på magsäck/tolvfingertarm minskade från cirka 8 600 till cirka 5 300 (cirka 3 300 färre), ljumskbråck från cirka 16 100 till cirka 5 200 (cirka 10 900 färre) och smärtor i buk och bäcken från cirka 29 700 till cirka 28 200 (cirka 1 500 färre). Smärtor i luftstrupe och bröstkorg ökade från cirka 12 800 till cirka 28 100, alltså med cirka 15 300. Det är den största förändringen i antal. Ljumskbråck har den största förändringen i procent, vilket kan locka.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
