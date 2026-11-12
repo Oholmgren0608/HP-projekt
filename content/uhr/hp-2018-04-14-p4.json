@@ -1,0 +1,778 @@
+{
+  "examId": "hp-2018-04-14",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är 5/2 − 8/5?",
+      "options": [
+        "−0,3",
+        "0,9",
+        "1,2",
+        "1,7"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv bråken med den gemensamma nämnaren 10: 5/2 = 25/10 och 8/5 = 16/10. Skillnaden är 25/10 − 16/10 = 9/10 = 0,9. Kontroll med decimaltal: 5/2 = 2,5 och 8/5 = 1,6, och 2,5 − 1,6 = 0,9. Svaret −0,3 får man om man drar täljarna från varandra och multiplicerar nämnarna, (5 − 8)/10, vilket inte är en tillåten räkneregel.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Vad är a?",
+      "passage": "12, a, 17, 13 och 20 är fem positiva heltal som har medelvärdet 16.",
+      "options": [
+        "16",
+        "18",
+        "20",
+        "22"
+      ],
+      "blindAnswer": 1,
+      "explain": "Fem tal med medelvärdet 16 har summan 5 · 16 = 80. De fyra kända talen har summan 12 + 17 + 13 + 20 = 62. Då är a = 80 − 62 = 18. Kontroll: (12 + 18 + 17 + 13 + 20)/5 = 80/5 = 16.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket uttryck motsvarar ett heltal?",
+      "options": [
+        "(√7 + √7)²",
+        "7√7",
+        "√7 + √7",
+        "√7 + √(7/7)"
+      ],
+      "blindAnswer": 0,
+      "explain": "√7 + √7 = 2√7, så (√7 + √7)² = (2√7)² = 2² · (√7)² = 4 · 7 = 28, som är ett heltal. √7 är inte ett heltal eftersom 7 ligger mellan 2² = 4 och 3² = 9. Därför är varken 7√7 eller √7 + √7 = 2√7 heltal. I det sista uttrycket är √(7/7) = √1 = 1, så det blir √7 + 1, som inte heller är ett heltal.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Hur stor är arean av fyrhörningen?",
+      "options": [
+        "1 500 cm²",
+        "3 000 cm²",
+        "4 500 cm²",
+        "6 000 cm²"
+      ],
+      "blindAnswer": 1,
+      "explain": "Fyrhörningens diagonaler är vinkelräta mot varandra. Den vågräta diagonalen är 60 cm och delar fyrhörningen i två trianglar med basen 60 cm och höjderna 30 cm och 70 cm. Arean är 60 · 30/2 + 60 · 70/2 = 900 + 2 100 = 3 000 cm². Samma svar ger formeln för en fyrhörning med vinkelräta diagonaler: 60 · 100/2 = 3 000 cm², där 100 = 30 + 70 är den lodräta diagonalen. Svaret 6 000 cm² är arean av hela rektangeln runt fyrhörningen, som är dubbelt så stor.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.24,
+          0.56,
+          0.49,
+          0.775
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket av svarsalternativen är lika med uttrycket 2(−r + 3s)?",
+      "options": [
+        "3s − r + 2",
+        "−2r + 3s",
+        "2(s − r) + s",
+        "−6(r/3 − s)"
+      ],
+      "blindAnswer": 3,
+      "explain": "Multiplicera in 2: 2(−r + 3s) = −2r + 6s. Pröva alternativen. 3s − r + 2 har fel koefficienter och en konstant. 2(s − r) + s = 2s − 2r + s = −2r + 3s, som har 3s i stället för 6s, precis som alternativet −2r + 3s. −6(r/3 − s) = −6 · r/3 + 6s = −2r + 6s, vilket stämmer. Felalternativet −2r + 3s lockar om man bara multiplicerar den första termen med 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Vad är x₁ + y₁?",
+      "passage": "Linjen y = 5x + 10 skär x-axeln i punkten (x₁, 0) och y-axeln i punkten (0, y₁).",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "15"
+      ],
+      "blindAnswer": 2,
+      "explain": "Linjen skär y-axeln där x = 0: y₁ = 5 · 0 + 10 = 10. Den skär x-axeln där y = 0: 0 = 5x + 10 ger 5x = −10 och x₁ = −2. Summan är x₁ + y₁ = −2 + 10 = 8. Svaret 15 får man om man bara adderar talen 5 och 10 i ekvationen.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vad är x?",
+      "passage": "(3/2)/(6/x) = 2",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "9"
+      ],
+      "blindAnswer": 2,
+      "explain": "Att dela med 6/x är detsamma som att multiplicera med x/6. Vänsterledet blir 3/2 · x/6 = 3x/12 = x/4. Ekvationen x/4 = 2 ger x = 8. Kontroll: 6/8 = 3/4, och (3/2)/(3/4) = 3/2 · 4/3 = 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Vilken av graferna nedan representerar funktionen f(x) = x/2 + 2?",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 3,
+      "explain": "Funktionen har riktningskoefficienten 1/2 och skär y-axeln i y = 2. Alla fyra linjerna går genom (0, 2), så det är lutningen som avgör. Linjen ska stiga 1 steg för varje 2 steg åt höger och skär x-axeln där x/2 + 2 = 0, alltså i x = −4. Graf A lutar nedåt och går genom (1, 0), lutning −2. Graf B går genom (−1, 0), lutning 2. Graf C lutar nedåt och går genom (4, 0), lutning −1/2. Graf D går genom (−4, 0) och (0, 2), lutning 2/4 = 1/2. Det är graf D.",
+      "figure": {
+        "pages": [
+          5
+        ],
+        "box": [
+          0.2,
+          0.48,
+          0.47,
+          0.895
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Hur många personer deltog i mötet?",
+      "passage": "Vid ett möte skakade alla hand med varandra en gång. Det blev totalt 15 handskakningar.",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "blindAnswer": 1,
+      "explain": "Med n personer skakar var och en hand med de n − 1 andra. Räknar man så kommer varje handskakning med två gånger, så antalet handskakningar är n(n − 1)/2. För n = 6 blir det 6 · 5/2 = 15. Kontroll: 5 personer ger 5 · 4/2 = 10 och 7 personer ger 7 · 6/2 = 21 handskakningar. Det var alltså 6 personer.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Hur stor är arean av den skuggade delen av rektangeln?",
+      "passage": "En rektangel är indelad i 15 mindre rektanglar. De mindre rektanglarna har alla samma area.\nx = 1 cm\ny = 7/5 cm",
+      "options": [
+        "6/15 cm²",
+        "14/15 cm²",
+        "14/25 cm²",
+        "21/25 cm²"
+      ],
+      "blindAnswer": 2,
+      "explain": "Hela rektangeln har sidorna x = 1 cm och y = 7/5 cm, så arean är 1 · 7/5 = 7/5 cm². Den är indelad i 15 lika stora rektanglar, och 6 av dem är skuggade (två rader med tre rektanglar). Den skuggade delen är 6/15 av hela arean: 6/15 · 7/5 = 42/75 = 14/25 cm². Svaret 6/15 cm² får man om man räknar som om hela rektangeln hade arean 1 cm².",
+      "figure": {
+        "pages": [
+          6
+        ],
+        "box": [
+          0.25,
+          0.524,
+          0.485,
+          0.658
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Vad är k?",
+      "passage": "p > 0\np ≠ r\nr = (k + p)/k − 1",
+      "options": [
+        "k = 1",
+        "k = (p − 1)/(r − 1)",
+        "k = p/(r + 2)",
+        "k = p/r"
+      ],
+      "blindAnswer": 3,
+      "explain": "Dela upp bråket: (k + p)/k = k/k + p/k = 1 + p/k. Då blir r = 1 + p/k − 1 = p/k. Multiplicera båda leden med k och dela med r: k = p/r. Kontroll med tal: k = 2 och p = 6 ger r = 8/2 − 1 = 3, och p/r = 6/3 = 2.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ har samma värde som 5⁻² − (−2)⁻¹?",
+      "options": [
+        "27/50",
+        "7⁻³",
+        "2/27",
+        "27"
+      ],
+      "blindAnswer": 0,
+      "explain": "En negativ exponent betyder ett inverterat värde: 5⁻² = 1/5² = 1/25 och (−2)⁻¹ = 1/(−2) = −1/2. Uttrycket blir 1/25 − (−1/2) = 1/25 + 1/2 = 2/50 + 25/50 = 27/50. Alternativet 7⁻³ lockar om man felaktigt drar baserna från varandra, 5 − (−2) = 7, och adderar exponenterna.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "De tre vinklarna i en triangel är u, v och w.\nKvantitet I: u + v\nKvantitet II: w",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Vinkelsumman i en triangel är 180°, så u + v = 180° − w. Jämförelsen beror alltså på hur stor w är. Om w = 90° är u + v = 90°, och kvantiteterna är lika. Om w = 60° är u + v = 120°, och då är kvantitet I större. Om w = 120° är u + v = 60°, och då är kvantitet II större. Eftersom olika trianglar ger olika svar är informationen otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "30 < 3x − 6 < 63\nKvantitet I: x\nKvantitet II: 10",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Lös olikheterna. Addera 6 i alla led: 36 < 3x < 69. Dela med 3: 12 < x < 23. x är alltså alltid större än 12 och därmed större än 10. Kvantitet I är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En affär har 75 % rabatt på byxor och 70 % rabatt på tröjor. Ordinarie pris för de röda byxorna är 299 kr. Ordinarie pris för den gula tröjan är 199 kr.\nKvantitet I: Det rabatterade priset för de röda byxorna\nKvantitet II: Det rabatterade priset för den gula tröjan",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Med 75 % rabatt betalar man 25 % av det ordinarie priset: byxorna kostar 0,25 · 299 = 74,75 kr. Med 70 % rabatt betalar man 30 %: tröjan kostar 0,30 · 199 = 59,70 kr. Kvantitet I är större. Den högre rabatten på byxorna kan locka till att tro att de blir billigast, men deras ordinarie pris är så mycket högre att de ändå kostar mer.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x³ < 0\nKvantitet I: x⁷\nKvantitet II: 3x⁴",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "x³ < 0 betyder att x är negativt. Ett negativt tal upphöjt till en udda exponent är negativt, så x⁷ < 0. Upphöjt till en jämn exponent blir det positivt, så x⁴ > 0 och 3x⁴ > 0. Till exempel ger x = −1 att x⁷ = −1 och 3x⁴ = 3. Kvantitet II är alltid större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Samuel har en påse med endast röda, gröna och blå enfärgade kulor. 2/5 av kulorna är röda och 3/10 av kulorna är gröna. Samuel plockar slumpmässigt upp en kula ur påsen.\nKvantitet I: Sannolikheten att kulan är blå\nKvantitet II: Sannolikheten att kulan är röd",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Andelen röda kulor är 2/5 = 4/10 och andelen gröna är 3/10. Resten är blå: 1 − 4/10 − 3/10 = 3/10. Sannolikheten att kulan är blå är alltså 3/10 och att den är röd 4/10. Kvantitet II är större.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: f(4)\nKvantitet II: g(3)",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Lägg märke till att graferna har olika skalor. I grafen för f är varje ruta 2 enheter i x-led och 1 enhet i y-led. Linjen går genom (0, 2) och (8, 4), så den stiger 1 enhet för varje 4 enheter åt höger, och f(4) = 3. I grafen för g är varje ruta 1 enhet i x-led och 2 enheter i y-led. Linjen går genom origo och (5, 10), så g(x) = 2x och g(3) = 6. Kvantitet II är större.",
+      "figure": {
+        "pages": [
+          10
+        ],
+        "box": [
+          0.225,
+          0.54,
+          0.665,
+          0.675
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Radien i cirkeln C är x. Höjden i triangeln T är 2x och basen är 3x.\nKvantitet I: Arean av cirkeln C\nKvantitet II: Arean av triangeln T",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Cirkelns area är πx². Triangelns area är bas · höjd/2 = 3x · 2x/2 = 3x². Eftersom π ≈ 3,14 är större än 3 och x² är positivt (x är en radie) är πx² > 3x². Kvantitet I är större.",
+      "figure": {
+        "pages": [
+          11
+        ],
+        "box": [
+          0.27,
+          0.135,
+          0.675,
+          0.28
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 5/3 − 3/2\nKvantitet II: 1/7 + 1/42",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Kvantitet I med den gemensamma nämnaren 6: 10/6 − 9/6 = 1/6. Kvantitet II med den gemensamma nämnaren 42: 6/42 + 1/42 = 7/42 = 1/6. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x > 0\nKvantitet I: 7x/8\nKvantitet II: 88 % av x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "7/8 = 0,875, så kvantitet I är 0,875x. Kvantitet II är 0,88x. Eftersom x är positivt är 0,88x större än 0,875x. Kvantitet II är större. Utan villkoret x > 0 hade svaret berott på tecknet på x.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "√5 · √9 = 45ˣ\nKvantitet I: 0,5\nKvantitet II: x",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Rötter kan multipliceras under samma rottecken: √5 · √9 = √(5 · 9) = √45. Kvadratroten motsvarar exponenten 1/2, så √45 = 45^(1/2). Ekvationen 45ˣ = 45^(1/2) ger x = 1/2 = 0,5. Kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Två löpare springer ett antal varv runt samma motionsslinga. Båda löparna startar samtidigt från samma plats. De springer åt samma håll, var och en med sin egen konstanta hastighet. Efter hur lång tid blir den långsammare löparen varvad av den snabbare löparen?\n(1) Slingan är 800 meter lång och det tar den långsammare löparen 6 minuter att springa ett varv runt slingan.\n(2) Efter 9 minuter har den långsammare löparen sprungit ett och ett halvt varv runt slingan, vilket är 1 200 meter. Samtidigt har den snabbare löparen sprungit 2 000 meter.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Den långsammare löparen blir varvad när den snabbare har sprungit ett varv längre, så man behöver slingans längd och skillnaden i hastighet.\n(1) Slingan är 800 meter och den långsammare löparens hastighet är 800/6 meter per minut, men den snabbare löparens hastighet är okänd. Inte tillräckligt.\n(2) Ett och ett halvt varv är 1 200 meter, så ett varv är 800 meter. På 9 minuter har den snabbare löparen sprungit 2 000 − 1 200 = 800 meter längre, alltså exakt ett varv mer. Eftersom hastigheterna är konstanta har avståndet mellan dem vuxit jämnt, så den långsammare löparen blir varvad efter just 9 minuter. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I en låda finns det fyra olika sorters spik: nubb, kopparspik, pappspik och dyckert.\nHur många spikar finns det i lådan?\n(1) I lådan finns det 24 kopparspikar, vilket är 50 procent mer än antalet dyckertar.\n(2) Dyckert och kopparspik utgör tillsammans 50 procent av antalet spikar i lådan.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) 24 kopparspikar är 1,5 gånger antalet dyckertar, så det finns 24/1,5 = 16 dyckertar. Antalet nubb och pappspik är okänt. Inte tillräckligt.\n(2) Ger bara en andel, inget antal. Inte tillräckligt.\n(1) och (2) tillsammans: Dyckert och kopparspik är 16 + 24 = 40 spikar, och det är 50 procent av alla. Lådan innehåller 2 · 40 = 80 spikar. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Vad är 15 procent av y?\n(1) y är 60 procent av 900.\n(2) 5 procent av y är 27.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) y = 0,6 · 900 = 540, och 15 procent av y är 0,15 · 540 = 81. Tillräckligt.\n(2) 15 procent är tre gånger så mycket som 5 procent, så 15 procent av y är 3 · 27 = 81. Tillräckligt.\nVart och ett av påståendena räcker alltså för sig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Var och en av Mimmis tröjor är antingen färgglad eller svart. Varje tröja är dessutom antingen långärmad eller kortärmad. Mimmi har 14 långärmade tröjor. Hur många tröjor har Mimmi?\n(1) Hälften av de färgglada tröjorna är långärmade.\n(2) Sex av de svarta tröjorna är inte långärmade.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "Antalet tröjor är de 14 långärmade plus de kortärmade, så man behöver veta antalet kortärmade tröjor.\n(1) Lika många färgglada tröjor är kortärmade som långärmade, men hur många av de 14 långärmade som är färgglada framgår inte, och antalet svarta kortärmade är okänt. Inte tillräckligt.\n(2) Det finns 6 svarta kortärmade tröjor, men antalet färgglada kortärmade är okänt. Inte tillräckligt.\n(1) och (2) tillsammans: Antalet tröjor blir 14 + 6 + antalet färgglada långärmade. Är 4 av de långärmade färgglada blir det 24 tröjor, är 8 av dem färgglada blir det 28. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Tre enfärgade klossar – en röd, en grön och en blå – är staplade på varandra.\nVilken färg har den översta klossen?\n(1) Den blå klossen är inte underst. Den gröna klossen är inte överst.\n(2) Den röda klossen är inte i mitten. Den blå klossen är under den röda klossen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "(1) Ordningarna uppifrån röd–blå–grön, blå–röd–grön och blå–grön–röd uppfyller båda villkoren. Den översta klossen kan vara röd eller blå. Inte tillräckligt.\n(2) Den röda klossen är inte i mitten, alltså överst eller underst. Om den vore underst skulle den blå klossen inte kunna ligga under den. Den röda klossen ligger alltså överst. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Bland talen 28, 32, 42, 56, 72, 78 väljs ett ut, vilket?\n(1) Talet är jämnt delbart med 3.\n(2) Talet är en heltalsmultipel av 4.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Talen som är delbara med 3 är 42, 72 och 78 (siffersummorna 6, 9 och 15 är delbara med 3). Tre tal är möjliga. Inte tillräckligt.\n(2) Multiplerna av 4 är 28, 32, 56 och 72. Fyra tal är möjliga. Inte tillräckligt.\n(1) och (2) tillsammans: Bara 72 finns i båda grupperna (72 = 3 · 24 = 4 · 18). Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "För vilken ålder gällde att det skedde 20 förlossningar och att andelen förlossningar per startad behandlingscykel var 10 procent?",
+      "options": [
+        "25 år",
+        "26 år",
+        "41 år",
+        "42 år"
+      ],
+      "blindAnswer": 2,
+      "explain": "Staplarna (antal förlossningar) läses mot den vänstra axeln och punkterna (andel per startad cykel) mot den högra axeln. För 41 år når stapeln ungefär 20 och punkten ligger vid ungefär 10 procent. För 42 år ligger punkten också nära 10 procent, men stapeln når bara cirka 15. För 25 och 26 år är staplarna cirka 22 och 23, men där ligger punkterna kring 26–27 procent. Bara 41 år uppfyller båda villkoren.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur många fler förlossningar skedde bland kvinnor 33–35 år än bland kvinnor 36–38 år?",
+      "options": [
+        "20",
+        "25",
+        "35",
+        "40"
+      ],
+      "blindAnswer": 3,
+      "explain": "Läs av staplarna mot den vänstra axeln. 33 år: cirka 120, 34 år: cirka 105 och 35 år: cirka 103, sammanlagt ungefär 328. 36 år: cirka 95, 37 år: cirka 103 och 38 år: cirka 89, sammanlagt ungefär 287. Skillnaden är 328 − 287 ≈ 41, alltså närmast 40 förlossningar.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Hur stor var skillnaden avseende andelen förlossningar per startad behandlingscykel om man jämför 30-åringar med 40-åringar?",
+      "options": [
+        "16 procentenheter",
+        "20 procentenheter",
+        "32 procentenheter",
+        "42 procentenheter"
+      ],
+      "blindAnswer": 0,
+      "explain": "Andelen per startad cykel visas av punkterna och läses mot den högra axeln (procent). För 30 år ligger punkten vid ungefär 32 procent och för 40 år vid ungefär 16 procent. Skillnaden är 32 − 16 = 16 procentenheter. Läser man av punkterna mot den vänstra axeln (antal) får man i stället ungefär 39 − 19 = 20, vilket är fel skala.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Med vilket av följande årtal har cirka 100 miljoner mynt präglats?",
+      "options": [
+        "2000",
+        "2003",
+        "2007",
+        "2009"
+      ],
+      "blindAnswer": 2,
+      "explain": "Lägg ihop de fyra myntsorterna i tabellen för varje årtal (i miljoner). 2000: 33,1 + 107,2 + 3,9 + 8,5 ≈ 152,6. 2003: 32,1 + 54,2 + 11,1 + 13,8 ≈ 111,1. 2007: 50,0 + 30,8 + 0,6 + 15,2 ≈ 96,6. 2009: 20,0 + 40,0 + 10,0 + 3,4 = 73,4. Närmast 100 miljoner kommer 2007.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilket svarsförslag anger proportionen mellan antalet 50-öringar, 1-kronor, 5-kronor och 10-kronor som har präglats med årtalet 2008?",
+      "options": [
+        "2:5:1:1",
+        "3:5:1:1",
+        "3:5:2:2",
+        "3:6:2:2"
+      ],
+      "blindAnswer": 1,
+      "explain": "Raden för 2008 i tabellen anger 35 000 000 50-öringar, 60 510 000 1-kronor, 12 000 000 5-kronor och 12 000 000 10-kronor. Förhållandet är alltså 35 : 60,5 : 12 : 12 (i miljoner). Dela alla tal med 12: ungefär 2,9 : 5,0 : 1 : 1, vilket avrundat blir 3:5:1:1.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Bestäm det årtal som flest mynt har präglats med. Hur stor andel av mynten med detta årtal utgörs av 1-kronor?",
+      "options": [
+        "50 procent",
+        "60 procent",
+        "70 procent",
+        "80 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Summera raderna i tabellen. Årtalet 2000 har flest mynt: 33 060 252 + 107 191 187 + 3 851 326 + 8 520 983 ≈ 152,6 miljoner. Närmast kommer 2002 och 2008 med knappt 120 miljoner vardera. Av mynten med årtalet 2000 är 107,2 miljoner 1-kronor, och 107,2/152,6 ≈ 0,70. Andelen är alltså cirka 70 procent.",
+      "figure": {
+        "pages": [
+          18
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Vad av följande finns 2,5 mil i sydvästlig riktning från Mansjön?",
+      "options": [
+        "Porfyrisk granit",
+        "Kvartsit",
+        "Migmatitomvandlat metasediment",
+        "Finnsjön"
+      ],
+      "blindAnswer": 3,
+      "explain": "2,5 mil är 25 km, alltså fem gånger skalstrecket på 5 km nere till höger på kartan. Norr är uppåt, så sydväst är snett nedåt åt vänster. Mansjön ligger strax ovanför kartans mitt. Går man 25 km snett nedåt vänster därifrån hamnar man vid Finnsjön, som ligger cirka 25 km från Mansjön. Porfyrisk granit (ringar) och kvartsit (fint prickat) finns i den riktningen bara längre bort, vid kartans vänsterkant, och migmatitomvandlat metasediment (vågiga tecken) omger Mansjön men tar slut långt innan man kommit 25 km.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Avläsningen är snäv: Finnsjön ligger cirka 25 km från Mansjön, något söder om sydväst, och närmaste porfyriska granit vid vänsterkanten 26–27 km bort, något väster om sydväst.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Kartan är indelad i fyra lika stora fält, som efter väderstrecken kan benämnas nordväst, nordost, sydost och sydväst. Vilken bergart förekommer i samtliga fält utom det nordöstra?",
+      "options": [
+        "Migmatitgranit",
+        "Metaryolit",
+        "Dalagranit",
+        "Migmatitomvandlat metasediment"
+      ],
+      "blindAnswer": 0,
+      "explain": "Fälten avgränsas av de två tunna linjer som korsar varandra mitt på kartan. Migmatitgranit (dubbla streck) finns kring Hamra i nordväst, i det stora området kring Storejen i sydväst och nere till vänster i sydostfältet, sydväst om Voxna, men inte i nordost. Metaryolit (stora svarta prickar) finns i nordost kring Lillskog men inte i sydost. Migmatitomvandlat metasediment (vågiga tecken) finns i alla fyra fälten, och dalagranit (oregelbundna enkla streck) finns bara i de två västra fälten. Svaret är migmatitgranit.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Utgå från den nordligaste änden av den regionala deformationszon som i söder börjar 1 kilometer från tätorten Edsbyn. Fortsätt till närmast belägna plats med migmatitgranit. Gå därifrån vidare till närmaste tätort. Hur långt är det mellan den tätorten och Loos koboltgruva?",
+      "options": [
+        "15 km",
+        "45 km",
+        "55 km",
+        "75 km"
+      ],
+      "blindAnswer": 1,
+      "explain": "Deformationszonerna är de långa svarta linjerna. Den som slutar strax norr om Edsbyn går snett uppåt vänster och tar slut vid en liten mörkgrå fläck (mafisk metavulkanit) strax söder om kartans vågräta mittlinje. Närmaste migmatitgranit därifrån är en liten lins med dubbla streck cirka 7 km åt västsydväst. Från linsen är Voxna närmaste tätort, cirka 13 km bort, medan Edsbyn ligger cirka 16 km bort. Avståndet från Voxna till Loos koboltgruva (symbolen vid Loos längst upp på kartan) motsvarar knappt nio skalstreck på 5 km, alltså cirka 45 km.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Hur många cykelstölder anmäldes sammanlagt åren 2006–2009?",
+      "options": [
+        "200 000",
+        "230 000",
+        "270 000",
+        "300 000"
+      ],
+      "blindAnswer": 2,
+      "explain": "Läs av diagrammet Cykelstölder (uppe till vänster). Linjen ligger vid ungefär 66 000 år 2006, 67 000 år 2007, 66 000 år 2008 och 66 000 år 2009. Summan är cirka 66 000 + 67 000 + 66 000 + 66 000 = 265 000, och närmast det ligger 270 000.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur stor var den procentuella minskningen av antalet anmälda bilbrott om man jämför den redovisade periodens första och sista år?",
+      "options": [
+        "40 procent",
+        "50 procent",
+        "60 procent",
+        "70 procent"
+      ],
+      "blindAnswer": 2,
+      "explain": "Perioden är 2002–2011. I diagrammet Bilbrott (uppe till höger) är antalet cirka 210 000 år 2002 och cirka 84 000 år 2011. Minskningen är 210 000 − 84 000 = 126 000, och 126 000/210 000 = 0,6, alltså 60 procent. Alternativet 40 procent är i stället den andel av det första årets antal som fanns kvar det sista året.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur stort var antalet anmälda fall av skadegörelse i genomsnitt per år för den redovisade perioden?",
+      "options": [
+        "155 000",
+        "165 000",
+        "175 000",
+        "185 000"
+      ],
+      "blindAnswer": 1,
+      "explain": "Läs av diagrammet Skadegörelse (nere till vänster) för de tio åren 2002–2011: ungefär 140 000, 152 000, 147 000, 147 000, 148 000, 179 000, 194 000, 199 000, 163 000 och 166 000. Summan är cirka 1 635 000, och medelvärdet blir 1 635 000/10 ≈ 163 500. Närmast ligger 165 000.",
+      "figure": {
+        "pages": [
+          22
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
