@@ -1,0 +1,809 @@
+{
+  "examId": "hp-2022-05-07",
+  "passNumber": 4,
+  "questions": [
+    {
+      "number": 1,
+      "kind": "xyz",
+      "prompt": "Vad är (1,7 · 10⁵) · (3,3 · 10³)?",
+      "options": [
+        "3,21 · 10⁸",
+        "5,61 · 10⁸",
+        "3,21 · 10¹⁵",
+        "5,61 · 10¹⁵"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplicera de vanliga talen för sig och tiopotenserna för sig: (1,7 · 10⁵) · (3,3 · 10³) = (1,7 · 3,3) · (10⁵ · 10³). Här är 1,7 · 3,3 = 1,7 · 3 + 1,7 · 0,3 = 5,1 + 0,51 = 5,61. Potenser med samma bas multipliceras genom att exponenterna adderas: 10⁵ · 10³ = 10⁵⁺³ = 10⁸. Produkten är alltså 5,61 · 10⁸. Alternativen med 10¹⁵ lockar om man multiplicerar exponenterna (5 · 3 = 15) i stället för att addera dem.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 2,
+      "kind": "xyz",
+      "prompt": "Medelvärdet av x och y är 3. Medelvärdet av y och 1 är 5. Vilket värde har x?",
+      "options": [
+        "−5",
+        "−3",
+        "0",
+        "15"
+      ],
+      "blindAnswer": 1,
+      "explain": "Medelvärdet av y och 1 är 5, så summan är y + 1 = 2 · 5 = 10, alltså y = 9. Medelvärdet av x och y är 3, så x + y = 2 · 3 = 6. Då är x = 6 − 9 = −3. Kontroll: (−3 + 9)/2 = 3 och (9 + 1)/2 = 5.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 3,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ motsvarar (x⁷)ʸ⁺²?",
+      "passage": "x > 1",
+      "options": [
+        "xʸ⁺⁹",
+        "x⁷ʸ⁺²",
+        "x⁷ʸ⁺¹⁴",
+        "xʸ⁺⁴⁹"
+      ],
+      "blindAnswer": 2,
+      "explain": "När en potens upphöjs till en ny exponent multipliceras exponenterna. Exponenten blir 7 · (y + 2) = 7y + 14, så (x⁷)ʸ⁺² = x⁷ʸ⁺¹⁴. Kontroll med y = 0: (x⁷)² = x¹⁴, och 7 · 0 + 14 = 14. Alternativet x⁷ʸ⁺² lockar om man bara multiplicerar 7 med y och glömmer tvåan, och xʸ⁺⁹ får man om man adderar exponenterna 7 och y + 2, vilket bara gäller när man multiplicerar potenser med samma bas.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 4,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ visar grafen till f?",
+      "passage": "f(x) = x/2 − 1",
+      "options": [
+        "Graf A",
+        "Graf B",
+        "Graf C",
+        "Graf D"
+      ],
+      "blindAnswer": 2,
+      "explain": "f(x) = x/2 − 1 är en rät linje med lutningen 1/2 som skär y-axeln i y = −1. Graf A och graf B lutar nedåt, alltså har de negativ lutning och faller bort. Graf C och graf D skär båda y-axeln i −1, men graf D stiger 2 steg för varje steg åt höger, så dess lutning är 2. Graf C går genom (0, −1) och (2, 0): 1 steg uppåt på 2 steg åt höger, alltså lutningen 1/2. Kontroll: f(2) = 2/2 − 1 = 0.",
+      "figure": {
+        "pages": [
+          3
+        ],
+        "box": [
+          0.17,
+          0.458,
+          0.42,
+          0.955
+        ]
+      },
+      "note": "Alternativen är fyra grafer märkta A–D; de står i figuren och alternativen anger bara vilken graf.",
+      "verification": "agreed"
+    },
+    {
+      "number": 5,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är med säkerhet lika med b om 6x/y = 3a/(2b)?",
+      "passage": "a ≠ 0, b ≠ 0, x ≠ 0, y ≠ 0",
+      "options": [
+        "y/2",
+        "ay/(4x)",
+        "4ay/x",
+        "9ay/x"
+      ],
+      "blindAnswer": 1,
+      "explain": "Multiplicera korsvis: 6x/y = 3a/(2b) ger 6x · 2b = 3a · y, alltså 12bx = 3ay. Dela båda leden med 12x (x ≠ 0): b = 3ay/(12x) = ay/(4x). Kontroll med a = 4, x = 1 och y = 2: då är b = 4 · 2/(4 · 1) = 2, och mycket riktigt är 6 · 1/2 = 3 och 3 · 4/(2 · 2) = 3. Alternativet 4ay/x lockar om man vänder på faktorn 1/4 när man förkortar 3/12.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 6,
+      "kind": "xyz",
+      "prompt": "Hur stor är vinkeln v?",
+      "options": [
+        "130°",
+        "145°",
+        "150°",
+        "160°"
+      ],
+      "blindAnswer": 0,
+      "explain": "Vinkeln 140° ligger utanför triangeln, så triangelns vinkel vid det högra hörnet är 180° − 140° = 40°. Den lodräta linjen är vinkelrät mot den vågräta, så den högra deltriangeln har vinklarna 90°, 40° och 5x. Det ger 5x = 180° − 90° − 40° = 50°, alltså x = 10°. I den vänstra deltriangeln är vinkeln upptill 4x = 40° och vinkeln nedtill 90°, så vinkeln vid det vänstra hörnet är 180° − 90° − 40° = 50°. Vinkeln v bildar tillsammans med den en rak vinkel: v = 180° − 50° = 130°.",
+      "figure": {
+        "pages": [
+          4
+        ],
+        "box": [
+          0.2,
+          0.535,
+          0.73,
+          0.717
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 7,
+      "kind": "xyz",
+      "prompt": "Vilket svarsalternativ är med säkerhet korrekt?",
+      "passage": "x ≠ 0\ny ≠ 0\nx²/y + 2 = 2 − (−x)",
+      "options": [
+        "x + y = 2",
+        "x < y",
+        "x = y",
+        "x > y"
+      ],
+      "blindAnswer": 2,
+      "explain": "Förenkla högerledet: 2 − (−x) = 2 + x. Ekvationen blir x²/y + 2 = 2 + x, alltså x²/y = x. Multiplicera båda leden med y: x² = xy. Eftersom x ≠ 0 går det att dela med x, och då är x = y. Kontroll med x = y = 3: 9/3 + 2 = 5 och 2 − (−3) = 5. Alternativet x + y = 2 gäller inte alltid; med x = y = 3 är summan 6.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 8,
+      "kind": "xyz",
+      "prompt": "Kalle är pappa till tre pojkar och en flicka. Idag är pojkarnas sammanlagda ålder lika med flickans ålder. Vad är differensen mellan pojkarnas sammanlagda ålder och flickans ålder om tre år?",
+      "options": [
+        "0 år",
+        "3 år",
+        "6 år",
+        "9 år"
+      ],
+      "blindAnswer": 2,
+      "explain": "Om tre år har var och en av de tre pojkarna blivit 3 år äldre, så deras sammanlagda ålder har ökat med 3 · 3 = 9 år. Flickans ålder har bara ökat med 3 år. Idag är de lika, så om tre år är pojkarnas sammanlagda ålder 9 − 3 = 6 år större än flickans. Svaret 0 år lockar om man tror att likheten består, men summan av tre åldrar växer tre gånger så fort som en ålder.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 9,
+      "kind": "xyz",
+      "prompt": "Hur många procent är 14,4 av 36?",
+      "options": [
+        "35",
+        "40",
+        "45",
+        "50"
+      ],
+      "blindAnswer": 1,
+      "explain": "Andelen är 14,4/36. Förläng med 10: 144/360. Eftersom 360 · 0,4 = 144 är andelen 0,4, alltså 40 procent. Kontroll: 40 % av 36 är 0,4 · 36 = 14,4.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 10,
+      "kind": "xyz",
+      "prompt": "Punkten (a, a) ligger på linjen y = (1/2)x + 2. Vilket värde har a?",
+      "options": [
+        "0",
+        "1/2",
+        "2",
+        "4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Punkten (a, a) har både x-koordinaten och y-koordinaten a. Sätt in den i linjens ekvation: a = (1/2)a + 2. Dra bort (1/2)a från båda leden: (1/2)a = 2, alltså a = 4. Kontroll: (1/2) · 4 + 2 = 4, så punkten (4, 4) ligger på linjen. Svaret 2 lockar om man läser av konstanttermen, men den anger bara var linjen skär y-axeln.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 11,
+      "kind": "xyz",
+      "prompt": "Ett geometriskt objekt kan delas upp i två kvadrater och två kvartscirklar, som figuren visar. Vilken omkrets har objektet?",
+      "options": [
+        "(30 + 5π) cm",
+        "(40 + 5π) cm",
+        "(30 + 10π) cm",
+        "(40 + 10π) cm"
+      ],
+      "blindAnswer": 0,
+      "explain": "Kvadraternas sida är 5 cm, och kvartscirklarnas radie är lika lång som kvadratsidan, alltså 5 cm. De streckade linjerna ligger inuti objektet och hör inte till omkretsen. Underkanten består av två radier och två kvadratsidor: 5 + 5 + 5 + 5 = 20 cm, och överkanten av två kvadratsidor: 10 cm. Varje båge är en fjärdedel av en cirkel med radien 5 cm: 2π · 5/4 = 2,5π cm, så de två bågarna är 5π cm tillsammans. Omkretsen är 20 + 10 + 5π = (30 + 5π) cm. Alternativen med 10π får man om man räknar bågarna som halvcirklar.",
+      "figure": {
+        "pages": [
+          7
+        ],
+        "box": [
+          0.22,
+          0.125,
+          0.63,
+          0.24
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 12,
+      "kind": "xyz",
+      "prompt": "Vilket värde har uttrycket (x + y)² − (x − y)²?",
+      "passage": "xy = 1",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "4"
+      ],
+      "blindAnswer": 3,
+      "explain": "Utveckla med kvadreringsreglerna: (x + y)² = x² + 2xy + y² och (x − y)² = x² − 2xy + y². Skillnaden är x² + 2xy + y² − x² + 2xy − y² = 4xy. Eftersom xy = 1 blir värdet 4 · 1 = 4. Kontroll med x = y = 1: (1 + 1)² − (1 − 1)² = 4 − 0 = 4. Svaret 0 lockar om man glömmer att minustecknet framför (x − y)² byter tecken på −2xy, så att 2xy-termerna verkar ta ut varandra.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 13,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 80 000 cm\nKvantitet II: 8 km",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Gör om till samma enhet. 1 km = 1 000 m och 1 m = 100 cm, så 1 km = 100 000 cm. Då är 80 000 cm = 80 000/100 000 km = 0,8 km, alltså 800 m. Kvantitet II, 8 km, är tio gånger så lång. Den som tror att en kilometer är 10 000 cm får 8 km och svarar att kvantiteterna är lika.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 14,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: 1/5 − 5/20\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Skriv bråken med samma nämnare: 1/5 = 4/20. Kvantitet I är då 4/20 − 5/20 = −1/20, ett negativt tal. Kvantitet II är 0, som är större än varje negativt tal. Man kan också förkorta 5/20 = 1/4 och se att 1/4 är större än 1/5, så skillnaden måste bli negativ.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 15,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "En mätserie består av de fem positiva heltalen 4, 2, a, 7 och 3.\nKvantitet I: Mätseriens median\nKvantitet II: 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Medianen av fem tal är det mittersta talet när talen står i storleksordning. De kända talen i ordning är 2, 3, 4 och 7, och var a hamnar avgör medianen. Med a = 1 blir serien 1, 2, 3, 4, 7 och medianen 3, lika med kvantitet II. Med a = 5 blir serien 2, 3, 4, 5, 7 och medianen 4, större än kvantitet II. Eftersom olika värden på a ger olika svar är informationen otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 16,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "−7(3 − 2x) = 21\nKvantitet I: x\nKvantitet II: 3",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Dela båda leden med −7: 3 − 2x = −3. Då är −2x = −6, alltså x = 3. Kontroll: −7(3 − 2 · 3) = −7 · (−3) = 21. Kvantitet I är 3, lika med kvantitet II.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 17,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Längden av den tredje sidan i en triangel där summan av de två andra sidorna är 17 cm\nKvantitet II: 15 cm",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "I en triangel är varje sida kortare än summan av de två andra, så den tredje sidan är kortare än 17 cm. Mer än så vet man inte. Om de två andra sidorna är 8 cm och 9 cm kan den tredje sidan vara 16 cm, som är större än 15 cm (8 + 9 = 17 > 16). Den kan också vara 2 cm, som är mindre än 15 cm (8 + 2 = 10 > 9). Båda trianglarna är möjliga, så informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 18,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x + 1/2 = y + 3/5\nKvantitet I: x\nKvantitet II: y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "Flytta över termerna: x − y = 3/5 − 1/2 = 6/10 − 5/10 = 1/10. Skillnaden x − y är positiv, så x är alltid större än y. Det kan verka som att y är störst eftersom 3/5 är större än 1/2, men när y behöver det större tillägget för att nå samma summa är det y som är det mindre talet. Exempel: x = 1/10 ger y = 0.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 19,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "x < y\nKvantitet I: x + y\nKvantitet II: x − y",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 3,
+      "explain": "Skillnaden mellan kvantiteterna är (x + y) − (x − y) = 2y, så det avgörande är om y är positivt eller negativt, och det säger villkoret x < y inget om. Med x = 1 och y = 2 är kvantitet I 3 och kvantitet II −1, så I är större. Med x = −3 och y = −2 är kvantitet I −5 och kvantitet II −1, så II är större. Informationen är otillräcklig.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 20,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Fyra cirklar har radierna 5 cm, 10 cm, 15 cm respektive 20 cm.\nKvantitet I: Den sammanlagda arean av den största och den minsta cirkeln\nKvantitet II: Den sammanlagda arean av de två mellanstora cirklarna",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 0,
+      "explain": "En cirkel med radien r har arean πr². Kvantitet I: π · 20² + π · 5² = 400π + 25π = 425π cm². Kvantitet II: π · 10² + π · 15² = 100π + 225π = 325π cm². Kvantitet I är större. Radierna har samma summa i båda kvantiteterna (25 cm), vilket kan locka till svaret att de är lika, men arean växer med kvadraten på radien, så den största cirkeln väger tyngst.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 21,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "L₁: y = k₁x + m₁\nL₂: y = k₂x + m₂\nKvantitet I: m₁ − m₂\nKvantitet II: 0",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 1,
+      "explain": "Konstanten m anger var linjen skär y-axeln. L₁ lutar nedåt och skär y-axeln i y = −2, så m₁ = −2. L₂ lutar uppåt och skär y-axeln i y = 2, så m₂ = 2. Kvantitet I är m₁ − m₂ = −2 − 2 = −4, som är mindre än 0. Att linjerna skär varandra i samma punkt på x-axeln, (−2, 0), betyder inte att m-värdena är lika; m läses av på y-axeln.",
+      "figure": {
+        "pages": [
+          12
+        ],
+        "box": [
+          0.19,
+          0.135,
+          0.5,
+          0.35
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 22,
+      "kind": "kva",
+      "prompt": "Jämför kvantitet I och kvantitet II.",
+      "passage": "Kvantitet I: Summan av primtalsfaktorerna i heltalet 21\nKvantitet II: Summan av primtalsfaktorerna i heltalet 30",
+      "options": [
+        "I är större än II",
+        "II är större än I",
+        "I är lika med II",
+        "Informationen är otillräcklig"
+      ],
+      "blindAnswer": 2,
+      "explain": "Primtalsfaktorisera talen. 21 = 3 · 7, så summan är 3 + 7 = 10. 30 = 2 · 3 · 5, så summan är 2 + 3 + 5 = 10. Kvantiteterna är lika. Att 30 är större och har fler primtalsfaktorer kan locka till att svara att II är större, men faktorerna i 30 är mindre.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 23,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är Alma längre än Elsa?\n(1) Alma är längre än Freja.\n(2) Freja är kortare än Elsa.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 4,
+      "explain": "(1) Alma är längre än Freja, men det säger inget om Elsa. Inte tillräckligt.\n(2) Elsa är längre än Freja, men det säger inget om Alma. Inte tillräckligt.\n(1) och (2) tillsammans: Både Alma och Elsa är längre än Freja, men det avgör inte vem av dem som är längst. Med Freja 160 cm kan Alma vara 170 cm och Elsa 165 cm, eller Alma 165 cm och Elsa 170 cm. Inte tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 24,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "I ett pennställ finns det endast enfärgade svarta och röda pennor. Hur många pennor finns det i pennstället?\n(1) Sannolikheten är 5/15 att en slumpmässigt plockad penna från pennstället är röd.\n(2) Det finns 20 svarta pennor i pennstället.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) Sannolikheten 5/15 = 1/3 betyder att en tredjedel av pennorna är röda, men det stämmer både med 3 pennor (1 röd) och med 15 pennor (5 röda). Inte tillräckligt.\n(2) 20 svarta pennor säger inget om antalet röda. Inte tillräckligt.\n(1) och (2) tillsammans: Om en tredjedel av pennorna är röda är två tredjedelar svarta. Två tredjedelar är 20 pennor, så en tredjedel är 10 och det finns 20 + 10 = 30 pennor. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 25,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "50 < x < 60\nVad är x?\n(1) x är jämnt delbart med 7.\n(2) x är jämnt delbart med 8.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 3,
+      "explain": "(1) Multiplerna av 7 runt intervallet är 49, 56 och 63. Bara 56 ligger mellan 50 och 60, så x = 56. Tillräckligt.\n(2) Multiplerna av 8 runt intervallet är 48, 56 och 64. Bara 56 ligger mellan 50 och 60, så x = 56. Tillräckligt.\nVarje påstående räcker för sig. Att båda leder till samma tal kan locka till att tro att de behövs tillsammans, men intervallet är så smalt att det bara rymmer en multipel av 7 och en av 8.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 26,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "En kiosk säljer kulglass och har en dag endast tre olika smaker: choklad, jordgubb och vanilj. Hur många kulor glass säljs under denna dag?\n(1) 1/8 av kulorna som säljs under dagen har vaniljsmak. Av smakerna choklad och jordgubb säljs det sammanlagt 140 kulor.\n(2) Det säljs 80 kulor med smaken choklad under dagen.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 0,
+      "explain": "(1) Vaniljkulorna är 1/8 av alla kulor, så choklad och jordgubb är tillsammans 7/8 av alla kulor. 7/8 av antalet är 140, så 1/8 är 140/7 = 20 och det säljs 8 · 20 = 160 kulor. Tillräckligt.\n(2) 80 chokladkulor säger inget om hur många jordgubbs- och vaniljkulor som säljs. Inte tillräckligt.\nDet räcker alltså med (1).",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 27,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "Är x < 0?\n(1) x < y < z\n(2) xy > xz",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 2,
+      "explain": "(1) x < y < z säger bara hur talen är ordnade. Både x = −1, y = 0, z = 1 och x = 1, y = 2, z = 3 uppfyller villkoret. Inte tillräckligt.\n(2) xy > xz kan skrivas x(y − z) > 0, vilket gäller när x och y − z har samma tecken. Både x = 1, y = 3, z = 2 och x = −1, y = 2, z = 3 uppfyller olikheten. Inte tillräckligt.\n(1) och (2) tillsammans: Enligt (1) är y < z, så y − z är negativt. Då kräver x(y − z) > 0 att även x är negativt. Tillräckligt.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 28,
+      "kind": "nog",
+      "prompt": "Tillräcklig information för lösningen erhålls",
+      "passage": "C är en cirkel och K är en kvadrat. Har C större area än K?\n(1) Sidan i K är större än radien i C.\n(2) Diametern i C är lika med diagonalen i K.",
+      "options": [
+        "i (1) men ej i (2)",
+        "i (2) men ej i (1)",
+        "i (1) tillsammans med (2)",
+        "i (1) och (2) var för sig",
+        "ej genom de båda påståendena"
+      ],
+      "blindAnswer": 1,
+      "explain": "Kalla kvadratens sida s och cirkelns radie r.\n(1) s > r. Med r = 1 och s = 1,5 har K arean 2,25 och C arean π ≈ 3,14, så C är större. Med r = 1 och s = 2 har K arean 4, och då är K större. Inte tillräckligt.\n(2) Diagonalen i kvadraten är s√2, och den är lika med diametern 2r. Då är s = 2r/√2 = r√2 och kvadratens area s² = 2r². Cirkelns area är πr² ≈ 3,14r², alltså större. Tillräckligt.\nDet räcker alltså med (2): kvadraten får plats inuti cirkeln med hörnen på cirkeln.",
+      "figure": null,
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 29,
+      "kind": "dtk",
+      "prompt": "Identifiera åldersgruppen med störst antal mottagare av föräldrapenning. Vilket svarsförslag visar den procentuella fördelningen av kvinnor och män inom denna grupp?",
+      "options": [
+        "Cirkeldiagram A",
+        "Cirkeldiagram B",
+        "Cirkeldiagram C",
+        "Cirkeldiagram D"
+      ],
+      "blindAnswer": 0,
+      "explain": "I kolumnen Antal mottagare, Samtliga, har åldersgruppen 35–39 år flest mottagare, 223 465 (näst flest har 30–34 år med 196 308). I den gruppen är 119 518 kvinnor och 103 947 män. Kvinnornas andel är 119 518/223 465 ≈ 0,53, alltså cirka 53 procent, och männens cirka 47 procent. I cirkeldiagram A är den svarta delen (kvinnor) något större än hälften. Cirkeldiagram D visar samma fördelning med kvinnor och män ombytta, och cirkeldiagram B (drygt 60 procent kvinnor) passar gruppen 30–34 år, där 119 905/196 308 ≈ 61 procent är kvinnor.",
+      "figure": {
+        "pages": [
+          16,
+          17
+        ],
+        "boxes": [
+          [
+            0.05,
+            0.1,
+            0.72,
+            0.945
+          ],
+          [
+            0.255,
+            0.515,
+            0.4,
+            0.89
+          ]
+        ],
+        "rotate": 90
+      },
+      "note": "Bildalternativ: cirkeldiagrammen A–D (från uppgiftssidan) står under tabellen i figuren.",
+      "verification": "agreed"
+    },
+    {
+      "number": 30,
+      "kind": "dtk",
+      "prompt": "Hur många föräldrapenningdagar togs ut i genomsnitt per barn under 2012?",
+      "options": [
+        "36",
+        "55",
+        "68",
+        "77"
+      ],
+      "blindAnswer": 3,
+      "explain": "Använd raden Samtliga: antal nettodagar är 50 777 667 och antal barn 660 567. I genomsnitt togs 50 777 667/660 567 ≈ 77 dagar ut per barn (660 567 · 77 ≈ 50,9 miljoner). Totalraden ska användas för barnen, eftersom samma barn enligt fotnoten kan räknas i flera åldersgrupper. Alternativet 68 får man om man delar med antalet mottagare, 743 560, i stället för antalet barn.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.05,
+          0.1,
+          0.72,
+          0.945
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 31,
+      "kind": "dtk",
+      "prompt": "Identifiera den åldersgrupp som tog ut flest föräldrapenningdagar. Hur stor andel av samtliga föräldrapenningdagar togs ut av föräldrar i denna grupp?",
+      "options": [
+        "20 procent",
+        "30 procent",
+        "40 procent",
+        "50 procent"
+      ],
+      "blindAnswer": 1,
+      "explain": "I kolumnen Antal nettodagar, Samtliga, har åldersgruppen 30–34 år flest dagar: 15 585 678 av totalt 50 777 667. Andelen är 15 585 678/50 777 667 ≈ 0,31, alltså cirka 30 procent. Gruppen 35–39 år har visserligen flest mottagare, men den tog ut färre dagar (12 947 173), så det gäller att läsa i rätt kolumn.",
+      "figure": {
+        "pages": [
+          16
+        ],
+        "box": [
+          0.05,
+          0.1,
+          0.72,
+          0.945
+        ],
+        "rotate": 90
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 32,
+      "kind": "dtk",
+      "prompt": "Vilken av följande elever besvarade uppgifterna i grammatikdelen på kortast tid?",
+      "options": [
+        "Elev 1",
+        "Elev 8",
+        "Elev 10",
+        "Elev 14"
+      ],
+      "blindAnswer": 2,
+      "explain": "Grammatikdelen är uppgift 11–20, de vita rutorna i staplarna. Läs av var den vita delen börjar och slutar på tidsaxeln: elev 1 från cirka 54,5 till 90 minuter (cirka 35 minuter), elev 8 från cirka 48,5 till 74,5 minuter (cirka 26 minuter), elev 10 från cirka 64,5 till 88,5 minuter (cirka 24 minuter) och elev 14 från 90 till 120 minuter (30 minuter). Elev 10 behövde kortast tid. Elev 8 ligger nära, men dess vita del är ungefär två minuter längre.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.05,
+          0.06,
+          0.98,
+          0.95
+        ]
+      },
+      "note": "Elev 8 och elev 10 ligger nära varandra (cirka 26 och 24 minuter).",
+      "verification": "agreed"
+    },
+    {
+      "number": 33,
+      "kind": "dtk",
+      "prompt": "Vilken uppgift arbetade flest elever med när exakt 30 minuter av provtiden hade gått?",
+      "options": [
+        "Uppgift 4",
+        "Uppgift 5",
+        "Uppgift 6",
+        "Uppgift 7"
+      ],
+      "blindAnswer": 0,
+      "explain": "Vid 30 minuter är alla elever kvar i läsförståelsen (de mörkgrå rutorna, uppgift 1–10), så räkna rutorna från vänster fram till 30 minuter i varje stapel. Med uppgift 4 arbetar sju elever (elev 5, 7, 9, 10, 12, 14 och 17), med uppgift 6 fem elever (elev 2, 3, 15, 16 och 18), med uppgift 5 tre elever (elev 1, 4 och 19) och med uppgift 7 två elever (elev 6 och 8). De övriga tre arbetar med uppgift 3, 8 respektive 9. Flest arbetar alltså med uppgift 4.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.05,
+          0.06,
+          0.98,
+          0.95
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 34,
+      "kind": "dtk",
+      "prompt": "Studera provtiden för de tre elever som inte besvarade alla uppgifter i provet. Hur lång tid använde de i genomsnitt till läsförståelsedelen?",
+      "options": [
+        "45 minuter",
+        "50 minuter",
+        "55 minuter",
+        "65 minuter"
+      ],
+      "blindAnswer": 2,
+      "explain": "Figuren visar bara besvarade uppgifter, så de elever vars staplar har färre än 30 rutor har inte besvarat allt: elev 3 (stapeln slutar mitt i grammatikdelen), elev 9 (bara tre rutor i lucktexterna) och elev 20 (fem rutor i lucktexterna). Läsförståelsen, de mörkgrå rutorna, tog för elev 3 cirka 57 minuter, för elev 9 cirka 77 minuter och för elev 20 cirka 34 minuter. Medelvärdet är (57 + 77 + 34)/3 = 168/3 = 56 minuter, vilket är närmast 55 minuter.",
+      "figure": {
+        "pages": [
+          18
+        ],
+        "box": [
+          0.05,
+          0.06,
+          0.98,
+          0.95
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 35,
+      "kind": "dtk",
+      "prompt": "Från fyren på Stora Karlsö kan man gå nedför en trappa till stranden och följa strandkanten till Norderhamn. Från fyren går också en körväg till Norderhamn. Hur mycket längre blir det att ta körvägen?",
+      "options": [
+        "800 meter",
+        "1 200 meter",
+        "1 700 meter",
+        "2 000 meter"
+      ],
+      "blindAnswer": 1,
+      "explain": "Mät med skalstocken, där hela linjalen är 500 m. Vägen via trappan: från fyren till trappan vid Hien är det cirka 140 m, trappan är cirka 50 m, och längs strandkanten runt Millsnabb till Norderhamn är det cirka 600 m, sammanlagt cirka 800 m. Körvägen är den prickade linjen. Den går först söderut på öns västra del (cirka 550 m), sedan österut genom Smaldal (cirka 750 m) och till sist norrut förbi Lilla Förvar och Hesselby läde upp till Norderhamn (cirka 650 m), sammanlagt knappt 2 000 m. Körvägen är alltså ungefär 2 000 − 800 = 1 200 m längre.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Sträckorna är uppmätta med skalstocken och ungefärliga: körvägen cirka 1 950 m och vägen via trappan och stranden cirka 800 m.",
+      "verification": "agreed"
+    },
+    {
+      "number": 36,
+      "kind": "dtk",
+      "prompt": "Studera kartan över Lilla Karlsö. På vilket avstånd och i vilken riktning från rauken vid Stalen ligger Helveteshålet?",
+      "options": [
+        "630 meter i sydvästlig riktning",
+        "630 meter i nordostlig riktning",
+        "1 050 meter i sydvästlig riktning",
+        "1 050 meter i nordostlig riktning"
+      ],
+      "blindAnswer": 3,
+      "explain": "Rauken vid Stalen ligger i sydvästra delen av Lilla Karlsö och Helveteshålet i nordöstra delen. Nordpilen pekar uppåt, så riktningen från Stalen till Helveteshålet är nordostlig. Avståndet mellan dem är ungefär två gånger hela skalstocken på 500 m, alltså cirka 1 000 m, vilket stämmer med 1 050 meter. 630 m skulle bara vara en dryg skalstockslängd, och sydvästlig riktning är riktningen åt andra hållet, från Helveteshålet mot Stalen.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 37,
+      "kind": "dtk",
+      "prompt": "Vid Hesselby läde på Stora Karlsö finns ett järnåldersröse. Hur många grottor ligger inom en radie av 500 meter från detta röse?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "blindAnswer": 2,
+      "explain": "Radien 500 m är lika lång som hela skalstocken. Grottorna är de vita symbolerna i strandbranten (Issjögrotta och Ancylusgrotta i teckenförklaringen). Inom 500 m från röset vid Hesselby läde ligger Lilla Förvar (knappt 100 m bort), tre grottor utan namn i branten vid Norderhamnsberget strax norr om Lilla Förvar (alla inom 200 m) och Stora Förvar i nordost (cirka 460 m bort). Jungfruhålet ligger utanför, cirka 600 m bort. Det blir 5 grottor.",
+      "figure": {
+        "pages": [
+          20
+        ]
+      },
+      "note": "Tre av grottorna saknar namn på kartan. Stora Förvar ligger cirka 460 m från röset, alltså nära gränsen.",
+      "verification": "agreed"
+    },
+    {
+      "number": 38,
+      "kind": "dtk",
+      "prompt": "Vilket av följande år uppgick de svenska lastbilarnas transporterade godsvikt till omkring 350 miljoner ton?",
+      "options": [
+        "2006",
+        "2007",
+        "2009",
+        "2012"
+      ],
+      "blindAnswer": 1,
+      "explain": "Svenska lastbilars godsvikt 2004 var 318,5 miljoner ton, vilket är index 100. 350 miljoner ton motsvarar index 350/318,5 · 100 ≈ 110. I det nedersta diagrammet ligger kurvan för svenska lastbilar (ljusgrå med runda punkter) vid cirka 111 år 2007, alltså 1,11 · 318,5 ≈ 354 miljoner ton. De andra åren ligger den vid cirka 105 (2006), 103 (2009) och 91 (2012). Den mörka kurvan med trianglar, som ligger vid 110 år 2012, gäller utländska lastbilar.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 39,
+      "kind": "dtk",
+      "prompt": "Hur omfattande var utländska och svenska lastbilars totala trafikarbete på svenska vägar 2012?",
+      "options": [
+        "2,5 miljarder km",
+        "2,7 miljarder km",
+        "2,9 miljarder km",
+        "3,6 miljarder km"
+      ],
+      "blindAnswer": 2,
+      "explain": "Utgå från värdena för 2004 och indexen för 2012 i det översta diagrammet. Utländska lastbilar har index cirka 142, alltså 1,42 · 461 ≈ 650 miljoner km (det stämmer med summan av staplarna i mittdiagrammet). Svenska lastbilar har index cirka 101, alltså 1,01 · 2 227 ≈ 2 250 miljoner km. Sammanlagt blir det cirka 650 + 2 250 = 2 900 miljoner km, alltså 2,9 miljarder km. 2,7 miljarder km får man om man adderar värdena för 2004 (461 + 2 227 ≈ 2 700).",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    },
+    {
+      "number": 40,
+      "kind": "dtk",
+      "prompt": "Hur långt sammanlagt körde lastbilar från Norge, Danmark och Finland utan last på svenska vägar 2012?",
+      "options": [
+        "50 miljoner km",
+        "70 miljoner km",
+        "230 miljoner km",
+        "280 miljoner km"
+      ],
+      "blindAnswer": 0,
+      "explain": "Trafikarbete utan last är den ljusa delen överst i staplarna i mittdiagrammet. Norge: stapeln når cirka 140 och den svarta delen cirka 112, alltså cirka 28 miljoner km utan last. Danmark: cirka 80 − 69 = 11 miljoner km. Finland: cirka 77 − 63 = 14 miljoner km. Sammanlagt blir det cirka 28 + 11 + 14 = 53 miljoner km, närmast 50 miljoner km. Hela staplarna ger nästan 300 miljoner km och de svarta delarna cirka 245, så det gäller att bara ta med de ljusa delarna.",
+      "figure": {
+        "pages": [
+          22
+        ]
+      },
+      "note": "",
+      "verification": "agreed"
+    }
+  ]
+}
