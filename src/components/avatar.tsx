@@ -42,7 +42,10 @@ export function Avatar({
   className?: string;
 }) {
   const fetched = useAvatarUrl(src === undefined ? userId : null);
-  const url = src === undefined ? fetched : src;
+  const known = src === undefined ? fetched : src;
+  // En bild som inte går att ladda (t.ex. en expert utan profilbild) visas som initialer.
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
+  const url = known && known !== failedUrl ? known : null;
   const { user } = useAuth();
   const [open, setOpen] = useState(false);
   const canReport = reportable && Boolean(url) && Boolean(user) && Boolean(userId) && user?.id !== userId;
@@ -55,6 +58,7 @@ export function Avatar({
       width={256}
       height={256}
       loading="lazy"
+      onError={() => setFailedUrl(url)}
       className={cn("shrink-0 rounded-full border border-[var(--line)] object-cover", SIZES[size], className)}
     />
   ) : (

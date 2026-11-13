@@ -5,7 +5,8 @@ import { MapPin, Video } from "lucide-react";
 import { useAuth } from "@/lib/supabase/auth-context";
 import { fetchExpert } from "@/lib/studiehjalp/api";
 import { FORMAT_LABEL, formatSek, type ExpertDirectoryEntry } from "@/lib/studiehjalp/types";
-import { subtestLabel } from "./expert-search";
+import { Avatar } from "@/components/avatar";
+import { expertAvatarSrc, subtestLabel } from "./expert-search";
 import { Spinner, StudiehjalpGate } from "./gate";
 import { Chip, ExpertBadges, Notice, PageHeader, Panel, PanelTitle } from "./ui";
 
@@ -62,11 +63,16 @@ function ProfileContent({ publicId }: { publicId: string }) {
 
   return (
     <div className="space-y-6">
-      <PageHeader
-        title={expert.display_name}
-        intro={expert.headline || undefined}
-        back={{ href: "/studiehjalp/experter", label: "Alla experter" }}
-      />
+      <div className="flex items-end justify-between gap-4">
+        <div className="min-w-0 flex-1">
+          <PageHeader
+            title={expert.display_name}
+            intro={expert.headline || undefined}
+            back={{ href: "/studiehjalp/experter", label: "Alla experter" }}
+          />
+        </div>
+        <Avatar name={expert.display_name} src={expertAvatarSrc(expert.public_id)} size="lg" />
+      </div>
 
       {!expert.published ? (
         <Notice tone="warn">Förhandsvisning: profilen är inte publicerad och syns bara för dig.</Notice>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Avatar } from "@/components/avatar";
 import { useEffect, useState } from "react";
 import { MapPin, Search, Video } from "lucide-react";
 import { SUBTESTS } from "@/lib/subtests";
@@ -20,6 +21,11 @@ const INITIAL: SearchFilters = {
   query: "",
   sort: "rotation",
 };
+
+/** Expertens profilbild via servern, som inte lämnar ut bildens sökväg (api/expertbild). */
+export function expertAvatarSrc(publicId: string): string {
+  return `/api/expertbild/${publicId}`;
+}
 
 export function subtestLabel(kind: string): string {
   return SUBTESTS.find((s) => s.kind === kind)?.short ?? kind.toUpperCase();
@@ -266,9 +272,12 @@ function ExpertCard({ row }: { row: ExpertSearchRow }) {
       className="block h-full rounded-xl border border-[var(--line)] bg-card p-5 transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--mist)]"
     >
       <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <h2 className="truncate text-base font-semibold text-[var(--ink)]">{row.display_name}</h2>
-          {row.headline ? <p className="mt-0.5 text-sm text-[var(--ink-soft)]">{row.headline}</p> : null}
+        <div className="flex min-w-0 items-start gap-3">
+          <Avatar name={row.display_name} src={expertAvatarSrc(row.public_id)} size="md" className="size-11" />
+          <div className="min-w-0">
+            <h2 className="truncate text-base font-semibold text-[var(--ink)]">{row.display_name}</h2>
+            {row.headline ? <p className="mt-0.5 text-sm text-[var(--ink-soft)]">{row.headline}</p> : null}
+          </div>
         </div>
         {row.price_60 !== null ? (
           <p className="shrink-0 text-right text-sm font-medium text-[var(--ink)]">
