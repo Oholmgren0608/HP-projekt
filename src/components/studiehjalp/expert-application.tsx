@@ -23,6 +23,7 @@ import {
   type ExpertTrack,
   type MyApplication,
 } from "@/lib/studiehjalp/types";
+import { useStudiehjalpAccess } from "@/lib/studiehjalp/access";
 import { Spinner, StudiehjalpGate } from "./gate";
 import { buttonClass, Field, inputClass, Notice, PageHeader, Panel, PanelTitle } from "./ui";
 
@@ -252,8 +253,17 @@ function ApplicationEditor({ app, onChange }: { app: MyApplication; onChange: ()
   const [busy, setBusy] = useState<"save" | "submit" | null>(null);
   const [notice, setNotice] = useState<{ tone: "ok" | "error"; text: string } | null>(null);
 
-  const required: DocumentKind[] = app.track === "hp" ? ["hp_result", "identity"] : ["teacher_license", "identity"];
-  const kinds: DocumentKind[] = [...required, "other"];
+  // Testläge (flaggan experts_require_documents av, migration 0042): inga underlag krävs.
+  const documentsRequired = useStudiehjalpAccess().hasFlag("experts_require_documents");
+  const required: DocumentKind[] = !documentsRequired
+    ? []
+    : app.track === "hp"
+      ? ["hp_result", "identity"]
+      : ["teacher_license", "identity"];
+  const kinds: DocumentKind[] = [
+    ...(app.track === "hp" ? (["hp_result", "identity"] as const) : (["teacher_license", "identity"] as const)),
+    "other",
+  ];
   const docs = app.documents.filter((d) => !d.deleted);
 
   async function save(): Promise<boolean> {
@@ -405,6 +415,11 @@ function ApplicationEditor({ app, onChange }: { app: MyApplication; onChange: ()
 
       <Panel>
         <PanelTitle>Underlag</PanelTitle>
+        {!documentsRequired ? (
+          <Notice className="mt-3">
+            Testläge: ID-handling och bevis krävs inte just nu. Du kan skicka in ansökan utan underlag.
+          </Notice>
+        ) : null}
         <p className="mt-2 text-sm text-[var(--ink-muted)]">
           PDF, JPEG eller PNG, högst 10 MB per fil. Underlagen sparas i ett privat arkiv som bara
           granskare med särskild behörighet kan öppna, och raderas 30 dagar efter beslutet (senast 90

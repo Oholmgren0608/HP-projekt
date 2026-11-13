@@ -371,6 +371,8 @@ function Row({ label, value }: { label: string; value: string }) {
 }
 
 function DecisionForm({ app, onDecided }: { app: AdminApplication; onDecided: () => Promise<void> }) {
+  // Testläge (flaggan experts_require_documents av, migration 0042): underlag och identitetskontroll krävs inte.
+  const documentsRequired = useStudiehjalpAccess().hasFlag("experts_require_documents");
   const options: Decision[] =
     app.status === "approved" ? ["rejected", "blocked"] : ["approved", "needs_completion", "rejected", "blocked"];
   const [decision, setDecision] = useState<Decision>(options[0]);
@@ -460,10 +462,15 @@ function DecisionForm({ app, onDecided }: { app: AdminApplication; onDecided: ()
           </>
         ) : null}
       </div>
-      {approving ? (
+      {approving && documentsRequired ? (
         <p className="mt-4 text-xs text-[var(--ink-muted)]">
           För att godkänna måste du själv ha öppnat det obligatoriska underlaget och ID-handlingen ovan.
         </p>
+      ) : null}
+      {approving && !documentsRequired ? (
+        <Notice className="mt-4">
+          Testläge: ansökan kan godkännas utan underlag och identitetskontroll. Beslutet märks så i loggen.
+        </Notice>
       ) : null}
       {approving ? (
         <label className="mt-4 flex items-start gap-2.5 text-sm text-[var(--ink)]">

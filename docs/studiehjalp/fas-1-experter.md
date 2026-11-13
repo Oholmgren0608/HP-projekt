@@ -85,6 +85,7 @@ Alla skrivningar går via `SECURITY DEFINER`-funktioner som kontrollerar `auth.u
 
 - **`CRON_SECRET` måste finnas i Vercel** (Production). Annars svarar gallringsjobbet `503` och underlagen gallras inte automatiskt. Jobbet använder också `SUPABASE_SERVICE_ROLE_KEY`, som redan används vid kontoradering.
 - **Roller** ges i `/studiehjalp/admin` med e-postadress. Kontot måste ha bekräftad e-post. Granskare behöver både `verify_expert` och `view_sensitive_document`.
+- **Testläge utan underlag** (Oscar, 2026-11-13; migration 0042): flaggan `experts_require_documents` är `off`, så en ansökan kan skickas in och godkännas utan resultatbesked, legitimation och ID-handling, och utan identitetskontroll. Allt annat gäller: bara teamet når Studiehjälp, ingen granskar sin egen ansökan, och beslutet loggas med `documents_required: false`. Slå på kravet igen under Studiehjälp → Admin → Flaggor (läge "på"). Experter som godkänts i testläget bör granskas om eller återkallas innan profilerna visas för alla.
 - **Rollback:** [`supabase/manual/0029_studiehjalp_experter_rollback.sql`](../../supabase/manual/0029_studiehjalp_experter_rollback.sql). Töm bucketen via Storage-API:t först.
 
 ## Innan flaggorna slås på för alla (`on`)
@@ -94,6 +95,7 @@ Alla skrivningar går via `SECURITY DEFINER`-funktioner som kontrollerar `auth.u
 3. "Confirm email" är påslaget i Supabase Auth.
 4. `CRON_SECRET` är satt och gallringsjobbet har gått utan fel i Vercels cron-logg.
 5. Minst en granskare utöver ägaren har fått sina roller.
+6. `experts_require_documents` är påslagen igen (testläget avslutat).
 
 Slå sedan på `experts_public` och `studiehjalp` först. `experts_apply` öppnar själva insamlingen och ska slås på sist.
 
