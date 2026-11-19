@@ -4,7 +4,7 @@
  *   npm run fragebank:upload -- --dry-run          # visa vad som skulle hända
  *   npm run fragebank:upload                       # alla delprov
  *   npm run fragebank:upload -- elf las            # bara vissa delprov
- *   npm run fragebank:upload -- --pool spel ord    # till den stängda spelpoolen (ADR 0001; bara ORD och MEK)
+ *   npm run fragebank:upload -- --pool spel ord    # till den stängda spelpoolen (ADR 0001; bara ORD)
  *   npm run fragebank:upload -- --uhr [--dry-run]  # UHR:s kvantitativa frågor (content/uhr/, se upload-uhr.ts)
  *
  * Kräver SUPABASE_SERVICE_ROLE_KEY och SUPABASE_URL (eller
@@ -60,10 +60,10 @@ if (poolValue !== "ovning" && poolValue !== "spel") {
   process.exit(1);
 }
 /**
- * Den stängda spelpoolen tar bara ORD och MEK; spelens XYZ, KVA och NOG är
- * UHR-frågor (migration 0041).
+ * Den stängda spelpoolen tar bara ORD; spelens XYZ, KVA och NOG är
+ * UHR-frågor (migration 0041) och MEK är inte med i spelen (0043).
  */
-const POOL_SPEL_KINDS = new Set(["ord", "mek"]);
+const POOL_SPEL_KINDS = new Set(["ord"]);
 const pool: "ovning" | "spel" = poolValue;
 const kindArgs = args.filter(
   (a, i) => !a.startsWith("--") && !(poolArg && !poolArg.includes("=") && args[i - 1] === poolArg),
@@ -108,7 +108,7 @@ async function printOpenReports(sb: ReturnType<typeof createClient<Database>>) {
   }
 }
 
-/** Spelpoolen per delprov och status (ADR 0001), för den som fyller på ORD och MEK mot målet 80. */
+/** Spelpoolen per delprov och status (ADR 0001), för den som fyller på ORD mot målet 80. */
 async function printPoolCounts(sb: ReturnType<typeof createClient<Database>>) {
   const { data, error } = await sb.from("questions").select("kind, status").eq("pool", "spel");
   if (error) {
@@ -200,7 +200,7 @@ async function main() {
     const wrong = fresh.filter((q) => !POOL_SPEL_KINDS.has(q.kind));
     if (wrong.length > 0) {
       throw new Error(
-        `Spelpoolen tar bara ORD och MEK (spelens kvantfrågor är UHR-frågor); ${wrong.length} frågor har annat delprov.`,
+        `Spelpoolen tar bara ORD (spelens kvantfrågor är UHR-frågor, MEK är inte med); ${wrong.length} frågor har annat delprov.`,
       );
     }
     console.log("Pool: spel – frågorna syns inte i övningen och kommer inte med i offlinekopian.");

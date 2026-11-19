@@ -15,7 +15,7 @@ fråga på samma gång, svarar på sin egen skärm och ser en poängtavla mellan
 
 ## Frågor
 
-- Delprov: **ORD, MEK, XYZ, KVA, NOG**. LÄS, ELF och DTK tar för lång tid för ett gruppspel.
+- Delprov: **ORD, XYZ, KVA, NOG**. LÄS, ELF och DTK tar för lång tid för ett gruppspel. MEK togs bort 2026-11-19 (migration 0043).
 - Frågan visas med sina riktiga alternativ: ORD och NOG har fem (A–E), MEK, XYZ och KVA fyra (A–D).
 - 10 frågor per spel.
 - Frågorna kommer ur den **stängda frågepoolen** ([ADR 0001](../adr/0001-stangd-fragepool.md)). Facit skickas

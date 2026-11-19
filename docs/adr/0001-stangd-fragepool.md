@@ -86,3 +86,15 @@ Oscar: "alla kvant frågor i spelpoolen är UHR-frågor ... utöka till så myck
   `fragebank:upload -- --pool spel` följer). De 120 egna XYZ-, KVA- och NOG-frågorna som låg i poolen flyttas tillbaka
   till övningen. ORD och MEK utökas inte (Oscar, samma dag).
 
+## Ändring 2026-11-19: spelen utan MEK, duellerna främst UHR-frågor
+
+Oscar: "Ta bort alla verbala frågor förutom ord frågorna från duellerna ... frågorna ska främst vara UHR frågorna".
+Via ask_person valde han att det gäller även Alla mot alla, och 2 ORD + 8 UHR per duell.
+
+- Spelen har ORD, XYZ, KVA och NOG (migration 0043). MEK väljs aldrig mer; LÄS och ELF var aldrig med. ORD kan inte
+  bli UHR-frågor, eftersom UHR:s verbala frågor är spärrade (AGENTS.md regel 1), så ORD är appens egna frågor.
+- En duell får 2 ORD-frågor ur spelpoolen och 8 UHR-frågor jämnt över XYZ, KVA och NOG (3, 3, 2), i slumpad ordning
+  (`duel_ensure_questions`). I Alla mot alla väljer värden delprov som förut, men MEK går inte att välja och väntande
+  rum med MEK fick det borttaget.
+- Den stängda spelpoolen tar bara ORD (`CLOSED_POOL_KINDS`). De 40 MEK-frågorna som låg i poolen flyttas tillbaka
+  till övningen. Inget raderas.

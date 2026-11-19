@@ -7,7 +7,7 @@ export type DuelProfile = Database["public"]["Tables"]["player_profiles"]["Row"]
 export type DuelAnswer = Database["public"]["Tables"]["duel_answers"]["Row"];
 export type DuelReview = Database["public"]["Tables"]["duel_reviews"]["Row"];
 
-/** Tio frågor ur spelpoolen, två per delprov (ORD, MEK, XYZ, KVA, NOG). Tid per fråga: `poolTimeLimitMs`. */
+/** Tio frågor: 2 ORD ur spelpoolen och 8 UHR-frågor i XYZ, KVA och NOG (0043). Tid per fråga: `poolTimeLimitMs`. */
 export const DUEL_QUESTION_COUNT = 10;
 export const DUEL_MATCHMAKING_TIMEOUT_MS = 20_000;
 export const DUEL_STALL_GRACE_MS = 60_000;

@@ -417,7 +417,7 @@ export async function setStatus(input: {
  * Flyttar en eller flera Övningsfrågor mellan övningen och den stängda
  * spelpoolen (ADR 0001). Provfrågor flyttas aldrig (de publicerade
  * kvantitativa väljs ändå till spelen, 0040/0041), och
- * spelpoolen tar bara ORD och MEK.
+ * spelpoolen tar bara ORD (MEK är inte med i spelen sedan 0043).
  */
 export async function setPool(input: {
   accessToken: string;

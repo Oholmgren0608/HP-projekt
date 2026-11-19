@@ -96,8 +96,8 @@ If a task seems to need one of these, stop and ask.
   `.superdesign/` — the Lugn design system and drafts
 - Question bank: lives in the database (8 subtests: ORD, LÄS, MEK, ELF, XYZ, KVA, NOG, DTK). Since 2026-11-12 about 3,360 published
   practice questions, of which 1,948 are quantitative UHR questions (52 passes, 2012–2024; 132 more wait for review on /review,
-  `docs/uhr-fragor/plan.md`), plus the closed game pool: 40 each of ORD and MEK (the 120 own XYZ/KVA/NOG pool questions move back
-  to practice with migration 0041). `src/lib/uhr.ts` holds the shared UHR rules
+  `docs/uhr-fragor/plan.md`), plus the closed game pool: 40 ORD questions (the 120 own XYZ/KVA/NOG pool questions moved back
+  to practice with migration 0041, the 40 MEK with 0043). `src/lib/uhr.ts` holds the shared UHR rules
 
 ## 6. Domain rules
 - Full test: 40 questions in 55 min (80 min with extended time). Quick test: 24 questions in 20 min.
@@ -108,7 +108,8 @@ If a task seems to need one of these, stop and ask.
 - Missed questions become error cards in "Dagens repetition" (also quantitative UHR questions; verbal UHR ids are always dropped).
 - UHR questions first: in practice, prov and nivåtest `buildQuiz` puts UHR questions before our own within each tier (unseen before
   seen). In the games, XYZ, KVA and NOG come only from the published UHR questions (`pool_pick_questions`, migration 0041; our own
-  questions only as long as a delprov has no published UHR question), and ORD and MEK from the closed pool.
+  questions only as long as a delprov has no published UHR question), and ORD from the closed pool. A duel has 2 ORD and 8 UHR
+  questions (3, 3 and 2 of XYZ, KVA and NOG; `duel_ensure_questions`, migration 0043).
 - Score forecast / normerad poäng: the conversion is in `src/lib/progress-history.ts`. `estimateNormFromPercent()` turns % correct into a
   rough 0,0–2,0 (not UHR's official normering table) and `prognosisFromExercises()` builds the forecast (a delprov counts from 10 answers);
   rounding and limits are in `clampNorm()` in `src/lib/hp-scores.ts`. Don't change this logic without being asked.
@@ -116,10 +117,10 @@ If a task seems to need one of these, stop and ask.
 - Duel answers are graded only on the server. Duel-pool questions never reach the client with correct_index.
   Competitive questions live in the closed question pool (`questions.pool = 'spel'`, ADR `docs/adr/0001-stangd-fragepool.md`):
   no client can read it, it is not in the offline copy, and the server picks, times and grades every answer
-  (`duel_next_question` / `duel_submit_answer`, migration 0037). Duels use ORD, MEK, XYZ, KVA and NOG; time per question
+  (`duel_next_question` / `duel_submit_answer`, migration 0037). Duels and Alla mot alla use ORD, XYZ, KVA and NOG (Oscar, 2026-11-19: no MEK, LÄS or ELF); time per question
   follows the delprov (`src/lib/pool-time.ts` must match `pool_time_limit_ms`). Pool questions never become error cards.
   Exception (Oscar, 2026-11-11/12, ADR 0001 updates): the games' XYZ, KVA and NOG are the published UHR questions, and the closed pool
-  only holds ORD and MEK (`CLOSED_POOL_KINDS`). UHR answers are public (practice bank and UHR's own facit), which Oscar accepted;
+  only holds ORD (`CLOSED_POOL_KINDS`). UHR answers are public (practice bank and UHR's own facit), which Oscar accepted;
   the server still picks, times and grades them.
 
 ## 7. Design system "Lugn"

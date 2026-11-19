@@ -44,7 +44,7 @@ const VIEW_OPTIONS: { id: View; label: string }[] = [
   { id: "all", label: "Alla" },
 ];
 
-/** "Flytta till spelpoolen" bara för ORD och MEK; spelens kvantfrågor är UHR-frågor (0041). */
+/** "Flytta till spelpoolen" bara för ORD; spelens kvantfrågor är UHR-frågor (0041) och MEK är inte med (0043). */
 const POOL_REVIEW_KINDS: readonly string[] = CLOSED_POOL_KINDS;
 
 /**

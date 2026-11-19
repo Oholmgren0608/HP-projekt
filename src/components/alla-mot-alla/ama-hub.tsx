@@ -72,7 +72,7 @@ export function AmaHub({ initialCode }: { initialCode: string }) {
         </h1>
         <p className="mt-2 max-w-2xl text-[var(--ink-muted)]">
           Alla får samma fråga samtidigt. Rätt svar ger 600 poäng och upp till 400 till för snabbhet.
-          Tio frågor ur ORD, MEK, XYZ, KVA och NOG.
+          Tio frågor ur ORD, XYZ, KVA och NOG.
         </p>
       </div>
 

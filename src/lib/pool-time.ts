@@ -2,8 +2,10 @@
  * Delprov och tid per fråga i tävlingslägena (duell och Alla mot alla).
  * Servern äger tiden (`pool_time_limit_ms` i migration 0037); de här värdena
  * används bara för att visa nedräkningen och måste stämma med servern.
+ * MEK är inte med sedan 0043 (Oscar, 2026-11-19): av de verbala delproven
+ * finns bara ORD i spelen.
  */
-export const POOL_KINDS = ["ord", "mek", "xyz", "kva", "nog"] as const;
+export const POOL_KINDS = ["ord", "xyz", "kva", "nog"] as const;
 export type PoolKind = (typeof POOL_KINDS)[number];
 
 /**
@@ -11,7 +13,7 @@ export type PoolKind = (typeof POOL_KINDS)[number];
  * XYZ, KVA och NOG väljs bland de publicerade UHR-frågorna (migration 0041), så
  * egna frågor i de delproven hör hemma i övningen.
  */
-export const CLOSED_POOL_KINDS: readonly PoolKind[] = ["ord", "mek"];
+export const CLOSED_POOL_KINDS: readonly PoolKind[] = ["ord"];
 
 export function isClosedPoolKind(kind: string): boolean {
   return (CLOSED_POOL_KINDS as readonly string[]).includes(kind);
@@ -19,7 +21,6 @@ export function isClosedPoolKind(kind: string): boolean {
 
 const LIMITS_MS: Record<PoolKind, number> = {
   ord: 20_000,
-  mek: 45_000,
   kva: 75_000,
   xyz: 90_000,
   nog: 90_000,
