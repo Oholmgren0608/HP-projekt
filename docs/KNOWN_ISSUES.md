@@ -104,3 +104,38 @@ returns each entry's user id, display name and XP.
 **Impact:** any logged-in user can put any value up to the cap on the weekly
 ranking with a single call, and anyone can read the ranking through the API. No
 screen in the app shows it today (`fetchLeaderboard` is unused).
+
+## minimatch override under shadcn's ts-morph
+
+**Status:** open, worked around on 2026-11-20 (PR #7) with an `overrides` entry in
+`package.json`. Remove it when shadcn depends on ts-morph 28 or newer.
+
+`shadcn` (latest 4.23.0) depends on `ts-morph` `^26.0.0`, which uses
+`@ts-morph/common` 0.27 with `minimatch` 10. npm audit reports minimatch below
+11.0.1 (GHSA-g3hv-75wg-m249, denial of service through crafted glob patterns), and
+audit's own fix is a downgrade to shadcn 1.0.0. The override gives
+`@ts-morph/common` minimatch `^11.0.1` instead. `@ts-morph/common` only calls
+`minimatch(path, pattern)`, which minimatch 11 still has, and ts-morph's glob
+matching gave the same results with minimatch 10 and 11.
+
+**Impact:** none in the app. shadcn is a dev dependency, and the shadcn CLI never
+calls ts-morph's glob functions.
+
+**To remove it:** when `npm view shadcn dependencies.ts-morph` shows `^28` or
+newer, delete the `overrides` entry, run `npm install` and check that
+`npm audit` still finds nothing.
+
+## npm 12 refuses `npm audit fix --dry-run`
+
+**Status:** open, npm bug (seen with npm 12.0.2 on 2026-11-20).
+
+`npm audit fix --dry-run` and `npm update --dry-run` stop with `EALLOWREMOTE`
+("Fetching packages of type "remote" have been disabled") for
+`@tailwindcss/oxide-wasm32-wasi`. A dry run makes npm build a complete dependency
+tree, and for that it unpacks each package with bundled dependencies from its
+tarball URL. npm 12 treats that URL as a remote dependency, which its default
+`allow-remote=none` blocks, even though the tarball comes from the npm registry.
+
+**Workaround:** run the command without `--dry-run`, which does not unpack the
+tarball, and review the result with `git diff package.json package-lock.json`.
+To undo it, run `git checkout -- package.json package-lock.json` and `npm ci`.
