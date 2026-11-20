@@ -1,0 +1,13 @@
+{
+  // Typkontroll för filerna som bara körs på Cloudflare Workers. De använder
+  // cloudflare:workers, vars typer genereras till .cloudflare/types (ignoreras
+  // av git). Därför ligger de utanför tsconfig.json, så att next build och
+  // npx tsc fungerar utan genererade typer. Kör: npm run typecheck:cloudflare
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "incremental": false
+  },
+  "include": ["src/worker.ts", "src/lib/avatar/reencode.workers.ts", ".cloudflare/types"],
+  "exclude": ["node_modules"]
+}
