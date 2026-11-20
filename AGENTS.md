@@ -50,6 +50,10 @@ If a task seems to need one of these, stop and ask.
   they test, and shared helpers live in `src/test/` (an in-memory Supabase and simulated devices for sync tests). Tests run
   in the `node` environment. Type check, lint, `npm test` and `npm run build` are the checks, and your summary must say which
   tests you ran and whether they passed.
+- CI: GitHub Actions (`.github/workflows/ci.yml`) runs the checks on Node 22, 24 and 26 for every pull request, every push to
+  `main` and every Monday: `npm ci`, lint, `npx next typegen` before `tsc` (a fresh checkout has no `.next/types` or
+  `next-env.d.ts`), `npm test` and `npm run build`, without secrets. A separate job runs `npm audit`: moderate or worse in
+  production dependencies fails it, and the full audit (dev included) only reports.
 - DB migrations: add a new file `supabase/migrations/NNNN_<name>.sql` by hand, numbered after the highest one
   (not `supabase migration new`, which names files by timestamp). Never edit a migration that is already applied.
   Dry run: `npm run db:dry`. Apply: `npm run db:push`. See what is applied: `npm run db -- migration list`.
