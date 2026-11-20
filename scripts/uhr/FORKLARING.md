@@ -24,6 +24,12 @@ npx tsx scripts/uhr/forklaring.ts rendera hp-2019-10-20-p1        # förhandsbil
    man behöver se? Rätta och rendera igen. Beskär gärna en förhandsbild för att se detaljer.
 5. Alla frågor som `lista` visar ska ha en markering när du är klar (`kontroll` säger "saknar markeringar" annars).
 
+`kontroll` skriver också om `src/lib/content/uhr-marks-passes.json`, listan över provpass som har en fil i
+`public/uhr/forklaring/`. Appen hämtar bara filer som står i listan, så att provpass utan bildförklaringar inte ger
+404-fel i konsolen. Committa listan tillsammans med provpassets fil; ett test i `src/lib/content/uhr-marks.test.ts`
+stoppar en lista som inte stämmer med mappen. Skriptet läser själv listan, så om filen saknas eller är trasig (t.ex.
+efter en merge-konflikt): skriv `[]` i den och kör `kontroll` igen.
+
 ## Filen
 
 ```json
@@ -96,7 +102,8 @@ förklaringen fel, ändra inte i `content/uhr/`. Skriv det i din rapport.
 
 ## Regler för den som gör markeringarna
 
-- Skriv bara i `public/uhr/forklaring/<provpass>.json` för ditt eget provpass. Rör inga andra filer.
+- Skriv bara i `public/uhr/forklaring/<provpass>.json` för ditt eget provpass. Rör inga andra filer (listan över
+  provpass uppdaterar `kontroll` själv).
 - Committa inte, och kör inte bygget eller hela testsviten. Det gör den som samordnar.
 - Rapportera när du är klar:
   - hur många frågor du markerade,
