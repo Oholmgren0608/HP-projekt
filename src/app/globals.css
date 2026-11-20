@@ -227,6 +227,33 @@
   }
 }
 
+/* ---- Bakgrundsscenen (MountainBackdrop) -------------------------------- */
+/* Platta ytor i Skymningsblått och papper. Ljuset kommer från vänster i båda
+   lägena, så solsidan är ljusast både i ljust och mörkt läge; det som ligger
+   långt bort drar mot himlen (papperet). */
+.mountain-scene {
+  --far: color-mix(in oklab, var(--brand) 10%, var(--paper));
+  --far-snow: color-mix(in oklab, var(--brand) 3%, var(--paper));
+  --rock-lit: color-mix(in oklab, var(--brand) 22%, var(--paper));
+  --rock-shade: color-mix(in oklab, var(--brand) 34%, var(--paper));
+  --rock-deep: color-mix(in oklab, var(--brand) 45%, var(--paper));
+  --rock-near: color-mix(in oklab, var(--brand) 44%, var(--paper));
+  --snow: #ffffff;
+  --snow-shade: color-mix(in oklab, var(--brand) 16%, #ffffff);
+  --ice-line: color-mix(in oklab, var(--brand) 34%, var(--paper));
+}
+.dark .mountain-scene {
+  --far: color-mix(in oklab, var(--brand) 11%, var(--paper));
+  --far-snow: color-mix(in oklab, var(--brand) 20%, var(--paper));
+  --rock-lit: color-mix(in oklab, var(--brand) 30%, var(--paper));
+  --rock-shade: color-mix(in oklab, var(--brand) 19%, var(--paper));
+  --rock-deep: color-mix(in oklab, var(--brand) 14%, var(--paper));
+  --rock-near: color-mix(in oklab, var(--brand) 24%, var(--paper));
+  --snow: color-mix(in oklab, var(--brand) 50%, var(--paper));
+  --snow-shade: color-mix(in oklab, var(--brand) 38%, var(--paper));
+  --ice-line: color-mix(in oklab, var(--brand) 28%, var(--paper));
+}
+
 /* ---- Mjuk scrollbar ---------------------------------------------------- */
 @supports (scrollbar-width: auto) {
   * {
