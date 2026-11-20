@@ -1,0 +1,100 @@
+# CI för HP Lift: kontrollerna i AGENTS.md §4 (lint, typkontroll, tester och build) plus npm audit.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Måndagar 05:00 UTC, så att nya sårbarheter och ändrade verktyg syns även när inget pushas.
+    - cron: "0 5 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  # En ny push till samma PR avbryter den förra körningen. Övriga körningar får en egen grupp och avbryts aldrig.
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+
+jobs:
+  checks:
+    name: Kontroller (Node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        # 22: äldsta som Vercel erbjuder (npm 10). 24: utvecklarmaskinen (npm 11).
+        # 26: Vercels standard, och det Vercel väljer för engines ">=20.9" (npm 11).
+        node: [22, 24, 26]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - name: Installera beroenden
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      # tsc behöver ruttyperna i .next/types och next-env.d.ts (som inte är incheckad).
+      # next typegen skapar dem utan ett helt bygge.
+      - name: Ruttyper
+        run: npx next typegen
+
+      - name: Typkontroll
+        run: npx tsc --noEmit
+
+      - name: Tester
+        run: npm test
+
+      # Bygget går utan .env.local och utan hemligheter.
+      - name: Build
+        run: npm run build
+
+  audit:
+    name: npm audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      # npm audit läser bara package-lock.json, så jobbet installerar inget.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      # Alla beroenden, även dev: bara rapport. Fynd ger en varning och hamnar i
+      # jobbets sammanfattning, men steget stoppar aldrig.
+      - name: npm audit, alla beroenden (bara rapport)
+        run: |
+          status=0
+          npm audit > "$RUNNER_TEMP/audit.txt" 2>&1 || status=$?
+          cat "$RUNNER_TEMP/audit.txt"
+          if [ "$status" -ne 0 ]; then
+            echo "::warning title=npm audit::Kända sårbarheter i beroendena. Se jobbets sammanfattning."
+            {
+              echo "### npm audit (alla beroenden)"
+              echo
+              echo '```'
+              cat "$RUNNER_TEMP/audit.txt"
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      # Produktionsberoenden: stoppar vid moderate eller värre.
+      - name: npm audit, produktion (stoppar vid moderate)
+        run: npm audit --omit=dev --audit-level=moderate
