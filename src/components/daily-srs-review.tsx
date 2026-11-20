@@ -11,7 +11,10 @@ import {
   reviewSrsCard,
   type SrsCard,
 } from "@/lib/error-srs";
+import { QuestionFigure } from "@/components/question-figure";
 import { QuestionPassage } from "@/components/question-passage";
+import { ExplainFigure } from "@/lib/content/explain-figures";
+import { findQuestionById } from "@/lib/practice";
 import { QuestionSource } from "@/components/question-source";
 
 export function DailySrsReview() {
@@ -115,6 +118,9 @@ export function DailySrsReview() {
         textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-5 text-[15px] leading-relaxed text-[var(--ink-soft)]"
       />
 
+      {/* Bilden hämtas ur banken, så att även kort som skapades innan bilden fanns får den. */}
+      <QuestionFigure question={{ figureUrl: findQuestionById(card.id)?.figureUrl }} />
+
       <p className={`text-lg font-medium text-[var(--ink)] ${card.passage ? "mt-4" : "mt-5"}`}>
         {card.front}
       </p>
@@ -193,6 +199,7 @@ export function DailySrsReview() {
               Förklaring
             </span>
             <p className="mt-1 whitespace-pre-wrap">{card.explain}</p>
+            <ExplainFigure questionId={card.id} />
           </div>
           <div className="flex flex-wrap gap-2">
             <button

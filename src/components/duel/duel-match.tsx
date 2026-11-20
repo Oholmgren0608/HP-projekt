@@ -32,6 +32,7 @@ import {
 } from "./duel-utils";
 import { ReviewForm } from "./review-form";
 import { QuestionFigure } from "@/components/question-figure";
+import { ExplainFigure } from "@/lib/content/explain-figures";
 import { QuestionSource } from "@/components/question-source";
 import { QuestionPassage } from "@/components/question-passage";
 
@@ -620,6 +621,8 @@ function DuelReviewList({ items, oppName }: { items: DuelReviewItem[]; oppName: 
             <p className="text-xs text-[var(--ink-muted)]">
               Fråga {item.index + 1} · {kindBadge(item.question.kind as Parameters<typeof kindBadge>[0])}
             </p>
+            <QuestionPassage passage={item.question.passage} className="mt-2" textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-relaxed text-[var(--ink-soft)]" />
+            <QuestionFigure question={{ figureUrl: item.question.figure_url }} position={item.index + 1} />
             <p className="mt-1 font-medium text-[var(--ink)]">{item.question.prompt}</p>
             <QuestionSource id={item.question.id} className="mt-1" />
             <p className="mt-2 text-sm text-[var(--ink-soft)]">
@@ -636,6 +639,7 @@ function DuelReviewList({ items, oppName }: { items: DuelReviewItem[]; oppName: 
               ) : null}
             </p>
             <p className="mt-2 text-sm leading-relaxed text-[var(--ink-muted)]">{item.explain}</p>
+            <ExplainFigure questionId={item.question.id} />
           </li>
         ))}
       </ol>

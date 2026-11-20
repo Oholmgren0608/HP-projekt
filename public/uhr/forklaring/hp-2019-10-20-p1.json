@@ -1,0 +1,161 @@
+{
+  "examId": "hp-2019-10-20",
+  "passNumber": 1,
+  "marks": {
+    "hp-2019-10-20-p1-q3": {
+      "image": "/uhr/hp-2019-10-20/p1-q3.webp",
+      "width": 498,
+      "height": 523,
+      "caption": "Axlarna delar femhörningen i en kvadrat och två trianglar: 4 + 2 + 4 = 10 areaenheter.",
+      "shapes": [
+        {
+          "type": "polygon",
+          "points": [
+            [
+              231,
+              120
+            ],
+            [
+              388,
+              120
+            ],
+            [
+              388,
+              277
+            ],
+            [
+              231,
+              277
+            ]
+          ]
+        },
+        {
+          "type": "polygon",
+          "points": [
+            [
+              74,
+              277
+            ],
+            [
+              231,
+              120
+            ],
+            [
+              231,
+              277
+            ]
+          ]
+        },
+        {
+          "type": "polygon",
+          "points": [
+            [
+              74,
+              277
+            ],
+            [
+              388,
+              277
+            ],
+            [
+              231,
+              434
+            ]
+          ]
+        },
+        {
+          "type": "label",
+          "x": 310,
+          "y": 200,
+          "text": "4"
+        },
+        {
+          "type": "label",
+          "x": 180,
+          "y": 238,
+          "text": "2"
+        },
+        {
+          "type": "label",
+          "x": 231,
+          "y": 328,
+          "text": "4"
+        }
+      ]
+    },
+    "hp-2019-10-20-p1-q6": {
+      "image": "/uhr/hp-2019-10-20/p1-q6.webp",
+      "width": 633,
+      "height": 276,
+      "caption": "Basvinklarna är 180° − 130° = 50° och 180° − 117° = 63°, så v = 180° − 50° − 63° = 67°.",
+      "shapes": [
+        {
+          "type": "label",
+          "x": 178,
+          "y": 240,
+          "text": "50°"
+        },
+        {
+          "type": "label",
+          "x": 458,
+          "y": 240,
+          "text": "63°"
+        },
+        {
+          "type": "label",
+          "x": 360,
+          "y": 108,
+          "text": "67°"
+        },
+        {
+          "type": "arrow",
+          "x1": 100,
+          "y1": 234,
+          "x2": 146,
+          "y2": 240
+        },
+        {
+          "type": "arrow",
+          "x1": 548,
+          "y1": 234,
+          "x2": 492,
+          "y2": 240
+        }
+      ]
+    },
+    "hp-2019-10-20-p1-q29": {
+      "image": "/uhr/hp-2019-10-20/p1-s16.webp",
+      "width": 1284,
+      "height": 1764,
+      "caption": "Fritidsaktiviteter: cirka 2 750 + 3 300 + 3 900 ≈ 10 000 tusen kronor, alltså 10 miljoner kronor.",
+      "shapes": [
+        {
+          "type": "box",
+          "x": 902,
+          "y": 1330,
+          "w": 300,
+          "h": 318
+        },
+        {
+          "type": "label",
+          "x": 948,
+          "y": 1486,
+          "text": "2 750"
+        },
+        {
+          "type": "label",
+          "x": 1048,
+          "y": 1461,
+          "text": "3 300"
+        },
+        {
+          "type": "label",
+          "x": 1150,
+          "y": 1430,
+          "text": "3 900"
+        }
+      ],
+      "scale": 0.45
+    }
+  }
+}

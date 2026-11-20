@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { UhrMarkFigure } from "@/components/uhr-mark-figure";
+import { isUhrQuestionId } from "@/lib/uhr";
 
 /**
  * Bildförklaringar till facit — en inline-SVG per fråga där en bild faktiskt
@@ -814,8 +816,12 @@ const FIGURES: Record<string, () => ReactNode> = {
   ),
 };
 
-/** Bildförklaring till facit, eller null när frågan inte har någon. */
+/**
+ * Bildförklaring till facit, eller null när frågan inte har någon. UHR-frågorna får
+ * sin egen bild med markeringar (`UhrMarkFigure`, hämtas när förklaringen visas).
+ */
 export function ExplainFigure({ questionId }: { questionId: string }) {
+  if (isUhrQuestionId(questionId)) return <UhrMarkFigure questionId={questionId} />;
   const figure = FIGURES[questionId];
   if (!figure) return null;
   return <>{figure()}</>;

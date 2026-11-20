@@ -21,6 +21,7 @@ import {
 import { distributionPercent, formatPoints, kindsText, placement, topWithMe } from "@/lib/alla-mot-alla/format";
 import { errorMessage } from "@/components/duel/duel-utils";
 import { QuestionFigure } from "@/components/question-figure";
+import { ExplainFigure } from "@/lib/content/explain-figures";
 import { QuestionSource } from "@/components/question-source";
 import { QuestionPassage } from "@/components/question-passage";
 import { cn } from "@/lib/utils";
@@ -618,6 +619,8 @@ function Finished({ state, busy, onAgain }: { state: AmaState; busy: boolean; on
                 <p className="text-xs text-[var(--ink-muted)]">
                   Fråga {item.index + 1} · {badge(item.question.kind)} · {formatPoints(item.my_points)} poäng
                 </p>
+                <QuestionPassage passage={item.question.passage} className="mt-2" textClassName="rounded-lg border border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-relaxed text-[var(--ink-soft)]" />
+                <QuestionFigure question={{ figureUrl: item.question.figure_url }} position={item.index + 1} />
                 <p className="mt-1 font-medium text-[var(--ink)]">{item.question.prompt}</p>
                 <QuestionSource id={item.question.id} className="mt-1" />
                 <p className="mt-2 text-sm text-[var(--ink-soft)]">
@@ -628,6 +631,7 @@ function Finished({ state, busy, onAgain }: { state: AmaState; busy: boolean; on
                   {" · "}Du: <span className="font-medium tabular-nums">{letter(item.my_chosen)}</span>
                 </p>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--ink-muted)]">{item.explain}</p>
+                <ExplainFigure questionId={item.question.id} />
               </li>
             ))}
           </ol>
