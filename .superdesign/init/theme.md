@@ -483,8 +483,8 @@ const sans = Nunito({
 
 export const metadata: Metadata = {
   title: {
-    default: "HP Lift — Studieplan för Högskoleprovet",
-    template: "%s · HP Lift",
+    default: "HP Topp — Studieplan för Högskoleprovet",
+    template: "%s · HP Topp",
   },
   description:
     "Mata in dina HP-resultat och få en personlig studieplan med prioritering, tidsfördelning och veckoplan.",

@@ -33,7 +33,7 @@ describe("loggans märke", () => {
   });
 
   it("har samma former som loggfilen i docs/logga/", () => {
-    const file = readFileSync(new URL("../../docs/logga/hp-lift-symbol.svg", import.meta.url), "utf8");
+    const file = readFileSync(new URL("../../docs/logga/hp-topp-symbol.svg", import.meta.url), "utf8");
     expect(shapes(render(1))).toEqual(shapes(file));
   });
 });

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-11-06T20:39:32+00:00",
-  "title": "Design System: HP Lift",
+  "title": "Design System: HP Topp",
   "extensions": {
     "colorMeta": {
       "skymningsbla": {
@@ -440,7 +440,7 @@
   ],
   "narrative": {
     "northStar": "Lugn kompass",
-    "overview": "HP Lift points the way without raising its voice. A user opening the app during a stressful test period should see, within a glance, what to do today and nothing that competes with it. The compass is the veckoplan and \"Dagens pass\"; everything else (practice, repetition, results) sits around it on flat paper surfaces, in ink tones, with one quiet blue to mark the direction.\n\nThe interface is friendly and clear rather than severe: gently rounded corners, generous touch targets (44px buttons), sentence-case Swedish copy, and soft tinted fills for selected states. Density is moderate. Cards hold one idea each, lists are preferred over mosaics, and practice and reading views narrow to a single column so the question has the stage.\n\nThe system grew out of a deliberate rejection of the earlier \"AI-generated\" look: no gradients, glows, glassmorphism, emoji, confetti, bouncing motion, pill-shaped primary buttons, tracked-out uppercase eyebrows or competing accent colours. Gamification (XP, streaks, achievements) stays, but quiet: plain numbers and small line icons, never celebratory banners.",
+    "overview": "HP Topp points the way without raising its voice. A user opening the app during a stressful test period should see, within a glance, what to do today and nothing that competes with it. The compass is the veckoplan and \"Dagens pass\"; everything else (practice, repetition, results) sits around it on flat paper surfaces, in ink tones, with one quiet blue to mark the direction.\n\nThe interface is friendly and clear rather than severe: gently rounded corners, generous touch targets (44px buttons), sentence-case Swedish copy, and soft tinted fills for selected states. Density is moderate. Cards hold one idea each, lists are preferred over mosaics, and practice and reading views narrow to a single column so the question has the stage.\n\nThe system grew out of a deliberate rejection of the earlier \"AI-generated\" look: no gradients, glows, glassmorphism, emoji, confetti, bouncing motion, pill-shaped primary buttons, tracked-out uppercase eyebrows or competing accent colours. Gamification (XP, streaks, achievements) stays, but quiet: plain numbers and small line icons, never celebratory banners.",
     "keyCharacteristics": [
       "One accent colour, Skymningsblå, for direction: the primary action, links, active navigation, focus.",
       "Green and red exist only to say right or wrong.",

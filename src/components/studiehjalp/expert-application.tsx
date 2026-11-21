@@ -107,7 +107,7 @@ function ApplicationContent() {
       <PageHeader
         title="Bli expert"
         back={{ href: "/studiehjalp", label: "Studiehjälp" }}
-        intro="Som expert syns du för elever som söker hjälp med högskoleprovet. Alla experter granskas manuellt av HP Lift innan profilen kan publiceras."
+        intro="Som expert syns du för elever som söker hjälp med högskoleprovet. Alla experter granskas manuellt av HP Topp innan profilen kan publiceras."
       />
 
       {error ? <Notice tone="error">{error}</Notice> : null}
@@ -462,7 +462,7 @@ function ApplicationEditor({ app, onChange }: { app: MyApplication; onChange: ()
             onChange={(e) => setConsent(e.target.checked)}
             className="mt-0.5 size-4 accent-[var(--brand)]"
           />
-          Jag samtycker till att HP Lift behandlar mina uppgifter och underlag för att granska ansökan.
+          Jag samtycker till att HP Topp behandlar mina uppgifter och underlag för att granska ansökan.
           Underlagen raderas senast 30 dagar efter beslutet, och jag kan återkalla samtycket när som helst
           genom att dra tillbaka ansökan.
         </label>

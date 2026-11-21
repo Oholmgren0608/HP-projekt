@@ -58,7 +58,7 @@ export function StudiehjalpAdmin() {
 
   if (loading || access.loading) return <Spinner />;
   if (!user || visible.length === 0) {
-    return <Notice>Den här sidan är bara för HP Lifts granskare och administratörer.</Notice>;
+    return <Notice>Den här sidan är bara för HP Topps granskare och administratörer.</Notice>;
   }
 
   return (
@@ -554,7 +554,7 @@ function Roles() {
       {error ? <Notice tone="error">{error}</Notice> : null}
       <Panel>
         <PanelTitle>Ge en roll</PanelTitle>
-        <p className="mt-1 text-sm text-[var(--ink-muted)]">Personen behöver ett HP Lift-konto med e-postadressen.</p>
+        <p className="mt-1 text-sm text-[var(--ink-muted)]">Personen behöver ett HP Topp-konto med e-postadressen.</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_16rem_auto] sm:items-end">
           <Field label="E-post" htmlFor="sh-role-email">
             <input id="sh-role-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputClass} />

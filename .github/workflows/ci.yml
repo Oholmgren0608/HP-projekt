@@ -1,4 +1,4 @@
-# CI för HP Lift: kontrollerna i AGENTS.md §4 (lint, typkontroll, tester och build) plus npm audit.
+# CI för HP Topp: kontrollerna i AGENTS.md §4 (lint, typkontroll, tester och build) plus npm audit.
 name: CI
 
 on:

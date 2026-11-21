@@ -28,7 +28,7 @@ describe("bakgrunden med klättraren", () => {
   });
 
   it("klättrar lika brant som i loggan, där foten också står på eggen", () => {
-    const logo = readFileSync(new URL("../../docs/logga/hp-lift-symbol.svg", import.meta.url), "utf8");
+    const logo = readFileSync(new URL("../../docs/logga/hp-topp-symbol.svg", import.meta.url), "utf8");
     const { ridge, foot } = logoClimb(logo);
     expect(Math.abs(angle(bottom, top) - angle(...ridge))).toBeLessThan(1);
     expect(Math.abs(xAt(...ridge, foot[1]) - foot[0])).toBeLessThan(0.2);

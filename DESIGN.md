@@ -1,5 +1,5 @@
 ---
-name: HP Lift
+name: HP Topp
 description: A calm study plan and practice tool for Högskoleprovet, design system "Lugn".
 colors:
   skymningsbla: "#2b4c7e"
@@ -127,13 +127,13 @@ components:
     padding: "12px 16px"
 ---
 
-# Design System: HP Lift
+# Design System: HP Topp
 
 ## Overview
 
 **Creative North Star: "Lugn kompass"**
 
-HP Lift points the way without raising its voice. A user opening the app during a stressful test period should see, within a glance, what to do today and nothing that competes with it. The compass is the veckoplan and "Dagens pass"; everything else (practice, repetition, results) sits around it on flat paper surfaces, in ink tones, with one quiet blue to mark the direction.
+HP Topp points the way without raising its voice. A user opening the app during a stressful test period should see, within a glance, what to do today and nothing that competes with it. The compass is the veckoplan and "Dagens pass"; everything else (practice, repetition, results) sits around it on flat paper surfaces, in ink tones, with one quiet blue to mark the direction.
 
 The interface is friendly and clear rather than severe: gently rounded corners, generous touch targets (44px buttons), sentence-case Swedish copy, and soft tinted fills for selected states. Density is moderate. Cards hold one idea each, lists are preferred over mosaics, and practice and reading views narrow to a single column so the question has the stage.
 

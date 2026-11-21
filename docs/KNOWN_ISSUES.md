@@ -136,7 +136,7 @@ a malformed ZIP64 archive), and audit's own fix is a downgrade to vinext 0.2.1. 
 override gives satori fflate `~0.7.5`, a patch release in the same 0.7 line.
 
 **Impact:** none in the app. `@vercel/og` is only used for `next/og` images, which
-HP Lift does not use.
+HP Topp does not use.
 
 **To remove it:** when the satori version that `@vercel/og` uses depends on fflate
 0.7.5 or newer (`npm ls satori`, then `npm view satori@<version> dependencies.fflate`),

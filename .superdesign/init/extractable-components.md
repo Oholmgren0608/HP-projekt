@@ -7,7 +7,7 @@ Candidates for Superdesign `DraftComponent` extraction. Full source lives in `co
 ## AppHeader
 - Source: `src/components/app-shell.tsx` (header block inside `AppShell`)
 - Category: layout
-- Description: Floating sticky header with "HP Lift" Fraunces wordmark, desktop nav with dropdown groups and animated active pill, sound/theme icon buttons and account cluster
+- Description: Floating sticky header with "HP Topp" Fraunces wordmark, desktop nav with dropdown groups and animated active pill, sound/theme icon buttons and account cluster
 - Extractable props: activeItem (string, default: "/"), isLoggedIn (boolean, default: false), userInitials (string, default: "OH"), displayName (string, default: "oscar"), theme ("light" | "dark", default: "light"), soundOn (boolean, default: true)
 - Hardcoded: wordmark text, NAV items (Plan > Veckoplan/Nivåtest/Poäng; Öva > Öva delprov/ORD-Flashcards/Läsbibliotek/Gamla prov/Duell; Forum; Tips), lucide icons, all CSS
 

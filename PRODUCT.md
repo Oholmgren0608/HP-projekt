@@ -18,7 +18,7 @@ contact experts, so age and guardian questions matter there (`docs/juridik/`).
 
 ## Product Purpose
 
-HP Lift is a study tool for HP: the user enters their level (scores or the nivåtest), gets a prioritised veckoplan
+HP Topp is a study tool for HP: the user enters their level (scores or the nivåtest), gets a prioritised veckoplan
 towards their provdatum, and practises against it with original questions, error cards ("Dagens repetition"), mock
 tests and a score forecast. Success is a user who knows what to do today and raises their normerad poäng.
 
@@ -55,10 +55,10 @@ Confirmed differentiators against hpguiden, HP-appen and similar:
 
 ## Brand Commitments
 
-- Name: **HP Lift**. UI language Swedish.
+- Name: **HP Topp** (Oscar, 2026-11-21; it replaced HP Lift, a name another app already uses). UI language Swedish.
 - Logo (Oscar, 2026-11-20, replacing the hiker from 2026-11-10 and the cable car from 2026-11-08): a mountaineer in
   profile with two ice axes climbing the ridge of a K2-like mountain, white on a Skymningsblå square, next to
-  "HP Lift" in IBM Plex Sans SemiBold. Files and rules in `docs/logga/`.
+  "HP Topp" in IBM Plex Sans SemiBold. Files and rules in `docs/logga/`.
 - Background scene (Oscar, 2026-11-09; climber on K2, 2026-11-20): the same mountaineer seen from the side,
   front-pointing up an ice step with ice axes and crampons, roped to an ice screw, with a K2-like mountain behind
   (summit snowfield, serac, Bottleneck, Shoulder) as flat sunlit and shadowed planes, muted at the bottom of every page.

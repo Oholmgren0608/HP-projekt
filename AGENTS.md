@@ -1,4 +1,4 @@
-# AGENTS.md — HP Lift
+# AGENTS.md — HP Topp
 
 Read this before every task. If anything here conflicts with a task request, STOP and ask.
 
@@ -38,6 +38,9 @@ If a task seems to need one of these, stop and ask.
 - Supabase: Postgres, Auth, Storage, RLS
 - Hosted on Vercel. A Cloudflare Workers build through vinext (`vite.config.ts`, `cloudflare.config.ts`, `src/worker.ts`)
   runs alongside it until the switch, so `next build` and the vinext build must both keep working.
+- Name: **HP Topp** (Oscar, 2026-11-21; it was called HP Lift, a name another app already uses). Keys and ids keep the old
+  name on purpose: the localStorage keys `hp-lift-*`, the auth storage key `hp-lift-auth` and the IndexedDB `hp-lift`
+  (renaming them logs users out and loses guest data), and the Cloudflare Worker `hp-lift` until the domain switch.
 - UI language: **Swedish**. Code, comments and commit messages: comments and commits in **Swedish**
   (commits as `<type>(<scope>): …`, e.g. `feat(fragebank): …`); names in code in English, keeping Swedish domain words
   such as `delprov`, `veckoplan`, `nivatest` and `prov`.

@@ -105,7 +105,7 @@ function ProfileContent({ publicId }: { publicId: string }) {
           <Panel>
             <PanelTitle>Omdömen</PanelTitle>
             <p className="mt-2 text-sm text-[var(--ink-muted)]">
-              Inga omdömen än. Omdömen kan bara lämnas efter en genomförd och betald lektion via HP Lift,
+              Inga omdömen än. Omdömen kan bara lämnas efter en genomförd och betald lektion via HP Topp,
               och bokning öppnar senare.
             </p>
           </Panel>
@@ -166,7 +166,7 @@ function ProfileContent({ publicId }: { publicId: string }) {
               <p className="mt-3 text-sm text-[var(--ink-soft)]">Första samtalet är gratis.</p>
             ) : null}
             <p className="mt-3 text-xs text-[var(--ink-muted)]">
-              Priserna sätter experten själv. Bokning och betalning via HP Lift öppnar senare; då visas
+              Priserna sätter experten själv. Bokning och betalning via HP Topp öppnar senare; då visas
               totalpris och avgifter innan du betalar.
             </p>
           </Panel>
