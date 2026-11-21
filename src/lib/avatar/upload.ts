@@ -4,6 +4,9 @@ export const AVATAR_SIZE = 256;
 /** Hur många uppladdningar (även underkända) en användare får göra per dygn. */
 export const AVATAR_DAILY_LIMIT = 10;
 export const AVATAR_INPUT_FORMATS = ["jpeg", "png", "webp"] as const;
+/** Större bilder än så här (i pixlar) läses inte in alls. */
+export const AVATAR_MAX_INPUT_PIXELS = 40_000_000;
+export const AVATAR_WEBP_QUALITY = 82;
 
 /** Kontrollerar att filen ser ut som en bild vi tar emot, innan den läses in. */
 export function validateUpload(file: { size: number; type: string }): string | null {

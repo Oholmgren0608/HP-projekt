@@ -125,6 +125,24 @@ calls ts-morph's glob functions.
 newer, delete the `overrides` entry, run `npm install` and check that
 `npm audit` still finds nothing.
 
+## fflate override under vinext's @vercel/og
+
+**Status:** open, worked around on 2026-11-21 (PR #6) with an `overrides` entry in
+`package.json`. Remove it when satori depends on fflate 0.7.5 or newer.
+
+`vinext` depends on `@vercel/og`, whose `satori` pins `fflate` to exactly 0.7.3. npm
+audit reports fflate below 0.7.5 (GHSA-px8p-9vwx-vf98, `unzipSync` can loop forever on
+a malformed ZIP64 archive), and audit's own fix is a downgrade to vinext 0.2.1. The
+override gives satori fflate `~0.7.5`, a patch release in the same 0.7 line.
+
+**Impact:** none in the app. `@vercel/og` is only used for `next/og` images, which
+HP Lift does not use.
+
+**To remove it:** when the satori version that `@vercel/og` uses depends on fflate
+0.7.5 or newer (`npm ls satori`, then `npm view satori@<version> dependencies.fflate`),
+delete the `satori` entry from `overrides`, run `npm install` and check that
+`npm audit` still finds nothing.
+
 ## npm 12 refuses `npm audit fix --dry-run`
 
 **Status:** open, npm bug (seen with npm 12.0.2 on 2026-11-20).
