@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Integritetspolicy",
-  description: "Vilka personuppgifter HP Lift behandlar, varför och vilka rättigheter du har.",
+  description: "Vilka personuppgifter HP Topp behandlar, varför och vilka rättigheter du har.",
 };
 
 const CONTACT = "oholmgren32@gmail.com";
@@ -70,7 +70,7 @@ export default function IntegritetspolicyPage() {
         </h1>
         <p className="text-sm text-[var(--ink-muted)]">Senast uppdaterad {UPDATED}</p>
         <P>
-          Här förklarar vi vilka personuppgifter HP Lift behandlar, varför vi gör det och vilka rättigheter du
+          Här förklarar vi vilka personuppgifter HP Topp behandlar, varför vi gör det och vilka rättigheter du
           har.
         </P>
       </header>
@@ -78,7 +78,7 @@ export default function IntegritetspolicyPage() {
       <Section id="ansvarig" title="1. Vem ansvarar för dina uppgifter?">
         <P>
           Personuppgiftsansvarig är Oscar Holmgren. Den som är personuppgiftsansvarig avgör hur och varför
-          uppgifterna behandlas. När HP Lifts bolag är bildat tar det över ansvaret, och då uppdaterar vi
+          uppgifterna behandlas. När HP Topps bolag är bildat tar det över ansvaret, och då uppdaterar vi
           policyn.
         </P>
         <P>
@@ -88,7 +88,7 @@ export default function IntegritetspolicyPage() {
 
       <Section id="utan-konto" title="2. Använda appen utan konto">
         <P>
-          Du kan öva i HP Lift utan att logga in. Då sparas dina resultat, din veckoplan, dina flashcards och
+          Du kan öva i HP Topp utan att logga in. Då sparas dina resultat, din veckoplan, dina flashcards och
           dina inställningar bara i din egen webbläsare. De skickas inte till oss. Du raderar dem genom att
           rensa webbläsarens data, eller med knappen ”Rensa lokal data” på profilsidan.
         </P>
@@ -326,7 +326,7 @@ export default function IntegritetspolicyPage() {
 
       <Section id="cookies" title="8. Cookies och lagring i webbläsaren">
         <P>
-          HP Lift använder inga cookies för spårning, statistik eller reklam. Vi lagrar uppgifter i din
+          HP Topp använder inga cookies för spårning, statistik eller reklam. Vi lagrar uppgifter i din
           webbläsare bara för att tjänsten ska fungera:
         </P>
         <List items={["din inloggning,", "dina studiedata,", "valt tema (ljust eller mörkt),", "om ljud är på."]} />

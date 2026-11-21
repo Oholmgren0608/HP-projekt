@@ -1,4 +1,4 @@
-# Integritetspolicy för HP Lift
+# Integritetspolicy för HP Topp
 
 > **Källtext för sidan `/integritetspolicy`** (`src/app/integritetspolicy/page.tsx`). Ändra båda samtidigt.
 > Texten beskriver hur appen faktiskt fungerar den 1 november 2026 (migration `0031`). När något ändras måste policyn också uppdateras, till exempel annonser, betalning eller nya tjänster.
@@ -7,17 +7,17 @@
 
 **Senast uppdaterad:** 21 november 2026 [**Kontrollera:** sätt dagen då ändringen publiceras, även `UPDATED` i `page.tsx`]
 
-Den här policyn förklarar vilka personuppgifter HP Lift behandlar, varför vi gör det och vilka rättigheter du har.
+Den här policyn förklarar vilka personuppgifter HP Topp behandlar, varför vi gör det och vilka rättigheter du har.
 
 ## 1. Vem ansvarar för dina uppgifter?
 
-Personuppgiftsansvarig är Oscar Holmgren. Den som är personuppgiftsansvarig avgör hur och varför uppgifterna behandlas. När HP Lifts bolag är bildat tar det över ansvaret, och då uppdaterar vi policyn.
+Personuppgiftsansvarig är Oscar Holmgren. Den som är personuppgiftsansvarig avgör hur och varför uppgifterna behandlas. När HP Topps bolag är bildat tar det över ansvaret, och då uppdaterar vi policyn.
 
 Kontakt i frågor om personuppgifter: oholmgren32@gmail.com
 
 ## 2. Använda appen utan konto
 
-Du kan öva i HP Lift utan att logga in. Då sparas dina resultat, din veckoplan, dina flashcards och dina inställningar bara i din egen webbläsare (`localStorage`). De skickas inte till oss. Du raderar dem genom att rensa webbläsarens data, eller med knappen "Rensa lokal data" på profilsidan.
+Du kan öva i HP Topp utan att logga in. Då sparas dina resultat, din veckoplan, dina flashcards och dina inställningar bara i din egen webbläsare (`localStorage`). De skickas inte till oss. Du raderar dem genom att rensa webbläsarens data, eller med knappen "Rensa lokal data" på profilsidan.
 
 För att visa sidan måste vår webbhotelltjänst ta emot din IP-adress och teknisk information om webbläsaren (se avsnitt 7).
 
@@ -109,7 +109,7 @@ Vi kan också behöva lämna ut uppgifter till myndigheter om lagen kräver det.
 
 ## 8. Cookies och lagring i webbläsaren
 
-HP Lift använder inga cookies för spårning, statistik eller reklam. Vi lagrar uppgifter i din webbläsare (`localStorage`) bara för att tjänsten ska fungera:
+HP Topp använder inga cookies för spårning, statistik eller reklam. Vi lagrar uppgifter i din webbläsare (`localStorage`) bara för att tjänsten ska fungera:
 - din inloggning,
 - dina studiedata,
 - valt tema (ljust eller mörkt),

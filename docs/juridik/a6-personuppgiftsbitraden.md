@@ -26,7 +26,7 @@ Enligt artikel 28 i GDPR måste det finnas ett skriftligt avtal med varje levera
 - Supabase lovar att lagra data i den region du har valt (klausul 6.1). Projektets databas ligger i `eu-west-1`, alltså Irland.
 
 **Gör så här:**
-1. Logga in på supabase.com/dashboard med kontot som äger HP Lift-projektet.
+1. Logga in på supabase.com/dashboard med kontot som äger HP Topp-projektet.
 2. Öppna organisationen och gå till organisationens inställningar (*Organization settings*).
 3. Öppna *Legal documents*.
    - Ladda ned **DPA** som PDF.
@@ -47,10 +47,10 @@ Enligt artikel 28 i GDPR måste det finnas ett skriftligt avtal med varje levera
   - Det finns inget biträdesavtal för appens personuppgifter.
   - Villkoren säger *"You shall only use the Services under a Hobby plan for your personal or non-commercial use"*.
   - På Hobby får Vercel också använda ditt innehåll för att träna AI-modeller.
-- HP Lift har användare, och planen är att ta betalt och visa annonser. Därför räcker Hobby inte för A6.
+- HP Topp har användare, och planen är att ta betalt och visa annonser. Därför räcker Hobby inte för A6.
 
 **Gör så här:**
-1. Logga in på vercel.com och välj teamet eller kontot som äger HP Lift-projektet.
+1. Logga in på vercel.com och välj teamet eller kontot som äger HP Topp-projektet.
 2. Se vilken plan du har under *Settings → Billing*.
 3. **Om det står Hobby:** uppgradera till **Pro**. Pro kostar per medlem och månad; kolla aktuellt pris på vercel.com/pricing.
    - Är du ensam räcker en medlem.
@@ -154,7 +154,7 @@ Avgör frågorna innan ändringarna publiceras.
 3. **Överföringsmekanism.** Policyn anger DPF och SCC. Cloudflare är DPF-certifierat (aktivt 2026-11-21), så överföringar till USA har stöd i EU-kommissionens beslut om DPF. För andra länder utanför EES gäller SCC. Räcker det, eller vill du göra en egen överföringsbedömning (TIA) för de länderna? Cloudflare hjälper till med den på kundens bekostnad (DPA 6.5).
 4. **Network Data.** Cloudflare får använda data som härleds från trafiken för att driva och utveckla sina tjänster (självbetjäningsavtalet 2.5.5). Ska integritetspolicyn säga något om det?
 5. **Testinloggningen.** Access loggar testarnas e-postadress, IP-adress och land och sätter cookien `CF_Authorization`. Ska Access ligga kvar efter bytet? Räcker det att informera testarna direkt, eller ska det stå i policyn?
-6. **Cookies och statistik efter bytet.** Om domänen går genom Cloudflare kan bot-skydd sätta cookies (`__cf_bm`, `cf_clearance`), och Web Analytics kan slås på. Policyn säger i dag att HP Lift inte använder statistikverktyg. Ska de vara avstängda, eller ska avsnitt 8 uppdateras?
+6. **Cookies och statistik efter bytet.** Om domänen går genom Cloudflare kan bot-skydd sätta cookies (`__cf_bm`, `cf_clearance`), och Web Analytics kan slås på. Policyn säger i dag att HP Topp inte använder statistikverktyg. Ska de vara avstängda, eller ska avsnitt 8 uppdateras?
 7. **Vercel under övergången.** Vercels DPA kräver Pro-plan. Om kontot har Hobby: uppgradera för övergångstiden, eller byta så snart som möjligt? Vad ska tas bort hos Vercel efter bytet: projektet, loggarna, miljövariablerna?
 8. **Publicering.** Ska övergångsversionen av policyn, med både Vercel och Cloudflare, publiceras redan nu, eller bara slutversionen på bytesdagen? Datumet högst upp sätts därefter. Ska bytet också meddelas i appen (avsnitt 11 i policyn, "större ändringar")?
 

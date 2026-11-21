@@ -26,7 +26,7 @@ Kriterierna nedan kommer från Europeiska dataskyddsstyrelsens (EDPB) riktlinjer
 | Behandling i stor omfattning | **Nej** i piloten. Kan bli ja vid full lansering. |
 | Sårbara personer | **Nej** för de sökande, som är 18 år eller äldre. Däremot kan elever som tar kontakt med experter vara unga. |
 | Ny teknik | Nej |
-| Hindrar någon att utöva en rättighet eller få en tjänst | **Delvis.** Ett avslag hindrar personen från att erbjuda tjänster via HP Lift. |
+| Hindrar någon att utöva en rättighet eller få en tjänst | **Delvis.** Ett avslag hindrar personen från att erbjuda tjänster via HP Topp. |
 
 **Slutsats:** minst två kriterier är uppfyllda, så en DPIA görs.
 
@@ -76,7 +76,7 @@ Personnummer sparas aldrig i databasen, men kan synas i en uppladdad ID-handling
 
 **Rättslig grund:**
 - Samtycke (artikel 6.1 a) för ansökan och underlag. Det lämnas aktivt och kan återkallas genom att ansökan dras tillbaka.
-- Berättigat intresse (artikel 6.1 f) för att spara beslut och logg efter beslutet, så att HP Lift kan visa varför ett märke gavs.
+- Berättigat intresse (artikel 6.1 f) för att spara beslut och logg efter beslutet, så att HP Topp kan visa varför ett märke gavs.
 - Personnummer i en ID-handling får behandlas med samtycke (3 kap. 10 § i dataskyddslagen, 2018:218).
 
 ## 3. Nödvändighet och proportionalitet
@@ -154,7 +154,7 @@ Ingen kvarstående risk är hög, så något förhandssamråd med IMY behövs in
 
 ## 8. Synpunkter
 
-- Dataskyddsombud: inget utsett. Det krävs inte enligt artikel 37, eftersom HP Lift inte är en myndighet och inte behandlar känsliga uppgifter i stor omfattning eller övervakar personer systematiskt.
+- Dataskyddsombud: inget utsett. Det krävs inte enligt artikel 37, eftersom HP Topp inte är en myndighet och inte behandlar känsliga uppgifter i stor omfattning eller övervakar personer systematiskt.
 - Registrerades synpunkter (artikel 35.9): be pilotens experter om synpunkter innan skarp start, och anteckna dem här.
 
 ## 9. Beslut
