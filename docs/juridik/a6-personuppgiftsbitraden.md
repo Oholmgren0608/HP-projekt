@@ -105,7 +105,7 @@ Enligt artikel 28 i GDPR måste det finnas ett skriftligt avtal med varje levera
    - Inställningen finns i `cloudflare.config.ts` (`observability: { enabled: false }`), så den följer med varje deploy.
    - Kontrollera efter nästa deploy från `main` att Workers Logs är avstängt under *Workers & Pages → hp-lift → Settings → Observability*. Vill du stänga av det tidigare gör du det på samma ställe.
    - Utan Workers Logs blir det svårare att felsöka gallringsjobbet (A7).
-7. **Vid bytet**, om domänen går genom Cloudflare: slå inte på Web Analytics, Zaraz eller bot-skydd som sätter cookies (till exempel Bot Fight Mode) utan att först uppdatera integritetspolicyn, avsnitt 8. Se öppen fråga 6.
+7. **Vid bytet**, om domänen går genom Cloudflare: håll Web Analytics, Zaraz och bot-skydd som sätter cookies (till exempel Bot Fight Mode) avstängda (beslutat av Oscar 2026-11-21). Ska något av dem slås på senare måste integritetspolicyn, avsnitt 8, uppdateras först.
 8. **Vid bytet:** ta bort Access (beslutat av Oscar 2026-11-21), alltså Access-applikationen som skyddar `hp-lift.<konto>.workers.dev`, och ta bort testarna under *Zero Trust → Team & Resources → Users*.
 
 ## 2b. Anthropic: kontroll av profilbilder (sedan 2026-11-07)
@@ -156,7 +156,7 @@ Avgör frågorna innan ändringarna publiceras.
 3. **Överföringsmekanism.** Policyn anger DPF och SCC. Cloudflare är DPF-certifierat (aktivt 2026-11-21), så överföringar till USA har stöd i EU-kommissionens beslut om DPF. För andra länder utanför EES gäller SCC. Räcker det, eller vill du göra en egen överföringsbedömning (TIA) för de länderna? Cloudflare hjälper till med den på kundens bekostnad (DPA 6.5).
 4. **Network Data.** Cloudflare får använda data som härleds från trafiken för att driva och utveckla sina tjänster (självbetjäningsavtalet 2.5.5). Ska integritetspolicyn säga något om det?
 5. **Testinloggningen.** **Avgjort 2026-11-21:** Access tas bort efter bytet. Fram till dess gäller det bara inbjudna testare, som kan informeras direkt i stället för i policyn.
-6. **Cookies och statistik efter bytet.** Om domänen går genom Cloudflare kan bot-skydd sätta cookies (`__cf_bm`, `cf_clearance`), och Web Analytics kan slås på. Policyn säger i dag att HP Topp inte använder statistikverktyg. Ska de vara avstängda, eller ska avsnitt 8 uppdateras?
+6. **Cookies och statistik efter bytet.** **Avgjort 2026-11-21:** bot-skydd som sätter cookies (`__cf_bm`, `cf_clearance`) och Web Analytics hålls avstängda, så avsnitt 8 i policyn behöver inte ändras.
 7. **Vercel under övergången.** Vercels DPA kräver Pro-plan. Om kontot har Hobby: uppgradera för övergångstiden, eller byta så snart som möjligt? Vad ska tas bort hos Vercel efter bytet: projektet, loggarna, miljövariablerna?
 8. **Publicering.** Ska övergångsversionen av policyn, med både Vercel och Cloudflare, publiceras redan nu, eller bara slutversionen på bytesdagen? Datumet högst upp sätts därefter. Ska bytet också meddelas i appen (avsnitt 11 i policyn, "större ändringar")?
 
@@ -168,6 +168,6 @@ Avgör frågorna innan ändringarna publiceras.
    - sätt nytt datum högst upp och i `UPDATED`.
 2. **DPIA:n:** under *Mottagare*, ta bort Vercel och orden "I dag bara för testversionen" hos Cloudflare. Ta bort Vercel ur A6 och den gamla Vercel-delen ur A7.
 3. **Det här dokumentet:** ta bort avsnitt 2 och Vercel-raden i loggen, gör 2a till avsnitt 2 och ta bort Vercel ur rubriken.
-4. **Driften (A7):** kontrollera att kontot har Workers Paid och att Workers Logs är avstängt. Lägg in hemligheterna för Workern `hp-lift`, bland annat `CRON_SECRET` och `ANTHROPIC_API_KEY`. Kontrollera i Cloudflares logg att Cron Triggern har kört gallringen, och stäng sedan av Vercel Cron så att jobbet inte körs från båda.
+4. **Driften (A7):** kontrollera att kontot har Workers Paid och att Workers Logs är avstängt. Går domänen genom Cloudflare: kontrollera att Web Analytics och bot-skydd som sätter cookies är avstängda (avsnitt 2a, steg 7). Lägg in hemligheterna för Workern `hp-lift`, bland annat `CRON_SECRET` och `ANTHROPIC_API_KEY`. Kontrollera i Cloudflares logg att Cron Triggern har kört gallringen, och stäng sedan av Vercel Cron så att jobbet inte körs från båda.
 5. **Access:** ta bort Access-applikationen och testarna (avsnitt 2a, steg 8).
 6. **Vercel:** när Cloudflare har fungerat ett tag, ta bort Vercel-projektet eller åtminstone miljövariablerna, bland annat `SUPABASE_SERVICE_ROLE_KEY`. Då finns inga hemligheter eller loggar kvar hos Vercel.

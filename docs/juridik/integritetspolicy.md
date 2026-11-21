@@ -117,7 +117,7 @@ HP Topp använder inga cookies för spårning, statistik eller reklam. Vi lagrar
 
 Den lagringen är nödvändig för funktioner du själv har bett om, och kräver därför inget samtycke.
 
-[**Kontrollera vid bytet:** om domänen går genom Cloudflare kan bot-skydd sätta nödvändiga cookies (`__cf_bm`, `cf_clearance`), och Cloudflare Web Analytics samlar statistik om det slås på. Slå inte på något av det utan att uppdatera avsnittet. Testinloggningen (Cloudflare Access) sätter cookien `CF_Authorization`, men bara för testare, och tas bort vid bytet (beslutat av Oscar 2026-11-21). Se öppen fråga 6 i `a6-personuppgiftsbitraden.md`.]
+[**Kontrollera vid bytet:** bot-skydd som sätter cookies (`__cf_bm`, `cf_clearance`) och Cloudflare Web Analytics ska vara avstängda (beslutat av Oscar 2026-11-21), så att avsnittet stämmer. Ska något av dem slås på måste avsnittet uppdateras först. Testinloggningen (Cloudflare Access) sätter cookien `CF_Authorization`, men bara för testare, och tas bort vid bytet.]
 
 Om vi i framtiden visar annonser eller använder statistikverktyg frågar vi först om ditt samtycke, och då uppdaterar vi den här policyn.
 
