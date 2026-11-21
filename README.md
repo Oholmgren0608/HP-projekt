@@ -146,8 +146,14 @@ Två saker i `supabase/` är inte migrationer:
   Web application-klient).
 - I Supabase: Authentication → Providers → Google: fyll i Client ID och
   Client Secret.
-- Authentication → URL Configuration: lägg till
-  `http://127.0.0.1:43123` och `http://localhost:43123`.
+- Authentication → URL Configuration → Redirect URLs: lägg till
+  `http://127.0.0.1:43123/**` och `http://localhost:43123/**`. Appen ber
+  om att komma tillbaka till sidan man loggade in från (t.ex. `/profil`),
+  och en adress utan `/**` täcker bara startsidan. Saknas en matchning
+  skickar Supabase användaren till Site URL, alltså produktionen.
+- Lägg till Cloudflare-adressen på samma sätt (t.ex.
+  `https://hp-lift.<konto>.workers.dev/**` eller den egna domänen med `/**`)
+  innan appen byter värd.
 
 ### Synk-logik
 
