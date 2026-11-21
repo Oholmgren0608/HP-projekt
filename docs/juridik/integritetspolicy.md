@@ -1,22 +1,23 @@
-# Integritetspolicy för HP Lift
+# Integritetspolicy för HP Topp
 
 > **Källtext för sidan `/integritetspolicy`** (`src/app/integritetspolicy/page.tsx`). Ändra båda samtidigt.
 > Texten beskriver hur appen faktiskt fungerar den 1 november 2026 (migration `0031`). När något ändras måste policyn också uppdateras, till exempel annonser, betalning eller nya tjänster.
-> Punkterna märkta **Kontrollera** är interna anteckningar och visas inte på sidan. Låt gärna en jurist läsa texten.
+> **Utkast 21 november 2026:** avsnitt 7, och anteckningar i avsnitt 6 och 8, inför flytten från Vercel till Cloudflare. Öppna frågor och checklistan för bytet finns i `a6-personuppgiftsbitraden.md` (avsnitt 6 och 7).
+> Punkterna märkta **Kontrollera** och **Vid bytet** är interna anteckningar och visas inte på sidan. Låt gärna en jurist läsa texten.
 
-**Senast uppdaterad:** 7 november 2026
+**Senast uppdaterad:** 21 november 2026 [**Kontrollera:** sätt dagen då ändringen publiceras, även `UPDATED` i `page.tsx`]
 
-Den här policyn förklarar vilka personuppgifter HP Lift behandlar, varför vi gör det och vilka rättigheter du har.
+Den här policyn förklarar vilka personuppgifter HP Topp behandlar, varför vi gör det och vilka rättigheter du har.
 
 ## 1. Vem ansvarar för dina uppgifter?
 
-Personuppgiftsansvarig är Oscar Holmgren. Den som är personuppgiftsansvarig avgör hur och varför uppgifterna behandlas. När HP Lifts bolag är bildat tar det över ansvaret, och då uppdaterar vi policyn.
+Personuppgiftsansvarig är Oscar Holmgren. Den som är personuppgiftsansvarig avgör hur och varför uppgifterna behandlas. När HP Topps bolag är bildat tar det över ansvaret, och då uppdaterar vi policyn.
 
 Kontakt i frågor om personuppgifter: oholmgren32@gmail.com
 
 ## 2. Använda appen utan konto
 
-Du kan öva i HP Lift utan att logga in. Då sparas dina resultat, din veckoplan, dina flashcards och dina inställningar bara i din egen webbläsare (`localStorage`). De skickas inte till oss. Du raderar dem genom att rensa webbläsarens data, eller med knappen "Rensa lokal data" på profilsidan.
+Du kan öva i HP Topp utan att logga in. Då sparas dina resultat, din veckoplan, dina flashcards och dina inställningar bara i din egen webbläsare (`localStorage`). De skickas inte till oss. Du raderar dem genom att rensa webbläsarens data, eller med knappen "Rensa lokal data" på profilsidan.
 
 För att visa sidan måste vår webbhotelltjänst ta emot din IP-adress och teknisk information om webbläsaren (se avsnitt 7).
 
@@ -85,7 +86,7 @@ Ditt konto-id och din e-postadress visas aldrig.
 | Övriga uppgifter i expertansökan och granskningsbeslut | Avslagna och tillbakadragna ansökningar: 12 månader efter beslutet. Utkast och ansökningar som väntar på komplettering: 6 månader efter senaste ändringen. Godkända och spärrade ansökningar: så länge du har kontot. |
 | Önskemål och felrapporter | Tills ärendet är avslutat. När du tar bort kontot kopplas rapporten bort från dig, men texten sparas. |
 | Logg över administrativa åtgärder, t.ex. vem som har öppnat ett dokument | 24 månader |
-| Tekniska loggar hos våra leverantörer | Enligt leverantörens rutiner, normalt några dagar till några veckor |
+| Tekniska loggar hos våra leverantörer | Enligt leverantörens rutiner, normalt några dagar till några veckor [**Kontrollera:** Cloudflare sparar Workers Logs i 3 dagar på Workers Free och 7 dagar på Workers Paid, och Access-loggarna för testinloggningen i 24 timmar på Zero Trust Free] |
 
 Du tar själv bort ditt konto på profilsidan under "Ta bort konto".
 
@@ -97,7 +98,10 @@ Vi säljer aldrig dina uppgifter. Vi använder följande leverantörer, som beha
 |---|---|---|
 | Supabase Pte. Ltd. (Singapore, del av amerikanska Supabase Inc.) | Databas, inloggning, lagring av filer, e-post vid inloggning och lösenordsåterställning | Data lagras inom EU (Irland). Överföring utanför EU skyddas av EU-kommissionens standardavtalsklausuler, som ingår i Supabases personuppgiftsbiträdesavtal. [**Kontrollera:** se `a6-personuppgiftsbitraden.md`] |
 | Anthropic, PBC | Kontrollerar automatiskt profilbilder du laddar upp innan andra ser dem. Bara den förminskade bilden skickas, inte ditt namn eller din e-post. Anthropic använder inte uppgifterna för att träna sina modeller. | USA. Överföringen skyddas av standardavtalsklausuler i Anthropics villkor för personuppgiftsbiträden. [**Kontrollera:** se `a6-personuppgiftsbitraden.md`] |
-| Vercel Inc. | Webbhotell, serverfunktioner och schemalagda jobb. Tar emot IP-adress och teknisk information när du besöker sidan. | USA och EU. Vercel omfattas av EU–US Data Privacy Framework och standardavtalsklausuler. [**Kontrollera:** gäller bara på Vercels Pro-plan, se `a6-personuppgiftsbitraden.md`] |
+| Cloudflare, Inc. | Webbhotell, serverfunktioner och schemalagda jobb, till exempel den automatiska raderingen av expertunderlag. Tar emot IP-adress och teknisk information när du besöker sidan, och sparar tekniska loggar i några dagar. Förminskar profilbilder du laddar upp och tar bort metadata som plats. Databasen och dina filer lagras hos Supabase, inte hos Cloudflare. | Cloudflares globala nätverk. Ditt besök hanteras normalt i ett datacenter nära dig, men uppgifter kan också behandlas utanför EU, till exempel i USA. Cloudflare omfattas av EU–US Data Privacy Framework, och EU-kommissionens standardavtalsklausuler ingår i Cloudflares personuppgiftsbiträdesavtal. [**Kontrollera:** att avtalet gäller kontots plan, se `a6-personuppgiftsbitraden.md`. DPF-certifieringen var aktiv 2026-11-21.] |
+| Vercel Inc. | Webbhotell, serverfunktioner och schemalagda jobb. Tar emot IP-adress och teknisk information när du besöker sidan. | USA och EU. Vercel omfattas av EU–US Data Privacy Framework och standardavtalsklausuler. [**Kontrollera:** gäller bara på Vercels Pro-plan, se `a6-personuppgiftsbitraden.md`] [**Vid bytet:** ta bort raden och stycket om flytten nedan] |
+
+Vi håller på att flytta driften av appen från Vercel till Cloudflare. Tills flytten är klar sköter Vercel driften, och därefter tar vi bort Vercel från listan.
 
 Om du väljer att logga in med Google får vi ditt namn, din e-postadress och eventuellt din profilbild från Google. Google behandlar då uppgifter enligt sin egen integritetspolicy.
 
@@ -105,13 +109,15 @@ Vi kan också behöva lämna ut uppgifter till myndigheter om lagen kräver det.
 
 ## 8. Cookies och lagring i webbläsaren
 
-HP Lift använder inga cookies för spårning, statistik eller reklam. Vi lagrar uppgifter i din webbläsare (`localStorage`) bara för att tjänsten ska fungera:
+HP Topp använder inga cookies för spårning, statistik eller reklam. Vi lagrar uppgifter i din webbläsare (`localStorage`) bara för att tjänsten ska fungera:
 - din inloggning,
 - dina studiedata,
 - valt tema (ljust eller mörkt),
 - om ljud är på.
 
 Den lagringen är nödvändig för funktioner du själv har bett om, och kräver därför inget samtycke.
+
+[**Kontrollera vid bytet:** om domänen går genom Cloudflare kan bot-skydd sätta nödvändiga cookies (`__cf_bm`, `cf_clearance`), och Cloudflare Web Analytics samlar statistik om det slås på. Slå inte på något av det utan att uppdatera avsnittet. Testinloggningen (Cloudflare Access) sätter cookien `CF_Authorization`, men bara för testare. Se öppna frågor 5 och 6 i `a6-personuppgiftsbitraden.md`.]
 
 Om vi i framtiden visar annonser eller använder statistikverktyg frågar vi först om ditt samtycke, och då uppdaterar vi den här policyn.
 
