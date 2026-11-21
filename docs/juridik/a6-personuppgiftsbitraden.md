@@ -72,7 +72,7 @@ Enligt artikel 28 i GDPR måste det finnas ett skriftligt avtal med varje levera
   - Workers Logs stängs av (beslutat av Oscar 2026-11-21), så Cloudflare sparar inte appens loggar.
 - **Cloudflare Images:** profilbilder kodas om med bindningen `IMAGES` (`src/lib/avatar/reencode.workers.ts`). Originalbilden, som kan innehålla metadata som plats, skickas till Images och kommer tillbaka förminskad. Appen tar sedan bort den metadata som finns kvar och sparar bilden hos Supabase. Appen använder inte Images egen lagring.
 - **Cron Trigger:** kör gallringen av Studiehjälps underlag dagligen 03.30 UTC (`/api/cron/studiehjalp-purge`). Det som loggas är antal raderade filer och rader, eller ett felmeddelande.
-- **Cloudflare Access (bara testversionen):** skyddar i dag `hp-lift.<konto>.workers.dev`. Vid inloggning loggas testarens e-postadress, IP-adress och land, och cookien `CF_Authorization` sätts. Access-loggarna sparas i 24 timmar på Zero Trust Free, och testarna syns i användarlistan under *Zero Trust → Team & Resources → Users*.
+- **Cloudflare Access (bara testversionen):** skyddar i dag `hp-lift.<konto>.workers.dev`. Vid inloggning loggas testarens e-postadress, IP-adress och land, och cookien `CF_Authorization` sätts. Access-loggarna sparas i 24 timmar på Zero Trust Free, och testarna syns i användarlistan under *Zero Trust → Team & Resources → Users*. Access tas bort vid bytet (beslutat av Oscar 2026-11-21).
 
 **Läget:**
 - Avtalspart är **Cloudflare, Inc.** (USA).
@@ -106,7 +106,7 @@ Enligt artikel 28 i GDPR måste det finnas ett skriftligt avtal med varje levera
    - Kontrollera efter nästa deploy från `main` att Workers Logs är avstängt under *Workers & Pages → hp-lift → Settings → Observability*. Vill du stänga av det tidigare gör du det på samma ställe.
    - Utan Workers Logs blir det svårare att felsöka gallringsjobbet (A7).
 7. **Vid bytet**, om domänen går genom Cloudflare: slå inte på Web Analytics, Zaraz eller bot-skydd som sätter cookies (till exempel Bot Fight Mode) utan att först uppdatera integritetspolicyn, avsnitt 8. Se öppen fråga 6.
-8. **Vid bytet:** bestäm om Access ska ligga kvar, till exempel för en testmiljö, och ta bort testare som inte längre behöver åtkomst. Se öppen fråga 5.
+8. **Vid bytet:** ta bort Access (beslutat av Oscar 2026-11-21), alltså Access-applikationen som skyddar `hp-lift.<konto>.workers.dev`, och ta bort testarna under *Zero Trust → Team & Resources → Users*.
 
 ## 2b. Anthropic: kontroll av profilbilder (sedan 2026-11-07)
 
@@ -155,7 +155,7 @@ Avgör frågorna innan ändringarna publiceras.
 2. **Var uppgifterna behandlas.** **Avgjort 2026-11-21:** Workers Logs stängs av. Ett anrop hanteras fortfarande i närmaste datacenter, och en EU-begränsning kräver Enterprise. Risk R9 i DPIA:n står kvar som låg.
 3. **Överföringsmekanism.** Policyn anger DPF och SCC. Cloudflare är DPF-certifierat (aktivt 2026-11-21), så överföringar till USA har stöd i EU-kommissionens beslut om DPF. För andra länder utanför EES gäller SCC. Räcker det, eller vill du göra en egen överföringsbedömning (TIA) för de länderna? Cloudflare hjälper till med den på kundens bekostnad (DPA 6.5).
 4. **Network Data.** Cloudflare får använda data som härleds från trafiken för att driva och utveckla sina tjänster (självbetjäningsavtalet 2.5.5). Ska integritetspolicyn säga något om det?
-5. **Testinloggningen.** Access loggar testarnas e-postadress, IP-adress och land och sätter cookien `CF_Authorization`. Ska Access ligga kvar efter bytet? Räcker det att informera testarna direkt, eller ska det stå i policyn?
+5. **Testinloggningen.** **Avgjort 2026-11-21:** Access tas bort efter bytet. Fram till dess gäller det bara inbjudna testare, som kan informeras direkt i stället för i policyn.
 6. **Cookies och statistik efter bytet.** Om domänen går genom Cloudflare kan bot-skydd sätta cookies (`__cf_bm`, `cf_clearance`), och Web Analytics kan slås på. Policyn säger i dag att HP Topp inte använder statistikverktyg. Ska de vara avstängda, eller ska avsnitt 8 uppdateras?
 7. **Vercel under övergången.** Vercels DPA kräver Pro-plan. Om kontot har Hobby: uppgradera för övergångstiden, eller byta så snart som möjligt? Vad ska tas bort hos Vercel efter bytet: projektet, loggarna, miljövariablerna?
 8. **Publicering.** Ska övergångsversionen av policyn, med både Vercel och Cloudflare, publiceras redan nu, eller bara slutversionen på bytesdagen? Datumet högst upp sätts därefter. Ska bytet också meddelas i appen (avsnitt 11 i policyn, "större ändringar")?
@@ -169,4 +169,5 @@ Avgör frågorna innan ändringarna publiceras.
 2. **DPIA:n:** under *Mottagare*, ta bort Vercel och orden "I dag bara för testversionen" hos Cloudflare. Ta bort Vercel ur A6 och den gamla Vercel-delen ur A7.
 3. **Det här dokumentet:** ta bort avsnitt 2 och Vercel-raden i loggen, gör 2a till avsnitt 2 och ta bort Vercel ur rubriken.
 4. **Driften (A7):** kontrollera att kontot har Workers Paid och att Workers Logs är avstängt. Lägg in hemligheterna för Workern `hp-lift`, bland annat `CRON_SECRET` och `ANTHROPIC_API_KEY`. Kontrollera i Cloudflares logg att Cron Triggern har kört gallringen, och stäng sedan av Vercel Cron så att jobbet inte körs från båda.
-5. **Vercel:** när Cloudflare har fungerat ett tag, ta bort Vercel-projektet eller åtminstone miljövariablerna, bland annat `SUPABASE_SERVICE_ROLE_KEY`. Då finns inga hemligheter eller loggar kvar hos Vercel.
+5. **Access:** ta bort Access-applikationen och testarna (avsnitt 2a, steg 8).
+6. **Vercel:** när Cloudflare har fungerat ett tag, ta bort Vercel-projektet eller åtminstone miljövariablerna, bland annat `SUPABASE_SERVICE_ROLE_KEY`. Då finns inga hemligheter eller loggar kvar hos Vercel.

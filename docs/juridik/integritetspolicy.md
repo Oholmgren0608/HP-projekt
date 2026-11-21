@@ -86,7 +86,7 @@ Ditt konto-id och din e-postadress visas aldrig.
 | Övriga uppgifter i expertansökan och granskningsbeslut | Avslagna och tillbakadragna ansökningar: 12 månader efter beslutet. Utkast och ansökningar som väntar på komplettering: 6 månader efter senaste ändringen. Godkända och spärrade ansökningar: så länge du har kontot. |
 | Önskemål och felrapporter | Tills ärendet är avslutat. När du tar bort kontot kopplas rapporten bort från dig, men texten sparas. |
 | Logg över administrativa åtgärder, t.ex. vem som har öppnat ett dokument | 24 månader |
-| Tekniska loggar hos våra leverantörer | Enligt leverantörens rutiner, normalt några dagar till några veckor [**Kontrollera:** Workers Logs ska vara avstängt för Cloudflare-Workern (beslutat av Oscar 2026-11-21). Access-loggarna för testinloggningen sparas i 24 timmar på Zero Trust Free.] |
+| Tekniska loggar hos våra leverantörer | Enligt leverantörens rutiner, normalt några dagar till några veckor [**Kontrollera:** Workers Logs ska vara avstängt för Cloudflare-Workern (beslutat av Oscar 2026-11-21). Access-loggarna för testinloggningen sparas i 24 timmar på Zero Trust Free, och Access tas bort vid bytet.] |
 
 Du tar själv bort ditt konto på profilsidan under "Ta bort konto".
 
@@ -117,7 +117,7 @@ HP Topp använder inga cookies för spårning, statistik eller reklam. Vi lagrar
 
 Den lagringen är nödvändig för funktioner du själv har bett om, och kräver därför inget samtycke.
 
-[**Kontrollera vid bytet:** om domänen går genom Cloudflare kan bot-skydd sätta nödvändiga cookies (`__cf_bm`, `cf_clearance`), och Cloudflare Web Analytics samlar statistik om det slås på. Slå inte på något av det utan att uppdatera avsnittet. Testinloggningen (Cloudflare Access) sätter cookien `CF_Authorization`, men bara för testare. Se öppna frågor 5 och 6 i `a6-personuppgiftsbitraden.md`.]
+[**Kontrollera vid bytet:** om domänen går genom Cloudflare kan bot-skydd sätta nödvändiga cookies (`__cf_bm`, `cf_clearance`), och Cloudflare Web Analytics samlar statistik om det slås på. Slå inte på något av det utan att uppdatera avsnittet. Testinloggningen (Cloudflare Access) sätter cookien `CF_Authorization`, men bara för testare, och tas bort vid bytet (beslutat av Oscar 2026-11-21). Se öppen fråga 6 i `a6-personuppgiftsbitraden.md`.]
 
 Om vi i framtiden visar annonser eller använder statistikverktyg frågar vi först om ditt samtycke, och då uppdaterar vi den här policyn.
 
