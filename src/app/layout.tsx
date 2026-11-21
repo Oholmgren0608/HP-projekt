@@ -12,7 +12,11 @@ import "./globals.css";
 // IBM Plex Sans ligger i repot (OFL, se fonts/OFL.txt) så att bygget inte
 // behöver nå Google Fonts.
 const sans = localFont({
-  variable: "--font-sans",
+  // Får inte heta --font-sans: Tailwind-temats --font-sans i globals.css pekar på
+  // den här variabeln, och med samma namn refererar värdet till sig självt. Då
+  // blir hela font-family-deklarationen ogiltig så fort next/fonts klass inte
+  // vinner kaskaden, och texten faller tillbaka på Times New Roman.
+  variable: "--font-body",
   src: [
     { path: "./fonts/IBMPlexSans-400.ttf", weight: "400", style: "normal" },
     { path: "./fonts/IBMPlexSans-500.ttf", weight: "500", style: "normal" },
