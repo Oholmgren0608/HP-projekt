@@ -299,7 +299,7 @@ export default function IntegritetspolicyPage() {
             {
               title: "Cloudflare, Inc.",
               fields: [
-                ["Vad", "Webbhotell, serverfunktioner och schemalagda jobb, till exempel den automatiska raderingen av expertunderlag. Tar emot IP-adress och teknisk information när du besöker sidan, och sparar tekniska loggar i några dagar. Förminskar profilbilder du laddar upp och tar bort metadata som plats. Databasen och dina filer lagras hos Supabase, inte hos Cloudflare."],
+                ["Vad", "Webbhotell, serverfunktioner och schemalagda jobb, till exempel den automatiska raderingen av expertunderlag. Tar emot IP-adress och teknisk information när du besöker sidan. Förminskar profilbilder du laddar upp och tar bort metadata som plats. Databasen och dina filer lagras hos Supabase, inte hos Cloudflare."],
                 ["Var", "Cloudflares globala nätverk. Ditt besök hanteras normalt i ett datacenter nära dig, men uppgifter kan också behandlas utanför EU, till exempel i USA. Cloudflare omfattas av EU–US Data Privacy Framework, och EU-kommissionens standardavtalsklausuler ingår i Cloudflares personuppgiftsbiträdesavtal."],
               ],
             },

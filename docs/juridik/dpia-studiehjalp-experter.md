@@ -70,7 +70,7 @@ Personnummer sparas aldrig i databasen, men kan synas i en uppladdad ID-handling
 **Mottagare:**
 - Granskare med roll.
 - Supabase (databas, lagring och e-post), som personuppgiftsbiträde. Data lagras i EU (Irland).
-- Cloudflare (serverfunktioner och det dagliga gallringsjobbet), som personuppgiftsbiträde. I dag bara för testversionen, och för hela appen **vid bytet**. Ansökningarna passerar servern, som också laddar ned varje underlag för att kontrollera storlek och filtyp. Appen lagrar varken ansökningar eller underlag hos Cloudflare. Cloudflare sparar tekniska loggar (Workers Logs) i 3–7 dagar beroende på plan.
+- Cloudflare (serverfunktioner och det dagliga gallringsjobbet), som personuppgiftsbiträde. I dag bara för testversionen, och för hela appen **vid bytet**. Ansökningarna passerar servern, som också laddar ned varje underlag för att kontrollera storlek och filtyp. Appen lagrar varken ansökningar eller underlag hos Cloudflare. Workers Logs stängs av, så appens loggar sparas inte heller där (beslutat av Oscar 2026-11-21).
 - Vercel (serverfunktioner och gallringsjobbet), som personuppgiftsbiträde. **Vid bytet:** tas bort.
 - Publik profil: alla besökare.
 
@@ -90,7 +90,7 @@ Personnummer sparas aldrig i databasen, men kan synas i en uppladdad ID-handling
 | Korrekthet | Granskaren antecknar verifierat värde och källa. Sökanden kan komplettera, och ett beslut kan omprövas. |
 | Information till de registrerade | Integritetspolicyn, avsnitt 4. Policyn är publicerad på `/integritetspolicy` och länkad från samtycket (A2, klar). |
 | Rättigheter | Radering: dra tillbaka ansökan eller ta bort kontot (båda finns). Registerutdrag och dataportabilitet: via e-post (manuellt). |
-| Överföring till tredje land | Lagring sker i EU. Leverantörerna är amerikanska bolag, och åtkomst skyddas av standardavtalsklausuler respektive Data Privacy Framework (åtgärd A6). Cloudflare kör servern i sitt globala nät: ett anrop hanteras normalt i ett datacenter nära användaren, men uppgifter kan behandlas och loggar lagras utanför EU, eftersom en EU-begränsning kräver Cloudflares Enterprise-plan. Cloudflares DPA har SCC och DPF (avsnitt 6) och åtaganden om myndigheters begäranden (avsnitt 8). |
+| Överföring till tredje land | Lagring sker i EU. Leverantörerna är amerikanska bolag, och åtkomst skyddas av standardavtalsklausuler respektive Data Privacy Framework (åtgärd A6). Cloudflare kör servern i sitt globala nät: ett anrop hanteras normalt i ett datacenter nära användaren, men uppgifter kan behandlas utanför EU, eftersom en EU-begränsning kräver Cloudflares Enterprise-plan. Workers Logs stängs av, så appens loggar lagras inte hos Cloudflare. Cloudflares DPA har SCC och DPF (avsnitt 6) och åtaganden om myndigheters begäranden (avsnitt 8). |
 
 ## 4. Risker för de registrerade
 
@@ -120,7 +120,7 @@ Sannolikhet (S) och allvarlighet (A) bedöms som 1 = låg, 2 = medel och 3 = hö
 | R5 | Märkena räknas fram ur kontrolltypen. "HP-resultat granskat" betyder att ett dokument är granskat, och "Verifierat HP-resultat" att resultatet setts i den officiella tjänsten. ID visas som en egen signal och påstår inte BankID. |
 | R6 | Godkännande kräver att granskaren har jämfört namnet på ID-handlingen med underlaget. |
 | R8 | Bara PDF, JPEG och PNG tillåts. Filtypen kontrolleras mot filens innehåll, och felaktiga filer tas bort. |
-| R9 | Data lagras i EU (Irland). Appen lagrar inga ansökningar eller underlag hos Cloudflare, och överföringar skyddas av SCC och DPF (A6). |
+| R9 | Data lagras i EU (Irland). Appen lagrar inga ansökningar, underlag eller loggar hos Cloudflare (Workers Logs stängs av), och överföringar skyddas av SCC och DPF (A6). |
 | R10 | Aktivt samtycke krävs innan ansökan kan skickas in. Det står i ansökan att den granskas manuellt. |
 
 ## 6. Kvarstående risk efter åtgärder
@@ -145,7 +145,7 @@ Ingen kvarstående risk är hög, så något förhandssamråd med IMY behövs in
 | A3 | Inför gallring av ansökningsuppgifter. Förslag:<ul><li>Avslagna och tillbakadragna ansökningar: namn, resultat och meddelande raderas 12 månader efter beslutet.</li><li>Utkast som inte har ändrats på 6 månader raderas.</li><li>Godkända ansökningar sparas så länge experten är aktiv.</li></ul> | Beslutat av Oscar 2026-11-01, även för ansökningar som väntar på komplettering. Spärrade ansökningar sparas. | **Klar** i `0031` |
 | A4 | Revisionsloggen sparas i 24 månader och gallras automatiskt. | Beslutat av Oscar 2026-11-01 | **Klar** i `0031` |
 | A5 | Rutin för granskare: inga nedladdningar till egen dator, inga skärmdumpar, granskning bara på en egen och låst enhet. Skriftlig sekretessförbindelse för varje granskare. | Oscar | **Ja** |
-| A6 | Godkänn personuppgiftsbiträdesavtal (DPA) med Supabase och Cloudflare, och spara kopior. Steg för steg: [`a6-personuppgiftsbitraden.md`](a6-personuppgiftsbitraden.md). Cloudflares DPA ingår i självbetjäningsavtalet, även på gratisplanerna (öppen fråga 1 i A6-dokumentet). Tills bytet gäller också Vercel, vars DPA kräver Pro-plan. | Oscar | **Ja** |
+| A6 | Godkänn personuppgiftsbiträdesavtal (DPA) med Supabase och Cloudflare, och spara kopior. Steg för steg: [`a6-personuppgiftsbitraden.md`](a6-personuppgiftsbitraden.md). Cloudflares DPA ingår i självbetjäningsavtalet, och kontot ska ha Workers Paid (beslutat av Oscar 2026-11-21). Tills bytet gäller också Vercel, vars DPA kräver Pro-plan. | Oscar | **Ja** |
 | A7 | Slå på "Confirm email" i Supabase Auth och sätt `CRON_SECRET` i Vercel. Kontrollera i Vercels logg att gallringsjobbet går utan fel. **Vid bytet:** sätt `CRON_SECRET` som hemlighet för Workern `hp-lift`, kontrollera i Cloudflares logg att Cron Triggern kör gallringen utan fel och stäng sedan av Vercel Cron. | Oscar | **Ja** |
 | A8 | Rutin för personuppgiftsincidenter: vem som gör vad, och anmälan till IMY inom 72 timmar. | Oscar | **Ja** |
 | A9 | Rutin för registerutdrag och dataportabilitet: svar inom en månad. | Oscar | Ja |
