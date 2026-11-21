@@ -5,9 +5,13 @@
  *
  * Markeringarna ligger som data i `public/uhr/forklaring/<examId>-p<N>.json` (en fil per
  * provpass, hämtas först när en förklaring visas) med koordinater i bildens pixlar.
+ * `uhr-marks-passes.json` listar provpassen som har en fil, så att appen bara hämtar filer
+ * som finns; `scripts/uhr/forklaring.ts kontroll` skriver om listan från mappen.
  * Samma funktion ritar markeringarna i appen och i kontrollverktyget
  * (`scripts/uhr/forklaring.ts`), så förhandsbilden är det användaren ser.
  */
+
+import passesWithMarks from "./uhr-marks-passes.json";
 
 export type UhrMarkShape =
   | { type: "box"; x: number; y: number; w: number; h: number }
@@ -45,10 +49,19 @@ export const LABEL_MAX = 24;
 
 const PASS_RE = /^(hp-\d{4}-\d{2}-\d{2})-p(\d)-q\d{1,2}$/;
 
-/** Filen med markeringarna för en UHR-fråga, t.ex. "/uhr/forklaring/hp-2019-10-20-p1.json". */
+/** Provpassen som har en fil i `public/uhr/forklaring/`, t.ex. "hp-2019-10-20-p1". */
+const PASSES_WITH_MARKS: ReadonlySet<string> = new Set(passesWithMarks);
+
+/**
+ * Filen med markeringarna för en UHR-fråga, t.ex. "/uhr/forklaring/hp-2019-10-20-p1.json",
+ * eller null om frågans provpass inte har någon fil. Då hämtas ingenting, så pass utan
+ * bildförklaringar ger inga 404-fel.
+ */
 export function marksFileUrl(questionId: string): string | null {
   const m = PASS_RE.exec(questionId);
-  return m ? `/uhr/forklaring/${m[1]}-p${m[2]}.json` : null;
+  if (!m) return null;
+  const pass = `${m[1]}-p${m[2]}`;
+  return PASSES_WITH_MARKS.has(pass) ? `/uhr/forklaring/${pass}.json` : null;
 }
 
 const num = (v: unknown): v is number => typeof v === "number" && Number.isFinite(v);
@@ -151,7 +164,10 @@ export function marksToSvg(m: UhrMarks, color = MARK_COLOR): string {
 
 const cache = new Map<string, Promise<UhrMarksFile | null>>();
 
-/** Markeringarna för en UHR-fråga, eller null om frågan saknar dem. Filen hämtas en gång per provpass. */
+/**
+ * Markeringarna för en UHR-fråga, eller null om frågan saknar dem. Filen hämtas en gång per
+ * provpass, och bara för provpass som har en fil (`marksFileUrl`).
+ */
 export async function loadUhrMarks(questionId: string): Promise<UhrMarks | null> {
   const url = marksFileUrl(questionId);
   if (!url) return null;

@@ -10,16 +10,19 @@
  * Frågorna som ska ha markeringar är de publicerade UHR-frågorna med bild, alltså de
  * i offlinekopian (src/lib/content/fallback-bank.json) som har figureUrl. `lista` och
  * `rendera` lägger PNG-bilder i content/uhr/.arbete/forklaring/ (ingår inte i git).
+ * `kontroll` skriver också om src/lib/content/uhr-marks-passes.json, listan över
+ * provpass som har en fil; appen hämtar bara filer som står i den.
  * Fel gör att skriptet avslutas med kod 1.
  */
 
-import { existsSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { marksToSvg, validateMarks, type UhrMarksFile } from "@/lib/content/uhr-marks";
 import { PROJECT_ROOT, WORK_DIR, facitIndex, figurePath, readFacit, readPass, type UhrPass } from "./lib";
 
 const MARKS_DIR = join(PROJECT_ROOT, "public", "uhr", "forklaring");
+const PASS_LIST = join(PROJECT_ROOT, "src", "lib", "content", "uhr-marks-passes.json");
 const OUT_DIR = join(WORK_DIR, "forklaring");
 const LETTERS = "ABCDE";
 
@@ -45,6 +48,23 @@ function splitPass(key: string): { examId: string; passNumber: number } {
   const m = /^(hp-\d{4}-\d{2}-\d{2})-p(\d)$/.exec(key);
   if (!m) throw new Error(`Okänt provpass: ${key} (skriv t.ex. hp-2019-10-20-p1)`);
   return { examId: m[1], passNumber: Number(m[2]) };
+}
+
+/**
+ * Skriver om listan över provpass som har en fil i public/uhr/forklaring/ (appen hämtar
+ * bara dem, så pass utan fil ger inga 404-fel). Listan följer mappen; true om den ändrades.
+ */
+function writePassList(): boolean {
+  const passes = existsSync(MARKS_DIR)
+    ? readdirSync(MARKS_DIR)
+        .filter((f) => /^hp-\d{4}-\d{2}-\d{2}-p\d\.json$/.test(f))
+        .map((f) => f.replace(/\.json$/, ""))
+        .sort()
+    : [];
+  const text = `${JSON.stringify(passes, null, 2)}\n`;
+  if (existsSync(PASS_LIST) && readFileSync(PASS_LIST, "utf8").replace(/\r\n/g, "\n") === text) return false;
+  writeFileSync(PASS_LIST, text);
+  return true;
 }
 
 function readMarks(key: string): UhrMarksFile | null {
@@ -179,6 +199,8 @@ async function main() {
       console.log(`FEL ${f}: inget provpass med publicerade frågor med bild`);
       errors++;
     }
+    if (command === "kontroll" && writePassList())
+      console.log("Skrev om src/lib/content/uhr-marks-passes.json (provpassen som har en fil).");
     console.log(`\n${done}/${total} frågor har markeringar, ${errors} fel.`);
     if (errors) process.exit(1);
     return;
