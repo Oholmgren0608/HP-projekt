@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const CONTACT = "oholmgren32@gmail.com";
-const UPDATED = "7 november 2026";
+const UPDATED = "21 november 2026";
 
 function Section({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
@@ -297,6 +297,14 @@ export default function IntegritetspolicyPage() {
               ],
             },
             {
+              title: "Cloudflare, Inc.",
+              fields: [
+                ["Vad", "Webbhotell, serverfunktioner och schemalagda jobb, till exempel den automatiska raderingen av expertunderlag. Tar emot IP-adress och teknisk information när du besöker sidan, och sparar tekniska loggar i några dagar. Förminskar profilbilder du laddar upp och tar bort metadata som plats. Databasen och dina filer lagras hos Supabase, inte hos Cloudflare."],
+                ["Var", "Cloudflares globala nätverk. Ditt besök hanteras normalt i ett datacenter nära dig, men uppgifter kan också behandlas utanför EU, till exempel i USA. Cloudflare omfattas av EU–US Data Privacy Framework, och EU-kommissionens standardavtalsklausuler ingår i Cloudflares personuppgiftsbiträdesavtal."],
+              ],
+            },
+            // Vid bytet till Cloudflare: ta bort Vercel-raden och stycket om flytten nedan.
+            {
               title: "Vercel Inc.",
               fields: [
                 ["Vad", "Webbhotell, serverfunktioner och schemalagda jobb. Tar emot IP-adress och teknisk information när du besöker sidan."],
@@ -305,6 +313,10 @@ export default function IntegritetspolicyPage() {
             },
           ]}
         />
+        <P>
+          Vi håller på att flytta driften av appen från Vercel till Cloudflare. Tills flytten är klar sköter
+          Vercel driften, och därefter tar vi bort Vercel från listan.
+        </P>
         <P>
           Om du väljer att logga in med Google får vi ditt namn, din e-postadress och eventuellt din profilbild
           från Google. Google behandlar då uppgifter enligt sin egen integritetspolicy.
