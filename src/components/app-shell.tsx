@@ -248,7 +248,7 @@ function Wordmark() {
       className="flex items-center gap-2.5 rounded-md text-base font-semibold text-[var(--ink)]"
     >
       <LogoMark className="size-7 shrink-0" />
-      HP Lift
+      HP Topp
     </Link>
   );
 }
@@ -439,7 +439,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       {/* Sidfot: samma två kanaler som i profilen (Hjälp & feedback). */}
       <footer className="mx-auto w-full max-w-[1080px] px-4 pb-28 pt-6 sm:px-8 md:pb-10">
         <div className="flex flex-col gap-3 border-t border-[var(--line)] pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-[var(--ink-muted)]">HP Lift byggs vidare med dina förslag</p>
+          <p className="text-sm text-[var(--ink-muted)]">HP Topp byggs vidare med dina förslag</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <Link href="/feedback" className="inline-flex min-h-6 items-center text-sm font-medium text-[var(--brand)] hover:underline">
               Skicka önskemål

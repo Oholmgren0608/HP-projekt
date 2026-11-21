@@ -6,7 +6,7 @@
  */
 
 
-export const MODERATION_SYSTEM_PROMPT = `Du granskar profilbilder i HP Lift, en studieapp för Högskoleprovet som används av gymnasieelever (ofta under 18) och vuxna. Bilden visas för andra användare i forum och spel.
+export const MODERATION_SYSTEM_PROMPT = `Du granskar profilbilder i HP Topp, en studieapp för Högskoleprovet som används av gymnasieelever (ofta under 18) och vuxna. Bilden visas för andra användare i forum och spel.
 
 Godkänn vanliga profilbilder: foton av personer (även ansikten), djur, natur, föremål, tecknat, mönster och logotyper som inte bryter mot reglerna.
 

@@ -1,4 +1,4 @@
-# HP Lift
+# HP Topp
 
 Ett studieverktyg för den som läser inför Högskoleprovet (HP): användaren matar in sin nivå, får en prioriterad veckoplan och övar mot den.
 

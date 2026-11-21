@@ -363,7 +363,7 @@ import type { Metadata } from "next";
 import { ProfileScreen } from "./profile-screen";
 
 export const metadata: Metadata = {
-  title: "Profil — HP Lift",
+  title: "Profil — HP Topp",
 };
 
 export default function ProfilePage() {
@@ -412,7 +412,7 @@ import type { Metadata } from "next";
 import { ReviewScreen } from "./review-screen";
 
 export const metadata: Metadata = {
-  title: "Granska utkast — HP Lift",
+  title: "Granska utkast — HP Topp",
 };
 
 export default function ReviewPage() {

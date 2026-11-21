@@ -312,7 +312,7 @@ function ProfileEditor({
         ))}
       </div>
       <p className="mt-2 text-xs text-[var(--ink-muted)]">
-        Priserna visas som information. Bokning och betalning via HP Lift öppnar senare; då visas
+        Priserna visas som information. Bokning och betalning via HP Topp öppnar senare; då visas
         plattformens avgift och din andel innan någon bokar.
       </p>
 

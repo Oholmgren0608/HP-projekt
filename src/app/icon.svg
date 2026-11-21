@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <title>HP Lift</title>
-  <defs><clipPath id="hp-lift-ruta"><rect width="64" height="64" rx="14"/></clipPath></defs>
-  <g clip-path="url(#hp-lift-ruta)">
+  <title>HP Topp</title>
+  <defs><clipPath id="hp-topp-ruta"><rect width="64" height="64" rx="14"/></clipPath></defs>
+  <g clip-path="url(#hp-topp-ruta)">
     <rect width="64" height="64" fill="#2b4c7e"/>
     <path d="M13.6 71L35.4 30L37.6 27.6L41 20.4L45 12L48 15.4L51.2 19.6L53.6 23L57.2 24.4L61 26.2L63.4 28.6L67 34L72 42V71z" fill="#ffffff" opacity=".3" transform="translate(1.6 -4)"/>
     <g transform="translate(18 62) scale(1.85)" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" fill="none">

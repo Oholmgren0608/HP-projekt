@@ -1,7 +1,7 @@
 import { useId } from "react";
 
 /**
- * HP Lifts märke (2026-11-20): en bergsklättrare i profil som frontar uppför
+ * HP Topps märke (2026-11-20): en bergsklättrare i profil som frontar uppför
  * eggen på ett berg format efter K2, med en isyxa i varje hand, i en
  * Skymningsblå ruta. Berget har en skuggsida, en solsida och snö på toppen
  * och axeln. Färgerna kommer från temat (`primary` och `primary-foreground`),

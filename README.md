@@ -1,4 +1,4 @@
-# HP Lift — Studieplan för Högskoleprovet
+# HP Topp — Studieplan för Högskoleprovet
 
 Mata in dina HP-resultat (normpoäng + råpoäng per delprov) så bygger sidan om prioritering, tidsfördelning och veckoplan.
 

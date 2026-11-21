@@ -105,7 +105,7 @@ function SearchContent() {
         back={{ href: "/studiehjalp", label: "Studiehjälp" }}
         intro={
           <>
-            Alla experter är granskade av HP Lift: minst 1,20 på högskoleprovet eller lärarlegitimation
+            Alla experter är granskade av HP Topp: minst 1,20 på högskoleprovet eller lärarlegitimation
             kontrollerad i Skolverkets register. Ordningen roteras varje dag så att nya experter syns –
             ingen kan betala för en bättre plats.
           </>

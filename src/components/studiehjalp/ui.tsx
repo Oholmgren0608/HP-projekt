@@ -182,8 +182,8 @@ export function ExpertBadges({
           : `HP-resultat granskat${score}`,
       detail:
         hpCheck === "live_portal"
-          ? `HP Lift har sett resultatet i den officiella resultattjänsten${test}. Minst 1,20 krävs.`
-          : `HP Lift har granskat ett officiellt resultatbesked${test}. Minst 1,20 krävs. Resultatet är inte kontrollerat direkt hos myndigheten.`,
+          ? `HP Topp har sett resultatet i den officiella resultattjänsten${test}. Minst 1,20 krävs.`
+          : `HP Topp har granskat ett officiellt resultatbesked${test}. Minst 1,20 krävs. Resultatet är inte kontrollerat direkt hos myndigheten.`,
     });
   }
   if (teacherVerified) {
@@ -197,7 +197,7 @@ export function ExpertBadges({
     items.push({
       icon: IdCard,
       title: "ID-handling granskad",
-      detail: "HP Lift har granskat en ID-handling manuellt. Det är inte en BankID-kontroll.",
+      detail: "HP Topp har granskat en ID-handling manuellt. Det är inte en BankID-kontroll.",
     });
   }
   if (items.length === 0) return null;

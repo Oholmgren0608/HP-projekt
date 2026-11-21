@@ -12,7 +12,7 @@ Specen kräver i Fas 0 att den här rapporten levereras innan skarpa produktions
 
 ## 1. Sammanfattning
 
-**Specen bygger på flera förutsättningar som inte finns i HP Lift i dag.**
+**Specen bygger på flera förutsättningar som inte finns i HP Topp i dag.**
 
 | Specen förutsätter | Nuläge |
 |---|---|

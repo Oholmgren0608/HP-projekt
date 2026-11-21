@@ -31,8 +31,8 @@ const sans = Nunito({
 
 export const metadata: Metadata = {
   title: {
-    default: "HP Lift — Studieplan för Högskoleprovet",
-    template: "%s · HP Lift",
+    default: "HP Topp — Studieplan för Högskoleprovet",
+    template: "%s · HP Topp",
   },
   description:
     "Mata in dina HP-resultat och få en personlig studieplan med prioritering, tidsfördelning och veckoplan.",
@@ -135,10 +135,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 - Path: `src/components/app-shell.tsx`
 - Renders:
   - Background: absolute layer of soft radial gradients (brand top-left, lagoon top-right, energy bottom) over a fog -> paper -> fog vertical gradient.
-  - **Floating sticky header** (`sticky top-3`, max-w-6xl, no background/border of its own): "HP Lift" wordmark in Fraunces, desktop nav (`md:flex`) with grouped dropdown menus (Plan: Veckoplan/Nivåtest/Poäng; Öva: Öva delprov/ORD-Flashcards/Läsbibliotek/Gamla prov/Duell) and flat links (Forum, Tips). Active item gets an animated `motion` pill (`layoutId="nav-pill"`, `bg-[var(--accent-soft)] shadow-soft`). Right side: sound toggle, theme toggle (rotating icon), divider, AuthCluster (avatar initials + account menu: Profil, Granska, Logga ut; or "Logga in" popover with LoginPanel).
+  - **Floating sticky header** (`sticky top-3`, max-w-6xl, no background/border of its own): "HP Topp" wordmark in Fraunces, desktop nav (`md:flex`) with grouped dropdown menus (Plan: Veckoplan/Nivåtest/Poäng; Öva: Öva delprov/ORD-Flashcards/Läsbibliotek/Gamla prov/Duell) and flat links (Forum, Tips). Active item gets an animated `motion` pill (`layoutId="nav-pill"`, `bg-[var(--accent-soft)] shadow-soft`). Right side: sound toggle, theme toggle (rotating icon), divider, AuthCluster (avatar initials + account menu: Profil, Granska, Logga ut; or "Logga in" popover with LoginPanel).
   - One-off prompts: PasswordRecoveryPrompt, UsernamePrompt.
   - `<motion.main key={pathname}>` fade/slide-in, `mx-auto max-w-6xl px-5 sm:px-8 pt-7 sm:pt-10 pb-10 md:pb-16`.
-  - Footer: top border, tagline "HP Lift · byggs vidare med dina forslag" + links to `/feedback` and `/feedback?typ=problem`.
+  - Footer: top border, tagline "HP Topp · byggs vidare med dina forslag" + links to `/feedback` and `/feedback?typ=problem`.
   - **Floating mobile bottom nav** (`md:hidden`, fixed bottom, 4-column grid in a rounded-2xl frosted card with `shadow-card backdrop-blur-md`), icon + label, group items open an upward menu panel.
 
 ```tsx
@@ -490,7 +490,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-5 py-3.5 sm:px-8">
           <Link href="/" className="flex items-baseline gap-2">
             <span className="font-[family-name:var(--font-display)] text-xl tracking-tight text-[var(--ink)] sm:text-2xl">
-              HP Lift
+              HP Topp
             </span>
           </Link>
           <nav className="hidden items-center gap-0.5 md:flex" aria-label="Huvudmeny">
@@ -572,7 +572,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <footer className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-28 pt-8 sm:px-8 md:pb-10">
         <div className="flex flex-col gap-3 border-t border-[var(--line)] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-[var(--ink-muted)]">
-            HP Lift · byggs vidare med dina förslag
+            HP Topp · byggs vidare med dina förslag
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <Link

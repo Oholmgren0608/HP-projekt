@@ -76,7 +76,7 @@ function HubContent() {
       <div className="grid gap-4 sm:grid-cols-2">
         {access.hasFlag("experts_public") ? (
           <HubCard href="/studiehjalp/experter" icon={Search} title="Hitta experter">
-            Experter med minst 1,20 på högskoleprovet eller lärarlegitimation, granskade av HP Lift.
+            Experter med minst 1,20 på högskoleprovet eller lärarlegitimation, granskade av HP Topp.
             Ordningen roteras varje dag – ingen kan betala för en bättre plats.
           </HubCard>
         ) : null}

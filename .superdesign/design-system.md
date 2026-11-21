@@ -1,7 +1,7 @@
-# HP Lift — Design System ("Lugn")
+# HP Topp — Design System ("Lugn")
 
 ## Product context
-HP Lift is a Swedish study-plan web app for Högskoleprovet (HP). Users take a nivåtest or enter earlier results, get a personal veckoplan, and practise the eight delprov (ORD, LÄS, MEK, ELF — verbal; XYZ, KVA, NOG, DTK — kvantitativ). Other features: timed provpass/mock exams (`/prov`), flashcards and spaced repetition ("Dagens repetition"), a reading library, 1v1 duels, a question forum, tips, a profile with progress history.
+HP Topp is a Swedish study-plan web app for Högskoleprovet (HP). Users take a nivåtest or enter earlier results, get a personal veckoplan, and practise the eight delprov (ORD, LÄS, MEK, ELF — verbal; XYZ, KVA, NOG, DTK — kvantitativ). Other features: timed provpass/mock exams (`/prov`), flashcards and spaced repetition ("Dagens repetition"), a reading library, 1v1 duels, a question forum, tips, a profile with progress history.
 
 Key pages: Översikt (dashboard `/`), Plan (`/plan`, `/nivatest`, `/resultat`), Öva (`/ova`, `/ova/[delprov]`, flashcards, `/bibliotek`, `/prov`, `/duell`), Forum, Tips, Profil.
 
@@ -79,5 +79,5 @@ Rules: the accent is used for at most one primary action per view plus active/se
 Minimal and functional: 120–160ms ease-out opacity/colour transitions; page content fades in (no slide/scale). No springs, bounces, wiggles, flicker, confetti. Respect `prefers-reduced-motion`.
 
 ## Brand
-Name: **HP Lift** — wordmark set in IBM Plex Sans 600, 16px, `--text`, optionally preceded by a simple 20px square mark in `--accent` (solid square, radius 4px). No logo file exists in the repo.
+Name: **HP Topp** — wordmark set in IBM Plex Sans 600, 16px, `--text`, optionally preceded by a simple 20px square mark in `--accent` (solid square, radius 4px). No logo file exists in the repo.
 Tone of voice: calm, direct, encouraging without hype. Swedish.
