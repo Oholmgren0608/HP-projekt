@@ -6,6 +6,10 @@ export default defineConfig({
     // vinexts fetch-hanterare plus gallringsjobbet (scheduled), se src/worker.ts.
     entrypoint: "./src/worker.ts",
     compatibilityDate: "2026-11-20",
+    // Workers Logs är avstängt, så att appens loggar inte sparas hos Cloudflare
+    // (Oscars beslut 2026-11-21, docs/juridik/a6-personuppgiftsbitraden.md).
+    // Slå inte på det utan att först uppdatera integritetspolicyn och DPIA:n.
+    observability: { enabled: false },
     assets: {
       htmlHandling: "none",
       notFoundHandling: "none",

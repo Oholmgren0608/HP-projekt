@@ -101,8 +101,9 @@ Enligt artikel 28 i GDPR måste det finnas ett skriftligt avtal med varje levera
    - underbiträdeslistan, cloudflare.com/gdpr/subprocessors/cloudflare-services.
 4. Lägg in underbiträdeslistans RSS-flöde, cloudflare.com/gdpr/subprocessors/rss.xml, i en RSS-läsare. Annars räcker det att läsa listan varje år (avsnitt 5).
 5. Spara Cloudflares post i DPF-listan som PDF: dataprivacyframework.gov/list, sök på "Cloudflare". Den var aktiv 2026-11-21.
-6. Stäng av Workers Logs under *Workers & Pages → hp-lift → Settings → Observability* (beslutat av Oscar 2026-11-21). Det är påslaget från början för nya Workers.
-   - Lägg också in inställningen i `cloudflare.config.ts`, så att en senare deploy inte slår på loggarna igen.
+6. Workers Logs ska vara avstängt (beslutat av Oscar 2026-11-21). Det är påslaget från början för nya Workers.
+   - Inställningen finns i `cloudflare.config.ts` (`observability: { enabled: false }`), så den följer med varje deploy.
+   - Kontrollera efter nästa deploy från `main` att Workers Logs är avstängt under *Workers & Pages → hp-lift → Settings → Observability*. Vill du stänga av det tidigare gör du det på samma ställe.
    - Utan Workers Logs blir det svårare att felsöka gallringsjobbet (A7).
 7. **Vid bytet**, om domänen går genom Cloudflare: slå inte på Web Analytics, Zaraz eller bot-skydd som sätter cookies (till exempel Bot Fight Mode) utan att först uppdatera integritetspolicyn, avsnitt 8. Se öppen fråga 6.
 8. **Vid bytet:** bestäm om Access ska ligga kvar, till exempel för en testmiljö, och ta bort testare som inte längre behöver åtkomst. Se öppen fråga 5.
